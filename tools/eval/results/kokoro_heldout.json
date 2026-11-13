@@ -1,0 +1,241 @@
+{
+ "reference": "misaki 0.9.4 (spaCy en_core_web_sm tagger, espeak-ng fallback)",
+ "set": "heldout",
+ "sentences": 3000,
+ "accents": {
+  "en-us": {
+   "sentences": 3000,
+   "exact_sentence": 0.949,
+   "token_error_rate": 0.002480373369598813,
+   "sentences_with_aligned_words": 2995,
+   "word_agreement": {
+    "in-dictionary": {
+     "words": 20251,
+     "identical": 0.9996049577798627
+    },
+    "pos-dependent": {
+     "words": 3843,
+     "identical": 0.9849076242518865
+    },
+    "out-of-dictionary": {
+     "words": 372,
+     "identical": 0.7526881720430108
+    }
+   },
+   "seconds_per_sentence": {
+    "misaki": 0.0022536161963333445,
+    "uccharan": 2.3515785666556137e-05
+   },
+   "speedup": 95.83418680067365,
+   "top_in_dictionary_disagreements": [
+    {
+     "word": "that",
+     "misaki": "ðæt",
+     "uccharan": "ðˈæt",
+     "count": 21
+    },
+    {
+     "word": "that",
+     "misaki": "ðˈæt",
+     "uccharan": "ðæt",
+     "count": 11
+    },
+    {
+     "word": "in",
+     "misaki": "ˈɪn",
+     "uccharan": "ɪn",
+     "count": 5
+    },
+    {
+     "word": "lives",
+     "misaki": "lˈɪvz",
+     "uccharan": "lˈIvz",
+     "count": 4
+    },
+    {
+     "word": "read",
+     "misaki": "ɹˈid",
+     "uccharan": "ɹˈɛd",
+     "count": 2
+    },
+    {
+     "word": "used",
+     "misaki": "jˈuzd",
+     "uccharan": "jˈust",
+     "count": 2
+    },
+    {
+     "word": "that's",
+     "misaki": "ðˈæts",
+     "uccharan": "ðæts",
+     "count": 2
+    },
+    {
+     "word": "read",
+     "misaki": "ɹˈɛd",
+     "uccharan": "ɹˈid",
+     "count": 2
+    },
+    {
+     "word": "live",
+     "misaki": "lˈɪv",
+     "uccharan": "lˈIv",
+     "count": 2
+    },
+    {
+     "word": "overweight",
+     "misaki": "ˌOvəɹwˈAt.",
+     "uccharan": "ˈOvəɹwˌAt.",
+     "count": 1
+    },
+    {
+     "word": "lives",
+     "misaki": "lˈɪvz.",
+     "uccharan": "lˈIvz.",
+     "count": 1
+    },
+    {
+     "word": "that",
+     "misaki": "ðæt,",
+     "uccharan": "ðˈæt,",
+     "count": 1
+    },
+    {
+     "word": "'gender",
+     "misaki": "“ʤˈɛndəɹ",
+     "uccharan": "ʤˈɛndəɹ",
+     "count": 1
+    },
+    {
+     "word": "disorder'",
+     "misaki": "dɪsˈɔɹdəɹ”",
+     "uccharan": "dɪsˈɔɹdəɹ",
+     "count": 1
+    },
+    {
+     "word": "upset",
+     "misaki": "ˌʌpsˈɛt",
+     "uccharan": "ˈʌpsˌɛt",
+     "count": 1
+    }
+   ]
+  },
+  "en-gb": {
+   "sentences": 3000,
+   "exact_sentence": 0.923,
+   "token_error_rate": 0.0036005434782608696,
+   "sentences_with_aligned_words": 2995,
+   "word_agreement": {
+    "in-dictionary": {
+     "words": 20240,
+     "identical": 0.999604743083004
+    },
+    "pos-dependent": {
+     "words": 3843,
+     "identical": 0.9843871975019516
+    },
+    "out-of-dictionary": {
+     "words": 383,
+     "identical": 0.5691906005221932
+    }
+   },
+   "seconds_per_sentence": {
+    "misaki": 0.0021158427366666124,
+    "uccharan": 2.560576799987757e-05
+   },
+   "speedup": 82.63148899407074,
+   "top_in_dictionary_disagreements": [
+    {
+     "word": "that",
+     "misaki": "ðat",
+     "uccharan": "ðˈat",
+     "count": 21
+    },
+    {
+     "word": "that",
+     "misaki": "ðˈat",
+     "uccharan": "ðat",
+     "count": 11
+    },
+    {
+     "word": "in",
+     "misaki": "ˈɪn",
+     "uccharan": "ɪn",
+     "count": 5
+    },
+    {
+     "word": "lives",
+     "misaki": "lˈɪvz",
+     "uccharan": "lˈIvz",
+     "count": 4
+    },
+    {
+     "word": "read",
+     "misaki": "ɹˈiːd",
+     "uccharan": "ɹˈɛd",
+     "count": 2
+    },
+    {
+     "word": "used",
+     "misaki": "jˈuːzd",
+     "uccharan": "jˈuːst",
+     "count": 2
+    },
+    {
+     "word": "that's",
+     "misaki": "ðˈats",
+     "uccharan": "ðats",
+     "count": 2
+    },
+    {
+     "word": "read",
+     "misaki": "ɹˈɛd",
+     "uccharan": "ɹˈiːd",
+     "count": 2
+    },
+    {
+     "word": "live",
+     "misaki": "lˈɪv",
+     "uccharan": "lˈIv",
+     "count": 2
+    },
+    {
+     "word": "overweight",
+     "misaki": "ˌQvəwˈAt.",
+     "uccharan": "ˈQvəwAt.",
+     "count": 1
+    },
+    {
+     "word": "lives",
+     "misaki": "lˈɪvz.",
+     "uccharan": "lˈIvz.",
+     "count": 1
+    },
+    {
+     "word": "that",
+     "misaki": "ðat,",
+     "uccharan": "ðˈat,",
+     "count": 1
+    },
+    {
+     "word": "'gender",
+     "misaki": "“ʤˈɛndə",
+     "uccharan": "ʤˈɛndə",
+     "count": 1
+    },
+    {
+     "word": "disorder'",
+     "misaki": "dɪsˈɔːdə”",
+     "uccharan": "dɪsˈɔːdə",
+     "count": 1
+    },
+    {
+     "word": "upset",
+     "misaki": "ˌʌpsˈɛt",
+     "uccharan": "ˈʌpsɛt",
+     "count": 1
+    }
+   ]
+  }
+ }
+}

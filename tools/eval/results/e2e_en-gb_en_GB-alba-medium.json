@@ -1,0 +1,42 @@
+{
+ "language": "en-gb",
+ "voice": "en_GB-alba-medium.onnx",
+ "tts": "sherpa-onnx 2.0.1 (phoneme_codepoints)",
+ "asr": "whisper-onnx:base",
+ "reference": "espeak-ng 1.52.0 voice en-gb-x-rp",
+ "sentences": 500,
+ "audio_minutes": 20.286561602418747,
+ "sentences_with_identical_phonemes": 347,
+ "reference_phonemes": {
+  "sentences": 500,
+  "wer": 0.07358013336399172,
+  "cer": 0.03709662590787901
+ },
+ "uccharan_phonemes": {
+  "sentences": 500,
+  "wer": 0.07472982294780409,
+  "cer": 0.039854739358278934
+ },
+ "wer_difference_uccharan_minus_reference": 0.0011496895838123689,
+ "wer_difference_95ci_paired_bootstrap": [
+  -0.00549319321710055,
+  0.0077428437353355235
+ ],
+ "subset_where_phonemes_differ": {
+  "reference_phonemes": {
+   "sentences": 153,
+   "wer": 0.09340252038547071,
+   "cer": 0.04512126339537507
+  },
+  "uccharan_phonemes": {
+   "sentences": 153,
+   "wer": 0.09710896960711639,
+   "cer": 0.05358150028200789
+  }
+ },
+ "better_worse_same_sentences": {
+  "uccharan_better": 29,
+  "uccharan_worse": 25,
+  "same": 446
+ }
+}

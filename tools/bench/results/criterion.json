@@ -1,0 +1,68 @@
+{
+ "note": "criterion medians from one run of `cargo bench -p uccharan` on the development machine (4 shared vCPUs, heavily contended)",
+ "benchmarks": {
+  "lexicon_path/en-us": {
+   "time": "59.459 \u00b5s",
+   "throughput": "1.1437 Melem/s"
+  },
+  "lexicon_path/en-gb": {
+   "time": "67.192 \u00b5s",
+   "throughput": "1.0120 Melem/s"
+  },
+  "lexicon_path/en-us-improved": {
+   "time": "84.918 \u00b5s",
+   "throughput": "800.77 Kelem/s"
+  },
+  "rule_path/en-us": {
+   "time": "866.61 \u00b5s",
+   "throughput": "73.851 Kelem/s"
+  },
+  "hindi/compatible": {
+   "time": "34.696 \u00b5s",
+   "throughput": "1.4122 Melem/s"
+  },
+  "hindi/improved": {
+   "time": "39.788 \u00b5s",
+   "throughput": "1.2315 Melem/s"
+  },
+  "numbers/natural": {
+   "time": "29.790 \u00b5s",
+   "throughput": "570.66 Kelem/s"
+  },
+  "numbers/reference-style": {
+   "time": "31.950 \u00b5s",
+   "throughput": "532.08 Kelem/s"
+  },
+  "batch/1-threads": {
+   "time": "23.054 ms",
+   "throughput": "1.1798 Melem/s"
+  },
+  "batch/2-threads": {
+   "time": "31.680 ms",
+   "throughput": "858.58 Kelem/s"
+  },
+  "batch/4-threads": {
+   "time": "34.127 ms",
+   "throughput": "797.03 Kelem/s"
+  },
+  "profiles/analyze-only": {
+   "time": "69.304 \u00b5s",
+   "throughput": "981.18 Kelem/s"
+  },
+  "profiles/render-piper": {
+   "time": "1.9888 \u00b5s",
+   "throughput": "34.192 Melem/s"
+  },
+  "profiles/render-sherpa-codepoints": {
+   "time": "2.9693 \u00b5s",
+   "throughput": "22.901 Melem/s"
+  },
+  "profiles/render-kokoro": {
+   "time": "56.252 \u00b5s",
+   "throughput": "1.2088 Melem/s"
+  },
+  "cold_start": {
+   "time": "14.536 \u00b5s"
+  }
+ }
+}

@@ -1,0 +1,253 @@
+{
+ "language": "en-gb",
+ "reference": "espeak-ng 1.52.0 voice en-gb-x-rp (library API)",
+ "set": "prose",
+ "sentence_level": {
+  "sentences": 1000,
+  "reference_symbols": 96661,
+  "per": 0.015145715438491221,
+  "per_without_stress": 0.012602701573596992,
+  "exact_sentence": 0.452,
+  "exact_sentence_without_stress": 0.52,
+  "piper_shape_per": 0.015196063572893617,
+  "piper_shape_exact_sentence": 0.441,
+  "word_count_mismatch_sentences": 491,
+  "errors_by_class": {
+   "vowel": {
+    "count": 632,
+    "share": 0.43169398907103823,
+    "per_contribution": 0.006538314314977085
+   },
+   "stress": {
+    "count": 384,
+    "share": 0.26229508196721313,
+    "per_contribution": 0.00397264667239114
+   },
+   "other": {
+    "count": 211,
+    "share": 0.14412568306010928,
+    "per_contribution": 0.0021828865830065903
+   },
+   "consonant": {
+    "count": 156,
+    "share": 0.10655737704918032,
+    "per_contribution": 0.0016138877106589007
+   },
+   "word-boundary": {
+    "count": 76,
+    "share": 0.05191256830601093,
+    "per_contribution": 0.0007862529872440799
+   },
+   "length": {
+    "count": 5,
+    "share": 0.0034153005464480873,
+    "per_contribution": 5.17271702134263e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "∅→ ",
+    "count": 75
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 68
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 68
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 68
+   },
+   {
+    "edit": "ɐ→æ",
+    "count": 49
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 48
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 39
+   },
+   {
+    "edit": "ɪ→ə",
+    "count": 37
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 37
+   },
+   {
+    "edit": "ə→ɐ",
+    "count": 36
+   },
+   {
+    "edit": "ʌ→ɒ",
+    "count": 35
+   },
+   {
+    "edit": "ɒ→ː",
+    "count": 33
+   },
+   {
+    "edit": "ə→ɪ",
+    "count": 31
+   },
+   {
+    "edit": "ɑ→∅",
+    "count": 30
+   },
+   {
+    "edit": "ː→æ",
+    "count": 30
+   },
+   {
+    "edit": "s→z",
+    "count": 28
+   },
+   {
+    "edit": "ɪ→i",
+    "count": 22
+   },
+   {
+    "edit": "∅→ɔ",
+    "count": 22
+   },
+   {
+    "edit": "ɐ→ə",
+    "count": 22
+   },
+   {
+    "edit": "ɒ→ʌ",
+    "count": 21
+   },
+   {
+    "edit": "ˌ→æ",
+    "count": 17
+   },
+   {
+    "edit": "ɐ→t",
+    "count": 17
+   },
+   {
+    "edit": "t→ ",
+    "count": 17
+   },
+   {
+    "edit": "ə→∅",
+    "count": 16
+   },
+   {
+    "edit": "∅→ə",
+    "count": 16
+   }
+  ],
+  "word_error_by_class": {
+   "function": {
+    "words": 4169,
+    "wrong": 35,
+    "rate": 0.008395298632765651
+   },
+   "lexicon": {
+    "words": 3525,
+    "wrong": 243,
+    "rate": 0.06893617021276596
+   },
+   "oov": {
+    "words": 135,
+    "wrong": 48,
+    "rate": 0.35555555555555557
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 14,
+    "per": 0.029297954671088998,
+    "exact_sentence": 0.07142857142857142
+   },
+   "no-digits": {
+    "sentences": 986,
+    "per": 0.014875806519630582,
+    "exact_sentence": 0.45740365111561865
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "pg1661-332",
+    "text": "Come on, my boy, and we shall see whether it will not fit the lock.",
+    "reference": "kˈʌm ˈɒn maɪ bˈɔɪ ænd wiːʃˌɐl sˈiː wˈɛðɐɹ ɪt wɪl nˌɒt fˈɪt ðə lˈɒk",
+    "uccharan": "kˈʌm ˈɒn maɪ bˈɔɪ ænd wiː ʃˌæl sˈiː wˈɛðɐɹ ɪt wɪl nˌɒt fˈɪt ðə lˈɒk"
+   },
+   {
+    "id": "pg1661-232",
+    "text": "With much labour we separated them and carried him, living but horribly mangled, into the house.",
+    "reference": "wɪð mˈʌtʃ lˈeɪbɐ wiː sˈɛpəɹˌeɪtɪd ðˌɛm ænd kˈæɹɪd hˌɪm lˈɪvɪŋ bˌʌt hˈɒɹɪblɪ mˈæŋɡəld ˌɪntʊ ðə hˈaʊs",
+    "uccharan": "wɪð mˌʌtʃ lˈeɪbɐ wiː sˈɛpəɹˌeɪtɪd ðˌɛm ænd kˈæɹɪd hˌɪm lˈɪvɪŋ bˌʌt hˈɔːɹɪblɪ mˈæŋɡəld ˌɪntʊ ðə hˈaʊs"
+   },
+   {
+    "id": "pg1661-143",
+    "text": "I was very angry, for this was the third demand during the month.",
+    "reference": "aɪ wɒz vˈɛɹɪ ˈæŋɡɹɪ fɔː ðɪs wʌzðə θˈɜːd dɪmˈɑːnd djˈɔːɹɪŋ ðə mˈʌnθ",
+    "uccharan": "aɪ wɒz vˈɛɹɪ ˈæŋɡɹɪ fɔː ðɪs wɒzðə θˈɜːd dɪmˈɑːnd dˈɔːɹɪŋ ðə mˈʌnθ"
+   },
+   {
+    "id": "pg1661-762",
+    "text": "If I may give an opinion,” remarked the strange gentleman, “we’ve had just a little too much secrecy over this business already.",
+    "reference": "ɪf aɪ mˈeɪ ɡˈɪv ɐn əpˈɪniən ɹɪmˈɑːkt ðə stɹˈeɪndʒ dʒˈɛntəlmən wiːvhˌæd dʒˈʌst ɐ lˈɪtəl tˈuː mʌtʃ sˈiːkɹɪsɪ ˌəʊvɐ ðɪs bˈɪznəs ɔːlɹˈɛdɪ",
+    "uccharan": "ɪf aɪ mˈeɪ ɡˈɪv ɐn əpˈɪniən ɹɪmˈɑːkt ðə stɹˈeɪndʒ dʒˈɛntəlmən wiːv hæd dʒˈʌst ɐ lˈɪtəl tˈuː mˌʌtʃ sˈiːkɹəsɪ ˌəʊvɐ ðɪs bˈɪznəs ɔːlɹˈɛdɪ"
+   },
+   {
+    "id": "pg1661-932",
+    "text": "I confess that it is not the situation which I should like to see a sister of mine apply for.",
+    "reference": "aɪ kənfˈɛs ðˌɐtɪt ɪz nˌɒt ðə sˌɪtʃuːˈeɪʃən wˌɪtʃ aɪ ʃˌʊd lˈaɪk tə sˈiː ɐ sˈɪstɐɹ ɒv mˈaɪn ɐplˈaɪ fɔː",
+    "uccharan": "aɪ kənfˈɛs ðæt ɪt ɪz nˌɒt ðə sˌɪtʃuːˈeɪʃən wˌɪtʃ aɪ ʃˌʊd lˈaɪk tə sˈiː ɐ sˈɪstɐɹ ɒv mˈaɪn ɐplˈaɪ fɔː"
+   },
+   {
+    "id": "pg1661-395",
+    "text": "I would not have his cursed stock mixed with mine; not that I had any dislike to the lad, but his blood was in him, and that was enough.",
+    "reference": "aɪ wʊd nˌɒtɐv hɪz kˈɜːst stˈɒk mˈɪkst wɪð mˈaɪn nˌɒt ðæt aɪ hˌæd ˌɛnɪ dɪslˈaɪk tə ðə lˈæd bˌʌt hɪz blˈʌd wɒz ɪn hˌɪm ænd ðæt wɒz ɪnˈʌf",
+    "uccharan": "aɪ wʊd nˌɒt hæv hɪz kˈɜːst stˈɒk mˈɪkst wɪð mˈaɪn nˌɒt ðæt aɪ hæd ˌɛnɪ dɪslˈaɪk tə ðə lˈæd bˌʌt hɪz blˈʌd wɒz ɪn hˌɪm ænd ðæt wɒz ɪnˈʌf"
+   },
+   {
+    "id": "pg1661-700",
+    "text": "It is a cold night, and I observe that your circulation is more adapted for summer than for winter.",
+    "reference": "ɪt ɪz ɐ kˈəʊld nˈaɪt ænd aɪ ɒbzˈɜːv ðæt jɔː sˌɜːkjʊlˈeɪʃən ɪz mˈɔːɹ ɐdˈæptɪd fɔː sˈʌmɐ ðɐn fɔː wˈɪntɐ",
+    "uccharan": "ɪt ɪz ɐ kˈəʊld nˈaɪt ænd aɪ əbzˈɜːv ðæt jɔː sˈɜːkjʊlˌeɪʃən ɪz mˈɔːɹ ɐdˈæptɪd fɔː sˈʌmɐ ðɐn fɔː wˈɪntɐ"
+   },
+   {
+    "id": "pg1661-349",
+    "text": "Cocksure,” said the salesman, “I thought that I was out of geese, but before I finish you’ll find that there is still one left in my shop.",
+    "reference": "kˌɒkʃˈɔː sˈɛd ðə sˈeɪlzmən aɪ θˈɔːt ðæt aɪ wɒz ˌaʊtəv ɡˈiːs bˌʌt bɪfˌɔːɹ aɪ fˈɪnɪʃ juːl fˈaɪnd ðæt ðeəɹ ɪz stˈɪl wˈɒn lˈɛft ɪn maɪ ʃˈɒp",
+    "uccharan": "kˈɒksjuː sˈɛd ðə sˈeɪlzmən aɪ θˈɔːt ðæt aɪ wɒz ˌaʊtəv ɡˈiːs bˌʌt bɪfˌɔːɹ aɪ fˈɪnɪʃ juːl fˈaɪnd ðæt ðeəɹ ɪz stˈɪl wˈɒn lˈɛft ɪn maɪ ʃˈɒp"
+   },
+   {
+    "id": "pg1661-564",
+    "text": "An examination showed that one of the india-rubber bands which was round the head of a driving-rod had shrunk so as not quite to fill the socket along which it worked.",
+    "reference": "ɐn ɪɡzˌæmɪnˈeɪʃən ʃˈəʊd ðˈætwˌɒn ɒvðɪ ˈɪndɪəɹˈʌbɐ bˈændz wˌɪtʃ wɒz ɹˈaʊnd ðə hˈɛd əvɐ dɹˈaɪvɪŋɹˈɒd hæd ʃɹˈʌŋk sˌəʊ æz nˌɒt kwˈaɪt tə fˈɪl ðə sˈɒkɪt ɐlˈɒŋ wˌɪtʃ ɪt wˈɜːkt",
+    "uccharan": "ɐn ɪɡzˌæmɪnˈeɪʃən ʃˈəʊd ðæt wˈɒn ɒvðɪ ˈɪndiɐɹˈʌbɐ bˈændz wˌɪtʃ wɒz ɹˈaʊnd ðə hˈɛd əvɐ dɹˈaɪvɪŋɹˈɒd hæd ʃɹˈʌŋk sˌəʊ æz nˌɒt kwˈaɪt tə fˈɪl ðə sˈɒkɪt ɐlˈɒŋ wˌɪtʃ ɪt wˈɜːkt"
+   },
+   {
+    "id": "pg1661-40",
+    "text": "Oh, yes! he is the greengrocer who brings our vegetables round.",
+    "reference": "ˈəʊ jˈɛs hiː ɪz ðə ɡɹˈiːŋɡɹəʊsɐ hˌuː bɹˈɪŋz ˌaʊɐ vˈɛdʒɪtəbəlz ɹˈaʊnd",
+    "uccharan": "ˈəʊ jˈɛs hiː ɪz ðə ɡɹˈiːnɡɹəʊsɐ hˌuː bɹˈɪŋz ˌaʊɐ vˈɛdʒtəbəlz ɹˈaʊnd"
+   },
+   {
+    "id": "pg1661-943",
+    "text": "We shall be at the Copper Beeches by seven o’clock, my friend and I.",
+    "reference": "wiːʃˌɐl biː æt ðə kˈɒpɐ bˈiːtʃɪz baɪ sˈɛvən əklˈɒk maɪ fɹˈɛnd ænd ˈaɪ",
+    "uccharan": "wiː ʃˌæl biː æt ðə kˈɒpɐ bˈiːtʃɪz baɪ sˈɛvən əklˈɒk maɪ fɹˈɛnd ænd ˈaɪ"
+   },
+   {
+    "id": "pg1661-789",
+    "text": "These are the more patent facts which are to be deduced from his hat.",
+    "reference": "ðiːz ɑː ðə mˈɔː pˈeɪtənt fˈækts wˌɪtʃ ɑː təbɪ dɪdjˈuːst fɹɒm hɪz hˈæt",
+    "uccharan": "ðiːz ɑː ðə mˈɔː pˈætənt fˈækts wˌɪtʃ ɑː təbɪ dɪdjˈuːst fɹɒm hɪz hˈæt"
+   }
+  ]
+ }
+}

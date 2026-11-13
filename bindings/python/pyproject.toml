@@ -1,0 +1,42 @@
+[build-system]
+requires = ["maturin>=1.7,<2"]
+build-backend = "maturin"
+
+[project]
+name = "uccharan"
+version = "0.1.0"
+description = "Permissively licensed text-to-phoneme (G2P) for neural TTS: en-US, en-GB, Hindi and Hinglish, with espeak-style IPA, Piper, Kokoro, Kitten/Matcha and sherpa-onnx output profiles."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+authors = [{ name = "Abhinav Gautam", email = "abhinav@codebuckets.in" }]
+keywords = ["g2p", "phonemizer", "tts", "ipa", "hindi", "piper", "kokoro", "sherpa-onnx"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Rust",
+  "Topic :: Multimedia :: Sound/Audio :: Speech",
+  "Topic :: Text Processing :: Linguistic",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://cb-sigma.github.io/uccharan/"
+Repository = "https://github.com/cb-Sigma/uccharan"
+Issues = "https://github.com/cb-Sigma/uccharan/issues"
+
+[project.scripts]
+uccharan = "uccharan.cli:main"
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.maturin]
+python-source = "python"
+module-name = "uccharan._native"
+features = ["pyo3/extension-module"]
+strip = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

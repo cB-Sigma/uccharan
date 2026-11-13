@@ -1,0 +1,112 @@
+import json
+import subprocess
+import sys
+import unicodedata
+
+import pytest
+
+import uccharan
+from uccharan.compat import EspeakBackend
+
+
+def test_version_and_constants():
+    assert uccharan.__version__.count(".") == 2
+    assert "hi" in uccharan.LANGUAGES and "sherpa-onnx" in uccharan.PROFILES
+
+
+def test_english_basic():
+    assert uccharan.phonemize("Hello, world.") == "həlˈoʊ, wˈɜːld."
+    assert uccharan.phonemize("Hello, world.", punctuation=False) == "həlˈoʊ wˈɜːld"
+    assert uccharan.phonemize("The car park is far.", "en-gb") == "ðə kˈɑː pˈɑːk ɪz fˈɑː."
+
+
+def test_hindi_and_code_mixing():
+    nfd = lambda s: unicodedata.normalize("NFD", s)  # noqa: E731
+    assert nfd(uccharan.phonemize("नमस्ते दुनिया", "hi")) == nfd("nəmˈʌsteː dˈʊnɪjˌaː")
+    mixed = uccharan.analyze("मैं office जा रहा हूँ", "hi")
+    langs = [w.lang for w in mixed[0][0][0]]
+    assert langs == ["hi", "en-gb", "hi", "hi", "hi"]
+    flagged = uccharan.phonemize("मैं office जा रहा हूँ", "hi", language_flags=True)
+    assert "(en)" in flagged and "(hi)" in flagged
+    roman = uccharan.phonemize("main ghar ja raha hoon", "hi", hinglish=True)
+    assert nfd(roman) == nfd(uccharan.phonemize("मैं घर जा रहा हूँ", "hi"))
+
+
+def test_profiles_shapes():
+    s = uccharan.phonemize("Hi there. Bye!", "en-us", "piper")
+    assert s == ["hˈaɪ ðˈɛɹ.", "bˈaɪ!"]
+    cps = uccharan.phonemize("Hi there. Bye!", "en-us", "sherpa-onnx")
+    assert cps == [[ord(c) for c in x] for x in s]
+    k = uccharan.phonemize("The butter is better.", "en-us", "kokoro")
+    assert "T" in k and uccharan.unmapped(k, "kokoro") == []
+    ids = uccharan.kokoro_ids(k)
+    assert ids[0] == 0 and ids[-1] == 0 and len(ids) == len(k) + 2
+    m = uccharan.phonemize("Hello, world.", "en-us", "matcha")
+    assert uccharan.matcha_ids(m)[0::2] == [0] * (len(m) + 1)
+    assert uccharan.kitten_ids(m)[-2:] == [10, 0]
+
+
+def test_piper_ids_from_dict():
+    cfg = {"phoneme_id_map": {"_": [0], "^": [1], "$": [2], " ": [3], "h": [20], "a": [14], "ɪ": [74], "ˈ": [120], ".": [10]}}
+    ids, missing = uccharan.piper_ids("hˈaɪ.", cfg)
+    assert ids == [1, 0, 20, 0, 120, 0, 14, 0, 74, 0, 10, 0, 2] and missing == []
+    ids, missing = uccharan.piper_ids("hˈaɪ.", json.dumps(cfg))
+    assert missing == []
+    _, missing = uccharan.piper_ids("xa", cfg)
+    assert missing == ["x"]
+
+
+def test_normalisation_modes():
+    assert uccharan.phonemize("$5", normalize="natural") == uccharan.phonemize("five dollars")
+    assert uccharan.phonemize("5", "hi") == uccharan.phonemize("पांच", "hi")
+    assert uccharan.phonemize("abc 123", normalize="off") == uccharan.phonemize("abc")
+
+
+def test_batch_matches_single():
+    texts = [f"Sentence number {i} is here." for i in range(40)]
+    assert uccharan.phonemize_batch(texts) == [uccharan.phonemize(t) for t in texts]
+
+
+def test_errors():
+    with pytest.raises(ValueError):
+        uccharan.phonemize("x", lang="xx")
+    with pytest.raises(ValueError):
+        uccharan.phonemize("x", profile="nope")  # type: ignore[call-overload]
+    with pytest.raises(ValueError):
+        uccharan.phonemize("x", normalize="nope")
+    assert uccharan.phonemize("") == ""
+    assert uccharan.phonemize("...", profile="piper") == []
+
+
+def test_phonemizer_shim():
+    b = EspeakBackend("en-us", preserve_punctuation=True, with_stress=True)
+    assert b.phonemize(["Hello, world."], strip=True) == ["həlˈoʊ, wˈɜːld."]
+    assert b.phonemize(["Hello"]) == ["həlˈoʊ "]
+    plain = EspeakBackend("en-us")
+    assert plain.phonemize(["Hello, world."], strip=True) == ["həloʊ wɜːld"]
+    tied = EspeakBackend("en-us", with_stress=True, tie="^")
+    assert tied.phonemize(["church"], strip=True) == ["t^ʃˈɜːt^ʃ"]
+    with pytest.raises(ValueError):
+        EspeakBackend("fr-fr")
+    with pytest.raises(TypeError):
+        b.phonemize("Hello")  # type: ignore[arg-type]
+
+
+def test_cli():
+    out = subprocess.run([sys.executable, "-m", "uccharan", "-l", "hi", "-p", "piper", "नमस्ते।"], capture_output=True, text=True, check=True)
+    assert json.loads(out.stdout) == [unicodedata.normalize("NFD", "nəmˈʌsteː.")]
+    out = subprocess.run([sys.executable, "-m", "uccharan"], input="Hello\nworld\n", capture_output=True, text=True, check=True)
+    assert out.stdout.splitlines() == ["həlˈoʊ", "wˈɜːld"]
+
+
+def test_kokoro_english_built_in_and_override(tmp_path):
+    assert uccharan.has_misaki("en-us") and uccharan.has_misaki("en-gb")
+    assert uccharan.phonemize("I read the book yesterday.", "en-us", "kokoro") == "ˌI ɹˈɛd ðə bˈʊk jˈɛstəɹdˌA."
+    assert uccharan.phonemize("Hello.", "en-gb", "kokoro") == "həlˈQ."
+    # A different copy of misaki's dictionaries can replace the built-in one.
+    (tmp_path / "gb_gold.json").write_text(json.dumps({"hello": "hɛlˈQ"}, ensure_ascii=False), encoding="utf-8")
+    (tmp_path / "gb_silver.json").write_text("{}", encoding="utf-8")
+    uccharan.load_misaki(tmp_path, "en-gb")
+    assert uccharan.phonemize("Hello.", "en-gb", "kokoro") == "hɛlˈQ."
+    with pytest.raises(ValueError):
+        uccharan.load_misaki(tmp_path, "en-gb")

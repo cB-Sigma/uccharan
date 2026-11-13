@@ -1,0 +1,19 @@
+[package]
+name = "uccharan-python"
+description = "Python bindings for uccharan."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+publish = false
+
+[lib]
+name = "_native"
+crate-type = ["cdylib"]
+doc = false
+
+[dependencies]
+uccharan = { path = "../../crates/uccharan" }
+pyo3 = { version = "0.30", features = ["extension-module", "abi3-py39"] }

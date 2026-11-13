@@ -1,0 +1,75 @@
+# Homographs in context (en-US). check=word: some output word, with stress
+# marks removed, must equal one of the expected forms. Expected forms follow
+# CMUdict's variants for the intended sense, written in the target notation.
+# id	text	expected
+read-past-1	I read it yesterday.	ɹɛd
+read-past-2	She has read the book twice.	ɹɛd
+read-past-3	He read the letter and smiled.	ɹɛd
+read-past-4	Last week we read three chapters.	ɹɛd
+read-past-5	The report was read aloud.	ɹɛd
+read-pres-1	I like to read before bed.	ɹiːd
+read-pres-2	Please read the instructions carefully.	ɹiːd
+read-pres-3	They will read it tomorrow.	ɹiːd
+lead-metal-1	The lead pipe was heavy.	lɛd
+lead-metal-2	Old paint often contains lead.	lɛd
+lead-metal-3	The box was lined with lead.	lɛd
+lead-verb-1	She will lead the team.	liːd
+lead-verb-2	They took the lead early.	liːd
+live-adj-1	We watched a live broadcast.	laɪv
+live-adj-2	The band played live music all night.	laɪv
+live-adj-3	Do not touch the live wire.	laɪv
+live-verb-1	They live in Mumbai.	lɪv
+live-verb-2	Where do you live?	lɪv
+wind-verb-1	You have to wind the clock every day.	waɪnd
+wind-verb-2	The roads wind through the hills.	waɪnd
+wind-noun-1	The wind was cold.	wɪnd
+wind-noun-2	A strong wind blew all night.	wɪnd
+tear-rip-1	There is a tear in the cloth.	tɛɹ
+tear-rip-2	Please do not tear the paper.	tɛɹ
+tear-rip-3	Years of wear and tear ruined it.	tɛɹ
+tear-cry-1	A single tear rolled down her cheek.	tɪɹ
+bass-fish-1	He caught a huge bass in the lake.	bæs
+bass-fish-2	We went fishing for bass.	bæs
+bass-music-1	She plays bass in a band.	beɪs
+bass-music-2	Turn up the bass.	beɪs
+bow-knot-1	She tied a bow in her hair.	boʊ
+bow-knot-2	He hunted with a bow and arrows.	boʊ
+bow-bend-1	The actors took a bow.	baʊ
+wound-wind-1	He wound the rope around the post.	waʊnd
+wound-wind-2	The path wound through the forest.	waʊnd
+wound-injury-1	The wound healed slowly.	wuːnd
+minute-tiny-1	She noticed every minute detail.	maɪnuːt|maɪnjuːt
+minute-tiny-2	Only minute quantities were found.	maɪnuːt|maɪnjuːt
+minute-time-1	Wait a minute.	mɪnɪt|mɪnᵻt|mɪnət
+close-adj-1	We live close to the station.	kloʊs
+close-adj-2	They are very close friends.	kloʊs
+close-verb-1	Please close the door.	kloʊz
+close-verb-2	The shops close at nine.	kloʊz
+does-deer-1	The does ran into the woods.	doʊz
+dove-dive-1	She dove into the pool.	doʊv
+dove-bird-1	A white dove sat on the roof.	dʌv
+sow-pig-1	The sow fed her piglets.	saʊ
+sow-plant-1	Farmers sow seeds in spring.	soʊ
+resume-cv-1	Please send me your resume.	ɹɛzəmeɪ|ɹɛzuːmeɪ|ɹɛzjuːmeɪ|ɹɛzʊmeɪ
+resume-verb-1	Classes resume on Monday.	ɹɪzuːm|ɹᵻzuːm|ɹiːzuːm|ɹəzuːm
+record-verb-1	They will record a new album.	ɹᵻkɔːɹd|ɹɪkɔːɹd|ɹəkɔːɹd
+record-noun-1	She broke the world record.	ɹɛkɚd
+record-verb-2	We record every meeting.	ɹᵻkɔːɹd|ɹɪkɔːɹd|ɹəkɔːɹd
+object-verb-1	I object to that proposal.	əbdʒɛkt
+object-noun-1	A strange object fell from the sky.	ɑːbdʒɛkt|ɑːbdʒɪkt
+present-verb-1	Let me present our guest.	pɹᵻzɛnt|pɹɪzɛnt|pɹizɛnt|pɹiːzɛnt
+present-noun-1	She gave me a present.	pɹɛzənt
+desert-verb-1	He would never desert his friends.	dᵻzɜːt|dɪzɜːt|dɪzɜːɹt
+desert-noun-1	Camels cross the desert.	dɛzɚt
+produce-noun-1	The market sells fresh produce.	pɹoʊduːs|pɹɑːduːs
+produce-verb-1	Factories produce cars.	pɹədjuːs|pɹəduːs
+permit-noun-1	You need a parking permit.	pɜːmɪt
+permit-verb-1	They do not permit smoking.	pɚmɪt
+refuse-noun-1	The refuse was collected on Friday.	ɹɛfjuːs
+refuse-verb-1	I refuse to answer.	ɹᵻfjuːz|ɹɪfjuːz|ɹəfjuːz
+content-adj-1	She felt content with the result.	kəntɛnt
+content-noun-1	The content of the letter was secret.	kɑːntɛnt
+polish-nation-1	My neighbour speaks Polish at home.	poʊlɪʃ
+polish-verb-1	I need to polish my shoes.	pɑːlɪʃ
+conduct-verb-1	She will conduct the orchestra.	kəndʌkt
+contract-verb-1	Muscles contract when cold.	kəntɹækt

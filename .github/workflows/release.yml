@@ -1,0 +1,315 @@
+name: Release
+
+# Builds the Python wheels (abi3) and sdist, publishes them to PyPI as
+# "uccharan", creates the GitHub release (and its tag) with the wheels, the sdist,
+# the C library for each platform and the npm tarball attached, and publishes the
+# crates and the npm package when their tokens are configured.
+#
+# Two ways to run it:
+#   * Actions tab -> Release -> "Run workflow" on main, with `targets` naming the
+#     registries to publish to (default "pypi,crates,npm"; e.g. "crates,npm" leaves
+#     PyPI alone). The version is read from Cargo.toml ([workspace.package]).
+#   * Push a tag vX.Y.Z (it must match the workspace version): publishes everywhere.
+#
+# The GitHub release, and with it the tag vX.Y.Z, is created only by a run that
+# publishes to PyPI (the PyPI release is the one that cannot be redone), after the
+# PyPI upload succeeded. A crates/npm-only run creates no release and no tag.
+# Each registry job is independent: a failure in one does not stop the others.
+#
+# Secrets:
+#   PYPI_API_TOKEN        required  PyPI API token for the project "uccharan"
+#   CARGO_REGISTRY_TOKEN  optional  crates.io token; the crates.io job is skipped without it
+#   NPM_TOKEN             optional  npm token; the npm job is skipped without it
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      targets:
+        description: "Comma-separated registries to publish to: pypi, crates, npm. The GitHub release (and tag) is created only when pypi is included."
+        type: string
+        default: "pypi,crates,npm"
+
+permissions:
+  contents: read
+
+env:
+  WASM_BINDGEN_VERSION: "0.2.130"
+
+jobs:
+  meta:
+    name: version
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Read the workspace version
+        id: version
+        run: |
+          version="$(sed -n '/^\[workspace.package\]/,/^\[/s/^version = "\(.*\)"/\1/p' Cargo.toml)"
+          test -n "$version"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+          echo "workspace version: ${version}"
+      - name: Python and npm packages carry the same version
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          grep -q "^version = \"$VERSION\"" bindings/python/pyproject.toml
+          grep -q "\"version\": \"$VERSION\"" bindings/wasm/package.json
+      - name: Check that the tag matches the version
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          test "v${{ steps.version.outputs.version }}" = "${GITHUB_REF_NAME}" || { echo "tag ${GITHUB_REF_NAME} != version ${{ steps.version.outputs.version }}"; exit 1; }
+      - name: Refuse to release a version that already has a release
+        if: github.event_name == 'workflow_dispatch' && contains(inputs.targets, 'pypi')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "v${{ steps.version.outputs.version }}" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "release v${{ steps.version.outputs.version }} already exists; bump the version first"; exit 1
+          fi
+
+  wheels:
+    name: wheel ${{ matrix.name }}
+    needs: meta
+    if: github.event_name == 'push' || contains(inputs.targets, 'pypi')
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: linux-x86_64,  os: ubuntu-latest,  target: x86_64-unknown-linux-gnu,  manylinux: "2014" }
+          - { name: linux-aarch64, os: ubuntu-latest,  target: aarch64-unknown-linux-gnu, manylinux: "2014" }
+          - { name: macos-arm64,   os: macos-latest,   target: aarch64-apple-darwin,      manylinux: "off" }
+          - { name: macos-x86_64,  os: macos-latest,   target: x86_64-apple-darwin,       manylinux: "off" }
+          - { name: windows-x64,   os: windows-latest, target: x86_64-pc-windows-msvc,    manylinux: "off" }
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Build the abi3 wheel
+        uses: PyO3/maturin-action@v1
+        with:
+          command: build
+          target: ${{ matrix.target }}
+          manylinux: ${{ matrix.manylinux }}
+          args: --release --out dist --manifest-path bindings/python/Cargo.toml
+      - name: Smoke-test the wheel
+        if: matrix.name == 'linux-x86_64' || matrix.name == 'macos-arm64' || matrix.name == 'windows-x64'
+        shell: bash
+        run: |
+          python -m pip install --no-index --find-links dist uccharan
+          python -m pip install "pytest>=8"
+          cd bindings/python/tests && python -m pytest -q .
+      - uses: actions/upload-artifact@v7
+        with:
+          name: wheel-${{ matrix.name }}
+          path: dist/*.whl
+
+  sdist:
+    name: sdist
+    needs: meta
+    if: github.event_name == 'push' || contains(inputs.targets, 'pypi')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build the source distribution
+        uses: PyO3/maturin-action@v1
+        with:
+          command: sdist
+          args: --out dist --manifest-path bindings/python/Cargo.toml
+      - uses: actions/upload-artifact@v7
+        with:
+          name: sdist
+          path: dist/*.tar.gz
+
+  clib:
+    name: C library ${{ matrix.name }}
+    needs: meta
+    if: github.event_name == 'push' || contains(inputs.targets, 'pypi')
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: linux-x86_64,  os: ubuntu-latest,    target: x86_64-unknown-linux-gnu,  lib: libuccharan.so,    static: libuccharan.a }
+          - { name: linux-aarch64, os: ubuntu-24.04-arm, target: aarch64-unknown-linux-gnu, lib: libuccharan.so,    static: libuccharan.a }
+          - { name: macos-arm64,   os: macos-latest,     target: aarch64-apple-darwin,      lib: libuccharan.dylib, static: libuccharan.a }
+          - { name: macos-x86_64,  os: macos-latest,     target: x86_64-apple-darwin,       lib: libuccharan.dylib, static: libuccharan.a }
+          - { name: windows-x64,   os: windows-latest,   target: x86_64-pc-windows-msvc,    lib: uccharan.dll,      static: uccharan.lib }
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install the Rust toolchain
+        shell: bash
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+          rustup target add ${{ matrix.target }}
+      - name: Build and package
+        shell: bash
+        env:
+          VERSION: ${{ needs.meta.outputs.version }}
+        run: |
+          cargo build --release -p uccharan-capi --target ${{ matrix.target }}
+          dir="uccharan-c-$VERSION-${{ matrix.name }}"
+          mkdir -p "$dir/lib" "$dir/include" out
+          out_dir="target/${{ matrix.target }}/release"
+          cp "$out_dir/${{ matrix.lib }}" "$out_dir/${{ matrix.static }}" "$dir/lib/"
+          if [ "${{ runner.os }}" = "Windows" ]; then cp "$out_dir/uccharan.dll.lib" "$dir/lib/" 2>/dev/null || true; fi
+          cp crates/uccharan-capi/include/uccharan.h "$dir/include/"
+          cp crates/uccharan-capi/examples/hello.c LICENSE NOTICE DATA_LICENSES.md "$dir/"
+          if [ "${{ runner.os }}" = "Windows" ]; then 7z a "out/$dir.zip" "$dir" > /dev/null; else tar czf "out/$dir.tar.gz" "$dir"; fi
+      - uses: actions/upload-artifact@v7
+        with:
+          name: clib-${{ matrix.name }}
+          path: out/*
+
+  npm-pack:
+    name: WebAssembly package
+    needs: meta
+    if: github.event_name == 'push' || contains(inputs.targets, 'pypi')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Install the Rust toolchain and wasm-bindgen
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+          rustup target add wasm32-unknown-unknown
+          cargo install wasm-bindgen-cli --version "$WASM_BINDGEN_VERSION" --locked
+      - name: Build, test and pack
+        run: |
+          mkdir -p out
+          node bindings/wasm/build.mjs
+          cd bindings/wasm && node --test test/node.test.mjs && npm pack --pack-destination ../../out
+      - uses: actions/upload-artifact@v7
+        with:
+          name: npm
+          path: out/*.tgz
+
+  pypi:
+    name: publish to PyPI
+    needs: [wheels, sdist]
+    if: github.event_name == 'push' || contains(inputs.targets, 'pypi')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: wheel-*
+          merge-multiple: true
+          path: dist/
+      - uses: actions/download-artifact@v8
+        with:
+          name: sdist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
+
+  release:
+    name: GitHub release and tag
+    needs: [meta, pypi, clib, npm-pack]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # creates the tag and the release
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: wheel-*
+          merge-multiple: true
+          path: dist/
+      - uses: actions/download-artifact@v8
+        with:
+          name: sdist
+          path: dist/
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: clib-*
+          merge-multiple: true
+          path: dist/
+      - uses: actions/download-artifact@v8
+        with:
+          name: npm
+          path: dist/
+      - name: Create the release (and the tag, when started by hand)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.meta.outputs.version }}
+        run: |
+          if gh release view "v$VERSION" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "v$VERSION" dist/* --clobber --repo "$GITHUB_REPOSITORY"
+          else
+            gh release create "v$VERSION" --target "$GITHUB_SHA" --generate-notes dist/* --repo "$GITHUB_REPOSITORY"
+          fi
+
+  crates:
+    name: publish to crates.io
+    needs: meta
+    if: github.event_name == 'push' || contains(inputs.targets, 'crates')
+    runs-on: ubuntu-latest
+    env:
+      CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+      VERSION: ${{ needs.meta.outputs.version }}
+    steps:
+      - name: Skip notice
+        if: env.CARGO_REGISTRY_TOKEN == ''
+        run: echo "CARGO_REGISTRY_TOKEN is not set; skipping crates.io."
+      - uses: actions/checkout@v7
+        if: env.CARGO_REGISTRY_TOKEN != ''
+      - name: Publish uccharan, then uccharan-capi (dependency order; the other workspace crates are publish = false)
+        if: env.CARGO_REGISTRY_TOKEN != ''
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+          published() { curl -sf -A "uccharan-release (github.com/cb-Sigma/uccharan)" "https://crates.io/api/v1/crates/$1/$VERSION" > /dev/null; }
+          if published uccharan; then echo "uccharan $VERSION is already on crates.io"; else cargo publish -p uccharan; fi
+          # the index needs a moment before the dependent crate can resolve the new version
+          for i in 1 2 3 4 5 6 7 8 9 10; do
+            if published uccharan-capi; then echo "uccharan-capi $VERSION is already on crates.io"; break; fi
+            cargo publish -p uccharan-capi && break
+            sleep 30
+          done
+          published uccharan-capi
+
+  npm:
+    name: publish to npm
+    needs: meta
+    if: github.event_name == 'push' || contains(inputs.targets, 'npm')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write   # npm provenance
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      VERSION: ${{ needs.meta.outputs.version }}
+    steps:
+      - name: Skip notice
+        if: env.NODE_AUTH_TOKEN == ''
+        run: echo "NPM_TOKEN is not set; skipping npm."
+      - uses: actions/checkout@v7
+        if: env.NODE_AUTH_TOKEN != ''
+      - uses: actions/setup-node@v7
+        if: env.NODE_AUTH_TOKEN != ''
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - name: Build, test and publish
+        if: env.NODE_AUTH_TOKEN != ''
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+          rustup target add wasm32-unknown-unknown
+          cargo install wasm-bindgen-cli --version "$WASM_BINDGEN_VERSION" --locked
+          node bindings/wasm/build.mjs
+          cd bindings/wasm
+          node --test test/node.test.mjs
+          if npm view "uccharan@$VERSION" version > /dev/null 2>&1; then
+            echo "uccharan $VERSION is already on npm"
+          else
+            npm publish --access public --provenance
+          fi

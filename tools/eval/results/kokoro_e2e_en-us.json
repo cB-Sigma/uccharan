@@ -1,0 +1,23 @@
+{
+ "language": "en-us",
+ "model": "kokoro-v1.0-int8",
+ "sid": 3,
+ "tts": "sherpa-onnx 2.0.1 (phoneme_codepoints)",
+ "asr": "whisper-onnx:base",
+ "reference_front_end": "misaki 0.9.4 (spaCy en_core_web_sm, espeak-ng fallback)",
+ "sentences": 300,
+ "audio_minutes": 11.385531250000001,
+ "identical_tokens": 287,
+ "wer_reference": 0.029469548133595286,
+ "wer_uccharan": 0.029076620825147347,
+ "wer_difference": -0.0003929273084479386,
+ "wer_difference_95ci": [
+  -0.0016187778227438284,
+  0.0008045052292839903
+ ],
+ "better_worse_same": [
+  2,
+  1,
+  297
+ ]
+}

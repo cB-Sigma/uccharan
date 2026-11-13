@@ -1,0 +1,248 @@
+{
+ "language": "hi",
+ "reference": "espeak-ng 1.52.0 voice hi (library API)",
+ "set": "dev",
+ "sentence_level": {
+  "sentences": 2000,
+  "reference_symbols": 86156,
+  "per": 0.0014856771437856912,
+  "per_without_stress": 0.001134460590999946,
+  "exact_sentence": 0.983,
+  "exact_sentence_without_stress": 0.983,
+  "piper_shape_per": 0.0014612265240932466,
+  "piper_shape_exact_sentence": 0.9825,
+  "word_count_mismatch_sentences": 10,
+  "errors_by_class": {
+   "stress": {
+    "count": 44,
+    "share": 0.34375,
+    "per_contribution": 0.0005107015181763313
+   },
+   "consonant": {
+    "count": 25,
+    "share": 0.1953125,
+    "per_contribution": 0.0002901713171456428
+   },
+   "vowel": {
+    "count": 23,
+    "share": 0.1796875,
+    "per_contribution": 0.00026695761177399134
+   },
+   "other": {
+    "count": 12,
+    "share": 0.09375,
+    "per_contribution": 0.00013928223222990855
+   },
+   "schwa": {
+    "count": 11,
+    "share": 0.0859375,
+    "per_contribution": 0.00012767537954408282
+   },
+   "length": {
+    "count": 8,
+    "share": 0.0625,
+    "per_contribution": 9.28548214866057e-05
+   },
+   "word-boundary": {
+    "count": 5,
+    "share": 0.0390625,
+    "per_contribution": 5.8034263429128555e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→∅",
+    "count": 12
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 9
+   },
+   {
+    "edit": "ə→∅",
+    "count": 7
+   },
+   {
+    "edit": "ʰ→∅",
+    "count": 7
+   },
+   {
+    "edit": "a→ə",
+    "count": 6
+   },
+   {
+    "edit": "∅→ː",
+    "count": 6
+   },
+   {
+    "edit": "ˈ→ə",
+    "count": 5
+   },
+   {
+    "edit": "ʌ→ɟ",
+    "count": 5
+   },
+   {
+    "edit": "ɟ→ˈ",
+    "count": 5
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 5
+   },
+   {
+    "edit": " →∅",
+    "count": 5
+   },
+   {
+    "edit": "χ→∅",
+    "count": 5
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 4
+   },
+   {
+    "edit": "t→ʈ",
+    "count": 3
+   },
+   {
+    "edit": "a→∅",
+    "count": 3
+   },
+   {
+    "edit": "∅→ə",
+    "count": 3
+   },
+   {
+    "edit": "∅→e",
+    "count": 2
+   },
+   {
+    "edit": "ɪ→ː",
+    "count": 2
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 2
+   },
+   {
+    "edit": "ʃ→ʂ",
+    "count": 2
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 2
+   },
+   {
+    "edit": "ː→∅",
+    "count": 2
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 2
+   },
+   {
+    "edit": "χ→x",
+    "count": 2
+   },
+   {
+    "edit": "ə→ʌ",
+    "count": 2
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 12976,
+    "wrong": 25,
+    "rate": 0.0019266337854500616
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 13,
+    "per": 0.05121293800539083,
+    "exact_sentence": 0.38461538461538464
+   },
+   "no-digits": {
+    "sentences": 1987,
+    "per": 0.001053691432317887,
+    "exact_sentence": 0.9869149471565174
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "3620967",
+    "text": "स्पेन १९७५ से जनतंत्र रहा है।",
+    "reference": "spˈeːn ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː pəchˈʌtːəɾ seː ɟˌənətˈʌntɾə ɾˌəhaː hɛː",
+    "uccharan": "spˈeːn ˈeːk həɟˈaːɾ nˈɔːsˈɔː pˌəcəhˈʌtːəɾ seː ɟˌənətˈʌntɾə ɾˌəhaː hɛː"
+   },
+   {
+    "id": "2070300",
+    "text": "वे फुट‍बॉल खेलते है।",
+    "reference": "ʋeː pʰˈʊʈ bˈɔl kʰˈeːltˌeː hɛː",
+    "uccharan": "ʋeː pʰˈʊʈbˌɔl kʰˈeːltˌeː hɛː"
+   },
+   {
+    "id": "10977255",
+    "text": "२०१३ में टॉम कॉलेज में था।",
+    "reference": "dˈoː hˈʌɟaːɾ tˈeːɾəh mẽː ʈˈɔm kɔlˈeːɟ mẽː tʰaː",
+    "uccharan": "dˈoː həɟˈaːɾ tˈeːɾəh mẽː ʈˈɔm kɔlˈeːɟ mẽː tʰaː"
+   },
+   {
+    "id": "3216519",
+    "text": "सेइचो मात्सुमोतो का निधन सन १९९२ में हुआ।",
+    "reference": "sˈeːɪcˌoː mˈaːtsʊmˌoːtoː kaː nˈɪdʰən sˈʌn ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː bˈaːnəbˌeː mẽː hˈʊaː",
+    "uccharan": "sˈeːɪcˌoː mˈaːtsʊmˌoːtoː kaː nˈɪdʰən sˈʌn ˈeːk həɟˈaːɾ nˈɔːsˈɔː bˈaːnʋˌeː mẽː hˈʊaː"
+   },
+   {
+    "id": "516783",
+    "text": "मैं आस-पड़ोस में रहता हूँ।",
+    "reference": "mɛ̃ ˈaːsəpr.ˈoːs mẽː ɾˈʌhətˌaː hũ",
+    "uccharan": "mɛ̃ ˈaːspər.ˈoːs mẽː ɾˈʌhətˌaː hũ"
+   },
+   {
+    "id": "3621310",
+    "text": "मेक्सिको यूनाइटेड स्टेट्‍स का पड़ोसी है।",
+    "reference": "mˈeːksɪkˌoː jˌuːnaːɪʈˈeːɖ sʈˈeːʈ sˈə kaː pər.ˈoːsi hɛː",
+    "uccharan": "mˈeːksɪkˌoː jˌuːnaːɪʈˈeːɖ sʈˈeːʈs kaː pər.ˈoːsi hɛː"
+   },
+   {
+    "id": "2070250",
+    "text": "वे रॉक अॅन्ड रोल के राजा थे।",
+    "reference": "ʋeː ɾˈɔk ʌʰχˈɛnɖ ɾˈoːl keː ɾˈaːɟaː tʰeː",
+    "uccharan": "ʋeː ɾˈɔk ʌˈɛnɖ ɾˈoːl keː ɾˈaːɟaː tʰeː"
+   },
+   {
+    "id": "3066312",
+    "text": "आप TV मे समाचार देखते है ?",
+    "reference": "ˌaːp tˈiː vˈiː mˈeː sˌəmaːcˈaːɾ dˈeːkʰtˌeː hɛː",
+    "uccharan": "ˌaːp tˌiːvˈiː mˈeː sˌəmaːcˈaːɾ dˈeːkʰtˌeː hɛː"
+   },
+   {
+    "id": "2654502",
+    "text": "आपका पत्र पिछले महीने की २९ तारीख को प्राप्त हुआ।",
+    "reference": "ˌaːpkˌaː pˈʌtɾə pˈɪcʰlˌeː məhˈiːneː ki ˈʊntis taːɾˈiːkʰ koː pɾˈaːpt hˈʊaː",
+    "uccharan": "ˌaːpkˌaː pˈʌtɾə pˈɪcʰlˌeː məhˈiːneː ki ˌʊntˈiːs taːɾˈiːkʰ koː pɾˈaːpt hˈʊaː"
+   },
+   {
+    "id": "3669602",
+    "text": "ईसाईयत और इस्लाम दो अलग-अलग धर्म हैं।",
+    "reference": "ˌiːsaːˈiːjət ɔːɾ ɪslˈaːm dˈoː ˈʌləɡˌəˈʌləɡ dʰˈʌrm hɛ̃",
+    "uccharan": "ˌiːsaːˈiːjət ɔːɾ ɪslˈaːm dˈoː ˈʌləɡˈʌləɡ dʰˈʌrm hɛ̃"
+   },
+   {
+    "id": "8938171",
+    "text": "इसके अतिरिक्त यह भाषा गोवा, कर्णाटक, गुजरात, आंध्र प्रदेश, मध्य प्रदेश, तमिल नाडु और छत्तीसगढ़ में बोली जाती है।",
+    "reference": "ˈɪskˌeː ˌʌtɪɾˈɪkt jˌəh bʰˈaːʂaː ɡˈoːʋaː kərɳˈaːʈək ɡˌʊɟɾˈaːt ˈãdʰɾə pɾədˈeːʃ mˈʌdʰjə pɾədˈeːʃ tˈʌmɪl nˈaːɖʊ ɔːɾ cʰˌətːisəɡˈʌr.h mẽː bˈoːli ɟˈaːti hɛː",
+    "uccharan": "ˈɪskˌeː ˌʌtɪɾˈɪkt jˌəh bʰˈaːʂaː ɡˈoːʋaː kərɳˈaːʈək ɡˌʊɟɾˈaːt ˈãdʰɾə pɾədˈeːʃ mˈʌdʰjə pɾədˈeːʃ tˈʌmɪl nˈaːɖʊ ɔːɾ cʰətːˈiːsəɡˌər.h mẽː bˈoːli ɟˈaːti hɛː"
+   },
+   {
+    "id": "611457",
+    "text": "पार्श्व-टिप्पणियाँ न जोड़ें।",
+    "reference": "pˈaːrʃʋəʈˈɪpːɳˌɪjã nˈə ɟˈoːr.ẽː",
+    "uccharan": "pˈaːrʃʋʈˈɪpːɳˌɪjã nˈə ɟˈoːr.ẽː"
+   }
+  ]
+ }
+}

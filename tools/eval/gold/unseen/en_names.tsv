@@ -1,0 +1,22 @@
+# Second names set, written after the names list was frozen. Same check as ../en_names.tsv.
+# id	text	expected	group
+u-n-01	Sinead sang at the wedding.	ʃɪnˈeɪd	other
+u-n-02	Ciaran moved to Cork.	kˈɪɹən|kˈiəɹən|kˈɪɹɔːn	other
+u-n-03	Joaquin Phoenix starred in it.	fˈiːnɪks	cmudict
+u-n-04	We drove through Yosemite to Tahoe.	tˈɑːhoʊ	cmudict
+u-n-05	Dvorak wrote nine symphonies.	dvˈɔːɹʒæk|dvˈɔːɹʒɑːk|dəvˈɔːɹʒæk	other
+u-n-06	Louisville hosts the derby.	lˈuːivɪl|lˈuːəvəl	cmudict
+u-n-07	La Jolla has a famous beach.	hˈɔɪə	cmudict
+u-n-08	Zhang is a common surname.	dʒˈɑːŋ|ʒˈɑːŋ|dʒˈæŋ	other
+u-n-09	The Thames flows through London.	tˈɛmz	cmudict
+u-n-10	Edinburgh is cold in March.	ˈɛdɪnbɚə|ˈɛdɪnbɹə|ˈɛdənbɚoʊ|ˈɛdɪnbɚoʊ	cmudict
+u-n-11	Anjali teaches chemistry.	ˈʌndʒəli|ˈændʒəli|ɑːndʒˈɑːli	other
+u-n-12	Mr. Gupta runs the shop.	ɡˈʊptə|ɡˈuːptə	other
+u-n-13	They flew to Bengaluru.	bɛŋɡəlˈʊɹuː|bɛŋɡəlˈuːɹuː	other
+u-n-14	Tolkien wrote for decades.	tˈoʊlkiːn|tˈɑːlkiːn	other
+u-n-15	Nokia made sturdy phones.	nˈoʊkiə	cmudict
+u-n-16	Reykjavik is the capital of Iceland.	ɹˈeɪkjəvɪk|ɹˈeɪkjəviːk	cmudict
+u-n-17	Seamus fixed the roof.	ʃˈeɪməs	cmudict
+u-n-18	The Louvre was closed.	lˈuːvɹə|lˈuːv	cmudict
+u-n-19	Wojciech keeps goal for Poland.	vˈɔɪtʃɛk|vˈɔɪtʃɛx	other
+u-n-20	Ubuntu is easy to install.	ʊbˈʊntuː|uːbˈʊntuː|uːbˈuːntuː	other

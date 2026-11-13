@@ -1,0 +1,21 @@
+[package]
+name = "uccharan-capi"
+description = "C ABI for uccharan, the permissively licensed text-to-phoneme library."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+readme = "README.md"
+keywords = ["g2p", "phonemizer", "tts", "ffi"]
+categories = ["text-processing", "external-ffi-bindings"]
+
+[lib]
+name = "uccharan"
+crate-type = ["cdylib", "staticlib"]
+doc = false
+
+[dependencies]
+uccharan_core = { package = "uccharan", path = "../uccharan", version = "0.1.0" }

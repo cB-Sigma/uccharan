@@ -1,0 +1,11 @@
+[package]
+name = "uccharan-lexgen"
+description = "Builds uccharan's compiled language data from the source data in data/sources."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+publish = false
+
+[dependencies]
+uccharan = { path = "../../crates/uccharan", default-features = false }

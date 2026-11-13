@@ -1,0 +1,34 @@
+# Anusvara and chandrabindu. check=broad (see hi_schwa.tsv). Anusvara before a
+# stop is the homorganic nasal consonant; chandrabindu, and anusvara before
+# h or at the end of a word, nasalise the vowel. Where both are standard, both are listed.
+# id	word	expected	romanisation
+n-01	हिंदी	hɪndi	hindī
+n-02	अंदर	əndəɾ	andar
+n-03	गंगा	ɡəŋɡa	gaṅgā
+n-04	पंखा	pəŋkʰa	paṅkhā
+n-05	चंपा	cəmpa	campā
+n-06	लंबा	ləmba	lambā
+n-07	ठंडा	ʈʰəɳɖa	ṭhaṇḍā
+n-08	घंटा	ɡʰəɳʈa	ghaṇṭā
+n-09	पंजाब	pəɲɟab|pənɟab	pañjāb
+n-10	चंचल	cəɲcəl|cəncəl	cañcal
+n-11	संबंध	səmbəndʰ	sambandh
+n-12	अंगूर	əŋɡuɾ	aṅgūr
+n-13	मंदिर	məndɪɾ	mandir
+n-14	संतरा	səntɾa	santrā
+n-15	गाँव	ɡãʋ	gā̃v
+n-16	चाँद	cãd	cā̃d
+n-17	माँ	mã	mā̃
+n-18	हँसना	hə̃sna	hãsnā
+n-19	आँख	ãkʰ	ā̃kh
+n-20	ऊँचा	ũca	ū̃cā
+n-21	पाँच	pãc	pā̃c
+n-22	कहाँ	kəhã	kahā̃
+n-23	यहाँ	jəhã	yahā̃
+n-24	सिंह	sɪŋh|sɪ̃h	siṃh
+n-25	इंसान	ɪnsan	insān
+n-26	हूँ	hũ	hū̃
+n-27	मैं	mɛ̃	maĩ
+n-28	नहीं	nəhĩ	nahī̃
+n-29	कंप्यूटर	kəmpjuʈəɾ	kampyūṭar
+n-30	इंजन	ɪɲɟən|ɪnɟən	iñjan

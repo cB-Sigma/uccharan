@@ -1,0 +1,43 @@
+# Second homograph set, written after the improved-mode rules were frozen and
+# never used to adjust them. Same check as ../en_homographs.tsv.
+# id	text	expected
+u-read-1	My grandmother read me that story when I was small.	ɹɛd
+u-read-2	Have you read the news today?	ɹɛd
+u-read-3	Children should read every day.	ɹiːd
+u-read-4	I read the whole thing in one sitting last night.	ɹɛd
+u-read-5	Tom read the sign and turned left.	ɹɛd
+u-lead-1	The pencil has no lead in it.	lɛd
+u-lead-2	Who will lead the meeting?	liːd
+u-lead-3	The water was tested for lead.	lɛd
+u-lead-4	Lead by example.	liːd
+u-live-1	The concert was broadcast live.	laɪv
+u-live-2	Most of my relatives live abroad.	lɪv
+u-live-3	I have never seen a live octopus.	laɪv
+u-live-4	We live and learn.	lɪv
+u-wind-1	Wind the thread around the spool.	waɪnd
+u-wind-2	The wind knocked over the fence.	wɪnd
+u-wind-3	Rivers wind slowly to the sea.	waɪnd
+u-tear-1	She wiped away a tear.	tɪɹ
+u-tear-2	Be careful not to tear your sleeve.	tɛɹ
+u-tear-3	I saw him tear the letter in half.	tɛɹ
+u-bass-1	The bass guitar was too loud.	beɪs
+u-bass-2	Sea bass is on the menu tonight.	bæs
+u-bow-1	The violinist lifted her bow.	boʊ
+u-bow-2	He gave a deep bow to the audience.	baʊ
+u-wound-1	The nurse cleaned the wound.	wuːnd
+u-wound-2	She wound the scarf around her neck.	waʊnd
+u-minute-1	The differences are minute.	maɪnuːt|maɪnjuːt
+u-minute-2	It takes one minute to boil.	mɪnɪt|mɪnᵻt|mɪnət
+u-close-1	Stay close to me.	kloʊs
+u-close-2	Did you close the window?	kloʊz
+u-close-3	That was a close game.	kloʊs
+u-dove-1	The swimmer dove off the rocks.	doʊv
+u-record-1	Did you record the lecture?	ɹᵻkɔːɹd|ɹɪkɔːɹd|ɹəkɔːɹd
+u-record-2	He holds the record for most goals.	ɹɛkɚd
+u-object-1	Nobody will object if you leave early.	əbdʒɛkt
+u-present-1	The mayor will present the awards.	pɹᵻzɛnt|pɹɪzɛnt|pɹizɛnt|pɹiːzɛnt
+u-present-2	All students were present.	pɹɛzənt
+u-desert-1	The Sahara is a vast desert.	dɛzɚt
+u-produce-1	These trees produce fruit every year.	pɹədjuːs|pɹəduːs
+u-contract-1	She signed the contract yesterday.	kɑːntɹækt
+u-permit-1	Fishing without a permit is illegal.	pɜːmɪt

@@ -1,0 +1,55 @@
+# Proper nouns (en-US). check=skeleton: the consonants and the primary-stressed
+# vowel of some output word must match the expected form. Expected forms:
+# group "cmudict" follows the CMUdict entry; group "other" follows the usual
+# English pronunciation given by general dictionaries and the bearer's own usage.
+# id	text	expected	group
+joaquin	Joaquin arrived late.	wɑːkˈiːn	cmudict
+jose	We met Jose at the station.	hoʊzˈeɪ	cmudict
+juan	Juan plays the guitar.	wˈɑːn	cmudict
+sean	Sean is my cousin.	ʃˈɔːn	cmudict
+siobhan	Siobhan sings well.	ʃəvˈɔːn	cmudict
+nguyen	Doctor Nguyen will see you now.	nuːjˈɛn|wˈɪn|nwˈɪn	cmudict
+xavier	Xavier won the race.	zˈeɪvjɚ|ɛɡzˈeɪvjɚ	cmudict
+chloe	Chloe has a new job.	klˈoʊi	cmudict
+penelope	Penelope wrote a poem.	pənˈɛləpi	cmudict
+hermione	Hermione solved the puzzle.	hɚmˈaɪəni	other
+isaac	Isaac fixed the car.	ˈaɪzək	cmudict
+stephen	Stephen called twice.	stˈiːvən	cmudict
+geoffrey	Geoffrey lives abroad.	dʒˈɛfɹi	cmudict
+arkansas	They moved to Arkansas.	ˈɑːɹkənsɔː	cmudict
+illinois	She studied in Illinois.	ɪlənˈɔɪ	cmudict
+tucson	Tucson is hot in summer.	tˈuːsɑːn	cmudict
+worcester	The train stops at Worcester.	wˈʊstɚ	cmudict
+leicester	He flew to Leicester.	lˈɛstɚ	cmudict
+gloucester	Gloucester has an old port.	ɡlˈɔːstɚ|ɡlˈɑːstɚ	cmudict
+greenwich	We walked to Greenwich.	ɡɹˈɛnɪtʃ	cmudict
+yosemite	Yosemite was crowded.	joʊsˈɛmɪti	cmudict
+albuquerque	Albuquerque has a balloon festival.	ˈælbəkɚki	cmudict
+connecticut	Connecticut is a small state.	kənˈɛtɪkət	cmudict
+versailles	We visited Versailles.	vɚsˈaɪ	cmudict
+qatar	Qatar hosted the games.	kətˈɑːɹ|kˈɑːtɚ|kˈʌtɚ	cmudict
+beijing	Beijing was cold.	beɪdʒˈɪŋ|beɪʒˈɪŋ	cmudict
+porsche	He drives a Porsche.	pˈɔːɹʃə|pˈɔːɹʃ	cmudict
+hyundai	The Hyundai broke down.	hˈʌndeɪ	cmudict
+nike	She bought Nike shoes.	nˈaɪki	cmudict
+adobe	Adobe released an update.	ədˈoʊbi	cmudict
+chopin	She played Chopin.	ʃˈoʊpæn|ʃoʊpˈæn	cmudict
+mozart	Mozart wrote it at twelve.	mˈoʊtsɑːɹt	cmudict
+nietzsche	He quoted Nietzsche.	nˈiːtʃi|nˈiːtʃə	cmudict
+descartes	Descartes doubted everything.	deɪkˈɑːɹt	cmudict
+xiaomi	My Xiaomi phone is new.	ʃaʊmˈiː|ʃˈaʊmi	other
+huawei	Huawei makes routers.	wˈɑːweɪ|hwˈɑːweɪ	other
+saoirse	Saoirse won an award.	sˈɜːʃə|sˈɪɹʃə|sˈɜːɹʃə	other
+niamh	Niamh is from Dublin.	nˈiːv	other
+aoife	Aoife plays the harp.	ˈiːfə	other
+kyiv	Kyiv is the capital of Ukraine.	kˈiːv|kˈiːɪv|kˈiːjɪv	other
+tchaikovsky	We heard Tchaikovsky last night.	tʃaɪkˈɔfski|tʃaɪkˈɑːfski|tʃaɪkˈɔːfski	other
+djokovic	Djokovic won again.	dʒˈoʊkəvɪtʃ|dʒˈɑːkəvɪtʃ	other
+ghibli	We love Ghibli films.	dʒˈɪbli|ɡˈɪbli	other
+youtube	I saw it on YouTube.	jˈuːtuːb|jˈuːtjuːb	other
+latex	The paper was written in LaTeX.	lˈeɪtɛk|lˈɑːtɛk|lˈeɪtɛks	other
+linux	The server runs Linux.	lˈɪnəks|lˈɪnʊks	other
+ios	The app needs iOS seventeen.	aɪoʊˈɛs	other
+iphone	Her iPhone fell.	ˈaɪfoʊn	other
+github	The code is on GitHub.	ɡˈɪthʌb	other
+whatsapp	Send it on WhatsApp.	wˈʌtsæp|wˈɑːtsæp|wˈɔtsæp	other

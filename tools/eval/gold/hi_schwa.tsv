@@ -1,0 +1,41 @@
+# Hindi inherent-vowel (schwa) deletion in compounds and suffixed words.
+# check=broad: the word's phonemes must equal the expected form after removing
+# stress and length marks and writing ʌ as ə and r as ɾ. Expected forms follow the
+# standard pronunciation (the romanisation in the last column is for readers).
+# id	word	expected	romanisation
+s-01	लड़कपन	ləɽəkpən	laṛakpan
+s-02	अनुमति	ənʊmətɪ	anumati
+s-03	अजनबी	əɟnəbi	ajnabī
+s-04	समझदार	səməɟʰdaɾ	samajhdār
+s-05	समझना	səməɟʰna	samajhnā
+s-06	बचपन	bəcpən	bacpan
+s-07	अपनापन	əpnapən	apnāpan
+s-08	दुकानदार	dʊkandaɾ	dukāndār
+s-09	ईमानदार	imandaɾ	īmāndār
+s-10	जानकारी	ɟankaɾi	jānkārī
+s-11	सरकारी	səɾkaɾi	sarkārī
+s-12	मतलब	mətləb	matlab
+s-13	आदमी	admi	ādmī
+s-14	लड़की	ləɽki	laṛkī
+s-15	लड़कियाँ	ləɽkɪjã	laṛkiyā̃
+s-16	कलम	kələm	kalam
+s-17	नमकीन	nəmkin	namkīn
+s-18	पढ़ना	pəɽʰna	paṛhnā
+s-19	निकलना	nɪkəlna	nikalnā
+s-20	निकला	nɪkla	niklā
+s-21	बदलता	bədəlta	badaltā
+s-22	पकड़ना	pəkəɽna	pakaṛnā
+s-23	धड़कन	dʰəɽkən	dhaṛkan
+s-24	करवट	kəɾʋəʈ	karvaṭ
+s-25	जनता	ɟənta	jantā
+s-26	अचरज	əcɾəɟ	acraj
+s-27	गलती	ɡəlti	galtī
+s-28	महसूस	mɛhsus|məhsus	mahsūs
+s-29	घबराहट	ɡʰəbɾahəʈ	ghabrāhaṭ
+s-30	मुस्कुराहट	mʊskʊɾahəʈ	muskurāhaṭ
+s-31	खिलखिलाना	kʰɪlkʰɪlana	khilkhilānā
+s-32	चमकदार	cəməkdaɾ	camakdār
+s-33	किताबघर	kɪtabɡʰəɾ	kitābghar
+s-34	देशभक्ति	deʃbʰəktɪ	deśbhakti
+s-35	लोकसभा	loksəbʰa	loksabhā
+s-36	रेलगाड़ी	ɾelɡaɽi	relgāṛī

@@ -1,0 +1,24 @@
+# Romanised Hindi (Hinglish). check=say with the Hindi voice: the system must read the
+# romanised text as it reads the Devanagari spelling (uccharan improved runs
+# with its Hinglish option on; it is experimental).
+# id	text	spoken forms
+r-01	kya haal hai	क्या हाल है
+r-02	main ghar ja raha hoon	मैं घर जा रहा हूँ
+r-03	aap kaise hain	आप कैसे हैं
+r-04	mujhe pani chahiye	मुझे पानी चाहिए
+r-05	yeh bahut accha hai	यह बहुत अच्छा है
+r-06	tum kahan ho	तुम कहाँ हो
+r-07	mera naam Ravi hai	मेरा नाम रवि है
+r-08	kal milte hain	कल मिलते हैं
+r-09	bahut dhanyavaad	बहुत धन्यवाद
+r-10	namaste dosto	नमस्ते दोस्तो
+r-11	kitne baje hain	कितने बजे हैं
+r-12	mujhe nahin pata	मुझे नहीं पता
+r-13	woh kal aayega	वह कल आएगा
+r-14	khana kha liya	खाना खा लिया
+r-15	chalo chalte hain	चलो चलते हैं
+r-16	aaj mausam accha hai	आज मौसम अच्छा है
+r-17	meri baat suno	मेरी बात सुनो
+r-18	kya kar rahe ho	क्या कर रहे हो
+r-19	sab theek hai	सब ठीक है
+r-20	phir milenge	फिर मिलेंगे

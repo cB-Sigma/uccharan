@@ -1,0 +1,42 @@
+{
+ "language": "hi",
+ "voice": "hi_IN-rohan-medium.onnx",
+ "tts": "sherpa-onnx 2.0.1 (phoneme_codepoints)",
+ "asr": "faster-whisper:faster-whisper-tiny-hindi",
+ "reference": "espeak-ng 1.52.0 voice hi",
+ "sentences": 500,
+ "audio_minutes": 17.310720332577475,
+ "sentences_with_identical_phonemes": 495,
+ "reference_phonemes": {
+  "sentences": 500,
+  "wer": 0.08946877912395154,
+  "cer": 0.028293859027088357
+ },
+ "uccharan_phonemes": {
+  "sentences": 500,
+  "wer": 0.08822615719167444,
+  "cer": 0.02779747553538505
+ },
+ "wer_difference_uccharan_minus_reference": -0.001242621932277102,
+ "wer_difference_95ci_paired_bootstrap": [
+  -0.003202049311559398,
+  0.0
+ ],
+ "subset_where_phonemes_differ": {
+  "reference_phonemes": {
+   "sentences": 5,
+   "wer": 0.23255813953488372,
+   "cer": 0.07920792079207921
+  },
+  "uccharan_phonemes": {
+   "sentences": 5,
+   "wer": 0.13953488372093023,
+   "cer": 0.04455445544554455
+  }
+ },
+ "better_worse_same_sentences": {
+  "uccharan_better": 2,
+  "uccharan_worse": 0,
+  "same": 498
+ }
+}

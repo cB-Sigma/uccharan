@@ -1,0 +1,59 @@
+{
+  "name": "uccharan",
+  "version": "0.1.0",
+  "description": "Permissively licensed text-to-phoneme (G2P) for neural TTS in the browser and Node: en-US, en-GB, Hindi and Hinglish, with espeak-style IPA, Piper, Kokoro, Kitten/Matcha and sherpa-onnx output profiles.",
+  "license": "Apache-2.0",
+  "author": "Abhinav Gautam <abhinav@codebuckets.in>",
+  "homepage": "https://cb-sigma.github.io/uccharan/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cb-Sigma/uccharan.git",
+    "directory": "bindings/wasm"
+  },
+  "bugs": "https://github.com/cb-Sigma/uccharan/issues",
+  "keywords": [
+    "g2p",
+    "phonemizer",
+    "tts",
+    "ipa",
+    "hindi",
+    "wasm",
+    "piper",
+    "kokoro",
+    "sherpa-onnx"
+  ],
+  "type": "module",
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./data/*": "./data/*",
+    "./uccharan.wasm": "./dist/uccharan_wasm_bg.wasm"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "dist",
+    "data",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "DATA_LICENSES.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/node.test.mjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

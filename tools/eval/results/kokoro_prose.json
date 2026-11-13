@@ -1,0 +1,241 @@
+{
+ "reference": "misaki 0.9.4 (spaCy en_core_web_sm tagger, espeak-ng fallback)",
+ "set": "prose",
+ "sentences": 1000,
+ "accents": {
+  "en-us": {
+   "sentences": 1000,
+   "exact_sentence": 0.872,
+   "token_error_rate": 0.002866356144750985,
+   "sentences_with_aligned_words": 990,
+   "word_agreement": {
+    "in-dictionary": {
+     "words": 14502,
+     "identical": 0.9982760998482968
+    },
+    "pos-dependent": {
+     "words": 3245,
+     "identical": 0.987673343605547
+    },
+    "out-of-dictionary": {
+     "words": 130,
+     "identical": 0.43846153846153846
+    }
+   },
+   "seconds_per_sentence": {
+    "misaki": 0.003122339520999958,
+    "uccharan": 7.660000299983949e-05
+   },
+   "speedup": 40.76161094936903,
+   "top_in_dictionary_disagreements": [
+    {
+     "word": "that",
+     "misaki": "ðæt",
+     "uccharan": "ðˈæt",
+     "count": 18
+    },
+    {
+     "word": "in",
+     "misaki": "ˈɪn",
+     "uccharan": "ɪn",
+     "count": 9
+    },
+    {
+     "word": "that",
+     "misaki": "ðˈæt",
+     "uccharan": "ðæt",
+     "count": 4
+    },
+    {
+     "word": "that",
+     "misaki": "ðæt,",
+     "uccharan": "ðˈæt,",
+     "count": 3
+    },
+    {
+     "word": "holmes’",
+     "misaki": "hˈOmz”",
+     "uccharan": "hˈOmz",
+     "count": 2
+    },
+    {
+     "word": "”ˈATi",
+     "misaki": "”ˈATi",
+     "uccharan": "ˈATi",
+     "count": 2
+    },
+    {
+     "word": "i",
+     "misaki": "ˈI",
+     "uccharan": "ˌI.",
+     "count": 2
+    },
+    {
+     "word": "close",
+     "misaki": "klˈOs",
+     "uccharan": "klˈOz",
+     "count": 2
+    },
+    {
+     "word": "goodness’",
+     "misaki": "ɡˈʊdnəs”",
+     "uccharan": "ɡˈʊdnəs",
+     "count": 1
+    },
+    {
+     "word": "here’s",
+     "misaki": "“hˈɪɹ”ˈɛs",
+     "uccharan": "“hˈɪɹz",
+     "count": 1
+    },
+    {
+     "word": "‘co",
+     "misaki": "“kˈO",
+     "uccharan": "kˈO",
+     "count": 1
+    },
+    {
+     "word": "‘k",
+     "misaki": "“kˈA",
+     "uccharan": "kˈA.",
+     "count": 1
+    },
+    {
+     "word": "l",
+     "misaki": "“ˈɛl",
+     "uccharan": "“ˈɛl.",
+     "count": 1
+    },
+    {
+     "word": "presents",
+     "misaki": "pɹizˈɛnts",
+     "uccharan": "pɹˈɛzᵊnts",
+     "count": 1
+    },
+    {
+     "word": "‘g’",
+     "misaki": "“ʤˈi”",
+     "uccharan": "ʤˈi",
+     "count": 1
+    }
+   ]
+  },
+  "en-gb": {
+   "sentences": 1000,
+   "exact_sentence": 0.886,
+   "token_error_rate": 0.002792078385784273,
+   "sentences_with_aligned_words": 990,
+   "word_agreement": {
+    "in-dictionary": {
+     "words": 14504,
+     "identical": 0.9982763375620518
+    },
+    "pos-dependent": {
+     "words": 3245,
+     "identical": 0.987673343605547
+    },
+    "out-of-dictionary": {
+     "words": 128,
+     "identical": 0.5546875
+    }
+   },
+   "seconds_per_sentence": {
+    "misaki": 0.002843307922000349,
+    "uccharan": 4.89580290000049e-05
+   },
+   "speedup": 58.07643771770438,
+   "top_in_dictionary_disagreements": [
+    {
+     "word": "that",
+     "misaki": "ðat",
+     "uccharan": "ðˈat",
+     "count": 18
+    },
+    {
+     "word": "in",
+     "misaki": "ˈɪn",
+     "uccharan": "ɪn",
+     "count": 9
+    },
+    {
+     "word": "that",
+     "misaki": "ðˈat",
+     "uccharan": "ðat",
+     "count": 4
+    },
+    {
+     "word": "that",
+     "misaki": "ðat,",
+     "uccharan": "ðˈat,",
+     "count": 3
+    },
+    {
+     "word": "holmes’",
+     "misaki": "hˈQmz”",
+     "uccharan": "hˈQmz",
+     "count": 2
+    },
+    {
+     "word": "”ˈAti",
+     "misaki": "”ˈAti",
+     "uccharan": "ˈAti",
+     "count": 2
+    },
+    {
+     "word": "i",
+     "misaki": "ˈI",
+     "uccharan": "ˌI.",
+     "count": 2
+    },
+    {
+     "word": "close",
+     "misaki": "klˈQs",
+     "uccharan": "klˈQz",
+     "count": 2
+    },
+    {
+     "word": "goodness’",
+     "misaki": "ɡˈʊdnəs”",
+     "uccharan": "ɡˈʊdnəs",
+     "count": 1
+    },
+    {
+     "word": "here’s",
+     "misaki": "“hˈɪə”ˈɛs",
+     "uccharan": "“hˈɪəz",
+     "count": 1
+    },
+    {
+     "word": "‘co",
+     "misaki": "“kˈQ",
+     "uccharan": "kˈQ",
+     "count": 1
+    },
+    {
+     "word": "‘k",
+     "misaki": "“kˈA",
+     "uccharan": "kˈA.",
+     "count": 1
+    },
+    {
+     "word": "l",
+     "misaki": "“ˈɛl",
+     "uccharan": "“ˈɛl.",
+     "count": 1
+    },
+    {
+     "word": "presents",
+     "misaki": "pɹɪzˈɛnts",
+     "uccharan": "pɹˈɛzᵊnts",
+     "count": 1
+    },
+    {
+     "word": "‘g’",
+     "misaki": "“ʤˈiː”",
+     "uccharan": "ʤˈiː",
+     "count": 1
+    }
+   ]
+  }
+ }
+}

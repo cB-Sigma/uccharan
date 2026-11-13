@@ -1,0 +1,61 @@
+{
+ "reference": "espeak-ng 1.52.0",
+ "piper": [
+  {
+   "voice": "en_GB-alba-medium.onnx.json",
+   "espeak_voice": "en-gb-x-rp",
+   "symbols_in_map": 166,
+   "texts": 3000,
+   "sentences": 3087,
+   "framing_matches_independent_implementation": true,
+   "symbols_missing_from_phoneme_id_map": {},
+   "passed": true,
+   "id_sequence_vs_reference": {
+    "texts": 3000,
+    "exact": 0.72,
+    "id_error_rate": 0.009179524511283536,
+    "symbols_the_reference_emits_outside_the_map": {}
+   }
+  },
+  {
+   "voice": "en_US-lessac-medium.onnx.json",
+   "espeak_voice": "en-us",
+   "symbols_in_map": 154,
+   "texts": 3000,
+   "sentences": 3087,
+   "framing_matches_independent_implementation": true,
+   "symbols_missing_from_phoneme_id_map": {},
+   "passed": true,
+   "id_sequence_vs_reference": {
+    "texts": 3000,
+    "exact": 0.7606666666666667,
+    "id_error_rate": 0.007792801505107872,
+    "symbols_the_reference_emits_outside_the_map": {}
+   }
+  }
+ ],
+ "sherpa_onnx": [
+  {
+   "tokens": "alba",
+   "language": "en-gb",
+   "texts": 3000,
+   "codepoints": 136082,
+   "codepoints_not_in_tokens_txt": {},
+   "passed": true
+  },
+  {
+   "tokens": "lessac",
+   "language": "en-us",
+   "texts": 3000,
+   "codepoints": 137509,
+   "codepoints_not_in_tokens_txt": {},
+   "passed": true
+  }
+ ],
+ "kokoro": {
+  "skipped": "no --kokoro-tokens"
+ },
+ "kitten": {
+  "skipped": "no --kitten-tokens"
+ }
+}

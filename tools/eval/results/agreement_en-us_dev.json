@@ -1,0 +1,253 @@
+{
+ "language": "en-us",
+ "reference": "espeak-ng 1.52.0 voice en-us (library API)",
+ "set": "dev",
+ "sentence_level": {
+  "sentences": 2000,
+  "reference_symbols": 90537,
+  "per": 0.01184046301512089,
+  "per_without_stress": 0.009449881876476544,
+  "exact_sentence": 0.763,
+  "exact_sentence_without_stress": 0.817,
+  "piper_shape_per": 0.011586088080111984,
+  "piper_shape_exact_sentence": 0.7615,
+  "word_count_mismatch_sentences": 298,
+  "errors_by_class": {
+   "vowel": {
+    "count": 465,
+    "share": 0.4337686567164179,
+    "per_contribution": 0.005136021736969416
+   },
+   "stress": {
+    "count": 339,
+    "share": 0.3162313432835821,
+    "per_contribution": 0.0037443255243712515
+   },
+   "other": {
+    "count": 145,
+    "share": 0.13526119402985073,
+    "per_contribution": 0.0016015551652915382
+   },
+   "consonant": {
+    "count": 78,
+    "share": 0.07276119402985075,
+    "per_contribution": 0.0008615262268464826
+   },
+   "length": {
+    "count": 34,
+    "share": 0.03171641791044776,
+    "per_contribution": 0.0003755370732407745
+   },
+   "word-boundary": {
+    "count": 11,
+    "share": 0.010261194029850746,
+    "per_contribution": 0.00012149728840142704
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→ˌ",
+    "count": 76
+   },
+   {
+    "edit": "ɪ→ə",
+    "count": 60
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 51
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 48
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 40
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 36
+   },
+   {
+    "edit": "∅→i",
+    "count": 35
+   },
+   {
+    "edit": "ː→∅",
+    "count": 28
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 27
+   },
+   {
+    "edit": "∅→ɑ",
+    "count": 22
+   },
+   {
+    "edit": "ɐ→ə",
+    "count": 22
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 19
+   },
+   {
+    "edit": "ᵻ→ɪ",
+    "count": 19
+   },
+   {
+    "edit": "ɪ→i",
+    "count": 18
+   },
+   {
+    "edit": "j→∅",
+    "count": 18
+   },
+   {
+    "edit": "ə→ɪ",
+    "count": 17
+   },
+   {
+    "edit": "ɑ→∅",
+    "count": 16
+   },
+   {
+    "edit": "ɪ→ᵻ",
+    "count": 14
+   },
+   {
+    "edit": "ɔ→ː",
+    "count": 13
+   },
+   {
+    "edit": "i→∅",
+    "count": 12
+   },
+   {
+    "edit": "s→z",
+    "count": 11
+   },
+   {
+    "edit": "a→∅",
+    "count": 11
+   },
+   {
+    "edit": "t→ɾ",
+    "count": 10
+   },
+   {
+    "edit": "ɐ→æ",
+    "count": 10
+   },
+   {
+    "edit": "ː→ə",
+    "count": 10
+   }
+  ],
+  "word_error_by_class": {
+   "function": {
+    "words": 6015,
+    "wrong": 34,
+    "rate": 0.005652535328345802
+   },
+   "lexicon": {
+    "words": 7230,
+    "wrong": 385,
+    "rate": 0.05325034578146611
+   },
+   "oov": {
+    "words": 142,
+    "wrong": 42,
+    "rate": 0.29577464788732394
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 17,
+    "per": 0.01808439383791025,
+    "exact_sentence": 0.5294117647058824
+   },
+   "no-digits": {
+    "sentences": 1983,
+    "per": 0.011735771079466332,
+    "exact_sentence": 0.7650025214321735
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "11925832",
+    "text": "I wonder why Tom cares about it so much.",
+    "reference": "aɪ wˈʌndɚ wˌaɪ tˈɑːm kˈɛɹz ɐbˌaʊt ɪt sˈoʊ mˌʌtʃ",
+    "uccharan": "aɪ wˈʌndɚ wˌaɪ tˈɑːm kˈɛɹz ɐbˌaʊt ɪt sˌoʊ mˈʌtʃ"
+   },
+   {
+    "id": "7156847",
+    "text": "I've been in Australia way longer than you have.",
+    "reference": "aɪv bˌɪn ɪn ɔːstɹˈeɪliə wˈeɪ lˈɔŋɡɚ ðɐn juː hˈæv",
+    "uccharan": "aɪv bˌɪn ɪn ɔːstɹˈeɪliə wˈeɪ lˈɑːŋɡɚ ðɐn juː hˈæv"
+   },
+   {
+    "id": "3271000",
+    "text": "We support the environmentalists completely.",
+    "reference": "wiː səpˈɔːɹt ðɪ ɛnvˌaɪɹənmˈɛntəlˌɪsts kəmplˈiːtli",
+    "uccharan": "wiː səpˈɔːɹt ðɪ ɛnvˈaɪɹənmˌɛntəlˌɪsts kəmplˈiːtli"
+   },
+   {
+    "id": "12054471",
+    "text": "Chuck's Diner serves the best hamburgers in town.",
+    "reference": "tʃˈʌks dˈaɪnɚ sˈɜːvz ðə bˈɛst hˈæmbɜːɡɚz ɪn tˈaʊn",
+    "uccharan": "tʃˈʌks dˈaɪnɚ sˈɜːvz ðə bˈɛst hˈæmbɚɡɚz ɪn tˈaʊn"
+   },
+   {
+    "id": "11775843",
+    "text": "Antonio helps refugees cross the border.",
+    "reference": "æntˈoʊnɪˌoʊ hˈɛlps ɹˈɛfjuːdʒˌiːz kɹˈɔs ðə bˈɔːɹdɚ",
+    "uccharan": "æntˈoʊnɪˌoʊ hˈɛlps ɹˈɛfjuːdʒiz kɹˈɔs ðə bˈɔːɹdɚ"
+   },
+   {
+    "id": "10101136",
+    "text": "Algeria and China have a lasting relationship.",
+    "reference": "ældʒˈɪɹiə ænd tʃˈaɪnə hæv ɐ lˈæstɪŋ ɹᵻlˈeɪʃənʃˌɪp",
+    "uccharan": "ældʒˈiəɹiə ænd tʃˈaɪnə hæv ɐ lˈæstɪŋ ɹᵻlˈeɪʃənʃˌɪp"
+   },
+   {
+    "id": "6543040",
+    "text": "Sami hosted a Halloween bash for his friends.",
+    "reference": "sˈɑːmi hˈoʊstᵻd ɐ hˌæloʊˈiːn bˈæʃ fɔːɹ hɪz fɹˈɛndz",
+    "uccharan": "sˈɑːmi hˈoʊstᵻd ɐ hˌæləwˈiːn bˈæʃ fɔːɹ hɪz fɹˈɛndz"
+   },
+   {
+    "id": "3823348",
+    "text": "How's that different from the way we've been doing it?",
+    "reference": "hˌaʊz ðæt dˈɪfɹənt fɹʌmðə wˈeɪ wiːv bˌɪn dˈuːɪŋ ɪt",
+    "uccharan": "hˈaʊz ðæt dˈɪfɹənt fɹʌmðə wˈeɪ wiːv bˌɪn dˌuːɪŋ ɪt"
+   },
+   {
+    "id": "9526161",
+    "text": "By the time I arrived, everyone had already gone.",
+    "reference": "baɪ ðə tˈaɪm aɪ ɚɹˈaɪvd ˈɛvɹɪwˌʌn hæd ɔːlɹˌɛdi ɡˈɔn",
+    "uccharan": "baɪ ðə tˈaɪm aɪ ɚɹˈaɪvd ˈɛvɹɪwˌʌn hæd ɔːlɹˌɛdi ɡˈɑːn"
+   },
+   {
+    "id": "7184050",
+    "text": "I doubt very seriously Tom will be sympathetic.",
+    "reference": "aɪ dˈaʊt vˈɛɹi sˈɪɹiəsli tˈɑːm wɪl biː sˌɪmpəθˈɛɾɪk",
+    "uccharan": "aɪ dˈaʊt vˈɛɹi sˈiəɹiəsli tˈɑːm wɪl biː sˌɪmpəθˈɛɾɪk"
+   },
+   {
+    "id": "11847193",
+    "text": "Carmela's expressive eyebrows, a characteristic of many Maltese women, frame her face beautifully.",
+    "reference": "kɑːɹmˈɛləz ɛkspɹˈɛsɪv ˈaɪbɹaʊz ɐ kˌæɹɪktɚɹˈɪstɪk ʌv mˈɛni mˈɔltiːz wˈɪmɪn fɹˈeɪm hɜː fˈeɪs bjˈuːɾɪfəli",
+    "uccharan": "kɑːɹmˈɛləz ɛkspɹˈɛsɪv ˈaɪbɹaʊz ɐ kˌæɹəktɚɹˈɪstɪk ʌv mˈɛni mɔltˈiːz wˈɪmɪn fɹˈeɪm hɜː fˈeɪs bjˈuːɾɪfli"
+   },
+   {
+    "id": "12117182",
+    "text": "Our inability to talk has prevented us from addressing important matters.",
+    "reference": "ˌaʊɚɹ ɪnɐbˈɪləɾi tə tˈɔːk hɐz pɹɪvˈɛntᵻd ˌʌs fɹʌm ɐdɹˈɛsɪŋ ɪmpˈɔːɹtənt mˈæɾɚz",
+    "uccharan": "ˌaʊɚɹ ˌɪnəbˈɪlᵻɾi tə tˈɔːk hɐz pɹɪvˈɛntᵻd ˌʌs fɹʌm ɐdɹˈɛsɪŋ ɪmpˈɔːɹtənt mˈæɾɚz"
+   }
+  ]
+ }
+}

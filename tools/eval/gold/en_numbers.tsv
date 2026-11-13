@@ -1,0 +1,44 @@
+# Numbers, dates, times, money, units (en-US). check=say: a system passes when
+# it reads the text exactly as it reads one of the spoken forms (its own
+# phonemes for both, stress marks and spaces ignored).
+# id	text	spoken forms
+money-1	It costs $5.50.	It costs five dollars and fifty cents.|It costs five dollars fifty.
+money-2	She paid $20 for it.	She paid twenty dollars for it.
+money-3	The fine was £3.	The fine was three pounds.
+money-4	He owes me ₹500.	He owes me five hundred rupees.
+money-5	The deal was worth $1.5bn.	The deal was worth one point five billion dollars.
+money-6	Tickets are €12 each.	Tickets are twelve euros each.
+lakh-1	The car costs ₹1,50,000.	The car costs one lakh fifty thousand rupees.|The car costs one hundred fifty thousand rupees.|The car costs one hundred and fifty thousand rupees.
+date-1	The meeting is on 2024-01-05.	The meeting is on January fifth twenty twenty four.|The meeting is on January fifth two thousand twenty four.
+date-2	She was born on 3/14/1990.	She was born on March fourteenth nineteen ninety.
+year-1	It happened in 2015.	It happened in twenty fifteen.|It happened in two thousand fifteen.
+year-2	The war ended in 1945.	The war ended in nineteen forty five.
+year-3	The fort was built in 1648.	The fort was built in sixteen forty eight.
+decade-1	Music from the 1990s is back.	Music from the nineteen nineties is back.
+time-1	Meet me at 3:30pm.	Meet me at three thirty p m.
+time-2	The train leaves at 7:05.	The train leaves at seven oh five.
+time-3	Lunch is at 12:00.	Lunch is at twelve o'clock.|Lunch is at twelve.
+ordinal-1	She finished 3rd.	She finished third.
+ordinal-2	This is the 21st century.	This is the twenty first century.
+ordinal-3	It is his 100th game.	It is his hundredth game.|It is his one hundredth game.
+decimal-1	Pi is about 3.14.	Pi is about three point one four.
+decimal-2	The rate fell to 0.5 percent.	The rate fell to zero point five percent.
+percent-1	Sales rose 25%.	Sales rose twenty five percent.
+negative-1	It was -5 degrees.	It was minus five degrees.|It was negative five degrees.
+range-1	Read pages 10-15.	Read pages ten to fifteen.
+range-2	He lived there 1999-2005.	He lived there nineteen ninety nine to two thousand five.
+fraction-1	Add 1/2 cup of sugar.	Add one half cup of sugar.|Add half a cup of sugar.
+fraction-2	About 3/4 of them agreed.	About three quarters of them agreed.|About three fourths of them agreed.
+phone-1	Call 555-1234 now.	Call five five five one two three four now.
+phone-2	Dial 800-555-0199 today.	Dial eight zero zero five five five zero one nine nine today.|Dial eight hundred five five five zero one nine nine today.
+unit-1	The box weighs 10kg.	The box weighs ten kilograms.
+unit-2	It is 5km away.	It is five kilometers away.
+unit-3	He drove at 100 km/h.	He drove at one hundred kilometers per hour.|He drove at a hundred kilometers per hour.
+unit-4	Add 250ml of milk.	Add two hundred fifty milliliters of milk.|Add two hundred and fifty milliliters of milk.
+unit-5	The room is 20 m wide.	The room is twenty meters wide.
+big-1	The city has 1,234,567 people.	The city has one million two hundred thirty four thousand five hundred sixty seven people.
+big-2	About 2,000 people came.	About two thousand people came.
+cardinal-1	I have 17 books.	I have seventeen books.
+cardinal-2	There were 105 guests.	There were one hundred five guests.|There were one hundred and five guests.|There were a hundred and five guests.
+symbol-1	Tom & Jerry is on.	Tom and Jerry is on.
+symbol-2	Use 2 + 2 as an example.	Use two plus two as an example.

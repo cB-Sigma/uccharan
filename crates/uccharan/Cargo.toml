@@ -1,0 +1,33 @@
+[package]
+name = "uccharan"
+description = "Permissively licensed text-to-phoneme (G2P) library for neural TTS: en-US, en-GB, Hindi and Hinglish, with espeak-style IPA, Piper, Kokoro, Kitten/Matcha and sherpa-onnx output profiles."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+readme = "README.md"
+keywords = ["g2p", "phonemizer", "tts", "ipa", "hindi"]
+categories = ["text-processing", "multimedia::audio", "wasm"]
+include = ["src/**", "data/*.ucd", "benches/**", "tests/**", "README.md", "LICENSE", "NOTICE", "DATA_LICENSES.md"]
+
+[features]
+default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-kokoro"]
+# Compile the language data into the library. Without these, load data at run time with `Phonemizer::load`.
+embed-en-us = []
+embed-en-gb = []
+embed-hi = []
+# misaki's English dictionaries for the Kokoro profile (about 3 MB per accent).
+embed-kokoro = []
+
+[dependencies]
+
+[dev-dependencies]
+criterion = { version = "0.5", default-features = false }
+
+[[bench]]
+name = "throughput"
+harness = false
+

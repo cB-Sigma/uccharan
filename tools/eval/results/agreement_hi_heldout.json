@@ -1,0 +1,262 @@
+{
+ "language": "hi",
+ "reference": "espeak-ng 1.52.0 voice hi (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 3000,
+  "reference_symbols": 119476,
+  "per": 0.0011968930998694299,
+  "per_without_stress": 0.000905373831775701,
+  "exact_sentence": 0.9883333333333333,
+  "exact_sentence_without_stress": 0.9883333333333333,
+  "piper_shape_per": 0.0011819656496327754,
+  "piper_shape_exact_sentence": 0.9876666666666667,
+  "word_count_mismatch_sentences": 15,
+  "errors_by_class": {
+   "stress": {
+    "count": 50,
+    "share": 0.34965034965034963,
+    "per_contribution": 0.000418494090863437
+   },
+   "consonant": {
+    "count": 31,
+    "share": 0.21678321678321677,
+    "per_contribution": 0.0002594663363353309
+   },
+   "vowel": {
+    "count": 23,
+    "share": 0.16083916083916083,
+    "per_contribution": 0.000192507281797181
+   },
+   "other": {
+    "count": 15,
+    "share": 0.1048951048951049,
+    "per_contribution": 0.0001255482272590311
+   },
+   "schwa": {
+    "count": 13,
+    "share": 0.09090909090909091,
+    "per_contribution": 0.00010880846362449362
+   },
+   "word-boundary": {
+    "count": 5,
+    "share": 0.03496503496503497,
+    "per_contribution": 4.1849409086343704e-05
+   },
+   "length": {
+    "count": 5,
+    "share": 0.03496503496503497,
+    "per_contribution": 4.1849409086343704e-05
+   },
+   "diacritic": {
+    "count": 1,
+    "share": 0.006993006993006993,
+    "per_contribution": 8.36988181726874e-06
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→∅",
+    "count": 13
+   },
+   {
+    "edit": "ə→∅",
+    "count": 8
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 6
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 6
+   },
+   {
+    "edit": "a→ə",
+    "count": 6
+   },
+   {
+    "edit": "ˈ→ə",
+    "count": 6
+   },
+   {
+    "edit": "ʌ→ɟ",
+    "count": 6
+   },
+   {
+    "edit": "ɟ→ˈ",
+    "count": 6
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 5
+   },
+   {
+    "edit": " →∅",
+    "count": 5
+   },
+   {
+    "edit": "t→ʈ",
+    "count": 4
+   },
+   {
+    "edit": "∅→ə",
+    "count": 4
+   },
+   {
+    "edit": "a→∅",
+    "count": 4
+   },
+   {
+    "edit": "∅→ː",
+    "count": 4
+   },
+   {
+    "edit": "ʰ→∅",
+    "count": 3
+   },
+   {
+    "edit": "χ→∅",
+    "count": 3
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 3
+   },
+   {
+    "edit": "ʌ→ə",
+    "count": 3
+   },
+   {
+    "edit": "ʃ→ʂ",
+    "count": 3
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 3
+   },
+   {
+    "edit": "ɪ→ː",
+    "count": 2
+   },
+   {
+    "edit": "n→ɲ",
+    "count": 2
+   },
+   {
+    "edit": "ə→ʌ",
+    "count": 2
+   },
+   {
+    "edit": "n→∅",
+    "count": 2
+   },
+   {
+    "edit": "t→∅",
+    "count": 2
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 18139,
+    "wrong": 24,
+    "rate": 0.0013231159380340703
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 22,
+    "per": 0.030913978494623656,
+    "exact_sentence": 0.5454545454545454
+   },
+   "no-digits": {
+    "sentences": 2978,
+    "per": 0.0008221175034749296,
+    "exact_sentence": 0.9916051040967092
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "3620608",
+    "text": "बहरीन २००२ में राज्य बना।",
+    "reference": "bˌəhəɾˈiːn dˈoː hˈʌɟaːɾ dˈoː mẽː ɾˈaːɟjə bˈʌnaː",
+    "uccharan": "bˌəhəɾˈiːn dˈoː həɟˈaːɾ dˈoː mẽː ɾˈaːɟjə bˈʌnaː"
+   },
+   {
+    "id": "8686380",
+    "text": "भारत की आबादी १२७ करोड़ से ज़्यादा है।",
+    "reference": "bʰˈaːɾət ki aːbˈaːdi ˈeːksˈɔː sətːˈaːis kəɾˈoːr. seː zjˈaːdaː hɛː",
+    "uccharan": "bʰˈaːɾət ki aːbˈaːdi ˈeːksˈɔː sˌətːaːˈiːs kəɾˈoːr. seː zjˈaːdaː hɛː"
+   },
+   {
+    "id": "3214211",
+    "text": "मेरा जन्म सन १९७७ में ओसाका में हुआ था।",
+    "reference": "mˌeːɾaː ɟˈʌnm sˈʌn ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː səthˈʌtːəɾ mẽː oːsˈaːkaː mẽː hˈʊaː tʰaː",
+    "uccharan": "mˌeːɾaː ɟˈʌnm sˈʌn ˈeːk həɟˈaːɾ nˈɔːsˈɔː sˌətəhˈʌtːəɾ mẽː oːsˈaːkaː mẽː hˈʊaː tʰaː"
+   },
+   {
+    "id": "457029",
+    "text": "कुछ नेत्रहीन व्यक्तियों में उनके आास-पास की चीज़ों की दूरी को महसूस करने की क्षतिपूरक क्षमता पैदा हो जाती है।",
+    "reference": "kˈʊcʰ nˌetrɾahˈɪn ʋjˈʌktɪjˌõ mẽː ˌʊnkˌeː aːʰχˈaːspˈaːs ki cˈiːzõ ki dˈuːɾi koː mˌəhəsˈuːs kˈʌɾnˌeː ki kʃˌətɪpˈuːɾək kʃˈʌmtˌaː pˈɛːdaː hoː ɟˈaːti hɛː",
+    "uccharan": "kˈʊcʰ nˈeːtɾəhˌiːn ʋjˈʌktɪjˌõ mẽː ˌʊnkˌeː aːˈaːspˈaːs ki cˈiːzõ ki dˈuːɾi koː mˌəhəsˈuːs kˈʌɾnˌeː ki kʃˌətɪpˈuːɾək kʃˈʌmtˌaː pˈɛːdaː hoː ɟˈaːti hɛː"
+   },
+   {
+    "id": "8686381",
+    "text": "भारत की जनसंख्या १२७ करोड़ से ज़्यादा है।",
+    "reference": "bʰˈaːɾət ki ɟˌənəsˈʌŋkʰjaː ˈeːksˈɔː sətːˈaːis kəɾˈoːr. seː zjˈaːdaː hɛː",
+    "uccharan": "bʰˈaːɾət ki ɟˌənəsˈʌŋkʰjaː ˈeːksˈɔː sˌətːaːˈiːs kəɾˈoːr. seː zjˈaːdaː hɛː"
+   },
+   {
+    "id": "3667661",
+    "text": "सऊदी अरब को अरबी में \"अल-मामलकह अल-अरबिय्यह अस-सऊदिय्याह\" कहते हैं।",
+    "reference": "sˈʌudˌi ˈʌɾəb koː ˈʌɾbˌi mẽː ˈʌlmˈaːməlˌəkəh ˈʌləˌəɾbˈɪjjəh ˈʌsəsudɪjjˈaːh kˈʌhətˌeː hɛ̃",
+    "uccharan": "sˈʌudˌi ˈʌɾəb koː ˈʌɾbˌi mẽː ˈʌlmˈaːməlˌəkəh ˈʌlˌʌɾbˈɪjjəh ˈʌssˌəudɪjjˈaːh kˈʌhətˌeː hɛ̃"
+   },
+   {
+    "id": "3669386",
+    "text": "अमरीका पहुँचने के लिये महासागर पार करना पड़ता है।",
+    "reference": "ˌʌmɾˈiːkaː pəhˈũncənˌeː keː lˈɪjeː mˌahaːsaːɡˈaɾ pˈaːɾ kˈʌɾnˌaː pˈʌr.tˌaː hɛː",
+    "uccharan": "ˌʌmɾˈiːkaː pəhˈũncənˌeː keː lˈɪjeː mˌəhaːsˈaːɡəɾ pˈaːɾ kˈʌɾnˌaː pˈʌr.tˌaː hɛː"
+   },
+   {
+    "id": "3623176",
+    "text": "रायगढ़ मराठा साम्राज्य की पहली राजधानी थी।",
+    "reference": "ɾˌaːjəɡˈʌr.h məɾˈaːʈʰaː saːmɾˈaːɟjə ki pˈʌhəlˌi ɾˌaːɟdʰˈaːni tʰi",
+    "uccharan": "ɾˈaːjəɡˌər.h məɾˈaːʈʰaː saːmɾˈaːɟjə ki pˈʌhəlˌi ɾˌaːɟdʰˈaːni tʰi"
+   },
+   {
+    "id": "488668",
+    "text": "हिमाचल प्रदेश की राजधानी, शिमला, चण्डीगढ़ से केवल ११५ किलोमीटर की दूरी पर है।",
+    "reference": "hɪmˈaːcəl pɾədˈeːʃ ki ɾˌaːɟdʰˈaːni ʃˈɪmlˌaː cˌəɳɖiɡˈʌr.h seː kˈeːʋəl ˈeːksˈɔː pˈʌndɾəh kˌɪloːmˈiːʈəɾ ki dˈuːɾi pˈʌɾ hɛː",
+    "uccharan": "hɪmˈaːcəl pɾədˈeːʃ ki ɾˌaːɟdʰˈaːni ʃˈɪmlˌaː cəɳɖˈiːɡər.h seː kˈeːʋəl ˈeːksˈɔː pˈʌndɾəh kˌɪloːmˈiːʈəɾ ki dˈuːɾi pˈʌɾ hɛː"
+   },
+   {
+    "id": "487723",
+    "text": "१६०० की शतक में चाय को भारत से यूरोप में लाया गया था।",
+    "reference": "ˈeːk hˈʌɟaːɾ cʰˈʌhsˈɔː ki ʃˈʌtək mẽː cˈaːj koː bʰˈaːɾət seː juːɾˈoːp mẽː lˈaːjaː ɡˈʌjaː tʰaː",
+    "uccharan": "ˈeːk həɟˈaːɾ cʰˈʌhsˈɔː ki ʃˈʌtək mẽː cˈaːj koː bʰˈaːɾət seː juːɾˈoːp mẽː lˈaːjaː ɡˈʌjaː tʰaː"
+   },
+   {
+    "id": "10301718",
+    "text": "घर में तीन मंज़िलें हैं।",
+    "reference": "ɡʰˈʌɾ mẽː tˈiːn mˈʌnzɪlˌẽː hɛ̃",
+    "uccharan": "ɡʰˈʌɾ mẽː tˈiːn mˈʌɲzɪlˌẽː hɛ̃"
+   },
+   {
+    "id": "9957141",
+    "text": "हमें एक अच्छे रेजर-ब्लेड बनाने का नुख्सा बताओ।",
+    "reference": "hˈʌmẽː ˈeːk ˈʌcʰcʰeː ɾˈeːɟrblˈeːɖ bənˈaːneː kaː nˈʊkʰsaː bətˈaːoː",
+    "uccharan": "hˈʌmẽː ˈeːk ˈʌcʰcʰeː ɾˈeːɟəɾblˈeːɖ bənˈaːneː kaː nˈʊkʰsaː bətˈaːoː"
+   }
+  ]
+ },
+ "word_level": {
+  "heldout-sentence-words": {
+   "words": 3096,
+   "per": 0.0022744189893309074,
+   "exact_word": 0.9958010335917312,
+   "exact_word_without_stress": 0.9958010335917312,
+   "stress_pattern_error": 0.0022609819121447027
+  }
+ }
+}

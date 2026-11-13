@@ -1,0 +1,89 @@
+uccharan
+Copyright 2026 Abhinav Gautam and the uccharan contributors
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+uccharan contains no source code, rule file or dictionary from espeak-ng or
+from any other GPL-licensed project. See DATA_LICENSES.md for every data file.
+
+Third-party data compiled into the language data files
+------------------------------------------------------
+
+The English pronunciation lexicons (crates/uccharan/data/en-us.ucd and
+en-gb.ucd) are derived from:
+
+  The CMU Pronouncing Dictionary (cmudict)
+  Copyright (C) 1993-2015 Carnegie Mellon University. All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  1. Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+     The contents of this file are deemed to be source code.
+
+  2. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in
+     the documentation and/or other materials provided with the
+     distribution.
+
+  This work was supported in part by funding from the Defense Advanced
+  Research Projects Agency, the Office of Naval Research and the National
+  Science Foundation of the United States of America, and by member
+  companies of the Carnegie Mellon Sphinx Speech Consortium. We acknowledge
+  the contributions of many volunteers to the expansion and improvement of
+  this dictionary.
+
+  THIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY ``AS IS'' AND
+  ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY
+  NOR ITS EMPLOYEES BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Ported code
+-----------
+
+crates/uccharan/src/kokoro.rs is a port to Rust of the English G2P of misaki
+0.9.4 (https://github.com/hexgrad/misaki, misaki/en.py), Copyright hexgrad,
+licensed under the Apache License, Version 2.0. The port follows its
+dictionary lookup, stress, suffix, number and sub-word logic; spaCy's tagger
+and the espeak-ng fallback were replaced.
+
+Third-party data: misaki's English dictionaries
+------------------------------------------------
+
+data/sources/misaki/{us,gb}_{gold,silver}.json, and the files compiled from
+them (crates/uccharan/data/kokoro-en-us.ucd and kokoro-en-gb.ucd, also in the
+npm package's data directory), are copied unchanged from the misaki 0.9.4
+wheel on PyPI (https://github.com/hexgrad/misaki, author hexgrad), distributed
+under the Apache License, Version 2.0 (data/sources/misaki/LICENSE). Upstream
+does not document the original sources of these dictionaries; this project
+relies on the upstream Apache-2.0 licence statement.
+
+Symbol tables
+-------------
+
+The Kokoro-82M vocabulary (hexgrad/Kokoro-82M, Apache-2.0) and the
+StyleTTS2-style symbol table used by Kitten TTS (Apache-2.0) and Matcha-TTS
+(MIT) are reproduced in crates/uccharan/src/profile.rs as lists of symbols
+and ids so that output can be checked against them.
+
+Evaluation text (repository only; not part of any published package)
+--------------------------------------------------------------------
+
+tools/eval/data contains sentences from Tatoeba (https://tatoeba.org),
+licensed CC BY 2.0 FR, and sentences from "The Adventures of Sherlock Holmes"
+by Arthur Conan Doyle (Project Gutenberg #1661, public domain in the USA).
+
+Brand assets
+------------
+
+The Devanagari wordmark in docs/assets/brand is drawn from outlines of a font
+licensed under the SIL Open Font License 1.1; see docs/assets/brand/brand.md.

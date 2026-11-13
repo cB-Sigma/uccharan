@@ -1,0 +1,18 @@
+{
+ "set": "heldout",
+ "utterances": 1000,
+ "identical": {
+  "en-us stress": 0.765,
+  "en-us stress+punctuation": 0.765,
+  "en-us stress+tie": 0.699,
+  "en-us plain": 0.834,
+  "en-gb-x-rp stress": 0.727,
+  "en-gb-x-rp stress+punctuation": 0.726,
+  "en-gb-x-rp stress+tie": 0.708,
+  "en-gb-x-rp plain": 0.803,
+  "hi stress": 0.983,
+  "hi stress+punctuation": 0.975,
+  "hi stress+tie": 0.983,
+  "hi plain": 0.983
+ }
+}

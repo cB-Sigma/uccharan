@@ -1,0 +1,7 @@
+# Hindi exceptions lexicon: words whose pronunciation the rules get wrong.
+# Hand-written for uccharan (Apache-2.0). Columns: word, pronunciation in the
+# compatible notation, optional pronunciation for the improved mode (used when
+# the two differ). Entries here are loanwords whose inherent vowels do not
+# follow the native deletion pattern.
+अजनबी		ˈʌɟnəbiː
+अजनबियों		ˈʌɟnəbɪjõ

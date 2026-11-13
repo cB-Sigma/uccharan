@@ -1,0 +1,31 @@
+# Abbreviations and initialisms (en-US). check=say (see en_numbers.tsv).
+# id	text	spoken forms
+title-1	Dr. Smith is here.	Doctor Smith is here.
+title-2	Mr. Jones called.	Mister Jones called.
+title-3	Mrs. Patel teaches maths.	Missus Patel teaches maths.
+title-4	Prof. Lee wrote the book.	Professor Lee wrote the book.
+street-1	He lives on Baker St. near the park.	He lives on Baker Street near the park.
+drive-1	Turn left on Maple Dr. after the bridge.	Turn left on Maple Drive after the bridge.
+saint-1	We visited St. Paul last year.	We visited Saint Paul last year.
+versus-1	It was India vs. Australia.	It was India versus Australia.
+etc-1	Bring pens, paper, etc. to class.	Bring pens, paper, etcetera to class.|Bring pens, paper, et cetera to class.
+eg-1	Citrus fruits, e.g. oranges, are sour.	Citrus fruits, for example oranges, are sour.
+ie-1	The capital, i.e. Delhi, is large.	The capital, that is Delhi, is large.
+no-1	See item No. 5 on the list.	See item number five on the list.
+month-1	It opens on Jan. 5 at noon.	It opens on January five at noon.|It opens on January fifth at noon.
+month-2	The deadline is Oct. 31 this year.	The deadline is October thirty one this year.|The deadline is October thirty first this year.
+inc-1	She works at Acme Inc. in Boston.	She works at Acme Incorporated in Boston.
+jr-1	Martin Luther King Jr. spoke here.	Martin Luther King Junior spoke here.
+mt-1	They climbed Mt. Everest twice.	They climbed Mount Everest twice.
+acronym-1	NASA launched a rocket.	Nasa launched a rocket.
+acronym-2	The FBI opened a case.	The F B I opened a case.
+acronym-3	He works for the UN in Geneva.	He works for the U N in Geneva.
+acronym-4	The page is written in HTML.	The page is written in H T M L.
+acronym-5	She has a PhD in physics.	She has a P H D in physics.
+acronym-6	The USB cable broke.	The U S B cable broke.
+acronym-7	My CPU is too slow.	My C P U is too slow.
+acronym-8	UNESCO protects the site.	Unesco protects the site.
+dotted-1	He moved to the U.S. in May.	He moved to the U S in May.
+ampm-1	We close at 9 p.m. sharp.	We close at nine P M sharp.
+caps-1	The sign said STOP in red.	The sign said stop in red.
+caps-2	DO NOT ENTER the room.	Do not enter the room.

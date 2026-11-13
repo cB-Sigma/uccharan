@@ -1,0 +1,25 @@
+{
+ "sentences": 3000,
+ "words": 24474,
+ "systems": {
+  "misaki": {
+   "latency_us_p50": 1957.7519997255877,
+   "latency_us_p99": 4257.365999364993,
+   "words_per_second": 3821.5488499795742,
+   "init_plus_first_call_ms": 1452.0815270007006,
+   "rss_after_init_mb": 204.07421875
+  },
+  "uccharan": {
+   "latency_us_p50": 25.933999495464377,
+   "latency_us_p99": 103.57700011809357,
+   "words_per_second": 259260.3969953702,
+   "init_plus_first_call_ms": 0.5588720005107461,
+   "rss_after_init_mb": 2.48828125
+  }
+ },
+ "speedup": {
+  "latency_p50": 75.48978321172486,
+  "throughput": 67.84170690288465,
+  "init": 2598.236314708308
+ }
+}

@@ -1,0 +1,22 @@
+[package]
+name = "uccharan-wasm"
+description = "WebAssembly bindings for uccharan."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+doc = false
+
+[dependencies]
+# No embedded data: languages are loaded lazily by the JavaScript wrapper.
+uccharan = { path = "../../crates/uccharan", default-features = false }
+wasm-bindgen = "=0.2.130"
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false

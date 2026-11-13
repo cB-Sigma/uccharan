@@ -1,0 +1,69 @@
+# Names, brands and loanwords whose usual pronunciation the letter-to-sound
+# rules (or the first CMUdict variant) miss. Used by the improved mode only.
+# Hand-written for uccharan (Apache-2.0) from general knowledge of how the
+# bearers say them. Columns: word, en-US, en-GB (empty: derived from en-US by
+# the accent rules in tools/lexgen).
+siobhan	ʃəvˈɔːn
+saoirse	sˈɜːʃə	sˈɜːʃə
+niamh	nˈiːv
+aoife	ˈiːfə
+hermione	hɚmˈaɪəni
+xiaomi	ʃˈaʊmi
+huawei	wˈɑːweɪ
+hyundai	hˈʌndeɪ
+mozart	mˈoʊtsɑːɹt
+tchaikovsky	tʃaɪkˈɔfski
+djokovic	dʒˈoʊkəvɪtʃ	dʒˈɒkəvɪtʃ
+kyiv	kˈiːv
+ghibli	dʒˈɪbli
+youtube	jˈuːtuːb	jˈuːtjuːb
+latex	lˈeɪtɛk
+ios	ˌaɪoʊˈɛs
+macos	mˌækoʊˈɛs
+iphone	ˈaɪfoʊn
+ipad	ˈaɪpæd
+github	ɡˈɪthʌb
+whatsapp	wˈʌtsæp	wˈɒtsæp
+wifi	wˈaɪfaɪ
+linkedin	lˌɪŋktˈɪn
+paypal	pˈeɪpæl
+javascript	dʒˈɑːvəskɹˌɪpt
+nvidia	ɛnvˈɪdiə
+ikea	aɪkˈiːə
+adidas	ədˈiːdəs	ˈædɪdæs
+versace	vɚsˈɑːtʃi
+goethe	ɡˈɜːtə	ɡˈɜːtə
+camus	kæmˈuː
+dvorak	dvˈɔːɹʒæk
+quinoa	kˈiːnwɑː
+gnocchi	nˈɔːki	nˈɒki
+worcestershire	wˈʊstɚʃɚ
+edinburgh	ˈɛdɪnbɚɹə	ˈɛdɪnbɹə
+arkansas	ˈɑːɹkənsɔː
+sioux	sˈuː
+maori	mˈaʊɹi
+sharma	ʃˈɑːɹmə
+gupta	ɡˈʊptə
+singh	sˈɪŋ
+patel	pətˈɛl
+kumar	kʊmˈɑːɹ
+priya	pɹˈiːjə
+rahul	ɹˈɑːhʊl
+amit	əmˈiːt
+anjali	ˈʌndʒəli
+abhinav	əbˈɪnəv
+gautam	ɡˈaʊtəm
+delhi	dˈɛli
+mumbai	mʊmbˈaɪ
+bengaluru	bˌɛŋɡəlˈʊɹuː
+chennai	tʃɛnˈaɪ
+kolkata	koʊlkˈɑːtə
+hyderabad	hˈaɪdɚɹəbˌɑːd
+pune	pˈuːneɪ
+jaipur	dʒˈaɪpʊɹ
+diwali	dɪwˈɑːli
+namaste	nˈʌməsteɪ
+samosa	səmˈoʊsə
+biryani	bɪɹjˈɑːni
+paneer	pənˈɪɹ	pənˈiə
+chai	tʃˈaɪ

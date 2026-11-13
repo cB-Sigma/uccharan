@@ -1,0 +1,281 @@
+{
+ "language": "en-us",
+ "reference": "espeak-ng 1.52.0 voice en-us (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 3000,
+  "reference_symbols": 134160,
+  "per": 0.011873881932021466,
+  "per_without_stress": 0.009692535904524307,
+  "exact_sentence": 0.7616666666666667,
+  "exact_sentence_without_stress": 0.812,
+  "piper_shape_per": 0.011617600046499463,
+  "piper_shape_exact_sentence": 0.7606666666666667,
+  "word_count_mismatch_sentences": 463,
+  "errors_by_class": {
+   "vowel": {
+    "count": 648,
+    "share": 0.4067796610169492,
+    "per_contribution": 0.00483005366726297
+   },
+   "stress": {
+    "count": 471,
+    "share": 0.295668549905838,
+    "per_contribution": 0.003510733452593918
+   },
+   "other": {
+    "count": 233,
+    "share": 0.14626490897677338,
+    "per_contribution": 0.001736732259988074
+   },
+   "consonant": {
+    "count": 169,
+    "share": 0.10608913998744507,
+    "per_contribution": 0.0012596899224806201
+   },
+   "length": {
+    "count": 40,
+    "share": 0.025109855618330193,
+    "per_contribution": 0.0002981514609421586
+   },
+   "word-boundary": {
+    "count": 31,
+    "share": 0.0194601381042059,
+    "per_contribution": 0.00023106738223017292
+   },
+   "diacritic": {
+    "count": 1,
+    "share": 0.0006277463904582549,
+    "per_contribution": 7.4537865235539655e-06
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→∅",
+    "count": 91
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 91
+   },
+   {
+    "edit": "ɪ→ə",
+    "count": 74
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 73
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 57
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 54
+   },
+   {
+    "edit": "∅→i",
+    "count": 44
+   },
+   {
+    "edit": "ᵻ→ɪ",
+    "count": 38
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 37
+   },
+   {
+    "edit": "ɐ→ə",
+    "count": 31
+   },
+   {
+    "edit": "s→z",
+    "count": 30
+   },
+   {
+    "edit": "ɪ→i",
+    "count": 29
+   },
+   {
+    "edit": "ː→∅",
+    "count": 29
+   },
+   {
+    "edit": "∅→ɑ",
+    "count": 27
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 26
+   },
+   {
+    "edit": "ɑ→∅",
+    "count": 24
+   },
+   {
+    "edit": "∅→ ",
+    "count": 23
+   },
+   {
+    "edit": "æ→ː",
+    "count": 19
+   },
+   {
+    "edit": "ə→ɪ",
+    "count": 19
+   },
+   {
+    "edit": "j→∅",
+    "count": 19
+   },
+   {
+    "edit": "t→ɾ",
+    "count": 16
+   },
+   {
+    "edit": "a→∅",
+    "count": 15
+   },
+   {
+    "edit": "ɐ→æ",
+    "count": 15
+   },
+   {
+    "edit": "ʌ→ə",
+    "count": 14
+   },
+   {
+    "edit": "ː→ə",
+    "count": 14
+   }
+  ],
+  "word_error_by_class": {
+   "function": {
+    "words": 9063,
+    "wrong": 54,
+    "rate": 0.005958291956305859
+   },
+   "lexicon": {
+    "words": 10533,
+    "wrong": 547,
+    "rate": 0.05193202316529004
+   },
+   "oov": {
+    "words": 196,
+    "wrong": 61,
+    "rate": 0.3112244897959184
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 31,
+    "per": 0.036214953271028034,
+    "exact_sentence": 0.3548387096774194
+   },
+   "no-digits": {
+    "sentences": 2969,
+    "per": 0.01139886923217217,
+    "exact_sentence": 0.7659144493095318
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "10109949",
+    "text": "Does Algeria need to focus on services?",
+    "reference": "dˈʌz ældʒˈɪɹiə nˈiːd tə fˈoʊkəs ˌɔn sˈɜːvɪsᵻz",
+    "uccharan": "dˈʌz ældʒˈiəɹiə nˈiːd tə fˈoʊkəs ˌɔn sˈɜːvɪsᵻz"
+   },
+   {
+    "id": "8586199",
+    "text": "The crew members will return home by air Sunday and be quarantined on Sebaru Kecil, an uninhabited island in Thousand Islands, near Jakarta.",
+    "reference": "ðə kɹˈuː mˈɛmbɚz wɪl ɹᵻtˈɜːn hˈoʊm baɪ ˈɛɹ sˈʌndeɪ ænd biː kwˈɔːɹəntˌiːnd ˌɔn sˈɛbɑːɹɹˌuː kˈɛsɪl ɐn ˌʌnɪnhˈæbɪɾᵻd ˈaɪlənd ɪn θˈaʊzənd ˈaɪləndz nˌɪɹ dʒɐkˈɑːɹɾə",
+    "uccharan": "ðə kɹˈuː mˈɛmbɚz wɪl ɹᵻtˈɜːn hˈoʊm baɪ ˈɛɹ sˈʌndeɪ ænd biː kwˈɔːɹəntˌiːnd ˌɔn sᵻbˈɑːɹuː kˈɛsəl ɐn ˌʌnɪnhˈæbɪɾᵻd ˈaɪlənd ɪn θˈaʊzənd ˈaɪləndz nˌɪɹ dʒəkˈɑːɹɾə"
+   },
+   {
+    "id": "10104642",
+    "text": "His so-called apology involved an inordinate amount of explanation and complaining.",
+    "reference": "hɪz sˌoʊkˈɔːld ɐpˈɑːlədʒi ɪnvˈɑːlvd ɐn ɪnˈɔːɹdᵻnət ɐmˈaʊnt ʌv ɛksplɐnˈeɪʃən ænd kəmplˈeɪnɪŋ",
+    "uccharan": "hɪz sˌoʊkˈɔːld ɐpˈɑːlədʒi ɪnvˈɑːlvd ɐn ɪnˈɔːɹdɪnɪt ɐmˈaʊnt ʌv ˌɛksplənˈeɪʃən ænd kəmplˈeɪnɪŋ"
+   },
+   {
+    "id": "2866387",
+    "text": "In psychoanalysis, this voice is called the superego, which Freud conceived as the infantile internalizing of parental authority.",
+    "reference": "ɪn sˌaɪkoʊɐnˈæləsˌɪs ðɪs vˈɔɪs ɪz kˈɔːld ðə sˈuːpɚɹˌiːɡoʊ wˌɪtʃ fɹˈɔɪd kənsˈiːvd æz ðɪ ˈɪnfəntˌaɪl ɪntˈɜːnəlˌaɪzɪŋ ʌv pɚɹˈɛntəl ɐθˈɔːɹɪɾi",
+    "uccharan": "ɪn sˌaɪkoʊənˈæləsɪs ðɪs vˈɔɪs ɪz kˈɔːld ðə sˈuːpɚˌiːɡoʊ wˌɪtʃ fɹˈɔɪd kənsˈiːvd æz ðɪ ˈɪnfəntɪl ɪntˈɜːnəlˌaɪzɪŋ ʌv pɚɹˈɛntəl ɐθˈɔːɹᵻɾi"
+   },
+   {
+    "id": "7509206",
+    "text": "I know that Tom knew I shouldn't have done that.",
+    "reference": "aɪ nˈoʊ ðæt tˈɑːm nˈuː aɪ ʃˌʊdənthəv dˈʌn ðˈæt",
+    "uccharan": "aɪ nˈoʊ ðæt tˈɑːm nˈuː aɪ ʃˌʊdənt hæv dˈʌn ðˈæt"
+   },
+   {
+    "id": "7184056",
+    "text": "I doubt very seriously Tom will be punished.",
+    "reference": "aɪ dˈaʊt vˈɛɹi sˈɪɹiəsli tˈɑːm wɪl biː pˈʌnɪʃt",
+    "uccharan": "aɪ dˈaʊt vˈɛɹi sˈiəɹiəsli tˈɑːm wɪl biː pˈʌnɪʃt"
+   },
+   {
+    "id": "6886082",
+    "text": "She's a thief, isn't she?",
+    "reference": "ʃiːz ɐ θˈiːf ˈɪzənt ʃiː",
+    "uccharan": "ʃiːz ɐ θˈiːf ˌɪzənt ʃiː"
+   },
+   {
+    "id": "59034",
+    "text": "Translating this poem is too much for me.",
+    "reference": "tɹænslˈeɪɾɪŋ ðɪs pˈoʊᵻm ɪz tˈuː mʌtʃ fɔːɹ mˌiː",
+    "uccharan": "tɹænzlˈeɪɾɪŋ ðɪs pˈoʊᵻm ɪz tˈuː mˌʌtʃ fɔːɹ mˌiː"
+   },
+   {
+    "id": "42479",
+    "text": "That will never disappear.",
+    "reference": "ðæt wɪl nˈɛvɚ dˌɪsɐpˈɪɹ",
+    "uccharan": "ðæt wɪl nˈɛvɚ dˌɪsəpˈɪɹ"
+   },
+   {
+    "id": "279686",
+    "text": "The result of the vote was a win for the Liberals.",
+    "reference": "ðə ɹɪzˈʌlt ʌvðə vˈoʊt wʌzɐ wˈɪn fɚðə lˈɪbɚɹəlz",
+    "uccharan": "ðə ɹɪzˈʌlt ʌvðə vˈoʊt wʌzɐ wˈɪn fɚðə lˈɪbɜːɹəlz"
+   },
+   {
+    "id": "26991",
+    "text": "It was raining hard, so we played indoors.",
+    "reference": "ɪt wʌz ɹˈeɪnɪŋ hˈɑːɹd sˌoʊ wiː plˈeɪd ɪndˈɔːɹz",
+    "uccharan": "ɪt wʌz ɹˈeɪnɪŋ hˈɑːɹd sˌoʊ wiː plˈeɪd ˈɪndɔːɹz"
+   },
+   {
+    "id": "12311214",
+    "text": "You should've stayed home.",
+    "reference": "juː ʃˌʊdəv stˈeɪd hˈoʊm",
+    "uccharan": "juː ʃˈʊdəv stˈeɪd hˈoʊm"
+   }
+  ]
+ },
+ "word_level": {
+  "frequent-in-lexicon": {
+   "words": 5000,
+   "per": 0.023292317179135016,
+   "exact_word": 0.8962,
+   "exact_word_without_stress": 0.9104,
+   "stress_pattern_error": 0.0326
+  },
+  "rare-in-lexicon": {
+   "words": 3000,
+   "per": 0.18043045037863692,
+   "exact_word": 0.4663333333333333,
+   "exact_word_without_stress": 0.49,
+   "stress_pattern_error": 0.21566666666666667
+  },
+  "out-of-lexicon": {
+   "words": 1997,
+   "per": 0.19057039235080778,
+   "exact_word": 0.4381572358537807,
+   "exact_word_without_stress": 0.48022033049574364,
+   "stress_pattern_error": 0.28943415122684024
+  }
+ }
+}

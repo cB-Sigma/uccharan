@@ -1,0 +1,27 @@
+# Nukta consonants and related letters. check=broad (see hi_schwa.tsv). Every
+# symbol must be IPA: the flap is ɽ, never an ASCII stand-in.
+# id	word	expected	romanisation
+k-01	क़लम	qələm|kələm	qalam
+k-02	ख़बर	xəbəɾ	xabar
+k-03	ग़लत	ɣələt	ġalat
+k-04	ज़रूर	zəɾuɾ	zarūr
+k-05	फ़ोन	fon	fon
+k-06	पढ़ाई	pəɽʰai	paṛhāī
+k-07	बड़ा	bəɽa	baṛā
+k-08	लड़का	ləɽka	laṛkā
+k-09	सड़क	səɽək	saṛak
+k-10	पेड़	peɽ	peṛ
+k-11	घोड़ा	ɡʰoɽa	ghoṛā
+k-12	चढ़ना	cəɽʰna	caṛhnā
+k-13	ज़िंदगी	zɪndəɡi|zɪndɡi	zindagī
+k-14	ख़ुशी	xʊʃi	xuśī
+k-15	ताज़ा	taza	tāzā
+k-16	सफ़र	səfəɾ	safar
+k-17	काग़ज़	kaɣəz	kāġaz
+k-18	दरवाज़ा	dəɾʋaza	darvāzā
+k-19	बाज़ार	bazaɾ	bāzār
+k-20	साढ़े	saɽʰe	sāṛhe
+k-21	थोड़ा	tʰoɽa	thoṛā
+k-22	फ़िल्म	fɪlm	film
+k-23	मज़ा	məza	mazā
+k-24	ख़ुशियाँ	xʊʃɪjã	xuśiyā̃

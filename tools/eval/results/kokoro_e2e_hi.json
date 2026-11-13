@@ -1,0 +1,23 @@
+{
+ "language": "hi",
+ "model": "kokoro-v1.0-int8",
+ "sid": 32,
+ "tts": "sherpa-onnx 2.0.1 (phoneme_codepoints)",
+ "asr": "faster-whisper:faster-whisper-tiny-hindi",
+ "reference_front_end": "espeak-ng 1.52.0 hi + published Kokoro mapping",
+ "sentences": 300,
+ "audio_minutes": 11.026797222222223,
+ "identical_tokens": 224,
+ "wer_reference": 0.1035015447991761,
+ "wer_uccharan": 0.10247167868177137,
+ "wer_difference": -0.0010298661174047291,
+ "wer_difference_95ci": [
+  -0.0055387713997985906,
+  0.0036231884057971015
+ ],
+ "better_worse_same": [
+  8,
+  5,
+  287
+ ]
+}

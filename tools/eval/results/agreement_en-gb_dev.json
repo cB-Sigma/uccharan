@@ -1,0 +1,253 @@
+{
+ "language": "en-gb",
+ "reference": "espeak-ng 1.52.0 voice en-gb-x-rp (library API)",
+ "set": "dev",
+ "sentence_level": {
+  "sentences": 2000,
+  "reference_symbols": 89621,
+  "per": 0.01420426016223876,
+  "per_without_stress": 0.011606883210479068,
+  "exact_sentence": 0.723,
+  "exact_sentence_without_stress": 0.778,
+  "piper_shape_per": 0.013887378471844618,
+  "piper_shape_exact_sentence": 0.7215,
+  "word_count_mismatch_sentences": 299,
+  "errors_by_class": {
+   "vowel": {
+    "count": 560,
+    "share": 0.4399057344854674,
+    "per_contribution": 0.006248535499492306
+   },
+   "stress": {
+    "count": 373,
+    "share": 0.29300864100549884,
+    "per_contribution": 0.004161970966626126
+   },
+   "other": {
+    "count": 226,
+    "share": 0.17753338570306362,
+    "per_contribution": 0.002521730398009395
+   },
+   "consonant": {
+    "count": 96,
+    "share": 0.07541241162608013,
+    "per_contribution": 0.001071177514198681
+   },
+   "word-boundary": {
+    "count": 12,
+    "share": 0.009426551453260016,
+    "per_contribution": 0.00013389718927483513
+   },
+   "length": {
+    "count": 6,
+    "share": 0.004713275726630008,
+    "per_contribution": 6.694859463741756e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→ˌ",
+    "count": 75
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 56
+   },
+   {
+    "edit": "ɪ→i",
+    "count": 52
+   },
+   {
+    "edit": "ɪ→ə",
+    "count": 51
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 51
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 49
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 43
+   },
+   {
+    "edit": "ə→ɐ",
+    "count": 35
+   },
+   {
+    "edit": "ɒ→ː",
+    "count": 34
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 32
+   },
+   {
+    "edit": "ɐ→ə",
+    "count": 32
+   },
+   {
+    "edit": "∅→ɔ",
+    "count": 29
+   },
+   {
+    "edit": "ə→ɪ",
+    "count": 26
+   },
+   {
+    "edit": "j→∅",
+    "count": 25
+   },
+   {
+    "edit": "i→∅",
+    "count": 24
+   },
+   {
+    "edit": "n→ə",
+    "count": 21
+   },
+   {
+    "edit": "̩→n",
+    "count": 21
+   },
+   {
+    "edit": "ɪ→ɛ",
+    "count": 19
+   },
+   {
+    "edit": "ʌ→ɒ",
+    "count": 18
+   },
+   {
+    "edit": "ː→ɪ",
+    "count": 18
+   },
+   {
+    "edit": "a→∅",
+    "count": 18
+   },
+   {
+    "edit": "∅→ə",
+    "count": 16
+   },
+   {
+    "edit": "ə→æ",
+    "count": 16
+   },
+   {
+    "edit": "∅→ɑ",
+    "count": 15
+   },
+   {
+    "edit": "ə→∅",
+    "count": 13
+   }
+  ],
+  "word_error_by_class": {
+   "function": {
+    "words": 6007,
+    "wrong": 38,
+    "rate": 0.006325953054769436
+   },
+   "lexicon": {
+    "words": 7221,
+    "wrong": 440,
+    "rate": 0.06093338872732309
+   },
+   "oov": {
+    "words": 141,
+    "wrong": 44,
+    "rate": 0.3120567375886525
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 17,
+    "per": 0.03571428571428571,
+    "exact_sentence": 0.47058823529411764
+   },
+   "no-digits": {
+    "sentences": 1983,
+    "per": 0.013835136024696682,
+    "exact_sentence": 0.7251638930912758
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "13371248",
+    "text": "The Algerian dictatorial regime is opposed to democracy and human rights.",
+    "reference": "ðɪ ældʒˈiəɹɪən dɪktɐtˈɔːɹɪəl ɹeɪʒˈiːm ɪz əpˈəʊzd tə dɪmˈɒkɹəsɪ ænd hjˈuːmən ɹˈaɪts",
+    "uccharan": "ðɪ ældʒˈiəɹiən dˌɪktətˈɔːɹɪəl ɹɪʒˈiːm ɪz əpˈəʊzd tə dɪmˈɒkɹəsɪ ænd hjˈuːmən ɹˈaɪts"
+   },
+   {
+    "id": "6526266",
+    "text": "I wasn't able to get everything done that I wanted to do.",
+    "reference": "aɪ wˌɒzn̩t ˈeɪbəl tə ɡɛt ˈɛvɹɪθˌɪŋ dˈʌn ðæt aɪ wˈɒntɪd tə dˈuː",
+    "uccharan": "aɪ wˈɒzənt ˈeɪbəl tə ɡɛt ˈɛvɹɪθˌɪŋ dˈʌn ðæt aɪ wˈɒntɪd tə dˈuː"
+   },
+   {
+    "id": "10752473",
+    "text": "Tom says you aren't allowed to cuddle a koala in Australia.",
+    "reference": "tˈɒm sˈɛz juː ˌɑːnt ɐlˈaʊd tə kˈʌdəl ɐ kəʊˈɑːlɐɹ ɪn ɒstɹˈeɪliə",
+    "uccharan": "tˈɒm sˈɛz juː ˌɑːnt ɐlˈaʊd tə kˈʌdəl ɐ kəʊˈɑːlɐɹ ɪn ɔːstɹˈeɪliɐ"
+   },
+   {
+    "id": "7735303",
+    "text": "I've had no chance to talk to Tom yet.",
+    "reference": "aɪvhˌæd nˈəʊ tʃˈɑːns tə tˈɔːk tə tˈɒm jˈɛt",
+    "uccharan": "aɪv hæd nˈəʊ tʃˈɑːns tə tˈɔːk tə tˈɒm jˈɛt"
+   },
+   {
+    "id": "1553453",
+    "text": "I should've known better.",
+    "reference": "aɪ ʃˌʊdəv nˈəʊn bˈɛtɐ",
+    "uccharan": "aɪ ʃˈʊdəv nˈəʊn bˈɛtɐ"
+   },
+   {
+    "id": "11650968",
+    "text": "The affected area should remain quarantined for several days.",
+    "reference": "ðɪ ɐfˈɛktɪd ˈeəɹiə ʃˌʊd ɹɪmˈeɪn kwˈɒɹəntˌiːnd fɔː sˈɛvɹəl dˈeɪz",
+    "uccharan": "ðɪ ɐfˈɛktɪd ˈeəɹiɐ ʃˌʊd ɹɪmˈeɪn kwˈɔːɹəntˌiːnd fɔː sˈɛvɹəl dˈeɪz"
+   },
+   {
+    "id": "9141388",
+    "text": "Tom is a hippy who's addicted to kombucha.",
+    "reference": "tˈɒm ɪz ɐ hˈɪpɪ hˌuːz ɐdˈɪktɪd tə kˈɒmbʌtʃɐ",
+    "uccharan": "tˈɒm ɪz ɐ hˈɪpɪ hˌuːz ɐdˈɪktɪd tə kˈɒmbʌkɐ"
+   },
+   {
+    "id": "9030538",
+    "text": "We have a degree in music education.",
+    "reference": "wiː hæv ɐ dɪɡɹˈiː ɪn mjˈuːzɪk ˌɛdʒuːkˈeɪʃən",
+    "uccharan": "wiː hæv ɐ dɪɡɹˈiː ɪn mjˈuːzɪk ˌɛdʒəkˈeɪʃən"
+   },
+   {
+    "id": "7991936",
+    "text": "Sami educated people on that topic.",
+    "reference": "sˈɑːmɪ ˈɛdʒuːkˌeɪtɪd pˈiːpəl ˌɒn ðæt tˈɒpɪk",
+    "uccharan": "sˈɑːmɪ ˈɛdʒəkˌeɪtɪd pˈiːpəl ˌɒn ðæt tˈɒpɪk"
+   },
+   {
+    "id": "7787160",
+    "text": "Not far from the village, a shell exploded.",
+    "reference": "nˌɒt fˈɑː fɹʌmðə vˈɪlɪdʒ ɐ ʃˈɛl ɪksplˈəʊdɪd",
+    "uccharan": "nˌɒt fˌɑː fɹɒmðə vˈɪlɪdʒ ɐ ʃˈɛl ɪksplˈəʊdɪd"
+   },
+   {
+    "id": "6573948",
+    "text": "His prime directive is to waste my time.",
+    "reference": "hɪz pɹˈaɪm daɪɹˈɛktɪv ɪz tə wˈeɪst maɪ tˈaɪm",
+    "uccharan": "hɪz pɹˈaɪm dəɹˈɛktɪv ɪz tə wˈeɪst maɪ tˈaɪm"
+   },
+   {
+    "id": "2026946",
+    "text": "Maybe what I want doesn't matter anymore.",
+    "reference": "mˈeɪbiː wɒt aɪ wˈɒnt dˈʌzənt mˈætɐɹ ˌɛnɪmˈɔː",
+    "uccharan": "mˈeɪbɪ wɒt aɪ wˈɒnt dˈʌzənt mˈætɐɹ ˌɛnɪmˈɔː"
+   }
+  ]
+ }
+}

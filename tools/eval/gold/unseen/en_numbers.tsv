@@ -1,0 +1,22 @@
+# Second numbers set, written after the normaliser was frozen. Same check as ../en_numbers.tsv.
+# id	text	spoken forms
+u-m-01	The bill came to $42.75.	The bill came to forty two dollars and seventy five cents.|The bill came to forty two dollars seventy five.
+u-m-02	He earns ₹75,000 a month.	He earns seventy five thousand rupees a month.
+u-m-03	The flight leaves at 6:45am.	The flight leaves at six forty five A M.|The flight leaves at six forty five a.m.
+u-m-04	It was built in 1887.	It was built in eighteen eighty seven.
+u-m-05	She ran 42.2 km.	She ran forty two point two kilometers.
+u-m-06	Only 3% failed.	Only three percent failed.
+u-m-07	The 2nd floor is closed.	The second floor is closed.
+u-m-08	Chapter 12 is long.	Chapter twelve is long.
+u-m-09	The meeting is on 15/08/2023.	The meeting is on August fifteenth twenty twenty three.|The meeting is on the fifteenth of August twenty twenty three.
+u-m-10	Mix 2/3 cup of flour.	Mix two thirds cup of flour.|Mix two thirds of a cup of flour.
+u-m-11	It weighs 3.5kg.	It weighs three point five kilograms.
+u-m-12	Call 1-800-555-0100.	Call one eight hundred five five five zero one zero zero.|Call one eight zero zero five five five zero one zero zero.
+u-m-13	Temperatures hit 40°C.	Temperatures hit forty degrees Celsius.
+u-m-14	The 1960s were turbulent.	The nineteen sixties were turbulent.
+u-m-15	He scored 99 runs.	He scored ninety nine runs.
+u-m-16	About 1,500,000 people voted.	About one million five hundred thousand people voted.|About one and a half million people voted.
+u-m-17	It costs £9.99.	It costs nine pounds ninety nine.|It costs nine pounds and ninety nine pence.
+u-m-18	Open from 9-5 daily.	Open from nine to five daily.
+u-m-19	Version 2.0 is out.	Version two point zero is out.|Version two point oh is out.
+u-m-20	The speed limit is 65 mph.	The speed limit is sixty five miles per hour.

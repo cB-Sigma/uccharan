@@ -1,0 +1,96 @@
+{
+ "reference": "espeak-ng 1.52.0",
+ "piper": [
+  {
+   "voice": "en_US-amy-low.onnx.json",
+   "espeak_voice": "en-us",
+   "symbols_in_map": 130,
+   "texts": 3000,
+   "sentences": 3087,
+   "framing_matches_independent_implementation": true,
+   "symbols_missing_from_phoneme_id_map": {
+    "̩": 47
+   },
+   "passed": false,
+   "id_sequence_vs_reference": {
+    "texts": 3000,
+    "exact": 0.7603333333333333,
+    "id_error_rate": 0.007820222821823453,
+    "symbols_the_reference_emits_outside_the_map": {
+     "̩": 50,
+     "̃": 1
+    }
+   }
+  },
+  {
+   "voice": "hi_IN-rohan-medium.onnx.json",
+   "espeak_voice": "hi",
+   "symbols_in_map": 161,
+   "texts": 3000,
+   "sentences": 3039,
+   "framing_matches_independent_implementation": true,
+   "symbols_missing_from_phoneme_id_map": {},
+   "passed": true,
+   "id_sequence_vs_reference": {
+    "texts": 3000,
+    "exact": 0.9876666666666667,
+    "id_error_rate": 0.00086480027044663,
+    "symbols_the_reference_emits_outside_the_map": {}
+   }
+  }
+ ],
+ "sherpa_onnx": [
+  {
+   "tokens": "piper-en-us-amy-low",
+   "language": "en-us",
+   "texts": 3000,
+   "codepoints": 137514,
+   "codepoints_not_in_tokens_txt": {
+    "̩": 47
+   },
+   "passed": false
+  },
+  {
+   "tokens": "piper-hi-in-rohan-medium",
+   "language": "hi",
+   "texts": 3000,
+   "codepoints": 122607,
+   "codepoints_not_in_tokens_txt": {},
+   "passed": true
+  }
+ ],
+ "kokoro": {
+  "tokens": "kokoro-v1.0-int8",
+  "symbols": 114,
+  "framing_pad_0_both_ends": true,
+  "tokens_outside_vocabulary": {
+   "en-us": {},
+   "en-gb": {},
+   "hi": {}
+  },
+  "passed": true,
+  "hindi_vs_reference_through_published_mapping": {
+   "sentences": 3000,
+   "exact": 0.9883333333333333,
+   "token_error_rate": 0.001258917331095258
+  },
+  "english_words_vs_misaki_gold": {
+   "dictionary": "us_gold.json",
+   "words": 3603,
+   "exact": 0.6952539550374688,
+   "exact_ignoring_stress": 0.7435470441298918
+  }
+ },
+ "kitten": {
+  "tokens": "kitten-nano-0.8-int8",
+  "symbols": 175,
+  "ids_match_model_tokens_txt": true,
+  "symbols_outside_table": [],
+  "passed": true,
+  "ids_vs_phonemizer_package_front_end": {
+   "texts": 3000,
+   "exact": 0.7513333333333333,
+   "id_error_rate": 0.013498710201773914
+  }
+ }
+}

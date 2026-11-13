@@ -1,0 +1,1221 @@
+{
+ "reference": "espeak-ng 1.52.0",
+ "sets": [
+  {
+   "file": "en_homographs.tsv",
+   "title": "English homographs in context",
+   "language": "en-us",
+   "check": "word",
+   "items": 71,
+   "systems": {
+    "reference": {
+     "passed": 45,
+     "accuracy": 0.6338028169014085,
+     "failed_ids": [
+      "read-past-1",
+      "read-past-3",
+      "read-past-4",
+      "lead-metal-1",
+      "lead-metal-2",
+      "lead-metal-3",
+      "wind-verb-2",
+      "tear-rip-1",
+      "bass-fish-1",
+      "bass-fish-2",
+      "bow-bend-1",
+      "wound-wind-1",
+      "wound-wind-2",
+      "minute-tiny-1",
+      "minute-tiny-2",
+      "close-verb-1",
+      "close-verb-2",
+      "does-deer-1",
+      "dove-dive-1",
+      "sow-pig-1",
+      "resume-cv-1",
+      "object-verb-1",
+      "present-verb-1",
+      "produce-noun-1",
+      "content-adj-1",
+      "contract-verb-1"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 39,
+     "accuracy": 0.5492957746478874,
+     "failed_ids": [
+      "read-past-1",
+      "read-past-3",
+      "read-past-4",
+      "lead-metal-1",
+      "lead-metal-2",
+      "lead-metal-3",
+      "live-adj-2",
+      "wind-verb-2",
+      "tear-rip-1",
+      "tear-rip-3",
+      "bass-fish-1",
+      "bass-fish-2",
+      "bow-knot-1",
+      "bow-knot-2",
+      "wound-wind-1",
+      "wound-wind-2",
+      "minute-tiny-1",
+      "minute-tiny-2",
+      "close-adj-1",
+      "close-adj-2",
+      "does-deer-1",
+      "dove-dive-1",
+      "sow-pig-1",
+      "resume-cv-1",
+      "present-verb-1",
+      "desert-verb-1",
+      "produce-noun-1",
+      "permit-noun-1",
+      "refuse-noun-1",
+      "content-adj-1",
+      "conduct-verb-1",
+      "contract-verb-1"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 39,
+     "accuracy": 0.5492957746478874,
+     "failed_ids": [
+      "read-past-1",
+      "read-past-3",
+      "read-past-4",
+      "lead-metal-1",
+      "lead-metal-2",
+      "lead-metal-3",
+      "live-adj-2",
+      "wind-verb-2",
+      "tear-rip-1",
+      "tear-rip-3",
+      "bass-fish-1",
+      "bass-fish-2",
+      "bow-knot-1",
+      "bow-knot-2",
+      "wound-wind-1",
+      "wound-wind-2",
+      "minute-tiny-1",
+      "minute-tiny-2",
+      "close-adj-1",
+      "close-adj-2",
+      "does-deer-1",
+      "dove-dive-1",
+      "sow-pig-1",
+      "resume-cv-1",
+      "present-verb-1",
+      "desert-verb-1",
+      "produce-noun-1",
+      "permit-noun-1",
+      "refuse-noun-1",
+      "content-adj-1",
+      "conduct-verb-1",
+      "contract-verb-1"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 71,
+     "accuracy": 1.0,
+     "failed_ids": []
+    }
+   }
+  },
+  {
+   "file": "en_names.tsv",
+   "title": "English proper nouns and brands",
+   "language": "en-us",
+   "check": "skeleton",
+   "items": 50,
+   "systems": {
+    "reference": {
+     "passed": 31,
+     "accuracy": 0.62,
+     "failed_ids": [
+      "joaquin",
+      "jose",
+      "juan",
+      "nguyen",
+      "xavier",
+      "isaac",
+      "tucson",
+      "versailles",
+      "qatar",
+      "chopin",
+      "descartes",
+      "xiaomi",
+      "huawei",
+      "niamh",
+      "kyiv",
+      "tchaikovsky",
+      "djokovic",
+      "latex",
+      "whatsapp"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 37,
+     "accuracy": 0.74,
+     "failed_ids": [
+      "siobhan",
+      "hermione",
+      "hyundai",
+      "mozart",
+      "xiaomi",
+      "huawei",
+      "saoirse",
+      "niamh",
+      "aoife",
+      "tchaikovsky",
+      "djokovic",
+      "latex",
+      "iphone"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 37,
+     "accuracy": 0.74,
+     "failed_ids": [
+      "siobhan",
+      "hermione",
+      "hyundai",
+      "mozart",
+      "xiaomi",
+      "huawei",
+      "saoirse",
+      "niamh",
+      "aoife",
+      "tchaikovsky",
+      "djokovic",
+      "latex",
+      "iphone"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 50,
+     "accuracy": 1.0,
+     "failed_ids": []
+    }
+   }
+  },
+  {
+   "file": "en_numbers.tsv",
+   "title": "English numbers, dates, money, units",
+   "language": "en-us",
+   "check": "say",
+   "items": 40,
+   "systems": {
+    "reference": {
+     "passed": 14,
+     "accuracy": 0.35,
+     "failed_ids": [
+      "money-1",
+      "money-2",
+      "money-3",
+      "money-4",
+      "money-5",
+      "money-6",
+      "lakh-1",
+      "date-1",
+      "date-2",
+      "year-2",
+      "year-3",
+      "decade-1",
+      "time-2",
+      "time-3",
+      "ordinal-3",
+      "range-1",
+      "range-2",
+      "fraction-1",
+      "fraction-2",
+      "phone-1",
+      "phone-2",
+      "unit-1",
+      "unit-2",
+      "unit-3",
+      "unit-4",
+      "unit-5"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 14,
+     "accuracy": 0.35,
+     "failed_ids": [
+      "money-1",
+      "money-2",
+      "money-3",
+      "money-4",
+      "money-5",
+      "money-6",
+      "lakh-1",
+      "date-1",
+      "date-2",
+      "year-2",
+      "year-3",
+      "decade-1",
+      "time-2",
+      "time-3",
+      "ordinal-3",
+      "range-1",
+      "range-2",
+      "fraction-1",
+      "fraction-2",
+      "phone-1",
+      "phone-2",
+      "unit-1",
+      "unit-2",
+      "unit-3",
+      "unit-4",
+      "unit-5"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 39,
+     "accuracy": 0.975,
+     "failed_ids": [
+      "unit-5"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 39,
+     "accuracy": 0.975,
+     "failed_ids": [
+      "unit-5"
+     ]
+    }
+   }
+  },
+  {
+   "file": "en_abbreviations.tsv",
+   "title": "English abbreviations and initialisms",
+   "language": "en-us",
+   "check": "say",
+   "items": 29,
+   "systems": {
+    "reference": {
+     "passed": 15,
+     "accuracy": 0.5172413793103449,
+     "failed_ids": [
+      "title-3",
+      "title-4",
+      "street-1",
+      "drive-1",
+      "saint-1",
+      "versus-1",
+      "etc-1",
+      "ie-1",
+      "no-1",
+      "month-1",
+      "month-2",
+      "inc-1",
+      "jr-1",
+      "mt-1"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 27,
+     "accuracy": 0.9310344827586207,
+     "failed_ids": [
+      "street-1",
+      "drive-1"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 29,
+     "accuracy": 1.0,
+     "failed_ids": []
+    },
+    "uccharan-improved": {
+     "passed": 29,
+     "accuracy": 1.0,
+     "failed_ids": []
+    }
+   }
+  },
+  {
+   "file": "hi_schwa.tsv",
+   "title": "Hindi schwa deletion (compounds, suffixes)",
+   "language": "hi",
+   "check": "broad",
+   "items": 36,
+   "systems": {
+    "reference": {
+     "passed": 19,
+     "accuracy": 0.5277777777777778,
+     "failed_ids": [
+      "s-01",
+      "s-02",
+      "s-03",
+      "s-06",
+      "s-12",
+      "s-14",
+      "s-15",
+      "s-18",
+      "s-22",
+      "s-23",
+      "s-24",
+      "s-26",
+      "s-28",
+      "s-33",
+      "s-34",
+      "s-35",
+      "s-36"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 19,
+     "accuracy": 0.5277777777777778,
+     "failed_ids": [
+      "s-01",
+      "s-02",
+      "s-03",
+      "s-06",
+      "s-12",
+      "s-14",
+      "s-15",
+      "s-18",
+      "s-22",
+      "s-23",
+      "s-24",
+      "s-26",
+      "s-28",
+      "s-33",
+      "s-34",
+      "s-35",
+      "s-36"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 19,
+     "accuracy": 0.5277777777777778,
+     "failed_ids": [
+      "s-01",
+      "s-02",
+      "s-03",
+      "s-06",
+      "s-12",
+      "s-14",
+      "s-15",
+      "s-18",
+      "s-22",
+      "s-23",
+      "s-24",
+      "s-26",
+      "s-28",
+      "s-33",
+      "s-34",
+      "s-35",
+      "s-36"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 36,
+     "accuracy": 1.0,
+     "failed_ids": []
+    }
+   }
+  },
+  {
+   "file": "hi_nasals.tsv",
+   "title": "Hindi anusvara / chandrabindu",
+   "language": "hi",
+   "check": "broad",
+   "items": 30,
+   "systems": {
+    "reference": {
+     "passed": 19,
+     "accuracy": 0.6333333333333333,
+     "failed_ids": [
+      "n-01",
+      "n-14",
+      "n-15",
+      "n-16",
+      "n-18",
+      "n-19",
+      "n-20",
+      "n-21",
+      "n-24",
+      "n-25",
+      "n-30"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 19,
+     "accuracy": 0.6333333333333333,
+     "failed_ids": [
+      "n-01",
+      "n-14",
+      "n-15",
+      "n-16",
+      "n-18",
+      "n-19",
+      "n-20",
+      "n-21",
+      "n-24",
+      "n-25",
+      "n-30"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 19,
+     "accuracy": 0.6333333333333333,
+     "failed_ids": [
+      "n-01",
+      "n-14",
+      "n-15",
+      "n-16",
+      "n-18",
+      "n-19",
+      "n-20",
+      "n-21",
+      "n-24",
+      "n-25",
+      "n-30"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 30,
+     "accuracy": 1.0,
+     "failed_ids": []
+    }
+   }
+  },
+  {
+   "file": "hi_nukta.tsv",
+   "title": "Hindi nukta consonants",
+   "language": "hi",
+   "check": "broad",
+   "items": 24,
+   "systems": {
+    "reference": {
+     "passed": 13,
+     "accuracy": 0.5416666666666666,
+     "failed_ids": [
+      "k-06",
+      "k-07",
+      "k-08",
+      "k-09",
+      "k-10",
+      "k-11",
+      "k-12",
+      "k-13",
+      "k-20",
+      "k-21",
+      "k-22"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 13,
+     "accuracy": 0.5416666666666666,
+     "failed_ids": [
+      "k-06",
+      "k-07",
+      "k-08",
+      "k-09",
+      "k-10",
+      "k-11",
+      "k-12",
+      "k-13",
+      "k-20",
+      "k-21",
+      "k-22"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 13,
+     "accuracy": 0.5416666666666666,
+     "failed_ids": [
+      "k-06",
+      "k-07",
+      "k-08",
+      "k-09",
+      "k-10",
+      "k-11",
+      "k-12",
+      "k-13",
+      "k-20",
+      "k-21",
+      "k-22"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 24,
+     "accuracy": 1.0,
+     "failed_ids": []
+    }
+   }
+  },
+  {
+   "file": "hi_numbers.tsv",
+   "title": "Hindi numbers, money, abbreviations",
+   "language": "hi",
+   "check": "say",
+   "items": 18,
+   "systems": {
+    "reference": {
+     "passed": 3,
+     "accuracy": 0.16666666666666666,
+     "failed_ids": [
+      "h-01",
+      "h-02",
+      "h-03",
+      "h-05",
+      "h-06",
+      "h-07",
+      "h-08",
+      "h-09",
+      "h-11",
+      "h-12",
+      "h-13",
+      "h-15",
+      "h-16",
+      "h-17",
+      "h-18"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 12,
+     "accuracy": 0.6666666666666666,
+     "failed_ids": [
+      "h-02",
+      "h-03",
+      "h-08",
+      "h-11",
+      "h-12",
+      "h-15"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 18,
+     "accuracy": 1.0,
+     "failed_ids": []
+    },
+    "uccharan-improved": {
+     "passed": 18,
+     "accuracy": 1.0,
+     "failed_ids": []
+    }
+   }
+  },
+  {
+   "file": "mix_english_in_hindi.tsv",
+   "title": "English words in Hindi text (stays in the Hindi phone set)",
+   "language": "hi",
+   "check": "inventory",
+   "items": 20,
+   "systems": {
+    "reference": {
+     "passed": 6,
+     "accuracy": 0.3,
+     "failed_ids": [
+      "m-01",
+      "m-02",
+      "m-04",
+      "m-07",
+      "m-09",
+      "m-11",
+      "m-12",
+      "m-13",
+      "m-14",
+      "m-15",
+      "m-16",
+      "m-17",
+      "m-19",
+      "m-20"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 4,
+     "accuracy": 0.2,
+     "failed_ids": [
+      "m-01",
+      "m-02",
+      "m-03",
+      "m-04",
+      "m-07",
+      "m-08",
+      "m-09",
+      "m-11",
+      "m-12",
+      "m-13",
+      "m-14",
+      "m-15",
+      "m-16",
+      "m-17",
+      "m-19",
+      "m-20"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 4,
+     "accuracy": 0.2,
+     "failed_ids": [
+      "m-01",
+      "m-02",
+      "m-03",
+      "m-04",
+      "m-07",
+      "m-08",
+      "m-09",
+      "m-11",
+      "m-12",
+      "m-13",
+      "m-14",
+      "m-15",
+      "m-16",
+      "m-17",
+      "m-19",
+      "m-20"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 20,
+     "accuracy": 1.0,
+     "failed_ids": []
+    }
+   }
+  },
+  {
+   "file": "mix_hindi_in_english.tsv",
+   "title": "Hindi words in English text",
+   "language": "en-us",
+   "check": "word-broad",
+   "items": 10,
+   "systems": {
+    "reference": {
+     "passed": 10,
+     "accuracy": 1.0,
+     "failed_ids": []
+    },
+    "uccharan-compatible": {
+     "passed": 10,
+     "accuracy": 1.0,
+     "failed_ids": []
+    },
+    "uccharan-default": {
+     "passed": 10,
+     "accuracy": 1.0,
+     "failed_ids": []
+    },
+    "uccharan-improved": {
+     "passed": 10,
+     "accuracy": 1.0,
+     "failed_ids": []
+    }
+   }
+  },
+  {
+   "file": "mix_romanised_hindi.tsv",
+   "title": "Romanised Hindi (experimental)",
+   "language": "hi",
+   "check": "say-hinglish",
+   "items": 20,
+   "systems": {
+    "reference": {
+     "passed": 0,
+     "accuracy": 0.0,
+     "failed_ids": [
+      "r-01",
+      "r-02",
+      "r-03",
+      "r-04",
+      "r-05",
+      "r-06",
+      "r-07",
+      "r-08",
+      "r-09",
+      "r-10",
+      "r-11",
+      "r-12",
+      "r-13",
+      "r-14",
+      "r-15",
+      "r-16",
+      "r-17",
+      "r-18",
+      "r-19",
+      "r-20"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 0,
+     "accuracy": 0.0,
+     "failed_ids": [
+      "r-01",
+      "r-02",
+      "r-03",
+      "r-04",
+      "r-05",
+      "r-06",
+      "r-07",
+      "r-08",
+      "r-09",
+      "r-10",
+      "r-11",
+      "r-12",
+      "r-13",
+      "r-14",
+      "r-15",
+      "r-16",
+      "r-17",
+      "r-18",
+      "r-19",
+      "r-20"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 0,
+     "accuracy": 0.0,
+     "failed_ids": [
+      "r-01",
+      "r-02",
+      "r-03",
+      "r-04",
+      "r-05",
+      "r-06",
+      "r-07",
+      "r-08",
+      "r-09",
+      "r-10",
+      "r-11",
+      "r-12",
+      "r-13",
+      "r-14",
+      "r-15",
+      "r-16",
+      "r-17",
+      "r-18",
+      "r-19",
+      "r-20"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 20,
+     "accuracy": 1.0,
+     "failed_ids": []
+    }
+   }
+  },
+  {
+   "file": "unseen/en_homographs.tsv",
+   "title": "UNSEEN: English homographs",
+   "language": "en-us",
+   "check": "word",
+   "items": 40,
+   "systems": {
+    "reference": {
+     "passed": 25,
+     "accuracy": 0.625,
+     "failed_ids": [
+      "u-read-1",
+      "u-read-4",
+      "u-read-5",
+      "u-lead-1",
+      "u-lead-3",
+      "u-live-2",
+      "u-wind-1",
+      "u-wind-3",
+      "u-tear-3",
+      "u-bass-2",
+      "u-bow-2",
+      "u-wound-2",
+      "u-minute-1",
+      "u-dove-1",
+      "u-object-1"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 24,
+     "accuracy": 0.6,
+     "failed_ids": [
+      "u-read-1",
+      "u-read-2",
+      "u-read-4",
+      "u-read-5",
+      "u-lead-1",
+      "u-lead-3",
+      "u-live-1",
+      "u-wind-1",
+      "u-wind-3",
+      "u-tear-3",
+      "u-bass-2",
+      "u-bow-1",
+      "u-wound-2",
+      "u-minute-1",
+      "u-close-1",
+      "u-dove-1"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 24,
+     "accuracy": 0.6,
+     "failed_ids": [
+      "u-read-1",
+      "u-read-2",
+      "u-read-4",
+      "u-read-5",
+      "u-lead-1",
+      "u-lead-3",
+      "u-live-1",
+      "u-wind-1",
+      "u-wind-3",
+      "u-tear-3",
+      "u-bass-2",
+      "u-bow-1",
+      "u-wound-2",
+      "u-minute-1",
+      "u-close-1",
+      "u-dove-1"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 33,
+     "accuracy": 0.825,
+     "failed_ids": [
+      "u-read-2",
+      "u-lead-1",
+      "u-lead-3",
+      "u-wind-1",
+      "u-wind-3",
+      "u-bow-1",
+      "u-minute-1"
+     ]
+    }
+   }
+  },
+  {
+   "file": "unseen/en_names.tsv",
+   "title": "UNSEEN: English proper nouns",
+   "language": "en-us",
+   "check": "skeleton",
+   "items": 20,
+   "systems": {
+    "reference": {
+     "passed": 12,
+     "accuracy": 0.6,
+     "failed_ids": [
+      "u-n-06",
+      "u-n-07",
+      "u-n-08",
+      "u-n-12",
+      "u-n-13",
+      "u-n-14",
+      "u-n-16",
+      "u-n-19"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 9,
+     "accuracy": 0.45,
+     "failed_ids": [
+      "u-n-01",
+      "u-n-02",
+      "u-n-04",
+      "u-n-05",
+      "u-n-07",
+      "u-n-08",
+      "u-n-10",
+      "u-n-13",
+      "u-n-16",
+      "u-n-19",
+      "u-n-20"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 9,
+     "accuracy": 0.45,
+     "failed_ids": [
+      "u-n-01",
+      "u-n-02",
+      "u-n-04",
+      "u-n-05",
+      "u-n-07",
+      "u-n-08",
+      "u-n-10",
+      "u-n-13",
+      "u-n-16",
+      "u-n-19",
+      "u-n-20"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 11,
+     "accuracy": 0.55,
+     "failed_ids": [
+      "u-n-01",
+      "u-n-02",
+      "u-n-04",
+      "u-n-07",
+      "u-n-08",
+      "u-n-10",
+      "u-n-16",
+      "u-n-19",
+      "u-n-20"
+     ]
+    }
+   }
+  },
+  {
+   "file": "unseen/en_numbers.tsv",
+   "title": "UNSEEN: English numbers and units",
+   "language": "en-us",
+   "check": "say",
+   "items": 20,
+   "systems": {
+    "reference": {
+     "passed": 7,
+     "accuracy": 0.35,
+     "failed_ids": [
+      "u-m-01",
+      "u-m-02",
+      "u-m-04",
+      "u-m-05",
+      "u-m-09",
+      "u-m-10",
+      "u-m-11",
+      "u-m-12",
+      "u-m-13",
+      "u-m-14",
+      "u-m-17",
+      "u-m-18",
+      "u-m-20"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 6,
+     "accuracy": 0.3,
+     "failed_ids": [
+      "u-m-01",
+      "u-m-02",
+      "u-m-03",
+      "u-m-04",
+      "u-m-05",
+      "u-m-09",
+      "u-m-10",
+      "u-m-11",
+      "u-m-12",
+      "u-m-13",
+      "u-m-14",
+      "u-m-17",
+      "u-m-18",
+      "u-m-20"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 17,
+     "accuracy": 0.85,
+     "failed_ids": [
+      "u-m-05",
+      "u-m-09",
+      "u-m-18"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 17,
+     "accuracy": 0.85,
+     "failed_ids": [
+      "u-m-05",
+      "u-m-09",
+      "u-m-18"
+     ]
+    }
+   }
+  },
+  {
+   "file": "unseen/hi_words.tsv",
+   "title": "UNSEEN: Hindi schwa / nasal / nukta words",
+   "language": "hi",
+   "check": "broad",
+   "items": 36,
+   "systems": {
+    "reference": {
+     "passed": 22,
+     "accuracy": 0.6111111111111112,
+     "failed_ids": [
+      "u-h-01",
+      "u-h-04",
+      "u-h-06",
+      "u-h-08",
+      "u-h-11",
+      "u-h-12",
+      "u-h-18",
+      "u-h-20",
+      "u-h-25",
+      "u-h-26",
+      "u-h-27",
+      "u-h-31",
+      "u-h-32",
+      "u-h-36"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 22,
+     "accuracy": 0.6111111111111112,
+     "failed_ids": [
+      "u-h-01",
+      "u-h-04",
+      "u-h-06",
+      "u-h-08",
+      "u-h-11",
+      "u-h-12",
+      "u-h-18",
+      "u-h-20",
+      "u-h-25",
+      "u-h-26",
+      "u-h-27",
+      "u-h-31",
+      "u-h-32",
+      "u-h-36"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 22,
+     "accuracy": 0.6111111111111112,
+     "failed_ids": [
+      "u-h-01",
+      "u-h-04",
+      "u-h-06",
+      "u-h-08",
+      "u-h-11",
+      "u-h-12",
+      "u-h-18",
+      "u-h-20",
+      "u-h-25",
+      "u-h-26",
+      "u-h-27",
+      "u-h-31",
+      "u-h-32",
+      "u-h-36"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 35,
+     "accuracy": 0.9722222222222222,
+     "failed_ids": [
+      "u-h-06"
+     ]
+    }
+   }
+  },
+  {
+   "file": "unseen/mix.tsv",
+   "title": "UNSEEN: Romanised Hindi",
+   "language": "hi",
+   "check": "say-hinglish",
+   "items": 12,
+   "systems": {
+    "reference": {
+     "passed": 0,
+     "accuracy": 0.0,
+     "failed_ids": [
+      "u-r-01",
+      "u-r-02",
+      "u-r-03",
+      "u-r-04",
+      "u-r-05",
+      "u-r-06",
+      "u-r-07",
+      "u-r-08",
+      "u-r-09",
+      "u-r-10",
+      "u-r-11",
+      "u-r-12"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 0,
+     "accuracy": 0.0,
+     "failed_ids": [
+      "u-r-01",
+      "u-r-02",
+      "u-r-03",
+      "u-r-04",
+      "u-r-05",
+      "u-r-06",
+      "u-r-07",
+      "u-r-08",
+      "u-r-09",
+      "u-r-10",
+      "u-r-11",
+      "u-r-12"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 0,
+     "accuracy": 0.0,
+     "failed_ids": [
+      "u-r-01",
+      "u-r-02",
+      "u-r-03",
+      "u-r-04",
+      "u-r-05",
+      "u-r-06",
+      "u-r-07",
+      "u-r-08",
+      "u-r-09",
+      "u-r-10",
+      "u-r-11",
+      "u-r-12"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 7,
+     "accuracy": 0.5833333333333334,
+     "failed_ids": [
+      "u-r-03",
+      "u-r-07",
+      "u-r-08",
+      "u-r-10",
+      "u-r-11"
+     ]
+    }
+   }
+  }
+ ],
+ "total_development_sets": {
+  "reference": {
+   "passed": 175,
+   "items": 348,
+   "accuracy": 0.5028735632183908
+  },
+  "uccharan-compatible": {
+   "passed": 194,
+   "items": 348,
+   "accuracy": 0.5574712643678161
+  },
+  "uccharan-default": {
+   "passed": 227,
+   "items": 348,
+   "accuracy": 0.6522988505747126
+  },
+  "uccharan-improved": {
+   "passed": 347,
+   "items": 348,
+   "accuracy": 0.9971264367816092
+  }
+ },
+ "total_unseen_sets": {
+  "reference": {
+   "passed": 66,
+   "items": 128,
+   "accuracy": 0.515625
+  },
+  "uccharan-compatible": {
+   "passed": 61,
+   "items": 128,
+   "accuracy": 0.4765625
+  },
+  "uccharan-default": {
+   "passed": 72,
+   "items": 128,
+   "accuracy": 0.5625
+  },
+  "uccharan-improved": {
+   "passed": 103,
+   "items": 128,
+   "accuracy": 0.8046875
+  }
+ }
+}

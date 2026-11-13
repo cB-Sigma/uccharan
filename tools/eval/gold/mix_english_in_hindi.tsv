@@ -1,0 +1,25 @@
+# English words (Latin script) inside Hindi sentences. check=inventory: every
+# phone of the output must be one that Hindi voices are trained on (the phones
+# that occur in Hindi words); English-only phones such as æ ɒ ɹ w θ ð or the
+# diphthongs əʊ aɪ cannot be rendered properly by a Hindi voice.
+# id	text
+m-01	मैं office जा रहा हूँ।
+m-02	WhatsApp पर message करो।
+m-03	यह computer बहुत slow है।
+m-04	मेरा phone charge नहीं है।
+m-05	कल meeting है, time पर आना।
+m-06	उसने email भेजा।
+m-07	यह movie बहुत अच्छी थी।
+m-08	मुझे water चाहिए।
+m-09	वह doctor के पास गया।
+m-10	school की bus आ गई।
+m-11	train late है।
+m-12	मेरा password भूल गया।
+m-13	online order कर दो।
+m-14	यह road बंद है।
+m-15	thank you बोलो।
+m-16	weather आज अच्छा है।
+m-17	वह third floor पर रहता है।
+m-18	file download हो गई।
+m-19	party में बहुत fun था।
+m-20	birthday कब है?

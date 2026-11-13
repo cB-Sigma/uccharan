@@ -1,0 +1,39 @@
+# build output
+/target/
+**/target/
+/demo/_site/
+/bindings/wasm/dist/
+/bindings/python/dist/
+/dist/
+*.whl
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+*.so
+*.pyd
+*.dylib
+node_modules/
+/hello
+
+# scratch and downloads
+/.scratch/
+/tools/eval/.work/
+/tools/brand/.work/
+*.jsonl
+.venv/
+.env
+
+# internal working notes: not part of the published repository
+/RESEARCH.md
+/BEHAVIOUR_SPEC.md
+/PROGRESS.md
+
+# editors and OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+/bindings/wasm/data/

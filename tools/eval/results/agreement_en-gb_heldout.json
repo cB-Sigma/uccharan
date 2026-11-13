@@ -1,0 +1,276 @@
+{
+ "language": "en-gb",
+ "reference": "espeak-ng 1.52.0 voice en-gb-x-rp (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 3000,
+  "reference_symbols": 132780,
+  "per": 0.01412110257568911,
+  "per_without_stress": 0.011656164465325683,
+  "exact_sentence": 0.721,
+  "exact_sentence_without_stress": 0.777,
+  "piper_shape_per": 0.013804896665100987,
+  "piper_shape_exact_sentence": 0.72,
+  "word_count_mismatch_sentences": 463,
+  "errors_by_class": {
+   "vowel": {
+    "count": 798,
+    "share": 0.4256,
+    "per_contribution": 0.006009941256213285
+   },
+   "stress": {
+    "count": 529,
+    "share": 0.28213333333333335,
+    "per_contribution": 0.0039840337400210875
+   },
+   "other": {
+    "count": 325,
+    "share": 0.17333333333333334,
+    "per_contribution": 0.002447657779786112
+   },
+   "consonant": {
+    "count": 176,
+    "share": 0.09386666666666667,
+    "per_contribution": 0.0013255008284380177
+   },
+   "word-boundary": {
+    "count": 30,
+    "share": 0.016,
+    "per_contribution": 0.00022593764121102577
+   },
+   "length": {
+    "count": 17,
+    "share": 0.009066666666666667,
+    "per_contribution": 0.00012803133001958126
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→∅",
+    "count": 101
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 91
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 82
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 81
+   },
+   {
+    "edit": "ɪ→i",
+    "count": 64
+   },
+   {
+    "edit": "ɪ→ə",
+    "count": 62
+   },
+   {
+    "edit": "ɐ→ə",
+    "count": 61
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 58
+   },
+   {
+    "edit": "ə→ɐ",
+    "count": 53
+   },
+   {
+    "edit": "ɒ→ː",
+    "count": 51
+   },
+   {
+    "edit": "∅→ɔ",
+    "count": 35
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 31
+   },
+   {
+    "edit": "s→z",
+    "count": 30
+   },
+   {
+    "edit": "∅→ɑ",
+    "count": 29
+   },
+   {
+    "edit": "n→ə",
+    "count": 28
+   },
+   {
+    "edit": "̩→n",
+    "count": 28
+   },
+   {
+    "edit": "ə→ɪ",
+    "count": 27
+   },
+   {
+    "edit": "ɹ→∅",
+    "count": 26
+   },
+   {
+    "edit": "i→∅",
+    "count": 26
+   },
+   {
+    "edit": "ː→ɪ",
+    "count": 26
+   },
+   {
+    "edit": "ʌ→ɒ",
+    "count": 26
+   },
+   {
+    "edit": "ɪ→ɛ",
+    "count": 25
+   },
+   {
+    "edit": "j→∅",
+    "count": 25
+   },
+   {
+    "edit": "∅→ ",
+    "count": 24
+   },
+   {
+    "edit": "a→∅",
+    "count": 24
+   }
+  ],
+  "word_error_by_class": {
+   "function": {
+    "words": 9063,
+    "wrong": 54,
+    "rate": 0.005958291956305859
+   },
+   "lexicon": {
+    "words": 10533,
+    "wrong": 659,
+    "rate": 0.06256527105288143
+   },
+   "oov": {
+    "words": 196,
+    "wrong": 60,
+    "rate": 0.30612244897959184
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 31,
+    "per": 0.043052837573385516,
+    "exact_sentence": 0.2903225806451613
+   },
+   "no-digits": {
+    "sentences": 2969,
+    "per": 0.013553465156459972,
+    "exact_sentence": 0.725496800269451
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "4643254",
+    "text": "In the digital era, broken clocks are not right twice a day. They're just rubbish.",
+    "reference": "ɪnðə dˈɪdʒɪtəl ˈiəɹɐ bɹˈəʊkən klˈɒks ɑː nˌɒt ɹˈaɪt twˈaɪs ɐ dˈeɪ ðeɪɐ dʒˈʌst ɹˈʌbɪʃ",
+    "uccharan": "ɪnðə dˈɪdʒɪtəl ˈɛɹɐ bɹˈəʊkən klˈɒks ɑː nˌɒt ɹˈaɪt twˈaɪs ɐ dˈeɪ ðeə dʒˈʌst ɹˈʌbɪʃ"
+   },
+   {
+    "id": "7437328",
+    "text": "Tom and Mary said that they're sympathetic.",
+    "reference": "tˈɒm ænd mˈeəɹɪ sˈɛd ðæt ðeɪɐ sˌɪmpəθˈɛtɪk",
+    "uccharan": "tˈɒm ænd mˈeəɹɪ sˈɛd ðæt ðeə sˌɪmpəθˈɛtɪk"
+   },
+   {
+    "id": "7194497",
+    "text": "Didn't you know that Tom used to teach French in Australia?",
+    "reference": "dˈɪdnt juː nˈəʊ ðæt tˈɒm jˈuːzd tə tˈiːtʃ fɹˈɛntʃ ɪn ɒstɹˈeɪliə",
+    "uccharan": "dˈɪdnt juː nˈəʊ ðæt tˈɒm jˈuːzd tə tˈiːtʃ fɹˈɛntʃ ɪn ɔːstɹˈeɪliɐ"
+   },
+   {
+    "id": "6876722",
+    "text": "We used to have a lovely, little Gazebo outside our house.",
+    "reference": "wiː jˈuːzd tə hæv ɐ lˈʌvlɪ lˈɪtəl ɡɐzˈiːbəʊ aʊtsˈaɪd ˌaʊɐ hˈaʊs",
+    "uccharan": "wiː jˈuːzd tə hæv ɐ lˈʌvlɪ lˈɪtəl ɡəzˈiːbəʊ ˈaʊtsaɪd ˌaʊɐ hˈaʊs"
+   },
+   {
+    "id": "6675958",
+    "text": "I suspect that Tom is being sarcastic.",
+    "reference": "aɪ səspˈɛkt ðæt tˈɒm ɪz bˌiːɪŋ sɑːkˈɑːstɪk",
+    "uccharan": "aɪ səspˈɛkt ðæt tˈɒm ɪz bˌiːɪŋ sɑːkˈæstɪk"
+   },
+   {
+    "id": "437093",
+    "text": "I was fifteen years old in this picture.",
+    "reference": "aɪ wɒz fˈɪftiːn jˈiəz ˈəʊld ɪn ðɪs pˈɪktʃɐ",
+    "uccharan": "aɪ wɒz fɪftˈiːn jˈiəz ˈəʊld ɪn ðɪs pˈɪktʃɐ"
+   },
+   {
+    "id": "12042183",
+    "text": "Blessed are the poor in spirit, for theirs is the kingdom of heaven.",
+    "reference": "blˈɛst ɑː ðə pˈɔːɹ ɪn spˈɪɹɪt fɔː ðˈeəz ɪz ðə kˈɪŋdəm ɒv hˈɛvən",
+    "uccharan": "blˈɛst ɑː ðə pˈuːɹ ɪn spˈiəɹɪt fɔː ðˈeəz ɪz ðə kˈɪŋdəm ɒv hˈɛvən"
+   },
+   {
+    "id": "11859291",
+    "text": "Through unification with Albania, Kosovo could gain access to the rest of the world.",
+    "reference": "θɹuː jˌuːnɪfɪkˈeɪʃən wɪð ælbˈeɪniə kˈɒsəvˌəʊ kʊd ɡˈeɪn ˈæksɛs tə ðə ɹˈɛst ɒvðə wˈɜːld",
+    "uccharan": "θɹuː jˌuːnɪfɪkˈeɪʃən wɪð ælbˈeɪniɐ kˈəʊsəʊvˌəʊ kʊd ɡˈeɪn ˈæksɛs tə ðə ɹˈɛst ɒvðə wˈɜːld"
+   },
+   {
+    "id": "4992833",
+    "text": "Michael is already an adult, but he still lives with his mother.",
+    "reference": "mˈaɪkəl ɪz ɔːlɹˌɛdɪ ɐn ˈædʌlt bˌʌt hiː stˈɪl lˈɪvz wɪð hɪz mˈʌðɐ",
+    "uccharan": "mˈaɪkəl ɪz ɔːlɹˌɛdɪ ɐn ɐdˈʌlt bˌʌt hiː stˈɪl lˈɪvz wɪð hɪz mˈʌðɐ"
+   },
+   {
+    "id": "3661267",
+    "text": "Great-Grandma is the undisputed matriarch of our family.",
+    "reference": "ɡɹˈeɪtɡɹˈændmɑːɹ ɪz ðɪ ʌndɪspjˈuːtɪd mˈeɪtɹɪˌɑːk ɒv ˌaʊɐ fˈæmɪlɪ",
+    "uccharan": "ɡɹˈeɪtɡɹˈændmɐɹ ɪz ðɪ ˌʌndɪspjˈuːtɪd mˈeɪtɹɪˌɑːk ɒv ˌaʊɐ fˈæmɪlɪ"
+   },
+   {
+    "id": "11685775",
+    "text": "Claudio heard a noise coming from below his window outside.",
+    "reference": "klˈɔːdɪˌəʊ hˈɜːd ɐ nˈɔɪz kˈʌmɪŋ fɹɒm bɪlˌəʊ hɪz wˈɪndəʊ aʊtsˈaɪd",
+    "uccharan": "klˈɔːdɪˌəʊ hˈɜːd ɐ nˈɔɪz kˈʌmɪŋ fɹɒm bɪlˈəʊ hɪz wˈɪndəʊ ˈaʊtsaɪd"
+   },
+   {
+    "id": "7813404",
+    "text": "Maybe we just got off to a bad start.",
+    "reference": "mˈeɪbiː wiː dʒˈʌst ɡɒt ˈɒf tʊ ɐ bˈæd stˈɑːt",
+    "uccharan": "mˈeɪbɪ wiː dʒˈʌst ɡɒt ˈɒf tʊ ɐ bˈæd stˈɑːt"
+   }
+  ]
+ },
+ "word_level": {
+  "frequent-in-lexicon": {
+   "words": 5000,
+   "per": 0.025753875858935772,
+   "exact_word": 0.8908,
+   "exact_word_without_stress": 0.9046,
+   "stress_pattern_error": 0.0352
+  },
+  "rare-in-lexicon": {
+   "words": 3000,
+   "per": 0.17802876411798163,
+   "exact_word": 0.4673333333333333,
+   "exact_word_without_stress": 0.48966666666666664,
+   "stress_pattern_error": 0.21666666666666667
+  },
+  "out-of-lexicon": {
+   "words": 1997,
+   "per": 0.18645862357202564,
+   "exact_word": 0.44667000500751125,
+   "exact_word_without_stress": 0.49223835753630446,
+   "stress_pattern_error": 0.29494241362043067
+  }
+ }
+}

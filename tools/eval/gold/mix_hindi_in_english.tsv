@@ -1,0 +1,14 @@
+# Hindi words inside English sentences (en-US voice). check=word-broad: some
+# output word must equal the expected Hindi form (broad comparison as in
+# hi_schwa.tsv).
+# id	text	expected
+e-01	She said नमस्ते to everyone.	nəməste
+e-02	We drank चाय on the terrace.	caj
+e-03	My friend lives in दिल्ली now.	dɪlːi|dɪlli
+e-04	The word पानी means water.	pani
+e-05	He greeted us with धन्यवाद and a smile.	dʰənjəʋad
+e-06	They visited आगरा last winter.	aɡɾa
+e-07	The sign said स्वागत in large letters.	sʋaɡət
+e-08	Her name is प्रिया Sharma.	pɾɪja
+e-09	We ordered पनीर and rice.	pəniɾ
+e-10	The festival of दिवाली is in autumn.	dɪʋali
