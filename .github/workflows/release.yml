@@ -218,6 +218,13 @@ jobs:
     permissions:
       contents: write   # creates the tag and the release
     steps:
+      - uses: actions/checkout@v7
+      - name: Language packs (the wheel fetches en-gb and Kokoro English from here, checked by SHA-256)
+        run: |
+          python3 tools/packs.py --check
+          mkdir -p dist
+          cp crates/uccharan/data/*.ucd dist/
+          (cd dist && sha256sum *.ucd > packs.sha256)
       - uses: actions/download-artifact@v8
         with:
           pattern: wheel-*

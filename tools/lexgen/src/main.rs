@@ -91,6 +91,8 @@ fn build_kokoro(root: &Path, british: bool) -> Vec<u8> {
         uccharan::kokoro::MisakiLexicon::image_entries(&read("gold"), &read("silver"))
             .expect("valid JSON");
     let mut b = Builder::new();
+    // The Kokoro front end makes several lookups per word: small blocks.
+    b.block_size(8);
     for (k, v) in entries {
         b.entry(&k, &v);
     }
@@ -111,6 +113,8 @@ fn build_kokoro(root: &Path, british: bool) -> Vec<u8> {
     );
     b.build().expect("build")
 }
+
+const LTS_MIN_COUNT: u32 = 2;
 
 fn build_english(
     entries: &[cmudict::Entry],
@@ -147,10 +151,131 @@ fn build_english(
             map.remove(possessive.as_str());
         }
     }
-    let mut b = Builder::new();
-    for (w, v) in &map {
-        b.entry(w, &v.join("|"));
+    let min_count: u32 = std::env::var("LEXGEN_MIN_COUNT")
+        .ok()
+        .and_then(|v| v.parse().ok())
+        .unwrap_or(LTS_MIN_COUNT);
+    let model = lts::train(&lts_examples(entries, accent, |_| false), min_count);
+    let names_model = name_model(entries);
+    let lang = if accent == en::Accent::Us {
+        uccharan::Lang::EnUs
+    } else {
+        uccharan::Lang::EnGb
+    };
+    let image = |dropped: &std::collections::HashSet<&str>| -> Vec<u8> {
+        let mut b = Builder::new();
+        for (w, v) in &map {
+            if !dropped.contains(w) {
+                b.entry(w, &v.join("|"));
+            }
+        }
+        add_names(&mut b, names, accent);
+        b.lts(model.outputs.clone(), model.tables.clone());
+        b.section(*b"NAMC", names_model.clone());
+        let left_out: Vec<&str> = dropped.iter().copied().collect();
+        b.section(
+            *b"KNWN",
+            uccharan::known::encode(&left_out, uccharan::known::RICE_K).expect("known-word set"),
+        );
+        b.meta("lang", name);
+        b.meta("format", "2");
+        b.meta("source", "CMUdict (BSD-2-Clause) converted by tools/lexgen, plus data/sources/en/overrides.tsv and names.tsv; entries the letter-to-sound model reproduces exactly are left out and listed in KNWN");
+        b.build().expect("build")
+    };
+    // Leave out every entry that the run-time rules (morphology, compounds,
+    // letter-to-sound) already reproduce exactly, and check the result: each
+    // left-out word must still come out identical to the full lexicon.
+    let full = Data::from_vec(image(&Default::default())).expect("image");
+    let full_en = uccharan::en::English::new(&full, lang);
+    let want: BTreeMap<&str, String> = map
+        .keys()
+        .map(|w| (*w, full_en.word(w, uccharan::en::Hint::None)))
+        .collect();
+    let mut dropped: std::collections::HashSet<&str> = map
+        .iter()
+        // Words with an apostrophe stay: the run-time set of left-out words is
+        // not consulted for them (a false hit there would hide the 's rules).
+        .filter(|(w, v)| {
+            !w.contains('\'')
+                && v.len() == 1
+                && uccharan::en::letter_to_sound(&full, w, lang) == v[0]
+        })
+        .map(|(w, _)| *w)
+        .collect();
+    for round in 0..8 {
+        let reduced = Data::from_vec(image(&dropped)).expect("image");
+        let en_r = uccharan::en::English::new(&reduced, lang);
+        let bad: Vec<&str> = map
+            .keys()
+            .copied()
+            .filter(|w| en_r.word(w, uccharan::en::Hint::None) != want[w])
+            .collect();
+        eprintln!(
+            "{name}: prune round {round}: {} left out, {} differ",
+            dropped.len(),
+            bad.len()
+        );
+        if bad.is_empty() {
+            break;
+        }
+        for w in bad {
+            dropped.remove(w);
+        }
     }
+    let bytes = image(&dropped);
+    let check = Data::from_vec(bytes.clone()).expect("image");
+    let en_c = uccharan::en::English::new(&check, lang);
+    assert!(
+        map.keys()
+            .all(|w| en_c.word(w, uccharan::en::Hint::None) == want[w]),
+        "pruned lexicon is not equivalent"
+    );
+    bytes
+}
+
+/// The name-origin model: Indian names (data/sources/names) against CMUdict's words.
+fn name_model(entries: &[cmudict::Entry]) -> Vec<u8> {
+    let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../..");
+    let text = std::fs::read_to_string(root.join("data/sources/names/indian_names.txt"))
+        .expect("indian_names.txt");
+    let indian: Vec<String> = text
+        .lines()
+        .filter(|l| !l.starts_with('#'))
+        .flat_map(|l| l.split_whitespace())
+        .map(|w| w.to_lowercase())
+        .collect();
+    let set: std::collections::HashSet<&str> = indian.iter().map(String::as_str).collect();
+    let english: Vec<String> = entries
+        .iter()
+        .filter(|e| {
+            e.variant == 1
+                && e.word.bytes().all(|b| b.is_ascii_lowercase())
+                && !set.contains(e.word.as_str())
+        })
+        .map(|e| e.word.clone())
+        .collect();
+    let model = uccharan::names::train_model(&indian, &english);
+    let t = uccharan::names::INDIC_THRESHOLD;
+    let hit_i = indian
+        .iter()
+        .filter(|w| uccharan::names::indic_score(&model, w) >= t)
+        .count();
+    let hit_e = english
+        .iter()
+        .filter(|w| uccharan::names::indic_score(&model, w) >= t)
+        .count();
+    eprintln!(
+        "name-origin model: {} trigrams; flags {}/{} Indian training names, {}/{} CMUdict words",
+        model.len() / 4,
+        hit_i,
+        indian.len(),
+        hit_e,
+        english.len()
+    );
+    model
+}
+
+fn add_names(b: &mut Builder, names: &str, accent: en::Accent) {
     // Names and brands for the improved mode, stored under a "^" prefix.
     for line in names
         .lines()
@@ -167,12 +292,6 @@ fn build_english(
             b.entry(&format!("^{w}"), &pron);
         }
     }
-    let model = lts::train(&lts_examples(entries, accent, |_| false), 2);
-    b.lts(model.outputs, model.tables);
-    b.meta("lang", name);
-    b.meta("format", "1");
-    b.meta("source", "CMUdict (BSD-2-Clause) converted by tools/lexgen, plus data/sources/en/overrides.tsv and names.tsv");
-    b.build().expect("build")
 }
 
 fn main() {
@@ -245,6 +364,40 @@ fn main() {
             if stale {
                 eprintln!("compiled data is stale: run `cargo run --release -p uccharan-lexgen`");
                 std::process::exit(1);
+            }
+        }
+        "prune-stats" => {
+            // How many lexicon entries the letter-to-sound tables reproduce exactly.
+            for name in ["en-us.ucd", "en-gb.ucd"] {
+                let bytes = std::fs::read(out_dir.join(name)).unwrap();
+                let d = Data::from_vec(bytes).unwrap();
+                let lang = if name.starts_with("en-us") {
+                    uccharan::Lang::EnUs
+                } else {
+                    uccharan::Lang::EnGb
+                };
+                let (mut n, mut same, mut multi) = (0usize, 0usize, 0usize);
+                let mut pron = String::new();
+                for e in &entries {
+                    if e.variant != 1 {
+                        continue;
+                    }
+                    if !d.lookup(&e.word, &mut pron) {
+                        continue;
+                    }
+                    n += 1;
+                    if pron.contains('|') {
+                        multi += 1;
+                        continue;
+                    }
+                    if uccharan::en::letter_to_sound(&d, &e.word, lang) == pron {
+                        same += 1;
+                    }
+                }
+                println!(
+                    "{name}: entries {n}, multi-variant {multi}, LTS reproduces {same} ({:.1}%)",
+                    100.0 * same as f64 / n as f64
+                );
             }
         }
         "lts-eval" => {

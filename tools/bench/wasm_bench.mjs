@@ -45,14 +45,13 @@ for (const [lang, file] of [["en-us", "en_heldout.tsv"], ["en-gb", "en_heldout.t
   await u.loadLanguage(lang);
   u.phonemizeSync(texts[0], opt);
   const load = performance.now() - t0;
-  for (const t of texts.slice(0, 100)) u.phonemizeSync(t, opt);
-  let best = null;
-  for (let r = 0; r < 5; r++) {
-    const lat = [];
-    for (const t of texts) { const a = performance.now(); u.phonemizeSync(t, opt); lat.push(performance.now() - a); }
-    const total = lat.reduce((x, y) => x + y, 0);
-    if (!best || total < best.total) best = { total, lat };
-  }
+  // Warm up (JIT) on other text, then time each held-out sentence once:
+  // uccharan keeps a small cache of recent words, so repeated rounds over the
+  // same sentences would flatter it.
+  for (const t of sentences(file.replace("heldout", "dev"))) u.phonemizeSync(t, opt);
+  const lat = [];
+  for (const t of texts) { const a = performance.now(); u.phonemizeSync(t, opt); lat.push(performance.now() - a); }
+  const best = { total: lat.reduce((x, y) => x + y, 0), lat };
   const words = texts.reduce((n, t) => n + t.trim().split(/\s+/).length, 0);
   const res = { sentences: texts.length, load_data_plus_first_call_ms: load, latency_us_p50: 1000 * pct(best.lat, 0.5), latency_us_p99: 1000 * pct(best.lat, 0.99), words_per_second: words / (best.total / 1000) };
   console.log(`[${lang}] load+first ${load.toFixed(1)} ms  p50 ${res.latency_us_p50.toFixed(1)} µs  p99 ${res.latency_us_p99.toFixed(1)} µs  ${Math.round(res.words_per_second)} words/s`);

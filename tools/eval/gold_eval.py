@@ -107,6 +107,11 @@ def broad(s: str) -> str:
 def skeleton(word: str) -> tuple[str, str]:
     """(consonants, primary-stressed vowel nucleus) after a few notational merges."""
     w = unicodedata.normalize("NFD", word)
+    # notational variants that do not change the name: linking r written twice,
+    # [iə] for [jə], [ŋ] before a velar, [æ]/[ɛ] before r (marry/merry)
+    w = w.replace("ɚɹ", "ɚ").replace("ɹɹ", "ɹ").replace("iə", "jə").replace("ɪə", "jə")
+    w = re.sub(r"ŋ(?=[kɡ])", "n", w)
+    w = re.sub(r"[æɛ](?=ˈ?ɹ)", "ɛ", w)
     for a, b in (("n̩", "ən"), ("l̩", "əl"), ("ɚ", "əɹ"), ("ɝ", "ɜɹ"), ("ᵻ", "ɪ"), ("ɐ", "ə"), ("ɾ", "t"), ("ʔ", "t"), ("ː", ""), ("ˌ", "")):
         w = w.replace(a, b)
     w = re.sub(r"ɔ(?![ɪɹ])", "ɑ", w)

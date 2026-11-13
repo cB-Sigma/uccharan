@@ -4,6 +4,7 @@
 // (`data/<lang>.ucd`) is fetched the first time it is needed.
 
 import initWasm, * as wasm from "./dist/uccharan_wasm.js";
+import { PACKS } from "./packs.js";
 
 export const LANGUAGES = Object.freeze(["en-us", "en-gb", "hi"]);
 export const PROFILES = Object.freeze(["espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx"]);
@@ -30,6 +31,27 @@ async function readBytes(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`failed to fetch ${url}: ${res.status}`);
   return new Uint8Array(await res.arrayBuffer());
+}
+
+async function sha256Hex(bytes) {
+  const subtle = globalThis.crypto?.subtle ?? (isNode ? (await import("node:crypto")).webcrypto.subtle : null);
+  if (!subtle) return null;
+  const digest = new Uint8Array(await subtle.digest("SHA-256", bytes));
+  return Array.from(digest, (b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+// Fetch a pack and check it against the SHA-256 sum this version was built with.
+async function readPack(name) {
+  const url = new URL(`${name}.ucd`, dataBase);
+  const bytes = await readBytes(url);
+  const want = PACKS[name];
+  if (want) {
+    const got = await sha256Hex(bytes);
+    if (got != null && (got !== want.sha256 || bytes.length !== want.size)) {
+      throw new Error(`${url}: SHA-256 ${got} does not match the ${name} pack of this uccharan version`);
+    }
+  }
+  return bytes;
 }
 
 /**
@@ -62,7 +84,7 @@ export async function loadLanguage(lang, bytes) {
   if (!loading.has(tag)) {
     loading.set(
       tag,
-      readBytes(new URL(`${tag}.ucd`, dataBase)).then((b) => wasm.load(tag, b)).finally(() => loading.delete(tag)),
+      readPack(tag).then((b) => wasm.load(tag, b)).finally(() => loading.delete(tag)),
     );
   }
   await loading.get(tag);
@@ -91,7 +113,7 @@ export async function loadKokoro(lang = "en-us") {
   if (tag === "hi" || wasm.hasMisaki(tag)) return;
   const key = `kokoro-${tag}`;
   if (!loading.has(key)) {
-    loading.set(key, readBytes(new URL(`${key}.ucd`, dataBase)).then((b) => { if (!wasm.hasMisaki(tag)) wasm.loadKokoro(b); }).finally(() => loading.delete(key)));
+    loading.set(key, readPack(key).then((b) => { if (!wasm.hasMisaki(tag)) wasm.loadKokoro(b); }).finally(() => loading.delete(key)));
   }
   await loading.get(key);
 }

@@ -11,7 +11,7 @@ rmSync(site, { recursive: true, force: true });
 mkdirSync(join(site, "pkg"), { recursive: true });
 for (const f of ["index.html", "style.css", "app.js"]) cpSync(join(here, f), join(site, f));
 const pkg = join(root, "bindings", "wasm");
-for (const f of ["index.js", "dist", "data"]) cpSync(join(pkg, f), join(site, "pkg", f), { recursive: true });
+for (const f of ["index.js", "packs.js", "dist", "data"]) cpSync(join(pkg, f), join(site, "pkg", f), { recursive: true });
 const brand = join(root, "docs", "assets", "brand");
 cpSync(join(brand, "logo-mark.svg"), join(site, "logo-mark.svg"));
 cpSync(join(brand, "favicon", "favicon.svg"), join(site, "favicon.svg"));

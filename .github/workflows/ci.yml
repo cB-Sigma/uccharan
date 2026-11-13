@@ -36,7 +36,9 @@ jobs:
       - name: Tests
         run: cargo test --workspace
       - name: Compiled language data is up to date
-        run: cargo run --release -p uccharan-lexgen -- check
+        run: |
+          cargo run --release -p uccharan-lexgen -- check
+          python3 tools/packs.py --check
       - name: Licence files in the packages match the repository's
         run: |
           for d in crates/uccharan crates/uccharan-capi bindings/python bindings/wasm; do

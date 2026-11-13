@@ -25,7 +25,10 @@ pub mod data;
 pub mod en;
 pub mod hi;
 pub mod ipa;
+pub mod known;
 pub mod kokoro;
+pub mod lex2;
+pub mod names;
 pub mod norm;
 pub mod profile;
 pub mod text;
@@ -171,9 +174,12 @@ pub struct Sentence {
 /// The phonemizer. Cheap to share between threads (`&Phonemizer` is `Sync`).
 #[derive(Clone, Debug, Default)]
 pub struct Phonemizer {
-    data: [Option<Data>; 3],
+    data: [std::sync::OnceLock<Data>; 3],
     /// misaki dictionaries for the Kokoro English front end (US, GB).
     misaki: [std::sync::OnceLock<std::sync::Arc<kokoro::MisakiLexicon>>; 2],
+    /// Compiled Kokoro English packs loaded at run time (US, GB); dictionaries
+    /// given to `load_misaki` take precedence.
+    kokoro_packs: [std::sync::OnceLock<std::sync::Arc<kokoro::MisakiLexicon>>; 2],
 }
 
 impl Phonemizer {
@@ -184,15 +190,21 @@ impl Phonemizer {
         let mut p = Phonemizer::default();
         #[cfg(feature = "embed-en-us")]
         {
-            p.data[0] = Data::from_static(include_bytes!("../data/en-us.ucd")).ok();
+            if let Ok(d) = Data::from_static(include_bytes!("../data/en-us.ucd")) {
+                p.data[0] = d.into();
+            }
         }
         #[cfg(feature = "embed-en-gb")]
         {
-            p.data[1] = Data::from_static(include_bytes!("../data/en-gb.ucd")).ok();
+            if let Ok(d) = Data::from_static(include_bytes!("../data/en-gb.ucd")) {
+                p.data[1] = d.into();
+            }
         }
         #[cfg(feature = "embed-hi")]
         {
-            p.data[2] = Data::from_static(include_bytes!("../data/hi.ucd")).ok();
+            if let Ok(d) = Data::from_static(include_bytes!("../data/hi.ucd")) {
+                p.data[2] = d.into();
+            }
         }
         p
     }
@@ -204,26 +216,51 @@ impl Phonemizer {
 
     /// Load (or replace) the data image of a language.
     pub fn load(&mut self, lang: Lang, bytes: Vec<u8>) -> Result<(), DataError> {
-        self.data[lang.index()] = Some(Data::from_vec(bytes)?);
+        self.data[lang.index()] = Data::from_vec(bytes)?.into();
         Ok(())
+    }
+
+    /// Load a language pack (`en-us.ucd`, `en-gb.ucd`, `hi.ucd`,
+    /// `kokoro-en-us.ucd` or `kokoro-en-gb.ucd`) into a shared phonemizer.
+    /// The pack names its language in its metadata. Returns that name.
+    /// A language that already has data keeps it (the call still succeeds),
+    /// so that a pack can be loaded on first use from several threads.
+    pub fn load_pack(&self, bytes: Vec<u8>) -> Result<String, String> {
+        let d = Data::from_vec(bytes).map_err(|e| e.to_string())?;
+        let name = d.meta("lang").unwrap_or("").to_string();
+        if let Some(accent) = name.strip_prefix("kokoro-") {
+            let lang =
+                Lang::parse(accent).ok_or_else(|| format!("unknown pack language {name:?}"))?;
+            if self.has_misaki(lang) {
+                return Ok(name);
+            }
+            return match self.load_kokoro_data(d) {
+                Ok(_) => Ok(name),
+                Err(_) if self.has_misaki(lang) => Ok(name),
+                Err(e) => Err(e),
+            };
+        }
+        let lang = Lang::parse(&name).ok_or_else(|| format!("unknown pack language {name:?}"))?;
+        let _ = self.data[lang.index()].set(d);
+        Ok(name)
     }
 
     /// True when the language's data is available.
     pub fn has(&self, lang: Lang) -> bool {
-        self.data[lang.index()].is_some()
+        self.data[lang.index()].get().is_some()
     }
 
     /// The loaded data image of a language.
     pub fn data(&self, lang: Lang) -> Option<&Data> {
-        self.data[lang.index()].as_ref()
+        self.data[lang.index()].get()
     }
 
     fn english(&self, lang: Lang) -> Option<en::English<'_>> {
         // Fall back to the other accent's data rather than produce nothing.
         let d = self.data[lang.index()]
-            .as_ref()
-            .or(self.data[0].as_ref())
-            .or(self.data[1].as_ref())?;
+            .get()
+            .or(self.data[0].get())
+            .or(self.data[1].get())?;
         Some(en::English::new(d, lang))
     }
 
@@ -303,7 +340,7 @@ impl Phonemizer {
                 opt.lang
             }
         };
-        let hi = hi::Hindi::new(self.data[Lang::Hi.index()].as_ref());
+        let hi = hi::Hindi::new(self.data[Lang::Hi.index()].get());
         // Romanised Hindi: rewrite Latin items as Devanagari where the classifier says so.
         let mut owned: Vec<norm::Item>;
         let mut items = items;
@@ -329,6 +366,19 @@ impl Phonemizer {
                 l => {
                     if let Some(e) = self.english(l) {
                         let mut ws = e.span(span, last, compat);
+                        if !compat && opt.lang != Lang::Hi {
+                            // Indian names in English text (improved mode).
+                            for w in ws.iter_mut() {
+                                let t = w.text.as_str();
+                                let capital = t.chars().next().is_some_and(char::is_uppercase)
+                                    && t.chars().skip(1).all(char::is_lowercase);
+                                if capital && !t.contains(' ') && !e.knows(&t.to_lowercase()) {
+                                    if let Some(ipa) = names::indian_name(e.name_model(), t, &hi) {
+                                        w.ipa = ipa;
+                                    }
+                                }
+                            }
+                        }
                         if opt.lang == Lang::Hi {
                             hi::adapt_english(&mut ws, compat);
                         }
@@ -368,14 +418,17 @@ impl Phonemizer {
     /// `kokoro-en-gb.ucd`) at run time, for builds without the
     /// `embed-kokoro` feature (the WebAssembly package fetches it on demand).
     pub fn load_kokoro(&self, bytes: Vec<u8>) -> Result<Lang, String> {
-        let lex =
-            kokoro::MisakiLexicon::from_image(Data::from_vec(bytes).map_err(|e| e.to_string())?)?;
+        self.load_kokoro_data(Data::from_vec(bytes).map_err(|e| e.to_string())?)
+    }
+
+    fn load_kokoro_data(&self, data: Data) -> Result<Lang, String> {
+        let lex = kokoro::MisakiLexicon::from_image(data)?;
         let (slot, lang) = if lex.british() {
             (1, Lang::EnGb)
         } else {
             (0, Lang::EnUs)
         };
-        self.misaki[slot]
+        self.kokoro_packs[slot]
             .set(std::sync::Arc::new(lex))
             .map_err(|_| "Kokoro English data is already loaded for this accent".to_string())?;
         Ok(lang)
@@ -394,7 +447,7 @@ impl Phonemizer {
             Lang::EnGb => 1,
             Lang::Hi => return None,
         };
-        if let Some(l) = self.misaki[slot].get() {
+        if let Some(l) = self.misaki[slot].get().or(self.kokoro_packs[slot].get()) {
             return Some(l);
         }
         #[cfg(feature = "embed-kokoro")]

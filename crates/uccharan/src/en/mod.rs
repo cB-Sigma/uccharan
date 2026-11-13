@@ -194,6 +194,12 @@ pub fn letter_to_sound(data: &Data, word: &str, lang: Lang) -> String {
     if letters.is_empty() || !data.lts(&letters, &mut raw) {
         return String::new();
     }
+    polish_lts(&raw, lang)
+}
+
+/// Clean-up applied to a raw letter-to-sound prediction: doubled consonant
+/// letters give one consonant, and the stress marks are repaired.
+pub(crate) fn polish_lts(raw: &str, lang: Lang) -> String {
     // Doubled letters spell one consonant.
     let mut dedup = String::with_capacity(raw.len());
     let mut prev = '\0';
@@ -281,9 +287,30 @@ impl<'a> English<'a> {
     }
 
     /// Lexicon entry with all variants (`a|b|c`).
+    /// The name-origin model of the language data (empty when absent).
+    pub fn name_model(&self) -> &'a [u8] {
+        self.data.name_model()
+    }
+
+    /// True when `w` (lower case) has an entry in the lexicon or the names list.
+    pub fn knows(&self, w: &str) -> bool {
+        self.entry(w).is_some() || self.entry(&format!("^{w}")).is_some()
+    }
+
     fn entry(&self, key: &str) -> Option<String> {
+        // Running text repeats its words: remember recent answers.
+        crate::data::memo(self.data.id() * 2 + 1, key, || self.entry_uncached(key))
+    }
+
+    fn entry_uncached(&self, key: &str) -> Option<String> {
         let mut s = String::new();
-        self.data.lookup(key, &mut s).then_some(s)
+        if self.data.lookup_uncached(key, &mut s) {
+            return Some(s);
+        }
+        // Words left out because the letter-to-sound model reproduces them
+        // (the "^" names list and words with an apostrophe are never left out).
+        (!key.starts_with('^') && !key.contains('\'') && self.data.known(key))
+            .then(|| letter_to_sound(self.data, key, self.lang))
     }
 
     /// Lexicon pronunciation, choosing among variants by the hint.

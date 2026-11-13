@@ -23,6 +23,10 @@ Build: `cargo build --release -p uccharan-capi` → `target/release/libuccharan.
 `uccharan_string_free`. Flags: `UCCHARAN_IMPROVED`, `UCCHARAN_HINGLISH`,
 `UCCHARAN_NORMALIZE_ESPEAK`, `UCCHARAN_NORMALIZE_OFF`, `UCCHARAN_NO_PUNCTUATION`.
 
+Every language pack is compiled in by default. Build with `--no-default-features --features
+embed-en-us,embed-hi` (or no features at all) for a smaller library, and load the `.ucd` packs
+attached to each GitHub release with `uccharan_load`.
+
 ## Licence
 
 Licence: Apache-2.0. Includes data from the CMU Pronouncing Dictionary (BSD-2-Clause) and misaki (Apache-2.0); see NOTICE.

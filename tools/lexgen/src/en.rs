@@ -414,6 +414,9 @@ pub fn convert(e: &Entry, accent: Accent) -> Vec<Ph> {
                         "i".into()
                     } else if first_syl && g0 == b'e' && prev_p == "R" && i >= 2 {
                         "iː".into()
+                    } else if first_syl && g0 == b'e' && prev_p == "D" && i == 1 {
+                        // de- before a vowel: deodorant, deactivate
+                        "iː".into()
                     } else {
                         "ɪ".into()
                     }
@@ -421,7 +424,8 @@ pub fn convert(e: &Entry, accent: Accent) -> Vec<Ph> {
                     reduced_e(segs, i, first_syl, prev_p, next_p, n, !us).into()
                 } else if g0 == b'e' && first_syl && matches!(prev_p, "R" | "D" | "B") && i == 1 {
                     "ᵻ".into()
-                } else if g == "y" && !last {
+                } else if g == "y" && !last && !(i + 2 == n && matches!(next_p, "Z" | "S")) {
+                    // (Mary's, Tony's keep the final vowel of Mary, Tony)
                     "ɪ".into()
                 } else if was_secondary {
                     "iː".into()

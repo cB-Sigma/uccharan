@@ -23,9 +23,9 @@ await phonemize("I read it yesterday.", { improved: true });          // "aɪ ɹ
 kokoroIds(await phonemize("नमस्ते", { lang: "hi", profile: "kokoro" })); // [0, …, 0]
 ```
 
-The WebAssembly core is about 410 KiB (155 KiB gzipped). Language data is fetched the first time a language is used
-(`data/en-us.ucd` and `data/en-gb.ucd` about 2 MB each, `data/hi.ucd` 4 KB; `data/kokoro-en-*.ucd`, misaki's dictionaries for the Kokoro profile,
-about 3 MB each); point
+The WebAssembly core is about 440 KiB (165 KiB gzipped). Language data is fetched the first time a language is used
+(`data/en-us.ucd` and `data/en-gb.ucd` about 0.7 MB each, `data/hi.ucd` 3 KB; `data/kokoro-en-*.ucd`, misaki's dictionaries for the Kokoro profile,
+about 2 MB each) and checked against the SHA-256 sums the package was built with; point
 `init({ dataBaseUrl })` elsewhere to host it yourself. After `await init()` and
 `await loadLanguage(...)`, `phonemizeSync` runs without awaiting.
 

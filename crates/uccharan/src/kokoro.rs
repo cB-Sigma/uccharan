@@ -49,7 +49,7 @@ pub struct MisakiLexicon {
 #[derive(Clone)]
 enum Store {
     Map(HashMap<Box<str>, Entry>),
-    Image(Data, char),
+    Image(Box<Data>, char),
 }
 
 impl Store {
@@ -337,8 +337,8 @@ impl MisakiLexicon {
         };
         Ok(MisakiLexicon {
             british,
-            gold: Store::Image(data.clone(), '<'),
-            silver: Store::Image(data, '>'),
+            gold: Store::Image(Box::new(data.clone()), '<'),
+            silver: Store::Image(Box::new(data), '>'),
         })
     }
 

@@ -15,10 +15,13 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from collections.abc import Iterable, Mapping
 from typing import Literal, NamedTuple, Union, overload
 
 from . import _native
+from . import packs as _packs
+from .packs import PackError
 
 __version__: str = _native.__version__
 
@@ -32,6 +35,7 @@ PROFILES: tuple[str, ...] = ("espeak-ipa", "piper", "kokoro", "kitten", "matcha"
 __all__ = [
     "LANGUAGES",
     "PROFILES",
+    "PackError",
     "Word",
     "__version__",
     "analyze",
@@ -40,6 +44,7 @@ __all__ = [
     "kitten_ids",
     "load_misaki",
     "kokoro_ids",
+    "load_pack",
     "matcha_ids",
     "phonemize",
     "phonemize_batch",
@@ -47,6 +52,37 @@ __all__ = [
     "sentences",
     "unmapped",
 ]
+
+
+_ready: set[tuple[str, str]] = set()
+
+
+_LATIN = re.compile(r"[A-Za-z]")
+
+
+def _need(lang: str, profile: str = "espeak-ipa", text: object = "") -> None:
+    # en-gb and the Kokoro English data are packs, fetched on first use.
+    # Hindi reads English words in Latin script with the en-gb data.
+    key = (lang, "kokoro" if profile == "kokoro" else "")
+    if key not in _ready:
+        _packs.ensure(lang, profile)
+        _ready.add(key)
+    if ("en-gb", "") not in _ready and lang.lower() in ("hi", "hi-in", "h", "hin"):
+        texts = [text] if isinstance(text, str) else text
+        if any(_LATIN.search(t) for t in texts):  # type: ignore[union-attr]
+            _need("en-gb")
+
+
+def load_pack(name_or_path: Union[str, "os.PathLike[str]"]) -> str:
+    """Load a language pack: a pack name (``en-gb``, ``kokoro-en-us``,
+    ``kokoro-en-gb``; fetched and checked as described in
+    :mod:`uccharan.packs`) or the path of a ``.ucd`` file (used as is).
+    Returns the pack's language. Packs are also loaded on first use."""
+    name = os.fspath(name_or_path)
+    if name in _packs.PACKS:
+        return _native.load_pack(_packs.fetch(name))
+    with open(name, "rb") as fh:
+        return _native.load_pack(fh.read())
 
 
 class Word(NamedTuple):
@@ -127,6 +163,7 @@ def phonemize(
     brackets words read by another language's rules with ``(en)``/``(hi)``
     markers in ``espeak-ipa`` output.
     """
+    _need(lang, profile, text)
     if profile == "piper":
         return _native.sentences(text, lang, normalize, improved, hinglish)
     if profile == "sherpa-onnx":
@@ -150,21 +187,26 @@ def phonemize_batch(
     a space, for ``sherpa-onnx`` codepoints are written in decimal, separated
     by spaces, with `` | `` between sentences.
     """
-    return _native.render_batch(list(texts), lang, profile, normalize, improved, hinglish, punctuation)
+    texts = list(texts)
+    _need(lang, profile, texts)
+    return _native.render_batch(texts, lang, profile, normalize, improved, hinglish, punctuation)
 
 
 def sentences(text: str, lang: str = "en-us", *, normalize: str = "natural", improved: bool = False, hinglish: bool = False) -> list[str]:
     """Piper-shaped sentence strings (same as ``phonemize(profile="piper")``)."""
+    _need(lang, "", text)
     return _native.sentences(text, lang, normalize, improved, hinglish)
 
 
 def codepoints(text: str, lang: str = "en-us", *, normalize: str = "natural", improved: bool = False, hinglish: bool = False) -> list[list[int]]:
     """Codepoint lists per sentence (same as ``phonemize(profile="sherpa-onnx")``)."""
+    _need(lang, "", text)
     return _native.codepoints(text, lang, normalize, improved, hinglish)
 
 
 def analyze(text: str, lang: str = "en-us", *, normalize: str = "natural", improved: bool = False, hinglish: bool = False) -> list[list[tuple[list[Word], str]]]:
     """Sentences → clauses → ``(words, terminator)``."""
+    _need(lang, "", text)
     raw = _native.analyze(text, lang, normalize, improved, hinglish)
     return [[([Word(*w) for w in words], term) for words, term in sentence] for sentence in raw]
 

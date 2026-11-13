@@ -22,7 +22,7 @@ import re
 from collections.abc import Iterable
 from typing import Union
 
-from . import _native
+from . import _native, _need
 
 _VOWEL = "aeiouæɑɒɐɔəɚɛɜɪʊʌᵻ"
 _STRESS = "ˈˌ"
@@ -100,6 +100,7 @@ class EspeakBackend:
         for line in text:
             # phonemizer's punctuation set has no danda: it ends a clause but is not kept.
             pieces = re.split(r"[।॥]+", line) if self.preserve_punctuation else [line]
+            _need(self.language, "", line)
             s = " ".join(
                 p for p in (
                     _native.render(piece, self.language, "espeak-ipa", "espeak", False, False, self.preserve_punctuation,

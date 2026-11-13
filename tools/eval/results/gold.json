@@ -907,8 +907,8 @@
      ]
     },
     "uccharan-compatible": {
-     "passed": 9,
-     "accuracy": 0.45,
+     "passed": 10,
+     "accuracy": 0.5,
      "failed_ids": [
       "u-n-01",
       "u-n-02",
@@ -916,7 +916,6 @@
       "u-n-05",
       "u-n-07",
       "u-n-08",
-      "u-n-10",
       "u-n-13",
       "u-n-16",
       "u-n-19",
@@ -924,8 +923,8 @@
      ]
     },
     "uccharan-default": {
-     "passed": 9,
-     "accuracy": 0.45,
+     "passed": 10,
+     "accuracy": 0.5,
      "failed_ids": [
       "u-n-01",
       "u-n-02",
@@ -933,7 +932,6 @@
       "u-n-05",
       "u-n-07",
       "u-n-08",
-      "u-n-10",
       "u-n-13",
       "u-n-16",
       "u-n-19",
@@ -941,15 +939,13 @@
      ]
     },
     "uccharan-improved": {
-     "passed": 11,
-     "accuracy": 0.55,
+     "passed": 13,
+     "accuracy": 0.65,
      "failed_ids": [
       "u-n-01",
-      "u-n-02",
       "u-n-04",
       "u-n-07",
       "u-n-08",
-      "u-n-10",
       "u-n-16",
       "u-n-19",
       "u-n-20"
@@ -1203,19 +1199,19 @@
    "accuracy": 0.515625
   },
   "uccharan-compatible": {
-   "passed": 61,
+   "passed": 62,
    "items": 128,
-   "accuracy": 0.4765625
+   "accuracy": 0.484375
   },
   "uccharan-default": {
-   "passed": 72,
+   "passed": 73,
    "items": 128,
-   "accuracy": 0.5625
+   "accuracy": 0.5703125
   },
   "uccharan-improved": {
-   "passed": 103,
+   "passed": 105,
    "items": 128,
-   "accuracy": 0.8046875
+   "accuracy": 0.8203125
   }
  }
 }

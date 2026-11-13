@@ -99,10 +99,10 @@ def test_cli():
     assert out.stdout.splitlines() == ["həlˈoʊ", "wˈɜːld"]
 
 
-def test_kokoro_english_built_in_and_override(tmp_path):
-    assert uccharan.has_misaki("en-us") and uccharan.has_misaki("en-gb")
+def test_kokoro_english_pack_and_override(tmp_path):
     assert uccharan.phonemize("I read the book yesterday.", "en-us", "kokoro") == "ˌI ɹˈɛd ðə bˈʊk jˈɛstəɹdˌA."
     assert uccharan.phonemize("Hello.", "en-gb", "kokoro") == "həlˈQ."
+    assert uccharan.has_misaki("en-us") and uccharan.has_misaki("en-gb")
     # A different copy of misaki's dictionaries can replace the built-in one.
     (tmp_path / "gb_gold.json").write_text(json.dumps({"hello": "hɛlˈQ"}, ensure_ascii=False), encoding="utf-8")
     (tmp_path / "gb_silver.json").write_text("{}", encoding="utf-8")
@@ -110,3 +110,22 @@ def test_kokoro_english_built_in_and_override(tmp_path):
     assert uccharan.phonemize("Hello.", "en-gb", "kokoro") == "hɛlˈQ."
     with pytest.raises(ValueError):
         uccharan.load_misaki(tmp_path, "en-gb")
+
+
+def test_packs_are_verified(tmp_path, monkeypatch):
+    from uccharan import packs
+
+    assert set(packs.PACKS) >= {"en-gb", "kokoro-en-us", "kokoro-en-gb"}
+    assert uccharan.load_pack("en-gb") == "en-gb"
+    # A file with the right name but the wrong content is refused.
+    (tmp_path / "kokoro-en-gb.ucd").write_bytes(b"UCD1\0\0\0\0")
+    monkeypatch.setenv("UCCHARAN_DATA_DIR", str(tmp_path))
+    monkeypatch.setenv("XDG_CACHE_HOME", str(tmp_path / "cache"))
+    with pytest.raises(uccharan.PackError, match="SHA-256"):
+        packs.fetch("kokoro-en-gb")
+    # Offline and nowhere to be found: a clear error that names the URL.
+    (tmp_path / "kokoro-en-gb.ucd").unlink()
+    with pytest.raises(uccharan.PackError, match="releases/download"):
+        packs.fetch("kokoro-en-gb")
+    with pytest.raises(uccharan.PackError, match="unknown pack"):
+        packs.fetch("fr")

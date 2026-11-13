@@ -1,0 +1,24 @@
+# Common Indian given names and surnames in their usual Latin spelling, written by hand for
+# uccharan (Apache-2.0). Used only to train the name-origin classifier (character trigrams);
+# no pronunciations. Names in tools/eval/gold/names.tsv are not listed here.
+Aadhya Aakash Aamir Aanya Abhay Achyut Adarsh Advait Ajay Ajit Alok Amar Ambika Amish Amit Amitabh Amol Amrita Anagha Anamika
+Anil Anirban Anita Ankit Ankita Anoop Anupam Anupama Anurag Anushka Aparna Archana Arnav Aruna Arundhati Arvind Asha Ashok Ashutosh
+Atul Avinash Ayesha Ayush Bharat Bhaskar Bhavesh Bhupendra Chaitanya Chandan Chandrakant Charulata Chetan Chhaya Daksh Darshan
+Dattatreya Dev Devika Dhananjay Dharmendra Dhruv Dilip Dinesh Durga Gajendra Ganesh Gargi Gayatri Geeta Girish Gita Gopal Govind
+Gulshan Gurpreet Hari Haridas Harish Harpreet Hemant Hema Himanshu Indira Indrajit Ishita Jagdish Jahnavi Jaspreet Jatin Jaya
+Jayashree Jitendra Jyoti Kailash Kalpana Kamal Kamala Kamini Kanika Karan Karthik Kartik Kaushik Keshav Ketan Khushi Kishore
+Komal Krishna Kriti Kumud Kusum Lalit Lata Laxman Leela Madhav Madhavi Mahesh Mahendra Malati Mamta Manoj Manjula Mansi Mayank
+Mayur Meera Mohan Mohini Mridula Mukesh Murali Nalini Namrata Narendra Naresh Naveen Neeraj Neha Nilesh Nirmala Nisha Nitin Nitya
+Omkar Pallavi Pankaj Parag Parth Parvati Pavan Prabhakar Pranav Prashant Pratibha Prateek Praveen Preeti Priyanka Pushpa Radha
+Radhika Raghav Raghu Rahul Rajeev Rajendra Rajinder Rakesh Ramya Ranjit Ravi Ravindra Rekha Rishabh Rohan Ruchi Rupali Sachin
+Sadhana Sahil Sameer Sandeep Sangeeta Sanjana Santosh Sarita Satish Saurabh Savita Seema Shalini Shantanu Sharad Shashi Shekhar
+Shirish Shivani Shobha Shraddha Shubham Shweta Smita Sneha Sonal Sudha Sudhir Suhas Sujata Sukhwinder Sumit Sunil Suresh Surya
+Sushma Swati Tanmay Tara Tejas Trupti Tushar Uma Umesh Usha Vaibhav Vandana Vasant Vasudha Vedika Vidya Vijay Vinay Vinod Vishal
+Vishnu Vivek Yashwant Yogesh Yogita
+Acharya Agnihotri Ahuja Arya Awasthi Bajaj Bakshi Banerji Barua Basu Bhagat Bhandari Bhargava Bhatia Bhatnagar Bhosale Biswas
+Chakrabarti Chandra Chauhan Chawla Chettiar Chhabra Dalal Dandekar Das Dave Deshmukh Dhawan Dixit Dutta Dwivedi Gadgil Gandhi
+Garg Ghoshal Goel Gowda Goyal Guha Jain Jha Kakkar Kamath Kannan Karnik Kashyap Kaul Khurana Kohli Krishnamoorthy
+Kumaran Lal Madan Mahajan Majumdar Malik Mangeshkar Mathur Mittal Modi Nagarajan Nambiar Nanda Narang Natarajan Nayak
+Nigam Ojha Padmanabhan Pai Palekar Panicker Parekh Pathak Pawar Phadke Pradhan Puri Purohit Raghunathan Rajagopalan Rajan Ranade
+Rathore Rawat Raman Sabharwal Sahni Saini Sarkar Sastry Sethi Shastri Shenoy Shinde Shukla Sinha Sodhi Somani Subramaniam Suri
+Talwar Tandon Thakkar Thapar Upadhyay Vaidya Varghese Venkataraman Verma Wadhwa Walia

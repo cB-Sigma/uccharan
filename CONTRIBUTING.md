@@ -58,12 +58,16 @@ By contributing you agree that your contribution is licensed under the Apache Li
 
 1. Bump the version in `Cargo.toml` (`[workspace.package]`), `bindings/python/pyproject.toml`,
    `bindings/wasm/package.json` and the `uccharan_core` dependency of `crates/uccharan-capi`, and
-   add a `CHANGELOG.md` section.
+   add a `CHANGELOG.md` section. If the language data changed, rebuild it
+   (`cargo run --release -p uccharan-lexgen`) and refresh the pack sums (`python tools/packs.py`);
+   CI checks both.
 2. Actions → Release → Run workflow on `main`. The `targets` input chooses the registries
    (`pypi`, `crates`, `npm`; default all three). Each registry job is independent and skips a
    version that is already published.
 3. The GitHub release and its tag `vX.Y.Z` are created only by a run that includes `pypi`, after
-   the PyPI upload succeeded; the wheels, the sdist, the C library for each platform and the npm
-   tarball are attached to it.
+   the PyPI upload succeeded; the wheels, the sdist, the C library for each platform, the npm
+   tarball and the language packs (`*.ucd` with `packs.sha256`) are attached to it. The wheel
+   downloads en-GB and the Kokoro English packs from this release, so between the PyPI upload and
+   the release (a few minutes) those two need `UCCHARAN_DATA_DIR`.
 
 Secrets: `PYPI_API_TOKEN`, `CARGO_REGISTRY_TOKEN`, `NPM_TOKEN` (organisation secrets).

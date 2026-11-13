@@ -5,43 +5,43 @@
  "sentence_level": {
   "sentences": 2000,
   "reference_symbols": 90537,
-  "per": 0.01184046301512089,
-  "per_without_stress": 0.009449881876476544,
-  "exact_sentence": 0.763,
-  "exact_sentence_without_stress": 0.817,
-  "piper_shape_per": 0.011586088080111984,
-  "piper_shape_exact_sentence": 0.7615,
+  "per": 0.01160851364635453,
+  "per_without_stress": 0.009249884376445295,
+  "exact_sentence": 0.769,
+  "exact_sentence_without_stress": 0.823,
+  "piper_shape_per": 0.011359965543232476,
+  "piper_shape_exact_sentence": 0.7675,
   "word_count_mismatch_sentences": 298,
   "errors_by_class": {
    "vowel": {
-    "count": 465,
-    "share": 0.4337686567164179,
-    "per_contribution": 0.005136021736969416
+    "count": 458,
+    "share": 0.4357754519505233,
+    "per_contribution": 0.005058705280713963
    },
    "stress": {
-    "count": 339,
-    "share": 0.3162313432835821,
-    "per_contribution": 0.0037443255243712515
+    "count": 334,
+    "share": 0.31779257849666986,
+    "per_contribution": 0.0036890994841887845
    },
    "other": {
     "count": 145,
-    "share": 0.13526119402985073,
+    "share": 0.1379638439581351,
     "per_contribution": 0.0016015551652915382
    },
    "consonant": {
-    "count": 78,
-    "share": 0.07276119402985075,
-    "per_contribution": 0.0008615262268464826
+    "count": 76,
+    "share": 0.07231208372978117,
+    "per_contribution": 0.0008394358107734959
    },
    "length": {
-    "count": 34,
-    "share": 0.03171641791044776,
-    "per_contribution": 0.0003755370732407745
+    "count": 29,
+    "share": 0.02759276879162702,
+    "per_contribution": 0.00032031103305830765
    },
    "word-boundary": {
-    "count": 11,
-    "share": 0.010261194029850746,
-    "per_contribution": 0.00012149728840142704
+    "count": 9,
+    "share": 0.008563273073263558,
+    "per_contribution": 9.940687232844031e-05
    }
   },
   "top_confusions": [
@@ -54,12 +54,12 @@
     "count": 60
    },
    {
-    "edit": "∅→ˌ",
-    "count": 51
-   },
-   {
     "edit": "ˈ→∅",
     "count": 48
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 46
    },
    {
     "edit": "∅→ˈ",
@@ -74,12 +74,12 @@
     "count": 35
    },
    {
-    "edit": "ː→∅",
-    "count": 28
-   },
-   {
     "edit": "ˌ→∅",
     "count": 27
+   },
+   {
+    "edit": "ː→∅",
+    "count": 23
    },
    {
     "edit": "∅→ɑ",
@@ -88,10 +88,6 @@
    {
     "edit": "ɐ→ə",
     "count": 22
-   },
-   {
-    "edit": "i→ɪ",
-    "count": 19
    },
    {
     "edit": "ᵻ→ɪ",
@@ -112,6 +108,10 @@
    {
     "edit": "ɑ→∅",
     "count": 16
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 14
    },
    {
     "edit": "ɪ→ᵻ",
@@ -154,8 +154,8 @@
    },
    "lexicon": {
     "words": 7230,
-    "wrong": 385,
-    "rate": 0.05325034578146611
+    "wrong": 377,
+    "rate": 0.05214384508990318
    },
    "oov": {
     "words": 142,
@@ -171,11 +171,17 @@
    },
    "no-digits": {
     "sentences": 1983,
-    "per": 0.011735771079466332,
-    "exact_sentence": 0.7650025214321735
+    "per": 0.01149993261758232,
+    "exact_sentence": 0.7710539586485123
    }
   },
   "examples_of_disagreement": [
+   {
+    "id": "11276402",
+    "text": "Ziri could send us to the unemployment line.",
+    "reference": "zˈiəɹi kʊd sˈɛnd ˌʌs tə ðɪ ʌnɛmplˈɔɪmənt lˈaɪn",
+    "uccharan": "zˈiəɹi kʊd sˈɛnd ˌʌs tə ðɪ ˌʌnɪmplˈɔɪmənt lˈaɪn"
+   },
    {
     "id": "11925832",
     "text": "I wonder why Tom cares about it so much.",
@@ -241,13 +247,30 @@
     "text": "Carmela's expressive eyebrows, a characteristic of many Maltese women, frame her face beautifully.",
     "reference": "kɑːɹmˈɛləz ɛkspɹˈɛsɪv ˈaɪbɹaʊz ɐ kˌæɹɪktɚɹˈɪstɪk ʌv mˈɛni mˈɔltiːz wˈɪmɪn fɹˈeɪm hɜː fˈeɪs bjˈuːɾɪfəli",
     "uccharan": "kɑːɹmˈɛləz ɛkspɹˈɛsɪv ˈaɪbɹaʊz ɐ kˌæɹəktɚɹˈɪstɪk ʌv mˈɛni mɔltˈiːz wˈɪmɪn fɹˈeɪm hɜː fˈeɪs bjˈuːɾɪfli"
-   },
-   {
-    "id": "12117182",
-    "text": "Our inability to talk has prevented us from addressing important matters.",
-    "reference": "ˌaʊɚɹ ɪnɐbˈɪləɾi tə tˈɔːk hɐz pɹɪvˈɛntᵻd ˌʌs fɹʌm ɐdɹˈɛsɪŋ ɪmpˈɔːɹtənt mˈæɾɚz",
-    "uccharan": "ˌaʊɚɹ ˌɪnəbˈɪlᵻɾi tə tˈɔːk hɐz pɹɪvˈɛntᵻd ˌʌs fɹʌm ɐdɹˈɛsɪŋ ɪmpˈɔːɹtənt mˈæɾɚz"
    }
   ]
+ },
+ "word_level": {
+  "frequent-in-lexicon": {
+   "words": 5000,
+   "per": 0.023012024553633995,
+   "exact_word": 0.8976,
+   "exact_word_without_stress": 0.9118,
+   "stress_pattern_error": 0.0322
+  },
+  "rare-in-lexicon": {
+   "words": 3000,
+   "per": 0.18039059386209647,
+   "exact_word": 0.4666666666666667,
+   "exact_word_without_stress": 0.49033333333333334,
+   "stress_pattern_error": 0.21566666666666667
+  },
+  "out-of-lexicon": {
+   "words": 1997,
+   "per": 0.19117485437960216,
+   "exact_word": 0.4361542313470205,
+   "exact_word_without_stress": 0.4782173259889835,
+   "stress_pattern_error": 0.2899349023535303
+  }
  }
 }

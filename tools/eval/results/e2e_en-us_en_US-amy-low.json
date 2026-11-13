@@ -5,38 +5,38 @@
  "asr": "whisper-onnx:base",
  "reference": "espeak-ng 1.52.0 voice en-us",
  "sentences": 500,
- "audio_minutes": 24.953258333333334,
- "sentences_with_identical_phonemes": 377,
+ "audio_minutes": 24.943710416666665,
+ "sentences_with_identical_phonemes": 383,
  "reference_phonemes": {
   "sentences": 500,
-  "wer": 0.03173143251322143,
-  "cer": 0.01360669302197297
+  "wer": 0.02943205334559669,
+  "cer": 0.01259538475682633
  },
  "uccharan_phonemes": {
   "sentences": 500,
   "wer": 0.029661991262359164,
-  "cer": 0.012135699181759677
+  "cer": 0.012457479084306335
  },
- "wer_difference_uccharan_minus_reference": -0.0020694412508622632,
+ "wer_difference_uccharan_minus_reference": 0.00022993791676247446,
  "wer_difference_95ci_paired_bootstrap": [
-  -0.005182514646237044,
-  0.0011238480557428637
+  -0.002081887578070784,
+  0.0025217790004585052
  ],
  "subset_where_phonemes_differ": {
   "reference_phonemes": {
-   "sentences": 123,
-   "wer": 0.05243790248390064,
-   "cer": 0.02229965156794425
+   "sentences": 117,
+   "wer": 0.04230769230769231,
+   "cer": 0.01786039730271551
   },
   "uccharan_phonemes": {
-   "sentences": 123,
-   "wer": 0.04415823367065318,
-   "cer": 0.016724738675958188
+   "sentences": 117,
+   "wer": 0.04326923076923077,
+   "cer": 0.017313650446509933
   }
  },
  "better_worse_same_sentences": {
-  "uccharan_better": 14,
+  "uccharan_better": 10,
   "uccharan_worse": 11,
-  "same": 475
+  "same": 479
  }
 }

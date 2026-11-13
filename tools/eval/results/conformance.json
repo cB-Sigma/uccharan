@@ -14,8 +14,8 @@
    "passed": false,
    "id_sequence_vs_reference": {
     "texts": 3000,
-    "exact": 0.7603333333333333,
-    "id_error_rate": 0.007820222821823453,
+    "exact": 0.767,
+    "id_error_rate": 0.007591561335805222,
     "symbols_the_reference_emits_outside_the_map": {
      "̩": 50,
      "̃": 1
@@ -44,7 +44,7 @@
    "tokens": "piper-en-us-amy-low",
    "language": "en-us",
    "texts": 3000,
-   "codepoints": 137514,
+   "codepoints": 137502,
    "codepoints_not_in_tokens_txt": {
     "̩": 47
    },
@@ -76,9 +76,9 @@
   },
   "english_words_vs_misaki_gold": {
    "dictionary": "us_gold.json",
-   "words": 3603,
-   "exact": 0.6952539550374688,
-   "exact_ignoring_stress": 0.7435470441298918
+   "words": 3629,
+   "exact": 0.9947643979057592,
+   "exact_ignoring_stress": 0.9950399559107193
   }
  },
  "kitten": {
@@ -89,8 +89,8 @@
   "passed": true,
   "ids_vs_phonemizer_package_front_end": {
    "texts": 3000,
-   "exact": 0.7513333333333333,
-   "id_error_rate": 0.013498710201773914
+   "exact": 0.7576666666666667,
+   "id_error_rate": 0.013166542987384714
   }
  }
 }

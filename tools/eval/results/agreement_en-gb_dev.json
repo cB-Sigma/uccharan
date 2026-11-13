@@ -5,42 +5,42 @@
  "sentence_level": {
   "sentences": 2000,
   "reference_symbols": 89621,
-  "per": 0.01420426016223876,
-  "per_without_stress": 0.011606883210479068,
-  "exact_sentence": 0.723,
-  "exact_sentence_without_stress": 0.778,
-  "piper_shape_per": 0.013887378471844618,
-  "piper_shape_exact_sentence": 0.7215,
+  "per": 0.014081521072070162,
+  "per_without_stress": 0.011531021228711231,
+  "exact_sentence": 0.7265,
+  "exact_sentence_without_stress": 0.7795,
+  "piper_shape_per": 0.01376775344193836,
+  "piper_shape_exact_sentence": 0.725,
   "word_count_mismatch_sentences": 299,
   "errors_by_class": {
    "vowel": {
-    "count": 560,
-    "share": 0.4399057344854674,
-    "per_contribution": 0.006248535499492306
+    "count": 558,
+    "share": 0.4421553090332805,
+    "per_contribution": 0.006226219301279834
    },
    "stress": {
-    "count": 373,
-    "share": 0.29300864100549884,
-    "per_contribution": 0.004161970966626126
+    "count": 368,
+    "share": 0.29160063391442154,
+    "per_contribution": 0.004106180471094944
    },
    "other": {
     "count": 226,
-    "share": 0.17753338570306362,
+    "share": 0.179080824088748,
     "per_contribution": 0.002521730398009395
    },
    "consonant": {
-    "count": 96,
-    "share": 0.07541241162608013,
-    "per_contribution": 0.001071177514198681
+    "count": 94,
+    "share": 0.07448494453248812,
+    "per_contribution": 0.0010488613159862087
    },
    "word-boundary": {
-    "count": 12,
-    "share": 0.009426551453260016,
-    "per_contribution": 0.00013389718927483513
+    "count": 10,
+    "share": 0.00792393026941363,
+    "per_contribution": 0.00011158099106236261
    },
    "length": {
     "count": 6,
-    "share": 0.004713275726630008,
+    "share": 0.004754358161648178,
     "per_contribution": 6.694859463741756e-05
    }
   },
@@ -67,7 +67,7 @@
    },
    {
     "edit": "∅→ˌ",
-    "count": 49
+    "count": 44
    },
    {
     "edit": "∅→ˈ",
@@ -134,12 +134,12 @@
     "count": 16
    },
    {
-    "edit": "ə→æ",
-    "count": 16
-   },
-   {
     "edit": "∅→ɑ",
     "count": 15
+   },
+   {
+    "edit": "ə→æ",
+    "count": 14
    },
    {
     "edit": "ə→∅",
@@ -154,8 +154,8 @@
    },
    "lexicon": {
     "words": 7221,
-    "wrong": 440,
-    "rate": 0.06093338872732309
+    "wrong": 436,
+    "rate": 0.060379448829801965
    },
    "oov": {
     "words": 141,
@@ -171,11 +171,17 @@
    },
    "no-digits": {
     "sentences": 1983,
-    "per": 0.013835136024696682,
-    "exact_sentence": 0.7251638930912758
+    "per": 0.013710290662701881,
+    "exact_sentence": 0.7286938981341402
    }
   },
   "examples_of_disagreement": [
+   {
+    "id": "1629436",
+    "text": "That organization is corrupt to the core.",
+    "reference": "ðæt ˌɔːɡɐnaɪzˈeɪʃən ɪz kəɹˈʌpt tə ðə kˈɔː",
+    "uccharan": "ðæt ˌɔːɡənɪzˈeɪʃən ɪz kəɹˈʌpt tə ðə kˈɔː"
+   },
    {
     "id": "13371248",
     "text": "The Algerian dictatorial regime is opposed to democracy and human rights.",
@@ -241,13 +247,30 @@
     "text": "His prime directive is to waste my time.",
     "reference": "hɪz pɹˈaɪm daɪɹˈɛktɪv ɪz tə wˈeɪst maɪ tˈaɪm",
     "uccharan": "hɪz pɹˈaɪm dəɹˈɛktɪv ɪz tə wˈeɪst maɪ tˈaɪm"
-   },
-   {
-    "id": "2026946",
-    "text": "Maybe what I want doesn't matter anymore.",
-    "reference": "mˈeɪbiː wɒt aɪ wˈɒnt dˈʌzənt mˈætɐɹ ˌɛnɪmˈɔː",
-    "uccharan": "mˈeɪbɪ wɒt aɪ wˈɒnt dˈʌzənt mˈætɐɹ ˌɛnɪmˈɔː"
    }
   ]
+ },
+ "word_level": {
+  "frequent-in-lexicon": {
+   "words": 5000,
+   "per": 0.025611903004145606,
+   "exact_word": 0.8918,
+   "exact_word_without_stress": 0.9052,
+   "stress_pattern_error": 0.0348
+  },
+  "rare-in-lexicon": {
+   "words": 3000,
+   "per": 0.17802876411798163,
+   "exact_word": 0.4673333333333333,
+   "exact_word_without_stress": 0.48966666666666664,
+   "stress_pattern_error": 0.21666666666666667
+  },
+  "out-of-lexicon": {
+   "words": 1997,
+   "per": 0.18690443020339928,
+   "exact_word": 0.44516775162744116,
+   "exact_word_without_stress": 0.49073610415623437,
+   "stress_pattern_error": 0.2954431647471207
+  }
  }
 }

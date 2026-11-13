@@ -7,11 +7,12 @@ carries.
 
 | File | What it is | Source | Licence |
 | --- | --- | --- | --- |
-| `crates/uccharan/data/en-us.ucd` | English (General American) lexicon, 126 k entries, and letter-to-sound tables | Built by `tools/lexgen` from CMUdict plus the hand-written files below | BSD-2-Clause (CMUdict) + Apache-2.0 |
-| `crates/uccharan/data/en-gb.ucd` | English (Received Pronunciation) lexicon and letter-to-sound tables | The same CMUdict entries passed through this project's accent rules, plus the hand-written files below | BSD-2-Clause (CMUdict) + Apache-2.0 |
+| `crates/uccharan/data/en-us.ucd` | English (General American): the CMUdict-derived entries that the letter-to-sound tables do not reproduce (52 k of 126 k), a set of the left-out words, letter-to-sound tables, and the name-origin classifier | Built by `tools/lexgen` from CMUdict plus the hand-written files below | BSD-2-Clause (CMUdict) + Apache-2.0 |
+| `crates/uccharan/data/en-gb.ucd` | English (Received Pronunciation): the same kinds of tables | The same CMUdict entries passed through this project's accent rules, plus the hand-written files below | BSD-2-Clause (CMUdict) + Apache-2.0 |
 | `crates/uccharan/data/hi.ucd` | Hindi exceptions and the romanised-Hindi word list | Built from the hand-written files below | Apache-2.0 |
 | `crates/uccharan/data/kokoro-en-us.ucd`, `kokoro-en-gb.ucd` | misaki's dictionaries, compiled (Kokoro English) | see "misaki's English dictionaries" below | Apache-2.0 |
 | `bindings/wasm/data/*.ucd` | Copies of the files above for the npm package | — | as above |
+| `*.ucd` assets of each GitHub release | The same files, which the Python package downloads on first use (checked by SHA-256) | — | as above |
 
 The `.ucd` files are reproducible: `cargo run --release -p uccharan-lexgen`
 rebuilds them byte for byte and `… -- check` fails when they are stale.
@@ -25,14 +26,18 @@ rebuilds them byte for byte and `… -- check` fails when they are stale.
 | `data/sources/en/names.tsv` | Names, brands and loanwords for the improved mode | Written by hand for this project | Apache-2.0 |
 | `data/sources/hi/exceptions.tsv` | Hindi words that do not follow the schwa-deletion rules | Written by hand for this project | Apache-2.0 |
 | `data/sources/hi/romanized.tsv` | Common romanised spellings of Hindi words → Devanagari | Written by hand for this project | Apache-2.0 |
+| `data/sources/names/indian_names.txt` | About 350 common Indian given names and surnames in their usual Latin spelling (no pronunciations) | Written by hand for this project | Apache-2.0 |
+| `tools/eval/gold/names.tsv` (evaluation only, not shipped in packages) | 380 names in short sentences with expected pronunciations | Hand-written IPA, and CMUdict variants where the name is in CMUdict | Apache-2.0; CMUdict parts BSD-2-Clause |
 
 Tables inside the source code (function words and weak forms, homograph cues,
 number words, units, abbreviations, Devanagari letter values, Hindi suffixes)
 were written by hand for this project and are Apache-2.0.
 
 The letter-to-sound tables are counted from CMUdict's own entries (after this
-project's conversion to the target notation). No statistical model in this
-repository was trained on the output of another phonemizer.
+project's conversion to the target notation). The name-origin classifier (the
+`NAMC` section of the English packs: character-trigram counts) is trained on
+`data/sources/names/indian_names.txt` against CMUdict's words. No statistical
+model in this repository was trained on the output of another phonemizer.
 
 ## misaki's English dictionaries (Kokoro English)
 

@@ -30,21 +30,31 @@ never touches the linguistic code.
 
 `crates/uccharan/data/*.ucd` are small read-only images (`data.rs`):
 
-- a lexicon: a front-coded, block-indexed sorted string table used in place (no parsing at load
-  time). A lookup is a binary search over block heads followed by a scan of at most 16 entries, with
-  no allocation beyond the output string;
-- letter-to-sound tables for English: for each letter and a window of neighbouring letters, the
-  phoneme string that letter most often produced in the lexicon. Eight window shapes from 4+4
-  letters down to the bare letter; an entry is stored only when the narrower windows would predict
-  something else. Counted from the CMUdict-derived lexicon, not learned from another phonemizer;
+- a lexicon (`LEX2`, `lex2.rs`): the sorted word → pronunciation table, front-coded in blocks of
+  8 entries and entropy-coded with canonical Huffman codes, used in place (no parsing at load
+  time). A pronunciation is stored as an edit of the letter-to-sound prediction for the word when
+  that is shorter. A lookup is a binary search over four-byte block fences followed by a scan of at
+  most one block. Entries that the letter-to-sound tables reproduce exactly are left out; the build
+  checks that every word still comes out identical;
+- a set of the left-out words (`KNWN`, `known.rs`: a Golomb-coded set, about 1 false hit in 1 024),
+  so that morphology and the name path still know them as words;
+- letter-to-sound tables for English (`LTS2`): for each letter and a window of neighbouring
+  letters, the phoneme string that letter most often produced in the lexicon. Eight window shapes
+  from 4+4 letters down to the bare letter; an entry is stored only when the narrower windows would
+  predict something else. Each table is a hash table with 16-bit fingerprints. Counted from the
+  CMUdict-derived lexicon, not learned from another phonemizer;
+- the name-origin classifier for English (`NAMC`: character-trigram log-odds, `names.rs`);
 - metadata (language, format version, source).
 
 The images are built by `tools/lexgen` from `data/sources` and are reproducible byte for byte.
-English is about 2.1 MB per accent; Hindi is 4 KB because Hindi is almost entirely rules.
+English is about 0.7 MB per accent; Hindi is 3 KB because Hindi is almost entirely rules. Lookups
+go through a small per-thread cache of recent answers (4 096 words).
 
-By default the three images are compiled into the library (`embed-*` cargo features). Without
-those features, or in WebAssembly, the application loads them at run time with
-`Phonemizer::load`.
+By default the Rust crate and the C library compile every image in (`embed-*` cargo features).
+The Python wheel carries en-US and Hindi and fetches the other packs on first use
+(`uccharan.packs`); WebAssembly fetches every pack on demand. Without the features the
+application loads packs at run time with `Phonemizer::load` or, on a shared phonemizer,
+`Phonemizer::load_pack`.
 
 ## Threads and memory
 

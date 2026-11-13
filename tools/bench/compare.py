@@ -47,8 +47,8 @@ VOICES = {"en-us": "en-us", "en-gb": "en-gb-x-rp", "hi": "hi"}
 FLAGS = 4 | 16  # reference-style number reading, no punctuation: same output shape as the reference call
 
 
-def sentences(lang: str, limit: int) -> list[str]:
-    name = "hi_heldout.tsv" if lang == "hi" else "en_heldout.tsv"
+def sentences(lang: str, limit: int, part: str = "heldout") -> list[str]:
+    name = f"{'hi' if lang == 'hi' else 'en'}_{part}.tsv"
     rows = [line.split("\t", 1)[1] for line in (ROOT / "tools/eval/data" / name).read_text(encoding="utf-8").splitlines() if "\t" in line]
     return rows[:limit] if limit else rows
 
@@ -126,33 +126,33 @@ def pct(xs: list[float], q: float) -> float:
     return xs[min(len(xs) - 1, int(q * len(xs)))]
 
 
-def bench_latency(eng, lang: str, texts: list[bytes], rounds: int) -> dict:
-    eng.set_lang(lang)
-    for t in texts[:200]:
-        eng.call(t)
-    best_total = None
-    lat: list[float] = []
-    clock = time.perf_counter
+def bench_latency(engines: list[str], lib_path: str, lang: str, limit: int, rounds: int) -> dict:
+    """Each round runs in a fresh process: initialise, warm up on 1 000
+    development sentences (other text), then time one call per held-out
+    sentence once. uccharan keeps a small per-thread cache of recent words, so
+    timing the same sentences repeatedly in one process would flatter it.
+    The engines take turns round by round, so that a change in machine load
+    affects both alike; the best round of each is kept."""
+    best: dict = {}
     for _ in range(rounds):
-        cur = []
-        t00 = clock()
-        for t in texts:
-            t0 = clock()
-            eng.call(t)
-            cur.append(clock() - t0)
-        total = clock() - t00
-        if best_total is None or total < best_total:
-            best_total, lat = total, cur
-    words = sum(len(t.split()) for t in texts)
-    return {
-        "sentences": len(texts),
-        "words": words,
-        "latency_us_p50": 1e6 * pct(lat, 0.50),
-        "latency_us_p99": 1e6 * pct(lat, 0.99),
-        "latency_us_mean": 1e6 * statistics.fmean(lat),
-        "words_per_second_1_thread": words / sum(lat),
-        "sentences_per_second_1_thread": len(texts) / sum(lat),
-    }
+        for which in engines:
+            r = run_child(which, lib_path, lang, "latency", limit)
+            if which not in best or sum(r["lat"]) < sum(best[which]["lat"]):
+                best[which] = r
+    out = {}
+    for which, b in best.items():
+        lat, words = b["lat"], b["words"]
+        out[which] = {
+            "sentences": len(lat),
+            "words": words,
+            "latency_us_p50": 1e6 * pct(lat, 0.50),
+            "latency_us_p99": 1e6 * pct(lat, 0.99),
+            "latency_us_mean": 1e6 * statistics.fmean(lat),
+            "words_per_second_1_thread": words / sum(lat),
+            "sentences_per_second_1_thread": len(lat) / sum(lat),
+            "method": "best of N fresh processes, engines alternating; warm-up on 1 000 development sentences; each held-out sentence timed once",
+        }
+    return out
 
 
 def bench_threads(eng, lang: str, texts: list[bytes], n: int, repeat: int) -> float:
@@ -181,6 +181,20 @@ def child(which: str, lib_path: str, lang: str, mode: str, limit: int, repeat: i
 
     if mode == "noop":
         print(json.dumps({"rss": rss()}))
+        return
+    if mode == "latency":
+        eng = make(which, lib_path)
+        eng.set_lang(lang)
+        for t in sentences(lang, 1000, "dev"):
+            eng.call(t.encode())
+        texts = [s.encode() for s in sentences(lang, limit)]
+        clock = time.perf_counter
+        lat = []
+        for t in texts:
+            t0 = clock()
+            eng.call(t)
+            lat.append(clock() - t0)
+        print(json.dumps({"lat": lat, "words": sum(len(t.split()) for t in texts)}))
         return
     r0 = rss()
     t0 = time.perf_counter()
@@ -274,14 +288,17 @@ def main() -> int:
     for lang in args.langs.split(","):
         texts = [s.encode() for s in sentences(lang, args.limit)]
         entry: dict = {}
+        latency = bench_latency(engines, args.lib, lang, args.limit, args.rounds)
         for which in engines:
             eng = make(which, args.lib)
-            e = bench_latency(eng, lang, texts, args.rounds)
+            e = latency[which]
             e["disk"] = eng.disk()
             scaling = {}
             for n in threads:
                 if which == "uccharan":
-                    scaling[str(n)] = max(bench_threads(eng, lang, texts, n, 8) for _ in range(5))
+                    # one pass over the held-out set: the worker threads start
+                    # with empty caches, as in the single-thread timing
+                    scaling[str(n)] = max(bench_threads(eng, lang, texts, n, 1) for _ in range(7))
                 else:
                     # separate processes: the library is not thread-safe
                     best = 0.0

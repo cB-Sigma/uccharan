@@ -24,10 +24,11 @@ o.mode = Mode::Improved;
 assert!(p.phonemize("I read it yesterday.", &o).contains("ɹˈɛd"));
 ```
 
-`Phonemizer` is `Sync`; share one instance between threads. The language data (about 2 MB per
-English accent, 4 KB for Hindi, and 3 MB per accent of misaki's dictionaries for the Kokoro
+`Phonemizer` is `Sync`; share one instance between threads. The language data (about 0.7 MB per
+English accent, 3 KB for Hindi, and 2 MB per accent of misaki's dictionaries for the Kokoro
 profile) is compiled in through the default `embed-*` features; turn them
-off and use `Phonemizer::load` to supply it at run time.
+off and use `Phonemizer::load`, or `Phonemizer::load_pack` on a shared phonemizer, to supply the
+`.ucd` packs (attached to each GitHub release) at run time.
 
 Measured agreement with the reference, speed and the end-to-end results are in the repository:
 <https://github.com/cB-Sigma/uccharan>.

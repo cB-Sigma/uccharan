@@ -5,49 +5,49 @@
  "sentence_level": {
   "sentences": 1000,
   "reference_symbols": 96661,
-  "per": 0.015145715438491221,
-  "per_without_stress": 0.012602701573596992,
-  "exact_sentence": 0.452,
-  "exact_sentence_without_stress": 0.52,
-  "piper_shape_per": 0.015196063572893617,
-  "piper_shape_exact_sentence": 0.441,
+  "per": 0.015052606532107054,
+  "per_without_stress": 0.012509863992944344,
+  "exact_sentence": 0.453,
+  "exact_sentence_without_stress": 0.523,
+  "piper_shape_per": 0.015105129681832419,
+  "piper_shape_exact_sentence": 0.442,
   "word_count_mismatch_sentences": 491,
   "errors_by_class": {
    "vowel": {
-    "count": 632,
-    "share": 0.43169398907103823,
-    "per_contribution": 0.006538314314977085
+    "count": 631,
+    "share": 0.4336769759450172,
+    "per_contribution": 0.0065279688809343995
    },
    "stress": {
-    "count": 384,
-    "share": 0.26229508196721313,
-    "per_contribution": 0.00397264667239114
+    "count": 383,
+    "share": 0.2632302405498282,
+    "per_contribution": 0.003962301238348455
    },
    "other": {
-    "count": 211,
-    "share": 0.14412568306010928,
-    "per_contribution": 0.0021828865830065903
+    "count": 212,
+    "share": 0.1457044673539519,
+    "per_contribution": 0.0021932320170492754
    },
    "consonant": {
-    "count": 156,
-    "share": 0.10655737704918032,
-    "per_contribution": 0.0016138877106589007
+    "count": 149,
+    "share": 0.10240549828178694,
+    "per_contribution": 0.001541469672360104
    },
    "word-boundary": {
-    "count": 76,
-    "share": 0.05191256830601093,
-    "per_contribution": 0.0007862529872440799
+    "count": 75,
+    "share": 0.05154639175257732,
+    "per_contribution": 0.0007759075532013946
    },
    "length": {
     "count": 5,
-    "share": 0.0034153005464480873,
+    "share": 0.003436426116838488,
     "per_contribution": 5.17271702134263e-05
    }
   },
   "top_confusions": [
    {
     "edit": "∅→ ",
-    "count": 75
+    "count": 74
    },
    {
     "edit": "∅→ˈ",
@@ -67,7 +67,7 @@
    },
    {
     "edit": "ˌ→ˈ",
-    "count": 48
+    "count": 47
    },
    {
     "edit": "∅→ˌ",
@@ -149,18 +149,18 @@
   "word_error_by_class": {
    "function": {
     "words": 4169,
-    "wrong": 35,
-    "rate": 0.008395298632765651
+    "wrong": 34,
+    "rate": 0.008155432957543776
    },
    "lexicon": {
     "words": 3525,
-    "wrong": 243,
-    "rate": 0.06893617021276596
+    "wrong": 242,
+    "rate": 0.06865248226950355
    },
    "oov": {
     "words": 135,
-    "wrong": 48,
-    "rate": 0.35555555555555557
+    "wrong": 49,
+    "rate": 0.362962962962963
    }
   },
   "by_subset": {
@@ -171,17 +171,11 @@
    },
    "no-digits": {
     "sentences": 986,
-    "per": 0.014875806519630582,
-    "exact_sentence": 0.45740365111561865
+    "per": 0.014780921857209126,
+    "exact_sentence": 0.45841784989858014
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "pg1661-332",
-    "text": "Come on, my boy, and we shall see whether it will not fit the lock.",
-    "reference": "kˈʌm ˈɒn maɪ bˈɔɪ ænd wiːʃˌɐl sˈiː wˈɛðɐɹ ɪt wɪl nˌɒt fˈɪt ðə lˈɒk",
-    "uccharan": "kˈʌm ˈɒn maɪ bˈɔɪ ænd wiː ʃˌæl sˈiː wˈɛðɐɹ ɪt wɪl nˌɒt fˈɪt ðə lˈɒk"
-   },
    {
     "id": "pg1661-232",
     "text": "With much labour we separated them and carried him, living but horribly mangled, into the house.",
@@ -247,7 +241,36 @@
     "text": "These are the more patent facts which are to be deduced from his hat.",
     "reference": "ðiːz ɑː ðə mˈɔː pˈeɪtənt fˈækts wˌɪtʃ ɑː təbɪ dɪdjˈuːst fɹɒm hɪz hˈæt",
     "uccharan": "ðiːz ɑː ðə mˈɔː pˈætənt fˈækts wˌɪtʃ ɑː təbɪ dɪdjˈuːst fɹɒm hɪz hˈæt"
+   },
+   {
+    "id": "pg1661-211",
+    "text": "Holmes, how curious I became as to what the meaning of this extraordinary performance could possibly be.",
+    "reference": "hˈəʊmz hˌaʊ kjˈɔːɹiəs aɪ bɪkˌeɪm æz tə wɒt ðə mˈiːnɪŋ ɒv ðɪs ɛkstɹˈɔːdɪnəɹɪ pəfˈɔːməns kʊd pˈɒsɪblɪ bˈiː",
+    "uccharan": "hˈəʊmz hˌaʊ kjˈɔːɹiəs aɪ bɪkˌeɪm æz tə wɒt ðə mˈiːnɪŋ ɒv ðɪs ˌɛkstɹəɹˈɔːdɪnəɹɪ pəfˈɔːməns kʊd pˈɒsɪblɪ bˈiː"
    }
   ]
+ },
+ "word_level": {
+  "frequent-in-lexicon": {
+   "words": 5000,
+   "per": 0.025611903004145606,
+   "exact_word": 0.8918,
+   "exact_word_without_stress": 0.9052,
+   "stress_pattern_error": 0.0348
+  },
+  "rare-in-lexicon": {
+   "words": 3000,
+   "per": 0.17802876411798163,
+   "exact_word": 0.4673333333333333,
+   "exact_word_without_stress": 0.48966666666666664,
+   "stress_pattern_error": 0.21666666666666667
+  },
+  "out-of-lexicon": {
+   "words": 1997,
+   "per": 0.18690443020339928,
+   "exact_word": 0.44516775162744116,
+   "exact_word_without_stress": 0.49073610415623437,
+   "stress_pattern_error": 0.2954431647471207
+  }
  }
 }

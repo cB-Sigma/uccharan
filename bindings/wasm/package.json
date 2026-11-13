@@ -1,6 +1,6 @@
 {
   "name": "uccharan",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices: 5× faster than espeak-ng, Apache-2.0.",
   "license": "Apache-2.0",
   "author": "Abhinav Gautam <abhinav@codebuckets.in>",
@@ -37,6 +37,7 @@
   "files": [
     "index.js",
     "index.d.ts",
+    "packs.js",
     "dist",
     "data",
     "README.md",

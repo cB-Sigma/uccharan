@@ -11,192 +11,198 @@
    "uccharan": {
     "sentences": 3000,
     "words": 24474,
-    "latency_us_p50": 10.449000001244713,
-    "latency_us_p99": 37.36099915840896,
-    "latency_us_mean": 12.05398900280367,
-    "words_per_second_1_thread": 676788.4057387565,
-    "sentences_per_second_1_thread": 82960.08896037712,
+    "latency_us_p50": 11.763000657083467,
+    "latency_us_p99": 47.77899812324904,
+    "latency_us_mean": 14.057871010057474,
+    "words_per_second_1_thread": 580315.4684065242,
+    "sentences_per_second_1_thread": 71134.52664948814,
+    "method": "best of N fresh processes, engines alternating; warm-up on 1 000 development sentences; each held-out sentence timed once",
     "disk": {
-     "library_bytes": 11170232,
+     "library_bytes": 6243520,
      "data_bytes": 0,
      "note": "language data for en-US, en-GB and Hindi is inside the library"
     },
     "words_per_second_by_workers": {
-     "1": 777634.7832465009,
-     "2": 1404092.4139093973,
-     "4": 1705579.7787443546
+     "1": 737056.0294522746,
+     "2": 594646.9095086964,
+     "4": 664585.5982332514
     },
     "parallel_method": "native threads sharing one handle (batch call)",
     "cold_start_ms": 0.0,
-    "init_plus_first_call_ms": 0.5508160002136719,
-    "rss_after_init_mb": 2.15625,
-    "rss_after_run_mb": 3.75390625,
+    "init_plus_first_call_ms": 0.6470490006904583,
+    "rss_after_init_mb": 1.94140625,
+    "rss_after_run_mb": 2.9609375,
     "scaling_vs_1_worker": {
      "1": 1.0,
-     "2": 1.805593633617488,
-     "4": 2.1932915238485498
+     "2": 0.8067865748966112,
+     "4": 0.9016758179525676
     }
    },
    "reference": {
     "sentences": 3000,
     "words": 24474,
-    "latency_us_p50": 53.235999985190574,
-    "latency_us_p99": 230.0649994140258,
-    "latency_us_mean": 63.79249799889901,
-    "words_per_second_1_thread": 127883.37588129562,
-    "sentences_per_second_1_thread": 15675.824452230401,
+    "latency_us_p50": 62.11800064193085,
+    "latency_us_p99": 237.6650008955039,
+    "latency_us_mean": 71.70356461332025,
+    "words_per_second_1_thread": 113773.98102861545,
+    "sentences_per_second_1_thread": 13946.30804469422,
+    "method": "best of N fresh processes, engines alternating; warm-up on 1 000 development sentences; each held-out sentence timed once",
     "disk": {
      "library_bytes": 661568,
      "data_bytes": 18373365,
      "note": "all languages; the data directory is required at run time"
     },
     "words_per_second_by_workers": {
-     "1": 114660.77437840964,
-     "2": 202028.4467285073,
-     "4": 202064.83306964842
+     "1": 105174.60213578765,
+     "2": 169136.93299778205,
+     "4": 143204.68593614906
     },
     "parallel_method": "separate processes (library is not thread-safe)",
-    "cold_start_ms": 4.970785999830696,
-    "init_plus_first_call_ms": 4.278288000023167,
-    "rss_after_init_mb": 2.97265625,
-    "rss_after_run_mb": 3.60546875
+    "cold_start_ms": 7.793317996402038,
+    "init_plus_first_call_ms": 3.9839099990786053,
+    "rss_after_init_mb": 2.91015625,
+    "rss_after_run_mb": 3.59375
    },
    "speedup": {
-    "latency_p50": 5.094841609613261,
-    "latency_p99": 6.157892042409266,
-    "throughput_1_thread": 5.29223130899334,
-    "throughput_max_workers": 8.44075514197203,
-    "init_plus_first_call": 7.767181778240897
+    "latency_p50": 5.280795474964503,
+    "latency_p99": 4.974256686639421,
+    "throughput_1_thread": 5.100599127849523,
+    "throughput_max_workers": 4.6408090202409396,
+    "init_plus_first_call": 6.157045285329893
    }
   },
   "en-gb": {
    "uccharan": {
     "sentences": 3000,
     "words": 24474,
-    "latency_us_p50": 11.369999810995068,
-    "latency_us_p99": 41.12599981453968,
-    "latency_us_mean": 13.054448660720178,
-    "words_per_second_1_thread": 624921.0680606365,
-    "sentences_per_second_1_thread": 76602.2392817647,
+    "latency_us_p50": 11.010000889655203,
+    "latency_us_p99": 46.6029996459838,
+    "latency_us_mean": 13.377953997405712,
+    "words_per_second_1_thread": 609809.2429965016,
+    "sentences_per_second_1_thread": 74749.84591768836,
+    "method": "best of N fresh processes, engines alternating; warm-up on 1 000 development sentences; each held-out sentence timed once",
     "disk": {
-     "library_bytes": 11170232,
+     "library_bytes": 6243520,
      "data_bytes": 0,
      "note": "language data for en-US, en-GB and Hindi is inside the library"
     },
     "words_per_second_by_workers": {
-     "1": 721440.3913809027,
-     "2": 1200291.2891299992,
-     "4": 1326455.329492575
+     "1": 779758.5959522628,
+     "2": 674945.5091757687,
+     "4": 601153.2297201644
     },
     "parallel_method": "native threads sharing one handle (batch call)",
-    "cold_start_ms": 0.6834349997006939,
-    "init_plus_first_call_ms": 0.5150289998709923,
-    "rss_after_init_mb": 2.1640625,
-    "rss_after_run_mb": 3.6953125,
+    "cold_start_ms": 1.1367810002411716,
+    "init_plus_first_call_ms": 0.6861600013507996,
+    "rss_after_init_mb": 1.89453125,
+    "rss_after_run_mb": 2.9140625,
     "scaling_vs_1_worker": {
      "1": 1.0,
-     "2": 1.663742844828153,
-     "4": 1.8386208276384672
+     "2": 0.8655826465773123,
+     "4": 0.7709478713550051
     }
    },
    "reference": {
     "sentences": 3000,
     "words": 24474,
-    "latency_us_p50": 56.35700017592171,
-    "latency_us_p99": 216.70299975085072,
-    "latency_us_mean": 64.79365200236013,
-    "words_per_second_1_thread": 125907.39598537897,
-    "sentences_per_second_1_thread": 15433.610687102106,
+    "latency_us_p50": 57.18700049328618,
+    "latency_us_p99": 216.1129996238742,
+    "latency_us_mean": 65.46326471288921,
+    "words_per_second_1_thread": 124619.51043504484,
+    "sentences_per_second_1_thread": 15275.742882452174,
+    "method": "best of N fresh processes, engines alternating; warm-up on 1 000 development sentences; each held-out sentence timed once",
     "disk": {
      "library_bytes": 661568,
      "data_bytes": 18373365,
      "note": "all languages; the data directory is required at run time"
     },
     "words_per_second_by_workers": {
-     "1": 135831.7900382893,
-     "2": 214253.9896630531,
-     "4": 275315.713619632
+     "1": 114031.0037761503,
+     "2": 138255.47786162625,
+     "4": 147499.32004837418
     },
     "parallel_method": "separate processes (library is not thread-safe)",
-    "cold_start_ms": 0.18001999978878302,
-    "init_plus_first_call_ms": 3.762657000152103,
-    "rss_after_init_mb": 2.984375,
-    "rss_after_run_mb": 3.6171875
+    "cold_start_ms": 0.9539949969621375,
+    "init_plus_first_call_ms": 3.8572669982386287,
+    "rss_after_init_mb": 2.92578125,
+    "rss_after_run_mb": 3.56640625
    },
    "speedup": {
-    "latency_p50": 4.956640379309691,
-    "latency_p99": 5.269245750330368,
-    "throughput_1_thread": 4.963338834624184,
-    "throughput_max_workers": 4.81794268860791,
-    "init_plus_first_call": 7.305718709227242
+    "latency_p50": 5.194095901210876,
+    "latency_p99": 4.63731951302621,
+    "throughput_1_thread": 4.893368950557314,
+    "throughput_max_workers": 4.0756339047733166,
+    "init_plus_first_call": 5.621527035451021
    }
   },
   "hi": {
    "uccharan": {
     "sentences": 3000,
     "words": 18310,
-    "latency_us_p50": 6.940000275790226,
-    "latency_us_p99": 26.540999897406437,
-    "latency_us_mean": 7.796924667066682,
-    "words_per_second_1_thread": 782787.2647164485,
-    "sentences_per_second_1_thread": 128255.6960212641,
+    "latency_us_p50": 5.523997970158234,
+    "latency_us_p99": 20.87899702019058,
+    "latency_us_mean": 6.3257323527068365,
+    "words_per_second_1_thread": 964842.1705230167,
+    "sentences_per_second_1_thread": 158084.46267444294,
+    "method": "best of N fresh processes, engines alternating; warm-up on 1 000 development sentences; each held-out sentence timed once",
     "disk": {
-     "library_bytes": 11170232,
+     "library_bytes": 6243520,
      "data_bytes": 0,
      "note": "language data for en-US, en-GB and Hindi is inside the library"
     },
     "words_per_second_by_workers": {
-     "1": 1039328.3611499841,
-     "2": 1805254.4316388448,
-     "4": 1744103.4882915004
+     "1": 1278426.8437016027,
+     "2": 1626657.206768528,
+     "4": 1175740.6749031406
     },
     "parallel_method": "native threads sharing one handle (batch call)",
-    "cold_start_ms": 0.0,
-    "init_plus_first_call_ms": 0.46349400054168655,
-    "rss_after_init_mb": 1.40625,
-    "rss_after_run_mb": 2.625,
+    "cold_start_ms": 3.2048709981609136,
+    "init_plus_first_call_ms": 0.6541990005644038,
+    "rss_after_init_mb": 1.70703125,
+    "rss_after_run_mb": 2.68359375,
     "scaling_vs_1_worker": {
      "1": 1.0,
-     "2": 1.7369432983060211,
-     "4": 1.6781063170081347
+     "2": 1.2723897458681694,
+     "4": 0.9196777122567759
     }
    },
    "reference": {
     "sentences": 3000,
     "words": 18310,
-    "latency_us_p50": 14.835000001767185,
-    "latency_us_p99": 48.736000280769076,
-    "latency_us_mean": 16.68674932777018,
-    "words_per_second_1_thread": 365759.2748262918,
-    "sentences_per_second_1_thread": 59927.789430850644,
+    "latency_us_p50": 15.74600173626095,
+    "latency_us_p99": 49.055997806135565,
+    "latency_us_mean": 17.581926013614673,
+    "words_per_second_1_thread": 347136.7885752209,
+    "sentences_per_second_1_thread": 56876.59015432347,
+    "method": "best of N fresh processes, engines alternating; warm-up on 1 000 development sentences; each held-out sentence timed once",
     "disk": {
      "library_bytes": 661568,
      "data_bytes": 18373365,
      "note": "all languages; the data directory is required at run time"
     },
     "words_per_second_by_workers": {
-     "1": 261771.45187696975,
-     "2": 528399.4766897287,
-     "4": 609410.7414032778
+     "1": 290593.27470003936,
+     "2": 454464.2325362483,
+     "4": 423746.4621594452
     },
     "parallel_method": "separate processes (library is not thread-safe)",
-    "cold_start_ms": 7.15760399998544,
-    "init_plus_first_call_ms": 4.88822799979971,
-    "rss_after_init_mb": 2.90234375,
-    "rss_after_run_mb": 4.0703125
+    "cold_start_ms": 0.9617309988243505,
+    "init_plus_first_call_ms": 3.816070999164367,
+    "rss_after_init_mb": 2.8359375,
+    "rss_after_run_mb": 4.01171875
    },
    "speedup": {
-    "latency_p50": 2.137607984472017,
-    "latency_p99": 1.8362533615597323,
-    "throughput_1_thread": 2.1401706493655253,
-    "throughput_max_workers": 2.861950684156614,
-    "init_plus_first_call": 10.54647523827024
+    "latency_p50": 2.8504720351680195,
+    "latency_p99": 2.3495380433598907,
+    "throughput_1_thread": 2.779429326644086,
+    "throughput_max_workers": 2.77463242739886,
+    "init_plus_first_call": 5.8331960089698836
    }
   }
  },
  "machine_scaling_control": {
   "1": 1.0,
-  "2": 1.876094276094276,
-  "4": 2.1474747474747473
+  "2": 1.6,
+  "4": 1.3857707509881423
  }
 }

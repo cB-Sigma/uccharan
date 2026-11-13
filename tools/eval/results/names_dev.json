@@ -1,0 +1,301 @@
+{
+ "split": "dev",
+ "items": 208,
+ "systems": {
+  "reference": {
+   "failed": [
+    "english-colin",
+    "english-douglas",
+    "english-evelyn",
+    "english-rutherford",
+    "indian-akshay",
+    "indian-anirudh",
+    "indian-bhavna",
+    "indian-chandrashekhar",
+    "indian-uday",
+    "indian-zubin",
+    "indian-raghavan",
+    "indian-bhattacharya",
+    "indian-malhotra",
+    "indian-deshpande",
+    "indian-mishra",
+    "indian-thakur",
+    "indian-sengupta",
+    "indian-arora",
+    "indian-krishnamurthy",
+    "indian-viswanathan",
+    "indian-murthy",
+    "indian-vijayalakshmi",
+    "indian-yamini",
+    "hispanic-guadalupe",
+    "hispanic-joaquin",
+    "hispanic-rodrigo",
+    "chinese-zheng",
+    "chinese-xiao",
+    "chinese-yang",
+    "east_asian-kobayashi",
+    "east_asian-sakura",
+    "east_asian-seoyeon",
+    "east_asian-duong",
+    "arabic_persian_turkish-youssef",
+    "arabic_persian_turkish-hussein",
+    "arabic_persian_turkish-karim",
+    "arabic_persian_turkish-hassan",
+    "arabic_persian_turkish-darius",
+    "arabic_persian_turkish-mehmet",
+    "arabic_persian_turkish-ozturk",
+    "african-thabo",
+    "african-nomvula",
+    "african-kipchoge",
+    "european-friedrich",
+    "european-francois",
+    "european-jacques",
+    "european-dubois",
+    "european-lefebvre",
+    "european-rousseau",
+    "european-francesca",
+    "european-wojcik",
+    "european-padraig",
+    "european-eilidh",
+    "european-pieter"
+   ]
+  },
+  "uccharan-compatible": {
+   "failed": [
+    "english-harriet",
+    "indian-akshay",
+    "indian-anirudh",
+    "indian-bhavna",
+    "indian-chandrashekhar",
+    "indian-gaurav",
+    "indian-jayant",
+    "indian-ritu",
+    "indian-raghavan",
+    "indian-ramachandran",
+    "indian-pillai",
+    "indian-bhattacharya",
+    "indian-deshpande",
+    "indian-sengupta",
+    "indian-krishnamurthy",
+    "indian-viswanathan",
+    "indian-gautam",
+    "indian-vijayalakshmi",
+    "east_asian-seoyeon",
+    "arabic_persian_turkish-shirin",
+    "african-nomvula",
+    "african-kipchoge",
+    "european-ciaran",
+    "european-padraig",
+    "european-eilidh"
+   ]
+  },
+  "uccharan-improved": {
+   "failed": [
+    "english-harriet",
+    "indian-abhishek",
+    "indian-anirudh",
+    "indian-bhavna",
+    "indian-ritu",
+    "indian-pillai",
+    "indian-sengupta",
+    "indian-viswanathan",
+    "east_asian-seoyeon",
+    "arabic_persian_turkish-shirin",
+    "african-nomvula",
+    "african-kipchoge",
+    "european-padraig",
+    "european-eilidh",
+    "european-annika"
+   ]
+  }
+ },
+ "by_group": {
+  "african": {
+   "reference": {
+    "passed": 0,
+    "items": 3,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 1,
+    "items": 3,
+    "accuracy": 0.3333333333333333
+   },
+   "uccharan-improved": {
+    "passed": 1,
+    "items": 3,
+    "accuracy": 0.3333333333333333
+   }
+  },
+  "arabic_persian_turkish": {
+   "reference": {
+    "passed": 8,
+    "items": 15,
+    "accuracy": 0.5333333333333333
+   },
+   "uccharan-compatible": {
+    "passed": 14,
+    "items": 15,
+    "accuracy": 0.9333333333333333
+   },
+   "uccharan-improved": {
+    "passed": 14,
+    "items": 15,
+    "accuracy": 0.9333333333333333
+   }
+  },
+  "chinese": {
+   "reference": {
+    "passed": 4,
+    "items": 7,
+    "accuracy": 0.5714285714285714
+   },
+   "uccharan-compatible": {
+    "passed": 7,
+    "items": 7,
+    "accuracy": 1.0
+   },
+   "uccharan-improved": {
+    "passed": 7,
+    "items": 7,
+    "accuracy": 1.0
+   }
+  },
+  "east_asian": {
+   "reference": {
+    "passed": 9,
+    "items": 13,
+    "accuracy": 0.6923076923076923
+   },
+   "uccharan-compatible": {
+    "passed": 12,
+    "items": 13,
+    "accuracy": 0.9230769230769231
+   },
+   "uccharan-improved": {
+    "passed": 12,
+    "items": 13,
+    "accuracy": 0.9230769230769231
+   }
+  },
+  "english": {
+   "reference": {
+    "passed": 63,
+    "items": 67,
+    "accuracy": 0.9402985074626866
+   },
+   "uccharan-compatible": {
+    "passed": 66,
+    "items": 67,
+    "accuracy": 0.9850746268656716
+   },
+   "uccharan-improved": {
+    "passed": 66,
+    "items": 67,
+    "accuracy": 0.9850746268656716
+   }
+  },
+  "european": {
+   "reference": {
+    "passed": 12,
+    "items": 23,
+    "accuracy": 0.5217391304347826
+   },
+   "uccharan-compatible": {
+    "passed": 20,
+    "items": 23,
+    "accuracy": 0.8695652173913043
+   },
+   "uccharan-improved": {
+    "passed": 20,
+    "items": 23,
+    "accuracy": 0.8695652173913043
+   }
+  },
+  "hispanic": {
+   "reference": {
+    "passed": 5,
+    "items": 8,
+    "accuracy": 0.625
+   },
+   "uccharan-compatible": {
+    "passed": 8,
+    "items": 8,
+    "accuracy": 1.0
+   },
+   "uccharan-improved": {
+    "passed": 8,
+    "items": 8,
+    "accuracy": 1.0
+   }
+  },
+  "indian": {
+   "reference": {
+    "passed": 53,
+    "items": 72,
+    "accuracy": 0.7361111111111112
+   },
+   "uccharan-compatible": {
+    "passed": 55,
+    "items": 72,
+    "accuracy": 0.7638888888888888
+   },
+   "uccharan-improved": {
+    "passed": 65,
+    "items": 72,
+    "accuracy": 0.9027777777777778
+   }
+  },
+  "in-cmudict": {
+   "reference": {
+    "passed": 127,
+    "items": 162,
+    "accuracy": 0.7839506172839507
+   },
+   "uccharan-compatible": {
+    "passed": 160,
+    "items": 162,
+    "accuracy": 0.9876543209876543
+   },
+   "uccharan-improved": {
+    "passed": 160,
+    "items": 162,
+    "accuracy": 0.9876543209876543
+   }
+  },
+  "not-in-cmudict": {
+   "reference": {
+    "passed": 27,
+    "items": 46,
+    "accuracy": 0.5869565217391305
+   },
+   "uccharan-compatible": {
+    "passed": 23,
+    "items": 46,
+    "accuracy": 0.5
+   },
+   "uccharan-improved": {
+    "passed": 33,
+    "items": 46,
+    "accuracy": 0.717391304347826
+   }
+  },
+  "all": {
+   "reference": {
+    "passed": 154,
+    "items": 208,
+    "accuracy": 0.7403846153846154
+   },
+   "uccharan-compatible": {
+    "passed": 183,
+    "items": 208,
+    "accuracy": 0.8798076923076923
+   },
+   "uccharan-improved": {
+    "passed": 193,
+    "items": 208,
+    "accuracy": 0.9278846153846154
+   }
+  }
+ }
+}

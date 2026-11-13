@@ -119,6 +119,30 @@ fn load_misaki(lang: &str, gold: &str, silver: &str) -> PyResult<()> {
         .map_err(PyValueError::new_err)
 }
 
+/// Load a language pack image; returns the pack's language name.
+#[pyfunction]
+fn load_pack(bytes: Vec<u8>) -> PyResult<String> {
+    engine().load_pack(bytes).map_err(PyValueError::new_err)
+}
+
+/// Names of the packs that `lang` with `profile` still needs (empty when
+/// everything is loaded or built in).
+#[pyfunction]
+fn missing_packs(lang: &str, profile: &str) -> Vec<String> {
+    let Some(l) = Lang::parse(lang) else {
+        return Vec::new();
+    };
+    let e = engine();
+    let mut out = Vec::new();
+    if !e.has(l) {
+        out.push(l.tag().to_string());
+    }
+    if profile == "kokoro" && l != Lang::Hi && !e.has_misaki(l) {
+        out.push(format!("kokoro-{}", l.tag()));
+    }
+    out
+}
+
 /// True when misaki's dictionaries are loaded for the language.
 #[pyfunction]
 fn has_misaki(lang: &str) -> bool {
@@ -233,6 +257,8 @@ fn _native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(render_batch, m)?)?;
     m.add_function(wrap_pyfunction!(load_misaki, m)?)?;
     m.add_function(wrap_pyfunction!(has_misaki, m)?)?;
+    m.add_function(wrap_pyfunction!(load_pack, m)?)?;
+    m.add_function(wrap_pyfunction!(missing_packs, m)?)?;
     m.add_function(wrap_pyfunction!(sentences, m)?)?;
     m.add_function(wrap_pyfunction!(codepoints, m)?)?;
     m.add_function(wrap_pyfunction!(analyze, m)?)?;

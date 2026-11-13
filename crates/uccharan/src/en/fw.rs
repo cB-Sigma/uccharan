@@ -165,6 +165,7 @@ pub static PAIRS: &[(&str, &str, &str, &str)] = &[
     ("as", "is", "ˌæzˌɪz", "ˌæzˌɪz"),
     ("at", "a", "æɾə", "ætɐ"),
     ("could", "have", "kˌʊdɐv", "kˌʊdɐv"),
+    ("couldn't", "have", "kˌʊdəntəv", "kˌʊdəntəv"),
     ("did", "not", "dɪdnˌɑːt", "dɪdnˌɒt"),
     ("do", "not", "duːnˌɑːt", "duːnˌɒt"),
     ("does", "not", "dʌznˌɑːt", "dʌznˌɒt"),
@@ -181,6 +182,7 @@ pub static PAIRS: &[(&str, &str, &str, &str)] = &[
     ("in", "the", "", ""),
     ("might", "have", "mˌaɪthɐv", "mˌaɪthɐv"),
     ("must", "have", "mˈʌstɐv", "mˈʌstɐv"),
+    ("mustn't", "have", "mˌʌsənthɐv", "mˌʌsənthɐv"),
     ("no", "one", "nˈoʊwˈʌn", "nˈəʊwˈɒn"),
     ("not", "a", "nˌɑːɾə", "nˌɒtɐ"),
     ("of", "a", "əvə", "əvɐ"),
@@ -189,6 +191,7 @@ pub static PAIRS: &[(&str, &str, &str, &str)] = &[
     ("on", "the", "ɔnðə", "ɒnðə"),
     ("out", "of", "ˌaʊɾəv", "ˌaʊtəv"),
     ("should", "have", "ʃˌʊdəv", "ʃˌʊdəv"),
+    ("shouldn't", "have", "ʃˌʊdənthəv", "ʃˌʊdənthəv"),
     ("than", "a", "ðˌænə", "ðˌænɐ"),
     ("that", "a", "ðˌæɾə", "ðˌætɐ"),
     ("that", "the", "", ""),
@@ -200,6 +203,7 @@ pub static PAIRS: &[(&str, &str, &str, &str)] = &[
     ("was", "the", "", ""),
     ("with", "the", "", ""),
     ("would", "have", "wʊdhɐv", "wʊdhɐv"),
+    ("wouldn't", "have", "wˌʊdəntəv", "wˌʊdəntəv"),
 ];
 
 /// Find a function word.

@@ -24,8 +24,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def sentences(limit: int) -> list[str]:
-    rows = (ROOT / "tools/eval/data/en_heldout.tsv").read_text(encoding="utf-8").splitlines()
+def sentences(limit: int, part: str = "heldout") -> list[str]:
+    rows = (ROOT / f"tools/eval/data/en_{part}.tsv").read_text(encoding="utf-8").splitlines()
     return [r.split("\t", 1)[1] for r in rows if "\t" in r][:limit]
 
 
@@ -90,7 +90,8 @@ def main() -> int:
     res: dict = {"sentences": len(texts), "words": words, "systems": {}}
     for which in ("misaki", "uccharan"):
         f = make(which, args.lib, "us")
-        for t in texts[:50]:
+        # Warm up on other text (uccharan keeps a small cache of recent words).
+        for t in sentences(300, "dev"):
             f(t)
         lat = []
         for t in texts:

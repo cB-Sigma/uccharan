@@ -5,8 +5,8 @@
  "accents": {
   "en-us": {
    "sentences": 3000,
-   "exact_sentence": 0.949,
-   "token_error_rate": 0.002480373369598813,
+   "exact_sentence": 0.9486666666666667,
+   "token_error_rate": 0.0024881003894418,
    "sentences_with_aligned_words": 2995,
    "word_agreement": {
     "in-dictionary": {
@@ -19,14 +19,14 @@
     },
     "out-of-dictionary": {
      "words": 372,
-     "identical": 0.7526881720430108
+     "identical": 0.75
     }
    },
    "seconds_per_sentence": {
-    "misaki": 0.0022536161963333445,
-    "uccharan": 2.3515785666556137e-05
+    "misaki": 0.0021237804509995233,
+    "uccharan": 2.525232433375398e-05
    },
-   "speedup": 95.83418680067365,
+   "speedup": 84.1023750103167,
    "top_in_dictionary_disagreements": [
     {
      "word": "that",
@@ -122,8 +122,8 @@
   },
   "en-gb": {
    "sentences": 3000,
-   "exact_sentence": 0.923,
-   "token_error_rate": 0.0036005434782608696,
+   "exact_sentence": 0.9226666666666666,
+   "token_error_rate": 0.0036156400966183577,
    "sentences_with_aligned_words": 2995,
    "word_agreement": {
     "in-dictionary": {
@@ -136,14 +136,14 @@
     },
     "out-of-dictionary": {
      "words": 383,
-     "identical": 0.5691906005221932
+     "identical": 0.566579634464752
     }
    },
    "seconds_per_sentence": {
-    "misaki": 0.0021158427366666124,
-    "uccharan": 2.560576799987757e-05
+    "misaki": 0.0021044157420001285,
+    "uccharan": 2.9367842667852528e-05
    },
-   "speedup": 82.63148899407074,
+   "speedup": 71.65714437389452,
    "top_in_dictionary_disagreements": [
     {
      "word": "that",

@@ -1,0 +1,384 @@
+# Names gold set (built before any names tuning). Columns: id, text, expected, origin, source, split.
+# expected: hand IPA alternatives separated by |; "cmu:" introduces CMUdict ARPABET variants (BSD-2-Clause).
+# source: cmudict, phonology (written by hand from standard pronunciation), or both. split: dev (may be used
+# to adjust rules) or heldout (never used for tuning). Check: skeleton (consonants + stressed vowel).
+english-abigail	Have you met Abigail?	cmu:AE1 B AH0 G EY2 L	english	cmudict	dev
+english-adrian	We had lunch with Adrian yesterday.	cmu:EY1 D R IY0 AH0 N	english	cmudict	heldout
+english-alastair	We had lunch with Alastair yesterday.	cmu:AE1 L AH0 S T EH2 R	english	cmudict	heldout
+english-alexander	We had lunch with Alexander yesterday.	cmu:AE2 L AH0 G Z AE1 N D ER0|AE2 L IH0 G Z AE1 N D ER0	english	cmudict	heldout
+english-alice	The letter was signed by Alice.	cmu:AE1 L AH0 S|AE1 L IH0 S	english	cmudict	dev
+english-amelia	Everyone thanked Amelia for the help.	cmu:AH0 M IY1 L Y AH0	english	cmudict	dev
+english-andrew	We had lunch with Andrew yesterday.	cmu:AE1 N D R UW0	english	cmudict	dev
+english-angela	Angela arrived early this morning.	cmu:AE1 N JH AH0 L AH0	english	cmudict	dev
+english-anthony	Everyone thanked Anthony for the help.	cmu:AE1 N TH AH0 N IY0	english	cmudict	dev
+english-barbara	The letter was signed by Barbara.	cmu:B AA1 R B ER0 AH0|B AA1 R B R AH0	english	cmudict	heldout
+english-benjamin	Everyone thanked Benjamin for the help.	cmu:B EH1 N JH AH0 M AH0 N	english	cmudict	dev
+english-bethany	Have you met Bethany?	cmu:B EH1 TH AH0 N IY0	english	cmudict	heldout
+english-bradley	Everyone thanked Bradley for the help.	cmu:B R AE1 D L IY0	english	cmudict	dev
+english-brandon	Have you met Brandon?	cmu:B R AE1 N D AH0 N	english	cmudict	heldout
+english-brenda	Everyone thanked Brenda for the help.	cmu:B R EH1 N D AH0	english	cmudict	dev
+english-bridget	Bridget arrived early this morning.	cmu:B R IH1 JH AH0 T|B R IH1 JH IH0 T	english	cmudict	dev
+english-caroline	The letter was signed by Caroline.	cmu:K EH1 R AH0 L AY2 N	english	cmudict	heldout
+english-catherine	The letter was signed by Catherine.	cmu:K AE1 TH ER0 AH0 N|K AE1 TH ER0 IH0 N|K AE1 TH R IH0 N	english	cmudict	dev
+english-charlotte	Charlotte arrived early this morning.	cmu:SH AA1 R L AH0 T	english	cmudict	heldout
+english-christopher	Have you met Christopher?	cmu:K R IH1 S T AH0 F ER0	english	cmudict	dev
+english-clarence	The letter was signed by Clarence.	cmu:K L EH1 R AH0 N S	english	cmudict	dev
+english-claudia	Claudia arrived early this morning.	cmu:K L AO1 D IY0 AH0	english	cmudict	dev
+english-colin	Have you met Colin?	cmu:K OW1 L IH0 N	english	cmudict	dev
+english-courtney	The letter was signed by Courtney.	cmu:K AO1 R T N IY0	english	cmudict	heldout
+english-daniel	The letter was signed by Daniel.	cmu:D AE1 N Y AH0 L	english	cmudict	heldout
+english-deborah	The letter was signed by Deborah.	cmu:D EH1 B ER0 AH0|D EH1 B R AH0	english	cmudict	heldout
+english-dennis	Have you met Dennis?	cmu:D EH1 N IH0 S	english	cmudict	heldout
+english-dorothy	Have you met Dorothy?	cmu:D AO1 R AH0 TH IY0|D AO1 R TH IY0	english	cmudict	heldout
+english-douglas	We had lunch with Douglas yesterday.	cmu:D AH1 G L AH0 S	english	cmudict	dev
+english-edmund	Everyone thanked Edmund for the help.	cmu:EH1 D M AH0 N D	english	cmudict	dev
+english-eleanor	We had lunch with Eleanor yesterday.	cmu:EH1 L AH0 N AO0 R|EH1 L AH0 N ER0	english	cmudict	heldout
+english-elizabeth	The letter was signed by Elizabeth.	cmu:IH0 L IH1 Z AH0 B AH0 TH|IH0 L IH1 Z AH0 B IH0 TH	english	cmudict	dev
+english-emily	Have you met Emily?	cmu:EH1 M IH0 L IY0	english	cmudict	dev
+english-ethan	We had lunch with Ethan yesterday.	cmu:IY1 TH AH0 N	english	cmudict	heldout
+english-evelyn	The letter was signed by Evelyn.	cmu:EH1 V AH0 L AH0 N|EH1 V AH0 L IH0 N	english	cmudict	dev
+english-florence	The letter was signed by Florence.	cmu:F L AO1 R AH0 N S	english	cmudict	dev
+english-frederick	Frederick arrived early this morning.	cmu:F R EH1 D R IH0 K|F R EH1 D ER0 IH0 K	english	cmudict	dev
+english-gareth	Have you met Gareth?	cmu:G EH1 R IH0 TH	english	cmudict	heldout
+english-geoffrey	We had lunch with Geoffrey yesterday.	cmu:JH EH1 F R IY0	english	cmudict	dev
+english-gerald	The letter was signed by Gerald.	cmu:JH EH1 R AH0 L D	english	cmudict	dev
+english-gillian	Gillian arrived early this morning.	cmu:JH IH1 L IY0 AH0 N	english	cmudict	heldout
+english-gordon	We had lunch with Gordon yesterday.	cmu:G AO1 R D AH0 N	english	cmudict	dev
+english-graham	Everyone thanked Graham for the help.	cmu:G R EY1 AH0 M|G R AE1 M	english	cmudict	heldout
+english-gregory	The letter was signed by Gregory.	cmu:G R EH1 G ER0 IY0	english	cmudict	dev
+english-gwendolyn	Gwendolyn arrived early this morning.	cmu:G W EH1 N D AH0 L IH0 N	english	cmudict	heldout
+english-harold	We had lunch with Harold yesterday.	cmu:HH EH1 R AH0 L D	english	cmudict	dev
+english-harriet	Harriet arrived early this morning.	cmu:HH EH1 R IY0 AH0 T	english	cmudict	dev
+english-hazel	Have you met Hazel?	cmu:HH EY1 Z AH0 L	english	cmudict	heldout
+english-heather	We had lunch with Heather yesterday.	cmu:HH EH1 DH ER0	english	cmudict	heldout
+english-hugh	Have you met Hugh?	cmu:HH Y UW1|Y UW1	english	cmudict	heldout
+english-imogen	Have you met Imogen?	cmu:IH1 M AH0 G AH0 N	english	cmudict	heldout
+english-isabella	Have you met Isabella?	cmu:IH2 Z AH0 B EH1 L AH0	english	cmudict	heldout
+english-jacqueline	We had lunch with Jacqueline yesterday.	cmu:JH AE1 K W AH0 L IH0 N|JH AE1 K L IH0 N|JH AE1 K AH0 L IH0 N	english	cmudict	dev
+english-jasper	The letter was signed by Jasper.	cmu:JH AE1 S P ER0	english	cmudict	heldout
+english-jennifer	Jennifer arrived early this morning.	cmu:JH EH1 N AH0 F ER0	english	cmudict	heldout
+english-jeremy	The letter was signed by Jeremy.	cmu:JH EH1 R AH0 M IY2	english	cmudict	heldout
+english-jessica	Have you met Jessica?	cmu:JH EH1 S IH0 K AH0	english	cmudict	dev
+english-jonathan	We had lunch with Jonathan yesterday.	cmu:JH AA1 N AH0 TH AH0 N	english	cmudict	dev
+english-joseph	Joseph arrived early this morning.	cmu:JH OW1 S AH0 F|JH OW1 Z AH0 F	english	cmudict	heldout
+english-josephine	We had lunch with Josephine yesterday.	cmu:JH OW1 S AH0 F IY2 N	english	cmudict	heldout
+english-katherine	Katherine arrived early this morning.	cmu:K AE1 TH ER0 IH0 N|K AE1 TH R IH0 N	english	cmudict	heldout
+english-kenneth	Kenneth arrived early this morning.	cmu:K EH1 N IH0 TH	english	cmudict	dev
+english-lawrence	Lawrence arrived early this morning.	cmu:L AO1 R AH0 N S	english	cmudict	dev
+english-leonard	The letter was signed by Leonard.	cmu:L EH1 N ER0 D	english	cmudict	heldout
+english-lillian	Everyone thanked Lillian for the help.	cmu:L IH1 L IY0 AH0 N	english	cmudict	dev
+english-lucinda	We had lunch with Lucinda yesterday.	cmu:L UW0 S IH1 N D AH0	english	cmudict	dev
+english-madeleine	We had lunch with Madeleine yesterday.	cmu:M AE2 D AH0 L EH1 N	english	cmudict	heldout
+english-malcolm	Have you met Malcolm?	cmu:M AE1 L K AH0 M	english	cmudict	heldout
+english-margaret	Margaret arrived early this morning.	cmu:M AA1 R G ER0 IH0 T|M AA1 R G R AH0 T|M AA1 R G R IH0 T	english	cmudict	dev
+english-matthew	Have you met Matthew?	cmu:M AE1 TH Y UW0	english	cmudict	heldout
+english-meredith	Everyone thanked Meredith for the help.	cmu:M EH1 R IH0 D IH0 TH	english	cmudict	heldout
+english-michael	Everyone thanked Michael for the help.	cmu:M AY1 K AH0 L	english	cmudict	heldout
+english-miranda	Miranda arrived early this morning.	cmu:M ER0 AE1 N D AH0	english	cmudict	dev
+english-nathaniel	The letter was signed by Nathaniel.	cmu:N AH0 TH AE1 N Y AH0 L	english	cmudict	dev
+english-nicholas	Have you met Nicholas?	cmu:N IH1 K AH0 L AH0 S|N IH1 K L AH0 S	english	cmudict	heldout
+english-oliver	Have you met Oliver?	cmu:AA1 L AH0 V ER0|AA1 L IH0 V ER0	english	cmudict	dev
+english-penelope	Everyone thanked Penelope for the help.	cmu:P AH0 N EH1 L AH0 P IY0	english	cmudict	dev
+english-philippa	We had lunch with Philippa yesterday.	cmu:F IH0 L IH1 P AH0	english	cmudict	dev
+english-phoebe	The letter was signed by Phoebe.	cmu:F IY1 B IY0	english	cmudict	dev
+english-quentin	We had lunch with Quentin yesterday.	cmu:K W EH1 N T IH0 N	english	cmudict	heldout
+english-rebecca	We had lunch with Rebecca yesterday.	cmu:R AH0 B EH1 K AH0	english	cmudict	heldout
+english-reginald	We had lunch with Reginald yesterday.	cmu:R EH1 JH AH0 N AH0 L D	english	cmudict	dev
+english-rosalind	Rosalind arrived early this morning.	cmu:R AA1 Z AH0 L IH0 N D	english	cmudict	heldout
+english-rupert	The letter was signed by Rupert.	cmu:R UW1 P ER0 T	english	cmudict	dev
+english-samantha	Have you met Samantha?	cmu:S AH0 M AE1 N TH AH0	english	cmudict	dev
+english-sebastian	We had lunch with Sebastian yesterday.	cmu:S AH0 B AE1 S CH AH0 N	english	cmudict	heldout
+english-stephanie	Everyone thanked Stephanie for the help.	cmu:S T EH1 F AH0 N IY0	english	cmudict	dev
+english-theodore	Theodore arrived early this morning.	cmu:TH IY1 AH0 D AO2 R	english	cmudict	heldout
+english-timothy	The letter was signed by Timothy.	cmu:T IH1 M AH0 TH IY0	english	cmudict	dev
+english-vanessa	Have you met Vanessa?	cmu:V AH0 N EH1 S AH0	english	cmudict	dev
+english-veronica	The letter was signed by Veronica.	cmu:V ER0 AA1 N IH0 K AH0	english	cmudict	heldout
+english-vivian	Have you met Vivian?	cmu:V IH1 V IY0 AH0 N	english	cmudict	heldout
+english-winifred	We had lunch with Winifred yesterday.	cmu:W IH1 N IH0 F R IH0 D	english	cmudict	dev
+english-zachary	Have you met Zachary?	cmu:Z AE1 K ER0 IY0	english	cmudict	heldout
+english-ashworth	Everyone thanked Ashworth for the help.	cmu:AE1 SH W ER2 TH	english	cmudict	dev
+english-beckett	We had lunch with Beckett yesterday.	cmu:B EH1 K IH0 T	english	cmudict	dev
+english-blackwood	The letter was signed by Blackwood.	cmu:B L AE1 K W UH2 D	english	cmudict	dev
+english-bradshaw	Bradshaw arrived early this morning.	cmu:B R AE1 D SH AO2	english	cmudict	dev
+english-carmichael	Carmichael arrived early this morning.	cmu:K AA1 R M AY2 K AH0 L	english	cmudict	heldout
+english-chamberlain	Have you met Chamberlain?	cmu:CH EY1 M B ER0 L AH0 N|CH EY1 M B ER0 L IH0 N	english	cmudict	dev
+english-davenport	Everyone thanked Davenport for the help.	cmu:D AE1 V AH0 N P AO2 R T	english	cmudict	dev
+english-featherstone	The letter was signed by Featherstone.	cmu:F EH1 DH ER0 S T OW2 N	english	cmudict	dev
+english-fitzgerald	Fitzgerald arrived early this morning.	cmu:F IH0 T S JH EH1 R AH0 L D	english	cmudict	heldout
+english-gallagher	Everyone thanked Gallagher for the help.	cmu:G AE1 L AH0 G ER0|G AE1 L AH0 HH ER0	english	cmudict	dev
+english-hargreaves	Have you met Hargreaves?	cmu:HH AA1 R G R IY2 V Z	english	cmudict	heldout
+english-hathaway	The letter was signed by Hathaway.	cmu:HH AE1 TH AH0 W EY2	english	cmudict	dev
+english-kensington	Kensington arrived early this morning.	cmu:K EH1 N Z IH0 NG T AH0 N	english	cmudict	heldout
+english-livingstone	We had lunch with Livingstone yesterday.	cmu:L IH1 V IH0 NG S T OW2 N	english	cmudict	heldout
+english-macdonald	The letter was signed by Macdonald.	cmu:M AH0 K D AA1 N AH0 L D	english	cmudict	dev
+english-mackenzie	We had lunch with Mackenzie yesterday.	cmu:M AH0 K EH1 N Z IY0	english	cmudict	dev
+english-marlowe	The letter was signed by Marlowe.	cmu:M AA1 R L OW2	english	cmudict	heldout
+english-pemberton	Everyone thanked Pemberton for the help.	cmu:P EH1 M B ER0 T AH0 N	english	cmudict	dev
+english-prendergast	We had lunch with Prendergast yesterday.	cmu:P R EH1 N D ER0 G AE2 S T	english	cmudict	dev
+english-rutherford	Everyone thanked Rutherford for the help.	cmu:R AH1 TH ER0 F ER0 D	english	cmudict	dev
+english-sinclair	The letter was signed by Sinclair.	cmu:S IH0 N K L EH1 R|S IH1 N K L EH0 R	english	cmudict	dev
+english-thackeray	The letter was signed by Thackeray.	cmu:TH AE1 K ER0 IY0	english	cmudict	dev
+english-whitfield	Have you met Whitfield?	cmu:W IH1 T F IY0 L D|HH W IH1 T F IY0 L D	english	cmudict	heldout
+english-wainwright	Everyone thanked Wainwright for the help.	cmu:W EY1 N R AY2 T	english	cmudict	dev
+english-worthington	Everyone thanked Worthington for the help.	cmu:W ER1 DH IH0 NG T AH0 N	english	cmudict	dev
+indian-aarav	Have you met Aarav?	ˈɑːɹəv|ɑːɹˈʌv|ˈɑːɹʌv	indian	phonology	dev
+indian-abhishek	The letter was signed by Abhishek.	əbˈɪʃeɪk|ʌbhˈɪʃeɪk|əbhˈɪʃɛk	indian	phonology	dev
+indian-aditi	Aditi arrived early this morning.	ˈʌdɪti|ədˈiːti|ˈædɪti	indian	phonology	heldout
+indian-aditya	The letter was signed by Aditya.	ədˈɪtjə|ɑːdˈɪtjə|ədˈiːtjə	indian	phonology	heldout
+indian-akshay	The letter was signed by Akshay.	ˈʌkʃeɪ|əkʃˈeɪ	indian	phonology	dev
+indian-ananya	We had lunch with Ananya yesterday.	ənˈʌnjə|ɑːnˈʌnjə|ənˈɑːnjə	indian	phonology	heldout
+indian-anirudh	The letter was signed by Anirudh.	ənˈɪɹʊd|ənɪɹˈʊd	indian	phonology	dev
+indian-anjali	Everyone thanked Anjali for the help.	ˈʌndʒəli|ɑːndʒˈɑːli|ˈændʒəli	indian	phonology	dev
+indian-arjun	We had lunch with Arjun yesterday.	ˈɑːɹdʒʊn|ˈɑːɹdʒən|ɑːɹdʒˈuːn|cmu:AA1 R JH AH0 N	indian	phonology+cmudict	dev
+indian-ashwin	The letter was signed by Ashwin.	ˈæʃwɪn|ˈʌʃwɪn|ˈɑːʃwɪn	indian	phonology	dev
+indian-bhavna	Everyone thanked Bhavna for the help.	bˈɑːvnə|bhˈɑːvnə	indian	phonology	dev
+indian-chandrashekhar	Have you met Chandrashekhar?	tʃˌʌndɹəʃˈeɪkɚ|tʃˌʌndɹəʃˈɛkɚ	indian	phonology	dev
+indian-deepika	We had lunch with Deepika yesterday.	dˈiːpɪkə|dɪpˈiːkə	indian	phonology	dev
+indian-devendra	Devendra arrived early this morning.	dəvˈɛndɹə|deɪvˈeɪndɹə|dɛvˈɛndɹə	indian	phonology	dev
+indian-divya	We had lunch with Divya yesterday.	dˈɪvjə|dˈɪvjɑː	indian	phonology	dev
+indian-gaurav	Everyone thanked Gaurav for the help.	ɡˈaʊɹəv|ɡˈɔːɹəv|ɡˈɔɹəv	indian	phonology	dev
+indian-harsha	Have you met Harsha?	hˈɑːɹʃə|hˈʌɹʃə|cmu:HH AA1 R SH AH0	indian	phonology+cmudict	dev
+indian-ishaan	The letter was signed by Ishaan.	ɪʃˈɑːn|iːʃˈɑːn	indian	phonology	heldout
+indian-jayant	Jayant arrived early this morning.	dʒˈeɪənt|dʒəjˈʌnt|dʒˈaɪənt	indian	phonology	dev
+indian-kavya	Everyone thanked Kavya for the help.	kˈɑːvjə|kˈævjə	indian	phonology	heldout
+indian-krishnan	Krishnan arrived early this morning.	kɹˈɪʃnən|kɹˈɪʃnʌn|cmu:K R IH1 SH N AH0 N	indian	phonology+cmudict	dev
+indian-lakshmi	We had lunch with Lakshmi yesterday.	lˈʌkʃmi|lˈækʃmi|lˈɑːkʃmi	indian	phonology	dev
+indian-madhuri	We had lunch with Madhuri yesterday.	mˈɑːdʊɹi|mədˈʊɹi|mˈɑːdhʊɹi	indian	phonology	heldout
+indian-manish	Have you met Manish?	mənˈiːʃ|mˈʌnɪʃ|cmu:M AE1 N IH0 SH	indian	phonology+cmudict	heldout
+indian-meenakshi	The letter was signed by Meenakshi.	miːnˈɑːkʃi|mɪnˈʌkʃi|mˈiːnəkʃi	indian	phonology	dev
+indian-nandini	Everyone thanked Nandini for the help.	nˈʌndɪni|nˈændɪni|nɑːndˈiːni	indian	phonology	heldout
+indian-nikhil	We had lunch with Nikhil yesterday.	nˈɪkɪl|nˈɪkhɪl|nɪkˈɪl	indian	phonology	dev
+indian-pooja	The letter was signed by Pooja.	pˈuːdʒə|pˈuːdʒɑː	indian	phonology	heldout
+indian-pradeep	The letter was signed by Pradeep.	pɹədˈiːp|pɹɑːdˈiːp	indian	phonology	heldout
+indian-prakash	The letter was signed by Prakash.	pɹəkˈɑːʃ|pɹəkˈæʃ|cmu:P R AA0 K AA1 SH	indian	phonology+cmudict	dev
+indian-rajesh	Everyone thanked Rajesh for the help.	ɹɑːdʒˈeɪʃ|ɹədʒˈɛʃ|ɹɑːdʒˈɛʃ|ɹˈɑːdʒɛʃ	indian	phonology	heldout
+indian-ramesh	Everyone thanked Ramesh for the help.	ɹəmˈeɪʃ|ɹəmˈɛʃ|ɹˈɑːmɛʃ|cmu:R AA1 M EH2 SH	indian	phonology+cmudict	heldout
+indian-ritu	Have you met Ritu?	ɹˈɪtuː|ɹˈɪtu	indian	phonology	dev
+indian-rohit	Rohit arrived early this morning.	ɹˈoʊhɪt|ɹoʊhˈɪt|ɹˈoʊɪt	indian	phonology	dev
+indian-sanjay	Sanjay arrived early this morning.	sˈʌndʒeɪ|sˈændʒeɪ|sɑːndʒˈeɪ|cmu:S AE1 N JH EY0	indian	phonology+cmudict	dev
+indian-shreya	Shreya arrived early this morning.	ʃɹˈeɪə|ʃɹˈeɪjə	indian	phonology	dev
+indian-siddharth	The letter was signed by Siddharth.	sɪdˈɑːɹθ|sɪdˈɑːɹt|sˈɪdɑːɹθ	indian	phonology	dev
+indian-sunita	Everyone thanked Sunita for the help.	sʊnˈiːtə|suːnˈiːtə	indian	phonology	heldout
+indian-tanvi	We had lunch with Tanvi yesterday.	tˈʌnvi|tˈænvi	indian	phonology	dev
+indian-uday	Everyone thanked Uday for the help.	ˈuːdeɪ|ʊdˈeɪ|cmu:UW1 D EY0	indian	phonology+cmudict	dev
+indian-varun	We had lunch with Varun yesterday.	vəɹˈʊn|vˈʌɹʊn|vɑːɹˈuːn	indian	phonology	heldout
+indian-vikram	Vikram arrived early this morning.	vˈɪkɹəm|vˈɪkɹʌm	indian	phonology	dev
+indian-yash	The letter was signed by Yash.	jˈʌʃ|jˈæʃ|jˈɑːʃ	indian	phonology	dev
+indian-zubin	Have you met Zubin?	zuːbˈiːn|zˈuːbɪn|cmu:Z UW1 B IH0 N	indian	phonology+cmudict	dev
+indian-venkatesh	We had lunch with Venkatesh yesterday.	vˌɛŋkətˈeɪʃ|vˌɛŋkətˈɛʃ|wˌɛŋkətˈeɪʃ|cmu:V EH2 N K AA0 T EH1 SH	indian	phonology+cmudict	dev
+indian-srinivasan	We had lunch with Srinivasan yesterday.	ʃɹˌiːnɪvˈɑːsən|sɹˌiːnɪvˈɑːsən|ʃɹˌiːnɪvˈæsən|cmu:S R IY0 N IY2 V AA0 S AA1 N|SH R IY0 N IY2 V AA0 S AA1 N	indian	phonology+cmudict	heldout
+indian-subramanian	The letter was signed by Subramanian.	sˌʊbɹəmˈɑːniən|sˌuːbɹəmˈæniən|cmu:S UW2 B R AH0 M AA1 N IY0 AH0 N	indian	phonology+cmudict	heldout
+indian-raghavan	The letter was signed by Raghavan.	ɹˈɑːɡəvən|ɹˈʌɡəvən	indian	phonology	dev
+indian-balasubramaniam	Have you met Balasubramaniam?	bˌɑːləsˌʊbɹəmˈɑːniəm|bˌæləsˌuːbɹəmˈæniəm	indian	phonology	heldout
+indian-ramachandran	Have you met Ramachandran?	ɹˌɑːmətʃˈʌndɹən|ɹˌæmətʃˈændɹən	indian	phonology	dev
+indian-iyer	Have you met Iyer?	ˈaɪjɚ|ˈaɪɚ|cmu:AY1 ER0	indian	phonology+cmudict	heldout
+indian-iyengar	Iyengar arrived early this morning.	ˈaɪjəŋɡɑːɹ|aɪjˈɛŋɡɑːɹ	indian	phonology	heldout
+indian-nair	Everyone thanked Nair for the help.	nˈaɪɚ|nˈɛɹ|cmu:N EH1 R	indian	phonology+cmudict	dev
+indian-menon	The letter was signed by Menon.	mˈeɪnən|mˈɛnən|cmu:M EY0 N AO1 N	indian	phonology+cmudict	dev
+indian-pillai	We had lunch with Pillai yesterday.	pˈɪlaɪ|pɪlˈaɪ	indian	phonology	dev
+indian-reddy	We had lunch with Reddy yesterday.	ɹˈɛdi|cmu:R EH1 D IY0	indian	phonology+cmudict	heldout
+indian-naidu	Everyone thanked Naidu for the help.	nˈaɪduː|nˈaɪdu	indian	phonology	heldout
+indian-chaudhary	Have you met Chaudhary?	tʃˈaʊdəɹi|tʃˈɔːdəɹi|tʃˈaʊdhəɹi|tʃˈoʊdəɹi	indian	phonology	heldout
+indian-chatterjee	We had lunch with Chatterjee yesterday.	tʃˈætɚdʒiː|tʃˈʌtɚdʒi|tʃˌɑːtɚdʒˈiː|cmu:CH AH0 T ER1 JH IY0	indian	phonology+cmudict	dev
+indian-banerjee	The letter was signed by Banerjee.	bˈænɚdʒiː|bˈɑːnɚdʒi|bˌænɚdʒˈiː|cmu:B AH0 N ER1 JH IY0	indian	phonology+cmudict	heldout
+indian-mukherjee	The letter was signed by Mukherjee.	mˈʊkɚdʒiː|mˈʊkɚdʒi|mˌʊkɚdʒˈiː|cmu:M AH0 K ER1 JH IY0	indian	phonology+cmudict	dev
+indian-bhattacharya	The letter was signed by Bhattacharya.	bˌʌtətʃˈɑːɹjə|bˌætətʃˈɑːɹjə	indian	phonology	dev
+indian-agarwal	Agarwal arrived early this morning.	ˈʌɡəɹwɑːl|ˈæɡəɹwɑːl|ˈʌɡɚwəl|cmu:AA1 G AA0 R W AA0 L	indian	phonology+cmudict	heldout
+indian-malhotra	We had lunch with Malhotra yesterday.	məlhˈoʊtɹə|mælhˈoʊtɹə|məlˈoʊtɹə|cmu:M AE2 L HH AA1 T R AH0	indian	phonology+cmudict	dev
+indian-kapoor	The letter was signed by Kapoor.	kəpˈʊɹ|kəpˈuːɹ|cmu:K AH0 P UW1 R	indian	phonology+cmudict	dev
+indian-khanna	We had lunch with Khanna yesterday.	kˈʌnə|kˈɑːnə|kˈænə|cmu:K AE1 N AH0	indian	phonology+cmudict	heldout
+indian-mehta	Have you met Mehta?	mˈeɪtə|mˈɛtə|mˈeɪhtə|cmu:M EH1 T AH0	indian	phonology+cmudict	dev
+indian-joshi	The letter was signed by Joshi.	dʒˈoʊʃi|cmu:JH OW1 SH IY0	indian	phonology+cmudict	dev
+indian-kulkarni	Everyone thanked Kulkarni for the help.	kʊlkˈɑːɹni|kʊlkˈɑːni|cmu:K AH0 L K AA1 R N IY0	indian	phonology+cmudict	heldout
+indian-deshpande	We had lunch with Deshpande yesterday.	dˈeɪʃpɑːndeɪ|dɛʃpˈʌndeɪ|deɪʃpˈændeɪ	indian	phonology	dev
+indian-patil	Have you met Patil?	pˈɑːtɪl|pˈætɪl|pətˈiːl	indian	phonology	heldout
+indian-gokhale	We had lunch with Gokhale yesterday.	ɡˈoʊkəleɪ|ɡˈoʊkhəleɪ	indian	phonology	heldout
+indian-trivedi	Everyone thanked Trivedi for the help.	tɹɪvˈeɪdi|tɹɪvˈɛdi|cmu:T R IY0 V EH1 D IY0	indian	phonology+cmudict	dev
+indian-chaturvedi	Have you met Chaturvedi?	tʃˌʌtɚvˈeɪdi|tʃˌætɚvˈeɪdi	indian	phonology	heldout
+indian-srivastava	Have you met Srivastava?	ʃɹiːvˈɑːstəvə|sɹiːvˈɑːstəvə|ʃɹɪvˈæstəvə|cmu:S R IY0 V AA0 S T AA1 V AH0|SH R IY0 V AA0 S T AA1 V AH0	indian	phonology+cmudict	heldout
+indian-saxena	Saxena arrived early this morning.	sˈʌksənə|sæksˈiːnə|sˈæksənə|cmu:S AE1 K S IH0 N AH0	indian	phonology+cmudict	dev
+indian-tiwari	Tiwari arrived early this morning.	tɪwˈɑːɹi|tɪvˈɑːɹi	indian	phonology	heldout
+indian-dubey	We had lunch with Dubey yesterday.	dˈuːbeɪ|dˈuːbi|cmu:D AH1 B IY0	indian	phonology+cmudict	dev
+indian-pandey	Everyone thanked Pandey for the help.	pˈɑːndeɪ|pˈændeɪ|pˈʌndeɪ|cmu:P AA1 N D EY2	indian	phonology+cmudict	dev
+indian-mishra	We had lunch with Mishra yesterday.	mˈɪʃɹə|mˈɪʃɹɑː|cmu:M IH1 SH R AH0	indian	phonology+cmudict	dev
+indian-yadav	The letter was signed by Yadav.	jˈɑːdəv|jˈædəv|jɑːdˈɑːv	indian	phonology	dev
+indian-thakur	Have you met Thakur?	tˈɑːkʊɹ|tˈɑːkɚ|θˈɑːkʊɹ	indian	phonology	dev
+indian-bhatt	We had lunch with Bhatt yesterday.	bˈʌt|bˈæt|bhˈʌt|cmu:B AE1 T|B AA1 T	indian	phonology+cmudict	heldout
+indian-desai	Have you met Desai?	dəsˈaɪ|deɪsˈaɪ|dˈɛsaɪ|cmu:D EY0 S AA1 IY0	indian	phonology+cmudict	heldout
+indian-shah	The letter was signed by Shah.	ʃˈɑː|ʃˈɑːh|cmu:SH AA1	indian	phonology+cmudict	heldout
+indian-bose	The letter was signed by Bose.	bˈoʊs|bˈoʊz|cmu:B OW1 Z	indian	phonology+cmudict	dev
+indian-ghosh	The letter was signed by Ghosh.	ɡˈoʊʃ|ɡhˈoʊʃ|cmu:G AA1 SH	indian	phonology+cmudict	dev
+indian-sengupta	Have you met Sengupta?	sɛnɡˈʊptə|sɛnɡˈuːptə	indian	phonology	dev
+indian-dasgupta	Have you met Dasgupta?	dɑːsɡˈʊptə|dæsɡˈʊptə	indian	phonology	heldout
+indian-chakraborty	Chakraborty arrived early this morning.	tʃəkɹˈɑːbɚti|tʃəkɹˈɔːbɚti|tʃˌʌkɹəbˈɔːɹti	indian	phonology	heldout
+indian-gill	The letter was signed by Gill.	ɡˈɪl|cmu:G IH1 L	indian	phonology+cmudict	dev
+indian-sandhu	Sandhu arrived early this morning.	sˈʌndhuː|sˈænduː|sˈʌnduː|cmu:S AE1 N D HH UW0	indian	phonology+cmudict	heldout
+indian-dhillon	Dhillon arrived early this morning.	dˈɪlən|dˈɪlɑːn|cmu:D IH1 L AH0 N	indian	phonology+cmudict	dev
+indian-grewal	Have you met Grewal?	ɡɹˈeɪwəl|ɡɹˈɛwɑːl|ɡɹeɪwˈɑːl|cmu:G R UW1 AH0 L	indian	phonology+cmudict	dev
+indian-ahluwalia	Everyone thanked Ahluwalia for the help.	ˌɑːluːwˈɑːliə|ˌɑːlʊwˈɑːliə|cmu:AH0 L UW0 AA1 L Y AH0	indian	phonology+cmudict	heldout
+indian-bhardwaj	Bhardwaj arrived early this morning.	bˈɑːɹdwɑːdʒ|bhˈɑːɹdwɑːdʒ|bɑːɹdwˈɑːdʒ	indian	phonology	dev
+indian-chopra	Have you met Chopra?	tʃˈoʊpɹə|tʃˈɑːpɹə|cmu:CH AA1 P R AH0	indian	phonology+cmudict	dev
+indian-arora	We had lunch with Arora yesterday.	əɹˈɔːɹə|əɹˈoʊɹə|cmu:AA0 R AO1 R AA0	indian	phonology+cmudict	dev
+indian-krishnamurthy	Everyone thanked Krishnamurthy for the help.	kɹˌɪʃnəmˈʊɹti|kɹˌɪʃnəmˈɜːθi|kɹˌɪʃnəmˈɜːɹti	indian	phonology	dev
+indian-narayanan	Have you met Narayanan?	nˌɑːɹəjˈɑːnən|nəɹˈaɪənən|nəɹˈɑːjənən|cmu:N AA2 R AY0 AA1 N AH0 N	indian	phonology+cmudict	dev
+indian-gopalakrishnan	We had lunch with Gopalakrishnan yesterday.	ɡˌoʊpɑːləkɹˈɪʃnən|ɡˌoʊpələkɹˈɪʃnən	indian	phonology	heldout
+indian-shankar	Everyone thanked Shankar for the help.	ʃˈʌŋkɚ|ʃˈæŋkɚ|ʃˈɑːŋkɚ|cmu:SH AE1 NG K AA0 R	indian	phonology+cmudict	dev
+indian-swaminathan	Everyone thanked Swaminathan for the help.	swˌɑːmɪnˈɑːθən|swˌɑːmɪnˈɑːtən|cmu:S W AA2 M IH0 N AA1 TH AH0 N	indian	phonology+cmudict	dev
+indian-viswanathan	Have you met Viswanathan?	vˌɪʃwənˈɑːθən|vˌɪswənˈɑːθən|wˌɪʃwənˈɑːtən	indian	phonology	dev
+indian-hegde	The letter was signed by Hegde.	hˈɛɡdeɪ|hˈeɪɡdeɪ	indian	phonology	heldout
+indian-rao	The letter was signed by Rao.	ɹˈaʊ|cmu:R AW1	indian	phonology+cmudict	dev
+indian-murthy	Have you met Murthy?	mˈʊɹti|mˈɜːθi|mˈɜːɹti|cmu:M ER1 TH IY0	indian	phonology+cmudict	dev
+indian-prasad	Everyone thanked Prasad for the help.	pɹəsˈɑːd|pɹɑːsˈɑːd|pɹəsˈæd|cmu:P R AE1 S AH0 D	indian	phonology+cmudict	dev
+indian-anand	The letter was signed by Anand.	ənˈʌnd|ɑːnˈʌnd|ənˈænd|cmu:AE1 N AH0 N D	indian	phonology+cmudict	heldout
+indian-abhinav	Everyone thanked Abhinav for the help.	əbˈɪnəv|əbhˈɪnəv|ʌbɪnˈʌv	indian	phonology	heldout
+indian-gautam	The letter was signed by Gautam.	ɡˈaʊtəm|ɡˈɔːtəm|ɡˈaʊtʌm	indian	phonology	dev
+indian-kiran	Kiran arrived early this morning.	kˈɪɹən|kˈiːɹən	indian	phonology	heldout
+indian-lalitha	We had lunch with Lalitha yesterday.	lˈʌlɪtə|ləlˈiːθə|ləlˈɪtə	indian	phonology	heldout
+indian-padmini	Have you met Padmini?	pˈʌdmɪni|pˈædmɪni	indian	phonology	dev
+indian-revathi	Have you met Revathi?	ɹˈeɪvəti|ɹeɪvˈɑːθi|ɹˈɛvəθi	indian	phonology	heldout
+indian-saraswati	Everyone thanked Saraswati for the help.	sˈʌɹəswəti|səɹˈʌswəti|sɑːɹəswˈʌti	indian	phonology	heldout
+indian-vijayalakshmi	We had lunch with Vijayalakshmi yesterday.	vˌɪdʒəjəlˈʌkʃmi|vˌɪdʒəjəlˈækʃmi	indian	phonology	dev
+indian-yamini	Yamini arrived early this morning.	jˈɑːmɪni|jˈæmɪni	indian	phonology	dev
+indian-shilpa	Have you met Shilpa?	ʃˈɪlpə	indian	phonology	heldout
+indian-kunal	Kunal arrived early this morning.	kˈuːnəl|kʊnˈɑːl|kˈʊnɑːl	indian	phonology	heldout
+hispanic-alejandro	We had lunch with Alejandro yesterday.	cmu:AA0 L EY0 Y AA1 N D R OW0|AA0 L EY0 HH AA1 N D R OW0	hispanic	cmudict	heldout
+hispanic-carlos	The letter was signed by Carlos.	cmu:K AA1 R L OW0 S	hispanic	cmudict	heldout
+hispanic-diego	We had lunch with Diego yesterday.	cmu:D IY0 EY1 G OW0	hispanic	cmudict	heldout
+hispanic-fernando	We had lunch with Fernando yesterday.	cmu:F ER0 N AE1 N D OW0|F ER0 N AA1 N D OW0	hispanic	cmudict	heldout
+hispanic-guadalupe	Have you met Guadalupe?	cmu:G W AA2 D AH0 L UW1 P|G W AA2 D AH0 L UW1 P EY0	hispanic	cmudict	dev
+hispanic-ignacio	The letter was signed by Ignacio.	cmu:IH2 G N AA1 S IY0 OW0	hispanic	cmudict	heldout
+hispanic-jimena	We had lunch with Jimena yesterday.	cmu:JH IH1 M AH0 N AH0	hispanic	cmudict	heldout
+hispanic-joaquin	The letter was signed by Joaquin.	cmu:W AA2 K IY1 N	hispanic	cmudict	dev
+hispanic-lourdes	The letter was signed by Lourdes.	cmu:L AO1 R D Z	hispanic	cmudict	heldout
+hispanic-mercedes	The letter was signed by Mercedes.	cmu:M ER0 S EY1 D IY0 Z	hispanic	cmudict	heldout
+hispanic-rodrigo	Rodrigo arrived early this morning.	cmu:R AH0 D R IY1 G OW0	hispanic	cmudict	dev
+hispanic-santiago	Have you met Santiago?	cmu:S AE2 N T IY0 AA1 G OW0	hispanic	cmudict	dev
+hispanic-ximena	The letter was signed by Ximena.	hɪmˈeɪnə|hiːmˈeɪnə|ʃɪmˈeɪnə	hispanic	phonology	heldout
+hispanic-gonzalez	We had lunch with Gonzalez yesterday.	cmu:G AA0 N Z AA1 L AH0 Z	hispanic	cmudict	heldout
+hispanic-hernandez	Have you met Hernandez?	cmu:HH ER0 N AE1 N D EH0 Z	hispanic	cmudict	dev
+hispanic-martinez	Everyone thanked Martinez for the help.	cmu:M AA0 R T IY1 N EH0 Z	hispanic	cmudict	heldout
+hispanic-rodriguez	The letter was signed by Rodriguez.	cmu:R AA0 D R IY1 G EH0 Z	hispanic	cmudict	dev
+hispanic-sanchez	Have you met Sanchez?	cmu:S AE1 N CH EH0 Z	hispanic	cmudict	dev
+hispanic-ramirez	Ramirez arrived early this morning.	cmu:R AH0 M IH1 R EH0 Z	hispanic	cmudict	heldout
+hispanic-vasquez	Everyone thanked Vasquez for the help.	cmu:V AE0 S K EH1 Z	hispanic	cmudict	heldout
+hispanic-gutierrez	Gutierrez arrived early this morning.	cmu:G UW0 T Y EH1 R EH0 Z	hispanic	cmudict	heldout
+hispanic-dominguez	Dominguez arrived early this morning.	cmu:D AH0 M IH1 NG IH0 Z	hispanic	cmudict	heldout
+hispanic-castillo	We had lunch with Castillo yesterday.	cmu:K AE2 S T IY1 OW0|K AE2 S T IH1 L OW0	hispanic	cmudict	heldout
+hispanic-jimenez	The letter was signed by Jimenez.	cmu:HH IH2 M EH1 N EH2 Z	hispanic	cmudict	heldout
+hispanic-morales	The letter was signed by Morales.	cmu:M ER0 AE1 L Z|M AO0 R AE1 L EH0 S	hispanic	cmudict	heldout
+hispanic-ortega	Have you met Ortega?	cmu:AO0 R T EY1 G AH0	hispanic	cmudict	heldout
+hispanic-zapata	Have you met Zapata?	cmu:Z AA0 P AA1 T AH0	hispanic	cmudict	dev
+chinese-wei	Have you met Wei?	cmu:W EY1	chinese	cmudict	heldout
+chinese-jing	The letter was signed by Jing.	cmu:JH IH1 NG	chinese	cmudict	heldout
+chinese-xiaoming	Xiaoming arrived early this morning.	ʃˌaʊmˈɪŋ|ʃaʊmˈɪŋ	chinese	phonology	heldout
+chinese-zhang	The letter was signed by Zhang.	cmu:ZH AE1 NG|ZH AA1 NG	chinese	cmudict	dev
+chinese-liu	The letter was signed by Liu.	cmu:L Y UW1	chinese	cmudict	heldout
+chinese-chen	We had lunch with Chen yesterday.	cmu:CH EH1 N	chinese	cmudict	dev
+chinese-huang	We had lunch with Huang yesterday.	cmu:HH W AE1 NG|HH W AA1 NG	chinese	cmudict	heldout
+chinese-zhao	The letter was signed by Zhao.	cmu:ZH AW1|JH AW1	chinese	cmudict	heldout
+chinese-zhou	We had lunch with Zhou yesterday.	cmu:ZH UW1	chinese	cmudict	dev
+chinese-xu	We had lunch with Xu yesterday.	cmu:Z UW1	chinese	cmudict	heldout
+chinese-qian	Qian arrived early this morning.	cmu:K IY1 AA2 N|JH IH1 N	chinese	cmudict	heldout
+chinese-sun	The letter was signed by Sun.	cmu:S AH1 N	chinese	cmudict	dev
+chinese-zheng	We had lunch with Zheng yesterday.	cmu:Z EH1 NG	chinese	cmudict	dev
+chinese-feng	The letter was signed by Feng.	cmu:F EH1 NG	chinese	cmudict	heldout
+chinese-jiang	We had lunch with Jiang yesterday.	cmu:JH AA1 NG|JH IY0 AA1 NG	chinese	cmudict	heldout
+chinese-xiao	Xiao arrived early this morning.	cmu:ZH AW1	chinese	cmudict	dev
+chinese-yang	Have you met Yang?	cmu:Y AE1 NG	chinese	cmudict	dev
+chinese-zhu	The letter was signed by Zhu.	cmu:ZH UW1	chinese	cmudict	heldout
+chinese-cao	Everyone thanked Cao for the help.	cmu:K AW1	chinese	cmudict	heldout
+east_asian-takahashi	We had lunch with Takahashi yesterday.	cmu:T AA0 K AA0 HH AA1 SH IY0	east_asian	cmudict	heldout
+east_asian-watanabe	Everyone thanked Watanabe for the help.	cmu:W AA2 T AA0 N AA1 B EY0	east_asian	cmudict	heldout
+east_asian-yamamoto	The letter was signed by Yamamoto.	cmu:Y AA0 M AA0 M OW1 T OW0	east_asian	cmudict	dev
+east_asian-nakamura	Nakamura arrived early this morning.	cmu:N AA0 K AA0 M UH1 R AH0	east_asian	cmudict	heldout
+east_asian-kobayashi	Have you met Kobayashi?	cmu:K OW2 B AA0 Y AA1 SH IY0	east_asian	cmudict	dev
+east_asian-hiroshi	Have you met Hiroshi?	cmu:HH IH0 R OW1 SH IY0	east_asian	cmudict	heldout
+east_asian-sakura	Have you met Sakura?	cmu:S AE0 K UH1 R AA2	east_asian	cmudict	dev
+east_asian-kenji	We had lunch with Kenji yesterday.	cmu:K EH1 N JH IY0	east_asian	cmudict	dev
+east_asian-kim	We had lunch with Kim yesterday.	cmu:K IH1 M	east_asian	cmudict	dev
+east_asian-park	Have you met Park?	cmu:P AA1 R K	east_asian	cmudict	dev
+east_asian-choi	We had lunch with Choi yesterday.	cmu:CH OY1	east_asian	cmudict	dev
+east_asian-jung	Jung arrived early this morning.	cmu:Y UH1 NG	east_asian	cmudict	heldout
+east_asian-seoyeon	We had lunch with Seoyeon yesterday.	sˌɔːjˈʌn|sˈoʊjʌn|sˌʌjˈʌn	east_asian	phonology	dev
+east_asian-minjun	Minjun arrived early this morning.	mˈɪndʒuːn|mɪndʒˈuːn|mˈɪndʒʊn	east_asian	phonology	heldout
+east_asian-nguyen	We had lunch with Nguyen yesterday.	cmu:N UW0 Y EH1 N	east_asian	cmudict	heldout
+east_asian-tran	Have you met Tran?	cmu:T R AE1 N	east_asian	cmudict	dev
+east_asian-pham	The letter was signed by Pham.	cmu:F AE1 M	east_asian	cmudict	heldout
+east_asian-huynh	Huynh arrived early this morning.	cmu:HH AY1 N	east_asian	cmudict	dev
+east_asian-phuong	The letter was signed by Phuong.	cmu:F UW0 AO1 NG	east_asian	cmudict	heldout
+east_asian-thanh	Thanh arrived early this morning.	cmu:TH AE1 N	east_asian	cmudict	heldout
+east_asian-hoang	Hoang arrived early this morning.	cmu:HH OW1 NG	east_asian	cmudict	dev
+east_asian-duong	We had lunch with Duong yesterday.	cmu:D UW1 OW0 NG	east_asian	cmudict	dev
+east_asian-vo	Everyone thanked Vo for the help.	cmu:V OW1	east_asian	cmudict	dev
+arabic_persian_turkish-mohammed	Have you met Mohammed?	cmu:M OW0 HH AE1 M IH0 D	arabic_persian_turkish	cmudict	dev
+arabic_persian_turkish-ahmed	We had lunch with Ahmed yesterday.	cmu:AA1 M AH0 D|AA1 M EH0 D	arabic_persian_turkish	cmudict	heldout
+arabic_persian_turkish-fatima	We had lunch with Fatima yesterday.	cmu:F AE1 TH IH0 M AH0|F AE1 T IH0 M AH0	arabic_persian_turkish	cmudict	heldout
+arabic_persian_turkish-aisha	Everyone thanked Aisha for the help.	cmu:AY1 SH AH0	arabic_persian_turkish	cmudict	heldout
+arabic_persian_turkish-khalid	We had lunch with Khalid yesterday.	cmu:K AA1 L IH0 D|HH AA1 L IH0 D	arabic_persian_turkish	cmudict	dev
+arabic_persian_turkish-youssef	Everyone thanked Youssef for the help.	cmu:Y UW1 S EH0 F	arabic_persian_turkish	cmudict	dev
+arabic_persian_turkish-omar	Omar arrived early this morning.	cmu:OW1 M AA0 R	arabic_persian_turkish	cmudict	dev
+arabic_persian_turkish-layla	Layla arrived early this morning.	cmu:L EY1 L AA0	arabic_persian_turkish	cmudict	heldout
+arabic_persian_turkish-hussein	The letter was signed by Hussein.	cmu:HH UW0 S EY1 N	arabic_persian_turkish	cmudict	dev
+arabic_persian_turkish-abdullah	Have you met Abdullah?	cmu:AE2 B D AH1 L AH0	arabic_persian_turkish	cmudict	heldout
+arabic_persian_turkish-mustafa	We had lunch with Mustafa yesterday.	cmu:M UW0 S T AA1 F AH0	arabic_persian_turkish	cmudict	heldout
+arabic_persian_turkish-nasser	Have you met Nasser?	cmu:N AE1 S ER0	arabic_persian_turkish	cmudict	dev
+arabic_persian_turkish-rashid	The letter was signed by Rashid.	cmu:R AH0 SH IY1 D|R AA0 SH IY1 D	arabic_persian_turkish	cmudict	dev
+arabic_persian_turkish-karim	Everyone thanked Karim for the help.	cmu:K ER0 IY1 M	arabic_persian_turkish	cmudict	dev
+arabic_persian_turkish-hassan	Hassan arrived early this morning.	cmu:HH AH0 S AA1 N	arabic_persian_turkish	cmudict	dev
+arabic_persian_turkish-farah	Have you met Farah?	cmu:F EH1 R AH0	arabic_persian_turkish	cmudict	dev
+arabic_persian_turkish-darius	Have you met Darius?	cmu:D ER0 AY1 AH0 S	arabic_persian_turkish	cmudict	dev
+arabic_persian_turkish-shirin	Shirin arrived early this morning.	cmu:SH IH1 R AH0 N	arabic_persian_turkish	cmudict	dev
+arabic_persian_turkish-mehmet	Mehmet arrived early this morning.	cmu:M EH1 M AH0 T	arabic_persian_turkish	cmudict	dev
+arabic_persian_turkish-ozturk	Everyone thanked Ozturk for the help.	ˈɜːztɜːɹk|ˈoʊztɜːɹk|ɜːztˈɜːɹk	arabic_persian_turkish	phonology	dev
+arabic_persian_turkish-kaya	Kaya arrived early this morning.	cmu:K AA1 Y AH0	arabic_persian_turkish	cmudict	dev
+african-oluwaseun	We had lunch with Oluwaseun yesterday.	ˌoʊluːwˈɑːʃeɪn|ˌoʊluːwəʃˈeɪn|ˌoʊluːwˈɑːseɪn	african	phonology	heldout
+african-chukwuemeka	Chukwuemeka arrived early this morning.	tʃˌʊkwuːˈɛmɛkə|tʃˌuːkwuːˈɛməkə|tʃˌʊkwəmˈɛkə	african	phonology	heldout
+african-folasade	We had lunch with Folasade yesterday.	fˌoʊləʃˈɑːdeɪ|fˌoʊləsˈɑːdeɪ	african	phonology	heldout
+african-ama	Have you met Ama?	cmu:EY2 EH2 M EY1	african	cmudict	heldout
+african-kofi	Have you met Kofi?	cmu:K OW1 F IY0	african	cmudict	heldout
+african-abena	Have you met Abena?	əbˈeɪnə|ɑːbˈɛnə	african	phonology	heldout
+african-thabo	Thabo arrived early this morning.	cmu:TH EY1 B OW0	african	cmudict	dev
+african-nomvula	The letter was signed by Nomvula.	nɒmvˈuːlə|noʊmvˈuːlə|nɑːmvˈuːlə	african	phonology	dev
+african-wanjiru	The letter was signed by Wanjiru.	wɑːndʒˈiːɹuː|wændʒˈiːɹuː	african	phonology	heldout
+african-kipchoge	The letter was signed by Kipchoge.	kɪptʃˈoʊɡeɪ|kɪptʃˈoʊɡi	african	phonology	dev
+african-amara	The letter was signed by Amara.	cmu:AA0 M AA1 R AH0	african	cmudict	heldout
+european-johann	Johann arrived early this morning.	cmu:Y OW1 HH AA0 N	european	cmudict	heldout
+european-friedrich	The letter was signed by Friedrich.	cmu:F R IY1 D R IH0 K	european	cmudict	dev
+european-gunther	We had lunch with Gunther yesterday.	cmu:G AH1 N TH ER0	european	cmudict	dev
+european-schneider	The letter was signed by Schneider.	cmu:SH N AY1 D ER0	european	cmudict	heldout
+european-schmidt	Have you met Schmidt?	cmu:SH M IH1 T	european	cmudict	dev
+european-wagner	Everyone thanked Wagner for the help.	cmu:W AE1 G N ER0|V AA1 G N ER0	european	cmudict	heldout
+european-becker	Everyone thanked Becker for the help.	cmu:B EH1 K ER0	european	cmudict	dev
+european-hoffmann	Hoffmann arrived early this morning.	cmu:HH AO1 F M AH0 N	european	cmudict	heldout
+european-francois	The letter was signed by Francois.	cmu:F R AA0 N S W AA1	european	cmudict	dev
+european-jacques	Everyone thanked Jacques for the help.	cmu:ZH AA1 K|JH AE1 K	european	cmudict	dev
+european-genevieve	Genevieve arrived early this morning.	cmu:JH EH1 N AH0 V IY2 V	european	cmudict	dev
+european-dubois	Dubois arrived early this morning.	cmu:D UW0 B OY1 S|D UW0 B W AA1	european	cmudict	dev
+european-lefebvre	Lefebvre arrived early this morning.	cmu:L AH0 F EY1 B ER0	european	cmudict	dev
+european-rousseau	Have you met Rousseau?	cmu:R UW0 S OW1	european	cmudict	dev
+european-giuseppe	Have you met Giuseppe?	cmu:JH IH0 S EH1 P IY0	european	cmudict	heldout
+european-giovanni	Giovanni arrived early this morning.	cmu:JH IY2 OW0 V AA1 N IY0|JH AH0 V AA1 N IY0	european	cmudict	dev
+european-francesca	We had lunch with Francesca yesterday.	cmu:F R AE0 N CH EH1 S K AH0	european	cmudict	dev
+european-rossi	The letter was signed by Rossi.	cmu:R AO1 S IY0	european	cmudict	heldout
+european-bianchi	Have you met Bianchi?	cmu:B IY0 AA1 N CH IY0	european	cmudict	heldout
+european-esposito	Have you met Esposito?	cmu:EH0 S P AH0 Z IY1 T OW0	european	cmudict	heldout
+european-ferrari	Ferrari arrived early this morning.	cmu:F ER0 AA1 R IY0	european	cmudict	dev
+european-dmitri	We had lunch with Dmitri yesterday.	cmu:D AH0 M IY1 T R IY0|D M IY1 T R IY0	european	cmudict	heldout
+european-svetlana	Everyone thanked Svetlana for the help.	cmu:S V EH2 T L AA1 N AH0	european	cmudict	heldout
+european-kowalski	Kowalski arrived early this morning.	cmu:K AH0 W AA1 L S K IY0	european	cmudict	heldout
+european-wojcik	The letter was signed by Wojcik.	cmu:W OY1 CH IH0 K	european	cmudict	dev
+european-novak	The letter was signed by Novak.	cmu:N OW1 V AE0 K	european	cmudict	dev
+european-siobhan	We had lunch with Siobhan yesterday.	cmu:SH AW1 B AA2 N|SH AH0 V AO1 N	european	cmudict	dev
+european-aoife	The letter was signed by Aoife.	ˈiːfə	european	phonology	heldout
+european-niamh	Have you met Niamh?	cmu:N AY1 AH0 M|N IY1 V	european	cmudict	heldout
+european-ciaran	We had lunch with Ciaran yesterday.	kˈɪɹən|kˈiəɹən	european	phonology	dev
+european-saoirse	Saoirse arrived early this morning.	sˈɜːɹʃə|sˈɪɹʃə	european	phonology	heldout
+european-padraig	Padraig arrived early this morning.	pˈɔːɹɪɡ|pˈɑːdɹɪɡ|pˈɔːdɹɪɡ	european	phonology	dev
+european-eilidh	We had lunch with Eilidh yesterday.	ˈeɪli	european	phonology	dev
+european-lachlan	Lachlan arrived early this morning.	cmu:L AE1 K L AH0 N	european	cmudict	heldout
+european-bjorn	Bjorn arrived early this morning.	cmu:B Y AO1 R N	european	cmudict	dev
+european-ingrid	Have you met Ingrid?	cmu:IH1 NG G R IH0 D	european	cmudict	dev
+european-sigurd	The letter was signed by Sigurd.	cmu:S IH1 G ER0 D	european	cmudict	heldout
+european-annika	The letter was signed by Annika.	ˈɑːnɪkə|ˈænɪkə	european	phonology	dev
+european-pieter	Have you met Pieter?	cmu:P IY1 T ER0	european	cmudict	dev
+european-joost	Joost arrived early this morning.	cmu:JH UW1 S T	european	cmudict	heldout

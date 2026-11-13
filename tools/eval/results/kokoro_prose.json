@@ -23,10 +23,10 @@
     }
    },
    "seconds_per_sentence": {
-    "misaki": 0.003122339520999958,
-    "uccharan": 7.660000299983949e-05
+    "misaki": 0.002797389707000548,
+    "uccharan": 4.113678499925299e-05
    },
-   "speedup": 40.76161094936903,
+   "speedup": 68.00214715494528,
    "top_in_dictionary_disagreements": [
     {
      "word": "that",
@@ -140,10 +140,10 @@
     }
    },
    "seconds_per_sentence": {
-    "misaki": 0.002843307922000349,
-    "uccharan": 4.89580290000049e-05
+    "misaki": 0.0030839769240010354,
+    "uccharan": 7.1218624998437e-05
    },
-   "speedup": 58.07643771770438,
+   "speedup": 43.30295514788045,
    "top_in_dictionary_disagreements": [
     {
      "word": "that",

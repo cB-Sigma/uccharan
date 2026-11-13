@@ -5,42 +5,42 @@
  "sentence_level": {
   "sentences": 3000,
   "reference_symbols": 132780,
-  "per": 0.01412110257568911,
-  "per_without_stress": 0.011656164465325683,
-  "exact_sentence": 0.721,
-  "exact_sentence_without_stress": 0.777,
-  "piper_shape_per": 0.013804896665100987,
-  "piper_shape_exact_sentence": 0.72,
+  "per": 0.013902696189185118,
+  "per_without_stress": 0.011494154864125106,
+  "exact_sentence": 0.725,
+  "exact_sentence_without_stress": 0.7796666666666666,
+  "piper_shape_per": 0.013592062000939409,
+  "piper_shape_exact_sentence": 0.724,
   "word_count_mismatch_sentences": 463,
   "errors_by_class": {
    "vowel": {
-    "count": 798,
-    "share": 0.4256,
-    "per_contribution": 0.006009941256213285
+    "count": 793,
+    "share": 0.4295774647887324,
+    "per_contribution": 0.005972284982678114
    },
    "stress": {
-    "count": 529,
-    "share": 0.28213333333333335,
-    "per_contribution": 0.0039840337400210875
+    "count": 519,
+    "share": 0.281148429035753,
+    "per_contribution": 0.003908721192950745
    },
    "other": {
-    "count": 325,
-    "share": 0.17333333333333334,
-    "per_contribution": 0.002447657779786112
+    "count": 320,
+    "share": 0.1733477789815818,
+    "per_contribution": 0.0024100015062509415
    },
    "consonant": {
-    "count": 176,
-    "share": 0.09386666666666667,
-    "per_contribution": 0.0013255008284380177
+    "count": 171,
+    "share": 0.09263271939328277,
+    "per_contribution": 0.0012878445549028468
    },
    "word-boundary": {
-    "count": 30,
-    "share": 0.016,
-    "per_contribution": 0.00022593764121102577
+    "count": 26,
+    "share": 0.014084507042253521,
+    "per_contribution": 0.000195812622382889
    },
    "length": {
     "count": 17,
-    "share": 0.009066666666666667,
+    "share": 0.009209100758396533,
     "per_contribution": 0.00012803133001958126
    }
   },
@@ -59,7 +59,7 @@
    },
    {
     "edit": "ˌ→ˈ",
-    "count": 81
+    "count": 78
    },
    {
     "edit": "ɪ→i",
@@ -74,12 +74,12 @@
     "count": 61
    },
    {
-    "edit": "∅→ˌ",
-    "count": 58
-   },
-   {
     "edit": "ə→ɐ",
     "count": 53
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 52
    },
    {
     "edit": "ɒ→ː",
@@ -118,32 +118,32 @@
     "count": 26
    },
    {
-    "edit": "i→∅",
-    "count": 26
-   },
-   {
-    "edit": "ː→ɪ",
-    "count": 26
-   },
-   {
     "edit": "ʌ→ɒ",
     "count": 26
+   },
+   {
+    "edit": "i→∅",
+    "count": 25
    },
    {
     "edit": "ɪ→ɛ",
     "count": 25
    },
    {
-    "edit": "j→∅",
-    "count": 25
-   },
-   {
-    "edit": "∅→ ",
-    "count": 24
-   },
-   {
     "edit": "a→∅",
     "count": 24
+   },
+   {
+    "edit": "ː→ɪ",
+    "count": 24
+   },
+   {
+    "edit": "j→∅",
+    "count": 24
+   },
+   {
+    "edit": "∅→ə",
+    "count": 23
    }
   ],
   "word_error_by_class": {
@@ -154,8 +154,8 @@
    },
    "lexicon": {
     "words": 10533,
-    "wrong": 659,
-    "rate": 0.06256527105288143
+    "wrong": 651,
+    "rate": 0.06180575334662489
    },
    "oov": {
     "words": 196,
@@ -171,23 +171,11 @@
    },
    "no-digits": {
     "sentences": 2969,
-    "per": 0.013553465156459972,
-    "exact_sentence": 0.725496800269451
+    "per": 0.013330773660971396,
+    "exact_sentence": 0.729538565173459
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "4643254",
-    "text": "In the digital era, broken clocks are not right twice a day. They're just rubbish.",
-    "reference": "ɪnðə dˈɪdʒɪtəl ˈiəɹɐ bɹˈəʊkən klˈɒks ɑː nˌɒt ɹˈaɪt twˈaɪs ɐ dˈeɪ ðeɪɐ dʒˈʌst ɹˈʌbɪʃ",
-    "uccharan": "ɪnðə dˈɪdʒɪtəl ˈɛɹɐ bɹˈəʊkən klˈɒks ɑː nˌɒt ɹˈaɪt twˈaɪs ɐ dˈeɪ ðeə dʒˈʌst ɹˈʌbɪʃ"
-   },
-   {
-    "id": "7437328",
-    "text": "Tom and Mary said that they're sympathetic.",
-    "reference": "tˈɒm ænd mˈeəɹɪ sˈɛd ðæt ðeɪɐ sˌɪmpəθˈɛtɪk",
-    "uccharan": "tˈɒm ænd mˈeəɹɪ sˈɛd ðæt ðeə sˌɪmpəθˈɛtɪk"
-   },
    {
     "id": "7194497",
     "text": "Didn't you know that Tom used to teach French in Australia?",
@@ -247,16 +235,28 @@
     "text": "Maybe we just got off to a bad start.",
     "reference": "mˈeɪbiː wiː dʒˈʌst ɡɒt ˈɒf tʊ ɐ bˈæd stˈɑːt",
     "uccharan": "mˈeɪbɪ wiː dʒˈʌst ɡɒt ˈɒf tʊ ɐ bˈæd stˈɑːt"
+   },
+   {
+    "id": "7437201",
+    "text": "Tom and Mary said that they're still afraid.",
+    "reference": "tˈɒm ænd mˈeəɹɪ sˈɛd ðæt ðeɪɐ stˈɪl ɐfɹˈeɪd",
+    "uccharan": "tˈɒm ænd mˈeəɹɪ sˈɛd ðæt ðeə stˈɪl ɐfɹˈeɪd"
+   },
+   {
+    "id": "14083254",
+    "text": "Why can she use the tablet? That is unfair!",
+    "reference": "wˌaɪ kæn ʃiː jˈuːs ðə tˈæblət ðæt ɪz ʌnfˈeə",
+    "uccharan": "wˌaɪ kæn ʃiː jˈuːz ðə tˈæblɪt ðæt ɪz ʌnfˈeə"
    }
   ]
  },
  "word_level": {
   "frequent-in-lexicon": {
    "words": 5000,
-   "per": 0.025753875858935772,
-   "exact_word": 0.8908,
-   "exact_word_without_stress": 0.9046,
-   "stress_pattern_error": 0.0352
+   "per": 0.025611903004145606,
+   "exact_word": 0.8918,
+   "exact_word_without_stress": 0.9052,
+   "stress_pattern_error": 0.0348
   },
   "rare-in-lexicon": {
    "words": 3000,
@@ -267,10 +267,10 @@
   },
   "out-of-lexicon": {
    "words": 1997,
-   "per": 0.18645862357202564,
-   "exact_word": 0.44667000500751125,
-   "exact_word_without_stress": 0.49223835753630446,
-   "stress_pattern_error": 0.29494241362043067
+   "per": 0.18690443020339928,
+   "exact_word": 0.44516775162744116,
+   "exact_word_without_stress": 0.49073610415623437,
+   "stress_pattern_error": 0.2954431647471207
   }
  }
 }

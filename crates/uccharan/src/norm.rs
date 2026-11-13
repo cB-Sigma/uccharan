@@ -809,6 +809,13 @@ fn latin_or_deva(cx: &mut Ctx, r: &str, sc: Script) {
         return;
     }
     let _ = sc;
+    // Fast path: a plain word in lower case or capitalised (most words).
+    let b = r.as_bytes();
+    // (`push_latin` would keep these unchanged: no hyphen, hump or capitals run.)
+    if !b.is_empty() && b[0].is_ascii_alphabetic() && b[1..].iter().all(u8::is_ascii_lowercase) {
+        cx.out.push(Item::raw(r));
+        return;
+    }
     // Hyphenated parts and camelCase humps are separate words.
     for (pi, part) in r.split('-').enumerate() {
         if part.is_empty() {

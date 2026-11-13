@@ -34,7 +34,15 @@ backend.phonemize(["Hello, world."], strip=True)             # ['həlˈoʊ, wˈ�
 
 A command-line program is installed as `uccharan` (`uccharan -l hi -p piper "नमस्ते"`).
 
-English for Kokoro uses a port of misaki, with misaki 0.9.4's dictionaries built in.
+English for Kokoro uses a port of misaki with misaki 0.9.4's dictionaries; `load_misaki(dir)`
+loads another copy.
+
+The wheel carries the en-US and Hindi data. British English and the Kokoro English data are
+language packs: downloaded from the GitHub release of the same version the first time they are
+needed, checked against SHA-256 sums inside the wheel, and cached in `~/.cache/uccharan`. On an
+offline machine put the `.ucd` files (from the release page) in a directory named by
+`UCCHARAN_DATA_DIR`, set `UCCHARAN_OFFLINE=1` to forbid downloads, or call
+`uccharan.load_pack(path)`.
 
 Documentation, measured agreement, speed and end-to-end results:
 <https://github.com/cB-Sigma/uccharan>.

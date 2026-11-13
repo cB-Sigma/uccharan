@@ -456,6 +456,14 @@ fn delete_schwas(ph: &mut Vec<Ph>, improved: bool, boundary: Option<usize>) {
 /// Hindi (final deletion, then medial deletion in a V C _ C V frame scanning
 /// from the end of the word), made aware of morpheme seams and of the
 /// learned words that keep the vowel before a final short i or u.
+/// Delete only a word-final inherent vowel (names read in English).
+fn final_schwa_only(ph: &mut Vec<Ph>) {
+    let vowels = ph.iter().filter(|p| p.vowel).count();
+    if ph.last().is_some_and(|l| l.schwa && !l.independent) && vowels > 1 {
+        ph.pop();
+    }
+}
+
 fn delete_schwas_standard(ph: &mut Vec<Ph>, boundary: Option<usize>) {
     let total_vowels = ph.iter().filter(|p| p.vowel).count();
     if let Some(last) = ph.last() {
@@ -766,6 +774,16 @@ impl<'a> Hindi<'a> {
 
     /// Pronunciation of one Devanagari word with its lexical stress.
     pub fn word(&self, word: &str, compat: bool) -> String {
+        self.word_with(word, compat, true)
+    }
+
+    /// A romanised name read out in English: every written vowel is kept
+    /// except the final inherent one ("Raghavan" keeps the medial a).
+    pub fn name(&self, word: &str) -> String {
+        self.word_with(word, false, false)
+    }
+
+    fn word_with(&self, word: &str, compat: bool, medial: bool) -> String {
         let improved = !compat;
         if let Some(e) = self.lookup(word) {
             // "compat|improved" when the two differ.
@@ -803,7 +821,9 @@ impl<'a> Hindi<'a> {
         } else {
             None
         };
-        if improved {
+        if improved && !medial {
+            final_schwa_only(&mut ph);
+        } else if improved {
             delete_schwas_standard(&mut ph, boundary);
         } else {
             delete_schwas(&mut ph, false, None);

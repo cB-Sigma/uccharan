@@ -5,47 +5,47 @@
  "sentence_level": {
   "sentences": 3000,
   "reference_symbols": 134160,
-  "per": 0.011873881932021466,
-  "per_without_stress": 0.009692535904524307,
-  "exact_sentence": 0.7616666666666667,
-  "exact_sentence_without_stress": 0.812,
-  "piper_shape_per": 0.011617600046499463,
-  "piper_shape_exact_sentence": 0.7606666666666667,
+  "per": 0.0115608228980322,
+  "per_without_stress": 0.009422830557615804,
+  "exact_sentence": 0.768,
+  "exact_sentence_without_stress": 0.8186666666666667,
+  "piper_shape_per": 0.011312447324827807,
+  "piper_shape_exact_sentence": 0.767,
   "word_count_mismatch_sentences": 463,
   "errors_by_class": {
    "vowel": {
-    "count": 648,
-    "share": 0.4067796610169492,
-    "per_contribution": 0.00483005366726297
+    "count": 634,
+    "share": 0.4087685364281109,
+    "per_contribution": 0.004725700655933214
    },
    "stress": {
-    "count": 471,
-    "share": 0.295668549905838,
-    "per_contribution": 0.003510733452593918
+    "count": 461,
+    "share": 0.2972275950999355,
+    "per_contribution": 0.003436195587358378
    },
    "other": {
-    "count": 233,
-    "share": 0.14626490897677338,
-    "per_contribution": 0.001736732259988074
+    "count": 231,
+    "share": 0.14893617021276595,
+    "per_contribution": 0.001721824686940966
    },
    "consonant": {
-    "count": 169,
-    "share": 0.10608913998744507,
-    "per_contribution": 0.0012596899224806201
+    "count": 163,
+    "share": 0.10509348807221147,
+    "per_contribution": 0.0012149672033392963
    },
    "length": {
-    "count": 40,
-    "share": 0.025109855618330193,
-    "per_contribution": 0.0002981514609421586
+    "count": 34,
+    "share": 0.02192134107027724,
+    "per_contribution": 0.00025342874180083483
    },
    "word-boundary": {
-    "count": 31,
-    "share": 0.0194601381042059,
-    "per_contribution": 0.00023106738223017292
+    "count": 27,
+    "share": 0.017408123791102514,
+    "per_contribution": 0.00020125223613595708
    },
    "diacritic": {
     "count": 1,
-    "share": 0.0006277463904582549,
+    "share": 0.0006447453255963894,
     "per_contribution": 7.4537865235539655e-06
    }
   },
@@ -59,20 +59,20 @@
     "count": 91
    },
    {
+    "edit": "∅→ˈ",
+    "count": 74
+   },
+   {
     "edit": "ɪ→ə",
     "count": 74
    },
    {
-    "edit": "∅→ˈ",
-    "count": 73
-   },
-   {
     "edit": "∅→ˌ",
-    "count": 57
+    "count": 51
    },
    {
     "edit": "ˌ→ˈ",
-    "count": 54
+    "count": 51
    },
    {
     "edit": "∅→i",
@@ -81,10 +81,6 @@
    {
     "edit": "ᵻ→ɪ",
     "count": 38
-   },
-   {
-    "edit": "i→ɪ",
-    "count": 37
    },
    {
     "edit": "ɐ→ə",
@@ -99,8 +95,8 @@
     "count": 29
    },
    {
-    "edit": "ː→∅",
-    "count": 29
+    "edit": "i→ɪ",
+    "count": 27
    },
    {
     "edit": "∅→ɑ",
@@ -115,8 +111,12 @@
     "count": 24
    },
    {
-    "edit": "∅→ ",
+    "edit": "ː→∅",
     "count": 23
+   },
+   {
+    "edit": "∅→ ",
+    "count": 19
    },
    {
     "edit": "æ→ː",
@@ -159,8 +159,8 @@
    },
    "lexicon": {
     "words": 10533,
-    "wrong": 547,
-    "rate": 0.05193202316529004
+    "wrong": 529,
+    "rate": 0.05022310832621286
    },
    "oov": {
     "words": 196,
@@ -176,8 +176,8 @@
    },
    "no-digits": {
     "sentences": 2969,
-    "per": 0.01139886923217217,
-    "exact_sentence": 0.7659144493095318
+    "per": 0.011079700893671348,
+    "exact_sentence": 0.7723139104075446
    }
   },
   "examples_of_disagreement": [
@@ -204,12 +204,6 @@
     "text": "In psychoanalysis, this voice is called the superego, which Freud conceived as the infantile internalizing of parental authority.",
     "reference": "ɪn sˌaɪkoʊɐnˈæləsˌɪs ðɪs vˈɔɪs ɪz kˈɔːld ðə sˈuːpɚɹˌiːɡoʊ wˌɪtʃ fɹˈɔɪd kənsˈiːvd æz ðɪ ˈɪnfəntˌaɪl ɪntˈɜːnəlˌaɪzɪŋ ʌv pɚɹˈɛntəl ɐθˈɔːɹɪɾi",
     "uccharan": "ɪn sˌaɪkoʊənˈæləsɪs ðɪs vˈɔɪs ɪz kˈɔːld ðə sˈuːpɚˌiːɡoʊ wˌɪtʃ fɹˈɔɪd kənsˈiːvd æz ðɪ ˈɪnfəntɪl ɪntˈɜːnəlˌaɪzɪŋ ʌv pɚɹˈɛntəl ɐθˈɔːɹᵻɾi"
-   },
-   {
-    "id": "7509206",
-    "text": "I know that Tom knew I shouldn't have done that.",
-    "reference": "aɪ nˈoʊ ðæt tˈɑːm nˈuː aɪ ʃˌʊdənthəv dˈʌn ðˈæt",
-    "uccharan": "aɪ nˈoʊ ðæt tˈɑːm nˈuː aɪ ʃˌʊdənt hæv dˈʌn ðˈæt"
    },
    {
     "id": "7184056",
@@ -252,30 +246,36 @@
     "text": "You should've stayed home.",
     "reference": "juː ʃˌʊdəv stˈeɪd hˈoʊm",
     "uccharan": "juː ʃˈʊdəv stˈeɪd hˈoʊm"
+   },
+   {
+    "id": "7471300",
+    "text": "Tom and Mary didn't want to call their lawyer.",
+    "reference": "tˈɑːm ænd mˈɛɹi dˈɪdnt wˈɔnt tə kˈɔːl ðɛɹ lˈɔɪɚ",
+    "uccharan": "tˈɑːm ænd mˈɛɹi dˈɪdnt wˈɔnt tə kˈɔːl ðɛɹ lˈɔːjɚ"
    }
   ]
  },
  "word_level": {
   "frequent-in-lexicon": {
    "words": 5000,
-   "per": 0.023292317179135016,
-   "exact_word": 0.8962,
-   "exact_word_without_stress": 0.9104,
-   "stress_pattern_error": 0.0326
+   "per": 0.023012024553633995,
+   "exact_word": 0.8976,
+   "exact_word_without_stress": 0.9118,
+   "stress_pattern_error": 0.0322
   },
   "rare-in-lexicon": {
    "words": 3000,
-   "per": 0.18043045037863692,
-   "exact_word": 0.4663333333333333,
-   "exact_word_without_stress": 0.49,
+   "per": 0.18039059386209647,
+   "exact_word": 0.4666666666666667,
+   "exact_word_without_stress": 0.49033333333333334,
    "stress_pattern_error": 0.21566666666666667
   },
   "out-of-lexicon": {
    "words": 1997,
-   "per": 0.19057039235080778,
-   "exact_word": 0.4381572358537807,
-   "exact_word_without_stress": 0.48022033049574364,
-   "stress_pattern_error": 0.28943415122684024
+   "per": 0.19117485437960216,
+   "exact_word": 0.4361542313470205,
+   "exact_word_without_stress": 0.4782173259889835,
+   "stress_pattern_error": 0.2899349023535303
   }
  }
 }
