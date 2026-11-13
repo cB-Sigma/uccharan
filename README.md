@@ -14,7 +14,12 @@
 </p>
 
 <p align="center"><sub>
-  <a href="docs/evaluation.md#5-speed-start-up-memory-and-size">10 µs per sentence vs 53 µs</a> ·
+  espeak-ng is a speech synthesiser whose text-to-phoneme front end is what modern neural voices
+  actually use; uccharan replaces that front end, and the neural voice does the speaking.
+</sub></p>
+
+<p align="center"><sub>
+  <a href="docs/evaluation.md#5-speed-start-up-memory-and-size">10 µs vs 53 µs to turn a sentence into phonemes</a> ·
   <a href="docs/evaluation.md#2-end-to-end-real-voices-real-speech-recognition">same word error rate through Piper and Kokoro voices</a> ·
   <a href="DATA_LICENSES.md">no GPL anywhere</a>
 </sub></p>
