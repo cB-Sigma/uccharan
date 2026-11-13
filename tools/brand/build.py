@@ -147,10 +147,10 @@ def main() -> None:
         second = SECOND_DARK if dark else SECOND_LIGHT
         inner = (
             f'<svg style="position:absolute;left:140px;top:118px" width="{width * k:.0f}" height="{64 * k:.0f}" viewBox="0 0 {width:.0f} 64">{body}</svg>'
-            '<div style="position:absolute;left:140px;top:296px;font-weight:600;font-size:66px;letter-spacing:-0.022em">Text to phonemes, without the GPL.</div>'
-            f'<div class="second" style="position:absolute;left:140px;top:392px;font-size:31px;line-height:44px;width:1050px">'
-            "The phoneme streams that Piper, Kokoro and sherpa-onnx voices expect, for English and Hindi. Rust, Python, C and WebAssembly.</div>"
-            f'<div class="ipa" style="position:absolute;left:1330px;top:470px;font-size:34px;color:{second};letter-spacing:0.04em">उच्चारण → /ʊcːˈaːɾəɳ/</div>'
+            '<div style="position:absolute;left:140px;top:282px;font-weight:600;font-size:62px;line-height:72px;letter-spacing:-0.022em">5× faster than espeak-ng.<br>Just as accurate. Free to ship.</div>'
+            f'<div class="second" style="position:absolute;left:140px;top:448px;font-size:29px;line-height:41px;width:1120px">'
+            "A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python, C and the browser. Apache-2.0.</div>"
+            f'<div class="ipa" style="position:absolute;left:1350px;top:500px;font-size:32px;color:{second};letter-spacing:0.04em">उच्चारण → /ʊcːˈaːɾəɳ/</div>'
             + motif(dark, 1350, 0, 1.0)
         )
         (WORK / f"banner-{'dark' if dark else 'light'}.html").write_text(page(dark, 2000, 600, fonts, inner, radius=22), encoding="utf-8")
@@ -158,9 +158,9 @@ def main() -> None:
     k = 1.55
     inner = (
         f'<svg style="position:absolute;left:96px;top:100px" width="{width * k:.0f}" height="{64 * k:.0f}" viewBox="0 0 {width:.0f} 64">{body}</svg>'
-        '<div style="position:absolute;left:96px;top:274px;font-weight:600;font-size:60px;letter-spacing:-0.022em">Text to phonemes,<br>without the GPL.</div>'
-        f'<div class="second" style="position:absolute;left:96px;top:440px;font-size:28px;line-height:40px;width:900px">'
-        "The phoneme streams that Piper, Kokoro and sherpa-onnx voices expect.</div>"
+        '<div style="position:absolute;left:96px;top:250px;font-weight:600;font-size:52px;line-height:62px;letter-spacing:-0.022em">5× faster than espeak-ng.<br>Just as accurate. Free to ship.</div>'
+        f'<div class="second" style="position:absolute;left:96px;top:398px;font-size:25px;line-height:36px;width:880px">'
+        "A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python, C and the browser. Apache-2.0.</div>"
         f'<div style="position:absolute;left:96px;top:548px;font-size:23px;font-weight:500">English <span class="second">&nbsp;•&nbsp;</span> Hindi <span class="second">&nbsp;•&nbsp;</span> Hinglish'
         f'<span class="second"> &nbsp;•&nbsp; Rust · Python · C · WebAssembly &nbsp;•&nbsp; Apache-2.0</span></div>'
         + motif(True, 940, 0, 0.73)

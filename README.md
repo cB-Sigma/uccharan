@@ -2,9 +2,22 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/brand/banner-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="docs/assets/brand/banner-light.png">
-    <img alt="uccharan · उच्चारण — text to phonemes, without the GPL" src="docs/assets/brand/banner-light.png" width="800">
+    <img alt="uccharan · उच्चारण — 5× faster than espeak-ng. Just as accurate. Free to ship." src="docs/assets/brand/banner-light.png" width="800">
   </picture>
 </p>
+
+<h3 align="center">5× faster than espeak-ng. Just as accurate. Free to ship.</h3>
+
+<p align="center">
+  A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust,
+  Python, C and the browser. Apache-2.0.
+</p>
+
+<p align="center"><sub>
+  <a href="docs/evaluation.md#5-speed-start-up-memory-and-size">10 µs per sentence vs 53 µs</a> ·
+  <a href="docs/evaluation.md#2-end-to-end-real-voices-real-speech-recognition">same word error rate through Piper and Kokoro voices</a> ·
+  <a href="DATA_LICENSES.md">no GPL anywhere</a>
+</sub></p>
 
 <p align="center">
   <a href="https://github.com/cB-Sigma/uccharan/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/cB-Sigma/uccharan/actions/workflows/ci.yml/badge.svg"></a>
@@ -204,9 +217,9 @@ date, please open an issue.
 
 ## Licence and provenance
 
-Code: Apache-2.0. Data: the English lexicon is derived from the CMU Pronouncing Dictionary
-(BSD-2-Clause, notice in [NOTICE](NOTICE)); the Kokoro English dictionaries are misaki's
-(Apache-2.0); every other table was written by hand for this project. [DATA_LICENSES.md](DATA_LICENSES.md) lists every file.
+Licence: Apache-2.0. Includes data from the CMU Pronouncing Dictionary (BSD-2-Clause) and misaki
+(Apache-2.0); see [NOTICE](NOTICE). Every other table was written by hand for this project;
+[DATA_LICENSES.md](DATA_LICENSES.md) lists every file.
 
 uccharan contains no espeak-ng code, rules or dictionary data. The Kokoro English front end is a port
 of misaki's Apache-2.0 code and ships misaki 0.9.4's English dictionaries unchanged under their

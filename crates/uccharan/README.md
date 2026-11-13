@@ -1,5 +1,9 @@
 # uccharan
 
+**5× faster than espeak-ng. Just as accurate. Free to ship.**
+A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python,
+C and the browser. Apache-2.0. ([measurements](https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md))
+
 Permissively licensed text-to-phoneme conversion for neural text-to-speech: English (US and
 British RP), Hindi and code-mixed Hindi + English, producing the phoneme streams that
 espeak-trained voices expect (Piper, Kokoro, Kitten TTS, Matcha-TTS, sherpa-onnx), with no GPL
@@ -26,5 +30,8 @@ profile) is compiled in through the default `embed-*` features; turn them
 off and use `Phonemizer::load` to supply it at run time.
 
 Measured agreement with the reference, speed and the end-to-end results are in the repository:
-<https://github.com/cB-Sigma/uccharan>. Licence: Apache-2.0; the English lexicon is derived from
-CMUdict (BSD-2-Clause), see `NOTICE` and `DATA_LICENSES.md`.
+<https://github.com/cB-Sigma/uccharan>.
+
+## Licence
+
+Licence: Apache-2.0. Includes data from the CMU Pronouncing Dictionary (BSD-2-Clause) and misaki (Apache-2.0); see NOTICE.

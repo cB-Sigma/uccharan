@@ -5,7 +5,7 @@ build-backend = "maturin"
 [project]
 name = "uccharan"
 version = "0.1.0"
-description = "Permissively licensed text-to-phoneme (G2P) for neural TTS: en-US, en-GB, Hindi and Hinglish, with espeak-style IPA, Piper, Kokoro, Kitten/Matcha and sherpa-onnx output profiles."
+description = "Drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices: 5× faster than espeak-ng, Apache-2.0."
 readme = "README.md"
 requires-python = ">=3.9"
 license = "Apache-2.0"

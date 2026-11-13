@@ -1,5 +1,9 @@
 # uccharan-capi
 
+**5× faster than espeak-ng. Just as accurate. Free to ship.**
+A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python,
+C and the browser. Apache-2.0. ([measurements](https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md))
+
 C ABI for [uccharan](https://github.com/cB-Sigma/uccharan): a shared and a static library plus
 `include/uccharan.h`.
 
@@ -19,4 +23,6 @@ Build: `cargo build --release -p uccharan-capi` → `target/release/libuccharan.
 `uccharan_string_free`. Flags: `UCCHARAN_IMPROVED`, `UCCHARAN_HINGLISH`,
 `UCCHARAN_NORMALIZE_ESPEAK`, `UCCHARAN_NORMALIZE_OFF`, `UCCHARAN_NO_PUNCTUATION`.
 
-Licence: Apache-2.0 (see `NOTICE` and `DATA_LICENSES.md` for the bundled data).
+## Licence
+
+Licence: Apache-2.0. Includes data from the CMU Pronouncing Dictionary (BSD-2-Clause) and misaki (Apache-2.0); see NOTICE.

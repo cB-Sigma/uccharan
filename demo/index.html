@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>uccharan · live text-to-phoneme demo</title>
-<meta name="description" content="Type text and watch uccharan turn it into phonemes in your browser: English and Hindi, espeak-style IPA, Piper, Kokoro and sherpa-onnx profiles. Apache-2.0, WebAssembly.">
-<meta property="og:title" content="uccharan · उच्चारण">
-<meta property="og:description" content="Text to phonemes, without the GPL. Runs in your browser.">
+<title>uccharan · 5× faster than espeak-ng</title>
+<meta name="description" content="5× faster than espeak-ng. Just as accurate. Free to ship. A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python, C and the browser. Apache-2.0. Try it live in your browser.">
+<meta property="og:title" content="uccharan · 5× faster than espeak-ng. Just as accurate. Free to ship.">
+<meta property="og:description" content="A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python, C and the browser. Apache-2.0.">
 <meta property="og:image" content="https://cb-sigma.github.io/uccharan/og.png">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -35,8 +35,10 @@
 
 <main>
   <section class="intro">
-    <h1>Text to phonemes, in your browser.</h1>
-    <p>uccharan turns text into the phoneme streams that espeak-trained voices expect. Everything on this page runs locally in WebAssembly; nothing you type leaves your device.</p>
+    <h1>5× faster than espeak-ng. Just as accurate. Free to ship.</h1>
+    <p>A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python, C and the browser. Apache-2.0.</p>
+    <p class="proof"><a href="https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md#5-speed-start-up-memory-and-size">10 µs per sentence vs 53 µs</a> · <a href="https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md#2-end-to-end-real-voices-real-speech-recognition">same word error rate through Piper and Kokoro voices</a> · <a href="https://github.com/cB-Sigma/uccharan/blob/main/DATA_LICENSES.md">no GPL anywhere</a></p>
+    <p class="note-local">Everything on this page runs locally in WebAssembly; nothing you type leaves your device.</p>
   </section>
 
   <section class="panel" aria-label="Phonemizer">

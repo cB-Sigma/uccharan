@@ -1,6 +1,6 @@
 [package]
 name = "uccharan-capi"
-description = "C ABI for uccharan, the permissively licensed text-to-phoneme library."
+description = "C ABI for uccharan, the drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices: 5× faster than espeak-ng, Apache-2.0."
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

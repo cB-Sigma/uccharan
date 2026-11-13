@@ -1,6 +1,6 @@
 [package]
 name = "uccharan"
-description = "Permissively licensed text-to-phoneme (G2P) library for neural TTS: en-US, en-GB, Hindi and Hinglish, with espeak-style IPA, Piper, Kokoro, Kitten/Matcha and sherpa-onnx output profiles."
+description = "Drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices: 5× faster than espeak-ng, Apache-2.0."
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

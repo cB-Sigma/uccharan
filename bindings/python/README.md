@@ -1,5 +1,9 @@
 # uccharan (Python)
 
+**5× faster than espeak-ng. Just as accurate. Free to ship.**
+A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python,
+C and the browser. Apache-2.0. ([measurements](https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md))
+
 Permissively licensed text-to-phoneme conversion for neural TTS: English (US, British RP), Hindi
 and Hinglish, in the shapes Piper, Kokoro, Kitten TTS, Matcha-TTS and sherpa-onnx voices expect.
 No GPL code or data; no runtime dependencies.
@@ -30,9 +34,11 @@ backend.phonemize(["Hello, world."], strip=True)             # ['həlˈoʊ, wˈ�
 
 A command-line program is installed as `uccharan` (`uccharan -l hi -p piper "नमस्ते"`).
 
-English for Kokoro uses a port of misaki with misaki 0.9.4's dictionaries built in (Apache-2.0;
-see DATA_LICENSES.md).
+English for Kokoro uses a port of misaki, with misaki 0.9.4's dictionaries built in.
 
 Documentation, measured agreement, speed and end-to-end results:
-<https://github.com/cB-Sigma/uccharan>. Licence: Apache-2.0; English data derived from CMUdict
-(BSD-2-Clause).
+<https://github.com/cB-Sigma/uccharan>.
+
+## Licence
+
+Licence: Apache-2.0. Includes data from the CMU Pronouncing Dictionary (BSD-2-Clause) and misaki (Apache-2.0); see NOTICE.
