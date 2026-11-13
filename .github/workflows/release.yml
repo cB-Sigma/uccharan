@@ -266,7 +266,7 @@ jobs:
         run: |
           rustup toolchain install stable --profile minimal
           rustup default stable
-          published() { curl -sf -A "uccharan-release (github.com/cb-Sigma/uccharan)" "https://crates.io/api/v1/crates/$1/$VERSION" > /dev/null; }
+          published() { curl -sf -A "uccharan-release (github.com/cB-Sigma/uccharan)" "https://crates.io/api/v1/crates/$1/$VERSION" > /dev/null; }
           if published uccharan; then echo "uccharan $VERSION is already on crates.io"; else cargo publish -p uccharan; fi
           # the index needs a moment before the dependent crate can resolve the new version
           for i in 1 2 3 4 5 6 7 8 9 10; do

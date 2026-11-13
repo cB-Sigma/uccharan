@@ -34,5 +34,5 @@ English for Kokoro uses a port of misaki with misaki 0.9.4's dictionaries built 
 see DATA_LICENSES.md).
 
 Documentation, measured agreement, speed and end-to-end results:
-<https://github.com/cb-Sigma/uccharan>. Licence: Apache-2.0; English data derived from CMUdict
+<https://github.com/cB-Sigma/uccharan>. Licence: Apache-2.0; English data derived from CMUdict
 (BSD-2-Clause).

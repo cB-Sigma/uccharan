@@ -1,6 +1,6 @@
 # bolo
 
-[bolo](https://github.com/cb-Sigma/bolo) is uccharan's sibling project: a speech server that pulls
+[bolo](https://github.com/cB-Sigma/bolo) is uccharan's sibling project: a speech server that pulls
 models and serves them over familiar APIs. Its Piper voices run on sherpa-onnx, and their phonemes
 currently come from an optional, separately installed espeak-ng component.
 

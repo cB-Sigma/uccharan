@@ -10,7 +10,7 @@ edition = "2021"
 rust-version = "1.82"
 license = "Apache-2.0"
 authors = ["Abhinav Gautam <abhinav@codebuckets.in>"]
-repository = "https://github.com/cb-Sigma/uccharan"
+repository = "https://github.com/cB-Sigma/uccharan"
 homepage = "https://cb-sigma.github.io/uccharan/"
 
 [profile.release]

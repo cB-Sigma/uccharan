@@ -23,8 +23,8 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://cb-sigma.github.io/uccharan/"
-Repository = "https://github.com/cb-Sigma/uccharan"
-Issues = "https://github.com/cb-Sigma/uccharan/issues"
+Repository = "https://github.com/cB-Sigma/uccharan"
+Issues = "https://github.com/cB-Sigma/uccharan/issues"
 
 [project.scripts]
 uccharan = "uccharan.cli:main"

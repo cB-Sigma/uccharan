@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/cb-Sigma/uccharan/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/cb-Sigma/uccharan/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/cB-Sigma/uccharan/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/cB-Sigma/uccharan/actions/workflows/ci.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="Licence: Apache-2.0" src="https://img.shields.io/badge/licence-Apache--2.0-1f62b3"></a>
   <a href="https://pypi.org/project/uccharan/"><img alt="PyPI" src="https://img.shields.io/pypi/v/uccharan?color=1f62b3"></a>
   <a href="https://crates.io/crates/uccharan"><img alt="crates.io" src="https://img.shields.io/crates/v/uccharan?color=1f62b3"></a>
@@ -223,7 +223,7 @@ originally come from (details in [DATA_LICENSES.md](DATA_LICENSES.md)).
   directly with onnxruntime.
 - Windows and macOS builds (built by the release workflow, not run here).
 - A human listening test.
-- Integration inside [bolo](https://github.com/cb-Sigma/bolo).
+- Integration inside [bolo](https://github.com/cB-Sigma/bolo).
 - Side-by-side speed against espeak-ng's WebAssembly build.
 
 ## Roadmap
@@ -245,4 +245,4 @@ Integrations: [sherpa-onnx](docs/integrations/sherpa-onnx.md), [Piper](docs/inte
 [Kokoro](docs/integrations/kokoro.md), [bolo](docs/integrations/bolo.md) ·
 [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md) · [Security](SECURITY.md)
 
-uccharan is a sibling of [bolo](https://github.com/cb-Sigma/bolo). Made by Abhinav Gautam.
+uccharan is a sibling of [bolo](https://github.com/cB-Sigma/bolo). Made by Abhinav Gautam.

@@ -26,5 +26,5 @@ about 3 MB each); point
 `await loadLanguage(...)`, `phonemizeSync` runs without awaiting.
 
 Live demo: <https://cb-sigma.github.io/uccharan/>. Documentation and measurements:
-<https://github.com/cb-Sigma/uccharan>. Licence: Apache-2.0; English data derived from CMUdict
+<https://github.com/cB-Sigma/uccharan>. Licence: Apache-2.0; English data derived from CMUdict
 (BSD-2-Clause).

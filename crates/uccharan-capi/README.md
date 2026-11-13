@@ -1,6 +1,6 @@
 # uccharan-capi
 
-C ABI for [uccharan](https://github.com/cb-Sigma/uccharan): a shared and a static library plus
+C ABI for [uccharan](https://github.com/cB-Sigma/uccharan): a shared and a static library plus
 `include/uccharan.h`.
 
 ```c

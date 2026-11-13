@@ -26,5 +26,5 @@ profile) is compiled in through the default `embed-*` features; turn them
 off and use `Phonemizer::load` to supply it at run time.
 
 Measured agreement with the reference, speed and the end-to-end results are in the repository:
-<https://github.com/cb-Sigma/uccharan>. Licence: Apache-2.0; the English lexicon is derived from
+<https://github.com/cB-Sigma/uccharan>. Licence: Apache-2.0; the English lexicon is derived from
 CMUdict (BSD-2-Clause), see `NOTICE` and `DATA_LICENSES.md`.

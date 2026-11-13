@@ -7,10 +7,10 @@
   "homepage": "https://cb-sigma.github.io/uccharan/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cb-Sigma/uccharan.git",
+    "url": "git+https://github.com/cB-Sigma/uccharan.git",
     "directory": "bindings/wasm"
   },
-  "bugs": "https://github.com/cb-Sigma/uccharan/issues",
+  "bugs": "https://github.com/cB-Sigma/uccharan/issues",
   "keywords": [
     "g2p",
     "phonemizer",
