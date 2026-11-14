@@ -93,9 +93,9 @@ def test_phonemizer_shim():
 
 
 def test_cli():
-    out = subprocess.run([sys.executable, "-m", "uccharan", "-l", "hi", "-p", "piper", "नमस्ते।"], capture_output=True, text=True, check=True)
+    out = subprocess.run([sys.executable, "-m", "uccharan", "-l", "hi", "-p", "piper", "नमस्ते।"], capture_output=True, text=True, encoding="utf-8", check=True)
     assert json.loads(out.stdout) == [unicodedata.normalize("NFD", "nəmˈʌsteː.")]
-    out = subprocess.run([sys.executable, "-m", "uccharan"], input="Hello\nworld\n", capture_output=True, text=True, check=True)
+    out = subprocess.run([sys.executable, "-m", "uccharan"], input="Hello\nworld\n", capture_output=True, text=True, encoding="utf-8", check=True)
     assert out.stdout.splitlines() == ["həlˈoʊ", "wˈɜːld"]
 
 

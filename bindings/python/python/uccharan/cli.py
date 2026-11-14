@@ -22,6 +22,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     ap.add_argument("--json", action="store_true", help="print one JSON value per input line")
     ap.add_argument("-V", "--version", action="version", version=f"uccharan {__version__}")
     args = ap.parse_args(argv)
+    # Phonemes are not in the legacy Windows code pages: always read and write UTF-8.
+    for stream in (sys.stdin, sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            reconfigure(encoding="utf-8")
 
     def emit(line: str) -> None:
         try:
