@@ -71,6 +71,13 @@ npm install uccharan
 [release](https://github.com/cB-Sigma/uccharan/releases), or build them with
 `cargo build --release -p uccharan-capi`.
 
+**Homebrew** (macOS, Linux): the `uccharan` command, `libuccharan` and `uccharan.h`, built from
+source
+
+```sh
+brew install cb-sigma/tap/uccharan
+```
+
 **Language packs**: English and Hindi are built in. The word tables of German, Dutch, French,
 Italian, Portuguese, Polish, Turkish, Czech, Swedish, Catalan, Romanian, Hungarian, Finnish,
 Norwegian, Danish, Urdu and Sindhi are small packs attached to each GitHub release. The wheel and
@@ -172,7 +179,8 @@ uccharan_sound_index_free(names);
 uccharan_free(p);
 ```
 
-**Command line** (installed with the Python package, or `cargo install uccharan`):
+**Command line** (installed with the Python package, `brew install cb-sigma/tap/uccharan`, or
+`cargo install uccharan`):
 `uccharan -l hi -p piper "नमस्ते दुनिया।"`. Code written for `phonemizer` can use
 `from uccharan.compat import EspeakBackend`.
 
