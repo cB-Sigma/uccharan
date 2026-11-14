@@ -1,7 +1,7 @@
 # uccharan (Python)
 
 **5× faster than espeak-ng. Just as accurate. Free to ship.**
-A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python,
+A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English, Hindi and nineteen more South Asian languages, in Rust, Python,
 C and the browser. Apache-2.0. ([measurements](https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md))
 
 Permissively licensed text-to-phoneme conversion for neural TTS: English (US, British RP), Hindi
@@ -37,7 +37,7 @@ A command-line program is installed as `uccharan` (`uccharan -l hi -p piper "न
 English for Kokoro uses a port of misaki with misaki 0.9.4's dictionaries; `load_misaki(dir)`
 loads another copy.
 
-The wheel carries the en-US and Hindi data. British English and the Kokoro English data are
+The wheel carries the en-US, Hindi and other South Asian language data. British English and the Kokoro English data are
 language packs: downloaded from the GitHub release of the same version the first time they are
 needed, checked against SHA-256 sums inside the wheel, and cached in `~/.cache/uccharan`. On an
 offline machine put the `.ucd` files (from the release page) in a directory named by
