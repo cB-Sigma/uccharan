@@ -88,6 +88,30 @@ pub unsafe extern "C" fn uccharan_load(
     }
 }
 
+/// Load any `.ucd` pack, for example an optional `wikipron-en-us.ucd`
+/// (CC BY-SA 4.0 data, used by the improved mode). The pack names its
+/// language itself. Returns 0 on success, -1 for a bad argument, -2 for a
+/// malformed or unknown pack.
+///
+/// # Safety
+/// `p` must be a live phonemizer; `data` must point to `len` readable bytes.
+#[no_mangle]
+pub unsafe extern "C" fn uccharan_load_pack(
+    p: *mut UccharanPhonemizer,
+    data: *const u8,
+    len: usize,
+) -> i32 {
+    if p.is_null() || data.is_null() {
+        return -1;
+    }
+    // SAFETY: pointers were checked for NULL and the caller guarantees validity.
+    let (p, bytes) = unsafe { (&*p, std::slice::from_raw_parts(data, len)) };
+    match p.inner.load_pack(bytes.to_vec()) {
+        Ok(_) => 0,
+        Err(_) => -2,
+    }
+}
+
 /// Phonemize `text`.
 ///
 /// `lang` is "en-us", "en-gb" or "hi" (espeak voice names are accepted).

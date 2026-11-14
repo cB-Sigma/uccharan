@@ -555,7 +555,8 @@ fn render(ph: &[Ph], improved: bool) -> String {
                 && ph.get(i + 1).is_some_and(|q| q.s == "h")
             {
                 "ɛ"
-            } else if p.schwa && p.independent && !improved {
+            } else if p.schwa && p.independent && !improved && (i == 0 || p.stress == 1) {
+                // A vowel letter अ inside a word (जंतुअन) is ə unless stressed.
                 "ʌ"
             } else if p.schwa {
                 if p.stress == 1 && !single_letter {
@@ -758,13 +759,21 @@ static FUNCTION_WORDS: &[(&str, u8, u8)] = &[
 /// The Hindi front end.
 pub struct Hindi<'a> {
     data: Option<&'a Data>,
+    wiki: Option<&'a Data>,
 }
 
 impl<'a> Hindi<'a> {
     /// Create the front end; the data image holds the exceptions lexicon and
     /// the romanised-Hindi word list and may be absent.
     pub fn new(data: Option<&'a Data>) -> Self {
-        Hindi { data }
+        Hindi { data, wiki: None }
+    }
+
+    /// Use an optional WikiPron pack (improved mode) for words outside the
+    /// exceptions lexicon.
+    pub fn with_wiki(mut self, wiki: Option<&'a Data>) -> Self {
+        self.wiki = wiki;
+        self
     }
 
     pub(crate) fn lookup(&self, key: &str) -> Option<String> {
@@ -783,6 +792,21 @@ impl<'a> Hindi<'a> {
         self.word_with(word, false, false)
     }
 
+    /// Improved reading of a word whose last morpheme starts at the inherent
+    /// vowel after `stem` (Bhojpuri past forms: रह-ल-न ɾəhələn keeps that
+    /// vowel, where Hindi-type deletion would drop it).
+    pub fn word_seam(&self, word: &str, stem: &str) -> String {
+        let mut ph = parse(word, true);
+        if ph.is_empty() {
+            return String::new();
+        }
+        geminate(&mut ph, true);
+        assign_stress(&mut ph);
+        let b = parse(stem, true).len().checked_sub(1);
+        delete_schwas_standard(&mut ph, b);
+        render(&ph, true)
+    }
+
     fn word_with(&self, word: &str, compat: bool, medial: bool) -> String {
         let improved = !compat;
         if let Some(e) = self.lookup(word) {
@@ -794,6 +818,15 @@ impl<'a> Hindi<'a> {
             // An empty compatible column means "use the rules".
             if !chosen.is_empty() {
                 return chosen.to_string();
+            }
+        }
+        if improved && medial {
+            if let Some(w) = self.wiki {
+                let mut s = String::new();
+                if w.lookup(word, &mut s) {
+                    let predicted = Hindi::new(None).word_with(word, false, true);
+                    return crate::wiki::with_stress(&s, &predicted, Lang::Hi);
+                }
             }
         }
         let mut ph = parse(word, improved);
@@ -861,6 +894,31 @@ impl<'a> Hindi<'a> {
                         }
                         _ => ipa,
                     };
+                }
+                // Compatible mode: before a hyphen the reference keeps the final
+                // inherent vowel of a word of two or more syllables (अलग-अलग).
+                if compat && items.get(i + 1).is_some_and(|x| x.hyphen) {
+                    let cs: Vec<char> = it.text.chars().collect();
+                    let n = cs.len();
+                    let cons = |c: char| ('क'..='ह').contains(&c);
+                    // …CəC at the end: the last two letters are bare consonants.
+                    let last = if n >= 3 && cons(cs[n - 2]) && cs[n - 1] != 'य' {
+                        cs[n - 1]
+                    } else {
+                        ' '
+                    };
+                    let vowels: Vec<(usize, char)> = ipa
+                        .char_indices()
+                        .filter(|(_, c)| "aeiouəɐɑɛɪɔʊʌ".contains(*c))
+                        .collect();
+                    if ('क'..='ह').contains(&last) && vowels.len() >= 2 {
+                        let (k, _) = vowels[vowels.len() - 1];
+                        let stressed = ipa[..k].ends_with(['ˈ', 'ˌ']);
+                        if !stressed {
+                            ipa.push('ˌ');
+                        }
+                        ipa.push('ə');
+                    }
                 }
                 WordOut::new(&it.text, ipa, Lang::Hi, it.glue)
             })

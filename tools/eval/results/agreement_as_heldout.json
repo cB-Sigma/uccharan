@@ -1,0 +1,248 @@
+{
+ "language": "as",
+ "reference": "espeak-ng 1.52.0 voice as (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 2000,
+  "reference_symbols": 123127,
+  "per": 0.07209629082167193,
+  "per_without_stress": 0.06332292119726385,
+  "exact_sentence": 0.563,
+  "exact_sentence_without_stress": 0.572,
+  "piper_shape_per": 0.07089179757065621,
+  "piper_shape_exact_sentence": 0.563,
+  "word_count_mismatch_sentences": 783,
+  "errors_by_class": {
+   "vowel": {
+    "count": 3561,
+    "share": 0.40114903683676917,
+    "per_contribution": 0.028921357622617296
+   },
+   "stress": {
+    "count": 2482,
+    "share": 0.2795989636138335,
+    "per_contribution": 0.02015804819414101
+   },
+   "consonant": {
+    "count": 1632,
+    "share": 0.1838458938830686,
+    "per_contribution": 0.01325460703176395
+   },
+   "other": {
+    "count": 635,
+    "share": 0.07153317562239496,
+    "per_contribution": 0.00515727663306992
+   },
+   "length": {
+    "count": 456,
+    "share": 0.05136870564379858,
+    "per_contribution": 0.003703493141228163
+   },
+   "word-boundary": {
+    "count": 105,
+    "share": 0.011828320378506252,
+    "per_contribution": 0.0008527780259406953
+   },
+   "diacritic": {
+    "count": 6,
+    "share": 0.0006759040216289286,
+    "per_contribution": 4.873017291089688e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "o→ɔ",
+    "count": 2554
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 1010
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 795
+   },
+   {
+    "edit": "ʃ→b",
+    "count": 530
+   },
+   {
+    "edit": "ʃ→χ",
+    "count": 519
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 412
+   },
+   {
+    "edit": "∅→ː",
+    "count": 297
+   },
+   {
+    "edit": "ɔ→o",
+    "count": 294
+   },
+   {
+    "edit": "e→ɔ",
+    "count": 259
+   },
+   {
+    "edit": "n→ ",
+    "count": 201
+   },
+   {
+    "edit": "ː→∅",
+    "count": 159
+   },
+   {
+    "edit": "∅→χ",
+    "count": 118
+   },
+   {
+    "edit": "ʃ→ɔ",
+    "count": 116
+   },
+   {
+    "edit": "o→ ",
+    "count": 116
+   },
+   {
+    "edit": "o→ə",
+    "count": 105
+   },
+   {
+    "edit": "ɔ→ə",
+    "count": 103
+   },
+   {
+    "edit": "∅→ ",
+    "count": 92
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 91
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 76
+   },
+   {
+    "edit": "d→ɾ",
+    "count": 55
+   },
+   {
+    "edit": "∅→ɾ",
+    "count": 52
+   },
+   {
+    "edit": "ʃ→ ",
+    "count": 52
+   },
+   {
+    "edit": "æ→e",
+    "count": 52
+   },
+   {
+    "edit": "t→ʈ",
+    "count": 52
+   },
+   {
+    "edit": "∅→h",
+    "count": 50
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 5667,
+    "wrong": 100,
+    "rate": 0.01764602082230457
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 14,
+    "per": 0.09655638082376772,
+    "exact_sentence": 0.0
+   },
+   "no-digits": {
+    "sentences": 1986,
+    "per": 0.07179849727898986,
+    "exact_sentence": 0.5669687814702921
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "12624194",
+    "text": "টমে ডাৰ্ক মীট নাখায়।",
+    "reference": "ʈˈɔme ɖˈaɾkɔ mˈiʈ dˌontennˈɔ ˈakaɾ kʰˈɔ ˈakaɾ ˌontostedʒˈɔ bˈindu",
+    "uccharan": "ʈˈɔme ɖˈaɾkɔ mˈiʈ dˈɔntːɔ nˈɔ ˈakaɾ kʰˈɔ ˈakaɾ ˌɔntɔstˌedʒˈɔ bˈindu"
+   },
+   {
+    "id": "12355392",
+    "text": "তই জাৰ্মান ভাষা কিয় শিকিছ?",
+    "reference": "tˈoi ɟˈarman bʰˈaʃa kˈɔ hɾˌɔʃʃoˈikaɾ ˌontostedʒˈɔ bˈindu ʃˈikitʃʰ",
+    "uccharan": "tˈoi ɟˈarman bʰˈaʃa kˈɔ hɾˈɔχbɔˌikaɾ ˌɔntɔstˌedʒˈɔ bˈindu ʃˈikitʃʰ"
+   },
+   {
+    "id": "10883596",
+    "text": "আপুনি কিয় নীৰৱ হৈ ৰ’লে?",
+    "reference": "ˈapunˌi kˈɔ hɾˌɔʃʃoˈikaɾ ˌontostedʒˈɔ bˈindu nˈiɾɔwˌaɔ hˈoj ɾˈole",
+    "uccharan": "ˈapunˌi kˈɔ hɾˈɔχbɔˌikaɾ ˌɔntɔstˌedʒˈɔ bˈindu nˈiɾɔwˌaɔ hˈoj ɾˈole"
+   },
+   {
+    "id": "8624341",
+    "text": "গুলপীয়া কাপোৰ পিন্ধি থকা মহিলাগৰাকী কোন?",
+    "reference": "ɡˈɔ dˈiːɾɡʰukˌaɾ lˈɔ pˈɔ dˈiːɾɡʰikˌaɾ ˌontostedʒˈɔ bˈindu ˈakaɾ kˈapoɾ pˈindʰi tʰˈɔka mˈohilˌaɡɔɾˌaki kˌon",
+    "uccharan": "ɡˈɔ hɾˈɔχbɔˌukaɾ lˈɔ pˈɔ dˈiɾɡʰikˌaɾ ˌɔntɔstˌedʒˈɔ bˈindu ˈakaɾ kˈapoɾ pˈindʰi tʰˈɔka mˈohilˌaɡɔɾˌaki kˈon"
+   },
+   {
+    "id": "12030511",
+    "text": "তুমি কাঁহী-বাটি ধোৱামানে মই মজিয়াখন সাৰিম।",
+    "reference": "tˌumi kˈãhibˈaʈi dʰˈowɔˌamanˌe mˈoi mˈɔ ɟˈɔ hɾˌɔʃʃoˈikaɾ ˌontostedʒˈɔ bˈindu ˈakaɾ kʰˈɔ dˌontennˈɔ χˈaɾim",
+    "uccharan": "tˌumi kˈãhibˈaʈi dʰˈowɔˌamanˌe mˈoi mˈɔ ɟˈɔ hɾˈɔχbɔˌikaɾ ˌɔntɔstˌedʒˈɔ bˈindu ˈakaɾ kʰˈɔ dˈɔntːɔ nˈɔ χˈaɾim"
+   },
+   {
+    "id": "11986056",
+    "text": "মই কেতিয়াও সন্তান জন্ম দিব নোখোজোঁ।",
+    "reference": "mˈoi kˈɔ ˈekaɾ tˈɔ hɾˌɔʃʃoˈikaɾ ˌontostedʒˈɔ bˈindu ˈakaɾ o χˈəntan ɟˈɔnmɔ dˈib nˈokʰoɟˌõ",
+    "uccharan": "mˈoi kˈɔ ˈekaɾ tˈo hɾˈɔχbɔˌikaɾ ˌɔntɔstˌedʒˈɔ bˈindu ˈakaɾ ˈoː χˈəntan ɟˈɔnmɔ dˈib nˈokʰoɟˌõ"
+   },
+   {
+    "id": "10113984",
+    "text": "অলপ গোপনীয়তা পালে ভাল পাম৷",
+    "reference": "ˈɔlɔp ɡˈɔ ˈokaɾ pˈɔ dˌontennˈɔ dˈiːɾɡʰikˌaɾ ˌontostedʒˈɔ bˈindu tˈɔ ˈakaɾ pˈale bʰˈal pˈam",
+    "uccharan": "ˈɔlɔp ɡˈɔ ˈoːkaɾ pˈɔ dˈɔntːɔ nˈɔ dˈiɾɡʰikˌaɾ ˌɔntɔstˌedʒˈɔ bˈindu tˈo ˈakaɾ pˈale bʰˈal pˈam"
+   },
+   {
+    "id": "11988755",
+    "text": "তই প্ৰায়েই এইটো কৰ নেকি?",
+    "reference": "tˈoi pˈɔ hˈɔʃontˌo ɾˈɔ ˈakaɾ ˌontostedʒˈɔ bˈindu ˈekaɾ hɾˌɔʃʃoˈi ˈeiʈˌo kˈɔɾ nˈeki",
+    "uccharan": "tˈoi pˈɔ hˈɔχəntˌo ɾˈɔ ˈakaɾ ˌɔntɔstˌedʒˈɔ bˈindu ˈekaɾ hɾˈɔχbɔ ˈi ˈeiʈˌo kˈɔɾ nˈeki"
+   },
+   {
+    "id": "12644813",
+    "text": "মই মোৰ ৰাছিয়ান বন্ধুৰ লগত প্ৰায়ে আড্ডা মাৰোঁ।",
+    "reference": "mˈoi mˈoɾ ɾˈɔ ˈakaɾ tʃhˈɔ hɾˌɔʃʃoˈikaɾ ˌontostedʒˈɔ bˈindu ˈakaɾ dˌontennˈɔ bˈondʰuɾ lˈɔɡɔtˌo pˈɔ hˈɔʃontˌo ɾˈɔ ˈakaɾ ˌontostedʒˈɔ bˈindu ˈekaɾ ˈaɖɖa mˈaɾõ",
+    "uccharan": "mˈoi mˈoɾ ɾˈɔ ˈakaɾ tʃʰˈɔ hɾˈɔχbɔˌikaɾ ˌɔntɔstˌedʒˈɔ bˈindu ˈakaɾ dˈɔntːɔ nˈɔ bˈondʰuɾ lˈɔɡɔtˌo pˈɔ hˈɔχəntˌo ɾˈɔ ˈakaɾ ˌɔntɔstˌedʒˈɔ bˈindu ˈekaɾ ˈaɖɖa mˈaɾõ"
+   },
+   {
+    "id": "8626693",
+    "text": "মই টমক লগ ধৰিবলৈ ইচ্ছুক নহয়।",
+    "reference": "mˈoi ʈˈɔmɔk lˈɔɡ dʰˈoɾibˌɔloj ˈitʃtʃʰuk dˌontennˈɔ hˈɔ ˌontostedʒˈɔ bˈindu",
+    "uccharan": "mˈoi ʈˈɔmɔk lˈɔɡ dʰˈoɾibˌɔloj ˈitʃtʃʰuk dˈɔntːɔ nˈɔ hˈo ˌɔntɔstˌedʒˈɔ bˈindu"
+   },
+   {
+    "id": "13255231",
+    "text": "সিহঁত চেমনীয়া।",
+    "reference": "χˈihɔ̃tˌo tʃˈɔ ˈekaɾ mˈɔ dˌontennˈɔ dˈiːɾɡʰikˌaɾ ˌontostedʒˈɔ bˈindu ˈakaɾ",
+    "uccharan": "χˈihɔ̃tˌo tʃˈɔ ˈekaɾ mˈɔ dˈɔntːɔ nˈɔ dˈiɾɡʰikˌaɾ ˌɔntɔstˌedʒˈɔ bˈindu ˈakaɾ"
+   },
+   {
+    "id": "12513260",
+    "text": "অনবৰতে সৎ হৈ থকাটো সহজ নহয়।",
+    "reference": "ˈɔnɔbˌɔɾɔtˌe χˈət hˈoj tʰˈɔkaʈˌo χˈəhɔɟ dˌontennˈɔ hˈɔ ˌontostedʒˈɔ bˈindu",
+    "uccharan": "ˈɔnɔbˌɔɾɔtˌe χˈət hˈoj tʰˈɔkaʈˌo χˈəhɔɟ dˈɔntːɔ nˈɔ hˈo ˌɔntɔstˌedʒˈɔ bˈindu"
+   }
+  ]
+ }
+}

@@ -1,0 +1,243 @@
+{
+ "language": "ta",
+ "reference": "espeak-ng 1.52.0 voice ta (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 192909,
+  "per": 0.04094676764692161,
+  "per_without_stress": 0.023054980031828966,
+  "exact_sentence": 0.09288537549407115,
+  "exact_sentence_without_stress": 0.26877470355731226,
+  "piper_shape_per": 0.040542200745321263,
+  "piper_shape_exact_sentence": 0.09189723320158102,
+  "word_count_mismatch_sentences": 225,
+  "errors_by_class": {
+   "stress": {
+    "count": 4133,
+    "share": 0.5232307887074313,
+    "per_contribution": 0.021424609530918723
+   },
+   "consonant": {
+    "count": 2411,
+    "share": 0.30522850993796685,
+    "per_contribution": 0.01249812087564603
+   },
+   "other": {
+    "count": 623,
+    "share": 0.07887074313204204,
+    "per_contribution": 0.003229501993167763
+   },
+   "vowel": {
+    "count": 438,
+    "share": 0.05545005696923661,
+    "per_contribution": 0.0022705005987278975
+   },
+   "word-boundary": {
+    "count": 228,
+    "share": 0.028864413216862894,
+    "per_contribution": 0.001181904421255618
+   },
+   "length": {
+    "count": 66,
+    "share": 0.008355488036460312,
+    "per_contribution": 0.0003421302272055736
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˌ→∅",
+    "count": 1687
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 1588
+   },
+   {
+    "edit": "ɖ→ʈ",
+    "count": 290
+   },
+   {
+    "edit": "t→∅",
+    "count": 243
+   },
+   {
+    "edit": "∅→ ",
+    "count": 195
+   },
+   {
+    "edit": "∅→ʉ",
+    "count": 174
+   },
+   {
+    "edit": "ɡ→k",
+    "count": 167
+   },
+   {
+    "edit": "b→p",
+    "count": 147
+   },
+   {
+    "edit": "p→b",
+    "count": 144
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 138
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 96
+   },
+   {
+    "edit": "ʉ→m",
+    "count": 88
+   },
+   {
+    "edit": "∅→s",
+    "count": 81
+   },
+   {
+    "edit": "ː→ˈ",
+    "count": 78
+   },
+   {
+    "edit": "∅→r",
+    "count": 77
+   },
+   {
+    "edit": "∅→n",
+    "count": 76
+   },
+   {
+    "edit": "∅→o",
+    "count": 73
+   },
+   {
+    "edit": "d→t",
+    "count": 70
+   },
+   {
+    "edit": "a→ʌ",
+    "count": 59
+   },
+   {
+    "edit": "ˌ→ʉ",
+    "count": 55
+   },
+   {
+    "edit": "ɭ→∅",
+    "count": 53
+   },
+   {
+    "edit": "ː→ʉ",
+    "count": 52
+   },
+   {
+    "edit": "ː→∅",
+    "count": 52
+   },
+   {
+    "edit": "u→∅",
+    "count": 47
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 46
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 12663,
+    "wrong": 1806,
+    "rate": 0.14262023217247097
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 211,
+    "per": 0.08111730877329529,
+    "exact_sentence": 0.014218009478672985
+   },
+   "no-digits": {
+    "sentences": 801,
+    "per": 0.028277249326650985,
+    "exact_sentence": 0.1136079900124844
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-840",
+    "text": "ஆனால், கூடுதலான தகுதி மதிப்பீடுகளின் பயன்பாடு இல்லை எனில், ஜாவாத்தீவின் மத்திய மற்றும் கிழக்கு பகுதியிலிருந்து கிடைக்கும் உணவையே இந்த சொல் குறிக்கிறது.",
+    "reference": "ˈaːnaːl kˈuːɖʉdˌʌlaːnʌ tˈʌɡʉdi mˈʌdippˌiːɖʉɡˌʌɭin pˈʌjʌnpaːɖʉ ˈillaɪ ˈenil dʒˈaːvaːttˌiːvin mˈʌddijʌ mˈʌʈrʉm kˈiɻʌkkʉ pˈʌɡʉdˌijilˌiɹʉndʉ kˈiɖaɪkkʉm ˈuɳʌvˌaɪjeː ˈindʌ sˈol kˈurikkirˌʌdʉ",
+    "uccharan": "ˈaːnaːl kˈuːɖʉdˌʌlaːnʌ tˈʌɡʉdi mˈʌdippiːɖˌʉɡʌɭin pˈʌjʌnbˌaːɖʉ ˈillaɪ ˈenil dʒˈaːvaːttˌiːvin mˈʌddijʌ mˈʌʈrʉm kˈiɻʌkkʉ pˈʌɡʉdijiliɹˌʉndʉ kˈiɖaɪkkʉm ˈuɳʌvˌaɪjeː ˈindʌ sˈol kˈurikkirˌʌdʉ"
+   },
+   {
+    "id": "flores-devtest-767",
+    "text": "கூடுதலாக, வாசனைகள் கரடிகள் மற்றும் பிற வனவிலங்குகளை ஈர்க்கின்றன என்பதை அறிந்து கொள்ளுங்கள், எனவே வாசனை நிறைந்த உணவுகளை எடுத்துச் செல்வதையோ அல்லது சமைப்பதையோ தவிர்த்து, முகாமை சுத்தமாக வைத்திருங்கள்.",
+    "reference": "kˈuːɖʉdˌʌlaːɡʌ vˈaːsʌnˌaɪɡʌɭ kˈʌɹʌɖˌiɡʌɭ mˈʌʈrʉm pˈirʌ vˈʌnʌvˌilʌŋɡˌʉɡʌɭaɪ ˈiːrkkˌinrʌnʌ ʲˈenbʌdaɪ ˈarindʉ kˈoɭɭʉŋɡʌɭ ʲˈenʌveː vˈaːsʌnaɪ nˈiraɪndʌ ˈuɳʌvˌʉɡʌɭaɪ ˈeɖʉttʉtʃːelvˌʌdaɪjoː ˈallʌdʉ sˈʌmaɪppˌʌdaɪjoː tˈʌvirttʉ mˈuɡaːmaɪ sˈuttʌmˌaːɡʌ vˈaɪttiɹˌʉŋɡʌɭ",
+    "uccharan": "kˈuːɖʉdˌʌlaːɡʌ vˈaːsʌnˌaɪɡʌɭ kˈʌɹʌɖˌiɡʌɭ mˈʌʈrʉm pˈirʌ vˈʌnʌvilˌʌŋɡʉɡˌʌɭaɪ ˈiːrkkinrˌʌnʌ ʲˈenbʌdaɪ ˈarindʉ kˈoɭɭʉŋɡʌɭ ʲˈenʌveː vˈaːsʌnaɪ nˈiraɪndʌ ˈuɳʌvˌʉɡʌɭaɪ ˈeɖʉttʉtʃ sˈelvʌdˌaɪjoː ˈallʌdʉ sˈʌmaɪppˌʌdaɪjoː tˈʌvirttʉ mˈuɡaːmaɪ sˈuttʌmˌaːɡʌ vˈaɪttiɹˌʉŋɡʌɭ"
+   },
+   {
+    "id": "flores-devtest-96",
+    "text": "அதிகாரிகள் இது, யுரேனியம் எரிசக்திப் பொருள் வைக்கப்பட்டிருந்த கலம் சேதமடைந்திருக்கலாம் மற்றும் ஒழுகல் ஏற்பட்டிருப்பதைக் குறிக்கலாம் என அனுமானிக்கின்றனர்.",
+    "reference": "ˈadiɡˌaːɹiɡʌɭ ˈidʉ jˈuɹeːnˌijʌm ʲˈeɹisˌʌɡtip pˈoɹʉɭ vˈaɪkkʌppˌʌʈʈiɹˌʉndʌ kˈʌlʌm sˈeːdʌmˌʌɖaɪndˌiɹʉkkˌʌlaːm mˈʌʈrʉm ˈoɻʉɡʌl ʲˈeːrpʌʈʈˌiɹʉppˌʌdaɪk kˈurikkˌʌlaːm ʲˈenʌ ˈanʉmˌaːnikkinrˌʌnʌr",
+    "uccharan": "ˈadiɡˌaːɹiɡʌɭ ˈidʉ jˈuɹeːnˌijʌm ʲˈeɹisˌʌktip pˈoɹʉɭ vˈaɪkkˌʌppʌʈʈiɹˌʉndʌ kˈʌlʌm sˈeːdʌmˌʌɖaɪndiɹˌʉkkˌʌlaːm mˈʌʈrʉm ˈoɻʉɡʌl ʲˈeːrpʌʈʈiɹˌʉppʌdaɪk kˈurikkˌʌlaːm ʲˈenʌ ˈanʉmˌaːnikkinrˌʌnʌr"
+   },
+   {
+    "id": "flores-devtest-387",
+    "text": "புராதன ரோமானியர்களின் உணவுகளில் , ஐரோப்பாவிற்கு ஆசியாவிலிருந்தோ அமெரிக்காவிலிருந்தோ பல நூற்றாண்டுகள் பின்னர் வந்த உணவுகள் இடம் பெற்றிருக்க முடியாது.",
+    "reference": "pˈuɹaːdˌʌnʌ ɹˈoːmaːnˌijʌrɡˌʌɭin ˈuɳʌvˌʉɡʌɭil ˈaɪɹoːppˌaːvirkʉ ˈaːsijˌaːvilˌiɹʉndoː ˈameɹˌikkˌaːvilˌiɹʉndoː pˈʌlʌ nˈuːʈraːɳɖˌʉɡʌɭ pˈinnʌr vˈʌndʌ ˈuɳʌvˌʉɡʌɭ ˈiɖʌm pˈeʈriɹˌʉkkʌ mˈuɖijˌaːdʉ",
+    "uccharan": "pˈuɹaːdˌʌnʌ ɹˈoːmaːnijˌʌrɡʌɭin ˈuɳʌvˌʉɡʌɭil ˈaɪɹoːppˌaːvirkʉ ˈaːsijˌaːviliɹˌʉndoː ˈameɹikkˌaːviliɹˌʉndoː pˈʌlʌ nˈuːʈraːɳɖˌʉɡʌɭ pˈinnʌr vˈʌndʌ ˈuɳʌvˌʉɡʌɭ ˈiɖʌm pˈeʈriɹˌʉkkʌ mˈuɖijˌaːdʉ"
+   },
+   {
+    "id": "flores-devtest-232",
+    "text": "பாடகர் சஞ்சு சர்மா மாலையைத் தொடங்கினார், அதைத் தொடர்ந்து ஜெய் ஷங்கர் செளத்ரி சப்பன் போக் பஜனையும் வழங்கினார், பாடகர் ராஜு கண்டேல்வால் அவருடன் பாடினார்.",
+    "reference": "pˈaːɖʌɡʌr sˈʌɲdʒʉ ʂˈʌrmaː mˈaːlaɪjaɪt tˈoɖʌŋɡˌinaːr ˈadaɪt tˈoɖʌrndʉ dʒˈej ʂˈʌŋkʌr sˈaʊdɹi sˈʌppʌn pˈoːɡ bˈʌdʒʌnˌaɪjʉm vˈʌɻʌŋɡˌinaːr pˈaːɖʌɡʌr ɹˈaːdʒʉ kˈʌɳɖeːlvaːl ˈavʌɹˌʉɖʌn pˈaːɖinaːr",
+    "uccharan": "pˈaːɖʌɡʌr sˈʌɲdʒʉ sˈʌrmaː mˈaːlaɪjaɪt tˈoɖʌŋɡˌinaːr ˈadaɪt tˈoɖʌrndʉ dʒˈej ʂˈʌŋɡʌr sˈeɭʌtɹi sˈʌppʌn pˈoːk pˈʌdʒʌnˌaɪjʉm vˈʌɻʌŋɡˌinaːr pˈaːɖʌɡʌr ɹˈaːdʒʉ kˈʌɳɖeːlvaːl ˈavʌɹˌʉɖʌn pˈaːɖinaːr"
+   },
+   {
+    "id": "flores-devtest-219",
+    "text": "ஈரானில் விமான விபத்துக்கள் பொதுவானவை, இது சிவில் மற்றும் இராணுவ நடவடிக்கைகளுக்கான மிகவும் மோசமாக பராமரிக்கப்படும் பழைய கடற்படையைக் கொண்டுள்ளது.",
+    "reference": "ˈiːɹaːnil vˈimaːnʌ vˈibʌttˌʉkkʌɭ pˈodʉvˌaːnʌvaɪ ˈidʉ sˈivil mˈʌʈrʉm ɹˈaːɳʉvʌ nˈʌɖʌvˌʌɖikkaɪɡˌʌɭʉkkaːnʌ mˈiɡʌvʉm mˈoːsʌmˌaːɡʌ pˈʌɹaːmˌʌɹikkˌʌppʌɖʉm pˈʌɻaɪjʌ kˈʌɖʌrpˌʌɖaɪjaɪk kˈoɳɖʉɭɭˌʌdʉ",
+    "uccharan": "ˈiːɹaːnil vˈimaːnʌ vˈibʌttˌʉkkʌɭ pˈodʉvˌaːnʌvaɪ ˈidʉ sˈivil mˈʌʈrʉm ˈiɹaːɳˌʉvʌ nˈʌɖʌvˌʌɖikkˌaɪɡʌɭˌʉkkˌaːnʌ mˈiɡʌvʉm mˈoːsʌmˌaːɡʌ pˈʌɹaːmˌʌɹikkˌʌppʌɖʉm pˈʌɻaɪjʌ kˈʌɖʌrpˌʌɖaɪjaɪk kˈoɳɖʉɭɭˌʌdʉ"
+   },
+   {
+    "id": "flores-devtest-90",
+    "text": "சந்திரன் பூமியில் ஒரு இழுவை செலுத்தி அலைகளை ஏற்படுத்துகிறது, அதே போல் பால்வீதி, தனுசு விண்மீன் கூட்டம் மீது ஒரு சக்தியை செலுத்துகிறது.",
+    "reference": "tʃˈʌndiɹʌn bˈuːmijil ˈoɹʉ ˈiɻʉvaɪ sˈelʉtti ˈalaɪɡˌʌɭaɪ ˈeːrpʌɖˌʉttʉɡˌirʌdʉ ˈadeː pˈoːl pˈaːlviːdi dˈʌnʉsʉ vˈiɳmiːn kˈuːʈʈʌm mˈiːdʉ ˈoɹʉ sˈʌɡtijaɪ sˈelʉttˌʉɡirˌʌdʉ",
+    "uccharan": "sˈʌndiɹʌn bˈuːmijil ˈoɹʉ ˈiɻʉvaɪ sˈelʉtti ˈalaɪɡˌʌɭaɪ ˈeːrpʌɖˌʉttʉɡirˌʌdʉ ˈadeː pˈoːl pˈaːlviːdi tˈʌnʉsʉ vˈiɳmiːn kˈuːʈʈʌm mˈiːdʉ ˈoɹʉ sˈʌktˌijaɪ sˈelʉttˌʉɡirˌʌdʉ"
+   },
+   {
+    "id": "flores-devtest-121",
+    "text": "அவர் பல நாடுகளுடைய ரூபாய் நோட்டுகளை பொறிக்கும் பணியிலும்  ஈடுபட்டிருந்தார், அவர் படைப்புகளின் சமீபத்திய எடுத்துக்காட்டுகள் கனடா நாட்டின் $5 மற்றும் $100 நோட்டுக்களின் முன்புறத்தில் உள்ள பிரதமரின் உருவப்படங்கள் அடங்கும்",
+    "reference": "ˈavʌr pˈʌlʌ nˈaːɖʉɡˌʌɭʉɖˌaɪjʌ ɹˈuːbaːj nˈoːʈʈʉɡˌʌɭaɪ pˈorikkʉm pˈʌɳijˌilʉm ˈiːɖʉpˌʌʈʈiɹˌʉndaːr ˈavʌr pˈʌɖaɪppˌʉɡʌɭin sˈʌmiːbˌʌttijʌ ʲˈeɖʉttˌʉkkˌaːʈʈʉɡʌɭ kˈʌnʌɖaː nˈaːʈʈin dˈolʌ ˈaɪndʉ mˈʌʈrʉm dˈolʌ nˈuːrʉ nˈoːʈʈʉkkˌʌɭin mˈunpʉrˌʌttil ˈuɭɭʌ pɹˈʌdʌmˌʌɹin ˈuɹʉvˌʌppʌɖˌʌŋɡʌɭ ˈaɖʌŋɡʉm",
+    "uccharan": "ˈavʌr pˈʌlʌ nˈaːɖʉɡˌʌɭʉɖˌaɪjʌ ɹˈuːbaːj nˈoːʈʈʉɡˌʌɭaɪ pˈorikkʉm pˈʌɳijˌilʉm ˈiːɖʉpˌʌʈʈiɹˌʉndaːr ˈavʌr pˈʌɖaɪppˌʉɡʌɭin sˈʌmiːbˌʌttijʌ ʲˈeɖʉttˌʉkkˌaːʈʈʉɡʌɭ kˈʌnʌɖaː nˈaːʈʈin ˈaɪndʉ mˈʌʈrʉm ˈonrʉ nˌuːrʉ nˈoːʈʈʉkkˌʌɭin mˈunbʉrˌʌttil ˈuɭɭʌ pɹˈʌdʌmˌʌɹin ˈuɹʉvˌʌppʌɖˌʌŋɡʌɭ ˈaɖʌŋɡʉm"
+   },
+   {
+    "id": "flores-devtest-678",
+    "text": "ஏ ஐ என்பது அவர் அறிவியல் புதினத்திறகு பெரும் தொடர்புடையதாக இருந்தாலும், ஏ ஐ கணினி அறிவியலின் ஒரு முக்கியமான கிளை, இயந்திரத்தின் நடத்தை, கற்றல் மற்றும் புத்திசாலித்தனமான மாற்றம் போன்றவற்றைக் கையாள்கிறது.",
+    "reference": "jˈeː ˈaɪ ˈenbʌdʉ ˈavʌr ˈarivˌijʌl pˈudinˌʌttirˌʌɡʉ pˈeɹʉm tˈoɖʌrbˌʉɖaɪjˌʌdaːɡʌ ˈiɹʉndˌaːlʉm jˈeː ˈaɪ kˈʌɳini ˈarivˌijʌlin ˈoɹʉ mˈukkˌijʌmˌaːnʌ kˈiɭaɪ ˈijʌndˌiɹʌttin nˈʌɖʌttaɪ kˈʌʈrʌl mˈʌʈrʉm bˈuddisˌaːlittˌʌnʌmˌaːnʌ mˈaːʈrʌm pˈoːnrʌvˌʌʈraɪk kˈaɪjaːɭɡˌirʌdʉ",
+    "uccharan": "ʲˈeː ˈaɪ ˈenbʌdʉ ˈavʌr ˈarivˌijʌl pˈudinˌʌttirˌʌɡʉ pˈeɹʉm tˈoɖʌrbˌʉɖaɪjˌʌdaːɡʌ ˈiɹʉndˌaːlʉm ʲˈeː ˈaɪ kˈʌɳini ˈarivijˌʌlin ˈoɹʉ mˈukkˌijʌmˌaːnʌ kˈiɭaɪ ˈijʌndiɹˌʌttin nˈʌɖʌttaɪ kˈʌʈrʌl mˈʌʈrʉm pˈuttisˌaːlittˌʌnʌmˌaːnʌ mˈaːʈrʌm pˈoːnrʌvˌʌʈraɪk kˈaɪjaːɭɡirˌʌdʉ"
+   },
+   {
+    "id": "flores-devtest-691",
+    "text": "\"வலைப்பதிவுகளின் சரியான பயன்பாடு \"\"மாணவர்களை மேலும் விமர்சகர்களாகவும், பகுத்தாய்பவர்களாகவும் ஆக்கும்; இணைய கேள்விகளுக்கு பதிலளிக்கும் போது அவர்கள் அடுதவர்களுடைய கருத்துக்கு தங்கள் பதிலைச் சொல்வதுடன், தங்களுக்கே உரிய ஒரு நிலையை எடுக்கவும் உதவுகிறது\"\" (ஓராவேக் 2002). \"",
+    "reference": "vˈʌlaɪppˌʌdivˌʉɡʌɭin sˈʌɹijˌaːnʌ pˈʌjʌnpaːɖʉ mˈaːɳʌvˌʌrɡʌɭaɪ mˈeːlʉm vˈimʌrsˌʌɡʌrɡˌʌɭaːɡˌʌvʉm pˈʌɡʉttˌaːjbʌvˌʌrɡʌɭˌaːɡʌvʉm ˈaːkkʉm ˈiɳaɪjʌ kˈeːɭviɡˌʌɭʉkkʉ bˈʌdilˌʌɭikkʉm pˈoːdʉ ˈavʌrɡʌɭ ˈaɖʉdˌʌvʌrɡˌʌɭʉɖˌaɪjʌ kˈʌɹʉttˌʉkkʉ tˈʌŋɡʌɭ bˈʌdilaɪtʃːolvˌʌdʉɖʌn tˈʌŋɡʌɭˌʉkkeː ˈuɹijʌ ˈoɹʉ nˈilaɪjaɪ ˈeɖʉkkˌʌvʉm ˈudʌvˌʉɡirˌʌdʉ ˈoːɹaːveːɡ ˈiɹʌɳɖ ˌaːjiɹˌʌttʉ ˌiɹʌɳɖʉ",
+    "uccharan": "vˈʌlaɪppˌʌdivˌʉɡʌɭin sˈʌɹijˌaːnʌ pˈʌjʌnbˌaːɖʉ mˈaːɳʌvˌʌrɡʌɭaɪ mˈeːlʉm vˈimʌrsˌʌɡʌrɡˌʌɭaːɡˌʌvʉm pˈʌɡʉttˌaːjbʌvˌʌrɡʌɭˌaːɡʌvʉm ˈaːkkʉm ˈiɳaɪjʌ kˈeːɭviɡˌʌɭʉkkʉ pˈʌdilˌʌɭikkʉm pˈoːdʉ ˈavʌrɡʌɭ ˈaɖʉdˌʌvʌrɡˌʌɭʉɖˌaɪjʌ kˈʌɹʉttˌʉkkʉ tˈʌŋɡʌɭ pˈʌdilaɪtʃ sˈolvʌdˌʉɖʌn tˈʌŋɡʌɭˌʉkkeː ˈuɹijʌ ˈoɹʉ nˈilaɪjaɪ ˈeɖʉkkˌʌvʉm ˈudʌvˌʉɡirˌʌdʉ ˈoːɹaːveːk ˈiɹʌɳɖʉ ˌaːjiɹʌm ˌiɹʌɳɖʉ"
+   },
+   {
+    "id": "flores-devtest-1",
+    "text": "ஹாலிஃபாக்ஸில் உள்ள டல்ஹெளசி பல்கலைக்கழகத்தின் மருத்துவப் பேராசிரியரும், நோவா ஸ்கோட்டியா மற்றும் கனேடிய நீரிழிவு சங்கத்தின் மருத்துவ மற்றும் அறிவியல் பிரிவின் தலைவருமான டாக்டர் இஹுத் உர், ஆராய்ச்சி இன்னும் ஆரம்ப நாட்களில்தான் உள்ளது என்று எச்சரித்துள்ளார்.",
+    "reference": "hˈaːlifˌaːksil ˈuɭɭʌ ɖˈʌlheɭˌʌsi pˈʌlɡʌlˌaɪkkʌɻˌʌɡʌttin mˈʌɹʉttˌʉvʌp pˈeːɹaːsˌiɹijˌʌɹʉm nˈoːvaː skˈoːʈʈijaː mˈʌʈrʉm kˈʌneːɖˌijʌ nˈiːɹiɻˌivʉ sˈʌŋɡʌttin mˈʌɹʉttˌʉvʌ mˈʌʈrʉm ˈarivˌijʌl pˈiɹivin tˈʌlaɪvˌʌɹʉmˌaːnʌ ɖˈaːkʈʌr ˈihʉd ˈur ˈaːɹaːjtʃːi ˈinnʉm ˈaːɹʌmbʌ nˈaːɖkʌɭˌildaːn ˈuɭɭʌdʉ ʲˈenrʉ ʲˈetʃːʌɹˌittʉɭɭaːr",
+    "uccharan": "hˈaːlifˌaːksil ˈuɭɭʌ ʈˈʌlheɭˌʌsi pˈʌlɡʌlˌaɪkkˌʌɻʌɡˌʌttin mˈʌɹʉttˌʉvʌp pˈeːɹaːsiɹijˌʌɹʉm nˈoːvaː skˈoːʈʈijaː mˈʌʈrʉm kˈʌneːɖˌijʌ nˈiːɹiɻˌivʉ sˈʌŋɡʌttin mˈʌɹʉttˌʉvʌ mˈʌʈrʉm ˈarivˌijʌl pɹˈivin tˈʌlaɪvˌʌɹʉmˌaːnʌ ʈˈaːkʈʌr ˈihʉt ˈur ˈaːɹaːjtʃːi ˈinnʉm ˈaːɹʌmbʌ nˈaːʈkʌɭˌildaːn ˈuɭɭʌdʉ ʲˈenrʉ ʲˈetʃːʌɹittˌʉɭɭaːr"
+   },
+   {
+    "id": "flores-devtest-940",
+    "text": "அரசியல் பேச்சுவார்த்தைகள் தோல்வியடைந்த போதிலும் மால்டோவாவின் இந்த இரண்டு பகுதிகளுக்கு இடையே பொருளாதார ரீதியிலான தொடர்புகள் மீண்டும் தொடங்கப்பட்டுள்ளன.",
+    "reference": "ˈaɹʌsˌijʌl pˈeːtʃːʉvˌaːrttaɪɡʌɭ tˈoːlvijˌʌɖaɪndʌ pˈoːdilʉm mˈaːlʈˌoːvaːvin ˈindʌ ˈiɹʌɳɖʉ pˈʌɡʉdˌiɡʌɭˌʉkkʉ ˈiɖaɪjeː pˈoɹʉɭˌaːdaːɹʌ ɹˈiːdijˌilaːnʌ tˈoɖʌrbˌʉɡʌɭ mˈiːɳɖʉm tˈoɖʌŋɡˌʌppʌʈʈˌʉɭɭʌnʌ",
+    "uccharan": "ˈaɹʌsˌijʌl pˈeːtʃːʉvˌaːrttaɪɡʌɭ tˈoːlvijˌʌɖaɪndʌ pˈoːdilʉm mˈaːlɖoːvˌaːvin ˈindʌ ˈiɹʌɳɖʉ pˈʌɡʉdiɡˌʌɭʉkkʉ ˈiɖaɪjeː pˈoɹʉɭˌaːdaːɹʌ ɹˈiːdijilˌaːnʌ tˈoɖʌrbˌʉɡʌɭ mˈiːɳɖʉm tˈoɖʌŋɡˌʌppʌʈʈˌʉɭɭʌnʌ"
+   }
+  ]
+ }
+}

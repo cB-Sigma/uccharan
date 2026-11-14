@@ -70,3 +70,6 @@ export function kittenIds(phonemes: string): number[];
 export function matchaIds(phonemes: string): number[];
 /** Library version. */
 export function version(): Promise<string>;
+
+/** Load the optional CC BY-SA 4.0 WikiPron pack of a language (improved mode only). */
+export function loadWikipron(lang: string, bytes?: Uint8Array | ArrayBuffer): Promise<void>;

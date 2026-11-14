@@ -1,0 +1,335 @@
+//! The text format of a data-driven language (`crates/uccharan/lang/*.lang`)
+//! and the parts every such language shares: metadata, an exceptions
+//! lexicon, unstressed (function) words, and number words.
+//!
+//! A file is a list of sections:
+//!
+//! ```text
+//! [meta]
+//! tag = mr
+//! stress = weight
+//!
+//! [classes]
+//! V = a e i o u
+//!
+//! [pre]            ; rewrite rules on letters, before reading (see `rules`)
+//! [post]           ; rewrite rules on phonemes, after reading
+//! [post.compat]    ; only in compatible mode
+//! [post.improved]  ; only in improved mode
+//!
+//! [words]          ; exceptions: word, then phonemes (or "compat | improved")
+//! [unstressed]     ; function words: word, level inside a clause, level at its end (0, s, p)
+//! [numbers]        ; number words: value, then the word(s)
+//! ```
+//!
+//! Lines starting with `#` are comments; `;` starts a comment after content.
+
+use std::collections::HashMap;
+
+use crate::rules::{Classes, RuleError, RuleSet};
+
+/// A parsed language file.
+#[derive(Clone, Debug, Default)]
+pub struct LangFile {
+    /// `(section name, [(line number, text)])` in file order.
+    pub sections: Vec<(String, Vec<(usize, String)>)>,
+}
+
+impl LangFile {
+    /// Split a file into sections.
+    pub fn parse(text: &str) -> LangFile {
+        let mut f = LangFile::default();
+        let mut cur = String::new();
+        let mut lines: Vec<(usize, String)> = Vec::new();
+        for (n, raw) in text.lines().enumerate() {
+            let t = raw.trim();
+            if t.starts_with('[') && t.ends_with(']') && !t.contains(' ') {
+                if !lines.is_empty() || !cur.is_empty() {
+                    f.sections
+                        .push((std::mem::take(&mut cur), std::mem::take(&mut lines)));
+                }
+                cur = t[1..t.len() - 1].to_string();
+                continue;
+            }
+            lines.push((n + 1, raw.to_string()));
+        }
+        f.sections.push((cur, lines));
+        f
+    }
+
+    /// The raw text of all sections with this name (joined; line numbers
+    /// are lost, so rule errors report the line inside the section).
+    pub fn text(&self, name: &str) -> String {
+        let mut s = String::new();
+        for (n, ls) in &self.sections {
+            if n == name {
+                for (_, l) in ls {
+                    s.push_str(l);
+                    s.push('\n');
+                }
+            }
+        }
+        s
+    }
+
+    /// Non-empty, comment-free lines of a section.
+    pub fn lines(&self, name: &str) -> Vec<String> {
+        let mut out = Vec::new();
+        for (n, ls) in &self.sections {
+            if n == name {
+                for (_, l) in ls {
+                    let t = strip(l);
+                    if !t.is_empty() {
+                        out.push(t.to_string());
+                    }
+                }
+            }
+        }
+        out
+    }
+
+    /// `key = value` pairs of the `[meta]` section.
+    pub fn meta(&self) -> HashMap<String, String> {
+        self.lines("meta")
+            .iter()
+            .filter_map(|l| {
+                l.split_once('=')
+                    .map(|(k, v)| (k.trim().to_string(), v.trim().to_string()))
+            })
+            .collect()
+    }
+
+    /// Classes from `[classes]`.
+    pub fn classes(&self) -> Classes {
+        let mut c = Classes::default();
+        for l in self.lines("classes") {
+            c.parse_line(&l);
+        }
+        c
+    }
+
+    /// A rule pass, or an empty one when the section is absent.
+    pub fn rules(&self, name: &str, classes: &mut Classes) -> Result<RuleSet, String> {
+        RuleSet::parse(&self.text(name), classes)
+            .map_err(|RuleError { line, message }| format!("[{name}] line {line}: {message}"))
+    }
+}
+
+fn strip(l: &str) -> &str {
+    let t = l.trim();
+    if t.starts_with('#') {
+        return "";
+    }
+    match t.find(';') {
+        Some(i) if i == 0 || t.as_bytes()[i - 1] != b'\\' => t[..i].trim(),
+        _ => t,
+    }
+}
+
+/// The exceptions lexicon: word -> (compatible, improved) phonemes.
+pub fn words(f: &LangFile) -> HashMap<String, (String, String)> {
+    let mut m = HashMap::new();
+    for l in f.lines("words") {
+        let mut it = l.splitn(2, char::is_whitespace);
+        let (Some(w), Some(p)) = (it.next(), it.next()) else {
+            continue;
+        };
+        let (c, i) = match p.split_once('|') {
+            Some((a, b)) => (a.trim().to_string(), b.trim().to_string()),
+            None => (p.trim().to_string(), p.trim().to_string()),
+        };
+        m.insert(w.to_string(), (c, i));
+    }
+    m
+}
+
+/// Unstressed words: word -> (level inside a clause, level at its end),
+/// each `0` (no stress), `s` (secondary at most) or `p` (keep).
+pub fn unstressed(f: &LangFile) -> HashMap<String, (u8, u8)> {
+    let mut m = HashMap::new();
+    for l in f.lines("unstressed") {
+        let p: Vec<&str> = l.split_whitespace().collect();
+        if p.is_empty() {
+            continue;
+        }
+        let lv = |s: Option<&&str>| s.and_then(|x| x.bytes().next()).unwrap_or(b'0');
+        let mid = lv(p.get(1));
+        let fin = p.get(2).map(|x| x.as_bytes()[0]).unwrap_or(mid);
+        m.insert(p[0].to_string(), (mid, fin));
+    }
+    m
+}
+
+/// Number words of a language and how they combine.
+#[derive(Clone, Debug, Default)]
+pub struct Numbers {
+    /// Exact values: `n` -> words. Keys may carry a `+` suffix for the form
+    /// used when more follows (`100+` "one hundred and…"), or an `x` suffix
+    /// for the form used before a scale word (`2x`).
+    table: HashMap<String, Vec<String>>,
+    /// Scale words from the largest down: (value, word, form when more follows).
+    scales: Vec<(u64, String, String)>,
+    /// Indian grouping (thousand, lakh, crore) instead of thousand, million.
+    pub indian: bool,
+    /// Join "N hundred" into one output word (two stresses).
+    pub glue_hundred: bool,
+    /// Say "one" before a scale word.
+    pub one_before_scale: bool,
+    /// Tens and units make one word ("twenty" + "five" read as one).
+    pub join_tens: bool,
+    /// Words of a number after its first carry secondary stress at most.
+    pub demote_tail: bool,
+    /// Word(s) for the decimal point, minus and percent.
+    pub point: Vec<String>,
+    /// Word(s) for a leading minus sign (empty: the sign is not read).
+    pub minus: Vec<String>,
+    /// Word(s) for `%` after the number.
+    pub percent: Vec<String>,
+}
+
+impl Numbers {
+    /// Read the `[numbers]` section.
+    pub fn parse(f: &LangFile) -> Numbers {
+        let mut n = Numbers {
+            one_before_scale: true,
+            ..Numbers::default()
+        };
+        for l in f.lines("numbers") {
+            let mut it = l.splitn(2, char::is_whitespace);
+            let (Some(k), Some(v)) = (it.next(), it.next()) else {
+                continue;
+            };
+            let words: Vec<String> = v.split_whitespace().map(str::to_string).collect();
+            match k {
+                "point" => n.point = words,
+                "minus" => n.minus = words,
+                "percent" => n.percent = words,
+                "grouping" => n.indian = v.trim() == "indian",
+                "glue-hundred" => n.glue_hundred = v.trim() == "yes",
+                "one-before-scale" => n.one_before_scale = v.trim() != "no",
+                "join-tens" => n.join_tens = v.trim() == "yes",
+                "demote-after-first" => n.demote_tail = v.trim() == "yes",
+                k if k.starts_with("scale") => {
+                    // "scale1000 हज़ार"; "scale1000+ …" is the form used when more follows.
+                    let (num, more) = match k[5..].strip_suffix('+') {
+                        Some(x) => (x, true),
+                        None => (&k[5..], false),
+                    };
+                    if let Ok(val) = num.parse::<u64>() {
+                        let w = v.trim().to_string();
+                        match n.scales.iter_mut().find(|s| s.0 == val) {
+                            Some(s) if more => s.2 = w,
+                            Some(s) => s.1 = w,
+                            None => n.scales.push((val, w.clone(), w)),
+                        }
+                    }
+                }
+                _ => {
+                    n.table.insert(k.to_string(), words);
+                }
+            }
+        }
+        n.scales.sort_by_key(|s| std::cmp::Reverse(s.0));
+        n
+    }
+
+    /// True when the language has number words.
+    pub fn is_empty(&self) -> bool {
+        self.table.is_empty()
+    }
+
+    fn get(&self, n: u64, more: bool) -> Option<&Vec<String>> {
+        if more {
+            if let Some(w) = self.table.get(&format!("{n}+")) {
+                return Some(w);
+            }
+        }
+        self.table.get(&n.to_string())
+    }
+
+    /// Words for `n`; each entry is `(word, glued to the previous one)`.
+    pub fn cardinal(&self, n: u64, out: &mut Vec<(String, bool)>) {
+        if let Some(w) = self.get(n, false) {
+            out.extend(w.iter().map(|x| (x.clone(), false)));
+            return;
+        }
+        for (val, word, word_more) in &self.scales {
+            if n >= *val {
+                let (q, r) = (n / val, n % val);
+                let listed = if r > 0 {
+                    self.table.get(&format!("{}+", q * val))
+                } else {
+                    None
+                };
+                if let Some(w) = listed {
+                    // A listed multiple (e.g. "two hundred" as one word).
+                    out.extend(w.iter().map(|x| (x.clone(), false)));
+                } else {
+                    if q > 1 || self.one_before_scale {
+                        // A combining form before a scale word ("2x" in the file).
+                        match self.table.get(&format!("{q}x")) {
+                            Some(w) => out.extend(w.iter().map(|x| (x.clone(), false))),
+                            None => self.cardinal(q, out),
+                        }
+                    }
+                    let glue = *val == 100 && self.glue_hundred && (q > 1 || self.one_before_scale);
+                    out.push((if r > 0 { word_more } else { word }.clone(), glue));
+                }
+                if r > 0 {
+                    self.cardinal(r, out);
+                }
+                return;
+            }
+        }
+        // Below the smallest scale and not listed: tens + units.
+        if n < 100 {
+            let (t, u) = (n / 10 * 10, n % 10);
+            if let Some(w) = self.get(t, u > 0) {
+                let start = out.len();
+                out.extend(w.iter().map(|x| (x.clone(), false)));
+                if u > 0 {
+                    self.cardinal(u, out);
+                }
+                if self.join_tens && out.len() > start + 1 {
+                    let joined: String = out.drain(start..).map(|x| x.0).collect();
+                    out.push((joined, false));
+                }
+                return;
+            }
+        }
+        // Fall back to digits.
+        for d in n.to_string().bytes() {
+            if let Some(w) = self.get(u64::from(d - b'0'), false) {
+                out.extend(w.iter().map(|x| (x.clone(), false)));
+            }
+        }
+    }
+
+    /// Words for a digit string, one per digit.
+    pub fn digits(&self, s: &str, out: &mut Vec<(String, bool)>) {
+        for d in s.bytes().filter(u8::is_ascii_digit) {
+            if let Some(w) = self.get(u64::from(d - b'0'), false) {
+                out.extend(w.iter().map(|x| (x.clone(), false)));
+            }
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn sections_and_numbers() {
+        let f = LangFile::parse(
+            "[meta]\ntag = xx ; comment\n[numbers]\n1 one\n2 two\n20 twenty\n\
+             scale100 hundred\nscale1000 thousand\n",
+        );
+        assert_eq!(f.meta()["tag"], "xx");
+        let n = Numbers::parse(&f);
+        let mut out = Vec::new();
+        n.cardinal(2122, &mut out);
+        let w: Vec<&str> = out.iter().map(|x| x.0.as_str()).collect();
+        assert_eq!(w, ["two", "thousand", "one", "hundred", "twenty", "two"]);
+    }
+}

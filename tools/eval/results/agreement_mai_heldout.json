@@ -1,0 +1,243 @@
+{
+ "language": "mai",
+ "reference": "espeak-ng 1.52.0 voice hi (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 195019,
+  "per": 0.007512088565729493,
+  "per_without_stress": 0.005251566999830594,
+  "exact_sentence": 0.7312252964426877,
+  "exact_sentence_without_stress": 0.7351778656126482,
+  "piper_shape_per": 0.007503843246287399,
+  "piper_shape_exact_sentence": 0.724308300395257,
+  "word_count_mismatch_sentences": 189,
+  "errors_by_class": {
+   "stress": {
+    "count": 604,
+    "share": 0.41228668941979524,
+    "per_contribution": 0.0030971341253929105
+   },
+   "vowel": {
+    "count": 274,
+    "share": 0.18703071672354948,
+    "per_contribution": 0.001404991308539168
+   },
+   "consonant": {
+    "count": 209,
+    "share": 0.14266211604095563,
+    "per_contribution": 0.0010716904506740369
+   },
+   "other": {
+    "count": 199,
+    "share": 0.13583617747440274,
+    "per_contribution": 0.0010204133956178629
+   },
+   "word-boundary": {
+    "count": 119,
+    "share": 0.08122866894197953,
+    "per_contribution": 0.0006101969551684708
+   },
+   "length": {
+    "count": 60,
+    "share": 0.040955631399317405,
+    "per_contribution": 0.00030766233033704406
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": " →∅",
+    "count": 113
+   },
+   {
+    "edit": "ˈ→ə",
+    "count": 109
+   },
+   {
+    "edit": "ʌ→ɟ",
+    "count": 109
+   },
+   {
+    "edit": "ɟ→ˈ",
+    "count": 109
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 98
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 86
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 74
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 60
+   },
+   {
+    "edit": "∅→ə",
+    "count": 53
+   },
+   {
+    "edit": "∅→ː",
+    "count": 52
+   },
+   {
+    "edit": "ə→∅",
+    "count": 43
+   },
+   {
+    "edit": "a→ə",
+    "count": 33
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 24
+   },
+   {
+    "edit": "a→∅",
+    "count": 23
+   },
+   {
+    "edit": "ə→ʌ",
+    "count": 21
+   },
+   {
+    "edit": "l→∅",
+    "count": 17
+   },
+   {
+    "edit": "s→∅",
+    "count": 16
+   },
+   {
+    "edit": "∅→ɾ",
+    "count": 16
+   },
+   {
+    "edit": "r→ɾ",
+    "count": 15
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 15
+   },
+   {
+    "edit": "t→ʈ",
+    "count": 14
+   },
+   {
+    "edit": "ˈ→l",
+    "count": 14
+   },
+   {
+    "edit": "s→ʃ",
+    "count": 13
+   },
+   {
+    "edit": "l→ə",
+    "count": 13
+   },
+   {
+    "edit": "o→ə",
+    "count": 13
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 19777,
+    "wrong": 134,
+    "rate": 0.0067755473529857915
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 197,
+    "per": 0.0241086186540732,
+    "exact_sentence": 0.2639593908629442
+   },
+   "no-digits": {
+    "sentences": 815,
+    "per": 0.002908252493957516,
+    "exact_sentence": 0.8441717791411043
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-655",
+    "text": "अहि सिद्धांत सब सँ मालूम होयत अछि कि लोगक किछ ज़रूरत आ/वा इच्छाएँ होइत छय जेकरा वयस्कताक लेल परिपक्व होबय के साथ-साथ आंतरिक रूप देल गेल अछि।",
+    "reference": "ˈɛhɪ sɪdʰːˈãt sˈʌb sˈʌn maːlˈuːm hˈoːjət ˈʌcʰɪ kˈɪ lˈoːɡək kˈɪcʰ zəɾˈuːɾət ˈaː slˈaʃ ʋˈaː ɪcʰcʰˈaːj hˈoːɪt cʰˈʌɛj ɟˈeːkɾˌaː ʋˌəjəskətˈaːk lˈeːl pˌəɾɪpˈʌkʋ hˈoːbˌɛj keː sˈaːtʰsˈaːtʰ ˈãtɾˌɪk ɾˈuːp dˈeːl ɡˈeːl ˈʌcʰɪ",
+    "uccharan": "ˈɛhɪ sɪdʰːˈãt sˈʌb sˈʌn maːlˈuːm hˈoːjət ˈʌcʰɪ kˈɪ lˈoːɡək kˈɪcʰ zəɾˈuːɾət ˈaː ʋˈaː ɪcʰcʰˈaːj hˈoːɪt cʰˈʌɛj ɟˈeːkɾˌaː ʋˌəjəskətˈaːk lˈeːl pˌəɾɪpˈʌkʋ hˈoːbˌɛj keː sˈaːtʰsˈaːtʰ ˈãtɾˌɪk ɾˈuːp dˈeːl ɡˈeːl ˈʌcʰɪ"
+   },
+   {
+    "id": "flores-devtest-303",
+    "text": "जापानक अर्थव्यवस्था, व्यापार एवं उद्योग मंत्रालय (METI) कहलथि कि हुनका उपकरण सभ सें संबंधित 27 दुर्घटना सभक जानकारी छलनि।",
+    "reference": "ɟaːpˈaːnək ˌʌɾtʰəʋjəʋˈʌstʰaː ʋjaːpˈaːɾ ˈeːʋən ʊdjˈoːɡ məntɾˈaːlˌɛj mˈɛti kˈʌhəltʰɪ kˈɪ hˈʊnkˌaː ˈʊpəkˌəɾəɳ sˈʌbʰ sˈẽː səmbˈʌndʰɪt sətːˈaːis dˈʊɾɡʰəʈnaː sˈʌbʰək ɟˌaːnkˈaːɾi cʰˈʌlnˌɪ",
+    "uccharan": "ɟaːpˈaːnək ˌʌɾtʰəʋjəʋˈʌstʰaː ʋjaːpˈaːɾ ˈeːʋən ʊdjˈoːɡ məntɾˈaːlˌɛj mˈɛtɪ kˈʌhəltʰɪ kˈɪ hˈʊnkˌaː ˈʊpəkˌəɾəɳ sˈʌbʰ sˈẽː səmbˈʌndʰɪt sˌətːaːˈiːs dˈʊɾɡʰəʈnaː sˈʌbʰək ɟˌaːnkˈaːɾi cʰˈʌlnˌɪ"
+   },
+   {
+    "id": "flores-devtest-720",
+    "text": "हेनरी लुइस गेट्सक PBS स्पेशल वंडर्स ऑफ द अफ्रीकन वर्ल्डक दौरान ई प्रमुख पड़ाव सभ में सँ एकटा छल।",
+    "reference": "hˈeːnɾˌi lˈʊɪs ɡˈeːʈsək pˈiː bˈiː ˈɛs spˈeːʃəl ʋəɳɖˈʌrs ˈɔpʰ dˈə ʌpʰɾˈiːkən ʋˈʌrlɖək dɔːɾˈaːn ˈi pɾˈʌmʊkʰ pər.ˈaːʋ sˈʌbʰ mẽː sˈʌn ˈeːkʈˌaː cʰˈʌl",
+    "uccharan": "hˈeːnɾˌi lˈʊɪs ɡˈeːʈsək pˌiːbˌiːˈɛs spˈeːʃəl ʋəɳɖˈʌrs ˈɔpʰ dˈə ʌpʰɾˈiːkən ʋˈʌrlɖək dɔːɾˈaːn ˈi pɾˈʌmʊkʰ pər.ˈaːʋ sˈʌbʰ mẽː sˈʌn ˈeːkʈˌaː cʰˈʌl"
+   },
+   {
+    "id": "flores-devtest-520",
+    "text": "जखन वेबसाइट सभ पर दर्शकक प्रतिक्रिया सभक जाँच कयल गेल, त' “व्यक्तिगत भागीदारी” आ “निरंतर संबंध” सभ केँ सेहो ईघमी आ मैककॉर्ड (1998) द्वारा नव प्रेरणा पहलू सभक रूप मे चिह्नित कयल गेल।",
+    "reference": "ɟˈʌkʰən ʋˌeːbsˈaːɪʈ sˈʌbʰ pˈʌɾ dˈʌrʃəkˌək pɾətˈɪkɾɪjˌaː sˈʌbʰək ɟˈãnc kˈʌjəl ɡˈeːl tˈə ʋjˈʌktɪɡˌət bʰˌaːɡidˈaːɾi ˈaː nɪɾˈʌntəɾ səmbˈʌndʰ sˈʌbʰ kˈẽː sˈeːhoː ˈiːɡʰmˌi ˈaː mˌɛːkkˈɔɾɖ ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː ʌtʰːˈaːnəbˌeː dʋˈaːɾaː nˈʌʋ pɾˈeːɾɳˌaː pˈʌhəlˌuː sˈʌbʰək ɾˈuːp mˈeː cˈɪhnɪt kˈʌjəl ɡˈeːl",
+    "uccharan": "ɟˈʌkʰən ʋˌeːbsˈaːɪʈ sˈʌbʰ pˈʌɾ dˈʌrʃəkˌək pɾətˈɪkɾɪjˌaː sˈʌbʰək ɟˈãnc kˈʌjəl ɡˈeːl tˈə ʋjˈʌktɪɡˌət bʰˌaːɡidˈaːɾi ˈaː nɪɾˈʌntəɾ səmbˈʌndʰ sˈʌbʰ kˈẽː sˈeːhoː ˈiːɡʰmˌi ˈaː mˌɛːkkˈɔɾɖ ˈeːk həɟˈaːɾ nˈɔːsˈɔː ʌʈʰʈʰˈaːnʋˌeː dʋˈaːɾaː nˈʌʋ pɾˈeːɾɳˌaː pˈʌhəlˌuː sˈʌbʰək ɾˈuːp mˈeː cˈɪhnɪt kˈʌjəl ɡˈeːl"
+   },
+   {
+    "id": "flores-devtest-561",
+    "text": "आखिरकार, लकड़ी कें पहिया कें लोहां कें पहिया सँ बदलि देल गेल। 1767 में, पहिल पूर्ण-लौह रेल शुरू कएल गेल छल।",
+    "reference": "ˌaːkʰɪɾkˈaːɾ lˈʌkr.ˌi kˈẽː pˈʌhɪjˌaː kˈẽː lˈoːhã kˈẽː pˈʌhɪjˌaː sˈʌn bˈʌdlˌɪ dˈeːl ɡˈeːl ˈeːk hˈʌɟaːɾ sˈaːtsˈɔː sˈʌr.səʈʰ mˈẽː pˈʌhɪl pˈuːrɳəlˈɔːh ɾˈeːl ʃˈʊɾuː kəˈeːl ɡˈeːl cʰˈʌl",
+    "uccharan": "ˌaːkʰɪɾkˈaːɾ lˈʌkr.ˌi kˈẽː pˈʌhɪjˌaː kˈẽː lˈoːhã kˈẽː pˈʌhɪjˌaː sˈʌn bˈʌdlˌɪ dˈeːl ɡˈeːl ˈeːk həɟˈaːɾ sˈaːtsˈɔː sˈʌr.əsˌəʈʰ mˈẽː pˈʌhɪl pˈuːrɳəlˈɔːh ɾˈeːl ʃˈʊɾuː kəˈeːl ɡˈeːl cʰˈʌl"
+   },
+   {
+    "id": "flores-devtest-136",
+    "text": "दमकल कर्मी लोकनि आखिरकार राति 11:35 बजे धरि आगि पर काबू पाबि लेलक।",
+    "reference": "dˈʌməkˌəl kˈʌrmi lˈoːknˌɪ ˌaːkʰɪɾkˈaːɾ ɾˈaːtɪ ɡjˈaːɾəh pˈɛ̃tis bˈʌɟeː dʰˈʌɾɪ ˈaːɡɪ pˈʌɾ kˈaːbuː pˈaːbɪ lˈeːlək",
+    "uccharan": "dˈʌməkˌəl kˈʌrmi lˈoːknˌɪ ˌaːkʰɪɾkˈaːɾ ɾˈaːtɪ ɡjˈaːɾəh pɛ̃tˈiːs bˈʌɟeː dʰˈʌɾɪ ˈaːɡɪ pˈʌɾ kˈaːbuː pˈaːbɪ lˈeːlək"
+   },
+   {
+    "id": "flores-devtest-67",
+    "text": "मुदा कप्तानक विकेट गिरबाक पश्चात भारत पाली समाप्त भेला पर 7 विकेटक नोकसान कए मात्र 36 रन बनोलक।",
+    "reference": "mˈʊdaː kəptˈaːnək ʋɪkˈeːʈ ɡˌɪɾbˈaːk pəʃcˈaːt bʰˈaːɾət pˈaːli səmˈaːpt bʰˈeːlaː pˈʌɾ sˈaːt ʋɪkˈeːʈək nˌoːksˈaːn kˈʌeː mˈaːtɾə cʰˈʌtːis ɾˈʌn bənˈoːlək",
+    "uccharan": "mˈʊdaː kəptˈaːnək ʋɪkˈeːʈ ɡˌɪɾbˈaːk pəʃcˈaːt bʰˈaːɾət pˈaːli səmˈaːpt bʰˈeːlaː pˈʌɾ sˈaːt ʋɪkˈeːʈək nˌoːksˈaːn kˈʌeː mˈaːtɾə cʰətːˈiːs ɾˈʌn bənˈoːlək"
+   },
+   {
+    "id": "flores-devtest-6",
+    "text": "ओ कहलथि जे ओ एकटा WiFi डोर बेलक निर्माण केलथि।",
+    "reference": "ˈoː kˈʌhəltʰɪ ɟˈeː ˈoː ˈeːkʈˌaː wˈaɪ fˌaɪ ɖˈoːɾ bˈeːlək nɪrmˈaːɳ kˈeːltʰˌɪ",
+    "uccharan": "ˈoː kˈʌhəltʰɪ ɟˈeː ˈoː ˈeːkʈˌaː wˈɪ fˈaɪ ɖˈoːɾ bˈeːlək nɪrmˈaːɳ kˈeːltʰˌɪ"
+   },
+   {
+    "id": "flores-devtest-790",
+    "text": "ट्रैवल एजेंट आमतौर पर पैकेजक पेशकश करैत छथि जाहि में नाश्ता, हवाई अड्डे सँ / कें लेल परिवहन व्यवस्था या अतय धरि ​​​​कि संयुक्त उड़ान आ होटल पैकेज शामिल अछि।",
+    "reference": "ʈɾˈɛːʋəl eːɟˈẽːʈ ˌaːmtˈɔːɾ pˈʌɾ pɛːkˈeːɟək pˈeːʃəkˌəʃ kəɾˈɛːt cʰˈʌtʰɪ ɟˈaːhɪ mẽː nˈaːʃtaː həʋˈaːi ˈʌɖɖeː sˈʌn slˈaʃ kˈẽː lˈeːl pˈʌɾɪʋˌəhən ʋjəʋˈʌstʰaː jˈaː ˈʌtˌɛj dʰˈʌɾɪ kˈɪ səɲjˈʊkt ʊr.ˈaːn ˈaː hˈoːʈəl pɛːkˈeːɟ ʃˈaːmɪl ˈʌcʰɪ",
+    "uccharan": "ʈɾˈɛːʋəl eːɟˈẽːʈ ˌaːmtˈɔːɾ pˈʌɾ pɛːkˈeːɟək pˈeːʃəkˌəʃ kəɾˈɛːt cʰˈʌtʰɪ ɟˈaːhɪ mẽː nˈaːʃtaː həʋˈaːi ˈʌɖɖeː sˈʌn kˈẽː lˈeːl pˈʌɾɪʋˌəhən ʋjəʋˈʌstʰaː jˈaː ˈʌtˌɛj dʰˈʌɾɪ kˈɪ səɲjˈʊkt ʊr.ˈaːn ˈaː hˈoːʈəl pɛːkˈeːɟ ʃˈaːmɪl ˈʌcʰɪ"
+   },
+   {
+    "id": "flores-devtest-527",
+    "text": "अलगाव आ पुनर्संयोजन प्रत्येक पीढ़ीक संग द्विटा पूल सभक बीच फेरबदल भिन्नता कें आगू-पाछू करैत रहैत अछि।",
+    "reference": "ˌʌlɡˈaːʋ ˈaː pˌʊnərsəɲjˈoːɟən pɾətːjˈeːk pˈiːr.hik sˈʌŋɡ dʋˈɪʈaː pˈuːl sˈʌbʰək bˈiːc pʰˈeːɾəbˌədəl bʰˈɪnnətˌaː kˈẽː ˈaːɡuːpˈaːcʰuː kəɾˈɛːt ɾəhˈɛːt ˈʌcʰɪ",
+    "uccharan": "ˌʌlɡˈaːʋ ˈaː pˌʊnərsəɲjˈoːɟən pɾətːjˈeːk pir.hˈiːk sˈʌŋɡ dʋˈɪʈaː pˈuːl sˈʌbʰək bˈiːc pʰˈeːɾəbˌədəl bʰˈɪnnətˌaː kˈẽː ˈaːɡuːpˈaːcʰuː kəɾˈɛːt ɾəhˈɛːt ˈʌcʰɪ"
+   },
+   {
+    "id": "flores-devtest-65",
+    "text": "रॉबिन उथप्पा सर्वोच्च स्कोर बनोलक, ओ मात्र 41 गेंद मे 11 चौका आ 2 छक्का केर मदति सँ 70 रन बनोलक।",
+    "reference": "ɾˈɔbɪn ʊtʰˈʌpːaː sərʋˈoːcː skˈoːɾ bənˈoːlək ˈoː mˈaːtɾə ɪktˈaːlis ɡˈẽːd mˈeː ɡjˈaːɾəh cˈɔːkaː ˈaː dˈoː cʰˈʌkːaː kˈeːɾ mˈʌdtˌɪ sˈʌn sˈʌtːəɾ ɾˈʌn bənˈoːlək",
+    "uccharan": "ɾˈɔbɪn ʊtʰˈʌpːaː sərʋˈoːcː skˈoːɾ bənˈoːlək ˈoː mˈaːtɾə ˌɪktaːlˈiːs ɡˈẽːd mˈeː ɡjˈaːɾəh cˈɔːkaː ˈaː dˈoː cʰˈʌkːaː kˈeːɾ mˈʌdtˌɪ sˈʌn sˈʌtːəɾ ɾˈʌn bənˈoːlək"
+   },
+   {
+    "id": "flores-devtest-600",
+    "text": "हर्शे आ चेज़ अपन स्वयंक DNA कें एकटा जीवाणु में प्रत्यारोपित करय कें लेल फेज या वायरसक उपयोग कएलनि।",
+    "reference": "hˈʌrʃeː ˈaː cˈeːz ˈʌpən sʋəjˈʌŋk dˈiː ˈɛn ˈeɪ kˈẽː ˈeːkʈˌaː ɟiʋˈaːɳʊ mẽː pɾˌətːjaːɾˈoːpɪt kˈʌɾˌɛj kˈẽː lˈeːl pʰˈeːɟ jˈaː ʋˈaːjəɾˌəsək ˌʊpjˈoːɡ kəˈeːlnˌɪ",
+    "uccharan": "hˈʌrʃeː ˈaː cˈeːz ˈʌpən sʋəjˈʌŋk dˌiːˌɛnˈeɪ kˈẽː ˈeːkʈˌaː ɟiʋˈaːɳʊ mẽː pɾˌətːjaːɾˈoːpɪt kˈʌɾˌɛj kˈẽː lˈeːl pʰˈeːɟ jˈaː ʋˈaːjəɾˌəsək ˌʊpjˈoːɡ kəˈeːlnˌɪ"
+   }
+  ]
+ }
+}

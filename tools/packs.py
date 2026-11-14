@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Write the SHA-256 sums and sizes of the language packs
-(crates/uccharan/data/*.ucd) into the places that check them:
+(crates/uccharan/data/*.ucd and the optional data/packs/*.ucd) into the places that check them:
 bindings/python/python/uccharan/packs.py and bindings/wasm/packs.js.
 
     python tools/packs.py          # update
@@ -24,7 +24,8 @@ JS = ROOT / "bindings/wasm/packs.js"
 
 def packs() -> dict[str, tuple[str, int]]:
     out = {}
-    for f in sorted(DATA.glob("*.ucd")):
+    # Core packs, then the optional share-alike packs in data/packs.
+    for f in sorted(DATA.glob("*.ucd")) + sorted((ROOT / "data/packs").glob("*.ucd")):
         b = f.read_bytes()
         out[f.stem] = (hashlib.sha256(b).hexdigest(), len(b))
     return out

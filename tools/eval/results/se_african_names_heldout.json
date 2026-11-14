@@ -1,0 +1,340 @@
+{
+ "split": "heldout",
+ "items": 96,
+ "systems": {
+  "reference": {
+   "failed": [
+    "chichewa-mphatso",
+    "chichewa-tiwonge",
+    "chichewa-chifundo",
+    "chichewa-chakwera",
+    "chichewa-msowoya",
+    "chichewa-phiri",
+    "chichewa-mwale",
+    "chichewa-chirwa",
+    "chichewa-nyirenda",
+    "chichewa-kalua",
+    "chichewa-mzuzu",
+    "chichewa-karonga",
+    "chichewa-chiradzulu",
+    "chichewa-ntcheu",
+    "shona-tapiwa",
+    "shona-kudzai",
+    "shona-nyarai",
+    "shona-fadzai",
+    "shona-kundai",
+    "shona-chenai",
+    "shona-shamiso",
+    "shona-vimbai",
+    "shona-anesu",
+    "shona-tichaona",
+    "shona-chamisa",
+    "shona-nkomo",
+    "shona-moyo",
+    "shona-chinhoyi",
+    "shona-chitungwiza",
+    "tsonga-hlulani",
+    "tsonga-vutomi",
+    "tsonga-ripfumelo",
+    "tsonga-mikateko",
+    "tsonga-ndzalama",
+    "tsonga-baloyi",
+    "tsonga-mabunda",
+    "tsonga-hlungwani",
+    "tsonga-malamulele",
+    "tsonga-xikundu",
+    "tsonga-xinavane",
+    "tigrinya-kidane",
+    "tigrinya-yonas",
+    "tigrinya-senait",
+    "tigrinya-gebremedhin",
+    "tigrinya-tewolde",
+    "tigrinya-isaias",
+    "tigrinya-afwerki",
+    "tigrinya-hailu",
+    "tigrinya-mebrahtu",
+    "tigrinya-shire"
+   ]
+  },
+  "uccharan-compatible": {
+   "failed": [
+    "chichewa-chisomo",
+    "chichewa-mphatso",
+    "chichewa-madalitso",
+    "chichewa-dalitso",
+    "chichewa-tiwonge",
+    "chichewa-limbani",
+    "chichewa-chifundo",
+    "chichewa-bingu",
+    "chichewa-kamuzu",
+    "chichewa-msowoya",
+    "chichewa-mwanamvekha",
+    "chichewa-phiri",
+    "chichewa-mwale",
+    "chichewa-chirwa",
+    "chichewa-nyirenda",
+    "chichewa-kalua",
+    "chichewa-karonga",
+    "chichewa-chiradzulu",
+    "chichewa-ntcheu",
+    "shona-tapiwa",
+    "shona-kudzai",
+    "shona-nyarai",
+    "shona-tsitsi",
+    "shona-fadzai",
+    "shona-simbarashe",
+    "shona-kundai",
+    "shona-vimbai",
+    "shona-anesu",
+    "shona-tichaona",
+    "shona-ngoni",
+    "shona-chamisa",
+    "shona-nkomo",
+    "shona-mapfumo",
+    "shona-masvingo",
+    "shona-gweru",
+    "shona-chinhoyi",
+    "shona-chitungwiza",
+    "tsonga-hlulani",
+    "tsonga-vutomi",
+    "tsonga-tiyani",
+    "tsonga-ripfumelo",
+    "tsonga-mikateko",
+    "tsonga-masingita",
+    "tsonga-akani",
+    "tsonga-mihloti",
+    "tsonga-ndzalama",
+    "tsonga-baloyi",
+    "tsonga-mabunda",
+    "tsonga-hlungwani",
+    "tsonga-tsakane",
+    "tsonga-malamulele",
+    "tsonga-xikundu",
+    "tsonga-mavambe",
+    "tsonga-xinavane",
+    "tigrinya-tesfay",
+    "tigrinya-kidane",
+    "tigrinya-yonas",
+    "tigrinya-senait",
+    "tigrinya-tewolde",
+    "tigrinya-isaias",
+    "tigrinya-afwerki",
+    "tigrinya-hailu",
+    "tigrinya-mebrahtu",
+    "tigrinya-rahel",
+    "tigrinya-nebiat",
+    "tigrinya-shire"
+   ]
+  },
+  "uccharan-improved": {
+   "failed": [
+    "chichewa-bingu",
+    "chichewa-chirwa",
+    "chichewa-ntcheu",
+    "shona-shamiso",
+    "shona-vimbai",
+    "shona-mapfumo",
+    "shona-masvingo",
+    "shona-gweru",
+    "shona-chinhoyi",
+    "shona-chitungwiza",
+    "tsonga-vutomi",
+    "tsonga-ripfumelo",
+    "tsonga-hlungwani",
+    "tsonga-mavambe",
+    "tsonga-xinavane",
+    "tigrinya-tesfay",
+    "tigrinya-senait",
+    "tigrinya-isaias",
+    "tigrinya-teklay",
+    "tigrinya-zerai",
+    "tigrinya-nebiat",
+    "tigrinya-shire",
+    "tigrinya-adwa"
+   ]
+  },
+  "uccharan-improved+wikipron": {
+   "failed": [
+    "chichewa-bingu",
+    "chichewa-chirwa",
+    "chichewa-ntcheu",
+    "shona-shamiso",
+    "shona-vimbai",
+    "shona-mapfumo",
+    "shona-masvingo",
+    "shona-gweru",
+    "shona-chinhoyi",
+    "shona-chitungwiza",
+    "tsonga-vutomi",
+    "tsonga-ripfumelo",
+    "tsonga-hlungwani",
+    "tsonga-mavambe",
+    "tsonga-xinavane",
+    "tigrinya-tesfay",
+    "tigrinya-senait",
+    "tigrinya-isaias",
+    "tigrinya-teklay",
+    "tigrinya-zerai",
+    "tigrinya-nebiat",
+    "tigrinya-shire",
+    "tigrinya-adwa"
+   ]
+  }
+ },
+ "by_group": {
+  "chichewa": {
+   "reference": {
+    "passed": 10,
+    "items": 24,
+    "accuracy": 0.4166666666666667
+   },
+   "uccharan-compatible": {
+    "passed": 5,
+    "items": 24,
+    "accuracy": 0.20833333333333334
+   },
+   "uccharan-improved": {
+    "passed": 21,
+    "items": 24,
+    "accuracy": 0.875
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 21,
+    "items": 24,
+    "accuracy": 0.875
+   }
+  },
+  "shona": {
+   "reference": {
+    "passed": 11,
+    "items": 26,
+    "accuracy": 0.4230769230769231
+   },
+   "uccharan-compatible": {
+    "passed": 8,
+    "items": 26,
+    "accuracy": 0.3076923076923077
+   },
+   "uccharan-improved": {
+    "passed": 19,
+    "items": 26,
+    "accuracy": 0.7307692307692307
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 19,
+    "items": 26,
+    "accuracy": 0.7307692307692307
+   }
+  },
+  "tigrinya": {
+   "reference": {
+    "passed": 17,
+    "items": 27,
+    "accuracy": 0.6296296296296297
+   },
+   "uccharan-compatible": {
+    "passed": 15,
+    "items": 27,
+    "accuracy": 0.5555555555555556
+   },
+   "uccharan-improved": {
+    "passed": 19,
+    "items": 27,
+    "accuracy": 0.7037037037037037
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 19,
+    "items": 27,
+    "accuracy": 0.7037037037037037
+   }
+  },
+  "tsonga": {
+   "reference": {
+    "passed": 8,
+    "items": 19,
+    "accuracy": 0.42105263157894735
+   },
+   "uccharan-compatible": {
+    "passed": 2,
+    "items": 19,
+    "accuracy": 0.10526315789473684
+   },
+   "uccharan-improved": {
+    "passed": 14,
+    "items": 19,
+    "accuracy": 0.7368421052631579
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 14,
+    "items": 19,
+    "accuracy": 0.7368421052631579
+   }
+  },
+  "in-cmudict": {
+   "reference": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   }
+  },
+  "not-in-cmudict": {
+   "reference": {
+    "passed": 46,
+    "items": 96,
+    "accuracy": 0.4791666666666667
+   },
+   "uccharan-compatible": {
+    "passed": 30,
+    "items": 96,
+    "accuracy": 0.3125
+   },
+   "uccharan-improved": {
+    "passed": 73,
+    "items": 96,
+    "accuracy": 0.7604166666666666
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 73,
+    "items": 96,
+    "accuracy": 0.7604166666666666
+   }
+  },
+  "all": {
+   "reference": {
+    "passed": 46,
+    "items": 96,
+    "accuracy": 0.4791666666666667
+   },
+   "uccharan-compatible": {
+    "passed": 30,
+    "items": 96,
+    "accuracy": 0.3125
+   },
+   "uccharan-improved": {
+    "passed": 73,
+    "items": 96,
+    "accuracy": 0.7604166666666666
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 73,
+    "items": 96,
+    "accuracy": 0.7604166666666666
+   }
+  }
+ }
+}

@@ -1,12 +1,12 @@
 // SHA-256 sums and sizes of the language packs; written by tools/packs.py.
 export const PACKS = Object.freeze({
  "en-gb": {
-  "sha256": "1d194cbcf56f3a57990918a0d7627b16c76a22edb46144b126662eab27c67bac",
-  "size": 707225
+  "sha256": "c267d028790da5440ae90df87da7b131800f7932124afe356193e387aaab13ad",
+  "size": 707290
  },
  "en-us": {
-  "sha256": "3f2b2ac6461ba5d3a56b5d7e8da0608da3f5d65831add64a32a7a1972046bf7d",
-  "size": 727151
+  "sha256": "337e2c2c25c3d1a376f857634c20e2a220bcc91e65876ec58623f2feaf997aac",
+  "size": 727189
  },
  "hi": {
   "sha256": "970df73a97f846c7089d8794acce6f54f745ffcbfa208b77a5710ad84a2e3a31",
@@ -19,5 +19,17 @@ export const PACKS = Object.freeze({
  "kokoro-en-us": {
   "sha256": "05a70e6f2314c04fcfc7b0a50387025a4919436551cb69a6074417df0641aa76",
   "size": 1914413
+ },
+ "wikipron-en-gb": {
+  "sha256": "53718c5458145f7a49cb0bc29c534f1eddf4f6424f240e654bc469f4884c8d4f",
+  "size": 728104
+ },
+ "wikipron-en-us": {
+  "sha256": "85946bafb7e1e9daab9909138c7ba38437ca6d42d8e673122a8eba76dfdf814b",
+  "size": 741599
+ },
+ "wikipron-hi": {
+  "sha256": "8f5d330038f296d4e712d3a17a0837268bd2a91033d7b029d8fad0952b10a889",
+  "size": 321723
  }
 });

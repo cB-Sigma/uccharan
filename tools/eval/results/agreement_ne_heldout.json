@@ -1,0 +1,243 @@
+{
+ "language": "ne",
+ "reference": "espeak-ng 1.52.0 voice ne (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 199538,
+  "per": 0.026686646152612535,
+  "per_without_stress": 0.014171916610941,
+  "exact_sentence": 0.1857707509881423,
+  "exact_sentence_without_stress": 0.3201581027667984,
+  "piper_shape_per": 0.027117550736863,
+  "piper_shape_exact_sentence": 0.18181818181818182,
+  "word_count_mismatch_sentences": 234,
+  "errors_by_class": {
+   "stress": {
+    "count": 2924,
+    "share": 0.5491079812206573,
+    "per_contribution": 0.01465385039441109
+   },
+   "vowel": {
+    "count": 1051,
+    "share": 0.19737089201877933,
+    "per_contribution": 0.005267167156130662
+   },
+   "consonant": {
+    "count": 614,
+    "share": 0.11530516431924882,
+    "per_contribution": 0.003077108119756638
+   },
+   "other": {
+    "count": 292,
+    "share": 0.05483568075117371,
+    "per_contribution": 0.001463380408744199
+   },
+   "length": {
+    "count": 271,
+    "share": 0.050892018779342726,
+    "per_contribution": 0.0013581372971564313
+   },
+   "word-boundary": {
+    "count": 173,
+    "share": 0.03248826291079812,
+    "per_contribution": 0.0008670027764135153
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→∅",
+    "count": 658
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 578
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 572
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 497
+   },
+   {
+    "edit": "ː→∅",
+    "count": 220
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 204
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 184
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 172
+   },
+   {
+    "edit": "∅→ə",
+    "count": 141
+   },
+   {
+    "edit": "ʌ→ə",
+    "count": 130
+   },
+   {
+    "edit": " →∅",
+    "count": 120
+   },
+   {
+    "edit": "ʋ→w",
+    "count": 115
+   },
+   {
+    "edit": "ə→∅",
+    "count": 101
+   },
+   {
+    "edit": "∅→d",
+    "count": 82
+   },
+   {
+    "edit": "ʃ→s",
+    "count": 78
+   },
+   {
+    "edit": "ə→æ",
+    "count": 75
+   },
+   {
+    "edit": "ɒ→ʌ",
+    "count": 73
+   },
+   {
+    "edit": "∅→ ",
+    "count": 53
+   },
+   {
+    "edit": "∅→ː",
+    "count": 51
+   },
+   {
+    "edit": "i→∅",
+    "count": 48
+   },
+   {
+    "edit": "n→∅",
+    "count": 46
+   },
+   {
+    "edit": "ˈ→ə",
+    "count": 42
+   },
+   {
+    "edit": " →r",
+    "count": 28
+   },
+   {
+    "edit": "s→∅",
+    "count": 28
+   },
+   {
+    "edit": "ə→ʌ",
+    "count": 27
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 14091,
+    "wrong": 1295,
+    "rate": 0.09190263288623944
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 196,
+    "per": 0.03904087836305068,
+    "exact_sentence": 0.04081632653061224
+   },
+   "no-digits": {
+    "sentences": 816,
+    "per": 0.023183408810209964,
+    "exact_sentence": 0.22058823529411764
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-949",
+    "text": "स्कटर्ब बस क्याबो दा रोकामा रोकिदैँ 403 सिन्ट्राको नियमित यात्रा गर्दछ।",
+    "reference": "skəʈˈʌrrbə bˈʌs kːjˈaːboː dˈaː ɾoːkˈaːmaː ɾˈoːkɪdˌɛ̃ fˈɔːhˈʌndɹɪdən θɹˈiː sɪnʈɾˈaːkoː nˈɪjəmˌɪt jˈaːtɾaː ɡˈʌrrdəcʰˌə",
+    "uccharan": "skəʈˈʌrrbə bˈʌs kːjˈaːboː dˈaː ɾoːkˈaːmaː ɾˈoːkɪdˌɛ̃ː fˈɔːhˈʌndɹɪd ænd θɹˈiː sɪnʈɾˈaːkoː nˈɪjəmˌɪt jˈaːtɾaː ɡˈʌrrdəcʰˌə"
+   },
+   {
+    "id": "flores-devtest-213",
+    "text": "1980 को दशकमा उनले ट्याक्सी, चीयर्स र The Tracy Ullman शो जस्ता कार्यक्रमहरूमा काम गरे।",
+    "reference": "nˈaɪntiːnhˈʌndɹɪdən ˈeɪti kˈoː dˈʌʃəkˌəmaː ˈʊnəlˌeː ʈʈjˈaːksi cɪːjˈʌrrsə ɾə ðə tɹˈeɪsi ˈʌlmən ʃˈoː ɟˈʌstaː kˈaːrrjəkɾˌəməhˌəɾuːmˌaː kˈaːmə ɡˈʌɾeː",
+    "uccharan": "nˈaɪntiːnhˈʌndɹɪd ˈeɪtɪ kˈoː dˈʌʃəkˌəmaː ˈʊnəlˌeː ʈːjˈaːksi cɪːjˈʌrrsə ɾə ðə tɹˈeɪsɪ ˈʌlmən ʃˈoː ɟˈʌstaː kˈaːrrjəkɾˌəməhˌəɾuːmˌaː kˈaːmə ɡˈʌɾeː"
+   },
+   {
+    "id": "flores-devtest-124",
+    "text": "गाडीलाई नै त्यही दिन लगभग 1200 GMT मा दुर्घटना स्थलबाट टाढा लगिएको थियो।",
+    "reference": "ɡˌaːɖɪːlˈaːi nˈɛː tːjˈʌhi dˈɪn lˈʌɡəbʰˌəɡ wˈɒn θˈaʊzənd tˈuːhˈʌndɹɪd dʒˈiː ˈɛm tˈiː mˈaː dˈurrɡʰəʈˌənaː stʰˌələbˈaːʈ ʈˈaːɖʰaː lˌəɡɪˈeːkoː tʰˈɪjoː",
+    "uccharan": "ɡˌaːɖɪːlˈaːi nˈɛː tːjˈʌhi dˈɪn lˈʌɡəbʰˌəɡ wˈʌn θˈaʊzənd tˈuːhˈʌndɹɪd dʒˌiːˌɛmtˈiː mˈaː dˈurrɡʰəʈˌənaː stʰˌələbˈaːʈ ʈˈaːɖʰaː lˌəɡɪˈeːkoː tʰˈɪjoː"
+   },
+   {
+    "id": "flores-devtest-793",
+    "text": "केही उत्सवहरूका लागि, सङ्गीत उत्सवहरूमा उपस्थित धेरैले साइटमा शिविर राख्ने निर्णय गर्छन् र अधिकांश उपस्थितहरू यसलाई अनुभवको एक महत्त्वपूर्ण हिस्सा मान्छन्।",
+    "reference": "kˈeːhi ˌʊtsəwˌəhəɾˈuːkaː lˈaːɡɪ səŋɡˈɪːt ˌʊtsəwˌəhəɾˈuːmaː ʊpˈʌstʰɪt dʰeːɾˈɛːleː sˈaːɪʈˌəmaː ʃɪwˈɪɾə ɾˈaːkʰneː nˈɪrrɳəjˌə ɡˈʌrrcʰən ɾə ˌədʰɪkˈaːnʃ ʊpˈʌstʰɪtˌəhəɾˌuː jˌəsəlˈaːi ˌənubʰˌəwˌəkˈoː ˈeːkə mˌəhəttwpˈuːrrɳə hˈɪssˌaː mˈaːncʰən",
+    "uccharan": "kˈeːhi ˌʊtsəwˌəhəɾˈuːkaː lˈaːɡɪ səŋɡˈɪːt ˌʊtsəwˌəhəɾˈuːmaː ʊpˈʌstʰɪt dʰeːɾˈɛːleː sˈaːɪʈˌəmaː ʃˈɪwɪɾˌə ɾˈaːkʰneː nˈɪrrɳəjˌə ɡˈʌrrcʰən ɾə ˌədʰɪkˈaːnʃə ʊpˈʌstʰɪtˌəhəɾˌuː jˌəsəlˈaːi ənubʰˌəwəkˌoː ˈeːkə mˌəhəttwəpˈuːrrɳə hˈɪssˌaː mˈaːncʰən"
+   },
+   {
+    "id": "flores-devtest-525",
+    "text": "बीसौँ शताब्दीमा गरिएको अनुसन्धानले लुकेको र अभिव्यक्त गरी आनुवांशिक भिन्नताका दुई समूहहरू हुन्छन् भन्ने देखाएको छ।",
+    "reference": "bˈɪːsɔ̃ ʃətˈaːbdɪːmˌaː ɡˌəɾɪˈeːkoː ˌənusˌəndʰˌaːnəlˈeː lukˈeːkoː ɾə ˌəbʰɪwjˈʌktə ɡˈʌɾi ˌaːnuwˈaːnʃɪkˌə bʰɪnnˌətˈaːkaː dˈui səmˈuːhəhˌəɾuː hˈuncʰən bʰˈʌnnˌeː dˌeːkʰaːˈeːkoː cʰˈə",
+    "uccharan": "bˈɪːsɔ̃ː ʃətˈaːbdɪːmˌaː ɡˌəɾɪˈeːkoː ˌənusəndʰˈaːnəlˌeː lukˈeːkoː ɾə ˌəbʰɪwjˈʌktə ɡˈʌɾi ˌaːnuwˈaːnʃɪkˌə bʰˌɪnnətˈaːkaː dˈui səmˈuːhəhˌəɾuː hˈuncʰən bʰˈʌnnˌeː dˌeːkʰaːˈeːkoː cʰˈə"
+   },
+   {
+    "id": "flores-devtest-596",
+    "text": "शरीरविज्ञान र व्यवहारका बारेमा धेरैको मनाइने ताल प्राय: अन्तरजात चक्रको उपस्थिति र जैविक घडीकामार्फत उनीहरूको उत्पादनमा निर्भर गर्छन्‌।",
+    "reference": "ʃˌəɾɪːɾəwˈɪɟɲaːn ɾə ʋjˌəwəhˈaːɾəkˌaː baːɾˈeːmaː dʰeːɾˈɛːkoː mənˈaːɪnˌeː tˈaːl pɾˈaːjə ˌəntəɾəɟˈaːt cˈʌkɾəkˌoː ʊpˈʌstʰɪtˌɪ ɾə ɟɛːwˈɪkə ɡʰˌəɖɪːkaːmˈaːrrpʰət ˌʊnɪːhəɾˈuːkoː ʊtpˈaːdənˌəmaː nˈɪrrbʰəɾˌə ɡˈʌrrcʰən",
+    "uccharan": "ʃˌəɾɪːɾˌəwɪɟɲˈaːn ɾə wjˌəwəhˈaːɾəkˌaː baːɾˈeːmaː dʰeːɾˈɛːkoː mənˈaːɪnˌeː tˈaːl pɾˈaːjə ˌəntəɾəɟˈaːt cˈʌkɾəkˌoː ʊpˈʌstʰɪtˌɪ ɾə ɟˈɛːwɪkˌə ɡʰˌəɖɪːkaːmˈaːrrpʰət ˌʊnɪːhəɾˈuːkoː ʊtpˈaːdənˌəmaː nˈɪrrbʰəɾˌə ɡˈʌrrcʰən"
+   },
+   {
+    "id": "flores-devtest-750",
+    "text": "अर्जेन्टिना राम्रो पोलो टोली र खेलाडीहरू भएको देशका रूपमा विश्वमा प्रसिद्ध छ।",
+    "reference": "ərrɟˈeːnʈɪnˌaː ɾˈaːmɾoː pˈoːloː ʈˈoːli ɾə kʰˌeːlaːɖˈɪːhəɾˌuː bʰəˈeːkoː dˈeːʃəkˌaː ɾˈuːpəmˌaː wɪʃwmˈaː pɾəsˈɪdːdʰə cʰˈə",
+    "uccharan": "ərrɟˈeːnʈɪnˌaː ɾˈaːmɾoː pˈoːloː ʈˈoːli ɾə kʰˌeːlaːɖˈɪːhəɾˌuː bʰəˈeːkoː dˈeːʃəkˌaː ɾˈuːpəmˌaː wˈɪʃwəmˌaː pɾəsˈɪddʰə cʰˈə"
+   },
+   {
+    "id": "flores-devtest-52",
+    "text": "यो प्रतिवेदन मध्य पूर्वको नीतिका बारेमा संयुक्त राज्य अमेरिकामा खुल्ला बहस र सहमति गठन गर्नका लागि अनुरोध गर्न खुल्यो।",
+    "reference": "jˈoː pɾˌətɪwˈeːdən mˈʌdʰjə puːrrwkˈoː nˈɪːtɪkˌaː baːɾˈeːmaː səɲjˈuktə ɾˈaːɟjə ˌəmeːɾɪkˈaːmaː kʰˈulllaː bˈʌhəs ɾə sˈʌhəmˌətɪ ɡˈʌʈʰən ɡˈʌrrnəkˌaː lˈaːɡɪ ənuɾˌoːdʰ ɡˈʌrrnə kʰˈuljoː",
+    "uccharan": "jˈoː pɾˌətɪwˈeːdən mˈʌdʰjə pˈuːrrwəkˌoː nˈɪːtɪkˌaː baːɾˈeːmaː səɲjˈuktə ɾˈaːɟjə ˌəmeːɾɪkˈaːmaː kʰˈulllˌaː bˈʌhəs ɾə sˈʌhəmˌətɪ ɡˈʌʈʰən ɡˈʌrrnəkˌaː lˈaːɡɪ ˌənuɾˈoːdʰ ɡˈʌrrnə kʰˈuljoː"
+   },
+   {
+    "id": "flores-devtest-370",
+    "text": "वैज्ञानिकहरूले सोच्दछन् कि ओसेलोटहरूले जनावरहरूलाई खान (सिकार) गर्न उनीहरू बसेको ठाउँमा सुँघेर पत्ता लगाउँछन्।",
+    "reference": "wˈɛːɟɲaːnˌɪkəhˌəɾuːlˌeː sˈoːcdəcʰˌən kˈɪ ˌoːseːlˌoːʈəhəɾˈuːleː ɟˌənaːwˌəɾəhˌəɾuːlˈaːi kʰˈaːn sɪkˈaːɾə ɡˈʌrrnə ʊnˈɪːhəɾˌuː bəsˈeːkoː ʈʰˌaːũmˈaː sũɡʰˈeːɾə pˈʌttˌaː lˌəɡaːũcʰˈʌn",
+    "uccharan": "wˈɛːɟɲaːnˌɪkəhˌəɾuːlˌeː sˈoːcdəcʰˌən kˈɪ ˌoːseːlˌoːʈəhəɾˈuːleː ɟˌənaːwˌəɾəhˌəɾuːlˈaːi kʰˈaːn sɪkˈaːɾə ɡˈʌrrnə ʊnˈɪːhəɾˌuː bəsˈeːkoː ʈʰaːˈũmaː sũɡʰˈeːɾə pˈʌttˌaː lˌəɡaːˈũcʰən"
+   },
+   {
+    "id": "flores-devtest-3",
+    "text": "सोमबारका दिन सारा ड्यानियस, स्विडिस एकेडेमीमा नोबेल साहित्य समितिका स्थायी सचिवले, स्विडेनको सेभेरिजेस रेडियोको एक रेडियो कार्यक्रममा सार्वजनिक रूपमा घोषणा गरे कि बब डिलनलाई साहित्यमा 2016 को नोबेल पुरस्कार पाउने बारेमा सिधै पुग्न असमर्थ भएकाले समितिले उहाँसम्म पुग्न आफ्ना प्रयासहरू त्यागिदियो।",
+    "reference": "sˌoːməbˈaːɾəkˌaː dˈɪn sˈaːɾaː ɖɖjˈaːnɪjˌəs swˈɪɖɪs ˌeːkeːɖeːmˈɪːmaː noːbˈeːl saːhˈɪtːjə sˈʌmɪtˌɪkaː stʰˈaːji sˈʌcɪwˌəleː swˈɪɖeːnˌəkoː sˌeːbʰeːɾɪɟˈeːs ɾˌeːɖɪjˈoːkoː ˈeːkə ɾˈeːɖɪjˌoː kˈaːrrjəkɾˌəməmˌaː saːrrwɟˈʌnɪkˌə ɾˈuːpəmˌaː ɡʰˈoːʂəɳˌaː ɡˈʌɾeː kˈɪ bˈʌb ɖˌɪlənəlˈaːi saːhˈɪtːjəmˌaː tˈuː θˈaʊzənd ən sˈɪkstiːn kˈoː noːbˈeːl pˌuɾəskˈaːɾə pˈaːʊnˌeː baːɾˈeːmaː sˈɪdʰɛː pˈuɡnə ˌəsəmˈʌrrtʰə bʰˌəeːkˈaːleː sˈʌmɪtˌɪleː ˌʊhãsˈʌmmˌə pˈuɡnə ˈaːpʰːnaː pɾəjˈaːsəhˌəɾuː tːjˈaːɡɪdˌɪjoː",
+    "uccharan": "sˌoːməbˈaːɾəkˌaː dˈɪn sˈaːɾaː ɖjˈaːnɪjˌəs swˈɪɖɪs ˌeːkeːɖeːmˈɪːmaː noːbˈeːl saːhˈɪtːjˌə sˈʌmɪtˌɪkaː stʰˈaːji sˈʌcɪwˌəleː swɪɖˈeːnəkˌoː sˌeːbʰeːɾɪɟˈeːs ɾˌeːɖɪjˈoːkoː ˈeːkə ɾˈeːɖɪjˌoː kˈaːrrjəkɾˌəməmˌaː sˈaːrrwəɟˌənɪkˌə ɾˈuːpəmˌaː ɡʰˈoːʂəɳˌaː ɡˈʌɾeː kˈɪ bˈʌb ɖˌɪlənəlˈaːi saːhˈɪtːjˌəmaː tˈuː θˈaʊzənd ænd sɪkstˈiːn kˈoː noːbˈeːl pˌuɾəskˈaːɾə pˈaːʊnˌeː baːɾˈeːmaː sˈɪdʰɛː pˈuɡnə ˌəsəmˈʌrrtʰə bʰˌəeːkˈaːleː sˈʌmɪtˌɪleː ˌʊhãsˈʌmmˌə pˈuɡnə ˈaːpʰːnaː pɾəjˈaːsəhˌəɾuː tːjˈaːɡɪdˌɪjoː"
+   },
+   {
+    "id": "flores-devtest-261",
+    "text": "त्यसपछि पनि हाम्रा सामानहरूमा असी प्रतिशत मध्य अमेरिकी देशहरूमा ट्यारिफको माध्यमबाट कर लगाइएको थियो। हामी तपाईंलाई व्यवहार गर्छौँ।",
+    "reference": "tːjˈʌsəpˌəcʰɪ pˈʌnɪ hˈaːmɾaː sˌaːmaːnˌəhəɾˈuːmaː ˈʌsi pɾˈʌtɪʃˌət mˈʌdʰjə əmˈeːɾɪkˌiː dˌeːʃəhəɾˈuːmaː ʈʈjˈaːɾɪpʰˌəkoː mˈaːdʰjəmˌəbaːʈ kˈʌɾə lˌəɡaːɪˈeːkoː tʰˈɪjoː hˈaːmi tˌəpaːˈɪːnlaːˌiː ʋjˌəwəhˈaːɾə ɡˈʌrrcʰɔ̃",
+    "uccharan": "tːjˈʌsəpˌəcʰɪ pˈʌnɪ hˈaːmɾaː sˌaːmaːnˌəhəɾˈuːmaː ˈʌsi pɾˈʌtishʋt mˈʌdʰjə əmˈeːɾɪkˌiː dˌeːʃəhəɾˈuːmaː ʈːjˈaːɾɪpʰˌəkoː mˈaːdʰjəmˌəbaːʈ kˈʌɾə lˌəɡaːɪˈeːkoː tʰˈɪjoː hˈaːmi tˌəpaːˈɪːnlaːˌiː wjˌəwəhˈaːɾə ɡˈʌrrcʰɔ̃ː"
+   },
+   {
+    "id": "flores-devtest-562",
+    "text": "पहिलो ज्ञात यातायात भनेको हिँडाइ थियो, मानिसहरू होमो ईरेक्टस (ठाडो मानिस) को उदयसँगै दुई मिलियन वर्ष पहिला ठाडो भएर हिँड्न थालेका थिए।",
+    "reference": "pˈʌhɪlˌoː ɟɲˈaːt jˌaːtaːjˈaːt bʰənˈeːkoː hĩɖˈaːɪ tʰˈɪjoː mˈaːnɪsˌəhəɾˌuː hˈoːmoː ɪːɾˈeːkʈəs ʈʰˈaːɖoː mˈaːnɪs kˈoː ˌʊdəjˌəʃʌ̃ɡˈɛː dˈui mˈɪlɪjˌən wˈʌrrʂə pˈʌhɪlˌaː ʈʰˈaːɖoː bʰəˈeːɾə hˈĩɖnˈə tʰaːlˈeːkaː tʰˈɪeː",
+    "uccharan": "pˈʌhɪlˌoː ɟɲˈaːt jˌaːtaːjˈaːt bʰənˈeːkoː hɪ̃ɖˈaːɪ tʰˈɪjoː mˈaːnɪsˌəhəɾˌuː hˈoːmoː ɪːɾˈeːkʈəs ʈʰˈaːɖoː mˈaːnɪs kˈoː ˌʊdəjəsˈʌ̃ɡɛː dˈui mˈɪlɪjˌən wˈʌrrʂə pˈʌhɪlˌaː ʈʰˈaːɖoː bʰəˈeːɾə hˈɪ̃ɖnə tʰaːlˈeːkaː tʰˈɪeː"
+   }
+  ]
+ }
+}

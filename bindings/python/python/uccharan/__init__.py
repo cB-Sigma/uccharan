@@ -25,11 +25,11 @@ from .packs import PackError
 
 __version__: str = _native.__version__
 
-Lang = Literal["en-us", "en-gb", "hi"]
+Lang = Literal["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai"]
 Profile = Literal["espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx"]
 NormalizeMode = Literal["natural", "espeak", "off"]
 
-LANGUAGES: tuple[str, ...] = ("en-us", "en-gb", "hi")
+LANGUAGES: tuple[str, ...] = ("en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai")
 PROFILES: tuple[str, ...] = ("espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx")
 
 __all__ = [
@@ -62,12 +62,12 @@ _LATIN = re.compile(r"[A-Za-z]")
 
 def _need(lang: str, profile: str = "espeak-ipa", text: object = "") -> None:
     # en-gb and the Kokoro English data are packs, fetched on first use.
-    # Hindi reads English words in Latin script with the en-gb data.
+    # Indic languages read English words in Latin script with the en-gb data.
     key = (lang, "kokoro" if profile == "kokoro" else "")
     if key not in _ready:
         _packs.ensure(lang, profile)
         _ready.add(key)
-    if ("en-gb", "") not in _ready and lang.lower() in ("hi", "hi-in", "h", "hin"):
+    if ("en-gb", "") not in _ready and lang.lower().replace("_", "-") not in ("en", "en-us", "en-gb", "en-gb-x-rp", "en-uk", "a", "b"):
         texts = [text] if isinstance(text, str) else text
         if any(_LATIN.search(t) for t in texts):  # type: ignore[union-attr]
             _need("en-gb")

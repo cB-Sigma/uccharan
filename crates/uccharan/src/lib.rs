@@ -21,54 +21,149 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 
+pub mod african;
+pub mod bho;
 pub mod data;
 pub mod en;
+pub mod gnorm;
 pub mod hi;
+pub mod indic;
 pub mod ipa;
+pub mod kaithi;
 pub mod known;
 pub mod kokoro;
+pub mod langdef;
 pub mod lex2;
 pub mod names;
 pub mod norm;
 pub mod profile;
+pub mod rules;
 pub mod text;
+pub mod wiki;
 
 use data::{Data, DataError};
 pub use text::Terminator;
 
-/// Languages (and accents) with a front end.
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
-pub enum Lang {
+/// Declares the languages: enum variant, canonical tag, other accepted
+/// names, script, and the language file for data-driven languages.
+macro_rules! languages {
+    ($( $(#[$doc:meta])* $v:ident $tag:literal [$($alias:literal),*] $script:expr, $file:expr; )*) => {
+        /// Languages (and accents) with a front end.
+        #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
+        pub enum Lang {
+            $( $(#[$doc])* $v, )*
+        }
+
+        /// Number of [`Lang`] values.
+        pub const LANGS: usize = [$($tag),*].len();
+
+        impl Lang {
+            /// All languages.
+            pub const ALL: [Lang; LANGS] = [$(Lang::$v),*];
+
+            /// Parse a language tag or an espeak voice name.
+            pub fn parse(s: &str) -> Option<Lang> {
+                let s = s.to_ascii_lowercase().replace('_', "-");
+                match s.as_str() {
+                    $( $tag $(| $alias)* => Some(Lang::$v), )*
+                    _ => None,
+                }
+            }
+
+            /// Canonical tag.
+            pub fn tag(self) -> &'static str {
+                match self { $( Lang::$v => $tag, )* }
+            }
+
+            /// The writing system the language is read from.
+            pub fn script(self) -> text::Script {
+                match self { $( Lang::$v => $script, )* }
+            }
+
+            fn file(self) -> Option<&'static str> {
+                match self { $( Lang::$v => $file, )* }
+            }
+        }
+    };
+}
+
+use text::Script::{Brahmic, Devanagari, Latin};
+
+languages! {
     /// General American English (espeak voice `en-us`).
-    EnUs,
+    EnUs "en-us" ["en", "a"] Latin, None;
     /// British English, Received Pronunciation (espeak voice `en-gb-x-rp`).
-    EnGb,
+    EnGb "en-gb" ["en-gb-x-rp", "en-uk", "b"] Latin, None;
     /// Hindi in Devanagari (espeak voice `hi`).
-    Hi,
+    Hi "hi" ["hi-in", "h", "hin"] Devanagari, None;
+    /// Bengali (espeak voice `bn`).
+    Bn "bn" ["bn-in", "bn-bd", "ben"] Brahmic(0x0980), Some(include_str!("../lang/bn.lang"));
+    /// Marathi in Devanagari (espeak voice `mr`).
+    Mr "mr" ["mr-in", "mar"] Devanagari, Some(include_str!("../lang/mr.lang"));
+    /// Telugu (espeak voice `te`).
+    Te "te" ["te-in", "tel"] Brahmic(0x0c00), Some(include_str!("../lang/te.lang"));
+    /// Nepali (espeak voice `ne`).
+    Ne "ne" ["ne-np", "nep"] Devanagari, Some(include_str!("../lang/ne.lang"));
+    /// Kannada (espeak voice `kn`).
+    Kn "kn" ["kn-in", "kan"] Brahmic(0x0c80), Some(include_str!("../lang/kn.lang"));
+    /// Tamil (espeak voice `ta`).
+    Ta "ta" ["ta-in", "tam"] Brahmic(0x0b80), Some(include_str!("../lang/ta.lang"));
+    /// Malayalam (espeak voice `ml`).
+    Ml "ml" ["ml-in", "mal"] Brahmic(0x0d00), Some(include_str!("../lang/ml.lang"));
+    /// Assamese (espeak voice `as`).
+    As "as" ["as-in", "asm"] Brahmic(0x0980), Some(include_str!("../lang/as.lang"));
+    /// Gujarati (espeak voice `gu`).
+    Gu "gu" ["gu-in", "guj"] Brahmic(0x0a80), Some(include_str!("../lang/gu.lang"));
+    /// Bhojpuri in Devanagari or Kaithi (no espeak voice: compatible mode is the `hi` reading).
+    Bho "bho" ["bho-in", "bhojpuri"] Devanagari, None;
+    /// Maithili in Devanagari or Kaithi (no espeak voice: compatible mode is the `hi` reading).
+    Mai "mai" ["mai-in", "maithili"] Devanagari, None;
 }
 
 impl Lang {
-    /// Parse a language tag or an espeak voice name.
-    pub fn parse(s: &str) -> Option<Lang> {
-        match s.to_ascii_lowercase().replace('_', "-").as_str() {
-            "en" | "en-us" | "a" => Some(Lang::EnUs),
-            "en-gb" | "en-gb-x-rp" | "en-uk" | "b" => Some(Lang::EnGb),
-            "hi" | "hi-in" | "h" | "hin" => Some(Lang::Hi),
-            _ => None,
+    /// True for the English accents.
+    pub fn is_english(self) -> bool {
+        matches!(self, Lang::EnUs | Lang::EnGb)
+    }
+
+    /// True for Hindi and the languages read with the Hindi front end
+    /// (Bhojpuri, Maithili).
+    pub fn hindi_like(self) -> bool {
+        matches!(self, Lang::Hi | Lang::Bho | Lang::Mai)
+    }
+
+    /// The name used in espeak-style language-switch flags (`(en)`, `(hi)`).
+    pub fn flag(self) -> &'static str {
+        if self.is_english() {
+            "en"
+        } else if self.hindi_like() {
+            // Bhojpuri and Maithili are read with the reference's Hindi voice.
+            "hi"
+        } else {
+            self.tag()
         }
     }
 
-    /// Canonical tag.
-    pub fn tag(self) -> &'static str {
-        match self {
-            Lang::EnUs => "en-us",
-            Lang::EnGb => "en-gb",
-            Lang::Hi => "hi",
+    /// The default language of a script (`None` for scripts without one).
+    pub fn for_script(s: text::Script) -> Option<Lang> {
+        match s {
+            Latin => Some(Lang::EnUs),
+            Devanagari => Some(Lang::Hi),
+            _ => Lang::ALL.into_iter().find(|l| l.script() == s),
         }
     }
 
-    /// All languages.
-    pub const ALL: [Lang; 3] = [Lang::EnUs, Lang::EnGb, Lang::Hi];
+    /// The data-driven description of a language, for languages built on the
+    /// shared engines (`None` for English and Hindi).
+    pub fn indic(self) -> Option<&'static indic::Indic> {
+        use std::sync::OnceLock;
+        static CELLS: [OnceLock<indic::Indic>; LANGS] = [const { OnceLock::new() }; LANGS];
+        let text = self.file()?;
+        Some(CELLS[self.index()].get_or_init(|| {
+            indic::Indic::from_text(text)
+                .unwrap_or_else(|e| panic!("lang/{}.lang: {e}", self.tag()))
+        }))
+    }
 
     fn index(self) -> usize {
         self as usize
@@ -174,12 +269,15 @@ pub struct Sentence {
 /// The phonemizer. Cheap to share between threads (`&Phonemizer` is `Sync`).
 #[derive(Clone, Debug, Default)]
 pub struct Phonemizer {
-    data: [std::sync::OnceLock<Data>; 3],
+    data: [std::sync::OnceLock<Data>; LANGS],
     /// misaki dictionaries for the Kokoro English front end (US, GB).
     misaki: [std::sync::OnceLock<std::sync::Arc<kokoro::MisakiLexicon>>; 2],
     /// Compiled Kokoro English packs loaded at run time (US, GB); dictionaries
     /// given to `load_misaki` take precedence.
     kokoro_packs: [std::sync::OnceLock<std::sync::Arc<kokoro::MisakiLexicon>>; 2],
+    /// Optional WikiPron packs (CC BY-SA, loaded at run time), used by the
+    /// improved mode.
+    wikipron: [std::sync::OnceLock<Data>; LANGS],
 }
 
 impl Phonemizer {
@@ -240,14 +338,25 @@ impl Phonemizer {
                 Err(e) => Err(e),
             };
         }
+        if let Some(l) = name.strip_prefix("wikipron-") {
+            let lang = Lang::parse(l).ok_or_else(|| format!("unknown pack language {name:?}"))?;
+            let _ = self.wikipron[lang.index()].set(d);
+            return Ok(name);
+        }
         let lang = Lang::parse(&name).ok_or_else(|| format!("unknown pack language {name:?}"))?;
         let _ = self.data[lang.index()].set(d);
         Ok(name)
     }
 
-    /// True when the language's data is available.
+    /// True when the language's data is available (always, for the
+    /// data-driven languages, whose rules are compiled in).
     pub fn has(&self, lang: Lang) -> bool {
-        self.data[lang.index()].get().is_some()
+        self.data[lang.index()].get().is_some() || lang.file().is_some()
+    }
+
+    /// True when the optional WikiPron pack of the language is loaded.
+    pub fn has_wikipron(&self, lang: Lang) -> bool {
+        self.wikipron[lang.index()].get().is_some()
     }
 
     /// The loaded data image of a language.
@@ -267,6 +376,25 @@ impl Phonemizer {
     /// Analyse text into sentences, clauses and words.
     pub fn analyze(&self, text: &str, opt: &Options) -> Vec<Sentence> {
         let compat = opt.mode == Mode::Compatible;
+        // Kaithi is read as the Devanagari it transliterates to.
+        let owned_kaithi;
+        let text = if kaithi::has_kaithi(text) {
+            owned_kaithi = kaithi::to_devanagari(text);
+            owned_kaithi.as_str()
+        } else {
+            text
+        };
+        let owned_avagraha;
+        let text = match (opt.lang.hindi_like() && !compat)
+            .then(|| bho::avagraha_s(text))
+            .flatten()
+        {
+            Some(t) => {
+                owned_avagraha = t;
+                owned_avagraha.as_str()
+            }
+            None => text,
+        };
         let mut sentences: Vec<Sentence> = Vec::new();
         let mut cur = Sentence::default();
         for raw in text::clauses(text) {
@@ -277,7 +405,7 @@ impl Phonemizer {
                 if opt.normalize == Normalize::Natural
                     && chunk.dot
                     && ci > 0
-                    && opt.lang != Lang::Hi
+                    && opt.lang.is_english()
                 {
                     let capital =
                         |c: &text::Chunk| c.text.chars().next().is_some_and(|x| x.is_uppercase());
@@ -298,7 +426,24 @@ impl Phonemizer {
                         }
                     }
                 }
-                items.extend(norm::expand_with(chunk, opt.lang, opt.normalize, !compat));
+                if let Some(g) = self.generic_for_chunk(&chunk.text, opt.lang) {
+                    items.extend(gnorm::expand(
+                        chunk,
+                        &g.numbers,
+                        compat && g.ascii_digits_english,
+                    ));
+                } else {
+                    let nl = if opt.lang.hindi_like() {
+                        Lang::Hi
+                    } else {
+                        opt.lang
+                    };
+                    let start = items.len();
+                    items.extend(norm::expand_with(chunk, nl, opt.normalize, !compat));
+                    if !compat && matches!(opt.lang, Lang::Bho | Lang::Mai) {
+                        bho::adapt_numbers(&mut items[start..], opt.lang);
+                    }
+                }
             }
             if compat {
                 // The reference writes hyphenated compounds as one word.
@@ -325,27 +470,54 @@ impl Phonemizer {
         sentences
     }
 
+    /// The data-driven language that should normalise a chunk: the request
+    /// language when it is one, else the language of another Indic script
+    /// found in the chunk.
+    fn generic_for_chunk(&self, chunk: &str, lang: Lang) -> Option<&'static indic::Indic> {
+        if let Some(g) = lang.indic() {
+            return Some(g);
+        }
+        for c in chunk.chars() {
+            if let text::Script::Brahmic(b) = text::script_of(c) {
+                return Lang::for_script(text::Script::Brahmic(b)).and_then(Lang::indic);
+            }
+        }
+        None
+    }
+
     /// Route each item to a language front end, span by span.
     fn clause_words(&self, items: &[norm::Item], opt: &Options, compat: bool) -> Vec<WordOut> {
         let route = |it: &norm::Item| -> Lang {
-            let deva = it
+            let script = it
                 .text
                 .chars()
-                .any(|c| text::script_of(c) == text::Script::Devanagari);
-            if deva {
-                Lang::Hi
-            } else if opt.lang == Lang::Hi {
-                opt.embedded_english
-            } else {
+                .map(text::script_of)
+                .find(|s| !matches!(s, text::Script::Digit | text::Script::Other))
+                .unwrap_or(text::Script::Latin);
+            if script == opt.lang.script() {
                 opt.lang
+            } else if script == text::Script::Latin {
+                if opt.lang.is_english() {
+                    opt.lang
+                } else {
+                    opt.embedded_english
+                }
+            } else {
+                Lang::for_script(script).unwrap_or(opt.lang)
             }
         };
-        let hi = hi::Hindi::new(self.data[Lang::Hi.index()].get());
+        let mut hi = hi::Hindi::new(self.data[Lang::Hi.index()].get());
+        if !compat {
+            hi = hi.with_wiki(self.wikipron[Lang::Hi.index()].get());
+        }
         // Romanised Hindi: rewrite Latin items as Devanagari where the classifier says so.
         let mut owned: Vec<norm::Item>;
         let mut items = items;
-        if opt.hinglish && opt.lang == Lang::Hi {
+        if opt.hinglish && opt.lang.hindi_like() {
             owned = items.to_vec();
+            if opt.lang == Lang::Bho && !compat {
+                bho::rewrite_roman(&mut owned);
+            }
             let english = self.english(opt.embedded_english);
             hi::roman::rewrite(&mut owned, &hi, english.as_ref());
             items = &owned;
@@ -363,23 +535,86 @@ impl Phonemizer {
             let span = &items[i..j];
             match lang {
                 Lang::Hi => out.extend(hi.span(span, last, compat)),
+                Lang::Bho | Lang::Mai => out.extend(bho::span(&hi, span, last, compat, lang)),
+                l if l.indic().is_some() => {
+                    let g = l.indic().unwrap();
+                    out.extend(g.span(span, last, compat, l));
+                }
                 l => {
                     if let Some(e) = self.english(l) {
                         let mut ws = e.span(span, last, compat);
-                        if !compat && opt.lang != Lang::Hi {
+                        // Compatible mode leaves the pack out: on the development
+                        // set it moved agreement with the reference slightly away
+                        // (en-US PER 1.16 -> 1.18 %, en-GB 1.41 -> 1.42 %).
+                        let wiki = if compat {
+                            None
+                        } else {
+                            self.wikipron[l.index()].get()
+                        };
+                        let mut from_pack = vec![false; ws.len()];
+                        if let Some(wd) = wiki {
+                            // Words and names outside the own lexicon: the WikiPron pack.
+                            for (w, hit) in ws.iter_mut().zip(from_pack.iter_mut()) {
+                                let t = w.text.as_str();
+                                if t.contains(' ') || !t.chars().all(char::is_alphabetic) {
+                                    continue;
+                                }
+                                let lower = t.to_lowercase();
+                                if e.knows(&lower) {
+                                    continue;
+                                }
+                                let capital = t.chars().next().is_some_and(char::is_uppercase);
+                                let mut s = String::new();
+                                let keys = if capital {
+                                    [format!("^{lower}"), lower.clone()]
+                                } else {
+                                    [lower.clone(), format!("^{lower}")]
+                                };
+                                if keys.iter().any(|k| wd.lookup(k, &mut s)) {
+                                    w.ipa = wiki::with_stress(&s, &w.ipa, l);
+                                    *hit = true;
+                                }
+                            }
+                        }
+                        if !compat && opt.lang.is_english() {
                             // Indian names in English text (improved mode).
-                            for w in ws.iter_mut() {
+                            for (w, _) in ws.iter_mut().zip(&from_pack).filter(|x| !*x.1) {
                                 let t = w.text.as_str();
                                 let capital = t.chars().next().is_some_and(char::is_uppercase)
                                     && t.chars().skip(1).all(char::is_lowercase);
+                                // Listed Arabic given names: English dictionaries
+                                // give many of them English stress (Mahmoud, Khaled).
+                                if capital
+                                    && african::arabic_name(t)
+                                    && !e.in_lexicon(&format!("^{}", t.to_lowercase()))
+                                {
+                                    let ar = african::read_arabic(t, l == Lang::EnGb);
+                                    if !african::english_reading_fits(&w.ipa, &ar) {
+                                        w.ipa = ar;
+                                    }
+                                    continue;
+                                }
                                 if capital && !t.contains(' ') && !e.knows(&t.to_lowercase()) {
-                                    if let Some(ipa) = names::indian_name(e.name_model(), t, &hi) {
+                                    let horn = african::horn_name(t)
+                                        && names::indic_score(e.name_model(), t)
+                                            < 2 * names::INDIC_THRESHOLD;
+                                    if horn
+                                        || african::strongly_african(t)
+                                        || african::prefer_over_indian(t)
+                                    {
+                                        w.ipa = african::read(t, l == Lang::EnGb);
+                                    } else if let Some(ipa) =
+                                        names::indian_name(e.name_model(), t, &hi)
+                                    {
                                         w.ipa = ipa;
+                                    } else if african::looks_african(t) {
+                                        // African names (improved mode).
+                                        w.ipa = african::read(t, l == Lang::EnGb);
                                     }
                                 }
                             }
                         }
-                        if opt.lang == Lang::Hi {
+                        if opt.lang.hindi_like() {
                             hi::adapt_english(&mut ws, compat);
                         }
                         out.extend(ws);
@@ -406,7 +641,7 @@ impl Phonemizer {
         let slot = match lang {
             Lang::EnUs => 0,
             Lang::EnGb => 1,
-            Lang::Hi => return Err("misaki dictionaries exist for en-us and en-gb only".into()),
+            _ => return Err("misaki dictionaries exist for en-us and en-gb only".into()),
         };
         let lex = kokoro::MisakiLexicon::from_json(gold_json, silver_json, slot == 1)?;
         self.misaki[slot]
@@ -445,7 +680,7 @@ impl Phonemizer {
         let slot = match lang {
             Lang::EnUs => 0,
             Lang::EnGb => 1,
-            Lang::Hi => return None,
+            _ => return None,
         };
         if let Some(l) = self.misaki[slot].get().or(self.kokoro_packs[slot].get()) {
             return Some(l);
@@ -488,7 +723,7 @@ impl Phonemizer {
             for s in self.analyze(word, &opt) {
                 for c in s.clauses {
                     for w in c.words {
-                        parts.push(if w.lang == Lang::Hi {
+                        parts.push(if !w.lang.is_english() {
                             w.ipa.replace('-', "")
                         } else {
                             kokoro::espeak_style_to_misaki(&w.ipa, lang == Lang::EnGb)
@@ -517,7 +752,7 @@ impl Phonemizer {
         prof: profile::Profile,
         punctuation: bool,
     ) -> String {
-        if prof == profile::Profile::Kokoro && opt.lang != Lang::Hi {
+        if prof == profile::Profile::Kokoro && opt.lang.is_english() {
             if let Some(k) = self.kokoro_english(text, opt.lang) {
                 return k;
             }

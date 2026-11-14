@@ -26,6 +26,7 @@ fn main() {
     let mut voice_config: Option<String> = None;
     let mut threads: Option<usize> = None;
     let mut misaki: Option<String> = None;
+    let mut packs: Vec<String> = Vec::new();
     let mut texts: Vec<String> = Vec::new();
     let mut args = std::env::args().skip(1);
     while let Some(a) = args.next() {
@@ -50,13 +51,14 @@ fn main() {
             "--voice-config" => voice_config = args.next(),
             "--threads" => threads = args.next().and_then(|v| v.parse().ok()),
             "--misaki" => misaki = args.next(),
+            "--pack" => packs.extend(args.next()),
             "-V" | "--version" => {
                 println!("uccharan {}", env!("CARGO_PKG_VERSION"));
                 return;
             }
             "-h" | "--help" => {
                 println!(
-                    "usage: uccharan [-l en-us|en-gb|hi] [-p espeak-ipa|piper|kokoro|kitten|matcha|sherpa-onnx]\n                [--normalize natural|espeak|off] [--improved] [--hinglish] [--no-punctuation]\n                [--ids [--voice-config FILE]] [--threads N] [--misaki DIR] [TEXT...]\n\nReads lines from standard input when no TEXT is given."
+                    "usage: uccharan [-l en-us|en-gb|hi] [-p espeak-ipa|piper|kokoro|kitten|matcha|sherpa-onnx]\n                [--normalize natural|espeak|off] [--improved] [--hinglish] [--no-punctuation]\n                [--ids [--voice-config FILE]] [--threads N] [--misaki DIR] [--pack FILE.ucd]... [TEXT...]\n\nReads lines from standard input when no TEXT is given."
                 );
                 return;
             }
@@ -67,6 +69,11 @@ fn main() {
         die(&format!("unknown profile '{prof}'"))
     };
     let p = Phonemizer::new();
+    for f in &packs {
+        let bytes = std::fs::read(f).unwrap_or_else(|e| die(&format!("{f}: {e}")));
+        p.load_pack(bytes)
+            .unwrap_or_else(|e| die(&format!("{f}: {e}")));
+    }
     if let Some(dir) = &misaki {
         let accent = if lang == Lang::EnGb { "gb" } else { "us" };
         let read = |name: &str| {

@@ -43,12 +43,12 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-VOICES = {"en-us": "en-us", "en-gb": "en-gb-x-rp", "hi": "hi"}
+VOICES = {"bho": "hi", "mai": "hi", "en-us": "en-us", "en-gb": "en-gb-x-rp", "hi": "hi", "bn": "bn", "mr": "mr", "te": "te", "ne": "ne", "kn": "kn", "ta": "ta", "ml": "ml", "as": "as", "gu": "gu"}
 FLAGS = 4 | 16  # reference-style number reading, no punctuation: same output shape as the reference call
 
 
 def sentences(lang: str, limit: int, part: str = "heldout") -> list[str]:
-    name = f"{'hi' if lang == 'hi' else 'en'}_{part}.tsv"
+    name = f"{'en' if lang.startswith('en') else lang}_{part}.tsv"
     rows = [line.split("\t", 1)[1] for line in (ROOT / "tools/eval/data" / name).read_text(encoding="utf-8").splitlines() if "\t" in line]
     return rows[:limit] if limit else rows
 

@@ -55,6 +55,15 @@ pub fn load(lang_tag: &str, bytes: Vec<u8>) -> Result<(), JsError> {
         .map_err(|e| JsError::new(&e.to_string()))
 }
 
+/// Load any `.ucd` pack (for example an optional `wikipron-*` pack).
+/// Returns the pack's name.
+#[wasm_bindgen(js_name = loadPack)]
+pub fn load_pack(bytes: Vec<u8>) -> Result<String, JsError> {
+    ENGINE
+        .with(|e| e.borrow().load_pack(bytes))
+        .map_err(|e| JsError::new(&e))
+}
+
 /// True when the language's data has been loaded.
 #[wasm_bindgen]
 pub fn has(lang_tag: &str) -> bool {

@@ -50,8 +50,10 @@ the caller to bring phonemes. uccharan is that phonemizer:
   speech-recognition word error rate when real voices speak its output ([numbers](#measured-compatibility)).
 - **Improved mode is more correct than espeak-ng**: homographs in context, names, numbers, Hindi
   schwa deletion and nasals — 82.0 % against espeak-ng's 51.6 % on a hand-made test set written
-  after the rules were frozen, and 89.0 % against 61.6 % on held-out personal names of many origins
-  (Indian names 77.1 % against 43.8 %) ([numbers](#correctness-improved-mode)).
+  after the rules were frozen, 91.3 % against 61.6 % on held-out personal names of many origins
+  (Indian names 79.2 % against 43.8 %), 75.9 % against 45.6 % on 195 held-out African names,
+  and 69.4 % against 56.5 % on 85 held-out Egyptian names
+  ([numbers](#correctness-improved-mode)).
 - **Both are faster**: 5× lower latency and 5× higher throughput than espeak-ng for English,
   2.8× for Hindi, about 6× faster start-up, and it scales across threads ([numbers](#speed)).
 - **Kokoro English**: a port of misaki, the front end Kokoro was trained on, with its dictionaries
@@ -158,6 +160,67 @@ marked 0.1.0 were not re-run.
 +0.5 (English) / +1.0 (Hindi).
 ¹ Old 130-symbol Piper voices lack the syllabic mark U+0329, which espeak-ng emits as well.
 
+### More languages (data-driven, new)
+
+These languages run on a shared engine: one decoder for every Brahmic script plus a short language
+file of letters, rewrite rules, exceptions and number words (`crates/uccharan/lang/*.lang`;
+[docs/adding-a-language.md](docs/adding-a-language.md)). Agreement is measured exactly as above,
+against espeak-ng 1.52.0, on held-out sentences never used to write rules. Speed is p50 latency per
+held-out sentence, one thread, against the same espeak-ng voice.
+
+<!-- @@LANGTABLE@@ -->
+| Language | espeak-ng voice | Held-out text | Phoneme agreement (held-out) | Without digits | Speed vs espeak-ng (p50) | Voices that use it |
+| --- | --- | --- | --- | --- | --- | --- |
+| Bengali | `bn` | Tatoeba, 2,000 sentences | PER 0.37 %, 93.2 % identical | — | 2.0× | Piper `bn_BD`, Mimic-3 `bn` |
+| Marathi | `mr` | Tatoeba, 2,000 sentences | PER 0.27 %, 97.0 % identical | — | 3.2× | Piper `mr_IN` |
+| Telugu | `te` | FLORES-200, 1,012 sentences | PER 0.87 % | 0.52 % | 3.0× | Piper `te_IN` (3) |
+| Kannada | `kn` | FLORES-200, 1,012 sentences | PER 1.58 % | 0.50 % | 2.4× | MMS / SYSPIN (character input) |
+| Malayalam | `ml` | FLORES-200, 1,012 sentences | PER 2.01 % | 0.97 % | 2.6× | Piper `ml_IN` (2) |
+| Nepali | `ne` | FLORES-200, 1,012 sentences | PER 2.67 % | 2.32 % | 15× | Piper `ne_NP` (3), Mimic-3 `ne` |
+| Tamil | `ta` | FLORES-200, 1,012 sentences | PER 4.09 % | 2.83 % | 37× | Piper `ta_IN` (2, community) |
+| Gujarati | `gu` | FLORES-200, 1,012 sentences | PER 2.41 % | 2.04 % | 3.8× | Mimic-3 `gu` |
+| Assamese | `as` | Tatoeba, 2,000 sentences | PER 7.21 %, 56.3 % identical | — | 2.2× | MMS (character input) |
+| Bhojpuri | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.80 % against `hi` | 0.33 % | 3.3× | SYSPIN (character input) |
+| Maithili | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.75 % against `hi` | 0.29 % | 3.0× | MMS, SYSPIN (character input) |
+<!-- @@END@@ -->
+
+FLORES-200 sentences are longer news-style text with many numbers, so their rates are not
+comparable with the Tatoeba rows. Most of the remaining disagreement in Telugu, Kannada and
+Malayalam is in numbers, which espeak-ng reads from its own word lists. Assamese is a first version: espeak-ng spells out
+letter by letter every word written with a separate nukta code point (which is how normalised text
+writes য়), and the letter names are only partly reproduced. Tamil (stop voicing
+depends on the word's origin: uccharan has a hand-written list of Sanskrit and foreign loan stems
+that keep a voiced initial, and marks the compound element படு and prefix முன்; the rest of the gap
+is numbers and secondary stress) and Nepali (stress on
+many word-final long vowels) fall short of the 2 % target. Speed was measured once on a shared
+4-vCPU machine, 500 held-out sentences, one thread. End-to-end tests with voices of these languages
+have not been run yet.
+
+**Bhojpuri and Maithili** have no espeak-ng voice; text in them given to espeak-ng is read with the
+Hindi voice, so compatible mode reproduces that Hindi reading (the rows above measure it against
+`espeak-ng -v hi`). Improved mode reads them as Bhojpuri and Maithili: ऐ औ as əi əu, vowel letters
+इ उ after a vowel as vowels of their own, the avagraha (also typed as a Latin *s*: हs) as a
+pronounced final ə, ड़ ढ़ as flaps, chandrabindu as a nasal vowel, the vowel before the past
+suffix -ल- kept (रहलन ɾəhələn), unstressed copula and pronouns, Bhojpuri number words (दू, छव,
+एगारह, पहिला), Kaithi script (U+11080–U+110CF) read as the Devanagari it transliterates to, and an
+experimental romanised-Bhojpuri path (`--hinglish`); Maithili also keeps word-final short i and u
+(अछि əcʰɪ). Hand-written gold sets, split before any work ([tools/eval/gold/bho](tools/eval/gold/bho):
+437 words, 153 sentences; [tools/eval/gold/mai](tools/eval/gold/mai): 410 words, 134 of them with
+Wiktionary's pronunciations via WikiPron, and 151 sentences), held-out halves:
+
+| Held-out | Hindi-voice fallback (espeak-ng `hi`) | uccharan compatible | **uccharan improved** |
+| --- | ---: | ---: | ---: |
+| Bhojpuri words (224), exact | 62.9 % | 63.8 % | **96.4 %** |
+| Bhojpuri sentences (82): PER / identical | 5.54 % / 28.0 % | 5.54 % / 28.0 % | **0.43 % / 91.5 %** |
+| Maithili words (226), exact | 68.6 % | 66.4 % | **93.4 %** |
+| — of which Wiktionary pronunciations | 62 % | 56 % | **82 %** |
+| Maithili sentences (71): PER / identical | 5.66 % / 32.4 % | 5.60 % / 32.4 % | **0.29 % / 94.4 %** |
+
+Apart from the Wiktionary items, the gold sets encode the grammars' descriptions as written down by
+us, so they show that improved mode implements them, not that a native speaker would accept every
+form; items to check with a native speaker are listed in
+[docs/bhojpuri-maithili-review.md](docs/bhojpuri-maithili-review.md).
+
 ## Correctness (improved mode)
 
 Hand-written gold sets ([tools/eval/gold](tools/eval/gold)); expected pronunciations come from
@@ -178,17 +241,87 @@ split in half; the held-out half (172 names) was never used to build anything:
 
 | Held-out names | espeak-ng 1.52 | uccharan compatible | **uccharan improved** |
 | --- | ---: | ---: | ---: |
-| Indian (48) | 43.8 % | 50.0 % | **77.1 %** |
-| Not in CMUdict, any origin (41) | 34.1 % | 19.5 % | **56.1 %** |
-| African (8) | **50.0 %** | 37.5 % | 37.5 % |
-| **All (172)** | 61.6 % | 80.2 % | **89.0 %** |
+| Indian (48) | 43.8 % | 50.0 % | **79.2 %** |
+| Not in CMUdict, any origin (41) | 34.1 % | 19.5 % | **68.3 %** |
+| African (8) | 50.0 % | 37.5 % | **87.5 %** |
+| **All (172)** | 61.6 % | 80.2 % | **91.3 %** |
+
+(91.9 % before the Arabic-names list: one name of the Arabic/Persian/Turkish group is now read
+differently from CMUdict, so that group is 5 of 6, against espeak-ng's 3 of 6. Making the list
+leave every CMUdict name alone would cost 10 points on the Egyptian development half, so it stays.)
 
 For names that are in CMUdict the reference *is* CMUdict, which uccharan's lexicon comes from, so
 the fair rows are Indian names and names not in CMUdict; per-origin results are in
-[docs/evaluation.md](docs/evaluation.md#names-by-origin). African names are the one origin where
-espeak-ng does better. On the development gold sets (348 items, used to build improved mode)
+[docs/evaluation.md](docs/evaluation.md#names-by-origin).
+
+**African names.** Eight African names are too few to show anything, so a separate set of 388
+African names (first names, surnames, places; Yoruba, Igbo, Hausa, Akan, Ewe, Swahili, Kikuyu, Luo,
+Luganda, Nguni, Sotho-Tswana, Shona, Amharic-Tigrinya, Somali, Oromo, Wolof, Fula, Lingala,
+Malagasy, North African and 17 more) was written by hand from each language's documented phonology
+before any work on them ([tools/eval/gold/african_names.src](tools/eval/gold/african_names.src),
+sources in the file header), split by hash into development and held-out halves. Improved mode
+recognises such names by spelling (prenasalised and labial-velar onsets, clicks, Somali and
+French-based spellings, Bantu syllable shapes) and reads them with their own letter values and
+penultimate stress, mapped to English phonemes. Held-out half (195 names):
+
+| | espeak-ng 1.52 | uccharan compatible | **uccharan improved** |
+| --- | ---: | ---: | ---: |
+| All (195) | 45.6 % | 41.5 % | **75.9 %** |
+| West African: Yoruba, Igbo, Hausa, Akan, Ewe (50) | 48.0 % | 42.0 % | **84.0 %** |
+| East, Central and Southern African, incl. Luo (55) | 43.6 % | 41.8 % | **81.8 %** |
+| Horn of Africa: Amharic, Tigrinya, Somali, Oromo (18) | 55.6 % | 44.4 % | **77.8 %** |
+| Wolof, Fula (19) | 47.4 % | 52.6 % | **73.7 %** |
+| Malagasy (7) | 42.9 % | 42.9 % | **57.1 %** |
+| North African (20) | 35.0 % | 30.0 % | **50.0 %** |
+
+Arabic and Berber names in French or English transliteration are read with Arabic weight-based
+stress (vowel length guessed from the spelling: ou, -ine, -ane, doubled letters). Arabic given
+names on a list taken from Wikidata (CC0; 1 508 names, leaving out every name an English
+dictionary of common words already lists) are read this way even when CMUdict has them with
+English stress (*Mahmoud*, *Khaled*), unless the dictionary's reading already stresses the same
+syllable with the same consonants and a fitting vowel (*Nasser*); names of Eritrean and Ethiopian
+people on Wikidata (CC0) are read as Horn of Africa names. Two further sets were written by hand before the work on
+them, split by hash and tuned on the development half only. The held-out halves were scored after
+the first round of work, when Tigrinya still trailed by one name; the Tigrinya development half was
+then grown by 40 names, the reader improved on development data only, and every held-out half was
+scored a second (final) time. The table gives that second scoring:
+
+| Held-out set | espeak-ng 1.52 | uccharan compatible | **uccharan improved** |
+| --- | ---: | ---: | ---: |
+| North African, 181 names ([north_african_names.src](tools/eval/gold/north_african_names.src)): held-out 100 | 40.0 % | 33.0 % | **66.0 %** |
+| — of which Maghrebi (70) / Berber (10) / Egyptian (20) | 37.1 / 30.0 / 55.0 % | | **67.1 / 70.0 / 60.0 %** |
+| Egyptian, 167 new names ([egyptian_names.src](tools/eval/gold/egyptian_names.src)): held-out 85 | 56.5 % | 48.2 % | **69.4 %** |
+| Chichewa, Shona, Tsonga, Tigrinya, 224 new names ([se_african_names.src](tools/eval/gold/se_african_names.src)): held-out 96 | 47.9 % | 31.2 % | **76.0 %** |
+| — Chichewa (24) | 41.7 % | 20.8 % | **87.5 %** |
+| — Shona (26) | 42.3 % | 30.8 % | **73.1 %** |
+| — Tsonga (19) | 42.1 % | 10.5 % | **73.7 %** |
+| — Tigrinya (27) | 63.0 % | 55.6 % | **70.4 %** |
+
+At the first scoring Tigrinya trailed (59.3 % against 63.0 %): Eritrean and Ethiopian names written
+like English words (*Selam*, *Feven*) kept English letter values; the Wikidata list of Horn of
+Africa names fixed that. Improved mode now recognises Ethiopian name elements (*gebre*,
+*wolde*, *habte*, *tesfa*, *berhan*, *haile*, *tekle*, …), Tsonga *x* = ʃ and *rh*, final *-ai* as
+two syllables, and Egyptian spellings (final *-y* after two consonants = i, *aw* = aʊ, *ee*/*oo*
+long). Before this work improved mode scored 41.0 % on the African held-out half. On the development gold sets (348 items, used to build improved mode)
 improved mode scores 99.7 % against espeak-ng's 50.3 %; that number only shows the rules do what
 they were written to do. What improved mode changes: [docs/improved-mode.md](docs/improved-mode.md).
+
+**Optional WikiPron packs (CC BY-SA 4.0).** `wikipron-en-us`, `wikipron-en-gb` and `wikipron-hi`
+hold Wiktionary pronunciations (80.8 k, 81.3 k and 30.4 k words) for the improved mode's words
+outside uccharan's own lexicon. They are **not Apache-2.0**: they are separate release assets that
+are never downloaded unless you ask (`uccharan.load_pack("wikipron-en-us")`, `--pack FILE`), and
+compatible mode never uses them (on the development set they moved agreement with espeak-ng
+slightly away: en-US PER 1.16 → 1.18 %, en-GB 1.41 → 1.42 %). Measured with the pack loaded
+(before the African-names work), improved mode scored 88.4 % on the held-out names (89.0 %
+without) and 82.8 % on the unseen gold sets (82.0 % without): Wiktionary covers few of the names
+that CMUdict lacks (8 of the 41 held-out ones), so it adds little there; with the current rules
+the pack scores 91.3 % against 91.9 % without.
+
+| Pack | Words | Licence | Used by |
+| --- | ---: | --- | --- |
+| `wikipron-en-us` | 80.8 k | CC BY-SA 4.0 (Wiktionary via WikiPron) | improved mode, en-US |
+| `wikipron-en-gb` | 81.3 k | CC BY-SA 4.0 (Wiktionary via WikiPron) | improved mode, en-GB |
+| `wikipron-hi` | 30.4 k | CC BY-SA 4.0 (Wiktionary via WikiPron) | improved mode, Hindi |
 
 ## Speed
 
@@ -244,7 +377,9 @@ date, please open an issue.
 
 Licence: Apache-2.0. Includes data from the CMU Pronouncing Dictionary (BSD-2-Clause) and misaki
 (Apache-2.0); see [NOTICE](NOTICE). Every other table was written by hand for this project;
-[DATA_LICENSES.md](DATA_LICENSES.md) lists every file.
+[DATA_LICENSES.md](DATA_LICENSES.md) lists every file. The optional `wikipron-*` packs are
+CC BY-SA 4.0 (Wiktionary contributors, via WikiPron); they are not part of any package and are
+loaded only on request.
 
 uccharan contains no espeak-ng code, rules or dictionary data. The Kokoro English front end is a port
 of misaki's Apache-2.0 code and ships misaki 0.9.4's English dictionaries unchanged under their
@@ -268,8 +403,9 @@ originally come from (details in [DATA_LICENSES.md](DATA_LICENSES.md)).
 
 ## Roadmap
 
-- **More Indic languages**, starting with Hindi's Devanagari relatives: Marathi, Nepali, Maithili,
-  Bhojpuri — each with held-out sets and the same gates ([how](docs/adding-a-language.md)).
+- **More languages**: further Indic languages (Odia, Punjabi, Konkani, Sanskrit, Sinhala, Urdu)
+  and Latin-alphabet languages, each with held-out sets and the same gates
+  ([how](docs/adding-a-language.md)).
 - **An optional GPL data pack**, kept in a separate repository and package, for people who can
   accept the GPL and want espeak-ng's own dictionaries for languages uccharan does not cover yet.
 - **A small neural fallback** for out-of-lexicon words (int8, under 1.5 MB per language, trained

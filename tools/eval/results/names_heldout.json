@@ -112,25 +112,41 @@
   },
   "uccharan-improved": {
    "failed": [
-    "indian-aditi",
     "indian-ishaan",
     "indian-kavya",
     "indian-pooja",
+    "indian-pradeep",
     "indian-sunita",
     "indian-varun",
     "indian-balasubramaniam",
-    "indian-naidu",
-    "indian-tiwari",
     "indian-chakraborty",
     "indian-lalitha",
+    "indian-saraswati",
     "hispanic-ximena",
     "hispanic-ramirez",
     "chinese-xiaoming",
-    "african-oluwaseun",
-    "african-chukwuemeka",
-    "african-folasade",
-    "african-abena",
-    "african-wanjiru"
+    "arabic_persian_turkish-abdullah",
+    "african-oluwaseun"
+   ]
+  },
+  "uccharan-improved+wikipron": {
+   "failed": [
+    "indian-ishaan",
+    "indian-kavya",
+    "indian-nandini",
+    "indian-pradeep",
+    "indian-sunita",
+    "indian-varun",
+    "indian-balasubramaniam",
+    "indian-patil",
+    "indian-chakraborty",
+    "indian-lalitha",
+    "indian-saraswati",
+    "hispanic-ximena",
+    "hispanic-ramirez",
+    "chinese-xiaoming",
+    "arabic_persian_turkish-abdullah",
+    "african-oluwaseun"
    ]
   }
  },
@@ -147,9 +163,14 @@
     "accuracy": 0.375
    },
    "uccharan-improved": {
-    "passed": 3,
+    "passed": 7,
     "items": 8,
-    "accuracy": 0.375
+    "accuracy": 0.875
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 7,
+    "items": 8,
+    "accuracy": 0.875
    }
   },
   "arabic_persian_turkish": {
@@ -164,9 +185,14 @@
     "accuracy": 1.0
    },
    "uccharan-improved": {
-    "passed": 6,
+    "passed": 5,
     "items": 6,
-    "accuracy": 1.0
+    "accuracy": 0.8333333333333334
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 5,
+    "items": 6,
+    "accuracy": 0.8333333333333334
    }
   },
   "chinese": {
@@ -181,6 +207,11 @@
     "accuracy": 0.9166666666666666
    },
    "uccharan-improved": {
+    "passed": 11,
+    "items": 12,
+    "accuracy": 0.9166666666666666
+   },
+   "uccharan-improved+wikipron": {
     "passed": 11,
     "items": 12,
     "accuracy": 0.9166666666666666
@@ -201,6 +232,11 @@
     "passed": 10,
     "items": 10,
     "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 10,
+    "items": 10,
+    "accuracy": 1.0
    }
   },
   "english": {
@@ -215,6 +251,11 @@
     "accuracy": 1.0
    },
    "uccharan-improved": {
+    "passed": 52,
+    "items": 52,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
     "passed": 52,
     "items": 52,
     "accuracy": 1.0
@@ -235,6 +276,11 @@
     "passed": 17,
     "items": 17,
     "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 17,
+    "items": 17,
+    "accuracy": 1.0
    }
   },
   "hispanic": {
@@ -252,6 +298,11 @@
     "passed": 17,
     "items": 19,
     "accuracy": 0.8947368421052632
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 17,
+    "items": 19,
+    "accuracy": 0.8947368421052632
    }
   },
   "indian": {
@@ -266,6 +317,11 @@
     "accuracy": 0.5
    },
    "uccharan-improved": {
+    "passed": 38,
+    "items": 48,
+    "accuracy": 0.7916666666666666
+   },
+   "uccharan-improved+wikipron": {
     "passed": 37,
     "items": 48,
     "accuracy": 0.7708333333333334
@@ -283,9 +339,14 @@
     "accuracy": 0.9923664122137404
    },
    "uccharan-improved": {
-    "passed": 130,
+    "passed": 129,
     "items": 131,
-    "accuracy": 0.9923664122137404
+    "accuracy": 0.9847328244274809
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 129,
+    "items": 131,
+    "accuracy": 0.9847328244274809
    }
   },
   "not-in-cmudict": {
@@ -300,9 +361,14 @@
     "accuracy": 0.1951219512195122
    },
    "uccharan-improved": {
-    "passed": 23,
+    "passed": 28,
     "items": 41,
-    "accuracy": 0.5609756097560976
+    "accuracy": 0.6829268292682927
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 27,
+    "items": 41,
+    "accuracy": 0.6585365853658537
    }
   },
   "all": {
@@ -317,9 +383,14 @@
     "accuracy": 0.8023255813953488
    },
    "uccharan-improved": {
-    "passed": 153,
+    "passed": 157,
     "items": 172,
-    "accuracy": 0.8895348837209303
+    "accuracy": 0.9127906976744186
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 156,
+    "items": 172,
+    "accuracy": 0.9069767441860465
    }
   }
  }

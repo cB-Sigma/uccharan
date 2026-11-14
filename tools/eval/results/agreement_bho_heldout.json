@@ -1,0 +1,243 @@
+{
+ "language": "bho",
+ "reference": "espeak-ng 1.52.0 voice hi (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 192932,
+  "per": 0.008039101859722597,
+  "per_without_stress": 0.005801038271157793,
+  "exact_sentence": 0.7055335968379447,
+  "exact_sentence_without_stress": 0.7104743083003953,
+  "piper_shape_per": 0.008044462446357432,
+  "piper_shape_exact_sentence": 0.6986166007905138,
+  "word_count_mismatch_sentences": 229,
+  "errors_by_class": {
+   "stress": {
+    "count": 597,
+    "share": 0.3849129593810445,
+    "per_contribution": 0.003094354487591483
+   },
+   "vowel": {
+    "count": 276,
+    "share": 0.17794970986460348,
+    "per_contribution": 0.0014305558435096304
+   },
+   "consonant": {
+    "count": 228,
+    "share": 0.1470019342359768,
+    "per_contribution": 0.0011817635228992599
+   },
+   "other": {
+    "count": 195,
+    "share": 0.12572533849129594,
+    "per_contribution": 0.0010107188024796301
+   },
+   "word-boundary": {
+    "count": 195,
+    "share": 0.12572533849129594,
+    "per_contribution": 0.0010107188024796301
+   },
+   "length": {
+    "count": 60,
+    "share": 0.03868471953578337,
+    "per_contribution": 0.0003109904007629631
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→ə",
+    "count": 108
+   },
+   {
+    "edit": "ʌ→ɟ",
+    "count": 108
+   },
+   {
+    "edit": "ɟ→ˈ",
+    "count": 108
+   },
+   {
+    "edit": " →∅",
+    "count": 107
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 94
+   },
+   {
+    "edit": "∅→ ",
+    "count": 88
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 83
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 72
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 62
+   },
+   {
+    "edit": "∅→ə",
+    "count": 54
+   },
+   {
+    "edit": "∅→ː",
+    "count": 52
+   },
+   {
+    "edit": "ə→∅",
+    "count": 46
+   },
+   {
+    "edit": "a→ə",
+    "count": 25
+   },
+   {
+    "edit": "a→∅",
+    "count": 25
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 22
+   },
+   {
+    "edit": "ə→ʌ",
+    "count": 19
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 19
+   },
+   {
+    "edit": "l→∅",
+    "count": 18
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 17
+   },
+   {
+    "edit": "t→ʈ",
+    "count": 15
+   },
+   {
+    "edit": "s→∅",
+    "count": 15
+   },
+   {
+    "edit": "∅→ɾ",
+    "count": 14
+   },
+   {
+    "edit": "ˈ→l",
+    "count": 13
+   },
+   {
+    "edit": "s→ʃ",
+    "count": 12
+   },
+   {
+    "edit": "l→ə",
+    "count": 12
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 19431,
+    "wrong": 122,
+    "rate": 0.00627862693633884
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 197,
+    "per": 0.024897240164415736,
+    "exact_sentence": 0.2436548223350254
+   },
+   "no-digits": {
+    "sentences": 815,
+    "per": 0.003265561297445413,
+    "exact_sentence": 0.8171779141104294
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-520",
+    "text": "ऐइमी अउर मैकॉर्ड (1998) जब वेबसाइट के बारे में दर्सकन के प्रतिक्रिया के पड़ताल कइलें, त उनके पता चलल कि “निजी रूप से जुड़ाव” आ “रिस्ता के आगे बढ़ावे के कोसिस” भी इंटरनेट खातिर एगो नया तरह के प्रेरणा ह.",
+    "reference": "ˈɛːɪmˌi ˈʌʊɾ mɛːkˈɔɾɖ ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː ʌtʰːˈaːnəbˌeː ɟˈʌb ʋˌeːbsˈaːɪʈ keː bˈaːɾeː mẽː dˈʌrsəkˌən keː pɾətˈɪkɾɪjˌaː keː pˌər.tˈaːl kˈʌɪlˌẽː tˈə ˌʊnkˌeː pˈʌtaː cˈʌləl kˈɪ nˈɪɟi ɾˈuːp seː ɟʊr.ˈaːʋ ˈaː ɾˈɪstaː keː ˈaːɡeː bər.hˈaːʋeː keː kˈoːsɪs bʰˈi ˌĩʈəɾnˈeːʈ kʰˈaːtɪɾ ˈeːɡoː nˈʌjaː tˈʌɾəh keː pɾˈeːɾɳˌaː hˈə",
+    "uccharan": "ˈɛːɪmˌi ˈʌʊɾ mɛːkˈɔɾɖ ˈeːk həɟˈaːɾ nˈɔːsˈɔː ʌʈʰʈʰˈaːnʋˌeː ɟˈʌb ʋˌeːbsˈaːɪʈ keː bˈaːɾeː mẽː dˈʌrsəkˌən keː pɾətˈɪkɾɪjˌaː keː pˌər.tˈaːl kˈʌɪlˌẽː tˈə ˌʊnkˌeː pˈʌtaː cˈʌləl kˈɪ nˈɪɟi ɾˈuːp seː ɟʊr.ˈaːʋ ˈaː ɾˈɪstaː keː ˈaːɡeː bər.hˈaːʋeː keː kˈoːsɪs bʰˈi ˌĩʈəɾnˈeːʈ kʰˈaːtɪɾ ˈeːɡoː nˈʌjaː tˈʌɾəh keː pɾˈeːɾɳˌaː hˈə"
+   },
+   {
+    "id": "flores-devtest-723",
+    "text": "पार्क 19,500 वर्ग किलोमीटर में फइलल बा अउर इ 14 अविभिन्न इकोज़ोन में विभाजित कइल बा,हरेयक एगो अलगा वन्य जीव के समर्थन करेला।",
+    "reference": "pˈaːɾk ʊnnˈɪs hˈʌɟaːɾ pˈãcsˈɔː ʋˈʌɾɡ kˌɪloːmˈiːʈəɾ mẽː pʰˈʌɪlˌəl bˈaː ˈʌʊɾ ˈɪ cˈɔːdəh ˌʌʋɪbʰˈɪnnə ˌɪkoːzˈoːn mẽː ʋɪbʰˈaːɟɪt kˈʌɪl bˈaː həɾˈeːjək ˈeːɡoː ˈʌlɡˌaː ʋˈʌnjə ɟˈiːʋ keː səmˈʌɾtʰən kəɾˈeːlaː",
+    "uccharan": "pˈaːɾk ʊnnˈiːs həɟˈaːɾ pˈãcsˈɔː ʋˈʌɾɡ kˌɪloːmˈiːʈəɾ mẽː pʰˈʌɪlˌəl bˈaː ˈʌʊɾ ˈɪ cˈɔːdəh ˌʌʋɪbʰˈɪnnə ˌɪkoːzˈoːn mẽː ʋɪbʰˈaːɟɪt kˈʌɪl bˈaː həɾˈeːjək ˈeːɡoː ˈʌlɡˌaː ʋˈʌnjə ɟˈiːʋ keː səmˈʌɾtʰən kəɾˈeːlaː"
+   },
+   {
+    "id": "flores-devtest-307",
+    "text": "नॉर्दर्न मेरियाना एमर्जेंसी मैनेजमेंट ऑफिस के हवाले से खबर बा कि देस में इ भूकंप से नुकसान के कौनो खबर नइखे.",
+    "reference": "nˈɔɾdərn mˌeːɾɪjˈaːnaː ˌeːmrɟˈẽːsi mˌɛːneːɟmˈẽːʈ ˈɔpʰɪs keː həʋˈaːleː seː kʰˈʌbəɾ bˈaː kˈɪ dˈeːs mẽː ˈɪ bʰuːkˈʌmp seː nˌʊksˈaːn keː kˈɔːnoː kʰˈʌbəɾ nˈʌɪkʰˌeː",
+    "uccharan": "nɔɾdˈʌrn mˌeːɾɪjˈaːnaː ˌeːmɾɟˈẽːsi mˌɛːneːɟmˈẽːʈ ˈɔpʰɪs keː həʋˈaːleː seː kʰˈʌbəɾ bˈaː kˈɪ dˈeːs mẽː ˈɪ bʰuːkˈʌmp seː nˌʊksˈaːn keː kˈɔːnoː kʰˈʌbəɾ nˈʌɪkʰˌeː"
+   },
+   {
+    "id": "flores-devtest-74",
+    "text": "बाकिर प्रधानमंत्री जॉन हॉवर्ड के कहला अनुसार सरकार के ओर से 4.5 करोड़ ऑस्ट्रेलियाई डॉलर के रासि खाली ए बात के ध्यान में रखिके दीहल गइल बा कि तस्मानिया सरकार के देखरेख में अस्पताल के सुविधा में कउनो कमी न आवे.",
+    "reference": "bˈaːkɪɾ pɾˌədʰaːnəmˈʌntɾi ɟˈɔn hɔʋˈʌɾɖ keː kˈʌhəlˌaː ˌʌnʊsˈaːɾ sˌəɾkˈaːɾ keː ˈoːɾ seː cˈaːɾ dəsəmlˈoː pˈãc kəɾˈoːr. ˌɔsʈɾeːlɪjˈaːi ɖˈɔləɾ keː ɾˈaːsɪ kʰˈaːli ˈeː bˈaːt keː dʰjˈaːn mẽː ɾˈʌkʰɪkˌeː dˈiːhəl ɡˈʌɪl bˈaː kˈɪ təsmˈaːnɪjˌaː sˌəɾkˈaːɾ keː dˌeːkʰɾˈeːkʰ mẽː ˌʌspətˈaːl keː sˈʊʋɪdʰˌaː mẽː kˈʌʊnˌoː kˈʌmi nˈə ˈaːʋeː",
+    "uccharan": "bˈaːkɪɾ pɾˌədʰaːnəmˈʌntɾi ɟˈɔn hɔʋˈʌɾɖ keː kˈʌhəlˌaː ˌʌnʊsˈaːɾ sˌəɾkˈaːɾ keː ˈoːɾ seː cˈaːɾ dˈʌʃəmˌələʋ pˈãc kəɾˈoːr. ˌɔsʈɾeːlɪjˈaːi ɖˈɔləɾ keː ɾˈaːsɪ kʰˈaːli ˈeː bˈaːt keː dʰjˈaːn mẽː ɾˈʌkʰɪkˌeː dˈiːhəl ɡˈʌɪl bˈaː kˈɪ təsmˈaːnɪjˌaː sˌəɾkˈaːɾ keː dˌeːkʰɾˈeːkʰ mẽː ˌʌspətˈaːl keː sˈʊʋɪdʰˌaː mẽː kˈʌʊnˌoː kˈʌmi nˈə ˈaːʋeː"
+   },
+   {
+    "id": "flores-devtest-34",
+    "text": "गवर्नर कहलन कि घायल लोग में 19 गो पुलिस अफसर बाड़न.",
+    "reference": "ɡəʋˈʌrnəɾ kˈʌhəlˌən kˈɪ ɡʰˈaːjəl lˈoːɡ mẽː ʊnnˈɪs ɡˈoː pˈʊlɪs ˈʌpʰəsˌəɾ bˈaːr.ən",
+    "uccharan": "ɡəʋˈʌrnəɾ kˈʌhəlˌən kˈɪ ɡʰˈaːjəl lˈoːɡ mẽː ʊnnˈiːs ɡˈoː pˈʊlɪs ˈʌpʰəsˌəɾ bˈaːr.ən"
+   },
+   {
+    "id": "flores-devtest-479",
+    "text": "जवन युग में ई कुल घटना भइल ओके सामान्य रूप से हाई मिडल युग कहल जाला आ ई यूरोपीय इतिहास में 11वी, 12वीं अउर 13वीं सदी (1000–1300 ई.) के बखत रहे.",
+    "reference": "ɟˈʌʋən jˈʊɡ mẽː ˈi kˈʊl ɡʰˈʌʈnˌaː bʰˈʌɪl ˈoːkeː saːmˈaːnjə ɾˈuːp seː hˈaːi mˈɪɖəl jˈʊɡ kˈʌhəl ɟˈaːlaː ˈaː ˈi jˌuːɾoːpˈiːj ˌɪtɪhˈaːs mẽː ɡjˈaːɾəh ʋˈi bˈaːɾəh ʋˈĩ ˈʌʊɾ tˈeːɾəh ʋˈĩ sˈʌdi ˈeːk hˈʌɟaːɾ ˈeːk hˈʌɟaːɾ tˈiːnsˈɔː ˈi keː bˈʌkʰət ɾˌəheː",
+    "uccharan": "ɟˈʌʋən jˈʊɡ mẽː ˈi kˈʊl ɡʰˈʌʈnˌaː bʰˈʌɪl ˈoːkeː saːmˈaːnjə ɾˈuːp seː hˈaːi mˈɪɖəl jˈʊɡ kˈʌhəl ɟˈaːlaː ˈaː ˈi jˌuːɾoːpˈiːj ˌɪtɪhˈaːs mẽː ɡjˈaːɾəh ʋˈi bˈaːɾəh ʋˈĩ ˈʌʊɾ tˈeːɾəh ʋˈĩ sˈʌdi ˈeːk həɟˈaːɾ ˈeːk həɟˈaːɾ tˈiːnsˈɔː ˈi keː bˈʌkʰət ɾˌəheː"
+   },
+   {
+    "id": "flores-devtest-755",
+    "text": "ई द्वीपन पर खाली एगो बैंक ह जहां पइसा के एक्सचेंज कइल जा सकेला. ई बैंक स्टैनली में FIC वेस्ट स्टोर के सामने ह.",
+    "reference": "ˈi dʋˈiːpən pˈʌɾ kʰˈaːli ˈeːɡoː bˈɛ̃k hˈə ɟˈʌhã pˈʌɪsˌaː keː ˈeːksəcˌẽːɟ kˈʌɪl ɟˈaː səkˈeːlaː ˈi bˈɛ̃k sʈˈɛːnlˌi mẽː ˈɛf ˈaɪ sˈiː ʋˈeːsʈ sʈˈoːɾ keː sˈaːmnˌeː hˈə",
+    "uccharan": "ˈi dʋˈiːpən pˈʌɾ kʰˈaːli ˈeːɡoː bˈɛ̃k hˈə ɟˈʌhã pˈʌɪsˌaː keː ˈeːksəcˌẽːɟ kˈʌɪl ɟˈaː səkˈeːlaː ˈi bˈɛ̃k sʈˈɛːnlˌi mẽː ˌɛfˌaɪsˈiː ʋˈeːsʈ sʈˈoːɾ keː sˈaːmnˌeː hˈə"
+   },
+   {
+    "id": "flores-devtest-839",
+    "text": "17,000 द्वीप में से चाहे जेकरा चुनीं, बाकी इंडोनेवेशिया के भोजन में इतना वेरायटी मिली कि का कहल जाए, अउर वू वेरायटी पूरा देस में पाएल जाला.",
+    "reference": "sˌətɾəh hˈʌɟaːɾ dʋˈiːp mẽː seː cˈaːheː ɟˈeːkɾˌaː cˈʊnĩ bˈaːki ˌĩɖoːneːʋˈeːʃɪjˌaː keː bʰˈoːɟən mẽː ˈɪtnˌaː ʋeːɾˈaːjʈˌi mˈɪli kˈɪ kaː kˈʌhəl ɟˈaːeː ˈʌʊɾ ʋˈuː ʋeːɾˈaːjʈˌi pˈuːɾaː dˈeːs mẽː paːˈeːl ɟˈaːlaː",
+    "uccharan": "sˈʌtɾəh həɟˈaːɾ dʋˈiːp mẽː seː cˈaːheː ɟˈeːkɾˌaː cˈʊnĩ bˈaːki ˌĩɖoːneːʋˈeːʃɪjˌaː keː bʰˈoːɟən mẽː ˈɪtnˌaː ʋeːɾˈaːjʈˌi mˈɪli kˈɪ kaː kˈʌhəl ɟˈaːeː ˈʌʊɾ ʋˈuː ʋeːɾˈaːjʈˌi pˈuːɾaː dˈeːs mẽː paːˈeːl ɟˈaːlaː"
+   },
+   {
+    "id": "flores-devtest-572",
+    "text": "डनलप ब्रॉडसाइड के 25 प्रति अब्बो बा जवन दस्तावेज के सबसे पुरान बचल प्रति ह. हाथे के लिखल मूल प्रति अब नईखे बचल.",
+    "reference": "ɖˈʌnəlˌəp bɾˌɔɖsˈaːɪɖ keː pˈʌcːis pɾˈʌtɪ ˈʌbboː bˈaː ɟˈʌʋən dˌəstaːʋˈeːɟ keː sˈʌbsˌeː pʊɾˈaːn bˈʌcəl pɾˈʌtɪ hˈə hˈaːtʰeː keː lˈɪkʰəl mˈuːl pɾˈʌtɪ ˈʌb nəˈiːkʰeː bˈʌcəl",
+    "uccharan": "ɖˈʌnəlˌəp bɾˌɔɖsˈaːɪɖ keː pəcːˈiːs pɾˈʌtɪ ˈʌbboː bˈaː ɟˈʌʋən dˌəstaːʋˈeːɟ keː sˈʌbsˌeː pʊɾˈaːn bˈʌcəl pɾˈʌtɪ hˈə hˈaːtʰeː keː lˈɪkʰəl mˈuːl pɾˈʌtɪ ˈʌb nəˈiːkʰeː bˈʌcəl"
+   },
+   {
+    "id": "flores-devtest-434",
+    "text": "आम तौर पर कई गो फॉर्मैट (उदाहरण खातिर APS परिवार के फॉर्मैट) ए आस्पेक्ट रेसिओ के जईसन, चाहे ओकरे बराबर होने.",
+    "reference": "ˈaːm tˈɔːɾ pˈʌɾ kˈʌi ɡˈoː pʰɔrmˈɛːʈ ʊdˈaːhəɾˌəɳ kʰˈaːtɪɾ ˈeɪ pˈiː ˈɛs pˌəɾɪʋˈaːɾ keː pʰɔrmˈɛːʈ ˈeː aːspˈeːkʈ ɾˈeːsɪˌoː keː ɟəˈiːsən cˈaːheː ˈoːkɾˌeː bəɾˈaːbəɾ hˈoːneː",
+    "uccharan": "ˈaːm tˈɔːɾ pˈʌɾ kˈʌi ɡˈoː pʰɔrmˈɛːʈ ʊdˈaːhəɾˌəɳ kʰˈaːtɪɾ ˌeɪpˌiːˈɛs pˌəɾɪʋˈaːɾ keː pʰɔrmˈɛːʈ ˈeː aːspˈeːkʈ ɾˈeːsɪˌoː keː ɟəˈiːsən cˈaːheː ˈoːkɾˌeː bəɾˈaːbəɾ hˈoːneː"
+   },
+   {
+    "id": "flores-devtest-182",
+    "text": "संयुक्त राज्य भूवैज्ञानिक सर्वेक्षण (USGS) अऊर ओकरे राष्ट्रीय भूकंप सूचना केंद्र के नुकसान के तत्काल कवनों सूचना नइखे मिलल.",
+    "reference": "səɲjˈʊkt ɾˈaːɟjə bʰuːʋˈɛːɡjaːnˌɪk sərʋˈeːkʃəɳ ˈʌsɡz ˈʌuɾ ˈoːkɾˌeː ɾˈaːʂʈɾij bʰuːkˈʌmp sˈuːcnˌaː kˈẽːdɾə keː nˌʊksˈaːn keː tətkˈaːl kˈʌʋnˌõ sˈuːcnˌaː nˈʌɪkʰˌeː mˈɪləl",
+    "uccharan": "səɲjˈʊkt ɾˈaːɟjə bʰuːʋˈɛːɡjaːnˌɪk sərʋˈeːkʃəɳ jˈuːsz ˈʌuɾ ˈoːkɾˌeː ɾˈaːʂʈɾij bʰuːkˈʌmp sˈuːcnˌaː kˈẽːdɾə keː nˌʊksˈaːn keː tətkˈaːl kˈʌʋnˌõ sˈuːcnˌaː nˈʌɪkʰˌeː mˈɪləl"
+   },
+   {
+    "id": "flores-devtest-724",
+    "text": "ई दक्षिण अफ्रीका के मुख्य आकर्सन में से एगो बा अउर एकरा के दक्षिण अफ्रीकी राष्ट्रीय उद्यानन (SANParks) में प्रमुख मानल जाला.",
+    "reference": "ˈi dˈʌkʃɪɳ ʌpʰɾˈiːkaː keː mˈʊkʰjə aːkˈʌrsən mẽː seː ˈeːɡoː bˈaː ˈʌʊɾ ˈeːkɾˌaː keː dˈʌkʃɪɳ ʌpʰɾˈiːki ɾˈaːʂʈɾij ʊdjˈaːnən ˈɛs ˈeɪ ˈɛn pˈɑːks mẽː pɾˈʌmʊkʰ mˈaːnəl ɟˈaːlaː",
+    "uccharan": "ˈi dˈʌkʃɪɳ ʌpʰɾˈiːkaː keː mˈʊkʰjə aːkˈʌrsən mẽː seː ˈeːɡoː bˈaː ˈʌʊɾ ˈeːkɾˌaː keː dˈʌkʃɪɳ ʌpʰɾˈiːki ɾˈaːʂʈɾij ʊdjˈaːnən ˌɛsˌeɪˈɛn pˈɑːks mẽː pɾˈʌmʊkʰ mˈaːnəl ɟˈaːlaː"
+   }
+  ]
+ }
+}

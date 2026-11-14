@@ -25,7 +25,7 @@ import re
 import unicodedata
 from pathlib import Path
 
-from common import VOICES, VOWELS, load_oracle, read_tsv, run_uccharan
+from common import ROOT, VOICES, VOWELS, load_oracle, read_tsv, run_uccharan
 
 GOLD = Path(__file__).resolve().parent / "gold"
 DATA = Path(__file__).resolve().parent / "data"
@@ -50,7 +50,15 @@ SETS = [
     ("unseen/hi_words.tsv", "hi", "broad", "UNSEEN: Hindi schwa / nasal / nukta words"),
     ("unseen/mix.tsv", "hi", "say-hinglish", "UNSEEN: Romanised Hindi"),
 ]
-SYSTEMS = ["reference", "uccharan-compatible", "uccharan-default", "uccharan-improved"]
+SYSTEMS = ["reference", "uccharan-compatible", "uccharan-default", "uccharan-improved", "uccharan-improved+wikipron"]
+PACKS = ROOT / "data" / "packs"
+
+
+def wikipron_pack(lang: str) -> Path | None:
+    """The optional CC BY-SA WikiPron pack for a language, when it was built
+    (``cargo run --release -p uccharan-lexgen -- wikipron``)."""
+    p = PACKS / f"wikipron-{lang}.ucd"
+    return p if p.exists() else None
 
 
 def rows_of(name: str) -> list[list[str]]:
@@ -67,7 +75,8 @@ class Systems:
         self.binary = binary
 
     def available(self) -> list[str]:
-        return [s for s in SYSTEMS if s != "reference" or self.oracle is not None]
+        out = [s for s in SYSTEMS if s != "reference" or self.oracle is not None]
+        return [s for s in out if not s.endswith("+wikipron") or wikipron_pack("en-us")]
 
     def run(self, system: str, lang: str, texts: list[str], hinglish: bool = False) -> list[str]:
         if system == "reference":
@@ -77,6 +86,10 @@ class Systems:
         if system == "uccharan-default":
             return run_uccharan(texts, lang, normalize="natural", binary=self.binary)
         extra = ("--improved", "--hinglish") if hinglish else ("--improved",)
+        if system.endswith("+wikipron"):
+            for code in {lang, "en-gb" if lang == "hi" else lang}:
+                if wikipron_pack(code):
+                    extra += ("--pack", str(wikipron_pack(code)))
         return run_uccharan(texts, lang, normalize="natural", binary=self.binary, extra=extra)
 
 

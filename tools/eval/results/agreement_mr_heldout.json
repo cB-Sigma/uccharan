@@ -1,0 +1,243 @@
+{
+ "language": "mr",
+ "reference": "espeak-ng 1.52.0 voice mr (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 2000,
+  "reference_symbols": 81836,
+  "per": 0.0029815729019013635,
+  "per_without_stress": 0.002567579263191299,
+  "exact_sentence": 0.969,
+  "exact_sentence_without_stress": 0.9695,
+  "piper_shape_per": 0.002907461690617478,
+  "piper_shape_exact_sentence": 0.969,
+  "word_count_mismatch_sentences": 33,
+  "errors_by_class": {
+   "stress": {
+    "count": 83,
+    "share": 0.3401639344262295,
+    "per_contribution": 0.0010142235690893983
+   },
+   "consonant": {
+    "count": 56,
+    "share": 0.22950819672131148,
+    "per_contribution": 0.0006842954201085097
+   },
+   "other": {
+    "count": 44,
+    "share": 0.18032786885245902,
+    "per_contribution": 0.0005376606872281147
+   },
+   "vowel": {
+    "count": 41,
+    "share": 0.1680327868852459,
+    "per_contribution": 0.000501002004008016
+   },
+   "word-boundary": {
+    "count": 16,
+    "share": 0.06557377049180328,
+    "per_contribution": 0.0001955129771738599
+   },
+   "length": {
+    "count": 4,
+    "share": 0.01639344262295082,
+    "per_contribution": 4.8878244293464976e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→∅",
+    "count": 39
+   },
+   {
+    "edit": " →r",
+    "count": 16
+   },
+   {
+    "edit": " →∅",
+    "count": 13
+   },
+   {
+    "edit": "ə→∅",
+    "count": 10
+   },
+   {
+    "edit": "ɾ→ə",
+    "count": 9
+   },
+   {
+    "edit": "ʰ→∅",
+    "count": 8
+   },
+   {
+    "edit": "ɟ→z",
+    "count": 8
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 8
+   },
+   {
+    "edit": "χ→∅",
+    "count": 7
+   },
+   {
+    "edit": "ə→ʌ",
+    "count": 7
+   },
+   {
+    "edit": "ʌ→ˌ",
+    "count": 7
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 7
+   },
+   {
+    "edit": "ə→ˈ",
+    "count": 6
+   },
+   {
+    "edit": "ɾ→ʌ",
+    "count": 6
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 6
+   },
+   {
+    "edit": "ʌ→∅",
+    "count": 5
+   },
+   {
+    "edit": "ɛ→ɲ",
+    "count": 5
+   },
+   {
+    "edit": "ʌ→ə",
+    "count": 4
+   },
+   {
+    "edit": "t→∅",
+    "count": 4
+   },
+   {
+    "edit": "ɾ→∅",
+    "count": 4
+   },
+   {
+    "edit": "n→∅",
+    "count": 3
+   },
+   {
+    "edit": "ɲ→ʌ",
+    "count": 3
+   },
+   {
+    "edit": "∅→ ",
+    "count": 3
+   },
+   {
+    "edit": "∅→n",
+    "count": 3
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 2
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 9476,
+    "wrong": 35,
+    "rate": 0.0036935415787252004
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 17,
+    "per": 0.03137651821862348,
+    "exact_sentence": 0.6470588235294118
+   },
+   "no-digits": {
+    "sentences": 1983,
+    "per": 0.0026345735206807835,
+    "exact_sentence": 0.9717599596570852
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "4332348",
+    "text": "तिने मला फेसबुकवर अ‍ॅड केलं.",
+    "reference": "tˈɪneː mˈʌlaː pʰˈeːsbˌʊkəvˌəɾ ˈʌ ʰχˈɛɖ kˈeːlən",
+    "uccharan": "tˈɪneː mˈʌlaː pʰˈeːsbˌʊkəvˌəɾ ˈʌɛɖ kˈeːlən"
+   },
+   {
+    "id": "5098479",
+    "text": "मी माझ्या सर्व शेजार्‍यांना ओळखते.",
+    "reference": "mˈi mˈaːɟʰjaː sˈʌrv ʃeːzˈaːɾ jˈãnaː ˈoːɭəkʰteː",
+    "uccharan": "mˈi mˈaːɟʰjaː sˈʌrv ʃeːzˈaːrjãnˌaː ˈoːɭəkʰteː"
+   },
+   {
+    "id": "4745464",
+    "text": "टॉमसला अ‍ॅना आवडते, पण तिला तो आवडत नाही.",
+    "reference": "ʈˈɔməslaː ˈʌ ʰχˈɛnaː ˈaːvəɖteː pˈʌɳ tˈɪlaː tˈoː ˈaːvəɖˌət nˈaːhi",
+    "uccharan": "ʈˈɔməslaː ˈʌɛnˌaː ˈaːvəɖteː pˈʌɳ tˈɪlaː tˈoː ˈaːvəɖˌət nˈaːhi"
+   },
+   {
+    "id": "4387964",
+    "text": "तुम्हाला भात बर्‍यापैकी शिजवता येतो का?",
+    "reference": "tʊmhˈaːlaː bʰˈaːt bˈʌɾ jaːpˈaɪki ʃˈɪzəvtaː jˈeːtoː kˈaː",
+    "uccharan": "tʊmhˈaːlaː bʰˈaːt bˌərjaːpˈaɪki ʃˈɪzəvtaː jˈeːtoː kˈaː"
+   },
+   {
+    "id": "2461071",
+    "text": "मी तुझ्या भावाला अगदी बर्‍यापैकी ओळखते.",
+    "reference": "mˈi tˈʊɟʰjaː bʰaːvˈaːlaː ˈʌɡdˌi bˈʌɾ jaːpˈaɪki ˈoːɭəkʰteː",
+    "uccharan": "mˈi tˈʊɟʰjaː bʰaːvˈaːlaː ˈʌɡdˌi bˌərjaːpˈaɪki ˈoːɭəkʰteː"
+   },
+   {
+    "id": "2718653",
+    "text": "टॉमने मेरीला दुसर्‍या मुलांबरोबर खेळायला दिलं नाही.",
+    "reference": "ʈˈɔmnˌeː meːɾˈiːlaː dˈʊsəɾ jˈaː mˌʊlãbɾˈoːbəɾ kʰeːɭˈaːjlˌaː dˈɪlən nˈaːhi",
+    "uccharan": "ʈˈɔmnˌeː meːɾˈiːlaː dʊsˈʌrjaː mˌʊlãbɾˈoːbəɾ kʰeːɭˈaːjlˌaː dˈɪlən nˈaːhi"
+   },
+   {
+    "id": "10951484",
+    "text": "जाऊन बघ काय चाल्लंय.",
+    "reference": "zˈaːun bˈʌɡʰ kˈaːj cˈaːlləɲˌɛj",
+    "uccharan": "zˈaːun bˈʌɡʰ kˈaːj cˈaːlləɲj"
+   },
+   {
+    "id": "5084289",
+    "text": "आपण पॉपकॉर्न खात आहोत.",
+    "reference": "ˈaːpəɳ pˈɔpkˌɔrn kʰˈaːt aːhˈoːt",
+    "uccharan": "ˈaːpəɳ pˌɔpkˈɔrn kʰˈaːt aːhˈoːt"
+   },
+   {
+    "id": "5227286",
+    "text": "तुमची आजी कुठे राहते?",
+    "reference": "tˈʊmcˌi ˈaːɟi kˈʊʈʰeː ɾˈaːhətˌeː",
+    "uccharan": "tˈʊmcˌi ˈaːɟiˌi kˈʊʈʰeː ɾˈaːhətˌeː"
+   },
+   {
+    "id": "2094608",
+    "text": "मी एका पांढर्‍या कुत्र्याला कुंपणेवरून उडी मारताना पाहिलं.",
+    "reference": "mˈi ˈeːkaː pˈãɖʰəɾ jˈaː kʊtrjˈaːlaː kˌũpɳˌeːvɾˈuːn ˈʊɖi mˌaːɾtˈaːnaː pˈaːhɪlˌən",
+    "uccharan": "mˈi ˈeːkaː pãɖʰˈʌrjaː kʊtrjˈaːlaː kˌũpɳˌeːvɾˈuːn ˈʊɖi mˌaːɾtˈaːnaː pˈaːhɪlˌən"
+   },
+   {
+    "id": "6559337",
+    "text": "टॉम बादली बर्फाने भऱली.",
+    "reference": "ʈˈɔm bˈaːdlˌi bəɾpʰˈaːneː bʰˈʌɾlˌi",
+    "uccharan": "ʈˈɔm bˈaːdlˌi bəɾpʰˈaːneː bʰˈʌli"
+   },
+   {
+    "id": "2555736",
+    "text": "'अपप्रयोग'चा अर्थ काय आहे?",
+    "reference": "ˌʌpəpɾəjˈoːɡcˌaː ˈʌɾtʰ kˈaːj ˈaːheː",
+    "uccharan": "ˌʌpəpɾəjˈoːɡ cˈaː ˈʌɾtʰ kˈaːj ˈaːheː"
+   }
+  ]
+ }
+}

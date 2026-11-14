@@ -107,6 +107,25 @@
     "european-eilidh",
     "european-annika"
    ]
+  },
+  "uccharan-improved+wikipron": {
+   "failed": [
+    "english-harriet",
+    "indian-abhishek",
+    "indian-anirudh",
+    "indian-bhavna",
+    "indian-ritu",
+    "indian-pillai",
+    "indian-sengupta",
+    "indian-viswanathan",
+    "east_asian-seoyeon",
+    "arabic_persian_turkish-shirin",
+    "african-nomvula",
+    "african-kipchoge",
+    "european-padraig",
+    "european-eilidh",
+    "european-annika"
+   ]
   }
  },
  "by_group": {
@@ -122,6 +141,11 @@
     "accuracy": 0.3333333333333333
    },
    "uccharan-improved": {
+    "passed": 1,
+    "items": 3,
+    "accuracy": 0.3333333333333333
+   },
+   "uccharan-improved+wikipron": {
     "passed": 1,
     "items": 3,
     "accuracy": 0.3333333333333333
@@ -142,6 +166,11 @@
     "passed": 14,
     "items": 15,
     "accuracy": 0.9333333333333333
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 14,
+    "items": 15,
+    "accuracy": 0.9333333333333333
    }
   },
   "chinese": {
@@ -156,6 +185,11 @@
     "accuracy": 1.0
    },
    "uccharan-improved": {
+    "passed": 7,
+    "items": 7,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
     "passed": 7,
     "items": 7,
     "accuracy": 1.0
@@ -176,6 +210,11 @@
     "passed": 12,
     "items": 13,
     "accuracy": 0.9230769230769231
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 12,
+    "items": 13,
+    "accuracy": 0.9230769230769231
    }
   },
   "english": {
@@ -190,6 +229,11 @@
     "accuracy": 0.9850746268656716
    },
    "uccharan-improved": {
+    "passed": 66,
+    "items": 67,
+    "accuracy": 0.9850746268656716
+   },
+   "uccharan-improved+wikipron": {
     "passed": 66,
     "items": 67,
     "accuracy": 0.9850746268656716
@@ -210,6 +254,11 @@
     "passed": 20,
     "items": 23,
     "accuracy": 0.8695652173913043
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 20,
+    "items": 23,
+    "accuracy": 0.8695652173913043
    }
   },
   "hispanic": {
@@ -224,6 +273,11 @@
     "accuracy": 1.0
    },
    "uccharan-improved": {
+    "passed": 8,
+    "items": 8,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
     "passed": 8,
     "items": 8,
     "accuracy": 1.0
@@ -244,6 +298,11 @@
     "passed": 65,
     "items": 72,
     "accuracy": 0.9027777777777778
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 65,
+    "items": 72,
+    "accuracy": 0.9027777777777778
    }
   },
   "in-cmudict": {
@@ -258,6 +317,11 @@
     "accuracy": 0.9876543209876543
    },
    "uccharan-improved": {
+    "passed": 160,
+    "items": 162,
+    "accuracy": 0.9876543209876543
+   },
+   "uccharan-improved+wikipron": {
     "passed": 160,
     "items": 162,
     "accuracy": 0.9876543209876543
@@ -278,6 +342,11 @@
     "passed": 33,
     "items": 46,
     "accuracy": 0.717391304347826
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 33,
+    "items": 46,
+    "accuracy": 0.717391304347826
    }
   },
   "all": {
@@ -292,6 +361,11 @@
     "accuracy": 0.8798076923076923
    },
    "uccharan-improved": {
+    "passed": 193,
+    "items": 208,
+    "accuracy": 0.9278846153846154
+   },
+   "uccharan-improved+wikipron": {
     "passed": 193,
     "items": 208,
     "accuracy": 0.9278846153846154

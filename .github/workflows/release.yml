@@ -223,7 +223,8 @@ jobs:
         run: |
           python3 tools/packs.py --check
           mkdir -p dist
-          cp crates/uccharan/data/*.ucd dist/
+          cp crates/uccharan/data/*.ucd data/packs/*.ucd dist/
+          cp data/sources/wikipron/LICENSE-CC-BY-SA-4.0.txt dist/wikipron-LICENSE-CC-BY-SA-4.0.txt
           (cd dist && sha256sum *.ucd > packs.sha256)
       - uses: actions/download-artifact@v8
         with:

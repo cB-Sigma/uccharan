@@ -6,10 +6,10 @@
 import initWasm, * as wasm from "./dist/uccharan_wasm.js";
 import { PACKS } from "./packs.js";
 
-export const LANGUAGES = Object.freeze(["en-us", "en-gb", "hi"]);
+export const LANGUAGES = Object.freeze(["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai"]);
 export const PROFILES = Object.freeze(["espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx"]);
 
-const ALIASES = { en: "en-us", "en-us": "en-us", "en-gb": "en-gb", "en-gb-x-rp": "en-gb", "en-uk": "en-gb", hi: "hi", "hi-in": "hi" };
+const ALIASES = { en: "en-us", "en-us": "en-us", "en-gb": "en-gb", "en-gb-x-rp": "en-gb", "en-uk": "en-gb", hi: "hi", "hi-in": "hi", bn: "bn", "bn-in": "bn", "bn-bd": "bn", mr: "mr", te: "te", ne: "ne", "ne-np": "ne", kn: "kn", ta: "ta", ml: "ml", as: "as", gu: "gu", bho: "bho", bhojpuri: "bho", mai: "mai", maithili: "mai" };
 const isNode = typeof process !== "undefined" && process.versions != null && process.versions.node != null && typeof window === "undefined";
 
 let ready = null;
@@ -110,10 +110,32 @@ export async function loadMisaki(lang, gold, silver) {
 export async function loadKokoro(lang = "en-us") {
   const tag = canonical(lang);
   await init();
-  if (tag === "hi" || wasm.hasMisaki(tag)) return;
+  if (!tag.startsWith("en") || wasm.hasMisaki(tag)) return;
   const key = `kokoro-${tag}`;
   if (!loading.has(key)) {
     loading.set(key, readPack(key).then((b) => { if (!wasm.hasMisaki(tag)) wasm.loadKokoro(b); }).finally(() => loading.delete(key)));
+  }
+  await loading.get(key);
+}
+
+/**
+ * Load the optional WikiPron pack of a language (`wikipron-en-us`,
+ * `wikipron-en-gb`, `wikipron-hi`). These packs hold Wiktionary
+ * pronunciations under CC BY-SA 4.0, not Apache-2.0, so they are not in this
+ * package and never fetched automatically: download the file from the
+ * GitHub release, then pass its bytes, or place it in the data directory
+ * (see `init`). Files from the data directory are checked by SHA-256. The
+ * improved mode uses the pack for words outside uccharan's own lexicon.
+ */
+export async function loadWikipron(lang, bytes) {
+  const key = `wikipron-${canonical(lang)}`;
+  await init();
+  if (bytes) {
+    wasm.loadPack(bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes));
+    return;
+  }
+  if (!loading.has(key)) {
+    loading.set(key, readPack(key).then((b) => wasm.loadPack(b)));
   }
   await loading.get(key);
 }
@@ -135,7 +157,8 @@ const HAS_DEVANAGARI = /[ऀ-ॿ]/;
 export function languagesFor(text, lang = "en-us") {
   const tag = canonical(lang);
   const need = [tag];
-  if (tag === "hi" && HAS_LATIN.test(text)) need.push("en-gb");
+  const english = tag === "en-us" || tag === "en-gb";
+  if (!english && HAS_LATIN.test(text)) need.push("en-gb");
   if (tag !== "hi" && HAS_DEVANAGARI.test(text)) need.push("hi");
   return need;
 }
@@ -163,7 +186,7 @@ export async function phonemize(text, options = {}) {
   await init();
   wasmReady = true;
   await Promise.all(languagesFor(text, options.lang).map((l) => loadLanguage(l)));
-  if (options.profile === "kokoro" && canonical(options.lang ?? "en-us") !== "hi") await loadKokoro(options.lang ?? "en-us");
+  if (options.profile === "kokoro" && canonical(options.lang ?? "en-us").startsWith("en")) await loadKokoro(options.lang ?? "en-us");
   return run(text, options);
 }
 

@@ -1,0 +1,319 @@
+# Bengali (Bangla). espeak-ng voice "bn". See docs/adding-a-language.md for the format.
+# Written for uccharan from specs/bn.md and specs/family-brahmic.md.
+
+[meta]
+tag = bn
+block = 0980
+stress = initial
+deletion = final
+inherent = ɔ ɔ
+anusvara = velar
+visarga = silent
+
+[letters]
+ক k
+খ kʰ
+গ ɡ
+ঘ ɡʰ
+ঙ ŋ
+চ tʃ
+ছ tʃʰ
+জ ɟ
+ঝ ɟʰ
+ঞ n
+ট ʈ
+ঠ ʈʰ
+ড ɖ
+ঢ ɖʰ
+ণ n
+ত t
+থ tʰ
+দ d
+ধ dʰ
+ন n
+প p
+ফ f
+ব b
+ভ bʰ
+ম m
+য dʒ
+র ɾ
+ল l
+শ ʃ
+ষ ʃ
+স ʃ
+হ h
+ড় r.
+ঢ় hr.
+য় j
+ড় r.
+ঢ় hr.
+য় j
+ৎ t dead
+অ ɔ
+আ a
+ই i
+ঈ i
+উ u
+ঊ u
+ঋ ɾ i stressed
+এ e
+ঐ o +j
+ও oː
+ঔ o +w
+া a
+ি i
+ী i
+ু u
+ূ u
+ৃ ɾ i stressed
+ে e
+ৈ o +j
+ো o
+ৌ o +w
+# Markers written by the [pre] rules below (never in real text).
+S s consonant
+Y ː consonant
+Æ æ sign
+Ǽ æ vowel
+
+[classes]
+C = ক খ গ ঘ ঙ চ ছ জ ঝ ঞ ট ঠ ড ঢ ণ ত থ দ ধ ন প ফ ব ভ ম য র ল শ ষ স হ ড় ঢ় য়
+M = া ি ী ু ূ ৃ ে ৈ ো ৌ
+V = a e i o u ɔ æ
+HI = i u
+S = ˈ ˌ
+VO = a e i o u æ
+RT = m n l ʃ s h ɾ j
+K = k ɡ ŋ t ʃ ʰ ɟ n ʈ ɖ d p f b m ɾ r l h j s ː . ʒ
+
+[pre]
+ক্ষ -> খ্খ
+জ্ঞ -> গ্গ
+স্ব -> স / # _
+জ্ব -> জ
+স -> S / _ ্ত | _ ্থ | _ ্ল | _ ্য
+শ -> S / _ ্ল
+অ্যা -> Ǽ
+# ya-phala (্য). Medially before a vowel sign it is read dʒ; before a
+# consonant, and as ্যা inside a word, it is æ; at the end of a word it
+# lengthens the consonant before it (ː), or doubles n, l, m, ʈ, ʃ, s and r.
+্যা -> Æ / _ . | # {C} _
+্য -> Æ / _ {C}
+্য -> ্ন / ন _ # | ন _ {M} # | ন _ া #
+্য -> ্ণ / ণ _ # | ণ _ {M} # | ণ _ া #
+্য -> ্ল / ল _ # | ল _ {M} # | ল _ া #
+্য -> ্ম / ম _ # | ম _ {M} # | ম _ া #
+্য -> ্ট / ট _ # | ট _ {M} # | ট _ া #
+্য -> ্ড / ড _ # | ড _ {M} # | ড _ া #
+্য -> ্শ / শ _ # | শ _ {M} # | শ _ া #
+্য -> ্ষ / ষ _ # | ষ _ {M} # | ষ _ া #
+্য -> ্S / স _ # | স _ {M} # | স _ া #
+্য -> ্র / র _ # | র _ {M} # | র _ া #
+্য -> ্Y / _ # | _ {M} # | _ া #
+# Word-final ত and হ keep a vowel, written o.
+ত -> তো / _ #
+হ -> হো / _ #
+
+[pre.compat]
+# No nasal mark on ্যাঁ.
+ঁ -> 0 / Æ _
+# The reference loses the vowel sign after a nukta written as a separate
+# code point (base letter + U+09BC), which is how normalised text spells
+# these letters: the letter is then read without a vowel, and decomposed
+# য় loses itself too.
+য় -> 0 / _ {M}
+{M} -> ্ / ড় _ | ঢ় _
+{M} -> 0 / য় _
+
+[post]
+# r before sonorants and fricatives, the tap elsewhere.
+ɾ -> r / _ {RT}
+# The inherent vowel of the first syllable is raised before i or u, and after
+# an initial r when a full vowel follows.
+ɔ -> o / # {K}* {S}* _ {K}* {S}* {HI} | # {K}* ɾ {S}* _ {K} {K}* {S}* {VO} | # {K}* ɾ {S}* _ {K} {K}* {S}* ɔ {K}
+# i and u after e are glides before a consonant (u also at the end).
+i -> j / {K} e _ {K}
+u -> w / e _ {K} | e _ #
+
+[words]
+@এক ˈæk
+@সাত ʃˈat
+@দুই dˈuj
+@ছয় tʃʰˈɔ
+@বারো bˈaɾɔ
+@একুশ ekˈuʃ
+@পঁয়তাল্লিশ pˈɔ̃jtallˈiʃ
+@নিরানব্বই nˈiɾanɔbbˈoj
+@পঞ্চাশ pˈɔ̃tʃˈaʃ
+হাজার hˈajaɾ
+দশমিক dˈɔsomik
+বিয়োগ bijˈoɡ
+শতকরা ʃɔtkˈɔɾa
+একটা ˈækʈaː
+একটি ˈekʈi
+একজন ækɟˈɔn
+খেলা kʰælˈa
+করছি koɾcʰˈi
+দুঃখ dukʰkʰˈo
+
+[unstressed]
+# Pronouns, auxiliaries, conjunctions and particles.
+আমি s
+আমার s
+আমরা s
+আমাদের s
+তুমি s
+তোমার s
+তোমাদের s
+তুই s
+তোর s
+আপনি s
+আপনার s
+আপনাকে s
+সে 0
+তার s
+তারা s
+তাদের s
+এ 0
+এই s
+এটা s
+এর s
+ইনি s
+ও 0
+ওটা s
+ওটার s
+ওরা s
+ওর s
+ঐ 0
+কে 0
+কি 0
+কেন s
+কখন s
+কিন্তু s
+অথবা s
+উপর s
+মধ্যে s
+এবং s
+আর s
+হয় s
+ছিল s
+ছিলেন s
+
+[numbers]
+# Number words 0-99 from Unicode CLDR common/rbnf/bn.xml (Unicode License v3).
+0 শূন্য
+1 এক
+2 দুই
+3 তিন
+4 চার
+5 পাঁচ
+6 ছয়
+7 সাত
+8 আট
+9 নয়
+10 দশ
+11 এগারো
+12 বারো
+13 তেরো
+14 চৌদ্দ
+15 পনেরো
+16 ষোলো
+17 সতেরো
+18 আঠারো
+19 উনিশ
+20 কুড়ি
+21 একুশ
+22 বাইশ
+23 তেইশ
+24 চব্বিশ
+25 পঁচিশ
+26 ছাব্বিশ
+27 সাতাশ
+28 আঠাশ
+29 উনত্রিশ
+30 ত্রিশ
+31 একত্রিশ
+32 বত্রিশ
+33 তেত্রিশ
+34 চৌত্রিশ
+35 পঁয়ত্রিশ
+36 ছত্রিশ
+37 সাঁইত্রিশ
+38 আটত্রিশ
+39 উনচল্লিশ
+40 চল্লিশ
+41 একচল্লিশ
+42 বিয়াল্লিশ
+43 তেতাল্লিশ
+44 চুয়াল্লিশ
+45 পঁয়তাল্লিশ
+46 ছেচল্লিশ
+47 সাতচল্লিশ
+48 আটচল্লিশ
+49 উনপঞ্চাশ
+50 পঞ্চাশ
+51 একান্ন
+52 বায়ান্ন
+53 তিপান্ন
+54 চুয়ান্ন
+55 পঞ্চান্ন
+56 ছাপান্ন
+57 সাতান্ন
+58 আটান্ন
+59 উনষাট
+60 ষাট
+61 একষট্টি
+62 বাষট্টি
+63 তেষট্টি
+64 চৌষট্টি
+65 পঁয়ষট্টি
+66 ছেষট্টি
+67 সাতষট্টি
+68 আটষট্টি
+69 উনসত্তর
+70 সত্তর
+71 একাত্তর
+72 বাহাত্তর
+73 তিয়াত্তর
+74 চুয়াত্তর
+75 পঁচাত্তর
+76 ছিয়াত্তর
+77 সাতাত্তর
+78 আটাত্তর
+79 উনআশি
+80 আশি
+81 একাশি
+82 বিরাশি
+83 তিরাশি
+84 চুরাশি
+85 পঁচাশি
+86 ছিয়াশি
+87 সাতাশি
+88 অষ্টআশি
+89 উননব্বই
+90 নব্বই
+91 একানব্বই
+92 বিরানব্বই
+93 তিরানব্বই
+94 চুরানব্বই
+95 পঁচানব্বই
+96 ছিয়ানব্বই
+97 সাতানব্বই
+98 আটানব্বই
+99 নিরানব্বই
+2x দু
+scale100 শো
+scale1000 হাজার
+scale100000 লাখ
+scale10000000 কোটি
+glue-hundred yes
+grouping indian
+point দশমিক
+minus বিয়োগ
+percent শতকরা
+
+[post.improved]
+# The flap letters ড় ঢ় as IPA (the reference prints "r." and "hr.").
+hr. -> ɽʰ
+r. -> ɽ

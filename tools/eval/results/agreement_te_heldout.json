@@ -1,0 +1,243 @@
+{
+ "language": "te",
+ "reference": "espeak-ng 1.52.0 voice te (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 184527,
+  "per": 0.008670817820698326,
+  "per_without_stress": 0.007151108767171451,
+  "exact_sentence": 0.6452569169960475,
+  "exact_sentence_without_stress": 0.66600790513834,
+  "piper_shape_per": 0.00869490726859982,
+  "piper_shape_exact_sentence": 0.6393280632411067,
+  "word_count_mismatch_sentences": 248,
+  "errors_by_class": {
+   "stress": {
+    "count": 476,
+    "share": 0.2975,
+    "per_contribution": 0.002579568301657752
+   },
+   "consonant": {
+    "count": 472,
+    "share": 0.295,
+    "per_contribution": 0.0025578912571060063
+   },
+   "vowel": {
+    "count": 368,
+    "share": 0.23,
+    "per_contribution": 0.001994288098760615
+   },
+   "other": {
+    "count": 125,
+    "share": 0.078125,
+    "per_contribution": 0.0006774076422420567
+   },
+   "length": {
+    "count": 89,
+    "share": 0.055625,
+    "per_contribution": 0.0004823142412763444
+   },
+   "word-boundary": {
+    "count": 70,
+    "share": 0.04375,
+    "per_contribution": 0.00037934827965555175
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ʲ→∅",
+    "count": 225
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 175
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 97
+   },
+   {
+    "edit": "ː→∅",
+    "count": 87
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 61
+   },
+   {
+    "edit": "i→∅",
+    "count": 54
+   },
+   {
+    "edit": "a→∅",
+    "count": 46
+   },
+   {
+    "edit": "∅→ ",
+    "count": 40
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 37
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 35
+   },
+   {
+    "edit": "u→∅",
+    "count": 35
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 32
+   },
+   {
+    "edit": " →∅",
+    "count": 30
+   },
+   {
+    "edit": "a→æ",
+    "count": 23
+   },
+   {
+    "edit": "ː→ɪ",
+    "count": 22
+   },
+   {
+    "edit": "l→∅",
+    "count": 22
+   },
+   {
+    "edit": "m→∅",
+    "count": 21
+   },
+   {
+    "edit": "j→ɪ",
+    "count": 20
+   },
+   {
+    "edit": "j→∅",
+    "count": 20
+   },
+   {
+    "edit": "d→∅",
+    "count": 19
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 19
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 17
+   },
+   {
+    "edit": "k→n",
+    "count": 17
+   },
+   {
+    "edit": "ˌ→ɕ",
+    "count": 17
+   },
+   {
+    "edit": "m→n",
+    "count": 17
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 12554,
+    "wrong": 251,
+    "rate": 0.0199936275290744
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 225,
+    "per": 0.019254644856352508,
+    "exact_sentence": 0.4311111111111111
+   },
+   "no-digits": {
+    "sentences": 787,
+    "per": 0.005165348877474462,
+    "exact_sentence": 0.7064803049555273
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-302",
+    "text": "iPods అతిగా వేడెక్కడం ద్వారా వైఫల్యం చెందాయని 60 కేసులు రిపోర్ట్ చేయబడ్డాయి. వీటిలో 6 వరకూ మంటలు రేగి 4గురు స్వల్పంగా గాయపడ్డారు.",
+    "reference": "ˈaːj pˈɒdz ˈatiɡaː ʋˈeːɖekkˌaɖan dʋˈaːraː ʋˈaɪpʰaljan cˈendaːjˌani ˈaraʋaɪ kˈeːsulu rˈipoːrʈ cˈeːjabˌaɖɖaːji ʋˈiːʈiloː ˈaːru ʋˈarakuː mˈanʈalu rˈeːɡi nˈaːluɡu ɡˈuru sʋˈalpanɡaː ɡˈaːjapˌaɖɖaːru",
+    "uccharan": "ˈaɪpɒdz ˈatiɡaː ʋˈeːɖekkˌaɖan dʋˈaːraː ʋˈaɪpʰaljan cˈendaːjˌani ˈaraʋaɪ kˈeːsulu rˈipoːrʈ cˈeːjabˌaɖɖaːji ʋˈiːʈiloː ˈaːru ʋˈarakuː mˈanʈalu rˈeːɡi nˈaːluɡu ɡˈuru sʋˈalpanɡaː ɡˈaːjapˌaɖɖaːru"
+   },
+   {
+    "id": "flores-devtest-903",
+    "text": "1819లో కనుగొనబడిన సౌత్ షెట్లాండ్ దీవులను అనేక దేశాలు తమవి అని చెప్పాయి మరియు ఎక్కువ స్థావరాలను కలిగి ఉన్నాయి, 2020లో పదహారు చురుకుగా ఉన్నాయి.",
+    "reference": "ˈokaʋˌejji ˌenimˌidiʋˌandalˌa pandˌommidi lˈoː kˈanuɡˌonabˌaɖina sˈaʊt ʂˈeʈlaːnɖ dˈiːʋulˌanu ˈaneːka dˈeːɕaːlu tˈamaʋi ˈani cˈeppaːji mˈariju ʲˈekkuʋa stʰˈaːʋarˌaːlanu kˈaliɡi ˈunnaːji rˈenɖu ʋˌela ˌiraʋaɪ lˈoː pˈadahˌaːru cˈurukˌuɡaː ˈunnaːji",
+    "uccharan": "ˈokaʋˌejji ˌenimˌidiʋˌandala pˌandommˌidi lˈoː kˈanuɡˌonabˌaɖina sˈaʊt ʂˈeʈlaːnɖ dˈiːʋulˌanu ˈaneːka dˈeːɕaːlu tˈamaʋi ˈani cˈeppaːji mˈariju ˈekkuʋa stʰˈaːʋarˌaːlanu kˈaliɡi ˈunnaːji rˈenɖu ʋˌela ˌiraʋaɪ lˈoː pˈadahˌaːru cˈurukˌuɡaː ˈunnaːji"
+   },
+   {
+    "id": "flores-devtest-722",
+    "text": "క్రుగర్ నేషనల్ పార్క్ (KNP) దక్షిణాఫ్రికాకు ఈశాన్యంలో ఉంది మరియు తూర్పున మొజాంబిక్ సరిహద్దు, ఉత్తరాన జింబాబ్వే మరియు దక్షిణ సరిహద్దు మొసలి నది కలవు.",
+    "reference": "krˈuɡar nˈeːʂanal pˈaːrk kˈeːjˌɛnpˌiː dˈakʂiɳˌaːpʰrikˌaːku ˈiːɕaːnjˌanloː ˈundi mˈariju tˈuːrpuna mˈoɟaːnbik sˈarihˌaddu ˈuttarˌaːna ɟˈinbaːbʋeː mˈariju dˈakʂiɳa sˈarihˌaddu mˈosali nˈadi kˈalaʋu",
+    "uccharan": "krˈuɡar nˈeːʂanal pˈaːrk kˌeɪˌɛnpˈiː dˈakʂiɳˌaːpʰrikˌaːku ˈiːɕaːnjˌanloː ˈundi mˈariju tˈuːrpuna mˈoɟaːnbik sˈarihˌaddu ˈuttarˌaːna ɟˈinbaːbʋeː mˈariju dˈakʂiɳa sˈarihˌaddu mˈosali nˈadi kˈalaʋu"
+   },
+   {
+    "id": "flores-devtest-64",
+    "text": "కాంగ్రెస్ 2005 ఆర్థిక సంవత్సరంలో అశ్లీల కార్యక్రమానికి నిధులను సమకూర్చడం ప్రారంభించింది మరియు FBI 10 మంది ఏజెంట్లను వయోజన అశ్లీల తత్వానికి అంకితం చేయాలని పేర్కొంది.",
+    "reference": "kˈaːnɡres rˈenɖu ʋˌela ˌaɪdu ˈaːrtʰika sˈanʋatsˌaranloː ˈaɕliːla kˈaːrjakrˌamaːnˌiki nˈidʰulˌanu sˈamakˌuːrcaɖan prˈaːranbʰˌincindi mˈariju ˈɛfbˌiːˌaːj pˈadi mˈandi ˈeːɟenʈlˌanu ʋˈajoːɟˌana ˈaɕliːla tˈatʋaːnˌiki ˈankitan cˈeːjaːlˌani pˈeːrkondi",
+    "uccharan": "kˈaːnɡres rˈenɖu ʋˌela ˌaɪdu ˈaːrtʰika sˈanʋatsˌaranloː ˈaɕliːla kˈaːrjakrˌamaːnˌiki nˈidʰulˌanu sˈamakˌuːrcaɖan prˈaːranbʰˌincindi mˈariju ˈɛfbɪˌaɪ pˈadi mˈandi ˈeːɟenʈlˌanu ʋˈajoːɟˌana ˈaɕliːla tˈatʋaːnˌiki ˈankitan cˈeːjaːlˌani pˈeːrkondi"
+   },
+   {
+    "id": "flores-devtest-536",
+    "text": "ఇతర biorhythm ఆధారిత ఎంపికలు నిద్రకు ముందు చాలా ద్రవం (ముఖ్యంగా నీరు లేదా టీ, తెలిసిన డైయూరెటిక్) త్రాగడం, బలవంతంగా మూత్రవిసర్జన కు ఒక వ్యక్తి.",
+    "reference": "ˈitara bˌaɪəʊɹˈɪðəm ˈaːdʰaːrˌita ʲˈenpikˌalu nˈidraku mˈundu cˈaːlaː drˈaʋan mˈukʰjanɡaː nˈiːru lˈeːdaː ʈˈiː tˈelisˌina ɖˈaɪjuːrˌeʈik trˈaːɡaɖan bˈalaʋˌantanɡaː mˈuːtraʋˌisarɟˌana kˈu ˌoka ʋjˈakti",
+    "uccharan": "ˈitara baɪˈəʊɹɪðəm ˈaːdʰaːrˌita ˈenpikˌalu nˈidraku mˈundu cˈaːlaː drˈaʋan mˈukʰjanɡaː nˈiːru lˈeːdaː ʈˈiː tˈelisˌina ɖˈaɪjuːrˌeʈik trˈaːɡaɖan bˈalaʋˌantanɡaː mˈuːtraʋˌisarɟˌana kˈu ˌoka ʋjˈakti"
+   },
+   {
+    "id": "flores-devtest-73",
+    "text": "Devonport‌లోని Mersey ఆసుపత్రి యొక్క నిధులను సమకూర్చడానికి ఫెడరల్ గవర్నమెంట్ స్వాధీనం చేసుకున్నప్పటి నుండి, Tasmania రాష్ట్ర ప్రభుత్వం మరియు కొంతమంది MPలు ఈ చర్యను నవంబర్‌లో జరిగే ఎన్నికలకు లక్ష్యంగా చేస్తున్నారని విమర్శించారు.",
+    "reference": "dˈɛvənpˌɔːtlˈoːni mˈɜːsi ˈaːsupˌatri jˈokka nˈidʰulˌanu sˈamakˌuːrcaɖˌaːniki pʰˈeɖaral ɡˈaʋarnˌamenʈ sʋˈaːdʰiːnan cˈeːsukˌunnappˌaʈi nˈunɖi tazmˈeɪniə rˈaːʂʈra prˈabʰutʋan mˈariju kˈontamˌandi ˌɛmpˈiːlˈu ˈiː cˈarjanu nˈaʋanbˌarloː ɟˈariɡeː ʲˈennikˌalaku lˈakʂjanɡaː cˈeːstunnˌaːrani ʋˈimarɕˌincaːru",
+    "uccharan": "dˈɛvənpˌɔːt lˈoːni mˈɜːsɪ ˈaːsupˌatri jˈokka nˈidʰulˌanu sˈamakˌuːrcaɖˌaːniki pʰˈeɖaral ɡˈaʋarnˌamenʈ sʋˈaːdʰiːnan cˈeːsukˌunnappˌaʈi nˈunɖi tæzmˈeɪniɐ rˈaːʂʈra prˈabʰutʋan mˈariju kˈontamˌandi ˌɛmpˈiː lˈu ˈiː cˈarjanu nˈaʋanbˌarloː ɟˈariɡeː ˈennikˌalaku lˈakʂjanɡaː cˈeːstunnˌaːrani ʋˈimarɕˌincaːru"
+   },
+   {
+    "id": "flores-devtest-453",
+    "text": "ప్రాచీన చైనా చరిత్రలో ఈ మూడు రాజ్యాల శకము రక్తపాత యుగాలలో ఒకటి, Xi’anలో గ్రాండ్ ప్యాలెస్‌ సింహాసనాన్ని పొందడానికి పోరాడుతూ వేలాది మంది మరణించారు.",
+    "reference": "prˈaːciːna cˈaɪnaː cˈaritrˌaloː ˈiː mˈuːɖu rˈaːɟjaːla ɕˈakamu rˈaktapˌaːta jˈuɡaːlˌaloː ˈokaʈi zˈɪənlˈoː ɡrˈaːnɖ pjˈaːles sˈinhaːsˌanaːnni pˈondaɖˌaːniki pˈoːraːɖˌutuː ʋˈeːlaːdi mˈandi mˈaraɳˌincaːru",
+    "uccharan": "prˈaːciːna cˈaɪnaː cˈaritrˌaloː ˈiː mˈuːɖu rˈaːɟjaːla ɕˈakamu rˈaktapˌaːta jˈuɡaːlˌaloː ˈokaʈi ʒˈaʊən lˈoː ɡrˈaːnɖ pjˈaːles sˈinhaːsˌanaːnni pˈondaɖˌaːniki pˈoːraːɖˌutuː ʋˈeːlaːdi mˈandi mˈaraɳˌincaːru"
+   },
+   {
+    "id": "flores-devtest-696",
+    "text": "అనేక మంది ఆశ్చర్యపోయే జనాభా ను పోల్చడానికి: కెనడియన్ పౌరుల కంటే U.S.లో నివసిస్తున్న ఆఫ్రికన్ అమెరికన్లు ఎక్కువ.",
+    "reference": "ˈaneːka mˈandi ˈaːɕcarjˌapoːjeː ɟˈanaːbʰaː nˈu pˈoːlcaɖˌaːniki kˈenaɖˌijan pˈaʊrula kˈanʈeː jˈuːˌɛs lˈoː nˈiʋasˌistunna ˈaːpʰrikan ˈamerˌikanlu ʲˈekkuʋa",
+    "uccharan": "ˈaneːka mˈandi ˈaːɕcarjˌapoːjeː ɟˈanaːbʰaː nˈu pˈoːlcaɖˌaːniki kˈenaɖˌijan pˈaʊrula kˈanʈeː jˈuː ˈɛs lˈoː nˈiʋasˌistunna ˈaːpʰrikan ˈamerˌikanlu ˈekkuʋa"
+   },
+   {
+    "id": "flores-devtest-11",
+    "text": "ఒక యాంటీ బాడీ కాక్టైల్, ZMapp, ప్రారంభంలో ఈ రంగంలో వాగ్దానాన్ని చూపించింది, కానీ అధికారిక అధ్యయనాలు మరణాన్ని నిరోధించడంలో కోరిన దాని కంటే తక్కువ ప్రయోజనాన్ని కలిగి ఉన్నట్లు సూచించాయి.",
+    "reference": "ˌoka jˈaːnʈiː bˈaːɖiː kˈaːkʈaɪl zˈɛd mˈap prˈaːranbʰˌanloː ˈiː rˈanɡanloː ʋˈaːɡdaːnˌaːnni cˈuːpincˌindi kˈaːniː ˈadʰikˌaːrika ˈadʰjajˌanaːlu mˈaraɳˌaːnni nˈiroːdʰˌincaɖˌanloː kˈoːrina dˈaːni kˈanʈeː tˈakkuʋa prˈajoːɟˌanaːnni kˈaliɡi ˈunnaʈlu sˈuːcincˌaːji",
+    "uccharan": "ˌoka jˈaːnʈiː bˈaːɖiː kˈaːkʈaɪl zmˈæp prˈaːranbʰˌanloː ˈiː rˈanɡanloː ʋˈaːɡdaːnˌaːnni cˈuːpincˌindi kˈaːniː ˈadʰikˌaːrika ˈadʰjajˌanaːlu mˈaraɳˌaːnni nˈiroːdʰˌincaɖˌanloː kˈoːrina dˈaːni kˈanʈeː tˈakkuʋa prˈajoːɟˌanaːnni kˈaliɡi ˈunnaʈlu sˈuːcincˌaːji"
+   },
+   {
+    "id": "flores-devtest-423",
+    "text": "15వ శతాబ్దంలో తైవాన్ ప్రారంభం ఇక్కడ ఐరోపా నావికులు ఇల్హా ఫోర్మోసా లేదా అందమైన ద్వీపంగా పేరు నమోదు చేశారు.",
+    "reference": "pˈadihˌeːnaʋa ɕˈataːbdˌanloː tˈaɪʋaːn prˈaːranbʰan ˈikkaɖa ˈaɪroːpaː nˈaːʋikˌulu ˈilhaː pʰˈoːrmoːsaː lˈeːdaː ˈandamˌaɪna dʋˈiːpanɡaː pˈeːru nˈamoːdu cˈeːɕaːru",
+    "uccharan": "pˈadihˌeːnu ʋˈa ɕˈataːbdˌanloː tˈaɪʋaːn prˈaːranbʰan ˈikkaɖa ˈaɪroːpaː nˈaːʋikˌulu ˈilhaː pʰˈoːrmoːsaː lˈeːdaː ˈandamˌaɪna dʋˈiːpanɡaː pˈeːru nˈamoːdu cˈeːɕaːru"
+   },
+   {
+    "id": "flores-devtest-708",
+    "text": "పోర్చుగల్ వాసులు దాన్ని  నాశనం చేసి, కాసా బ్రంకా అనే పేరుతో పునర్నిర్మించారు, 1755 లో వచ్చిన భూకంపం తరువాత మాత్రమే దీనిని వదిలి వెళ్లారు.",
+    "reference": "pˈoːrcuɡal ʋˈaːsulu dˈaːnni nˈaːɕanan cˈeːsi kˈaːsaː brˈankaː ˈaneː pˈeːrutoː pˈunarnˌirmincˌaːru ˈokaʋˌejji ˌeːɖuʋˌandalˌa jaːbʰˌaɪaɪdu lˈoː ʋˈaccina bʰˈuːkanpan tˈaruʋˌaːta mˈaːtrameː dˈiːnini ʋˈadili ʋˈeɭlaːru",
+    "uccharan": "pˈoːrcuɡal ʋˈaːsulu dˈaːnni nˈaːɕanan cˈeːsi kˈaːsaː brˈankaː ˈaneː pˈeːrutoː pˈunarnˌirmincˌaːru ˈokaʋˌejji ˌeːɖuʋˌandala jˌaːbʰaɪˌaɪdu lˈoː ʋˈaccina bʰˈuːkanpan tˈaruʋˌaːta mˈaːtrameː dˈiːnini ʋˈadili ʋˈeɭlaːru"
+   },
+   {
+    "id": "flores-devtest-740",
+    "text": "పారో (Nu 150) మరియు పునఖా (Nu 200) వంటి సమీప ప్రాంతాలకు ప్రయాణించడానికి వేగవంతమైన మరియు సౌకర్యవంతమైన మార్గంగా షేర్ డ్ టాక్సీలు ఉన్నాయి.",
+    "reference": "pˈaːroː nˈuː ˈokaʋˌanda jˌaːbʰaɪ mˈariju pˈunakʰaː nˈuː rˈenɖuʋˌandalu ʋˈanʈi sˈamiːpa prˈaːntaːlˌaku prˈajaːɳˌincaɖˌaːniki ʋˈeːɡaʋˌantamˌaɪna mˈariju sˈaʊkarjˌaʋantˌamaɪna mˈaːrɡanɡaː ʂˈeːr ˈiɖ ʈˈaːksiːlu ˈunnaːji",
+    "uccharan": "pˈaːroː njˈuː ˈokaʋˌanda jˌaːbʰaɪ mˈariju pˈunakʰaː njˈuː rˈenɖuʋˌandalu ʋˈanʈi sˈamiːpa prˈaːntaːlˌaku prˈajaːɳˌincaɖˌaːniki ʋˈeːɡaʋˌantamˌaɪna mˈariju sˈaʊkarjˌaʋantˌamaɪna mˈaːrɡanɡaː ʂˈeːr ɖ ʈˈaːksiːlu ˈunnaːji"
+   }
+  ]
+ }
+}

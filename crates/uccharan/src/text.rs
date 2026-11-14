@@ -65,7 +65,10 @@ pub enum Script {
     Latin,
     /// Devanagari (U+0900–U+097F).
     Devanagari,
-    /// ASCII or Devanagari digits.
+    /// Another Brahmic script block (Bengali U+0980, Gurmukhi U+0A00, …),
+    /// named by the first code point of its block.
+    Brahmic(u32),
+    /// ASCII or Indic-script digits.
     Digit,
     /// Anything else.
     Other,
@@ -75,10 +78,22 @@ pub enum Script {
 pub fn script_of(c: char) -> Script {
     match c {
         'a'..='z' | 'A'..='Z' | '\u{00c0}'..='\u{024f}' => Script::Latin,
-        '\u{0966}'..='\u{096f}' | '0'..='9' => Script::Digit,
+        '0'..='9' => Script::Digit,
+        '\u{0900}'..='\u{0dff}' if indic_digit(c).is_some() => Script::Digit,
         '\u{0900}'..='\u{097f}' | '\u{200c}' | '\u{200d}' => Script::Devanagari,
+        '\u{0980}'..='\u{0dff}' => Script::Brahmic(c as u32 & !0x7f),
         _ => Script::Other,
     }
+}
+
+/// Value of a digit of an Indic script (Devanagari to Sinhala blocks).
+pub fn indic_digit(c: char) -> Option<u8> {
+    let u = c as u32;
+    if !(0x0900..0x0e00).contains(&u) {
+        return None;
+    }
+    let off = u & 0x7f;
+    (0x66..=0x6f).contains(&off).then(|| (off - 0x66) as u8)
 }
 
 /// A whitespace-delimited chunk with its surrounding punctuation removed.
@@ -300,6 +315,11 @@ pub fn runs(chunk: &str) -> Vec<(Script, &str)> {
         let prev = if k > 0 { Some(cs[k - 1].1) } else { None };
         let next = cs.get(k + 1).map(|x| x.1);
         let mut sc = script_of(c);
+        if matches!(c, '\u{200c}' | '\u{200d}')
+            && matches!(cur, Some(Script::Devanagari | Script::Brahmic(_)))
+        {
+            sc = cur.unwrap();
+        }
         if sc == Script::Other {
             let between = |f: fn(char) -> bool| prev.is_some_and(f) && next.is_some_and(f);
             if matches!(c, '\'' | '’')
@@ -308,7 +328,9 @@ pub fn runs(chunk: &str) -> Vec<(Script, &str)> {
                     || prev.is_some_and(|p| p == 's' || p == 'S'))
             {
                 sc = Script::Latin;
-            } else if matches!(c, ',' | '.' | ':') && between(|x| x.is_ascii_digit()) {
+            } else if matches!(c, ',' | '.' | ':')
+                && between(|x| x.is_ascii_digit() || indic_digit(x).is_some())
+            {
                 sc = Script::Digit;
             }
         }

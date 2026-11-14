@@ -254,28 +254,5 @@
     "uccharan": "tˈɑːm ænd mˈɛɹi dˈɪdnt wˈɔnt tə kˈɔːl ðɛɹ lˈɔːjɚ"
    }
   ]
- },
- "word_level": {
-  "frequent-in-lexicon": {
-   "words": 5000,
-   "per": 0.023012024553633995,
-   "exact_word": 0.8976,
-   "exact_word_without_stress": 0.9118,
-   "stress_pattern_error": 0.0322
-  },
-  "rare-in-lexicon": {
-   "words": 3000,
-   "per": 0.18039059386209647,
-   "exact_word": 0.4666666666666667,
-   "exact_word_without_stress": 0.49033333333333334,
-   "stress_pattern_error": 0.21566666666666667
-  },
-  "out-of-lexicon": {
-   "words": 1997,
-   "per": 0.19117485437960216,
-   "exact_word": 0.4361542313470205,
-   "exact_word_without_stress": 0.4782173259889835,
-   "stress_pattern_error": 0.2899349023535303
-  }
  }
 }

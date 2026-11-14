@@ -1,0 +1,164 @@
+# Kannada. espeak-ng voice "kn". Written for uccharan from specs/kn.md and
+# specs/family-brahmic.md.
+
+[meta]
+tag = kn
+block = 0c80
+stress = initial
+final-secondary = no
+deletion = none
+inherent = ɐ ɐ
+anusvara = homorganic
+visarga = h
+trill = k kʰ ɡ ɡʰ ŋ c cʰ ɟ ɟʰ ɲ ʈ ʈʰ ɖ ɖʰ ɳ t tʰ d dʰ n p pʰ b bʰ m j l ɭ v ɕ ʂ s h
+
+[letters]
+ಕ k
+ಖ kʰ
+ಗ ɡ
+ಘ ɡʰ
+ಙ ŋ
+ಚ c
+ಛ cʰ
+ಜ ɟ
+ಝ ɟʰ
+ಞ ɲ
+ಟ ʈ
+ಠ ʈʰ
+ಡ ɖ
+ಢ ɖʰ
+ಣ ɳ
+ತ t
+ಥ tʰ
+ದ d
+ಧ dʰ
+ನ n
+ಪ p
+ಫ pʰ
+ಬ b
+ಭ bʰ
+ಮ m
+ಯ j
+ರ ɹ
+ಱ ɹ
+ಲ l
+ಳ ɭ
+ವ v
+ಶ ɕ
+ಷ ʂ
+ಸ s
+ಹ h
+ಅ ɐ
+ಆ aː
+ಇ i
+ಈ iː
+ಉ u
+ಊ uː
+ಋ ɹ u
+ಎ e
+ಏ eː
+ಐ aɪ
+ಒ o
+ಓ oː
+ಔ aʊ
+ಾ aː
+ಿ i
+ೀ iː
+ು u
+ೂ uː
+ೃ ɹ u
+ೆ e
+ೇ eː
+ೈ aɪ
+ೊ o
+ೋ oː
+ೌ aʊ
+ೕ ignore
+ೖ ignore
+ೞ ɭ
+
+[pre]
+ಜ್ಞ -> ಜ್ಞ
+
+[unstressed]
+# Pronouns, demonstratives, quantifiers and conjunctions.
+ನಾನು s
+ನಾವು s
+ನೀನು s
+ನೀವು s
+ಅವನು s
+ಅವಳು s
+ಅವರು s
+ಅವು s
+ಅದು s
+ಇದು s
+ನನ್ನ s
+ನಮ್ಮ s
+ನಿನ್ನ s
+ನಿಮ್ಮ s
+ತಮ್ಮ s
+ಅವನ s
+ಅವಳ s
+ಅವರ s
+ಅದರ s
+ಇದರ s
+ಅವುಗಳ s
+ಈ 0
+ಆ 0
+ಈಗ s
+ಯಾವುದೇ s
+ಕೆಲವು s
+ಹಲವು s
+ಅನೇಕ s
+ಇತರ s
+ಮತ್ತು s
+ಆದರೆ s
+ಆದ್ದರಿಂದ s
+ಆದಾಗ್ಯೂ s
+
+[numbers]
+# Number words 0-99 from Unicode CLDR common/rbnf/kn.xml (Unicode License v3).
+0 ಸೊನ್ನೆ
+1 ಒಂದು
+2 ಎರಡು
+3 ಮೂರು
+4 ನಾಲ್ಕು
+5 ಐದು
+6 ಆರು
+7 ಏಳು
+8 ಎಂಟು
+9 ಒಂಬತ್ತು
+10 ಹತ್ತು
+11 ಹನ್ನೊಂದು
+12 ಹನ್ನೆರಡು
+13 ಹದಿಮೂರು
+14 ಹದಿನಾಲ್ಕು
+15 ಹದಿನೈದು
+16 ಹದಿನಾರು
+17 ಹದಿನೇಳು
+18 ಹದಿನೆಂಟು
+19 ಹತ್ತೊಂಬತ್ತು
+20 ಇಪ್ಪತ್ತು
+20+ ಇಪ್ಪತ್ತ್
+30 ಮೂವತ್ತು
+30+ ಮೂವತ್ತ್
+40 ನಲವತ್ತು
+40+ ನಲವತ್ತ್
+50 ಐವತ್ತು
+50+ ಐವತ್ತ್
+60 ಅರವತ್ತು
+60+ ಅರವತ್ತ್
+70 ಎಪ್ಪತ್ತು
+70+ ಎಪ್ಪತ್ತ್
+80 ಎಂಬತ್ತು
+80+ ಎಂಬತ್ತ್
+90 ತೊಂಬತ್ತು
+90+ ತೊಂಬತ್ತ್
+scale100 ನೂರು
+scale1000 ಸಾವಿರ
+scale100000 ಲಕ್ಷ
+scale10000000 ಕೋಟಿ
+grouping indian
+join-tens yes
+point ದಶಮಾಂಶ
+percent ಪ್ರತಿಶತ

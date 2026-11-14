@@ -1,0 +1,248 @@
+{
+ "language": "gu",
+ "reference": "espeak-ng 1.52.0 voice gu (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 192011,
+  "per": 0.024134033987636125,
+  "per_without_stress": 0.019028136707236624,
+  "exact_sentence": 0.1442687747035573,
+  "exact_sentence_without_stress": 0.15612648221343872,
+  "piper_shape_per": 0.02397045035391574,
+  "piper_shape_exact_sentence": 0.1442687747035573,
+  "word_count_mismatch_sentences": 209,
+  "errors_by_class": {
+   "vowel": {
+    "count": 1578,
+    "share": 0.34052654294346135,
+    "per_contribution": 0.008218279161089729
+   },
+   "stress": {
+    "count": 1483,
+    "share": 0.3200258955545965,
+    "per_contribution": 0.007723515840238319
+   },
+   "consonant": {
+    "count": 798,
+    "share": 0.17220543806646527,
+    "per_contribution": 0.00415601189515184
+   },
+   "other": {
+    "count": 425,
+    "share": 0.0917134225291325,
+    "per_contribution": 0.0022134148564405165
+   },
+   "length": {
+    "count": 236,
+    "share": 0.050927924039706515,
+    "per_contribution": 0.0012290962496940279
+   },
+   "word-boundary": {
+    "count": 98,
+    "share": 0.021148036253776436,
+    "per_contribution": 0.0005103874257204015
+   },
+   "diacritic": {
+    "count": 16,
+    "share": 0.0034527406128614588,
+    "per_contribution": 8.332855930129003e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ə→ʌ",
+    "count": 514
+   },
+   {
+    "edit": "ə→∅",
+    "count": 502
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 489
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 343
+   },
+   {
+    "edit": "ʊ→u",
+    "count": 290
+   },
+   {
+    "edit": "∅→ː",
+    "count": 197
+   },
+   {
+    "edit": "ʃ→ʂ",
+    "count": 174
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 164
+   },
+   {
+    "edit": "n→ŋ",
+    "count": 139
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 113
+   },
+   {
+    "edit": "ˈ→ə",
+    "count": 92
+   },
+   {
+    "edit": " →∅",
+    "count": 83
+   },
+   {
+    "edit": "ʋ→w",
+    "count": 80
+   },
+   {
+    "edit": "ː→ʰ",
+    "count": 62
+   },
+   {
+    "edit": "ʰ→d",
+    "count": 61
+   },
+   {
+    "edit": "a→∅",
+    "count": 49
+   },
+   {
+    "edit": "n→ɲ",
+    "count": 46
+   },
+   {
+    "edit": "ʌ→ə",
+    "count": 43
+   },
+   {
+    "edit": "ː→∅",
+    "count": 39
+   },
+   {
+    "edit": "l→∅",
+    "count": 39
+   },
+   {
+    "edit": "u→ʋ",
+    "count": 37
+   },
+   {
+    "edit": "ʌ→h",
+    "count": 35
+   },
+   {
+    "edit": "h→ˈ",
+    "count": 35
+   },
+   {
+    "edit": "s→∅",
+    "count": 32
+   },
+   {
+    "edit": "n→ɳ",
+    "count": 30
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 16272,
+    "wrong": 1680,
+    "rate": 0.10324483775811209
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 210,
+    "per": 0.03633865857171346,
+    "exact_sentence": 0.05238095238095238
+   },
+   "no-digits": {
+    "sentences": 802,
+    "per": 0.020383986928104576,
+    "exact_sentence": 0.16832917705735662
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-319",
+    "text": "સાથી કુસ્તીબાજોએ પણ લુનાને શ્રદ્ધાંજલિ આપી હતી.",
+    "reference": "sˈaːtʰi kˌustibaːɟˈoːeː pˈʌɳ lunˈaːneː ʃɾˌədʰːʌ̃ɟˈʌlɪ ˈaːpi hˈʌti",
+    "uccharan": "sˈaːtʰi kˌustibaːɟˈoːeː pˈʌɳ lunˈaːneː ʃɾˌəddʰʌ̃ɟˈʌlɪ ˈaːpi hˈʌti"
+   },
+   {
+    "id": "flores-devtest-803",
+    "text": "બર્ફીલા અને બર્ફીલા રોડ વે પર ઘર્ષણ ઓછું હોય છે અને તમે ખુલ્લા ડામર પર હોય તે રીતે વાહન ચલાવી શકતા નથી.",
+    "reference": "bəɾpʰˈiːlaː ˈʌneː bəɾpʰˈiːlaː ɾˈoːɖ wˈeː pˈʌɾ ɡʰərʂˈʌɳ ˈoːcʰũ hˈoːjə cʰˈeː ˈʌneː tˈʌmeː kʰˈullaː ɖˈaːməɾ pˈʌɾ hˈoːjə tˈeː ɾˈiːteː waːhˈʌn cəlˈaːʋi ʃəkˈʌtaː nˈʌtʰi",
+    "uccharan": "bəɾpʰˈiːlaː ˈʌneː bəɾpʰˈiːlaː ɾˈoːɖ wˈeː pˈʌɾ ɡʰərʂˈʌɳ ˈoːcʰũ hˈoːj cʰˈeː ˈʌneː tˈʌmeː kʰˈullaː ɖaːmˈʌɾ pˈʌɾ hˈoːj tˈeː ɾˈiːteː waːhˈʌn cəlˈaːʋi ʃəkˈʌtaː nˈʌtʰi"
+   },
+   {
+    "id": "flores-devtest-948",
+    "text": "ઉત્તરે અને એકદમ નજીકમાં રોમાન્ટિક અને મનમોહક સિન્ત્ર શહેર આવેલું છે જે, લૉર્ડ બાયરને તેના ઝળહળતા વૈભવનો અહેવાલ આપ્યો ત્યાર પછી વિદેશીઓમાં પ્રસિદ્ધ થયું.",
+    "reference": "ʊtːˈʌɾeː ˈʌneː ˌeːkədˈʌm nˌəɟikˈʌmʌ̃ ɾˌoːmaːnʈˈɪk ˈʌneː mˌənmoːhˈʌk sˈɪntɾə ʃˈʌheːɾ aːʋˈeːlũ cʰˈeː ɟˈeː lˈɔɾɖ bˌaːjəɾˈʌneː tˈeːnaː zˌər.əhər.ˈʌtaː wˌaɪbʰəʋˈʌnoː ˌɛheːʋˈaːl ˈaːpːjoː tːjˈaːɾ pˈʌcʰi wˌɪdeːʃiˈoːmʌ̃ pɾəsˈɪdʰː tʰˈʌjũ",
+    "uccharan": "utːˈʌɾeː ˈʌneː ˌeːkədˈʌm nˌəɟikˈʌmʌ̃ ɾˌoːmaːnʈˈɪk ˈʌneː mˌənmoːhˈʌk sˈɪntɾə ʃəhˈeːɾ aːʋˈeːlũ cʰˈeː ɟˈeː lˈɔɾɖ bˌaːjəɾˈʌneː tˈeːnaː zˌər.əhər.ˈʌtaː wˌaɪbʰəʋˈʌnoː ˌʌheːʋˈaːl ˈaːpːjoː tːjˈaːɾ pˈʌcʰi wˌɪdeːʃiˈoːmʌ̃ pɾəsˈɪddʰ tʰˈʌjũ"
+   },
+   {
+    "id": "flores-devtest-964",
+    "text": "આ વિસ્તાર ખુબજ વિવિધતા વાળા પશુ અને પક્ષીઓની પ્રજાતિઓનું પણ ઘર છે.",
+    "reference": "ˈaː wˈɪstaːɾ kʰubˈʌɟ wˌɪʋɪdʰˈʌtaː wˈaːr.aː pˈʌʃu ˈʌneː pˌəkʃiˈoːni pɾˌəɟaːtɪˈoːnũ pˈʌɳ ɡʰˈʌɾ cʰˈeː",
+    "uccharan": "ˈaː wɪstˈaːɾ kʰubˈʌɟ wˌɪʋɪdʰˈʌtaː wˈaːr.aː pˈʌʃu ˈʌneː pˌəkʂiˈoːni pɾˌəɟaːtɪˈoːnũ pˈʌɳ ɡʰˈʌɾ cʰˈeː"
+   },
+   {
+    "id": "flores-devtest-460",
+    "text": "મક્કાની ઉત્તરે આવેલા પર્વતો પૈકીના એક પર્વત ની ટોચ ઉપર સ્થિત આ ગુફા બાકીની દુનિયાથી સંપૂર્ણ રીતે વિખૂટી થયેલી છે.",
+    "reference": "məkːˈaːni ʊtːˈʌɾeː aːʋˈeːlaː pərʋˈʌtoː paɪkˈiːnaː ˈeːk pərʋˈʌt nˈi ʈˈoːc ˈʊpəɾ stʰˈɪt ˈaː ɡˈupʰaː baːkˈiːni dˌunɪjˈaːtʰi səmpˈuːrɳə ɾˈiːteː wɪkʰˈuːʈi tʰəjˈeːli cʰˈeː",
+    "uccharan": "məkːˈaːni utːˈʌɾeː aːʋˈeːlaː pərʋˈʌtoː paɪkˈiːnaː ˈeːk pərʋˈʌt nˈi ʈˈoːc upˈʌɾ stʰˈɪt ˈaː ɡˈupʰaː baːkˈiːni dˌunɪjˈaːtʰi səmpˈuːrɳə ɾˈiːteː wɪkʰˈuːʈi tʰəjˈeːli cʰˈeː"
+   },
+   {
+    "id": "flores-devtest-441",
+    "text": "ચર્ચની કેન્દ્રીય સત્તા એક હજાર વર્ષથી રોમમાં હતી અને સત્તા અને પૈસાની આ એકાગ્રતાને કારણે ઘણાને પ્રશ્ન થયો કે આ સિદ્ધાંતને પૂર્ણ કરવામાં આવી રહ્યો છે કે નહીં.",
+    "reference": "cəɾcˈʌni keːndɾˈiːjə sˈʌtːaː ˈeːk hˈʌɟaːɾ wərʂˈʌtʰi ɾoːmˈʌmʌ̃ hˈʌti ˈʌneː sˈʌtːaː ˈʌneː paɪsˈaːni ˈaː ˌeːkaːɡɾətˈaːneː kaːɾˈʌɳeː ɡʰəɳˈaːneː pɾˈʌʃnə tʰˈʌjoː kˈeː ˈaː sˌɪdʰːʌ̃tˈʌneː pˈuːrɳə kˌəɾʋˈaːmʌ̃ ˈaːʋi ɾˈʌhjoː cʰˈeː kˈeː nˈʌhĩ",
+    "uccharan": "cəɾcˈʌni keːndɾˈiːj sˈʌtːaː ˈeːk həɟˈaːɾ wərʂˈʌtʰi ɾoːmˈʌmʌ̃ hˈʌti ˈʌneː sˈʌtːaː ˈʌneː paɪsˈaːni ˈaː ˌeːkaːɡɾətˈaːneː kaːɾˈʌɳeː ɡʰəɳˈaːneː pɾˈʌʃnə tʰˈʌjoː kˈeː ˈaː sˌɪddʰʌ̃tˈʌneː pˈuːrɳə kˌəɾʋˈaːmʌ̃ ˈaːʋi ɾˈʌhjoː cʰˈeː kˈeː nˈʌhĩː"
+   },
+   {
+    "id": "flores-devtest-11",
+    "text": "એક એન્ટિબોડી નું મિશ્રણ, ZMapp, તે શરૂઆત માં ક્ષેત્ર માં આશાસ્પદ હતું, પણ ઔપચારિક અભ્યાસ માં સંકેત મળ્યા કે તે મૃત્યુ અટકાવવામાં ધાર્યા કરતાં ઓછું ફાયદાકારક હતું.",
+    "reference": "ˈeːk ˌeːnʈɪbˈoːɖi nˈũ mɪʃɾˈʌɳ zˈɛd mˈap tˈeː ʃˌəɾuːˈaːt mˈʌ̃ kʃˈeːtɾə mˈʌ̃ ˌaːʃaːspˈʌd hˈʌtũ pˈʌɳ ˌaʊpcaːɾˈɪk ʌbʰjˈaːs mˈʌ̃ səŋkˈeːt mˈʌr.jaː kˈeː tˈeː mɾˈutːju ˌʌʈkˌaːʋʋˈaːmʌ̃ dʰˈaːrjaː kəɾˈʌtʌ̃ ˈoːcʰũ pʰˌaːjədˌaːkaːɾˈʌk hˈʌtũ",
+    "uccharan": "ˈeːk ˌeːnʈɪbˈoːɖi nˈũ mɪʃɾˈʌɳ zmˈæp tˈeː ʃˌəɾuːˈaːt mˈʌ̃ kʂˈeːtɾə mˈʌ̃ ˌaːʃaːspˈʌd hˈʌtũ pˈʌɳ ˌaʊpcaːɾˈɪk ʌbʰjˈaːs mˈʌ̃ səŋkˈeːt mˈʌr.jaː kˈeː tˈeː mɾˈutːju ˌʌʈkˌaːʋʋˈaːmʌ̃ dʰˈaːrjaː kəɾˈʌtʌ̃ ˈoːcʰũ pʰˌaːjdˌaːkaːɾˈʌk hˈʌtũ"
+   },
+   {
+    "id": "flores-devtest-893",
+    "text": "પુનઃપ્રવેશનો આઘાત સંસ્કૃતિના આઘાત કરતાં વહેલો આવે છે (હનીમૂનનો તબક્કો ટૂંકો છે), લાંબો સમય ચાલે છે, અને તે વધુ ગંભીર હોઇ શકે છે.",
+    "reference": "pˌunəhpɾˌəʋeːʃˈʌnoː aːɡʰˈaːt sˌənskɾutˈɪnaː aːɡʰˈaːt kəɾˈʌtʌ̃ wəhˈeːloː ˈaːʋeː cʰˈeː hˌənimuːnˈʌnoː təbˈʌkːoː ʈˈunkoː cʰˈeː lˈʌ̃boː səmˈʌɛj cˈaːleː cʰˈeː ˈʌneː tˈeː wˈʌdʰu ɡˈʌmbʰiɾ hˈoːɪ ʃˈʌkeː cʰˈeː",
+    "uccharan": "pˌunəhpɾˌəʋeːʃˈʌnoː aːɡʰˈaːt sˌənskɾutˈɪnaː aːɡʰˈaːt kəɾˈʌtʌ̃ wəhˈeːloː ˈaːʋeː cʰˈeː hˌənimuːnˈʌnoː təbˈʌkːoː ʈˈuːŋkoː cʰˈeː lˈʌ̃boː səmˈʌɛj cˈaːleː cʰˈeː ˈʌneː tˈeː wˈʌdʰu ɡəmbʰˈiːɾ hˈoːɪ ʃˈʌkeː cʰˈeː"
+   },
+   {
+    "id": "flores-devtest-924",
+    "text": "જો તમે માત્ર શિપબોર્ડ વડે આનંદપર્યટન કરીને દરિયાકિનારે જતા હો, તો તમને અલગ વિઝાની જરૂર નથી (2009 સુધી).",
+    "reference": "ɟˈoː tˈʌmeː mˈaːtɾə ʃˌɪpbˈoːɾɖ wˈʌɖeː ˌaːnəndˌəpərjəʈˈʌn kəɾˈiːneː dˌəɾɪjˌaːkɪnˈaːɾeː ɟˈʌtaː hˈoː tˈoː təmˈʌneː ʌlˈʌɡ wɪzˈaːni ɟˈʌɾuːɾ nˈʌtʰi bˈeː həɟˌaːɾ nˈʌu sˈudʰi",
+    "uccharan": "ɟˈoː tˈʌmeː mˈaːtɾə ʃˌɪpbˈoːɾɖ wˈʌɖeː ˌaːnəndˌəpərjəʈˈʌn kəɾˈiːneː dˌəɾɪjˌaːkɪnˈaːɾeː ɟˈʌtaː hˈoː tˈoː təmˈʌneː ʌlˈʌɡ wɪzˈaːni ɟəɾˈuːɾ nˈʌtʰi bˈeː həɟˈaːɾ nˈʌʋ sˈudʰi"
+   },
+   {
+    "id": "flores-devtest-630",
+    "text": "નવા રાજ્યના પ્રાચીન ઇજિપ્શિયનો તેમના પૂર્વજોના જે સ્મારકોથી અભિભૂત થતાં તે એ સમયે એક હજાર વર્ષ કરતાં જૂનાં હતાં.",
+    "reference": "nˈʌʋaː ɾaːɟjˈənaː pɾaːcˈiːn ˌɪɟɪpʃɪjˈənoː teːmˈʌnaː pˌuːrʋəɟˈoːnaː ɟˈeː smˌaːɾkˈoːtʰi ˌʌbʰɪbʰˈuːt tʰˈʌtʌ̃ tˈeː ˈeː səmˈʌjeː ˈeːk hˈʌɟaːɾ wˈʌrʂ kəɾˈʌtʌ̃ ɟˈuːnʌ̃ hˈʌtʌ̃",
+    "uccharan": "nˈʌʋaː ɾaːɟjˈʌnaː pɾaːcˈiːn ˌɪɟɪpʃɪjˈʌnoː teːmˈʌnaː pˌuːrʋəɟˈoːnaː ɟˈeː smˌaːɾkˈoːtʰi ˌʌbʰɪbʰˈuːt tʰˈʌtʌ̃ tˈeː ˈeː səmˈʌjeː ˈeːk həɟˈaːɾ wˈʌrʂ kəɾˈʌtʌ̃ ɟˈuːnʌ̃ hˈʌtʌ̃"
+   },
+   {
+    "id": "flores-devtest-82",
+    "text": "યુ.એસ. કોર્પ્સ ઓફ એન્જિનિયર્સે અંદાજ મૂક્યો હતો કે અગાઉ ક્ષતિગ્રસ્ત ડેમ 6 ઇંચ વરસાદ થી તૂટી શકે.",
+    "reference": "jˈu ˈeːs kˈoːɾps ˈoːpʰ ˌeːnɟɪnɪjˈərseː ʌndˈaːɟ mˈuːkːjoː hˈʌtoː kˈeː ʌɡˈaːʊ kʃˌətɪɡɾˈʌst ɖˈeːm cʰˈə ˈɪnc wˌəɾsˈaːd tʰˈi tˈuːʈi ʃˈʌkeː",
+    "uccharan": "jˈu ˈeːs kˈoːɾps ˈoːpʰ ˌeːnɟɪnɪjˈʌrseː ʌndˈaːɟ mˈuːkːjoː hˈʌtoː kˈeː ʌɡˈaːu kʂˌətɪɡɾˈʌst ɖˈeːm cʰˈə ˈɪɲc wˌəɾsˈaːd tʰˈi tˈuːʈi ʃˈʌkeː"
+   },
+   {
+    "id": "flores-devtest-480",
+    "text": "ઊચા મધ્ય યુગોની પહેલા શરૂઆતના મધ્ય યુગો હતા જેના પછી પાછલા મધ્ય યુગ હતા, કે પરંપરા મુજબ 1500ની આસપાસ પૂર્ણ થાય છે.",
+    "reference": "ˈucaː mˈʌdʰjə juɡˈoːni pəhˈeːlaː ʃˌəɾuːaːtˈʌnaː mˈʌdʰjə jˈuɡoː hˈʌtaː ɟˈeːnaː pˈʌcʰi paːcʰˈʌlaː mˈʌdʰjə jˈuɡ hˈʌtaː kˈeː pˌəɾəmpˈʌɾaː muɟˈʌb ˈeːk həɟˌaːɾ pˈaːɲcsˈoː nˈi ˌaːspˈaːs pˈuːrɳə tʰˈaːjə cʰˈeː",
+    "uccharan": "ˈuːcaː mˈʌdʰjə juɡˈoːni pəhˈeːlaː ʃˌəɾuːaːtˈʌnaː mˈʌdʰjə jˈuɡoː hˈʌtaː ɟˈeːnaː pˈʌcʰi paːcʰˈʌlaː mˈʌdʰjə jˈuɡ hˈʌtaː kˈeː pˌəɾəmpˈʌɾaː muɟˈʌb ˈeːk həɟˈaːɾ pˈʌ̃csˈoː nˈi ˌaːspˈaːs pˈuːrɳə tʰˈaːj cʰˈeː"
+   }
+  ]
+ }
+}

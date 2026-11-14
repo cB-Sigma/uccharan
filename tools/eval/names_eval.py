@@ -60,9 +60,9 @@ def references(field: str) -> list[str]:
     return refs
 
 
-def rows(split: str) -> list[list[str]]:
+def rows(split: str, gold: Path = GOLD) -> list[list[str]]:
     out = []
-    for line in GOLD.read_text(encoding="utf-8").splitlines():
+    for line in gold.read_text(encoding="utf-8").splitlines():
         if line and not line.startswith("#"):
             f = line.split("\t")
             if split in ("all", f[5]):
@@ -77,10 +77,11 @@ def main() -> int:
     ap.add_argument("--origin", default="")
     ap.add_argument("--out", type=Path)
     ap.add_argument("--uccharan-bin")
+    ap.add_argument("--gold", type=Path, default=GOLD, help="names set (default gold/names.tsv; also gold/african_names.tsv)")
     args = ap.parse_args()
     sysx = Systems(load_oracle(), args.uccharan_bin)
     systems = [s for s in sysx.available() if s != "uccharan-default"]
-    data = rows(args.split)
+    data = rows(args.split, args.gold)
     if args.origin:
         data = [r for r in data if r[3] == args.origin]
     res: dict = {"split": args.split, "items": len(data), "systems": {}}
@@ -109,7 +110,7 @@ def main() -> int:
         print(f"{k:28s} {n:4d}  " + "  ".join(f"{table[k][s][0]:4d} ({100 * table[k][s][0] / max(1, n):5.1f}%)      " for s in systems))
     if args.out:
         args.out.mkdir(parents=True, exist_ok=True)
-        (args.out / f"names_{args.split}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        (args.out / f"{args.gold.stem}_{args.split}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
     return 0
 

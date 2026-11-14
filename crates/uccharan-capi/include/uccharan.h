@@ -55,6 +55,15 @@ int32_t uccharan_load(struct UccharanPhonemizer *p,
                       const uint8_t *data,
                       uintptr_t len);
 
+// Load any `.ucd` pack, for example an optional `wikipron-en-us.ucd`
+// (CC BY-SA 4.0 data, used by the improved mode). The pack names its
+// language itself. Returns 0 on success, -1 for a bad argument, -2 for a
+// malformed or unknown pack.
+//
+// # Safety
+// `p` must be a live phonemizer; `data` must point to `len` readable bytes.
+int32_t uccharan_load_pack(struct UccharanPhonemizer *p, const uint8_t *data, uintptr_t len);
+
 // Phonemize `text`.
 //
 // `lang` is "en-us", "en-gb" or "hi" (espeak voice names are accepted).

@@ -1,0 +1,245 @@
+{
+ "split": "heldout",
+ "items": 85,
+ "systems": {
+  "reference": {
+   "failed": [
+    "egyptian-sameh",
+    "egyptian-wael",
+    "egyptian-hatem",
+    "egyptian-hazem",
+    "egyptian-ehab",
+    "egyptian-nader",
+    "egyptian-samir",
+    "egyptian-mamdouh",
+    "egyptian-gaber",
+    "egyptian-sayed",
+    "egyptian-moataz",
+    "egyptian-ziad",
+    "egyptian-adham",
+    "egyptian-abdelmoneim",
+    "egyptian-abdelhalim",
+    "egyptian-shafik",
+    "egyptian-selim",
+    "egyptian-kandil",
+    "egyptian-tawfik",
+    "egyptian-zaghloul",
+    "egyptian-barakat",
+    "egyptian-girgis",
+    "egyptian-tawadros",
+    "egyptian-nermeen",
+    "egyptian-shereen",
+    "egyptian-inas",
+    "egyptian-mervat",
+    "egyptian-fayza",
+    "egyptian-doaa",
+    "egyptian-nourhan",
+    "egyptian-hayam",
+    "egyptian-zeinab",
+    "egyptian-assiut",
+    "egyptian-suez",
+    "egyptian-helwan",
+    "egyptian-arish",
+    "egyptian-shebin"
+   ]
+  },
+  "uccharan-compatible": {
+   "failed": [
+    "egyptian-ayman",
+    "egyptian-wael",
+    "egyptian-hazem",
+    "egyptian-ehab",
+    "egyptian-nader",
+    "egyptian-mamdouh",
+    "egyptian-fawzy",
+    "egyptian-gaber",
+    "egyptian-sayed",
+    "egyptian-moataz",
+    "egyptian-ziad",
+    "egyptian-seif",
+    "egyptian-abdelfattah",
+    "egyptian-abdelmoneim",
+    "egyptian-abdelhalim",
+    "egyptian-abdelwahab",
+    "egyptian-shafik",
+    "egyptian-ezzat",
+    "egyptian-kamal",
+    "egyptian-selim",
+    "egyptian-kandil",
+    "egyptian-shalaby",
+    "egyptian-tawfik",
+    "egyptian-okasha",
+    "egyptian-zaghloul",
+    "egyptian-girgis",
+    "egyptian-bishoy",
+    "egyptian-tawadros",
+    "egyptian-abeer",
+    "egyptian-inas",
+    "egyptian-nahla",
+    "egyptian-fayza",
+    "egyptian-doaa",
+    "egyptian-salma",
+    "egyptian-nourhan",
+    "egyptian-rasha",
+    "egyptian-zeinab",
+    "egyptian-qena",
+    "egyptian-saqqara",
+    "egyptian-helwan",
+    "egyptian-maadi",
+    "egyptian-nuweiba",
+    "egyptian-taba",
+    "egyptian-arish"
+   ]
+  },
+  "uccharan-improved": {
+   "failed": [
+    "egyptian-ayman",
+    "egyptian-sameh",
+    "egyptian-nader",
+    "egyptian-mamdouh",
+    "egyptian-gaber",
+    "egyptian-sayed",
+    "egyptian-seif",
+    "egyptian-shafik",
+    "egyptian-selim",
+    "egyptian-kandil",
+    "egyptian-okasha",
+    "egyptian-girgis",
+    "egyptian-bishoy",
+    "egyptian-tawadros",
+    "egyptian-nermeen",
+    "egyptian-abeer",
+    "egyptian-inas",
+    "egyptian-nahla",
+    "egyptian-fayza",
+    "egyptian-doaa",
+    "egyptian-nourhan",
+    "egyptian-zeinab",
+    "egyptian-saqqara",
+    "egyptian-banha",
+    "egyptian-helwan",
+    "egyptian-arish"
+   ]
+  },
+  "uccharan-improved+wikipron": {
+   "failed": [
+    "egyptian-ayman",
+    "egyptian-sameh",
+    "egyptian-nader",
+    "egyptian-mamdouh",
+    "egyptian-gaber",
+    "egyptian-sayed",
+    "egyptian-seif",
+    "egyptian-shafik",
+    "egyptian-selim",
+    "egyptian-kandil",
+    "egyptian-okasha",
+    "egyptian-girgis",
+    "egyptian-bishoy",
+    "egyptian-tawadros",
+    "egyptian-nermeen",
+    "egyptian-abeer",
+    "egyptian-inas",
+    "egyptian-nahla",
+    "egyptian-fayza",
+    "egyptian-doaa",
+    "egyptian-nourhan",
+    "egyptian-zeinab",
+    "egyptian-saqqara",
+    "egyptian-banha",
+    "egyptian-helwan",
+    "egyptian-arish"
+   ]
+  }
+ },
+ "by_group": {
+  "egyptian": {
+   "reference": {
+    "passed": 48,
+    "items": 85,
+    "accuracy": 0.5647058823529412
+   },
+   "uccharan-compatible": {
+    "passed": 41,
+    "items": 85,
+    "accuracy": 0.4823529411764706
+   },
+   "uccharan-improved": {
+    "passed": 59,
+    "items": 85,
+    "accuracy": 0.6941176470588235
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 59,
+    "items": 85,
+    "accuracy": 0.6941176470588235
+   }
+  },
+  "in-cmudict": {
+   "reference": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   }
+  },
+  "not-in-cmudict": {
+   "reference": {
+    "passed": 48,
+    "items": 85,
+    "accuracy": 0.5647058823529412
+   },
+   "uccharan-compatible": {
+    "passed": 41,
+    "items": 85,
+    "accuracy": 0.4823529411764706
+   },
+   "uccharan-improved": {
+    "passed": 59,
+    "items": 85,
+    "accuracy": 0.6941176470588235
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 59,
+    "items": 85,
+    "accuracy": 0.6941176470588235
+   }
+  },
+  "all": {
+   "reference": {
+    "passed": 48,
+    "items": 85,
+    "accuracy": 0.5647058823529412
+   },
+   "uccharan-compatible": {
+    "passed": 41,
+    "items": 85,
+    "accuracy": 0.4823529411764706
+   },
+   "uccharan-improved": {
+    "passed": 59,
+    "items": 85,
+    "accuracy": 0.6941176470588235
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 59,
+    "items": 85,
+    "accuracy": 0.6941176470588235
+   }
+  }
+ }
+}

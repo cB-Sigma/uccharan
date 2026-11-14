@@ -76,9 +76,11 @@ fn clause_words(c: &Clause, out: &mut String, flags: Option<Lang>) {
         }
         first = false;
         if let Some(base) = flags {
-            let is_foreign = w.lang != base && !(base != Lang::Hi && w.lang != Lang::Hi);
+            let is_foreign = w.lang.flag() != base.flag();
             if is_foreign && !foreign {
-                out.push_str(if w.lang == Lang::Hi { "(hi)" } else { "(en)" });
+                out.push('(');
+                out.push_str(w.lang.flag());
+                out.push(')');
             } else if !is_foreign && foreign {
                 // The switch-back flag belongs to the previous word.
                 let at = out.rfind(' ').unwrap_or(out.len());
@@ -498,10 +500,10 @@ pub fn kokoro_tokens(sentences: &[Sentence], lang: Lang) -> String {
                     out.push(' ');
                 }
                 first = false;
-                let t = match lang {
-                    Lang::Hi => kokoro_espeak(&w.ipa, w.lang != Lang::Hi),
-                    _ if w.lang == Lang::Hi => kokoro_espeak(&w.ipa, false),
-                    l => kokoro_english(&w.ipa, l == Lang::EnGb),
+                let t = if lang.is_english() && w.lang.is_english() {
+                    kokoro_english(&w.ipa, lang == Lang::EnGb)
+                } else {
+                    kokoro_espeak(&w.ipa, w.lang.is_english())
                 };
                 out.push_str(&t);
             }

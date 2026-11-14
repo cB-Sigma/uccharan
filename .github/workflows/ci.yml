@@ -38,6 +38,7 @@ jobs:
       - name: Compiled language data is up to date
         run: |
           cargo run --release -p uccharan-lexgen -- check
+          cargo run --release -p uccharan-lexgen -- wikipron-check
           python3 tools/packs.py --check
       - name: Licence files in the packages match the repository's
         run: |

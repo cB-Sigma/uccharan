@@ -60,3 +60,10 @@ test("Kokoro English: compiled misaki data is fetched on demand", async () => {
   await uccharan.loadMisaki("en-gb", { hello: "həlˈQ" }, "{}");
   assert.equal(await uccharan.phonemize("Hello.", { lang: "en-gb", profile: "kokoro" }), "həlˈQ.");
 });
+
+test("data-driven Indic languages need no data file", async () => {
+  const { phonemize, LANGUAGES } = await import("../index.js");
+  assert.ok(LANGUAGES.includes("bn"));
+  assert.equal(await phonemize("কমলা", { lang: "bn" }), "kˈɔmɔlˌa");
+  assert.equal(await phonemize("తెలుగు", { lang: "te" }), "tˈeluɡu");
+});

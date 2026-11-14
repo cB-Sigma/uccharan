@@ -137,7 +137,7 @@ fn missing_packs(lang: &str, profile: &str) -> Vec<String> {
     if !e.has(l) {
         out.push(l.tag().to_string());
     }
-    if profile == "kokoro" && l != Lang::Hi && !e.has_misaki(l) {
+    if profile == "kokoro" && l.is_english() && !e.has_misaki(l) {
         out.push(format!("kokoro-{}", l.tag()));
     }
     out

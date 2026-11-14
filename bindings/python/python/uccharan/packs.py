@@ -14,6 +14,12 @@ Where a pack comes from, first match wins:
 3. the release download (skipped when ``UCCHARAN_OFFLINE=1``).
 
 Every file is checked against its SHA-256 sum before it is used.
+
+Optional packs are never fetched automatically. ``wikipron-en-us``,
+``wikipron-en-gb`` and ``wikipron-hi`` hold pronunciations from Wiktionary
+(via WikiPron) under **CC BY-SA 4.0**, not Apache-2.0: load one with
+``uccharan.load_pack("wikipron-en-us")`` only if that licence suits your use.
+They are used by the improved mode for words outside uccharan's own lexicon.
 ``uccharan.load_pack(path)`` loads any ``.ucd`` file directly, unchecked.
 """
 
@@ -32,11 +38,14 @@ URL = "https://github.com/cB-Sigma/uccharan/releases/download/v{version}/{name}.
 # name -> (sha256, size in bytes); written by tools/packs.py from crates/uccharan/data.
 PACKS: dict[str, tuple[str, int]] = {
     # @@PACKS@@
-    "en-gb": ("1d194cbcf56f3a57990918a0d7627b16c76a22edb46144b126662eab27c67bac", 707225),
-    "en-us": ("3f2b2ac6461ba5d3a56b5d7e8da0608da3f5d65831add64a32a7a1972046bf7d", 727151),
+    "en-gb": ("c267d028790da5440ae90df87da7b131800f7932124afe356193e387aaab13ad", 707290),
+    "en-us": ("337e2c2c25c3d1a376f857634c20e2a220bcc91e65876ec58623f2feaf997aac", 727189),
     "hi": ("970df73a97f846c7089d8794acce6f54f745ffcbfa208b77a5710ad84a2e3a31", 2964),
     "kokoro-en-gb": ("dcd66185dfe6f43c0d244287ffbd895a0f17465e533d1d0394a7d9ed9d7ccea0", 2066805),
     "kokoro-en-us": ("05a70e6f2314c04fcfc7b0a50387025a4919436551cb69a6074417df0641aa76", 1914413),
+    "wikipron-en-gb": ("53718c5458145f7a49cb0bc29c534f1eddf4f6424f240e654bc469f4884c8d4f", 728104),
+    "wikipron-en-us": ("85946bafb7e1e9daab9909138c7ba38437ca6d42d8e673122a8eba76dfdf814b", 741599),
+    "wikipron-hi": ("8f5d330038f296d4e712d3a17a0837268bd2a91033d7b029d8fad0952b10a889", 321723),
     # @@END@@
 }
 

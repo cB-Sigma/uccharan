@@ -23,6 +23,8 @@ pub struct Item {
     pub generated: bool,
     /// The item follows a hyphen inside the same token (`well-known`).
     pub hyphen: bool,
+    /// A word of a number reading other than its first.
+    pub number_tail: bool,
 }
 
 impl Item {
@@ -33,6 +35,7 @@ impl Item {
             glue: false,
             generated: true,
             hyphen: false,
+            number_tail: false,
         }
     }
     fn raw(t: &str) -> Item {
@@ -42,6 +45,7 @@ impl Item {
             glue: false,
             generated: false,
             hyphen: false,
+            number_tail: false,
         }
     }
     fn spell(t: &str) -> Item {
@@ -51,6 +55,7 @@ impl Item {
             glue: false,
             generated: false,
             hyphen: false,
+            number_tail: false,
         }
     }
 }
@@ -579,12 +584,9 @@ fn split_number(s: &str) -> Option<(&str, Option<&str>)> {
 
 fn to_ascii_digits(s: &str) -> String {
     s.chars()
-        .map(|c| {
-            if ('\u{0966}'..='\u{096f}').contains(&c) {
-                char::from(b'0' + (c as u32 - 0x0966) as u8)
-            } else {
-                c
-            }
+        .map(|c| match crate::text::indic_digit(c) {
+            Some(d) => char::from(b'0' + d),
+            None => c,
         })
         .collect()
 }
@@ -783,6 +785,8 @@ pub fn expand_with(chunk: &Chunk, lang: Lang, style: Normalize, brands: bool) ->
                     }
                 }
             },
+            // Other Indic scripts are read by their own languages (see `gnorm`).
+            Script::Brahmic(_) => cx.out.push(Item::raw(r)),
             Script::Other => {
                 let c = r.chars().next().unwrap_or(' ');
                 match c {
@@ -1082,6 +1086,7 @@ fn special(cx: &mut Ctx, s: &str, lower: &str) -> bool {
                             glue: false,
                             generated: true,
                             hyphen: false,
+                            number_tail: false,
                         });
                     }
                 }
@@ -1120,7 +1125,7 @@ fn special(cx: &mut Ctx, s: &str, lower: &str) -> bool {
                         cx.en_ordinal(d);
                         cx.en_year(y);
                     }
-                    Lang::EnGb => {
+                    _ => {
                         cx.w("the");
                         cx.en_ordinal(d);
                         cx.w("of");

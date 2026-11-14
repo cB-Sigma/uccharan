@@ -3,12 +3,62 @@
 All notable changes are listed here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow semantic versioning.
 
-## [0.2.0] - unreleased
+## [0.2.0] - 2026-11-14
 
-Smaller, with modular language packs, and better at names.
+Eleven more Indian languages; smaller, with modular language packs; and better at names.
 
 ### Added
 
+- **African names in English text** (improved mode): names spelled in African-language
+  orthographies are recognised by spelling cues and read with their own letter values and
+  penultimate stress, mapped to English phonemes (`uccharan::african`). A new hand-written gold
+  set of 388 African names from 37 languages with sources per language
+  (`tools/eval/gold/african_names.src`, built by `tools/eval/build_african_names.py`;
+  `names_eval.py --gold`). Held-out: 70.8 % against espeak-ng's 45.6 % (41.0 % before); the
+  general names set rises to 91.9 % (African 7/8 against espeak-ng's 4/8). Compatible mode is
+  unchanged.
+- **Egyptian, Chichewa, Shona, Tsonga and Tigrinya names** (improved mode): a list of 1 508
+  Arabic given names from Wikidata (CC0) read with Arabic stress even where CMUdict has them with
+  English stress; Egyptian spelling conventions; Ethiopian name elements; more Bantu onsets and
+  clusters, Tsonga *x* and *rh*. Two new hand-written gold sets (167 Egyptian names; 224 Chichewa,
+  Shona, Tsonga and Tigrinya names, the Tigrinya development half grown to 59). Held-out (second scoring): Egyptian 69.4 % against espeak-ng's 56.5 %;
+  Chichewa/Shona/Tsonga/Tigrinya 87.5/73.1/73.7/70.4 % against 41.7/42.3/42.1/63.0 %. A list of
+  Eritrean and Ethiopian name words from Wikidata (CC0) for Horn of Africa names.
+
+- **Bhojpuri and Maithili** (`bho`, `mai`): compatible mode reproduces espeak-ng's Hindi-voice
+  reading (no espeak-ng voice exists; held-out PER 0.80 % and 0.75 % against `hi` on FLORES-200),
+  improved mode reads them with their own phonology (ऐ औ = əi əu, इ उ after a vowel, avagraha and
+  its Latin-*s* spelling, flaps, nasal vowels, past -ल- forms, unstressed copula, Bhojpuri number
+  words), Kaithi script support (`uccharan::kaithi`) and an experimental romanised-Bhojpuri word
+  list. New hand-written gold sets (Bhojpuri 437 words and 153 sentences; Maithili 410 words, 134 with
+  Wiktionary pronunciations, and 151 sentences; `tools/eval/build_bho_gold.py`,
+  `tools/eval/bho_eval.py`). Held-out words: Bhojpuri 96.4 % against 62.9 % for the Hindi-voice
+  fallback, Maithili 93.4 % against 68.6 %; sentence PER 0.43 % and 0.29 % against 5.54 % and
+  5.66 %. 3.0–3.3× faster than espeak-ng's `hi` voice on the same text.
+- **Bengali, Marathi, Telugu, Kannada, Malayalam, Nepali, Tamil, Gujarati and Assamese** (`bn`,
+  `mr`, `te`, `kn`, `ml`, `ne`, `ta`, `gu`, `as`), compatible with the espeak-ng voices of the same names (held-out PER 0.37 %,
+  0.27 %, 0.87 %, 1.58 %, 2.01 %, 2.67 %, 4.09 %, 2.41 %, 7.21 %), with improved-mode fixes for known reference
+  quirks, every output profile, number reading, and routing of each script to its own language
+  inside mixed text (with `(bn)`-style flags in the `espeak-ipa` profile). 2–37× faster than
+  espeak-ng on the same sentences.
+- **A data-driven language engine**: ordered context-sensitive rewrite rules
+  (`uccharan::rules`), a language-file format (`uccharan::langdef`: letters, rule passes per
+  mode, exceptions, unstressed words, number words with scale and combining forms) and one
+  decoder for all Brahmic scripts (`uccharan::indic`: stress schemes, inherent-vowel deletion
+  schemes, anusvara/visarga/geminate options). A new language is a `languages!` row plus a
+  `.lang` file. `tools/eval/build_lang_sets.py` builds held-out sets per language (Tatoeba, or
+  FLORES-200 for evaluation only); `tools/cldr_numbers.py` drafts number words from Unicode CLDR.
+
+- **Optional WikiPron packs (CC BY-SA 4.0, not Apache-2.0)**: `wikipron-en-us`, `wikipron-en-gb`
+  and `wikipron-hi`, built by `uccharan-lexgen wikipron` from Wiktionary pronunciations
+  (via WikiPron) and rewritten into uccharan's symbols. They are separate release assets, never
+  inside a package and never fetched unless asked for; each names its licence in its metadata.
+  The improved mode uses them for words and names outside uccharan's own lexicon, taking the
+  stress from uccharan's own reading (WikiPron's transcriptions carry none) and, where Wiktionary
+  lists several pronunciations, the one closest to uccharan's. Compatible mode does not use them.
+  Loading: `Phonemizer::load_pack` / `has_wikipron` (Rust), `uccharan.load_pack("wikipron-en-us")`
+  (Python), `loadWikipron` (JavaScript), `uccharan_load_pack` (C), `--pack FILE` (command line).
+  Held-out names with the pack: 88.4 % (89.0 % without); unseen gold sets 82.8 % (82.0 %).
 - **Indian names in English text** (improved mode): a character-trigram classifier (trained on a
   hand-written list of Indian names against CMUdict's words) picks out unknown capitalised words
   that look Indian; they are read through uccharan's romanised-Hindi and Hindi rules and mapped
@@ -43,6 +93,18 @@ Smaller, with modular language packs, and better at names.
   *strength(s)*, *length(s)* take the forms espeak-ng uses; *de-* before a vowel (*deodorant*) and
   possessives of names in *-y* (*Mary's*) keep a full /i/. Held-out en-US PER 1.19 % → 1.16 %,
   en-GB 1.41 % → 1.39 %.
+
+### Fixed
+
+- Tamil compatible mode: a hand-written list of Sanskrit and foreign loan stems that keep a voiced
+  initial stop (பூமி, தேசிய, கவனம், பிரிட்டிஷ், …), compound boundaries before படு and after
+  முன், the பிர-/கிர- cluster limited to k and p, and a word-initial glide ʲ merged into a preceding
+  i or j (also Malayalam, Telugu). Held-out PER 4.41 % → 4.09 % (Malayalam 2.04 % → 2.01 %).
+- Hindi compatible mode: before a hyphen, a word of two or more syllables ending in …CəC keeps its
+  final inherent vowel as the reference does (अलग-अलग), and a vowel letter अ inside a word is ə
+  unless stressed (जंतुअन). Hindi development PER 0.15 % → 0.14 %.
+- A doubled *k* outside the English lexicon was dropped by the letter-to-sound model (*Mekki*
+  read as *mˈɪi*); it is now read like *ck*.
 
 ## [0.1.0]
 

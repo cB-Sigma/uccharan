@@ -1,0 +1,185 @@
+# Malayalam. espeak-ng voice "ml". Written for uccharan from specs/ml.md and
+# specs/family-brahmic.md.
+
+[meta]
+tag = ml
+block = 0d00
+stress = initial-light-heavy
+final-secondary = no
+deletion = none
+inherent = ə ɐ
+anusvara = m
+visarga = h
+geminate = k t p
+
+[letters]
+ക k
+ഖ kʰ
+ഗ ɡ
+ഘ ɡʰ
+ങ ŋ
+ച c
+ഛ cʰ
+ജ ɟ
+ഝ ɟʰ
+ഞ ɲ
+ട ʈ
+ഠ ʈʰ
+ഡ ɖ
+ഢ ɖʰ
+ണ ɳ
+ത t
+ഥ tʰ
+ദ d
+ധ dʰ
+ന n
+പ p
+ഫ pʰ
+ബ b
+ഭ bʰ
+മ m
+യ j
+ര ɾ
+റ r
+ല l
+ള ɭ
+വ v
+ശ ɕ
+ഷ ʂ
+സ s
+ഹ h
+അ ɐ
+ആ aː
+ഇ i
+ഈ iː
+ഉ u
+ഊ uː
+ഋ r ɨ
+എ ʲ e
+ഏ ʲ eː
+ഐ aɪ
+ഒ o
+ഓ oː
+ഔ aʊ
+ാ aː
+ി i
+ീ iː
+ു u
+ൂ uː
+ൃ r̩
+െ e
+േ eː
+ൈ aɪ
+ൊ o
+ോ oː
+ൌ aʊ
+ഴ r.
+ൺ ɳ dead
+ൻ n dead
+ർ ɾ dead
+ൽ l dead
+ൾ ɭ dead
+ൿ k dead
+ൗ ignore
+ൌ aʊ
+Ɨ ɨ sign
+
+[classes]
+VIR = ്
+DT = ക ത ട പ
+V = a e i o u ɐ ə ɨ ː
+VV = a e i o u ɐ ə ɨ
+S = ˈ ˌ
+ASP = ʰ
+N = m n ŋ ɲ ɳ
+SON = j ɾ l ɭ
+C = k ɡ ŋ c ɟ ɲ ʈ ɖ ɳ t d n p b m j ɾ r l ɭ v ɕ ʂ s h ʰ .
+
+[pre]
+റ്റ -> ട്ട
+ന്റ -> ന്ദ
+# A word-final virama is read ɨ, except after a single stop.
+് -> Ɨ / ത്ത _ # | ട്ട _ # | ക്ക _ # | പ്പ _ #
+് -> ് / {DT} _ #
+് -> Ɨ / _ #
+
+[post]
+# The inherent vowel is ɐ in the first syllable and at the end of a word.
+ə -> ɐ / # {C}* _ | _ # | ˌ _
+# Single stops are voiced before a vowel after a vowel, nasal, sonorant or s;
+# t also after n and at the end of a word after a vowel.
+k -> ɡ / {V} _ {S}* {VV} | {N} _ {S}* {VV} | {SON} _ {S}* {VV} | s _ {S}* {VV} | {C} {VV} _ #
+t -> d / {V} _ {S}* {VV} | {N} _ {S}* {VV} | {SON} _ {S}* {VV} | s _ {S}* {VV} | n _ | {C} {VV} _ #
+ʈ -> ɖ / {V} _ {S}* {VV} | {N} _ {S}* {VV} | {SON} _ {S}* {VV} | s _ {S}* {VV}
+p -> b / {V} _ {S}* {VV} | {N} _ {S}* {VV} | {SON} _ {S}* {VV} | s _ {S}* {VV}
+
+[post.improved]
+r. -> ɻ
+
+[numbers]
+# Number words 0-99 from Unicode CLDR common/rbnf/ml.xml (Unicode License v3).
+0 പൂജ്യം
+1 ഒന്ന്
+2 രണ്ട്
+3 മൂന്ന്
+4 നാല്
+5 അഞ്ച്
+6 ആറ്
+7 ഏഴ്
+8 എട്ട്
+9 ഒൻപത്
+10 പത്ത്
+11 പതിനൊന്ന്
+12 പന്ത്രണ്ട്
+13 പതിമൂന്ന്
+14 പതിനാല്
+15 പതിനഞ്ച്
+16 പതിനാറ്
+17 പതിനേഴ്
+18 പതിനെട്ട്
+19 പത്തൊൻപത്
+20 ഇരുവത്
+20+ ഇരുവത്തി
+30 മുപ്പത്
+30+ മുപ്പത്തി
+40 നാൽപ്പത്
+40+ നാപ്പത്തി
+50 അൻപത്
+50+ അൻപത്തി
+60 അറുപത്
+60+ അറുപത്തി
+70 എഴുപത്
+70+ എഴുപത്തി
+80 എൺപത്
+80+ എൺപത്തി
+90 തൊണ്ണൂറ്
+90+ തൊണ്ണൂറ്റി
+100 നൂറ്
+100+ നൂറ്റി
+200 ഇരുനൂറ്
+200+ ഇരുനൂറ്റി
+300 മുന്നൂറ്
+300+ മുന്നൂറ്റി
+400 നാനൂറ്
+400+ നാനൂറ്റി
+500 അഞ്ഞൂറ്
+500+ അഞ്ഞൂറ്റി
+600 അറുനൂറ്
+600+ അറുനൂറ്റി
+700 എഴുനൂറ്
+700+ എഴുനൂറ്റി
+800 എണ്ണൂറ്
+800+ എണ്ണൂറ്റി
+900 തൊള്ളായിരം
+900+ തൊള്ളായിരത്തി
+1000 ആയിരം
+1000+ ആയിരത്തി
+100000 ഒന്ന് ലക്ഷം
+scale100 നൂറ്
+scale1000 ആയിരം
+scale1000+ ആയിരത്തി
+scale100000 ലക്ഷം
+scale10000000 കോടി
+grouping indian
+join-tens yes
+one-before-scale no

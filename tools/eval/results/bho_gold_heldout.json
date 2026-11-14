@@ -1,0 +1,63 @@
+{
+ "lang": "bho",
+ "split": "heldout",
+ "systems": {
+  "espeak-ng hi (fallback)": {
+   "word_accuracy": 0.6294642857142857,
+   "sentence_per": 0.05537459283387622,
+   "sentence_exact": 0.2804878048780488,
+   "by_category": {
+    "hiatus": 0.78,
+    "verb": 0.88,
+    "noun": 0.725,
+    "diph": 0.0,
+    "flap": 0.5,
+    "cop": 0.7777777777777778,
+    "avagraha": 0.0,
+    "pron": 0.75,
+    "post": 1.0,
+    "misc": 0.6666666666666666,
+    "adj": 1.0,
+    "num": 0.9285714285714286
+   }
+  },
+  "uccharan compatible": {
+   "word_accuracy": 0.6383928571428571,
+   "sentence_per": 0.05537459283387622,
+   "sentence_exact": 0.2804878048780488,
+   "by_category": {
+    "hiatus": 0.78,
+    "verb": 0.88,
+    "noun": 0.725,
+    "diph": 0.0,
+    "flap": 0.5,
+    "cop": 0.7777777777777778,
+    "avagraha": 0.16666666666666666,
+    "pron": 0.75,
+    "post": 1.0,
+    "misc": 0.6666666666666666,
+    "adj": 1.0,
+    "num": 0.9285714285714286
+   }
+  },
+  "uccharan improved": {
+   "word_accuracy": 0.9642857142857143,
+   "sentence_per": 0.004343105320304018,
+   "sentence_exact": 0.9146341463414634,
+   "by_category": {
+    "hiatus": 0.96,
+    "verb": 1.0,
+    "noun": 0.975,
+    "diph": 0.8620689655172413,
+    "flap": 0.95,
+    "cop": 1.0,
+    "avagraha": 1.0,
+    "pron": 1.0,
+    "post": 1.0,
+    "misc": 1.0,
+    "adj": 1.0,
+    "num": 1.0
+   }
+  }
+ }
+}

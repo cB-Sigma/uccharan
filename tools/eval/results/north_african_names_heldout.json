@@ -1,0 +1,353 @@
+{
+ "split": "heldout",
+ "items": 100,
+ "systems": {
+  "reference": {
+   "failed": [
+    "maghrebi-abdelaziz",
+    "maghrebi-achraf",
+    "maghrebi-ahmed",
+    "maghrebi-aicha",
+    "maghrebi-assia",
+    "maghrebi-ayoub",
+    "maghrebi-aziz",
+    "maghrebi-bachir",
+    "maghrebi-bilal",
+    "maghrebi-brahim",
+    "maghrebi-chafik",
+    "maghrebi-chaimae",
+    "maghrebi-habib",
+    "maghrebi-hakim",
+    "maghrebi-hicham",
+    "maghrebi-houda",
+    "maghrebi-houria",
+    "maghrebi-ilyas",
+    "maghrebi-imane",
+    "maghrebi-lahcen",
+    "maghrebi-mounir",
+    "maghrebi-mourad",
+    "maghrebi-nabil",
+    "maghrebi-nassima",
+    "maghrebi-rachida",
+    "maghrebi-slimane",
+    "maghrebi-soufiane",
+    "maghrebi-yacine",
+    "maghrebi-yamina",
+    "maghrebi-benjelloun",
+    "maghrebi-khelifa",
+    "maghrebi-mansouri",
+    "maghrebi-sefrioui",
+    "maghrebi-zeroual",
+    "maghrebi-meknes",
+    "maghrebi-essaouira",
+    "maghrebi-ifrane",
+    "maghrebi-laayoune",
+    "maghrebi-setif",
+    "maghrebi-bejaia",
+    "maghrebi-djerba",
+    "maghrebi-nabeul",
+    "maghrebi-benghazi",
+    "maghrebi-ghadames",
+    "egyptian-hany",
+    "egyptian-dalia",
+    "egyptian-yasmeen",
+    "egyptian-naguib",
+    "egyptian-mahfouz",
+    "egyptian-alexandria",
+    "egyptian-ismailia",
+    "egyptian-zagazig",
+    "egyptian-sohag",
+    "berber-tinariwen",
+    "berber-lounes",
+    "berber-tafsut",
+    "berber-dihya",
+    "berber-tafraout",
+    "berber-aksil",
+    "berber-kahina"
+   ]
+  },
+  "uccharan-compatible": {
+   "failed": [
+    "maghrebi-abdellah",
+    "maghrebi-abdelaziz",
+    "maghrebi-abdeslam",
+    "maghrebi-achraf",
+    "maghrebi-aicha",
+    "maghrebi-assia",
+    "maghrebi-ayoub",
+    "maghrebi-badr",
+    "maghrebi-bachir",
+    "maghrebi-bilal",
+    "maghrebi-brahim",
+    "maghrebi-chafik",
+    "maghrebi-chaimae",
+    "maghrebi-djamel",
+    "maghrebi-djamila",
+    "maghrebi-fouad",
+    "maghrebi-hicham",
+    "maghrebi-houda",
+    "maghrebi-houria",
+    "maghrebi-ilyas",
+    "maghrebi-imane",
+    "maghrebi-lahcen",
+    "maghrebi-mounir",
+    "maghrebi-mourad",
+    "maghrebi-nabil",
+    "maghrebi-nassima",
+    "maghrebi-ouafae",
+    "maghrebi-rabah",
+    "maghrebi-rachida",
+    "maghrebi-slimane",
+    "maghrebi-yamina",
+    "maghrebi-benjelloun",
+    "maghrebi-bennani",
+    "maghrebi-berrada",
+    "maghrebi-el-fassi",
+    "maghrebi-khelifa",
+    "maghrebi-mansouri",
+    "maghrebi-tazi",
+    "maghrebi-zeroual",
+    "maghrebi-meknes",
+    "maghrebi-tanger",
+    "maghrebi-essaouira",
+    "maghrebi-ifrane",
+    "maghrebi-laayoune",
+    "maghrebi-setif",
+    "maghrebi-blida",
+    "maghrebi-bejaia",
+    "maghrebi-djerba",
+    "maghrebi-nabeul",
+    "maghrebi-benghazi",
+    "maghrebi-ghadames",
+    "egyptian-hosni",
+    "egyptian-hany",
+    "egyptian-yasmeen",
+    "egyptian-naguib",
+    "egyptian-mahfouz",
+    "egyptian-aswan",
+    "egyptian-alexandria",
+    "egyptian-ismailia",
+    "egyptian-hurghada",
+    "egyptian-zagazig",
+    "berber-tinariwen",
+    "berber-lounes",
+    "berber-tafsut",
+    "berber-tafraout",
+    "berber-aksil",
+    "berber-kahina"
+   ]
+  },
+  "uccharan-improved": {
+   "failed": [
+    "maghrebi-abdellah",
+    "maghrebi-aicha",
+    "maghrebi-badr",
+    "maghrebi-bachir",
+    "maghrebi-brahim",
+    "maghrebi-chafik",
+    "maghrebi-chaimae",
+    "maghrebi-hicham",
+    "maghrebi-lahcen",
+    "maghrebi-mourad",
+    "maghrebi-yacine",
+    "maghrebi-el-fassi",
+    "maghrebi-lamrani",
+    "maghrebi-tazi",
+    "maghrebi-zeroual",
+    "maghrebi-meknes",
+    "maghrebi-tanger",
+    "maghrebi-essaouira",
+    "maghrebi-setif",
+    "maghrebi-blida",
+    "maghrebi-bejaia",
+    "maghrebi-benghazi",
+    "maghrebi-misrata",
+    "egyptian-hany",
+    "egyptian-yasmeen",
+    "egyptian-aswan",
+    "egyptian-alexandria",
+    "egyptian-ismailia",
+    "egyptian-zagazig",
+    "egyptian-sohag",
+    "egyptian-tanta",
+    "berber-tinariwen",
+    "berber-lounes",
+    "berber-aksil"
+   ]
+  },
+  "uccharan-improved+wikipron": {
+   "failed": [
+    "maghrebi-abdellah",
+    "maghrebi-abdeslam",
+    "maghrebi-aicha",
+    "maghrebi-badr",
+    "maghrebi-bachir",
+    "maghrebi-brahim",
+    "maghrebi-chafik",
+    "maghrebi-chaimae",
+    "maghrebi-hicham",
+    "maghrebi-lahcen",
+    "maghrebi-mourad",
+    "maghrebi-yacine",
+    "maghrebi-el-fassi",
+    "maghrebi-lamrani",
+    "maghrebi-tazi",
+    "maghrebi-zeroual",
+    "maghrebi-meknes",
+    "maghrebi-tanger",
+    "maghrebi-essaouira",
+    "maghrebi-setif",
+    "maghrebi-blida",
+    "maghrebi-bejaia",
+    "maghrebi-benghazi",
+    "maghrebi-misrata",
+    "egyptian-hany",
+    "egyptian-yasmeen",
+    "egyptian-aswan",
+    "egyptian-alexandria",
+    "egyptian-ismailia",
+    "egyptian-hurghada",
+    "egyptian-zagazig",
+    "egyptian-sohag",
+    "egyptian-tanta",
+    "berber-tinariwen",
+    "berber-lounes",
+    "berber-aksil"
+   ]
+  }
+ },
+ "by_group": {
+  "berber": {
+   "reference": {
+    "passed": 3,
+    "items": 10,
+    "accuracy": 0.3
+   },
+   "uccharan-compatible": {
+    "passed": 4,
+    "items": 10,
+    "accuracy": 0.4
+   },
+   "uccharan-improved": {
+    "passed": 7,
+    "items": 10,
+    "accuracy": 0.7
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 7,
+    "items": 10,
+    "accuracy": 0.7
+   }
+  },
+  "egyptian": {
+   "reference": {
+    "passed": 11,
+    "items": 20,
+    "accuracy": 0.55
+   },
+   "uccharan-compatible": {
+    "passed": 10,
+    "items": 20,
+    "accuracy": 0.5
+   },
+   "uccharan-improved": {
+    "passed": 12,
+    "items": 20,
+    "accuracy": 0.6
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 11,
+    "items": 20,
+    "accuracy": 0.55
+   }
+  },
+  "maghrebi": {
+   "reference": {
+    "passed": 26,
+    "items": 70,
+    "accuracy": 0.37142857142857144
+   },
+   "uccharan-compatible": {
+    "passed": 19,
+    "items": 70,
+    "accuracy": 0.2714285714285714
+   },
+   "uccharan-improved": {
+    "passed": 47,
+    "items": 70,
+    "accuracy": 0.6714285714285714
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 46,
+    "items": 70,
+    "accuracy": 0.6571428571428571
+   }
+  },
+  "in-cmudict": {
+   "reference": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   }
+  },
+  "not-in-cmudict": {
+   "reference": {
+    "passed": 40,
+    "items": 100,
+    "accuracy": 0.4
+   },
+   "uccharan-compatible": {
+    "passed": 33,
+    "items": 100,
+    "accuracy": 0.33
+   },
+   "uccharan-improved": {
+    "passed": 66,
+    "items": 100,
+    "accuracy": 0.66
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 64,
+    "items": 100,
+    "accuracy": 0.64
+   }
+  },
+  "all": {
+   "reference": {
+    "passed": 40,
+    "items": 100,
+    "accuracy": 0.4
+   },
+   "uccharan-compatible": {
+    "passed": 33,
+    "items": 100,
+    "accuracy": 0.33
+   },
+   "uccharan-improved": {
+    "passed": 66,
+    "items": 100,
+    "accuracy": 0.66
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 64,
+    "items": 100,
+    "accuracy": 0.64
+   }
+  }
+ }
+}

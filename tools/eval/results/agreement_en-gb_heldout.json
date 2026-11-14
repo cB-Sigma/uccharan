@@ -249,28 +249,5 @@
     "uccharan": "wˌaɪ kæn ʃiː jˈuːz ðə tˈæblɪt ðæt ɪz ʌnfˈeə"
    }
   ]
- },
- "word_level": {
-  "frequent-in-lexicon": {
-   "words": 5000,
-   "per": 0.025611903004145606,
-   "exact_word": 0.8918,
-   "exact_word_without_stress": 0.9052,
-   "stress_pattern_error": 0.0348
-  },
-  "rare-in-lexicon": {
-   "words": 3000,
-   "per": 0.17802876411798163,
-   "exact_word": 0.4673333333333333,
-   "exact_word_without_stress": 0.48966666666666664,
-   "stress_pattern_error": 0.21666666666666667
-  },
-  "out-of-lexicon": {
-   "words": 1997,
-   "per": 0.18690443020339928,
-   "exact_word": 0.44516775162744116,
-   "exact_word_without_stress": 0.49073610415623437,
-   "stress_pattern_error": 0.2954431647471207
-  }
  }
 }

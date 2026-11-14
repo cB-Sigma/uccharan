@@ -1,0 +1,243 @@
+{
+ "language": "kn",
+ "reference": "espeak-ng 1.52.0 voice kn (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 191763,
+  "per": 0.01576425066357952,
+  "per_without_stress": 0.013843568889105342,
+  "exact_sentence": 0.5790513833992095,
+  "exact_sentence_without_stress": 0.5968379446640316,
+  "piper_shape_per": 0.015683665470148947,
+  "piper_shape_exact_sentence": 0.5741106719367589,
+  "word_count_mismatch_sentences": 219,
+  "errors_by_class": {
+   "consonant": {
+    "count": 1022,
+    "share": 0.33807476017201454,
+    "per_contribution": 0.005329495262381168
+   },
+   "stress": {
+    "count": 786,
+    "share": 0.2600066159444261,
+    "per_contribution": 0.004098809467936984
+   },
+   "vowel": {
+    "count": 561,
+    "share": 0.18557724115117433,
+    "per_contribution": 0.002925486146962657
+   },
+   "other": {
+    "count": 382,
+    "share": 0.12636453853787627,
+    "per_contribution": 0.0019920422604986364
+   },
+   "word-boundary": {
+    "count": 180,
+    "share": 0.05954349983460139,
+    "per_contribution": 0.0009386586567794622
+   },
+   "length": {
+    "count": 92,
+    "share": 0.030433344359907376,
+    "per_contribution": 0.000479758869020614
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˌ→∅",
+    "count": 181
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 151
+   },
+   {
+    "edit": "m→n",
+    "count": 147
+   },
+   {
+    "edit": "ɐ→∅",
+    "count": 145
+   },
+   {
+    "edit": "ʰ→∅",
+    "count": 145
+   },
+   {
+    "edit": "r→ɹ",
+    "count": 126
+   },
+   {
+    "edit": "ː→t",
+    "count": 117
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 110
+   },
+   {
+    "edit": " →∅",
+    "count": 102
+   },
+   {
+    "edit": "d→∅",
+    "count": 96
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 95
+   },
+   {
+    "edit": "a→∅",
+    "count": 95
+   },
+   {
+    "edit": "ː→∅",
+    "count": 86
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 79
+   },
+   {
+    "edit": "∅→ ",
+    "count": 78
+   },
+   {
+    "edit": "∅→t",
+    "count": 64
+   },
+   {
+    "edit": "∅→u",
+    "count": 54
+   },
+   {
+    "edit": "ː→u",
+    "count": 53
+   },
+   {
+    "edit": "ː→p",
+    "count": 48
+   },
+   {
+    "edit": "ʰ→t",
+    "count": 43
+   },
+   {
+    "edit": "i→ ",
+    "count": 38
+   },
+   {
+    "edit": "n→ɳ",
+    "count": 38
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 36
+   },
+   {
+    "edit": "ˌ→u",
+    "count": 32
+   },
+   {
+    "edit": "ɪ→i",
+    "count": 32
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 12230,
+    "wrong": 320,
+    "rate": 0.02616516762060507
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 212,
+    "per": 0.04914209918274785,
+    "exact_sentence": 0.10377358490566038
+   },
+   "no-digits": {
+    "sentences": 800,
+    "per": 0.0050061715199867605,
+    "exact_sentence": 0.705
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-815",
+    "text": "ರದ್ದುಗೊಳಿಸುವಿಕೆಯ ನಿಯಮಗಳು ಬೇರೆಬೇರೆಯಾಗಿರುತ್ತವೆ, ಆದರೆ ಮಾರ್ಚ್ ಕೊನೆಯ ತನಕ ಕೊರೊನಾ ವೈರಸ್‍‌ನಿಂದಾಗಿ ರದ್ದುಗೊಳಿಸುವ ನಿಯಮಗಳು ಜೂಲೈ 2020ವರೆಗೂ ವಿಸ್ತರಿಸುವುದಿಲ್ಲ, ಏಕೆಂದರೆ ಆ ಸಮಯದಲ್ಲಿ ಒಲಿಂಪಿಕ್ಸ್ ಅನ್ನು ನಿಗದಿಪಡಿಸಲಾಗಿದೆ.",
+    "reference": "ɹˈɐdduɡˌoɭisˌuvikˌejɐ nˈijɐmˌɐɡɐɭu bˈeːɹebˌeːɹejˌaːɡiɹˌuttɐve ˌaːdɐɹe mˈaːrc kˈonejɐ tˈɐnɐkɐ kˈoɹonaː vˈaɪɹɐs nˈindaːɡi ɹˈɐdduɡˌoɭisˌuvɐ nˈijɐmˌɐɡɐɭu ɟˈuːlaɪ ˈeɹɐɖu sˈaːviɹˌɐdɐ ˌɪpːɐtʰːu vˈɐɹeɡuː vˈistɐɹˌisuvˌudillɐ ˈeːkendˌɐɹe aː sˈɐmɐjˌɐdɐlli ˈolimpiks ˈɐnnu nˈiɡɐdˌipɐɖˌisɐlˌaːɡide",
+    "uccharan": "ɹˈɐdduɡˌoɭisˌuvikˌejɐ nˈijɐmˌɐɡɐɭu bˈeːɹebˌeːɹejˌaːɡiɹˌuttɐve ˌaːdɐɹe mˈaːrc kˈonejɐ tˈɐnɐkɐ kˈoɹonaː vˈaɪɹɐsnˌindaːɡi ɹˈɐdduɡˌoɭisˌuvɐ nˈijɐmˌɐɡɐɭu ɟˈuːlaɪ ˈeɹɐɖu sˈaːviɹɐ ˈippɐttu vˈɐɹeɡuː vˈistɐɹˌisuvˌudillɐ ˈeːkendˌɐɹe aː sˈɐmɐjˌɐdɐlli ˈolimpiks ˈɐnnu nˈiɡɐdˌipɐɖˌisɐlˌaːɡide"
+   },
+   {
+    "id": "flores-devtest-424",
+    "text": "1624 ರಲ್ಲಿ, ಡಚ್ ಈಸ್ಟ್ ಇಂಡಿಯಾ ಕಂಪನಿ ನೈರುತ್ಯ ತೈವಾನ್‌ನಲ್ಲಿ ಒಂದು ನೆಲೆಯನ್ನು ಸ್ಥಾಪಿಸಿತು, ಮೂಲನಿವಾಸಿ ಧಾನ್ಯ ಉತ್ಪಾದನಾ ವಿಧಾನಗಳ ರೂಪಾಂತರವನ್ನು ಪ್ರಾರಂಭಿಸಿತು ಮತ್ತು ಚೀನಾದ ಕಾರ್ಮಿಕರನ್ನು ತನ್ನ ಭತ್ತ ಮತ್ತು ಸಕ್ಕರೆ ತೋಟಗಳಲ್ಲಿ ಕೆಲಸ ಮಾಡಲು ನೇಮಿಸಿಕೊಂಡಿತು.",
+    "reference": "ˈondu sˈaːviɹˌɐdɐ ˈaːɹunˈuːɹaː ˌɪpːɐtʰːnˈaːlku ɹˈɐlli ɖˈɐc ˈiːsʈ ˈiɳɖijaː kˈɐmpɐni nˈaɪɹutjɐ tˈaɪvaːnnˌɐlli ˈondu nˈelejˌɐnnu stʰˈaːpisˌitu mˈuːlɐnˌivaːsi dʰˈaːnjɐ ˈutpaːdˌɐnaː vˈidʰaːnˌɐɡɐɭɐ ɹˈuːpaːntˌɐɹɐvˌɐnnu pɹˈaːɹɐmbʰˌisitu mˌɐttu cˈiːnaːdɐ kˈaːrmikˌɐɹɐnnu tˈɐnnɐ bʰˈɐttɐ mˌɐttu sˈɐkkɐɹe tˈoːʈɐɡˌɐɭɐlli kˈelɐsɐ mˈaːɖɐlu nˈeːmisˌikoɳɖˌitu",
+    "uccharan": "ˈondu sˈaːviɹɐ ˈaːɹu nˈuːɹu ˈippɐttnˌaːlku ɹˈɐlli ɖˈɐc ˈiːsʈ ˈiɳɖijaː kˈɐmpɐni nˈaɪɹutjɐ tˈaɪvaːnnˌɐlli ˈondu nˈelejˌɐnnu stʰˈaːpisˌitu mˈuːlɐnˌivaːsi dʰˈaːnjɐ ˈutpaːdˌɐnaː vˈidʰaːnˌɐɡɐɭɐ ɹˈuːpaːntˌɐɹɐvˌɐnnu pɹˈaːɹɐmbʰˌisitu mˌɐttu cˈiːnaːdɐ kˈaːrmikˌɐɹɐnnu tˈɐnnɐ bʰˈɐttɐ mˌɐttu sˈɐkkɐɹe tˈoːʈɐɡˌɐɭɐlli kˈelɐsɐ mˈaːɖɐlu nˈeːmisˌikoɳɖˌitu"
+   },
+   {
+    "id": "flores-devtest-109",
+    "text": "ಆಕೆ 500 ಅಡಿ ದೂರದಲ್ಲಿರುವ ತನ್ನ ಕಪ್ಪು ಓಲ್ಡ್ಸ್‌ಮೊಬೈಲ್ ಒಳಸಂಚಿಗೆ ಅಧಿಕಾರಿಗಳನ್ನು ನಿರ್ದೇಶಿಸಿದಳು.",
+    "reference": "ˈaːke ˈaɪnuːɹu ˈɐɖi dˈuːɹɐdˌɐlliɹˌuvɐ tˈɐnnɐ kˈɐppu ˈoːlɖsmobaɪl ˈoɭɐsˌɐɲciɡe ˈɐdʰikˌaːɹiɡˌɐɭɐnnu nˈirdeːɕˌisidˌɐɭu",
+    "uccharan": "ˈaːke ˈaɪdu nˈuːɹu ˈɐɖi dˈuːɹɐdˌɐlliɹˌuvɐ tˈɐnnɐ kˈɐppu ˈoːlɖsmobaɪl ˈoɭɐsˌɐɲciɡe ˈɐdʰikˌaːɹiɡˌɐɭɐnnu nˈirdeːɕˌisidˌɐɭu"
+   },
+   {
+    "id": "flores-devtest-861",
+    "text": "ಉತ್ಪಾದಿಸಿದ ಸಾಮಗ್ರಿಗಳು ಪುರಾತನ ಎಂಬುದಕ್ಕೆ ಸಮಗ್ರ ವ್ಯಾಖ್ಯಾನವಿಲ್ಲ. ಕೆಲವು ತೆರಿಗೆ ಸಂಸ್ಥೆಗಳು 100 ವರ್ಷಗಳಿಗಿಂತ ಹಳೆಯ ಸಾಮಗ್ರಿಗಳನ್ನು ಪುರಾತನ ಎಂದು ವ್ಯಾಖ್ಯಾನಿಸುತ್ತವೆ.",
+    "reference": "ˈutpaːdˌisidɐ sˈaːmɐɡɹˌiɡɐɭu pˈuɹaːtˌɐnɐ ˈembudˌɐkke sˈɐmɐɡɹɐ vjˈaːkʰjaːnˌɐvillɐ kˌelɐvu tˈeɹiɡe sˈɐmstʰeɡˌɐɭu nˈuːɹu vˈɐrʂɐɡˌɐɭiɡˌintɐ hˈɐɭejɐ sˈaːmɐɡɹˌiɡɐɭˌɐnnu pˈuɹaːtˌɐnɐ ˈendu vjˈaːkʰjaːnˌisuttˌɐve",
+    "uccharan": "ˈutpaːdˌisidɐ sˈaːmɐɡɹˌiɡɐɭu pˈuɹaːtˌɐnɐ ˈembudˌɐkke sˈɐmɐɡɹɐ vjˈaːkʰjaːnˌɐvillɐ kˌelɐvu tˈeɹiɡe sˈɐnstʰeɡˌɐɭu ˈondu nˈuːɹu vˈɐrʂɐɡˌɐɭiɡˌintɐ hˈɐɭejɐ sˈaːmɐɡɹˌiɡɐɭˌɐnnu pˈuɹaːtˌɐnɐ ˈendu vjˈaːkʰjaːnˌisuttˌɐve"
+   },
+   {
+    "id": "flores-devtest-16",
+    "text": "USA ಜಿಮ್ನಾಸ್ಟಿಕ್ಸ್ ಮತ್ತು USOC ಎರಡೂ ಒಂದೇ ಗುರಿ ಹೊಂದಿವೆ - ಜಿಮ್ನಾಸ್ಟಿಕ್ಸ್ ಮತ್ತು ಇತರೇ ಆಟಗಳನ್ನು ಸಾಧ್ಯವಾದಷ್ಟು ಮಟ್ಟಿಗೆ ಸುರಕ್ಷಿತಗೊಳಿಸಿ, ಅಥ್ಲೀಟ್‌ಗಳು ತಮ್ಮ ಕನಸನ್ನು ನನಸು ಮಾಡುವಲ್ಲಿ ಒಂದು ಸುರಕ್ಷಿತ, ಸಕಾರಾತ್ಮಕ ಮತ್ತು ಸಶಕ್ತ ಪರಿಸರ ನಿರ್ಮಾಣ ಮಾಡುವುದು.",
+    "reference": "jˈuːˌɛsˌeːj ɟˈimnaːsʈiks mˌɐttu jˈuːzɒk ˈeɹɐɖuː ˈondeː ɡˈuɹi hˈondive ɟˈimnaːsʈiks mˌɐttu ˈitɐɹeː ˈaːʈɐɡˌɐɭɐnnu sˈaːdʰjɐvˌaːdɐʂʈu mˈɐʈʈiɡe sˈuɹɐkʂˌitɐɡˌoɭisi ˈɐtʰliːʈɡˌɐɭu tˌɐmmɐ kˈɐnɐsˌɐnnu nˈɐnɐsu mˈaːɖuvˌɐlli ˈondu sˈuɹɐkʂˌitɐ sˈɐkaːɹˌaːtmɐkɐ mˌɐttu sˈɐɕɐktɐ pˈɐɹisˌɐɹɐ nˈirmaːɳɐ mˈaːɖuvˌudu",
+    "uccharan": "jˌuːɛsˈeɪ ɟˈimnaːsʈiks mˌɐttu juːsˈəʊk ˈeɹɐɖuː ˈondeː ɡˈuɹi hˈondive ɟˈimnaːsʈiks mˌɐttu ˈitɐɹeː ˈaːʈɐɡˌɐɭɐnnu sˈaːdʰjɐvˌaːdɐʂʈu mˈɐʈʈiɡe sˈuɹɐkʂˌitɐɡˌoɭisi ˈɐtʰliːʈɡˌɐɭu tˌɐmmɐ kˈɐnɐsˌɐnnu nˈɐnɐsu mˈaːɖuvˌɐlli ˈondu sˈuɹɐkʂˌitɐ sˈɐkaːɹˌaːtmɐkɐ mˌɐttu sˈɐɕɐktɐ pˈɐɹisˌɐɹɐ nˈirmaːɳɐ mˈaːɖuvˌudu"
+   },
+   {
+    "id": "flores-devtest-71",
+    "text": "ತಮ್ಮ ಕಾರ್ಯಾಲಯದಲ್ಲಿ NDP ನಾಯಕ ಜಾಕ್ ಲೇಟನ್‍‌‍ರೊಂದಿಗೆ ಮಂಗಳವಾರ ನಡೆದ 25 ನಿಮಿಷಗಳ ಮಾತುಕತೆಯ ನಂತರ, ಅದರ  ಎರಡನೇ ವಾಚನಕ್ಕೆ ಮೊದಲು, ಪ್ರಧಾನ ಮಂತ್ರಿ ಸ್ಟೀಫನ್ ಹಾರ್ಪರ್ ಸರ್ಕಾರದ 'ಸ್ವಚ್ಚ ವಾಯು ನೀತಿ'ಯನ್ನು ಸರ್ವ ಪಕ್ಷ ಕಮಿಟಿಯ ವಿಮರ್ಶೆಗಾಗಿ ಕಳಿಸಲು ಒಪ್ಪಿದ್ದಾರೆ.",
+    "reference": "tˌɐmmɐ kˈaːrjaːlˌɐjɐdˌɐlli ˈɛndˌiːpˌiː nˈaːjɐkɐ ɟˈaːk lˈeːʈɐn ɹˈondiɡe mˈɐŋɡɐɭˌɐvaːɹɐ nˈɐɖedɐ ˌɪpːɐtʰːˈaɪdu nˈimiʂˌɐɡɐɭɐ mˈaːtukˌɐtejɐ nˈɐntɐɹɐ ˌɐdɐɹɐ ˈeɹɐɖˌɐneː vˈaːcɐnˌɐkke mˈodɐlu pɹˈɐdʰaːnɐ mˈɐntɹi sʈˈiːpʰɐn hˈaːrpɐr sˈɐrkaːɹˌɐdɐ svˈɐccɐ vˈaːju nˈiːtijˌɐnnu sˈɐrvɐ pˈɐkʂɐ kˈɐmiʈˌijɐ vˈimɐrɕˌeɡaːɡi kˈɐɭisˌɐlu ˈoppiddˌaːɹe",
+    "uccharan": "tˌɐmmɐ kˈaːrjaːlˌɐjɐdˌɐlli ˌɛndˌiːpˈiː nˈaːjɐkɐ ɟˈaːk lˈeːʈɐnɹˌondiɡe mˈɐŋɡɐɭˌɐvaːɹɐ nˈɐɖedɐ ˈippɐttˌaɪdu nˈimiʂˌɐɡɐɭɐ mˈaːtukˌɐtejɐ nˈɐntɐɹɐ ˌɐdɐɹɐ ˈeɹɐɖˌɐneː vˈaːcɐnˌɐkke mˈodɐlu pɹˈɐdʰaːnɐ mˈɐntɹi sʈˈiːpʰɐn hˈaːrpɐɹ sˈɐrkaːɹˌɐdɐ svˈɐccɐ vˈaːju nˈiːtijˌɐnnu sˈɐrvɐ pˈɐkʂɐ kˈɐmiʈˌijɐ vˈimɐrɕˌeɡaːɡi kˈɐɭisˌɐlu ˈoppiddˌaːɹe"
+   },
+   {
+    "id": "flores-devtest-334",
+    "text": "ಅವರು 2016ರಲ್ಲಿನ  ಅಧ್ಯಕ್ಷೀಯ ಸ್ಥಾನಕ್ಕೆ ಸ್ಪರ್ಧಿಸಲಿದ್ದಾರೆ ಎಂದು ಅಂದಾಜಿಸಲಾಗಿದೆ.",
+    "reference": "ˌɐvɐɹu ˈeɹɐɖu sˈaːviɹˌɐdɐ hˌɐdinˌaːɹu ɹˈɐllinɐ ˈɐdʰjɐkʂˌiːjɐ stʰˈaːnɐkke spˈɐrdʰisˌɐliddˌaːɹe ˈendu ˈɐndaːɟˌisɐlˌaːɡide",
+    "uccharan": "ˌɐvɐɹu ˈeɹɐɖu sˈaːviɹɐ hˈɐdinˌaːɹu ɹˈɐllinɐ ˈɐdʰjɐkʂˌiːjɐ stʰˈaːnɐkke spˈɐrdʰisˌɐliddˌaːɹe ˈendu ˈɐndaːɟˌisɐlˌaːɡide"
+   },
+   {
+    "id": "flores-devtest-655",
+    "text": "ಈ ಸಿದ್ದಾಂತಗಳು ಸೂಚಿಸುವಂತೆ ಜನರು ಪ್ರೌಢಾವಸ್ಥೆಗೆ ತಲುಪುವಾಗ ಅವರ ಹಲವು ಅವಶ್ಯಕತೆಗಳು ಮತ್ತು /ಅಥವಾ ಆಸೆಗಳು ಆಂತರಂಗಿಕವಾಗಿ ಸೇರಿಕೊಂಡಿರುತ್ತವೆ.",
+    "reference": "iː sˈiddaːntˌɐɡɐɭu sˈuːcisˌuvɐnte ɟˈɐnɐɹu pɹˈaʊɖʰaːvˌɐstʰeɡe tˈɐlupˌuvaːɡɐ ˌɐvɐɹɐ hˌɐlɐvu ˈɐvɐɕjˌɐkɐtˌeɡɐɭu mˌɐttu slˈaʃ ˈɐtʰɐvaː ˈaːseɡˌɐɭu ˈaːntɐɹˌɐŋɡikˌɐvaːɡi sˈeːɹikˌoɳɖiɹˌuttɐve",
+    "uccharan": "iː sˈiddaːntˌɐɡɐɭu sˈuːcisˌuvɐnte ɟˈɐnɐɹu pɹˈaʊɖʰaːvˌɐstʰeɡe tˈɐlupˌuvaːɡɐ ˌɐvɐɹɐ hˌɐlɐvu ˈɐvɐɕjˌɐkɐtˌeɡɐɭu mˌɐttu ˈɐtʰɐvaː ˈaːseɡˌɐɭu ˈaːntɐɹˌɐŋɡikˌɐvaːɡi sˈeːɹikˌoɳɖiɹˌuttɐve"
+   },
+   {
+    "id": "flores-devtest-600",
+    "text": "ಹರ್ಷೇ ಮತ್ತು ಚೇಸ್ ತಮ್ಮ ಸ್ವಂತ DNA ಯನ್ನು ಒಂದು ಬ್ಯಾಕ್ಟೀರಿಯಮ್‍‌ನಲ್ಲಿ ಒಳ ಸೇರಿಸಲು ಬ್ಯಾಕ್ಟೀರಿಯಾ  ಅಥವಾ ವೈರಾಣುಗಳನ್ನು ಬಳಸಿದರು.",
+    "reference": "hˈɐrʂeː mˌɐttu cˈeːs tˌɐmmɐ svˈɐntɐ dˈiːˌɛnˌeːj jˈɐnnu ˈondu bjˈaːkʈiːɹˌijɐm nˈɐlli ˈoɭɐ sˈeːɹisˌɐlu bjˈaːkʈiːɹˌijaː ˈɐtʰɐvaː vˈaɪɹaːɳˌuɡɐɭˌɐnnu bˈɐɭɐsˌidɐɹu",
+    "uccharan": "hˈɐrʂeː mˌɐttu cˈeːs tˌɐmmɐ svˈɐntɐ dˈiːɛnˌeɪ jˈɐnnu ˈondu bjˈaːkʈiːɹˌijɐmnˌɐlli ˈoɭɐ sˈeːɹisˌɐlu bjˈaːkʈiːɹˌijaː ˈɐtʰɐvaː vˈaɪɹaːɳˌuɡɐɭˌɐnnu bˈɐɭɐsˌidɐɹu"
+   },
+   {
+    "id": "flores-devtest-249",
+    "text": "NHK ವರದಿ ಮಾಡಿದಂತೆ, ನಿಗಾಟಾ ಪ್ರಾಂತ್ಯದಲ್ಲಿರುವ ಕಾಸಿವಾಜಾಕಿ ಕರಿವಾ ಪರಮಾಣು ವಿದ್ಯುತ್ ಸ್ಥಾವರ ಎಂದಿನಂತೆ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತಿದೆ.",
+    "reference": "ˈɛnˌeːtʃkˌeːj vˈɐɹɐdi mˈaːɖidˌɐnte nˈiɡaːʈaː pɹˈaːntjɐdˌɐlliɹˌuvɐ kˈaːsivˌaːɟaːki kˈɐɹivaː pˈɐɹɐmˌaːɳu vˈidjut stʰˈaːvɐɹɐ ˈendinˌɐnte kˈaːrjɐ nˈirvɐhˌisuttˌide",
+    "uccharan": "ˌɛnˌeɪtʃkˈeɪ vˈɐɹɐdi mˈaːɖidˌɐnte nˈiɡaːʈaː pɹˈaːntjɐdˌɐlliɹˌuvɐ kˈaːsivˌaːɟaːki kˈɐɹivaː pˈɐɹɐmˌaːɳu vˈidjut stʰˈaːvɐɹɐ ˈendinˌɐnte kˈaːrjɐ nˈirvɐhˌisuttˌide"
+   },
+   {
+    "id": "flores-devtest-744",
+    "text": "ಸೆಪ್ಟೆಂಬರ್ 2017 ರಲ್ಲಿ ಸೇತುವೆ ಸಂಪೂರ್ಣವಾಗಿ ಕಾರ್ಯ ನಿರ್ವಹಿಸಲು ಸಿದ್ಧವಾಗಿರುತ್ತದೆ, ಆಗ ಬ್ರೆಝಿಲಿಯನ್ ಕಸ್ಟಮ್ಸ್ ಚೆಕ್ ಪಾಯಿಂಟ್‍‌ಗಳ  ಕೆಲಸ ಸಹ ಮುಗಿದಿರುತ್ತದೆ ಎಂದು ಭಾವಿಸಲಾಗಿದೆ.  ",
+    "reference": "sˈepʈembɐɹ ˈeɹɐɖu sˈaːviɹˌɐdɐ hˌɐdinˈeːɭu ɹˈɐlli sˈeːtuve sˈɐmpuːrɳˌɐvaːɡi kˈaːrjɐ nˈirvɐhˌisɐlu sˈiddʰɐvˌaːɡiɹˌuttɐde ˈaːɡɐ bɹˈeɟʰilˌijɐn kˈɐsʈɐms cˈek pˈaːjiɳʈ ɡˈɐɭɐ kˈelɐsɐ sˈɐhɐ mˈuɡidˌiɹuttˌɐde ˈendu bʰˈaːvisˌɐlaːɡˌide",
+    "uccharan": "sˈepʈembɐɹ ˈeɹɐɖu sˈaːviɹɐ hˈɐdinˌeːɭu ɹˈɐlli sˈeːtuve sˈɐmpuːrɳˌɐvaːɡi kˈaːrjɐ nˈirvɐhˌisɐlu sˈiddʰɐvˌaːɡiɹˌuttɐde ˈaːɡɐ bɹˈeɟʰilˌijɐn kˈɐsʈɐms cˈek pˈaːjiɳʈɡˌɐɭɐ kˈelɐsɐ sˈɐhɐ mˈuɡidˌiɹuttˌɐde ˈendu bʰˈaːvisˌɐlaːɡˌide"
+   },
+   {
+    "id": "flores-devtest-790",
+    "text": "ಟ್ರಾವೆಲ್ ಏಜೆಂಟರು ಸಾಮಾನ್ಯವಾಗಿ ಉಪಾಹಾರ, ವಿಮಾನ ನಿಲ್ದಾಣಕ್ಕೆ ಹೋಗಲು/ಬರಲು ಸಾರಿಗೆ ವ್ಯವಸ್ಥೆ ಅಥವಾ ಸಂಯೋಜಿತ ವಿಮಾನ ಮತ್ತು ಹೋಟೆಲ್ ಪ್ಯಾಕೇಜ್‌ಗಳನ್ನು ಒಳಗೊಂಡಿರುವ ಪ್ಯಾಕೇಜ್‌ಗಳನ್ನು ನೀಡುತ್ತಾರೆ.",
+    "reference": "ʈɹˈaːvel ˈeːɟeɳʈˌɐɹu sˈaːmaːnjˌɐvaːɡi ˈupaːhˌaːɹɐ vˈimaːnɐ nˈildaːɳˌɐkke hˈoːɡɐlu slˈaʃ bˈɐɹɐlu sˈaːɹiɡe vjˈɐvɐstʰe ˈɐtʰɐvaː sˈɐmjoːɟˌitɐ vˈimaːnɐ mˌɐttu hˈoːʈel pjˈaːkeːɟɡˌɐɭɐnnu ˈoɭɐɡˌoɳɖiɹˌuvɐ pjˈaːkeːɟɡˌɐɭɐnnu nˈiːɖuttˌaːɹe",
+    "uccharan": "ʈɹˈaːvel ˈeːɟeɳʈˌɐɹu sˈaːmaːnjˌɐvaːɡi ˈupaːhˌaːɹɐ vˈimaːnɐ nˈildaːɳˌɐkke hˈoːɡɐlu bˈɐɹɐlu sˈaːɹiɡe vjˈɐvɐstʰe ˈɐtʰɐvaː sˈɐɲjoːɟˌitɐ vˈimaːnɐ mˌɐttu hˈoːʈel pjˈaːkeːɟɡˌɐɭɐnnu ˈoɭɐɡˌoɳɖiɹˌuvɐ pjˈaːkeːɟɡˌɐɭɐnnu nˈiːɖuttˌaːɹe"
+   }
+  ]
+ }
+}

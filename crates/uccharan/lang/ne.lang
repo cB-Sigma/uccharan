@@ -1,0 +1,246 @@
+# Nepali. espeak-ng voice "ne". Written for uccharan from specs/ne.md,
+# specs/family-brahmic.md and the Hindi sections of BEHAVIOUR_SPEC.md.
+
+[meta]
+tag = ne
+block = 0900
+stress = weight
+deletion = final
+final-keep-after = ɾ m j w h cʰ k
+inherent = ə ʌ
+anusvara = split
+anusvara-after-vowel = n
+visarga = silent
+lengthen-before-y = k c ʈ t p
+cluster-first = ɾ=rr
+secondary-after-cluster = same ʂ
+final-drop-after-cluster = w
+# ASCII digits are read in English (Devanagari ones alone too, but not inside sentences).
+ascii-digits = en
+
+[letters]
+क k
+ख kʰ
+ग ɡ
+घ ɡʰ
+ङ ŋ
+च c
+छ cʰ
+ज ɟ
+झ ɟʰ
+ञ ɲ
+ट ʈ
+ठ ʈʰ
+ड ɖ
+ढ ɖʰ
+ण ɳ
+त t
+थ tʰ
+द d
+ध dʰ
+न n
+प p
+फ pʰ
+ब b
+भ bʰ
+म m
+य j
+र ɾ
+ल l
+ळ ɭ
+व w
+श ʃ
+ष ʂ
+स s
+ह h
+क़ q
+ख़ x
+ग़ ɣ
+ज़ z
+ड़ r.
+ढ़ r.h
+फ़ f
+य़ j
+क़ q
+ख़ x
+ग़ ɣ
+ज़ z
+ड़ r.
+ढ़ r.h
+फ़ f
+अ ə
+आ aː
+इ ɪ
+ई ɪː
+उ ʊ
+ऊ ʊ
+ऋ ɾ ɪ stressed
+ए eː
+ऐ ɛː
+ओ oː
+औ ʌʊ
+ा aː
+ि ɪ
+ी ɪː
+ु u
+ू uː
+ृ ɾ ɪ stressed
+े eː
+ै ɛː
+ो oː
+ौ ɔː
+ॉ ɔ
+Ü ʲ u sign
+
+[classes]
+S = ˈ ˌ
+
+[pre]
+ज्ञ -> ज्ञ
+नु -> नु / उ _ #
+नु -> नुÜ / _ #
+
+[post]
+# Long ii is ɪː, but i at the end of a word, and iː there under stress.
+ɪː -> i / {!S} _ # | # _ #
+ɪː -> iː / {S} _ #
+ː -> 0 / ã _
+ʊ̃ -> ũ
+ʃ -> ʃʃ / _ c
+l -> ll / _ l
+pʰ -> pʰː / _ n
+
+[words]
+प्रतिशत pɾˈʌtishʋt
+@दुई dˈuːˌiː
+@नौ nˈʌˈuː
+तर tˈaɾə
+पर pˈaɾə
+आज aːɟˈəː
+अब ʌbˈə
+हुन hˈunˈə
+छैन cʰˈɛːnə
+हजार hˈəzˈaːɾə
+सय sˈajə
+@एक eːk
+
+[post.compat]
+# Initial अनु- is printed unstressed.
+ˈʌ -> ə / # _ nu
+
+[unstressed]
+म 0
+हो 0
+र 0
+अनुसार s
+
+[numbers]
+# Number words 0-99 from Unicode CLDR common/rbnf/ne.xml (Unicode License v3).
+0 शुन्य
+1 एक
+2 दुई
+3 तिन
+4 चार
+5 पाँच
+6 छ
+7 सात
+8 आठ
+9 नौ
+10 दस
+11 एघार
+12 बाह्र
+13 तेह्र
+14 चौध
+15 पन्ध्र
+16 सोह्र
+17 सत्र
+18 अठार
+19 उन्नाइस
+20 बिस
+21 एक्काइस
+22 बाइस
+23 तेइस
+24 चौबिस
+25 पच्चिस
+26 छब्बिस
+27 सत्ताइस
+28 अट्ठाइस
+29 उनन्तिस
+30 तिस
+31 एकतिस
+32 बत्तिस
+33 तेत्तिस
+34 चौँतिस
+35 पैँतिस
+36 छत्तिस
+37 सैँतिस
+38 अठतिस
+39 उनन्चालिस
+40 चालिस
+41 एकचालिस
+42 बयालिस
+43 त्रिचालिस
+44 चवालिस
+45 पैँतालिस
+46 छयालिस
+47 सतचालिस
+48 अठचालिस
+49 उनन्चास
+50 पचास
+51 एकाउन्न
+52 बाउन्न
+53 त्रिपन्न
+54 चवन्न
+55 पचपन्न
+56 छपन्न
+57 सन्ताउन्न
+58 अन्ठाउन्न
+59 उनन्साठी
+60 साठी
+61 एकसट्ठी
+62 बयसट्ठी
+63 त्रिसट्ठी
+64 चौसट्ठी
+65 पैँसट्ठी
+66 छयसट्ठी
+67 सतसट्ठी
+68 अठसट्ठी
+69 उनन्सत्तरी
+70 सत्तरी
+71 एकहत्तर
+72 बहत्तर
+73 त्रिहत्तर
+74 चौहत्तर
+75 पचहत्तर
+76 छयहत्तर
+77 सतहत्तर
+78 अठहत्तर
+79 उनासी
+80 असी
+81 एकासी
+82 बयासी
+83 त्रियासी
+84 चौरासी
+85 पचासी
+86 छयासी
+87 सतासी
+88 अठासी
+89 उनान्नब्बे
+90 नब्बे
+91 एकानब्बे
+92 बयानब्बे
+93 त्रियानब्बे
+94 चौरानब्बे
+95 पन्चानब्बे
+96 छयानब्बे
+97 सन्तानब्बे
+98 अन्ठानब्बे
+99 उनान्सय
+scale100 सय
+scale1000 हजार
+scale100000 लाख
+scale10000000 करोड
+glue-hundred yes
+grouping indian
+point थोप्लो
+percent प्रतिशत

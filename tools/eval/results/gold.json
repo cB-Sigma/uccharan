@@ -120,6 +120,11 @@
      "passed": 71,
      "accuracy": 1.0,
      "failed_ids": []
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 71,
+     "accuracy": 1.0,
+     "failed_ids": []
     }
    }
   },
@@ -194,6 +199,11 @@
      ]
     },
     "uccharan-improved": {
+     "passed": 50,
+     "accuracy": 1.0,
+     "failed_ids": []
+    },
+    "uccharan-improved+wikipron": {
      "passed": 50,
      "accuracy": 1.0,
      "failed_ids": []
@@ -284,6 +294,13 @@
      "failed_ids": [
       "unit-5"
      ]
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 39,
+     "accuracy": 0.975,
+     "failed_ids": [
+      "unit-5"
+     ]
     }
    }
   },
@@ -328,6 +345,11 @@
      "failed_ids": []
     },
     "uccharan-improved": {
+     "passed": 29,
+     "accuracy": 1.0,
+     "failed_ids": []
+    },
+    "uccharan-improved+wikipron": {
      "passed": 29,
      "accuracy": 1.0,
      "failed_ids": []
@@ -414,6 +436,11 @@
      "passed": 36,
      "accuracy": 1.0,
      "failed_ids": []
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 36,
+     "accuracy": 1.0,
+     "failed_ids": []
     }
    }
   },
@@ -479,6 +506,14 @@
      "passed": 30,
      "accuracy": 1.0,
      "failed_ids": []
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 28,
+     "accuracy": 0.9333333333333333,
+     "failed_ids": [
+      "n-16",
+      "n-24"
+     ]
     }
    }
   },
@@ -544,6 +579,11 @@
      "passed": 24,
      "accuracy": 1.0,
      "failed_ids": []
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 24,
+     "accuracy": 1.0,
+     "failed_ids": []
     }
    }
   },
@@ -593,6 +633,11 @@
      "failed_ids": []
     },
     "uccharan-improved": {
+     "passed": 18,
+     "accuracy": 1.0,
+     "failed_ids": []
+    },
+    "uccharan-improved+wikipron": {
      "passed": 18,
      "accuracy": 1.0,
      "failed_ids": []
@@ -674,6 +719,11 @@
      "passed": 20,
      "accuracy": 1.0,
      "failed_ids": []
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 20,
+     "accuracy": 1.0,
+     "failed_ids": []
     }
    }
   },
@@ -700,6 +750,11 @@
      "failed_ids": []
     },
     "uccharan-improved": {
+     "passed": 10,
+     "accuracy": 1.0,
+     "failed_ids": []
+    },
+    "uccharan-improved+wikipron": {
      "passed": 10,
      "accuracy": 1.0,
      "failed_ids": []
@@ -795,6 +850,11 @@
      "passed": 20,
      "accuracy": 1.0,
      "failed_ids": []
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 20,
+     "accuracy": 1.0,
+     "failed_ids": []
     }
    }
   },
@@ -882,6 +942,19 @@
       "u-bow-1",
       "u-minute-1"
      ]
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 33,
+     "accuracy": 0.825,
+     "failed_ids": [
+      "u-read-2",
+      "u-lead-1",
+      "u-lead-3",
+      "u-wind-1",
+      "u-wind-3",
+      "u-bow-1",
+      "u-minute-1"
+     ]
     }
    }
   },
@@ -939,6 +1012,19 @@
      ]
     },
     "uccharan-improved": {
+     "passed": 13,
+     "accuracy": 0.65,
+     "failed_ids": [
+      "u-n-01",
+      "u-n-04",
+      "u-n-07",
+      "u-n-08",
+      "u-n-16",
+      "u-n-19",
+      "u-n-20"
+     ]
+    },
+    "uccharan-improved+wikipron": {
      "passed": 13,
      "accuracy": 0.65,
      "failed_ids": [
@@ -1009,6 +1095,15 @@
      ]
     },
     "uccharan-improved": {
+     "passed": 17,
+     "accuracy": 0.85,
+     "failed_ids": [
+      "u-m-05",
+      "u-m-09",
+      "u-m-18"
+     ]
+    },
+    "uccharan-improved+wikipron": {
      "passed": 17,
      "accuracy": 0.85,
      "failed_ids": [
@@ -1092,6 +1187,13 @@
      "failed_ids": [
       "u-h-06"
      ]
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 35,
+     "accuracy": 0.9722222222222222,
+     "failed_ids": [
+      "u-h-26"
+     ]
     }
    }
   },
@@ -1166,6 +1268,16 @@
       "u-r-10",
       "u-r-11"
      ]
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 8,
+     "accuracy": 0.6666666666666666,
+     "failed_ids": [
+      "u-r-07",
+      "u-r-08",
+      "u-r-10",
+      "u-r-11"
+     ]
     }
    }
   }
@@ -1190,6 +1302,11 @@
    "passed": 347,
    "items": 348,
    "accuracy": 0.9971264367816092
+  },
+  "uccharan-improved+wikipron": {
+   "passed": 345,
+   "items": 348,
+   "accuracy": 0.9913793103448276
   }
  },
  "total_unseen_sets": {
@@ -1212,6 +1329,11 @@
    "passed": 105,
    "items": 128,
    "accuracy": 0.8203125
+  },
+  "uccharan-improved+wikipron": {
+   "passed": 106,
+   "items": 128,
+   "accuracy": 0.828125
   }
  }
 }

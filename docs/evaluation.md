@@ -223,19 +223,27 @@ list.
 
 Held-out half:
 
-| Origin | Names | Reference (espeak-ng 1.52) | uccharan compatible | **uccharan improved** |
-| --- | ---: | ---: | ---: | ---: |
-| Indian | 48 | 43.8 % | 50.0 % | **77.1 %** |
-| English | 52 | 84.6 % | 100 % | **100 %** |
-| European | 17 | 70.6 % | 88.2 % | **100 %** |
-| Hispanic | 19 | 52.6 % | 89.5 % | **89.5 %** |
-| Chinese | 12 | 58.3 % | 91.7 % | **91.7 %** |
-| Other East Asian | 10 | 50.0 % | 100 % | **100 %** |
-| Arabic, Persian, Turkish | 6 | 50.0 % | 100 % | **100 %** |
-| African | 8 | **50.0 %** | 37.5 % | 37.5 % |
-| **Names not in CMUdict** | 41 | 34.1 % | 19.5 % | **56.1 %** |
-| Names in CMUdict | 131 | 70.2 % | 99.2 % | 99.2 % |
-| **All held-out** | 172 | 61.6 % | 80.2 % | **89.0 %** |
+| Origin | Names | Reference (espeak-ng 1.52) | uccharan compatible | **uccharan improved** | improved + WikiPron pack |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Indian | 48 | 43.8 % | 50.0 % | **77.1 %** | 75.0 % |
+| English | 52 | 84.6 % | 100 % | **100 %** | 100 % |
+| European | 17 | 70.6 % | 88.2 % | **100 %** | 100 % |
+| Hispanic | 19 | 52.6 % | 89.5 % | **89.5 %** | 89.5 % |
+| Chinese | 12 | 58.3 % | 91.7 % | **91.7 %** | 91.7 % |
+| Other East Asian | 10 | 50.0 % | 100 % | **100 %** | 100 % |
+| Arabic, Persian, Turkish | 6 | 50.0 % | 100 % | **100 %** | 100 % |
+| African | 8 | **50.0 %** | 37.5 % | 37.5 % | 37.5 % |
+| **Names not in CMUdict** | 41 | 34.1 % | 19.5 % | **56.1 %** | 53.7 % |
+| Names in CMUdict | 131 | 70.2 % | 99.2 % | 99.2 % | 99.2 % |
+| **All held-out** | 172 | 61.6 % | 80.2 % | **89.0 %** | 88.4 % |
+
+The last column loads the optional CC BY-SA WikiPron pack (`--pack data/packs/wikipron-en-us.ucd`;
+see [DATA_LICENSES.md](../DATA_LICENSES.md)). It was run once on the held-out half after the pack
+was built and checked on the development half (where it changed nothing: 92.8 % with and without).
+Wiktionary has only 8 of the 41 held-out names that CMUdict lacks. On Indian names it fixed one
+(*Pooja*) and broke two (*Nandini*, *Patil*: Wiktionary's English entries are anglicised, and the
+stress uccharan transfers onto them landed elsewhere), so the pack costs one name overall and does
+not help the African names (Wiktionary lists one of the eight). Its value is elsewhere: ordinary words outside CMUdict.
 
 Read the rows with care: for names that are in CMUdict the reference pronunciation *is* CMUdict's,
 and so is uccharan's lexicon, so 99 % there is expected rather than impressive. The fair comparison
@@ -243,6 +251,72 @@ is **names not in CMUdict: 56.1 % against 34.1 %**, and Indian names (77.1 % aga
 African names are the one origin where the reference does better (4 against 3 of 8 — too few to
 say much). The development half gives 92.8 % against 74.0 % overall and 90.3 % against 73.6 % on
 Indian names.
+
+### African names
+
+```sh
+python tools/eval/build_african_names.py        # expand the hand-written source into the gold set
+python tools/eval/names_eval.py --gold tools/eval/gold/african_names.tsv --split heldout
+```
+
+[`gold/african_names.src`](../tools/eval/gold/african_names.src) lists 388 African first names,
+surnames and place names from 37 languages with English-context pronunciations written by hand from
+each language's published grammar (sources in the header of the generated `.tsv`). Names from
+tone languages have no fixed English stress, so every syllable an English speaker may stress is
+accepted, and each plain vowel letter may take either of its two usual English values. The set was
+written before any African-names rules and split by a hash of the id (193 dev, 195 held-out).
+Held-out: espeak-ng 45.6 %, uccharan compatible 41.5 %, uccharan improved 75.4 % (41.0 % before
+the African-names rules, 70.8 % after the first round, 73.3 % after the North African work, 75.9 %
+now). Per-language results are in
+`tools/eval/results/african_names_heldout.json`.
+
+Several groups of that set were too small to say anything (one to four names), and the Egyptian
+names of the North African set trailed the reference, so three more sets were written by hand
+before any work on them, split by hash and used for tuning on the development half only. The
+held-out halves were first scored after one round of work; Tigrinya still trailed by one name
+(59.3 % against 63.0 %), so its development half was grown by 40 names (marked `!` in the source:
+always development), the reader was improved on development data only, and all held-out halves were
+scored a second and final time. Second scoring:
+
+```sh
+python tools/eval/build_african_names.py --north-african   # 181 Maghrebi, Egyptian, Berber names
+python tools/eval/build_african_names.py --egyptian        # 167 Egyptian names (second set)
+python tools/eval/build_african_names.py --se-african      # 184 Chichewa, Shona, Tsonga, Tigrinya names
+python tools/eval/names_eval.py --gold tools/eval/gold/egyptian_names.tsv --split heldout
+```
+
+| Held-out | n | espeak-ng 1.52 | compatible | improved | improved + WikiPron |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| North African set | 100 | 40.0 % | 33.0 % | **66.0 %** | 64.0 % |
+| Egyptian set | 85 | 56.5 % | 48.2 % | **69.4 %** | 69.4 % |
+| Chichewa | 24 | 41.7 % | 20.8 % | **87.5 %** | 87.5 % |
+| Shona | 26 | 42.3 % | 30.8 % | **73.1 %** | 73.1 % |
+| Tsonga | 19 | 42.1 % | 10.5 % | **73.7 %** | 73.7 % |
+| Tigrinya | 27 | 63.0 % | 55.6 % | **70.4 %** | 70.4 % |
+
+Development halves (used for tuning): Egyptian 75.6 % against 59.8 %; Tigrinya (59 names after
+growing) 69.5 % against 45.8 %; the whole Chichewa/Shona/Tsonga/Tigrinya development half 78.1 %
+against 38.3 %. First scoring of the held-out halves, for the record: North African 67.0 %,
+Egyptian 69.4 %, Chichewa/Shona/Tsonga/Tigrinya 72.9 % (Tigrinya 59.3 %). The gold notation of the two new sets writes a
+double consonant once, as English speakers say it (fixed before tuning; it also changed the
+reference's development score from 56.1 % to 59.8 %).
+
+What changed in improved mode: a list of 1 508 Arabic given names in English transliteration
+(Wikidata, CC0; names that misaki's dictionary of common English words lists are left out, as are
+Western given names) is read with the Arabic reader even when CMUdict has the name with English
+stress; Egyptian spellings (final *-y* after two consonants is i, *aw* is aʊ, *ee*/*oo* long,
+*dh*/*bh* split in *Medhat*/*Sobhy*, a stressed *a* before two consonants is English short a);
+words of the names of Eritrean and Ethiopian people on Wikidata (3 828 words, CC0; read with the
+African reader when the word is outside the English lexicon and not more Indian-looking); Ethiopian
+and Eritrean name elements (*gebre*, *wolde*, *habte*, *tesfa*, *berhan*, *haile*,
+*tekle*, *kidane*, *mehret*, *tsega*, *alem*, *fikre*); Bantu onsets *nts*, *nkh*, *ndz*, *ts*,
+*hw*, *kw*, *mn* and clusters *ndw*, *ngw*, *mph*, *tsw*; Tsonga *x* = ʃ and *rh*; final *-ai* as two
+syllables. A doubled *k* in words outside the lexicon is now read like *ck* in both modes (the
+letter-to-sound model had dropped it: *Mekki*); held-out agreement is unchanged. The general names
+set's held-out half moved from 91.9 % to 91.3 %: one of the six Arabic/Persian/Turkish names is now
+read differently from CMUdict (5 of 6 against espeak-ng's 3 of 6). The list keeps a CMUdict reading
+when it already stresses the same syllable with the same consonants and a fitting vowel; leaving
+every CMUdict name alone instead would cost 10 points on the Egyptian development half.
 
 ### Development sets (used for tuning)
 
@@ -260,6 +334,44 @@ Indian names.
 | Hindi words in English text | 10 | 100 % | 100 % | 100 % | 100 % |
 | Romanised Hindi | 20 | 0 % | 0 % | 0 % | 100 % |
 | **All development** | 348 | 50.3 % | 55.7 % | 65.2 % | 99.7 % |
+
+### Bhojpuri and Maithili (improved mode against the Hindi-voice fallback)
+
+```sh
+python tools/eval/build_bho_gold.py bho        # also: mai
+python tools/eval/bho_eval.py --lang bho --split heldout
+```
+
+espeak-ng has no Bhojpuri or Maithili voice; the fallback is its Hindi voice, which uccharan's
+compatible mode reproduces. Each gold set was written before any work on the language and split by
+a hash of the item. Bhojpuri: 437 words in 12 categories and 153 short sentences, written by hand
+from Shukla (1981) and Tiwari (1960); each word records where it is attested (FLORES-200 bho_Deva,
+Grierson's *Linguistic Survey of India*, or the spec's examples). Maithili: 410 words (134 with
+Wiktionary's own pronunciations via WikiPron, every variant accepted; the rest hand-written from
+Yadav 1996 and Jha 1958) and 151 sentences. The comparison is broad: stress removed, ʌ ɐ = ə,
+ɪ = i, ʊ = u, the reference's r. = ɽ, a geminate written with ː = a double consonant, aspirated
+sonorants = consonant + h.
+
+| Held-out | Hindi voice (espeak-ng `hi`) | compatible | improved |
+| --- | ---: | ---: | ---: |
+| Bhojpuri words (224) | 62.9 % | 63.8 % | **96.4 %** |
+| — ऐ औ words / avagraha / flaps / copula | 0 / 0 / 50 / 78 % | 0 / 17 / 50 / 78 % | **86 / 100 / 95 / 100 %** |
+| Bhojpuri sentences (82): PER / identical | 5.54 % / 28.0 % | 5.54 % / 28.0 % | **0.43 % / 91.5 %** |
+| Maithili words (226) | 68.6 % | 66.4 % | **93.4 %** |
+| — Wiktionary words / final i u / ऐ औ | 62 / 72 / 0 % | 56 / 72 / 0 % | **82 / 100 / 100 %** |
+| Maithili sentences (71): PER / identical | 5.66 % / 32.4 % | 5.60 % / 32.4 % | **0.29 % / 94.4 %** |
+
+The Bhojpuri held-out half was scored twice: first after the Bhojpuri work (words 96.0 %, sentence
+PER 0.65 %, identical 89.0 %), then after the Maithili work, which added Maithili past endings to
+the shared -ल- rule and the geminate notation to the comparison; the table gives the second
+scoring. Development halves: Bhojpuri words 98.6 % (fallback 64.3 %), sentence PER 0.56 %
+(4.50 %); Maithili words 92.9 % (67.4 %), sentence PER 0.39 % (6.15 %). Hiatus versus diphthong
+(गइल) is not visible in this broad comparison, only in stress. Speech recognisers checked (model
+cards, 2026-11-14): MMS-1B-all has Maithili and Magahi adapters but no Bhojpuri (CC BY-NC 4.0);
+AI4Bharat IndicConformer has a Maithili model (MIT) but no Bhojpuri; for Bhojpuri there are
+community models (RESPIN ESPnet Bhojpuri, CC BY 4.0; a Whisper-small Bhojpuri ONNX model, CC BY
+4.0; Vakyansh wav2vec2, no licence stated). No Piper voice takes Bhojpuri or Maithili phonemes, so
+no end-to-end test was run.
 
 ## 5. Speed, start-up, memory and size
 

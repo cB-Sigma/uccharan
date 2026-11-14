@@ -1,0 +1,63 @@
+{
+ "lang": "mai",
+ "split": "heldout",
+ "systems": {
+  "espeak-ng hi (fallback)": {
+   "word_accuracy": 0.6858407079646017,
+   "sentence_per": 0.056592765460910154,
+   "sentence_exact": 0.323943661971831,
+   "by_category": {
+    "wikt": 0.6229508196721312,
+    "avagraha": 0.25,
+    "diph": 0.0,
+    "finali": 0.71875,
+    "misc": 0.9230769230769231,
+    "pron": 0.8333333333333334,
+    "post": 0.8571428571428571,
+    "cop": 0.6,
+    "verb": 0.6363636363636364,
+    "adj": 0.8571428571428571,
+    "num": 1.0,
+    "noun": 0.8108108108108109
+   }
+  },
+  "uccharan compatible": {
+   "word_accuracy": 0.6637168141592921,
+   "sentence_per": 0.056009334889148193,
+   "sentence_exact": 0.323943661971831,
+   "by_category": {
+    "wikt": 0.5573770491803278,
+    "avagraha": 0.0,
+    "diph": 0.0,
+    "finali": 0.71875,
+    "misc": 0.9230769230769231,
+    "pron": 0.8333333333333334,
+    "post": 0.8571428571428571,
+    "cop": 0.6,
+    "verb": 0.6363636363636364,
+    "adj": 0.8571428571428571,
+    "num": 1.0,
+    "noun": 0.8108108108108109
+   }
+  },
+  "uccharan improved": {
+   "word_accuracy": 0.9336283185840708,
+   "sentence_per": 0.0029171528588098016,
+   "sentence_exact": 0.9436619718309859,
+   "by_category": {
+    "wikt": 0.819672131147541,
+    "avagraha": 0.75,
+    "diph": 1.0,
+    "finali": 1.0,
+    "misc": 0.9230769230769231,
+    "pron": 1.0,
+    "post": 1.0,
+    "cop": 1.0,
+    "verb": 1.0,
+    "adj": 1.0,
+    "num": 1.0,
+    "noun": 0.9459459459459459
+   }
+  }
+ }
+}

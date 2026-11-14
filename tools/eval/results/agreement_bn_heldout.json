@@ -1,0 +1,243 @@
+{
+ "language": "bn",
+ "reference": "espeak-ng 1.52.0 voice bn (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 2000,
+  "reference_symbols": 98066,
+  "per": 0.003987110721350927,
+  "per_without_stress": 0.003137167373459316,
+  "exact_sentence": 0.931,
+  "exact_sentence_without_stress": 0.939,
+  "piper_shape_per": 0.003931037235103963,
+  "piper_shape_exact_sentence": 0.931,
+  "word_count_mismatch_sentences": 27,
+  "errors_by_class": {
+   "stress": {
+    "count": 142,
+    "share": 0.3631713554987212,
+    "per_contribution": 0.0014480044051965004
+   },
+   "vowel": {
+    "count": 97,
+    "share": 0.24808184143222506,
+    "per_contribution": 0.0009891297697469052
+   },
+   "consonant": {
+    "count": 78,
+    "share": 0.19948849104859334,
+    "per_contribution": 0.000795382701445965
+   },
+   "other": {
+    "count": 62,
+    "share": 0.1585677749360614,
+    "per_contribution": 0.0006322272755083312
+   },
+   "word-boundary": {
+    "count": 6,
+    "share": 0.015345268542199489,
+    "per_contribution": 6.118328472661269e-05
+   },
+   "length": {
+    "count": 5,
+    "share": 0.01278772378516624,
+    "per_contribution": 5.098607060551058e-05
+   },
+   "diacritic": {
+    "count": 1,
+    "share": 0.0025575447570332483,
+    "per_contribution": 1.0197214121102114e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→ˌ",
+    "count": 34
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 28
+   },
+   {
+    "edit": "ɔ→∅",
+    "count": 22
+   },
+   {
+    "edit": "∅→ɔ",
+    "count": 21
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 17
+   },
+   {
+    "edit": "j→ɟ",
+    "count": 16
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 15
+   },
+   {
+    "edit": "ɔ→o",
+    "count": 13
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 13
+   },
+   {
+    "edit": "ː→ɾ",
+    "count": 12
+   },
+   {
+    "edit": "ɾ→ɔ",
+    "count": 12
+   },
+   {
+    "edit": "æ→e",
+    "count": 10
+   },
+   {
+    "edit": "∅→j",
+    "count": 10
+   },
+   {
+    "edit": "∅→t",
+    "count": 10
+   },
+   {
+    "edit": "c→ʃ",
+    "count": 9
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 9
+   },
+   {
+    "edit": "o→ɔ",
+    "count": 8
+   },
+   {
+    "edit": "o→∅",
+    "count": 8
+   },
+   {
+    "edit": "ː→ʃ",
+    "count": 5
+   },
+   {
+    "edit": "ː→∅",
+    "count": 5
+   },
+   {
+    "edit": "ˈ→ɔ",
+    "count": 5
+   },
+   {
+    "edit": "ʰ→∅",
+    "count": 4
+   },
+   {
+    "edit": "ɾ→r",
+    "count": 4
+   },
+   {
+    "edit": "i→.",
+    "count": 4
+   },
+   {
+    "edit": "∅→e",
+    "count": 4
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 12272,
+    "wrong": 125,
+    "rate": 0.010185788787483703
+   }
+  },
+  "by_subset": {
+   "no-digits": {
+    "sentences": 2000,
+    "per": 0.003987110721350927,
+    "exact_sentence": 0.931
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "2611645",
+    "text": "মুইরিয়েলের এখন ২০ বছর হয়েছে।",
+    "reference": "mˈuiɾˌileɾ ˈekʰɔn kˈuɾi bˈɔtʃʰɔɾ hˈɔtʃʰe",
+    "uccharan": "mˈuiɾˌileɾ ˈekʰɔn kˈur. bˈɔtʃʰɔɾ hˈɔtʃʰe"
+   },
+   {
+    "id": "11685359",
+    "text": "১৯৭৩ সালে আফগানিস্তানের রাজতন্ত্রের অবসান ঘটে।",
+    "reference": "ˈæk hˈajaɾ nˈɔʃˈo tˈiattˈɔɾ ʃˈale ˈafɔɡˌanistˌaneɾ ɾˈaɟɔtˌɔntɾeɾ ˈɔbɔʃˌan ɡʰˈɔʈe",
+    "uccharan": "ˈæk hˈaɟaɾ nˈɔjʃˈo tˈittɔɾ ʃˈale ˈafɔɡˌanistˌaneɾ ɾˈaɟɔtˌɔntɾeɾ ˈɔbɔʃˌan ɡʰˈɔʈe"
+   },
+   {
+    "id": "5683469",
+    "text": "ওনার এক তিক্ত অভিজ্ঞতা হয়েছিলো।",
+    "reference": "ˈoːnaɾ ˈek tˈikto ˈobʰiɡɡˌõta hˈotʃʰilˌo",
+    "uccharan": "ˈoːnaɾ ˈek tˈikto ˈobʰiɡɡˌɔta hˈotʃʰilˌo"
+   },
+   {
+    "id": "11500052",
+    "text": "১৭৫৭ সালে পলাশির যুদ্ধ হয়েছিল।",
+    "reference": "ˈæk hˈajaɾ ʃˈatʃˈo ʃˈatannˈo ʃˈale pˈɔlaʃˌiɾ dʒˈuddʰɔ hˈotʃʰil",
+    "uccharan": "ˈæk hˈaɟaɾ ʃˈatʃˈo ʃˈatannˌɔ ʃˈale pˈɔlaʃˌiɾ dʒˈuddʰɔ hˈotʃʰil"
+   },
+   {
+    "id": "11000837",
+    "text": "২০১৮ সালের ২৪ জানুয়ারি এটি আজাকিতে আসে।",
+    "reference": "dˈu hˈajaɾ ˈaʈʰaɾˌɔ ʃˈaleɾ tʃˈɔbbiʃ ɟˈanuɾˌi ˈeʈi ˈaɟakˌite ˈaʃe",
+    "uccharan": "dˈu hˈaɟaɾ ˈaʈʰaɾˌo ʃˈaleɾ tʃˈobbiʃ ɟˈanuɾˌi ˈeʈi ˈaɟakˌite ˈaʃe"
+   },
+   {
+    "id": "11479697",
+    "text": "পরিবর্তন-প্রক্রিয়ায় আমরা বাংলাদেশের পাশে থাকতে চাই।",
+    "reference": "pˈoɾibˌɔɾtɔnˌɔpɾˈɔkɾij ˌamɔɾˌa bˈaŋladˌeʃeɾ pˈaʃe tʰˈakɔtˌe tʃˈai",
+    "uccharan": "pˈoɾibˌɔɾtɔnpɾˈokɾij ˌamɔɾˌa bˈaŋladˌeʃeɾ pˈaʃe tʰˈakɔtˌe tʃˈai"
+   },
+   {
+    "id": "11536854",
+    "text": "বাংলাদেশের রাষ্ট্রপতি রাষ্ট্রের প্রধান হিসেবে দায়িত্ব পালন করেন কিন্তু সরকার প্রধানের দায়িত্ব পালন করেন বাংলাদেশের প্রধানমন্ত্রী।",
+    "reference": "bˈaŋladˌeʃeɾ ɾˈaʃʈɾɔpˌɔti ɾˈaʃʈɾeɾ pɾˈodʰan hˈiʃebˌe dˈatbɔ pˈalɔn kˈɔɾen kˌintu ʃˈɔɾɔkˌaɾ pɾˈodʰanˌeɾ dˈatbɔ pˈalɔn kˈɔɾen bˈaŋladˌeʃeɾ pɾˌɔɖʰanmˌɔntɾˈi",
+    "uccharan": "bˈaŋladˌeʃeɾ ɾˈaʃʈɾɔpˌɔti ɾˈaʃʈɾeɾ pɾˈodʰan hˈiʃebˌe dˈatbɔ pˈalɔn kˈɔɾen kˌintu ʃˈɔɾɔkˌaɾ pɾˈodʰanˌeɾ dˈatbɔ pˈalɔn kˈɔɾen bˈaŋladˌeʃeɾ pɾˈodʰanˌɔmɔntɾˌi"
+   },
+   {
+    "id": "11643656",
+    "text": "ইংরেজরা বাংলাদেশে আগমন করে ১৬০৮ সালে।",
+    "reference": "ˈiŋɾeɟˌɔɾa bˈaŋladˌeʃe ˈaɡɔmˌɔn kˈɔɾe ˈæk hˈajaɾ tʃʰˈɔʃˈo ˈaʈʰ ʃˈale",
+    "uccharan": "ˈiŋɾeɟˌɔɾa bˈaŋladˌeʃe ˈaɡɔmˌɔn kˈɔɾe ˈæk hˈaɟaɾ tʃʰˈɔjʃˈo ˈaʈ ʃˈale"
+   },
+   {
+    "id": "11456767",
+    "text": "বাংলাদেশ ১৯৭১ সালে স্বাধীনতা লাভ করে।",
+    "reference": "bˈaŋladˌeʃ ˈæk hˈajaɾ nˈɔʃˈo ˈekattˈɔɾ ʃˈale ʃˈadʰinˌɔta lˈabʰ kˈɔɾe",
+    "uccharan": "bˈaŋladˌeʃ ˈæk hˈaɟaɾ nˈɔjʃˈo ˈekattˌɔɾ ʃˈale ʃˈadʰinˌɔta lˈabʰ kˈɔɾe"
+   },
+   {
+    "id": "5279662",
+    "text": "ওদের বন্ধু লাগবে।",
+    "reference": "ˌoːdeɾ bˈondʰu lˈaɡɔbˌe",
+    "uccharan": "ˈoːdeɾ bˈondʰu lˈaɡɔbˌe"
+   },
+   {
+    "id": "11499497",
+    "text": "ধর্মপালের পর তাঁর পুত্র দেবপাল সিংহাসনে আরােহণ করেন।",
+    "reference": "dʰˈɔrmɔpˌaleɾ pˈɔɾ tˈãɾ pˈutɾɔ dˈebɔpˌal ʃˈiŋhaʃˌɔne ˈaɾahˌɔn kˈɔɾen",
+    "uccharan": "dʰˈɔrmɔpˌaleɾ pˈɔɾ tˈãɾ pˈutɾɔ dˈebɔpˌal ʃˈiŋhaʃˌɔne ˈaɾaˌehɔn kˈɔɾen"
+   },
+   {
+    "id": "11478600",
+    "text": "গ্রামের কয়েকজন বাসিন্দা সূত্রে জানা গেছে, মঙ্গলবার রাত আটটার দিকে বিজিবির পাঁচ সদস্যের একটি দল ওই গ্রামের বাবলু মিয়ার বাড়িতে যায়।",
+    "reference": "ɡɾˈameɾ kˈɔkɔɟˌɔn bˈaʃindˌa ʃˈutɾe ɟˈana ɡˈetʃʰe mɔnɡˈolbˌaɾ ɾˈato ˈaʈɔʈˌaɾ dˈike bˈiɟibˌiɾ pˈãtʃ ʃˈɔdɔsdʒˌeɾ ˈekʈi dˈɔl ˈoːi ɡɾˈameɾ bˈabɔlˌu mˈiɾ bˈar.te dʒˈaj",
+    "uccharan": "ɡɾˈameɾ kˈɔkɔɟˌɔn bˈaʃindˌa ʃˈutɾe ɟˈana ɡˈetʃʰe mˈɔŋɡɔlˌɔbaɾ ɾˈato ˈaʈɔʈˌaɾ dˈike bˈiɟibˌiɾ pˈãtʃ ʃˈɔdɔsdʒˌeɾ ˈekʈi dˈɔl ˈoːi ɡɾˈameɾ bˈabɔlˌu mˈiɾ bˈar.te dʒˈaj"
+   }
+  ]
+ }
+}

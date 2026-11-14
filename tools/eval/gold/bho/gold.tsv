@@ -1,0 +1,605 @@
+# Bhojpuri word gold set: hand-written broad pronunciations (Devanagari word, IPA), written 2026-11-14 before any
+# Bhojpuri work. Word sources: F = attested in FLORES-200 bho_Deva dev/devtest (CC BY-SA 4.0, text used for
+# evaluation only, https://github.com/facebookresearch/flores); L = forms in Grierson, Linguistic Survey of India
+# vol. V part II (1903, public domain, https://archive.org/details/in.ernet.dli.2015.32969) grammar sketch of
+# Bhojpuri; S = the spec's oracle example set (specs/bho.md, words only). Pronunciation: written by hand from
+# Shukla 1981, Bhojpuri Grammar, and Tiwari 1960 (vowels a aː i iː u uː e eː o oː ə, ऐ = əi, औ = əu, vowel letters
+# इ उ after a vowel are their own vowel, ड़ ढ़ = ɽ ɽʰ, avagraha = pronounced final ə, final inherent vowel silent
+# after a single consonant, Hindi-type medial schwa deletion, nasal vowels from chandrabindu and from anusvara
+# before a fricative or at the end). Notation: espeak-style Hindi symbols (c ɟ ʋ ɾ ʃ), aspiration ʰ.
+# Category tags: hiatus, diph, flap, avagraha, verb, cop, noun, adj, pron, post, num, misc.
+# Bhojpuri sentence gold set: short sentences written for this set on the patterns of Shukla 1981 (Bhojpuri
+# Grammar) and Grierson's LSI vol. V part II (1903, public domain), with vocabulary attested in FLORES-200 bho_Deva
+# (CC BY-SA 4.0); hand-written broad pronunciation of every word (conventions as words.src). Written 2026-11-14
+# before any Bhojpuri work. Format: sentence <TAB> pronunciation (words separated by spaces).
+# Columns: id, kind, text, expected, category, source, split. Date of all items: 2026-11-14.
+w-अउर	word	अउर	əuɾ	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-अउरी	word	अउरी	əuɾiː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-गइल	word	गइल	ɡəil	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कइल	word	कइल	kəil	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-अइसन	word	अइसन	əisən	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-रउआ	word	रउआ	ɾəuaː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-भइल	word	भइल	bʰəil	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-आउर	word	आउर	aːuɾ	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-जइसे	word	जइसे	ɟəiseː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कइले	word	कइले	kəileː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-नइखे	word	नइखे	nəikʰeː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कउनो	word	कउनो	kəunoː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-जइसन	word	जइसन	ɟəisən	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-राउर	word	राउर	ɾaːuɾ	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-आइल	word	आइल	aːil	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-रउवा	word	रउवा	ɾəuʋaː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-कइने	word	कइने	kəineː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-भइले	word	भइले	bʰəileː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-अइसे	word	अइसे	əiseː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-कइलस	word	कइलस	kəiləs	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-फइलल	word	फइलल	pʰəiləl	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-गइने	word	गइने	ɡəineː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-पइसा	word	पइसा	pəisaː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कइलन	word	कइलन	kəilən	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-लइकन	word	लइकन	ləikən	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-तइयार	word	तइयार	təijaːɾ	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कइला	word	कइला	kəilaː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-अइले	word	अइले	əileː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कइसे	word	कइसे	kəiseː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-रउरा	word	रउरा	ɾəuɾaː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-गइलन	word	गइलन	ɡəilən	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कुछउ	word	कुछउ	kucʰu	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-होइ	word	होइ	hoːi	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-बतइलन	word	बतइलन	bətəilən	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-ओइजा	word	ओइजा	oːiɟaː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-लउके	word	लउके	ləukeː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-गइले	word	गइले	ɡəileː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-गइलीं	word	गइलीं	ɡəilĩː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-भइला	word	भइला	bʰəilaː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-लइका	word	लइका	ləikaː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-चउथा	word	चउथा	cəutʰaː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-जाइब	word	जाइब	ɟaːib	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-ओइसे	word	ओइसे	oːiseː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-काइल	word	काइल	kaːil	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पाइल	word	पाइल	paːil	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बनइलन	word	बनइलन	bənəilən	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-हउ	word	हउ	həu	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-हइ	word	हइ	həi	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-फइले	word	फइले	pʰəileː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बइठल	word	बइठल	bəiʈʰəl	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-जउने	word	जउने	ɟəuneː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-सिकाइत	word	सिकाइत	sɪkaːit	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-अइलन	word	अइलन	əilən	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-ओइजू	word	ओइजू	oːiɟuː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-टकराइल	word	टकराइल	ʈəkɾaːil	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-तइयारी	word	तइयारी	təijaːɾiː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-लउकत	word	लउकत	ləukət	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कइ	word	कइ	kəi	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-जाइ	word	जाइ	ɟaːi	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-जउन	word	जउन	ɟəun	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-अइसने	word	अइसने	əisəneː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कइलें	word	कइलें	kəilẽː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-जाइल	word	जाइल	ɟaːil	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-अइहें	word	अइहें	əihẽː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-डेराइल	word	डेराइल	ɖeːɾaːil	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-गइलस	word	गइलस	ɡəiləs	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-जइहें	word	जइहें	ɟəihẽː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-गइलें	word	गइलें	ɡəilẽː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बतउलस	word	बतउलस	bətəuləs	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बतउनें	word	बतउनें	bətəunẽː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-मउसम	word	मउसम	məusəm	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-लउट	word	लउट	ləuʈ	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-भइया	word	भइया	bʰəijaː	hiatus	specs/bho.md example word; pronunciation hand-written	heldout
+w-माई	word	माई	maːiː	hiatus	specs/bho.md example word; pronunciation hand-written	heldout
+w-चिरई	word	चिरई	cɪɾəiː	hiatus	specs/bho.md example word; pronunciation hand-written	dev
+w-दुआरी	word	दुआरी	dʊaːɾiː	hiatus	specs/bho.md example word; pronunciation hand-written	dev
+w-कइसन	word	कइसन	kəisən	hiatus	specs/bho.md example word; pronunciation hand-written	heldout
+w-आवेलन	word	आवेलन	aːʋeːlən	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-आईं	word	आईं	aːĩː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-जाईं	word	जाईं	ɟaːĩː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-खाईं	word	खाईं	kʰaːĩː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-दिआई	word	दिआई	dɪaːiː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-बिआह	word	बिआह	bɪaːh	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-सिआर	word	सिआर	sɪaːɾ	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-पिअर	word	पिअर	pɪəɾ	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-कुआँ	word	कुआँ	kʊãː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-सुअर	word	सुअर	sʊəɾ	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-गउआँ	word	गउआँ	ɡəũː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-कउआ	word	कउआ	kəuaː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-बउआ	word	बउआ	bəuaː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-नउआ	word	नउआ	nəuaː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-खइनी	word	खइनी	kʰəiniː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-मइया	word	मइया	məijaː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-दइया	word	दइया	dəijaː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-बेटउआ	word	बेटउआ	beːʈəuaː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-बिलइया	word	बिलइया	bɪləijaː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-बहुरिया	word	बहुरिया	bəhʊɾɪjaː	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-मौसम	word	मौसम	məusəm	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-तौर	word	तौर	təuɾ	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-वैज्ञानिक	word	वैज्ञानिक	ʋəiɡjaːnɪk	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-मौजूद	word	मौजूद	məuɟuːd	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-कौनो	word	कौनो	kəunoː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-फैसला	word	फैसला	pʰəislaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-दौरान	word	दौरान	dəuɾaːn	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-समझौता	word	समझौता	səmɟʰəutaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-मौत	word	मौत	məut	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-बैंक	word	बैंक	bəĩk	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-औरतन	word	औरतन	əuɾətən	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-पौधा	word	पौधा	pəudʰaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-सैनिक	word	सैनिक	səinɪk	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-दौरा	word	दौरा	dəuɾaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-माहौल	word	माहौल	maːhəul	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-पैदा	word	पैदा	pəidaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-नौसेना	word	नौसेना	nəuseːnaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-गैर	word	गैर	ɡəiɾ	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-अवैध	word	अवैध	əʋəidʰ	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पैमाना	word	पैमाना	pəimaːnaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-मौका	word	मौका	məukaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-ऐतिहासिक	word	ऐतिहासिक	əitɪhaːsɪk	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-वैध	word	वैध	ʋəidʰ	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पैदल	word	पैदल	pəidəl	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पैर	word	पैर	pəiɾ	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-जैसे	word	जैसे	ɟəiseː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-नौ	word	नौ	nəu	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-मैदान	word	मैदान	məidaːn	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-कौशल	word	कौशल	kəuʃəl	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-नौकरी	word	नौकरी	nəukəɾiː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-जैविक	word	जैविक	ɟəiʋɪk	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-तैयार	word	तैयार	təijaːɾ	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-सौर	word	सौर	səuɾ	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-औपचारिक	word	औपचारिक	əupcaːɾɪk	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-वैश्विक	word	वैश्विक	ʋəiʃʋɪk	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बौद्ध	word	बौद्ध	bəuddʰ	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-भौतिक	word	भौतिक	bʰəutɪk	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पैटर्न	word	पैटर्न	pəiʈəɾn	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-शैली	word	शैली	ʃəiliː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-चौड़ा	word	चौड़ा	cəuɽaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-मौजूदा	word	मौजूदा	məuɟuːdaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-तैरे	word	तैरे	təiɾeː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-पैखाना	word	पैखाना	pəikʰaːnaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-नौका	word	नौका	nəukaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-सैद्धांतिक	word	सैद्धांतिक	səiddʰaːntɪk	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-औरत	word	औरत	əuɾət	diph	specs/bho.md example word; pronunciation hand-written	dev
+w-ऐसन	word	ऐसन	əisən	diph	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-कैसन	word	कैसन	kəisən	diph	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-बैल	word	बैल	bəil	diph	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-भैंस	word	भैंस	bʰəĩs	diph	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-चैत	word	चैत	cəit	diph	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-सैंया	word	सैंया	səĩjaː	diph	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-बड़	word	बड़	bəɽ	flap	specs/bho.md example word; pronunciation hand-written	dev
+w-बढ़िया	word	बढ़िया	bəɽʰɪjaː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-बड़का	word	बड़का	bəɽkaː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-उड़ान	word	उड़ान	ʊɽaːn	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-बड़हन	word	बड़हन	bəɽhən	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-जुड़ल	word	जुड़ल	ɟʊɽəl	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-दौड़	word	दौड़	dəuɽ	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-पड़ी	word	पड़ी	pəɽiː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-बाड़न	word	बाड़न	baːɽən	cop	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-सड़क	word	सड़क	səɽək	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-लड़ाई	word	लड़ाई	ləɽaːiː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-पहाड़	word	पहाड़	pəhaːɽ	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-बढ़	word	बढ़	bəɽʰ	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पड़ल	word	पड़ल	pəɽəl	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-खिलाड़ी	word	खिलाड़ी	kʰɪlaːɽiː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-भीड़	word	भीड़	bʰiːɽ	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-छोड़	word	छोड़	cʰoːɽ	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-पीढ़ी	word	पीढ़ी	piːɽʰiː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पेड़	word	पेड़	peːɽ	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-घड़ी	word	घड़ी	ɡʰəɽiː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-पढ़ाई	word	पढ़ाई	pəɽʰaːiː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-बड़ा	word	बड़ा	bəɽaː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-गाड़ी	word	गाड़ी	ɡaːɽiː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बेड़ा	word	बेड़ा	beːɽaː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-लकड़ी	word	लकड़ी	ləkəɽiː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-गड़हा	word	गड़हा	ɡəɽhaː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-कपड़ा	word	कपड़ा	kəpɽaː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-थोड़ा	word	थोड़ा	tʰoːɽaː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-बाढ़	word	बाढ़	baːɽʰ	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-गोड़	word	गोड़	ɡoːɽ	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पकड़	word	पकड़	pəkəɽ	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बढ़ल	word	बढ़ल	bəɽʰəl	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-पड़ेला	word	पड़ेला	pəɽeːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-खेलाड़ी	word	खेलाड़ी	kʰeːlaːɽiː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पड़ोसी	word	पड़ोसी	pəɽoːsiː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पड़	word	पड़	pəɽ	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-चढ़ाई	word	चढ़ाई	cəɽʰaːiː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-लड़ाका	word	लड़ाका	ləɽaːkaː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कीड़ा	word	कीड़ा	kiːɽaː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-करोड़	word	करोड़	kəɾoːɽ	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पढ़ला	word	पढ़ला	pəɽʰəlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-बढ़ावा	word	बढ़ावा	bəɽʰaːʋaː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बाड़ें	word	बाड़ें	baːɽẽː	cop	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बाड़े	word	बाड़े	baːɽeː	cop	specs/bho.md example word; pronunciation hand-written	heldout
+w-बाड़ी	word	बाड़ी	baːɽiː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-बाड़ू	word	बाड़ू	baːɽuː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-बाड़ा	word	बाड़ा	baːɽaː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-पढ़त	word	पढ़त	pəɽʰət	verb	specs/bho.md example word; pronunciation hand-written	heldout
+w-चलऽ	word	चलऽ	cələ	avagraha	specs/bho.md example word; pronunciation hand-written	heldout
+w-देखऽ	word	देखऽ	deːkʰə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-करऽ	word	करऽ	kəɾə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-बोलऽ	word	बोलऽ	boːlə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-सुनऽ	word	सुनऽ	sʊnə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-पढ़ऽ	word	पढ़ऽ	pəɽʰə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-लिखऽ	word	लिखऽ	lɪkʰə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-बइठऽ	word	बइठऽ	bəiʈʰə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-आवऽ	word	आवऽ	aːʋə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-रहऽ	word	रहऽ	ɾəhə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-कहऽ	word	कहऽ	kəhə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-धरऽ	word	धरऽ	dʰəɾə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-मारऽ	word	मारऽ	maːɾə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-पकड़ऽ	word	पकड़ऽ	pəkəɽə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-उठऽ	word	उठऽ	ʊʈʰə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-सुतऽ	word	सुतऽ	sʊtə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-जानऽ	word	जानऽ	ɟaːnə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-तऽ	word	तऽ	tə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-हऽ	word	हऽ	hə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-बाड़ऽ	word	बाड़ऽ	baːɽə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-रहलऽ	word	रहलऽ	ɾəhələ	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-करबऽ	word	करबऽ	kəɾəbə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-जइबऽ	word	जइबऽ	ɟəibə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-देबऽ	word	देबऽ	deːbə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-लेबऽ	word	लेबऽ	leːbə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-गइलऽ	word	गइलऽ	ɡəilə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-कइलऽ	word	कइलऽ	kəilə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-खइलऽ	word	खइलऽ	kʰəilə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-भइलऽ	word	भइलऽ	bʰəilə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-होखऽ	word	होखऽ	hoːkʰə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-बा	word	बा	baː	cop	specs/bho.md example word; pronunciation hand-written	heldout
+w-बानी	word	बानी	baːniː	cop	specs/bho.md example word; pronunciation hand-written	dev
+w-बाटे	word	बाटे	baːʈeː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-बाटी	word	बाटी	baːʈiː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-बाटीं	word	बाटीं	baːʈĩː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-हवे	word	हवे	həʋeː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-हईं	word	हईं	həĩː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-हउवे	word	हउवे	həuʋeː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-रहल	word	रहल	ɾəhəl	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-रहे	word	रहे	ɾəheː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-रहलन	word	रहलन	ɾəhələn	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-रहली	word	रहली	ɾəhəliː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-रहनी	word	रहनी	ɾəhəniː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-बोलेनी	word	बोलेनी	boːleːniː	verb	specs/bho.md example word; pronunciation hand-written	heldout
+w-कहेलन	word	कहेलन	kəheːlən	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-सकेला	word	सकेला	səkeːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-करेला	word	करेला	kəɾeːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-होला	word	होला	hoːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-होखे	word	होखे	hoːkʰeː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-होखेला	word	होखेला	hoːkʰeːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-जाला	word	जाला	ɟaːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-आवेला	word	आवेला	aːʋeːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-लागेला	word	लागेला	laːɡeːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-मिलेला	word	मिलेला	mɪleːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-रहेला	word	रहेला	ɾəheːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-देला	word	देला	deːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-लेला	word	लेला	leːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-चलेला	word	चलेला	cəleːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-बनेला	word	बनेला	bəneːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-जालें	word	जालें	ɟaːlẽː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-करेलन	word	करेलन	kəɾeːlən	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-देखल	word	देखल	deːkʰəl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-लागल	word	लागल	laːɡəl	verb	specs/bho.md example word; pronunciation hand-written	dev
+w-बनावल	word	बनावल	bənaːʋəl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-देहल	word	देहल	deːhəl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-लिहल	word	लिहल	lɪhəl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-कहल	word	कहल	kəhəl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पावल	word	पावल	paːʋəl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-मारल	word	मारल	maːɾəl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-चलल	word	चलल	cələl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-करब	word	करब	kəɾəb	verb	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-जाइबि	word	जाइबि	ɟaːibɪ	verb	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-देब	word	देब	deːb	verb	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-लेब	word	लेब	leːb	verb	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-होई	word	होई	hoːiː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-होखी	word	होखी	hoːkʰiː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-जाई	word	जाई	ɟaːiː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-करीं	word	करीं	kəɾĩː	verb	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-जानत	word	जानत	ɟaːnət	verb	specs/bho.md example word; pronunciation hand-written	heldout
+w-करत	word	करत	kəɾət	verb	specs/bho.md example word; pronunciation hand-written	dev
+w-कहत	word	कहत	kəhət	verb	specs/bho.md example word; pronunciation hand-written	dev
+w-आवत	word	आवत	aːʋət	verb	specs/bho.md example word; pronunciation hand-written	dev
+w-जात	word	जात	ɟaːt	verb	specs/bho.md example word; pronunciation hand-written	dev
+w-खात	word	खात	kʰaːt	verb	specs/bho.md example word; pronunciation hand-written	heldout
+w-देखत	word	देखत	deːkʰət	verb	specs/bho.md example word; pronunciation hand-written	dev
+w-लिखत	word	लिखत	lɪkʰət	verb	specs/bho.md example word; pronunciation hand-written	heldout
+w-पियत	word	पियत	pɪjət	verb	specs/bho.md example word; pronunciation hand-written	heldout
+w-करे	word	करे	kəɾeː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-करके	word	करके	kəɾkeː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कहले	word	कहले	kəhəleː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कहलन	word	कहलन	kəhələn	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कहलस	word	कहलस	kəhələs	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-देखलन	word	देखलन	deːkʰələn	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-मिलल	word	मिलल	mɪləl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-बोलल	word	बोलल	boːləl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-खाइल	word	खाइल	kʰaːil	verb	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-खइलीं	word	खइलीं	kʰəilĩː	verb	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-हम	word	हम	həm	pron	specs/bho.md example word; pronunciation hand-written	dev
+w-हमार	word	हमार	həmaːɾ	pron	specs/bho.md example word; pronunciation hand-written	heldout
+w-हमरा	word	हमरा	həmɾaː	pron	specs/bho.md example word; pronunciation hand-written	heldout
+w-हमनी	word	हमनी	həmniː	pron	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-तू	word	तू	tuː	pron	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-तोहार	word	तोहार	toːhaːɾ	pron	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-तोहरा	word	तोहरा	toːhɾaː	pron	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-ऊ	word	ऊ	uː	pron	specs/bho.md example word; pronunciation hand-written	heldout
+w-ई	word	ई	iː	pron	specs/bho.md example word; pronunciation hand-written	heldout
+w-उनकर	word	उनकर	ʊnkəɾ	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-उनका	word	उनका	ʊnkaː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-ओकर	word	ओकर	oːkəɾ	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-ओकरा	word	ओकरा	oːkɾaː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-एकर	word	एकर	eːkəɾ	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-एकरा	word	एकरा	eːkɾaː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-जेकर	word	जेकर	ɟeːkəɾ	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-जेकरा	word	जेकरा	ɟeːkɾaː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-केहू	word	केहू	keːhuː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कुछ	word	कुछ	kʊcʰ	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-सभ	word	सभ	səbʰ	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-सभे	word	सभे	səbʰeː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-अपना	word	अपना	əpnaː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-आपन	word	आपन	aːpən	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-एही	word	एही	eːhiː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-ओही	word	ओही	oːhiː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-इहे	word	इहे	ɪheː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-उहे	word	उहे	ʊheː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-का	word	का	kaː	pron	specs/bho.md example word; pronunciation hand-written	dev
+w-के	word	के	keː	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-में	word	में	mẽː	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-से	word	से	seː	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पर	word	पर	pəɾ	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-खातिर	word	खातिर	kʰaːtɪɾ	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-लगे	word	लगे	ləɡeː	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-ले	word	ले	leː	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-तक	word	तक	tək	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-साथे	word	साथे	saːtʰeː	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बाद	word	बाद	baːd	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पहिले	word	पहिले	pəhɪleː	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-बादे	word	बादे	baːdeː	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-जे	word	जे	ɟeː	misc	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कि	word	कि	kɪ	misc	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-ना	word	ना	naː	misc	specs/bho.md example word; pronunciation hand-written	heldout
+w-नू	word	नू	nuː	misc	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-भी	word	भी	bʰiː	misc	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-त	word	त	tə	misc	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-बहुत	word	बहुत	bəhʊt	adj	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-छोट	word	छोट	cʰoːʈ	adj	specs/bho.md example word; pronunciation hand-written	heldout
+w-नीक	word	नीक	niːk	adj	specs/bho.md example word; pronunciation hand-written	heldout
+w-खराब	word	खराब	kʰəɾaːb	adj	specs/bho.md example word; pronunciation hand-written	dev
+w-नया	word	नया	nəjaː	adj	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पुरान	word	पुरान	pʊɾaːn	adj	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-जादा	word	जादा	ɟaːdaː	adj	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-ढेर	word	ढेर	ɖʰeːɾ	adj	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-गरम	word	गरम	ɡəɾəm	adj	specs/bho.md example word; pronunciation hand-written	heldout
+w-ठंडा	word	ठंडा	ʈʰəɳɖaː	adj	specs/bho.md example word; pronunciation hand-written	dev
+w-सुंदर	word	सुंदर	sʊndəɾ	adj	specs/bho.md example word; pronunciation hand-written	dev
+w-आदमी	word	आदमी	aːdmiː	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-मरद	word	मरद	məɾəd	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-मेहरारू	word	मेहरारू	meːhəɾaːɾuː	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-बाबूजी	word	बाबूजी	baːbuːɟiː	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-बहिन	word	बहिन	bəhɪn	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-घर	word	घर	ɡʰəɾ	noun	specs/bho.md example word; pronunciation hand-written	dev
+w-किताब	word	किताब	kɪtaːb	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-इस्कूल	word	इस्कूल	ɪskuːl	noun	specs/bho.md example word; pronunciation hand-written	dev
+w-काम	word	काम	kaːm	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-भात	word	भात	bʰaːt	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-मछरी	word	मछरी	məcʰɾiː	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-दूध	word	दूध	duːdʰ	noun	specs/bho.md example word; pronunciation hand-written	dev
+w-पानी	word	पानी	paːniː	noun	specs/bho.md example word; pronunciation hand-written	dev
+w-नून	word	नून	nuːn	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-कुकुर	word	कुकुर	kʊkʊɾ	noun	specs/bho.md example word; pronunciation hand-written	dev
+w-बिलार	word	बिलार	bɪlaːɾ	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-गाय	word	गाय	ɡaːj	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-पोखरा	word	पोखरा	poːkʰəɾaː	noun	specs/bho.md example word; pronunciation hand-written	dev
+w-नदी	word	नदी	nədiː	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-सुरुज	word	सुरुज	sʊɾʊɟ	noun	specs/bho.md example word; pronunciation hand-written	dev
+w-चाँद	word	चाँद	cãːd	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-तारा	word	तारा	taːɾaː	noun	specs/bho.md example word; pronunciation hand-written	dev
+w-हवा	word	हवा	həʋaː	noun	specs/bho.md example word; pronunciation hand-written	dev
+w-बरखा	word	बरखा	bəɾkʰaː	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-भोर	word	भोर	bʰoːɾ	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-साँझ	word	साँझ	sãːɟʰ	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-रात	word	रात	ɾaːt	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-आज	word	आज	aːɟ	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-काल्ह	word	काल्ह	kaːlh	noun	specs/bho.md example word; pronunciation hand-written	dev
+w-गाँव	word	गाँव	ɡãːʋ	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-भूख	word	भूख	bʰuːkʰ	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-देस	word	देस	deːs	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-सरीर	word	सरीर	səɾiːɾ	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कोसिका	word	कोसिका	koːsɪkaː	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बेमारी	word	बेमारी	beːmaːɾiː	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-समय	word	समय	səməj	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-कारन	word	कारन	kaːɾən	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-लोग	word	लोग	loːɡ	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-दिन	word	दिन	dɪn	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-साल	word	साल	saːl	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बेरा	word	बेरा	beːɾaː	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-जगह	word	जगह	ɟəɡəh	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बात	word	बात	baːt	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-दुनिया	word	दुनिया	dʊnɪjaː	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-सरकार	word	सरकार	səɾkaːɾ	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-भासा	word	भासा	bʰaːsaː	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-इलाका	word	इलाका	ɪlaːkaː	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-सहर	word	सहर	səhəɾ	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-नाम	word	नाम	naːm	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-मनई	word	मनई	mənəiː	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-बेटा	word	बेटा	beːʈaː	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-बेटी	word	बेटी	beːʈiː	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-भाई	word	भाई	bʰaːiː	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-बाप	word	बाप	baːp	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-घोड़ा	word	घोड़ा	ɡʰoːɽaː	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-चिरइया	word	चिरइया	cɪɾəijaː	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-गोरू	word	गोरू	ɡoːɾuː	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-खेत	word	खेत	kʰeːt	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-धान	word	धान	dʰaːn	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-गेहूँ	word	गेहूँ	ɡeːhũː	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-आँख	word	आँख	ãːkʰ	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-मुँह	word	मुँह	mʊ̃h	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-हाथ	word	हाथ	haːtʰ	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-गोड़वा	word	गोड़वा	ɡoːɽʋaː	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-रसता	word	रसता	ɾəstaː	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-एक	word	एक	eːk	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-दू	word	दू	duː	num	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-तीन	word	तीन	tiːn	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-चार	word	चार	caːɾ	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-पाँच	word	पाँच	pãːc	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-छव	word	छव	cʰəʋ	num	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-सात	word	सात	saːt	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-आठ	word	आठ	aːʈʰ	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-दस	word	दस	dəs	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-बीस	word	बीस	biːs	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-सौ	word	सौ	səu	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-हजार	word	हजार	həɟaːɾ	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-लाख	word	लाख	laːkʰ	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-एगारह	word	एगारह	eːɡaːɾəh	num	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-पहिला	word	पहिला	pəhɪlaː	num	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-दूसर	word	दूसर	duːsəɾ	num	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-तीसर	word	तीसर	tiːsəɾ	num	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
+w-एगो	word	एगो	eːɡoː	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+w-दूगो	word	दूगो	duːɡoː	num	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
+w-गो	word	गो	ɡoː	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
+w-आधा	word	आधा	aːdʰaː	num	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
+s-004	sentence	हम भोजपुरी बोलेनी।	həm bʰoːɟpʊɾiː boːleːniː	sentence	written for this set (see header)	heldout
+s-005	sentence	रउआ कइसन बानी?	ɾəuaː kəisən baːniː	sentence	written for this set (see header)	heldout
+s-006	sentence	ई हमार घर ह।	iː həmaːɾ ɡʰəɾ hə	sentence	written for this set (see header)	heldout
+s-007	sentence	ऊ गाँव गइल।	uː ɡãːʋ ɡəil	sentence	written for this set (see header)	heldout
+s-008	sentence	हमरा भूख लागल बा।	həmɾaː bʰuːkʰ laːɡəl baː	sentence	written for this set (see header)	heldout
+s-009	sentence	का हाल बा?	kaː haːl baː	sentence	written for this set (see header)	heldout
+s-010	sentence	रउआ के नाम का ह?	ɾəuaː keː naːm kaː hə	sentence	written for this set (see header)	dev
+s-011	sentence	हमार नाम राम ह।	həmaːɾ naːm ɾaːm hə	sentence	written for this set (see header)	heldout
+s-012	sentence	तू कहाँ जात बाड़ऽ?	tuː kəhãː ɟaːt baːɽə	sentence	written for this set (see header)	dev
+s-013	sentence	हम बजार जात बानी।	həm bəɟaːɾ ɟaːt baːniː	sentence	written for this set (see header)	dev
+s-014	sentence	ऊ काल्ह आइल रहे।	uː kaːlh aːil ɾəheː	sentence	written for this set (see header)	heldout
+s-015	sentence	लइका इस्कूल गइल बा।	ləikaː ɪskuːl ɡəil baː	sentence	written for this set (see header)	dev
+s-016	sentence	माई खाना बनावत बाड़ी।	maːiː kʰaːnaː bənaːʋət baːɽiː	sentence	written for this set (see header)	dev
+s-017	sentence	बाबूजी खेत में बाड़न।	baːbuːɟiː kʰeːt mẽː baːɽən	sentence	written for this set (see header)	heldout
+s-018	sentence	इहाँ आवऽ।	ɪhãː aːʋə	sentence	written for this set (see header)	dev
+s-019	sentence	जल्दी चलऽ।	ɟəldiː cələ	sentence	written for this set (see header)	heldout
+s-020	sentence	किताब पढ़ऽ।	kɪtaːb pəɽʰə	sentence	written for this set (see header)	dev
+s-021	sentence	बइठऽ, पानी पीयऽ।	bəiʈʰə paːniː piːjə	sentence	written for this set (see header)	dev
+s-022	sentence	हम काल्ह जाइब।	həm kaːlh ɟaːib	sentence	written for this set (see header)	heldout
+s-023	sentence	ऊ ना आई।	uː naː aːiː	sentence	written for this set (see header)	heldout
+s-024	sentence	हमनी के खेत बड़ बा।	həmniː keː kʰeːt bəɽ baː	sentence	written for this set (see header)	dev
+s-025	sentence	उनकर बेटा पढ़त बा।	ʊnkəɾ beːʈaː pəɽʰət baː	sentence	written for this set (see header)	heldout
+s-026	sentence	ओकरा पास पइसा नइखे।	oːkɾaː paːs pəisaː nəikʰeː	sentence	written for this set (see header)	heldout
+s-027	sentence	ई काम बहुत नीक बा।	iː kaːm bəhʊt niːk baː	sentence	written for this set (see header)	dev
+s-028	sentence	आज बहुत गरम बा।	aːɟ bəhʊt ɡəɾəm baː	sentence	written for this set (see header)	dev
+s-029	sentence	रात में ठंडा लागेला।	ɾaːt mẽː ʈʰəɳɖaː laːɡeːlaː	sentence	written for this set (see header)	dev
+s-030	sentence	बरखा होत बा।	bəɾkʰaː hoːt baː	sentence	written for this set (see header)	dev
+s-031	sentence	नदी में पानी बढ़ल बा।	nədiː mẽː paːniː bəɽʰəl baː	sentence	written for this set (see header)	heldout
+s-032	sentence	पेड़ पर चिरई बइठल बा।	peːɽ pəɾ cɪɾəiː bəiʈʰəl baː	sentence	written for this set (see header)	dev
+s-033	sentence	कुकुर भूँकत बा।	kʊkʊɾ bʰũːkət baː	sentence	written for this set (see header)	heldout
+s-034	sentence	गाय दूध देले।	ɡaːj duːdʰ deːleː	sentence	written for this set (see header)	dev
+s-035	sentence	हम भात खाइले।	həm bʰaːt kʰaːileː	sentence	written for this set (see header)	heldout
+s-036	sentence	ऊ मछरी ना खाला।	uː məcʰɾiː naː kʰaːlaː	sentence	written for this set (see header)	heldout
+s-037	sentence	तोहार घर कहाँ बा?	toːhaːɾ ɡʰəɾ kəhãː baː	sentence	written for this set (see header)	heldout
+s-038	sentence	हमार घर बलिया में बा।	həmaːɾ ɡʰəɾ bəlɪjaː mẽː baː	sentence	written for this set (see header)	heldout
+s-039	sentence	ऊ छपरा से आइल बा।	uː cʰəpɾaː seː aːil baː	sentence	written for this set (see header)	dev
+s-040	sentence	आरा बड़ सहर ह।	aːɾaː bəɽ səhəɾ hə	sentence	written for this set (see header)	heldout
+s-041	sentence	सड़क पर गाड़ी चलत बा।	səɽək pəɾ ɡaːɽiː cələt baː	sentence	written for this set (see header)	dev
+s-042	sentence	खिलाड़ी दौड़त बाड़न।	kʰɪlaːɽiː dəuɽət baːɽən	sentence	written for this set (see header)	heldout
+s-043	sentence	ऊ कपड़ा धोवत बाड़ी।	uː kəpɽaː dʰoːʋət baːɽiː	sentence	written for this set (see header)	heldout
+s-044	sentence	हम थोड़ा थाकल बानी।	həm tʰoːɽaː tʰaːkəl baːniː	sentence	written for this set (see header)	heldout
+s-045	sentence	रउआ कब अइनी?	ɾəuaː kəb əiniː	sentence	written for this set (see header)	heldout
+s-046	sentence	हम परसों अइनी।	həm pəɾsõː əiniː	sentence	written for this set (see header)	dev
+s-047	sentence	का भइल?	kaː bʰəil	sentence	written for this set (see header)	heldout
+s-048	sentence	कुछउ ना भइल।	kucʰu naː bʰəil	sentence	written for this set (see header)	dev
+s-049	sentence	ऊ अइसन काहे कइलस?	uː əisən kaːheː kəiləs	sentence	written for this set (see header)	dev
+s-050	sentence	हमरा ना पता।	həmɾaː naː pətaː	sentence	written for this set (see header)	dev
+s-051	sentence	तू सच कहत बाड़ऽ।	tuː səc kəhət baːɽə	sentence	written for this set (see header)	heldout
+s-052	sentence	ई बात ठीक नइखे।	iː baːt ʈʰiːk nəikʰeː	sentence	written for this set (see header)	heldout
+s-053	sentence	ओकर माई बेमार बाड़ी।	oːkəɾ maːiː beːmaːɾ baːɽiː	sentence	written for this set (see header)	heldout
+s-054	sentence	डाक्टर के बोलावऽ।	ɖaːktəɾ keː boːlaːʋə	sentence	written for this set (see header)	dev
+s-055	sentence	दवाई खा लऽ।	dəʋaːiː kʰaː lə	sentence	written for this set (see header)	dev
+s-056	sentence	हम रउआ के इंतजार करत रहनी।	həm ɾəuaː keː ɪntəɟaːɾ kəɾət ɾəhəniː	sentence	written for this set (see header)	dev
+s-057	sentence	ऊ लोग बजार गइल बा।	uː loːɡ bəɟaːɾ ɡəil baː	sentence	written for this set (see header)	heldout
+s-058	sentence	सभे लोग आ गइल।	səbʰeː loːɡ aː ɡəil	sentence	written for this set (see header)	heldout
+s-059	sentence	गाँव में मेला लागल बा।	ɡãːʋ mẽː meːlaː laːɡəl baː	sentence	written for this set (see header)	dev
+s-060	sentence	लइकन खेलत बाड़न।	ləikən kʰeːlət baːɽən	sentence	written for this set (see header)	dev
+s-061	sentence	बूढ़ आदमी बइठल बाड़न।	buːɽʰ aːdmiː bəiʈʰəl baːɽən	sentence	written for this set (see header)	heldout
+s-062	sentence	मेहरारू गीत गावत बाड़ी।	meːhəɾaːɾuː ɡiːt ɡaːʋət baːɽiː	sentence	written for this set (see header)	dev
+s-063	sentence	भइया शहर में नौकरी करेलन।	bʰəijaː ʃəhəɾ mẽː nəukəɾiː kəɾeːlən	sentence	written for this set (see header)	heldout
+s-064	sentence	बहिन के बियाह होई।	bəhɪn keː bɪjaːh hoːiː	sentence	written for this set (see header)	heldout
+s-065	sentence	बियाह में सभे नाचल।	bɪjaːh mẽː səbʰeː naːcəl	sentence	written for this set (see header)	dev
+s-066	sentence	ई गीत बहुत पुरान ह।	iː ɡiːt bəhʊt pʊɾaːn hə	sentence	written for this set (see header)	dev
+s-067	sentence	हमरा भोजपुरी गीत नीक लागेला।	həmɾaː bʰoːɟpʊɾiː ɡiːt niːk laːɡeːlaː	sentence	written for this set (see header)	dev
+s-068	sentence	ऊ पटना में पढ़ेला।	uː pəʈnaː mẽː pəɽʰeːlaː	sentence	written for this set (see header)	dev
+s-069	sentence	कॉलेज बहुत दूर बा।	kɔːleːɟ bəhʊt duːɾ baː	sentence	written for this set (see header)	dev
+s-070	sentence	हम साइकिल से जाइले।	həm saːikɪl seː ɟaːileː	sentence	written for this set (see header)	dev
+s-071	sentence	रउआ चाह पीयब?	ɾəuaː caːh piːjəb	sentence	written for this set (see header)	dev
+s-072	sentence	हँ, थोड़ा दे दीं।	hə̃ tʰoːɽaː deː dĩː	sentence	written for this set (see header)	heldout
+s-073	sentence	ना, अबहीं ना।	naː əbʰəhĩː naː	sentence	written for this set (see header)	heldout
+s-074	sentence	भोर में उठऽ।	bʰoːɾ mẽː ʊʈʰə	sentence	written for this set (see header)	dev
+s-075	sentence	साँझ के घूमे चलल जाव।	sãːɟʰ keː ɡʰuːmeː cələl ɟaːʋ	sentence	written for this set (see header)	heldout
+s-076	sentence	सुरुज उगल बा।	sʊɾʊɟ ʊɡəl baː	sentence	written for this set (see header)	dev
+s-077	sentence	चाँद निकलल बा।	cãːd nɪkələl baː	sentence	written for this set (see header)	dev
+s-078	sentence	आकास में तारा चमकत बा।	aːkaːs mẽː taːɾaː cəmkət baː	sentence	written for this set (see header)	dev
+s-079	sentence	हवा तेज चलत बा।	həʋaː teːɟ cələt baː	sentence	written for this set (see header)	dev
+s-080	sentence	पोखरा में मछरी बा।	poːkʰəɾaː mẽː məcʰɾiː baː	sentence	written for this set (see header)	dev
+s-081	sentence	किसान धान रोपत बाड़न।	kɪsaːn dʰaːn ɾoːpət baːɽən	sentence	written for this set (see header)	dev
+s-082	sentence	गेहूँ के फसल तइयार बा।	ɡeːhũː keː pʰəsəl təijaːɾ baː	sentence	written for this set (see header)	dev
+s-083	sentence	बैल खेत जोतत बा।	bəil kʰeːt ɟoːtət baː	sentence	written for this set (see header)	heldout
+s-084	sentence	भैंस पानी में बइठल बा।	bʰəĩs paːniː mẽː bəiʈʰəl baː	sentence	written for this set (see header)	heldout
+s-085	sentence	हम दू गो आम खइनी।	həm duː ɡoː aːm kʰəiniː	sentence	written for this set (see header)	dev
+s-086	sentence	ऊ तीन दिन से बेमार बा।	uː tiːn dɪn seː beːmaːɾ baː	sentence	written for this set (see header)	heldout
+s-087	sentence	पाँच बजे आवऽ।	pãːc bəɟeː aːʋə	sentence	written for this set (see header)	dev
+s-088	sentence	दस रुपया लागी।	dəs ɾʊpəjaː laːɡiː	sentence	written for this set (see header)	heldout
+s-089	sentence	सौ लोग आइल रहे।	səu loːɡ aːil ɾəheː	sentence	written for this set (see header)	dev
+s-090	sentence	पहिला दिन नीक रहल।	pəhɪlaː dɪn niːk ɾəhəl	sentence	written for this set (see header)	dev
+s-091	sentence	दूसर लइका छोट बा।	duːsəɾ ləikaː cʰoːʈ baː	sentence	written for this set (see header)	heldout
+s-092	sentence	एगो कहानी सुनावऽ।	eːɡoː kəhaːniː sʊnaːʋə	sentence	written for this set (see header)	heldout
+s-093	sentence	एगो राजा रहलन।	eːɡoː ɾaːɟaː ɾəhələn	sentence	written for this set (see header)	dev
+s-094	sentence	राजा के तीन गो बेटा रहलन।	ɾaːɟaː keː tiːn ɡoː beːʈaː ɾəhələn	sentence	written for this set (see header)	heldout
+s-095	sentence	सबसे छोट बेटा बड़ा चलाक रहे।	səbseː cʰoːʈ beːʈaː bəɽaː cəlaːk ɾəheː	sentence	written for this set (see header)	dev
+s-096	sentence	ऊ जंगल में गइलन।	uː ɟəŋɡəl mẽː ɡəilən	sentence	written for this set (see header)	heldout
+s-097	sentence	उहाँ एगो बाघ रहे।	ʊhãː eːɡoː baːɡʰ ɾəheː	sentence	written for this set (see header)	heldout
+s-098	sentence	बाघ ओकरा के देखलस।	baːɡʰ oːkɾaː keː deːkʰələs	sentence	written for this set (see header)	dev
+s-099	sentence	लइका पेड़ पर चढ़ गइल।	ləikaː peːɽ pəɾ cəɽʰ ɡəil	sentence	written for this set (see header)	heldout
+s-100	sentence	बाघ भाग गइल।	baːɡʰ bʰaːɡ ɡəil	sentence	written for this set (see header)	dev
+s-101	sentence	ऊ घरे लउट आइल।	uː ɡʰəɾeː ləuʈ aːil	sentence	written for this set (see header)	heldout
+s-102	sentence	माई बहुत खुस भइली।	maːiː bəhʊt kʰʊs bʰəiliː	sentence	written for this set (see header)	heldout
+s-103	sentence	सभे मिल के खाना खइलस।	səbʰeː mɪl keː kʰaːnaː kʰəiləs	sentence	written for this set (see header)	heldout
+s-104	sentence	ई कहानी खतम भइल।	iː kəhaːniː kʰətəm bʰəil	sentence	written for this set (see header)	heldout
+s-105	sentence	तोहरा का चाहीं?	toːhɾaː kaː caːhĩː	sentence	written for this set (see header)	dev
+s-106	sentence	हमरा एगो किताब चाहीं।	həmɾaː eːɡoː kɪtaːb caːhĩː	sentence	written for this set (see header)	dev
+s-107	sentence	ई किताब केकर ह?	iː kɪtaːb keːkəɾ hə	sentence	written for this set (see header)	heldout
+s-108	sentence	ई किताब हमार ह।	iː kɪtaːb həmaːɾ hə	sentence	written for this set (see header)	heldout
+s-109	sentence	ओकरा के बोलऽ कि आवे।	oːkɾaː keː boːlə kɪ aːʋeː	sentence	written for this set (see header)	dev
+s-110	sentence	हम ओकरा से बात करब।	həm oːkɾaː seː baːt kəɾəb	sentence	written for this set (see header)	heldout
+s-111	sentence	रउआ हमार बात सुनीं।	ɾəuaː həmaːɾ baːt sʊnĩː	sentence	written for this set (see header)	dev
+s-112	sentence	हम रउआ के चिट्ठी लिखब।	həm ɾəuaː keː ciʈʈʰiː lɪkʰəb	sentence	written for this set (see header)	heldout
+s-113	sentence	चिट्ठी काल्ह मिल जाई।	ciʈʈʰiː kaːlh mɪl ɟaːiː	sentence	written for this set (see header)	heldout
+s-114	sentence	मौसम आज नीक बा।	məusəm aːɟ niːk baː	sentence	written for this set (see header)	heldout
+s-115	sentence	फैसला काल्ह होई।	pʰəislaː kaːlh hoːiː	sentence	written for this set (see header)	heldout
+s-116	sentence	सैनिक सीमा पर बाड़न।	səinɪk siːmaː pəɾ baːɽən	sentence	written for this set (see header)	dev
+s-117	sentence	औरत लोग पोखरा पर गइली।	əuɾət loːɡ poːkʰəɾaː pəɾ ɡəiliː	sentence	written for this set (see header)	heldout
+s-118	sentence	पैदल चलल नीक ह।	pəidəl cələl niːk hə	sentence	written for this set (see header)	dev
+s-119	sentence	पैर में दरद बा।	pəiɾ mẽː dəɾəd baː	sentence	written for this set (see header)	heldout
+s-120	sentence	ई जगह बहुत सुंदर बा।	iː ɟəɡəh bəhʊt sʊndəɾ baː	sentence	written for this set (see header)	heldout
+s-121	sentence	पहाड़ पर बरफ गिरल बा।	pəhaːɽ pəɾ bəɾəpʰ ɡɪɾəl baː	sentence	written for this set (see header)	dev
+s-122	sentence	भीड़ में मत जा।	bʰiːɽ mẽː mət ɟaː	sentence	written for this set (see header)	heldout
+s-123	sentence	बाढ़ में गाँव डूब गइल।	baːɽʰ mẽː ɡãːʋ ɖuːb ɡəil	sentence	written for this set (see header)	dev
+s-124	sentence	सरकार मदद करी।	səɾkaːɾ mədəd kəɾiː	sentence	written for this set (see header)	heldout
+s-125	sentence	लोग सड़क बनावत बाड़न।	loːɡ səɽək bənaːʋət baːɽən	sentence	written for this set (see header)	heldout
+s-126	sentence	ई सड़क पटना जाला।	iː səɽək pəʈnaː ɟaːlaː	sentence	written for this set (see header)	heldout
+s-127	sentence	रेल कब आई?	ɾeːl kəb aːiː	sentence	written for this set (see header)	dev
+s-128	sentence	रेल देर से आवेले।	ɾeːl deːɾ seː aːʋeːleː	sentence	written for this set (see header)	heldout
+s-129	sentence	हम टिकट ले लेले बानी।	həm ʈɪkəʈ leː leːleː baːniː	sentence	written for this set (see header)	heldout
+s-130	sentence	तू कहिया अइबऽ?	tuː kəhɪjaː əibə	sentence	written for this set (see header)	dev
+s-131	sentence	हम अगिला हफ्ता आइब।	həm əɡɪlaː həptaː aːib	sentence	written for this set (see header)	heldout
+s-132	sentence	घर में सभे ठीक बा।	ɡʰəɾ mẽː səbʰeː ʈʰiːk baː	sentence	written for this set (see header)	heldout
+s-133	sentence	रउआ के परनाम।	ɾəuaː keː pəɾnaːm	sentence	written for this set (see header)	heldout
+s-134	sentence	जय राम जी के।	ɟəj ɾaːm ɟiː keː	sentence	written for this set (see header)	dev
+s-135	sentence	भगवान भला करस।	bʰəɡʋaːn bʰəlaː kəɾəs	sentence	written for this set (see header)	heldout
+s-136	sentence	हम गरीब आदमी हईं।	həm ɡəɾiːb aːdmiː həĩː	sentence	written for this set (see header)	heldout
+s-137	sentence	ऊ बड़का आदमी हवे।	uː bəɽkaː aːdmiː həʋeː	sentence	written for this set (see header)	heldout
+s-138	sentence	ओकर बात मत मानऽ।	oːkəɾ baːt mət maːnə	sentence	written for this set (see header)	dev
+s-139	sentence	हमरा पर भरोसा करऽ।	həmɾaː pəɾ bʰəɾoːsaː kəɾə	sentence	written for this set (see header)	dev
+s-140	sentence	तू हमार भाई हवऽ।	tuː həmaːɾ bʰaːiː həʋə	sentence	written for this set (see header)	dev
+s-141	sentence	ऊ हमार दोस्त ह।	uː həmaːɾ doːst hə	sentence	written for this set (see header)	heldout
+s-142	sentence	दोस्ती बड़ चीज ह।	doːstiː bəɽ ciːɟ hə	sentence	written for this set (see header)	heldout
+s-143	sentence	हमनी के भासा मीठ ह।	həmniː keː bʰaːsaː miːʈʰ hə	sentence	written for this set (see header)	dev
+s-144	sentence	भोजपुरी करोड़ लोग बोलेला।	bʰoːɟpʊɾiː kəɾoːɽ loːɡ boːleːlaː	sentence	written for this set (see header)	dev
+s-145	sentence	ई भासा बिहार अउरी यूपी में बोलल जाला।	iː bʰaːsaː bɪhaːɾ əuɾiː juːpiː mẽː boːləl ɟaːlaː	sentence	written for this set (see header)	heldout
+s-146	sentence	लोग नेपाल में भी भोजपुरी बोलेला।	loːɡ neːpaːl mẽː bʰiː bʰoːɟpʊɾiː boːleːlaː	sentence	written for this set (see header)	heldout
+s-147	sentence	पहिले ई भासा कैथी में लिखल जात रहे।	pəhɪleː iː bʰaːsaː kəitʰiː mẽː lɪkʰəl ɟaːt ɾəheː	sentence	written for this set (see header)	dev
+s-148	sentence	अब देवनागरी में लिखल जाला।	əb deːʋnaːɡəɾiː mẽː lɪkʰəl ɟaːlaː	sentence	written for this set (see header)	heldout
+s-149	sentence	मछरी पोखरा में तइरत बा।	məcʰɾiː poːkʰəɾaː mẽː təiɾət baː	sentence	written for this set (see header)	dev
+s-150	sentence	हम रोज भोर में दौड़ीले।	həm ɾoːɟ bʰoːɾ mẽː dəuɽiːleː	sentence	written for this set (see header)	heldout
+s-151	sentence	ऊ पइसा कमाए परदेस गइल।	uː pəisaː kəmaːeː pəɾdeːs ɡəil	sentence	written for this set (see header)	heldout
+s-152	sentence	घड़ी में का बजल बा?	ɡʰəɽiː mẽː kaː bəɟəl baː	sentence	written for this set (see header)	dev
+s-153	sentence	आठ बज गइल।	aːʈʰ bəɟ ɡəil	sentence	written for this set (see header)	heldout
+s-154	sentence	लकड़ी ले आवऽ।	ləkəɽiː leː aːʋə	sentence	written for this set (see header)	dev
+s-155	sentence	ऊ हमरा के देख के हँसल।	uː həmɾaː keː deːkʰ keː hə̃səl	sentence	written for this set (see header)	dev
+s-156	sentence	हमनी के साथे चलीं।	həmniː keː saːtʰeː cəlĩː	sentence	written for this set (see header)	heldout

@@ -1,0 +1,232 @@
+# Tamil. espeak-ng voice "ta". Written for uccharan from specs/ta.md and
+# specs/family-brahmic.md. Tamil writes one letter per place of articulation;
+# the voicing of stops is decided by position ([post] rules).
+
+[meta]
+tag = ta
+block = 0b80
+stress = initial
+final-secondary = no
+secondary-avoid = i
+secondary-after-cluster = k
+deletion = none
+inherent = ʌ ʌ
+
+[letters]
+க k
+ங ŋ
+ச c
+ஞ ɲ
+ட ʈ
+ண ɳ
+த t
+ந n
+ப p
+ம m
+ய j
+ர ɹ
+ற r
+ல l
+ள ɭ
+ழ ɻ
+வ v
+ன n
+ஜ dʒ
+ஶ ʃ
+ஷ ʂ
+ஸ s
+ஹ h
+அ a
+ஆ aː
+இ i
+ஈ iː
+உ u
+ஊ uː
+எ ʲ e
+ஏ ʲ eː
+ஐ aɪ
+ஒ o
+ஓ oː
+ஔ aʊ
+ா aː
+ி i
+ீ iː
+ு u
+ூ uː
+ெ e
+ே eː
+ை aɪ
+ொ o
+ோ oː
+ௌ aʊ
+ௗ ignore
+ஃ ignore
+F f consonant
+B b consonant
+D d consonant
+G ɡ consonant
+P P consonant
+C tʃ consonant
+
+[classes]
+V = a e i o u ʌ ʉ ː ɪ ʊ
+S = ˈ ˌ
+N = m n ŋ ɲ ɳ
+SON = j ɹ ɻ l ɭ
+P = ˈ
+TC = க ச ட த ப
+KP = க ப
+TV = ா ி ீ ு ூ ெ ே ை ொ ோ ௌ
+LONG = ː
+VV = a e i o u ʌ ʉ
+C = k ɡ ŋ c s ɲ ʈ ɖ ɳ t d n p b m j ɹ r l ɭ ɻ v ʂ h f
+
+[pre]
+ஃப -> F
+ற்ற -> ட்ற
+ற்ச -> ச்ச
+# Sanskrit loans (and Greek, British) keep the voiced initial stop of their source (Tamil
+# spelling cannot show it): hand-written list of stems, matched at the start of a word.
+பூமி -> Bூமி / # _
+பூகம்ப -> Bூகம்ப / # _
+பாதிப் -> Bாதிப் / # _
+பாதிக் -> Bாதிக் / # _
+பலம் -> Bலம் / # _
+பலத் -> Bலத் / # _
+பக்தி -> Bக்தி / # _
+பயம் -> Bயம் / # _
+பயத் -> Bயத் / # _
+பாரத -> Bாரத / # _
+பாகம் -> Bாகம் / # _
+பாகத் -> Bாகத் / # _
+போதனை -> Bோதனை / # _
+பந்தம் -> Bந்தம் / # _
+பந்தத் -> Bந்தத் / # _
+பகவா -> Bகவா / # _
+பாஷை -> Bாஷை / # _
+பாக்கிய -> Bாக்கிய / # _
+தேசம் -> Dேசம் / # _
+தேசத் -> Dேசத் / # _
+தேசிய -> Dேசிய / # _
+தூர -> Dூர / # _
+தானம் -> Dானம் / # _
+தானத் -> Dானத் / # _
+தர்ம -> Dர்ம / # _
+தேவி -> Dேவி / # _
+தேவன் -> Dேவன் / # _
+தேவத -> Dேவத / # _
+திசை -> Dிசை / # _
+தினம் -> Dினம் / # _
+தினசரி -> Dினசரி / # _
+தினத் -> Dினத் / # _
+தீபம் -> Dீபம் / # _
+தீபத் -> Dீபத் / # _
+துக்க -> Dுக்க / # _
+தைரிய -> Dைரிய / # _
+தியான -> Dியான / # _
+தண்டனை -> Dண்டனை / # _
+தரிசன -> Dரிசன / # _
+தயவு -> Dயவு / # _
+தெய்வ -> Dெய்வ / # _
+கவன -> Gவன / # _
+கங்கை -> Gங்கை / # _
+கர்ப்ப -> Gர்ப்ப / # _
+குண -> Gுண / # _
+குரு -> Gுரு / # _
+கோத்திர -> Gோத்திர / # _
+கீத -> Gீத / # _
+காந்தி -> Gாந்தி / # _
+கதி -> Gதி / # _ #
+கிரேக்க -> G்ரேக்க / # _
+பிரிட்டி -> B்ரிட்டி / # _
+கிராம -> G்ராம / # _
+கிரக -> G்ரக / # _
+# Foreign names: China, Chile, Soviet with tʃ; French with f; Belgium with b.
+சீன -> Cீன / # _
+சிலி -> Cிலி / # _
+சோவிய -> Cோவிய / # _
+பிரெஞ்ச -> F்ரெஞ்ச / # _
+பெல்ஜிய -> Bெல்ஜிய / # _
+# Sanskrit dh written த்த in loans: dd.
+மத்திய -> மD்Dிய / # _
+சாத்திய -> சாD்Dிய / # _
+புத்தர் -> BுD்Dர் / # _
+# Second element of a compound or the auxiliary படு "experience": p stays voiceless.
+ப -> P / {TV} _ ட | ் _ ட
+# முன் "before" + stop: no voicing across the boundary.
+முன்பதி -> முன்Pதி / # _
+# Loans: an initial consonant + i + r is a cluster (பிர- = pr-).
+ி -> ் / # {KP} _ ர
+
+[post]
+# The palatal: tʃː doubled, dʒ after ɲ, s elsewhere.
+cc -> tʃː
+ʈc -> ɖtʃ
+c -> tʃ / _ #
+c -> dʒ / ɲ _
+c -> s
+# Stops are voiced after a vowel, a nasal or a sonorant (not when doubled,
+# not at the start of a word).
+k -> ɡ / {V} _ {S}* {VV} | {N} _ | {SON} _ {S}* {VV}
+t -> d / {V} _ {S}* {VV} | {N} _ | {SON} _ {S}* {VV}
+ʈ -> ɖ / {V} _ {S}* {VV} | {N} _ | {SON} _ {S}* {VV}
+p -> b / {V} _ {S}* {VV} | {N} _ | {SON} _ {S}* {VV}
+# Unstressed u is the "half-u" ʉ.
+uː -> ʉ / {!P} _
+u -> ʉ / {!P} _ {!LONG} | {!P} _ #
+# ர is a trill before a consonant and at the end of a word.
+ɹ -> r / _ {C} | _ #
+P -> p
+
+[words]
+எது ʲˈedʉ
+ஏழு ʲˈeːɻʉ
+என் ʲˈen
+
+[unstressed]
+
+[numbers]
+# Number words 0-99 from Unicode CLDR common/rbnf/ta.xml (Unicode License v3).
+0 சுழியம்
+1 ஒன்று
+2 இரண்டு
+3 மூன்று
+4 நான்கு
+5 ஐந்து
+6 ஆறு
+7 ஏழு
+8 எட்டு
+9 ஒன்பது
+10 பத்து
+11 பதினொன்று
+12 பன்னிரண்டு
+13 பதின்மூன்று
+14 பதினான்கு
+15 பதினைந்து
+16 பதினாறு
+17 பதினேழு
+18 பதினெட்டு
+19 பத்தொன்பது
+20 இருபது
+20+ இருபத்து
+30 முப்பது
+30+ முப்பத்து
+40 நாற்பது
+40+ நாற்பத்து
+50 ஐம்பது
+50+ ஐம்பத்து
+60 அறுபது
+60+ அறுபத்து
+70 எழுபது
+70+ எழுபத்து
+80 எண்பது
+80+ எண்பத்து
+90 தொண்ணூறு
+90+ தொண்ணூற்று
+scale100 நூறு
+scale1000 ஆயிரம்
+scale100000 லட்சம்
+scale10000000 கோடி
+grouping indian
+join-tens yes
+demote-after-first yes

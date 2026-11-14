@@ -185,11 +185,18 @@ pub struct English<'a> {
 
 /// Run the letter-to-sound model on a word and repair its stress pattern.
 pub fn letter_to_sound(data: &Data, word: &str, lang: Lang) -> String {
-    let letters: Vec<u8> = word
+    let mut letters: Vec<u8> = word
         .bytes()
         .filter(|b| b.is_ascii_alphabetic())
         .map(|b| b.to_ascii_lowercase())
         .collect();
+    // A doubled k (rare in English, so the model has not learnt it) is read
+    // like its English spelling ck.
+    for i in 1..letters.len() {
+        if letters[i] == b'k' && letters[i - 1] == b'k' {
+            letters[i - 1] = b'c';
+        }
+    }
     let mut raw = String::new();
     if letters.is_empty() || !data.lts(&letters, &mut raw) {
         return String::new();

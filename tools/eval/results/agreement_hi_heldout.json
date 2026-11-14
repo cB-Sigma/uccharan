@@ -5,52 +5,52 @@
  "sentence_level": {
   "sentences": 3000,
   "reference_symbols": 119476,
-  "per": 0.0011968930998694299,
-  "per_without_stress": 0.000905373831775701,
+  "per": 0.0012136328635039674,
+  "per_without_stress": 0.0009151090342679127,
   "exact_sentence": 0.9883333333333333,
   "exact_sentence_without_stress": 0.9883333333333333,
-  "piper_shape_per": 0.0011819656496327754,
+  "piper_shape_per": 0.001198268624110469,
   "piper_shape_exact_sentence": 0.9876666666666667,
   "word_count_mismatch_sentences": 15,
   "errors_by_class": {
    "stress": {
-    "count": 50,
-    "share": 0.34965034965034963,
-    "per_contribution": 0.000418494090863437
+    "count": 51,
+    "share": 0.35172413793103446,
+    "per_contribution": 0.00042686397268070576
    },
    "consonant": {
     "count": 31,
-    "share": 0.21678321678321677,
+    "share": 0.21379310344827587,
     "per_contribution": 0.0002594663363353309
    },
    "vowel": {
     "count": 23,
-    "share": 0.16083916083916083,
+    "share": 0.15862068965517243,
     "per_contribution": 0.000192507281797181
    },
    "other": {
-    "count": 15,
-    "share": 0.1048951048951049,
-    "per_contribution": 0.0001255482272590311
+    "count": 16,
+    "share": 0.1103448275862069,
+    "per_contribution": 0.00013391810907629985
    },
    "schwa": {
     "count": 13,
-    "share": 0.09090909090909091,
+    "share": 0.0896551724137931,
     "per_contribution": 0.00010880846362449362
    },
    "word-boundary": {
     "count": 5,
-    "share": 0.03496503496503497,
+    "share": 0.034482758620689655,
     "per_contribution": 4.1849409086343704e-05
    },
    "length": {
     "count": 5,
-    "share": 0.03496503496503497,
+    "share": 0.034482758620689655,
     "per_contribution": 4.1849409086343704e-05
    },
    "diacritic": {
     "count": 1,
-    "share": 0.006993006993006993,
+    "share": 0.006896551724137931,
     "per_contribution": 8.36988181726874e-06
    }
   },
@@ -76,6 +76,10 @@
     "count": 6
    },
    {
+    "edit": "∅→ˌ",
+    "count": 6
+   },
+   {
     "edit": "ˈ→ə",
     "count": 6
    },
@@ -86,10 +90,6 @@
    {
     "edit": "ɟ→ˈ",
     "count": 6
-   },
-   {
-    "edit": "∅→ˌ",
-    "count": 5
    },
    {
     "edit": " →∅",
@@ -171,7 +171,7 @@
    },
    "no-digits": {
     "sentences": 2978,
-    "per": 0.0008221175034749296,
+    "per": 0.0008390683798352375,
     "exact_sentence": 0.9916051040967092
    }
   },
@@ -193,6 +193,12 @@
     "text": "मेरा जन्म सन १९७७ में ओसाका में हुआ था।",
     "reference": "mˌeːɾaː ɟˈʌnm sˈʌn ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː səthˈʌtːəɾ mẽː oːsˈaːkaː mẽː hˈʊaː tʰaː",
     "uccharan": "mˌeːɾaː ɟˈʌnm sˈʌn ˈeːk həɟˈaːɾ nˈɔːsˈɔː sˌətəhˈʌtːəɾ mẽː oːsˈaːkaː mẽː hˈʊaː tʰaː"
+   },
+   {
+    "id": "9957141",
+    "text": "हमें एक अच्छे रेजर-ब्लेड बनाने का नुख्सा बताओ।",
+    "reference": "hˈʌmẽː ˈeːk ˈʌcʰcʰeː ɾˈeːɟrblˈeːɖ bənˈaːneː kaː nˈʊkʰsaː bətˈaːoː",
+    "uccharan": "hˈʌmẽː ˈeːk ˈʌcʰcʰeː ɾˈeːɟəɾˌəblˈeːɖ bənˈaːneː kaː nˈʊkʰsaː bətˈaːoː"
    },
    {
     "id": "457029",
@@ -241,22 +247,7 @@
     "text": "घर में तीन मंज़िलें हैं।",
     "reference": "ɡʰˈʌɾ mẽː tˈiːn mˈʌnzɪlˌẽː hɛ̃",
     "uccharan": "ɡʰˈʌɾ mẽː tˈiːn mˈʌɲzɪlˌẽː hɛ̃"
-   },
-   {
-    "id": "9957141",
-    "text": "हमें एक अच्छे रेजर-ब्लेड बनाने का नुख्सा बताओ।",
-    "reference": "hˈʌmẽː ˈeːk ˈʌcʰcʰeː ɾˈeːɟrblˈeːɖ bənˈaːneː kaː nˈʊkʰsaː bətˈaːoː",
-    "uccharan": "hˈʌmẽː ˈeːk ˈʌcʰcʰeː ɾˈeːɟəɾblˈeːɖ bənˈaːneː kaː nˈʊkʰsaː bətˈaːoː"
    }
   ]
- },
- "word_level": {
-  "heldout-sentence-words": {
-   "words": 3096,
-   "per": 0.0022744189893309074,
-   "exact_word": 0.9958010335917312,
-   "exact_word_without_stress": 0.9958010335917312,
-   "stress_pattern_error": 0.0022609819121447027
-  }
  }
 }

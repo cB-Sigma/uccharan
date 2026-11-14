@@ -1,0 +1,1265 @@
+{
+ "split": "heldout",
+ "items": 195,
+ "systems": {
+  "reference": {
+   "failed": [
+    "yoruba-adebayo",
+    "yoruba-funmilayo",
+    "yoruba-yetunde",
+    "yoruba-ogunleye",
+    "igbo-chukwuemeka",
+    "igbo-obinna",
+    "igbo-chiamaka",
+    "igbo-nnamdi",
+    "igbo-nwosu",
+    "igbo-onyekachi",
+    "igbo-onitsha",
+    "igbo-owerri",
+    "hausa-aminu",
+    "hausa-abubakar",
+    "hausa-usman",
+    "hausa-musa",
+    "hausa-kaduna",
+    "hausa-katsina",
+    "hausa-maiduguri",
+    "akan-kwame",
+    "akan-abena",
+    "akan-yaw",
+    "akan-adwoa",
+    "akan-akua",
+    "ewe-senyo",
+    "ewe-mawuli",
+    "swahili-neema",
+    "kikuyu-wanjiru",
+    "kikuyu-kamau",
+    "kikuyu-kariuki",
+    "luo-otieno",
+    "luo-achieng",
+    "luo-akinyi",
+    "luo-onyango",
+    "luo-kisumu",
+    "luganda-mukasa",
+    "luganda-ssebunya",
+    "luganda-nabirye",
+    "luganda-kiwanuka",
+    "zulu-nomvula",
+    "zulu-sibusiso",
+    "zulu-ngcobo",
+    "xhosa-xolani",
+    "xhosa-thembekile",
+    "ndebele-nkosinathi",
+    "sotho-mpho",
+    "tswana-masego",
+    "tswana-gaborone",
+    "sotho-maseru",
+    "amharic-selassie",
+    "amharic-tigist",
+    "amharic-mekdes",
+    "amharic-yohannes",
+    "amharic-gebre",
+    "tigrinya-ghebreyesus",
+    "somali-hirsi",
+    "somali-cabdi",
+    "wolof-ndiaye",
+    "wolof-mbaye",
+    "wolof-ndour",
+    "wolof-moussa",
+    "wolof-cheikh",
+    "wolof-thies",
+    "wolof-ousmane",
+    "wolof-youssou",
+    "wolof-senghor",
+    "fula-oumou",
+    "lingala-mukendi",
+    "lingala-ilunga",
+    "lingala-ndombe",
+    "malagasy-rasoanaivo",
+    "malagasy-hery",
+    "malagasy-fanja",
+    "malagasy-fianarantsoa",
+    "northafrican-youssef",
+    "northafrican-khadija",
+    "northafrican-rachid",
+    "northafrican-zineb",
+    "northafrican-boumediene",
+    "northafrican-bouteflika",
+    "northafrican-ouarzazate",
+    "northafrican-marrakech",
+    "northafrican-tlemcen",
+    "northafrican-kairouan",
+    "northafrican-oujda",
+    "northafrican-amazigh",
+    "northafrican-yasmina",
+    "swahili-mwanza",
+    "swahili-tanzania",
+    "swahili-mwalimu",
+    "swahili-nyerere",
+    "swahili-shauri",
+    "kalenjin-kipchoge",
+    "kinyarwanda-uwimana",
+    "kirundi-nkurunziza",
+    "kirundi-bujumbura",
+    "chichewa-blantyre",
+    "bemba-mwansa",
+    "bemba-kaunda",
+    "oshiwambo-hifikepunye",
+    "swati-mbabane",
+    "swati-mswati",
+    "bambara-coulibaly",
+    "ewondo-yaounde",
+    "duala-douala",
+    "duala-mbappe"
+   ]
+  },
+  "uccharan-compatible": {
+   "failed": [
+    "yoruba-adebayo",
+    "yoruba-babatunde",
+    "yoruba-adeola",
+    "yoruba-funmilayo",
+    "yoruba-yetunde",
+    "yoruba-bolanle",
+    "yoruba-ogunleye",
+    "igbo-chukwuemeka",
+    "igbo-chiamaka",
+    "igbo-nnamdi",
+    "igbo-ifeoma",
+    "igbo-nwosu",
+    "igbo-chimamanda",
+    "igbo-enugu",
+    "igbo-onitsha",
+    "igbo-owerri",
+    "hausa-usman",
+    "hausa-lawal",
+    "hausa-musa",
+    "hausa-kaduna",
+    "hausa-katsina",
+    "hausa-maiduguri",
+    "akan-yaw",
+    "akan-kwaku",
+    "akan-akua",
+    "akan-boateng",
+    "akan-sefwi",
+    "ewe-mawuli",
+    "ewe-delali",
+    "swahili-neema",
+    "swahili-imani",
+    "swahili-zawadi",
+    "kikuyu-wanjiru",
+    "kikuyu-kamau",
+    "kikuyu-kariuki",
+    "luo-otieno",
+    "luo-achieng",
+    "luo-kisumu",
+    "luganda-mukasa",
+    "luganda-kato",
+    "luganda-ssebunya",
+    "luganda-nabirye",
+    "luganda-kiwanuka",
+    "zulu-nomvula",
+    "sotho-thabo",
+    "zulu-sibusiso",
+    "xhosa-xolani",
+    "xhosa-thembekile",
+    "ndebele-nkosinathi",
+    "sotho-mpho",
+    "tswana-masego",
+    "tswana-gaborone",
+    "shona-tafadzwa",
+    "amharic-tigist",
+    "amharic-mekdes",
+    "amharic-yohannes",
+    "amharic-gebre",
+    "tigrinya-asmara",
+    "tigrinya-ghebreyesus",
+    "tigrinya-mehari",
+    "somali-hirsi",
+    "somali-cabdi",
+    "oromo-dhaba",
+    "wolof-ndiaye",
+    "wolof-mbaye",
+    "wolof-ndour",
+    "wolof-moussa",
+    "wolof-cheikh",
+    "wolof-thies",
+    "wolof-ousmane",
+    "wolof-youssou",
+    "wolof-senghor",
+    "lingala-mukendi",
+    "lingala-ilunga",
+    "lingala-ndombe",
+    "malagasy-rasoanaivo",
+    "malagasy-hery",
+    "malagasy-fanja",
+    "malagasy-fianarantsoa",
+    "northafrican-khadija",
+    "northafrican-fatima",
+    "northafrican-rachid",
+    "northafrican-zineb",
+    "northafrican-boumediene",
+    "northafrican-bouteflika",
+    "northafrican-ouarzazate",
+    "northafrican-tizi",
+    "northafrican-tlemcen",
+    "northafrican-kairouan",
+    "northafrican-oujda",
+    "northafrican-amazigh",
+    "northafrican-leila",
+    "northafrican-yasmina",
+    "kikuyu-maathai",
+    "swahili-tanzania",
+    "swahili-mwalimu",
+    "swahili-nyerere",
+    "swahili-shauri",
+    "kalenjin-kipchoge",
+    "kinyarwanda-uwimana",
+    "kirundi-nkurunziza",
+    "chichewa-lilongwe",
+    "chichewa-blantyre",
+    "bemba-mwansa",
+    "bemba-kaunda",
+    "oshiwambo-hifikepunye",
+    "tsonga-machel",
+    "swati-mbabane",
+    "swati-mswati",
+    "mende-koroma",
+    "bambara-coulibaly",
+    "ewondo-yaounde",
+    "ewondo-eto'o",
+    "duala-mbappe"
+   ]
+  },
+  "uccharan-improved": {
+   "failed": [
+    "yoruba-funmilayo",
+    "yoruba-bolanle",
+    "yoruba-ogunleye",
+    "hausa-lawal",
+    "akan-yaw",
+    "akan-adwoa",
+    "akan-boateng",
+    "akan-sefwi",
+    "kikuyu-kamau",
+    "luo-achieng",
+    "luganda-kato",
+    "zulu-nomvula",
+    "sotho-thabo",
+    "xhosa-thembekile",
+    "shona-tendai",
+    "tigrinya-asmara",
+    "tigrinya-ghebreyesus",
+    "somali-hirsi",
+    "somali-cabdi",
+    "wolof-ndiaye",
+    "wolof-moussa",
+    "wolof-cheikh",
+    "wolof-thies",
+    "wolof-senghor",
+    "malagasy-hery",
+    "malagasy-fanja",
+    "malagasy-ravalomanana",
+    "northafrican-khadija",
+    "northafrican-fatima",
+    "northafrican-rachid",
+    "northafrican-zineb",
+    "northafrican-boumediene",
+    "northafrican-tizi",
+    "northafrican-tlemcen",
+    "northafrican-oujda",
+    "northafrican-leila",
+    "northafrican-yasmina",
+    "swahili-tanzania",
+    "swahili-nyerere",
+    "swahili-shauri",
+    "kalenjin-kipchoge",
+    "chichewa-blantyre",
+    "bemba-kaunda",
+    "tsonga-machel",
+    "bambara-coulibaly",
+    "duala-douala",
+    "ewondo-eto'o"
+   ]
+  },
+  "uccharan-improved+wikipron": {
+   "failed": [
+    "yoruba-funmilayo",
+    "yoruba-bolanle",
+    "yoruba-ogunleye",
+    "hausa-lawal",
+    "akan-yaw",
+    "akan-adwoa",
+    "akan-boateng",
+    "akan-sefwi",
+    "swahili-imani",
+    "kikuyu-kamau",
+    "luo-achieng",
+    "luganda-kato",
+    "zulu-nomvula",
+    "sotho-thabo",
+    "xhosa-thembekile",
+    "shona-tendai",
+    "tigrinya-asmara",
+    "tigrinya-ghebreyesus",
+    "somali-hirsi",
+    "somali-cabdi",
+    "wolof-ndiaye",
+    "wolof-moussa",
+    "wolof-cheikh",
+    "wolof-thies",
+    "wolof-senghor",
+    "malagasy-hery",
+    "malagasy-fanja",
+    "malagasy-ravalomanana",
+    "northafrican-khadija",
+    "northafrican-fatima",
+    "northafrican-rachid",
+    "northafrican-zineb",
+    "northafrican-boumediene",
+    "northafrican-ouarzazate",
+    "northafrican-tizi",
+    "northafrican-oujda",
+    "northafrican-amazigh",
+    "northafrican-leila",
+    "northafrican-yasmina",
+    "swahili-tanzania",
+    "swahili-nyerere",
+    "swahili-shauri",
+    "kalenjin-kipchoge",
+    "chichewa-lilongwe",
+    "chichewa-blantyre",
+    "bemba-kaunda",
+    "tsonga-machel",
+    "bambara-coulibaly",
+    "duala-douala",
+    "ewondo-eto'o"
+   ]
+  }
+ },
+ "by_group": {
+  "akan": {
+   "reference": {
+    "passed": 6,
+    "items": 11,
+    "accuracy": 0.5454545454545454
+   },
+   "uccharan-compatible": {
+    "passed": 6,
+    "items": 11,
+    "accuracy": 0.5454545454545454
+   },
+   "uccharan-improved": {
+    "passed": 7,
+    "items": 11,
+    "accuracy": 0.6363636363636364
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 7,
+    "items": 11,
+    "accuracy": 0.6363636363636364
+   }
+  },
+  "amharic": {
+   "reference": {
+    "passed": 1,
+    "items": 6,
+    "accuracy": 0.16666666666666666
+   },
+   "uccharan-compatible": {
+    "passed": 2,
+    "items": 6,
+    "accuracy": 0.3333333333333333
+   },
+   "uccharan-improved": {
+    "passed": 6,
+    "items": 6,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 6,
+    "items": 6,
+    "accuracy": 1.0
+   }
+  },
+  "bambara": {
+   "reference": {
+    "passed": 2,
+    "items": 3,
+    "accuracy": 0.6666666666666666
+   },
+   "uccharan-compatible": {
+    "passed": 2,
+    "items": 3,
+    "accuracy": 0.6666666666666666
+   },
+   "uccharan-improved": {
+    "passed": 2,
+    "items": 3,
+    "accuracy": 0.6666666666666666
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 2,
+    "items": 3,
+    "accuracy": 0.6666666666666666
+   }
+  },
+  "bemba": {
+   "reference": {
+    "passed": 0,
+    "items": 2,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 2,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   }
+  },
+  "chichewa": {
+   "reference": {
+    "passed": 2,
+    "items": 3,
+    "accuracy": 0.6666666666666666
+   },
+   "uccharan-compatible": {
+    "passed": 1,
+    "items": 3,
+    "accuracy": 0.3333333333333333
+   },
+   "uccharan-improved": {
+    "passed": 2,
+    "items": 3,
+    "accuracy": 0.6666666666666666
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 1,
+    "items": 3,
+    "accuracy": 0.3333333333333333
+   }
+  },
+  "duala": {
+   "reference": {
+    "passed": 0,
+    "items": 2,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   },
+   "uccharan-improved": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   }
+  },
+  "ewe": {
+   "reference": {
+    "passed": 3,
+    "items": 5,
+    "accuracy": 0.6
+   },
+   "uccharan-compatible": {
+    "passed": 3,
+    "items": 5,
+    "accuracy": 0.6
+   },
+   "uccharan-improved": {
+    "passed": 5,
+    "items": 5,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 5,
+    "items": 5,
+    "accuracy": 1.0
+   }
+  },
+  "ewondo": {
+   "reference": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 2,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   }
+  },
+  "fula": {
+   "reference": {
+    "passed": 8,
+    "items": 9,
+    "accuracy": 0.8888888888888888
+   },
+   "uccharan-compatible": {
+    "passed": 9,
+    "items": 9,
+    "accuracy": 1.0
+   },
+   "uccharan-improved": {
+    "passed": 9,
+    "items": 9,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 9,
+    "items": 9,
+    "accuracy": 1.0
+   }
+  },
+  "gabonese": {
+   "reference": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-compatible": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-improved": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   }
+  },
+  "hausa": {
+   "reference": {
+    "passed": 4,
+    "items": 11,
+    "accuracy": 0.36363636363636365
+   },
+   "uccharan-compatible": {
+    "passed": 5,
+    "items": 11,
+    "accuracy": 0.45454545454545453
+   },
+   "uccharan-improved": {
+    "passed": 10,
+    "items": 11,
+    "accuracy": 0.9090909090909091
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 10,
+    "items": 11,
+    "accuracy": 0.9090909090909091
+   }
+  },
+  "igbo": {
+   "reference": {
+    "passed": 5,
+    "items": 13,
+    "accuracy": 0.38461538461538464
+   },
+   "uccharan-compatible": {
+    "passed": 4,
+    "items": 13,
+    "accuracy": 0.3076923076923077
+   },
+   "uccharan-improved": {
+    "passed": 13,
+    "items": 13,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 13,
+    "items": 13,
+    "accuracy": 1.0
+   }
+  },
+  "kalenjin": {
+   "reference": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   },
+   "uccharan-compatible": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   },
+   "uccharan-improved": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   }
+  },
+  "kikuyu": {
+   "reference": {
+    "passed": 3,
+    "items": 6,
+    "accuracy": 0.5
+   },
+   "uccharan-compatible": {
+    "passed": 2,
+    "items": 6,
+    "accuracy": 0.3333333333333333
+   },
+   "uccharan-improved": {
+    "passed": 5,
+    "items": 6,
+    "accuracy": 0.8333333333333334
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 5,
+    "items": 6,
+    "accuracy": 0.8333333333333334
+   }
+  },
+  "kimbundu": {
+   "reference": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-compatible": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-improved": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   }
+  },
+  "kinyarwanda": {
+   "reference": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   },
+   "uccharan-compatible": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   },
+   "uccharan-improved": {
+    "passed": 2,
+    "items": 2,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 2,
+    "items": 2,
+    "accuracy": 1.0
+   }
+  },
+  "kirundi": {
+   "reference": {
+    "passed": 0,
+    "items": 2,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   },
+   "uccharan-improved": {
+    "passed": 2,
+    "items": 2,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 2,
+    "items": 2,
+    "accuracy": 1.0
+   }
+  },
+  "liberian": {
+   "reference": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-compatible": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-improved": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   }
+  },
+  "lingala": {
+   "reference": {
+    "passed": 4,
+    "items": 7,
+    "accuracy": 0.5714285714285714
+   },
+   "uccharan-compatible": {
+    "passed": 4,
+    "items": 7,
+    "accuracy": 0.5714285714285714
+   },
+   "uccharan-improved": {
+    "passed": 7,
+    "items": 7,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 7,
+    "items": 7,
+    "accuracy": 1.0
+   }
+  },
+  "luganda": {
+   "reference": {
+    "passed": 2,
+    "items": 6,
+    "accuracy": 0.3333333333333333
+   },
+   "uccharan-compatible": {
+    "passed": 1,
+    "items": 6,
+    "accuracy": 0.16666666666666666
+   },
+   "uccharan-improved": {
+    "passed": 5,
+    "items": 6,
+    "accuracy": 0.8333333333333334
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 5,
+    "items": 6,
+    "accuracy": 0.8333333333333334
+   }
+  },
+  "luo": {
+   "reference": {
+    "passed": 0,
+    "items": 5,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 2,
+    "items": 5,
+    "accuracy": 0.4
+   },
+   "uccharan-improved": {
+    "passed": 4,
+    "items": 5,
+    "accuracy": 0.8
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 4,
+    "items": 5,
+    "accuracy": 0.8
+   }
+  },
+  "malagasy": {
+   "reference": {
+    "passed": 3,
+    "items": 7,
+    "accuracy": 0.42857142857142855
+   },
+   "uccharan-compatible": {
+    "passed": 3,
+    "items": 7,
+    "accuracy": 0.42857142857142855
+   },
+   "uccharan-improved": {
+    "passed": 4,
+    "items": 7,
+    "accuracy": 0.5714285714285714
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 4,
+    "items": 7,
+    "accuracy": 0.5714285714285714
+   }
+  },
+  "mende": {
+   "reference": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 1,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   }
+  },
+  "ndebele": {
+   "reference": {
+    "passed": 0,
+    "items": 1,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 1,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   }
+  },
+  "northafrican": {
+   "reference": {
+    "passed": 7,
+    "items": 20,
+    "accuracy": 0.35
+   },
+   "uccharan-compatible": {
+    "passed": 6,
+    "items": 20,
+    "accuracy": 0.3
+   },
+   "uccharan-improved": {
+    "passed": 10,
+    "items": 20,
+    "accuracy": 0.5
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 9,
+    "items": 20,
+    "accuracy": 0.45
+   }
+  },
+  "oromo": {
+   "reference": {
+    "passed": 3,
+    "items": 3,
+    "accuracy": 1.0
+   },
+   "uccharan-compatible": {
+    "passed": 2,
+    "items": 3,
+    "accuracy": 0.6666666666666666
+   },
+   "uccharan-improved": {
+    "passed": 3,
+    "items": 3,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 3,
+    "items": 3,
+    "accuracy": 1.0
+   }
+  },
+  "oshiwambo": {
+   "reference": {
+    "passed": 0,
+    "items": 1,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 1,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   }
+  },
+  "shona": {
+   "reference": {
+    "passed": 4,
+    "items": 4,
+    "accuracy": 1.0
+   },
+   "uccharan-compatible": {
+    "passed": 3,
+    "items": 4,
+    "accuracy": 0.75
+   },
+   "uccharan-improved": {
+    "passed": 3,
+    "items": 4,
+    "accuracy": 0.75
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 3,
+    "items": 4,
+    "accuracy": 0.75
+   }
+  },
+  "somali": {
+   "reference": {
+    "passed": 4,
+    "items": 6,
+    "accuracy": 0.6666666666666666
+   },
+   "uccharan-compatible": {
+    "passed": 4,
+    "items": 6,
+    "accuracy": 0.6666666666666666
+   },
+   "uccharan-improved": {
+    "passed": 4,
+    "items": 6,
+    "accuracy": 0.6666666666666666
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 4,
+    "items": 6,
+    "accuracy": 0.6666666666666666
+   }
+  },
+  "sotho": {
+   "reference": {
+    "passed": 3,
+    "items": 5,
+    "accuracy": 0.6
+   },
+   "uccharan-compatible": {
+    "passed": 3,
+    "items": 5,
+    "accuracy": 0.6
+   },
+   "uccharan-improved": {
+    "passed": 4,
+    "items": 5,
+    "accuracy": 0.8
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 4,
+    "items": 5,
+    "accuracy": 0.8
+   }
+  },
+  "swahili": {
+   "reference": {
+    "passed": 5,
+    "items": 11,
+    "accuracy": 0.45454545454545453
+   },
+   "uccharan-compatible": {
+    "passed": 4,
+    "items": 11,
+    "accuracy": 0.36363636363636365
+   },
+   "uccharan-improved": {
+    "passed": 8,
+    "items": 11,
+    "accuracy": 0.7272727272727273
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 7,
+    "items": 11,
+    "accuracy": 0.6363636363636364
+   }
+  },
+  "swati": {
+   "reference": {
+    "passed": 0,
+    "items": 2,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 2,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 2,
+    "items": 2,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 2,
+    "items": 2,
+    "accuracy": 1.0
+   }
+  },
+  "tigrinya": {
+   "reference": {
+    "passed": 2,
+    "items": 3,
+    "accuracy": 0.6666666666666666
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 3,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 1,
+    "items": 3,
+    "accuracy": 0.3333333333333333
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 1,
+    "items": 3,
+    "accuracy": 0.3333333333333333
+   }
+  },
+  "tsonga": {
+   "reference": {
+    "passed": 1,
+    "items": 1,
+    "accuracy": 1.0
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 1,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 0,
+    "items": 1,
+    "accuracy": 0.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 0,
+    "items": 1,
+    "accuracy": 0.0
+   }
+  },
+  "tswana": {
+   "reference": {
+    "passed": 0,
+    "items": 2,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 2,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 2,
+    "items": 2,
+    "accuracy": 1.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 2,
+    "items": 2,
+    "accuracy": 1.0
+   }
+  },
+  "wolof": {
+   "reference": {
+    "passed": 1,
+    "items": 10,
+    "accuracy": 0.1
+   },
+   "uccharan-compatible": {
+    "passed": 1,
+    "items": 10,
+    "accuracy": 0.1
+   },
+   "uccharan-improved": {
+    "passed": 5,
+    "items": 10,
+    "accuracy": 0.5
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 5,
+    "items": 10,
+    "accuracy": 0.5
+   }
+  },
+  "xhosa": {
+   "reference": {
+    "passed": 0,
+    "items": 2,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 2,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 1,
+    "items": 2,
+    "accuracy": 0.5
+   }
+  },
+  "yoruba": {
+   "reference": {
+    "passed": 6,
+    "items": 10,
+    "accuracy": 0.6
+   },
+   "uccharan-compatible": {
+    "passed": 3,
+    "items": 10,
+    "accuracy": 0.3
+   },
+   "uccharan-improved": {
+    "passed": 7,
+    "items": 10,
+    "accuracy": 0.7
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 7,
+    "items": 10,
+    "accuracy": 0.7
+   }
+  },
+  "zulu": {
+   "reference": {
+    "passed": 3,
+    "items": 6,
+    "accuracy": 0.5
+   },
+   "uccharan-compatible": {
+    "passed": 4,
+    "items": 6,
+    "accuracy": 0.6666666666666666
+   },
+   "uccharan-improved": {
+    "passed": 5,
+    "items": 6,
+    "accuracy": 0.8333333333333334
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 5,
+    "items": 6,
+    "accuracy": 0.8333333333333334
+   }
+  },
+  "in-cmudict": {
+   "reference": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   },
+   "uccharan-compatible": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   },
+   "uccharan-improved": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 0,
+    "items": 0,
+    "accuracy": 0.0
+   }
+  },
+  "not-in-cmudict": {
+   "reference": {
+    "passed": 89,
+    "items": 195,
+    "accuracy": 0.4564102564102564
+   },
+   "uccharan-compatible": {
+    "passed": 81,
+    "items": 195,
+    "accuracy": 0.4153846153846154
+   },
+   "uccharan-improved": {
+    "passed": 148,
+    "items": 195,
+    "accuracy": 0.7589743589743589
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 145,
+    "items": 195,
+    "accuracy": 0.7435897435897436
+   }
+  },
+  "all": {
+   "reference": {
+    "passed": 89,
+    "items": 195,
+    "accuracy": 0.4564102564102564
+   },
+   "uccharan-compatible": {
+    "passed": 81,
+    "items": 195,
+    "accuracy": 0.4153846153846154
+   },
+   "uccharan-improved": {
+    "passed": 148,
+    "items": 195,
+    "accuracy": 0.7589743589743589
+   },
+   "uccharan-improved+wikipron": {
+    "passed": 145,
+    "items": 195,
+    "accuracy": 0.7435897435897436
+   }
+  }
+ }
+}

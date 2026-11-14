@@ -1,0 +1,266 @@
+# Marathi. espeak-ng voice "mr". Written for uccharan from specs/mr.md,
+# specs/family-brahmic.md and the Hindi sections of BEHAVIOUR_SPEC.md.
+
+[meta]
+tag = mr
+block = 0900
+stress = weight
+deletion = medial
+inherent = ə ʌ
+anusvara = split
+visarga = h
+y-final = yes
+geminate = k ɡ c ɟ t d p
+geminate-aspirate = t d
+lengthen-before-y = k c t p
+final-release = n m j ɾ l ɭ ɳ ɲ ŋ
+final-release-not-after = ɾ n
+keep-schwa-after = h
+anusvara-consonant-after = ʊ
+candrabindu-after-inherent = n
+trill = n m j l v ʃ s h ɳ ʂ z f ɾ ɭ x ɣ
+
+[letters]
+क k
+ख kʰ
+ग ɡ
+घ ɡʰ
+ङ ŋ
+च c
+छ cʰ
+ज z
+झ ɟʰ
+ञ ɲ
+ट ʈ
+ठ ʈʰ
+ड ɖ
+ढ ɖʰ
+ण ɳ
+त t
+थ tʰ
+द d
+ध dʰ
+न n
+प p
+फ pʰ
+ब b
+भ bʰ
+म m
+य j
+र ɾ
+ल l
+ळ ɭ
+व v
+श ʃ
+ष ʂ
+स s
+ह h
+क़ q
+ख़ x
+ग़ ɣ
+ज़ z
+ड़ r.
+ढ़ r.h
+फ़ f
+य़ j
+क़ q
+ख़ x
+ग़ ɣ
+ज़ z
+ड़ r.
+ढ़ r.h
+फ़ f
+य़ j
+अ ʌ
+आ aː
+इ ɪ
+ई iː
+उ ʊ
+ऊ u
+ऋ ɾ ʊ
+ए eː
+ऐ aɪ
+ओ oː
+औ aʊ
+ऑ ɔ
+ऍ ɛ
+ॲ ɛ vowel
+ा aː
+ि ɪ
+ी iː
+ु ʊ
+ू uː
+ृ ɾ ʊ
+े eː
+ै aɪ
+ो oː
+ौ aʊ
+ॉ ɔ
+ॅ ɛ
+# Markers written by the [pre] rules (never in real text).
+J ɟ consonant
+D d consonant
+Ī i sign
+
+[classes]
+C = क ख ग घ ङ च छ ज झ ञ ट ठ ड ढ ण त थ द ध न प फ ब भ म य र ल ळ व श ष स ह
+S = ˈ ˌ
+NV = a i u o ɔ ɛ ə ʌ
+
+[pre]
+ज्ञ -> D्ण्य
+क्ष -> क्श
+# ज is z, but palatal before y and i-vowels, where the reference also
+# repeats the vowel.
+जी -> JĪी
+ट्य -> ट्ट्य
+जि -> Jिि
+
+[pre.compat]
+# ज before i-vowels is palatal in the reference, which also repeats the vowel.
+जी -> JĪी
+जि -> Jिि
+# ज़ is silent in the reference (both spellings).
+ज़ -> 0
+ज़ -> 0
+
+[post]
+# Long ii is written long only under stress and not word-finally.
+iː -> i / _ # | {!S} _ | # _
+ɪ̃ -> ĩ
+ʊ̃ -> ũ
+# Nasal vowels other than e have no length mark.
+ː -> 0 / {NV} ̃ _
+# An unaspirated stop before its aspirated twin is written aspirated.
+c -> cʰ / _ cʰ
+ʈ -> ʈʰ / _ ʈʰ
+ɖ -> ɖʰ / _ ɖʰ
+
+[post.improved]
+r.h -> ɽʰ
+r. -> ɽ
+
+[words]
+जग ɟˈʌɡ
+जय ɟˈʌɛj
+जेवण ɟˈeːvəɳ
+जीवन ɟˈiːvən
+जन्म ɟˈʌnm
+चित्र tʃˈɪtɾə
+शंभर ʃˈʌmbəɾ
+दशमलव dəsəmlˈoː
+प्रतिशत pətˈɪʃət
+
+[unstressed]
+
+[numbers]
+# Number words 0-99 from Unicode CLDR common/rbnf/mr.xml (Unicode License v3).
+0 शून्य
+1 एक
+2 दोन
+3 तीन
+4 चार
+5 पाच
+6 सहा
+7 सात
+8 आठ
+9 नऊ
+10 दहा
+11 अकरा
+12 बारा
+13 तेरा
+14 चौदा
+15 पंधरा
+16 सोळा
+17 सतरा
+18 अठरा
+19 एकोणीस
+20 वीस
+21 एकवीस
+22 बावीस
+23 तेवीस
+24 चोवीस
+25 पंचवीस
+26 सव्वीस
+27 सत्तावीस
+28 अठ्ठावीस
+29 एकोणतीस
+30 तीस
+31 एकतीस
+32 बत्तीस
+33 तेहतीस
+34 चौतीस
+35 पस्तीस
+36 छत्तीस
+37 सदतीस
+38 अडतीस
+39 एकोणचाळीस
+40 चाळीस
+41 एक्केचाळीस
+42 बेचाळीस
+43 त्रेचाळीस
+44 चव्वेचाळीस
+45 पंचेचाळीस
+46 सेहेचाळीस
+47 सत्तेचाळीस
+48 अठ्ठेचाळीस
+49 एकोणपन्नास
+50 पन्नास
+51 एक्कावन्न
+52 बावन्न
+53 त्रेपन्न
+54 चौपन्न
+55 पंचावन्न
+56 छप्पन्न
+57 सत्तावन्न
+58 अठ्ठावन्न
+59 एकोणसाठ
+60 साठ
+61 एकसष्ट
+62 बासष्ट
+63 त्रेसष्ट
+64 चौसष्ट
+65 पासष्ट
+66 सहासष्ट
+67 सदुसष्ट
+68 अडुसष्ट
+69 एकोणसत्तर
+70 सत्तर
+71 एकाहत्तर
+72 बाहत्तर
+73 त्र्याहत्तर
+74 चौर्‍याहत्तर
+75 पंच्याहत्तर
+76 शहात्तर
+77 सत्त्याहत्तर
+78 अठ्ठ्याहत्तर
+79 एकोणऐंशी
+80 ऐंशी
+81 एक्क्याऐंशी
+82 ब्याऐंशी
+83 त्र्याऐंशी
+84 चौर्‍याऐंशी
+85 पंच्याऐंशी
+86 शहाऐंशी
+87 सत्त्याऐंशी
+88 अठ्ठ्याऐंशी
+89 एकोणनव्वद
+90 नव्वद
+91 एक्याण्णव
+92 ब्याण्णव
+93 त्र्याण्णव
+94 चौर्‍याण्णव
+95 पंच्याण्णव
+96 शहाण्णव
+97 सत्त्याण्णव
+98 अठ्ठ्याण्णव
+99 नव्व्याण्णव
+100 शंभर
+scale100 शे
+scale1000 हजार
+scale100000 लाख
+scale10000000 कोटी
+glue-hundred yes
+grouping indian
+point दशमलव
+percent प्रतिशत

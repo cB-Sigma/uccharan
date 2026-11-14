@@ -21,6 +21,7 @@ mod cmudict;
 mod en;
 mod hi;
 mod lts;
+mod wikipron;
 
 use std::collections::BTreeMap;
 use std::io::Write;
@@ -363,6 +364,34 @@ fn main() {
             }
             if stale {
                 eprintln!("compiled data is stale: run `cargo run --release -p uccharan-lexgen`");
+                std::process::exit(1);
+            }
+        }
+        "wikipron" | "wikipron-check" => {
+            // Optional CC BY-SA packs, kept out of the core data directory.
+            let dir = root.join("data/packs");
+            let mut stale = false;
+            for (kind, name) in [
+                (wikipron::Kind::Us, "wikipron-en-us.ucd"),
+                (wikipron::Kind::Gb, "wikipron-en-gb.ucd"),
+                (wikipron::Kind::Hi, "wikipron-hi.ucd"),
+            ] {
+                let (bytes, n, skipped) = wikipron::build(&root, kind);
+                let path = dir.join(name);
+                if cmd == "wikipron-check" {
+                    let same = std::fs::read(&path).map(|o| o == bytes).unwrap_or(false);
+                    println!("{name}: {}", if same { "up to date" } else { "STALE" });
+                    stale |= !same;
+                } else {
+                    std::fs::create_dir_all(&dir).unwrap();
+                    std::fs::write(&path, &bytes).unwrap();
+                    println!(
+                        "{name}: {n} entries ({skipped} skipped), {} bytes",
+                        bytes.len()
+                    );
+                }
+            }
+            if stale {
                 std::process::exit(1);
             }
         }

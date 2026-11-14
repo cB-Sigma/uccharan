@@ -1,0 +1,172 @@
+# Telugu. espeak-ng voice "te". Written for uccharan from specs/te.md and
+# specs/family-brahmic.md.
+
+[meta]
+tag = te
+block = 0c00
+stress = initial
+final-secondary = no
+deletion = none
+inherent = a a
+anusvara = n
+visarga = h
+
+[letters]
+క k
+ఖ kʰ
+గ ɡ
+ఘ ɡʰ
+ఙ ŋ
+చ c
+ఛ cʰ
+జ ɟ
+ఝ ɟʰ
+ఞ ɲ
+ట ʈ
+ఠ ʈʰ
+డ ɖ
+ఢ ɖʰ
+ణ ɳ
+త t
+థ tʰ
+ద d
+ధ dʰ
+న n
+ప p
+ఫ pʰ
+బ b
+భ bʰ
+మ m
+య j
+ర r
+ఱ r
+ల l
+ళ ɭ
+వ ʋ
+శ ɕ
+ష ʂ
+స s
+హ h
+ౘ ts
+ౙ dz
+అ a
+ఆ aː
+ఇ i
+ఈ iː
+ఉ u
+ఊ uː
+ఋ r u
+ఎ e
+ఏ eː
+ఐ aɪ
+ఒ o
+ఓ oː
+ఔ aʊ
+ా aː
+ి i
+ీ iː
+ు u
+ూ uː
+ృ r u
+ె e
+ే eː
+ై aɪ
+ొ o
+ో oː
+ౌ aʊ
+ౕ ignore
+ౖ ignore
+
+[pre]
+జ్ఞ -> గ్న
+
+[classes]
+VEL = k ɡ
+PAL = c ɟ
+RET = ʈ ɖ
+LAB = p b m
+
+[post.improved]
+# The anusvara is homorganic before a stop and m at the end of a word
+# (the reference always prints n).
+n -> ŋ / _ {VEL}
+n -> ɲ / _ {PAL}
+n -> ɳ / _ {RET}
+n -> m / _ {LAB} | _ #
+
+[words]
+ఎలా ʲˈelaː
+@ఏడు ʲˈeːɖu
+@ఎనిమిది ʲˈenimˌidi
+
+[unstressed]
+ఒక s
+ఆ 0
+
+[numbers]
+# Number words 0-99 from Unicode CLDR common/rbnf/te.xml (Unicode License v3);
+# hundreds and scales arranged as Telugu voices read them.
+0 సున్న
+1 ఒకటి
+2 రెండు
+3 మూడు
+4 నాలుగు
+5 ఐదు
+6 ఆరు
+7 ఏడు
+8 ఎనిమిది
+9 తొమ్మిది
+10 పది
+11 పదకొండు
+12 పన్నెండు
+13 పదమ్మూడూ
+14 పధ్నాలుగు
+15 పదిహేను
+16 పదహారు
+17 పదిహేడు
+18 పద్ధెనిమిది
+19 పందొమ్మిది
+20 ఇరవై
+30 ముప్పై
+40 నలుభై
+50 యాభై
+60 అరవై
+70 ఢెభ్బై
+80 యెనభై
+90 తొమ్భై
+join-tens yes
+100 ఒకవంద
+100+ ఒకవంద
+200 రెండువందలు
+200+ రెండువందల
+300 మూడువందలు
+300+ మూడువందల
+400 నాలుగువందలు
+400+ నాలుగువందల
+500 ఐదువందలు
+500+ ఐదువందల
+600 ఆరువందలు
+600+ ఆరువందల
+700 ఏడువందలు
+700+ ఏడువందల
+800 ఎనిమిదివందలు
+800+ ఎనిమిదివందల
+900 తొమ్మిదివందలు
+900+ తొమ్మిదివందల
+1000 ఒకవెయ్యి
+1000+ ఒకవెయ్యి
+100000 లక్ష
+100000+ లక్ష
+10000000 కొతి
+10000000+ కొతి
+scale100 వందలు
+scale1000 వెలు
+scale1000+ వెల
+scale100000 లక్షలు
+scale100000+ లక్షల
+scale10000000 కోట్లు
+scale10000000+ కోట్ల
+grouping indian
+demote-after-first yes
+point దశాంశం
+percent శాతం

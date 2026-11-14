@@ -1,7 +1,9 @@
 # Adding a language
 
-The next languages planned are Hindi's Devanagari relatives: Marathi, Nepali, Maithili and
-Bhojpuri. This is the path a new language takes.
+Most languages are a **language file** (`crates/uccharan/lang/<tag>.lang`) read by a shared
+engine, plus one line that registers it. English and Hindi have their own front ends; Bengali,
+Marathi, Telugu, Kannada, Malayalam, Nepali and Tamil are language files. This is the path a new
+language takes.
 
 ## 1. Decide what "compatible" means
 
@@ -11,52 +13,85 @@ espeak-ng version. Install that espeak-ng yourself and pin the version in your n
 
 ## 2. Build the evaluation sets first
 
-Extend `tools/eval/build_sets.py`: a development sample and a held-out set of sentences from a
-redistributable source (Tatoeba is CC BY), disjoint by sentence id, plus word lists. Decide now
-that you will never look at held-out disagreements while writing rules.
+```sh
+python tools/eval/build_lang_sets.py <tag> --flores /path/to/flores200_dataset
+```
 
-## 3. Write the front end
+writes `tools/eval/data/<tag>_dev.tsv` and `<tag>_heldout.tsv` (add the language to `LANGS` and
+`FLORES` in the script). Sentences come from Tatoeba (CC BY 2.0 FR), split by a hash of the
+sentence id; when Tatoeba is small, from FLORES-200 (CC BY-SA 4.0; `dev` becomes our dev set,
+`devtest` our held-out set — evaluation input only, never shipped). Add the espeak voice to
+`VOICES` in `tools/eval/common.py` and `tools/bench/compare.py`. Tune only on the dev set; run the
+held-out set to report.
 
-Add `crates/uccharan/src/<lang>/mod.rs` with a `span(items, clause_final, compat) -> Vec<WordOut>`
-function, a variant in `Lang`, and a routing rule in `Phonemizer::clause_words`.
+## 3. Register the language
 
-For a Devanagari language most of `hi/mod.rs` carries over; what differs is exactly what you must
-probe and write:
+One row in the `languages!` table in `crates/uccharan/src/lib.rs`:
 
-- the letter inventory and its values (Marathi `ळ`, `ऱ्`, the two values of `च ज झ`; Nepali's
-  vowel lengths and `क्ष`, `ज्ञ`);
-- inherent-vowel deletion: Marathi and Nepali keep more final vowels than Hindi; Maithili and
-  Bhojpuri have their own patterns;
-- anusvara and chandrabindu;
-- stress, if the target notation marks it;
-- number words and abbreviations in `norm.rs`.
+```rust
+/// Kannada (espeak voice `kn`).
+Kn "kn" ["kn-in", "kan"] Brahmic(0x0c80), Some(include_str!("../lang/kn.lang"));
+```
 
-Work from descriptions of the language and from the development set's disagreement list
-(`python tools/eval/run_eval.py --lang … --set dev --show 40`). Each systematic disagreement
-becomes one hand-written rule with a comment saying what it does. If the reference is wrong about
-the language, put the correct behaviour behind `improved` and keep `compatible` faithful.
+(variant, canonical tag, other accepted names, script, language file). Add the tag to the language
+lists of the Python package (`bindings/python/python/uccharan/__init__.py`, `compat.py`) and the
+npm package (`bindings/wasm/index.js`).
 
-## 4. Data
+## 4. Write the language file
 
-If the language needs a lexicon, add its sources under `data/sources/<lang>/`, teach
-`tools/lexgen` to build `<lang>.ucd`, and add every file to `DATA_LICENSES.md` with its source and
-licence. Share-alike data (Wiktionary, WikiPron) cannot be shipped; it may be used as an
-evaluation reference that stays out of the repository.
+```text
+[meta]                 ; engine options
+tag = kn
+block = 0c80           ; first code point of the script's Unicode block
+stress = initial       ; initial | penult | weight | initial-light-heavy
+final-secondary = no
+deletion = none        ; none | final | medial (inherent-vowel deletion)
+inherent = ɐ ɐ         ; inherent vowel unstressed, stressed
+anusvara = homorganic  ; split | velar | homorganic | n | m
 
-## 5. Profiles
+[letters]              ; one letter per line: letter, sounds (a sign may be "ɾ ɪ"; "+j" is a glide after the vowel)
+ಕ k
+ೃ ɹ u
+ಋ ɹ u stressed          ; "stressed": attracts primary stress
+X ː consonant          ; marker letters written by [pre] rules need an explicit class
 
-Check every symbol your front end can emit against the voices' tables with
-`tools/eval/conformance.py`. A symbol the voice does not know is silently dropped by the model's
-tokenizer, which deletes sound.
+[classes]
+V = a e i o u
 
-## 6. Gates
+[pre]                  ; rewrite rules on letters, before reading
+ಜ್ಞ -> ಜ್ಞ
 
-A language is described as a drop-in replacement for a profile only when, on the held-out set:
+[post]                 ; rewrite rules on phonemes (stress marks included), after reading
+k -> ɡ / {V} _ {V}
+[post.compat]          ; reference-only habits
+[post.improved]        ; corrections for the improved mode
 
-- sentence-level phoneme error rate against the reference is at most 5 %;
-- no emitted symbol is outside the voice's table (other than symbols the reference itself emits
-  outside it);
-- an end-to-end run through at least one real voice (`tools/eval/e2e_tts_asr.py`) shows a word
-  error rate within +0.5 (English-like scripts) or +1.0 (others) of the reference's.
+[words]                ; exceptions: word, phonemes (or "compatible | improved"); "@word" = the word as read from digits
+[unstressed]           ; function words: word, level inside a clause, level at its end (0, s, p)
+[numbers]              ; 0–99 words (draft them with tools/cldr_numbers.py from Unicode CLDR), then
+scale100 ನೂರು           ; scale words; "scale1000+" = form when more follows, "2x" = form before a scale,
+grouping indian        ; "100+" = form of an exact value when more follows, join-tens, glue-hundred,
+point ದಶಮಾಂಶ            ; point, minus, percent, one-before-scale
+```
 
-Publish the numbers either way, in `docs/evaluation.md` and the README table.
+Rewrite rules (`uccharan::rules`) are written `match -> output / left _ right`, with classes
+`{Name}`, negated classes `{!Name}`, `#` for a word boundary, `.` for any character, `*` for
+repetition, several environments separated by `|`, and `{Class} -> 0` to delete a class member.
+At each position the longest match wins, then file order; environments look at the input of the
+pass. The full option list is in `crates/uccharan/src/indic.rs` and `langdef.rs`.
+
+For a new Brahmic language, start from a related file (Kannada was derived from Telugu by moving
+every letter 0x80 code points), read the language specification, compare a few dozen specified
+words with the reference, then iterate on the dev set with
+`python tools/eval/run_eval.py --lang <tag> --set dev --show 20`.
+
+## 5. Gates before a language ships
+
+- held-out agreement measured and written into the README language table, honestly, including
+  where it falls short;
+- unit tests with words from the specification (`crates/uccharan/tests/indic_languages.rs`);
+- `cargo test`, the Python tests and the WebAssembly tests pass;
+- speed measured against the same espeak-ng voice (`tools/bench/compare.py --langs <tag>`);
+- every data source recorded in `DATA_LICENSES.md` (number words from CLDR: Unicode License v3,
+  already in `NOTICE`); share-alike or non-commercial lexicons go into a separate downloadable pack,
+  never into the core.

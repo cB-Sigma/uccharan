@@ -63,7 +63,7 @@ def evaluate_sentences(rows, lang, oracle, binary, examples=12):
     hyp = run_uccharan(texts, lang, binary=binary)
     hyp_piper = run_uccharan(texts, lang, "piper", punctuation=True, binary=binary)
     cmu = set()
-    if lang != "hi":
+    if lang.startswith("en"):
         for line in (ROOT / "data/sources/cmudict/cmudict.dict").read_text(encoding="utf-8").splitlines():
             cmu.add(line.split(" ", 1)[0].split("(")[0])
     tot = Counter()
@@ -107,7 +107,7 @@ def evaluate_sentences(rows, lang, oracle, binary, examples=12):
             tot["aligned_sent"] += 1
             for a, b, s in zip(rw, hw, sw):
                 key = re.sub(r"[^a-z']", "", s.lower().replace("’", "'"))
-                if lang == "hi":
+                if not lang.startswith("en"):
                     cls = "lexicon"
                 elif key in FUNCTION_WORDS:
                     cls = "function"
@@ -182,7 +182,7 @@ def main() -> int:
     if oracle is None:
         print("reference phonemizer not installed; nothing to compare against")
         return 2
-    base = "hi" if args.lang == "hi" else "en"
+    base = "en" if args.lang.startswith("en") else args.lang
     rows = read_tsv(DATA / f"{base}_{args.set}.tsv")
     if args.limit:
         rows = rows[: args.limit]
