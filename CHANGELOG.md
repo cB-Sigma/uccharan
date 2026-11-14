@@ -5,6 +5,12 @@ All notable changes are listed here. The format follows
 
 ## [Unreleased]
 
+### Fixed
+
+- **WASM:** Bhojpuri, Maithili and Magahi asked for data files of their own (`bho.ucd`,
+  `mai.ucd`, `mag.ucd`) that do not exist, and failed. They now load the Hindi data, as the
+  Rust core and the Python package already did.
+
 ## [0.6.0] - 2026-11-14
 
 Fixes to existing languages and two new French voices: Belgian and Swiss French (`fr-be`,

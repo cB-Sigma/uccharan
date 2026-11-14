@@ -18,8 +18,9 @@ let dataBase = new URL("./data/", import.meta.url);
 const loading = new Map();
 // Latin-script languages read Latin text themselves.
 const LATIN = new Set(["es", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da", "fr-be", "fr-ch"]);
-// Languages read with another language's word table.
-const TABLE_OF = { "fr-be": "fr", "fr-ch": "fr" };
+// Languages read with another language's data (as the core does): Bhojpuri, Maithili and Magahi
+// with the Hindi data, Belgian and Swiss French with the French word table.
+const TABLE_OF = { bho: "hi", mai: "hi", mag: "hi", "fr-be": "fr", "fr-ch": "fr" };
 const WORD_TABLES = new Set(["ur", "sd", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da"]);
 const tablesLoaded = new Set();
 

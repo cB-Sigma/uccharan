@@ -76,3 +76,11 @@ test("a word table is fetched on first use, and the sync call says when it is mi
   assert.equal(uccharan.isLoaded("sv"), true);
   assert.ok(uccharan.phonemizeSync("Hej", { lang: "sv" }).length > 0);
 });
+
+test("Bhojpuri, Maithili and Magahi load the Hindi data and need no file of their own", async () => {
+  for (const lang of ["mai", "bho", "mag"]) {
+    const out = await uccharan.phonemize("प्रणाम! आज मौसम बहुत नीक बा।", { lang });
+    assert.ok(out.length > 0, lang);
+  }
+  assert.equal(uccharan.isLoaded("hi"), true);
+});
