@@ -610,6 +610,7 @@ impl Cx<'_> {
         let c = Chunk {
             text: s.to_string(),
             dot: false,
+            tight: false,
         };
         let items = self.expand(&c, l);
         self.join(&items, l)
@@ -620,6 +621,7 @@ impl Cx<'_> {
             let c = Chunk {
                 text: amount.to_string(),
                 dot: false,
+                tight: false,
             };
             let items = self.expand(&c, l);
             return self.join(&items, l);
@@ -679,7 +681,7 @@ impl Cx<'_> {
         let g = l.indic().expect("checked above");
         // Written number words where the language has them.
         let nums = g.numbers_text.as_ref().unwrap_or(&g.numbers);
-        let mut items = crate::gnorm::expand(c, nums, false);
+        let mut items = crate::gnorm::expand(c, nums, false, false);
         // Currency signs the generic reader leaves out.
         if c.text.starts_with('₹') {
             if let Some(w) = rupee_word(l) {

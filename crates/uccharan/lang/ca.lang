@@ -10,6 +10,8 @@ vowels = a e i o u ɛ ɔ ə
 stress = spanish
 secondary = none
 vowel-mark = h
+# A word written with u first is marked apart: no glide before it.
+vowel-mark-except = u
 spell-vowels = aeiouàèéíïòóúü
 
 [classes]
@@ -17,6 +19,11 @@ V = a e i o u à è é í ï ò ó ú ü
 FV = e i è é í
 VC = b β d ð ɡ ɣ m n l ʎ r ɾ ʒ z v
 PV = a e i o u ɛ ɔ ə
+PI = a e o u ɛ ɔ ə
+PX = a e i j o ɛ ə
+PY = a e o ɛ ə
+VL = b β d ð ɡ ɣ m n r ɾ ʒ z v
+B = ‿
 NU = a e i o ɛ ɔ ə
 CN = p t k b d ɡ f s z ʃ ʒ m n ɲ ŋ l ʎ r ɾ β ð ɣ
 SP = a e i o u ɛ ɔ ə z s ɾ r ʃ ʒ j w
@@ -66,11 +73,12 @@ y -> i
 # the start of a word are glides after a vowel.
 s -> ʒ / _ ‿ ʒ
 z -> ʒ / _ ‿ ʒ
-s -> z / _ ‿ {VC} | _ ‿ ⁑
-ʃ -> ʒ / _ ‿ {VC} | _ ‿ ⁑
+s -> z / _ ‿ {VC} | _ ‿ ⁑ | _ ‿ ⁂
+ʃ -> ʒ / _ ‿ {VC} | _ ‿ ⁑ | _ ‿ ⁂
 m -> ɱ / _ ‿ f
 t -> d / _ ‿ {VC}
-p -> b / _ ‿ {VC}
+# p stays before l.
+p -> b / _ ‿ {VL}
 k -> ɡ / _ ‿ {VC}
 n -> m / _ ‿ p | _ ‿ b | _ ‿ m | _ ‿ β
 n -> ŋ / _ ‿ k | _ ‿ ɡ
@@ -80,11 +88,25 @@ l -> ʎ / _ ‿ ʎ
 d -> ð / {SP} ‿ _ | {SP} ‿ ⁑ _
 b -> β / {SP} ‿ _ | l ‿ _ | ʎ ‿ _
 ɡ -> ɣ / {SP} ‿ _ | l ‿ _ | ʎ ‿ _
-i -> j / {PV} ‿ ⁑ _
-# The conjunction i and an unstressed final i are a glide before a vowel
-# other than u.
-i -> j / ‿ ⁑ _ ‿ ⁑ {NU} | ‿ ⁑ _ ‿ ⁑ ˈ {NU} | # ⁑ _ ‿ ⁑ {NU} | # ⁑ _ ‿ ⁑ ˈ {NU} | {CN} _ ‿ ⁑ {NU} | {CN} _ ‿ ⁑ ˈ {NU}
-u -> w / {PV} ‿ ⁑ _
+# A word-initial i is a glide after a vowel other than an unstressed i.
+i -> j / {PI} ‿ ⁑ _ {!B} | ˈ i ‿ ⁑ _ {!B}
+# The conjunction i, the pronoun hi and an unstressed final i are a glide
+# before a word written with a vowel letter (or h) first, but not before u
+# (the conjunction after a vowel letter is read j by [context.compat]).
+i -> j / {CN} _ ‿ ⁑ | ‿ ⁑ _ ‿ ⁑ | # ⁑ _ ‿ ⁑
+j -> i / ‿ ⁑ _ ‿ ⁂ | # ⁑ _ ‿ ⁂
+# u at the start of a word after a vowel that stays a vowel, and an
+# unstressed final u (ho, lo) before a vowel, are a glide; the conjunction o between vowels is w.
+u -> w / {PY} ‿ ⁑ _ | {PX} ‿ ⁂ ⁑ _ | {CN} ‿ ⁑ ˈ ɔ ‿ ⁂ ⁑ _ | # ⁑ ˈ ɔ ‿ ⁂ ⁑ _ | {CN} _ ‿ ⁑ | {CN} _ ‿ ⁂ | ‿ ⁑ _ ‿ ⁑ | ‿ ⁑ _ ‿ ⁂
+ˈɔ -> w / {PV} ‿ ⁑ _ ‿ ⁑ | {PV} ‿ ⁑ _ ‿ ⁂
+# A final r is a tap before a vowel; after a stressed vowel it is a trill
+# before a consonant and at the end (not in "per").
+r -> ɾ / _ ‿ ⁑ | _ ‿ ⁂
+ɾ -> r / ˈ {PV} _ ‿ {CN} | ˈ {PV} _ #
+
+[context.compat]
+# The conjunction i after a word written with a vowel letter last.
+i *a|*e|*i|*o|*u|*à|*è|*é|*í|*ò|*ó|*ú|*ï|*ü j
 
 [words]
 i i

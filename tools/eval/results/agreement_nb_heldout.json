@@ -5,49 +5,49 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 164950,
-  "per": 0.010287966050318278,
-  "per_without_stress": 0.008945253950763461,
-  "exact_sentence": 0.6867588932806324,
-  "exact_sentence_without_stress": 0.7223320158102767,
-  "piper_shape_per": 0.010376336686394073,
-  "piper_shape_exact_sentence": 0.6758893280632411,
-  "word_count_mismatch_sentences": 163,
+  "per": 0.009639284631706577,
+  "per_without_stress": 0.008329283900596122,
+  "exact_sentence": 0.691699604743083,
+  "exact_sentence_without_stress": 0.7272727272727273,
+  "piper_shape_per": 0.00973604370747587,
+  "piper_shape_exact_sentence": 0.6808300395256917,
+  "word_count_mismatch_sentences": 159,
   "errors_by_class": {
    "consonant": {
-    "count": 594,
-    "share": 0.3500294637595757,
-    "per_contribution": 0.003601091239769627
+    "count": 538,
+    "share": 0.3383647798742138,
+    "per_contribution": 0.0032615944225522888
    },
    "stress": {
-    "count": 436,
-    "share": 0.25692398350029466,
-    "per_contribution": 0.002643225219763565
+    "count": 419,
+    "share": 0.26352201257861635,
+    "per_contribution": 0.002540163685965444
    },
    "vowel": {
-    "count": 276,
-    "share": 0.1626399528579847,
-    "per_contribution": 0.0016732343134283115
+    "count": 271,
+    "share": 0.17044025157232703,
+    "per_contribution": 0.001642922097605335
    },
    "other": {
-    "count": 206,
-    "share": 0.12139068945197407,
-    "per_contribution": 0.0012488632919066384
-   },
-   "word-boundary": {
-    "count": 95,
-    "share": 0.05598114319387154,
-    "per_contribution": 0.0005759321006365565
+    "count": 194,
+    "share": 0.1220125786163522,
+    "per_contribution": 0.0011761139739314944
    },
    "length": {
-    "count": 90,
-    "share": 0.05303476723629935,
-    "per_contribution": 0.0005456198848135798
+    "count": 85,
+    "share": 0.05345911949685535,
+    "per_contribution": 0.0005153076689906033
+   },
+   "word-boundary": {
+    "count": 83,
+    "share": 0.05220125786163522,
+    "per_contribution": 0.0005031827826614126
    }
   },
   "top_confusions": [
    {
     "edit": "∅→ˈ",
-    "count": 116
+    "count": 104
    },
    {
     "edit": "ˌ→∅",
@@ -63,23 +63,19 @@
    },
    {
     "edit": "ʉ→∅",
-    "count": 60
-   },
-   {
-    "edit": "ˈ→∅",
-    "count": 56
-   },
-   {
-    "edit": " →∅",
     "count": 55
    },
    {
-    "edit": "t→∅",
-    "count": 54
+    "edit": "ˈ→∅",
+    "count": 51
    },
    {
-    "edit": "ː→∅",
-    "count": 47
+    "edit": " →∅",
+    "count": 50
+   },
+   {
+    "edit": "t→∅",
+    "count": 49
    },
    {
     "edit": "ə→ɛ",
@@ -94,16 +90,20 @@
     "count": 43
    },
    {
+    "edit": "ː→∅",
+    "count": 42
+   },
+   {
     "edit": "∅→ʉ",
-    "count": 40
+    "count": 34
    },
    {
     "edit": "∅→n",
-    "count": 40
+    "count": 34
    },
    {
     "edit": "∅→ ",
-    "count": 40
+    "count": 33
    },
    {
     "edit": "∅→i",
@@ -142,22 +142,22 @@
     "count": 27
    },
    {
-    "edit": "ə→∅",
-    "count": 26
+    "edit": "ɛ→ə",
+    "count": 25
    }
   ],
   "word_error_by_class": {
    "lexicon": {
-    "words": 17757,
-    "wrong": 274,
-    "rate": 0.015430534437123389
+    "words": 17850,
+    "wrong": 275,
+    "rate": 0.015406162464985995
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 216,
-    "per": 0.02801600914808462,
-    "exact_sentence": 0.44907407407407407
+    "per": 0.0253561041091804,
+    "exact_sentence": 0.4722222222222222
    },
    "no-digits": {
     "sentences": 796,
@@ -166,42 +166,6 @@
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-481",
-    "text": "Høymiddelalderen kom etter tidlig middelalder og etterfulgt av den sene middelalderen, som etter konvensjon ender rundt 1500.",
-    "reference": "hˈøymɪdːˌeːlɑllˌeːrən kˈɔm ˌɛtːər tˈɪdlɪ mˈɪdːeːlˌɑllər uːɡ ˈɛtːarfˌʉlɡt av deːn sˈeːna mˈɪdːeːlˌɑlleːrən suːm ˌɛtːər kˈɔnvənʃˌuːn ˈɛnnər rˈʉnnt ˈɛt tˈʉːsən fˈɛmhˈʉndra",
-    "uccharan": "hˈøymˌɪdːeːlˌɑlleːrən kˈɔm ˌɛtːər tˈɪdlɪ mˈɪdːeːlˌɑllər uːɡ ˈɛtːarfˌʉlɡt av deːn sˈeːna mˈɪdːeːlˌɑlleːrən suːm ˌɛtːər kˈɔnvənʃˌuːn ˈɛnnər rˈʉnnt ˈɛt tˈʉːsən fˈɛmhˈʉndra"
-   },
-   {
-    "id": "flores-devtest-336",
-    "text": "NextGen er et system som ifølge FAA vil gjøre det mulig å fly kortere ruter og årlig spare mye drivstoff og forminske karbonutslipp.",
-    "reference": "nˈɛkst ɡˈeːn ˌɛːr ɛt systˈeːm suːm ˈiːfœlɡa ˌɛfˌɑːˈɑː viːl jˈøːra deː mˈʉːlɪ oː flˈyː kˈʊrteːra rˈʉːtər uːɡ ˈɔrlɪ spˈara mˈyːa drˈɪvstɔff uːɡ fˈɔrmɪnska kˈɑrbuːnˌʉtʃlɪpː",
-    "uccharan": "nˈɛkstɡən ˌɛːr ɛt systˈeːm suːm ˈiːfœlɡa ˌɛfˌɑːˈɑː viːl jˈøːra deː mˈʉːlɪ oː flˈyː kˈʊrteːra rˈʉːtər uːɡ ˈɔrlɪ spˈara mˈyːa drˈɪvstɔff uːɡ fˈɔrmɪnska kˈɑrbuːnˌʉtʃlɪpː"
-   },
-   {
-    "id": "flores-devtest-793",
-    "text": "Diverse forandringer eller forespørsler bør foretas via reiseagenten først og ikke direkte med hotellet.",
-    "reference": "dˈiːvarʃa fˈuːrɑnnrˌɪŋər ˌɛllər fˈuːrəspˌœrʃlər bøːr fˈuːreːtˌas vˈiːɑ rˈaɪseːˌaɡɛntən fˈœrʃt uːɡ ˌɪkːa dˈiːrɛkta meːd hˈuːtɛllət",
-    "uccharan": "dˈiːvarʃa fˈuːrɑnnrˌɪŋər ˌɛllər fˈuːrəspˌœrʃlər bøːr fˈuːreːtˌas vˈiːɑ rˈaɪsˌeːaɡˌɛntən fˈœrʃt uːɡ ˌɪkːa dˈiːrɛkta meːd hˈuːtɛllət"
-   },
-   {
-    "id": "flores-devtest-500",
-    "text": "Delkulturer fører sammen likesinnede personer som føler seg utelatt fra de sosiale standardene og lar dem utvikle en identitetsfølelse.",
-    "reference": "dˈɛlkʉltˌʉːrər fˈøːrər sˈɑmmən lˈiːkeːsˌɪnneːda pˈarʃuːnər suːm fˈøːlər sˈeːɡ ˈʉːteːlˌɑtː frɑ diː sˈuːsiːˌala stˈɑnnɑrdˌɛna uːɡ lˈar dɛm ˈʉtvɪkla eːn ˈiːdəntˌiːtətsfˌøːlɛlsa",
-    "uccharan": "dəlkˈʉltˌʉːrər fˈøːrər sˈɑmmən lˈiːkeːsˌɪnneːda pˈarʃuːnər suːm fˈøːlər sˈeːɡ ˈʉːteːlˌɑtː frɑ diː sˈuːsiːˌala stˈɑnnɑrdˌɛna uːɡ lˈar dɛm ˈʉtvɪkla eːn ˈiːdəntˌiːtɛtsfˌøːlɛlsa"
-   },
-   {
-    "id": "flores-devtest-541",
-    "text": "Tibetansk buddhisme er basert på Buddhas lære, men ble utvidet til å inneholde mahayanas kjærlighetsretning og flere metoder fra indisk yoga.",
-    "reference": "tˈiːbeːtˌɑnsk bˈʉdːhɪsma ˌɛːr bˈasart poː bˈʉdːhas lˈaːra meːn bleː ˈʉtviːda tiːl oː ˈɪnneːhˌɔlla mˈahɑːˌyːanˌas xˈarlɪɡhˌɛtsrətnˌɪŋ uːɡ flˈeːra mˈeːtuːdər frɑ ˈɪnnɪsk ˈyːuːɡˌɑ",
-    "uccharan": "tˈiːbeːtˌɑnsk bˈʉdːhɪsma ˌɛːr bˈasart poː bˈʉdːhas lˈaːra meːn bleː ˈʉtviːda tiːl oː ˈɪnneːhˌɔlla mˈahɑːˌyːanˌas xˈarlɪɡhˌɛtsrɛˌənɪŋ uːɡ flˈeːra mˈeːtuːdər frɑ ˈɪnnɪsk ˈyːuːɡˌɑ"
-   },
-   {
-    "id": "flores-devtest-351",
-    "text": "Nesten alle hus i byene i Harappa og Mohenjo-daro hadde vannklosett som var tilknyttet et avansert kloakksystem.",
-    "reference": "nˈɛstən ˈɑlla hˈʉːs iː bˈyːɛna iː hˈarɑpːˌɑ uːɡ mˈuːhənjˌuːdˈaruː hˌɑdːa vˈɑnkluːsˌɛtː suːm var tˈɪlknytːət ɛt ˈavɑnsˌart klˈuːɑkːsˌystəm",
-    "uccharan": "nˈɛstən ˈɑlla hˈʉːs iː bˈyːɛna iː hˈarɑpːˌɑ uːɡ mˈuːhɛnjˌuːdˈaruː hˌɑdːa vˈɑnkluːsətː suːm var tˈɪlknytːət ɛt ˈavɑnsˌart klˈuːɑkːsˌystəm"
-   },
    {
     "id": "flores-devtest-98",
     "text": "Dr. Tony Moll kom over tuberkulosen (XDR-TB) som var særdeles motstandsdyktig mot medisin i den sørafrikanske regionen KwaZulu-Natal.",
@@ -237,6 +201,42 @@
     "text": "NHK meldte også om at atomkraftverket til Kashiwazaki Kariwa i Niigata-prefekturen var i drift som normalt.",
     "reference": "ˌɛnhˌoːkˈoː mˈɛllta ˈɔɡsoː uːm at ˈatɔmkrˌɑftvarkət tiːl kˈɑshiːvˌasaxˌiː kˈariːvˌɑ iː nˈiːiːɡˌatɑprˈeːfəktˌʉːrən var iː drˈɪft suːm nˈɔrmɑlt",
     "uccharan": "ˌɛnhˌoːkˈoː mˈɛllta ˈɔɡsoː uːm at ˈatɔmkrˌɑftvarkət tiːl kˈɑshiːvˌasaxˌiː kˈariːvˌɑ iː nˈiːɪɡˌatɑprˈeːfɛktˌʉːrən var iː drˈɪft suːm nˈɔrmɑlt"
+   },
+   {
+    "id": "flores-devtest-436",
+    "text": "Tredelingsreglene er mye misbrukt og ofte latterliggjort, men er en enkel retningslinje som skaper dynamikk samtidig som man har et mål for orden i et bilde.",
+    "reference": "trˈeːdeːlˌɪŋsrəɡlˌɛna ˌɛːr mˈyːa mˈɪsbrʉkt uːɡ ˈɔfta lˈɑtːarlˌɪɡːjʊrt meːn ˌɛːr eːn ˈɛŋkəl rˈɛtnɪŋʃlˌɪnja suːm skˈapər dˈyːnamˌɪkː sˈɑmtiːdˌɪ suːm mˈan har ɛt mˈoːl fɔrɹ ˈɔrdən iː ɛt bˈɪlla",
+    "uccharan": "trˈeːdeːlˌɪŋsrɛɡlˌɛna ˌɛːr mˈyːa mˈɪsbrʉkt uːɡ ˈɔfta lˈɑtːarlˌɪɡːjʊrt meːn ˌɛːr eːn ˈɛŋkəl rˈɛˌənɪŋʃlˌɪnja suːm skˈapər dˈyːnamˌɪkː sˈɑmtiːdˌɪ suːm mˈan har ɛt mˈoːl fɔrr ˈɔrdən iː ɛt bˈɪlla"
+   },
+   {
+    "id": "flores-devtest-986",
+    "text": "Kirsebærblomstrene som vises har vært en del av japansk kultur siden det 8. århundre og er også kjent som hanami.",
+    "reference": "xˈɪrʃeːbˌarblɔmstrˌɛna suːm vˈiːsəs har vart eːn dˈeːl av jˈapɑnsk kˈʉltʉːr sˈiːdən deː ˈɔtːənda ˈɔrhʉnnra uːɡ ˌɛːr ˈɔɡsoː xˈɛnt suːm hˈanamˌiː",
+    "uccharan": "xˈɪrʃeːbˌarblɔmstrˌɛna suːm vˈiːsəs har vart eːn dˈeːl av jˈapɑnsk kˈʉltʉːr sˈiːdən deː ˈɔtːa ˈɔrhʉnnra uːɡ ˌɛːr ˈɔɡsoː xˈɛnt suːm hˈanamˌiː"
+   },
+   {
+    "id": "flores-devtest-562",
+    "text": "Etter hvert ble trehjulene byttet ut med jernhjul. I 1767 ble de første fulljernskinnene innført.",
+    "reference": "ˌɛtːər vˈart bleː trˈɛjʉːlˌɛna bˈytːət ˈʉːt meːd jˈarnjʉːl iː ˈɛt tˈʉːsən ʃˈʉːhˈʉndrauːɡ sˈɛkstiːʃˈʉː bleː diː fˈœrʃta fˈʉljarnʃˌɪnnɛna ˈɪnfœrt",
+    "uccharan": "ˌɛtːər vˈart bleː trəjˈʉːlˌɛna bˈytːət ˈʉːt meːd jˈarnjʉːl iː ˈɛt tˈʉːsən ʃˈʉːhˈʉndrauːɡ sˈɛkstiːʃˈʉː bleː diː fˈœrʃta fˈʉljarnʃˌɪnnɛna ˈɪnfœrt"
+   },
+   {
+    "id": "flores-devtest-806",
+    "text": "Synlighet kan også være begrenset ved fallende eller blåsende snø eller ved kondensering eller is på kjøretøyvinduer.",
+    "reference": "sˈynlɪɡhət kan ˈɔɡsoː vˌaːra bəɡrˈɛnsət vˈeːd fˈɑllɛnna ˌɛllər blˈoːsɛnna snˈøː ˌɛllər vˈeːd kˈʊnnənsˌeːrɪŋ ˌɛllər ˈiːs poː xˈøːreːtˌøyvɪnnˌʉːər",
+    "uccharan": "sˈynlɪɡhət kan ˈɔɡsoː vˌaːra bəɡrˈɛnsət vˈeːd fˈɑllɛnna ˌɛllər blˈoːsɛnna snˈøː ˌɛllər vˈeːd kˈʊnnɛnsˌeːrɪŋ ˌɛllər ˈiːs poː xˈøːreːtˌøyvˌɪnnʉːər"
+   },
+   {
+    "id": "flores-devtest-226",
+    "text": "Rockebandet skal være på turné i USA og Canada frem til 16. september.",
+    "reference": "rˈɔkkeːbˌɑnnət skal vˌaːra poː tʉrnˈeː iː ˌʉːˌɛsˈɑː uːɡ kˈanadˌɑ frˈɛm tiːl sˈɛkstənda sˈɛptɛmbər",
+    "uccharan": "rˈɔkkeːbˌɑnnət skal vˌaːra poː tʉrnˈeː iː ˌʉːˌɛsˈɑː uːɡ kˈanadˌɑ frˈɛm tiːl sˈɛkstən sˈɛptɛmbər"
+   },
+   {
+    "id": "flores-devtest-202",
+    "text": "Australias Mitchell Gourley tok ellevteplassen i herrenes stående Super-G. Den tsjekkiske konkurrenten Oldrich Jelinek kjørte inn til syttendeplassen i konkurransen.",
+    "reference": "ˈaʊstralˌiːas mˈɪtʃɛl ɡˈuːʉrlˌeːyː tˈuːk ˈɛlləvtˌɛplɑssən iː hˈarreːnəs stˈoːanna sˈʉːpərɡˈeː deːn tʃˈɛkːɪska kˈɔŋkʉrrˌɛntən ˈɔllrɪʃ jˈeːliːnək xˈœrta ˈɪn tiːl sˈytːənnˌɛplɑssən iː kˈɔŋkʉrrˌɑnsən",
+    "uccharan": "ˈaʊstralˌiːas mˈɪtʃɛl ɡˈuːʉrlˌeːyː tˈuːk ˈɛlləvtˌɛplɑssən iː hˈarreːnəs stˈoːanna sˈʉːpərɡˈeː deːn tʃˈɛkːɪska kˈɔŋkʉrrˌɛntən ˈɔllrɪʃ jˈeːliːnˌeːk xˈœrta ˈɪn tiːl sˈytːɛnnˌɛplɑssən iː kˈɔŋkʉrrˌɑnsən"
    }
   ]
  }

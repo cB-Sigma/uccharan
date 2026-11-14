@@ -101,6 +101,43 @@ fn french() {
 }
 
 #[test]
+fn french_liaison_numbers_and_variants() {
+    check(
+        Lang::Fr,
+        &[
+            // h aspiré blocks liaison; h muet links.
+            ("les haricots sont verts", "le- aʁikˈo sˈɔ̃ vˈɛʁ"),
+            ("les hôtels sont pleins", "le-z otˈɛl sˈɔ̃ plˈɛ̃"),
+            ("les huit enfants", "le- yˈit ɑ̃fˈɑ̃"),
+            ("le onze novembre", "lə- ˈɔ̃z novˈɑ̃bʁ"),
+            // Number words before a vowel, a consonant and at the end.
+            ("six enfants et six livres", "sˈiz ɑ̃fˈɑ̃z e sˈi lˈivʁ"),
+            ("neuf ans", "nˈœv ˈɑ̃"),
+            // sont / ont after a clitic pronoun.
+            ("ils ont faim", "ilz ɔ̃ fˈɛ̃"),
+            ("les enfants ont faim", "le-z ɑ̃fˈɑ̃z ˈɔ̃ fˈɛ̃"),
+            // A space between groups of three digits.
+            ("1 000 000 euros", "œ̃ miljˈɔ̃ øʁˈo"),
+            ("de 11\u{a0}000 euros", "də- ˈɔ̃z zeʁozeʁo zeʁˈo øʁˈo"),
+        ],
+    );
+    check(
+        Lang::FrBe,
+        &[
+            ("70 ans", "sɛptˈɑ̃t ˈɑ̃"),
+            ("80", "katʁəvˈɛ̃"),
+            ("90", "nonˈɑ̃t"),
+        ],
+    );
+    check(Lang::FrCh, &[("80 ans", "yitˈɑ̃t ˈɑ̃"), ("96", "nonɑ̃tsˈis")]);
+    let p = Phonemizer::new();
+    let mut opt = Options::new(Lang::Fr);
+    opt.mode = uccharan::Mode::Improved;
+    let got = p.phonemize("de 11\u{a0}000 euros", &opt);
+    assert!(got.contains("mˈil"), "{got}");
+}
+
+#[test]
 fn italian() {
     check(
         Lang::It,

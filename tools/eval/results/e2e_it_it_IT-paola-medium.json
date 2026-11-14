@@ -1,0 +1,42 @@
+{
+ "language": "it",
+ "voice": "it_IT-paola-medium.onnx",
+ "tts": "sherpa-onnx 2.0.1 (phoneme_codepoints)",
+ "asr": "whisper-onnx:base",
+ "reference": "espeak-ng 1.52.0 voice it",
+ "sentences": 200,
+ "audio_minutes": 19.189950869236586,
+ "sentences_with_identical_phonemes": 159,
+ "reference_phonemes": {
+  "sentences": 200,
+  "wer": 0.3002165674066053,
+  "cer": 0.10512820512820513
+ },
+ "uccharan_phonemes": {
+  "sentences": 200,
+  "wer": 0.29913373037357877,
+  "cer": 0.10451977401129943
+ },
+ "wer_difference_uccharan_minus_reference": -0.0010828370330265291,
+ "wer_difference_95ci_paired_bootstrap": [
+  -0.009809264305177113,
+  0.007863340563991324
+ ],
+ "subset_where_phonemes_differ": {
+  "reference_phonemes": {
+   "sentences": 41,
+   "wer": 0.3856041131105398,
+   "cer": 0.15379825653798257
+  },
+  "uccharan_phonemes": {
+   "sentences": 41,
+   "wer": 0.38046272493573263,
+   "cer": 0.15089248650892487
+  }
+ },
+ "better_worse_same_sentences": {
+  "uccharan_better": 18,
+  "uccharan_worse": 13,
+  "same": 169
+ }
+}

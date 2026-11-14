@@ -248,23 +248,29 @@ second) and are the lower of two runs. The measurements vary by about ±10 % bet
 | Bhojpuri | `bho` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.51 % | 0.33 % | 3.3× | SYSPIN (character input) |
 | Maithili | `mai` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.46 % | 0.29 % | 3.0× | MMS, SYSPIN (character input) |
 | Magahi | `mag` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.40 % | 0.23 % | 2.8× | MMS (character input) |
-| Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.55 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
+| Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.54 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
 | German | `de` | `de` | FLORES-200, 1,012 sentences | 0.95 % | 0.77 % | 5.8× † | Piper `de_DE` (11) |
 | Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.69 % | 1.32 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
-| French | `fr` | `fr` | FLORES-200, 1,012 sentences | 0.79 % | 0.59 % | 5.9× † | Piper `fr_FR` (7), Kokoro `ff_siwis` |
+| French | `fr` | `fr` | FLORES-200, 1,012 sentences | 0.63 % | 0.54 % | 5.9× † | Piper `fr_FR` (7), Kokoro `ff_siwis` |
+| French (Belgium) | `fr-be` | `fr-be` | FLORES-200, 1,012 sentences ✦ | 0.63 % | 0.54 % | 5.9× † | none |
+| French (Switzerland) | `fr-ch` | `fr-ch` | FLORES-200, 1,012 sentences ✦ | 0.62 % | 0.54 % | 5.9× † | none |
 | Italian | `it` | `it` | FLORES-200, 1,012 sentences | 0.53 % | 0.37 % | 4.6× † | Piper `it_IT` (4), Kokoro `if_sara`, `im_nicola` |
 | Portuguese (Brazil) | `pt-br` | `pt-br` | FLORES-200, 1,012 sentences | 0.61 % | 0.40 % | 5.1× † | Piper `pt_BR` (4), Kokoro `pf_dora`, `pm_alex`, `pm_santa` |
 | Portuguese (Portugal) | `pt` | `pt` | FLORES-200, 1,012 sentences | 0.84 % | 0.60 % | 5.2× † | Piper `pt_PT` (1) |
-| Polish | `pl` | `pl` | FLORES-200, 1,012 sentences | 1.19 % | 0.92 % | 3.1× † | Piper `pl_PL` (5) |
+| Polish | `pl` | `pl` | FLORES-200, 1,012 sentences | 1.12 % | 0.92 % | 3.1× † | Piper `pl_PL` (5) |
 | Turkish | `tr` | `tr` | FLORES-200, 1,012 sentences | 0.68 % | 0.47 % | 2.7× † | Piper `tr_TR` (1) |
-| Czech | `cs` | `cs` | FLORES-200, 1,012 sentences | 1.32 % | 1.07 % | 1.8× † | Piper `cs_CZ` (3) |
-| Swedish | `sv` | `sv` | FLORES-200, 1,012 sentences | 1.44 % | 0.83 % | 3.7× † | Piper `sv_SE` (3) |
-| Catalan | `ca` | `ca` | FLORES-200, 1,012 sentences | 1.51 % | 1.18 % | 4.9× † | Piper `ca_ES` (3) |
-| Romanian | `ro` | `ro` | FLORES-200, 1,012 sentences | 0.97 % | 0.86 % | 3.3× † | Piper `ro_RO` (1) |
-| Hungarian | `hu` | `hu` | FLORES-200, 1,012 sentences | 1.37 % | 0.95 % | 13.1× † | Piper `hu_HU` (3) |
-| Finnish | `fi` | `fi` | FLORES-200, 1,012 sentences | 1.57 % | 1.08 % | 1.7× † | Piper `fi_FI` (2) |
-| Norwegian Bokmål | `nb` | `nb` | FLORES-200, 1,012 sentences | 1.03 % | 0.46 % | 2.3× † | Piper `no_NO` (2) |
-| Danish | `da` | `da` | FLORES-200, 1,012 sentences | 2.22 % | 1.78 % | 27.1× † | Piper `da_DK` (1) |
+| Czech | `cs` | `cs` | FLORES-200, 1,012 sentences | 1.31 % | 1.07 % | 1.8× † | Piper `cs_CZ` (3) |
+| Swedish | `sv` | `sv` | FLORES-200, 1,012 sentences | 1.32 % | 0.83 % | 3.7× † | Piper `sv_SE` (3) |
+| Catalan | `ca` | `ca` | FLORES-200, 1,012 sentences | 1.44 % | 1.10 % | 4.9× † | Piper `ca_ES` (3) |
+| Romanian | `ro` | `ro` | FLORES-200, 1,012 sentences | 0.96 % | 0.86 % | 3.3× † | Piper `ro_RO` (1) |
+| Hungarian | `hu` | `hu` | FLORES-200, 1,012 sentences | 1.34 % | 0.95 % | 13.1× † | Piper `hu_HU` (3) |
+| Finnish | `fi` | `fi` | FLORES-200, 1,012 sentences | 1.36 % | 1.08 % | 1.7× † | Piper `fi_FI` (2) |
+| Norwegian Bokmål | `nb` | `nb` | FLORES-200, 1,012 sentences | 0.96 % | 0.46 % | 2.3× † | Piper `no_NO` (2) |
+| Danish | `da` | `da` | FLORES-200, 1,012 sentences | 1.95 % | 1.49 % | 27.1× † | Piper `da_DK` (1) |
+
+✦ The Belgian and Swiss French voices are scored on the French sentences; they differ from the
+French reading only in the numbers 70–99 (septante, huitante, nonante). Their speed is the French
+voice's: in one run on a busy machine French 4.5×, `fr-be` 4.5×, `fr-ch` 5.2×.
 
 ‡ espeak-ng has no voice for Sanskrit, Bhojpuri, Maithili or Magahi; text in them is read with its
 Hindi voice, and compatible mode is measured against that reading. Improved mode reads them as
@@ -278,19 +284,21 @@ How to read it:
   after Spanish use a word table plus a letter-to-sound model, both made by running espeak-ng
   1.52.0 over word lists from Tatoeba and the Leipzig Corpora Collection. On the held-out text,
   words outside those lists are wrong far more often than listed ones: from 2.0 % (Hungarian)
-  and 9.2 % (Czech) to 49.0 % (European Portuguese) and 68.1 % (Danish) of such words. Each
+  and 9.2 % (Czech) to 49.0 % (European Portuguese) and 62.3 % (Danish) of such words. Each
   language's figures are in [docs/languages.md](docs/languages.md).
 - **Assamese (7.21 %), Tamil (4.09 %) and Nepali (2.67 %) are furthest from espeak-ng**; the
   reasons are in the language notes.
 - **Czech and Finnish are the slowest** against espeak-ng (1.8× and 1.7×): their texts have many
   distinct word forms, and each new form goes through the letter-to-sound model.
-- **Voices.** End to end (voice plus speech recogniser, 300 to 500 held-out sentences per voice)
+- **Voices.** End to end (voice plus speech recogniser, 200 to 500 held-out sentences per voice)
   the word error rate with uccharan's phonemes is within the confidence interval of espeak-ng's
   for the voices tried: Piper `amy-low` 2.94 % → 2.97 %, `lessac-medium` 4.30 % → 4.21 %,
-  `alba-medium` 7.36 % → 7.47 %, `hi_IN-rohan-medium` 8.95 % → 8.82 %, and three Kokoro
-  speakers. That is four Piper voices (three English, one Hindi) and one Kokoro speaker each for
-  American English, British English and Hindi; no voice of the other 36 languages has been run
-  end to end
+  `alba-medium` 7.36 % → 7.47 %, `hi_IN-rohan-medium` 8.95 % → 8.82 %, `es_ES-davefx-medium`
+  13.23 % → 12.90 %, `de_DE-thorsten-medium` 21.76 % → 20.99 %, `fr_FR-siwis-medium` 19.28 % →
+  19.39 %, `it_IT-paola-medium` 30.02 % → 29.91 % (a small recogniser), and three Kokoro
+  speakers. That is eight Piper voices (English, Hindi, Spanish, German, French, Italian) and one
+  Kokoro speaker each for American English, British English and Hindi; no voice of the other
+  languages has been run end to end
   ([details](docs/evaluation.md#2-end-to-end-real-voices-real-speech-recognition)).
 - **Kokoro English** does not go through espeak-ng: uccharan carries a port of misaki, the front
   end Kokoro was trained on, with misaki 0.9.4's dictionaries. It gives the same tokens as misaki
@@ -487,7 +495,7 @@ and nothing downloads it unless you ask.
 | Pack | What it is | Size | Licence | In the packages? |
 | --- | --- | ---: | --- | --- |
 | `en-us`, `en-gb`, `hi` | English lexicons and letter-to-sound models, Hindi exceptions | 0.7 MB, 0.7 MB, 3 KB | Apache-2.0 (includes CMUdict, BSD-2-Clause) | yes (the wheel fetches `en-gb` on first use) |
-| `de`, `nl`, `fr`, `it`, `pt-br`, `pt`, `pl`, `tr`, `cs`, `sv`, `ca`, `ro`, `hu`, `fi`, `nb`, `da`, `ur`, `sd` | word table of the language: a letter-to-sound model and its exceptions | 46 KB to 0.5 MB each, 4.0 MB together | Apache-2.0 | **fetched the first time the language is used** (wheel, npm package; crate with the `download` feature), or compiled in with the crate's `bundle` feature |
+| `de`, `nl`, `fr`, `it`, `pt-br`, `pt`, `pl`, `tr`, `cs`, `sv`, `ca`, `ro`, `hu`, `fi`, `nb`, `da`, `ur`, `sd` | word table of the language: a letter-to-sound model and its exceptions | 46 KB to 0.66 MB each, 4.2 MB together | Apache-2.0 | **fetched the first time the language is used** (wheel, npm package; crate with the `download` feature), or compiled in with the crate's `bundle` feature |
 | `kokoro-en-us`, `kokoro-en-gb` | misaki 0.9.4's English dictionaries, for the `kokoro` profile | 1.9 and 2.1 MB | Apache-2.0 | crate and C library yes; wheel and npm fetch them on first use |
 | `wikipron-en-us`, `wikipron-en-gb`, `wikipron-hi` | Wiktionary pronunciations (80.8 k, 81.3 k and 30.4 k words) for improved mode's words outside the built-in lexicon | 0.3 to 0.7 MB | **CC BY-SA 4.0** (Wiktionary contributors, via WikiPron) | **no**: on request only |
 | `xlit-hi`, `xlit-mr`, `xlit-bn`, `xlit-ta`, `xlit-te`, `xlit-gu`, `xlit-pa`, `xlit-kn`, `xlit-ml` | transliteration model, spelling lexicon and word counts per language | 3.1 to 8.7 MB, 60 MB together | **CC BY-SA 4.0** (trained on the Dakshina and Aksharantar word pairs; counts from corpora that include Wikipedia text) | **no**: on request only |
@@ -515,7 +523,8 @@ in [DATA_LICENSES.md](DATA_LICENSES.md).
 
 ## What is not tested
 
-- Voices of the 36 languages other than English and Hindi end to end; en-GB and Hindi on more
+- Voices of the languages other than English, Hindi, Spanish, German, French and Italian end to
+  end (Telugu, Marathi, Bengali and Urdu had no offline voice or recogniser that works); en-GB and Hindi on more
   than one Piper voice each; Kokoro on more than one speaker per language.
 - Kitten TTS and Matcha-TTS end to end (only symbol tables and framing are checked).
 - The `piper` command-line program (it embeds espeak-ng and has no hook) and running Piper voices

@@ -495,6 +495,7 @@ fn main() {
                 let mut h = code;
                 for p in [
                     root.join("data/sources").join(lang).join("words.tsv"),
+                    root.join("data/sources").join(lang).join("train.tsv"),
                     root.join("crates/uccharan/lang")
                         .join(format!("{lang}.lang")),
                     out_path(name),

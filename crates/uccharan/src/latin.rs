@@ -97,6 +97,11 @@ pub struct Latin {
     /// `[aspirated]`: words (or, with a final `*`, beginnings of words)
     /// that no clause rule reaches into.
     aspirated: Vec<(String, bool)>,
+    /// `[h-muet.compat]`: in compatible mode every word written with h
+    /// first is treated as in `[aspirated]` unless it is in this list
+    /// (words, or beginnings of words with a final `*`), as the French
+    /// reference voice does. Empty: off.
+    h_muet: Vec<(String, bool)>,
     /// `fuse = na do ...`: these words make one word with the word after
     /// them, stressed again as a whole (Czech prepositions).
     fuse: Vec<String>,
@@ -104,11 +109,24 @@ pub struct Latin {
     /// before a last word of a clause that has only secondary stress there
     /// (`word p s` in `[unstressed]`).
     promote: Vec<String>,
+    /// `clitic-verbs = ont sont` and `clitic-subjects = ils elles ...`:
+    /// inside a clause, these verbs have no stress after one of these
+    /// pronouns (French "ils ont", not "les enfants ont").
+    clitic_verbs: Vec<String>,
+    /// `[context.compat]` lines `WORD PREV|PREV... READING`: in compatible
+    /// mode the word right after one of these words (`*a`: a word ending
+    /// in a) is read so (French "de son", "le son": the noun, stressed and
+    /// with no liaison; Catalan "i" after a vowel letter).
+    context: Vec<(String, Vec<String>, String)>,
+    clitic_subjects: Vec<String>,
     /// `vowel-mark = yes`: inside a clause, a word written with a vowel
     /// letter first has `⁑` before its phonemes for the `[clause]` rules.
     vowel_mark: bool,
     /// `vowel-mark = h`: also words written with a silent h and a vowel.
     vowel_mark_h: bool,
+    /// `vowel-mark-except = u`: a word written with one of these letters
+    /// first gets `⁂` before its `⁑` (Catalan: no glide before "un").
+    vowel_mark_except: String,
     /// `secondary = auto`: trochaic secondary stresses.
     auto_secondary: bool,
     /// `stress-options =` words (see [`Latin::from_text`]).
@@ -119,6 +137,13 @@ pub struct Latin {
     final_vowel_unstressed: bool,
     final_long: bool,
     words: HashMap<String, (String, String)>,
+    /// `[words.improved]`: readings used in improved mode only, before the
+    /// word table (where the reference voice's reading is a known error).
+    words_improved: HashMap<String, String>,
+    /// `[spelling.improved]` lines `LETTERS FROM TO`: in improved mode a
+    /// word written with LETTERS has FROM in its reading replaced by TO, at
+    /// most once for each time it has the letters (French gn: nj -> ɲ).
+    spelling_improved: Vec<(String, String, String)>,
     unstressed: HashMap<String, (u8, u8)>,
     /// A suffix read with its own stress after the stem's (`-mente`).
     suffix: Option<(String, String)>,
@@ -133,6 +158,8 @@ const JOIN: char = '‿';
 const BLOCK: char = '⁞';
 /// Stands before a word written with a vowel letter first.
 const VOWEL: char = '⁑';
+/// Before [`VOWEL`] for a word written with a `vowel-mark-except` letter first.
+const EXCEPT: char = '⁂';
 
 impl Latin {
     /// Parse a language file.
@@ -210,15 +237,8 @@ impl Latin {
             secondary: meta.get("secondary").is_some_and(|v| v == "alternate"),
             elision: meta.get("elision").is_some_and(|v| v == "yes"),
             sandhi_block: meta.get("sandhi-block").cloned(),
-            aspirated: f
-                .lines("aspirated")
-                .iter()
-                .flat_map(|l| l.split_whitespace().map(str::to_string).collect::<Vec<_>>())
-                .map(|w| match w.strip_suffix('*') {
-                    Some(p) => (p.to_string(), true),
-                    None => (w, false),
-                })
-                .collect(),
+            aspirated: word_patterns(&f.lines("aspirated")),
+            h_muet: word_patterns(&f.lines("h-muet.compat")),
             fuse: meta
                 .get("fuse")
                 .map(|v| v.split_whitespace().map(str::to_string).collect())
@@ -227,10 +247,29 @@ impl Latin {
                 .get("promote-before-final")
                 .map(|v| v.split_whitespace().map(str::to_string).collect())
                 .unwrap_or_default(),
+            context: f
+                .lines("context.compat")
+                .iter()
+                .filter_map(|l| {
+                    let mut p = l.split_whitespace();
+                    let w = p.next()?.to_string();
+                    let prev = p.next()?.split('|').map(str::to_string).collect();
+                    Some((w, prev, p.next()?.to_string()))
+                })
+                .collect(),
+            clitic_verbs: meta
+                .get("clitic-verbs")
+                .map(|v| v.split_whitespace().map(str::to_string).collect())
+                .unwrap_or_default(),
+            clitic_subjects: meta
+                .get("clitic-subjects")
+                .map(|v| v.split_whitespace().map(str::to_string).collect())
+                .unwrap_or_default(),
             vowel_mark: meta
                 .get("vowel-mark")
                 .is_some_and(|v| v == "yes" || v == "h"),
             vowel_mark_h: meta.get("vowel-mark").is_some_and(|v| v == "h"),
+            vowel_mark_except: meta.get("vowel-mark-except").cloned().unwrap_or_default(),
             auto_secondary: meta
                 .get("secondary")
                 .is_some_and(|v| v == "auto" || v == "none"),
@@ -241,6 +280,26 @@ impl Latin {
             final_vowel_unstressed: opt("final-vowel-unstressed"),
             final_long: opt("final-long"),
             words: langdef::words(&f),
+            spelling_improved: f
+                .lines("spelling.improved")
+                .iter()
+                .filter_map(|l| {
+                    let mut p = l.split_whitespace();
+                    Some((
+                        p.next()?.to_string(),
+                        p.next()?.to_string(),
+                        p.next()?.to_string(),
+                    ))
+                })
+                .collect(),
+            words_improved: f
+                .lines("words.improved")
+                .iter()
+                .filter_map(|l| {
+                    let (w, r) = l.split_once(char::is_whitespace)?;
+                    Some((w.to_string(), r.trim().to_string()))
+                })
+                .collect(),
             unstressed: langdef::unstressed(&f),
             suffix: meta.get("suffix").and_then(|v| {
                 let (a, b) = v.split_once(char::is_whitespace)?;
@@ -840,6 +899,32 @@ impl Latin {
         compat: bool,
         table: Option<&crate::data::Data>,
     ) -> String {
+        let r = self.read_plain(w, lower, compat, table);
+        if compat || self.spelling_improved.is_empty() {
+            return r;
+        }
+        let mut r = r;
+        for (letters, from, to) in &self.spelling_improved {
+            let n = lower.matches(letters.as_str()).count();
+            if n > 0 {
+                r = r.replacen(from.as_str(), to, n);
+            }
+        }
+        r
+    }
+
+    fn read_plain(
+        &self,
+        w: &str,
+        lower: &str,
+        compat: bool,
+        table: Option<&crate::data::Data>,
+    ) -> String {
+        if !compat {
+            if let Some(r) = self.words_improved.get(lower) {
+                return r.clone();
+            }
+        }
         let own = self.words.contains_key(lower);
         // With `letter-names = yes` a consonant letter by itself is said by
         // its name (elsewhere it may be a word: Polish `w`, Czech `k`).
@@ -951,6 +1036,39 @@ impl Latin {
         }
     }
 
+    /// The items with each hyphenated word that the language file lists as
+    /// a whole ("dix-huit", "vingt-six") made one item.
+    fn join_hyphens(&self, items: &[crate::norm::Item]) -> Vec<crate::norm::Item> {
+        let mut out: Vec<crate::norm::Item> = Vec::with_capacity(items.len());
+        let mut i = 0;
+        while i < items.len() {
+            let mut end = i;
+            let mut key = items[i].text.to_lowercase();
+            let mut best = None;
+            for (j, x) in items.iter().enumerate().skip(i + 1) {
+                if !x.hyphen || x.generated {
+                    break;
+                }
+                key.push('-');
+                key.push_str(&x.text.to_lowercase());
+                if self.words.contains_key(&key) {
+                    best = Some(j);
+                }
+            }
+            if let Some(j) = best {
+                end = j;
+            }
+            let mut it = items[i].clone();
+            if end > i {
+                let parts: Vec<&str> = items[i..=end].iter().map(|x| x.text.as_str()).collect();
+                it.text = parts.join("-");
+            }
+            out.push(it);
+            i = end + 1;
+        }
+        out
+    }
+
     /// Phonemes for a run of words of this language inside one clause.
     pub fn span(
         &self,
@@ -960,6 +1078,13 @@ impl Latin {
         lang: crate::Lang,
         table: Option<&crate::data::Data>,
     ) -> Vec<crate::WordOut> {
+        let merged;
+        let items = if items.iter().any(|x| x.hyphen) {
+            merged = self.join_hyphens(items);
+            &merged[..]
+        } else {
+            items
+        };
         let n = items.len();
         let mut out: Vec<crate::WordOut> = Vec::with_capacity(n);
         let mut fuse_at: Option<usize> = None;
@@ -992,7 +1117,26 @@ impl Latin {
             // What the key says is looked up before the phonemes change.
             let (mut ipa, at) = self.token_joined(&it.text, compat, table);
             let key = ipa.get(at + 1..).unwrap_or("");
-            let unstressed = self.unstressed.get(key).copied();
+            let context = if compat && i > 0 && !self.context.is_empty() {
+                let prev = items[i - 1].text.to_lowercase();
+                self.context
+                    .iter()
+                    .find(|(w, ps, _)| {
+                        w == key
+                            && ps.iter().any(|p| match p.strip_prefix('*') {
+                                Some(end) => prev.ends_with(end),
+                                None => *p == prev,
+                            })
+                    })
+                    .map(|(_, _, r)| r.clone())
+            } else {
+                None
+            };
+            let unstressed = if context.is_some() {
+                None
+            } else {
+                self.unstressed.get(key).copied()
+            };
             let fuses = !self.fuse.is_empty() && self.fuse.iter().any(|f| f == key);
             let promoted = !self.promote.is_empty()
                 && i + 2 == n
@@ -1001,7 +1145,21 @@ impl Latin {
                 && items.get(i + 1).is_some_and(|x| {
                     self.unstressed.get(x.text.to_lowercase().as_str()) == Some(&(b'p', b's'))
                 });
+            let clitic = !self.clitic_verbs.is_empty()
+                && i > 0
+                && !(i + 1 == n && clause_final)
+                && self.clitic_verbs.iter().any(|v| v == key)
+                && {
+                    let prev = items[i - 1].text.to_lowercase().replace('’', "'");
+                    self.clitic_subjects.contains(&prev)
+                };
             ipa.truncate(at);
+            if let Some(r) = context {
+                ipa = r;
+            }
+            if clitic {
+                ipa = crate::ipa::strip_stress(&ipa);
+            }
             // Number words before the last of a number lose their stress.
             if self.numbers.stress_last && items.get(i + 1).is_some_and(|x| x.number_tail) {
                 ipa = crate::ipa::strip_stress(&ipa);
@@ -1025,27 +1183,29 @@ impl Latin {
                     _ => ipa,
                 };
             }
-            if self.vowel_mark
-                && !it.text.contains('#')
-                && it
+            if self.vowel_mark && !it.text.contains('#') {
+                // A silent h before the vowel counts with `vowel-mark = h`.
+                let first = it
                     .text
                     .chars()
-                    // A silent h before the vowel counts with `vowel-mark = h`.
                     .find(|c| !(self.vowel_mark_h && matches!(c, 'h' | 'H')))
-                    .is_some_and(|c| c.to_lowercase().any(|l| self.spell_vowels.contains(l)))
-            {
-                ipa.insert(0, VOWEL);
+                    .map(|c| c.to_lowercase().next().unwrap_or(c));
+                if first.is_some_and(|c| self.spell_vowels.contains(c)) {
+                    ipa.insert(0, VOWEL);
+                    if first.is_some_and(|c| self.vowel_mark_except.contains(c)) {
+                        ipa.insert(0, EXCEPT);
+                    }
+                }
             }
             // Words before which nothing links (French h aspiré, huit, onze).
-            if !self.aspirated.is_empty() {
+            if !self.aspirated.is_empty() || (compat && !self.h_muet.is_empty()) {
                 let low = it.text.to_lowercase();
-                if self.aspirated.iter().any(|(w, prefix)| {
-                    if *prefix {
-                        low.starts_with(w.as_str())
-                    } else {
-                        low == *w
-                    }
-                }) {
+                if matches_pattern(&self.aspirated, &low)
+                    || (compat
+                        && !self.h_muet.is_empty()
+                        && low.starts_with('h')
+                        && !matches_pattern(&self.h_muet, &low))
+                {
                     ipa.insert(0, BLOCK);
                 }
             }
@@ -1100,8 +1260,12 @@ impl Latin {
             }
         }
         for w in &mut out {
-            if self.sandhi_block.is_some() || self.vowel_mark || !self.aspirated.is_empty() {
-                w.ipa.retain(|c| c != BLOCK && c != VOWEL);
+            if self.sandhi_block.is_some()
+                || self.vowel_mark
+                || !self.aspirated.is_empty()
+                || !self.h_muet.is_empty()
+            {
+                w.ipa.retain(|c| c != BLOCK && c != VOWEL && c != EXCEPT);
             }
             let mode = if compat {
                 &self.post_compat
@@ -1115,4 +1279,28 @@ impl Latin {
         out.retain(|w| !w.ipa.is_empty());
         out
     }
+}
+
+/// Words of a list section, `(text, prefix)`: a final `*` makes the entry
+/// match every word that starts with it.
+fn word_patterns(lines: &[String]) -> Vec<(String, bool)> {
+    lines
+        .iter()
+        .flat_map(|l| l.split_whitespace())
+        .map(|w| match w.strip_suffix('*') {
+            Some(p) => (p.to_string(), true),
+            None => (w.to_string(), false),
+        })
+        .collect()
+}
+
+/// True when the lower-case word `low` matches an entry of `list`.
+fn matches_pattern(list: &[(String, bool)], low: &str) -> bool {
+    list.iter().any(|(w, prefix)| {
+        if *prefix {
+            low.starts_with(w.as_str())
+        } else {
+            low == w
+        }
+    })
 }

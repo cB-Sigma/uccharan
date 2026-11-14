@@ -1,0 +1,37 @@
+# French (standard metropolitan French): improved-mode gold set, test split.
+# Written by hand before any improved-mode work on the language was measured on
+# it; the dev/test split was fixed when the file was written. Test rows are
+# scored once per change of the language and never used to adjust rules.
+# Sources (standard descriptions and pronouncing dictionaries; no phonemizer):
+#   Fougeron & Smith (1993), "French", Journal of the International Phonetic Association 23(2); Warnant, Dictionnaire de la prononciation française dans sa norme actuelle (1987); Le Petit Robert (phonetic transcriptions)
+# Notation: ɥ in ui/ue (huit, nuit, lui); ɲ for gn; ʁ for r; final consonants as said alone; stress on the last full syllable.
+# check=ipa: segments must equal one expected form after notational
+# normalisation (stress marks, tie bars, non-syllabic and syllabic marks
+# removed; a long consonant written with ː counts as double); the primary
+# stress must fall on the same vowel. Alternatives are separated by |.
+# id	word	expected
+fr-t01	juin	ʒɥˈɛ̃
+fr-t02	cuisine	kɥizˈin
+fr-t03	signe	sˈiɲ
+fr-t04	tabac	tabˈa
+fr-t05	estomac	ɛstɔmˈa|ɛstomˈa
+fr-t06	exact	ɛɡzˈakt|ɛɡzˈa
+fr-t07	oiseau	wazˈo
+fr-t08	genou	ʒənˈu
+fr-t09	temps	tˈɑ̃
+fr-t10	seul	sˈœl
+fr-t11	deux	dˈø
+fr-t12	heureux	øʁˈø
+fr-t13	août	ˈut|ˈu
+fr-t14	œil	ˈœj
+fr-t15	bruit	bʁɥˈi
+fr-t16	puis	pɥˈi
+fr-t17	campagne	kɑ̃pˈaɲ
+fr-t18	ligne	lˈiɲ
+fr-t19	fruit	fʁɥˈi
+fr-t20	tuer	tɥˈe
+fr-t21	ennui	ɑ̃nɥˈi
+fr-t22	parfum	paʁfˈœ̃|paʁfˈɛ̃
+fr-t23	jardin	ʒaʁdˈɛ̃
+fr-t24	soleil	sɔlˈɛj
+fr-t25	travail	tʁavˈaj

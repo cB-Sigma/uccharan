@@ -1388,6 +1388,7 @@ mod tests {
         let c = Chunk {
             text: s.trim_end_matches('.').to_string(),
             dot: s.ends_with('.'),
+            tight: false,
         };
         expand(&c, lang, style)
             .iter()
@@ -1475,11 +1476,13 @@ mod tests {
         let c = Chunk {
             text: "FBI".into(),
             dot: false,
+            tight: false,
         };
         assert!(expand(&c, Lang::EnUs, Normalize::Natural)[0].spell);
         let c = Chunk {
             text: "NASA".into(),
             dot: false,
+            tight: false,
         };
         assert!(!expand(&c, Lang::EnUs, Normalize::Natural)[0].spell);
     }

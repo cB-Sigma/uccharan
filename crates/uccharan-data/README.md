@@ -8,8 +8,8 @@ You do not use this crate directly. uccharan depends on it when you ask for word
 compiled into your program:
 
 ```toml
-uccharan = { version = "0.5", features = ["bundle"] }      # every word table
-uccharan = { version = "0.5", features = ["embed-de"] }    # only German
+uccharan = { version = "0.6", features = ["bundle"] }      # every word table
+uccharan = { version = "0.6", features = ["embed-de"] }    # only German
 ```
 
 Without those features uccharan reads a language's table from a pack file at its first use (see

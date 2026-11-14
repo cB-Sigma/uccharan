@@ -5,43 +5,43 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 163613,
-  "per": 0.0156589024099552,
-  "per_without_stress": 0.012601699764154236,
-  "exact_sentence": 0.30138339920948615,
-  "exact_sentence_without_stress": 0.37351778656126483,
-  "piper_shape_per": 0.015700337512054,
-  "piper_shape_exact_sentence": 0.29347826086956524,
-  "word_count_mismatch_sentences": 162,
+  "per": 0.01364194776698673,
+  "per_without_stress": 0.010627014806648339,
+  "exact_sentence": 0.30335968379446643,
+  "exact_sentence_without_stress": 0.3774703557312253,
+  "piper_shape_per": 0.013711427193828351,
+  "piper_shape_exact_sentence": 0.29545454545454547,
+  "word_count_mismatch_sentences": 155,
   "errors_by_class": {
    "consonant": {
-    "count": 990,
-    "share": 0.3864168618266979,
-    "per_contribution": 0.006050863928905405
+    "count": 864,
+    "share": 0.3870967741935484,
+    "per_contribution": 0.0052807539743174444
    },
    "stress": {
-    "count": 774,
-    "share": 0.30210772833723654,
-    "per_contribution": 0.004730675435326044
+    "count": 717,
+    "share": 0.32123655913978494,
+    "per_contribution": 0.00438229236063149
    },
    "vowel": {
-    "count": 406,
-    "share": 0.15846994535519127,
-    "per_contribution": 0.002481465409227873
+    "count": 333,
+    "share": 0.14919354838709678,
+    "per_contribution": 0.0020352905942681815
    },
    "length": {
-    "count": 145,
-    "share": 0.05659640905542545,
-    "per_contribution": 0.0008862376461528118
+    "count": 137,
+    "share": 0.06137992831541219,
+    "per_contribution": 0.0008373417760202429
    },
    "other": {
-    "count": 143,
-    "share": 0.05581576893052303,
-    "per_contribution": 0.0008740136786196696
+    "count": 115,
+    "share": 0.05152329749103943,
+    "per_contribution": 0.0007028781331556783
    },
    "word-boundary": {
-    "count": 104,
-    "share": 0.04059328649492584,
-    "per_contribution": 0.000635646311723396
+    "count": 66,
+    "share": 0.02956989247311828,
+    "per_contribution": 0.00040339092859369364
    }
   },
   "top_confusions": [
@@ -51,7 +51,7 @@
    },
    {
     "edit": "ˌ→∅",
-    "count": 362
+    "count": 354
    },
    {
     "edit": "∅→ˌ",
@@ -59,7 +59,7 @@
    },
    {
     "edit": "ː→∅",
-    "count": 132
+    "count": 124
    },
    {
     "edit": "i→ɪ",
@@ -75,46 +75,18 @@
    },
    {
     "edit": " →∅",
-    "count": 63
+    "count": 55
    },
    {
     "edit": "s→∅",
     "count": 53
    },
    {
-    "edit": "∅→ ",
-    "count": 41
-   },
-   {
-    "edit": "∅→n",
-    "count": 40
-   },
-   {
-    "edit": "∅→l",
-    "count": 35
-   },
-   {
     "edit": "l→∅",
     "count": 34
    },
    {
-    "edit": "∅→ˈ",
-    "count": 34
-   },
-   {
-    "edit": "t→∅",
-    "count": 32
-   },
-   {
-    "edit": "h→∅",
-    "count": 32
-   },
-   {
     "edit": "ˈ→∅",
-    "count": 31
-   },
-   {
-    "edit": "∅→o",
     "count": 31
    },
    {
@@ -126,38 +98,66 @@
     "count": 27
    },
    {
-    "edit": "n→∅",
+    "edit": "h→∅",
     "count": 24
    },
    {
-    "edit": "a→∅",
-    "count": 23
+    "edit": "n→∅",
+    "count": 24
    },
    {
     "edit": "e→∅",
     "count": 18
    },
    {
-    "edit": "∅→a",
-    "count": 18
-   },
-   {
     "edit": "s→t",
     "count": 17
+   },
+   {
+    "edit": "i→∅",
+    "count": 17
+   },
+   {
+    "edit": "t→∅",
+    "count": 15
+   },
+   {
+    "edit": "∅→m",
+    "count": 13
+   },
+   {
+    "edit": "i→a",
+    "count": 13
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 13
+   },
+   {
+    "edit": "∅→ː",
+    "count": 13
+   },
+   {
+    "edit": "k→∅",
+    "count": 13
+   },
+   {
+    "edit": "ʃ→h",
+    "count": 13
    }
   ],
   "word_error_by_class": {
    "lexicon": {
-    "words": 13273,
-    "wrong": 1014,
-    "rate": 0.07639569049951028
+    "words": 13421,
+    "wrong": 1027,
+    "rate": 0.07652186871321064
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 196,
-    "per": 0.03115503460251794,
-    "exact_sentence": 0.21428571428571427
+    "per": 0.022727853111672924,
+    "exact_sentence": 0.22448979591836735
    },
    "no-digits": {
     "sentences": 816,
@@ -166,66 +166,6 @@
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-269",
-    "text": "Huhnen ja Prycen on määrä astua Westminsterin poliisituomioistuimen eteen 16. helmikuuta.",
-    "reference": "hˈuhnen ja prˈysen on mˈæːræ ˈastua vˈestmɪnsterɪm pˈolɪːsɪtˌuomɪˌoistuimen ˈeteːn kˈuːsitˌoista hˈelmɪkˌuːta",
-    "uccharan": "hˈuhnen ja prˈysen om mˈæːræ ˈastua vˈestmɪnsterɪm pˈolɪːsɪtˌuomɪˌoistuimen ˈeteːŋ kˈuːsitˌoista hˈelmɪkˌuːta"
-   },
-   {
-    "id": "flores-devtest-706",
-    "text": "Naisten tulisi ymmärtää, että kulttuurieroista voi aiheutua sellaista, mitä he saattavat kokea ahdisteluksi. Ei ole epätavallista, että joku lähtee seuraamaan perässä, tarttuu käsivarresta tms.",
-    "reference": "nˈaisten tˈulɪsɪ ˈymmærtæː ˈetːæ kˈultːuːrˌieroista vˈoi ˈaiheutˌua sˈellaista mˈitæ he sˈaːtːavat kˈokea ˈahdɪstelˌuksɪ ei ˌole ˈepætavˌallɪsta ˈetːæ jˈoku lˈæhteː sˈeuraːmaːm pˈeræssæ tˈartːuː kˈæsɪvˌarresta tˈeːˌæmˌæs",
-    "uccharan": "nˈaisten tˈulɪsɪ ˈymmærtæː ˈetːæ kˈultːuːrierˌoisˌia vˈoi ˈaiheutˌua sˈellaista mˈitæ he sˈaːtːavat kˈokea ˈahdɪstelˌuksɪ ei ˌole ˈepætavˌallɪsta ˈetːæ jˈoku lˈæhteː sˈeuraːmaːm pˈeræssæ tˈartːuː kˈæsɪvˌarresta tˈeːˌæmˌæs"
-   },
-   {
-    "id": "flores-devtest-403",
-    "text": "Se ei kuitenkaan ole totta. Vaikka asiakirjan taakse on kirjoitettu jotakin, se ei ole aarrekartta.",
-    "reference": "se ei kˈuiteŋkaːn ˌole tːˈotːa vˈaikːa ˈasɪakˌirjan tˈaːkse oŋ kˈirjoitˌetːu jˈotakɪn se ei ˌole ˈaːrrekˌartːa",
-    "uccharan": "se ei kˈuiteŋkaːn ˌole tˈotːa vˈaikːa ˈasɪakˌirjan tˈaːkse oŋ kˈirjoitˌetːu jˈotakɪn se ei ˌole ˈaːrrekartːa"
-   },
-   {
-    "id": "flores-devtest-190",
-    "text": "Camille Saint-Saënsin kirjoittaman ranskalaisen oopperan tarina kertoo taiteilijasta, \"jonka elämää määrittelee intohimo huumeita ja Japania kohtaan\".",
-    "reference": "kˈamɪlles sˈaintsˈaensɪn kˈirjoitːaman rˈanskalˌaisen ˈoːpːeran tˈarɪna kˈertoː tˈaiteilɪjˌasta jˌoŋka ˈelæmæː mˈæːrɪtːeleː ˈintohˌimo hˈuːmeita ja jˈapanˌia kˈohtaːn",
-    "uccharan": "kˈamille sˈaintsˈaensɪŋ kˈirjoitːaman rˈanskalˌaisen ˈoːpːeran tˈarɪna kˈertoː tˈaiteilɪjˌasta jˌoŋka ˈelæmæː mˈæːrɪtːeleː ˈintohˌimo hˈuːmeita ja jˈapanˌia kˈohtaːn"
-   },
-   {
-    "id": "flores-devtest-804",
-    "text": "Jäisillä ja lumisilla teillä kitkaa on vähän, etkä voi ajaa samalla tavalla kuin ajaisit asfaltilla.",
-    "reference": "jˈæisɪllæ ja lˈumɪsɪlla tˈeillæ kˈitkaː on vˈæhæn ˈetkæ vˈoi ˈajaː sˈamalla tˈavalla kˈuin ˈajaisɪt ˈasfaltɪlla",
-    "uccharan": "jˈæisˌillæ ja lˈumɪsɪlla tˈeillæ kˈitkaː on vˈæhæn ˈetkæ vˈoi ˈajaː sˈamalla tˈavalla kˈuin ˈajaisɪt ˈasfaltɪlla"
-   },
-   {
-    "id": "flores-devtest-287",
-    "text": "Adekoya on siitä lähtien ollut Edinburghin šeriffintuomioistuimessa syytettynä poikansa murhasta.",
-    "reference": "ˈadekˌoya on sˈiːtæ lˈæhtien ˌollut ˈedɪnbˌurɡhɪn ʃˈerɪffˌintuomɪˌoistuimˌessa sˈyːtetːˌynæ pˈoikansa mˈurhasta",
-    "uccharan": "ˈadekoˌya on sˈiːtæ lˈæhtien ˌollut ˈedɪnbˌurɡhɪn ʃˈerɪffˌintuomɪˌoistuimˌessa sˈyːtetːˌynæ pˈoikansa mˈurhasta"
-   },
-   {
-    "id": "flores-devtest-76",
-    "text": "Uusimman tiedotteen mukaan meren pinnan korkeuslukemat osoittavat tsunamin syntyneen. Lähellä Pago Pagoa ja Niuea havaittiin ilmeistä tsunamitoimintaa.",
-    "reference": "ˈuːsɪmman tˈiedotːeːn mˈukaːn mˈerem pˈinnaŋ kˈorkeuslˌukemat ˈosoitːavat tsˈunamɪn sˈyntyneːn lˈæhellæ pˈaɡo pˈaɡoa ja nˈiuea hˈavaitːɪːn ˈilmeistæ tsˈunamɪtˌoimɪntaː",
-    "uccharan": "ˈuːsɪmman tˈiedotːeːm mˈukaːm mˈerem pˈinnaŋ kˈorkeuslukemat ˈosoitːavat tsˈunamɪn sˈyntyneːn lˈæhellæ pˈaɡo pˈaɡoa ja nˈiuea hˈavaitːɪːn ˈilmeistæ tsˈunamɪtˌoimɪntaː"
-   },
-   {
-    "id": "flores-devtest-454",
-    "text": "Kolmen kuningaskunnan kausi oli yksi muinaisen Kiinan historian verisimmistä aikakausista. Tuhansia ihmisiä kuoli taistellessaan pääsystä istumaan Xi’anin mahtavan palatsin korkeimmalle istuimelle.",
-    "reference": "kˈolmeŋ kˈunɪŋŋˌaskunnaŋ kˈausɪ ˌolɪ ˈyksɪ mˈuinaiseŋ kˈiːnan hˈistorɪan vˈerɪsˌimmɪstæ ˈaikakˌausɪsta tˈuhansˌia ˈihmɪsˌiæ kˈuolɪ tˈaistellˌessaːm pˈæːsystæ ˈistumaːn ksˈianɪn mˈahtavam pˈalatsɪŋ kˈorkeimmˌalle ˈistuimˌelle",
-    "uccharan": "kˈolmeŋ kˈunɪŋŋˌaskunnaŋ kˈausɪ ˌolɪ ˈyksɪ mˈuinaiseŋ kˈiːnan hˈistorɪan vˈerɪsˌimmɪstæ ˈaikakˌausˌista tˈuhansˌia ˈihmɪsˌiæ kˈuolɪ tˈaistellˌessaːm pˈæːsystæ ˈistumaːŋ ksˈianɪm mˈahtavam pˈalatsɪŋ kˈorkeimmˌalle ˈistuimˌelle"
-   },
-   {
-    "id": "flores-devtest-365",
-    "text": "Naaraat ovat tavallisesti läheistä sukua toisilleen muodostaen suuren perheen sisaria ja tyttäriä.",
-    "reference": "nˈaːraːt ˌovat tˈavallɪsˌestɪl lˈæheistæ sˈukua tˈoisɪlleːn mˈuodostaen sˈuːrem pˈerheːn sˈisarˌia ja tˈytːærˌiæ",
-    "uccharan": "nˈaːraːt ˌovat tˈavallɪsˌestɪ lˈæheistæ sˈukua tˈoisɪlleːm mˈuodostaen sˈuːrem pˈerheːn sˈisarˌia ja tˈytːærˌiæ"
-   },
-   {
-    "id": "flores-devtest-293",
-    "text": "Muita käsiteltyjä aiheita olivat tietojen mukaan kummallekin kansakunnalle pyhän Jerusalemin asema tulevaisuudessa sekä Jordanin laakson kysymys. ",
-    "reference": "mˈuita kˈæsɪtˌeltyjæ ˈaiheita ˌolɪvat tˈietojen mˈukaːŋ kˈummallˌekːɪn kˈansakˌunnalle pːˈyhæn jˈerusˌalemɪn ˈasema tˈulevˌaisuːdˌessa sˈekæ jˈordanɪn lˈaːksoŋ kˈysymys",
-    "uccharan": "mˈuita kˈæsɪtˌeltyjæ ˈaiheita ˌolɪvat tˈietojem mˈukaːŋ kˈummallˌekːɪŋ kˈansakˌunnalle pˈyhæn jˈerusˌalemɪn ˈasema tˈulevˌaisuːdˌessa sˈekæ jˈordanɪn lˈaːksoŋ kˈysymys"
-   },
    {
     "id": "flores-devtest-466",
     "text": "Egyptin Kuolleiden laaksossa sijaitsevaan Gizan ylätasankoon eli Gizan nekropoliin kuuluu useita pyramideja (joista Suuri pyramidi on isoin), useita pieniä hautoja, useita temppeleitä ja Suuri sfinksi.",
@@ -237,6 +177,66 @@
     "text": "Näistä on tullut eriytyneitä oppialoja, jotka keskittyvät tarjoamaan ratkaisuja todellisiin ongelmiin.",
     "reference": "nˌæistæ on tˈullut ˈeriytynˌeitæ ˈopːɪˌaloja jˌotka kˈeskɪtːyvæt tˈarjoamaːn rˈatkaisˌuja tˈodellɪsɪːn ˈoŋŋelmɪːn",
     "uccharan": "nˌæistæ on tˈullut ˈeriytynˌeitæ ˈopːɪalˌoja jˌotka kˈeskɪtːyvæt tˈarjoamaːn rˈatkaisˌuja tˈodellɪsɪːn ˈoŋŋelmɪːn"
+   },
+   {
+    "id": "flores-devtest-988",
+    "text": "Japanissa keisari järjesti ensimmäiset kirsikankukkajuhlat vain itselleen ja muille keisarillisen hovin piirissä ‎vaikuttavan aristokratian jäsenille.‎",
+    "reference": "jˈapanˌissa kˈeisarɪ jˈærjestɪ ˈensɪmmˌæiset kˈirsɪkˌaŋkukːajˌuhlat vˈain ˈitselleːn ja mˈuille kːˈeisarˌillɪsen hˈovɪm pˈiːrɪssæ vˈaikutːavan ˈarɪstˌokratɪan jˈæsenˌille",
+    "uccharan": "jˈapanˌissa kˈeisarɪ jˈærjestɪ ˈensɪmmˌæiset kˈirsɪkˌaŋkukːajˌuhlat vˈain ˈitselleːn ja mˈuille kˈeisarɪllɪsen hˈovɪm pˈiːrɪssæ vˈaikutːavan ˈarɪstˌokratɪan jˈæsenˌille"
+   },
+   {
+    "id": "flores-devtest-296",
+    "text": "Vaatimukset täyttäviä vapaaehtoisia värvättiin kansallispuisto- ja villieläinpalvelun sekä Australian urheiluampujien liiton NSW:n yhteishankkeena ja osana ammuntaliiton metsästysohjelmaa.",
+    "reference": "vˈaːtɪmˌukset tˈæytːævˌiæ vˈapaːˌehtoisˌia vˈærvætːɪːŋ kˈansallˌispuisto ja vˈillielˌæimpalvelun sˈekæ ˈaustraːlɪan ˈurheiluˌampujien lˈiːton ˈænˌæskˌaksoisveː ˈæn ˈyhteishˌaŋkːeːna ja ˈosana ˈammuntalˌiːton mˈetsæstysˌohjelmaː",
+    "uccharan": "vˈaːtɪmˌukset tˈæytːævˌiæ vˈapaːˌehtoisˌia vˈærvætːɪːŋ kˈansallˌispuisto ja vˈillielˌæimpˌalvelun sˈekæ ˈaustraːlɪan ˈurheilˌuampujien lˈiːton ˈænˌæskˌaksoisveː ˈæn ˈyhteishˌaŋkːeːna ja ˈosana ˈammuntalˌiːtom mˈetsæstysˌohjelmaː"
+   },
+   {
+    "id": "flores-devtest-592",
+    "text": "Tieteen päätehtävä on selvittää tieteellisin menetelmin, miten maailma toimii. Tieteellinen menetelmä ohjaakin suurinta osaa tieteellisestä tutkimuksesta.",
+    "reference": "tˈieteːm pˈæːtehtˌævæ on sˈelvɪtːæː tˈieteːllɪsɪn mˈenetˌelmɪn mˈiten mˈaːɪlma tˈoimɪː tˈieteːllɪnen mˈenetˌelmæ ˈohjaːkɪn sˈuːrɪnta ˈosaː tˈieteːllɪsˌestæ tˈutkɪmˌuksesta",
+    "uccharan": "tˈieteːm pˈæːtehtˌævæ on sˈelvɪtːæː tˈieteːllɪsɪm mˈenetˌelmɪn mˈitem mˈaːɪlma tˈoimɪː tˈieteːllɪnem mˈenetˌelmæ ˈohjaːkɪn sˈuːrɪnta ˈosaː tˈieteːllɪsˌestæ tˈutkɪmˌuksesta"
+   },
+   {
+    "id": "flores-devtest-559",
+    "text": "Vaikka vaunutiet koostuivat pelkästään rinnakkaisista puulankuista, niiden ansiosta hevoset pystyivät vetämään vaunuja nopeammin ja suuremmilla kuormilla kuin senaikaisilla hieman epätasaisemmilla teillä.",
+    "reference": "vˈaikːa vˈaunutiet kˈoːstuivat pˈelkæstæːn rˈinnakːˌaisɪsta pˈuːlaŋkˌuista nˈiːden ˈansɪˌosta hˈevoset pˈystyivæt vˈetæmæːn vˈaunuja nˈopeˌammɪn ja sˈuːremmɪlla kˈuormɪlla kˈuin sˈenaikˌaisɪlla hˈieman ˈepætasˌaisemmɪlla tˈeillæ",
+    "uccharan": "vˈaikːa vˈaunutˌiet kˈoːstuivat pˈelkæstæːn rˈinnakːˌaisˌista pˈuːlaŋkuista nˈiːden ˈansɪˌosta hˈevoset pˈystyivæt vˈetæmæːn vˈaunuja nˈopeˌammɪn ja sˈuːremmɪlla kˈuormɪlla kˈuin sˈenaikˌaisɪlla hˈieman ˈepætasˌaisemmɪlla tˈeillæ"
+   },
+   {
+    "id": "flores-devtest-854",
+    "text": "Reppumatkailu suksin: tätä toimintaa kutsutaan myös erähiihdoksi, hiihtovaellukseksi tai retkihiihdoksi.",
+    "reference": "rˈepːumˌatkailu sˈuksɪn tˌætæ tˈoimɪntaː kˈutsutaːn mˈyøs ˈeræhˌiːhdoksɪ hˈiːhtovaˌelluksˌeksɪ tai rˈetkɪhˌiːhdoksɪ",
+    "uccharan": "rˈepːumˌatkailu sˈuksɪn tˌætæ tˈoimɪntaː kˈutsutaːm mˈyøs ˈeræhˌiːhdoksɪ hˈiːhtovaˌellukseksɪ tai rˈetkɪhˌiːhdoksɪ"
+   },
+   {
+    "id": "flores-devtest-803",
+    "text": "Kaikkien, jotka aikovat autoilla korkeilla leveysasteilla tai vuoristosolissa, tulee ottaa huomioon lumen, jään tai erittäin kylmien lämpötilojen mahdollisuus.",
+    "reference": "kˈaikːien jˌotka ˈaikovat ˈautoilla kˈorkeilla lˈeveysˌasteilla tai vˈuorɪstosolˌissa tˈuleː ˈotːaː hˈuomɪoːn lˈumen jˈæːn tai ˈerɪtːæiŋ kˈylmien lˈæmpøtˌilojen mˈahdollɪsuːs",
+    "uccharan": "kˈaikːien jˌotka ˈaikovat ˈautoilla kˈorkeilla lˈeveysˌasteilla tai vˈuorɪstosolɪssa tˈuleː ˈotːaː hˈuomɪoːn lˈumen jˈæːn tai ˈerɪtːæiŋ kˈylmien lˈæmpøtˌilojem mˈahdollɪsuːs"
+   },
+   {
+    "id": "flores-devtest-341",
+    "text": "Princetonin yliopiston ja Uppsalan yliopiston tutkijat kertoivat uuden lajin kehittyneen jo kahdessa sukupolvessa, vaikka tapahtumasarjan oli uskottu kestävän paljon kauemmin. Syynä oli kotoperäisen darwininpeipon (Geospiza fortes) ja tulokaslaji kaktussirkun (Geospiza conirostris) keskinäinen lisääntyminen.",
+    "reference": "prˈinsetonɪn ˈylɪopˌiston ja ˈupːsalan ˈylɪopˌiston tˈutkɪjat kˈertoivat ˈuːden lˈajɪŋ kˈehɪtːyneːn jˈo kˈahdessa sˈukupˌolvessa vˈaikːa tˈapahtumasˌarjan ˌolɪ ˈuskotːu kˈestævæm pˈaljoŋ kˈauemmɪn sˈyːnæ ˌolɪ kˈotoperˌæisen dˈarvɪnˌimpeipon ɡˈeospˌitsa fˈortes ja tˈulokˌaslajɪ kˈaktussˌirkun ɡˈeospˌitsa kˈonɪrˌostrɪs kˈeskɪnˌæinen lˈisæːntˌymɪnen",
+    "uccharan": "prˈinsetonɪn ˈylɪopˌiston ja ˈupːsalan ˈylɪopˌiston tˈutkɪjat kˈertoivat ˈuːden lˈajɪŋ kˈehɪtːyneːn jˈo kˈahdessa sˈukupˌolvessa vˈaikːa tˈapahtumasˌarjan ˌolɪ ˈuskotːu kˈestævæm pˈaljoŋ kˈauemmɪn sˈyːnæ ˌolɪ kˈotoperˌæisen dˈarvɪnɪmpˌeipoŋ ɡˈeospˌitsa fˈortes ja tˈulokˌaslajɪ kˈaktussˌirkuŋ ɡˈeospˌitsa kˈonɪrostrɪs kˈeskɪnˌæinen lˈisæːntˌymɪnen"
+   },
+   {
+    "id": "flores-devtest-710",
+    "text": "Marokon sulttaani jälleenrakensi kaupungin nimellä Dar-ul-Badya, ja sinne kauppa-asemia perustaneet espanjalaiset kauppiaat antoivat sille nimen Casablanca.",
+    "reference": "mˈarokon sˈultːaːnɪ jˈælleːnrakˌensɪ kˈaupuŋŋɪn nˈimellæ dˈarˈulbˈadya ja sˈinne kːˈaupːaˈasemˌia pˈerustaneːt ˈespanjalˌaiset kˈaupːɪaːt ˈantoivat sˈillen nˈimen kˈasablˌanka",
+    "uccharan": "mˈarokon sˈultːaːnɪ jˈælleːnrakˌensɪ kˈaupuŋŋɪn nˈimellæ dˈarˈulbˈadya ja sˈinne kˈaupːaˈasemˌia pˈerustaneːt ˈespanjalˌaiset kˈaupːɪaːt ˈantoivat sˈille nˈimeŋ kˈasablˌanka"
+   },
+   {
+    "id": "flores-devtest-280",
+    "text": "Syytettyjen nimiksi on ilmoitettu Baba Kanjar, Bhutha Kanjar, Rampro Kanjar, Gaza Kanjar ja Vishnu Kanjar.",
+    "reference": "sˈyːtetːyjen nˈimɪksɪ on ˈilmoitˌetːu bˈaba kˈanjar bhˈutha kˈanjar rˈampro kˈanjar ɡˈatsa kˈanjar ja vˈishnu kˈanjar",
+    "uccharan": "sˈyːtetːyjen nˈimɪksɪ on ˈilmoitˌetːu bˈaba kˈanjar bhˈutha kˈanjar rˈampro kˈanjar ɡˈatsa kˈanjar ja vˈɪsʃnu kˈanjar"
+   },
+   {
+    "id": "flores-devtest-745",
+    "text": "Aikataulun mukaan sillan tulisi olla täydessä käyttökunnossa syyskuussa 2017, jolloin Brasilian raja-asemien arvioidaan valmistuvan.",
+    "reference": "ˈaikatˌaulun mˈukaːn sˈillan tˈulɪsɪ ˌolla tːˈæydessæ kˈæytːøkˌunnossa sˈyːskuːssa kˈaksi tˌuhatːa sˈeitsemæntˌoista jˈolloin brˈasɪlɪan rˈajaˈasemien ˈarvɪˌoidaːn vˈalmɪstuvan",
+    "uccharan": "ˈaikatˌaulum mˈukaːn sˈillan tˈulɪsɪ ˌolla tˈæydessæ kˈæytːøkˌunnossa sˈyːskuːssa kˈaksi tˌuhatːa sˈeitsemæntˌoista jˈolloim brˈasɪlɪan rˈajaˈasemien ˈarvɪˌoidaːn vˈalmɪstuvan"
    }
   ]
  }

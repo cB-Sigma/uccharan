@@ -182,7 +182,8 @@ def main() -> int:
     if oracle is None:
         print("reference phonemizer not installed; nothing to compare against")
         return 2
-    base = "en" if args.lang.startswith("en") else args.lang
+    # The Belgian and Swiss French voices are scored on the French sentences.
+    base = "en" if args.lang.startswith("en") else "fr" if args.lang.startswith("fr") else args.lang
     rows = read_tsv(DATA / f"{base}_{args.set}.tsv")
     if args.limit:
         rows = rows[: args.limit]

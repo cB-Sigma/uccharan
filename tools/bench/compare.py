@@ -45,12 +45,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 # The word tables are packs; inside the repository they are read from the source tree.
 os.environ.setdefault("UCCHARAN_DATA_DIR", os.pathsep.join(str(ROOT / "crates" / d / "data") for d in ("uccharan", "uccharan-data")))
-VOICES = {"bho": "hi", "mai": "hi", "mag": "hi", "en-us": "en-us", "en-gb": "en-gb-x-rp", "hi": "hi", "bn": "bn", "mr": "mr", "te": "te", "ne": "ne", "kn": "kn", "ta": "ta", "ml": "ml", "as": "as", "gu": "gu", "pa": "pa", "or": "or", "kok": "kok", "si": "si", "sa": "hi", "ur": "ur", "sd": "sd", "es": "es", "da": "da", "nb": "nb", "fi": "fi", "hu": "hu", "ro": "ro", "ca": "ca", "sv": "sv", "cs": "cs", "tr": "tr", "pl": "pl", "pt": "pt", "pt-br": "pt-br", "it": "it", "fr": "fr", "de": "de", "nl": "nl"}
+VOICES = {"bho": "hi", "mai": "hi", "mag": "hi", "en-us": "en-us", "en-gb": "en-gb-x-rp", "hi": "hi", "bn": "bn", "mr": "mr", "te": "te", "ne": "ne", "kn": "kn", "ta": "ta", "ml": "ml", "as": "as", "gu": "gu", "pa": "pa", "or": "or", "kok": "kok", "si": "si", "sa": "hi", "ur": "ur", "sd": "sd", "es": "es", "da": "da", "nb": "nb", "fi": "fi", "hu": "hu", "ro": "ro", "ca": "ca", "sv": "sv", "cs": "cs", "tr": "tr", "pl": "pl", "pt": "pt", "pt-br": "pt-br", "it": "it", "fr": "fr", "de": "de", "nl": "nl", "fr-be": "fr-be", "fr-ch": "fr-ch"}
 FLAGS = 4 | 16  # reference-style number reading, no punctuation: same output shape as the reference call
 
 
 def sentences(lang: str, limit: int, part: str = "heldout") -> list[str]:
-    name = f"{'en' if lang.startswith('en') else lang}_{part}.tsv"
+    # The Belgian and Swiss French voices read the French sentences.
+    base = "en" if lang.startswith("en") else "fr" if lang.startswith("fr") else lang
+    name = f"{base}_{part}.tsv"
     rows = [line.split("\t", 1)[1] for line in (ROOT / "tools/eval/data" / name).read_text(encoding="utf-8").splitlines() if "\t" in line]
     return rows[:limit] if limit else rows
 

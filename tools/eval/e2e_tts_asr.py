@@ -64,20 +64,35 @@ def normalise(text: str, lang: str) -> str:
     if lang == "hi":
         text = text.replace("़", "").replace("ँ", "ं").replace("।", " ")
         text = re.sub(r"[^ऀ-ॿ\s]", " ", text)
-    else:
+    elif lang.startswith("en"):
         text = text.replace("’", "'")
         text = re.sub(r"[^a-z0-9'\s]", " ", text)
+    else:
+        # letters (with their marks) and digits of any script
+        text = text.replace("’", "'").replace("।", " ")
+        text = "".join(c if unicodedata.category(c)[0] in "LMN" or c == "'" else " " for c in text)
     return " ".join(text.split())
 
 
 def pick_sentences(lang: str, n: int) -> list[tuple[str, str]]:
-    rows = read_tsv(DATA / ("hi_heldout.tsv" if lang == "hi" else "en_heldout.tsv"))
-    if lang == "hi":
-        rows = [r for r in rows if 15 <= len(r[1]) <= 120 and not re.search(r"[A-Za-z0-9०-९]", r[1])]
-    else:
+    base = "en" if lang.startswith("en") else "fr" if lang.startswith("fr") else lang
+    rows = read_tsv(DATA / f"{base}_heldout.tsv")
+    if base == "en":
         rows = [r for r in rows if 30 <= len(r[1]) <= 120 and not re.search(r"[0-9]", r[1]) and r[1].isascii()]
+    elif re.search(r"[A-Za-z]", "".join(t for _, t in rows[:50])) and not re.search(r"[\u0900-\u0dff\u0600-\u06ff]", "".join(t for _, t in rows[:50])):
+        # Latin-script languages: sentences without digits
+        rows = [r for r in rows if 30 <= len(r[1]) <= 160 and not re.search(r"[0-9]", r[1])]
+    else:
+        # other scripts: no Latin letters and no digits of any script
+        rows = [r for r in rows if 15 <= len(r[1]) <= 160 and not re.search(r"[A-Za-z\d]", r[1])]
     random.Random(7).shuffle(rows)
     return rows[:n]
+
+
+def asr_language(lang: str) -> str:
+    """Whisper's code for a language tag (en-us -> en, pt-br -> pt; Bhojpuri,
+    Maithili and Magahi are transcribed as Hindi)."""
+    return "hi" if lang in ("bho", "mai", "mag") else lang.split("-")[0]
 
 
 def make_asr(spec: str, lang: str):
@@ -88,7 +103,7 @@ def make_asr(spec: str, lang: str):
 
         rec = sherpa_onnx.OfflineRecognizer.from_whisper(
             encoder=f"{path}-encoder.int8.onnx", decoder=f"{path}-decoder.int8.onnx", tokens=f"{path}-tokens.txt",
-            num_threads=2, language="hi" if lang == "hi" else "en", task="transcribe")
+            num_threads=2, language=asr_language(lang), task="transcribe")
 
         def run(samples, rate):
             s = rec.create_stream()
@@ -108,7 +123,7 @@ def make_asr(spec: str, lang: str):
             if rate != 16000:
                 idx = np.linspace(0, len(x) - 1, int(len(x) * 16000 / rate))
                 x = np.interp(idx, np.arange(len(x)), x).astype(np.float32)
-            segs, _ = model.transcribe(x, language="hi" if lang == "hi" else "en", beam_size=1, condition_on_previous_text=False)
+            segs, _ = model.transcribe(x, language=asr_language(lang), beam_size=1, condition_on_previous_text=False)
             return " ".join(s.text for s in segs)
 
         return run

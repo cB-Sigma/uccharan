@@ -5,78 +5,74 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 149920,
-  "per": 0.007884204909284952,
-  "per_without_stress": 0.006463574984856767,
-  "exact_sentence": 0.5770750988142292,
-  "exact_sentence_without_stress": 0.6413043478260869,
-  "piper_shape_per": 0.008281220266022718,
-  "piper_shape_exact_sentence": 0.5484189723320159,
-  "word_count_mismatch_sentences": 150,
+  "per": 0.006303361792956244,
+  "per_without_stress": 0.005362920501721158,
+  "exact_sentence": 0.6472332015810277,
+  "exact_sentence_without_stress": 0.6798418972332015,
+  "piper_shape_per": 0.006726030723195948,
+  "piper_shape_exact_sentence": 0.6136363636363636,
+  "word_count_mismatch_sentences": 149,
   "errors_by_class": {
    "consonant": {
-    "count": 463,
-    "share": 0.3917089678510998,
-    "per_contribution": 0.003088313767342583
+    "count": 380,
+    "share": 0.4021164021164021,
+    "per_contribution": 0.002534685165421558
    },
    "stress": {
-    "count": 311,
-    "share": 0.26311336717428085,
-    "per_contribution": 0.0020744397011739596
+    "count": 222,
+    "share": 0.23492063492063492,
+    "per_contribution": 0.0014807897545357524
    },
    "vowel": {
-    "count": 231,
-    "share": 0.19543147208121828,
-    "per_contribution": 0.0015408217716115261
+    "count": 201,
+    "share": 0.2126984126984127,
+    "per_contribution": 0.0013407150480256136
    },
    "other": {
-    "count": 101,
-    "share": 0.08544839255499154,
-    "per_contribution": 0.000673692636072572
+    "count": 88,
+    "share": 0.09312169312169312,
+    "per_contribution": 0.0005869797225186767
    },
    "word-boundary": {
-    "count": 61,
-    "share": 0.051607445008460234,
-    "per_contribution": 0.0004068836712913554
+    "count": 39,
+    "share": 0.04126984126984127,
+    "per_contribution": 0.0002601387406616862
    },
    "diacritic": {
     "count": 9,
-    "share": 0.007614213197969543,
+    "share": 0.009523809523809525,
     "per_contribution": 6.003201707577375e-05
    },
    "length": {
     "count": 6,
-    "share": 0.005076142131979695,
+    "share": 0.006349206349206349,
     "per_contribution": 4.0021344717182494e-05
    }
   },
   "top_confusions": [
    {
     "edit": "z→∅",
-    "count": 177
+    "count": 173
    },
    {
     "edit": "∅→ˈ",
-    "count": 135
+    "count": 67
    },
    {
     "edit": "ˈ→∅",
-    "count": 74
+    "count": 62
    },
    {
     "edit": "∅→z",
-    "count": 74
+    "count": 53
    },
    {
     "edit": "t→∅",
-    "count": 42
-   },
-   {
-    "edit": "∅→ ",
-    "count": 36
+    "count": 38
    },
    {
     "edit": " →∅",
-    "count": 25
+    "count": 23
    },
    {
     "edit": "ˌ→∅",
@@ -87,36 +83,20 @@
     "count": 22
    },
    {
-    "edit": "∅→e",
-    "count": 20
-   },
-   {
-    "edit": "∅→s",
-    "count": 20
-   },
-   {
     "edit": "s→∅",
-    "count": 18
+    "count": 19
    },
    {
     "edit": "ɛ→∅",
     "count": 17
    },
    {
+    "edit": "∅→ ",
+    "count": 16
+   },
+   {
     "edit": "∅→ə",
     "count": 15
-   },
-   {
-    "edit": "∅→ʁ",
-    "count": 14
-   },
-   {
-    "edit": "∅→o",
-    "count": 14
-   },
-   {
-    "edit": "∅→t",
-    "count": 11
    },
    {
     "edit": "∅→a",
@@ -124,14 +104,6 @@
    },
    {
     "edit": "e→∅",
-    "count": 10
-   },
-   {
-    "edit": "z→s",
-    "count": 10
-   },
-   {
-    "edit": "∅→n",
     "count": 10
    },
    {
@@ -143,39 +115,67 @@
     "count": 8
    },
    {
+    "edit": "∅→e",
+    "count": 7
+   },
+   {
+    "edit": "∅→t",
+    "count": 7
+   },
+   {
     "edit": "ʌ→y",
     "count": 7
    },
    {
-    "edit": "i→∅",
+    "edit": "ə→ɛ",
     "count": 7
+   },
+   {
+    "edit": "d→∅",
+    "count": 6
+   },
+   {
+    "edit": "u→∅",
+    "count": 6
+   },
+   {
+    "edit": "a→∅",
+    "count": 6
+   },
+   {
+    "edit": "̃→∅",
+    "count": 6
+   },
+   {
+    "edit": "i→∅",
+    "count": 6
    }
   ],
   "word_error_by_class": {
    "lexicon": {
-    "words": 21347,
-    "wrong": 475,
-    "rate": 0.022251370215955402
+    "words": 21369,
+    "wrong": 392,
+    "rate": 0.018344330572324395
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 189,
-    "per": 0.015256942227896584,
-    "exact_sentence": 0.4126984126984127
+    "per": 0.00963932333226939,
+    "exact_sentence": 0.6243386243386243
    },
    "no-digits": {
     "sentences": 823,
-    "per": 0.005936419596930601,
-    "exact_sentence": 0.6148238153098421
+    "per": 0.005422042330719285,
+    "exact_sentence": 0.6524908869987849
    }
   },
   "examples_of_disagreement": [
    {
-    "id": "flores-devtest-405",
-    "text": "Bien que personne ne sache vraiment qui l'a rédigé, on sait qu'à un stade précoce de son existence, le grand parchemin (qui mesure environ 29 pouces trois quarts sur 24 pouces) était entreposé roulé.",
-    "reference": "bjˈɛ̃ kə pɛʁsˈɔn nə- sˈaʃ vʁɛmˈɑ̃ ki la ʁediʒˈe ɔ̃ sˈɛ ka œ̃ stˈad pʁekˈɔs də- sˈɔ̃ ɛɡzistˈɑ̃s lə- ɡʁˈɑ̃ paʁʃmˈɛ̃ ki məzˈyʁ ɑ̃viʁˈɔ̃ vɛ̃tnˈœf pˈus tʁwˈa kˈaʁ syʁ vɛ̃tkˈatʁ pˈus etˈɛt ɑ̃tʁəpozˈe ʁulˈe",
-    "uccharan": "bjˈɛ̃ kə pɛʁsˈɔn nə- sˈaʃ vʁɛmˈɑ̃ ki la ʁediʒˈe ɔ̃ sˈɛ ka œ̃ stˈad pʁekˈɔs də- sɔ̃n ɛɡzistˈɑ̃s lə- ɡʁˈɑ̃ paʁʃmˈɛ̃ ki məzˈyʁ ɑ̃viʁˈɔ̃ vɛ̃tnˈœf pˈus tʁwˈa kˈaʁ syʁ vɛ̃tkˈatʁ pˈusz etˈɛt ɑ̃tʁəpozˈe ʁulˈe"
+    "id": "flores-devtest-127",
+    "text": "Ils sont tous revenus en courant de l’endroit où l’accident s’était produit.",
+    "reference": "il sɔ̃ tus ʁəvnˈy ɑ̃ kuʁˈɑ̃ də- lɑ̃dʁwˈa u laksidˈɑ̃ setˈɛ pʁodyˈi",
+    "uccharan": "il sɔ̃ tu ʁəvnˈy ɑ̃ kuʁˈɑ̃ də- lɑ̃dʁwˈa u laksidˈɑ̃ setˈɛ pʁodyˈi"
    },
    {
     "id": "flores-devtest-836",
@@ -193,7 +193,7 @@
     "id": "flores-devtest-81",
     "text": "La tempête subtropicale Jerry, 10ème tempête de la saison des ouragans à porter un nom, est apparue ce jour dans l'océan Atlantique.",
     "reference": "la- tɑ̃pˈɛt sybtʁopikˈal dʒˈɛɹi dˈiz jˈɛm tɑ̃pˈɛt də- la- sɛzˈɔ̃ de-z uʁaɡˈɑ̃z a pɔʁtˈe œ̃ nˈɔ̃ ɛt apaʁˈy sə- ʒˈuʁ dɑ̃ loseˈɑ̃ atlɑ̃tˈik",
-    "uccharan": "la- tɑ̃pˈɛt sybtʁopikˈal dʒˈɛɹi dˈis jˈɛm tɑ̃pˈɛt də- la- sɛzˈɔ̃ de-z uʁaɡˈɑ̃ a pɔʁtˈe œ̃ nˈɔ̃ ɛt apaʁˈy sə- ʒˈuʁ dɑ̃ loseˈɑ̃ atlɑ̃tˈik"
+    "uccharan": "la- tɑ̃pˈɛt sybtʁopikˈal dʒˈɛɹi dˈi jˈɛm tɑ̃pˈɛt də- la- sɛzˈɔ̃ de-z uʁaɡˈɑ̃ a pɔʁtˈe œ̃ nˈɔ̃ ɛt apaʁˈy sə- ʒˈuʁ dɑ̃ loseˈɑ̃ atlɑ̃tˈik"
    },
    {
     "id": "flores-devtest-906",
@@ -202,34 +202,16 @@
     "uccharan": "otʁz ɛɡzˈɑ̃pl lˈil də- lɪvɪŋstˈən e də- la- desɛpsjˈɔ̃ u la- kaldɛʁˈa inɔ̃dˈe dœ̃ vɔlkˈɑ̃ ɑ̃kˌɔʁ aktˈif ˈɔfʁ œ̃ pˈɔʁ natyʁˈɛl spɛktakylˈɛʁ"
    },
    {
-    "id": "flores-devtest-68",
-    "text": "Mais après avoir perdu le guichet de son capitaine, l'Inde n'a réalisé que 36 courses et perdu sept guichets jusqu'à la fin de la manche.",
-    "reference": "mɛz apʁˌɛz avwˈaʁ pɛʁdˈy lə- ɡiʃˈɛ də- sˈɔ̃ kapitˈɛn lˈɛ̃d na ʁealizˈe kə tʁɑ̃tsˈi kˈuʁsz e pɛʁdˈy sˈɛt ɡiʃˈɛ ʒyska la- fˈɛ̃ də- la- mˈɑ̃ʃ",
-    "uccharan": "mɛz apʁˌɛz avwˈaʁ pɛʁdˈy lə- ɡiʃˈɛ də- sɔ̃ kapitˈɛn lˈɛ̃d na ʁealizˈe kə tʁɑ̃tsˈis kˈuʁsz e pɛʁdˈy sˈɛt ɡiʃˈɛ ʒyska la- fˈɛ̃ də- la- mˈɑ̃ʃ"
-   },
-   {
     "id": "flores-devtest-542",
     "text": "En principe, le bouddhisme tibétain est très simple. Il se compose du Kundalini Yoga, de la méditation et de la voie de l'amour universel.",
     "reference": "ɑ̃ pʁɛ̃sˈip lə- budˈism tibetˈɛ̃ ɛ tʁɛ sˈɛ̃pl il sə- kɔ̃pˈɔz dy- kœ̃dalinˈi joɡˈa də- la- meditasjˈɔ̃ e də- la- vwˈa də- lamˈuʁ ynivɛʁsˈɛl",
     "uccharan": "ɑ̃ pʁɛ̃sˈip lə- budˈism tibetˈɛ̃ ɛ tʁɛ sˈɛ̃pl il sə- kɔ̃pˈɔz dy- kʌdalinˈi joɡˈa də- la- meditasjˈɔ̃ e də- la- vwˈa də- lamˈuʁ ynivɛʁsˈɛl"
    },
    {
-    "id": "flores-devtest-472",
-    "text": "Le 6 octobre 1789, le roi Louis XVI, la reine Marie-Antoinette, leurs deux jeunes enfants (Marie-Thérèse, 11 ans, et Louis-Charles, 4 ans) et la sœur du roi, madame Élisabeth, tous terrifiés, sont contraints de rentrer à Paris depuis Versailles par une foule de vendeuses.",
-    "reference": "lə- sˈiz ɔktˈɔbʁ mil sɛtsɑ̃ katʁəvɛ̃nˈœf lə- ʁwˈa lwˈi sɛz ʁomˈɛ̃ la- ʁˈɛn maʁˈjɑ̃twanˈɛt lœʁ dˈø ʒˈønz ɑ̃fˈɑ̃ maʁˈiteʁˈɛz ˈɔ̃z ˈɑ̃ e lwˈiʃˈaʁl kˈatʁ ˈɑ̃ e la- sˈœʁ dy- ʁwˈa madˈam ɪlˈɪseɪbəθ tus tɛʁifjˈe sˈɔ̃ kɔ̃tʁˈɛ̃ də- ʁɑ̃tʁˈe a paʁˈi dəpyˌi vɛʁsˈaj paʁ yn fˈul də- vɑ̃dˈøz",
-    "uccharan": "lə- sˈis ɔktˈɔbʁ mil sɛtsɑ̃ katʁəvɛ̃nˈœf lə- ʁwˈa lwˈi sɛz ʁomˈɛ̃ la- ʁˈɛn maʁˈiɑ̃twanˈɛt lœʁ dˈø ʒˈønz ɑ̃fˈɑ̃ maʁˈiteʁˈɛz ˈɔ̃z ˈɑ̃ e lwˈiʃˈaʁl kˈatʁ ˈɑ̃z e la- sˈœʁ dy- ʁwˈa madˈam ɪlˈɪseɪbəθ tu tɛʁifjˈe sˈɔ̃ kɔ̃tʁˈɛ̃ də- ʁɑ̃tʁˈe a paʁˈi dəpyˌi vɛʁsˈaj paʁ yn fˈul də- vɑ̃dˈøz"
-   },
-   {
     "id": "flores-devtest-707",
     "text": "Soyez ferme dans le refus des avances hommes, et n'ayez pas peur de tenir bon (différences culturelles ou non, ça ne veut pas dire que c'est acceptable !)",
     "reference": "swajˈe fˈɛʁm dɑ̃ lə- ʁəfˈy de-z avˈɑ̃sz ˈɔm e nɛjˈe pa pˈœʁ də- tənˈiʁ bˈɔ̃ difeʁˈɑ̃s kyltyʁˈɛl u nˈɔ̃ sa nə- vˈø pa dˈiʁ kə sɛt aksɛptˈabl",
     "uccharan": "swajˈe fˈɛʁm dɑ̃ lə- ʁəfˈy de-z avˈɑ̃s ˈɔm e nɛjˈe pa pˈœʁ də- tənˈiʁ bˈɔ̃ difeʁˈɑ̃s kyltyʁˈɛlz u nˈɔ̃ sa nə- vˈø pa dˈiʁ kə sɛt aksɛptˈabl"
-   },
-   {
-    "id": "flores-devtest-161",
-    "text": "« Ils sont plus frais que la surface environnante le jour et plus chauds la nuit ».",
-    "reference": "il sɔ̃ ply fʁˈɛ kə la- syʁfˈas ɑ̃viʁɔnˈɑ̃t lə- ʒˈuʁ e ply ʃˈo la- nyˈi",
-    "uccharan": "il sˈɔ̃ ply fʁˈɛ kə la- syʁfˈas ɑ̃viʁɔnˈɑ̃t lə- ʒˈuʁ e ply ʃˈo la- nyˈi"
    },
    {
     "id": "flores-devtest-960",
@@ -242,6 +224,24 @@
     "text": "L’archipel se trouve à 120 km au nord de la péninsule. L’île du Roi-George, avec le village de Villa Las Estrellas, est la plus grande.",
     "reference": "laʁʃipˈɛl sə- tʁˈuv a sɑ̃ vˈɛ̃ kilomˈɛtʁ o nˈɔʁ də- la- penɛ̃sˈyl lˈil dy- ʁwˈaʒˈɔʁʒ avˌɛk lə- vilˈaʒ də- vilˈa la-z ɛstʁɛlˈa ɛ la- ply ɡʁˈɑ̃d",
     "uccharan": "laʁʃipˈɛl sə- tʁˈuv a sɑ̃ vˈɛ̃ kilomˈɛtʁ o nˈɔʁ də- la- penɛ̃sˈyl lˈil dy- ʁwˈaʒˈɔʁʒ avˌɛk lə- vilˈaʒ də- vilˈa la- ɛstʁəlˈa ɛ la- ply ɡʁˈɑ̃d"
+   },
+   {
+    "id": "flores-devtest-939",
+    "text": "La Moldavie est une république multi-ethnique qui souffre de conflits ethniques.",
+    "reference": "la- mɔldavˈi ɛt yn ʁepyblˈik myltˈiɛθnˈiːk ki sˈufʁ də- kɔ̃flˈi ɛθnˈiːks",
+    "uccharan": "la- mɔldavˈi ɛt yn ʁepyblˈik myltˈiɛθnˈiːk ki sˈufʁ də- kɔ̃flˈiz ɛθnˈiːks"
+   },
+   {
+    "id": "flores-devtest-919",
+    "text": "Vous n'avez pas forcément besoin d'un yacht dans les archipels et sur les lacs.",
+    "reference": "vu navˈe pa fɔʁsemˈɑ̃ bəzwˈɛ̃ dœ̃ jˈɒt dɑ̃ le-z aʁʃipˈɛlz e syʁ le- lˈak",
+    "uccharan": "vu navˈe pa fɔʁsemˈɑ̃ bəzwˈɛ̃ dœ̃ jˈɒt dɑ̃ le-z aʁʃipˈɛl e syʁ le- lˈak"
+   },
+   {
+    "id": "flores-devtest-190",
+    "text": "L'histoire présentée dans l'opéra français, par Camille Saint-Saens, est celle d'un artiste « dont la vie est dictée par son amour pour la drogue et pour le Japon ».",
+    "reference": "listwˈaʁ pʁezɑ̃tˈe dɑ̃ lopeʁˈa fʁɑ̃sˈɛ paʁ kamˈij sˈɛ̃sˈɑ̃ ɛ sɛl dœ̃n aʁtˈist dɔ̃ la- vˈi ɛ diktˈe paʁ sɔ̃n amˈuʁ puʁ la- dʁˈoɡ e puʁ lə- ʒapˈɔ̃",
+    "uccharan": "listwˈaʁ pʁezɑ̃tˈe dɑ̃ lopeʁˈa fʁɑ̃sˈɛ paʁ kamˈij sˈɛ̃saˈɛ̃ ɛ sɛl dœ̃n aʁtˈist dɔ̃ la- vˈi ɛ diktˈe paʁ sɔ̃n amˈuʁ puʁ la- dʁˈoɡ e puʁ lə- ʒapˈɔ̃"
    }
   ]
  }

@@ -64,7 +64,7 @@ sample.
 
 Speed against the same espeak-ng voices with the model in place (throughput on the held-out sentences, one thread, a busy machine): German 2.4×, Dutch 1.8×, French 2.8× at first; after the model's run-time was rewritten (same output on every development and held-out sentence) German 5.8×, Dutch 3.2×, French 5.9×. The tables also got a key filter of one byte per entry, so the files are 4 to 10 % larger than the sizes above (`de.ucd` 373 KB, `nl.ucd` 242 KB, `fr.ucd` 181 KB).
 
-Known gaps: German and Dutch stress of long compounds and names outside the lists; Dutch final d before brackets and dashes, and "een" read as the numeral in some contexts; French liaison before h aspiré and before numbers, the stress of *sont* and *ont* before a participle, spaces as thousands separators.
+Known gaps: German and Dutch stress of long compounds and names outside the lists; Dutch final d before brackets and dashes, and "een" read as the numeral in some contexts; French liaison before h aspiré and before numbers, the stress of *sont* and *ont* before a participle, spaces as thousands separators (all four were worked on after 0.5.0: see "French gaps, Danish words, Catalan sandhi and spaced numbers" below).
 
 **Thirteen more Latin-script languages** (FLORES-200 devtest, 1,012 sentences each, each scored once; the development half is FLORES dev; European Portuguese uses the same sentences as Brazilian Portuguese). Word groups are counted on the sentences whose words align with the reference's. Speed is throughput on one thread against the espeak-ng voice, measured after the run-time rewrite (before it: Turkish 0.9×, Czech 0.7×, Finnish 0.7×, Norwegian 0.9×, Polish 1.0×).
 
@@ -73,16 +73,16 @@ Known gaps: German and Dutch stress of long compounds and names outside the list
 | Italian | `it` | 0.53 % | 0.38 % | 0.37 % | 76.0 % | 0.5 % | 0.1 % | 31.6 % (503) | 4.6× |
 | Portuguese (Brazil) | `pt-br` | 0.61 % | 0.38 % | 0.40 % | 61.8 % | 0.7 % | 0.8 % | 41.0 % (490) | 5.1× |
 | Portuguese (Portugal) | `pt` | 0.84 % | 0.66 % | 0.60 % | 49.8 % | 1.5 % | 1.8 % | 49.0 % (484) | 5.2× |
-| Polish | `pl` | 1.19 % | 0.90 % | 0.92 % | 36.4 % | 3.4 % | 2.6 % | 29.8 % (1058) | 3.1× |
+| Polish | `pl` | 1.12 % | 0.83 % | 0.92 % | 36.7 % | 3.4 % | 2.6 % | 29.8 % (1058) | 3.1× |
 | Turkish | `tr` | 0.68 % | 0.37 % | 0.47 % | 66.8 % | 0.1 % | 0.0 % | 22.0 % (1087) | 2.7× |
-| Czech | `cs` | 1.32 % | 0.80 % | 1.07 % | 45.2 % | 1.1 % | 2.9 % | 9.2 % (501) | 1.8× |
-| Swedish | `sv` | 1.44 % | 1.06 % | 0.83 % | 59.1 % | 0.1 % | 0.0 % | 32.3 % (1161) | 3.7× |
-| Catalan | `ca` | 1.51 % | 1.38 % | 1.18 % | 29.2 % | 4.8 % | 2.9 % | 40.3 % (553) | 4.9× |
-| Romanian | `ro` | 0.97 % | 0.41 % | 0.86 % | 51.7 % | 0.1 % | 0.0 % | 48.2 % (629) | 3.3× |
-| Hungarian | `hu` | 1.37 % | 0.93 % | 0.95 % | 48.7 % | 1.9 % | 0.2 % | 2.0 % (1121) | 13.1× |
-| Finnish | `fi` | 1.57 % | 1.26 % | 1.08 % | 30.1 % | 5.7 % | 4.5 % | 24.2 % (1938) | 1.7× |
-| Norwegian Bokmål | `nb` | 1.03 % | 0.89 % | 0.46 % | 68.7 % | 1.3 % | 0.0 % | 15.3 % (1119) | 2.3× |
-| Danish | `da` | 2.22 % | 1.40 % | 1.78 % | 37.5 % | 0.7 % | 0.4 % | 68.1 % (1025) | 27.1× |
+| Czech | `cs` | 1.31 % | 0.79 % | 1.07 % | 45.8 % | 1.1 % | 2.9 % | 9.2 % (501) | 1.8× |
+| Swedish | `sv` | 1.32 % | 0.95 % | 0.83 % | 59.8 % | 0.1 % | 0.0 % | 32.3 % (1161) | 3.7× |
+| Catalan | `ca` | 1.44 % | 1.30 % | 1.10 % | 32.2 % | 4.4 % | 2.3 % | 39.8 % (553) | 4.9× |
+| Romanian | `ro` | 0.96 % | 0.40 % | 0.86 % | 51.7 % | 0.1 % | 0.0 % | 48.2 % (629) | 3.3× |
+| Hungarian | `hu` | 1.34 % | 0.90 % | 0.95 % | 48.9 % | 1.9 % | 0.2 % | 2.0 % (1121) | 13.1× |
+| Finnish | `fi` | 1.36 % | 1.06 % | 1.08 % | 30.3 % | 5.7 % | 4.5 % | 24.2 % (1938) | 1.7× |
+| Norwegian Bokmål | `nb` | 0.96 % | 0.83 % | 0.46 % | 69.2 % | 1.3 % | 0.0 % | 15.3 % (1119) | 2.3× |
+| Danish | `da` | 1.95 % | 1.23 % | 1.49 % | 43.2 % | 0.7 % | 0.4 % | 62.3 % (930) | 27.1× |
 
 **Capitals, Roman numerals and single letters: all seventeen Latin-script languages scored again.**
 After the scores above, four things were changed on the development sentences and on probes of the
@@ -121,10 +121,54 @@ consonant letter by its name. (4) Finnish tens after a hundred carry secondary s
 | Norwegian | 1.11 % | **1.03 %** | 0.46 % | 68.7 % |
 | Danish | 2.26 % | **2.22 %** | 1.78 % | 37.5 % |
 
-The table of the thirteen languages above shows the new numbers in every column. Words outside the
+The table of the thirteen languages above shows the numbers of the latest scoring (below) in every column. Words outside the
 word lists are now wrong in: German 46.6 %, Dutch 53.7 %, French 31.6 %.
 
 Hungarian was scored a second time. The first scoring gave PER 2.08 % (without digits 1.61 %, identical sentences 19.3 %; listed words outside the table 6.6 % wrong): the voice gives about 2,400 frequent words only secondary stress at the end of a clause, and reads numbers from 10,000 with one stress per group of three digits, 2,000 and 2,000,000 as one word. Both were added from the word list's clause-final readings and from number probes (development half 1.92 → 1.38 %), not from the held-out half.
+
+**French gaps, Danish words, Catalan sandhi and spaced numbers: the Latin-script languages scored
+again.** After the release of 0.5.0 the following was changed on the development sentences and on
+probes of the reference voices (espeak-ng 1.52.0), and every held-out half was then scored once more
+(a documented re-score; the first scoring of the Belgian and Swiss French voices). (1) French: in
+compatible mode a word written with h first blocks liaison unless it is on a list of h-muet words
+(the reference treats h as aspirated by default), and improved mode uses the h-aspiré words of the
+usual dictionaries; number words keep or drop their final consonant by what follows (*six
+enfants*, *six livres*, *neuf ans*); *ont* and *sont* lose their stress after a clitic pronoun
+(*ils ont*, *n'en ont*, *y sont*); the voice reads *son* after *de* and *le* as the stressed noun;
+`fr-be` and `fr-ch` voices (septante, huitante, nonante). (2) Numbers: compatible mode joins groups
+of three digits only across an ordinary space, as the reference voices do; after a no-break or
+thin space (U+00A0, U+2009, U+202F, common in news text) the groups are read as numbers of their
+own, and a group with a leading zero as the voices read it (`000` "zero-zero zero"). Improved mode
+joins groups across all of these spaces. (3) Danish: 13,600 more words (Leipzig Corpora Collection
+`dan_news_2020_1M`, seen at least five times) were added to the word list and 41,000 rarer ones
+only train the letter-to-sound model (`data/sources/da/train.tsv`); `da.ucd` grew from 490 to
+658 KB. (4) Catalan: the conjunction *i* is a glide after a word written with a vowel last and
+before a word written with a vowel or h first except *u*; *hi*, *ho*, *lo* and final unstressed i
+and u become glides before a vowel; *o* is w between vowels; a final r is a tap before a vowel and
+a trill after a stressed vowel before a consonant; p stays voiceless before l. Development PER:
+French 0.80 → 0.63 %, Danish 2.21 → 1.94 %, Catalan 1.56 → 1.48 %, Spanish 0.63 → 0.62 %, Czech
+1.30 → 1.29 %, the others unchanged.
+
+| language | PER before | PER now | without stress | without digits | identical sentences |
+|---|---|---|---|---|---|
+| Spanish | 0.55 % | **0.54 %** | 0.43 % | 0.32 % | 68.3 % |
+| French | 0.79 % | **0.63 %** | 0.54 % | 0.54 % | 64.7 % |
+| French (Belgium), `fr-be` | — | **0.63 %** | 0.54 % | 0.54 % | 64.6 % |
+| French (Switzerland), `fr-ch` | — | **0.62 %** | 0.53 % | 0.54 % | 64.6 % |
+| Polish | 1.19 % | **1.12 %** | 0.83 % | 0.92 % | 36.7 % |
+| Czech | 1.32 % | **1.31 %** | 0.79 % | 1.07 % | 45.8 % |
+| Swedish | 1.44 % | **1.32 %** | 0.95 % | 0.83 % | 59.8 % |
+| Catalan | 1.51 % | **1.44 %** | 1.30 % | 1.10 % | 32.2 % |
+| Romanian | 0.97 % | **0.96 %** | 0.40 % | 0.86 % | 51.7 % |
+| Hungarian | 1.37 % | **1.34 %** | 0.90 % | 0.95 % | 48.9 % |
+| Finnish | 1.57 % | **1.36 %** | 1.06 % | 1.08 % | 30.3 % |
+| Norwegian | 1.03 % | **0.96 %** | 0.83 % | 0.46 % | 69.2 % |
+| Danish | 2.22 % | **1.95 %** | 1.23 % | 1.49 % | 43.2 % |
+
+German, Dutch, Italian, both Portuguese voices and Turkish did not change. The `fr-be` and `fr-ch`
+voices are scored on the French sentences (the Belgian and Swiss readings differ from the French
+one only in 70–99). Words outside the word lists are now wrong in: French 31.5 % (333 words),
+Catalan 39.8 % (553), Danish 62.3 % (930; was 68.1 % of 1,025).
 
 
 **Spanish** (`es`, FLORES-200 devtest, 1,012 sentences, scored once): PER **0.74 %**, without
@@ -233,6 +277,10 @@ over sentences of WER(uccharan) − WER(reference).
 | `en_US-lessac-medium` (0.1.0) | Whisper base | 377 / 500 | 4.30 % | **4.21 %** | −0.09 [−0.50, +0.30] | 16 / 12 |
 | `en_GB-alba-medium` (0.1.0) | Whisper base | 347 / 500 | **7.36 %** | 7.47 % | +0.11 [−0.55, +0.77] | 29 / 25 |
 | `hi_IN-rohan-medium` (0.1.0) | Whisper tiny, Hindi fine-tune (faster-whisper) | 495 / 500 | 8.95 % | **8.82 %** | −0.12 [−0.32, 0.00] | 2 / 0 |
+| `es_ES-davefx-medium` (after 0.5.0) | Whisper base | 159 / 200 | 13.23 % | **12.90 %** | −0.33 [−0.81, +0.12] | 17 / 9 |
+| `de_DE-thorsten-medium` (after 0.5.0) | Whisper base | 136 / 200 | 21.76 % | **20.99 %** | −0.77 [−1.77, +0.24] | 29 / 20 |
+| `fr_FR-siwis-medium` (after 0.5.0) | Whisper base | 136 / 200 | **19.28 %** | 19.39 % | +0.10 [−0.82, +1.04] | 24 / 28 |
+| `it_IT-paola-medium` (after 0.5.0) | Whisper base | 159 / 200 | 30.02 % | **29.91 %** | −0.11 [−0.98, +0.79] | 18 / 13 |
 
 Reading the table honestly:
 
@@ -254,6 +302,13 @@ Reading the table honestly:
   3.17 % → 2.97 % after a first run of 3.13 % → 3.56 % that led to three name corrections. The
   lessac, alba and rohan rows are from 0.1.0 (those voices were not re-run for 0.2.0; their
   phoneme streams changed only slightly — agreement in section 1).
+- **Spanish, German, French and Italian** (200 held-out FLORES-200 sentences without digits each,
+  one run, Whisper base int8 transcribing in the voice's language): no difference is significant.
+  The WER levels are high because Whisper base is weak on synthetic speech in these languages
+  (Italian most of all); the comparison between the columns is what matters. Telugu, Marathi,
+  Bengali and Urdu could not be checked offline: Piper has no Marathi, Bengali or Urdu voice, and
+  the installed recognisers (Whisper base and tiny) do not transcribe Telugu (they answer in other
+  scripts).
 - A human listening test was **not** done.
 
 ## 3. Profile conformance
@@ -443,6 +498,41 @@ every CMUdict name alone instead would cost 10 points on the Egyptian developmen
 | Hindi words in English text | 10 | 100 % | 100 % | 100 % | 100 % |
 | Romanised Hindi | 20 | 0 % | 0 % | 0 % | 100 % |
 | **All development** | 348 | 50.3 % | 55.7 % | 65.2 % | 99.7 % |
+
+### Spanish, German, French, Italian and Portuguese words (improved mode)
+
+`tools/eval/gold/improved/<lang>_{dev,test}.tsv`: 25 words per file and language, written by hand
+from the JIPA *Illustrations of the IPA* (Castilian Spanish: Martínez-Celdrán, Fernández-Planas &
+Carrera-Sabaté 2003; German: Kohler 1990; French: Fougeron & Smith 1993; Italian: Rogers &
+d'Arcangeli 2004; European Portuguese: Cruz-Ferreira 1995) and pronouncing dictionaries (Duden
+Aussprachewörterbuch, Warnant, DiPI and DOP, Porto Editora); each file names its sources and
+notation. The split was fixed when the files were written, before any improved-mode rule was
+changed on them; the test files were scored once. Check `ipa`: the segments must equal an expected
+form after notation-only normalisation (stress, tie bars and non-syllabic marks removed, a long
+consonant counted as a double one, vowel length only in German), and the main stress must be on the
+same vowel. `python tools/eval/gold_eval.py --improved dev|test` (results
+`tools/eval/results/gold_improved_{dev,test}.json`).
+
+Changes made on the development words, all following the sources above: Spanish final *d* as ð,
+ɱ before f, s voiced before a voiced consonant, unstressed u before a vowel as w; German r as ʁ and
+as ɐ after a long vowel, ɔʏ, *-dchen* with t, vowel length only under stress; French gn as ɲ (a new
+`[spelling.improved]` section: the phonemes alone cannot tell *gagner* from *panier*), *jouent*
+ʒu; Italian ɪ ʊ as j w before a vowel and i u elsewhere; European Portuguese final u, ɐj for *ei*,
+ɾ in clusters, nasal vowels at the end of a word.
+
+| language | reference (dev) | improved before (dev) | improved now (dev) | reference (test) | improved (test) |
+|---|---|---|---|---|---|
+| Spanish | 72 % | 84 % | **100 %** | 84 % | **96 %** |
+| German | 36 % | 60 % | **96 %** | 44 % | **96 %** |
+| French | 64 % | 80 % | **92 %** | 68 % | **88 %** |
+| Italian | 84 % | 84 % | **92 %** | 88 % | **92 %** |
+| Portuguese (Portugal) | 52 % | 52 % | **92 %** | 36 % | **72 %** |
+| all | 61.6 % | 72.0 % | **94.4 %** | 64.0 % | **88.8 %** |
+
+What is still wrong on the test words: lexical vowel quality (French *soleil* sɔlɛj, Portuguese
+*irmão*, *barco* read with an extra ə), French ɥ before a nasal vowel and before e (*juin*, *tuer*),
+Italian *occhio* with i for j, Portuguese *quente* and *cinco* (nasal vowel before a stop), *azul*
+with a final w, German *Garage* with a short a.
 
 ### Bhojpuri and Maithili (improved mode against the Hindi-voice fallback)
 

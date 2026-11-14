@@ -5,49 +5,49 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 165134,
-  "per": 0.013667688059394188,
-  "per_without_stress": 0.009302134703118267,
-  "exact_sentence": 0.4871541501976285,
-  "exact_sentence_without_stress": 0.6067193675889329,
-  "piper_shape_per": 0.013661674061281005,
-  "piper_shape_exact_sentence": 0.4841897233201581,
-  "word_count_mismatch_sentences": 391,
+  "per": 0.013377015030217883,
+  "per_without_stress": 0.008987503676395149,
+  "exact_sentence": 0.4891304347826087,
+  "exact_sentence_without_stress": 0.6086956521739131,
+  "piper_shape_per": 0.013375815144567193,
+  "piper_shape_exact_sentence": 0.48616600790513836,
+  "word_count_mismatch_sentences": 389,
   "errors_by_class": {
    "stress": {
-    "count": 923,
-    "share": 0.40894993354009745,
-    "per_contribution": 0.005589400123536038
-   },
-   "consonant": {
-    "count": 424,
-    "share": 0.18785999113867966,
-    "per_contribution": 0.0025676117577240302
+    "count": 921,
+    "share": 0.41693073789044816,
+    "per_contribution": 0.005577288747320358
    },
    "word-boundary": {
-    "count": 423,
-    "share": 0.18741692512184316,
-    "per_contribution": 0.0025615560696161904
+    "count": 415,
+    "share": 0.1878678134902671,
+    "per_contribution": 0.002513110564753473
+   },
+   "consonant": {
+    "count": 404,
+    "share": 0.18288818469895882,
+    "per_contribution": 0.0024464979955672365
    },
    "vowel": {
-    "count": 328,
-    "share": 0.14532565352237484,
-    "per_contribution": 0.0019862656993714194
+    "count": 314,
+    "share": 0.1421457673155274,
+    "per_contribution": 0.0019014860658616638
    },
    "other": {
-    "count": 129,
-    "share": 0.057155516171909615,
-    "per_contribution": 0.0007811837659113205
+    "count": 125,
+    "share": 0.05658669081032141,
+    "per_contribution": 0.0007569610134799617
    },
    "length": {
     "count": 30,
-    "share": 0.01329198050509526,
+    "share": 0.013580805794477138,
     "per_contribution": 0.00018167064323519082
    }
   },
   "top_confusions": [
    {
     "edit": "∅→ ",
-    "count": 362
+    "count": 356
    },
    {
     "edit": "ˌ→ˈ",
@@ -59,7 +59,7 @@
    },
    {
     "edit": "∅→ˈ",
-    "count": 192
+    "count": 190
    },
    {
     "edit": "∅→ˌ",
@@ -67,11 +67,11 @@
    },
    {
     "edit": "∅→ɑ",
-    "count": 78
+    "count": 74
    },
    {
     "edit": " →∅",
-    "count": 61
+    "count": 59
    },
    {
     "edit": "n→∅",
@@ -82,16 +82,16 @@
     "count": 47
    },
    {
-    "edit": "ɛ→∅",
-    "count": 47
-   },
-   {
     "edit": "i→∅",
     "count": 46
    },
    {
     "edit": "ˈ→ˌ",
     "count": 44
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 43
    },
    {
     "edit": "p→∅",
@@ -122,10 +122,6 @@
     "count": 19
    },
    {
-    "edit": "∅→l",
-    "count": 19
-   },
-   {
     "edit": "k→∅",
     "count": 18
    },
@@ -138,26 +134,30 @@
     "count": 15
    },
    {
-    "edit": "r→∅",
-    "count": 14
-   },
-   {
     "edit": "∅→e",
     "count": 12
+   },
+   {
+    "edit": "r→∅",
+    "count": 12
+   },
+   {
+    "edit": "∅→ː",
+    "count": 11
    }
   ],
   "word_error_by_class": {
    "lexicon": {
-    "words": 10652,
-    "wrong": 197,
-    "rate": 0.01849417949680811
+    "words": 10719,
+    "wrong": 199,
+    "rate": 0.018565164660882545
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 189,
-    "per": 0.029004316790339418,
-    "exact_sentence": 0.2328042328042328
+    "per": 0.02765002962503174,
+    "exact_sentence": 0.24338624338624337
    },
    "no-digits": {
     "sentences": 823,
@@ -166,12 +166,6 @@
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-416",
-    "text": "A kongresszusnak nem volt hatalma az adók kivetésére, és nem volt nemzeti végrehajtási vagy igazságszolgáltatási szerv sem, ezért a gyakran a vonakodó állami hatóságokra hagyatkozott törvényeinek érvényesítésére.",
-    "reference": "ˌɑ kˈonɡrɛssuʃnɑk nˈɛmvolt hˈɑtɑlmɑ ˌɑz ˈɑdoːk kˈivɛteːʃeːrɛ ˌeːʃ nˈɛmvolt nˈɛmzɛti vˈeːɡrɛhɑjtaːʃi vˌɑɟ ˈiɡɑʃʃaːɡsolɡaːltɑtaːʃi sˈɛrv ʃˌɛm ˈɛzeːrt ˌɑ ɟˈɑkrɑn ˌɑ vˈonɑkodoː ˈaːllɑmi hˈɑtoːʃaːɡokrɑ hˈɑɟɑtkozotː tˈørveːɲɛinɛk ˈeːrveːɲɛʃiːteːʃeːrɛ",
-    "uccharan": "ˌɑ kˈonɡrɛssuʃnɑk nɛm vˈolt hˈɑtɑlmɑ ˌɑz ˈɑdoːk kˈivɛteːʃeːrɛ ˌeːʃ nɛm vˈolt nˈɛmzɛti vˈeːɡrɛhɑjtaːʃi vˌɑɟ ˈiɡɑʃʃaːɡsolɡaːltɑtaːʃi sˈɛrv ʃˌɛm ˈɛzeːrt ˌɑ ɟˈɑkrɑn ˌɑ vˈonɑkodoː ˈaːllɑmi hˈɑtoːʃaːɡokrɑ hˈɑɟɑtkozotː tˈørveːɲɛinɛk ˈeːrveːɲɛʃiːteːʃeːrɛ"
-   },
    {
     "id": "flores-devtest-32",
     "text": "A toll szerkezete azt sugallja, hogy nem repülésre, hanem hőmérséklet-szabályozására vagy feltűnéskeltésre használták. A kutatók megállapították, hogy bár ez egy fiatal dinoszaurusz farka, a minta felnőtt tollazatra, nem pedig egy fióka tollazatára utal.",
@@ -237,6 +231,12 @@
     "text": "Az utazók olyan kártevő állatokkal találkozhatnak, amelyekkel korábban esetleg még nem találkoztak otthonukban.",
     "reference": "ˌɑz ˈutɑzoːk ˈojɑn kˈaːrtɛvøː ˈaːllɑtokːɑl tˈɑlaːlkozhɑtnɑk ˈɑmɛjɛkːɛl kˈoraːbːɑn ˈɛʃɛtlɛɡ mˈeːɡ nˈɛmtɑlaːlkostɑk ˈothonukbɑn",
     "uccharan": "ˌɑz ˈutɑzoːk ˈojɑn kˈaːrtɛvøː ˈaːllɑtokːɑl tˈɑlaːlkozhɑtnɑk ˈɑmɛjɛkːɛl kˈoraːbːɑn ˈɛʃɛtlɛɡ mˈeːɡ nɛm tˈɑlaːlkostɑk ˈothonukbɑn"
+   },
+   {
+    "id": "flores-devtest-722",
+    "text": "A város szöges ellentétben áll az ország többi városával, mivel inkább áraszt arab hangulatot, mint afrikait.",
+    "reference": "ˌɑ vˈaːroʃ sˈøɡɛʃ ˈɛllɛnteːtbɛn ˈaːll ˌɑz ˈorsaːɡ tˈøbːi vˈaːroʃaːvɑl mˈivɛl ˈinkaːbː ˈaːrɑst ˈɑrɑb hˈɑnɡulɑtot mˈintɑfrikɑit",
+    "uccharan": "ˌɑ vˈaːroʃ sˈøɡɛʃ ˈɛllɛnteːtbɛn ˈaːll ˌɑz ˈorsaːɡ tˈøbːi vˈaːroʃaːvɑl mˈivɛl ˈinkaːbː ˈaːrɑst ˈɑrɑb hˈɑnɡulɑtot mˈintɑ ˈɑfrikɑit"
    }
   ]
  }

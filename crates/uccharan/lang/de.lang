@@ -12,6 +12,8 @@ secondary = auto
 spell-vowels = aeiouäöüy
 
 [classes]
+RV = a e i o u y ø ɛ ɔ ɪ ʊ ʏ œ ə ɐ
+RC = p b t d k ɡ f v s z ʃ ʒ ç x h m n ŋ l j
 V = a e i o u ä ö ü y ă ĕ ĭ ŏ ŭ
 C = b c d f g h j k l m n p q r s t v w x z ß
 # Single consonant letters after which a syllable break leaves the vowel long.
@@ -277,6 +279,17 @@ r -> ɾ / _ {!PV} | _ # | {STOP} _
 # The -er vowel and the long a in standard transcription.
 ɜ -> ɐ
 ɑ -> a
+# Standard notation (Kohler 1990; Duden Aussprachewörterbuch): r is ʁ, and
+# ɐ after a long vowel before a consonant or at the end; ɔʏ; d before the
+# ç of -chen is t; a vowel is long only under (primary or secondary) stress.
+ɔø -> ɔʏ
+ɾ -> ɐ / ː _ # | ː _ {RC}
+r -> ɐ / ː _ # | ː _ {RC}
+ɾ -> ʁ
+r -> ʁ
+d -> t / _ ç
+ː -> ː / ˈ {RV} _ | ˌ {RV} _
+ː -> 0 / {RV} _
 
 [words]
 römisch# rˌøːmɪʃ

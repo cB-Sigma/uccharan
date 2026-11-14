@@ -118,12 +118,25 @@ fuse = na do pro o bez      ; these words are said as one word with the next, st
                             ; as a whole (Czech prepositions)
 promote-before-final = a az ; these words take primary stress before a last word of the
                             ; clause that is `word p s` in [unstressed] (Hungarian)
+vowel-mark-except = u       ; a word written with one of these letters first is marked `⁂⁑`
+                            ; instead of `⁑` (Catalan: no glide before u)
+clitic-verbs = ont sont     ; inside a clause these verbs lose their stress after one of the
+clitic-subjects = ils elles ; … these words (French)
 
 [pre]                       ; letters to phonemes; rules may write ˈ ˌ ° before a vowel
 [post]                      ; on phonemes, after the stress rule
 [clause]                    ; on the words of a clause joined by a boundary sign: what a word
                             ; does to its neighbour (liaison, voicing, final s before a vowel)
 [spell]                     ; letter names for acronyms and words without vowels
+[aspirated]                 ; words (`*`: beginnings of words) before which no clause rule
+                            ; links (French h aspiré)
+[h-muet.compat]             ; compatible mode: every word written with h first is treated as
+                            ; aspirated unless it is listed here (the French reference voice)
+[context.compat]            ; `WORD PREV|PREV READING`: compatible-mode reading of a word after
+                            ; one of these words (`*a`: a word ending in a)
+[words.improved]            ; `word reading`: improved-mode readings, before the word table
+[spelling.improved]         ; `LETTERS FROM TO`: improved mode replaces FROM by TO in the reading
+                            ; of a word written with LETTERS (French `gn nj ɲ`)
 [numbers]                   ; as above, plus:
 decimal comma               ; the comma is the decimal sign
 swap-tens und               ; units before tens (German)
@@ -134,6 +147,7 @@ tail-secondary no           ; words of a number after its first lose secondary s
 tail-stress no              ; … or all stress
 group-stress 10000          ; from this value on, the first word of each group of three
                             ; digits keeps its stress (Hungarian)
+group-stress-spaced 1000    ; the same for numbers written with spaces between the groups
 stress last                 ; only the last word of a number keeps its stress (French)
 fraction number             ; digits after the decimal sign are read as one number
 roman off                   ; Roman numerals are not numbers in compatible mode (they are
@@ -167,6 +181,8 @@ word<TAB>reading in compatible mode
   At run time the order is: `[words]` of the language file, table entry, spelled word, model,
   letter rules. For a Latin-script language the model reads the spelling, and its stress marks
   are the ones the language's stress rule cannot derive.
+- An optional `data/sources/<tag>/train.tsv` (same format) adds words that only train the model:
+  they get no table entries, so the table does not grow (Danish: rarer corpus words read alone).
 - For a language read by a letter table (Sindhi), the model reads what the letter rules give for
   the word and corrects it; `#model 3` asks that a wide context be seen three times. Measure
   first: for Urdu such a model made unlisted words worse, and it is not used.

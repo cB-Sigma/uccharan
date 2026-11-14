@@ -5,6 +5,60 @@ All notable changes are listed here. The format follows
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-11-14
+
+Fixes to existing languages and two new French voices: Belgian and Swiss French (`fr-be`,
+`fr-ch`). French liaison before h, number words and *ont*/*sont* follow the reference voice more
+closely; numbers written with spaces between groups of three digits are read as the reference
+voices read them; Danish reads words outside its list better; Catalan links words as the
+reference voice does. Improved mode of Spanish, German, French, Italian and Portuguese has new
+gold sets and follows the standard descriptions more closely.
+
+### Added
+
+- **Belgian and Swiss French** (`fr-be`, `fr-ch`, the espeak-ng voices of the same names): read
+  with the French word table; 70–99 as *septante*, *huitante* (Swiss) and *nonante*. Held-out
+  PER 0.63 % and 0.62 %.
+- **Improved-mode gold sets for Spanish, German, French, Italian and European Portuguese**
+  (`tools/eval/gold/improved/`, 25 development and 25 test words per language, written from the
+  JIPA illustrations and pronouncing dictionaries; `gold_eval.py --improved dev|test`). Test words
+  right: improved mode 88.8 %, espeak-ng 64.0 %.
+- Language-file sections `[words.improved]` (readings for improved mode only),
+  `[spelling.improved]` (a phoneme change tied to letters of the spelling), `[context.compat]`
+  (a word's reading after given words or word endings) and `[h-muet.compat]`; `[meta]` options
+  `clitic-verbs`, `clitic-subjects`, `group-stress-spaced`, `vowel-mark-except`; lexgen reads an
+  optional `data/sources/<lang>/train.tsv` of words that only train the letter-to-sound model.
+
+### Fixed
+
+- **French**: in compatible mode a word written with h first blocks liaison unless it is an
+  h-muet word, as the reference voice does (`les haricots`, `des hiboux`); improved mode uses the
+  h-aspiré words of the dictionaries. Number words keep or drop their final consonant by what
+  follows (`six enfants`, `six livres`, `dix ans`, `neuf heures`); *ont* and *sont* lose their
+  stress after a clitic pronoun (`ils ont`, `n'en ont`, `y sont`). Improved mode: gn is ɲ,
+  *jouent* is ʒu.
+- **Numbers with spaces between groups of three digits**: compatible mode joins the groups only
+  across an ordinary space, as the reference voices do; after a no-break or thin space (common in
+  news text) each group is read by itself, a group with a leading zero as the voices read it
+  (`000`). Improved mode joins groups across all of these spaces. Held-out PER in compatible mode:
+  Finnish 1.57 → 1.36 %, Swedish 1.44 → 1.32 %, Polish 1.19 → 1.12 %, Norwegian 1.03 → 0.96 %,
+  Hungarian 1.37 → 1.34 %.
+- **Catalan cross-word sandhi**: the conjunction *i*, *hi*, *ho*, *lo* and final unstressed i and
+  u as glides by the neighbouring words, *o* as w between vowels, final r as a tap before a vowel
+  and a trill after a stressed vowel before a consonant. Held-out PER 1.51 → 1.44 %.
+
+### Changed
+
+- **French** held-out PER 0.79 → 0.63 % (development 0.80 → 0.63 %).
+- **Danish words outside the word list**: 13,600 more words in the list and 41,000 that only
+  train the letter-to-sound model; held-out PER 2.22 → 1.95 %, outside-list words wrong 68.1 →
+  62.3 %; `da.ucd` 490 → 658 KB.
+- **Improved mode** of Spanish, German, Italian and European Portuguese follows the standard
+  descriptions more closely (Spanish final ð, ɱ and voiced s; German ʁ, ɐ after a long vowel and
+  short unstressed vowels; Italian j w i u for ɪ ʊ; Portuguese final u, ɐj, nasal final vowels).
+- `tools/eval/e2e_tts_asr.py` works for every language with a held-out set (it read English or
+  Hindi sentences only, and transcribed in English).
+
 ## [0.5.0] - 2026-11-14
 
 Language data on demand: the word tables of sixteen Latin-script languages, Urdu and Sindhi

@@ -67,7 +67,7 @@ loads another copy.
 
 The wheel (about 2 MB) carries American English, Hindi and the languages read by rules alone.
 British English, the word tables of the other languages (`de`, `fr`, `it`, `ur` …, 46 KB to
-0.5 MB each) and the Kokoro English data are language packs: downloaded from the GitHub release
+0.66 MB each) and the Kokoro English data are language packs: downloaded from the GitHub release
 of the same version the first time their language is used, checked against SHA-256 sums inside
 the wheel, and cached in `~/.cache/uccharan`. When a pack cannot be had, the call raises
 `uccharan.packs.PackError` naming the pack and its URL; a language is never read without its

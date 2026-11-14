@@ -120,6 +120,9 @@ pub struct Chunk {
     /// True when a full stop directly followed the chunk and was not used as a
     /// clause terminator (an abbreviation such as `Dr.`).
     pub dot: bool,
+    /// True when a no-break or thin space (U+00A0, U+2007, U+2009, U+202F)
+    /// came before the chunk, not an ordinary space.
+    pub tight: bool,
 }
 
 /// One clause of raw chunks.
@@ -253,6 +256,11 @@ pub fn clauses(text: &str) -> Vec<RawClause> {
         }
         let words: Vec<&str> = line.split_whitespace().collect();
         for (wi, raw) in words.iter().enumerate() {
+            let at = raw.as_ptr() as usize - line.as_ptr() as usize;
+            let tight = line[..at]
+                .chars()
+                .next_back()
+                .is_some_and(|c| matches!(c, '\u{a0}' | '\u{2007}' | '\u{2009}' | '\u{202f}'));
             // Dashes standing alone separate clauses without a terminator symbol.
             if raw.chars().all(|c| matches!(c, '-' | '–' | '—' | '―')) {
                 flush(&mut cur, &mut out, Terminator::Comma);
@@ -308,6 +316,7 @@ pub fn clauses(text: &str) -> Vec<RawClause> {
                 cur.chunks.push(Chunk {
                     text: part.to_string(),
                     dot,
+                    tight: tight && pi == 0,
                 });
             }
             if term != Terminator::None {

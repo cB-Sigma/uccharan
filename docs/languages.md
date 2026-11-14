@@ -47,23 +47,29 @@ Runs on that machine differ by about ±10 %.
 | Bhojpuri | `bho` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.51 % | 0.33 % | 3.3× | SYSPIN (character input) |
 | Maithili | `mai` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.46 % | 0.29 % | 3.0× | MMS, SYSPIN (character input) |
 | Magahi | `mag` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.40 % | 0.23 % | 2.8× | MMS (character input) |
-| Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.55 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
+| Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.54 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
 | German | `de` | `de` | FLORES-200, 1,012 sentences | 0.95 % | 0.77 % | 5.8× † | Piper `de_DE` (11) |
 | Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.69 % | 1.32 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
-| French | `fr` | `fr` | FLORES-200, 1,012 sentences | 0.79 % | 0.59 % | 5.9× † | Piper `fr_FR` (7), Kokoro `ff_siwis` |
+| French | `fr` | `fr` | FLORES-200, 1,012 sentences | 0.63 % | 0.54 % | 5.9× † | Piper `fr_FR` (7), Kokoro `ff_siwis` |
+| French (Belgium) | `fr-be` | `fr-be` | FLORES-200, 1,012 sentences ✦ | 0.63 % | 0.54 % | 5.9× † | none |
+| French (Switzerland) | `fr-ch` | `fr-ch` | FLORES-200, 1,012 sentences ✦ | 0.62 % | 0.54 % | 5.9× † | none |
 | Italian | `it` | `it` | FLORES-200, 1,012 sentences | 0.53 % | 0.37 % | 4.6× † | Piper `it_IT` (4), Kokoro `if_sara`, `im_nicola` |
 | Portuguese (Brazil) | `pt-br` | `pt-br` | FLORES-200, 1,012 sentences | 0.61 % | 0.40 % | 5.1× † | Piper `pt_BR` (4), Kokoro `pf_dora`, `pm_alex`, `pm_santa` |
 | Portuguese (Portugal) | `pt` | `pt` | FLORES-200, 1,012 sentences | 0.84 % | 0.60 % | 5.2× † | Piper `pt_PT` (1) |
-| Polish | `pl` | `pl` | FLORES-200, 1,012 sentences | 1.19 % | 0.92 % | 3.1× † | Piper `pl_PL` (5) |
+| Polish | `pl` | `pl` | FLORES-200, 1,012 sentences | 1.12 % | 0.92 % | 3.1× † | Piper `pl_PL` (5) |
 | Turkish | `tr` | `tr` | FLORES-200, 1,012 sentences | 0.68 % | 0.47 % | 2.7× † | Piper `tr_TR` (1) |
-| Czech | `cs` | `cs` | FLORES-200, 1,012 sentences | 1.32 % | 1.07 % | 1.8× † | Piper `cs_CZ` (3) |
-| Swedish | `sv` | `sv` | FLORES-200, 1,012 sentences | 1.44 % | 0.83 % | 3.7× † | Piper `sv_SE` (3) |
-| Catalan | `ca` | `ca` | FLORES-200, 1,012 sentences | 1.51 % | 1.18 % | 4.9× † | Piper `ca_ES` (3) |
-| Romanian | `ro` | `ro` | FLORES-200, 1,012 sentences | 0.97 % | 0.86 % | 3.3× † | Piper `ro_RO` (1) |
-| Hungarian | `hu` | `hu` | FLORES-200, 1,012 sentences | 1.37 % | 0.95 % | 13.1× † | Piper `hu_HU` (3) |
-| Finnish | `fi` | `fi` | FLORES-200, 1,012 sentences | 1.57 % | 1.08 % | 1.7× † | Piper `fi_FI` (2) |
-| Norwegian Bokmål | `nb` | `nb` | FLORES-200, 1,012 sentences | 1.03 % | 0.46 % | 2.3× † | Piper `no_NO` (2) |
-| Danish | `da` | `da` | FLORES-200, 1,012 sentences | 2.22 % | 1.78 % | 27.1× † | Piper `da_DK` (1) |
+| Czech | `cs` | `cs` | FLORES-200, 1,012 sentences | 1.31 % | 1.07 % | 1.8× † | Piper `cs_CZ` (3) |
+| Swedish | `sv` | `sv` | FLORES-200, 1,012 sentences | 1.32 % | 0.83 % | 3.7× † | Piper `sv_SE` (3) |
+| Catalan | `ca` | `ca` | FLORES-200, 1,012 sentences | 1.44 % | 1.10 % | 4.9× † | Piper `ca_ES` (3) |
+| Romanian | `ro` | `ro` | FLORES-200, 1,012 sentences | 0.96 % | 0.86 % | 3.3× † | Piper `ro_RO` (1) |
+| Hungarian | `hu` | `hu` | FLORES-200, 1,012 sentences | 1.34 % | 0.95 % | 13.1× † | Piper `hu_HU` (3) |
+| Finnish | `fi` | `fi` | FLORES-200, 1,012 sentences | 1.36 % | 1.08 % | 1.7× † | Piper `fi_FI` (2) |
+| Norwegian Bokmål | `nb` | `nb` | FLORES-200, 1,012 sentences | 0.96 % | 0.46 % | 2.3× † | Piper `no_NO` (2) |
+| Danish | `da` | `da` | FLORES-200, 1,012 sentences | 1.95 % | 1.49 % | 27.1× † | Piper `da_DK` (1) |
+
+✦ The Belgian and Swiss French voices are scored on the French sentences; they differ from the
+French reading only in the numbers 70–99 (septante, huitante, nonante). Their speed is the French
+voice's: in one run on a busy machine French 4.5×, `fr-be` 4.5×, `fr-ch` 5.2×.
 
 ‡ espeak-ng has no voice for Sanskrit, Bhojpuri, Maithili or Magahi; text in them is read with its
 Hindi voice, and compatible mode is measured against that reading.
@@ -116,7 +122,7 @@ and years counted in hundreds, French one-word readings stressed on the last wor
 
 **Italian, Portuguese (Brazil and Portugal), Polish, Turkish, Czech, Swedish, Catalan, Romanian,
 Hungarian, Finnish, Norwegian Bokmål and Danish** are built the same way: a word table with a
-letter-to-sound model and its exceptions (feature `embed-<tag>`, 46 KB to 490 KB each), number words
+letter-to-sound model and its exceptions (feature `embed-<tag>`, 46 KB to 660 KB each), number words
 and letter names with the voice's readings, a list of words without stress inside a clause, and
 rules for what happens between words: Portuguese final s, r and unstressed vowels before the next
 word (`os amigos` → `ʊz ˌæmˈiɡʊs`; not before digits or h), Polish and Czech voicing of a final

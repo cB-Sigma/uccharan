@@ -5,43 +5,43 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 159056,
-  "per": 0.014372296549642893,
-  "per_without_stress": 0.010571961009174312,
-  "exact_sentence": 0.5909090909090909,
-  "exact_sentence_without_stress": 0.6946640316205533,
-  "piper_shape_per": 0.014339364970979856,
-  "piper_shape_exact_sentence": 0.5869565217391305,
-  "word_count_mismatch_sentences": 164,
+  "per": 0.01324690674982396,
+  "per_without_stress": 0.009482511467889908,
+  "exact_sentence": 0.5978260869565217,
+  "exact_sentence_without_stress": 0.7035573122529645,
+  "piper_shape_per": 0.013228219373661504,
+  "piper_shape_exact_sentence": 0.5938735177865613,
+  "word_count_mismatch_sentences": 159,
   "errors_by_class": {
    "stress": {
-    "count": 805,
-    "share": 0.3521434820647419,
-    "per_contribution": 0.005061110552258324
+    "count": 776,
+    "share": 0.368296155671571,
+    "per_contribution": 0.00487878483049995
    },
    "vowel": {
-    "count": 510,
-    "share": 0.2230971128608924,
-    "per_contribution": 0.003206417865405895
+    "count": 482,
+    "share": 0.22876127195064072,
+    "per_contribution": 0.0030303792375012575
    },
    "consonant": {
-    "count": 466,
-    "share": 0.20384951881014873,
-    "per_contribution": 0.0029297857358414644
+    "count": 387,
+    "share": 0.1836734693877551,
+    "per_contribution": 0.002433105321396238
    },
    "other": {
-    "count": 351,
-    "share": 0.15354330708661418,
-    "per_contribution": 0.0022067699426617043
+    "count": 323,
+    "share": 0.1532985287138111,
+    "per_contribution": 0.002030731314757067
    },
    "word-boundary": {
-    "count": 126,
-    "share": 0.05511811023622047,
-    "per_contribution": 0.0007921738255708681
+    "count": 110,
+    "share": 0.052206929283341245,
+    "per_contribution": 0.0006915803239110754
    },
    "length": {
-    "count": 28,
-    "share": 0.012248468941382326,
-    "per_contribution": 0.00017603862790463735
+    "count": 29,
+    "share": 0.013763644992880873,
+    "per_contribution": 0.00018232572175837442
    }
   },
   "top_confusions": [
@@ -51,7 +51,7 @@
    },
    {
     "edit": "ˈ→∅",
-    "count": 156
+    "count": 152
    },
    {
     "edit": "ˌ→∅",
@@ -59,7 +59,7 @@
    },
    {
     "edit": "∅→ˈ",
-    "count": 134
+    "count": 114
    },
    {
     "edit": "ˌ→ˈ",
@@ -67,14 +67,14 @@
    },
    {
     "edit": "∅→ ",
-    "count": 80
-   },
-   {
-    "edit": "ə→ɛ",
-    "count": 67
+    "count": 69
    },
    {
     "edit": "∅→t",
+    "count": 66
+   },
+   {
+    "edit": "ə→ɛ",
     "count": 66
    },
    {
@@ -86,12 +86,12 @@
     "count": 64
    },
    {
-    "edit": "∅→n",
-    "count": 49
+    "edit": " →∅",
+    "count": 41
    },
    {
-    "edit": " →∅",
-    "count": 46
+    "edit": "∅→n",
+    "count": 39
    },
    {
     "edit": "t→ː",
@@ -127,37 +127,37 @@
    },
    {
     "edit": "ˈ→ˌ",
-    "count": 30
+    "count": 29
    },
    {
     "edit": "t→∅",
-    "count": 29
+    "count": 24
    },
    {
     "edit": "∅→e",
     "count": 23
    },
    {
-    "edit": "ə→ː",
+    "edit": "ː→∅",
     "count": 22
    },
    {
-    "edit": "∅→ɔ",
+    "edit": "ə→ː",
     "count": 22
    }
   ],
   "word_error_by_class": {
    "lexicon": {
-    "words": 16810,
-    "wrong": 394,
-    "rate": 0.02343842950624628
+    "words": 16950,
+    "wrong": 396,
+    "rate": 0.02336283185840708
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 199,
-    "per": 0.035050466052617066,
-    "exact_sentence": 0.3768844221105528
+    "per": 0.030114169102641884,
+    "exact_sentence": 0.4120603015075377
    },
    "no-digits": {
     "sentences": 813,
@@ -166,42 +166,6 @@
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-694",
-    "text": "Längre söderut ligger Niagarafallen och i den norra delen finns Muskokas vackra, orörda natur.",
-    "reference": "lˈɛŋrə sˈøːdərˌʉt lˈɪɡər nˈiːaɡˌarafˌalən ɔk iː dɛn nˈɔra dˈeːlən fˈɪns mɵskˈuːkas vˈakra uːrˈœrda nˈatˈʉr",
-    "uccharan": "lˈɛŋrə sˈøːdərˌʉt lˈɪɡər nˈiːaɡˌarafˌalən ɔk iː dɛn nˈɔra dˈeːlən fˈɪns mˈɵskuːkˌas vˈakra uːrˈœrda nˈatˈʉr"
-   },
-   {
-    "id": "flores-devtest-735",
-    "text": "Skogarna är dock inte bara mangroveträsk — de innehåller några av de sista kvarvarande ståndorterna av de stora djunglerna som en gång täckte Gangesslätten.",
-    "reference": "skˈuːɡarnˌa ɛːr dˈɔk ˈɪntɛ bˈɑːra mˈaŋruːvˌɛtrəsk deː ˈɪnəhˌɔlər nˌoːɡra ɑːv deː sˈɪsta kvˈarvɑːrˌandə stˈoːnduːtˌɛrna ɑːv deː stˈuːra jˈɵŋlərnˌa sɔm ɛn ɡˈɔŋ tˈɛktə ɡˈaŋəslˌɛtːən",
-    "uccharan": "skˈuːɡarnˌa ɛːr dˈɔk ˈɪntɛ bˈɑːra mˈaŋruːvətrˌɛsk deː ˈɪnəhˌɔlər nˌoːɡra ɑːv deː sˈɪsta kvˈarvɑːrˌandə stˈoːnduːtˌɛrna ɑːv deː stˈuːra jˈɵŋlɛrnˌa sɔm ɛn ɡˈɔŋ tˈɛktə ɡˈaŋəslˌɛtːən"
-   },
-   {
-    "id": "flores-devtest-40",
-    "text": "Iwasaki stötte på problem vid många tillfällen under sin resa.",
-    "reference": "ˈiːvasˌakiː stˈœtːə poː prɔblˈeːm viːd mˈɔŋa tˈɪlfələn ˈɵndər sɪn rˈeːsa",
-    "uccharan": "ˈiːvɑːsˌakiː stˈœtːə poː prɔblˈeːm viːd mˈɔŋa tˈɪlfələn ˈɵndər sɪn rˈeːsa"
-   },
-   {
-    "id": "flores-devtest-869",
-    "text": "Om landet du besöker blir föremål för en reserestriktion kan din resesjukvårdsförsäkring eller ditt avbokningsskydd påverkas.",
-    "reference": "ɔm lˈandət dʉ bəsˈøːkər blˈiːr fˈøːrəmˌoːl føːr ɛn rˌeːsərˌɛstrɪksxˈuːn kan dɪn rˌeːsəsxʉkvˈoːrdsfˈœʂəkrˌɪŋ ˌɛlər dɪt ˈɑːvbuːknˌɪŋskyd pˈoːvərkˌas",
-    "uccharan": "ɔm lˈandət dʉ bəsˈøːkər blˈiːr fˈøːrəmˌoːl føːr ɛn rˌeːsərˌɛstrɪksxˈuːn kan dɪn rˈeːsəsxˌʉkvoːrdsfœʂəkrˌɪŋ ˌɛlər dɪt ˈɑːvbuːknˌɪŋskyd pˈoːvərkˌas"
-   },
-   {
-    "id": "flores-devtest-219",
-    "text": "Enligt de tidiga rapporterna blev planet omdirigerat tillbaka till Afganistan efter att ha nekats nödlandning i Ürümqi.",
-    "reference": "ˈeːnlɪkt deː tˈiːdiːɡˌa rˈapɔtˌɛrna blˈeːv plˈɑːnət ˈɔmdɪrˌiːjeːrˌat tˈɪlbɑːkˌa tɪl ˌafɡanˈɪstan ˈɛftər at hˈɑː nˈeːkats nˈœdlandnˌɪŋ iː ˈʉrɵmkˌiː",
-    "uccharan": "ˈeːnlɪkt deː tˈiːdiːɡˌa rˈapɔtˌɛrna blˈeːv plˈɑːnət ˈɔmdɪrˌiːjeːrˌat tˈɪlbɑːkˌa tɪl ˈafɡanˌɪstan ˈɛftər at hˈɑː nˈeːkats nˈœdlandnˌɪŋ iː ˈɵrʉmkˌiː"
-   },
-   {
-    "id": "flores-devtest-266",
-    "text": "\"Lagförslaget kräver att våldsamma videospel som säljs i delstaten Kalifornien ska märkas med en dekal med texten \"\"18\"\" och gör försäljning till en minderårig straffbart med böter på $1000 per överträdelse.\"",
-    "reference": "lɑːɡfˈœʂlɑːɡət krˈɛːvər at vˈoːldsamˌa vˈiːdəˌɔspeːl sɔm sˈɛljs iː dˈeːlstatən kˈaliːfˌuːrniːən skɑː mˈɛrkas meːd ɛn dˈeːkal meːd tˈɛkstən ˈɑːrtɔn ɔk jˈøːr fˈœʂəljnˌɪŋ tɪl ɛn mˈɪndərˌoːrɪɡ strˈafbɑːt meːd bˈøːtər poː dˈɔlar ˈɛt tˈʉsɛn pˈɛːr ˈøːvətrˌɛːdəlsə",
-    "uccharan": "lɑːɡfˈœʂlɑːɡət krˈɛːvər at vˈoːldsamˌa vˈiːdəˌɔspeːl sɔm sˈɛljs iː dˈeːlstatən kˈaliːfˌuːrniːən skɑː mˈɛrkas meːd ɛn dˈeːkal meːd tˈɛkstən ˈɑːrtɔn ɔk jˈøːr fˈœʂəljnˌɪŋ tɪl ɛn mˈɪndərˌoːrɪɡ strˈafbɑːt meːd bˈøːtər poː ˈɛt tˈʉsɛn pˈɛːr ˈøːvətrˌɛːdəlsə"
-   },
    {
     "id": "flores-devtest-14",
     "text": "USA:s gymnastikförbund stödjer USA:s olympiska kommittés brev och håller med om att det är absolut nödvändigt att den olympiska familjen främjar en säker miljö för alla våra atleter.",
@@ -237,6 +201,42 @@
     "text": "\"I en intervju sade han att den nya varianten var \"\"väldigtt oroande och alarmerande på grund av den mycket höga dödlighetsnivån.\"\"\"",
     "reference": "iː ɛn ˈɪntərvjˌʉ sˈɑːdɛ han at dɛn nˈyːa vˈariːˌantən vɑːr vˈɛldɪkt ˈuːruːˌandə ɔk ˈɑːlarmˌeːrandə poː ɡrˈɵnd ɑːv dɛn mˈykət hˈøːɡa dˈœdlɪɡhˌeːtsniːvˌoːn",
     "uccharan": "iː ɛn ˈɪntərvjˌʉ sˈɑːdɛ han at dɛn nˈyːa vˈariːˌantən vɑːr vˈɛldɪktː ˈuːruːˌandə ɔk ˈɑːlarmˌeːrandə poː ɡrˈɵnd ɑːv dɛn mˈykət hˈøːɡa dˈœdlɪɡheːtsnˌiːvoːn"
+   },
+   {
+    "id": "flores-devtest-428",
+    "text": "Machu picchu består av tre huvudstrukturer, Intihuatana, Soltemplet och Templet med de tre fönstren.",
+    "reference": "mˈaʃʉ pˈɪkshʉ bəstˈoːr ɑːv trˈeː hˈʉvɵdstrˌɵktʉrər ˈɪntiːhˌʉatˌana sˈɔltəmplət ɔk tˈɛmplət meːd deː trˈeː fˈœnstrən",
+    "uccharan": "mˈaʃʉ pˈɪkshʉ bəstˈoːr ɑːv trˈeː hˈʉvɵdstrɵktˌʉrər ˈɪntiːhˌʉatˌana sˈɔltɛmplət ɔk tˈɛmplət meːd deː trˈeː fˈœnstrən"
+   },
+   {
+    "id": "flores-devtest-775",
+    "text": "North Shores stränder (i distriktet North Harbour) ligger vid Stilla havet och sträcker sig från Long Bay i norr till Devonport i söder.",
+    "reference": "nˈuːth sxˈuːrəs strˈɛndər iː dˈɪstrɪktət nˈuːth hˈarbuːˌʉr lˈɪɡər viːd stˈɪla hˈɑːvət ɔk strˈɛkːər sˈɛj froːn lˈɔŋ bˈayː iː nˈɔr tɪl dˈeːvɔnpˌuːt iː sˈøːdər",
+    "uccharan": "nˈuːth sxˈuːrəs strˈɛndər iː dˈɪstrɪktət nˈuːth hˈarbuːˌʉr lˈɪɡər viːd stˈɪla hˈɑːvət ɔk strˈɛkːər sˈɛj froːn lˈɔŋ bˈayː iː nˈɔr tɪl dˈeːvuːnpˌɔt iː sˈøːdər"
+   },
+   {
+    "id": "flores-devtest-543",
+    "text": "Med kundaliniyoga väcks kundalini-energin (upplysningsenergi) genom yogaställningar, andningsövningar, mantran och visualiseringar.",
+    "reference": "meːd kˈɵndalˌiːniːˌyːuːɡˌa vˈɛks kˈɵndalˌiːniːˌeːnərjˈiːn ˈɵplysnˌɪŋsənˌɛrjiː jˈeːnɔm ˈyːuːɡˌastəlnˌɪŋar ˌandnɪŋsˈœvnɪŋˌar mˈantran ɔk vˈiːsʉˌaliːsˌeːrɪŋˌar",
+    "uccharan": "meːd kˈɵndalˌiːniːˌyːuːɡˌa vˈɛks kˈɵndalˌiːniːˌeːnərjˈiːn ˈɵplysnˌɪŋseːnˌɛrjiː jˈeːnɔm ˈyːuːɡˌastəlnˌɪŋar ˈandnɪŋsœvnɪŋˌar mˈantran ɔk vˈiːsʉˌaliːsˌeːrɪŋˌar"
+   },
+   {
+    "id": "flores-devtest-116",
+    "text": "Flera miljoner flaskor med hjärnhinneinflammationsvaccin har också utlovats av regeringen, vilket kommer att hjälpa hälsoorganisationer att förbereda sig inför nästa år.",
+    "reference": "flˈeːra mˈɪljuːnər flˈaskuːr meːd jˌɛrnhɪnəɪnflˌamasxˈʊnsvaksˈiːn hɑːr ˈɔksoː ʉtlˈoːvats ɑːv rəjˈeːrɪŋən vˈɪlkət kˈɔmər at jˈɛlpa hˌɛlsuːˌɔrɡanˈɪsasxˈuːnər at fˈœrbərədˌa sˈɛj ɪnfˈøːr nˈɛsta ˈoːr",
+    "uccharan": "flˈeːra mˈɪljuːnər flˈaskuːr meːd jˈɛrnhɪnəɪnflˌamasxʊnsvˌaksiːn hɑːr ˈɔksoː ʉtlˈoːvats ɑːv rəjˈeːrɪŋən vˈɪlkət kˈɔmər at jˈɛlpa hɛlsuːˌɔrɡanˈɪsasxˈuːnər at fˈœrbərədˌa sˈɛj ɪnfˈøːr nˈɛsta ˈoːr"
+   },
+   {
+    "id": "flores-devtest-434",
+    "text": "Sidförhållandet i detta format (dividera med tolv för att åstadkomma den enklaste helsiffriga relationen) sägs därför vara 3:2.",
+    "reference": "sɪdfˈœrhɔlˌandət iː dˈɛtːa fˈɔrmat dˈiːviːdˌeːra meːd tˈɔlv føːr at ˈoːstadkˌɔma dɛn ˈɛŋklastə hˈɛlsɪfrˌiːɡa rˌeːlasxˈuːnən sˈɛjs dˈɛrføːr vˈɑːra trˈeː tvˈoː",
+    "uccharan": "sˈiːdfœrhɔlˌandət iː dˈɛtːa fˈɔrmat dˈiːviːdˌeːra meːd tˈɔlv føːr at ˈoːstadkˌɔma dɛn ˈɛŋklastə hˈɛlsɪfrˌiːɡa rˌeːlasxˈuːnən sˈɛjs dˈɛrføːr vˈɑːra trˈeː tvˈoː"
+   },
+   {
+    "id": "flores-devtest-432",
+    "text": "Det tillverkas fortfarande idag, men ännu viktigare är dess bildförhållande som ärvts till formaten på fotosensorer i digitalkameror.",
+    "reference": "deːt tˈɪlvərkˌas fˈuːtfarˌandə ˈɪdˌɑːɡ mˈɛn ˈɛnʉ vˈɪktiːɡˌarə ɛːr dəs bɪldfˈœrhɔlˌandə sɔm ˈɛrvts tɪl fˈɔrmatən poː fˌuːtuːsənsˈɔrər iː dˈiːɡiːtˌɑːlkamərˌuːr",
+    "uccharan": "deːt tˈɪlvərkˌas fˈuːtfarˌandə ˈɪdˌɑːɡ mˈɛn ˈɛnʉ vˈɪktiːɡˌarə ɛːr dəs bˈɪldfœrhɔlˌandə sɔm ˈɛrvts tɪl fˈɔrmatən poː fˈuːtuːsənsˌɔrər iː dˈiːɡiːtˌɑːlkamərˌuːr"
    }
   ]
  }

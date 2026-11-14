@@ -5,42 +5,42 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 155617,
-  "per": 0.01513330805760296,
-  "per_without_stress": 0.013814590984009485,
-  "exact_sentence": 0.29150197628458496,
-  "exact_sentence_without_stress": 0.3092885375494071,
-  "piper_shape_per": 0.014990445094093675,
-  "piper_shape_exact_sentence": 0.29150197628458496,
+  "per": 0.014387888212727401,
+  "per_without_stress": 0.013041089552670387,
+  "exact_sentence": 0.3221343873517787,
+  "exact_sentence_without_stress": 0.34189723320158105,
+  "piper_shape_per": 0.01425642583241581,
+  "piper_shape_exact_sentence": 0.3221343873517787,
   "word_count_mismatch_sentences": 209,
   "errors_by_class": {
    "consonant": {
-    "count": 878,
-    "share": 0.3728237791932059,
-    "per_contribution": 0.005642057101730531
+    "count": 884,
+    "share": 0.39481911567664135,
+    "per_contribution": 0.005680613300603404
    },
    "vowel": {
     "count": 630,
-    "share": 0.267515923566879,
+    "share": 0.28137561411344353,
     "per_contribution": 0.004048400881651748
    },
    "stress": {
-    "count": 456,
-    "share": 0.19363057324840766,
-    "per_contribution": 0.0029302711143384076
+    "count": 447,
+    "share": 0.19964269763287182,
+    "per_contribution": 0.002872436816029097
    },
    "other": {
-    "count": 255,
-    "share": 0.10828025477707007,
-    "per_contribution": 0.001638638452097136
+    "count": 142,
+    "share": 0.06342117016525234,
+    "per_contribution": 0.000912496706658013
    },
    "word-boundary": {
     "count": 135,
-    "share": 0.05732484076433121,
+    "share": 0.06029477445288075,
     "per_contribution": 0.0008675144746396602
    },
    "length": {
     "count": 1,
-    "share": 0.0004246284501061571,
+    "share": 0.00044662795891022776,
     "per_contribution": 6.426033145478964e-06
    }
   },
@@ -54,12 +54,16 @@
     "count": 166
    },
    {
-    "edit": "∅→ˈ",
-    "count": 128
-   },
-   {
     "edit": "t→d",
     "count": 125
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 120
+   },
+   {
+    "edit": "r→∅",
+    "count": 105
    },
    {
     "edit": "∅→ ",
@@ -70,20 +74,12 @@
     "count": 91
    },
    {
-    "edit": "i→j",
-    "count": 91
-   },
-   {
     "edit": "s→z",
     "count": 81
    },
    {
-    "edit": "r→∅",
-    "count": 80
-   },
-   {
     "edit": "ˈ→∅",
-    "count": 75
+    "count": 74
    },
    {
     "edit": "a→ə",
@@ -94,10 +90,6 @@
     "count": 66
    },
    {
-    "edit": "t→∅",
-    "count": 57
-   },
-   {
     "edit": "k→ɡ",
     "count": 52
    },
@@ -106,16 +98,12 @@
     "count": 44
    },
    {
-    "edit": "u→w",
-    "count": 38
-   },
-   {
     "edit": "d→ð",
     "count": 38
    },
    {
-    "edit": "j→i",
-    "count": 31
+    "edit": "t→∅",
+    "count": 32
    },
    {
     "edit": "s→∅",
@@ -126,8 +114,20 @@
     "count": 30
    },
    {
+    "edit": "u→w",
+    "count": 28
+   },
+   {
+    "edit": "t→ɾ",
+    "count": 28
+   },
+   {
     "edit": "u→ɔ",
     "count": 26
+   },
+   {
+    "edit": "i→j",
+    "count": 23
    },
    {
     "edit": "ɛ→ə",
@@ -149,47 +149,23 @@
   "word_error_by_class": {
    "lexicon": {
     "words": 19025,
-    "wrong": 979,
-    "rate": 0.051458607095926416
+    "wrong": 878,
+    "rate": 0.046149802890932984
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 187,
-    "per": 0.02746345709397605,
-    "exact_sentence": 0.09090909090909091
+    "per": 0.02698322177867155,
+    "exact_sentence": 0.0962566844919786
    },
    "no-digits": {
     "sentences": 825,
-    "per": 0.011774325429272281,
-    "exact_sentence": 0.336969696969697
+    "per": 0.010956663941128373,
+    "exact_sentence": 0.37333333333333335
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-695",
-    "text": "Són totes aquests elements, entre d'altres, els que fan que Ontario destaqui a ulls dels forasters com a ciutat canadenca per excel·lència.",
-    "reference": "sˈon tˈotəz əkˈɛdz ələmˈens ˈentɾə ðˈaltɾəs əls kə fˈaŋ kə wntəɾˈiu ðəstˈakj ə ˈuʎz ðəls fuɾəstˈes kˈɔm ə siwtˈat kənəðˈɛŋkə pəɾ əksəllˈɛnsiə",
-    "uccharan": "sˈon tˈotəz əkˈɛdz ələmˈens ˈentɾə ðˈaltɾəs əls kə fˈaŋ kə wntəɾˈiu ðəstˈakj ə ˈuʎz ðəls fuɾəstˈes kˈɔm ə siwtˈat kənəðˈɛŋkə pəɾ əksˈɛl lˈɛnsiə"
-   },
-   {
-    "id": "flores-devtest-15",
-    "text": "Estem d'acord amb la declaració del Comitè Olímpic dels Estats Units que es pot servir millor l'interès dels atletes i clubs, i el seu esport, amb avanços significatius dins l'organització, en comptes de treure la certificació.",
-    "reference": "əstˈɛm dəkˈɔrt əm lə ðəkləɾəsiˈo ðəl kumitˈɛ wlˈimpiɡ dəlz əstˈadz unˈits k əs pˈɔt sərβˈi miʎˈo lintəɾˈɛz ðəlz ədlˈɛtəz i klˈups j əl sˈew əspˈɔrt əmb əβˈansus siɡnifikətˈiwz ðˈinz lurɣənidzəsiˈo əŋ kˈomtəz ðə tɾˈɛwɾə lə sərtifikəsiˈo",
-    "uccharan": "əstˈɛm dəkˈɔrt əm lə ðəkləɾəsiˈo ðəl kumitˈɛ wlˈimpiɡ dəlz əstˈadz unˈids kə əs pˈɔt sərβˈi miʎˈo lintəɾˈɛz ðəlz ədlˈɛtəz i klˈubs j əl sˈew əspˈɔr əm əβˈansus siɡnifikətˈiwz ðˈinz lurɣənidzəsiˈo əŋ kˈomtəz ðə tɾˈɛwɾə lə sərtifikəsiˈo"
-   },
-   {
-    "id": "flores-devtest-985",
-    "text": "La majoria dels telescopis d'investigació moderns són instal·lacions enormes en àrees remotes amb condicions atmosfèriques favorables.",
-    "reference": "lə məʒuɾˈiə ðəls teleskˈɔpiz ðimbəstiɣəsiˈo muðˈɛrns sˈon instəlləsiˈonz ənˈorməz ən ˈaɾeəz rəmˈɔtəz əm kundisiˈonz əmmusfˈɛɾikəs fəβuɾˈabbləs",
-    "uccharan": "lə məʒuɾˈiə ðəls teleskˈɔpiz ðimbəstiɣəsiˈo muðˈɛrns sˈon instˈal ləsiˈonz ənˈorməz ən ˈaɾeəz rəmˈɔtəz əm kundisiˈonz əmmusfˈɛɾikəs fəβuɾˈabbləs"
-   },
-   {
-    "id": "flores-devtest-181",
-    "text": "El partit final d'aquesta sèrie tindrà lloc a Ellis Park a Johannesburg la setmana que ve, quan els Springboks s'enfrontaran a Austràlia.",
-    "reference": "əl pərtˈit finˈal dəkˈɛstə sˈɛɾiə tindɾˈa ʎˈɔk ə ˈɛlis pˈak ə ʒuənnəzβˈurɡ lə səmmˈanə kə βˈe kwˈan əls spɾiŋɡbˈoks səɱfɾuntəɾˈan ə əwstɾˈaliə",
-    "uccharan": "əl pərtˈit finˈal dəkˈɛstə sˈɛɾiə tindɾˈa ʎˈɔk ə ˈɛlis pˈak ə ʒuənnəzβˈurɡ lə səmmˈanə kə βˈe kwˈan əls spɾˈiŋɡbuks səɱfɾuntəɾˈan ə əwstɾˈaliə"
-   },
    {
     "id": "flores-devtest-917",
     "text": "Típicament hi haurà taxes de matriculació per a apuntar-se a aquests programes educacionals.",
@@ -197,16 +173,10 @@
     "uccharan": "tˈipikəmˈen j əwɾˈa tˈaksəz ðə mətɾikuləsiˈo pəɾ ə əpuntˈasə ə əkˈɛds pɾuɣɾˈaməz əðukəsiunˈals"
    },
    {
-    "id": "flores-devtest-624",
-    "text": "Hi va haver gent que pensava que el que deia era cert, però molta gent creia el contrari; que el Sistema Solar es movia envers la Terra, inclòs el Sol (i fins i tot les altres estrelles).",
-    "reference": "i βˈa əβˈɛ ʒˈeŋ kə pənsˈaβə k əl kə ðˈɛjə ˈeɾə sˈɛrt pəɾˈɔ mˈoltə ʒˈeŋ kɾˈɛjə əl kuntɾˈaɾi k əl sistˈemə sulˈaɾ əz muβˈiə əmbˈɛrz lə tˈɛrə iŋklˈɔz əl sˈɔl i fˈinz i tˈod ləz ˈaltɾəz əstɾˈeʎəs",
-    "uccharan": "j βˈa əβˈɛ ʒˈeŋ kə pənsˈaβə kə əl kə ðˈɛjə ˈeɾə sˈɛr pəɾˈɔ mˈoltə ʒˈeŋ kɾˈɛjə əl kuntɾˈaɾi kə əl sistˈemə sulˈaɾ əz muβˈiə əmbˈɛrz lə tˈɛrə iŋklˈɔz əl sˈɔl i fˈinz i tˈod ləz ˈaltɾəz əstɾˈeʎəs"
-   },
-   {
-    "id": "flores-devtest-192",
-    "text": "L'anterior president de la Cambra Newt Gingrich, el governador de Texas Rick Perry i la parlamentària Michele Bachmann han acabat en quarta, cinquena i sisena posició, respectivament.",
-    "reference": "ləntəɾiˈor pɾəziðˈen də lə kˈambɾə nˈepd ʒiŋɡɾˈik əl ɣuβərnəðˈo ðə tˈɛksəz rˈik pˈɛɾj i lə pərləməntˈaɾiə mitʃˈɛlə βətʃmˈann ˈan əkəβˈat əŋ kwˈartə siŋkˈɛnə j sizˈɛnə puzisiˈo rəspəktˈiβəmˈen",
-    "uccharan": "ləntəɾiˈor pɾəziðˈen də lə kˈambɾə njˈud ʒiŋɡɾˈik əl ɣuβərnəðˈo ðə tˈɛksəz rˈik pˈɛɾj j lə pərləməntˈaɾiə mitʃˈɛlə βətʃmˈann ˈan əkəβˈat əŋ kwˈartə siŋkˈɛnə j sizˈɛnə puzisiˈo rəspəktˈiβəmˈen"
+    "id": "flores-devtest-608",
+    "text": "Cada matí, la gent surt en cotxe dels petits pobles rurals per a anar al seu lloc de treball i passen al costat d'altres el lloc de treball dels quals és el lloc que acaben de deixar.",
+    "reference": "kˈaðə mətˈi lə ʒˈen sˈurt əŋ kˈotʃə ðəls pətˈits pˈɔbbləz ruɾˈals pəɾ ə ənˈa əl sˈew ʎˈɔɡ də tɾəβˈaʎ i pˈasən əl kustˈad dˈaltɾəz əʎ ʎˈɔɡ də tɾəβˈaʎ dəls kwˈalz ˈez əʎ ʎˈɔk k əkˈaβən də ðəʃˈa",
+    "uccharan": "kˈaðə mətˈi lə ʒˈen sˈuɾ əŋ kˈotʃə ðəls pətˈids pˈɔbbləz ruɾˈals pəɾ ə ənˈa əl sˈew ʎˈɔɡ də tɾəβˈaʎ i pˈasən əl kustˈad dˈaltɾəz əʎ ʎˈɔɡ də tɾəβˈaʎ dəls kwˈalz ˈez əʎ ʎˈɔk kə əkˈaβən də ðəʃˈa"
    },
    {
     "id": "flores-devtest-423",
@@ -215,10 +185,10 @@
     "uccharan": "ə kˈawzə ðəl ɣɾˈub dˈiʎəs kə tˈe əl ʒəpˈo suβˈin lanumənˈɛm ən tˈerməʒ ʒeuɣɾˈafiɡs un ərʃipˈɛlək"
    },
    {
-    "id": "flores-devtest-348",
-    "text": "Els ions d'hidrogen són protons als quals se'ls ha tret els electrons (en tant que els àtoms d'hidrogen consisteixen en un protó i un electró).",
-    "reference": "əlz iˈonz ðiðɾˈɔʒən sˈom pɾutˈonz əls kwˈals səlz ˈa tɾˈet əlz ələktɾˈons ən tˈaŋ k əlz ˈatumz ðiðɾˈɔʒəŋ kunsistˈɛʃən ən um pɾutˈo i wn ələktɾˈo",
-    "uccharan": "əlz iˈonz ðiðɾˈɔʒən sˈom pɾutˈonz əls kwˈals səlz ˈa tɾˈet əlz ələktɾˈonz ən tˈaŋ kə əlz ˈatumz ðiðɾˈɔʒəŋ kunsistˈɛʃən ən um pɾutˈo j wn ələktɾˈo"
+    "id": "flores-devtest-355",
+    "text": "El satèl·lit a l'espai rep la trucada i després la reflecteix de nou, quasi instantàniament.",
+    "reference": "əl sətˈɛllit ə ləspˈaj rˈɛp lə tɾukˈaðə j ðəspɾˈez lə rəfləktˈɛʒ ðə nˈɔw kwˈazj instəntˈaniəmˈen",
+    "uccharan": "əl sətˈɛl lˈit ə ləspˈaj rˈɛp lə tɾukˈaðə j ðəspɾˈez lə rəfləktˈɛʒ ðə nˈɔw kwˈazj instəntˈaniəmˈen"
    },
    {
     "id": "flores-devtest-74",
@@ -237,6 +207,36 @@
     "text": "Tot i que la IA té fortes connotacions de ciència-ficció, forma una branca molt important de la informàtica que estudia el comportament, l'aprenentatge i l'adaptació intel·ligent de màquines.",
     "reference": "tˈot i kə lə ˌiˈa tˈe fˈɔrtəs kunnutəsiˈonz ðə siˈɛnsiəfiksiˈo fˈormə ˈunə βɾˈaŋkə mˈol impurtˈan də lə jɱfurmˈatikə k əstuðˈiə əl kumpurtəmˈen ləpɾənəntˈadʒə j ləðəptəsiˈo jntəlliʒˈen də mˈakinəs",
     "uccharan": "tˈot i kə lə ˌiˈa tˈe fˈɔrtəs kunnutəsiˈonz ðə siˈɛnsiəfiksiˈo fˈormə ˈunə βɾˈaŋkə mˈol impurtˈan də lə jɱfurmˈatikə kə əstuðˈiə əl kumpurtəmˈen ləpɾənəntˈadʒə j ləðəptəsiˈo jntˈɛl liʒˈen də mˈakinəs"
+   },
+   {
+    "id": "flores-devtest-248",
+    "text": "Passats cinc minuts de l'espectacle va començar a bufar una mica de vent, al cap d'un minut el vent arribava als 70 km/h... aleshores va arribar la pluja, però tan forta i tan gruixuda que colpejava la pell com una agulla, després queia calamarsa del cel, la gent espantada i cridant i corrent per sobre dels altres.",
+    "reference": "pəsˈats sˈiŋ minˈudz ðə ləspəktˈaklə βˈa kumənsˈa ə βufˈa ˈunə mˈikə ðə βˈen əl kˈab dum minˈut əl βˈen əriβˈaβə əls sətˈantə kˌaˈemə βˈarə ˈak ələʃˈɔɾəz βˈa əriβˈa lə plˈuʒə pəɾˈɔ tˈaɱ fˈɔrtə j tˈaŋ ɡɾuʃˈuðə kə kulpəʒˈaβə lə pˈeʎ kˈɔm ˈunə əɣˈuʎə dəspɾˈes kˈɛjə kələmˈarsə ðəl sˈɛl lə ʒˈen əspəntˈaðə j kɾiðˈan i kurˈem pəɾ sˈoβɾə ðəlz ˈaltɾəs",
+    "uccharan": "pəsˈads sˈiŋ minˈudz ðə ləspəktˈaklə βˈa kumənsˈa ə βufˈa ˈunə mˈikə ðə βˈen əl kˈab dum minˈut əl βˈen əriβˈaβə əls sətˈantə kˌaˈemə ˈak ələʃˈɔɾəz βˈa əriβˈa lə plˈuʒə pəɾˈɔ tˈaɱ fˈɔrtə j tˈaŋ ɡɾuʃˈuðə kə kulpəʒˈaβə lə pˈeʎ kˈɔm ˈunə əɣˈuʎə dəspɾˈes kˈɛjə kələmˈarsə ðəl sˈɛl lə ʒˈen əspəntˈaðə j kɾiðˈan i kurˈem pəɾ sˈoβɾə ðəlz ˈaltɾəs"
+   },
+   {
+    "id": "flores-devtest-376",
+    "text": "Amb el temps, a mesura que la nova població comença a adaptar-se al seu nou entorn, comença a semblar-se cada cop menys a l'altra població.",
+    "reference": "əmb əl tˈems ə məzˈuɾə kə lə nˈɔβə pubbləsiˈo kumˈɛnsə ə əðəptˈarsə əl sˈew nˈɔw əntˈorn kumˈɛnsə ə səmblˈarsə kˈaðə kˈɔb mˌɛɲʒ ə lˈaltɾə pubbləsiˈo",
+    "uccharan": "əm əl tˈems ə məzˈuɾə kə lə nˈɔβə pubbləsiˈo kumˈɛnsə ə əðəptˈasə əl sˈew nˈɔw əntˈorn kumˈɛnsə ə səmblˈasə kˈaðə kˈɔb mˌɛɲʒ ə lˈaltɾə pubbləsiˈo"
+   },
+   {
+    "id": "flores-devtest-746",
+    "text": "Els guaranís foren el grup indígena més important que habitava el que avui és el Paraguai oriental, i vivien com a caçadors seminòmades que també practicaven l'agricultura de subsistència.",
+    "reference": "əlz ɣwəɾənˈis fˈoɾən əl ɣɾˈup indˈiʒənə mˈez impurtˈaŋ kə əβitˈaβə əl k əβˈuj ˈez əl pəɾəɣwˈaj uɾiəntˈal i βiβˈiəŋ kˈɔm ə kəsəðˈos sˌɛminˈɔməðəs kə təmbˈe pɾəktikˈaβən ləɣɾikultˈuɾə ðə supsistˈɛnsiə",
+    "uccharan": "əlz ɣwaɾənˈis fˈoɾən əl ɣɾˈup indˈiʒənə mˈez impurtˈaŋ kə əβitˈaβə əl kə əβˈuj ˈez əl pəɾəɣwˈaj uɾiəntˈal i βiβˈiəŋ kˈɔm ə kəsəðˈos səminˈɔməðəs kə təmbˈe pɾəktikˈaβən ləɣɾikultˈuɾə ðə supsistˈɛnsiə"
+   },
+   {
+    "id": "flores-devtest-453",
+    "text": "En aquests períodes van tenir lloc guerres feroces entre molts de nobles que lluitaven pel tron.",
+    "reference": "ən əkˈɛts pəɾˈiuðəz βˈan tənˈi ʎˈɔɡ ɡˈɛrəs fəɾˈɔsəz ˈentɾə mˈolz ðə nˈɔbbləs kə ʎujtˈaβəm pəl tɾˈɔn",
+    "uccharan": "ən əkˈɛds pəɾˈiuðəz βˈan tənˈi ʎˈɔɡ ɡˈɛrəs fəɾˈusəz ˈentɾə mˈolz ðə nˈɔbbləs kə ʎujtˈaβəm pəl tɾˈɔn"
+   },
+   {
+    "id": "flores-devtest-869",
+    "text": "Si el país que visitaràs és objecte d'alguna alerta de trànsit, pot ser que la teva assegurança de viatges o de cancel·lació es vegi afectada.",
+    "reference": "sj əl pəˈis kə βizitəɾˈaz ˈez ubʒˈektə ðəlɣˈunə əlˈɛrtə ðə tɾˈanzit pˈɔt sˈe kə lə tˈeβə əsəɣuɾˈansə ðə βiˈadʒəz ˈɔ ðə kənsəlləsiˈo əz βˈɛʒj əfəktˈaðə",
+    "uccharan": "sj əl pəˈis kə βizitəɾˈaz ˈez ubʒˈektə ðəlɣˈunə əlˈɛrtə ðə tɾˈanzit pˈɔt sˈe kə lə tˈeβə əsəɣuɾˈansə ðə βiˈadʒəz ˈɔ ðə kənsˈɛl ləsiˈo əz βˈɛʒj əfəktˈaðə"
    }
   ]
  }

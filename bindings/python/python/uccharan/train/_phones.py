@@ -95,7 +95,7 @@ _SCRIPT = {
     "ORIYA": ("or",),
     "SINHALA": ("si",),
     "ARABIC": ("ur", "sd"),
-    "LATIN": ("en", "en-us", "en-gb", "es", "de", "nl", "fr", "it", "pt", "pt-br", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da"),
+    "LATIN": ("en", "en-us", "en-gb", "es", "de", "nl", "fr", "it", "pt", "pt-br", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da", "fr-be", "fr-ch"),
 }
 _LANG_SCRIPT = {lang: script for script, langs in _SCRIPT.items() for lang in langs}
 # Scripts read as the language's own besides the main one.

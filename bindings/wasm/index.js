@@ -6,10 +6,10 @@
 import initWasm, * as wasm from "./dist/uccharan_wasm.js";
 import { PACKS } from "./packs.js";
 
-export const LANGUAGES = Object.freeze(["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag", "es", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da"]);
+export const LANGUAGES = Object.freeze(["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag", "es", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da", "fr-be", "fr-ch"]);
 export const PROFILES = Object.freeze(["espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx"]);
 
-const ALIASES = { en: "en-us", "en-us": "en-us", "en-gb": "en-gb", "en-gb-x-rp": "en-gb", "en-uk": "en-gb", hi: "hi", "hi-in": "hi", bn: "bn", "bn-in": "bn", "bn-bd": "bn", mr: "mr", te: "te", ne: "ne", "ne-np": "ne", kn: "kn", ta: "ta", ml: "ml", as: "as", gu: "gu", bho: "bho", bhojpuri: "bho", mai: "mai", maithili: "mai", pa: "pa", "pa-in": "pa", or: "or", odia: "or", oriya: "or", kok: "kok", gom: "kok", konkani: "kok", si: "si", sinhala: "si", sa: "sa", sanskrit: "sa", ur: "ur", "ur-pk": "ur", urdu: "ur", sd: "sd", sindhi: "sd", mag: "mag", magahi: "mag", es: "es", "es-es": "es", spanish: "es", de: "de", "de-de": "de", deu: "de", german: "de", nl: "nl", "nl-nl": "nl", "nl-be": "nl", nld: "nl", dutch: "nl", fr: "fr", "fr-fr": "fr", fra: "fr", french: "fr", it: "it", "it-it": "it", ita: "it", italian: "it", "pt-br": "pt-br", "por-br": "pt-br", brazilian: "pt-br", pt: "pt", "pt-pt": "pt", por: "pt", portuguese: "pt", pl: "pl", "pl-pl": "pl", pol: "pl", polish: "pl", tr: "tr", "tr-tr": "tr", tur: "tr", turkish: "tr", cs: "cs", "cs-cz": "cs", ces: "cs", cze: "cs", czech: "cs", sv: "sv", "sv-se": "sv", swe: "sv", swedish: "sv", ca: "ca", "ca-es": "ca", cat: "ca", catalan: "ca", ro: "ro", "ro-ro": "ro", ron: "ro", rum: "ro", romanian: "ro", hu: "hu", "hu-hu": "hu", hun: "hu", hungarian: "hu", fi: "fi", "fi-fi": "fi", fin: "fi", finnish: "fi", nb: "nb", "nb-no": "nb", no: "nb", nob: "nb", nor: "nb", norwegian: "nb", da: "da", "da-dk": "da", dan: "da", danish: "da" };
+const ALIASES = { en: "en-us", "en-us": "en-us", "en-gb": "en-gb", "en-gb-x-rp": "en-gb", "en-uk": "en-gb", hi: "hi", "hi-in": "hi", bn: "bn", "bn-in": "bn", "bn-bd": "bn", mr: "mr", te: "te", ne: "ne", "ne-np": "ne", kn: "kn", ta: "ta", ml: "ml", as: "as", gu: "gu", bho: "bho", bhojpuri: "bho", mai: "mai", maithili: "mai", pa: "pa", "pa-in": "pa", or: "or", odia: "or", oriya: "or", kok: "kok", gom: "kok", konkani: "kok", si: "si", sinhala: "si", sa: "sa", sanskrit: "sa", ur: "ur", "ur-pk": "ur", urdu: "ur", sd: "sd", sindhi: "sd", mag: "mag", magahi: "mag", es: "es", "es-es": "es", spanish: "es", de: "de", "de-de": "de", deu: "de", german: "de", nl: "nl", "nl-nl": "nl", "nl-be": "nl", nld: "nl", dutch: "nl", fr: "fr", "fr-fr": "fr", fra: "fr", french: "fr", it: "it", "it-it": "it", ita: "it", italian: "it", "pt-br": "pt-br", "por-br": "pt-br", brazilian: "pt-br", pt: "pt", "pt-pt": "pt", por: "pt", portuguese: "pt", pl: "pl", "pl-pl": "pl", pol: "pl", polish: "pl", tr: "tr", "tr-tr": "tr", tur: "tr", turkish: "tr", cs: "cs", "cs-cz": "cs", ces: "cs", cze: "cs", czech: "cs", sv: "sv", "sv-se": "sv", swe: "sv", swedish: "sv", ca: "ca", "ca-es": "ca", cat: "ca", catalan: "ca", ro: "ro", "ro-ro": "ro", ron: "ro", rum: "ro", romanian: "ro", hu: "hu", "hu-hu": "hu", hun: "hu", hungarian: "hu", fi: "fi", "fi-fi": "fi", fin: "fi", finnish: "fi", nb: "nb", "nb-no": "nb", no: "nb", nob: "nb", nor: "nb", norwegian: "nb", da: "da", "da-dk": "da", dan: "da", danish: "da", "fr-be": "fr-be", "fr-ch": "fr-ch" };
 const isNode = typeof process !== "undefined" && process.versions != null && process.versions.node != null && typeof window === "undefined";
 
 let ready = null;
@@ -17,7 +17,9 @@ let wasmReady = false;
 let dataBase = new URL("./data/", import.meta.url);
 const loading = new Map();
 // Latin-script languages read Latin text themselves.
-const LATIN = new Set(["es", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da"]);
+const LATIN = new Set(["es", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da", "fr-be", "fr-ch"]);
+// Languages read with another language's word table.
+const TABLE_OF = { "fr-be": "fr", "fr-ch": "fr" };
 const WORD_TABLES = new Set(["ur", "sd", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da"]);
 const tablesLoaded = new Set();
 
@@ -84,16 +86,17 @@ export async function loadLanguage(lang, bytes) {
     wasm.load(tag, bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes));
     return;
   }
+  const pack = TABLE_OF[tag] || tag;
   // Urdu and Sindhi read with rules alone until their word tables arrive.
-  if (wasm.has(tag) && (!WORD_TABLES.has(tag) || tablesLoaded.has(tag))) return;
-  if (WORD_TABLES.has(tag)) tablesLoaded.add(tag);
-  if (!loading.has(tag)) {
+  if (wasm.has(pack) && (!WORD_TABLES.has(pack) || tablesLoaded.has(pack))) return;
+  if (WORD_TABLES.has(pack)) tablesLoaded.add(pack);
+  if (!loading.has(pack)) {
     loading.set(
-      tag,
-      readPack(tag).then((b) => wasm.load(tag, b)).finally(() => loading.delete(tag)),
+      pack,
+      readPack(pack).then((b) => wasm.load(pack, b)).finally(() => loading.delete(pack)),
     );
   }
-  await loading.get(tag);
+  await loading.get(pack);
 }
 
 /**

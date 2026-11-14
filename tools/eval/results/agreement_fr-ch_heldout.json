@@ -1,0 +1,248 @@
+{
+ "language": "fr-ch",
+ "reference": "espeak-ng 1.52.0 voice fr-ch (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 149837,
+  "per": 0.006213418581525258,
+  "per_without_stress": 0.0052627299672557675,
+  "exact_sentence": 0.6462450592885376,
+  "exact_sentence_without_stress": 0.6788537549407114,
+  "piper_shape_per": 0.0066377782154815835,
+  "piper_shape_exact_sentence": 0.6126482213438735,
+  "word_count_mismatch_sentences": 149,
+  "errors_by_class": {
+   "consonant": {
+    "count": 378,
+    "share": 0.40601503759398494,
+    "per_contribution": 0.002522741378965142
+   },
+   "stress": {
+    "count": 222,
+    "share": 0.23845327604726102,
+    "per_contribution": 0.0014816100162176231
+   },
+   "vowel": {
+    "count": 192,
+    "share": 0.20622986036519872,
+    "per_contribution": 0.0012813924464584849
+   },
+   "other": {
+    "count": 85,
+    "share": 0.09129967776584318,
+    "per_contribution": 0.0005672831143175584
+   },
+   "word-boundary": {
+    "count": 39,
+    "share": 0.04189044038668099,
+    "per_contribution": 0.00026028284068687973
+   },
+   "diacritic": {
+    "count": 9,
+    "share": 0.00966702470461869,
+    "per_contribution": 6.006527092774148e-05
+   },
+   "length": {
+    "count": 6,
+    "share": 0.00644468313641246,
+    "per_contribution": 4.004351395182765e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "z→∅",
+    "count": 173
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 67
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 62
+   },
+   {
+    "edit": "∅→z",
+    "count": 54
+   },
+   {
+    "edit": "t→∅",
+    "count": 38
+   },
+   {
+    "edit": " →∅",
+    "count": 23
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 23
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 22
+   },
+   {
+    "edit": "s→∅",
+    "count": 19
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 17
+   },
+   {
+    "edit": "∅→ ",
+    "count": 16
+   },
+   {
+    "edit": "∅→ə",
+    "count": 15
+   },
+   {
+    "edit": "e→∅",
+    "count": 10
+   },
+   {
+    "edit": "ə→∅",
+    "count": 8
+   },
+   {
+    "edit": "∅→-",
+    "count": 8
+   },
+   {
+    "edit": "∅→e",
+    "count": 7
+   },
+   {
+    "edit": "∅→t",
+    "count": 7
+   },
+   {
+    "edit": "ʌ→y",
+    "count": 7
+   },
+   {
+    "edit": "∅→a",
+    "count": 7
+   },
+   {
+    "edit": "ə→ɛ",
+    "count": 7
+   },
+   {
+    "edit": "d→∅",
+    "count": 6
+   },
+   {
+    "edit": "u→∅",
+    "count": 6
+   },
+   {
+    "edit": "a→∅",
+    "count": 6
+   },
+   {
+    "edit": "̃→∅",
+    "count": 6
+   },
+   {
+    "edit": "i→∅",
+    "count": 6
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 21369,
+    "wrong": 392,
+    "rate": 0.018344330572324395
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 189,
+    "per": 0.00921688482094281,
+    "exact_sentence": 0.6190476190476191
+   },
+   "no-digits": {
+    "sentences": 823,
+    "per": 0.005422042330719285,
+    "exact_sentence": 0.6524908869987849
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-127",
+    "text": "Ils sont tous revenus en courant de l’endroit où l’accident s’était produit.",
+    "reference": "il sɔ̃ tus ʁəvnˈy ɑ̃ kuʁˈɑ̃ də- lɑ̃dʁwˈa u laksidˈɑ̃ setˈɛ pʁodyˈi",
+    "uccharan": "il sɔ̃ tu ʁəvnˈy ɑ̃ kuʁˈɑ̃ də- lɑ̃dʁwˈa u laksidˈɑ̃ setˈɛ pʁodyˈi"
+   },
+   {
+    "id": "flores-devtest-836",
+    "text": "Si vous voulez de petites mais copieuses pâtisseries, essayez les boules de Berlin, aussi appelées Berliner, Pfannkuchen ou Krapfen selon les régions.",
+    "reference": "sˈi vu vulˈe də- pətˈit mɛ kopjˈøz patisəʁˈi esɛjˈe le- bˈul də- bɛʁlˈɛ̃ osˌi aplˈe bɛʁlinˈe pfɑ̃nkyʃˈɛn u kʁapfˈɛn səlˈɔ̃ le- ʁeʒjˈɔ̃",
+    "uccharan": "sˈi vu vulˈe də- pətˈit mɛ kopjˈøz patisəʁˈi esɛjˈe le- bˈul də- bɛʁlˈɛ̃ osˌi aplˈe bɛʁlinˈe pfankyʃˈɛn u kʁapfˈɛn səlˈɔ̃ le- ʁeʒjˈɔ̃"
+   },
+   {
+    "id": "flores-devtest-271",
+    "text": "Edgar Veguilla a été blessé au bras et à la mâchoire tandis que Kristoffer Schneider a dû subir une chirurgie reconstructive pour son visage.",
+    "reference": "ɛdɡˈaʁ vəɡijˈa a etˈe blɛsˈe o bʁˈaz e a la- maʃwˈaʁ tɑ̃dˌi kə kʁistɔfˈe ʃnɛdˈe a dˈyː sybˈiʁ yn ʃiʁyʁʒˈi ʁəkɔ̃stʁyktˈiv puʁ sɔ̃ vizˈaʒ",
+    "uccharan": "ɛdɡˈaʁ vɡiˈa a etˈe blɛsˈe o bʁˈaz e a la- maʃwˈaʁ tɑ̃dˌi kə kʁistɔfˈe ʃnɛdˈe a dˈyː sybˈiʁ yn ʃiʁyʁʒˈi ʁəkɔ̃stʁyktˈiv puʁ sɔ̃ vizˈaʒ"
+   },
+   {
+    "id": "flores-devtest-81",
+    "text": "La tempête subtropicale Jerry, 10ème tempête de la saison des ouragans à porter un nom, est apparue ce jour dans l'océan Atlantique.",
+    "reference": "la- tɑ̃pˈɛt sybtʁopikˈal dʒˈɛɹi dˈiz jˈɛm tɑ̃pˈɛt də- la- sɛzˈɔ̃ de-z uʁaɡˈɑ̃z a pɔʁtˈe œ̃ nˈɔ̃ ɛt apaʁˈy sə- ʒˈuʁ dɑ̃ loseˈɑ̃ atlɑ̃tˈik",
+    "uccharan": "la- tɑ̃pˈɛt sybtʁopikˈal dʒˈɛɹi dˈi jˈɛm tɑ̃pˈɛt də- la- sɛzˈɔ̃ de-z uʁaɡˈɑ̃ a pɔʁtˈe œ̃ nˈɔ̃ ɛt apaʁˈy sə- ʒˈuʁ dɑ̃ loseˈɑ̃ atlɑ̃tˈik"
+   },
+   {
+    "id": "flores-devtest-906",
+    "text": "Autres exemples : l'île de Livingston et de la Déception, où la caldeira inondée d'un volcan encore actif offre un port naturel spectaculaire.",
+    "reference": "otʁz ɛɡzˈɑ̃pl lˈil də- lˈɪvɪŋstən e də- la- desɛpsjˈɔ̃ u la- kaldɛʁˈa inɔ̃dˈe dœ̃ vɔlkˈɑ̃ ɑ̃kˌɔʁ aktˈif ˈɔfʁ œ̃ pˈɔʁ natyʁˈɛl spɛktakylˈɛʁ",
+    "uccharan": "otʁz ɛɡzˈɑ̃pl lˈil də- lɪvɪŋstˈən e də- la- desɛpsjˈɔ̃ u la- kaldɛʁˈa inɔ̃dˈe dœ̃ vɔlkˈɑ̃ ɑ̃kˌɔʁ aktˈif ˈɔfʁ œ̃ pˈɔʁ natyʁˈɛl spɛktakylˈɛʁ"
+   },
+   {
+    "id": "flores-devtest-542",
+    "text": "En principe, le bouddhisme tibétain est très simple. Il se compose du Kundalini Yoga, de la méditation et de la voie de l'amour universel.",
+    "reference": "ɑ̃ pʁɛ̃sˈip lə- budˈism tibetˈɛ̃ ɛ tʁɛ sˈɛ̃pl il sə- kɔ̃pˈɔz dy- kœ̃dalinˈi joɡˈa də- la- meditasjˈɔ̃ e də- la- vwˈa də- lamˈuʁ ynivɛʁsˈɛl",
+    "uccharan": "ɑ̃ pʁɛ̃sˈip lə- budˈism tibetˈɛ̃ ɛ tʁɛ sˈɛ̃pl il sə- kɔ̃pˈɔz dy- kʌdalinˈi joɡˈa də- la- meditasjˈɔ̃ e də- la- vwˈa də- lamˈuʁ ynivɛʁsˈɛl"
+   },
+   {
+    "id": "flores-devtest-707",
+    "text": "Soyez ferme dans le refus des avances hommes, et n'ayez pas peur de tenir bon (différences culturelles ou non, ça ne veut pas dire que c'est acceptable !)",
+    "reference": "swajˈe fˈɛʁm dɑ̃ lə- ʁəfˈy de-z avˈɑ̃sz ˈɔm e nɛjˈe pa pˈœʁ də- tənˈiʁ bˈɔ̃ difeʁˈɑ̃s kyltyʁˈɛl u nˈɔ̃ sa nə- vˈø pa dˈiʁ kə sɛt aksɛptˈabl",
+    "uccharan": "swajˈe fˈɛʁm dɑ̃ lə- ʁəfˈy de-z avˈɑ̃s ˈɔm e nɛjˈe pa pˈœʁ də- tənˈiʁ bˈɔ̃ difeʁˈɑ̃s kyltyʁˈɛlz u nˈɔ̃ sa nə- vˈø pa dˈiʁ kə sɛt aksɛptˈabl"
+   },
+   {
+    "id": "flores-devtest-960",
+    "text": "Les Parisiens ont la réputation d'être égocentriques, grossiers et arrogants.",
+    "reference": "le- paʁizjˈɛ̃z ˈɔ̃ la- ʁepytasjˈɔ̃ dˈɛtʁ eɡosɑ̃tʁˈik ɡʁosjˈez e aʁoɡˈɑ̃",
+    "uccharan": "le- paʁizjˈɛ̃z ˈɔ̃ la- ʁepytasjˈɔ̃ dˈɛtʁ eɡosɑ̃tʁˈik ɡʁosjˈe e aʁoɡˈɑ̃"
+   },
+   {
+    "id": "flores-devtest-905",
+    "text": "L’archipel se trouve à 120 km au nord de la péninsule. L’île du Roi-George, avec le village de Villa Las Estrellas, est la plus grande.",
+    "reference": "laʁʃipˈɛl sə- tʁˈuv a sɑ̃ vˈɛ̃ kilomˈɛtʁ o nˈɔʁ də- la- penɛ̃sˈyl lˈil dy- ʁwˈaʒˈɔʁʒ avˌɛk lə- vilˈaʒ də- vilˈa la-z ɛstʁɛlˈa ɛ la- ply ɡʁˈɑ̃d",
+    "uccharan": "laʁʃipˈɛl sə- tʁˈuv a sɑ̃ vˈɛ̃ kilomˈɛtʁ o nˈɔʁ də- la- penɛ̃sˈyl lˈil dy- ʁwˈaʒˈɔʁʒ avˌɛk lə- vilˈaʒ də- vilˈa la- ɛstʁəlˈa ɛ la- ply ɡʁˈɑ̃d"
+   },
+   {
+    "id": "flores-devtest-939",
+    "text": "La Moldavie est une république multi-ethnique qui souffre de conflits ethniques.",
+    "reference": "la- mɔldavˈi ɛt yn ʁepyblˈik myltˈiɛθnˈiːk ki sˈufʁ də- kɔ̃flˈi ɛθnˈiːks",
+    "uccharan": "la- mɔldavˈi ɛt yn ʁepyblˈik myltˈiɛθnˈiːk ki sˈufʁ də- kɔ̃flˈiz ɛθnˈiːks"
+   },
+   {
+    "id": "flores-devtest-919",
+    "text": "Vous n'avez pas forcément besoin d'un yacht dans les archipels et sur les lacs.",
+    "reference": "vu navˈe pa fɔʁsemˈɑ̃ bəzwˈɛ̃ dœ̃ jˈɒt dɑ̃ le-z aʁʃipˈɛlz e syʁ le- lˈak",
+    "uccharan": "vu navˈe pa fɔʁsemˈɑ̃ bəzwˈɛ̃ dœ̃ jˈɒt dɑ̃ le-z aʁʃipˈɛl e syʁ le- lˈak"
+   },
+   {
+    "id": "flores-devtest-667",
+    "text": "La présence d'une réelle « équipe invisible » (Larson et LaFasto, 1989, p109) est également un élément unique d'une équipe virtuelle.",
+    "reference": "la- pʁezˈɑ̃s dyn ʁeˈɛl ekˈip ɛ̃vizˈibl laʁsˈɔ̃ e la- fastˈo mil nœfsɑ̃ yitɑ̃tenˈœf pˈe sɑ̃ nˈœf ɛt eɡalmˈɑ̃ œ̃n elemˈɑ̃ ynˈik dyn ekˈip viʁtyˈɛl",
+    "uccharan": "la- pʁezˈɑ̃s dyn ʁeˈɛl ekˈip ɛ̃vizˈibl laʁsˈɔ̃ e lafastˈo mil nœfsɑ̃ yitɑ̃tenˈœf pˈe sɑ̃ nˈœf ɛt eɡalmˈɑ̃ œ̃n elemˈɑ̃ ynˈik dyn ekˈip viʁtyˈɛl"
+   }
+  ]
+ }
+}

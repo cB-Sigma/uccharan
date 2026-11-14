@@ -10,6 +10,7 @@ secondary = none
 spell-vowels = aeiouyàèéìòóù
 
 [classes]
+IV = a e i o u ɛ ɔ
 V = a e i o u à è é ì ò ó ù
 AOU = a o u à ò ó ù
 FV = e i è é ì
@@ -64,6 +65,14 @@ k -> k
 
 [post]
 i -> ɪ / {!S} _ #
+
+[post.improved]
+# Italian has no ɪ ʊ: before a vowel they are the glides j w, elsewhere i u
+# (Rogers & d'Arcangeli 2004).
+ʊ -> w / _ ˈ {IV} | _ {IV}
+ɪ -> j / _ ˈ {IV} | _ {IV}
+ɪ -> i
+ʊ -> u
 
 [words]
 ord2# sekˈondo

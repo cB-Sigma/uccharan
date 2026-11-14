@@ -58,14 +58,14 @@ URL = "https://github.com/cB-Sigma/uccharan/releases/download/v{version}/{name}.
 # name -> (sha256, size in bytes); written by tools/packs.py.
 PACKS: dict[str, tuple[str, int]] = {
     # @@PACKS@@
-    "ca": ("c83057571a4ff4d66134299940d38befc780014179e522d7e87e64a4e4ca0faa", 195143),
+    "ca": ("f43c4166a27da16e50054ad17023a50441ce5ca667fe146e0caa98ad48ba3a32", 194839),
     "cs": ("9f4da9b8fba91aa9f39270d07dec9a72cee4b8373d3d917191a686a2462bb1c8", 77151),
-    "da": ("b94a426b4dc1b6bacf611eeb34e39b71a85cb725ec9ca747198195cf30d89804", 489926),
+    "da": ("31ea15551be0bbaf1ceb8793acabf45d216041e742f1b4ddd45855f5a65ae78d", 657638),
     "de": ("5a604a6503873a2d7f1e53c647e39a463b7696d8a8b20baf6be4ad5c610ea9cf", 372646),
     "en-gb": ("c267d028790da5440ae90df87da7b131800f7932124afe356193e387aaab13ad", 707290),
     "en-us": ("337e2c2c25c3d1a376f857634c20e2a220bcc91e65876ec58623f2feaf997aac", 727189),
     "fi": ("300219864616835b3ce5dc28c7e7bbcfb5d6a0122762f91b1054445e169e57fb", 136697),
-    "fr": ("d2c84507e9bbedce0cdc3531802e9eedaf54243dccc08bfae6c42a39472f7913", 181289),
+    "fr": ("f09e6d36ebf29950099d3df4b4587ce9409b68f52085d700b6418ba11ca2dec9", 181277),
     "hi": ("970df73a97f846c7089d8794acce6f54f745ffcbfa208b77a5710ad84a2e3a31", 2964),
     "hu": ("24a33b41ada5eccb82ede40f1dbe9677a367a679cc474866c071fdaba9c338da", 44777),
     "it": ("f500dc08197da28721172218146ba468939964a8e7265f7b81ae6cf6d4449819", 188304),

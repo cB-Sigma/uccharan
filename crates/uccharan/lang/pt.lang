@@ -12,6 +12,7 @@ vowel-mark = yes
 spell-vowels = aeiouáàâãéêíóôõúü
 
 [classes]
+PVW = a e i o u ɐ ɛ ɔ ̃
 V = a e i o u á à â ã é ê í ó ô õ ú
 FV = e i é ê í
 NV = b c d f g j k l m n p q r s t v x z ç
@@ -92,6 +93,20 @@ o -> ʊ / _ # | _ s #
 ʃ -> ʒ / _ ‿ {VCD} | _ ‿ ⁞
 ʊ -> w / ˈ {!J}* {PC} _ ‿ ⁑
 ʊ -> u / ‿ ⁑ _ ‿ ⁑ | # ⁑ _ ‿ ⁑
+
+[post.improved]
+# European Portuguese notation (Cruz-Ferreira 1995): final o is u (w after a
+# vowel), ei is ɐj,
+# r in a cluster is ɾ; a final vowel and ŋ is a nasal vowel (em: ɐ̃j̃).
+eɪŋ -> ɐ̃j̃ / _ #
+aŋ -> ɐ̃ / _ #
+oŋ -> õ / _ #
+uŋ -> ũ / _ #
+iŋ -> ĩ / _ #
+eɪ -> ɐj
+ʊ -> w / {PVW} _
+ʊ -> u
+ɹ -> ɾ
 
 [words]
 zero# zˈɛɾu

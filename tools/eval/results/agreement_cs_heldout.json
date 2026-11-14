@@ -5,47 +5,47 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 161551,
-  "per": 0.013153740923918763,
-  "per_without_stress": 0.008018198130735484,
-  "exact_sentence": 0.4515810276679842,
-  "exact_sentence_without_stress": 0.4881422924901186,
-  "piper_shape_per": 0.013208984791685715,
-  "piper_shape_exact_sentence": 0.44367588932806323,
-  "word_count_mismatch_sentences": 637,
+  "per": 0.01306708098371412,
+  "per_without_stress": 0.007919295246303505,
+  "exact_sentence": 0.4575098814229249,
+  "exact_sentence_without_stress": 0.49407114624505927,
+  "piper_shape_per": 0.013123647557221663,
+  "piper_shape_exact_sentence": 0.44960474308300397,
+  "word_count_mismatch_sentences": 633,
   "errors_by_class": {
    "stress": {
     "count": 997,
-    "share": 0.4691764705882353,
+    "share": 0.47228801515869256,
     "per_contribution": 0.006171425741716238
    },
    "consonant": {
     "count": 703,
-    "share": 0.3308235294117647,
+    "share": 0.3330175272382757,
     "per_contribution": 0.004351566997418772
    },
    "other": {
     "count": 162,
-    "share": 0.07623529411764705,
+    "share": 0.07674088109900522,
     "per_contribution": 0.0010027793080822774
    },
    "vowel": {
     "count": 151,
-    "share": 0.07105882352941177,
+    "share": 0.07153008053055424,
     "per_contribution": 0.000934689355064345
    },
    "word-boundary": {
-    "count": 80,
-    "share": 0.03764705882352941,
-    "per_contribution": 0.0004951996583122358
+    "count": 66,
+    "share": 0.031264803410705824,
+    "per_contribution": 0.0004085397181075945
    },
    "length": {
     "count": 31,
-    "share": 0.014588235294117647,
+    "share": 0.01468498342018001,
     "per_contribution": 0.00019188986759599135
    },
    "diacritic": {
     "count": 1,
-    "share": 0.00047058823529411766,
+    "share": 0.0004737091425864519,
     "per_contribution": 6.189995728902947e-06
    }
   },
@@ -123,10 +123,6 @@
     "count": 25
    },
    {
-    "edit": "∅→ ",
-    "count": 24
-   },
-   {
     "edit": "ː→∅",
     "count": 19
    },
@@ -149,20 +145,24 @@
    {
     "edit": "ˈ→a",
     "count": 15
+   },
+   {
+    "edit": "f→v",
+    "count": 14
    }
   ],
   "word_error_by_class": {
    "lexicon": {
-    "words": 6486,
-    "wrong": 207,
-    "rate": 0.031914893617021274
+    "words": 6538,
+    "wrong": 178,
+    "rate": 0.027225451208320588
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 193,
-    "per": 0.021499567847882456,
-    "exact_sentence": 0.2694300518134715
+    "per": 0.02112143474503025,
+    "exact_sentence": 0.3005181347150259
    },
    "no-digits": {
     "sentences": 819,
@@ -171,6 +171,18 @@
    }
   },
   "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-131",
+    "text": "Fluke napsala, že snahy některých lidí o umlčení žen v otázce ženského zdraví byly neúspěšné.",
+    "reference": "flˈuke nˈapsala ʒe snˈahi ɲˈekteriːx lˈiɟiː o ˈuml̩tʃˌeɲiː ʒˈen v ˈotaːstse ʒˈenskeːho zdrˈaviː bˌili nˈeuːspjˌeʃneː",
+    "uccharan": "flˈuke nˈapsala ʒe snˈahi ɲˈekteriːx lˈiɟiː ˈouml̩tʃˌeɲiː ʒˈen v ˈotaːstse ʒˈenskeːho zdrˈaviː bˌili nˈeuːspjˌeʃneː"
+   },
+   {
+    "id": "flores-devtest-453",
+    "text": "V průběhu těchto období se odehrávala nelítostná válka mezi mnoha šlechtici bojujícími o trůn.",
+    "reference": "v prˈuːbjehu cˈexto ˈobdobiː se ˈodehrˌaːvala nˈeliːtˌostnaː vˈaːlka mˈezi mnˈoha ʃlˈexcitsi bˈojujˌiːtsiːmi o trˈuːn",
+    "uccharan": "v prˈuːbjehu cˈexto ˈobdobiː se ˈodehrˌaːvala nˈeliːtˌostnaː vˈaːlka mˈezi mnˈoha ʃlˈexcitsi bˈojujˌiːtsiːmi ˈotruːn"
+   },
    {
     "id": "flores-devtest-24",
     "text": "Dvě písně z filmu Audition (The Fools Who Dream) a City of Stars získaly nominace na nejlepší originální píseň. Studio Lionsgate získalo 26 nominací – více než jakékoli jiné studio.",
@@ -230,18 +242,6 @@
     "text": "Biologické hodiny jsou soběstačnými oscilátory, které pokračují v čase volně probíhajícího cyklu i bez přítomnosti vnějších podnětů.",
     "reference": "bˈiolˌoɡitskeː hˈoɟini jsoʊ sˈobjestˌatʃniːmi ˈostsilˌaːtori ktˈereː pˈokratʃˌujiː v tʃˈase vˈolɲe prˈobiːhˌajiːtsˌiːho tsˈiklu i bˈes pr̝̊ˈiːtomnˌosci vɲˈejʃiːx pˈodɲetuː",
     "uccharan": "bˈiolˌoɡitskeː hˈoɟini jsoʊ sˈobjestˌatʃniːmi ˈostsilˌaːtori ktˈereː pˈokratʃˌujiː v tʃˈase vˈolɲe prˈobiːhˌajiːtsˌiːho tsˈiklu i bˈespr̝̊iːtˌomnosci vɲˈejʃiːx pˈodɲetuː"
-   },
-   {
-    "id": "flores-devtest-685",
-    "text": "Technologie nabízí řešení v podobě virtuálních exkurzí. Studenti se mohou dívat na artefakty z muzea, navštívit akvárium nebo obdivovat krásné umění, zatímco sedí ve třídě.",
-    "reference": "tˈexnolˌoɡije nˈabiːziː r̝ˈeʃeɲiː v pˈodobje vˈirtuˌaːlɲiːx ˈekskurziː stˈudenci se mˈohoʊ ɟˈiːvat na ˈartefˌakti s mˈuzea nˈafʃciːvit ˈakvaːrium nˌebo ˈobɟivˌovat krˈaːsneː ˈumɲeɲiː zˈaciːmtso sˈeɟiː vˈe tr̝̊ˈiːɟe",
-    "uccharan": "tˈexnolˌoɡije nˈabiːziː r̝ˈeʃeɲiː v pˈodobje vˈirtuˌaːlɲiːx ˈekskurziː stˈudenci se mˈohoʊ ɟˈiːvat nˈaartˌefakti s mˈuzea nˈafʃciːvit ˈakvaːrium nˌebo ˈobɟivˌovat krˈaːsneː ˈumɲeɲiː zˈaciːmtso sˈeɟiː vˈe tr̝̊ˈiːɟe"
-   },
-   {
-    "id": "flores-devtest-807",
-    "text": "Led a sníh jsou na druhou stranu v mnoha zemích normální a provoz pokračuje bez velkých přerušení po celý rok.",
-    "reference": "lˈed a sɲˈiːh jsoʊ nˈadruhoʊ strˈanu v mnˈoha zˈemiːx nˈormaːlɲiː a prˈovos pˈokratʃˌuje bˈezvelkiːx pr̝̊ˈeruʃˌeɲiː pˈotseliː rˈok",
-    "uccharan": "lˈet a sɲˈiːh jsoʊ nˈadruhˌoʊ strˈanu v mnˈoha zˈemiːx nˈormaːlɲiː a prˈovos pˈokratʃˌuje bˈesvelkiːx pr̝̊ˈeruʃˌeɲiː pˈotseliː rˈok"
    }
   ]
  }

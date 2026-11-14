@@ -5,49 +5,49 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 176030,
-  "per": 0.009663125603590297,
-  "per_without_stress": 0.004069162766510661,
+  "per": 0.009572232005908083,
+  "per_without_stress": 0.003978159126365055,
   "exact_sentence": 0.516798418972332,
-  "exact_sentence_without_stress": 0.7183794466403162,
-  "piper_shape_per": 0.009690540532979729,
+  "exact_sentence_without_stress": 0.7193675889328063,
+  "piper_shape_per": 0.009601020528056128,
   "piper_shape_exact_sentence": 0.508893280632411,
-  "word_count_mismatch_sentences": 253,
+  "word_count_mismatch_sentences": 252,
   "errors_by_class": {
    "stress": {
-    "count": 1083,
-    "share": 0.63668430335097,
-    "per_contribution": 0.00615236039311481
+    "count": 1081,
+    "share": 0.6415430267062314,
+    "per_contribution": 0.006140998693404533
    },
    "vowel": {
-    "count": 202,
-    "share": 0.11875367430922987,
-    "per_contribution": 0.0011475316707379424
+    "count": 196,
+    "share": 0.11632047477744807,
+    "per_contribution": 0.0011134465716071125
    },
    "other": {
-    "count": 162,
-    "share": 0.09523809523809523,
-    "per_contribution": 0.0009202976765324092
+    "count": 161,
+    "share": 0.09554896142433235,
+    "per_contribution": 0.000914616826677271
    },
    "consonant": {
-    "count": 147,
-    "share": 0.08641975308641975,
-    "per_contribution": 0.0008350849287053344
+    "count": 142,
+    "share": 0.08427299703264095,
+    "per_contribution": 0.0008066806794296427
    },
    "word-boundary": {
-    "count": 106,
-    "share": 0.06231628453850676,
-    "per_contribution": 0.0006021700846446629
+    "count": 104,
+    "share": 0.06172106824925816,
+    "per_contribution": 0.0005908083849343862
    },
    "length": {
     "count": 1,
-    "share": 0.0005878894767783657,
+    "share": 0.0005934718100890207,
     "per_contribution": 5.680849855138329e-06
    }
   },
   "top_confusions": [
    {
     "edit": "∅→ˈ",
-    "count": 389
+    "count": 387
    },
    {
     "edit": "ˈ→∅",
@@ -59,11 +59,11 @@
    },
    {
     "edit": "∅→e",
-    "count": 88
+    "count": 85
    },
    {
     "edit": "∅→ ",
-    "count": 82
+    "count": 80
    },
    {
     "edit": "ˌ→e",
@@ -148,15 +148,15 @@
   ],
   "word_error_by_class": {
    "lexicon": {
-    "words": 17108,
-    "wrong": 415,
-    "rate": 0.02425765723638064
+    "words": 17128,
+    "wrong": 416,
+    "rate": 0.024287716020551145
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 194,
-    "per": 0.013321895342382803,
+    "per": 0.01291820154412878,
     "exact_sentence": 0.4484536082474227
    },
    "no-digits": {
@@ -166,12 +166,6 @@
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-777",
-    "text": "Plajele Tamaki Drive se află în portul Waitemata, în suburbiile de pe piață din Mission Bay și St Heliers din centrul Auckland-ului.",
-    "reference": "plaʒˈele tamˈakʲ drˈive se ˈaflə ɨn pˈortul wˌaɪtemˈata ɨn sˌuburbˈiɪle de pe pjˈatsə din misjˈon bˈai ʃi sˌetˈe heljˈers din tʃˈentrul aʊkklˈandˈuluɪ",
-    "uccharan": "plaʒˈele tamˈakʲ drˈive se ˈaflə ɨn pˈortul waɪtemˈata ɨn sˌuburbˈiɪle de pe pjˈatsə din misjˈon bˈai ʃi sˌetˈe hˈeljers din tʃˈentrul aʊkklˈandˈuluɪ"
-   },
    {
     "id": "flores-devtest-384",
     "text": "Nu știm cu siguranță, dar ar fi putut avea limba bifurcată. Hrana sa includea broaște țestoase, pești mari, alte specii de mosasaurieni și e posibil chiar să fi fost canibal.",
@@ -237,6 +231,12 @@
     "text": "Populația inițială nu s-a schimbat deloc, are nevoie de aceleași adaptări ca și înainte.",
     "reference": "pˌopulˈatsja ˌinitsjˈalə nu sa skimbˈat delˈok ˌaɾe nevˈoje de atʃˈeleaʃʲˌʲ ˌadaptˈəɾʲʲ ka ʃi ˌɨnaˈinte",
     "uccharan": "pˌopulˈatsja ˌinitsjˈalə nu sˈea skimbˈat delˈok ˌaɾe nevˈoje de atʃˈeleaʃʲˌʲ ˌadaptˈəɾʲʲ ka ʃi ˌɨnaˈinte"
+   },
+   {
+    "id": "flores-devtest-602",
+    "text": "Au efectual două experimente marcând fie ADN-ul bacteriofagului cu fosfor radioactiv, fie proteinele acestuia cu sulf radioactiv.",
+    "reference": "aʊ ˌefektwˈal dˈouˌə ˌekspeɾimˈente markˈɨnd fˌie ˌadˌenˈeˈul bˌakteɾjofˈaɡuluɪ ku fosfˈor rˌadjɔˈaktiv fˌie prˌoteinˈele atʃˌestujˌa ku sˈulf rˌadjɔˈaktiv",
+    "uccharan": "aʊ ˌefektwˈal dˈouˌə ˌekspeɾimˈente markˈɨnd fˌie ˌadˌenˈeˈul bˌakteɾjˌofaɡˈuluɪ ku fosfˈor rˌadjɔˈaktiv fˌie prˌoteinˈele atʃˌestujˌa ku sˈulf rˌadjɔˈaktiv"
    }
   ]
  }

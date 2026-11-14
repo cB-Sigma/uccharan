@@ -14,6 +14,9 @@ suffix = mente mˈᴇnte
 spell-close-e = yes
 
 [classes]
+IV = a e i o u ɛ ɔ
+IVD = b β d ð ɡ ɣ m n ɲ l ʎ ʝ r ɾ
+IST = ˈ ˌ
 V = a e i o u á é í ó ú ü y ì
 VV = a e i o u á é í ó ú ü ì
 ACC = á é í ó ú
@@ -121,6 +124,13 @@ oɪ -> oi
 aʊ -> au
 eʊ -> eu
 ð -> d / l _ | n _
+# Final d after a vowel is the approximant ð; n before f is ɱ; s before a
+# voiced consonant is z; an unstressed u before a vowel is the glide w
+# (Martínez-Celdrán et al. 2003; Navarro Tomás).
+d -> ð / {IV} _ #
+n -> ɱ / _ f
+s -> z / _ {IVD}
+u -> w / {!IST} _ {IV} | {!IST} _ ˈ {IV} | # _ {IV} | # _ ˈ {IV}
 
 [words]
 kg kˌiloɣɾˈamo

@@ -1,0 +1,408 @@
+{
+ "reference": "espeak-ng 1.52.0",
+ "sets": [
+  {
+   "file": "improved/es_dev.tsv",
+   "title": "Spanish words, improved-mode dev set",
+   "language": "es",
+   "check": "ipa",
+   "items": 25,
+   "systems": {
+    "reference": {
+     "passed": 18,
+     "accuracy": 0.72,
+     "failed_ids": [
+      "es-d03",
+      "es-d04",
+      "es-d10",
+      "es-d12",
+      "es-d13",
+      "es-d18",
+      "es-d23"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 18,
+     "accuracy": 0.72,
+     "failed_ids": [
+      "es-d03",
+      "es-d04",
+      "es-d10",
+      "es-d12",
+      "es-d13",
+      "es-d18",
+      "es-d23"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 18,
+     "accuracy": 0.72,
+     "failed_ids": [
+      "es-d03",
+      "es-d04",
+      "es-d10",
+      "es-d12",
+      "es-d13",
+      "es-d18",
+      "es-d23"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 25,
+     "accuracy": 1.0,
+     "failed_ids": []
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 25,
+     "accuracy": 1.0,
+     "failed_ids": []
+    }
+   }
+  },
+  {
+   "file": "improved/de_dev.tsv",
+   "title": "German words, improved-mode dev set",
+   "language": "de",
+   "check": "ipa",
+   "items": 25,
+   "systems": {
+    "reference": {
+     "passed": 9,
+     "accuracy": 0.36,
+     "failed_ids": [
+      "de-d01",
+      "de-d02",
+      "de-d05",
+      "de-d08",
+      "de-d10",
+      "de-d11",
+      "de-d16",
+      "de-d17",
+      "de-d18",
+      "de-d19",
+      "de-d20",
+      "de-d21",
+      "de-d22",
+      "de-d23",
+      "de-d24",
+      "de-d25"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 9,
+     "accuracy": 0.36,
+     "failed_ids": [
+      "de-d01",
+      "de-d02",
+      "de-d05",
+      "de-d08",
+      "de-d10",
+      "de-d11",
+      "de-d16",
+      "de-d17",
+      "de-d18",
+      "de-d19",
+      "de-d20",
+      "de-d21",
+      "de-d22",
+      "de-d23",
+      "de-d24",
+      "de-d25"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 9,
+     "accuracy": 0.36,
+     "failed_ids": [
+      "de-d01",
+      "de-d02",
+      "de-d05",
+      "de-d08",
+      "de-d10",
+      "de-d11",
+      "de-d16",
+      "de-d17",
+      "de-d18",
+      "de-d19",
+      "de-d20",
+      "de-d21",
+      "de-d22",
+      "de-d23",
+      "de-d24",
+      "de-d25"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 24,
+     "accuracy": 0.96,
+     "failed_ids": [
+      "de-d08"
+     ]
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 24,
+     "accuracy": 0.96,
+     "failed_ids": [
+      "de-d08"
+     ]
+    }
+   }
+  },
+  {
+   "file": "improved/fr_dev.tsv",
+   "title": "French words, improved-mode dev set",
+   "language": "fr",
+   "check": "ipa",
+   "items": 25,
+   "systems": {
+    "reference": {
+     "passed": 16,
+     "accuracy": 0.64,
+     "failed_ids": [
+      "fr-d01",
+      "fr-d02",
+      "fr-d03",
+      "fr-d04",
+      "fr-d10",
+      "fr-d11",
+      "fr-d15",
+      "fr-d16",
+      "fr-d22"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 17,
+     "accuracy": 0.68,
+     "failed_ids": [
+      "fr-d01",
+      "fr-d02",
+      "fr-d03",
+      "fr-d10",
+      "fr-d11",
+      "fr-d15",
+      "fr-d16",
+      "fr-d22"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 17,
+     "accuracy": 0.68,
+     "failed_ids": [
+      "fr-d01",
+      "fr-d02",
+      "fr-d03",
+      "fr-d10",
+      "fr-d11",
+      "fr-d15",
+      "fr-d16",
+      "fr-d22"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 23,
+     "accuracy": 0.92,
+     "failed_ids": [
+      "fr-d11",
+      "fr-d22"
+     ]
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 23,
+     "accuracy": 0.92,
+     "failed_ids": [
+      "fr-d11",
+      "fr-d22"
+     ]
+    }
+   }
+  },
+  {
+   "file": "improved/it_dev.tsv",
+   "title": "Italian words, improved-mode dev set",
+   "language": "it",
+   "check": "ipa",
+   "items": 25,
+   "systems": {
+    "reference": {
+     "passed": 21,
+     "accuracy": 0.84,
+     "failed_ids": [
+      "it-d02",
+      "it-d04",
+      "it-d16",
+      "it-d17"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 21,
+     "accuracy": 0.84,
+     "failed_ids": [
+      "it-d02",
+      "it-d04",
+      "it-d16",
+      "it-d17"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 21,
+     "accuracy": 0.84,
+     "failed_ids": [
+      "it-d02",
+      "it-d04",
+      "it-d16",
+      "it-d17"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 23,
+     "accuracy": 0.92,
+     "failed_ids": [
+      "it-d02",
+      "it-d04"
+     ]
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 23,
+     "accuracy": 0.92,
+     "failed_ids": [
+      "it-d02",
+      "it-d04"
+     ]
+    }
+   }
+  },
+  {
+   "file": "improved/pt_dev.tsv",
+   "title": "Portuguese (Portugal) words, improved-mode dev set",
+   "language": "pt",
+   "check": "ipa",
+   "items": 25,
+   "systems": {
+    "reference": {
+     "passed": 13,
+     "accuracy": 0.52,
+     "failed_ids": [
+      "pt-d03",
+      "pt-d07",
+      "pt-d08",
+      "pt-d09",
+      "pt-d10",
+      "pt-d11",
+      "pt-d13",
+      "pt-d14",
+      "pt-d15",
+      "pt-d21",
+      "pt-d22",
+      "pt-d24"
+     ]
+    },
+    "uccharan-compatible": {
+     "passed": 13,
+     "accuracy": 0.52,
+     "failed_ids": [
+      "pt-d03",
+      "pt-d07",
+      "pt-d08",
+      "pt-d09",
+      "pt-d10",
+      "pt-d11",
+      "pt-d13",
+      "pt-d14",
+      "pt-d15",
+      "pt-d21",
+      "pt-d22",
+      "pt-d24"
+     ]
+    },
+    "uccharan-default": {
+     "passed": 13,
+     "accuracy": 0.52,
+     "failed_ids": [
+      "pt-d03",
+      "pt-d07",
+      "pt-d08",
+      "pt-d09",
+      "pt-d10",
+      "pt-d11",
+      "pt-d13",
+      "pt-d14",
+      "pt-d15",
+      "pt-d21",
+      "pt-d22",
+      "pt-d24"
+     ]
+    },
+    "uccharan-improved": {
+     "passed": 23,
+     "accuracy": 0.92,
+     "failed_ids": [
+      "pt-d09",
+      "pt-d14"
+     ]
+    },
+    "uccharan-improved+wikipron": {
+     "passed": 23,
+     "accuracy": 0.92,
+     "failed_ids": [
+      "pt-d09",
+      "pt-d14"
+     ]
+    }
+   }
+  }
+ ],
+ "total_development_sets": {
+  "reference": {
+   "passed": 77,
+   "items": 125,
+   "accuracy": 0.616
+  },
+  "uccharan-compatible": {
+   "passed": 78,
+   "items": 125,
+   "accuracy": 0.624
+  },
+  "uccharan-default": {
+   "passed": 78,
+   "items": 125,
+   "accuracy": 0.624
+  },
+  "uccharan-improved": {
+   "passed": 118,
+   "items": 125,
+   "accuracy": 0.944
+  },
+  "uccharan-improved+wikipron": {
+   "passed": 118,
+   "items": 125,
+   "accuracy": 0.944
+  }
+ },
+ "total_unseen_sets": {
+  "reference": {
+   "passed": 0,
+   "items": 0,
+   "accuracy": 0.0
+  },
+  "uccharan-compatible": {
+   "passed": 0,
+   "items": 0,
+   "accuracy": 0.0
+  },
+  "uccharan-default": {
+   "passed": 0,
+   "items": 0,
+   "accuracy": 0.0
+  },
+  "uccharan-improved": {
+   "passed": 0,
+   "items": 0,
+   "accuracy": 0.0
+  },
+  "uccharan-improved+wikipron": {
+   "passed": 0,
+   "items": 0,
+   "accuracy": 0.0
+  }
+ }
+}

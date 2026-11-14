@@ -40,10 +40,28 @@ pub fn build(root: &Path, lang: &str, source: &str) -> Vec<u8> {
         return build_corrector(lang, &rows, min_count, b);
     };
     let trainable = |w: &str| w == w.to_lowercase() && !w.contains(['\'', '’']);
+    // `train.tsv` next to the word list: more words (read alone) that only
+    // teach the model; the table gets no entries for them.
+    let extra = std::fs::read_to_string(root.join("data/sources").join(lang).join("train.tsv"))
+        .unwrap_or_default();
+    let listed: std::collections::HashSet<&str> = rows.iter().map(|(w, _)| w.as_str()).collect();
     let train: Vec<(String, String)> = rows
         .iter()
+        .map(|(w, r)| (w.as_str(), r.as_str()))
+        .chain(
+            extra
+                .lines()
+                .filter(|l| !l.starts_with('#'))
+                .filter_map(|l| l.split_once('\t'))
+                .filter(|(w, _)| !listed.contains(w)),
+        )
         .filter(|(w, _)| trainable(w))
-        .map(|(w, r)| (w.clone(), plain(r).replace("ˈʔ", "ʔˈ").replace("ˌʔ", "ʔˌ")))
+        .map(|(w, r)| {
+            (
+                w.to_string(),
+                plain(r).replace("ˈʔ", "ʔˈ").replace("ˌʔ", "ʔˌ"),
+            )
+        })
         .collect();
     let (letters, model) = crate::g2p::train(&train, 1, &crate::g2p::SHAPES, Some(latin));
     b.lts(model.outputs, model.tables);

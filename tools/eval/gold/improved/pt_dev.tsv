@@ -1,0 +1,37 @@
+# Portuguese (European Portuguese, Lisbon standard, the variety of the espeak-ng voice `pt`): improved-mode gold set, dev split.
+# Written by hand before any improved-mode work on the language was measured on
+# it; the dev/test split was fixed when the file was written. Test rows are
+# scored once per change of the language and never used to adjust rules.
+# Sources (standard descriptions and pronouncing dictionaries; no phonemizer):
+#   Cruz-Ferreira (1995), "European Portuguese", Journal of the International Phonetic Association 25(2); Mateus & d'Andrade, The Phonology of Portuguese (2000); Dicionário da Língua Portuguesa (Porto Editora, transcriptions)
+# Notation: unstressed vowel reduction (ɐ ɨ u); ʃ ʒ for s z at the end of a syllable; ʁ for rr and initial r; ɐj for ei; nasal diphthongs ɐ̃w̃ ɐ̃j̃ (ʊ̃ ĩ accepted); l and ɫ both accepted; β ð ɣ between vowels.
+# check=ipa: segments must equal one expected form after notational
+# normalisation (stress marks, tie bars, non-syllabic and syllabic marks
+# removed; a long consonant written with ː counts as double); the primary
+# stress must fall on the same vowel. Alternatives are separated by |.
+# id	word	expected
+pt-d01	casa	kˈazɐ
+pt-d02	coração	kuɾɐsˈɐ̃w̃
+pt-d03	leite	lˈɐjtɨ
+pt-d04	pão	pˈɐ̃w̃
+pt-d05	dia	dˈiɐ
+pt-d06	cidade	sidˈaðɨ|sidˈadɨ
+pt-d07	filho	fˈiʎu
+pt-d08	banho	bˈɐɲu
+pt-d09	rio	ʁˈiu
+pt-d10	caro	kˈaɾu
+pt-d11	carro	kˈaʁu
+pt-d12	mesa	mˈezɐ
+pt-d13	gato	ɡˈatu
+pt-d14	homem	ˈɔmɐ̃j̃
+pt-d15	bom	bˈõ
+pt-d16	mãe	mˈɐ̃j̃
+pt-d17	escola	ɨʃkˈɔlɐ|ʃkˈɔlɐ
+pt-d18	chave	ʃˈavɨ
+pt-d19	janela	ʒɐnˈɛlɐ
+pt-d20	sol	sˈɔl
+pt-d21	peixe	pˈɐjʃɨ
+pt-d22	livro	lˈivɾu
+pt-d23	hora	ˈɔɾɐ
+pt-d24	vinho	vˈiɲu
+pt-d25	cama	kˈɐmɐ

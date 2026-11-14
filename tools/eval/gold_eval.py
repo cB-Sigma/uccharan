@@ -50,6 +50,16 @@ SETS = [
     ("unseen/hi_words.tsv", "hi", "broad", "UNSEEN: Hindi schwa / nasal / nukta words"),
     ("unseen/mix.tsv", "hi", "say-hinglish", "UNSEEN: Romanised Hindi"),
 ]
+# Improved-mode word sets of the Latin-script languages (`--improved dev|test`):
+# hand-written from standard descriptions, split fixed when written; the test
+# files are scored once per change of a language (see docs/evaluation.md).
+IMPROVED = [
+    ("es", "Spanish"),
+    ("de", "German"),
+    ("fr", "French"),
+    ("it", "Italian"),
+    ("pt", "Portuguese (Portugal)"),
+]
 SYSTEMS = ["reference", "uccharan-compatible", "uccharan-default", "uccharan-improved", "uccharan-improved+wikipron"]
 PACKS = ROOT / "data" / "packs"
 
@@ -136,6 +146,49 @@ def skeleton(word: str) -> tuple[str, str]:
     return cons, (m.group(0) if m else "")
 
 
+IPA_DROP = "ˌ-‿\u0361\u032f\u0329"
+LONG_VOWELS = {"de"}
+
+
+def ipa_form(s: str, lang: str) -> tuple[str, int]:
+    """(segments, index of the vowel after the primary stress mark or -1)
+    after notation-only normalisation; see the gold files' headers."""
+    s = unicodedata.normalize("NFD", s.strip())
+    s = "".join(c for c in s if c not in IPA_DROP).replace("g", "ɡ").replace(" ", "")
+    out = []
+    for c in s:
+        if c == "ː" and out:
+            prev = out[-1]
+            if prev not in VOWELS and prev not in "\u0303ˈ":
+                # a long affricate (tsː, tʃː) is written with a double stop
+                pair = "".join(out[-2:])
+                out.insert(len(out) - (2 if pair in ("ts", "dz", "tʃ", "dʒ") else 1), pair[0] if pair in ("ts", "dz", "tʃ", "dʒ") else prev)
+                continue
+            if lang not in LONG_VOWELS:
+                continue
+        out.append(c)
+    s = "".join(out)
+    if lang == "pt":
+        s = re.sub(r"(?<=[aeiouɐɨɔɛ\u0303])ɪ", "j", s)
+        s = re.sub(r"(?<=[aeiouɐɨɔɛ\u0303])ʊ", "w", s)
+        s = s.replace("ɫ", "l").replace("j\u0303", "j").replace("w\u0303", "w")
+        # a vowel before a nasal consonant is nasalised in speech; not written
+        s = re.sub("\u0303(?=ˈ?[mnɲ])", "", s)
+    stress = -1
+    if "ˈ" in s:
+        stress = sum(1 for c in s[: s.index("ˈ")] if c in VOWELS)
+    return s.replace("ˈ", ""), stress
+
+
+def ipa_match(got: str, expected: str, lang: str) -> bool:
+    g = ipa_form(got, lang)
+    for e in expected.split("|"):
+        w = ipa_form(e, lang)
+        if g[0] == w[0] and (w[1] < 0 or g[1] == w[1]):
+            return True
+    return False
+
+
 def check_rows(kind: str, rows: list[list[str]], lang: str, system: str, sysx: Systems, inventory: set[str] | None):
     """Yields (id, passed, got)."""
     if kind in ("word", "skeleton", "word-broad"):
@@ -151,6 +204,10 @@ def check_rows(kind: str, rows: list[list[str]], lang: str, system: str, sysx: S
                 want = {skeleton(e) for e in expected}
                 ok = any(skeleton(g) in want for g in word_groups(out))
             yield r[0], ok, out
+    elif kind == "ipa":
+        outs = sysx.run(system, lang, [r[1] for r in rows])
+        for r, out in zip(rows, outs):
+            yield r[0], ipa_match(out, r[2], lang), out
     elif kind == "broad":
         outs = sysx.run(system, lang, [r[1] for r in rows])
         for r, out in zip(rows, outs):
@@ -187,6 +244,7 @@ def main() -> int:
     ap.add_argument("--out", type=Path)
     ap.add_argument("--show", default="", help="print failures of this system (development aid)")
     ap.add_argument("--only", default="")
+    ap.add_argument("--improved", choices=["dev", "test"], help="score only the improved-mode word sets of this split")
     ap.add_argument("--uccharan-bin")
     args = ap.parse_args()
     oracle = load_oracle()
@@ -197,7 +255,10 @@ def main() -> int:
     print(f"{'set':58s} {'n':>4s}  " + "  ".join(f"{s:>20s}" for s in systems))
     totals = {s: [0, 0] for s in systems}
     unseen = {s: [0, 0] for s in systems}
-    for name, lang, kind, title in SETS:
+    sets = SETS
+    if args.improved:
+        sets = [(f"improved/{t}_{args.improved}.tsv", t, "ipa", f"{n} words, improved-mode {args.improved} set") for t, n in IMPROVED]
+    for name, lang, kind, title in sets:
         if args.only and args.only not in name:
             continue
         rows = rows_of(name)
@@ -226,7 +287,8 @@ def main() -> int:
         print(f"{label:58s} {max(n for _, n in t.values()):4d}  " + "  ".join(f"{p:4d} ({100 * p / max(1, n):5.1f}%)      " for p, n in t.values()))
     if args.out:
         args.out.mkdir(parents=True, exist_ok=True)
-        (args.out / "gold.json").write_text(json.dumps(result, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        out_name = f"gold_improved_{args.improved}.json" if args.improved else "gold.json"
+        (args.out / out_name).write_text(json.dumps(result, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return 0
 
 

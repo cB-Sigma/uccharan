@@ -1,16 +1,16 @@
 // SHA-256 sums and sizes of the language packs; written by tools/packs.py.
 export const PACKS = Object.freeze({
  "ca": {
-  "sha256": "c83057571a4ff4d66134299940d38befc780014179e522d7e87e64a4e4ca0faa",
-  "size": 195143
+  "sha256": "f43c4166a27da16e50054ad17023a50441ce5ca667fe146e0caa98ad48ba3a32",
+  "size": 194839
  },
  "cs": {
   "sha256": "9f4da9b8fba91aa9f39270d07dec9a72cee4b8373d3d917191a686a2462bb1c8",
   "size": 77151
  },
  "da": {
-  "sha256": "b94a426b4dc1b6bacf611eeb34e39b71a85cb725ec9ca747198195cf30d89804",
-  "size": 489926
+  "sha256": "31ea15551be0bbaf1ceb8793acabf45d216041e742f1b4ddd45855f5a65ae78d",
+  "size": 657638
  },
  "de": {
   "sha256": "5a604a6503873a2d7f1e53c647e39a463b7696d8a8b20baf6be4ad5c610ea9cf",
@@ -29,8 +29,8 @@ export const PACKS = Object.freeze({
   "size": 136697
  },
  "fr": {
-  "sha256": "d2c84507e9bbedce0cdc3531802e9eedaf54243dccc08bfae6c42a39472f7913",
-  "size": 181289
+  "sha256": "f09e6d36ebf29950099d3df4b4587ce9409b68f52085d700b6418ba11ca2dec9",
+  "size": 181277
  },
  "hi": {
   "sha256": "970df73a97f846c7089d8794acce6f54f745ffcbfa208b77a5710ad84a2e3a31",

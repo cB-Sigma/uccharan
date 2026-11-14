@@ -1,0 +1,37 @@
+# Italian (standard Italian): improved-mode gold set, test split.
+# Written by hand before any improved-mode work on the language was measured on
+# it; the dev/test split was fixed when the file was written. Test rows are
+# scored once per change of the language and never used to adjust rules.
+# Sources (standard descriptions and pronouncing dictionaries; no phonemizer):
+#   Rogers & d'Arcangeli (2004), "Italian", Journal of the International Phonetic Association 34(1); Canepari, Dizionario di pronuncia italiana (DiPI, 1999); Migliorini, Tagliavini & Fiorelli, Dizionario d'ortografia e di pronunzia (DOP, RAI)
+# Notation: geminates written double (ː on a consonant counts as double); vowel length not marked; open ɛ ɔ and close e o under stress; ts dz ʎ ɲ ʃ long between vowels; z at the start of a word ts or dz by the dictionary.
+# check=ipa: segments must equal one expected form after notational
+# normalisation (stress marks, tie bars, non-syllabic and syllabic marks
+# removed; a long consonant written with ː counts as double); the primary
+# stress must fall on the same vowel. Alternatives are separated by |.
+# id	word	expected
+it-t01	zucchero	tsˈukkero|dzˈukkero
+it-t02	mezzo	mˈɛddzo|mˈɛttso
+it-t03	sole	sˈole
+it-t04	lago	lˈaɡo
+it-t05	pane	pˈane
+it-t06	libro	lˈibro
+it-t07	scuola	skwˈɔla
+it-t08	giorno	dʒˈorno
+it-t09	sempre	sˈɛmpre
+it-t10	tavolo	tˈavolo
+it-t11	acqua	ˈakkwa
+it-t12	cielo	tʃˈɛlo
+it-t13	pesce	pˈeʃʃe|pˈeʃe
+it-t14	occhio	ˈɔkkjo
+it-t15	piede	pjˈɛde
+it-t16	bocca	bˈokka
+it-t17	legge	lˈeddʒe
+it-t18	fratello	fratˈɛllo
+it-t19	sogno	sˈoɲɲo|sˈoɲo
+it-t20	aglio	ˈaʎʎo|ˈaʎo
+it-t21	zero	dzˈɛro
+it-t22	vento	vˈɛnto
+it-t23	tempo	tˈɛmpo
+it-t24	mondo	mˈondo
+it-t25	porta	pˈɔrta

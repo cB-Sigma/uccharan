@@ -2,8 +2,8 @@
 &[
     Pack {
         name: "ca",
-        sha256: "c83057571a4ff4d66134299940d38befc780014179e522d7e87e64a4e4ca0faa",
-        size: 195143,
+        sha256: "f43c4166a27da16e50054ad17023a50441ce5ca667fe146e0caa98ad48ba3a32",
+        size: 194839,
     },
     Pack {
         name: "cs",
@@ -12,8 +12,8 @@
     },
     Pack {
         name: "da",
-        sha256: "b94a426b4dc1b6bacf611eeb34e39b71a85cb725ec9ca747198195cf30d89804",
-        size: 489926,
+        sha256: "31ea15551be0bbaf1ceb8793acabf45d216041e742f1b4ddd45855f5a65ae78d",
+        size: 657638,
     },
     Pack {
         name: "de",
@@ -37,8 +37,8 @@
     },
     Pack {
         name: "fr",
-        sha256: "d2c84507e9bbedce0cdc3531802e9eedaf54243dccc08bfae6c42a39472f7913",
-        size: 181289,
+        sha256: "f09e6d36ebf29950099d3df4b4587ce9409b68f52085d700b6418ba11ca2dec9",
+        size: 181277,
     },
     Pack {
         name: "hi",

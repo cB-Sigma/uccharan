@@ -211,6 +211,9 @@ pub struct Numbers {
     /// first word of each group of three digits keeps its stress where
     /// `tail-stress no` or the like would take it (Hungarian). 0: off.
     pub group_stress: u64,
+    /// `group-stress-spaced 1000`: the same from this value for a number
+    /// written with a space between its groups ("1 500", French). 0: off.
+    pub group_stress_spaced: u64,
     /// `stress last`: only the last word of a number keeps its stress.
     pub stress_last: bool,
     /// `fraction number`: the digits after the decimal sign are read as
@@ -292,6 +295,7 @@ impl Numbers {
                 }
                 "tail-stress" => n.tail_unstressed = v.trim() == "no",
                 "group-stress" => n.group_stress = v.trim().parse().unwrap_or(0),
+                "group-stress-spaced" => n.group_stress_spaced = v.trim().parse().unwrap_or(0),
                 "and-below-hundred" => n.and_small = Some(v.trim().to_string()),
                 "glue-hundred" => n.glue_hundred = v.trim() == "yes",
                 "one-before-scale" => n.one_before_scale = v.trim() != "no",
@@ -465,10 +469,13 @@ impl Numbers {
 
     /// The places in the words of [`Numbers::cardinal`] for `n` where a
     /// later group of three digits starts, for languages with
-    /// `group-stress` and numbers it applies to.
-    pub fn group_starts(&self, n: u64) -> Vec<usize> {
+    /// `group-stress` and numbers it applies to; `spaced`: the number was
+    /// written with spaces between its groups.
+    pub fn group_starts(&self, n: u64, spaced: bool) -> Vec<usize> {
         let mut starts = Vec::new();
-        if self.group_stress == 0 || n < self.group_stress || self.speller.is_some() {
+        let applies = |from: u64| from > 0 && n >= from;
+        let on = applies(self.group_stress) || (spaced && applies(self.group_stress_spaced));
+        if !on || self.speller.is_some() {
             return starts;
         }
         let count = |v: u64| {

@@ -5,109 +5,109 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 160630,
-  "per": 0.02219386166967565,
-  "per_without_stress": 0.013972732343451031,
-  "exact_sentence": 0.37450592885375494,
-  "exact_sentence_without_stress": 0.532608695652174,
-  "piper_shape_per": 0.022036897567307753,
-  "piper_shape_exact_sentence": 0.36561264822134387,
+  "per": 0.019498225736163857,
+  "per_without_stress": 0.012257030494305706,
+  "exact_sentence": 0.4318181818181818,
+  "exact_sentence_without_stress": 0.5978260869565217,
+  "piper_shape_per": 0.019385612030590815,
+  "piper_shape_exact_sentence": 0.42391304347826086,
   "word_count_mismatch_sentences": 166,
   "errors_by_class": {
    "stress": {
-    "count": 1687,
-    "share": 0.47321178120617113,
-    "per_contribution": 0.010502396812550581
+    "count": 1480,
+    "share": 0.4725415070242657,
+    "per_contribution": 0.00921372097366619
    },
    "consonant": {
-    "count": 815,
-    "share": 0.22861150070126227,
-    "per_contribution": 0.005073772022660773
+    "count": 717,
+    "share": 0.2289272030651341,
+    "per_contribution": 0.004463674282512607
    },
    "vowel": {
-    "count": 582,
-    "share": 0.1632538569424965,
-    "per_contribution": 0.0036232335180227853
+    "count": 503,
+    "share": 0.16060025542784165,
+    "per_contribution": 0.0031314200336176306
    },
    "other": {
-    "count": 336,
-    "share": 0.09424964936886396,
-    "per_contribution": 0.0020917636805079997
+    "count": 290,
+    "share": 0.09259259259259259,
+    "per_contribution": 0.0018053912718670236
    },
    "word-boundary": {
-    "count": 112,
-    "share": 0.03141654978962132,
-    "per_contribution": 0.0006972545601693332
+    "count": 111,
+    "share": 0.035440613026819924,
+    "per_contribution": 0.0006910290730249642
    },
    "diacritic": {
-    "count": 24,
-    "share": 0.006732117812061711,
-    "per_contribution": 0.00014941169146485712
+    "count": 21,
+    "share": 0.006704980842911878,
+    "per_contribution": 0.00013073523003174998
    },
    "length": {
-    "count": 9,
-    "share": 0.0025245441795231417,
-    "per_contribution": 5.6029384299321425e-05
+    "count": 10,
+    "share": 0.0031928480204342275,
+    "per_contribution": 6.225487144369047e-05
    }
   },
   "top_confusions": [
    {
     "edit": "ˈ→∅",
-    "count": 400
+    "count": 368
    },
    {
     "edit": "ˌ→∅",
-    "count": 359
+    "count": 312
    },
    {
     "edit": "∅→ˈ",
-    "count": 288
+    "count": 270
    },
    {
     "edit": "∅→ˌ",
-    "count": 221
-   },
-   {
-    "edit": "∅→ʔ",
-    "count": 116
+    "count": 189
    },
    {
     "edit": "ˌ→ˈ",
-    "count": 114
+    "count": 92
+   },
+   {
+    "edit": "∅→ʔ",
+    "count": 86
    },
    {
     "edit": "ʔ→∅",
-    "count": 97
+    "count": 79
    },
    {
     "edit": "∅→ ",
-    "count": 71
+    "count": 70
    },
    {
     "edit": "∅→d",
-    "count": 48
-   },
-   {
-    "edit": "ˈ→ˌ",
-    "count": 47
+    "count": 43
    },
    {
     "edit": " →∅",
     "count": 41
    },
    {
-    "edit": "∅→e",
-    "count": 37
+    "edit": "ˈ→ˌ",
+    "count": 38
    },
    {
     "edit": "∅→n",
+    "count": 37
+   },
+   {
+    "edit": "∅→e",
     "count": 36
    },
    {
-    "edit": "∅→i",
-    "count": 34
+    "edit": "n→t",
+    "count": 33
    },
    {
-    "edit": "n→t",
+    "edit": "∅→i",
     "count": 33
    },
    {
@@ -123,125 +123,125 @@
     "count": 31
    },
    {
-    "edit": "∅→ɐ",
+    "edit": "ʌ→∅",
     "count": 30
-   },
-   {
-    "edit": "d→∅",
-    "count": 29
-   },
-   {
-    "edit": "s→∅",
-    "count": 28
    },
    {
     "edit": "ʁ→∅",
     "count": 28
    },
    {
-    "edit": "ʌ→∅",
-    "count": 28
-   },
-   {
-    "edit": "j→∅",
+    "edit": "s→∅",
     "count": 27
    },
    {
-    "edit": "ɐ→∅",
+    "edit": "d→∅",
+    "count": 26
+   },
+   {
+    "edit": "j→∅",
+    "count": 25
+   },
+   {
+    "edit": "∅→ɐ",
     "count": 23
+   },
+   {
+    "edit": "ɐ→∅",
+    "count": 21
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 17721,
-    "wrong": 843,
-    "rate": 0.04757067885559506
+    "wrong": 721,
+    "rate": 0.04068619152418035
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 199,
-    "per": 0.03699500067558438,
-    "exact_sentence": 0.23618090452261306
+    "per": 0.03486015403323875,
+    "exact_sentence": 0.2663316582914573
    },
    "no-digits": {
     "sentences": 813,
-    "per": 0.0177633973710819,
-    "exact_sentence": 0.40836408364083643
+    "per": 0.01489989888776542,
+    "exact_sentence": 0.47232472324723246
    }
   },
   "examples_of_disagreement": [
    {
-    "id": "flores-devtest-360",
-    "text": "Under dem er der flere mellemstore katte, som spiser mellemstort bytte, der rækker fra kaniner til antiloper og hjorte.",
-    "reference": "ˈɒnʔʌ dεm ɛɐ̯ dεɐ̯ flˈʔeʔʌ mˈεləmstʔoɐ̯ˌʔʌ kˈatə sʔʌm spˈisʔʌ mˈεləmstoɐ̯t bˈʔytə dεɐ̯ ʁˈ?akʔʌ fʁɑ kanˈinʔʌ tʔel ˌantʔelˈopʔʌ ʌ jˈʔʌɐ̯də",
-    "uccharan": "ˈɒnʔʌ dεm ɛɐ̯ dεɐ̯ flˈʔeʔʌ mˈεləmstʔoɐ̯ˌʔʌ kˈatə sʔʌm spˈisʔʌ mˈεləmstoɐ̯t bˈʔytə dεɐ̯ ʁˈ?akʔʌ fʁɑ kanˈinʔʌ tʔel ˈantilopˌʔʌ ʌ jˈʔʌɐ̯də"
+    "id": "flores-devtest-68",
+    "text": "Men efter at have mistet kaptajnens gærde scorede Indien kun 36 løb og havde tabt 7 gærder da inningen var slut. ",
+    "reference": "mˈεn ˈεftʔʌ ˈa ha mˈʔestəð k?ɑptˈajnəns ɡˈεɐ̯ʌ skˈoʔʌðə ˈʔendʔiən kɔn sˈεɡsʌtɾˈ?aðʋə lˈʔœb ʌ hˌaðə tˈ?ɑbt sˈʔyw ɡˈεɐ̯ʌɐ̯ da ˈʔenʔeŋən ʋɑ slˈʔut",
+    "uccharan": "mˈεn ˈεftʔʌ a ha mˈʔestəð k?ɑptˈajnəns ɡεɐ̯ˈʌ skˈoʔʌðə ˈʔendʔiən kɔn sˈεɡsʌtɾˈ?aðʋə lˈʔœb ʌ hˌaðə tˈ?ɑbt sˈʔyw ɡˈεɐ̯ʌɐ̯ da ˌʔenʔeŋˈən ʋɑ slˈʔut"
    },
    {
-    "id": "flores-devtest-726",
-    "text": "Som i alle sydafrikanske nationalparker er der daglige bevarelses- og adgangsgebyrer til parken.  ",
-    "reference": "sʔʌm i ˈalə sˈʔyð?ɑfʁˌʔikanskə naʃˈʔonˈalpɑkˌʔʌ ɛɐ̯ dεɐ̯ dˈ?ɑwlˌiə bʔeʋˈɑɑlsəs ʌ ˌaðɡ?ɑŋsɡʔebˈʔyʌ tʔel pˈɑkən",
-    "uccharan": "sʔʌm i ˈalə sˈʔyð?ɑfʁˌʔikanskə naʃˈʔonˈalpɑkˌʔʌ ɛɐ̯ dεɐ̯ dˈ?ɑwlˌiə bʔeʋˈɑɑlsəs ʌ ˈaðɡ?ɑŋsɡˌʔebʔyˌʌ tʔel pˈɑkən"
+    "id": "flores-devtest-741",
+    "text": "Deletaxaer er en hurtig og behagelig måde at rejse til nærliggende steder på, eksempelvis Paro (150 Nu) og Punakha (200 Nu).",
+    "reference": "dˈelεtˌ?ɑɡsaˌʔʌ ɛɐ̯ ʔen hˈɒɐ̯tˌʔi ʌ bʔehˈajəlʔi mˈɒðə a ʁˈ?ɑjsə tʔel nˈεɐ̯lʔeɡənə stˈεðʔʌ pɒ εksˈεmpεlʋˌʔis pˈɑʁʔo ed hˈunʁʌːðˌʌ haltɾˈεs nˈʔu ʌ pˈʔun?ɑkhˌa tˈohˈunʁʌð nˈʔu",
+    "uccharan": "dˈelεt?ɑɡsˌaʔʌ ɛɐ̯ ʔen hˈɒɐ̯tˌʔi ʌ bʔehˈajəlʔi mˈɒðə a ʁˈ?ɑjsə tʔel nˈεɐ̯lʔeɡənə stˈεðʔʌ pɒ εksˈεmpεlʋˌʔis pˈɑʁʔo ed hˈunʁʌːðʌ haltɾˈεs nˈʔu ʌ pˈɒn?ɑkhˌa tˈohˈunʁʌð nˈʔu"
    },
    {
-    "id": "flores-devtest-541",
-    "text": "Den tibetanske buddhisme er baseret på Buddhas lære, men blev udvidet af kærlighedsstien mahayana og med en masse teknikker fra indisk yoga.",
-    "reference": "dɛn tibˌʔetˈanskə bʔudˈʔismə ɛɐ̯ basˈʔeʌt pɒ bˈʔudas lˈɛʔʌ mˈεn blˈʔe ˈʔuðʋˌiðəð ˈa kˈεɐ̯lʔihˌʔeðstʔiən mˈahaˌʔyanˌa ʌ mεð ʔen mˈasə tʔeknˈʔikʔʌ fʁɑ ˈʔendʔisk jˈʔoɡa",
-    "uccharan": "dɛn tibˌʔetˈanskə bʔudˈʔismə ɛɐ̯ basˈʔeʌt pɒ bʔudhˈas lˈɛʔʌ mˈεn blˈʔe ˈʔuðʋˌiðəð ˈa kεɐ̯lʔihˌʔeðsstʔiˈən mˈahaˌʔyanˌa ʌ mεð ʔen mˈasə tʔeknˈʔikʔʌ fʁɑ ˈʔendʔisk jˈʔoɡa"
+    "id": "flores-devtest-240",
+    "text": "Giancarlo Fisichella mistede herredømmet over sin bil og sluttede løbet meget hurtigt efter start. ",
+    "reference": "ɡˈʔiankˌɑlʔo fˈʔisʔiʃˌεla mˈʔestəðə hˈaɐ̯ʔʌdˌʔœməð ˈɒwʔʌ sin bˈʔil ʌ slˈʔutəðə lˈœbəð mˈɑɑəð hˈɒɐ̯tʔit ˈεftʔʌ stˈɑt",
+    "uccharan": "ɡˈʔi?ɑnkˌɑlʔo fˈʔesʔiʃεla mˈʔestəðə hˈaɐ̯ʔʌdˌʔœməð ˈɒwʔʌ sin bˈʔil ʌ slˈʔutəðə lˈœbəð mˈɑɑəð hˈɒɐ̯tʔit ˈεftʔʌ stˈɑt"
    },
    {
-    "id": "flores-devtest-435",
-    "text": "Mange almindelige formater (eksempelvis APS-formaterne) er lig med eller tæt på dette billedformat. ",
-    "reference": "mˈ?ɑŋə almˈʔenliə fʔʌmˈatʔʌ εksˈεmpεlʋˌʔis ˌapˌeˈesfʔʌmˈatʔʌnə ɛɐ̯ lˈʔi mεð ˈεlʔʌ tˈεt pɒ dʔetə bˈʔeləðfʌːmˌat",
-    "uccharan": "mˈ?ɑŋə almˈʔenliə fʔʌmˈatʔʌ εksˈεmpεlʋˌʔis ˌapˌeˈesfʔʌmˈadʔʌnə ɛɐ̯ lˈʔi mεð ˈεlʔʌ tˈεt pɒ dʔetə bˈʔeləðfˌɒmat"
+    "id": "flores-devtest-786",
+    "text": "Havhvepse forekommer nær strande og nær flodmundinger fra oktober til april nord for 1770. De kan lejlighedsvis også findes uden for disse tider.",
+    "reference": "hˈɑʔuʋˌʔepsə fˈɒɒkˌʔʌmʔʌ nˈεɐ̯ stʁˈ?ɑnə ʌ nˈεɐ̯ flˈʔoðmɒnˌʔeŋʔʌ fʁɑ ʔoktˈobʔʌ tʔel apʁˈil nˈʔoɐ̯ fˈʌ ed tˈʔusən sˈʔywhˈunʁʌðˌʌ halfjˈεɐ̯s dʔi kan lˈ?ɑjlʔihˌʔeðsʋʔis ˈʔʌsə fˈʔenəs ˈʔuðən fˈʌ dʔisə tˈʔiðʌ",
+    "uccharan": "hˈɑwʋʔepsə fˈɒɒkˌʔʌmʔʌ nˈεɐ̯ stʁˈ?ɑnə ʌ nˈεɐ̯ flˈʔoðmˌɒnʔeŋˌʔʌ fʁɑ ʔoktˈobʔʌ tʔel apʁˈil nˈʔoɐ̯ fˈʌ ed tˈʔusən sˈʔywhˈunʁʌðʌ halfjˈεɐ̯s dʔi kan lˈ?ɑjlʔihˌʔeðsʋʔis ˈʔʌsə fˈʔenəs ˈʔuðən fˈʌ dʔisə tˈʔiðʌ"
    },
    {
-    "id": "flores-devtest-340",
-    "text": "Et studie som torsdag blev offentliggjort i tidsskriftet Science berettede om dannelsen af en ny fugleart på de ecuadorianske Galápagosøer.   ",
-    "reference": "et stˈʔuðjə sʔʌm tˈɒɒsda blˈʔe ˈʔʌfəntlʔiɡjˌʔoɐ̯t i tˈʔiðsɡʁʔeftəð sˈaɪəns bʔeʁˈ?atəðə ʔʌm dˈanəlsən ˈa ʔen nˈy fˈuləɑt pɒ dʔi ˌʔekʔuˌaðoʁʔiˈanskə ɡˈal?ɑpˌaɡʔosˌʔœʔʌ",
-    "uccharan": "et stˈʔuðjə sʔʌm tˈɒɒsda blˈʔe ˈʔʌfəntlʔiɡjˌʔoɐ̯t i tˈʔiðsɡʁʔeftəð sˈaɪəns bʔeʁˈ?atəðə ʔʌm dˈanəlsən ˈa ʔen nˈy fˈuləɑt pɒ dʔi ˌʔekʔuˌaðoʁʔiˈanskə ɡˈalapaɡˌʔosʔœˌʔʌ"
+    "id": "flores-devtest-712",
+    "text": "Omkring den gamle Medina er det nemt at finde steder, som sælger traditionelle marokkanske varer såsom taginer, keramik, lædervarer, vandpiber og en lang række nips, men det er meget turistpræget. ",
+    "reference": "ˈʔʌmkʁˈʔeŋ dɛn ɡˈ?ɑmlə mˈʔeðʔinˌa ɛɐ̯ de nˈεmt a fˈʔenə stˈεðʔʌ sʔʌm sˈεljʔʌ tʁˌ?ɑðiʃˌʔonˈεlə mˌɑɐ̯ʔʌkˈanskə ʋˈ?ɑʔʌ sˈɒsʔʌm tˈ?ɑɡinˌʔʌ kˌʔeʁ?ɑmˈʔik lˈεðʔʌʋˌ?ɑʔʌ ʋˈanpibˌʔʌ ʌ ʔen lˈ?ɑŋ ʁˈ?akə nˈʔeps mˈεn de ɛɐ̯ mˈɑɑəð tʔuʁˈistpʁεjəð",
+    "uccharan": "ˈʔʌmkʁˈʔeŋ dɛn ɡˈ?ɑmlə mˈʔeðʔinˌa ɛɐ̯ de nˈεmt a fˈʔenə stˈεðʔʌ sʔʌm sˈεljʔʌ tʁˌ?ɑðiʃˌʔonˈεlə mˌɑɐ̯ʔʌkˈanskə ʋˈ?ɑʔʌ sˈɒsʔʌm tˈawˌinʔʌ kˌʔeʁ?ɑmˈʔik lεðʔʌʋ?ˈɑˌʔʌ ʋˈanpibˌʔʌ ʌ ʔen lˈ?ɑŋ ʁˈ?akə nˈʔeps mˈεn de ɛɐ̯ mˈɑɑəð tʔuʁˈistpʁεjəð"
    },
    {
-    "id": "flores-devtest-232",
-    "text": "Berømte sangere overalt i landet spillede bhajans, eller tilbedelsessange for Shri Shyams fødder.",
-    "reference": "bʔeʁˈʔœmdə sˈ?ɑŋʔʌʔʌ ˌɒwʔʌˈalt i lˈanəð spˈʔeləðə bhˈ?ɑjans ˈεlʔʌ tˈʔelbeðəlsəsˌ?ɑŋə fˈʌ ʃʁˈʔi ʃˈʔyams fˈʔœðʔʌ",
-    "uccharan": "bʔeʁˈʔœmdə sˈ?ɑŋʔʌʔʌ ˌɒwʔʌˈalt i lˈanəð spˈʔeləðə bh?ɑjˈans ˈεlʔʌ tˈʔelbeðəlsəs?ɑŋə fˈʌ ʃʁˈʔi ʃhˈʔyams fˈʔœðʔʌ"
+    "id": "flores-devtest-493",
+    "text": "Den gotiske stil var mest udbredt i perioden mellem det 10.-11. århundrede og det 14. århundrede. ",
+    "reference": "dɛn ɡˈoːtʔiskə stˈʔel ʋɑ mˈʔest ˈʔuðbɐ̯ɛt i pˌεʁʔiˈoðən mˈεləm de tˈʔi ˈɛlfdə ɒɒhˈunɐ̯ʌðə ʌ de fjˈoɐ̯dənə ɒɒhˈunɐ̯ʌðə",
+    "uccharan": "dɛn ɡˈoːtʔiskə stˈʔel ʋɑ mˈʔest ˈʔuðbɐ̯ɛt i pˌεʁʔiˈoðən mˈεləm de tˈʔi ˈεlʋə ɒɒhˈunɐ̯ʌðə ʌ de fjˈoɐ̯dən ɒɒhˈunɐ̯ʌðə"
    },
    {
-    "id": "flores-devtest-813",
-    "text": "De paralympiske lege finder sted fra den 24. august til den 5. september 2021. Nogle arrangementer vil blive afholdt andre steder i Japan. ",
-    "reference": "dʔi pˈɑʁ?ɑlˌʔœmpʔiskə lˈaɪə fˈʔenʔʌ stˈεð fʁɑ dɛn fˈiʌʌtˈyʋənə ɑwɡˈɒst tʔel dɛn fˈɛmtə sʔeptˈεmbʔʌ tˈo tˈʔusən ʌ ˈeːnʌtˈyːʔu nˈoən ˌɑʁ?ɑŋʃəmˈ?ɑŋʔʌ ʋʔel blˈiə ˈ?ɑwhʔʌlt ˈ?ɑndʁʔʌ stˈεðʔʌ i jˈapan",
-    "uccharan": "dʔi pˈɑʁ?ɑlˌʔœmpʔiskə lˈaɪə fˈʔenʔʌ stˈεð fʁɑ dɛn fˈiʌʌtˈyːʔu ɑwɡˈɒst tʔel dɛn fˈεm sʔeptˈεmbʔʌ tˈo tˈʔusən ʌ ˈeːnʌtˈyːʔu nˈoən ˌɑʁ?ɑŋʃəmˈ?ɑŋʔʌ ʋʔel blˈiə ˈ?ɑwhʔʌlt ˈ?ɑndʁʔʌ stˈεðʔʌ i jˈapan"
+    "id": "flores-devtest-623",
+    "text": "For tusinder af år siden, sagde en mand ved navn Aristarchus, at solsystemet bevægede sig rundt om Solen.",
+    "reference": "fˈʌ tˈʔusənʔʌ ˈa ˈɒ sˈʔiðən sˈaə ʔen mˈan ʋʔeð nˈ?ɑwn ˈɑɑʔestˌɑʃʔus a sˈʔolsʔystˌεməð bʔeʋˈɛjəðə saɪ ʁˈɒnt ʔʌm sˈʔolən",
+    "uccharan": "fˈʌ tˈʔusənʔʌ ˈa ˈɒ sˈʔiðən sˈaə ʔen mˈan ʋʔeð nˈ?ɑwn ˌɑɑˈʔestɑʃˌʔus a sˈʔolsʔystˌεməð bʔeʋˈɛjəðə saɪ ʁˈɒnt ʔʌm sˈʔolən"
    },
    {
-    "id": "flores-devtest-562",
-    "text": "Til sidst blev træhjul erstattet af jernhjul. I 1767 blev de første skinner brugt, der var lavet udelukkende af metal.",
-    "reference": "tʔel sˈʔist blˈʔe tʁˈ?ajʔul εɐ̯stˈatəð ˈa jˈεɐ̯njʔul i ed tˈʔusən sˈʔywhˈunʁʌðʌ sˈʔywʌtɾˈɛs blˈʔe dʔi fˈʔœɐ̯sdə skˈʔenʔʌ bɐ̯ˈɒɡt dεɐ̯ ʋɑ lˈaʋəð ˈuðəlˌɒkənə ˈa mʔetˈal",
-    "uccharan": "tʔel sˈʔist blˈʔe tʁεjˈʔul εɐ̯stˈatəð ˈa jεɐ̯njˈʔul i ed tˈʔusən sˈʔywhˈunʁʌðʌ sˈʔywʌtɾˈɛs blˈʔe dʔi fˈʔœɐ̯sdə skˈʔenʔʌ bɐ̯ˈɒɡt dεɐ̯ ʋɑ lˈaʋəð ˈuðəlˌɒkənə ˈa mʔetˈal"
+    "id": "flores-devtest-1004",
+    "text": "På grund af den lange afstand fra kontinentet kunne pattedyr ikke klare rejsen, hvilket gjorde kæmpeskildpadden til det primære græsspisende dyr på Galapagos.",
+    "reference": "pɒ ɡʁˈɒn ˈa dɛn lˈ?ɑŋə ˈ?ɑwstan fʁɑ kˈʔʌntinəntəð kˈʔunə pˈatədʔyɐ̯ ˈʔekə klˈɑɑ ʁˈ?ɑjsən ʋˈʔelkəð ɡjˈoʌ kˈεmpəskʔilpˌaðən tʔel de pʁˈʔimɛˌʔʌ ɡʁˈ?aspisənə dˈʔyɐ̯ pɒ ɡˈal?ɑpˌaɡʔos",
+    "uccharan": "pɒ ɡʁˈɒn ˈa dɛn lˈ?ɑŋə ˈ?ɑwstan fʁɑ kˈʔʌntinəntəð kˈʔunə pˈatədʔyɐ̯ ˈʔekə klˈɑɑ ʁˈ?ɑjsən ʋˈʔelkəð ɡjˈoʌ kεmpəskʔilpˈaðən tʔel de pʁˈʔimɛˌʔʌ ɡʁ?aspˈisənə dˈʔyɐ̯ pɒ ɡal?ˈɑpˌaɡʔos"
    },
    {
-    "id": "flores-devtest-286",
-    "text": "Han blev efterfølgende overflyttet til Addenbrooke's Hospital i Cambridge. ",
-    "reference": "han blˈʔe ˈεftʔʌfˌʔœljənə ˈɒwʔʌflˌʔœtəð tʔel ˈaðεnbɐ̯ˌuks hˌʔospʔitˈal i kˈɛjmbʁɪdʒ",
-    "uccharan": "han blˈʔe ˈεftʔʌfˌʔœljənə ˈɒwʔʌflˌʔœtəð tʔel ˈaðənbɐ̯ukəs hˌʔospʔitˈal i kˈɛjmbʁɪdʒ"
+    "id": "flores-devtest-15",
+    "text": "Vi er enige i USOC's udtalelse om, at det er i vores atleters og klubbers, og deres sports, bedste interesser, at gå videre med meningsfulde ændringer inden for vores organisation i stedet for decertificering.",
+    "reference": "ʋi ɛɐ̯ ˈenˌiə i ˈʔusʔoks ˈʔuðtˌaləlsə ˈʔʌm a de ɛɐ̯ i ʋˌɒɒʔʌs atlˈεtʔʌs ʌ klˈʔubʔʌs ʌ dˌɛʌs spˈɒɒts bˈεsdə ˌʔentʌʁˈ?asʌ a ɡˈɒ ʋˈiðʔʌʔʌ mεð mˈʔenʔeŋsfˌʔulə ˈεndʁʔeŋˌʔʌ ˈʔenən fˈʌ ʋˌɒɒʔʌs ˌɒɡanˌʔisaʃˈʔon i stˈεðət fˈʌ desˈɛɐ̯tʔifisˌʔeɐ̯ʔeŋ",
+    "uccharan": "ʋi ɛɐ̯ ˈenˌiə i usˈoss ˈʔuðtˌaləlsə ˈʔʌm a de ɛɐ̯ i ʋˌɒɒʔʌs atlˈεtʔʌs ʌ klˈʔubʔʌs ʌ dˌɛʌs spˈɒɒts bˈεsdə ˌʔentʌʁˈ?asʌ a ɡˈɒ ʋˈiðʔʌʔʌ mεð mˈʔenʔeŋsfˌʔulə ˈεndʁʔeŋˌʔʌ ˈʔenən fˈʌ ʋˌɒɒʔʌs ˌɒɡanˌʔisaʃˈʔon i stˈεðət fˈʌ desˈɛɐ̯tˌʔifisˌeʁʔeŋ"
    },
    {
-    "id": "flores-devtest-648",
-    "text": "Fissionsbomben virker ud fra det princip, at det kræver energi at sammensætte en kerne med mange protoner og neutroner. ",
-    "reference": "fʔiʃˈʔonsbʔombən ʋˈʔiɐ̯kʔʌ ˈʔuð fʁɑ de pʁʔensˈʔip a de kʁˈɛʋʔʌ ˌʔenεɐ̯ɡˈʔi a sˈ?ɑmənsεtə ʔen kˈɛɐ̯nə mεð mˈ?ɑŋə pʁˈʔotonˌʔʌ ʌ nˌœʔutʁˈʔonʔʌ",
-    "uccharan": "fˈʔiʃʔonsbˌʔombən ʋˈʔiɐ̯kʔʌ ˈʔuð fʁɑ de pʁʔensˈʔip a de kʁˈɛʋʔʌ ˌʔenεɐ̯ɡˈʔi a sˈ?ɑmənsεtə ʔen kˈɛɐ̯nə mεð mˈ?ɑŋə pʁˈʔotʔoŋˌʔʌ ʌ nˌœʔutʁˈʔonʔʌ"
+    "id": "flores-devtest-963",
+    "text": "Nationalparken Plitvicesøerne er fyldt med skovområder - hovedsageligt med bøg og nåletræer - og byder på en blanding af både alpine planter og middelhavsplanter.",
+    "reference": "naʃˈʔonˈalpɑkən plˈʔitʋisəsˌʔœʔʌnə ɛɐ̯ fˈʔylt mεð skˈɔwʔʌmʁˌɒðʔʌ hoəðsˈajəlit mεð bˈʔœj ʌ nˈɒɒlətʁεˌʔʌ ʌ bˈʔyðʔʌ pɒ ʔen blˈanʔeŋ ˈa bˈɒðə alpˈinə plˈantʔʌ ʌ mˈʔiðəlhɑˌʔusplantˌʔʌ",
+    "uccharan": "naʃˈʔonˈalpɑkən plˈʔitʋisεsʔœˌʔʌnə ɛɐ̯ fˈʔylt mεð skˈɔwʔʌmʁˌɒðʔʌ hoəðsˈajəlit mεð bˈʔœj ʌ nˈɒɒlətʁεˌʔʌ ʌ bˈʔyðʔʌ pɒ ʔen blˈanʔeŋ ˈa bˈɒðə alpˈinə plˈantʔʌ ʌ mˈʔiðəlhɑwsplantˌʔʌ"
    },
    {
-    "id": "flores-devtest-425",
-    "text": "I 1624 etablerede det Nederlandske Ostindiske Kompagni en base i det sydvestlige Taiwan, der startede en forandring af de oprindelige kornproduktionspraksisser, og ansatte kinesiske arbejdere til at arbejde på deres ris- og sukkerplantager.",
-    "reference": "i ed tˈʔusən sˈεɡshˈunʁʌðʌ fˈiʌʌtˈyːʔu ˌʔetablˈʔeɐ̯ʔʌðə de nˈeðʔʌlˌanskə ʔostˈʔendʔisɡə kˌʔompanˈʔi ʔen bˈasə i de sʔyðʋˈεstliə tˈaʔiwˌan dεɐ̯ stˈɑtəðə ʔen fʔʌˈɑndʁʔeŋ ˈa dʔi ʔʌpʁˈʔenəlʔiə kˈɒnpʁʔoðˌʔukʃʔonspʁˌ?ɑksʔisˌʔʌ ʌ ˈansatə kinˈʔesʔisɡə ˈɑb?ɑjdˌʔʌʔʌ tʔel a ˈɑb?ɑjdə pɒ dˌɛʌs ʁˈʔis ʌ sˈɒkʔʌplˌantaʃəɐ̯",
-    "uccharan": "i ed tˈʔusən sˈεɡshˈunʁʌðʌ fˈiʌʌtˈyːʔu ˌʔetablˈʔeɐ̯ʔʌðə de nˈeðʔʌlˌanskə ˈʔostʔendʔiskə kˌʔompanˈʔi ʔen bˈasə i de sʔyðʋˈεstliə tˈaʔiwˌan dεɐ̯ stˈɑtəðə ʔen fʔʌˈɑndʁʔeŋ ˈa dʔi ʔʌpʁˈʔenəlʔiə kˈɒnpʁʔoðˌʔukʃʔonspʁ?ɑksʔisʔʌ ʌ ˈansatə kinˈʔesʔisɡə ˈɑb?ɑjdˌʔʌʔʌ tʔel a ˈɑb?ɑjdə pɒ dˌɛʌs ʁˈʔis ʌ sˈɒkʔʌplantˌajʌ"
+    "id": "flores-devtest-21",
+    "text": "Filmen med Ryan Gosling og Emma Stone blev nomineret i alle hovedkategorier.  ",
+    "reference": "fˈʔilmən mεð ʁˈʔyan ɡˈʔʌslʔeŋ ʌ ˈεma stˈonə blˈʔe nˌʔominˈʔeʌð i ˈalə hˈoəðkatˌʔeɡoɐ̯jˌʔʌ",
+    "uccharan": "fˈʔilmən mεð ʁˈʔyan ɡˈʔʌslʔeŋ ʌ ˈεma stˈonə blˈʔe nˌʔominˈʔeʌð i ˈalə hˈoəðkatˌʔeɡoɐ̯jʔʌɐ̯"
    },
    {
-    "id": "flores-devtest-978",
-    "text": "Sørg også for at udtale r og rr forskelligt: caro betyder kære, mens carro betyder vogn. ",
-    "reference": "sˈʔœɐ̯w ˈʔʌsə fˈʌ a ˈʔuðtˌalə ˈɛɐ̯ ʌ ˌɛʁˈɛɐ̯ fɒɒskˈεllʔit kˈɑʁʔo bʔetˈʔyðʔʌ kˈɛʔʌ mˈεns kˈɑʁʔo bʔetˈʔyðʔʌ ʋˈʔʌwn",
-    "uccharan": "sˈʔœɐ̯w ˈʔʌsə fˈʌ a ˈʔuðtˌalə ˈɛɐ̯ ʌ ˌɛɐ̯ˈɛɐ̯ fɒɒskˈεllʔit kˈɑʁʔo bʔetˈʔyðʔʌ kˈɛʔʌ mˈεns kɑʁˈʔo bʔetˈʔyðʔʌ ʋˈʔʌwn"
+    "id": "flores-devtest-601",
+    "text": "Hershey og Chase benyttede bakteriofager eller vira til at indsætte deres eget DNA i en bakterie.",
+    "reference": "hˈεɐ̯shʔi ʌ ʃˈasə bʔenˈʔœtəðə bˈ?ɑktʔeʁˌʔiʔofˌajʌ ˈεlʔʌ ʋˈʔiʁɑ tʔel a ˈʔensεtə dˌɛʌs ˈ?ɑjəð dˌeˌɛnˈa i ʔen b?ɑktˈʔeɐ̯jə",
+    "uccharan": "hεɐ̯shˈʔi ʌ ʃˈasə bʔenˈʔœtəðə b?ɑktˈʔeʁˌʔiʔofˌajʌ ˈεlʔʌ ʋˈʔiʁɑ tʔel a ˈʔensεtə dˌɛʌs ˈ?ɑjəð dˌeˌɛnˈa i ʔen b?ɑktˈʔeɐ̯jə"
    }
   ]
  }

@@ -1,0 +1,37 @@
+# Spanish (Castilian standard, the variety of the espeak-ng voice `es`): improved-mode gold set, test split.
+# Written by hand before any improved-mode work on the language was measured on
+# it; the dev/test split was fixed when the file was written. Test rows are
+# scored once per change of the language and never used to adjust rules.
+# Sources (standard descriptions and pronouncing dictionaries; no phonemizer):
+#   Martínez-Celdrán, Fernández-Planas & Carrera-Sabaté (2003), "Castilian Spanish", Journal of the International Phonetic Association 33(2); Real Academia Española, Nueva gramática de la lengua española: Fonética y fonología (2011); Navarro Tomás, Manual de pronunciación española
+# Notation: approximants β ð ɣ after vowels and most consonants; θ for c/z; x for j; ʎ or ʝ for ll (yeísmo accepted); nasal assimilation (ŋ ɱ); s voiced before a voiced consonant.
+# check=ipa: segments must equal one expected form after notational
+# normalisation (stress marks, tie bars, non-syllabic and syllabic marks
+# removed; a long consonant written with ː counts as double); the primary
+# stress must fall on the same vowel. Alternatives are separated by |.
+# id	word	expected
+es-t01	zapato	θapˈato
+es-t02	jamón	xamˈon
+es-t03	calle	kˈaʎe|kˈaʝe
+es-t04	ahora	aˈoɾa
+es-t05	desde	dˈezðe
+es-t06	hombre	ˈombɾe
+es-t07	gato	ɡˈato
+es-t08	lago	lˈaɣo
+es-t09	cuello	kwˈeʎo|kwˈeʝo
+es-t10	piano	pjˈano
+es-t11	viento	bjˈento
+es-t12	cuatro	kwˈatɾo
+es-t13	isla	ˈizla
+es-t14	fuego	fwˈeɣo
+es-t15	lengua	lˈeŋɡwa
+es-t16	sangre	sˈaŋɡɾe
+es-t17	ejército	exˈeɾθito
+es-t18	sábado	sˈaβaðo
+es-t19	ayer	aʝˈeɾ|ajˈeɾ
+es-t20	bien	bjˈen
+es-t21	cerveza	θeɾβˈeθa
+es-t22	joven	xˈoβen
+es-t23	abogado	aβoɣˈaðo
+es-t24	huerta	wˈeɾta|ɣwˈeɾta
+es-t25	algo	ˈalɣo

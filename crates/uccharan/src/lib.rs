@@ -177,6 +177,10 @@ languages! {
     Nb "nb" ["nb-no", "no", "nob", "nor", "norwegian"] Latin, Some(include_str!("../lang/nb.lang"));
     /// Danish (espeak voice `da`).
     Da "da" ["da-dk", "dan", "danish"] Latin, Some(include_str!("../lang/da.lang"));
+    /// French as spoken in Belgium (espeak voice `fr-be`; read with the French word table).
+    FrBe "fr-be" ["fr-be-x-be"] Latin, Some(concat!(include_str!("../lang/fr.lang"), "\n", include_str!("../lang/fr-be.lang")));
+    /// French as spoken in Switzerland (espeak voice `fr-ch`; read with the French word table).
+    FrCh "fr-ch" ["fr-ch-x-ch"] Latin, Some(concat!(include_str!("../lang/fr.lang"), "\n", include_str!("../lang/fr-ch.lang")));
 }
 
 impl Lang {
@@ -437,9 +441,12 @@ impl Phonemizer {
 
     /// The language whose data image `lang` is read with.
     fn data_lang(lang: Lang) -> Lang {
-        // Bhojpuri, Maithili and Magahi are read with the Hindi data.
+        // Bhojpuri, Maithili and Magahi are read with the Hindi data, the
+        // Belgian and Swiss French with the French word table.
         if lang.hindi_like() {
             Lang::Hi
+        } else if matches!(lang, Lang::FrBe | Lang::FrCh) {
+            Lang::Fr
         } else {
             lang
         }
@@ -499,7 +506,7 @@ impl Phonemizer {
 
     /// Load (or replace) the data image of a language.
     pub fn load(&mut self, lang: Lang, bytes: Vec<u8>) -> Result<(), DataError> {
-        self.data[lang.index()] = Data::from_vec(bytes)?.into();
+        self.data[Self::data_lang(lang).index()] = Data::from_vec(bytes)?.into();
         Ok(())
     }
 
@@ -540,8 +547,9 @@ impl Phonemizer {
     /// table, or nothing at all for a language read by compiled-in rules
     /// alone.
     pub fn has(&self, lang: Lang) -> bool {
-        self.data[lang.index()].get().is_some()
-            || (lang.file().is_some() && packs::pack(lang.tag()).is_none())
+        let l = Self::data_lang(lang);
+        self.data[l.index()].get().is_some()
+            || (lang.file().is_some() && packs::pack(l.tag()).is_none())
     }
 
     /// True when the optional WikiPron pack of the language is loaded.
@@ -551,7 +559,7 @@ impl Phonemizer {
 
     /// The loaded data image of a language.
     pub fn data(&self, lang: Lang) -> Option<&Data> {
-        self.data[lang.index()].get()
+        self.data[Self::data_lang(lang).index()].get()
     }
 
     fn english(&self, lang: Lang) -> Option<en::English<'_>> {
@@ -606,7 +614,7 @@ impl Phonemizer {
             let grouped;
             let chunks: &[text::Chunk] = if opt.lang.latin().is_some_and(|l| l.numbers.group_space)
             {
-                grouped = gnorm::join_groups(&raw.chunks, if compat { 6 } else { 3 });
+                grouped = gnorm::join_groups(&raw.chunks, if compat { 6 } else { 3 }, compat);
                 &grouped
             } else {
                 &raw.chunks
@@ -644,12 +652,13 @@ impl Phonemizer {
                     self.generic_for_chunk(&chunk.text, opt.lang)
                 };
                 if let Some(l) = opt.lang.latin() {
-                    items.extend(gnorm::expand(chunk, &l.numbers, false));
+                    items.extend(gnorm::expand(chunk, &l.numbers, false, compat));
                 } else if let Some(g) = generic {
                     items.extend(gnorm::expand(
                         chunk,
                         &g.numbers,
                         compat && g.ascii_digits_english,
+                        false,
                     ));
                 } else {
                     let nl = if opt.lang.hindi_like() || opt.lang == Lang::Sa {
@@ -764,7 +773,7 @@ impl Phonemizer {
                 Lang::Sa if compat => out.extend(bho::span(&hi, span, last, true, lang)),
                 l if l.latin().is_some() => {
                     self.want(l, false);
-                    let t = self.data[l.index()].get();
+                    let t = self.data[Self::data_lang(l).index()].get();
                     out.extend(l.latin().unwrap().span(span, last, compat, l, t));
                 }
                 l if l.indic().is_some() => {

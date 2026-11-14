@@ -12,8 +12,12 @@ stress = final
 secondary = none
 elision = yes
 spell-vowels = aeiouyàâéèêëîïôöùûüœæ
+# "ils ont", "elles sont": no stress on the verb after a clitic pronoun.
+clitic-verbs = ont sont
+clitic-subjects = ils elles il se ne qui qu'ils qu'elles me s'en s'ils les nous lui leur vous en n'en y n'y le la lorsqu'ils lorsqu'elles puisqu'ils puisqu'elles
 
 [classes]
+FC = p b t d k ɡ f v s z ʃ ʒ m n l ʁ
 V = a e i o u y à â é è ê ë î ï ô ö ù û ü œ æ
 C = b c ç d f g h j k l m n p q r s t v w x z
 # Consonants after which a nasal spelling stays a nasal vowel.
@@ -194,14 +198,47 @@ dd -> d
 ː -> 0
 
 [aspirated]
-# Words with h aspiré, and the numerals huit and onze: no liaison before them.
-hache* haie haies haine* haïr haï haïs haïssent hall halls halle halles halte* hamac* hameau*
-hamburger* hamster* hanche* handball handicap* hangar* hanneton* hant* harc* hard* harem*
-hareng* hargn* haricot* harnais harpe* harpon* hasard* haschisch hâte* hâti* hauss* haut*
-havre* henni* hérisson* hernie* héron* héros hêtre* heurt* hibou* hideu* hiérarch* hiss*
-hoch* hockey holland* homard* hongr* honte* honteu* hoquet* hormis hors houblon* houle*
-houss* hublot* huée* huer hurl* hussard* hutte*
+# Words with h aspiré (as the usual French dictionaries mark them), and the
+# numerals huit and onze: no liaison before them.
+hach* haie haies hagard* haillon* haine* haïr haï haïe haïs hais hait haïss* halage hâle*
+halet* halèt* hall halls halle halles halo halos halte* hamac* hameau* hampe* hamster*
+hanche* handball handicap* hangar* hanneton* hant* happ* harangu* harc* hard* harem*
+hareng* hargn* haricot* harna* haro harpe* harpi* harpon* hasard* haschisch hât* hauss*
+haut* havre* hayon* henni* hériss* hernie* héron* héros herse* hêtre* heurt* hibou*
+hideu* hiérarch* hiss* hobby hoch* hockey hold-up holland* homard* hongr* honte*
+honteu* hoquet* horde* hormis hors hotte* houblon* houill* houle* houppe* houspill*
+houss* houx hublot* huche* hue hué huée* huées hués huer hugueno* hulotte* hune hunes
+huppe* hurl* hurluberlu* hussard* hutte*
 huit* onze* dix-huit* vingt-huit* trente-huit* quarante-huit* cinquante-huit* soixante-huit*
+
+[h-muet.compat]
+# Compatible mode only: the reference voice links before a word written with
+# h first only when it is one of these (or starts with one ending in *); a
+# list derived from running espeak-ng 1.52.0 on the h-words of our French word
+# list ("des ..." and "un ...").
+habi* hallo hamea* hamel* hamer* hames* hameç* harm harma* harme* harmon harmoni*
+harmonyo* harmos* hart harts* haus hbt* hcl* hd hdd* hect* heim hela* helb* helde* heldn*
+hele* helg* heli* hella* hellb* helle* hellf* hellg* helli hellin hellinge* hello helloh*
+hellr* hellè* hellé* helme* helmi* helms* helmu* helpe* helpi* hels* helv* herb* heure
+heures* heureuse heureusem* heureuses* heureux* hiber* hippoc* hippod* hippog* hippol*
+hippom* hippopota* hippos* hippot* hiro* hista* histoi* histora* histori* histr* hive
+hiver* hivon* hk hm homm* honn* hora* horiz* horlo* horo* horr* hosa* hosd* hosef* hosh*
+hosi* hosk* hosm* hosn* hoso* hospic* hospital hospitalie* hospitalis* hospitalité*
+hospitaliè* hoss* host* hp hps* hs hsl* htm htt* huil* huiss* huitr* huma humai* humam*
+human humani humanis* humanita* humanité* humano* humans* humanv* humay* humb* hume*
+humi* humme* hummu* humn* humo* hump* humu* humy* humz* humé* huî* hy hyad* hyak* hyal*
+hyam* hyat* hyb* hyd* hyer* hyet* hyft* hyg* hyi* hyl* hym* hyn* hyog* hypa* hype hyper
+hypera* hyperb* hyperca* hyperce* hyperco* hyperf* hyperg* hyperh* hyperle* hyperm*
+hypero* hyperpo* hyperpré* hyperré* hypersa* hyperse* hyperso* hyperspec* hypert* hyperv*
+hyperx* hyperé* hyph* hypn* hypoa* hypoc* hypod* hypog* hypok* hypop* hypote* hypothè*
+hypothé* hypotr* hypoté* hypov* hypox* hypé* hyr* hys* hyt* hyund* hyv* hyè* hyé* hé héb*
+héc* héd* hég* héh* héla* héle* héli* hélo* hélv* hélâ* hélè* hélé héléc* hélén* hém*
+hén* hép* héra* hére* hérin* hérit* hériz* héré* hés* hét* hév* hô hôi* hôp* hôt* hôé*
+
+[context.compat]
+# The reference voice reads "son" after "de" and "le" as the noun (stressed,
+# no liaison), also where it is the possessive ("lors de son discours").
+son de|le sˈɔ̃
 
 [clause]
 # A latent final consonant is said before a vowel of the next word.
@@ -210,15 +247,32 @@ huit* onze* dix-huit* vingt-huit* trente-huit* quarante-huit* cinquante-huit* so
 ⁿ -> n / _ ‿ {VW}
 ʳ -> ʁ / _ ‿ {VW}
 ᵖ -> p / _ ‿ {VW}
+# six, dix: s at the end of a clause and before a word that blocks liaison,
+# z before a vowel, nothing before a consonant; huit: t but before a consonant;
+# neuf: v before ans and heures.
+ˢ -> s / _ ‿ ⁞ | _ #
+ˢ -> z / _ ‿ {VW}
+ᵀ -> t / _ ‿ {VW} | _ ‿ ⁞ | _ #
+ᶠ -> v / _ ‿ ˈ ɑ̃ ᶻ | _ ‿ ˈ ɑ̃ ‿ | _ ‿ ˈ ɑ̃ # | _ ‿ ˈ œ ʁ ᶻ | _ ‿ ˈ œ ʁ ‿ | _ ‿ ˈ œ ʁ #
 ᶻ -> 0
 ᵗ -> 0
 ⁿ -> 0
 ʳ -> 0
 ᵖ -> 0
+ˢ -> 0
+ᵀ -> 0
+ᶠ -> f
 
 [post.improved]
 # u before i is the glide ɥ (Fougeron & Smith 1993).
 y -> ɥ / _ i | _ ˈ i
+# The -ent of a verb after ou is silent but the vowel is said: jouent ʒu
+# (the reference reads ʒw).
+w -> ˈu / # {FC} _ # | # {FC} {FC} _ #
+
+[spelling.improved]
+# gn is the palatal nasal ɲ (the reference voice reads n j).
+gn nj ɲ
 
 [words]
 roman6# si
@@ -246,18 +300,19 @@ virgule viʁɡyl
 pour-cent puʁsˈɑ̃
 mille# mˈil
 million# miljˈɔ̃
+milliard# miljˈaʁ
 un#x œ̃
 zéro# zeʁˈo
 un# ˈœ̃
-deux# dˈø
-trois# tʁwˈa
+deux# dˈøᶻ
+trois# tʁwˈaᶻ
 quatre# kˈatʁ
 cinq# sˈɛ̃k
-six# sˈis
+six# sˈiˢ
 sept# sˈɛt
-huit# yˈit
+huit# yˈiᵀ
 neuf# nˈœf
-dix# dˈis
+dix# dˈiˢ
 onze# ˈɔ̃z
 douze# dˈuz
 treize# tʁˈɛz
@@ -265,59 +320,59 @@ quatorze# katˈɔʁz
 quinze# kˈɛ̃z
 seize# sˈɛz
 dix-sept# disˈɛt
-dix-huit# dizyˈit
+dix-huit# dizyˈiᵀ
 dix-neuf# diznˈœf
-vingt# vˈɛ̃
+vingt# vˈɛ̃ᵗ
 vingt-et-un# vɛ̃teˈœ̃
-vingt-deux# vɛ̃tdˈø
-vingt-trois# vɛ̃ttʁwˈa
+vingt-deux# vɛ̃tdˈøᶻ
+vingt-trois# vɛ̃ttʁwˈaᶻ
 vingt-quatre# vɛ̃tkˈatʁ
 vingt-cinq# vɛ̃tsˈɛ̃k
-vingt-six# vɛ̃tsˈis
+vingt-six# vɛ̃tsˈiˢ
 vingt-sept# vɛ̃tsˈɛt
-vingt-huit# vɛ̃tyˈit
+vingt-huit# vɛ̃tyˈiᵀ
 vingt-neuf# vɛ̃tnˈœf
 trente# tʁˈɑ̃t
 trente-et-un# tʁɑ̃teˈœ̃
-trente-deux# tʁɑ̃tdˈø
-trente-trois# tʁɑ̃ttʁwˈa
+trente-deux# tʁɑ̃tdˈøᶻ
+trente-trois# tʁɑ̃ttʁwˈaᶻ
 trente-quatre# tʁɑ̃tkˈatʁ
 trente-cinq# tʁɑ̃tsˈɛ̃k
-trente-six# tʁɑ̃tsˈis
+trente-six# tʁɑ̃tsˈiˢ
 trente-sept# tʁɑ̃tsˈɛt
-trente-huit# tʁɑ̃tyˈit
+trente-huit# tʁɑ̃tyˈiᵀ
 trente-neuf# tʁɑ̃tnˈœf
 quarante# kaʁˈɑ̃t
 quarante-et-un# kaʁɑ̃teˈœ̃
-quarante-deux# kaʁɑ̃tdˈø
-quarante-trois# kaʁɑ̃ttʁwˈa
+quarante-deux# kaʁɑ̃tdˈøᶻ
+quarante-trois# kaʁɑ̃ttʁwˈaᶻ
 quarante-quatre# kaʁɑ̃tkˈatʁ
 quarante-cinq# kaʁɑ̃tsˈɛ̃k
-quarante-six# kaʁɑ̃tsˈis
+quarante-six# kaʁɑ̃tsˈiˢ
 quarante-sept# kaʁɑ̃tsˈɛt
-quarante-huit# kaʁɑ̃tyˈit
+quarante-huit# kaʁɑ̃tyˈiᵀ
 quarante-neuf# kaʁɑ̃tnˈœf
 cinquante# sɛ̃kˈɑ̃t
 cinquante-et-un# sɛ̃kɑ̃teˈœ̃
-cinquante-deux# sɛ̃kɑ̃tdˈø
-cinquante-trois# sɛ̃kɑ̃ttʁwˈa
+cinquante-deux# sɛ̃kɑ̃tdˈøᶻ
+cinquante-trois# sɛ̃kɑ̃ttʁwˈaᶻ
 cinquante-quatre# sɛ̃kɑ̃tkˈatʁ
 cinquante-cinq# sɛ̃kɑ̃tsˈɛ̃k
-cinquante-six# sɛ̃kɑ̃tsˈis
+cinquante-six# sɛ̃kɑ̃tsˈiˢ
 cinquante-sept# sɛ̃kɑ̃tsˈɛt
-cinquante-huit# sɛ̃kɑ̃tyˈit
+cinquante-huit# sɛ̃kɑ̃tyˈiᵀ
 cinquante-neuf# sɛ̃kɑ̃tnˈœf
 soixante# swasˈɑ̃t
 soixante-et-un# swasɑ̃teˈœ̃
-soixante-deux# swasɑ̃tdˈø
-soixante-trois# swasɑ̃ttʁwˈa
+soixante-deux# swasɑ̃tdˈøᶻ
+soixante-trois# swasɑ̃ttʁwˈaᶻ
 soixante-quatre# swasɑ̃tkˈatʁ
 soixante-cinq# swasɑ̃tsˈɛ̃k
-soixante-six# swasɑ̃tsˈis
+soixante-six# swasɑ̃tsˈiˢ
 soixante-sept# swasɑ̃tsˈɛt
-soixante-huit# swasɑ̃tyˈit
+soixante-huit# swasɑ̃tyˈiᵀ
 soixante-neuf# swasɑ̃tnˈœf
-soixante-dix# swasɑ̃tdˈis
+soixante-dix# swasɑ̃tdˈiˢ
 soixante-et-onze# swasɑ̃teˈɔ̃z
 soixante-douze# swasɑ̃tdˈuz
 soixante-treize# swasɑ̃ttʁˈɛz
@@ -325,19 +380,19 @@ soixante-quatorze# swasɑ̃tkatˈɔʁz
 soixante-quinze# swasɑ̃tkˈɛ̃z
 soixante-seize# swasɑ̃tsˈɛz
 soixante-dix-sept# swasɑ̃tdisˈɛt
-soixante-dix-huit# swasɑ̃tdizyˈit
+soixante-dix-huit# swasɑ̃tdizyˈiᵀ
 soixante-dix-neuf# swasɑ̃tdiznˈœf
-quatre-vingts# katʁəvˈɛ̃
+quatre-vingts# katʁəvˈɛ̃ᶻ
 quatre-vingt-un# katʁəvɛ̃ˈœ̃
-quatre-vingt-deux# katʁəvɛ̃dˈø
-quatre-vingt-trois# katʁəvɛ̃tʁwˈa
+quatre-vingt-deux# katʁəvɛ̃dˈøᶻ
+quatre-vingt-trois# katʁəvɛ̃tʁwˈaᶻ
 quatre-vingt-quatre# katʁəvɛ̃kˈatʁ
 quatre-vingt-cinq# katʁəvɛ̃sˈɛ̃k
-quatre-vingt-six# katʁəvɛ̃sˈis
+quatre-vingt-six# katʁəvɛ̃sˈiˢ
 quatre-vingt-sept# katʁəvɛ̃sˈɛt
-quatre-vingt-huit# katʁəvɛ̃yˈit
+quatre-vingt-huit# katʁəvɛ̃yˈiᵀ
 quatre-vingt-neuf# katʁəvɛ̃nˈœf
-quatre-vingt-dix# katʁəvɛ̃dˈis
+quatre-vingt-dix# katʁəvɛ̃dˈiˢ
 quatre-vingt-onze# katʁəvɛ̃ˈɔ̃z
 quatre-vingt-douze# katʁəvɛ̃dˈuz
 quatre-vingt-treize# katʁəvɛ̃tʁˈɛz
@@ -345,7 +400,7 @@ quatre-vingt-quatorze# katʁəvɛ̃katˈɔʁz
 quatre-vingt-quinze# katʁəvɛ̃kˈɛ̃z
 quatre-vingt-seize# katʁəvɛ̃sˈɛz
 quatre-vingt-dix-sept# katʁəvɛ̃disˈɛt
-quatre-vingt-dix-huit# katʁəvɛ̃dizyˈit
+quatre-vingt-dix-huit# katʁəvɛ̃dizyˈiᵀ
 quatre-vingt-dix-neuf# katʁəvɛ̃diznˈœf
 sixx# si
 huitx# yi
@@ -367,7 +422,7 @@ quatre-vingt-sixx# katʁəvɛ̃si
 quatre-vingt-huitx# katʁəvɛ̃yi
 quatre-vingt-dixx# katʁəvɛ̃di
 quatre-vingt-dix-huitx# katʁəvɛ̃dizyi
-cent# sˈɑ̃
+cent# sˈɑ̃ᵗ
 centx# sɑ̃
 deux-cents# døsˈɑ̃
 deux-centsx# døsɑ̃
@@ -385,9 +440,57 @@ huit-cents# yisˈɑ̃
 huit-centsx# yisɑ̃
 neuf-cents# nœfsˈɑ̃
 neuf-centsx# nœfsɑ̃
+# Number words written in letters, with the final consonant said or not by context.
+six sˈiˢ
+huit yˈiᵀ
+neuf nˈœᶠ
+dix dˈiˢ
+dix-huit dˈizyˈiᵀ
+dix-neuf dˈiznˈœᶠ
+vingt-deux vˈɛ̃tdˈøᶻ
+vingt-trois vˈɛ̃ttʁwˈaᶻ
+vingt-quatre vˈɛ̃tkˈatʁ
+vingt-cinq vˈɛ̃tsˈɛ̃k
+vingt-six vˈɛ̃tsˈiˢ
+vingt-sept vˈɛ̃tsˈɛt
+vingt-huit vˈɛ̃tyˈiᵀ
+vingt-neuf vˈɛ̃tnˈœᶠ
+trente-six tʁˈɑ̃tsˈiˢ
+trente-huit tʁˈɑ̃tyˈiᵀ
+trente-neuf tʁˈɑ̃tnˈœᶠ
+quarante-six kaʁˈɑ̃tsˈiˢ
+quarante-huit kaʁˈɑ̃tyˈiᵀ
+quarante-neuf kaʁˈɑ̃tnˈœᶠ
+cinquante-six sɛ̃kˈɑ̃tsˈiˢ
+cinquante-huit sɛ̃kˈɑ̃tyˈiᵀ
+cinquante-neuf sɛ̃kˈɑ̃tnˈœᶠ
+soixante-six swasˈɑ̃tsˈiˢ
+soixante-huit swasˈɑ̃tyˈiᵀ
+soixante-neuf swasˈɑ̃tnˈœᶠ
+soixante-dix swasˈɑ̃tdˈiˢ
+soixante-dix-huit swasˈɑ̃tdˈizyˈiᵀ
+soixante-dix-neuf swasˈɑ̃tdˈiznˈœᶠ
+quatre-vingts kˈatʁvˈɛ̃ᶻ
+quatre-vingt-deux kˈatʁvˈɛ̃tdˈøᶻ
+quatre-vingt-trois kˈatʁvˈɛ̃ttʁwˈaᶻ
+quatre-vingt-quatre kˈatʁvˈɛ̃tkˈatʁ
+quatre-vingt-cinq kˈatʁvˈɛ̃tsˈɛ̃k
+quatre-vingt-six kˈatʁvˈɛ̃tsˈiˢ
+quatre-vingt-sept kˈatʁvˈɛ̃tsˈɛt
+quatre-vingt-huit kˈatʁvˈɛ̃tyˈiᵀ
+quatre-vingt-neuf kˈatʁvˈɛ̃tnˈœᶠ
+quatre-vingt-dix kˈatʁvˈɛ̃dˈiˢ
+quatre-vingt-onze kˈatʁvˈɛ̃tˈɔ̃z
+quatre-vingt-dix-huit kˈatʁvˈɛ̃dˈizyˈiᵀ
+quatre-vingt-dix-neuf kˈatʁvˈɛ̃dˈiznˈœᶠ
+quatre-vingt-un kˈatʁvˈɛ̃œ̃ⁿ
 
 [numbers]
 group space
+# Scale words keep their stress before more of the number from a million,
+# and from a thousand when the groups are written with spaces.
+group-stress 1000000
+group-stress-spaced 1000
 roman6 roman6#
 roman8 roman8#
 roman18 roman18#
@@ -544,6 +647,8 @@ one-before-scale no
 900 neuf-cents#
 900+ neuf-centsx#
 1000000 un#x million#
+1000000000 un#x milliard#
+scale1000000000 milliard#
 scale1000000 million#
 scale1000 mille#
 scale100 cent#

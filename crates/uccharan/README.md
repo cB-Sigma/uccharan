@@ -45,7 +45,7 @@ assert_eq!(fixed.text, "send it to Kothari");
 English (0.7 MB per accent), Hindi (3 KB) and misaki's dictionaries for the Kokoro profile (2 MB
 per accent) are compiled in through the default features. The languages read by rules alone
 (Spanish, the Indic scripts) need no data. The other languages have a **word table** (46 KB to
-0.5 MB each: `de`, `nl`, `fr`, `it`, `pt-br`, `pt`, `pl`, `tr`, `cs`, `sv`, `ca`, `ro`, `hu`, `fi`,
+0.66 MB each: `de`, `nl`, `fr`, `it`, `pt-br`, `pt`, `pl`, `tr`, `cs`, `sv`, `ca`, `ro`, `hu`, `fi`,
 `nb`, `da`, `ur`, `sd`), which is not in this crate. Choose how your program gets them:
 
 | | |

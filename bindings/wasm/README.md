@@ -36,7 +36,7 @@ names.apply("send it to Coat Harry", { lang: "en-us" }).text;         // "send i
 
 The WebAssembly core is about 1.5 MiB (about 560 KiB gzipped). Language data is fetched the first
 time a language is used (`data/en-us.ucd` and `data/en-gb.ucd` about 0.7 MB each, `data/hi.ucd`
-3 KB, the Urdu, Sindhi and European word tables 46 KB to 0.5 MB each; `data/kokoro-en-*.ucd`,
+3 KB, the Urdu, Sindhi and European word tables 46 KB to 0.66 MB each; `data/kokoro-en-*.ucd`,
 misaki's dictionaries for the Kokoro profile, about 2 MB each) and checked against the SHA-256
 sums the package was built with; point `init({ dataBaseUrl })` elsewhere to host it yourself.
 After `await init()` and `await loadLanguage(...)`, `phonemizeSync` runs without awaiting.

@@ -15,11 +15,17 @@ fn digit(c: char) -> Option<u8> {
     }
 }
 
+/// Between the groups of a number written with spaces ("1 500").
+pub const GROUPED: char = '\u{2063}';
+
 /// Chunks with numbers written in groups of three digits ("1 250 000")
 /// joined into one chunk each. A group that carries a decimal part ends
 /// the number ("12 500,50"). `first_max` is the most digits the first
-/// group may have (the reference voices also join "2020 100").
-pub fn join_groups(chunks: &[Chunk], first_max: usize) -> Vec<Chunk> {
+/// group may have (the reference voices also join "2020 100"). A joined
+/// chunk carries [`GROUPED`] between its groups. `plain_only`: only an
+/// ordinary space separates groups; the reference voices read groups after
+/// a no-break or thin space as a number of their own.
+pub fn join_groups(chunks: &[Chunk], first_max: usize, plain_only: bool) -> Vec<Chunk> {
     let digits = |s: &str, n: std::ops::RangeInclusive<usize>| {
         n.contains(&s.len()) && s.bytes().all(|b| b.is_ascii_digit())
     };
@@ -28,8 +34,13 @@ pub fn join_groups(chunks: &[Chunk], first_max: usize) -> Vec<Chunk> {
     for c in chunks {
         let head = c.text.split([',', '.']).next().unwrap_or("");
         let whole = head.len() == c.text.len();
-        if open && digits(head, 3..=3) && !out.last().is_some_and(|p| p.dot) {
+        if open
+            && digits(head, 3..=3)
+            && !(plain_only && c.tight)
+            && !out.last().is_some_and(|p| p.dot)
+        {
             if let Some(prev) = out.last_mut() {
+                prev.text.push(GROUPED);
                 prev.text.push_str(&c.text);
                 prev.dot = c.dot;
                 open = whole;
@@ -42,7 +53,9 @@ pub fn join_groups(chunks: &[Chunk], first_max: usize) -> Vec<Chunk> {
     out
 }
 
-fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str) {
+/// `compat`: a group of three digits with a leading zero is read as the
+/// reference voices read it ("000" zero-zero zero, "012" zero twelve).
+fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str, spaced: bool, compat: bool) {
     let ascii: String = s
         .chars()
         .map(|c| digit(c).map_or(c, |d| char::from(b'0' + d)))
@@ -81,11 +94,25 @@ fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str) {
     // Words that start a group of digits and keep their stress.
     let mut heads: Vec<usize> = Vec::new();
     for p in &parts {
-        if p.len() > 1 && p.starts_with('0') || p.len() > 15 {
+        if compat && p.len() == 3 && p.starts_with('0') && nums.speller.is_none() {
+            if let Some(last) = p.strip_prefix("00") {
+                let at = words.len();
+                nums.digits("00", &mut words);
+                if let Some(w) = words.get_mut(at + 1) {
+                    w.1 = true;
+                }
+                nums.digits(last, &mut words);
+            } else {
+                nums.digits(&p[..1], &mut words);
+                if let Ok(n) = p[1..].parse::<u64>() {
+                    nums.cardinal(n, &mut words);
+                }
+            }
+        } else if p.len() > 1 && p.starts_with('0') || p.len() > 15 {
             nums.digits(p, &mut words);
         } else if let Ok(n) = p.parse::<u64>() {
             let base = words.len();
-            heads.extend(nums.group_starts(n).into_iter().map(|k| base + k));
+            heads.extend(nums.group_starts(n, spaced).into_iter().map(|k| base + k));
             nums.cardinal(n, &mut words);
         }
     }
@@ -107,7 +134,8 @@ fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str) {
 /// Expand one chunk for a language whose number words are `nums`. With
 /// `ascii_english`, runs of ASCII digits are read as English numbers (as the
 /// reference's Nepali voice does) and later routed to English.
-pub fn expand(chunk: &Chunk, nums: &Numbers, ascii_english: bool) -> Vec<Item> {
+/// `compat`: reference-compatible readings (see [`push_number`]).
+pub fn expand(chunk: &Chunk, nums: &Numbers, ascii_english: bool, compat: bool) -> Vec<Item> {
     let mut out: Vec<Item> = Vec::new();
     // An apostrophe between two Indic letters is ignored (Assamese ল'ৰা).
     let owned;
@@ -125,6 +153,14 @@ pub fn expand(chunk: &Chunk, nums: &Numbers, ascii_english: bool) -> Vec<Item> {
         &owned
     } else {
         &chunk.text
+    };
+    let spaced = text.contains(GROUPED);
+    let owned_grouped;
+    let text: &str = if spaced {
+        owned_grouped = text.replace(GROUPED, "");
+        &owned_grouped
+    } else {
+        text
     };
     let rs = runs(text);
     let n = rs.len();
@@ -154,6 +190,7 @@ pub fn expand(chunk: &Chunk, nums: &Numbers, ascii_english: bool) -> Vec<Item> {
                 let c = Chunk {
                     text: r.to_string(),
                     dot: false,
+                    tight: false,
                 };
                 out.extend(crate::norm::expand(
                     &c,
@@ -161,7 +198,7 @@ pub fn expand(chunk: &Chunk, nums: &Numbers, ascii_english: bool) -> Vec<Item> {
                     crate::Normalize::EspeakLike,
                 ));
             }
-            Script::Digit => push_number(&mut out, nums, r),
+            Script::Digit => push_number(&mut out, nums, r, spaced, compat),
             Script::Other => {
                 let c = r.chars().next().unwrap_or(' ');
                 match c {
