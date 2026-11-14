@@ -3,6 +3,8 @@
 All notable changes are listed here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow semantic versioning.
 
+## [Unreleased]
+
 ## [0.5.0] - 2026-11-14
 
 Language data on demand: the word tables of sixteen Latin-script languages, Urdu and Sindhi
