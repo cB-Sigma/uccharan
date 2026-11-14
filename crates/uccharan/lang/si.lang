@@ -1,0 +1,342 @@
+# Sinhala. espeak-ng voice "si". Written for uccharan from specs/si.md and
+# specs/family-brahmic.md. The Sinhala block does not follow the common
+# Indic layout, so every letter states its kind.
+
+[meta]
+tag = si
+block = 0d80
+stress = initial
+final-secondary = no
+deletion = none
+inherent = ə ɐ
+anusvara = velar
+visarga = h
+split-zwj = yes
+
+[letters]
+ක k consonant
+ඛ kʰ consonant
+ග ɡ consonant
+ඝ ɡʰ consonant
+ඞ ŋ consonant
+ඟ ᵑɡ consonant
+ච tʃ consonant
+ඡ tʃh consonant
+ජ dʒ consonant
+ඣ dʒh consonant
+ඤ ɲ consonant
+ඥ ɡn consonant
+ඦ ɲdʒ consonant
+ට ʈ consonant
+ඨ ʈʰ consonant
+ඩ ɖ consonant
+ඪ ɖ consonant
+ණ ɳ consonant
+ඬ ⁿɖ consonant
+ත t consonant
+ථ tʰ consonant
+ද d consonant
+ධ dʰ consonant
+න n consonant
+ඳ ⁿd consonant
+ප p consonant
+ඵ pʰ consonant
+බ b consonant
+භ bʰ consonant
+ම m consonant
+ඹ ᵐb consonant
+ය j consonant
+ර ɹ consonant
+ල l consonant
+ව w consonant
+ශ s consonant
+ෂ ʃ consonant
+ස s consonant
+හ h consonant
+ළ ɭ consonant
+ෆ f consonant
+අ ɐ vowel
+ආ aː vowel
+ඇ æ vowel
+ඈ æː vowel
+ඉ i vowel
+ඊ iː vowel
+උ u vowel
+ඌ uː vowel
+ඍ ɹ u vowel
+ඎ ɹ uː vowel
+ඏ l iː vowel
+ඐ l i vowel
+එ e vowel
+ඒ eː vowel
+ඓ aɪ vowel
+ඔ o vowel
+ඕ oː vowel
+ඖ aʊ vowel
+ා aː sign
+ැ æ sign
+ෑ æː sign
+ි i sign
+ී iː sign
+ු u sign
+ූ uː sign
+ෘ ɹ u sign
+ෲ ɹ uː sign
+ෟ l i sign
+ෙ e sign
+ේ eː sign
+ෛ aɪ sign
+ො o sign
+ෝ oː sign
+ෞ aʊ sign
+් virama
+ං anusvara
+ඃ visarga
+Ŵ w dead
+Ŋ ŋ dead
+Ɲ ɲ dead
+Ɽ ɳ dead
+Ɱ m dead
+
+[classes]
+VEL = ක ඛ ග ඝ හ ඟ ඞ
+PAL = ච ඡ ජ ඣ ඤ ඦ
+RET = ට ඨ ඩ ඪ ඬ ණ
+CO = k ɡ c ʈ ɖ t d p b m n ɳ ŋ ɲ s ʃ h l ɭ w j f ɹ ᵑ ⁿ ᵐ
+VIR = ්
+S = ˈ ˌ
+
+[pre]
+# Anusvara: velar before velars and h, palatal, retroflex, else m.
+ං -> Ŋ / _ {VEL}
+ං -> Ɲ / _ {PAL}
+ං -> Ɽ / _ {RET}
+ං -> Ɱ
+# A word-final ව after a vowel has no vowel.
+ව -> Ŵ / . _ #
+
+[pre.improved]
+# ශ is ʃ for most speakers.
+ශ -> ෂ
+
+[post]
+# ර without a vowel is the trill.
+ɹ -> r / _ {CO} | _ #
+
+[post.improved]
+
+[words]
+# Number words as the reference reads digits (derived from running
+# espeak-ng 1.52.0 on the numbers 0-99 and the scale numbers).
+@ණක bˈinduvə
+@ණඛ ˈekə
+@ණග dˈekə
+@ණඝ tˈunə
+@ණච hˈɐtəɹə
+@ණඡ pˈɐhə
+@ණට ˈɐʈə
+@ණඨ nˈɐvəjə
+@ණඛක dˈɐhəjə
+@ණඛඛ ˈekolˌəhə
+@ණඛග dˈoləhə
+@ණඛඝ dˈɐhətˌunə
+@ණඛච dˈɐhəhˌətəɹə
+@ණඛඡ pˈɐhəɭˌovə
+@ණඛජ dˈɐhəsˌəjə
+@ණඛඣ dˈɐhəhˌətə
+@ණඛට dˈɐhəˌəʈə
+@ණඛඨ dˈɐhənˌəvəjə
+@ණගක vˈissə
+@ණගඛ vˈisiˌekə
+@ණගග vˈisidˌekə
+@ණගඝ vˈisitˌunə
+@ණගච vˈisihˌətəɹə
+@ණගඡ vˈisipˌəhə
+@ණගජ vˈisihˌəjə
+@ණගඣ vˈisihˌətə
+@ණගට vˈisiˌəʈə
+@ණගඨ vˈisinˌəvəjə
+@ණඝක tˈihə
+@ණඝඛ tˈisekə
+@ණඝග tˈisdekə
+@ණඝඝ tˈistunə
+@ණඝච tˈishətˌəɹə
+@ණඝඡ tˈispəhə
+@ණඝජ tˈishəjə
+@ණඝඣ tˈishətə
+@ණඝට tˈisəʈə
+@ණඝඨ tˈisnəvˌəjə
+@ණචක hˈɐtəlˌihə
+@ණචඛ hˈɐtəlˌisˌekə
+@ණචග hˈɐtəlˌisdekə
+@ණචඝ hˈɐtəlˌistunə
+@ණචච hˈɐtəlˌishətˌəɹə
+@ණචඡ hˈɐtəlˌispəhə
+@ණචජ hˈɐtəlˌishəjə
+@ණචඣ hˈɐtəlˌishətə
+@ණචට hˈɐtəlˌisəʈə
+@ණචඨ hˈɐtəlˌisnəvˌəjə
+@ණඡක pˈɐnəhə
+@ණඡඛ pˈɐnəsˌekə
+@ණඡග pˈɐnəsdˌekə
+@ණඡඝ pˈɐnəstˌunə
+@ණඡච pˈɐnəshˌɐtəɹə
+@ණඡඡ pˈɐnəspˌɐhə
+@ණඡජ pˈɐnəshˌəjə
+@ණඡඣ pˈɐnəshˌətə
+@ණඡට pˈɐnəsˌɐʈə
+@ණඡඨ pˈɐnəsnˌɐvəjə
+@ණජක hˈæʈə
+@ණජඛ hˈæʈəˌekə
+@ණජග hˈæʈədˌekə
+@ණජඝ hˈæʈətˌunə
+@ණජච hˈæʈəhˌɐtəɹə
+@ණජඡ hˈæʈəpˌɐhə
+@ණජජ hˈæʈəhˌəjə
+@ණජඣ hˈæʈəhˌətə
+@ණජට hˈæʈəˌɐʈə
+@ණජඨ hˈæʈənˌɐvəjə
+@ණඣක hˈættæːvə
+@ණඣඛ hˈættæːˌekə
+@ණඣග hˈættæːdˌekə
+@ණඣඝ hˈættæːtˌunə
+@ණඣච hˈættæːhˌɐtəɹə
+@ණඣඡ hˈættæːpˌɐhə
+@ණඣජ hˈættæːhˌəjə
+@ණඣඣ hˈættæːhˌətə
+@ණඣට hˈættæːˌɐʈə
+@ණඣඨ hˈættæːnˌɐvəjə
+@ණටක ˈɐsuːvə
+@ණටඛ ˈɐsuːˌekə
+@ණටග ˈɐsuːdˌekə
+@ණටඝ ˈɐsuːtˌunə
+@ණටච ˈɐsuːhˌɐtəɹə
+@ණටඡ ˈɐsuːpˌɐhə
+@ණටජ ˈɐsuːhˌəjə
+@ණටඣ ˈɐsuːhˌətə
+@ණටට ˈɐsuːˌɐʈə
+@ණටඨ ˈɐsuːnˌɐvəjə
+@ණඨක ˈɐnuːvə
+@ණඨඛ ˈɐnuːˌekə
+@ණඨග ˈɐnuːdˌekə
+@ණඨඝ ˈɐnuːtˌunə
+@ණඨච ˈɐnuːhˌɐtəɹə
+@ණඨඡ ˈɐnuːpˌɐhə
+@ණඨජ ˈɐnuːhˌəjə
+@ණඨඣ ˈɐnuːhˌətə
+@ණඨට ˈɐnuːˌɐʈə
+@ණඨඨ ˈɐnuːnˌɐvəjə
+@සිය sˈijəjə
+@දහස ˈɐhəs
+@ලක්ෂ lˈɐkʃəjə
+@කෝටි kˈoːʈijə
+
+[unstressed]
+
+[numbers]
+# Keys for the [words] table (not words of the language).
+0 ණක
+1 ණඛ
+2 ණග
+3 ණඝ
+4 ණච
+5 ණඡ
+6 ණජ
+7 ණඣ
+8 ණට
+9 ණඨ
+10 ණඛක
+11 ණඛඛ
+12 ණඛග
+13 ණඛඝ
+14 ණඛච
+15 ණඛඡ
+16 ණඛජ
+17 ණඛඣ
+18 ණඛට
+19 ණඛඨ
+20 ණගක
+21 ණගඛ
+22 ණගග
+23 ණගඝ
+24 ණගච
+25 ණගඡ
+26 ණගජ
+27 ණගඣ
+28 ණගට
+29 ණගඨ
+30 ණඝක
+31 ණඝඛ
+32 ණඝග
+33 ණඝඝ
+34 ණඝච
+35 ණඝඡ
+36 ණඝජ
+37 ණඝඣ
+38 ණඝට
+39 ණඝඨ
+40 ණචක
+41 ණචඛ
+42 ණචග
+43 ණචඝ
+44 ණචච
+45 ණචඡ
+46 ණචජ
+47 ණචඣ
+48 ණචට
+49 ණචඨ
+50 ණඡක
+51 ණඡඛ
+52 ණඡග
+53 ණඡඝ
+54 ණඡච
+55 ණඡඡ
+56 ණඡජ
+57 ණඡඣ
+58 ණඡට
+59 ණඡඨ
+60 ණජක
+61 ණජඛ
+62 ණජග
+63 ණජඝ
+64 ණජච
+65 ණජඡ
+66 ණජජ
+67 ණජඣ
+68 ණජට
+69 ණජඨ
+70 ණඣක
+71 ණඣඛ
+72 ණඣග
+73 ණඣඝ
+74 ණඣච
+75 ණඣඡ
+76 ණඣජ
+77 ණඣඣ
+78 ණඣට
+79 ණඣඨ
+80 ණටක
+81 ණටඛ
+82 ණටග
+83 ණටඝ
+84 ණටච
+85 ණටඡ
+86 ණටජ
+87 ණටඣ
+88 ණටට
+89 ණටඨ
+90 ණඨක
+91 ණඨඛ
+92 ණඨග
+93 ණඨඝ
+94 ණඨච
+95 ණඨඡ
+96 ණඨජ
+97 ණඨඣ
+98 ණඨට
+99 ණඨඨ
+scale100 සිය
+scale1000 දහස
+scale100000 ලක්ෂ
+scale10000000 කෝටි
+grouping indian

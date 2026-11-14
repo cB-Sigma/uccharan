@@ -1,0 +1,486 @@
+# Odia (Oriya). espeak-ng voice "or". Written for uccharan from specs/or.md
+# and specs/family-brahmic.md.
+
+[meta]
+tag = or
+block = 0b00
+stress = weight
+deletion = none
+inherent = ɔ ɔ
+anusvara = velar
+visarga = silent
+# Words with ୱ (not first) are spelled letter by letter in compatible mode.
+spell-if = ୱ
+spell-skip-initial = yes
+trill = m s n
+unstressable = l̩
+
+[letters]
+କ k
+ଖ kʰ
+ଗ ɡ
+ଘ ɡʰ
+ଙ ŋ
+ଚ tʃ
+ଛ tʃʰ
+ଜ ɟ
+ଝ ɟʰ
+ଞ n
+ଟ ʈ
+ଠ ʈʰ
+ଡ ɖ
+ଢ ɖʰ
+ଣ n
+ତ t
+ଥ tʰ
+ଦ d
+ଧ dʰ
+ନ n
+ପ p
+ଫ pʰ
+ବ b
+ଭ bʰ
+ମ m
+ଯ dʒ
+ର ɾ
+ଲ l
+ଳ l̩
+ଵ w
+ଶ s
+ଷ s
+ସ s
+ହ h
+ଡ଼ r.
+ଢ଼ hr.
+ୟ j
+ୱ w consonant
+ଡ଼ r.
+ଢ଼ hr.
+ଅ ɔ
+ଆ a
+ଇ i
+ଈ i
+ଉ u
+ଊ uː
+ଋ ɾ u
+ଏ e
+ଐ o +j
+ଓ o
+ଔ o +w
+ା a
+ି i
+ୀ i
+ୁ u
+ୂ uː
+ୃ ɾ u stressed
+େ e
+ୈ o +j
+ୋ o
+ୌ o +w
+୰ ignore
+# Markers written by the [pre] rules (never in real text).
+Ẋ kʰ kʰː dead
+Ḳ kʰ kʰ consonant
+Ĝ ɡɡ consonant
+Ṽ v consonant
+Ç tʃ dead
+J ɟ dead
+Ñ n dead
+Ț ʈ dead
+Ș s dead
+Ⱡ l̩ vowel
+Ǭ ɔː vowel
+Ğ ɡ consonant
+Ť ʈ consonant
+Ṫ t consonant
+Ḩ h dead
+Ẏ j dead
+Ŀ ː consonant
+ǣ æ sign
+
+[classes]
+C = କ ଖ ଗ ଘ ଙ ଚ ଛ ଜ ଝ ଞ ଟ ଠ ଡ ଢ ଣ ତ ଥ ଦ ଧ ନ ପ ଫ ବ ଭ ମ ଯ ର ଲ ଳ ଵ ଶ ଷ ସ ହ ଡ଼ ଢ଼ ୟ ୱ ଡ଼ ଢ଼ ଡ଼
+CA = କ ଖ ଗ ଘ ଙ ଚ ଛ ଜ ଝ ଞ ଟ ଠ ଡ ଢ ଣ ତ ଥ ଦ ଧ ନ ପ ଫ ବ ଭ ମ ଯ ର ଲ ଳ ଵ ଶ ଷ ସ ହ ଡ଼ ଢ଼ ୟ ୱ ଡ଼ ଢ଼ ଡ଼ ଂ
+B = ା ି ୀ ୁ ୂ ୃ େ ୈ ୋ ୌ ୍
+S = ˈ ˌ
+V = a e i o u ɔ æ
+
+[pre]
+# Conjuncts read as other sounds.
+କ୍ଷ -> Ẋ / _ {!B} | _ #
+କ୍ଷ -> Ḳ
+ଜ୍ଞ -> Ĝ / _ {B}
+ଜ୍ଞ -> Ĝ / {C} _
+ଜ୍ଞ -> Ĝଁ
+ଜ୍ବ -> ଜ
+ହ୍ବ -> Ṽ
+
+[pre.compat]
+# The reference's letter readings (see specs/or.md).
+# A word-initial ୱ with its vowel sign is not read.
+ୱା -> 0 / # _
+ୱି -> 0 / # _
+ୱୀ -> 0 / # _
+ୱୁ -> 0 / # _
+ୱୂ -> 0 / # _
+ୱୃ -> 0 / # _
+ୱେ -> 0 / # _
+ୱୈ -> 0 / # _
+ୱୋ -> 0 / # _
+ୱୌ -> 0 / # _
+ୱ -> 0 / # _
+ଚ -> Ç / {C} _ {!B} | {C} _ #
+ଜ -> J / {C} _ {!B} | {C} _ #
+ଞ -> Ñ / {C} _ {!B} | {C} _ #
+ଟ -> Ț / {C} _ {!B} | {C} _ #
+ସ -> Ș / {C} _ {!B} | {C} _ #
+ଳ -> ⱠǬ / {C} _ {!B} | {C} _ #
+ଳ -> Ⱡଅ / _ {!B} | _ #
+ଳ -> Ⱡ
+ଘ -> Ğ / {!CA} _ {!B} | # _ {!B} | {!C} _ # | # _ #
+ତ -> Ť / {!C} _ {!B} | # _ {!B}
+ଟ -> Ṫ / _ {!B} | _ #
+ହ -> Ḩ / _ #
+ୟ -> Ẏ / _ #
+
+# After ଡ଼ and ୟ a vowel sign is read as an independent vowel (an extra ɔ before it).
+ା -> ଆ / ଡ଼ _ | ଡ଼ _ | ୟ _
+ି -> ଇ / ଡ଼ _ | ଡ଼ _ | ୟ _
+ୀ -> ଈ / ଡ଼ _ | ଡ଼ _ | ୟ _
+ୁ -> ଉ / ଡ଼ _ | ଡ଼ _ | ୟ _
+ୂ -> ଊ / ଡ଼ _ | ଡ଼ _ | ୟ _
+ୃ -> ଋ / ଡ଼ _ | ଡ଼ _ | ୟ _
+େ -> ଏ / ଡ଼ _ | ଡ଼ _ | ୟ _
+ୈ -> ଐ / ଡ଼ _ | ଡ଼ _ | ୟ _
+ୋ -> ଓ / ଡ଼ _ | ଡ଼ _ | ୟ _
+ୌ -> ଔ / ଡ଼ _ | ଡ଼ _ | ୟ _
+# Ya-phala (୍ଯ): lengthens a stop, doubles other consonants at the end; æ inside a word.
+୍ଯ -> ୍ମ / ମ _ # | ମ _ {B} #
+୍ଯ -> ୍ଲ / ଲ _ # | ଲ _ {B} #
+୍ଯ -> ୍ସ / ସ _ # | ସ _ {B} #
+୍ଯ -> ୍ନ / ନ _ # | ନ _ {B} #
+୍ଯ -> ୍ଣ / ଣ _ # | ଣ _ {B} #
+୍ଯ -> ୍ଶ / ଶ _ # | ଶ _ {B} #
+୍ଯ -> ୍ଷ / ଷ _ # | ଷ _ {B} #
+୍ଯ -> ୍ହ / ହ _ # | ହ _ {B} #
+୍ଯ -> ୍ଳ / ଳ _ # | ଳ _ {B} #
+୍ଯା -> ǣ / _ .
+୍ଯ -> ୍Ŀ / _ # | _ {B} #
+୍ଯ -> ǣ / _ {C}
+
+[post]
+
+[post.compat]
+ɔ -> ʌ / w {S}* _ .
+
+[post.improved]
+l̩ -> ɭ
+r.h -> ɽʰ
+hr. -> ɽʰ
+r. -> ɽ
+
+[spell]
+# Letter names as the reference reads them (derived from running espeak-ng
+# 1.52.0 on single letters).
+ଁ /tʃˈɔndɾobˌindu
+ଂ /ˈɔnuʃʃˌɔɾ
+ଃ /bˈiʃɔɾɡˌo
+ଅ /ˈɔ
+ଆ /ˈa
+ଇ /hɾˌɔʃʃoˈi
+ଈ /dˈiːɾɡʰoˈi
+ଉ /hɾˌɔʃʃoˈu
+ଊ /dˈiːɾɡʰoˈu
+ଋ /ɾˈi
+ଌ /l̩ɾˈi
+ଏ /ˈe
+ଐ /ˈoj
+ଓ /ˈo
+ଔ /ˈow
+କ /kˈɔ
+ଖ /khˈɔ
+ଗ /ɡˈɔ
+ଘ /ɡhhˈɔ
+ଙ /ˈũɔ̃
+ଚ /tʃˈɔ
+ଛ /tʃhˈɔ
+ଜ /bˈoɾɡjɟɔ
+ଝ /ɟɟhhˈɔ
+ଞ /ŋˈɪɔ̃
+ଟ /tˈɔ
+ଠ /tʈhˈɔ
+ଡ /ɖˈɔ
+ଢ /ɖhˈɔ
+ଣ /mˌuɾddʰeɳɳˈɔ
+ତ /ʈˈɔ
+ଥ /thˈɔ
+ଦ /dˈɔ
+ଧ /dɖhˈɔ
+ନ /dˈontenˌɔ
+ପ /pˈɔ
+ଫ /fˈɔ
+ବ /bˈɔ
+ଭ /bʰˈɔ
+ମ /mˈɔ
+ଯ /dʒˈɔ
+ର /ɾˈɔ
+ଲ /lˈɔ
+ଳ /ˈl̩ɔ
+ଵ /ʋˈɔ
+ଶ /tˈalbesˌɔ
+ଷ /muɾdʰˌenˈɔsɔ
+ସ /dˌɔntesˈɔ
+ହ /hˈɔ
+଼ /bˈindu
+ଽ /lˈetəbˈiːtˈinidˈiː
+ା /ˈakaɾ
+ି /hɾˌɔʃʃoˈikaɾ
+ୀ /dˈiːɾɡʰikˌaɾ
+ୁ /hɾˈɔʃʃoˌukaɾ
+ୂ /dˈiːɾɡʰˈukaɾ
+ୃ /ɾˈikaɾ
+ୄ /ˈr̩
+େ /ˈekaɾ
+ୈ /ˈojkaɾ
+ୋ /ˈokaɾ
+ୌ /ˈowkaɾ
+୍ /hˈalˈʌnt
+୕ /lˈetəbˈiːpˈantʃɔpˈantʃɔ
+ୖ /lˈetəbˈiːpˈantʃɔchˈɔ
+ୗ /lˈetəbˈiːpˈantʃɔsˈatɔ
+ଡ଼ /r.ˈɔ
+ଢ଼ /hr.ˈɔ
+ୟ /ɔntˈostɔjˌɔ
+ୠ /ˈr̩
+ୡ /ˈl̩
+ୢ /ˈl̩
+ୣ /ˈl̩
+୦ /ʃˈunjɔ
+୧ /ˈekɔ
+୨ /dˈuj
+୩ /tˈini
+୪ /cˈaɾi
+୫ /pˈantʃɔ
+୬ /chˈɔ
+୭ /sˈatɔ
+୮ /ˈathɔ
+୯ /nˈɔ
+ୱ /lˈetəbˈiːsˈatɔˈekɔ
+
+[words]
+# A lone ନ (the negative particle) is read by its letter name.
+ନ dˈontenˌɔ
+# Number words as the reference reads digits (derived from running
+# espeak-ng 1.52.0 on the numbers 0-99).
+@ଶୂନ୍ୟ ʃˈunjɔ
+@ଦୁଇ dˈuj
+@ଚାରି cˈaɾi
+@ଛଅ chˈɔ
+@ଆଠ ˈathɔ
+@ନଅ nˈɔ
+@ଦଶ dˈɔsɔː
+@ଏଗାର eɡˈaɾˌɔ
+@ବାର bˈaːɾɔː
+@ତେର tˈeːɾɔː
+@ଚଉଦ cˈɔːudˌɔ
+@ପନ୍ଦର pˈɔndˈɔɾˈɔ
+@ଷୋଳ shˈoːholɾˌɔ
+@ସତର sˌɔtːɔɾˈɔː
+@ଅଠର ɔthˈɔːɾˈɔ
+@ଊଣେଇଶ ʊnˈeɪsˈɪ
+@କୋଡ଼ିଏ kˌor.iˈe
+@ଏକୋଇଶ ekˈoesˈi
+@ବାଇଶ bˈaːisˌi
+@ତେଇଶ tˈeːisˌi
+@ଚଉବିଶ cˈɔːbisˌi
+@ପଚିଶ p̃ɔcˈisi
+@ଛବିଶ chɔbˈisi
+@ସତାଇଶ sɔtˌeˈisi
+@ଅଠାଇଶ ɔthˈeˌisi
+@ଊଣାତିରିଶ ɔnˈɔtiɾˈisˈi
+@ତିରିଶ tˌiːɾisˈi
+@ଏକତିରିଶ ektˈiɾisˈi
+@ବତିଶ bɔtˈisi
+@ତେତିଶ tetːˈisi
+@ଚଉତିରିଶ cˈɔʊtˌiɾisˈi
+@ପଞ୍ଚତିରିଶ p̃ˌɔitˈiɾˈisˈi
+@ଛତିଶ cʰcʰˈɔtisˌi
+@ସତତିରିଶ sˌõitˈiɾisˌi
+@ଅଠତିରିଶ ˌɔthɔtˈiɾˈisi
+@ଊଣଚାଳିଶ anˈʌcaːlˌisi
+@ଚାଳିଶ cˈaːlisˌi
+@ଏକଚାଳିଶ ekcˈaːlɪsˌi
+@ବୟାଳିଶ bɔjˈalˈɪsi
+@ତେତାଳିଶ teˈalɪsˈi
+@ଚଉରାଳିଶ cˌɔʊɾˈalɪsˈi
+@ପଞ୍ଚଚାଳିଶ pɔɲtʃʰˈaːlɪsˌi
+@ଛେଚାଳିଶ chɔjˈaːlɪsˈi
+@ସତଚାଳିଶ sɔːtcˈaːlɪsˈi
+@ଅଠଚାଳିଶ ɔthcˈaːlɪsˌi
+@ଊଣପଚାଶ ɔɲcˈaːs
+@ପଚାଶ p̃ˈɔcːˈasɔ
+@ଏକାବନ ekˈaːbɔnˈɔ
+@ବାବନ bˈaːɔnˈɔ
+@ତେପନ tˌeːppɔnˈɔ
+@ଚଉବନ cˈɔːobɔnˈɔ
+@ପଞ୍ଚାବନ p̃ˈɔncabˈɔnˈɔ
+@ଛପନ chˈɔːppɔnˈɔ
+@ସତାବନ sˌɔtaːbɔnˈɔ
+@ଅଠାବନ ɔthˈaːbɔnˈɔ
+@ଊଣଷାଠିଏ ˈɔnˈɔsɔthˈi
+@ଷାଠିଏ sˌatʰiˈe
+@ଏକଷଠି eksˈɔthˈi
+@ବାଷଠି bˈaːsɔthˈi
+@ତେଷଠି tˌeːsɔthˈi
+@ଚଉଷଠି cˈɔːusˈɔthi
+@ପଞ୍ଚଷଠି p̃ˌɔisˈɔthi
+@ଛଅଷଠି chˌɔːsɔthˈi
+@ସତଷଠି sɔtsˈɔthˈi
+@ଅଠଷଠି ɔthˌɔsˈɔthi
+@ଊଣସତୁରୀ ɔnˈʊstˈʊɾˈi
+@ସତୁରୀ sotːˈʊɾˈi
+@ଏକସତୁରୀ ˌekostˈoɾˈi
+@ବାସତୁରୀ bastˈɔɾˈi
+@ତେସତୁରୀ testˈɔɾˈi
+@ଚଉସତୁରୀ cˌɔːostɔɾˈi
+@ପଞ୍ଚସତୁରୀ p̃ɔcˈɔstˈɔɾˈi
+@ଛଅସତୁରୀ chɔˈostɔɾˈi
+@ସତସତୁରୀ sɔtˈɔstɔɾˈi
+@ଅଠସତୁରୀ ɔthˈɔstˈɔɾˌi
+@ଊଣାଶୀ ɔnˈaːɔsˌi
+@ଅଶୀ ɔssˈiː
+@ଏକାଶୀ ˌekaɔsˈi
+@ବୟାଶୀ bɔjˈaːɔsˌi
+@ତେରାଶୀ teˈaˈɔsi
+@ଚଉରାଶୀ cˌʊːɾaːɔsˈiː
+@ପଞ୍ଚାଶୀ pɔncˈaˈɔsi
+@ଛିଆଶୀ chɔjˈaːɔsˈiː
+@ସତାଶୀ sɔtˈaːɔsˌiː
+@ଅଠାଶୀ ˌɔthhaɔsˈiː
+@ଊଣାନବେ ˌʊnaːnˈɔbbe
+@ନବେ nɔbˈeː
+@ଏକାନବେ ˌekaːnabˈe
+@ବୟାନବେ bɔjˈanabˈeː
+@ତେରାନବେ teˈaːnabˈe
+@ଚଉରାନବେ cˌɔuːɾˈaːnabˈeː
+@ପଞ୍ଚାନବେ pɔncˈaːnabˈeː
+@ଛିଆନବେ chɔˈanabˈeː
+@ସତାନବେ sɔtˈaːnabˈe
+@ଅଠାନବେ ˌɔthaːnabˈe
+@ନିଆଁନବେ ˈanesˌɔt
+@ହଜାର hˈʌɟaɾˌɔ
+@ଶହ sˈɔhɔ
+@ଲକ୍ଷ lˈʌkʰkʰɔ
+
+[unstressed]
+ଏ 0 0
+ଓ 0 0
+
+[numbers]
+# Number words 0-99 from Unicode CLDR common/rbnf/or.xml (Unicode License v3).
+0 ଶୂନ୍ୟ
+1 ଏକ
+2 ଦୁଇ
+3 ତିନି
+4 ଚାରି
+5 ପାଞ୍ଚ
+6 ଛଅ
+7 ସାତ
+8 ଆଠ
+9 ନଅ
+10 ଦଶ
+11 ଏଗାର
+12 ବାର
+13 ତେର
+14 ଚଉଦ
+15 ପନ୍ଦର
+16 ଷୋଳ
+17 ସତର
+18 ଅଠର
+19 ଊଣେଇଶ
+20 କୋଡ଼ିଏ
+21 ଏକୋଇଶ
+22 ବାଇଶ
+23 ତେଇଶ
+24 ଚଉବିଶ
+25 ପଚିଶ
+26 ଛବିଶ
+27 ସତାଇଶ
+28 ଅଠାଇଶ
+29 ଊଣାତିରିଶ
+30 ତିରିଶ
+31 ଏକତିରିଶ
+32 ବତିଶ
+33 ତେତିଶ
+34 ଚଉତିରିଶ
+35 ପଞ୍ଚତିରିଶ
+36 ଛତିଶ
+37 ସତତିରିଶ
+38 ଅଠତିରିଶ
+39 ଊଣଚାଳିଶ
+40 ଚାଳିଶ
+41 ଏକଚାଳିଶ
+42 ବୟାଳିଶ
+43 ତେତାଳିଶ
+44 ଚଉରାଳିଶ
+45 ପଞ୍ଚଚାଳିଶ
+46 ଛେଚାଳିଶ
+47 ସତଚାଳିଶ
+48 ଅଠଚାଳିଶ
+49 ଊଣପଚାଶ
+50 ପଚାଶ
+51 ଏକାବନ
+52 ବାବନ
+53 ତେପନ
+54 ଚଉବନ
+55 ପଞ୍ଚାବନ
+56 ଛପନ
+57 ସତାବନ
+58 ଅଠାବନ
+59 ଊଣଷାଠିଏ
+60 ଷାଠିଏ
+61 ଏକଷଠି
+62 ବାଷଠି
+63 ତେଷଠି
+64 ଚଉଷଠି
+65 ପଞ୍ଚଷଠି
+66 ଛଅଷଠି
+67 ସତଷଠି
+68 ଅଠଷଠି
+69 ଊଣସତୁରୀ
+70 ସତୁରୀ
+71 ଏକସତୁରୀ
+72 ବାସତୁରୀ
+73 ତେସତୁରୀ
+74 ଚଉସତୁରୀ
+75 ପଞ୍ଚସତୁରୀ
+76 ଛଅସତୁରୀ
+77 ସତସତୁରୀ
+78 ଅଠସତୁରୀ
+79 ଊଣାଶୀ
+80 ଅଶୀ
+81 ଏକାଶୀ
+82 ବୟାଶୀ
+83 ତେରାଶୀ
+84 ଚଉରାଶୀ
+85 ପଞ୍ଚାଶୀ
+86 ଛିଆଶୀ
+87 ସତାଶୀ
+88 ଅଠାଶୀ
+89 ଊଣାନବେ
+90 ନବେ
+91 ଏକାନବେ
+92 ବୟାନବେ
+93 ତେରାନବେ
+94 ଚଉରାନବେ
+95 ପଞ୍ଚାନବେ
+96 ଛିଆନବେ
+97 ସତାନବେ
+98 ଅଠାନବେ
+99 ନିଆଁନବେ
+scale100 ଶହ
+scale1000 ହଜାର
+scale100000 ଲକ୍ଷ
+scale10000000 କୋଟି
+glue-hundred yes
+grouping indian

@@ -93,6 +93,9 @@ pub enum Stress {
     Penult,
     /// First syllable, but the second when the first is light and the second long.
     InitialLightHeavy,
+    /// Classical Sanskrit: the penult if heavy, else the antepenult if
+    /// heavy, else the fourth syllable from the end.
+    Sanskrit,
 }
 
 /// What happens to inherent vowels.
@@ -246,6 +249,8 @@ pub struct Indic {
     keep_after_schwa_of: Vec<String>,
     /// Vowels (letter names) after which a final consonant keeps its vowel.
     final_keep_after_vowel: Vec<String>,
+    /// In compatible mode a word breaks after "virama + ZWJ".
+    split_zwj: bool,
     /// Nasal vowels that do not make a syllable heavy.
     light_nasal: Vec<String>,
     /// An independent inherent vowel (अ) always takes at least secondary stress.
@@ -302,9 +307,10 @@ impl Indic {
             }
             let (sym, kind_word): (Vec<String>, Option<&str>) =
                 match rest.last().map(String::as_str) {
-                    Some(k @ ("dead" | "vowel" | "sign" | "consonant" | "ignore" | "anusvara")) => {
-                        (rest[..rest.len() - 1].to_vec(), Some(k))
-                    }
+                    Some(
+                        k @ ("dead" | "vowel" | "sign" | "consonant" | "ignore" | "anusvara"
+                        | "virama" | "visarga" | "candrabindu"),
+                    ) => (rest[..rest.len() - 1].to_vec(), Some(k)),
                     _ => (rest.clone(), None),
                 };
             let cs: Vec<char> = key.chars().collect();
@@ -320,6 +326,9 @@ impl Indic {
                 Some("consonant") => Kind::Consonant,
                 Some("ignore") => Kind::Ignore,
                 Some("anusvara") => Kind::Anusvara,
+                Some("virama") => Kind::Virama,
+                Some("visarga") => Kind::Visarga,
+                Some("candrabindu") => Kind::Candrabindu,
                 _ => default_kind((c as u32).wrapping_sub(base))
                     .ok_or_else(|| format!("{tag}: no default class for {c:?}"))?,
             };
@@ -346,6 +355,7 @@ impl Indic {
             Some("weight") => Stress::Weight,
             Some("penult") => Stress::Penult,
             Some("initial-light-heavy") => Stress::InitialLightHeavy,
+            Some("sanskrit") => Stress::Sanskrit,
             _ => Stress::Initial,
         };
         let deletion = match meta.get("deletion").map(String::as_str) {
@@ -416,6 +426,7 @@ impl Indic {
                 .is_some_and(|v| v == "n"),
             final_after_any: meta.get("final-after").is_some_and(|v| v == "any"),
             light_nasal: list(&meta, "light-nasal"),
+            split_zwj: meta.get("split-zwj").is_some_and(|v| v == "yes"),
             final_keep_after_vowel: list(&meta, "final-keep-after-vowel"),
             keep_after_schwa_of: list(&meta, "keep-after-schwa-of"),
             explicit_stress: meta.get("explicit-stress").is_some_and(|v| v == "yes"),
@@ -745,6 +756,15 @@ impl Indic {
                 vs.iter().position(|&i| ph[i].attract).unwrap_or(0)
             }
             Stress::Initial => 0,
+            Stress::Sanskrit => {
+                if n >= 2 && weight(n - 2) > 0 {
+                    n - 2
+                } else if n >= 3 && weight(n - 3) > 0 {
+                    n - 3
+                } else {
+                    n.saturating_sub(4)
+                }
+            }
             Stress::Penult => n.saturating_sub(2),
             Stress::InitialLightHeavy => {
                 if n > 1 && !ph[vs[0]].long && ph[vs[1]].long {
@@ -993,6 +1013,20 @@ impl Indic {
     }
 
     fn word_uncached(&self, word: &str, compat: bool) -> String {
+        if compat && self.split_zwj {
+            // The reference breaks a word after "consonant + virama + ZWJ".
+            if let Some(at) = word.find("\u{200d}") {
+                let (a, b) = word.split_at(at);
+                let b = &b[3..];
+                if a.chars().last().and_then(|c| self.kind(c)) == Some(Kind::Virama)
+                    && !b.is_empty()
+                {
+                    let left = self.word_uncached(a, compat);
+                    let right = self.word_uncached(b, compat);
+                    return format!("{left} {right}").trim().to_string();
+                }
+            }
+        }
         if let Some((c, i)) = self.words.get(word) {
             let w = if compat { c } else { i };
             if !w.is_empty() {

@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools" / "oracle"))
 
-VOICES = {"bho": "hi", "mai": "hi", "en-us": "en-us", "en-gb": "en-gb-x-rp", "hi": "hi", "bn": "bn", "mr": "mr", "te": "te", "ne": "ne", "kn": "kn", "ta": "ta", "ml": "ml", "as": "as", "gu": "gu"}
+VOICES = {"bho": "hi", "mai": "hi", "en-us": "en-us", "en-gb": "en-gb-x-rp", "hi": "hi", "bn": "bn", "mr": "mr", "te": "te", "ne": "ne", "kn": "kn", "ta": "ta", "ml": "ml", "as": "as", "gu": "gu", "pa": "pa", "or": "or", "kok": "kok", "si": "si", "sa": "hi"}
 STRESS = "ˈˌ"
 VOWELS = set("aeiouyæɑɒɐɔəɚɛɜɝɪʊʌᵻɨøœɵãẽĩõũ")
 MARKS = set("ː̩̪̯̃")

@@ -5,7 +5,7 @@ All notable changes are listed here. The format follows
 
 ## [0.2.0] - 2026-11-14
 
-Eleven more Indian languages; smaller, with modular language packs; and better at names.
+Sixteen more South Asian languages; smaller, with modular language packs; and better at names.
 
 ### Added
 
@@ -41,6 +41,14 @@ Eleven more Indian languages; smaller, with modular language packs; and better a
   quirks, every output profile, number reading, and routing of each script to its own language
   inside mixed text (with `(bn)`-style flags in the `espeak-ipa` profile). 2–37× faster than
   espeak-ng on the same sentences.
+- **Punjabi, Odia, Sinhala, Konkani and Sanskrit** (`pa`, `or`, `si`, `kok`, `sa`) on the shared
+  Brahmic engine. Held-out PER against espeak-ng 1.52.0: Punjabi 0.41 %, Odia 0.50 %, Sinhala
+  0.86 % (FLORES-200), Konkani 0.20 % (Sangraha); Sanskrit has no espeak-ng voice, so compatible
+  mode is the Hindi voice's reading (0.95 % against `hi`) and improved mode reads it as Sanskrit
+  (no schwa deletion, classical stress rule, visarga echo, Sanskrit number words). 2.3–5.1× faster
+  than espeak-ng. Engine additions: letter names with their own stress, spelled-out words triggered
+  by a letter sequence, explicit letter kinds for scripts outside the common Indic layout, a word
+  break after ZWJ conjuncts, more anusvara and deletion options, a number-word table per language.
 - **A data-driven language engine**: ordered context-sensitive rewrite rules
   (`uccharan::rules`), a language-file format (`uccharan::langdef`: letters, rule passes per
   mode, exceptions, unstressed words, number words with scale and combining forms) and one

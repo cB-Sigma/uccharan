@@ -1,0 +1,243 @@
+{
+ "language": "pa",
+ "reference": "espeak-ng 1.52.0 voice pa (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 176631,
+  "per": 0.004115925290577532,
+  "per_without_stress": 0.004020147876796272,
+  "exact_sentence": 0.8942687747035574,
+  "exact_sentence_without_stress": 0.8952569169960475,
+  "piper_shape_per": 0.00413812386411296,
+  "piper_shape_exact_sentence": 0.8863636363636364,
+  "word_count_mismatch_sentences": 174,
+  "errors_by_class": {
+   "consonant": {
+    "count": 232,
+    "share": 0.31911966987620355,
+    "per_contribution": 0.001313472719964219
+   },
+   "vowel": {
+    "count": 208,
+    "share": 0.2861072902338377,
+    "per_contribution": 0.0011775962316920585
+   },
+   "stress": {
+    "count": 131,
+    "share": 0.18019257221458046,
+    "per_contribution": 0.0007416591651522099
+   },
+   "word-boundary": {
+    "count": 83,
+    "share": 0.11416781292984869,
+    "per_contribution": 0.00046990618860788877
+   },
+   "other": {
+    "count": 43,
+    "share": 0.059147180192572216,
+    "per_contribution": 0.00024344537482095442
+   },
+   "length": {
+    "count": 30,
+    "share": 0.04126547455295736,
+    "per_contribution": 0.00016984561034020075
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": " →∅",
+    "count": 81
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 68
+   },
+   {
+    "edit": "ə→∅",
+    "count": 44
+   },
+   {
+    "edit": "l→∅",
+    "count": 39
+   },
+   {
+    "edit": "a→∅",
+    "count": 32
+   },
+   {
+    "edit": "s→∅",
+    "count": 31
+   },
+   {
+    "edit": "ː→∅",
+    "count": 29
+   },
+   {
+    "edit": "d→∅",
+    "count": 26
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 24
+   },
+   {
+    "edit": "ɪ→∅",
+    "count": 21
+   },
+   {
+    "edit": "r→ɾ",
+    "count": 20
+   },
+   {
+    "edit": "m→∅",
+    "count": 17
+   },
+   {
+    "edit": "o→∅",
+    "count": 15
+   },
+   {
+    "edit": "i→∅",
+    "count": 14
+   },
+   {
+    "edit": "ʃ→∅",
+    "count": 12
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 12
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 10
+   },
+   {
+    "edit": "a→æ",
+    "count": 9
+   },
+   {
+    "edit": "r→∅",
+    "count": 9
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 8
+   },
+   {
+    "edit": "ʰ→∅",
+    "count": 8
+   },
+   {
+    "edit": "χ→∅",
+    "count": 8
+   },
+   {
+    "edit": "v→∅",
+    "count": 8
+   },
+   {
+    "edit": "e→∅",
+    "count": 7
+   },
+   {
+    "edit": "t→∅",
+    "count": 6
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 21330,
+    "wrong": 52,
+    "rate": 0.002437880918893577
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 196,
+    "per": 0.011181856451273417,
+    "exact_sentence": 0.7806122448979592
+   },
+   "no-digits": {
+    "sentences": 816,
+    "per": 0.0021785706556632016,
+    "exact_sentence": 0.9215686274509803
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-141",
+    "text": "ਕੋਈ ਵੀ ਸੁਨਾਮੀ ਚੇਤਾਵਨੀ ਜਾਰੀ ਨਹੀਂ ਕੀਤੀ ਗਈ ਹੈ, ਅਤੇ ਜਕਾਰਟਾ ਭੂ-ਭੌਤਿਕੀ ਏਜੈਂਸੀ ਦੇ ਅਨੁਸਾਰ, ਕੋਈ ਵੀ ਸੁਨਾਮੀ ਚੇਤਾਵਨੀ ਜਾਰੀ ਨਹੀਂ ਕੀਤੀ ਜਾਵੇਗੀ ਕਿਉਂਕਿ ਭੁਚਾਲ 6.5 ਤੀਬਰਤਾ ਦੀ ਜ਼ਰੂਰਤ ਨੂੰ ਪੂਰਾ ਨਹੀਂ ਕਰਦਾ ਹੈ।",
+    "reference": "kˈoi vˈi sʊnˈami cetˈavənˌi ɟˈaɾi nˈʌhĩ kˈiti ɡˈʌi hɛ ˈʌte ɟəkˈaɾəʈˌa pˈu+pˈɔ+tɪkˌi eɟˈɛ̃si de ˌənʊsˈaɾ kˈoi vˈi sʊnˈami cetˈavənˌi ɟˈaɾi nˈʌhĩ kˈiti ɟavˈeɡi kˈɪʊ̃kˌɪ pʊ+cˈal cʰˈe dəsəmlˈoː pˈʌnɟ tˈibəɾˌəta di zəɾˈuɾət nũ pˈuɾa nˈʌhĩ kˈʌɾədˌa hɛ",
+    "uccharan": "kˈoi vˈi sʊnˈami cetˈavənˌi ɟˈaɾi nˈʌhĩ kˈiti ɡˈʌi hɛ ˈʌte ɟəkˈaɾəʈˌa pˈu+pˈɔ+tɪkˌi eɟˈɛ̃si de ˌənʊsˈaɾ kˈoi vˈi sʊnˈami cetˈavənˌi ɟˈaɾi nˈʌhĩ kˈiti ɟavˈeɡi kˈɪʊ̃kˌɪ pʊ+cˈal cʰˈe pˈʌnɟ tˈibəɾˌəta di zəɾˈuɾət nũ pˈuɾa nˈʌhĩ kˈʌɾədˌa hɛ"
+   },
+   {
+    "id": "flores-devtest-325",
+    "text": "ਸਰਵੇਖਣ ਦੇ ਅਖੀਰ ਵਿਚ, ਸਰਵੇਖਣ ਕੀਤੇ ਗਏ 29% ਲੋਕਾਂ ਦਾ ਮੰਨਣਾ ਹੈ ਕਿ ਆਸਟਰੇਲੀਆ ਨੂੰ ਜਲਦੀ ਤੋਂ ਜਲਦੀ ਗਣਤੰਤਰ ਬਣਨਾ ਚਾਹੀਦਾ ਹੈ, ਜਦਕਿ 31 ਪ੍ਰਤੀਸ਼ਤ ਮੰਨਦੇ ਹਨ ਕਿ ਆਸਟਰੇਲੀਆ ਨੂੰ ਕਦੇ ਵੀ ਗਣਤੰਤਰ ਨਹੀਂ ਬਣਨਾ ਚਾਹੀਦਾ ਹੈ.",
+    "reference": "sˌəɾəvˈekʰəɳ de ˌəkʰˈiɾ vɪc sˌəɾəvˈekʰəɳ kˈite ɡˈʌe ʊnˈʌtːi prˈʌtɪʃˌət lˈokã da mˈʌnnəɳˌa hɛ kˈɪ ˌasəʈˌəɾelˈia nũ ɟˈʌlədˌi tõ ɟˈʌlədˌi ɡˌəɳətˈʌntəɾ bˈʌɳənˌa cahˈida hɛ ɟˈʌdəkˌɪ ɪkˈʌtːi pɾətˈiʃət mˈʌnnədˌe hən kˈɪ ˌasəʈˌəɾelˈia nũ kˈʌde vˈi ɡˌəɳətˈʌntəɾ nˈʌhĩ bˈʌɳənˌa cahˈida hɛ",
+    "uccharan": "sˌəɾəvˈekʰəɳ de ˌəkʰˈiɾ vɪc sˌəɾəvˈekʰəɳ kˈite ɡˈʌe ʊnˈʌtːi lˈokã da mˈʌnnəɳˌa hɛ kˈɪ ˌasəʈˌəɾelˈia nũ ɟˈʌlədˌi tõ ɟˈʌlədˌi ɡˌəɳətˈʌntəɾ bˈʌɳənˌa cahˈida hɛ ɟˈʌdəkˌɪ ɪkˈʌtːi pɾətˈiʃət mˈʌnnədˌe hən kˈɪ ˌasəʈˌəɾelˈia nũ kˈʌde vˈi ɡˌəɳətˈʌntəɾ nˈʌhĩ bˈʌɳənˌa cahˈida hɛ"
+   },
+   {
+    "id": "flores-devtest-8",
+    "text": "2017 ਦੇ ਅਖੀਰ ਵਿੱਚ, ਸਿਮਿਨੌਫ ਸ਼ਾਪਿੰਗ ਟੈਲੀਵਿਜ਼ਨ ਚੈਨਲ QVC 'ਤੇ ਨਜ਼ਰ ਆਏ।",
+    "reference": "dˈo həɟˈar sətˈarã de ˌəkʰˈiɾ vɪc sˌɪmɪnˈɔpʰ ʃapˈɪ̃ɡ ʈɛlˈivɪzˌən cˈɛnəl kjˈuː vˈiː sˈiː tˈe nˈʌzəɾ ˈae",
+    "uccharan": "dˈo həɟˈar sətˈarã de ˌəkʰˈiɾ vɪc sˌɪmɪnˈɔpʰ ʃapˈɪ̃ɡ ʈɛlˈivɪzˌən cˈɛnəl kjˌuːvˌiːsˈiː tˈe nˈʌzəɾ ˈae"
+   },
+   {
+    "id": "flores-devtest-716",
+    "text": "ਤੁਸੀਂ ਗੋਮਾ ਵਿੱਚ ਇੱਧਰ-ਉੱਧਰ ਜਾਣ ਲਈ ਬੋਡਾ-ਬੋਡਾ (ਮੋਟਰਸਾਈਕਲ ਟੈਕਸੀ) ਦਾ ਸਹਾਰਾ ਲੈ ਸਕਦੇ ਹੋ। ਛੋਟੀ ਯਾਤਰਾ ਲਈ ਸਧਾਰਣ (ਸਥਾਨਕ) ਕੀਮਤ ~500 ਕੋਂਗੋਲੀਜ਼ ਫ੍ਰੈਂਕ ਹੈ।",
+    "reference": "tˈʊsĩ ɡˈoma vɪc ˈɪdʰəɾˈʊdʰəɾ ɟˈaɳ lˈʌi bˈoɖabˈoɖa mˌoʈəɾˌəsaˈikəl ʈˈɛkəsˌi da səhˈaɾa lˈɛ sˈʌkədˌe ho cʰˈoʈi jˈatəɾˌa lˈʌi sədʰˈaɾəɳ sətʰˈanək kˈimət tˈɪldə pˈʌnɟsˈɔ kˌõɡolˈiz pʰɾˈɛ̃k hɛ",
+    "uccharan": "tˈʊsĩ ɡˈoma vɪc ˈɪdʰəɾˈʊdʰəɾ ɟˈaɳ lˈʌi bˈoɖabˈoɖa mˌoʈəɾˌəsaˈikəl ʈˈɛkəsˌi da səhˈaɾa lˈɛ sˈʌkədˌe ho cʰˈoʈi jˈatəɾˌa lˈʌi sədʰˈaɾəɳ sətʰˈanək kˈimət pˈʌnɟsˈɔ kˌõɡolˈiz pʰɾˈɛ̃k hɛ"
+   },
+   {
+    "id": "flores-devtest-830",
+    "text": "ਪੋਸਟ ਕੀਤੀਆਂ ਗਤੀ ਸੀਮਾਵਾਂ ਪਿਛਲੇ ਅਤੇ ਆਗਾਮੀ ਹਿੱਸਿਆਂ ਤੋਂ ਕਾਫ਼ੀ ਹੱਦ ਤੱਕ ਘੱਟ ਹਨ — ਆਮ ਤੌਰ ‘ਤੇ 35-40 ਮੀਲ ਪ੍ਰਤੀ ਘੰਟਾ (56-64 ਕਿਲੋਮੀਟਰ ਪ੍ਰਤੀ ਘੰਟਾ) — ਅਤੇ ਆਮ ਹਾਲਾਤਾਂ ਦੇ ਮੁਕਾਬਲੇ ਹੁਣ ਇਨ੍ਹਾਂ ਦੀ ਸਖ਼ਤ ਪਾਲਣਾ ਕਰਨਾ ਹੋਰ ਵੀ ਜ਼ਿਆਦਾ ਮਹੱਤਵਪੂਰਨ ਹੈੈ।",
+    "reference": "pˈosəʈ kitˈiã ɡˈʌti simˈavã pˈɪcʰəlˌe ˈʌte aɡˈami hˈɪssɪˌã tõ kˈafi hˈʌd tək kˈʌ+ʈ hən ˈam tˈɔɾ tˈe pˈɛŋti cˈali mˈil pɾˈʌti kˈʌ+nʈa cʰəpˈʌnɟa cˈɔ̃həʈ kˌɪlomˈiʈəɾ pɾˈʌti kˈʌ+nʈa ˈʌte ˈam halˈatã de mʊkˈabəlˌe hˈʊɳ ˈɪnhã di sˈʌxət pˈaləɳˌa kˈʌɾənˌa hˈoɾ vˈi zɪˈada mˌəhətːˌəvəpˈuɾən hˌɛʰχdəlˈavã",
+    "uccharan": "pˈosəʈ kitˈiã ɡˈʌti simˈavã pˈɪcʰəlˌe ˈʌte aɡˈami hˈɪssɪˌã tõ kˈafi hˈʌd tək kˈʌ+ʈ hən ˈam tˈɔɾ tˈe pˈɛŋti cˈali mˈil pɾˈʌti kˈʌ+nʈa cʰəpˈʌnɟa cˈɔ̃həʈ kˌɪlomˈiʈəɾ pɾˈʌti kˈʌ+nʈa ˈʌte ˈam halˈatã de mʊkˈabəlˌe hˈʊɳ ˈɪnhã di sˈʌxət pˈaləɳˌa kˈʌɾənˌa hˈoɾ vˈi zɪˈada mˌəhətːˌəvəpˈuɾən hˈɛɛ"
+   },
+   {
+    "id": "flores-devtest-735",
+    "text": "ਸੁੰਦਰਾਬਨਸ 3,850 ਵਰਗ ਕਿ.ਮੀ. ਖੇਤਰ ਘੇਰਦਾ ਹੈ, ਜਿਸ ਵਿਚੋਂ ਲਗਪਗ ਇਕ-ਤਿਹਾਈ ਪਾਣੀ/ਦਲਦਲ ਖੇਤਰਾਂ ਵਿੱਚ ਘਿਰਿਆ ਹੋਇਆ ਹੈ।",
+    "reference": "sˌʊ̃dəɾˈabənˌəs tˈɪ̃n həɟˈar ˈʌʈʰʈʰsˈɔ pənɟˈah vˈʌɾəɡ kˈɪ mˈi kʰˈetəɾ kˈe+ɾədˌa hɛ ɟˈɪs vˈɪcõ lˈʌɡəpˌəɡ ˈɪktɪhˈai pˈaɳi slˈaʃ dˈʌlədˌəl kʰˈetəɾˌã vɪc kˈɪ+ɾɪˌa hˈoɪˌa hɛ",
+    "uccharan": "sˌʊ̃dəɾˈabənˌəs tˈɪ̃n həɟˈar ˈʌʈʰʈʰsˈɔ pənɟˈah vˈʌɾəɡ kˈɪ mˈi kʰˈetəɾ kˈe+ɾədˌa hɛ ɟˈɪs vˈɪcõ lˈʌɡəpˌəɡ ˈɪktɪhˈai pˈaɳi dˈʌlədˌəl kʰˈetəɾˌã vɪc kˈɪ+ɾɪˌa hˈoɪˌa hɛ"
+   },
+   {
+    "id": "flores-devtest-678",
+    "text": "ਹਾਲਾਂਕਿ AI ਵਿਗਿਆਨਕ ਗਲਪ ਦਾ ਇੱਕ ਮਜ਼ਬੂਤ ਭਾਵ-ਅਰਥ ਹੈ, AI ਕਿਸੇ ਮਸ਼ੀਨ ਵਿੱਚ ਵਤੀਰੇ, ਸਿੱਖਿਆ ਅਤੇ ਅਕਲਮੰਦ ਅਨੁਕੂਲਨ ਨਾਲ ਨਜਿੱਠਦੀ ਕੰਪਿਊਟਰ ਵਿਗਿਆਨ ਦੀ ਇੱਕ ਬਹੁਤ ਮਹੱਤਵਪੂਰਨ ਸ਼ਾਖਾ ਨੂੰ ਬਣਾਉਂਦਾ ਹੈ।",
+    "reference": "halˈãkɪ ˈeɪ ˈaɪ vˌɪɡɪˈanək ɡˈʌləp da ˈɪk mˌəzəbˈut pˈa+vˈʌɾətʰ hɛ ˈeɪ ˈaɪ kˈɪse məʃˈin vɪc vətˈiɾe sˈɪkʰːɪˌa ˈʌte ˈʌkəlˌəmənd ˌənʊkˈulən nˈal nəɟˈɪʈʰʈʰədˌi kˌənpɪˈuʈəɾ vˌɪɡɪˈan di ˈɪk bˈʌhʊt mˌəhətːˌəvəpˈuɾən ʃˈakʰa nũ bəɳˈaʊ̃dˌa hɛ",
+    "uccharan": "halˈãkɪ ˈaɪ vˌɪɡɪˈanək ɡˈʌləp da ˈɪk mˌəzəbˈut pˈa+vˈʌɾətʰ hɛ ˈaɪ kˈɪse məʃˈin vɪc vətˈiɾe sˈɪkʰːɪˌa ˈʌte ˈʌkəlˌəmənd ˌənʊkˈulən nˈal nəɟˈɪʈʰʈʰədˌi kˌənpɪˈuʈəɾ vˌɪɡɪˈan di ˈɪk bˈʌhʊt mˌəhətːˌəvəpˈuɾən ʃˈakʰa nũ bəɳˈaʊ̃dˌa hɛ"
+   },
+   {
+    "id": "flores-devtest-324",
+    "text": "ਪੋਲ ਵਿਚਲੇ 34 ਪ੍ਰਤਿਸ਼ਤ ਲੋਕ ਇਹ ਰਾਏ ਰੱਖਦੇ ਹਨ, ਅਤੇ ਚਾਹੁੰਦੇ ਹਨ ਕਿ ਰਾਣੀ ਐਲਿਜ਼ਾਬੈਥ II ਆਸਟ੍ਰੇਲੀਆ ਦੀ ਆਖਰੀ ਮੋਨਾਰਕ ਬਣੇ।",
+    "reference": "pˈol vˈɪcəlˌe cˈɔŋti pɾˈʌtɪʃˌət lˈok ɪh ɾˈae ɾˈʌkʰːədˌe hən ˈʌte cˈahʊ̃dˌe hən kˈɪ ɾˈaɳi ˌɛlɪzabˈɛtʰ ˈaɪ ˈaɪ ˌasəʈɾelˈia di ˈakʰəɾˌi monˈaɾək bˈʌɳe",
+    "uccharan": "pˈol vˈɪcəlˌe cˈɔŋti pɾˈʌtɪʃˌət lˈok ɪh ɾˈae ɾˈʌkʰːədˌe hən ˈʌte cˈahʊ̃dˌe hən kˈɪ ɾˈaɳi ˌɛlɪzabˈɛtʰ ˈɪ ˌasəʈɾelˈia di ˈakʰəɾˌi monˈaɾək bˈʌɳe"
+   },
+   {
+    "id": "flores-devtest-586",
+    "text": "MS ਇੱਕ ਰੋਗ ਹੈ ਜੋ ਕੇਂਦਰੀ ਨਾੜੀ ਪ੍ਰਣਾਲੀ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ, ਜਿਸ ਵਿੱਚ ਦਿਮਾਗ, ਰੀੜ੍ਹ ਦੀ ਹੱਡੀ ਅਤੇ ਓਪਟਿਕ ਤੰਤੂ ਸ਼ਾਮਲ ਹੁੰਦੇ ਹਨ।",
+    "reference": "ˈɛm ˈɛs ˈɪk ɾˈoɡ hɛ ɟˈo kˈẽdəɾˌi nˈar.i pɾəɳˈali nũ pɾəbʰˈavɪt kˈʌɾədˌa hɛ ɟˈɪs vɪc dɪmˈaɡ ɾˈir.h di hˈʌɖɖi ˈʌte ˈopəʈˌɪk tˈʌntu ʃˈaməl hˈʊ̃de hən",
+    "uccharan": "mˈɪz ˈɪk ɾˈoɡ hɛ ɟˈo kˈẽdəɾˌi nˈar.i pɾəɳˈali nũ pɾəbʰˈavɪt kˈʌɾədˌa hɛ ɟˈɪs vɪc dɪmˈaɡ ɾˈir.h di hˈʌɖɖi ˈʌte ˈopəʈˌɪk tˈʌntu ʃˈaməl hˈʊ̃de hən"
+   },
+   {
+    "id": "flores-devtest-655",
+    "text": "ਇਹ ਸਿਧਾਂਤ ਦੱਸਦੇ ਹਨ ਕਿ ਲੋਕਾਂ ਦੀਆਂ ਕੁੱਝ ਜ਼ਰੂਰੀ ਲੋੜਾਂ ਅਤੇ/ਜਾਂ ਇੱਛਾਵਾਂ ਹੁੰਦੀਆਂ ਹਨ ਜਿਹਨਾਂ ਦੀ ਪੂਰਤੀ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਕਿਉਂਕਿ ਉਹ ਜਵਾਨੀ ਵਿੱਚ ਵੱਧ ਹੁੰਦੀਆਂ ਹਨ।",
+    "reference": "ɪh sɪdʰˈãt dˈʌssədˌe hən kˈɪ lˈokã dˈiã kˈʊɟʰ zəɾˈuɾi lˈor.ã ˈʌte slˈaʃ ɟˈã ɪcʰcʰˈavã hʊ̃dˈiã hən ɟˈɪhənˌã di pˈuɾətˌi kˈiti ɟˈãdi hɛ kˈɪʊ̃kˌɪ ʊh ɟəvˈani vɪc vˈʌdʰ hʊ̃dˈiã hən",
+    "uccharan": "ɪh sɪdʰˈãt dˈʌssədˌe hən kˈɪ lˈokã dˈiã kˈʊɟʰ zəɾˈuɾi lˈor.ã ˈʌte ɟˈã ɪcʰcʰˈavã hʊ̃dˈiã hən ɟˈɪhənˌã di pˈuɾətˌi kˈiti ɟˈãdi hɛ kˈɪʊ̃kˌɪ ʊh ɟəvˈani vɪc vˈʌdʰ hʊ̃dˈiã hən"
+   },
+   {
+    "id": "flores-devtest-124",
+    "text": "ਵਾਹਨ ਨੂੰ ਉੱਸੇ ਦਿਨ ਲਗਭਗ 1200 GMT ਵਜੇ ਹਾਦਸੇ ਦੀ ਥਾਂ ਤੋਂ ਆਪਣੇ ਆਪ ਦੂਰ ਲਿਜਾਇਆ ਗਿਆ ਸੀ।",
+    "reference": "vˈahən nũ ˈʊsse dˈɪn lˈʌɡəbʰˌəɡ ˈɪkː həɟˈar dˈosˈɔ dʒˈiː ˈɛm tˈiː vˈʌɟe hˈadəsˌe di tʰˈã tõ ˈapəɳˌe ap dˈuɾ lɪɟˈaɪˌa ɡˈɪa si",
+    "uccharan": "vˈahən nũ ˈʊsse dˈɪn lˈʌɡəbʰˌəɡ ˈɪkː həɟˈar dˈosˈɔ dʒˌiːˌɛmtˈiː vˈʌɟe hˈadəsˌe di tʰˈã tõ ˈapəɳˌe ap dˈuɾ lɪɟˈaɪˌa ɡˈɪa si"
+   },
+   {
+    "id": "flores-devtest-12",
+    "text": "PALM ਟ੍ਰਾਇਲ ਵਿੱਚ, ZMapp ਨੂੰ ਕਿਸੇ ਕੰਟਰੋਲ ਵਜੋਂ ਦਿੱਤਾ ਜਾਂਦਾ ਸੀ, ਮਤਲਬ ਵਿਗਿਆਨੀ ਇਸਨੂੰ ਅਧਾਰ-ਰੇਖਾ ਵਜੋਂ ਵਰਤਦੇ ਸੀ ਅਤੇ ਤਿੰਨ ਦੂਜੇ ਇਲਾਜਾਂ ਦੀ ਇਸਨਾਲ ਤੁਲਨਾ ਕਰਦੇ ਸੀ।",
+    "reference": "pˈɑːm ʈɾˈaɪl vɪc zˈɛd mˈap nũ kˈɪse kˈʌnʈəɾˌol vˈʌɟõ dˈɪtːa ɟˈãda si mˈʌtəlˌəb vˌɪɡɪˈani ˈɪsənˌũ ˌədʰˈarɾˈekʰa vˈʌɟõ vˈʌɾətˌəde si ˈʌte tˈɪ̃n dˈuɟe ɪlˈaɟã di ˌɪsənˈal tˈʊlənˌa kˈʌɾədˌe si",
+    "uccharan": "pˈɑːm ʈɾˈaɪl vɪc zmˈæp nũ kˈɪse kˈʌnʈəɾˌol vˈʌɟõ dˈɪtːa ɟˈãda si mˈʌtəlˌəb vˌɪɡɪˈani ˈɪsənˌũ ˌədʰˈaɾɾˈekʰa vˈʌɟõ vˈʌɾətˌəde si ˈʌte tˈɪ̃n dˈuɟe ɪlˈaɟã di ˌɪsənˈal tˈʊlənˌa kˈʌɾədˌe si"
+   }
+  ]
+ }
+}

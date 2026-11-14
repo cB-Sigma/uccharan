@@ -78,7 +78,12 @@ pub fn expand(chunk: &Chunk, nums: &Numbers, ascii_english: bool) -> Vec<Item> {
     for (i, (sc, r)) in rs.iter().enumerate() {
         match sc {
             Script::Latin | Script::Devanagari | Script::Brahmic(_) => {
-                let t = r.replace('\u{200d}', "");
+                // ZWJ stays inside Brahmic words (the reader decides).
+                let t = if matches!(sc, Script::Brahmic(_)) {
+                    r.to_string()
+                } else {
+                    r.replace('\u{200d}', "")
+                };
                 if !t.is_empty() {
                     let mut it = Item::word(&t);
                     it.generated = false;

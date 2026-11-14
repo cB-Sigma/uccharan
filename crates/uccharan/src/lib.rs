@@ -114,6 +114,16 @@ languages! {
     As "as" ["as-in", "asm"] Brahmic(0x0980), Some(include_str!("../lang/as.lang"));
     /// Gujarati (espeak voice `gu`).
     Gu "gu" ["gu-in", "guj"] Brahmic(0x0a80), Some(include_str!("../lang/gu.lang"));
+    /// Odia (espeak voice `or`).
+    Or "or" ["or-in", "ori", "ory", "odia", "oriya"] Brahmic(0x0b00), Some(include_str!("../lang/or.lang"));
+    /// Konkani in Devanagari (espeak voice `kok`).
+    Kok "kok" ["kok-in", "gom", "konkani"] Devanagari, Some(include_str!("../lang/kok.lang"));
+    /// Sinhala (espeak voice `si`).
+    Si "si" ["si-lk", "sin", "sinhala"] Brahmic(0x0d80), Some(include_str!("../lang/si.lang"));
+    /// Sanskrit in Devanagari (no espeak voice: compatible mode is the `hi` reading).
+    Sa "sa" ["sa-in", "san", "sanskrit"] Devanagari, Some(include_str!("../lang/sa.lang"));
+    /// Punjabi in Gurmukhi (espeak voice `pa`).
+    Pa "pa" ["pa-in", "pan", "pa-guru"] Brahmic(0x0a00), Some(include_str!("../lang/pa.lang"));
     /// Bhojpuri in Devanagari or Kaithi (no espeak voice: compatible mode is the `hi` reading).
     Bho "bho" ["bho-in", "bhojpuri"] Devanagari, None;
     /// Maithili in Devanagari or Kaithi (no espeak voice: compatible mode is the `hi` reading).
@@ -136,8 +146,8 @@ impl Lang {
     pub fn flag(self) -> &'static str {
         if self.is_english() {
             "en"
-        } else if self.hindi_like() {
-            // Bhojpuri and Maithili are read with the reference's Hindi voice.
+        } else if self.hindi_like() || self == Lang::Sa {
+            // Bhojpuri, Maithili and Sanskrit are read with the reference's Hindi voice.
             "hi"
         } else {
             self.tag()
@@ -426,14 +436,19 @@ impl Phonemizer {
                         }
                     }
                 }
-                if let Some(g) = self.generic_for_chunk(&chunk.text, opt.lang) {
+                let generic = if compat && opt.lang == Lang::Sa {
+                    None
+                } else {
+                    self.generic_for_chunk(&chunk.text, opt.lang)
+                };
+                if let Some(g) = generic {
                     items.extend(gnorm::expand(
                         chunk,
                         &g.numbers,
                         compat && g.ascii_digits_english,
                     ));
                 } else {
-                    let nl = if opt.lang.hindi_like() {
+                    let nl = if opt.lang.hindi_like() || opt.lang == Lang::Sa {
                         Lang::Hi
                     } else {
                         opt.lang
@@ -536,6 +551,7 @@ impl Phonemizer {
             match lang {
                 Lang::Hi => out.extend(hi.span(span, last, compat)),
                 Lang::Bho | Lang::Mai => out.extend(bho::span(&hi, span, last, compat, lang)),
+                Lang::Sa if compat => out.extend(bho::span(&hi, span, last, true, lang)),
                 l if l.indic().is_some() => {
                     let g = l.indic().unwrap();
                     out.extend(g.span(span, last, compat, l));

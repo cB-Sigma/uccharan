@@ -1,0 +1,243 @@
+{
+ "language": "si",
+ "reference": "espeak-ng 1.52.0 voice si (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 192856,
+  "per": 0.008550421039532087,
+  "per_without_stress": 0.00826661814653081,
+  "exact_sentence": 0.8003952569169961,
+  "exact_sentence_without_stress": 0.8013833992094862,
+  "piper_shape_per": 0.008597208472046248,
+  "piper_shape_exact_sentence": 0.791501976284585,
+  "word_count_mismatch_sentences": 742,
+  "errors_by_class": {
+   "consonant": {
+    "count": 503,
+    "share": 0.30503335354760464,
+    "per_contribution": 0.0026081636039324676
+   },
+   "vowel": {
+    "count": 497,
+    "share": 0.3013947847180109,
+    "per_contribution": 0.0025770523084581243
+   },
+   "stress": {
+    "count": 288,
+    "share": 0.17465130382049726,
+    "per_contribution": 0.0014933421827684904
+   },
+   "word-boundary": {
+    "count": 216,
+    "share": 0.13098847786537296,
+    "per_contribution": 0.0011200066370763678
+   },
+   "other": {
+    "count": 130,
+    "share": 0.07883565797453002,
+    "per_contribution": 0.0006740780686107769
+   },
+   "length": {
+    "count": 15,
+    "share": 0.009096422073984234,
+    "per_contribution": 7.777823868585888e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "∅→ə",
+    "count": 162
+   },
+   {
+    "edit": "∅→ ",
+    "count": 120
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 107
+   },
+   {
+    "edit": " →∅",
+    "count": 96
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 85
+   },
+   {
+    "edit": "∅→j",
+    "count": 85
+   },
+   {
+    "edit": "∅→e",
+    "count": 78
+   },
+   {
+    "edit": "∅→k",
+    "count": 78
+   },
+   {
+    "edit": "ə→∅",
+    "count": 70
+   },
+   {
+    "edit": "d→∅",
+    "count": 64
+   },
+   {
+    "edit": "d→ ",
+    "count": 55
+   },
+   {
+    "edit": "i→∅",
+    "count": 37
+   },
+   {
+    "edit": "e→∅",
+    "count": 27
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 24
+   },
+   {
+    "edit": "ʃ→∅",
+    "count": 24
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 23
+   },
+   {
+    "edit": "s→∅",
+    "count": 23
+   },
+   {
+    "edit": "∅→d",
+    "count": 21
+   },
+   {
+    "edit": " →ɐ",
+    "count": 19
+   },
+   {
+    "edit": "a→∅",
+    "count": 19
+   },
+   {
+    "edit": "ɐ→∅",
+    "count": 17
+   },
+   {
+    "edit": "h→ɳ",
+    "count": 17
+   },
+   {
+    "edit": "j→∅",
+    "count": 17
+   },
+   {
+    "edit": "l→∅",
+    "count": 17
+   },
+   {
+    "edit": "ᵐ→∅",
+    "count": 15
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 4767,
+    "wrong": 11,
+    "rate": 0.0023075309418921753
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 199,
+    "per": 0.029640360559234732,
+    "exact_sentence": 0.32160804020100503
+   },
+   "no-digits": {
+    "sentences": 813,
+    "per": 0.002410154785496224,
+    "exact_sentence": 0.9175891758917589
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-315",
+    "text": "ඔහු ප්‍රසව වෛද්‍යවරයෙකු ලෙස පුහුණුව ලැබූ අතර 1959 දී ඕක්ලන්තයේ ජාතික කාන්තා රෝහලේ සේවය කිරීමට පටන් ගත්තේ ය.",
+    "reference": "ˈohu p ɹˈɐsəw wˈaɪd jˈɐwəɹˌəjeku lˈesə pˈuhuɳuw lˈæbuː ˈɐtəɹə dˈɐhəs nˈɐvəjəsˈijə pˈɐnəsnˌɐvəjə dˈiː ˈoːkləntˌəjeː dʒˈaːtikə kˈaːntaː ɹˈoːhəleː sˈeːwəjə kˈiɹiːmˌəʈə pˈɐʈən ɡˈɐtteː jˈə",
+    "uccharan": "ˈohu p ɹˈɐsəw wˈaɪd jˈɐwəɹˌəjeku lˈesə pˈuhuɳuw lˈæbuː ˈɐtəɹə ˈekə ˈɐhəs nˈɐvəjə sˈijəjə pˈɐnəsnˌɐvəjə dˈiː ˈoːkləntˌəjeː dʒˈaːtikə kˈaːntaː ɹˈoːhəleː sˈeːwəjə kˈiɹiːmˌəʈə pˈɐʈən ɡˈɐtteː jˈə"
+   },
+   {
+    "id": "flores-devtest-813",
+    "text": "1964 වර්ෂයේද සත්කාරකත්වය දරමින්, සරත් සෘතුවේ ඔලිම්පික් දෙකක් සඳහා සත්කාරකත්වය ලැබූ එකම ආසියානු නගරය තෝකියෝව වෙයි.",
+    "reference": "dˈɐhəs nˈɐvəjəsˈijə hˈæʈəhˌɐtəɹə wˈɐrʃəjˌeːdə sˈɐtkaːɹˌəkətwˌəjə dˈɐɹəmin sˈɐɹət sɹˈutuweː ˈolimpik dˈekək sˈɐⁿdəhaː sˈɐtkaːɹˌəkətwˌəjə lˈæbuː ˈekəmə ˈaːsijˌaːnu nˈɐɡəɹˌəjə tˈoːkijoːw wˈeji",
+    "uccharan": "ˈekə ˈɐhəs nˈɐvəjə sˈijəjə hˈæʈəhˌɐtəɹə wˈɐrʃəjˌeːdə sˈɐtkaːɹˌəkətwˌəjə dˈɐɹəmin sˈɐɹət sɹˈutuweː ˈolimpik dˈekək sˈɐⁿdəhaː sˈɐtkaːɹˌəkətwˌəjə lˈæbuː ˈekəmə ˈaːsijˌaːnu nˈɐɡəɹˌəjə tˈoːkijoːw wˈeji"
+   },
+   {
+    "id": "flores-devtest-408",
+    "text": "මිත්‍ර පාර්ශ්වය 1940 අගෝස්තු 15 වන දින දකුණු ප්‍රංශය ආක්‍රමණය කළ අතර, එම ආක්‍රමණය \"ඩ්‍රැගන් මෙහෙයුම\" ලෙස හැඳින්විය.",
+    "reference": "mˈit ɹˈə pˈaːrswəjə dˈɐhəs nˈɐvəjəsˈijə hˈɐtəlˌihə ˈɐɡoːstu pˈɐhəɭˌovə wˈɐnə dˈinə dˈɐkuɳu p ɹˈɐmsəjə ˈaːk ɹˈɐməɳˌəjə kˈɐɭə ˈɐtəɹə ˈemə ˈaːk ɹˈɐməɳˌəjə ɖ ɹˈæɡən mˈehejˌumə lˈesə hˈæⁿdinwˌijə",
+    "uccharan": "mˈit ɹˈə pˈaːrswəjə ˈekə ˈɐhəs nˈɐvəjə sˈijəjə hˈɐtəlˌihə ˈɐɡoːstu pˈɐhəɭˌovə wˈɐnə dˈinə dˈɐkuɳu p ɹˈɐmsəjə ˈaːk ɹˈɐməɳˌəjə kˈɐɭə ˈɐtəɹə ˈemə ˈaːk ɹˈɐməɳˌəjə ɖ ɹˈæɡən mˈehejˌumə lˈesə hˈæⁿdinwˌijə"
+   },
+   {
+    "id": "flores-devtest-404",
+    "text": "කවුරුන් එය ලීවාදැයි කිසිවෙකු නොදන්නා මුත්, එහි මුල් කාලයේදීම මෙම විශාල පාච්මන්ට් ලේඛනය (එය අඟල් 29 3/4 සහ 24 1/2 ක විශාලත්වයකින් යුතුය) ගබඩා කිරීම සඳහා රෝල් කර තැබුණු බව දනී.",
+    "reference": "kˈɐwuɹun ˈejə lˈiːwaːdˌæji kˈisiwˌeku nˈodənnaː mˈut ˈehi mˈul kˈaːləjˌeːdiːmə mˈemə wˈisaːlə pˈaːtʃmənʈ lˈeːkʰənˌəjə ˈejə ˈɐᵑɡəl vˈisinˌəvəjə tˈunə slˈaʃ hˈɐtəɹə sˈɐhə vˈisihˌətəɹə ˈekə slˈaʃ dˈekə kˈə wˈisaːlˌətwəjˌəkin jˈutujə ɡˈɐbəɖaː kˈiɹiːmə sˈɐⁿdəhaː ɹˈoːl kˈɐɹə tˈæbuɳu bˈɐw dˈɐniː",
+    "uccharan": "kˈɐwuɹun ˈejə lˈiːwaːdˌæji kˈisiwˌeku nˈodənnaː mˈut ˈehi mˈul kˈaːləjˌeːdiːmə mˈemə wˈisaːlə pˈaːtʃmənʈ lˈeːkʰənˌəjə ˈejə ˈɐᵑɡəl vˈisinˌəvəjə tˈunə hˈɐtəɹə sˈɐhə vˈisihˌətəɹə ˈekə dˈekə kˈə wˈisaːlˌətwəjˌəkin jˈutujə ɡˈɐbəɖaː kˈiɹiːmə sˈɐⁿdəhaː ɹˈoːl kˈɐɹə tˈæbuɳu bˈɐw dˈɐniː"
+   },
+   {
+    "id": "flores-devtest-118",
+    "text": "ඔහු ස්වීඩනය සඳහා සහ තවත් රටවල් 28ක් සඳහා මුද්දර 1,000කට වඩා නිර්මාණය කළේ ය.",
+    "reference": "ˈohu swˈiːɖənˌəjə sˈɐⁿdəhaː sˈɐhə tˈɐwət ɹˈɐʈəwəl vˈisiˌəʈə k sˈɐⁿdəhaː mˈuddəɹə ˈɐhəs kˈɐʈə wˈɐɖaː nˈirmaːɳˌəjə kˈɐɭeː jˈə",
+    "uccharan": "ˈohu swˈiːɖənˌəjə sˈɐⁿdəhaː sˈɐhə tˈɐwət ɹˈɐʈəwəl vˈisiˌəʈə k sˈɐⁿdəhaː mˈuddəɹə ˈekə ˈɐhəs kˈɐʈə wˈɐɖaː nˈirmaːɳˌəjə kˈɐɭeː jˈə"
+   },
+   {
+    "id": "flores-devtest-434",
+    "text": "බොහෝ සාමාන්‍ය ආකෘති (උදාහරණයක් ලෙස APS පවුලේ ආකෘති) මෙම දර්ශනානුපාතයට සමාන හෝ ඉතා ආසන්න හෝ වෙයි.",
+    "reference": "bˈohoː sˈaːmaːn jˈə ˈaːkɹuti ˈudaːhˌəɹəɳˌəjək lˈesə ˈeɪ pˈiː ˈɛs pˈɐwuleː ˈaːkɹuti mˈemə dˈɐrsənˌaːnupˌaːtəjˌəʈə sˈɐmaːnə hˈoː ˈitaː ˈaːsənnə hˈoː wˈeji",
+    "uccharan": "bˈohoː sˈaːmaːn jˈə ˈaːkɹuti ˈudaːhˌəɹəɳˌəjək lˈesə eɪpˈiːz pˈɐwuleː ˈaːkɹuti mˈemə dˈɐrsənˌaːnupˌaːtəjˌəʈə sˈɐmaːnə hˈoː ˈitaː ˈaːsənnə hˈoː wˈeji"
+   },
+   {
+    "id": "flores-devtest-519",
+    "text": "උදාහරණයක් ලෙස, “ඉගෙනීම” සහ “සමාජායනය” අන්තර්ජාල භාවිතය සඳහා වැදගත් අභිප්‍රේරණ ලෙස යෝජනා කරනු ලැබේ (ජේම්ස් සහ පිරිස, 1995).",
+    "reference": "ˈudaːhˌəɹəɳˌəjək lˈesə ˈiɡenˌiːmə sˈɐhə sˈɐmaːdʒˌaːjənˌəjə ˈɐntərdʒˌaːlə bʰˈaːwitˌəjə sˈɐⁿdəhaː wˈædəɡət ˈɐbʰip ɹˈeːɹəɳə lˈesə jˈoːdʒənaː kˈɐɹənu lˈæbeː dʒˈeːms sˈɐhə pˈiɹisə dˈɐhəs nˈɐvəjəsˈijə ˈɐnuːpˌɐhə",
+    "uccharan": "ˈudaːhˌəɹəɳˌəjək lˈesə ˈiɡenˌiːmə sˈɐhə sˈɐmaːdʒˌaːjənˌəjə ˈɐntərdʒˌaːlə bʰˈaːwitˌəjə sˈɐⁿdəhaː wˈædəɡət ˈɐbʰip ɹˈeːɹəɳə lˈesə jˈoːdʒənaː kˈɐɹənu lˈæbeː dʒˈeːms sˈɐhə pˈiɹisə ˈekə ˈɐhəs nˈɐvəjə sˈijəjə ˈɐnuːpˌɐhə"
+   },
+   {
+    "id": "flores-devtest-141",
+    "text": "සුනාමි අනතුරු ඇඟවීම් කිසිවක් නිකුත් නොකෙරුණු අතර, ජකාර්තා භූගෝලීය භෞතික නියෝජිතායතනය පවසන පරිදි, කම්පනය 6.5 ප්‍රමාණයේ අවශ්‍යතාව නොසපුරන බැවින් සුනාමි  අනතුරු ඇඟවීම් කිසිවක් නිකුත් නොකෙරන බවයි.",
+    "reference": "sˈunaːmi ˈɐnətˌuɹu ˈæᵑɡəwiːm kˈisiwək nˈikut nˈokeɹˌuɳu ˈɐtəɹə dʒˈɐkaːrtaː bʰˈuːɡoːlˌiːjə bʰˈaʊtikə nˈijoːdʒˌitaːjˌətənˌəjə pˈɐwəsˌənə pˈɐɹidi kˈɐmpənˌəjə dˈekəsˈijə ˈekə p ɹˈɐmaːɳˌəjeː ˈɐwəs jˈɐtaːw nˈosəpˌuɹənə bˈæwin sˈunaːmi ˈɐnətˌuɹu ˈæᵑɡəwiːm kˈisiwək nˈikut nˈokeɹˌənə bˈɐwəji",
+    "uccharan": "sˈunaːmi ˈɐnətˌuɹu ˈæᵑɡəwiːm kˈisiwək nˈikut nˈokeɹˌuɳu ˈɐtəɹə dʒˈɐkaːrtaː bʰˈuːɡoːlˌiːjə bʰˈaʊtikə nˈijoːdʒˌitaːjˌətənˌəjə pˈɐwəsˌənə pˈɐɹidi kˈɐmpənˌəjə ɳˈɐdʒə pˈɐhə p ɹˈɐmaːɳˌəjeː ˈɐwəs jˈɐtaːw nˈosəpˌuɹənə bˈæwin sˈunaːmi ˈɐnətˌuɹu ˈæᵑɡəwiːm kˈisiwək nˈikut nˈokeɹˌənə bˈɐwəji"
+   },
+   {
+    "id": "flores-devtest-749",
+    "text": "1537 දී අසුන්සියොන්ට අඩිතාලම දැමීමේ සිට, එහි ස්වදේශික ස්වභාවය සහ අනන්‍යතාවයෙන් බොහෝමයක් රඳවා ගැනීමට පැරගුවේ හට හැකියාව ලැබී ඇත.",
+    "reference": "dˈɐhəs pˈɐhəsˈijə tˈishətə dˈiː ˈɐsunsˌijonʈə ˈɐɖitˌaːləmə dˈæmiːmeː sˈiʈə ˈehi swˈɐdeːsˌikə swˈɐbʰaːwˌəjə sˈɐhə ˈɐnən jˈɐtaːwˌəjen bˈohoːmˌəjək ɹˈɐⁿdəwaː ɡˈæniːmˌəʈə pˈæɹəɡˌuweː hˈɐʈə hˈækijaːw lˈæbiː ˈætə",
+    "uccharan": "ˈekə ˈɐhəs pˈɐhə sˈijəjə tˈishətə dˈiː ˈɐsunsˌijonʈə ˈɐɖitˌaːləmə dˈæmiːmeː sˈiʈə ˈehi swˈɐdeːsˌikə swˈɐbʰaːwˌəjə sˈɐhə ˈɐnən jˈɐtaːwˌəjen bˈohoːmˌəjək ɹˈɐⁿdəwaː ɡˈæniːmˌəʈə pˈæɹəɡˌuweː hˈɐʈə hˈækijaːw lˈæbiː ˈætə"
+   },
+   {
+    "id": "flores-devtest-480",
+    "text": "ඉහළ මධ්‍යකාලීන යුගයට පෙර පූර්ව මධ්‍යකාලීන යුගයටත් පසුව සම්මුතියෙන් 1500 පමණ වනවිට පමණ අවසන් වන පශ්චාත් මධ්‍යකාලීන යුගයත් පවතී.",
+    "reference": "ˈihəɭə mˈɐdʰ jˈɐkaːlˌiːnə jˈuɡəjˌəʈə pˈeɹə pˈuːrw mˈɐdʰ jˈɐkaːlˌiːnə jˈuɡəjˌəʈət pˈɐsuw sˈɐmmutˌijen dˈɐhəs pˈɐhəsˈijə pˈɐməɳə wˈɐnəwˌiʈə pˈɐməɳə ˈɐwəsən wˈɐnə pˈɐstʃaːt mˈɐdʰ jˈɐkaːlˌiːnə jˈuɡəjət pˈɐwətiː",
+    "uccharan": "ˈihəɭə mˈɐdʰ jˈɐkaːlˌiːnə jˈuɡəjˌəʈə pˈeɹə pˈuːrw mˈɐdʰ jˈɐkaːlˌiːnə jˈuɡəjˌəʈət pˈɐsuw sˈɐmmutˌijen ˈekə ˈɐhəs pˈɐhə sˈijəjə pˈɐməɳə wˈɐnəwˌiʈə pˈɐməɳə ˈɐwəsən wˈɐnə pˈɐstʃaːt mˈɐdʰ jˈɐkaːlˌiːnə jˈuɡəjət pˈɐwətiː"
+   },
+   {
+    "id": "flores-devtest-322",
+    "text": "2010 ෆෙඩරල් මැතිවරණයට පෙර ඡන්දය විමසනු ලැබූ 1,400 දෙනෙකුගෙන්, ඕස්ට්‍රේලියාව ජනරජයක් බවට පත් වීමට විරුද්ධ වන අය 2008 සිට සියයට 8කින් වර්ධනය වී ඇත.",
+    "reference": "dˈekə dˈɐhəs dˈɐhəjə fˈeɖəɹəl mˈætiwˌəɹəɳˌəjəʈə pˈeɹə tʃhˈɐndəjə wˈiməsˌənu lˈæbuː dˈɐhəs hˈɐtəɹəsˈijə dˈenekˌuɡen ˈoːsʈ ɹˈeːlijaːw dʒˈɐnəɹˌədʒəjək bˈɐwəʈə pˈɐt wˈiːməʈə wˈiɹuddʰə wˈɐnə ˈɐjə dˈekə dˈɐhəs ˈɐʈə sˈiʈə sˈijəjˌəʈə ˈɐʈə kˈin wˈɐrdʰənˌəjə wˈiː ˈætə",
+    "uccharan": "dˈekə ˈɐhəs dˈɐhəjə fˈeɖəɹəl mˈætiwˌəɹəɳˌəjəʈə pˈeɹə tʃhˈɐndəjə wˈiməsˌənu lˈæbuː ˈekə ˈɐhəs hˈɐtəɹə sˈijəjə dˈenekˌuɡen ˈoːsʈ ɹˈeːlijaːw dʒˈɐnəɹˌədʒəjək bˈɐwəʈə pˈɐt wˈiːməʈə wˈiɹuddʰə wˈɐnə ˈɐjə dˈekə ˈɐhəs ˈɐʈə sˈiʈə sˈijəjˌəʈə ˈɐʈə kˈin wˈɐrdʰənˌəjə wˈiː ˈætə"
+   },
+   {
+    "id": "flores-devtest-8",
+    "text": "2017 අවසානයේදී, සිමිනෝෆ් සාප්පු රූපවාහිනී නාලිකාව වූ QVC හි පෙනී සිටියේය.",
+    "reference": "dˈekə dˈɐhəs dˈɐhəhˌətə ˈɐwəsˌaːnəjˌeːdiː sˈiminoːf sˈaːppu ɹˈuːpəwˌaːhiniː nˈaːlikaːw wˈuː kjˈuː vˈiː sˈiː hˈi pˈeniː sˈiʈijˌeːjə",
+    "uccharan": "dˈekə ˈɐhəs dˈɐhəhˌətə ˈɐwəsˌaːnəjˌeːdiː sˈiminoːf sˈaːppu ɹˈuːpəwˌaːhiniː nˈaːlikaːw wˈuː kjˌuːvˌiːsˈiː hˈi pˈeniː sˈiʈijˌeːjə"
+   }
+  ]
+ }
+}

@@ -158,3 +158,70 @@ fn bhojpuri_and_maithili() {
     assert_eq!(Lang::parse("bhojpuri"), Some(Lang::Bho));
     assert_eq!(Lang::parse("maithili"), Some(Lang::Mai));
 }
+
+#[test]
+fn punjabi_odia() {
+    check(
+        Lang::Pa,
+        &[
+            ("ਘਰ", "kˈʌ+ɾ"),
+            ("ਕਰਨਾ", "kˈʌɾənˌa"),
+            ("ਪੰਜਾਬੀ", "pənɟˈabi"),
+            ("ਕੁੱਤਾ", "kˈʊtːa"),
+            ("ਅੱਖ", "ˈʌkʰ"),
+            ("ਮੈਂ ਪੰਜਾਬੀ ਬੋਲਦਾ ਹਾਂ।", "mɛ̃ pənɟˈabi bˈolədˌa hã."),
+        ],
+    );
+    check(
+        Lang::Or,
+        &[
+            ("ଘର", "ɡˈɔɾɔ"),
+            ("କମଳ", "kˈɔmɔl̩ˌɔː"),
+            ("ସତ୍ୟ", "sˈɔtj"),
+            ("ଓଡ଼ିଶା", "ˈor.ɔˌisa"),
+            ("ମୁଁ ଓଡ଼ିଆ କହେ।", "mˈũ ˈor.ɔˌia kˈɔhe."),
+        ],
+    );
+}
+
+#[test]
+fn konkani_sinhala_sanskrit() {
+    // The reference's Konkani voice reads vowel signs by their names.
+    check(
+        Lang::Kok,
+        &[
+            ("का", "kˌəaːkˈaːɾ"),
+            ("कक", "kˈʌk"),
+            ("करप", "kəɾˈʌp"),
+            (
+                "हांव कोंकणी उलयता.",
+                "hˌəaːkˈaːrshɪɾˈʌwˈindˈuwə kˌəoːkˈaːrŋkəɳikˈaːɾ ˌʊləjˌətaːkˈaːɾ.",
+            ),
+        ],
+    );
+    check(
+        Lang::Si,
+        &[
+            ("අම්මා", "ˈɐmmaː"),
+            ("ලංකාව", "lˈɐŋkaːw"),
+            // A ZWJ conjunct splits the word in the reference.
+            (
+                "\u{0d9a}\u{0dca}\u{200d}\u{0dbb}\u{0db8}\u{0dba}",
+                "k ɹˈɐməjə",
+            ),
+            ("මම සිංහල කතා කරනවා.", "mˈɐmə sˈiŋhələ kˈɐtaː kˈɐɹənˌəwaː."),
+        ],
+    );
+    // Sanskrit: compatible mode is the Hindi reading; improved keeps every a.
+    let p = Phonemizer::new();
+    assert_eq!(
+        p.phonemize("गच्छति", &Options::new(Lang::Sa)),
+        p.phonemize("गच्छति", &Options::new(Lang::Hi))
+    );
+    let mut o = Options::new(Lang::Sa);
+    o.mode = Mode::Improved;
+    assert_eq!(
+        p.phonemize("रामः वनं गच्छति।", &o),
+        "ɾˈaːməɦə ʋˈənəm ɡˈətʃtʃʰəti."
+    );
+}

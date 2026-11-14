@@ -1,0 +1,248 @@
+{
+ "language": "kok",
+ "reference": "espeak-ng 1.52.0 voice kok (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1000,
+  "reference_symbols": 278714,
+  "per": 0.0020128160049369603,
+  "per_without_stress": 0.0019947063562085234,
+  "exact_sentence": 0.852,
+  "exact_sentence_without_stress": 0.854,
+  "piper_shape_per": 0.0020385722140108106,
+  "piper_shape_exact_sentence": 0.845,
+  "word_count_mismatch_sentences": 87,
+  "errors_by_class": {
+   "consonant": {
+    "count": 199,
+    "share": 0.35472370766488415,
+    "per_contribution": 0.0007139935561184584
+   },
+   "vowel": {
+    "count": 148,
+    "share": 0.2638146167557932,
+    "per_contribution": 0.0005310102829423711
+   },
+   "stress": {
+    "count": 93,
+    "share": 0.1657754010695187,
+    "per_contribution": 0.00033367538049757097
+   },
+   "other": {
+    "count": 61,
+    "share": 0.10873440285204991,
+    "per_contribution": 0.00021886234634786915
+   },
+   "length": {
+    "count": 45,
+    "share": 0.08021390374331551,
+    "per_contribution": 0.00016145582927301822
+   },
+   "word-boundary": {
+    "count": 13,
+    "share": 0.023172905525846704,
+    "per_contribution": 4.6642795123316376e-05
+   },
+   "diacritic": {
+    "count": 2,
+    "share": 0.0035650623885918,
+    "per_contribution": 7.175814634356366e-06
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ə→∅",
+    "count": 41
+   },
+   {
+    "edit": "∅→ə",
+    "count": 39
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 30
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 29
+   },
+   {
+    "edit": "ː→∅",
+    "count": 24
+   },
+   {
+    "edit": "ʈ→ː",
+    "count": 22
+   },
+   {
+    "edit": "∅→ː",
+    "count": 21
+   },
+   {
+    "edit": "s→∅",
+    "count": 15
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 14
+   },
+   {
+    "edit": "l→∅",
+    "count": 14
+   },
+   {
+    "edit": "w→b",
+    "count": 13
+   },
+   {
+    "edit": "t→∅",
+    "count": 13
+   },
+   {
+    "edit": " →∅",
+    "count": 13
+   },
+   {
+    "edit": "∅→n",
+    "count": 12
+   },
+   {
+    "edit": "∅→t",
+    "count": 12
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 12
+   },
+   {
+    "edit": "ə→ː",
+    "count": 12
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 11
+   },
+   {
+    "edit": "j→h",
+    "count": 11
+   },
+   {
+    "edit": "∅→l",
+    "count": 11
+   },
+   {
+    "edit": "∅→j",
+    "count": 11
+   },
+   {
+    "edit": "ʃ→∅",
+    "count": 11
+   },
+   {
+    "edit": "ɳ→n",
+    "count": 10
+   },
+   {
+    "edit": "ʌ→ɔ",
+    "count": 10
+   },
+   {
+    "edit": "w→ː",
+    "count": 10
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 10049,
+    "wrong": 120,
+    "rate": 0.011941486715096029
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 110,
+    "per": 0.0064500192128231874,
+    "exact_sentence": 0.6363636363636364
+   },
+   "no-digits": {
+    "sentences": 890,
+    "per": 0.001345550602608552,
+    "exact_sentence": 0.8786516853932584
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "sangraha-1912",
+    "text": "पुलिसांनी सुरक्षा रक्षकांची अदीक चवकशी केले उपरांत खरो प्रकार भायर सरलो.",
+    "reference": "pˌəʊkˈaːrləɪkˈaːrsəːaːkˈaːrshɪɾˈʌwˈindˈunikˈaːɾ sˌəːʊkˈaːrɾəkʃˌəaːkˈaːɾ ɾˌəkʃəkaːkˈaːrɲcəikˈaːɾ ˌʌdikˈaːɾk cˌəwəkˌəʃikˈaːɾ kˌəeːkˈaːrləeːkˈaːɾ ˌʊpəɾaːkˈaːrshɪɾˈʌwˈindˈut kʰˌəɾoːkˈaːɾ pəhˈʌləntˈəɾəkaːkˈaːrɾ bʰˌəaːkˈaːrjəɾ sˌəːɾəloːkˈaːɾ",
+    "uccharan": "pˌəʊkˈaːrləɪkˈaːrsəːaːkˈaːrshɪɾˈʌwˈindˈunikˈaːɾ sˌəːʊkˈaːrɾəkʃaːkˈaːɾ ɾˌəkʃəkaːkˈaːrɲcəikˈaːɾ ˌʌdikˈaːɾk cˌəwəkˌəʃikˈaːɾ kˌəeːkˈaːrləeːkˈaːɾ ˌʊpəɾaːkˈaːrshɪɾˈʌwˈindˈut kʰˌəɾoːkˈaːɾ pəhˈʌləntˈəɾəkaːkˈaːrɾ bʰˌəaːkˈaːrjəɾ sˌəːɾəloːkˈaːɾ"
+   },
+   {
+    "id": "sangraha-1435",
+    "text": "गोंय साधन-सुविधा उदरगत म्हामंडळाचो उपाध्यक्ष दीपक नायक, कुठ्ठाळेचो आमदार आंतोनियो वाझ हांणी मार्केटाची पळोवणी करून कितें करपाची गरज आसा हें पळयलें.",
+    "reference": "ɡˌəoːkˈaːrɲjə sˌəːaːkˈaːɾdʰənˌəsːʊkˈaːrwəɪkˈaːɾdʰəaːkˈaːɾ ˌʊdəɾəɡˈʌt məhˈʌləntˈəhəaːkˈaːrməɳɖˌəɭaːkˈaːɾcəoːkˈaːɾ ˌʊpaːkˈaːɾdʰəhˈʌləntˈəjəkʃ dˌəikˈaːɾpək nˌəaːkˈaːrjək kˌəʊkˈaːɾʈʰʈʰəaːkˈaːrɭəeːkˈaːɾcəoːkˈaːɾ ˌaːmədaːkˈaːrɾ ˌãtoːkˈaːrnəɪkˈaːrjəoːkˈaːɾ wˌəaːkˈaːɾɟʰ hˌəaːkˈaːrɳɳəikˈaːɾ mˌəaːkˈaːrɾəhˈʌləntˈəkeːkˈaːɾʈəaːkˈaːɾcəikˈaːɾ pˌəɭoːkˈaːrwəɳikˈaːɾ kˌəɾuːkˈaːrn kˌəɪkˈaːɾtəeːkˈaːrshɪɾˈʌwˈindˈu kˌəɾəpaːkˈaːɾcəikˈaːɾ ɡəɾˈʌɟ ˌaːsːaːkˈaːɾ hˌəeːkˈaːrshɪɾˈʌwˈindˈu pˌəɭəjˌəleːkˈaːrshɪɾˈʌwˈindˈu",
+    "uccharan": "ɡˌəoːkˈaːrɲjə sˌəːaːkˈaːɾdʰənsˌəːʊkˈaːrwəɪkˈaːɾdʰəaːkˈaːɾ ˌʊdəɾəɡˈʌt məhˈʌləntˈəhəaːkˈaːrməɳɖˌəɭaːkˈaːɾcəoːkˈaːɾ ˌʊpaːkˈaːɾdʰəhˈʌləntˈəjəkʃ dˌəikˈaːɾpək nˌəaːkˈaːrjək kˌəʊkˈaːɾʈʰːəaːkˈaːrɭəeːkˈaːɾcəoːkˈaːɾ ˌaːmədaːkˈaːrɾ ˌãtoːkˈaːrnəɪkˈaːrjəoːkˈaːɾ wˌəaːkˈaːɾɟʰ hˌəaːkˈaːrɳɳəikˈaːɾ mˌəaːkˈaːrɾəhˈʌləntˈəkeːkˈaːɾʈəaːkˈaːɾcəikˈaːɾ pˌəɭoːkˈaːrwəɳikˈaːɾ kˌəɾuːkˈaːrn kˌəɪkˈaːɾtəeːkˈaːrshɪɾˈʌwˈindˈu kˌəɾəpaːkˈaːɾcəikˈaːɾ ɡəɾˈʌɟ ˌaːsːaːkˈaːɾ hˌəeːkˈaːrshɪɾˈʌwˈindˈu pˌəɭəjˌəleːkˈaːrshɪɾˈʌwˈindˈu"
+   },
+   {
+    "id": "sangraha-1555",
+    "text": "म्हणटकच व्यवस्थीत वाहन चलोवप तरी कशें?",
+    "reference": "məhˈʌləntˈəhəɳˌəʈəkˌəc whˈʌləntˈəjəwˌəsəːhˈʌləntˈətʰikˈaːɾt wˌəaːkˈaːrhən cˌəloːkˈaːrwəp tˌəɾikˈaːɾ kˌəʃeːkˈaːrshɪɾˈʌwˈindˈu",
+    "uccharan": "məhˈʌləntˈəhəɳˌəʈəkˌəc bhˈʌləntˈəjəwˌəsəːhˈʌləntˈətʰikˈaːɾt wˌəaːkˈaːrhən cˌəloːkˈaːrwəp tˌəɾikˈaːɾ kˌəʃeːkˈaːrshɪɾˈʌwˈindˈu"
+   },
+   {
+    "id": "sangraha-1837",
+    "text": "0 हो केंद्र सरकाराचो दुसरो टप्पो.",
+    "reference": "ʃˈuːnjə hˌəoːkˈaːɾ kˌəeːkˈaːrshɪɾˈʌwˈindˈudəhˈʌləntˈəɾə sˌəːɾəkaːkˈaːrɾəaːkˈaːɾcəoːkˈaːɾ dˌəʊkˈaːrsəːɾˌəoːkˈaːɾ ʈˌəpːəoːkˈaːɾ",
+    "uccharan": "ʃˈuːnjə hˌəoːkˈaːɾ kˌəeːkˈaːrshɪɾˈʌwˈindˈudəhˈʌləntˈəɾə sˌəːɾəkaːkˈaːrɾəaːkˈaːɾcəoːkˈaːɾ dˌəʊkˈaːrsəːɾˌəoːkˈaːɾ ʈˌəpːoːkˈaːɾ"
+   },
+   {
+    "id": "sangraha-1578",
+    "text": "7000ते 5000 वर्सांसावन ती इजिप्तांत वापरांत आशिल्ली, असो आदार मेळटा.",
+    "reference": "sˈaːt həɟˈaːɾ tˌəeːkˈaːɾ paːɲcː hˌəɟˈaːɾ wˌəɾəhˈʌləntˈəsːaːkˈaːrshɪɾˈʌwˈindˈusːaːkˈaːrwən tˌəikˈaːɾ ˌɪɟɪkˈaːɾpəhˈʌləntˈətaːkˈaːrshɪɾˈʌwˈindˈut wˌəaːkˈaːɾpəɾaːkˈaːrshɪɾˈʌwˈindˈut ˌaːʃɪkˈaːrləhˈʌləntˈəlikˈaːɾ ˌʌsːoːkˈaːɾ ˌaːdaːkˈaːrɾ mˌəeːkˈaːrɭəʈaːkˈaːɾ",
+    "uccharan": "sˈaːt həɟˈaːɾ tˌəeːkˈaːɾ pˈaːɲcː həɟˈaːɾ wˌəɾəhˈʌləntˈəsːaːkˈaːrshɪɾˈʌwˈindˈusːaːkˈaːrwən tˌəikˈaːɾ ˌɪɟɪkˈaːɾpəhˈʌləntˈətaːkˈaːrshɪɾˈʌwˈindˈut wˌəaːkˈaːɾpəɾaːkˈaːrshɪɾˈʌwˈindˈut ˌaːʃɪkˈaːrləhˈʌləntˈəlikˈaːɾ ˌʌsːoːkˈaːɾ ˌaːdaːkˈaːrɾ mˌəeːkˈaːrɭəʈaːkˈaːɾ"
+   },
+   {
+    "id": "sangraha-1204",
+    "text": "विलियम्सान 12 चोक्यांचे मजतीन 282 बॉलांत 132 धांवड्यो केल्यो.",
+    "reference": "wˌəɪkˈaːrləɪkˈaːrjəməhˈʌləntˈəsːaːkˈaːrn bˈaːɾaː cˌəoːkˈaːɾkːhˈʌləntˈəjaːkˈaːrɲcəeːkˈaːɾ mˌəɟətikˈaːrn dˈoːnʃˌəjə bjˈajˌəʃˌiː bˌəɔkˈaːrləaːkˈaːrshɪɾˈʌwˈindˈut eːkʃˌəjə bətːˈiːs dʰˌəaːkˈaːrshɪɾˈʌwˈindˈuwəɖəhˈʌləntˈəjoːkˈaːɾ kˌəeːkˈaːrləhˈʌləntˈəjoːkˈaːɾ",
+    "uccharan": "wˌəɪkˈaːrləɪkˈaːrjəməhˈʌləntˈəsːaːkˈaːrn bˈaːɾaː cˌəoːkˈaːɾkːhˈʌləntˈəjaːkˈaːrɲcəeːkˈaːɾ mˌəɟətikˈaːrn dˈoːnʃˌəjə bjˈajˌəʃˌiː bˌəɔkˈaːrləaːkˈaːrshɪɾˈʌwˈindˈut ˈeːkːʃˌəjə bətːˈiːs dʰˌəaːkˈaːrshɪɾˈʌwˈindˈuwəɖəhˈʌləntˈəjoːkˈaːɾ kˌəeːkˈaːrləhˈʌləntˈəjoːkˈaːɾ"
+   },
+   {
+    "id": "sangraha-1797",
+    "text": "दुसऱ्या दिसा पणजे पुलिस स्टेशनार वरून रातचीं3वरां मेरेन उबी दवरलीं.",
+    "reference": "dˌəʊkˈaːrsəːɾəhˈʌləntˈəjaːkˈaːɾ dˌəɪkˈaːrsəːaːkˈaːɾ pˌəɳəɟeːkˈaːɾ pˌəʊkˈaːrləɪkˈaːrsəː səːhˈʌləntˈəʈeːkˈaːrʃənaːkˈaːrɾ wˌəɾuːkˈaːrn ɾˌəaːkˈaːɾtəcikˈaːrshɪɾˈʌwˈindˈu tˈiːn wˌəɾaːkˈaːrshɪɾˈʌwˈindˈu mˌəeːkˈaːrɾəeːkˈaːrn ˌʊbikˈaːɾ dˌəwəɾˌəlikˈaːrshɪɾˈʌwˈindˈu",
+    "uccharan": "dˌəʊkˈaːrsəːhˈʌləntˈəjaːkˈaːɾ dˌəɪkˈaːrsəːaːkˈaːɾ pˌəɳəɟeːkˈaːɾ pˌəʊkˈaːrləɪkˈaːrsəː səːhˈʌləntˈəʈeːkˈaːrʃənaːkˈaːrɾ wˌəɾuːkˈaːrn ɾˌəaːkˈaːɾtəcikˈaːrshɪɾˈʌwˈindˈu tˈiːn wˌəɾaːkˈaːrshɪɾˈʌwˈindˈu mˌəeːkˈaːrɾəeːkˈaːrn ˌʊbikˈaːɾ dˌəwəɾˌəlikˈaːrshɪɾˈʌwˈindˈu"
+   },
+   {
+    "id": "sangraha-1964",
+    "text": "गोंयचे पयले मुख्यमंत्री दयानंद बांदोडकार हांची 112 वी जयंती काल जाली.",
+    "reference": "ɡˌəoːkˈaːrɲjəceːkˈaːɾ pˌəjəleːkˈaːɾ mˌəʊkˈaːɾkʰəhˈʌləntˈəjəmshɪɾˈʌwˈindˈutəhˈʌləntˈəɾikˈaːɾ dˌəjaːkˈaːrnəshɪɾˈʌwˈindˈud bˌəaːkˈaːrshɪɾˈʌwˈindˈudoːkˈaːɾɖəkaːkˈaːrɾ hˌəaːkˈaːrɲcəikˈaːɾ eːkʃˌəjə bˈaːɾaː wˌəikˈaːɾ ɟˌəjshɪɾˈʌwˈindˈutikˈaːɾ kˌəaːkˈaːrl ɟˌəaːkˈaːrləikˈaːɾ",
+    "uccharan": "ɡˌəoːkˈaːrɲjəceːkˈaːɾ pˌəjəleːkˈaːɾ mˌəʊkˈaːɾkʰəhˈʌləntˈəjəmshɪɾˈʌwˈindˈutəhˈʌləntˈəɾikˈaːɾ dˌəjaːkˈaːrnəshɪɾˈʌwˈindˈud bˌəaːkˈaːrshɪɾˈʌwˈindˈudoːkˈaːɾɖəkaːkˈaːrɾ hˌəaːkˈaːrɲcəikˈaːɾ ˈeːkːʃˌəjə bˈaːɾaː wˌəikˈaːɾ ɟˌəjshɪɾˈʌwˈindˈutikˈaːɾ kˌəaːkˈaːrl ɟˌəaːkˈaːrləikˈaːɾ"
+   },
+   {
+    "id": "sangraha-1070",
+    "text": "खरें पळयत तर गांव आत्म संतूश्ट आसता.",
+    "reference": "kʰˌəɾeːkˈaːrshɪɾˈʌwˈindˈu pˌəɭəjˈʌt tˈʌɾ ɡˌəaːkˈaːrshɪɾˈʌwˈindˈuwə ˌaːtəhˈʌləntˈəmə sˌəːshɪɾˈʌwˈindˈutuːkˈaːrʃəhˈʌləntˈəʈ ˌaːsəːtˌəaːkˈaːɾ",
+    "uccharan": "kʰˌəɾeːkˈaːrshɪɾˈʌwˈindˈu pˌəɭəjˈʌt tˈʌɾ ɡˌəaːkˈaːrshɪɾˈʌwˈindˈuwə ˌaːtəhˈʌləntˈəm sˌəːshɪɾˈʌwˈindˈutuːkˈaːrʃəhˈʌləntˈəʈ ˌaːsəːtˌəaːkˈaːɾ"
+   },
+   {
+    "id": "sangraha-1923",
+    "text": "घडये गद्य बरोवप सोंपें आसत ह्या विशयाचेर.",
+    "reference": "ɡʰˌəɖəjeːkˈaːɾ ɡˌədəhˈʌləntˈəjə bˌəɾoːkˈaːrwəp sˌəːoːkˈaːrmpəeːkˈaːrshɪɾˈʌwˈindˈu aːsˈʌːt həhˈʌləntˈəjaːkˈaːɾ wˌəɪkˈaːrʃəjaːkˈaːɾcəeːkˈaːrɾ",
+    "uccharan": "ɡʰˌəɖəjeːkˈaːɾ ɡˌədəhˈʌləntˈəjə bˌəɾoːkˈaːrwəp sˌəːoːkˈaːrmpəeːkˈaːrshɪɾˈʌwˈindˈu aːsˈʌt həhˈʌləntˈəjaːkˈaːɾ wˌəɪkˈaːrʃəjaːkˈaːɾcəeːkˈaːrɾ"
+   },
+   {
+    "id": "sangraha-1253",
+    "text": "राजस्थानान निर्धारीत 20 ओव्हरींनी 8 विकेटी वगडावन 175 धांवड्यो केल्यो.",
+    "reference": "ɾˌəaːkˈaːɾɟəsəːhˈʌləntˈətʰaːkˈaːrnəaːkˈaːrn nˌəɪkˈaːrɾəhˈʌləntˈədʰaːkˈaːrɾəikˈaːɾt wˈiːs ˌoːwəhˈʌləntˈəhəɾikˈaːrshɪɾˈʌwˈindˈunikˈaːɾ ˈaːʈʰ wˌəɪkˈaːɾkəeːkˈaːɾʈəikˈaːɾ wˌəɡəɖaːkˈaːrwən eːkʃˌəjə pəɲcːjˈaːtːəɾ dʰˌəaːkˈaːrshɪɾˈʌwˈindˈuwəɖəhˈʌləntˈəjoːkˈaːɾ kˌəeːkˈaːrləhˈʌləntˈəjoːkˈaːɾ",
+    "uccharan": "ɾˌəaːkˈaːɾɟəsəːhˈʌləntˈətʰaːkˈaːrnəaːkˈaːrn nˌəɪkˈaːrɾəhˈʌləntˈədʰaːkˈaːrɾəikˈaːɾt wˈiːs ˌoːwəhˈʌləntˈəhəɾikˈaːrshɪɾˈʌwˈindˈunikˈaːɾ ˈaːʈʰ wˌəɪkˈaːɾkəeːkˈaːɾʈəikˈaːɾ wˌəɡəɖaːkˈaːrwən ˈeːkːʃˌəjə pəɲcːjˈaːtːəɾ dʰˌəaːkˈaːrshɪɾˈʌwˈindˈuwəɖəhˈʌləntˈəjoːkˈaːɾ kˌəeːkˈaːrləhˈʌləntˈəjoːkˈaːɾ"
+   },
+   {
+    "id": "sangraha-1919",
+    "text": "चो बाल साहित्य पुरस्कार (1998), कोंकणी कला साहित्य केंद्र- कुडचडेंचो बाल साहित्य पुरस्कार (2003), 'मळबझेंप' पुस्तकाक कोंकणी भाशा मंडळाचो साहित्य पुरस्कार (2007), ए.",
+    "reference": "cˌəoːkˈaːɾ bˌəaːkˈaːrl sˌəːaːkˈaːrhəɪkˈaːɾtːhˈʌləntˈəjə pˌəʊkˈaːrɾəsəːhˈʌləntˈəkaːkˈaːrɾ ˈeːkː həɟˈaːɾ ɳˈʌwəʃˌəjə ʌʈʈʰjˌaːɳːnɔ kˌəoːkˈaːrŋkəɳikˈaːɾ kˌəlaːkˈaːɾ sˌəːaːkˈaːrhəɪkˈaːɾtːhˈʌləntˈəjə kˌəeːkˈaːrshɪɾˈʌwˈindˈudəhˈʌləntˈəɾə kˌəʊkˈaːɾɖəcˌəɖeːkˈaːrɲcəoːkˈaːɾ bˌəaːkˈaːrl sˌəːaːkˈaːrhəɪkˈaːɾtːhˈʌləntˈəjə pˌəʊkˈaːrɾəsəːhˈʌləntˈəkaːkˈaːrɾ dˈoːn həɟˈaːɾ tˈiːn mˌəɭəbˌəɟʰeːkˈaːrmp pˌəʊkˈaːrsəːhˈʌləntˈətəkaːkˈaːɾk kˌəoːkˈaːrŋkəɳikˈaːɾ bʰˌəaːkˈaːrʃəaːkˈaːɾ mˌəɳɖəɭaːkˈaːɾcəoːkˈaːɾ sˌəːaːkˈaːrhəɪkˈaːɾtːhˈʌləntˈəjə pˌəʊkˈaːrɾəsəːhˈʌləntˈəkaːkˈaːrɾ dˈoːn həɟˈaːɾ sˈaːt ˈeː",
+    "uccharan": "cˌəoːkˈaːɾ bˌəaːkˈaːrl sˌəːaːkˈaːrhəɪkˈaːɾtːhˈʌləntˈəjə pˌəʊkˈaːrɾəsəːhˈʌləntˈəkaːkˈaːrɾ ˈeːkː həɟˈaːɾ nˈɔːːʃˌəjə ʌʈʈʰjˌaːɳːnɔ kˌəoːkˈaːrŋkəɳikˈaːɾ kˌəlaːkˈaːɾ sˌəːaːkˈaːrhəɪkˈaːɾtːhˈʌləntˈəjə kˌəeːkˈaːrshɪɾˈʌwˈindˈudəhˈʌləntˈəɾə kˌəʊkˈaːɾɖəcˌəɖeːkˈaːrɲcəoːkˈaːɾ bˌəaːkˈaːrl sˌəːaːkˈaːrhəɪkˈaːɾtːhˈʌləntˈəjə pˌəʊkˈaːrɾəsəːhˈʌləntˈəkaːkˈaːrɾ dˈoːn həɟˈaːɾ tˈiːn mˌəɭəbˌəɟʰeːkˈaːrmp pˌəʊkˈaːrsəːhˈʌləntˈətəkaːkˈaːɾk kˌəoːkˈaːrŋkəɳikˈaːɾ bʰˌəaːkˈaːrʃəaːkˈaːɾ mˌəɳɖəɭaːkˈaːɾcəoːkˈaːɾ sˌəːaːkˈaːrhəɪkˈaːɾtːhˈʌləntˈəjə pˌəʊkˈaːrɾəsəːhˈʌləntˈəkaːkˈaːrɾ dˈoːn həɟˈaːɾ sˈaːt ˈeː"
+   }
+  ]
+ }
+}

@@ -25,11 +25,11 @@ from .packs import PackError
 
 __version__: str = _native.__version__
 
-Lang = Literal["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai"]
+Lang = Literal["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa"]
 Profile = Literal["espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx"]
 NormalizeMode = Literal["natural", "espeak", "off"]
 
-LANGUAGES: tuple[str, ...] = ("en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai")
+LANGUAGES: tuple[str, ...] = ("en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa")
 PROFILES: tuple[str, ...] = ("espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx")
 
 __all__ = [

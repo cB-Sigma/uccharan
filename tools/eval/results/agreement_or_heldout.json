@@ -1,0 +1,248 @@
+{
+ "language": "or",
+ "reference": "espeak-ng 1.52.0 voice or (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 212752,
+  "per": 0.005001128074001654,
+  "per_without_stress": 0.004495862088714527,
+  "exact_sentence": 0.808300395256917,
+  "exact_sentence_without_stress": 0.8320158102766798,
+  "piper_shape_per": 0.005055936535426473,
+  "piper_shape_exact_sentence": 0.799407114624506,
+  "word_count_mismatch_sentences": 394,
+  "errors_by_class": {
+   "consonant": {
+    "count": 293,
+    "share": 0.27537593984962405,
+    "per_contribution": 0.001377190343686546
+   },
+   "stress": {
+    "count": 277,
+    "share": 0.26033834586466165,
+    "per_contribution": 0.001301985410242912
+   },
+   "vowel": {
+    "count": 250,
+    "share": 0.2349624060150376,
+    "per_contribution": 0.0011750770850567798
+   },
+   "word-boundary": {
+    "count": 169,
+    "share": 0.1588345864661654,
+    "per_contribution": 0.0007943521094983831
+   },
+   "other": {
+    "count": 50,
+    "share": 0.046992481203007516,
+    "per_contribution": 0.00023501541701135593
+   },
+   "length": {
+    "count": 23,
+    "share": 0.021616541353383457,
+    "per_contribution": 0.00010810709182522374
+   },
+   "diacritic": {
+    "count": 2,
+    "share": 0.0018796992481203006,
+    "per_contribution": 9.400616680454238e-06
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": " →∅",
+    "count": 127
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 112
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 48
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 45
+   },
+   {
+    "edit": "l→∅",
+    "count": 43
+   },
+   {
+    "edit": "∅→ ",
+    "count": 42
+   },
+   {
+    "edit": "ə→∅",
+    "count": 38
+   },
+   {
+    "edit": "s→∅",
+    "count": 36
+   },
+   {
+    "edit": "r→ɾ",
+    "count": 32
+   },
+   {
+    "edit": "a→∅",
+    "count": 30
+   },
+   {
+    "edit": "ɔ→∅",
+    "count": 25
+   },
+   {
+    "edit": "d→∅",
+    "count": 24
+   },
+   {
+    "edit": "ː→∅",
+    "count": 23
+   },
+   {
+    "edit": "e→∅",
+    "count": 23
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 23
+   },
+   {
+    "edit": "i→∅",
+    "count": 22
+   },
+   {
+    "edit": "m→∅",
+    "count": 21
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 19
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 18
+   },
+   {
+    "edit": "∅→ɔ",
+    "count": 16
+   },
+   {
+    "edit": "t→∅",
+    "count": 16
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 15
+   },
+   {
+    "edit": "ʃ→∅",
+    "count": 15
+   },
+   {
+    "edit": "ɪ→∅",
+    "count": 13
+   },
+   {
+    "edit": "ŋ→∅",
+    "count": 11
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 11287,
+    "wrong": 61,
+    "rate": 0.005404447594577833
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 229,
+    "per": 0.011648812645141959,
+    "exact_sentence": 0.6637554585152838
+   },
+   "no-digits": {
+    "sentences": 783,
+    "per": 0.002773663997590301,
+    "exact_sentence": 0.8505747126436781
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-471",
+    "text": "ଭୟଭୀତ ରାଜା ଲୁଇ XVI, ରାଣୀ ମେରୀ ଆଣ୍ଟୋଏନେଟ୍, ସେମାନଙ୍କର ଦୁଇ ଛୋଟ ପିଲା (11 ବର୍ଷର ମେରୀ ଥେରେସ୍ ଏବଂ ଚାରି ବର୍ଷ ବୟସ୍କ ଲୁଇ-ଚାର୍ଲ୍ସ) ଏବଂ ରାଜାଙ୍କ ଭଉଣୀ, ମ୍ୟାଡମ୍ ଏଲିଜାବେଥ୍, 6 ଅକ୍ଟୋବର 1789ରେ ବଜାରର ମହିଳାଙ୍କ ଭିଡ଼ ଦ୍ୱାରା ଭର୍ସାଲେସରୁ ପ୍ୟାରିସକୁ ଫେରିଯିବାକୁ ବାଧ୍ୟ ହୋଇଥିଲେ।",
+    "reference": "bʰˈɔjɔbʰˌitɔ ɾˈaɟa lˈui ˈɛks vˈiː ˈaɪ ɾˈani mˈeɾi ˈanʈoˌeneʈ sˌemanˈɔŋkɔɾˌɔ dˈui tʃʰˈotɔ pˈila eɡˈaɾˌɔ bˈɔrsɔɾˌɔ mˈeɾi tʰˈeɾes ˈebɔŋ tʃˈaɾi bˈɔrsɔ bɔjˈɔskɔ lˈuitʃˈarlsɔ ˈebɔŋ ɾaɟˈaŋkɔ bʰˈɔunˌi mjˈɔaɖˌɔm ˈeliɟˌabetʰ chˈɔ ˈɔkʈobˌɔɾɔ ˈekɔ hˈʌɟaɾˌɔ sˈatɔsˈɔhɔ ˌʊnaːnˌɔbbe ɾˈe bˈɔɟaɾˌɔɾɔ mˌɔhil̩ˈaŋkɔ bʰˈir.ɔ dˈɔ hˈalˈʌnt lˈetəbˈiːsˈatɔˈekɔ ˈakaɾ ɾˈɔ ˈakaɾ bʰˈɔrsalˌesɔɾˌu pjˈɔaɾˌisɔkˌu pʰˈeɾidʒˌibakˌu bˈadʰj hˈoitʰˌile",
+    "uccharan": "bʰˈɔjɔbʰˌitɔ ɾˈaɟa lˈui ksvˈɪ ɾˈani mˈeɾi ˈanʈoˌeneʈ sˌemanˈɔŋkɔɾˌɔ dˈui tʃʰˈotɔ pˈila eɡˈaɾˌɔ bˈɔrsɔɾˌɔ mˈeɾi tʰˈeɾes ˈebɔŋ tʃˈaɾi bˈɔrsɔ bɔjˈɔskɔ lˈuitʃˈaɾlsɔ ˈebɔŋ ɾaɟˈaŋkɔ bʰˈɔunˌi mjˈɔaɖˌɔm ˈeliɟˌabetʰ chˈɔ ˈɔkʈobˌɔɾɔ ˈekɔ hˈʌɟaɾˌɔ sˈatɔsˈɔhɔ ˌʊnaːnˈɔbbe ɾˈe bˈɔɟaɾˌɔɾɔ mˌɔhil̩ˈaŋkɔ bʰˈir.ɔ dˈɔ hˈalˈʌnt lˈetəbˈiːsˈatɔˈekɔ ˈakaɾ ɾˈɔ ˈakaɾ bʰˈɔrsalˌesɔɾˌu pjˈɔaɾˌisɔkˌu pʰˈeɾidʒˌibakˌu bˈadʰj hˈoitʰˌile"
+   },
+   {
+    "id": "flores-devtest-182",
+    "text": "ୟୁନାଇଟେଡ୍ ଷ୍ଟେଟସ୍ ଜିଓଲୋଜିକାଲ୍ ସର୍ଭେ (USGS) ଏବଂ ଏହାର ଜାତୀୟ ଭୂକମ୍ପ ସୂଚନା କେନ୍ଦ୍ରକୁ ତତ୍‌କ୍ଷଣାତ୍‌ କୌଣସି କ୍ଷୟକ୍ଷତିର ରିପୋର୍ଟ ମିଳିନାହିଁ।",
+    "reference": "jˈɔunˌaiʈˌeɖ sʈˈetɔs ɟˈiolˌoɟikˌal sˈɔɾbʰe ˈʌsɡz ˈebɔŋ ˈehaɾˌɔ ɟˈatij bʰuːkˈɔmpɔ sˈuːtʃɔnˌa kˈendɾɔkˌu ʈˈɔtkʰkʰːnat kˈownɔsˌi kʰkʰːjˈɔkʰkʰːtiɾˌɔ ɾipˈoɾtɔ mˈil̩ˌinahˌĩ",
+    "uccharan": "jˈɔunˌaiʈˌeɖ sʈˈetɔs ɟˈiolˌoɟikˌal sˈɔɾbʰe jˈuːsz ˈebɔŋ ˈehaɾˌɔ ɟˈatij bʰuːkˈɔmpɔ sˈuːtʃɔnˌa kˈendɾɔkˌu ʈˈɔtkʰkʰːnat kˈownɔsˌi kʰkʰːjˈɔkʰkʰːtiɾˌɔ ɾipˈoɾtɔ mˈil̩ˌinahˌĩ"
+   },
+   {
+    "id": "flores-devtest-63",
+    "text": "ସଂସ୍ଥାର ସଫଳତା ହାର ବଢାଇବା ଉଦ୍ଦେଶ୍ୟରେ ଐତିହାସିକମାନେ ଅତୀତର FBI ନୀତିକୁ ସମାଲୋଚନା କରିଛନ୍ତି ଯାହାକି ସମାଧାନ କରିବା ସହଜ, ବିଶେଷକରି ଚୋରି ହୋଇଥିବା କାର ମାମଲା ଉପରେ ଧ୍ୟାନ ଦିଆଯାଇଥାଏ।",
+    "reference": "sˈɔŋstʰaɾˌɔ sˌɔpʰɔl̩ˈɔːta hˈaɾɔ bˈɔɖʰaˌiba uddˈesjɔɾˌe ˈojtihˌasikˌɔmanˌe ˈɔtiʈˌɔɾɔ ˈɛf bˈiː ˈaɪ nˈitikˌu sˈɔmalˌotʃɔnˌa kˌɔɾitʃʰˈɔnti dʒˈahakˌi sˈɔmadʰˌanɔ kˈɔɾibˌa sˈɔhɔɟ bˈisesˌɔkɔɾˌi tʃˈoɾi hˈoitʰˌiba kˈaɾɔ mˈamɔlˌa ˈupɔɾˌe dʰjˈɔanˌɔ dˈiadʒˌaitʰˌae",
+    "uccharan": "sˈɔŋstʰaɾˌɔ sˌɔpʰɔl̩ˈɔːta hˈaɾɔ bˈɔɖʰaˌiba uddˈesjɔɾˌe ˈojtihˌasikˌɔmanˌe ˈɔtiʈˌɔɾɔ ˈɛfbɪˌaɪ nˈitikˌu sˈɔmalˌotʃɔnˌa kˌɔɾitʃʰˈɔnti dʒˈahakˌi sˈɔmadʰˌanɔ kˈɔɾibˌa sˈɔhɔɟ bˈisesˌɔkɔɾˌi tʃˈoɾi hˈoitʰˌiba kˈaɾɔ mˈamɔlˌa ˈupɔɾˌe dʰjˈɔanˌɔ dˈiadʒˌaitʰˌae"
+   },
+   {
+    "id": "flores-devtest-105",
+    "text": "ଯୁକ୍ତରାଷ୍ଟ୍ରର ପ୍ରତିରକ୍ଷା ବିଭାଗର ଯୁକ୍ତରାଷ୍ଟ୍ରର ଷ୍ଟ୍ରାଟେଜିକ୍ କମାଣ୍ଡ ଅବଶେଷଗୁଡ଼ିକ ଉପରେ ନଜର ରଖିୁଛି।",
+    "reference": "dʒˌukʈɔɾˈasʈɾɔɾˌɔ pɾˌɔtiɾˈɔkʰkʰa bˈibʰaɡˌɔɾɔ dʒˌukʈɔɾˈasʈɾɔɾˌɔ sʈɾˈaʈeɟˌik kɔmˈanɖɔ ˈɔbɔsˌesɔɡˌur.ɔˌikɔ ˈupɔɾˌe nˈɔɟɾɔ ɾˈɔkʰitʃʰˌi",
+    "uccharan": "dʒˌukʈɔɾˈasʈɾɔɾˌɔ pɾˌɔtiɾˈɔkʰkʰa bˈibʰaɡˌɔɾɔ dʒˌukʈɔɾˈasʈɾɔɾˌɔ sʈɾˈaʈeɟˌik kɔmˈanɖɔ ˈɔbɔsˌesɔɡˌur.ɔˌikɔ ˈupɔɾˌe nˈɔɟɾɔ ɾˈɔkʰiˌutʃʰi"
+   },
+   {
+    "id": "flores-devtest-600",
+    "text": "ନିଜର ହିଁ DNA କୁ ଜୀବାଣୁରେ ଲାଗୁ କରିବା ପାଇଁ ଫେଜ୍ ବା ଭୂତାଣୁ ହର୍ସୀ ଓ ଚେଜ୍ ଦ୍ୱାରା ଉପଯୋଗ କରାଯାଇଥିଲା।",
+    "reference": "nˈiɟɔɾˌɔ hˈĩ dˈiː ˈɛn ˈeɪ kˈu ɟˈibanˌuɾe lˈaɡu kˈɔɾibˌa pˈaĩ pʰˈeɟ bˈa bʰˈuːtanˌu hˈɔrsi o tʃˈeɟ dˈɔ hˈalˈʌnt lˈetəbˈiːsˈatɔˈekɔ ˈakaɾ ɾˈɔ ˈakaɾ ˈupɔdʒˌoɡɔ kˈɔɾadʒˌaitʰˌila",
+    "uccharan": "nˈiɟɔɾˌɔ hˈĩ dˈiːɛnˌeɪ kˈu ɟˈibanˌuɾe lˈaɡu kˈɔɾibˌa pˈaĩ pʰˈeɟ bˈa bʰˈuːtanˌu hˈɔrsi o tʃˈeɟ dˈɔ hˈalˈʌnt lˈetəbˈiːsˈatɔˈekɔ ˈakaɾ ɾˈɔ ˈakaɾ ˈupɔdʒˌoɡɔ kˈɔɾadʒˌaitʰˌila"
+   },
+   {
+    "id": "flores-devtest-852",
+    "text": "ଏକ କ୍ରୀଡ଼ା ଭାବରେ ଡାଉନହିଲ୍ ସ୍କି ଅତି କମରେ 17ଶ ଶତାବ୍ଦୀରୁ ଆରମ୍ଭ ହୋଇଛି ଏବଂ 1861 ମସିହାରେ ଅଷ୍ଟ୍ରେଲିଆରେ ବାସ କରୁଥିବା ନରୱେର ଅଧିବାସୀମାନଙ୍କ ଦ୍ଵାରା ପ୍ରଥମ ମନୋରଞ୍ଜନ ସ୍କି କ୍ଲବ୍ ଖୋଲାଯାଇଥିଲା।",
+    "reference": "ˈekɔ kɾˈir.ɔˌa bʰˈabɔɾˌe ɖˈaunˌɔhil skˈi ˈɔti kˈɔmɔɾˌe sˌɔtːɔɾˈɔː tˈalbesˌɔ sɔtˈabdiɾˌu aɾˈɔmbʰɔ hˈoitʃʰˌi ˈebɔŋ ˈekɔ hˈʌɟaɾˌɔ ˈathɔsˈɔhɔ eksˈɔthˈi mˈɔsihˌaɾe ˈɔsʈɾelˌiaɾˌe bˈasɔ kˈɔɾutʰˌiba dˈontenˌɔ ɾˈɔ lˈetəbˈiːsˈatɔˈekɔ ˈekaɾ ɾˈɔ ˌɔdʰibˌasimanˈɔŋkɔ dwˈaɾa pɾˈɔtʰɔmˌɔ mˌɔnoɾˈɔnɟɔnˌɔ skˈi klˈɔb kʰˈoladʒˌaitʰˌila",
+    "uccharan": "ˈekɔ kɾˈir.ɔˌa bʰˈabɔɾˌe ɖˈaunˌɔhil skˈi ˈɔti kˈɔmɔɾˌe sˌɔtːɔɾˈɔː sˈɔ sɔtˈabdiɾˌu aɾˈɔmbʰɔ hˈoitʃʰˌi ˈebɔŋ ˈekɔ hˈʌɟaɾˌɔ ˈathɔsˈɔhɔ eksˈɔthˈi mˈɔsihˌaɾe ˈɔsʈɾelˌiaɾˌe bˈasɔ kˈɔɾutʰˌiba dˈontenˌɔ ɾˈɔ lˈetəbˈiːsˈatɔˈekɔ ˈekaɾ ɾˈɔ ˌɔdʰibˌasimanˈɔŋkɔ dwˈaɾa pɾˈɔtʰɔmˌɔ mˌɔnoɾˈɔnɟɔnˌɔ skˈi klˈɔb kʰˈoladʒˌaitʰˌila"
+   },
+   {
+    "id": "flores-devtest-11",
+    "text": "1 ଆଣ୍ଟିବଡି କକଟେଲ, ZMapp, ପ୍ରାରମ୍ଭରେ ଏହି କ୍ଷେତ୍ରରେ ସମ୍ଭାବନା ପ୍ରଦର୍ଶନ କରିଥିଲା, କିନ୍ତୁ ଔପଚାରିକ ଅଧ୍ୟୟନ ସୂଚାଇ ଦେଇଥିଲା ଯେ ମୃତ୍ୟୁ ପ୍ରତିହତ କରିବାରେ ଏହାର ଲାଭ କମ୍ ରହିଥିଲା।",
+    "reference": "ˈekɔ ˈanʈibˌɔɖi kˈɔkɔʈˌelɔ zˈɛd mˈap pɾaɾˈɔmbʰɔɾˌe ˈehi kʰkʰˈetɾɔɾˌe sˈɔmbʰabˌɔna pɾɔdˈɔrsɔnˌɔ kˈɔɾitʰˌila kˈintu ˈowpɔtʃˌaɾikˌɔ ˈɔdʰjɔjˌɔnɔ sˈuːtʃaˌi dˈeitʰˌila dʒˈe mɾˈutjɔˌu pɾˈɔtihˌɔtɔ kˈɔɾibˌaɾe ˈehaɾˌɔ lˈabʰɔ kˈɔm ɾˈɔhitʰˌila",
+    "uccharan": "ˈekɔ ˈanʈibˌɔɖi kˈɔkɔʈˌelɔ zmˈæp pɾaɾˈɔmbʰɔɾˌe ˈehi kʰkʰˈetɾɔɾˌe sˈɔmbʰabˌɔna pɾɔdˈɔrsɔnˌɔ kˈɔɾitʰˌila kˈintu ˈowpɔtʃˌaɾikˌɔ ˈɔdʰjɔjˌɔnɔ sˈuːtʃaˌi dˈeitʰˌila dʒˈe mɾˈutjɔˌu pɾˈɔtihˌɔtɔ kˈɔɾibˌaɾe ˈehaɾˌɔ lˈabʰɔ kˈɔm ɾˈɔhitʰˌila"
+   },
+   {
+    "id": "flores-devtest-134",
+    "text": "ରାତି 10:00ଟା - 11:00ଟା MDT ମଧ୍ୟରେ ପ୍ରାଙ୍ଗଣରେ ଥିବା ଅନ୍ତେବାସୀଙ୍କ ଦ୍ୱାରା ନିଆଁ ଲଗାଯାଇଥିଲା।",
+    "reference": "ɾˈati dˈɔsɔː ʃˈunjɔ ʃˈunjɔ ʈˈa eɡˈaɾˌɔ ʃˈunjɔ ʃˈunjɔ ʈˈa ˈɛm dˈiː tˈiː mˈɔdʰjɔɾˌe pɾˈaŋɡɔnˌɔɾe tʰˈiba ˌɔntebasˈiŋkɔ dˈɔ hˈalˈʌnt lˈetəbˈiːsˈatɔˈekɔ ˈakaɾ ɾˈɔ ˈakaɾ nˈiã lˈɔɡadʒˌaitʰˌila",
+    "uccharan": "ɾˈati dˈɔsɔː ʃˈunjɔ ʃˈunjɔ ʈˈa eɡˈaɾˌɔ ʃˈunjɔ ʃˈunjɔ ʈˈa ˌɛmdˌiːtˈiː mˈɔdʰjɔɾˌe pɾˈaŋɡɔnˌɔɾe tʰˈiba ˌɔntebasˈiŋkɔ dˈɔ hˈalˈʌnt lˈetəbˈiːsˈatɔˈekɔ ˈakaɾ ɾˈɔ ˈakaɾ nˈiã lˈɔɡadʒˌaitʰˌila"
+   },
+   {
+    "id": "flores-devtest-741",
+    "text": "ଓୟାପକ୍ ନଦୀ ସେତୁ ହେଉଛି ଏକ କେବୁଲ୍-ଦ୍ୱାରା-ଝୁଲି ରହିଥିବା ସେତୁ। ଏହା ଓୟାପକ୍ ନଦୀର ଦୁଇ ପାର୍ଶ୍ୱରେ ଥିବା ବ୍ରାଜିଲର ଓୟାପୋକ୍ ଏବଂ ଫ୍ରେଞ୍ଚ ଗୁୟାନାର ସେଣ୍ଟ-ଜର୍ଜସ୍ ଡି ଲ’ଓୟାପକ୍ ସହରକୁ ସଂଯୋଗ କରେ।",
+    "reference": "ˈojɔˌapɔk nˈɔdi sˈetu hˈeutʃʰˌi ˈekɔ kˈebuldˈɔhˈalˈʌntlˈetəbˈiːsˈatɔˈekɔˈakarɾˈɔˈakaɾɟʰˈuli ɾˈɔhitʰˌiba sˈetu ˈeha ˈojɔˌapɔk nˈɔdiɾˌɔ dˈui pˈɔ ˈakaɾ ɾˈɔ hˈalˈʌnt tˈalbesˌɔ hˈalˈʌnt lˈetəbˈiːsˈatɔˈekɔ ɾˈɔ ˈekaɾ tʰˈiba bɾˈaɟilˌɔɾɔ ˈojɔˌapok ˈebɔŋ pʰɾˈentʃɔ ɡˈujɔˌanaɾˌɔ sˈentɔɟˈɔɾɟɔs ɖˈi lˈɔojˌɔapˌɔk sˈɔhɔɾˌɔku sˈɔŋdʒoɡˌɔ kˈɔɾe",
+    "uccharan": "ˈojɔˌapɔk nˈɔdi sˈetu hˈeutʃʰˌi ˈekɔ kˈebul dˈɔ hˈalˈʌnt lˈetəbˈiːsˈatɔˈekɔ ˈakaɾ ɾˈɔ ˈakaɾɟʰˈuli ɾˈɔhitʰˌiba sˈetu ˈeha ˈojɔˌapɔk nˈɔdiɾˌɔ dˈui pˈɔ ˈakaɾ ɾˈɔ hˈalˈʌnt tˈalbesˌɔ hˈalˈʌnt lˈetəbˈiːsˈatɔˈekɔ ɾˈɔ ˈekaɾ tʰˈiba bɾˈaɟilˌɔɾɔ ˈojɔˌapok ˈebɔŋ pʰɾˈentʃɔ ɡˈujɔˌanaɾˌɔ sˈentɔɟˈɔɾɟɔs ɖˈi lˈɔojˌɔapˌɔk sˈɔhɔɾˌɔku sˈɔŋdʒoɡˌɔ kˈɔɾe"
+   },
+   {
+    "id": "flores-devtest-678",
+    "text": "ଯଦିଓ AI ର ବିଜ୍ଞାନ କଳ୍ପନାର ଏକ ଦୃଢ ସଂଯୋଗ ଅଛି, ତଥାପି AI ଏକ ମେସିନରେ ଆଚରଣ, ଶିକ୍ଷା ଏବଂ ବୁଦ୍ଧିମାନ ଉପଯୋଜନ ସହିତ କାରବାର କରି କମ୍ପ୍ୟୁଟର ବିଜ୍ଞାନର ଏକ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ଶାଖା ଗଠନ କରେ।",
+    "reference": "dʒˈɔdiˌo ˈeɪ ˈaɪ ɾˈɔ bˈiɡɡanˌɔ kˈɔl̩pˌɔnaɾˌɔ ˈekɔ dɾˈuɖʰɔ sˈɔŋdʒoɡˌɔ ˈɔtʃʰi ʈˈɔtʰapˌi ˈeɪ ˈaɪ ˈekɔ mˈesinˌɔɾe ˈatʃɔɾˌɔnɔ sˈikʰkʰa ˈebɔŋ bˈuddʰimˌanɔ ˈupɔdʒˌoɟɔnˌɔ sˈɔhitˌɔ kˈaɾɔbˌaɾɔ kˈɔɾi kˈɔmpjɔˌutɔɾˌɔ bˈiɡɡanˌɔɾɔ ˈekɔ ɡˈɔ hɾˈɔʃʃoˌukaɾ ɾˈɔ hɾˈɔʃʃoˌukaɾ ʈˈɔ hˈalˈʌnt lˈetəbˈiːsˈatɔˈekɔ pˈɔ dˈiːɾɡʰˈukaɾ ɾˈɔ hˈalˈʌnt mˌuɾddʰeɳɳˈɔ hˈalˈʌnt mˌuɾddʰeɳɳˈɔ sˈakʰa ɡˈɔʈʰɔnˌɔ kˈɔɾe",
+    "uccharan": "dʒˈɔdiˌo ˈaɪ ɾˈɔ bˈiɡɡanˌɔ kˈɔl̩pˌɔnaɾˌɔ ˈekɔ dɾˈuɖʰɔ sˈɔŋdʒoɡˌɔ ˈɔtʃʰi ʈˈɔtʰapˌi ˈaɪ ˈekɔ mˈesinˌɔɾe ˈatʃɔɾˌɔnɔ sˈikʰkʰa ˈebɔŋ bˈuddʰimˌanɔ ˈupɔdʒˌoɟɔnˌɔ sˈɔhitˌɔ kˈaɾɔbˌaɾɔ kˈɔɾi kˈɔmpjɔˌutɔɾˌɔ bˈiɡɡanˌɔɾɔ ˈekɔ ɡˈɔ hɾˈɔʃʃoˌukaɾ ɾˈɔ hɾˈɔʃʃoˌukaɾ ʈˈɔ hˈalˈʌnt lˈetəbˈiːsˈatɔˈekɔ pˈɔ dˈiːɾɡʰˈukaɾ ɾˈɔ hˈalˈʌnt mˌuɾddʰeɳɳˈɔ hˈalˈʌnt mˌuɾddʰeɳɳˈɔ sˈakʰa ɡˈɔʈʰɔnˌɔ kˈɔɾe"
+   },
+   {
+    "id": "flores-devtest-18",
+    "text": "1976 ମସିହାରେ ଚୟନ ସମୟରେ ସେ କାର୍ଟରଙ୍କୁ ବୈଦେଶିକ ନୀତି ସମ୍ବନ୍ଧରେ ପରାମର୍ଶ ଦେଉଥିଲେ, ତା'ପରେ ହେନେରୀ କିସିଞ୍ଜରଙ୍କ ପରେ ସେ 1977ରୁ 1981 ପର୍ଯ୍ୟନ୍ତ ଜାତୀୟ ସୁରକ୍ଷା ପରାମର୍ଶଦାତା (NSA) ଭାବରେ କାର୍ଯ୍ୟରତ ଥିଲେ।",
+    "reference": "ˈekɔ hˈʌɟaɾˌɔ nˈɔsˈɔhɔ chɔˈostɔɾˈi mˈɔsihˌaɾe tʃˈɔjɔnˌɔ sˈɔmɔjˌɔɾe sˈe kˌaɾtɔɾˈɔŋku bˈojdesˌikɔ nˈiti sɔmbˈɔndʰɔɾˌe pˌɔɾamˈɔrsɔ dˈeutʰˌile tˈapɔɾˌe hˈeneɾˌi kˌisinɟɔɾˈɔŋkɔ pˈɔɾe sˈe ˈekɔ hˈʌɟaɾˌɔ nˈɔsˈɔhɔ sɔtˈɔstɔɾˈi ɾˈu ˈekɔ hˈʌɟaɾˌɔ nˈɔsˈɔhɔ ˌekaɔsˈi pɔɾdʒjˈɔntɔ ɟˈatij suɾˈɔkʰkʰa pˌɔɾamˈɔrsɔdˌata ˈɛn ˈɛs ˈeɪ bʰˈabɔɾˌe kˈaɾdʒjɔɾˌɔtɔ tʰˈile",
+    "uccharan": "ˈekɔ hˈʌɟaɾˌɔ nˈɔsˈɔhɔ chɔˈostɔɾˈi mˈɔsihˌaɾe tʃˈɔjɔnˌɔ sˈɔmɔjˌɔɾe sˈe kˌaɾtɔɾˈɔŋku bˈojdesˌikɔ nˈiti sɔmbˈɔndʰɔɾˌe pˌɔɾamˈɔrsɔ dˈeutʰˌile tˈapɔɾˌe hˈeneɾˌi kˌisinɟɔɾˈɔŋkɔ pˈɔɾe sˈe ˈekɔ hˈʌɟaɾˌɔ nˈɔsˈɔhɔ sɔtˈɔstɔɾˈi ɾˈu ˈekɔ hˈʌɟaɾˌɔ nˈɔsˈɔhɔ ˌekaɔsˈi pɔɾdʒjˈɔntɔ ɟˈatij suɾˈɔkʰkʰa pˌɔɾamˈɔrsɔdˌata ˈɛnsɐ bʰˈabɔɾˌe kˈaɾdʒjɔɾˌɔtɔ tʰˈile"
+   },
+   {
+    "id": "flores-devtest-977",
+    "text": "ଆହୁରି ମଧ୍ୟ, r ଓ rr କୁ ଭିନ୍ନ ଭାବରେ ଉଚ୍ଚାରଣ କରିବା ସୁନିଶ୍ଚିତ କରନ୍ତୁ: କାରୋ (caro) କହିଲେ ହରିଣକୁ ବୁଝାଏ, ଯେତେବେଳେ କି କାର୍ରୋ (carro)ର ଅର୍ଥ ହେଉଛି ରଥ।",
+    "reference": "ˈahuɾˌi mˈɔdʰj ˈɑː o ˌɑːɹˈɑː kˈu bʰˈinnɔ bʰˈabɔɾˌe ˈutʃtʃaɾˌɔnɔ kˈɔɾibˌa sunˈistʃitˌɔ kɔɾˈɔntu kˈaɾo kˈaɹəʊ kˈɔhilˌe hˈɔɾinˌɔku bˈuɟʰaˌe dʒˈetebˌel̩ˌe kˈi kˈarɾo kˈɑːɹəʊ ɾˈɔ ˈɔɾtʰɔ hˈeutʃʰˌi ɾˈɔtʰɔ",
+    "uccharan": "ˈahuɾˌi mˈɔdʰj ˈɑː o ˌɑːˈɑː kˈu bʰˈinnɔ bʰˈabɔɾˌe ˈutʃtʃaɾˌɔnɔ kˈɔɾibˌa sunˈistʃitˌɔ kɔɾˈɔntu kˈaɾo kˈɑːɹəʊ kˈɔhilˌe hˈɔɾinˌɔku bˈuɟʰaˌe dʒˈetebˌel̩ˌe kˈi kˈaɾɾo kˈɑːɹəʊ ɾˈɔ ˈɔɾtʰɔ hˈeutʃʰˌi ɾˈɔtʰɔ"
+   }
+  ]
+ }
+}

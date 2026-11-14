@@ -180,6 +180,11 @@ held-out sentence, one thread, against the same espeak-ng voice.
 | Tamil | `ta` | FLORES-200, 1,012 sentences | PER 4.09 % | 2.83 % | 37× | Piper `ta_IN` (2, community) |
 | Gujarati | `gu` | FLORES-200, 1,012 sentences | PER 2.41 % | 2.04 % | 3.8× | Mimic-3 `gu` |
 | Assamese | `as` | Tatoeba, 2,000 sentences | PER 7.21 %, 56.3 % identical | — | 2.2× | MMS (character input) |
+| Punjabi (Gurmukhi) | `pa` | FLORES-200, 1,012 sentences | PER 0.41 % | 0.22 % | 3.8× | MMS (character input) |
+| Odia | `or` | FLORES-200, 1,012 sentences | PER 0.50 % | 0.28 % | 2.4× | MMS (character input) |
+| Sinhala | `si` | FLORES-200, 1,012 sentences | PER 0.86 % | 0.24 % | 2.3× | MMS (character input) |
+| Konkani | `kok` | Sangraha, 1,000 sentences | PER 0.20 % | 0.13 % | 5.1× | none |
+| Sanskrit | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.95 % against `hi` | 0.43 % | 4.2× | none |
 | Bhojpuri | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.80 % against `hi` | 0.33 % | 3.3× | SYSPIN (character input) |
 | Maithili | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.75 % against `hi` | 0.29 % | 3.0× | MMS, SYSPIN (character input) |
 <!-- @@END@@ -->
@@ -195,6 +200,17 @@ is numbers and secondary stress) and Nepali (stress on
 many word-final long vowels) fall short of the 2 % target. Speed was measured once on a shared
 4-vCPU machine, 500 held-out sentences, one thread. End-to-end tests with voices of these languages
 have not been run yet.
+
+Punjabi, Odia, Sinhala and Konkani follow the espeak-ng voices closely, including their quirks:
+Punjabi's `+` tone mark after a word-initial voiced aspirate, Odia's spelled-out words with ୱ, the
+1.52 library's word break after a Sinhala ZWJ conjunct, and the Konkani voice's reading of every
+vowel sign by its name. Improved mode drops those quirks: Punjabi gets vowel length, a low tone mark
+and ɽ; Odia keeps ୱ as w, ଳ as ɭ and the dental/retroflex distinction; Sinhala joins ZWJ conjuncts;
+Konkani is read as an ordinary Indic language. **Sanskrit** has no espeak-ng voice: compatible mode
+is the Hindi voice's reading (as for Bhojpuri), and improved mode reads Sanskrit as Sanskrit: every
+short a pronounced, the classical stress rule (heavy penult, else heavy antepenult, else the fourth
+syllable from the end), visarga echoing the vowel before it at the end of a word, and Sanskrit
+number words.
 
 **Bhojpuri and Maithili** have no espeak-ng voice; text in them given to espeak-ng is read with the
 Hindi voice, so compatible mode reproduces that Hindi reading (the rows above measure it against
@@ -403,9 +419,8 @@ originally come from (details in [DATA_LICENSES.md](DATA_LICENSES.md)).
 
 ## Roadmap
 
-- **More languages**: further Indic languages (Odia, Punjabi, Konkani, Sanskrit, Sinhala, Urdu)
-  and Latin-alphabet languages, each with held-out sets and the same gates
-  ([how](docs/adding-a-language.md)).
+- **More languages**: Urdu and Sindhi (Perso-Arabic script), then the Latin-alphabet languages —
+  each with held-out sets and the same gates ([how](docs/adding-a-language.md)).
 - **An optional GPL data pack**, kept in a separate repository and package, for people who can
   accept the GPL and want espeak-ng's own dictionaries for languages uccharan does not cover yet.
 - **A small neural fallback** for out-of-lexicon words (int8, under 1.5 MB per language, trained

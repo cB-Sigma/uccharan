@@ -6,10 +6,10 @@
 import initWasm, * as wasm from "./dist/uccharan_wasm.js";
 import { PACKS } from "./packs.js";
 
-export const LANGUAGES = Object.freeze(["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai"]);
+export const LANGUAGES = Object.freeze(["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa"]);
 export const PROFILES = Object.freeze(["espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx"]);
 
-const ALIASES = { en: "en-us", "en-us": "en-us", "en-gb": "en-gb", "en-gb-x-rp": "en-gb", "en-uk": "en-gb", hi: "hi", "hi-in": "hi", bn: "bn", "bn-in": "bn", "bn-bd": "bn", mr: "mr", te: "te", ne: "ne", "ne-np": "ne", kn: "kn", ta: "ta", ml: "ml", as: "as", gu: "gu", bho: "bho", bhojpuri: "bho", mai: "mai", maithili: "mai" };
+const ALIASES = { en: "en-us", "en-us": "en-us", "en-gb": "en-gb", "en-gb-x-rp": "en-gb", "en-uk": "en-gb", hi: "hi", "hi-in": "hi", bn: "bn", "bn-in": "bn", "bn-bd": "bn", mr: "mr", te: "te", ne: "ne", "ne-np": "ne", kn: "kn", ta: "ta", ml: "ml", as: "as", gu: "gu", bho: "bho", bhojpuri: "bho", mai: "mai", maithili: "mai", pa: "pa", "pa-in": "pa", or: "or", odia: "or", oriya: "or", kok: "kok", gom: "kok", konkani: "kok", si: "si", sinhala: "si", sa: "sa", sanskrit: "sa" };
 const isNode = typeof process !== "undefined" && process.versions != null && process.versions.node != null && typeof window === "undefined";
 
 let ready = null;
