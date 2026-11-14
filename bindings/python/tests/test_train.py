@@ -142,7 +142,7 @@ def test_label_files(tmp_path):
     rows = train.read_manifest(FIX / "piper.csv", layout="piper") + [Utterance("c", "…", audio="c.wav", speaker="ravi")]
     done = train.label(rows, "hi", improved=True)
     written = done.write(tmp_path, validation=1)
-    names = sorted(str(p.relative_to(tmp_path)) for p in written)
+    names = sorted(p.relative_to(tmp_path).as_posix() for p in written)
     assert names == sorted(
         [
             "labels.jsonl", "voice.json", "report.json",
