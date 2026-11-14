@@ -100,6 +100,7 @@ final-release-not-after = r n
 Ī i sign
 Ǐ iː sign
 Ȧ a sign
+ⱥ a sign weak
 ꞁ i vowel
 Ṉ n dead
 Ñ candrabindu
@@ -110,6 +111,7 @@ final-release-not-after = r n
 CC = ب پ ت ٹ ث ج چ ح خ د ڈ ذ ر ڑ ز ژ س ش ص ض ط ظ غ ف ق ک ك گ ل م ن ہ ه ۂ ۃ ة و ی ي ى Ḃ Ṕ Ṫ Ť Ĵ Ĉ Ḋ Ď Ḱ Ġ Ř Ŕ Ĺ Ṁ Ń ھ
 VL = ا آ ے ۓ ی و
 S = ˈ ˌ
+Hh = ب ث ج ح خ د ذ ر ز س ش ص ض ط ظ غ ف ق ل م ٹ پ چ ڈ ڑ ژ ک گ ہ
 
 [pre]
 # Aspirates written with do-chashmi he.
@@ -171,8 +173,11 @@ S = ˈ ˌ
 ع -> Ā / {CC} _
 ع -> Ă / # _
 # Vav: oː after a consonant before a consonant or at the end, else v.
+# Vav before ye and a consonant (or between vowel letters) is v.
+و -> و / _ ی {CC} | {VL} _ {VL}
 و -> Ō / {CC} _ {CC} | {CC} _ # | {CC} _ ں
 # Ye: i at the end, eː inside a word after a consonant, y before a vowel.
+ی -> Ē / {CC} _ و
 ی -> ْی / {CC} _ {VL}
 ی -> Ǐ / {CC} _ #
 ی -> Ǐ / {CC} _ ں
@@ -181,16 +186,34 @@ S = ˈ ˌ
 ی -> ꞁ / ئ _
 ئ -> Ȧ / {CC} _
 ے -> Ē / {CC} _
+# Izafat: a kasra at the end of a word is eː.
+ِ -> Ē / _ #
+# Alif carrying a short vowel mark at the start of a word is silent.
+ا -> 0 / # _ ُ | # _ ِ | # _ َ
+ائ -> Ȧإ / {CC} _ {Hh}
 # Final he after a consonant is a short a.
-ہ -> Ȧ / {CC} _ #
-ه -> Ȧ / {CC} _ #
+ہ -> ⱥ / {CC} _ #
+ه -> ⱥ / {CC} _ #
 # Noon ghunna: nasal after alif and vav, else n.
 ں -> Ñ / ا _ | و _
 ں -> Ṉ
 
+# Consonant pairs read without a vowel between them after the first
+# syllable (checked black-box against the reference reading).
+خ -> خْ / . _ ت #
+ر -> رْ / . _ د | . _ ٹ | . _ چ | . _ ڈ
+ر -> رْ / . _ ز #
+س -> سْ / . _ ٹ
+ش -> شْ / . _ ت #
+ل -> لْ / . _ ڈ
+م -> مْ / . _ ب | . _ پ
+ن -> نْ / . _ ب | . _ ج | . _ د | . _ س | . _ پ | . _ چ | . _ ڈ
+ٹ -> ٹْ / . _ س #
+ہ -> ہْ / . _ {Hh} {VL}
+
 [post]
-# Final unstressed ii is short.
-iː -> i / {!S} _ #
+# Unstressed ii is short.
+iː -> i / {!S} _
 
 [post.improved]
 # ص and ظ are s and z in Urdu.

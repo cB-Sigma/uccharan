@@ -1,0 +1,243 @@
+{
+ "language": "nl",
+ "reference": "espeak-ng 1.52.0 voice nl (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 164824,
+  "per": 0.01767946415570548,
+  "per_without_stress": 0.01105826883244304,
+  "exact_sentence": 0.3725296442687747,
+  "exact_sentence_without_stress": 0.49407114624505927,
+  "piper_shape_per": 0.017570440458723836,
+  "piper_shape_exact_sentence": 0.3705533596837945,
+  "word_count_mismatch_sentences": 149,
+  "errors_by_class": {
+   "stress": {
+    "count": 1307,
+    "share": 0.44852436513383664,
+    "per_contribution": 0.007929670436344221
+   },
+   "consonant": {
+    "count": 762,
+    "share": 0.26149622512010984,
+    "per_contribution": 0.004623113138863272
+   },
+   "vowel": {
+    "count": 498,
+    "share": 0.17089910775566233,
+    "per_contribution": 0.00302140464980828
+   },
+   "other": {
+    "count": 246,
+    "share": 0.08442004118050789,
+    "per_contribution": 0.0014925010920739698
+   },
+   "word-boundary": {
+    "count": 68,
+    "share": 0.023335621139327384,
+    "per_contribution": 0.00041256127748386155
+   },
+   "length": {
+    "count": 33,
+    "share": 0.011324639670555936,
+    "per_contribution": 0.000200213561131874
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→∅",
+    "count": 241
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 217
+   },
+   {
+    "edit": "d→t",
+    "count": 204
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 200
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 193
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 180
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 146
+   },
+   {
+    "edit": "t→d",
+    "count": 107
+   },
+   {
+    "edit": "t→∅",
+    "count": 62
+   },
+   {
+    "edit": " →∅",
+    "count": 57
+   },
+   {
+    "edit": "d→∅",
+    "count": 45
+   },
+   {
+    "edit": "ə→ɛ",
+    "count": 40
+   },
+   {
+    "edit": "e→∅",
+    "count": 34
+   },
+   {
+    "edit": "ː→ɔ",
+    "count": 30
+   },
+   {
+    "edit": "ɛ→ə",
+    "count": 30
+   },
+   {
+    "edit": "∅→e",
+    "count": 29
+   },
+   {
+    "edit": "o→∅",
+    "count": 28
+   },
+   {
+    "edit": "s→∅",
+    "count": 26
+   },
+   {
+    "edit": "ː→ɑ",
+    "count": 26
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 25
+   },
+   {
+    "edit": "a→∅",
+    "count": 25
+   },
+   {
+    "edit": "ː→ə",
+    "count": 25
+   },
+   {
+    "edit": "z→∅",
+    "count": 25
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 21
+   },
+   {
+    "edit": "e→ə",
+    "count": 20
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 19418,
+    "wrong": 839,
+    "rate": 0.043207333401998144
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 195,
+    "per": 0.030836410684924122,
+    "exact_sentence": 0.2
+   },
+   "no-digits": {
+    "sentences": 817,
+    "per": 0.013857897827363476,
+    "exact_sentence": 0.41370869033047736
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-33",
+    "text": "Gistermorgen ontplofte een autobom bij het hoofdbureau van de politie in Gaziantep, Turkije. Hierbij kwamen twee politieagenten om het leven en raakten meer dan twintig andere personen gewond.",
+    "reference": "ɣˈɪstərmˌɔrɣən ɔntplˈɔftə ən ˈʌʊtoːbˌɔm bɛɪ hət hˌoːvdbyrˈoː vɑn də poːlˈitsi ɪn ɣˈaːziˌɑntɛp tɵrkˈɛɪə hirbˈɛɪ kʋˈaːmən tʋˈeː poːlˈitsiaːɣˌɛntən ɔm hət lˈeːvən ɛn rˈaːktən mˈɪːr dˈɑn tʋˈɪntəx ˈɑndərə pɛrsˈɔnən ɣəʋˈɔnt",
+    "uccharan": "ɣˈɪstərmˌɔrɣən ɔntplˈɔftə ən ˈʌʊtoːbˌɔm bɛɪ hət hˈoːvdbyrˌoː vɑn də poːlˈitsi ɪn ɣaːzˈiɑntˌɛp tɵrkˈɛɪə hirbˈɛɪ kʋˈaːmən tʋˈeː poːlˈitsiaːɣˌɛntən ɔm hət lˈeːvən ɛn rˈaːktən mˈɪːr dˈɑn tʋˈɪntəx ˈɑndərə pɛrsˈɔnən ɣəʋˈɔnt"
+   },
+   {
+    "id": "flores-devtest-18",
+    "text": "Hij adviseerde tijdens de selecties van 1976 Carter op het gebied van buitenlands beleid. Vervolgens volgde hij Henry Kissinger op als National Security Advisor (NSA); deze functie vervulde hij van 1977 tot 1981.",
+    "reference": "hɛɪ ˌɑdvizˈɪrdə tˈɛɪdəns də seːlˈɛksis vɑn nˈeːɣəntinhˌɔndərt zˌɛsɛnzˌeːvəntəx kˈɑrtər ɔp hət ɣəbˈit vɑn bˈœytənlˌɑnts bəlˈɛɪt vərvˈɔlɣəns vˈɔlɣdə hɛɪ hˈɛnri kˈɪsɪŋər ɔp ɑls nˈaːʃoːnˌɑl sˈeːkyrˌiti ˈɑdvizˌɔr ˌɛnˌɛsˈaː dˌeːzə fˈɵnksi vərvˈɵldə hɛɪ vɑn nˈeːɣəntinhˌɔndərt zˌeːvənɛnzˌeːvəntəx tɔt nˈeːɣəntinhˌɔndərt ˌeːnɛntˌɑxtəx",
+    "uccharan": "hɛɪ ˌɑdvizˈɪrdə tˈɛɪdəns də seːlˈɛksi vɑn nˈeːɣəntˌinhˌɔndərt zˌɛsɛnzˌeːvəntəx kˈɑrtər ɔp hət ɣəbˈit vɑn bˈœytənlˌɑnts bəlˈɛɪt vərvˈɔlɣəns vˈɔlɣdə hɛɪ hˈɛnri kˈɪsɪŋər ɔp ɑls nˈaːʃoːnˌɑl sˈeːkyrˌiti ˈɑdvizɔr nsˈaː dˌeːzə fˈɵnksi vərvˈɵldə hɛɪ vɑn nˈeːɣəntˌinhˌɔndərt zˌeːvənɛnzˌeːvəntəx tɔt nˈeːɣəntˌinhˌɔndərt ˌeːnɛntˌɑxtəx"
+   },
+   {
+    "id": "flores-devtest-540",
+    "text": "Het Tibetaanse boeddhisme heeft zijn basis in de leer van Boeddha. Deze vorm van boeddhisme is echter uitgebreid met het mahayana-pad van de liefde en met een groot aantal technieken uit de Indiase yoga.",
+    "reference": "hə tˈibətˌaːnsə budhˈɪsmə heːft zɛɪn bˈaːzɪs ɪn də lˈɪːr vɑn bˈudhaː dˌeːzə vˈɔrm vɑn budhˈɪsmə ɪs ˈɛxtər ˈœytɣəbrˌɛɪd mɛt hət mˌaːhaːjˈaːnaːpˈɑt vɑn də lˈivdə ɛn mɛt ən ɣrˈoːt ˈaːntˌɑl tɛxnˈikən œy tə ˈɪndˌiaːzə jˈoːɣaː",
+    "uccharan": "hə tˈibətˌaːnsə budhˈɪsmə heːft zɛɪn pˈaːzɪs ɪn də lˈɪːr vɑn bˈudhaː dˌeːzə vˈɔrm vɑn budhˈɪsmə ɪs ˈɛxtər ˈœytɣəbrˌɛɪt mɛt hət maːhˈaːjaːnˌaːpˈɑt vɑn də lˈivdə ɛn mɛt ən ɣrˈoːt ˈaːntˌɑl tɛxnˈikən œy tə ˈɪndˌiaːzə jˈoːɣaː"
+   },
+   {
+    "id": "flores-devtest-893",
+    "text": "De shock van het terugkeren is erger dan de cultuurshock (je hebt een minder groot 'huwelijksreisgevoel'), het duurt langer, en het kan intenser zijn.",
+    "reference": "də ʃˈɔk vɑn hə tərˈɵxkˌɪːrən ɪs ˈɛrɣər dˈɑn də kˈɵltyrshˌɔk jə hɛpt ən mˈɪndər ɣrˈoːt hˌywələksrˌɛɪsxəvˈul hə tˈyrt lˈɑŋər ɛn hət kɑn ˈɪntˌɛnsər zɛɪn",
+    "uccharan": "də ʃˈɔk vɑn hə tərˈɵxkˌɪːrən ɪs ˈɛrɣər dˈɑn də kˈɵltyrsɔk jə hɛpt ən mˈɪndər ɣrˈoːt hˈywələksrˌɛɪsxəvˌul hə tˈyrt lˈɑŋər ɛn hət kɑn ˈɪntˌɛnsər zɛɪn"
+   },
+   {
+    "id": "flores-devtest-916",
+    "text": "Normaliter moet er voor de inschrijving voor deze educatieve programma's collegegeld worden betaald.",
+    "reference": "nˈɔrmaːlˌitər mˈut ər vɔːr də ˈɪnsxrˌɛɪvɪŋ vɔːr dˌeːzə ˌeːdykaːtˈivə proːɣrˈɑmaːs kˈɔləɣˌeːɣəlt ʋˌɔrdən bətˈaːlt",
+    "uccharan": "nˈɔrmaːlˌitər mˈut ər vɔːr də ˈɪnsxrˌɛɪvɪŋ vɔːr dˌeːzə ˌeːdykaːtˈivə prˌoːɣrɑmˈaːs kˈɔləɣˌeːɣəlt ʋˌɔrdən bətˈaːlt"
+   },
+   {
+    "id": "flores-devtest-674",
+    "text": "De correlatie tussen de pathologie van het brein en gedrag helpt wetenschappers tijdens hun onderzoek.",
+    "reference": "də kˌɔɾrəlˈaːtsi tˈɵsən də pˌɑtoːloːɣˈi vɑn hət brˈɛɪn ɛn ɣədrˈɑx hˈɛlpt ʋˈeːtənsxˌɑpərs tˈɛɪdəns hɵn ˈɔndərzˌuk",
+    "uccharan": "də kˌɔɾrəlˈaːtsi tˈɵsən də pˈɑtoːlˌoːɣi vɑn hət brˈɛɪn ɛn ɣədrˈɑx hˈɛlpt ʋˈeːtənsxˌɑpərs tˈɛɪdəns hɵn ˈɔndərzˌuk"
+   },
+   {
+    "id": "flores-devtest-645",
+    "text": "Tegenwoordig schrijft men berichten op een computerscherm zonder ooit een puntenslijper nodig te hebben.",
+    "reference": "tˈeːɣənʋˌɔːrdəx sxrˈɛɪft mˈɛn bərˈɪxtən ɔp ən kɔmpjˈutərsxˌɛrm zˈɔndər ˈoːjt ən pˈɵntənslˌɛɪpər nˈoːdəx tə hˌɛbən",
+    "uccharan": "tˈeːɣənʋˌɔːrdəx sxrˈɛɪft mˈɛn bərˈɪxtən ɔp ən kɔmpjˈutərsxˌɛrm zˈɔndər ˈoːjt ən pˌɵntɛnslˈɛɪpər nˈoːdəx tə hˌɛbən"
+   },
+   {
+    "id": "flores-devtest-63",
+    "text": "Historici hebben kritiek geuit op eerdere beleidsregels van de FBI, omdat ze hun middelen focusten op gemakkelijk op te lossen zaken, voornamelijk zaken met gestolen auto's, om op deze manier de succesratio van het bureau op te krikken.",
+    "reference": "hɪstˈoːrisˌi hˌɛbən kritˈik ɣˈøːɪt ɔp ˈɪːrdərə bəlˈɛɪtsrˌeːɣəls vɑn də ˌɛfbˌeːˈiː ˈɔmdɑt zə hɵn mˈɪdələn fˈoːkɵstən ɔp ɣəmˈɑkələk ɔp tə lˈɔsən zˈaːkən vˈɔːrnaːmələk zˈaːkən mɛt ɣəstˈoːlən ˈʌʊtoːs ɔm ɔp dˌeːzə maːnˈir də sˈɵksɛsrˌaːtiˌoː vɑn hət byrˈoː ɔp tə krˈɪkən",
+    "uccharan": "hɪstˈoːrisˌi hˌɛbən kritˈik ɣˈøːɪt ɔp ˈɪːrdərə bəlˈɛɪtsrəɣˌɛls vɑn də ˌɛfbˌeːˈiː ˈɔmdɑt zə hɵn mˈɪdələn fˈoːkɵstən ɔp ɣəmˈɑkələk ɔp tə lˈɔsən zˈaːkən vˈɔːrnaːmələk zˈaːkən mɛt ɣəstˈoːlən ˈʌʊtɔs ɔm ɔp dˌeːzə maːnˈir də sˈɵksɛsrˌaːtiˌoː vɑn hət byrˈoː ɔp tə krˈɪkən"
+   },
+   {
+    "id": "flores-devtest-558",
+    "text": "Hoewel paardenspoorwegen slechts bestonden uit een rails van planken, moesten de paarden wel steeds sneller lopen en grotere hoeveelheden voorttrekken dan op de enigszins moeilijk begaanbare wegen van die tijd.",
+    "reference": "huʋˈɛl pˌaːrdənspɔːrʋˈeːɣən slˈɛxts bəstˈɔndən œyt ən rˈɑjls vɑn plˈɑŋkən mˈustən də pˈaːrdən ʋˈɛl stˈeːt snˈɛlər lˈoːpən ɛn ɣrˈoːtərə hˈuveːlhˌeːdən vˈɔːrttrˌɛkən dˈɑn ɔp də ˈeːnɪxsˌɪns mˈujlək bəɣˈaːnbaːrə ʋˈeːɣən vɑn di tˈɛɪt",
+    "uccharan": "huʋˈɛl pˈaːrdɛnspˌɔːrʋeːɣən slˈɛxts bəstˈɔndən œyt ən rˈɑjls vɑn plˈɑŋkən mˈustən də pˈaːrdən ʋˈɛl stˈeːt snˈɛlər lˈoːpən ɛn ɣrˈoːtərə hˈuveːlhˌeːdən vˈɔːrtrɛkən dˈɑn ɔp də ˈeːnɪxsˌɪns mˈujlək bəɣˈaːnbaːrə ʋˈeːɣən vɑn di tˈɛɪt"
+   },
+   {
+    "id": "flores-devtest-34",
+    "text": "Onder de gewonden zijn negentien politieagenten, zei de gouverneur.",
+    "reference": "ˈɔndər də ɣəʋˈɔndən zɛɪn nˌeːɣəntˈin poːlˈitsiaːɣˌɛntən zˈɛɪ də ɣˌʌʊvərnˈøːr",
+    "uccharan": "ˈɔndər də ɣəʋˈɔndən zɛɪn nˈeːɣəntˌin poːlˈitsiaːɣˌɛntən zˈɛɪ də ɣˌʌʊvərnˈøːr"
+   },
+   {
+    "id": "flores-devtest-889",
+    "text": "Vanwege de onderwatertopologie bevindt de retourstroom zich in enkele diepere delen, waar een snelle stroming naar diep water kan ontstaan.",
+    "reference": "vɑnʋˈeːɣə də ˈɔndərʋˌaːtərtˌoːpoːloːɣˌi bəvˈɪn tə rˌeːtuːrstrˈoːm zɪx ɪn ˈɛŋkələ dˈipərə dˈeːlən ʋˈaːr ən snˈɛlə strˈoːmɪŋ naːr dˈip ʋˈaːtər kɑn ɔntstˈaːn",
+    "uccharan": "vɑnʋˈeːɣə də ˈɔndərʋˌaːtərtˌoːpoːlˌoːɣi bəvˈɪn tə rˈeːtuːrstrˌoːm zɪx ɪn ˈɛŋkələ dˈipərə dˈeːlən ʋˈaːr ən snˈɛlə strˈoːmɪŋ naːr dˈip ʋˈaːtər kɑn ɔntstˈaːn"
+   },
+   {
+    "id": "flores-devtest-72",
+    "text": "Tijdens de vergadering met de Minister-president vroeg Layton om veranderingen in de milieuwet van de conservatieven, waarbij hij vroeg om het 'grondig en volledig herschrijven' van de milieuwet van de conservatieve partij.",
+    "reference": "tˈɛɪdəns də vərɣˈaːdərˌɪŋ mɛ tə mˈinɪstərprˌeːzidˈɛnt vrˈux laːjtˈɔn ɔm vərˈɑndərˌɪŋən ɪn də mɪljˈøːʋɛt vɑn də kˌɔnsərvaːtˈivən ʋaːrbˈɛɪ hɛɪ vrˈux ɔm hət ɣrˈɔndəx ɛn vɔlˈeːdəx hɛrsxrˈɛɪvən vɑn də mɪljˈøːʋɛt vɑn də kˌɔnsərvaːtˈivə pɑrtˈɛɪ",
+    "uccharan": "tˈɛɪdəns də vərɣˈaːdərˌɪŋ mɛ tə mˈinɪstərprˌeːzidˈɛnt vrˈux laːjtˈɔn ɔm vərˈɑndərˌɪŋən ɪn də mɪljˈɛt vɑn də kˌɔnsərvaːtˈivən ʋaːrbˈɛɪ hɛɪ vrˈux ɔm hət ɣrˈɔndəx ɛn vɔlˈeːdəx hɛrsxrˈɛɪvən vɑn də mɪljˈɛt vɑn də kˌɔnsərvaːtˈivə pɑrtˈɛɪ"
+   }
+  ]
+ }
+}

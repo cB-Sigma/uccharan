@@ -418,6 +418,112 @@ pub unsafe extern "C" fn uccharan_wordlist_convert(
     CString::new(out).map_or(std::ptr::null_mut(), CString::into_raw)
 }
 
+/// Opaque handle of a vocabulary prepared for sound-alike matching.
+pub struct UccharanSoundIndex {
+    inner: uccharan_core::soundalike::SoundIndex,
+}
+
+/// Build a sound-alike index over a vocabulary: a word list (TSV, PLS or
+/// JSON text), a JSON array of terms (strings, or objects with `word` and
+/// optional `lang`, `ipa`, `say`), or text with one term per line.
+/// `options` is NULL or a JSON object (`langs`: the languages terms without
+/// phonemes are read in; `ordinary_words`: more words to take for ordinary
+/// speech).
+///
+/// Returns NULL for invalid input. Release the index with
+/// [`uccharan_sound_index_free`]. An index may be shared between threads.
+///
+/// # Safety
+/// `p` must be a live phonemizer; `vocabulary` a valid C string; `options`
+/// NULL or a valid C string.
+#[no_mangle]
+pub unsafe extern "C" fn uccharan_sound_index_new(
+    p: *const UccharanPhonemizer,
+    vocabulary: *const c_char,
+    options: *const c_char,
+) -> *mut UccharanSoundIndex {
+    if p.is_null() || vocabulary.is_null() {
+        return std::ptr::null_mut();
+    }
+    // SAFETY: pointers were checked for NULL and the caller guarantees validity.
+    let (p, vocabulary) = unsafe { (&*p, CStr::from_ptr(vocabulary)) };
+    let options = if options.is_null() {
+        Ok("")
+    } else {
+        // SAFETY: non-NULL and valid per the contract.
+        unsafe { CStr::from_ptr(options) }.to_str()
+    };
+    let (Ok(vocabulary), Ok(options)) = (vocabulary.to_str(), options) else {
+        return std::ptr::null_mut();
+    };
+    match uccharan_core::soundalike::SoundIndex::from_text(&p.inner, vocabulary, options) {
+        Ok(inner) => Box::into_raw(Box::new(UccharanSoundIndex { inner })),
+        Err(_) => std::ptr::null_mut(),
+    }
+}
+
+/// Destroy a sound-alike index. NULL is ignored.
+///
+/// # Safety
+/// `index` must be NULL or a pointer returned by
+/// [`uccharan_sound_index_new`] that has not been freed.
+#[no_mangle]
+pub unsafe extern "C" fn uccharan_sound_index_free(index: *mut UccharanSoundIndex) {
+    if !index.is_null() {
+        // SAFETY: per the contract, `index` came from Box::into_raw.
+        drop(unsafe { Box::from_raw(index) });
+    }
+}
+
+/// Correct a transcript against a sound-alike index. The result is JSON:
+/// `{"text", "changes": [{"src", "out", "from", "to", "index", "score",
+/// "case_only"}], "candidates": [{"src", "text", "term", "index", "score",
+/// "exact", "kind", "words"}]}` with `byte`, `char` and `utf16` offsets in
+/// every range. `text` is the transcript with every candidate applied that
+/// passes the options; `candidates` lists all places that sound like a
+/// term, applied or not. `options` is NULL or a JSON object: `threshold`,
+/// `uncertain_threshold`, `ordinary_threshold`, `confidence` (one number
+/// per whitespace-separated word), `max_confidence`, `fix_case`,
+/// `max_words`, `min_score`, `all`. With `threshold` 2 and `fix_case`
+/// false nothing is changed and only the candidates are reported.
+///
+/// Returns a newly allocated string, or NULL for invalid input.
+///
+/// # Safety
+/// `p` must be a live phonemizer and `index` a live index; `text` and
+/// `lang` valid C strings; `options` NULL or a valid C string.
+#[no_mangle]
+pub unsafe extern "C" fn uccharan_match_terms(
+    p: *const UccharanPhonemizer,
+    index: *const UccharanSoundIndex,
+    text: *const c_char,
+    lang: *const c_char,
+    options: *const c_char,
+) -> *mut c_char {
+    if p.is_null() || index.is_null() || text.is_null() || lang.is_null() {
+        return std::ptr::null_mut();
+    }
+    // SAFETY: pointers were checked for NULL and the caller guarantees validity.
+    let (p, index, text, lang) =
+        unsafe { (&*p, &*index, CStr::from_ptr(text), CStr::from_ptr(lang)) };
+    let options = if options.is_null() {
+        Ok("")
+    } else {
+        // SAFETY: non-NULL and valid per the contract.
+        unsafe { CStr::from_ptr(options) }.to_str()
+    };
+    let (Ok(text), Ok(lang), Ok(options)) = (text.to_str(), lang.to_str(), options) else {
+        return std::ptr::null_mut();
+    };
+    let Some(lang) = Lang::parse(lang) else {
+        return std::ptr::null_mut();
+    };
+    match index.inner.apply_json(&p.inner, text, lang, options) {
+        Ok(s) => CString::new(s).map_or(std::ptr::null_mut(), CString::into_raw),
+        Err(_) => std::ptr::null_mut(),
+    }
+}
+
 /// Release a string returned by this library. NULL is ignored.
 ///
 /// # Safety
@@ -503,6 +609,48 @@ mod textnorm_tests {
                 .unwrap()
                 .contains("<grapheme>Kokoro</grapheme>"));
             uccharan_string_free(s);
+            uccharan_free(p);
+        }
+    }
+}
+
+#[cfg(test)]
+mod soundalike_tests {
+    use super::*;
+
+    #[test]
+    fn match_terms_through_the_abi() {
+        let p = uccharan_new();
+        let c = |s: &str| CString::new(s).unwrap();
+        let (vocab, text, lang) = (c("Kothari\nPaytm\n"), c("call Coat Harry"), c("en-us"));
+        // SAFETY: all pointers are valid for the duration of the calls.
+        unsafe {
+            let ix = uccharan_sound_index_new(p, vocab.as_ptr(), std::ptr::null());
+            assert!(!ix.is_null());
+            let s = uccharan_match_terms(p, ix, text.as_ptr(), lang.as_ptr(), std::ptr::null());
+            let out = CStr::from_ptr(s).to_str().unwrap().to_string();
+            assert!(
+                out.starts_with(
+                    "{\"text\":\"call Kothari\",\"changes\":[{\"src\":{\"byte\":[5,15]"
+                ),
+                "{out}"
+            );
+            uccharan_string_free(s);
+            let none = c("{\"threshold\": 2, \"fix_case\": false}");
+            let s = uccharan_match_terms(p, ix, text.as_ptr(), lang.as_ptr(), none.as_ptr());
+            let out = CStr::from_ptr(s).to_str().unwrap().to_string();
+            assert!(
+                out.starts_with("{\"text\":\"call Coat Harry\",\"changes\":[],\"candidates\":[{"),
+                "{out}"
+            );
+            uccharan_string_free(s);
+            let bad = c("{\"nope\": 1}");
+            assert!(
+                uccharan_match_terms(p, ix, text.as_ptr(), lang.as_ptr(), bad.as_ptr()).is_null()
+            );
+            assert!(uccharan_sound_index_new(p, c("[1]").as_ptr(), std::ptr::null()).is_null());
+            uccharan_sound_index_free(ix);
+            uccharan_sound_index_free(std::ptr::null_mut());
             uccharan_free(p);
         }
     }

@@ -1,0 +1,170 @@
+# Technical and domain jargon: term, spoken form (only where the spelling
+# does not show how the term is said).
+Kubernetes
+kubectl	cube control
+PostgreSQL	postgres Q L
+MySQL	my S Q L
+nginx	engine X
+OAuth	oh auth
+gRPC	G R P C
+GraphQL	graph Q L
+Redis
+Kafka
+RabbitMQ	rabbit M Q
+Terraform
+Ansible
+Jenkins
+Grafana
+Prometheus
+Elasticsearch	elastic search
+Kibana
+Logstash	log stash
+Docker
+Podman
+Istio
+Envoy
+etcd	et C D
+Zookeeper
+Cassandra
+MongoDB	mongo D B
+DynamoDB	dynamo D B
+SQLite	S Q lite
+Databricks	data bricks
+Airflow
+Hadoop
+PySpark	pie spark
+NumPy	num pie
+PyTorch	pie torch
+TensorFlow	tensor flow
+Keras
+Jupyter
+Matplotlib	mat plot lib
+LangChain	lang chain
+ONNX	onyx
+CUDA	kooda
+Webpack	web pack
+Svelte
+Vue	view
+Angular
+Tailwind
+TypeScript	type script
+Kotlin
+Golang	go lang
+Haskell
+Erlang
+Elixir
+Scala
+Clojure
+Gradle
+Maven
+Bazel
+CMake	see make
+YAML	yamel
+TOML	tomel
+Protobuf	proto buff
+Avro
+Parquet	par kay
+WebSocket	web socket
+WebRTC	web R T C
+WebAssembly	web assembly
+Swagger
+Postman
+JWT	J W T
+SAML	samel
+LDAP	el dap
+Kerberos
+Okta
+GitHub	git hub
+GitLab	git lab
+Bitbucket	bit bucket
+Jira
+Confluence
+Datadog	data dog
+Splunk
+PagerDuty	pager duty
+Nagios
+Zabbix
+HAProxy	H A proxy
+Traefik	traffic
+Memcached	mem cashed
+Celery
+Gunicorn	gun i corn
+Uvicorn	you vi corn
+FastAPI	fast A P I
+Django	jango
+Laravel
+Symfony
+Deno	dee no
+Ubuntu
+Debian
+Fedora
+CentOS	sent O S
+systemd	system D
+tmux	T mux
+kubelet	cube let
+minikube	mini cube
+ArgoCD	argo C D
+Knative	kay native
+Kustomize	customize
+OpenShift	open shift
+Rancher
+Aadhaar
+FASTag	fast tag
+DigiLocker	digi locker
+CoWIN	co win
+Ayushman
+demat
+Sensex
+SEBI	sebi
+NABARD	nabard
+NEFT	neft
+GSTIN	G S T I N
+paracetamol
+azithromycin
+amoxicillin
+metformin
+atorvastatin
+pantoprazole
+ibuprofen
+cetirizine
+ranitidine
+omeprazole
+levothyroxine
+telmisartan
+amlodipine
+glimepiride
+montelukast
+Crocin
+echocardiogram
+angioplasty
+laparoscopy
+endoscopy
+tachycardia
+hypothyroidism
+panchayat
+tehsildar
+lokpal
+jugaad
+satyagraha
+swadeshi
+anganwadi
+gram sabha
+zila parishad
+benami
+hawala
+lathi charge
+dharna
+gherao
+bandh
+pradhan mantri
+vidhan sabha
+rajya sabha
+lok sabha
+mandi
+kirana
+tiffin
+dabbawala
+rangoli
+mehndi
+sangeet
+baraat

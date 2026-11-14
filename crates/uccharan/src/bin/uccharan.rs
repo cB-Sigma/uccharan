@@ -14,6 +14,12 @@
 //! `-p text-json` the spoken form with spans; `--norm-options JSON` sets the
 //! normalise options. `--wordlist FILE` (TSV or PLS, repeatable) applies a
 //! pronunciation word list in both modes.
+//! `--match-terms FILE` corrects each line against a vocabulary (a word list,
+//! a JSON array of terms, or one term per line) by sound and prints one JSON
+//! object per line with the new text, the changes and the candidates;
+//! `--match-options JSON` sets the matching options, `--index-options JSON`
+//! the languages the vocabulary is read in, and `--match-stats` prints
+//! timings to standard error.
 //! Without TEXT arguments, lines are read from standard input.
 
 use std::io::{BufRead, Write};
@@ -34,6 +40,10 @@ fn main() {
     let mut texts: Vec<String> = Vec::new();
     let mut norm_options = String::new();
     let mut wordlists: Vec<std::sync::Arc<uccharan::wordlist::WordList>> = Vec::new();
+    let mut match_terms: Option<String> = None;
+    let mut match_options = String::new();
+    let mut index_options = String::new();
+    let mut match_stats = false;
     let mut args = std::env::args().skip(1);
     while let Some(a) = args.next() {
         match a.as_str() {
@@ -66,18 +76,63 @@ fn main() {
                     .unwrap_or_else(|e| die(&format!("{f}: {e}")));
                 wordlists.push(std::sync::Arc::new(wl));
             }
+            "--match-terms" => match_terms = args.next(),
+            "--match-options" => match_options = args.next().unwrap_or_default(),
+            "--index-options" => index_options = args.next().unwrap_or_default(),
+            "--match-stats" => match_stats = true,
             "-V" | "--version" => {
                 println!("uccharan {}", env!("CARGO_PKG_VERSION"));
                 return;
             }
             "-h" | "--help" => {
                 println!(
-                    "usage: uccharan [-l en-us|en-gb|hi] [-p espeak-ipa|piper|kokoro|kitten|matcha|sherpa-onnx]\n                [--normalize natural|espeak|off] [--improved] [--hinglish] [--no-punctuation]\n                [--ids [--voice-config FILE]] [--threads N] [--misaki DIR] [--pack FILE.ucd]... [TEXT...]\n\nReads lines from standard input when no TEXT is given."
+                    "usage: uccharan [-l en-us|en-gb|hi] [-p espeak-ipa|piper|kokoro|kitten|matcha|sherpa-onnx]\n                [--normalize natural|espeak|off] [--improved] [--hinglish] [--no-punctuation]\n                [--ids [--voice-config FILE]] [--threads N] [--misaki DIR] [--pack FILE.ucd]... [TEXT...]\n                [--match-terms FILE [--match-options JSON] [--index-options JSON] [--match-stats]]\n\nReads lines from standard input when no TEXT is given."
                 );
                 return;
             }
             _ => texts.push(a),
         }
+    }
+    if let Some(f) = &match_terms {
+        let p = Phonemizer::new();
+        let vocabulary = std::fs::read_to_string(f).unwrap_or_else(|e| die(&format!("{f}: {e}")));
+        let t0 = std::time::Instant::now();
+        let index = uccharan::soundalike::SoundIndex::from_text(&p, &vocabulary, &index_options)
+            .unwrap_or_else(|e| die(&format!("{f}: {e}")));
+        let built = t0.elapsed();
+        let lines: Vec<String> = if texts.is_empty() {
+            std::io::stdin()
+                .lock()
+                .lines()
+                .map_while(Result::ok)
+                .collect()
+        } else {
+            texts.clone()
+        };
+        let mut out = std::io::BufWriter::new(std::io::stdout().lock());
+        let t1 = std::time::Instant::now();
+        for line in &lines {
+            let s = index
+                .apply_json(&p, line, lang, &match_options)
+                .unwrap_or_else(|e| die(&format!("--match-options: {e}")));
+            let _ = writeln!(out, "{s}");
+        }
+        if match_stats {
+            let secs = t1.elapsed().as_secs_f64();
+            let words: usize = lines.iter().map(|l| l.split_whitespace().count()).sum();
+            eprintln!(
+                "terms {} sequences {} build_ms {:.1} lines {} words {} seconds {:.4} lines_per_s {:.0} words_per_s {:.0}",
+                index.len(),
+                index.variants(),
+                built.as_secs_f64() * 1e3,
+                lines.len(),
+                words,
+                secs,
+                lines.len() as f64 / secs.max(1e-9),
+                words as f64 / secs.max(1e-9)
+            );
+        }
+        return;
     }
     if prof == "text" || prof == "text-json" {
         let p = Phonemizer::new();

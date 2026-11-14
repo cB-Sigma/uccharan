@@ -186,7 +186,7 @@ jobs:
         run: |
           mkdir -p out
           node bindings/wasm/build.mjs
-          cd bindings/wasm && node --test test/node.test.mjs && npm pack --pack-destination ../../out
+          cd bindings/wasm && npm test && npm pack --pack-destination ../../out
       - uses: actions/upload-artifact@v7
         with:
           name: npm
@@ -315,7 +315,7 @@ jobs:
           cargo install wasm-bindgen-cli --version "$WASM_BINDGEN_VERSION" --locked
           node bindings/wasm/build.mjs
           cd bindings/wasm
-          node --test test/node.test.mjs
+          npm test
           if npm view "uccharan@$VERSION" version > /dev/null 2>&1; then
             echo "uccharan $VERSION is already on npm"
           else

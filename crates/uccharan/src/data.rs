@@ -80,6 +80,8 @@ struct LtsShape {
 #[derive(Clone)]
 struct LtsHeader {
     tables: Vec<LtsShape>,
+    /// Some tables give the stress mark of a letter's vowel (flag 0x40).
+    stress: bool,
     outputs: Vec<(usize, usize)>,
 }
 
@@ -194,7 +196,12 @@ impl Data {
             });
             at = next;
         }
-        Ok(LtsHeader { tables, outputs })
+        let stress = tables.iter().any(|t| t.left & 0x40 != 0);
+        Ok(LtsHeader {
+            tables,
+            stress,
+            outputs,
+        })
     }
 
     /// Number of lexicon entries.
@@ -290,22 +297,66 @@ impl Data {
         };
         let b: &[u8] = &self.bytes;
         out.clear();
+        let mut state = 0u8;
+        let text = |v: usize| {
+            h.outputs.get(v).map_or("", |&(o, l)| {
+                std::str::from_utf8(&b[o..o + l]).unwrap_or("")
+            })
+        };
+        let pick = |i: usize, stress: bool, state: u32| {
+            h.tables
+                .iter()
+                .filter(|t| (t.left & 0x40 != 0) == stress)
+                .find_map(|t| Self::lts_probe(b, t, shape_hash(letters, i, t.left, t.right, state)))
+                .map(text)
+        };
         for i in 0..letters.len() {
-            for t in &h.tables {
-                let hash = context_hash(letters, i, t.left as usize, t.right as usize);
-                if let Some(v) = Self::lts_probe(b, t, hash) {
-                    if let Some(&(o, l)) = h.outputs.get(v) {
-                        out.push_str(std::str::from_utf8(&b[o..o + l]).unwrap_or(""));
-                    }
-                    break;
+            let Some(seg) = pick(i, false, state as u32) else {
+                continue;
+            };
+            let from = out.len();
+            match seg.char_indices().find(|&(_, c)| is_vowel(c)) {
+                Some((at, _)) if h.stress => {
+                    out.push_str(&seg[..at]);
+                    out.push_str(pick(i, true, stress_key(state, seg)).unwrap_or(""));
+                    out.push_str(&seg[at..]);
                 }
+                _ => out.push_str(seg),
             }
+            state = stress_state(state, &out[from..]);
         }
         true
     }
 }
 
+/// The bytes of a word for a letter-to-sound model of a language whose
+/// alphabet goes beyond ASCII: ASCII letters, the apostrophe and the hyphen
+/// stand for themselves, the letters of `extra` are numbered from 0x80.
+/// `None` when the word has any other character.
+pub fn encode_letters(word: &str, extra: &str) -> Option<Vec<u8>> {
+    word.chars()
+        .map(|c| {
+            if c.is_ascii_lowercase() || c == '\'' || c == '-' {
+                Some(c as u8)
+            } else if c.is_ascii() {
+                None
+            } else {
+                extra.chars().position(|x| x == c).map(|i| 0x80 + i as u8)
+            }
+        })
+        .collect()
+}
+
 impl Data {
+    /// The model's reading of a lower-case word, for images whose `META`
+    /// section names the model's letters (`letters=`).
+    pub fn model_word(&self, word: &str) -> Option<String> {
+        self.ltsm.as_ref()?;
+        let letters = encode_letters(word, self.meta("letters")?)?;
+        let mut out = String::new();
+        (self.lts(&letters, &mut out) && !out.is_empty()).then_some(out)
+    }
+
     fn lts_probe(b: &[u8], t: &LtsShape, h: u32) -> Option<usize> {
         let bucket = if t.bits == 0 {
             0
@@ -389,6 +440,98 @@ pub fn context_hash(letters: &[u8], i: usize, left: usize, right: usize) -> u32 
     for k in 1..=right {
         step(if i + k < letters.len() {
             letters[i + k]
+        } else {
+            b'#'
+        });
+    }
+    h
+}
+
+/// A vowel letter of the phonetic alphabet.
+pub fn is_vowel(c: char) -> bool {
+    matches!(
+        c,
+        'a' | 'e'
+            | 'i'
+            | 'o'
+            | 'u'
+            | 'y'
+            | 'ø'
+            | 'œ'
+            | 'ɛ'
+            | 'ɔ'
+            | 'ə'
+            | 'ɪ'
+            | 'ʊ'
+            | 'ʏ'
+            | 'ɑ'
+            | 'ɐ'
+            | 'æ'
+            | 'ɜ'
+            | 'ɨ'
+            | 'ʉ'
+            | 'ɯ'
+            | 'ɤ'
+            | 'ʌ'
+            | 'ɒ'
+            | 'ɵ'
+            | 'ɘ'
+            | 'ɚ'
+    )
+}
+
+/// The stress state after the output `out` of one letter: bits 0-1 count
+/// the vowels since the last stress mark (at most 3), bits 2-3 are that mark
+/// (1 primary, 2 secondary), bit 4 says a primary stress was written.
+pub fn stress_state(state: u8, out: &str) -> u8 {
+    let mut s = state;
+    for c in out.chars() {
+        match c {
+            'ˈ' => s = 0b1_01_00,
+            'ˌ' => s = (s & 0b1_00_00) | 0b10_00,
+            c if is_vowel(c) && s & 3 < 3 => s += 1,
+            _ => {}
+        }
+    }
+    s
+}
+
+/// The stress state together with a hash of the segments just chosen for
+/// a letter: the key of the stress tables.
+pub fn stress_key(state: u8, seg: &str) -> u32 {
+    let h = seg.bytes().fold(0x9dc5u32, |h, b| {
+        (h ^ b as u32).wrapping_mul(0x0193) & 0xffff
+    });
+    state as u32 | h << 8
+}
+
+/// [`context_hash`] for a table shape with flags: bit 7 of `left` adds the
+/// stress state of the output so far, bits 4-6 of `right` give a number of
+/// letters at the end of the word that are part of the context. Without
+/// flags this is `context_hash`.
+pub fn shape_hash(letters: &[u8], i: usize, left: u8, right: u8, state: u32) -> u32 {
+    let mut h = context_hash(letters, i, (left & 15) as usize, (right & 15) as usize);
+    if left & 0x80 == 0 && right & 0x70 == 0 {
+        return h;
+    }
+    let mut step = |c: u8| {
+        h ^= c as u32;
+        h = h.wrapping_mul(0x0100_0193);
+    };
+    step(left);
+    step(right);
+    if left & 0x80 != 0 {
+        step(state as u8);
+    }
+    if left & 0x40 != 0 {
+        // A stress table also sees the segments chosen for the letter.
+        step((state >> 8) as u8);
+        step((state >> 16) as u8);
+    }
+    let e = ((right >> 4) & 7) as usize;
+    for k in (1..=e).rev() {
+        step(if letters.len() >= k {
+            letters[letters.len() - k]
         } else {
             b'#'
         });

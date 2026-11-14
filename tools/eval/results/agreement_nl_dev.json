@@ -1,0 +1,243 @@
+{
+ "language": "nl",
+ "reference": "espeak-ng 1.52.0 voice nl (library API)",
+ "set": "dev",
+ "sentence_level": {
+  "sentences": 997,
+  "reference_symbols": 156325,
+  "per": 0.017246121861506477,
+  "per_without_stress": 0.010720568699960508,
+  "exact_sentence": 0.3801404212637914,
+  "exact_sentence_without_stress": 0.49648946840521563,
+  "piper_shape_per": 0.017086620639121728,
+  "piper_shape_exact_sentence": 0.3781344032096289,
+  "word_count_mismatch_sentences": 170,
+  "errors_by_class": {
+   "stress": {
+    "count": 1230,
+    "share": 0.45623145400593473,
+    "per_contribution": 0.007868223252838638
+   },
+   "consonant": {
+    "count": 684,
+    "share": 0.25370919881305637,
+    "per_contribution": 0.004375499760115145
+   },
+   "vowel": {
+    "count": 444,
+    "share": 0.16468842729970326,
+    "per_contribution": 0.0028402366863905324
+   },
+   "other": {
+    "count": 236,
+    "share": 0.08753709198813056,
+    "per_contribution": 0.001509675355829202
+   },
+   "word-boundary": {
+    "count": 60,
+    "share": 0.02225519287833828,
+    "per_contribution": 0.00038381576843115304
+   },
+   "length": {
+    "count": 42,
+    "share": 0.015578635014836795,
+    "per_contribution": 0.00026867103790180713
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→∅",
+    "count": 269
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 185
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 175
+   },
+   {
+    "edit": "d→t",
+    "count": 167
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 163
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 159
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 151
+   },
+   {
+    "edit": "t→d",
+    "count": 96
+   },
+   {
+    "edit": "t→∅",
+    "count": 66
+   },
+   {
+    "edit": " →∅",
+    "count": 60
+   },
+   {
+    "edit": "d→∅",
+    "count": 48
+   },
+   {
+    "edit": "ː→ɔ",
+    "count": 45
+   },
+   {
+    "edit": "e→∅",
+    "count": 43
+   },
+   {
+    "edit": "o→∅",
+    "count": 41
+   },
+   {
+    "edit": "ː→ə",
+    "count": 36
+   },
+   {
+    "edit": "ɛ→ə",
+    "count": 31
+   },
+   {
+    "edit": "s→∅",
+    "count": 27
+   },
+   {
+    "edit": "ː→∅",
+    "count": 25
+   },
+   {
+    "edit": "ə→ɛ",
+    "count": 25
+   },
+   {
+    "edit": "∅→e",
+    "count": 23
+   },
+   {
+    "edit": "ɪ→i",
+    "count": 22
+   },
+   {
+    "edit": "l→∅",
+    "count": 20
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 20
+   },
+   {
+    "edit": "ə→∅",
+    "count": 20
+   },
+   {
+    "edit": "z→∅",
+    "count": 19
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 18000,
+    "wrong": 751,
+    "rate": 0.04172222222222222
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 216,
+    "per": 0.026275194092506893,
+    "exact_sentence": 0.2175925925925926
+   },
+   "no-digits": {
+    "sentences": 781,
+    "per": 0.014188830470449214,
+    "exact_sentence": 0.42509603072983354
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-dev-917",
+    "text": "In deze categorie is een van de meest prominente apps Google Translate, waarmee je offline kunt vertalen als je de gewenste taalgegevens hebt gedownload.",
+    "reference": "ɪn dˌeːzə kˌaːtəɣoːrˈi ɪs ˈeːn vɑn də mˈeːst prˌoːminˈɛntə ˈɑps ɡˈuːɡəl trˌɑnslˈaːtə ʋaːrmˈeː jə ˈɒflaɪn kɵnt vərtˈaːlən ɑls jə də ɣəʋˈɛnstə tˈaːlɣəɣˌeːvəns hɛpt ɣədˈɔwnloːˌɑt",
+    "uccharan": "ɪn dˌeːzə kˌaːtəɣoːrˈi ɪs ən vɑn də mˈeːst prˌoːminˈɛntə ˈɑps ɡˈuːɡəl trˌɑnslˈaːtə ʋaːrmˈeː jə ˈɒflaɪn kɵnt vərtˈaːlən ɑls jə də ɣəʋˈɛnstə tˌaːlɣəɣˈeːvəns hɛpt ɣədˈɔwnloːˌɑt"
+   },
+   {
+    "id": "flores-dev-872",
+    "text": "Tijdens een staycation heb je de tijd om jezelf te verwennen en om eens iets speciaals te bereiden.",
+    "reference": "tˈɛɪdəns ən stˌaːjkaːʃˈɔn hɛp jə də tˈɛɪd ɔm jəsˈɛlf tə vərʋˈɛnən ɛn ɔm ˈeːns ˈit speːʃˈaːls tə bərˈɛɪdən",
+    "uccharan": "tˈɛɪdəns ən stˈaːjkaːʃˌɔn hɛp jə də tˈɛɪt ɔm jəsˈɛlf tə vərʋˈɛnən ɛn ɔm ˈeːns ˈit speːʃˈaːls tə bərˈɛɪdən"
+   },
+   {
+    "id": "flores-dev-812",
+    "text": "Een dagwandeling kan bestaan uit een wandeling van minder dan een mijl tot langere wandelingen die in één dag kunnen worden gelopen.",
+    "reference": "ən dˈɑɣʋɑndˌeːlɪŋ kɑn bəstˈaːn œyt ən ʋˈɑndəlˌɪŋ vɑn mˈɪndər dˈɑn ən mˈɛɪl tɔt lˈaŋərə ʋˈɑndəlˌɪŋən di ɪn ˈeːn dˈɑx kˌɵnən ʋˌɔrdən ɣəlˈoːpən",
+    "uccharan": "ən dˈɑɣʋɑndəlˌɪŋ kɑn bəstˈaːn œyt ən ʋˈɑndəlˌɪŋ vɑn mˈɪndər dˈɑn ən mˈɛɪl tɔt lˈaŋərə ʋˈɑndəlˌɪŋən di ɪn ˈeːn dˈɑx kˌɵnən ʋˌɔrdən ɣəlˈoːpən"
+   },
+   {
+    "id": "flores-dev-212",
+    "text": "Er was niemand in het appartement.",
+    "reference": "ər ʋˈɑs nˈimɑnd ɪn hət ˌɑpɑrtəmˈɛnt",
+    "uccharan": "ər ʋˈɑs nˈimɑnt ɪn hət ˌɑpɑrtəmˈɛnt"
+   },
+   {
+    "id": "flores-dev-25",
+    "text": "Ovechkins eerste assist van de avond was op het winnende doelpunt van debutant Nicklas Backstrom;",
+    "reference": "ˈoːvɛxkˌɪns ˈɪːrstə ɑsˈɪst vɑn də ˈaːvɔnt ʋˈɑs ɔp hət ʋˈɪnəndə dˈulpˌɵnt vɑn dˌeːbytˈɑnt nˈɪklɑs bˈɑkstrɔm",
+    "uccharan": "ˈoːvɛxkɪns ˈɪːrstə ɑsˈɪst vɑn də ˈaːvɔnt ʋˈɑs ɔp hət ʋˈɪnəndə dˈulpˌɵnt vɑn dˌeːbytˈɑnt nˈɪklɑs bɑkstrˈɔm"
+   },
+   {
+    "id": "flores-dev-102",
+    "text": "Een tweede beperkingsgebied onder de tanks dat tot 104.500 vaten kan opslaan, was nog niet volledig gevuld.",
+    "reference": "ən tʋˈeːdə bəpˌɛrkɪŋsɣəbˈit ˈɔndər də tˈɑŋks dɑ tɔt hˈɔndərt vˌir dˌœyzɛnt vˈɛɪfhˌɔndərt vˈaːtən kɑn ˈɔpslaːn ʋˈɑs nˈɔx nˌit vɔlˈeːdəx ɣəvˈɵlt",
+    "uccharan": "ən tʋˈeːdə bəpˈɛrkɪŋsɣəbˌit ˈɔndər də tˈɑŋks dɑ tɔt hˈɔndərt vˌir dˌœyzɛnt vˌɛɪfhˌɔndərt vˈaːtən kɑn ˈɔpslaːn ʋˈɑs nˈɔx nˌit vɔlˈeːdəx ɣəvˈɵld"
+   },
+   {
+    "id": "flores-dev-806",
+    "text": "Er zijn twee problemen met dure merkmonturen die op zulke plekken verkrijgbaar zijn: sommige zijn namaakmonturen en de echte exemplaren zijn duurder dan ze thuis zijn.",
+    "reference": "ər zɛɪn tʋˈeː prɔblˈeːmən mɛ tˈyrə mˌɛrkmɔntˈyrən di ɔp zˈɵlkə plˈɛkən vərkrˈɛɪɣbaːr zɛɪn sˌɔməɣə zɛɪn nˈaːmaːkmɔntˌyrən ɛn də ˈɛxtə ˈɛksɛmplˌaːrən zɛɪn dˈyrdər dˈɑn zə tˈœy sɛɪn",
+    "uccharan": "ər zɛɪn tʋˈeː prɔblˈeːmən mɛ tˈyrə mˈɛrkmɔntˌyrən di ɔp zˈɵlkə plˈɛkən vərkrˈɛɪɣbaːr zɛɪn sˌɔməɣə zɛɪn naːmˌaːkmɔntˈyrən ɛn də ˈɛxtə ˈɛksɛmplˌaːrən zɛɪn dˈyrdər dˈɑn zə tˈœy sɛɪn"
+   },
+   {
+    "id": "flores-dev-724",
+    "text": "Jardín de la Unión. Vroeger was deze ruimte het atrium van een 17e-eeuws klooster, de Templo de San Diego is hiervan het enige gebouw dat nog bestaat.",
+    "reference": "jˈɑrdɪn də lˈaː ˌyniˈɔn vrˈuɣər ʋˈɑs dˌeːzə rˈœymtə hət ˈɑtriˌɵm vɑn ən zˈeːvəntˌində ˈeːˈeʊs klˈoːstər də tˈɛmploː də sˈɑn dˈiɣoː ɪs hˈirvɑn hət ˌeːnəɣə ɣəbˈʌʊ dɑt nˈɔx bəstˈaːt",
+    "uccharan": "jˈɑrdɪn də lˈaː ˈynɪˌɔn vrˈuɣər ʋˈɑs dˌeːzə rˈœymtə hət ˈɑtriˌɵm vɑn ən zˈeːvəntˌin ˈeːˈeʊs klˈoːstər də tˈɛmploː də sˈɑn dˈiɣoː ɪs hˈirvɑn hət ˌeːnəɣə ɣəbˈʌʊ dɑt nˈɔx bəstˈaːt"
+   },
+   {
+    "id": "flores-dev-493",
+    "text": "Hoewel sommige wetenschappers vermoeden dat 'Indusbeschaving' de toepasselijke benaming is voor de beschaving die in de bekken van de opgedroogde Sarasvatirivier leefde, noemen anderen het de Harappanbeschaving naar Harappa, de eerste opgravingsplek uit de jaren 20.",
+    "reference": "huʋˈɛl sˌɔməɣə ʋˈeːtənsxˌɑpərs vərmˈudən dɑt ˈɪndˌɵzbɛsxˌaːvɪŋ də tˈupˌɑsələkə bənˈaːmɪŋ ɪs vɔːr də bəsxˈaːvɪŋ di ɪn də bˈɛkən vɑn də ˈɔpɣədrˌoːɣdə sˌaːrɑsfˌaːtirivˈir lˈeːvdə nˈumən ˈɑndərən hə tə hˈaːrɑpˌɑnbɛsxˌaːvɪŋ naːr haːrˈɑpaː də ˈɪːrstə ˈɔpɣrˌaːvɪŋsplˌɛk œy tə jˈaːrən tʋˈɪntəx",
+    "uccharan": "huʋˈɛl sˌɔməɣə ʋˈeːtənsxˌɑpərs vərmˈudən dɑt ˈɪndˌɵzbɛsxˌaːvɪŋ də tˈupˌɑsələkə bənˈaːmɪŋ ɪs vɔːr də bəsxˈaːvɪŋ di ɪn də bˈɛkən vɑn də ˈɔpɣədrˌoːɣdə sˈaːrɑsfˌaːtirˌivir lˈeːvdə nˈumən ˈɑndərən hə tə hˈaːrɑpˌɑnbəsxˌaːvɪŋ naːr hˈaːrɑpˌaː də ˈɪːrstə ˈɔpɣrˌaːvɪŋsplɛk œy tə jˈaːrən tʋˈɪntəx"
+   },
+   {
+    "id": "flores-dev-940",
+    "text": "Een goede eerste stap in de wereld van reisverslagen is schrijven voor een bestaande reisblogwebsite.",
+    "reference": "ən ɣˈudə ˈɪːrstə stˈɑp ɪn də ʋˈɪːrəlt vɑn rˌɛɪsfərslˈaːɣən ɪ sxrˈɛɪvən vɔːr ən bəstˈaːndə rˈɛɪzblɔɣʋˌɛbsitə",
+    "uccharan": "ən ɣˈudə ˈɪːrstə stˈɑp ɪn də ʋˈɪːrəlt vɑn rˌɛɪsfərslˈaːɣən ɪ sxrˈɛɪvən vɔːr ən bəstˈaːndə rˈɛɪzblˌɔɣʋɛbsˌitə"
+   },
+   {
+    "id": "flores-dev-121",
+    "text": "De Radio- en televisiewet reguleert de inhoud op het internet, maar om als internetinhoud te worden beschouwd, moet de inhoud fysiek op een server zijn opgeslagen.",
+    "reference": "də rˈaːdiˌoː ɛn tˈeːləvˌiziʋˌɛt rˌeːɣylˈɪr tə ˈɪnhˌʌʊd ɔp hət ˈɪntərnˌɛt maːr ɔm ɑls ˈɪntərnˌeːtɪnhˌʌʊd tə ʋˌɔrdən bəsxˈʌʊt mˈu tə ˈɪnhˌʌʊt fizˈik ɔp ən sˈɛrvər zɛɪn ˈɔpɣəslˌaːɣən",
+    "uccharan": "də rˈaːdiˌoː ɛn tˈeːləvˌiziʋˌɛt rˌeːɣylˈɪr tə ˈɪnhˌʌʊt ɔp hət ˈɪntərnˌɛt maːr ɔm ɑls ˌɪntərnˈeːtɪnhˌʌʊ tə ʋˌɔrdən bəsxˈʌʊd mˈu tə ˈɪnhˌʌʊt fizˈik ɔp ən sˈɛrvər zɛɪn ˈɔpɣəslˌaːɣən"
+   },
+   {
+    "id": "flores-dev-832",
+    "text": "Registratie is een extra vereiste voor de visumprocedure. In sommige landen moet je je aanwezigheid en je verblijfadres melden bij de plaatselijke autoriteiten.",
+    "reference": "rˌeːɣɪstrˈaːtsi ɪs ən ˈɛkstraː vərˈɛɪstə vɔːr də vˌizɵmprˌoːseːdˈyrə ɪn sˌɔməɣə lˈɑndən mˈut jə jə ˈaːnʋˌeːzəxhˌɛɪt ɛn jə vərblˌɛɪfɑdrˈɛs mˈɛldən bɛɪ də plˈaːtsələkə ˈʌʊtoːrˌitɛɪtən",
+    "uccharan": "rˌeːɣɪstrˈaːtsi ɪs ən ˈɛkstraː vərˈɛɪstə vɔːr də vˌizɵmprˌoːseːdˈyrə ɪn sˌɔməɣə lˈɑndən mˈut jə jə ˈaːnʋˌeːzəxhˌɛɪt ɛn jə vərblˈɛɪfˌaːdrɛs mˈɛldən bɛɪ də plˈaːtsələkə ˈʌʊtoːrˌitɛɪtən"
+   }
+  ]
+ }
+}

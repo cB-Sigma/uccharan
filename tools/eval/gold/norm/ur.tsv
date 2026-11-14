@@ -1,0 +1,15 @@
+# split	class	input	expected	options
+dev	cardinal	7	سات	
+heldout	cardinal	12	بارہ	
+dev	cardinal	19	انیس	
+heldout	cardinal	36	چھتیس	
+dev	cardinal	48	اڑتالیس	
+heldout	cardinal	100	سو || ایک سو	
+dev	cardinal	250	دو سو پچاس	
+heldout	cardinal	1000	ایک ہزار || ہزار	
+dev	cardinal	5000	پانچ ہزار	
+heldout	percent	75%	پچھتر فیصد || پچہتر فیصد || پچھتر فی صد	
+dev	cardinal	1,00,000	ایک لاکھ || لاکھ	
+heldout	decimal	1.5	ایک اعشاریہ پانچ	
+dev	cardinal	میرے پاس 3 کتابیں ہیں۔	میرے پاس تین کتابیں ہیں۔	
+heldout	cardinal	64	چونسٹھ	

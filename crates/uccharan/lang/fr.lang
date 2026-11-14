@@ -1,0 +1,698 @@
+# French. espeak-ng voice "fr". Written for uccharan from specs/fr.md: silent
+# final letters, nasal vowels, vowel digraphs, soft c and g, stress on the
+# last full syllable, liaison consonants before a vowel inside a clause.
+
+[meta]
+tag = fr
+vowels = a ɑ e ɛ i o ɔ u y ø œ ə
+unstressable = ə
+stress = final
+secondary = none
+elision = yes
+spell-vowels = aeiouyàâéèêëîïôöùûüœæ
+
+[classes]
+V = a e i o u y à â é è ê ë î ï ô ö ù û ü œ æ
+C = b c ç d f g h j k l m n p q r s t v w x z
+# Consonants after which a nasal spelling stays a nasal vowel.
+NC = b c ç d f g j k l p q r s t v w x z
+FV = e i y é è ê ë î ï
+SIL = s t d x z p
+M = m
+S = s
+OBS = b c d f g p t v
+N = n
+# Phoneme classes for [clause].
+VW = a ɑ e ɛ i o ɔ u y ø œ ə ˈ ˌ
+
+[pre]
+' -> 0
+’ -> 0
+- -> 0
+
+[pre.2]
+# Endings.
+aient -> ɛ / _ #
+èrent -> ɛr / _ #
+mment -> mɑ̃ / _ #
+ment -> mɑ̃ / e _ # | é _ # | u _ # | a _ # | o _ # | e _ s #
+ti -> sj / {!S} _ o n | n _ e l | a _ e n
+tie -> si / a _ # | a _ s #
+ent -> ɑ̃ / c _ # | d _ # | g _ # | c _ s # | d _ s # | g _ s # | {V} {C}* m _ s # | t _ s # | r _ s # | l _ s # | n _ s #
+ent -> 0 / {V} {C} {C}* _ #
+er -> e / {V} {C}* _ # | {V} {C}* _ s #
+ez -> e / _ #
+et -> ɛ / {C} _ # | {C} _ s #
+ed -> e / _ # | _ s #
+ie -> i / {C} _ # | {C} _ s # | {C} _ n t #
+oue -> u / _ # | _ s # | _ n t #
+oie -> wa / _ # | _ s # | _ n t #
+aie -> ɛ / _ # | _ s # | _ n t #
+es -> 0 / {V} {C} {C}* _ # | {V} {V}* _ #
+e -> 0 / {V} {C} {C}* _ # | {V} _ #
+ille -> ij / {C} _ # | {C} _ s # | {C} _ n t #
+ill -> il / # v _ | # m _
+uill -> yij
+aill -> aj
+eill -> ɛj
+euill -> œj
+ouill -> uj
+ill -> j / {V} _
+ill -> ij / {C} _ {V}
+ail -> aj / _ # | _ s #
+eil -> ɛj / _ # | _ s #
+euil -> œj / _ # | _ s #
+uy -> yij / _ {V}
+# Nasal vowels: before a consonant other than n or m, or at the end.
+ain -> ɛ̃ / _ {NC} | _ #
+aim -> ɛ̃ / _ {NC} | _ #
+ein -> ɛ̃ / _ {NC} | _ #
+oin -> wɛ̃ / _ {NC} | _ #
+ien -> jɑ̃ / _ c | l _ t | r _ t | c _ t
+ien -> jɛ̃ / _ {NC} | _ #
+an -> ɑ̃ / _ {NC} | _ #
+am -> ɑ̃ / _ {NC}
+en -> ɑ̃ / _ {NC} | # _ # | # _ n
+em -> ɑ̃ / _ {NC} | # _ m
+in -> ɛ̃ / _ {NC} | _ #
+im -> ɛ̃ / _ {NC}
+yn -> ɛ̃ / _ {NC}
+ym -> ɛ̃ / _ {NC}
+on -> ɔ̃ / _ {NC} | _ #
+om -> ɔ̃ / _ {NC}
+un -> œ̃ / _ {NC} | _ #
+um -> œ̃ / _ {NC}
+# Vowel digraphs.
+eau -> o
+au -> o
+ou -> w / _ {V}
+ou -> u
+où -> u
+oû -> u
+oi -> wa
+oî -> wa
+oy -> waj / _ {V}
+ai -> e / _ #
+ay -> ɛ / _ #
+ey -> ɛ / _ #
+ai -> ɛ
+aî -> ɛ
+ei -> ɛ
+ay -> ɛj / _ {V}
+œu -> œ / _ r # | _ r s # | _ r e | _ v r | _ f #
+œu -> ø
+eu -> œ / _ r # | _ r s # | _ r e | _ l # | _ l e # | _ l s # | _ l e s # | _ l e n t # | _ f # | _ v r
+eu -> ø
+œ -> œ
+é -> e
+è -> ɛ
+ê -> ɛ
+ë -> ɛ
+à -> a
+â -> aː
+î -> i
+ï -> i
+ô -> oː
+ö -> ø
+ù -> y
+û -> yː
+ü -> y
+u -> y
+y -> j / _ {V}
+y -> i
+i -> i / {OBS} l _ {V} | {OBS} r _ {V}
+i -> j / {C} _ {V} | # _ {V} | q u _ {V}
+# e: open before a pronounced consonant group, a schwa in an open syllable.
+e -> ə / {C} q u _ #
+e -> e / # _ f f | # _ s s
+e -> 0 / {V} {C} _ {C} {V} | {V} n {C} _ {C} {V} | {V} m {C} _ {C} {V} | {V} c h _ {C} {V} | {V} q u _ {C} {V} | {V} l l _ {C} {V} | {V} p p _ {C} {V} | {V} t t _ {C} {V} | {V} n n _ {C} {V} | {V} s s _ {C} {V} | {V} m m _ {C} {V} | {V} r r _ {C} {V}
+e -> ə / {C} _ {OBS} r {V} | {C} _ {OBS} l {V} | {C} _ c h {V} | {C} _ q u
+e -> ɛ / _ {C} {C} | _ x | _ {C} # | _ c # | _ f # | _ l # | _ r #
+e -> ə / {C} _ {C} {V} | # {C} _ #
+e -> ə / {C} _ # 
+e -> ɛ
+# o is close at the end of a word and before a z sound.
+o -> o / _ {SIL} # | _ {SIL} s # | _ c h {V} | _ p h | _ t h | _ q u | _ g n
+o -> ɔ / _ {C} {C} | _ {C} # | _ {C} e # | _ {C} e s # | _ x | _ {V}
+o -> o
+# Final consonants are silent.
+s -> 0 / _ # 
+t -> 0 / _ # | _ s #
+d -> 0 / _ # | _ s #
+x -> 0 / _ #
+z -> 0 / _ #
+p -> 0 / _ # | _ s #
+g -> 0 / n _ # | n _ s # | n _ t
+gt -> 0 / _ #
+c -> 0 / n _ # | n _ s #
+ck -> k
+cqu -> k
+p -> 0 / m _ t
+# Consonants.
+ch -> k / _ {C}
+ch -> ʃ
+sh -> ʃ
+sc -> s / _ {FV}
+ph -> f
+th -> t
+gn -> ɲ / _ e # | _ e s # | _ e n t # | _ #
+gn -> nj
+qu -> k
+q -> k
+gu -> ɡ / _ {FV}
+ge -> ʒ / _ a | _ o
+g -> ʒ / _ {FV}
+g -> ɡ
+c -> s / _ {FV}
+ç -> s
+cc -> ks / _ {FV}
+cc -> k
+c -> k
+j -> ʒ
+h -> 0
+x -> ɡz / # e _ {V}
+x -> ks
+w -> w
+r -> ʁ
+rr -> ʁ
+s -> z / {V} _ {V}
+ss -> s
+ll -> l
+mm -> m
+nn -> n
+tt -> t
+pp -> p
+ff -> f
+bb -> b
+dd -> d
+
+[post]
+# A circumflex vowel is long only under stress.
+ː -> ː / ˈ a _ | ˈ o _ | ˈ y _
+ː -> 0
+
+[clause]
+# A latent final consonant is said before a vowel of the next word.
+ᶻ -> z / _ ‿ {VW}
+ᵗ -> t / _ ‿ {VW}
+ⁿ -> n / _ ‿ {VW}
+ʳ -> ʁ / _ ‿ {VW}
+ᵖ -> p / _ ‿ {VW}
+ᶻ -> 0
+ᵗ -> 0
+ⁿ -> 0
+ʳ -> 0
+ᵖ -> 0
+
+[post.improved]
+# u before i is the glide ɥ (Fougeron & Smith 1993).
+y -> ɥ / _ i | _ ˈ i
+
+[words]
+l' l
+j' ʒ
+d' d
+c' s
+n' n
+s' s
+m' m
+t' t
+qu' k
+jusqu' ʒysk
+lorsqu' lɔʁsk
+puisqu' pɥisk
+virgule viʁɡyl
+pour-cent puʁsˈɑ̃
+mille# mˈil
+million# miljˈɔ̃
+un#x œ̃
+zéro# zeʁˈo
+un# ˈœ̃
+deux# dˈø
+trois# tʁwˈa
+quatre# kˈatʁ
+cinq# sˈɛ̃k
+six# sˈis
+sept# sˈɛt
+huit# yˈit
+neuf# nˈœf
+dix# dˈis
+onze# ˈɔ̃z
+douze# dˈuz
+treize# tʁˈɛz
+quatorze# katˈɔʁz
+quinze# kˈɛ̃z
+seize# sˈɛz
+dix-sept# disˈɛt
+dix-huit# dizyˈit
+dix-neuf# diznˈœf
+vingt# vˈɛ̃
+vingt-et-un# vɛ̃teˈœ̃
+vingt-deux# vɛ̃tdˈø
+vingt-trois# vɛ̃ttʁwˈa
+vingt-quatre# vɛ̃tkˈatʁ
+vingt-cinq# vɛ̃tsˈɛ̃k
+vingt-six# vɛ̃tsˈis
+vingt-sept# vɛ̃tsˈɛt
+vingt-huit# vɛ̃tyˈit
+vingt-neuf# vɛ̃tnˈœf
+trente# tʁˈɑ̃t
+trente-et-un# tʁɑ̃teˈœ̃
+trente-deux# tʁɑ̃tdˈø
+trente-trois# tʁɑ̃ttʁwˈa
+trente-quatre# tʁɑ̃tkˈatʁ
+trente-cinq# tʁɑ̃tsˈɛ̃k
+trente-six# tʁɑ̃tsˈis
+trente-sept# tʁɑ̃tsˈɛt
+trente-huit# tʁɑ̃tyˈit
+trente-neuf# tʁɑ̃tnˈœf
+quarante# kaʁˈɑ̃t
+quarante-et-un# kaʁɑ̃teˈœ̃
+quarante-deux# kaʁɑ̃tdˈø
+quarante-trois# kaʁɑ̃ttʁwˈa
+quarante-quatre# kaʁɑ̃tkˈatʁ
+quarante-cinq# kaʁɑ̃tsˈɛ̃k
+quarante-six# kaʁɑ̃tsˈis
+quarante-sept# kaʁɑ̃tsˈɛt
+quarante-huit# kaʁɑ̃tyˈit
+quarante-neuf# kaʁɑ̃tnˈœf
+cinquante# sɛ̃kˈɑ̃t
+cinquante-et-un# sɛ̃kɑ̃teˈœ̃
+cinquante-deux# sɛ̃kɑ̃tdˈø
+cinquante-trois# sɛ̃kɑ̃ttʁwˈa
+cinquante-quatre# sɛ̃kɑ̃tkˈatʁ
+cinquante-cinq# sɛ̃kɑ̃tsˈɛ̃k
+cinquante-six# sɛ̃kɑ̃tsˈis
+cinquante-sept# sɛ̃kɑ̃tsˈɛt
+cinquante-huit# sɛ̃kɑ̃tyˈit
+cinquante-neuf# sɛ̃kɑ̃tnˈœf
+soixante# swasˈɑ̃t
+soixante-et-un# swasɑ̃teˈœ̃
+soixante-deux# swasɑ̃tdˈø
+soixante-trois# swasɑ̃ttʁwˈa
+soixante-quatre# swasɑ̃tkˈatʁ
+soixante-cinq# swasɑ̃tsˈɛ̃k
+soixante-six# swasɑ̃tsˈis
+soixante-sept# swasɑ̃tsˈɛt
+soixante-huit# swasɑ̃tyˈit
+soixante-neuf# swasɑ̃tnˈœf
+soixante-dix# swasɑ̃tdˈis
+soixante-et-onze# swasɑ̃teˈɔ̃z
+soixante-douze# swasɑ̃tdˈuz
+soixante-treize# swasɑ̃ttʁˈɛz
+soixante-quatorze# swasɑ̃tkatˈɔʁz
+soixante-quinze# swasɑ̃tkˈɛ̃z
+soixante-seize# swasɑ̃tsˈɛz
+soixante-dix-sept# swasɑ̃tdisˈɛt
+soixante-dix-huit# swasɑ̃tdizyˈit
+soixante-dix-neuf# swasɑ̃tdiznˈœf
+quatre-vingts# katʁəvˈɛ̃
+quatre-vingt-un# katʁəvɛ̃ˈœ̃
+quatre-vingt-deux# katʁəvɛ̃dˈø
+quatre-vingt-trois# katʁəvɛ̃tʁwˈa
+quatre-vingt-quatre# katʁəvɛ̃kˈatʁ
+quatre-vingt-cinq# katʁəvɛ̃sˈɛ̃k
+quatre-vingt-six# katʁəvɛ̃sˈis
+quatre-vingt-sept# katʁəvɛ̃sˈɛt
+quatre-vingt-huit# katʁəvɛ̃yˈit
+quatre-vingt-neuf# katʁəvɛ̃nˈœf
+quatre-vingt-dix# katʁəvɛ̃dˈis
+quatre-vingt-onze# katʁəvɛ̃ˈɔ̃z
+quatre-vingt-douze# katʁəvɛ̃dˈuz
+quatre-vingt-treize# katʁəvɛ̃tʁˈɛz
+quatre-vingt-quatorze# katʁəvɛ̃katˈɔʁz
+quatre-vingt-quinze# katʁəvɛ̃kˈɛ̃z
+quatre-vingt-seize# katʁəvɛ̃sˈɛz
+quatre-vingt-dix-sept# katʁəvɛ̃disˈɛt
+quatre-vingt-dix-huit# katʁəvɛ̃dizyˈit
+quatre-vingt-dix-neuf# katʁəvɛ̃diznˈœf
+sixx# si
+huitx# yi
+dixx# di
+dix-huitx# dizyi
+vingt-sixx# vɛ̃tsi
+vingt-huitx# vɛ̃tyi
+trente-sixx# tʁɑ̃tsi
+trente-huitx# tʁɑ̃tyi
+quarante-sixx# kaʁɑ̃tsi
+quarante-huitx# kaʁɑ̃tyi
+cinquante-sixx# sɛ̃kɑ̃tsi
+cinquante-huitx# sɛ̃kɑ̃tyi
+soixante-sixx# swasɑ̃tsi
+soixante-huitx# swasɑ̃tyi
+soixante-dixx# swasɑ̃tdi
+soixante-dix-huitx# swasɑ̃tdizyi
+quatre-vingt-sixx# katʁəvɛ̃si
+quatre-vingt-huitx# katʁəvɛ̃yi
+quatre-vingt-dixx# katʁəvɛ̃di
+quatre-vingt-dix-huitx# katʁəvɛ̃dizyi
+cent# sˈɑ̃
+centx# sɑ̃
+deux-cents# døsˈɑ̃
+deux-centsx# døsɑ̃
+trois-cents# tʁwasˈɑ̃
+trois-centsx# tʁwasɑ̃
+quatre-cents# katʁsˈɑ̃
+quatre-centsx# katʁsɑ̃
+cinq-cents# sɛ̃ksˈɑ̃
+cinq-centsx# sɛ̃ksɑ̃
+six-cents# sisˈɑ̃
+six-centsx# sisɑ̃
+sept-cents# sɛtsˈɑ̃
+sept-centsx# sɛtsɑ̃
+huit-cents# yisˈɑ̃
+huit-centsx# yisɑ̃
+neuf-cents# nœfsˈɑ̃
+neuf-centsx# nœfsɑ̃
+
+[numbers]
+decimal comma
+fraction number
+stress last
+point virgule
+percent pour-cent
+glue-hundred yes
+one-before-scale no
+0 zéro#
+1 un#
+2 deux#
+3 trois#
+4 quatre#
+5 cinq#
+6 six#
+7 sept#
+8 huit#
+9 neuf#
+10 dix#
+11 onze#
+12 douze#
+13 treize#
+14 quatorze#
+15 quinze#
+16 seize#
+17 dix-sept#
+18 dix-huit#
+19 dix-neuf#
+20 vingt#
+21 vingt-et-un#
+22 vingt-deux#
+23 vingt-trois#
+24 vingt-quatre#
+25 vingt-cinq#
+26 vingt-six#
+27 vingt-sept#
+28 vingt-huit#
+29 vingt-neuf#
+30 trente#
+31 trente-et-un#
+32 trente-deux#
+33 trente-trois#
+34 trente-quatre#
+35 trente-cinq#
+36 trente-six#
+37 trente-sept#
+38 trente-huit#
+39 trente-neuf#
+40 quarante#
+41 quarante-et-un#
+42 quarante-deux#
+43 quarante-trois#
+44 quarante-quatre#
+45 quarante-cinq#
+46 quarante-six#
+47 quarante-sept#
+48 quarante-huit#
+49 quarante-neuf#
+50 cinquante#
+51 cinquante-et-un#
+52 cinquante-deux#
+53 cinquante-trois#
+54 cinquante-quatre#
+55 cinquante-cinq#
+56 cinquante-six#
+57 cinquante-sept#
+58 cinquante-huit#
+59 cinquante-neuf#
+60 soixante#
+61 soixante-et-un#
+62 soixante-deux#
+63 soixante-trois#
+64 soixante-quatre#
+65 soixante-cinq#
+66 soixante-six#
+67 soixante-sept#
+68 soixante-huit#
+69 soixante-neuf#
+70 soixante-dix#
+71 soixante-et-onze#
+72 soixante-douze#
+73 soixante-treize#
+74 soixante-quatorze#
+75 soixante-quinze#
+76 soixante-seize#
+77 soixante-dix-sept#
+78 soixante-dix-huit#
+79 soixante-dix-neuf#
+80 quatre-vingts#
+81 quatre-vingt-un#
+82 quatre-vingt-deux#
+83 quatre-vingt-trois#
+84 quatre-vingt-quatre#
+85 quatre-vingt-cinq#
+86 quatre-vingt-six#
+87 quatre-vingt-sept#
+88 quatre-vingt-huit#
+89 quatre-vingt-neuf#
+90 quatre-vingt-dix#
+91 quatre-vingt-onze#
+92 quatre-vingt-douze#
+93 quatre-vingt-treize#
+94 quatre-vingt-quatorze#
+95 quatre-vingt-quinze#
+96 quatre-vingt-seize#
+97 quatre-vingt-dix-sept#
+98 quatre-vingt-dix-huit#
+99 quatre-vingt-dix-neuf#
+6x sixx#
+8x huitx#
+10x dixx#
+18x dix-huitx#
+26x vingt-sixx#
+28x vingt-huitx#
+36x trente-sixx#
+38x trente-huitx#
+46x quarante-sixx#
+48x quarante-huitx#
+56x cinquante-sixx#
+58x cinquante-huitx#
+66x soixante-sixx#
+68x soixante-huitx#
+70x soixante-dixx#
+78x soixante-dix-huitx#
+86x quatre-vingt-sixx#
+88x quatre-vingt-huitx#
+90x quatre-vingt-dixx#
+98x quatre-vingt-dix-huitx#
+100 cent#
+100+ centx#
+200 deux-cents#
+200+ deux-centsx#
+300 trois-cents#
+300+ trois-centsx#
+400 quatre-cents#
+400+ quatre-centsx#
+500 cinq-cents#
+500+ cinq-centsx#
+600 six-cents#
+600+ six-centsx#
+700 sept-cents#
+700+ sept-centsx#
+800 huit-cents#
+800+ huit-centsx#
+900 neuf-cents#
+900+ neuf-centsx#
+1000000 un#x million#
+scale1000000 million#
+scale1000 mille#
+scale100 cent#
+
+[spell]
+a ˈa
+b bˈe
+c sˈe
+d dˈe
+e ˈə
+f ˈɛf
+g ʒˈe
+h ˈaʃ
+i ˈi
+j ʒˈi
+k kˈa
+l ˈɛl
+m ˈɛm
+n ˈɛn
+o ˈo
+p pˈe
+q kˈy
+r ˈɛʁ
+s ˈɛs
+t tˈe
+u ˈy
+v vˈe
+w dˈubləvˈe
+x ˈiks
+y iɡʁˈɛk
+z zˈɛd
+
+# Words without stress inside a clause and with stress at its end.
+[unstressed]
+pas 0 p
+ça 0 p
+moi s p
+lui s p
+toi s p
+plus 0 p
+vous 0 p
+cela s p
+non 0 p
+tout 0 p
+rien s p
+nous 0 p
+elle 0 p
+eux 0 p
+oui s p
+autres 0 p
+aussi s p
+mois s p
+et 0 p
+que 0 p
+jamais s p
+qui 0 p
+encore s p
+ainsi s p
+est 0 p
+un 0 p
+beaucoup s p
+alors s p
+peu 0 p
+mieux s p
+l'autre 0 p
+enfin s p
+une 0 p
+la 0 p
+toujours s p
+loin s p
+a 0 p
+quoi s p
+ceci s p
+le 0 p
+mais 0 p
+soit s p
+avant s p
+pourtant s p
+les 0 p
+autre 0 p
+trop 0 p
+pour 0 p
+d'elle 0 p
+à 0 p
+elles 0 p
+après s p
+ce 0 p
+depuis s p
+toutefois s p
+pourquoi s p
+d'autre 0 p
+avec s p
+quelqu'un s p
+contre 0 p
+comme 0 p
+d'autres 0 p
+soi s p
+autant s p
+d'eux 0 p
+c'est 0 p
+où 0 p
+son 0 p
+dans 0 p
+néanmoins s p
+certes 0 p
+près 0 p
+d'un 0 p
+faut 0 p
+suis s p
+par 0 p
+en 0 p
+assez s p
+comment s p
+voilà s p
+l'est 0 p
+toutes 0 p
+sur 0 p
+d'une 0 p
+lors 0 p
+quand 0 p
+d'elles 0 p
+qu'avant s p
+es 0 p
+l'avant s p
+hélas s p
+qu'elle 0 p
+êtes 0 p
+très 0 p
+eu 0 p
+tant 0 p
+sommes 0 p
+presque s p
+tel 0 p
+entre 0 p
+durant s p
+plusieurs s p
+qu'une 0 p
+eh 0 p
+j'ai 0 p
+voici s p
+vers 0 p
+as 0 p
+pars 0 p
+qu'il 0 p
+qu'un 0 p
+n'est 0 p
+leurs 0 p
+autour s p
+sous 0 p
+n'a 0 p
+guère 0 p
+il 0 p
+sans 0 p
+sois s p
+d'après s p
+toute 0 p
+s'est 0 p
+puisque s p
+ils 0 p
+d'avant s p
+vaut 0 p
+plupart s p
+tu 0 p
+telle 0 p
+las 0 p
+uns 0 p
+qu'ils 0 p
+l'un 0 p
+qu'elles 0 p
+d'où 0 p
+up s p
+l'a 0 p
+on 0 p
+celle 0 p
+ceux 0 p
+chez 0 p
+afin s p
+quelques s p
+celles 0 p
+jusqu'alors s p
+vaux 0 p
+lorsque s p
+n'ai 0 p
+ai 0 p

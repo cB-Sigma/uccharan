@@ -38,13 +38,16 @@ URL = "https://github.com/cB-Sigma/uccharan/releases/download/v{version}/{name}.
 # name -> (sha256, size in bytes); written by tools/packs.py from crates/uccharan/data.
 PACKS: dict[str, tuple[str, int]] = {
     # @@PACKS@@
+    "de": ("d85d952b068d54b5070390e6647cf094877ab43552ecc614eb4742166ab3d181", 356664),
     "en-gb": ("c267d028790da5440ae90df87da7b131800f7932124afe356193e387aaab13ad", 707290),
     "en-us": ("337e2c2c25c3d1a376f857634c20e2a220bcc91e65876ec58623f2feaf997aac", 727189),
+    "fr": ("d2563f251c4935379c85fa35ac8f1d75fdf8ebfde47b959605713f131f1b0cdd", 170022),
     "hi": ("970df73a97f846c7089d8794acce6f54f745ffcbfa208b77a5710ad84a2e3a31", 2964),
     "kokoro-en-gb": ("dcd66185dfe6f43c0d244287ffbd895a0f17465e533d1d0394a7d9ed9d7ccea0", 2066805),
     "kokoro-en-us": ("05a70e6f2314c04fcfc7b0a50387025a4919436551cb69a6074417df0641aa76", 1914413),
-    "sd": ("03df601bf97c4588a8be6c3a01cb3c0d7678309fd819e4dd91027e60b8d67707", 187440),
-    "ur": ("3b5fd97fb49d2cb21ae069e461269ba9e3c5f1c6dc5f7dd7f0e3ad4065de078a", 378180),
+    "nl": ("54bb0117d42f53aebb827fecd4f2c09d53e00a08c271377c0ce48b6edf4665b1", 230803),
+    "sd": ("6e6931a3d0f2bc2ae3914f96758e80db13f8d67e4ae515f600fa5fde4cd2af05", 191559),
+    "ur": ("5cbf557a6ac2b133b7a5e15e84e28ab410cc434265b4eb9f8f9c0c2db00eb8b1", 495368),
     "wikipron-en-gb": ("53718c5458145f7a49cb0bc29c534f1eddf4f6424f240e654bc469f4884c8d4f", 728104),
     "wikipron-en-us": ("85946bafb7e1e9daab9909138c7ba38437ca6d42d8e673122a8eba76dfdf814b", 741599),
     "wikipron-hi": ("8f5d330038f296d4e712d3a17a0837268bd2a91033d7b029d8fad0952b10a889", 321723),

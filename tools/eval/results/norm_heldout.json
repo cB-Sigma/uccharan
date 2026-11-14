@@ -1,19 +1,24 @@
 {
  "bn": {
   "ALL": {
-   "exact": 9,
-   "n": 10,
-   "wer": 7.69
+   "exact": 14,
+   "n": 14,
+   "wer": 0.0
   },
   "cardinal": {
-   "exact": 9,
-   "n": 9,
+   "exact": 11,
+   "n": 11,
+   "wer": 0.0
+  },
+  "decimal": {
+   "exact": 1,
+   "n": 1,
    "wer": 0.0
   },
   "percent": {
-   "exact": 0,
-   "n": 1,
-   "wer": 50.0
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
   }
  },
  "en-us": {
@@ -115,6 +120,28 @@
   "year": {
    "exact": 4,
    "n": 4,
+   "wer": 0.0
+  }
+ },
+ "gu": {
+  "ALL": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 5,
+   "n": 5,
+   "wer": 0.0
+  },
+  "decimal": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "percent": {
+   "exact": 1,
+   "n": 1,
    "wer": 0.0
   }
  },
@@ -225,21 +252,70 @@
    "wer": 0.0
   }
  },
- "mr": {
+ "kn": {
   "ALL": {
-   "exact": 9,
-   "n": 10,
-   "wer": 5.0
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
   },
   "cardinal": {
-   "exact": 8,
-   "n": 8,
+   "exact": 5,
+   "n": 5,
+   "wer": 0.0
+  },
+  "decimal": {
+   "exact": 1,
+   "n": 1,
    "wer": 0.0
   },
   "percent": {
-   "exact": 0,
+   "exact": 1,
    "n": 1,
-   "wer": 50.0
+   "wer": 0.0
+  }
+ },
+ "ml": {
+  "ALL": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 5,
+   "n": 5,
+   "wer": 0.0
+  },
+  "decimal": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "percent": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  }
+ },
+ "mr": {
+  "ALL": {
+   "exact": 14,
+   "n": 14,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 10,
+   "n": 10,
+   "wer": 0.0
+  },
+  "decimal": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "percent": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
   },
   "year": {
    "exact": 1,
@@ -249,14 +325,63 @@
  },
  "ne": {
   "ALL": {
-   "exact": 8,
-   "n": 10,
-   "wer": 15.38
+   "exact": 14,
+   "n": 14,
+   "wer": 0.0
   },
   "cardinal": {
+   "exact": 11,
+   "n": 11,
+   "wer": 0.0
+  },
+  "decimal": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "percent": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  }
+ },
+ "or": {
+  "ALL": {
+   "exact": 6,
+   "n": 7,
+   "wer": 9.09
+  },
+  "cardinal": {
+   "exact": 5,
+   "n": 5,
+   "wer": 0.0
+  },
+  "decimal": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "percent": {
+   "exact": 0,
+   "n": 1,
+   "wer": 50.0
+  }
+ },
+ "pa": {
+  "ALL": {
    "exact": 7,
-   "n": 9,
-   "wer": 18.18
+   "n": 7,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 5,
+   "n": 5,
+   "wer": 0.0
+  },
+  "decimal": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
   },
   "percent": {
    "exact": 1,
@@ -266,24 +391,73 @@
  },
  "ta": {
   "ALL": {
-   "exact": 5,
+   "exact": 14,
+   "n": 14,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 10,
    "n": 10,
-   "wer": 53.33
+   "wer": 0.0
+  },
+  "decimal": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "percent": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "year": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  }
+ },
+ "te": {
+  "ALL": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
   },
   "cardinal": {
    "exact": 5,
-   "n": 8,
-   "wer": 40.0
+   "n": 5,
+   "wer": 0.0
+  },
+  "decimal": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
   },
   "percent": {
-   "exact": 0,
+   "exact": 1,
    "n": 1,
-   "wer": 50.0
+   "wer": 0.0
+  }
+ },
+ "ur": {
+  "ALL": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
   },
-  "year": {
-   "exact": 0,
+  "cardinal": {
+   "exact": 5,
+   "n": 5,
+   "wer": 0.0
+  },
+  "decimal": {
+   "exact": 1,
    "n": 1,
-   "wer": 100.0
+   "wer": 0.0
+  },
+  "percent": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
   }
  }
 }

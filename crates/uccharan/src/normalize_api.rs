@@ -677,7 +677,9 @@ impl Cx<'_> {
             return items;
         }
         let g = l.indic().expect("checked above");
-        let mut items = crate::gnorm::expand(c, &g.numbers, false);
+        // Written number words where the language has them.
+        let nums = g.numbers_text.as_ref().unwrap_or(&g.numbers);
+        let mut items = crate::gnorm::expand(c, nums, false);
         // Currency signs the generic reader leaves out.
         if c.text.starts_with('₹') {
             if let Some(w) = rupee_word(l) {

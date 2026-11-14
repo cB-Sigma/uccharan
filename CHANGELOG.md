@@ -3,6 +3,91 @@
 All notable changes are listed here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow semantic versioning.
 
+## [0.3.0] - 2026-11-14
+
+### Added
+
+- **Tools for training voices and checking pronunciation** (`uccharan.train` in the Python
+  package, and the `uccharan-train` command): `label` turns a dataset manifest (LJSpeech-style
+  `metadata.csv`, Piper CSV, JSON lines, Hugging Face-style rows) into training-ready phonemes for
+  Piper (`--data.phoneme_type text` CSV, phoneme-id CSV, `phonemes.json`), Matcha-TTS filelists
+  and icefall-style recipes (`tokens.txt`, token lists), with a symbol table, a `voice.json` that
+  records the uccharan version, mode, profile and language, single-code-point symbols throughout,
+  a report of symbols outside a target table (`--symbols`, `--replace`, `--extend`), word lists,
+  and per-utterance warnings (unknown characters, unread or long numbers, mixed scripts);
+  `select` picks a compact reading script that covers every phone and as many diphones as
+  possible (greedy set cover with length, digit, script and rare-symbol filters) and writes its
+  coverage statistics; `coverage` reports phone and diphone counts, what is missing against a
+  reference corpus, the duration per phone from TextGrid, JSON-lines or CTM alignments, and
+  outlier utterances (too long, too many out-of-vocabulary words, wrong script, speaking rate);
+  `score` computes the phoneme error of a recogniser's text or a phone recogniser's output
+  against a reference with the sound-alike matcher's weighted distance, with a score per word and
+  the mispronounced, missing and extra words; `mfa-dict` writes a Montreal Forced Aligner
+  dictionary for a word list or corpus. In Rust, `uccharan::soundalike::score::align_words` gives
+  the weighted alignment per reference word. See docs/training.md and examples/train.
+- **Sound-alike matching** (`uccharan::soundalike`): correct speech-recognition output against a
+  vocabulary of names, products and jargon by comparing phonemes ("Coat Harry" → "Kothari",
+  "pay tm" → "Paytm", "कोठारी" → "Kothari"). A vocabulary index stores each term as its IPA, the
+  reading of its spoken form, or uccharan's readings of its spelling (English in both modes,
+  romanised Hindi, inner capitals split, initialisms spelled out); spans of one to three transcript
+  words are compared with a weighted phoneme edit distance (voicing, aspiration, vowel length and
+  retroflex / dental pairs cheap, schwa and stress nearly free, normalised by length) behind a
+  consonant-skeleton pre-filter. Candidates carry byte, code-point and UTF-16 offsets, a score,
+  whether the term is already there, and the kind of span (unknown word, uncertain, ordinary
+  words); `apply` returns the corrected text with every change, with separate thresholds per kind
+  and an optional per-word confidence gate. Rust, Python (`uccharan.SoundIndex`,
+  `uccharan.match_terms`), JavaScript (`createSoundIndex`, `matchTerms`), C
+  (`uccharan_sound_index_new`, `uccharan_match_terms`) and `uccharan --match-terms FILE`. A new
+  evaluation (`tools/eval/soundalike`): 651 hand-written terms in English, Hindi and Hinglish
+  sentences, spoken by synthetic voices and transcribed by small recognisers, plus hand-written
+  mishearings and sentences without a term. Held-out, at the default thresholds: 43.9 % of
+  the terms the recognisers got wrong are put back (64.2 % in English sentences) with 97.8 % of
+  the corrections right, and 2 of 775 sentences without a term are changed; character edit
+  distance puts back 8.8 %, Metaphone codes 18.7 % while changing 38 % of the sentences without a
+  term. 7 800 transcripts a second against 1 000 terms, 1 500 against 10 000, 300 against 50 000.
+- **Written number words in normalise-only mode** for Bengali, Gujarati, Kannada, Malayalam,
+  Marathi, Nepali, Odia, Punjabi, Tamil, Telugu and Urdu: `normalize()` now spells numbers with
+  the standard orthography of Unicode CLDR's spell-out rules (new `uccharan::rbnf`, rule files in
+  `crates/uccharan/lang/numbers/`, written by `tools/cldr_rbnf.py`) instead of the phonemiser's
+  voice-oriented number words: Tamil இருபத்து ஐந்து and இரண்டாயிரத்து இருபத்து நான்கு, Nepali तीन, Marathi
+  टक्के, Bengali শতাংশ. Phonemisation is unchanged. Gold sets extended (bn, mr, ne, ta) and added
+  (te, kn, ml, gu, pa, or, ur; `tools/eval/gold/norm`); held-out exact match after the change:
+  bn 14/14, mr 14/14, ne 14/14, ta 14/14 (the first ten rows of each were scored for 0.2.0),
+  te 7/7, kn 7/7, ml 7/7, gu 7/7, pa 7/7, ur 7/7, or 6/7.
+- **Spanish** (`es`) on a new Latin-script engine (`latin.rs`; language files with letter rules,
+  a stress module, clause-level rules across word boundaries, `[spell]` letter names, Roman
+  numerals, `+`-joined number words): held-out PER 0.74 % against espeak-ng 1.52.0 `es` on
+  FLORES-200 (0.45 % without digits), 2.3× faster. Improved mode: e for the voice's ɛ, ai ei oi
+  au eu, d after l and n.
+- **German** (`de`): on the Latin-script engine with German letter rules (vowel length from the spelling, unstressed prefixes, stressed particles and loan suffixes, final devoicing, r allophones), number words with units before tens and the decimal comma, and a word table (`de.ucd`, 16 k entries, 357 KB, feature `embed-de`) made by running espeak-ng 1.52.0 on a 139 k-word list. Held-out PER 1.01 % on FLORES-200 (0.82 % without digits); words of the word list 0.1 % wrong, words outside it 46.7 % (811 of 17,344 scored words); 2.4× faster. Improved mode writes ɐ for -er and aː for the voice's ɑː.
+- **Dutch** (`nl`): Dutch letter rules (vowel length by open and closed syllable, unstressed prefixes and endings, -lijk, final devoicing, g and ch), stop and s assimilation across words inside a clause, number words (one-word tens, years counted in hundreds, decimal comma) and a word table (`nl.ucd`, 12 k entries, 231 KB, feature `embed-nl`; 80 k-word list). Held-out PER 1.77 % on FLORES-200 (1.39 % without digits); words of the word list 1.8 % wrong, words outside it 54.7 % (803 of 19,173 scored words); 1.8× faster. Improved mode marks i, y and u long before r.
+- **French** (`fr`): French letter rules (silent final letters, nasal vowels, digraphs, schwa in open syllables, stress on the last full syllable), elided words read with the next word (`l'école`), liaison consonants kept as latent marks in the word table and said before a vowel inside a clause (`les amis` → `le-z amˈi`), the voice's clitic hyphen (`ʒə- nə- sˈɛ pˈa`), one-word number readings with stress on the last word, and a word table (`fr.ucd`, 12 k entries, 170 KB, feature `embed-fr`; 100 k-word list). Held-out PER 0.85 % on FLORES-200 (0.65 % without digits); words of the word list 1.6 % wrong, words outside it 32.4 % (330 of 21,347 scored words); 2.8× faster. Improved mode writes ɥ before i.
+- **A letter-to-sound model in the word tables** of German, Dutch and French: back-off tables over
+  letter contexts, trained on each language's full word list, with stress marks chosen so that the
+  language's own stress rule gives the reference pattern. It reads the words a table does not
+  list, and the tables keep only the words the model and the rules get wrong, which makes them
+  half the size or less (German 748 → 357 KB). Words held out of the model's training list:
+  German 62.1 → 69.0 % right, Dutch 48.6 → 59.4 %, French 83.7 → 86.4 %. The held-out figures
+  above include the model (before it: German 1.29 %, Dutch 1.91 %, French 0.98 %; see
+  docs/evaluation.md).
+
+### Changed
+
+- **Urdu and Sindhi**, words outside the tables: consonant pairs said without a vowel (نٹ, رڈ, ہ before
+  a consonant, …), final ہ after a consonant as a weak vowel that keeps the short vowel before it,
+  izafat kasra as eː, ی before و as eː, unstressed iː short, Sindhi on the Hindi-type deletion. The
+  tables now hold only the words the rules get wrong, taken from 120 k Urdu and 61 k Sindhi corpus
+  words (`ur.ucd` 47 k entries, 495 KB; `sd.ucd` 18 k entries, 192 KB). Held-out PER Urdu 2.18 →
+  1.44 %, Sindhi 2.79 → 1.52 %. New letter attribute `weak` in language files.
+
+### Fixed
+
+- Python: `bho`, `mai` and `mag` raised "unknown pack" on first use (they are read with the
+  Hindi data, which the wheel carries); they now work without a pack.
+- Command line (the `uccharan` program, `python -m uccharan` and `uccharan-train`): standard input
+  and output are UTF-8 on every platform; on Windows, phonemes could not be written to a console
+  or pipe that used a legacy code page.
+
 ## [0.2.0] - 2026-11-14
 
 Nineteen more South Asian languages; smaller, with modular language packs; and better at names.

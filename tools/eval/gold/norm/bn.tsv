@@ -19,3 +19,11 @@ dev	cardinal	33	তেত্রিশ
 heldout	cardinal	১৫	পনেরো	
 dev	cardinal	70	সত্তর	
 heldout	cardinal	10	দশ	
+dev	cardinal	36	ছত্রিশ	
+heldout	cardinal	48	আটচল্লিশ	
+dev	cardinal	250	দুইশো পঞ্চাশ || দুইশ পঞ্চাশ || দুই শত পঞ্চাশ || আড়াইশো	
+heldout	percent	75%	পঁচাত্তর শতাংশ	
+dev	cardinal	5000	পাঁচ হাজার	
+heldout	decimal	1.5	এক দশমিক পাঁচ	
+dev	cardinal	64	চৌষট্টি	
+heldout	cardinal	19	উনিশ	

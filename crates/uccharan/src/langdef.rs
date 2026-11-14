@@ -185,6 +185,23 @@ pub struct Numbers {
     pub minus: Vec<String>,
     /// Word(s) for `%` after the number.
     pub percent: Vec<String>,
+    /// `decimal comma`: the comma is the decimal sign and the full stop
+    /// groups thousands.
+    pub decimal_comma: bool,
+    /// `swap-tens und`: units are said before the tens, the tens as one
+    /// word with this linking word in front ("ein" "undzwanzig").
+    pub swap_tens: Option<String>,
+    /// `year-hundreds yes`: 1100 to 1999 are counted in hundreds
+    /// ("nineteen hundred eighty-four").
+    pub year_hundreds: bool,
+    /// `stress last`: only the last word of a number keeps its stress.
+    pub stress_last: bool,
+    /// `fraction number`: the digits after the decimal sign are read as
+    /// one number.
+    pub fraction_number: bool,
+    /// Rules for the written number words of normalise-only mode; when
+    /// set, they replace the table above.
+    pub speller: Option<std::sync::Arc<crate::rbnf::Rbnf>>,
 }
 
 impl Numbers {
@@ -205,6 +222,11 @@ impl Numbers {
                 "minus" => n.minus = words,
                 "percent" => n.percent = words,
                 "grouping" => n.indian = v.trim() == "indian",
+                "fraction" => n.fraction_number = v.trim() == "number",
+                "stress" => n.stress_last = v.trim() == "last",
+                "year-hundreds" => n.year_hundreds = v.trim() == "yes",
+                "decimal" => n.decimal_comma = v.trim() == "comma",
+                "swap-tens" => n.swap_tens = Some(v.trim().to_string()),
                 "glue-hundred" => n.glue_hundred = v.trim() == "yes",
                 "one-before-scale" => n.one_before_scale = v.trim() != "no",
                 "join-tens" => n.join_tens = v.trim() == "yes",
@@ -233,6 +255,26 @@ impl Numbers {
         n
     }
 
+    /// The same numbers with the written number words of `rules`
+    /// (normalise-only mode).
+    pub fn with_speller(&self, rules: &str) -> Numbers {
+        let r = crate::rbnf::Rbnf::parse(rules);
+        let words = |s: &str, old: &Vec<String>| {
+            if s.is_empty() {
+                old.clone()
+            } else {
+                s.split_whitespace().map(str::to_string).collect()
+            }
+        };
+        Numbers {
+            point: words(&r.point, &self.point),
+            minus: words(&r.minus, &self.minus),
+            percent: words(&r.percent, &self.percent),
+            speller: Some(std::sync::Arc::new(r)),
+            ..self.clone()
+        }
+    }
+
     /// True when the language has number words.
     pub fn is_empty(&self) -> bool {
         self.table.is_empty()
@@ -249,9 +291,28 @@ impl Numbers {
 
     /// Words for `n`; each entry is `(word, glued to the previous one)`.
     pub fn cardinal(&self, n: u64, out: &mut Vec<(String, bool)>) {
+        if let Some(r) = &self.speller {
+            let words = r.spell(n);
+            out.extend(words.split(' ').map(|w| (w.to_string(), false)));
+            return;
+        }
         if let Some(w) = self.get(n, false) {
             out.extend(w.iter().map(|x| (x.clone(), false)));
             return;
+        }
+        if self.year_hundreds && (1100..2000).contains(&n) && n % 1000 >= 100 {
+            if let Some((_, word, word_more)) = self.scales.iter().find(|s| s.0 == 100) {
+                let r = n % 100;
+                self.cardinal(n / 100, out);
+                out.push((
+                    if r > 0 { word_more } else { word }.clone(),
+                    self.glue_hundred,
+                ));
+                if r > 0 {
+                    self.cardinal(r, out);
+                }
+                return;
+            }
         }
         for (val, word, word_more) in &self.scales {
             if n >= *val {
@@ -284,6 +345,15 @@ impl Numbers {
         // Below the smallest scale and not listed: tens + units.
         if n < 100 {
             let (t, u) = (n / 10 * 10, n % 10);
+            if let (Some(link), true, Some(tens)) = (&self.swap_tens, u > 0, self.get(t, false)) {
+                // The unit's own form before the tens ("1u" in the file).
+                match self.table.get(&format!("{u}u")) {
+                    Some(w) => out.extend(w.iter().map(|x| (x.clone(), false))),
+                    None => self.cardinal(u, out),
+                }
+                out.push((format!("{link}{}", tens.concat()), false));
+                return;
+            }
             if let Some(w) = self.get(t, u > 0) {
                 let start = out.len();
                 out.extend(w.iter().map(|x| (x.clone(), false)));
@@ -308,6 +378,10 @@ impl Numbers {
     /// Words for a digit string, one per digit.
     pub fn digits(&self, s: &str, out: &mut Vec<(String, bool)>) {
         for d in s.bytes().filter(u8::is_ascii_digit) {
+            if let Some(r) = &self.speller {
+                out.push((r.spell(u64::from(d - b'0')), false));
+                continue;
+            }
             if let Some(w) = self.get(u64::from(d - b'0'), false) {
                 out.extend(w.iter().map(|x| (x.clone(), false)));
             }

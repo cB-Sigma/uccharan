@@ -1,0 +1,15 @@
+# split	class	input	expected	options
+dev	cardinal	7	ସାତ	
+heldout	cardinal	12	ବାର	
+dev	cardinal	19	ଉଣେଇଶ || ଊଣେଇଶ	
+heldout	cardinal	36	ଛତିଶ	
+dev	cardinal	48	ଅଠଚାଳିଶ || ଅଠଚାଳିସ	
+heldout	cardinal	100	ଶହେ || ଏକ ଶହ || ଏକଶହ	
+dev	cardinal	250	ଦୁଇ ଶହ ପଚାଶ || ଦୁଇଶହ ପଚାଶ	
+heldout	cardinal	1000	ଏକ ହଜାର || ହଜାରେ	
+dev	cardinal	5000	ପାଞ୍ଚ ହଜାର	
+heldout	percent	75%	ପଞ୍ଚସ୍ତରି ପ୍ରତିଶତ || ପଚସ୍ତରି ପ୍ରତିଶତ || ପଞ୍ଚସ୍ତରୀ ପ୍ରତିଶତ	
+dev	cardinal	1,00,000	ଏକ ଲକ୍ଷ || ଲକ୍ଷେ	
+heldout	decimal	1.5	ଏକ ଦଶମିକ ପାଞ୍ଚ	
+dev	cardinal	ମୋ ପାଖରେ 3 ଟି ବହି ଅଛି।	ମୋ ପାଖରେ ତିନି ଟି ବହି ଅଛି।	
+heldout	cardinal	64	ଚଉଷଠି	

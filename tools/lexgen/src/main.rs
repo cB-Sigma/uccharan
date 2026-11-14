@@ -19,6 +19,7 @@
 mod align;
 mod cmudict;
 mod en;
+mod g2p;
 mod hi;
 mod lts;
 mod wikipron;
@@ -81,6 +82,25 @@ fn gb_from_us(us: &str) -> String {
     }
     s
 }
+
+/// Word tables built from `data/sources/<lang>/words.tsv`: file, language, word source.
+const LATIN_TABLES: [(&str, &str, &str); 3] = [
+    (
+        "de.ucd",
+        "de",
+        "the words of Tatoeba and Leipzig Corpora Collection German sentences",
+    ),
+    (
+        "nl.ucd",
+        "nl",
+        "the words of Tatoeba and Leipzig Corpora Collection Dutch sentences",
+    ),
+    (
+        "fr.ucd",
+        "fr",
+        "the words of Tatoeba and Leipzig Corpora Collection French sentences",
+    ),
+];
 
 /// misaki's dictionaries (data/sources/misaki, Apache-2.0) for the Kokoro English front end.
 fn build_kokoro(root: &Path, british: bool) -> Vec<u8> {
@@ -329,35 +349,56 @@ fn main() {
                 .unwrap_or_default();
             let names =
                 std::fs::read_to_string(root.join("data/sources/en/names.tsv")).unwrap_or_default();
-            let files = [
-                (
-                    "en-us.ucd",
-                    build_english(&entries, en::Accent::Us, "en-us", &overrides, &names),
-                ),
-                (
-                    "en-gb.ucd",
-                    build_english(&entries, en::Accent::Gb, "en-gb", &overrides, &names),
-                ),
-                ("hi.ucd", hi::build(&root)),
-                (
-                    "ur.ucd",
+            // LEXGEN_ONLY=<tag> builds one Latin-script word table.
+            let only = std::env::var("LEXGEN_ONLY").ok();
+            let files = if only.is_some() {
+                Vec::new()
+            } else {
+                vec![
+                    (
+                        "en-us.ucd",
+                        build_english(&entries, en::Accent::Us, "en-us", &overrides, &names),
+                    ),
+                    (
+                        "en-gb.ucd",
+                        build_english(&entries, en::Accent::Gb, "en-gb", &overrides, &names),
+                    ),
+                    ("hi.ucd", hi::build(&root)),
+                    (
+                        "ur.ucd",
+                        words::build(
+                            &root,
+                            "ur",
+                            "derived from running espeak-ng 1.52.0 on Sangraha Urdu word lists",
+                        ),
+                    ),
+                    (
+                        "sd.ucd",
+                        words::build(
+                            &root,
+                            "sd",
+                            "derived from running espeak-ng 1.52.0 on Sangraha Sindhi word lists",
+                        ),
+                    ),
+                    ("kokoro-en-us.ucd", build_kokoro(&root, false)),
+                    ("kokoro-en-gb.ucd", build_kokoro(&root, true)),
+                ]
+            };
+            // Word tables of the Latin-script languages.
+            let mut files: Vec<(&str, Vec<u8>)> = files;
+            for (name, lang, what) in LATIN_TABLES {
+                if only.as_deref().is_some_and(|o| o != lang) {
+                    continue;
+                }
+                files.push((
+                    name,
                     words::build(
                         &root,
-                        "ur",
-                        "derived from running espeak-ng 1.52.0 on Sangraha Urdu word lists",
+                        lang,
+                        &format!("derived from running espeak-ng 1.52.0 on {what}"),
                     ),
-                ),
-                (
-                    "sd.ucd",
-                    words::build(
-                        &root,
-                        "sd",
-                        "derived from running espeak-ng 1.52.0 on Sangraha Sindhi word lists",
-                    ),
-                ),
-                ("kokoro-en-us.ucd", build_kokoro(&root, false)),
-                ("kokoro-en-gb.ucd", build_kokoro(&root, true)),
-            ];
+                ));
+            }
             let mut stale = false;
             for (name, bytes) in files {
                 let path = out_dir.join(name);
@@ -487,6 +528,96 @@ fn main() {
                     100.0 * edits as f64 / len as f64
                 );
             }
+        }
+        "g2p-eval" => {
+            // g2p-eval LANG FILE [MIN_COUNT]: hold out every tenth word of a
+            // `word<TAB>reading` list, train on the rest, score model and rules.
+            let a: Vec<String> = std::env::args().skip(2).collect();
+            let lang = uccharan::Lang::parse(&a[0]).expect("language");
+            let latin = lang.latin().expect("Latin-script language");
+            let min: u32 = a.get(2).and_then(|v| v.parse().ok()).unwrap_or(2);
+            let rows: Vec<(String, String)> = std::fs::read_to_string(&a[1])
+                .unwrap()
+                .lines()
+                .filter(|l| !l.starts_with('#'))
+                .filter_map(|l| l.split_once('\t'))
+                .filter(|(w, r)| !r.contains(' ') && *w == w.to_lowercase())
+                .map(|(w, r)| (w.to_string(), words::plain(r)))
+                .collect();
+            let held = |w: &str| {
+                w.bytes()
+                    .fold(7u32, |h, b| h.wrapping_mul(31).wrapping_add(b as u32))
+                    % 10
+                    == 0
+            };
+            let tr: Vec<(String, String)> =
+                rows.iter().filter(|(w, _)| !held(w)).cloned().collect();
+            // SHAPES="84,4 83,3 ..." (hex left,right bytes) tries another chain.
+            let shapes: Vec<(u8, u8)> = match std::env::var("SHAPES") {
+                Ok(v) => v
+                    .split_whitespace()
+                    .filter_map(|x| x.split_once(','))
+                    .map(|(l, r)| {
+                        (
+                            u8::from_str_radix(l, 16).unwrap(),
+                            u8::from_str_radix(r, 16).unwrap(),
+                        )
+                    })
+                    .collect(),
+                Err(_) => g2p::SHAPES.to_vec(),
+            };
+            let lat = std::env::var("LATENT").is_ok();
+            let (extra, model) = g2p::train(&tr, min, &shapes, lat.then_some(latin));
+            let mut b = Builder::new();
+            b.lts(model.outputs, model.tables);
+            b.meta("letters", &extra);
+            if lat {
+                b.meta("stress", "latent");
+            }
+            let bytes = b.build().unwrap();
+            let size = bytes.len();
+            let d = Data::from_vec(bytes).unwrap();
+            let (mut n, mut m_ok, mut r_ok, mut t_ok, mut tn) = (0, 0, 0, 0, 0);
+            let show = std::env::var("SHOW").is_ok();
+            let mut seg = [0usize; 3];
+            for (k, (w, r)) in rows.iter().enumerate() {
+                let got = latin.model_word(w, &d).unwrap_or_default();
+                if !held(w) {
+                    if k % 10 == 1 {
+                        tn += 1;
+                        t_ok += (got == *r) as usize;
+                    }
+                    continue;
+                }
+                n += 1;
+                m_ok += (got == *r) as usize;
+                let rule = latin.rule_word(w, true);
+                r_ok += (rule == *r) as usize;
+                let st = uccharan::ipa::strip_stress;
+                seg[0] += (st(&got) == st(r)) as usize;
+                seg[1] += (st(&rule) == st(r)) as usize;
+                let combo = latin.with_stress_of(&got, &rule).unwrap_or(rule.clone());
+                seg[2] += (combo == *r) as usize;
+                if show && got != *r {
+                    println!("{w}\t{r}\t{got}");
+                }
+            }
+            let pc = |a: usize, b: usize| 100.0 * a as f64 / b.max(1) as f64;
+            println!(
+                "segments only: model {:.1}% rules {:.1}%; model segments + rule stress {:.1}%",
+                pc(seg[0], n),
+                pc(seg[1], n),
+                pc(seg[2], n)
+            );
+            println!(
+                "{}: train {} held {n}; model exact {:.1}% rules exact {:.1}%; on training words {:.1}%; model {} bytes",
+                a[0],
+                tr.len(),
+                pc(m_ok, n),
+                pc(r_ok, n),
+                pc(t_ok, tn),
+                size
+            );
         }
         _ => eprintln!("unknown command"),
     }

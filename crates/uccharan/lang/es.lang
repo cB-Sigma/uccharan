@@ -1,0 +1,293 @@
+# Spanish (Spain). espeak-ng voice "es". Written for uccharan from
+# specs/es.md: letter rules, the Spanish stress rule, secondary stress on
+# alternate syllables before the primary, spirantisation of b d g and nasal
+# place assimilation inside the clause.
+
+[meta]
+tag = es
+vowels = a e ɛ i o u ı
+stress = spanish
+secondary = alternate
+# -mente adverbs keep the stress of the adjective as well.
+suffix = mente mˈᴇnte
+spell-close-e = yes
+
+[classes]
+V = a e i o u á é í ó ú ü y ì
+VV = a e i o u á é í ó ú ü ì
+ACC = á é í ó ú
+AEO = a e o á é ó
+NV = b c d f g h j k l m n ñ p q r s t v w x z
+FV = e i é í
+# Phoneme classes.
+P = a e ɛ i o u ı ɪ ʊ j w ɾ r l s θ f x ʝ ʎ β ð ɣ z ʃ
+VEL = ɡ x
+SN = p t k b d ɡ m n
+SNJ = p t k b d ɡ m n ‿
+LAB = b p β
+J = ‿
+NN = n m
+PV = a e ɛ i o u ˈ ˌ
+PC = p t k b d ɡ f θ s x tʃ ʝ ʎ m n ɲ l ɾ r ʃ β ð ɣ
+
+[pre]
+# Written accents mark the stressed vowel.
+á -> ˈa
+é -> ˈe
+í -> ˈi
+ó -> ˈo
+ú -> ˈu
+# "ì" only in number words: an i of its own syllable.
+ì -> ı
+# Falling diphthongs.
+ai -> aɪ / _ {NV} | _ #
+ei -> eɪ / _ {NV} | _ #
+oi -> oɪ / _ {NV} | _ #
+ay -> aɪ / _ {NV} | _ #
+ey -> eɪ / _ {NV} | _ #
+oy -> oɪ / _ {NV} | _ #
+uy -> uj / _ #
+au -> aʊ / _ {NV} | _ #
+eu -> eʊ / _ {NV} | _ #
+# Rising diphthongs: i and u before another vowel are glides.
+# After r, l and a consonant + r or l, i and u before a vowel are said as
+# vowels; i does not make a syllable of its own for stress (ⅰ) unless an
+# accented vowel follows.
+i -> ı / {NV} r _ {ACC} | {NV} l _ {ACC}
+i -> ⅰ / # r _ {VV} | # l _ {VV} | {NV} r _ {VV} | {NV} l _ {VV}
+u -> u / l _ {VV} | r _ {VV}
+ou -> ow / _ {NV} | _ #
+i -> j / _ {VV}
+u -> w / _ {VV}
+ü -> u
+# Consonants.
+qu -> k / _ {FV}
+gu -> ɡ / _ {FV}
+gü -> ɡu
+ch -> tʃ
+ll -> ʎ
+rr -> r
+cc -> kθ / _ {FV}
+c -> θ / _ {FV}
+c -> k
+z -> θ
+g -> x / _ {FV}
+g -> ɡ
+j -> x
+h -> 0
+ñ -> ɲ
+v -> b
+x -> ks
+y -> i / # _ #
+y -> ʝ / _ {V}
+y -> i
+r -> r / # _ | n _ | l _ | s _
+r -> ɾ
+ps -> s / # _
+
+[post]
+ı -> i
+ⅰ -> i
+# p before t is long.
+p -> pː / _ t
+# Nasal place inside the word.
+n -> m / _ b | _ p | _ f ɾ
+n -> ŋ / _ {VEL}
+
+[clause]
+# b d g are spirants after a vowel or a continuant, also across words.
+# A word-final d stays a stop before a consonant; g before a nasal stays a stop.
+# A word-final d stays a stop before a consonant; b d g before a stop or
+# nasal stay stops.
+b -> β / {P} _ {!SNJ} | {P} ‿ _ | d ‿ _
+d -> ð / {P} _ {!SNJ} | {P} ‿ _ | {P} _ ‿ {PV} | d ‿ _
+ɡ -> ɣ / {P} _ {!SNJ} | {P} ‿ _ | d ‿ _
+# Stressed e before n and a consonant is open.
+ˈe -> ˈɛ / _ n {PC} | _ n tʃ | _ ŋ {PC}
+# The -mente suffix keeps a close e.
+ᴇ -> e
+# A final n takes the place of the next word's first consonant.
+n -> m / _ ‿ b | _ ‿ p | _ ‿ f ɾ
+n -> ŋ / _ ‿ ɡ
+
+[post.improved]
+# The open e and the diphthong notation are conventions of the espeak-ng
+# voice; d after l and n is a stop (Martínez-Celdrán et al. 2003).
+ɛ -> e
+aɪ -> ai
+eɪ -> ei
+oɪ -> oi
+aʊ -> au
+eʊ -> eu
+ð -> d / l _ | n _
+
+[words]
+kg kˌiloɣɾˈamo
+doscientos ðosθjˈᴇntos
+dieznum djˈɛθ
+sesentanum sɛsˈɛnta
+etc etθˈeteɾa
+sr seɲˈoɾ
+sra seɲˈoɾa
+ser sˈer
+diez djˈɛθ
+méxico mˈɛxiko
+software sˈoftweɾ
+google ɡˈuɣəl
+
+[unstressed]
+el 0 0
+la 0 p
+los 0 0
+las 0 0
+lo 0 0
+de 0 0
+del 0 0
+a 0 0
+al 0 0
+en 0 0
+con 0 0
+por 0 0
+sin 0 0
+que 0 p
+se 0 0
+me 0 0
+te 0 0
+le 0 0
+les 0 0
+nos 0 0
+mi 0 0
+tu 0 0
+su 0 0
+sus 0 0
+mis 0 0
+y 0 0
+tras 0 0
+ante s s
+nuestra s s
+nuestro s s
+nuestras s s
+nuestros s s
+e 0 0
+o 0 0
+u 0 0
+si 0 0
+para s s
+sobre s s
+entre s s
+hasta s s
+desde s s
+pero s s
+como s s
+cuando s s
+donde s s
+porque s s
+hacia s s
+quienes s s
+quien 0 0
+mientras s s
+cuanto s s
+aunque s s
+bajo s s
+
+[spell]
+a ˈa
+b bˈe
+c θˈe
+d dˈe
+e ˈe
+f ˈɛfe
+g xˈe
+h ˈatʃe
+i ˈi
+j xˈota
+k kˈa
+l ˈɛle
+m ˈɛme
+n ˈɛne
+ñ ˈɛɲe
+o ˈo
+p pˈe
+q kˈu
+r ˈere
+s ˈɛse
+t tˈe
+u ˈu
+v ˈuβe
+w ˌuβeðˈoβle
+x ˈekis
+y ˌiɣɾjˈeɣa
+z θˈeta
+
+[numbers]
+point coma
+percent por ciento
+join-tens yes
+one-before-scale no
+0 cero
+1 uno
+2 dos
+3 tres
+4 cuatro
+5 cinco
+6 seis
+7 siete
+8 ocho
+9 nueve
+10 dieznum
+11 once
+12 doce
+13 trece
+14 catorce
+15 quince
+16 dieciséis
+17 diecisiete
+18 diecìocho
+19 diecinueve
+20 veinte
+21 veintìuno
+22 veintidós
+23 veintitrés
+24 veinticuatro
+25 veinticinco
+26 veintiséis
+27 veintisiete
+28 veintìocho
+29 veintinueve
+30 treinta
+30+ treinta+ì+
+40 cuarenta
+40+ cuarenta+ì+
+50 cincuenta
+50+ cincuenta+ì+
+60 sesentanum
+60+ sesentanum+ì+
+70 setenta
+70+ setenta+ì+
+80 ochenta
+80+ ochenta+ì+
+90 noventa
+90+ noventa+ì+
+100 cien
+100+ ciento
+200 doscientos
+200+ doscientos
+300 trescientos
+300+ trescientos
+400 cuatrocientos
+400+ cuatrocientos
+500 quinientos
+500+ quinientos
+600 seiscientos
+600+ seiscientos
+700 setecientos
+700+ setecientos
+800 ochocientos
+800+ ochocientos
+900 novecientos
+900+ novecientos
+1000000 un millón
+scale1000000 millones
+scale1000 mil
+scale100 cien
+scale100+ ciento

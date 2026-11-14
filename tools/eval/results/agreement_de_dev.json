@@ -1,0 +1,243 @@
+{
+ "language": "de",
+ "reference": "espeak-ng 1.52.0 voice de (library API)",
+ "set": "dev",
+ "sentence_level": {
+  "sentences": 997,
+  "reference_symbols": 168720,
+  "per": 0.011273115220483642,
+  "per_without_stress": 0.006109572995421148,
+  "exact_sentence": 0.5827482447342026,
+  "exact_sentence_without_stress": 0.728184553660983,
+  "piper_shape_per": 0.011323792799677964,
+  "piper_shape_exact_sentence": 0.563691073219659,
+  "word_count_mismatch_sentences": 192,
+  "errors_by_class": {
+   "stress": {
+    "count": 1014,
+    "share": 0.5331230283911672,
+    "per_contribution": 0.006009957325746799
+   },
+   "vowel": {
+    "count": 311,
+    "share": 0.16351209253417456,
+    "per_contribution": 0.0018432906590801327
+   },
+   "consonant": {
+    "count": 253,
+    "share": 0.13301787592008413,
+    "per_contribution": 0.0014995258416311047
+   },
+   "other": {
+    "count": 216,
+    "share": 0.11356466876971609,
+    "per_contribution": 0.0012802275960170698
+   },
+   "length": {
+    "count": 56,
+    "share": 0.029442691903259727,
+    "per_contribution": 0.0003319108582266477
+   },
+   "word-boundary": {
+    "count": 52,
+    "share": 0.027339642481598318,
+    "per_contribution": 0.00030820293978188717
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "∅→ˌ",
+    "count": 207
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 175
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 142
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 136
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 118
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 111
+   },
+   {
+    "edit": "ː→∅",
+    "count": 33
+   },
+   {
+    "edit": " →∅",
+    "count": 28
+   },
+   {
+    "edit": "t→∅",
+    "count": 27
+   },
+   {
+    "edit": "ɑ→∅",
+    "count": 25
+   },
+   {
+    "edit": "∅→ ",
+    "count": 24
+   },
+   {
+    "edit": "e→∅",
+    "count": 23
+   },
+   {
+    "edit": "∅→ː",
+    "count": 23
+   },
+   {
+    "edit": "ɑ→a",
+    "count": 20
+   },
+   {
+    "edit": "ː→a",
+    "count": 19
+   },
+   {
+    "edit": "ɾ→∅",
+    "count": 18
+   },
+   {
+    "edit": "ɛ→ə",
+    "count": 18
+   },
+   {
+    "edit": "ɜ→ɾ",
+    "count": 18
+   },
+   {
+    "edit": "u→∅",
+    "count": 17
+   },
+   {
+    "edit": "a→ɑ",
+    "count": 17
+   },
+   {
+    "edit": "∅→e",
+    "count": 16
+   },
+   {
+    "edit": "ə→ɛ",
+    "count": 15
+   },
+   {
+    "edit": "∅→ɛ",
+    "count": 14
+   },
+   {
+    "edit": "a→ː",
+    "count": 13
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 13
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 16649,
+    "wrong": 428,
+    "rate": 0.025707249684665746
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 218,
+    "per": 0.017206216742070842,
+    "exact_sentence": 0.4724770642201835
+   },
+   "no-digits": {
+    "sentences": 779,
+    "per": 0.009265355661148174,
+    "exact_sentence": 0.613607188703466
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-dev-163",
+    "text": "Ein Minenabwehrschiff der Avenger-Klasse, das Schiff war auf dem Weg nach Puerto Princesa in Palawan.",
+    "reference": "aɪn mˈiːnənˌabveːɾʃˌɪf dɛɾ ˈɑvɛŋɜklˈasə das ʃˈɪf vɑːɾ aʊf deːm vˈeːk nɑːx puːɜtˈoː pɾˈɪnkeːzˌɑː ɪn pˌɑlavˈɑːn",
+    "uccharan": "aɪn mˈiːnɛnˌabveːɾʃˌɪf dɛɾ ˈɑvɛŋɜklˈasə das ʃˈɪf vɑːɾ aʊf deːm vˈeːk nɑːx puːɜtˈoː pɾˈɪnkeːzˌɑː ɪn pˈɑlavˌɑːn"
+   },
+   {
+    "id": "flores-dev-338",
+    "text": "Während seiner Aufwärmrunde stürzte Lenz von seinem Motorrad und wurde dann von seinem Rennkollegen Xavier Zayat überfahren.",
+    "reference": "vˌɛːrənt zˌaɪnɜ ˈaʊfvˌɛɾmrʊndə ʃtˈʏɾtstə lˈɛnts fɔn zˌaɪnəm mˈoːtoːɾrˌɑːt ʊnt vˌʊɐdə dan fɔn zˌaɪnəm rˌɛnnkɔlˈeːɡən ksavˈiːɾ tsaɪˈɑːt ˌyːbɜfˈɑːrən",
+    "uccharan": "vˌɛːrənt zˌaɪnɜ ˈaʊfvˌɛɾmrʊndə ʃtˈʏɾtstə lˈɛnts fɔn zˌaɪnəm mˈoːtoːɾrˌɑːt ʊnt vˌʊɐdə dan fɔn zˌaɪnəm rˈɛnnkɔlˌeːɡən ksavˈiːɾ tsˈaɪˌɑːt ˌyːbɜfˈɑːrən"
+   },
+   {
+    "id": "flores-dev-759",
+    "text": "Bei einem sogenannten Hospitality Exchange Network handelt es sich um die Organisation, die Reisende in den Städten, die sie besuchen, mit Einheimischen zusammenbringt.",
+    "reference": "baɪ ˌaɪnəm zˈoːɡənˌantən hˌɒspɪtˈalɪti ˈɛksçaŋə nˈɛtwɜːk hˈandəlt ɛs zɪç ʊm diː ˌɔɾɡanˌiːzatsjˈoːn diː rˈaɪzəndə ɪn deːn ʃtˈɛtən diː ziː bəzˈuːxən mɪt ˈaɪnhˌaɪmɪʃən tsuːzˈamənbɾˌɪŋt",
+    "uccharan": "baɪ ˌaɪnəm zˈoːɡənˌantən hˌɔspiːtalˈɪti ˈɛksçaŋə nˈɛtwɜːk hˈandəlt ɛs zɪç ʊm diː ˌɔɾɡanˌiːzatsjˈoːn diː rˈaɪzəndə ɪn deːn ʃtˈɛtən diː ziː bəzˈuːxən mɪt ˈaɪnhˌaɪmɪʃən tsuːzˈamənbɾˌɪŋt"
+   },
+   {
+    "id": "flores-dev-907",
+    "text": "Üblicherweise bieten sie höhere Bandbreiten und bessere Leistungsqualität. Sie sind verschlüsselt und daher schwieriger auszuspionieren.",
+    "reference": "ˈʏblɪçɜvˌaɪzə bˈiːtən ziː hˈøːərə bˈandbɾaɪtən ʊnt bˈɛsərə lˌaɪstʊŋskvˈɑːliːtˈɛːt ziː zɪnt fɛɾʃlˈʏsəlt ʊnt dɑːhˈɛɾ ʃvˈiːrɪɡɜ ˈaʊstsuːʃpˌɪoːnˌiːrən",
+    "uccharan": "ˈʏblɪçɜvˌaɪzə bˈiːtən ziː hˈøːərə bˈandbɾaˌɪtən ʊnt bˈɛsərə lˈaɪstʊŋskvˌɑːliːtˌɛːt ziː zɪnt fɛɾʃlˈʏsəlt ʊnt dɑːhˈɛɾ ʃvˈiːrɪɡɜ ˈaʊstsuːʃpˌɪoːnˌiːrən"
+   },
+   {
+    "id": "flores-dev-735",
+    "text": "Sirena ist die einzige Rangerstation, die neben Zelten auch Übernachtung im Schlafsaal und warme Mahlzeiten anbietet. La Leona, San Pedrillo und Los Patos bieten nur Camping ohne Verpflegung an.",
+    "reference": "zˈiːrənˌɑː ɪst diː ˈaɪntsɪɡə rˌaŋɜstatsjˈoːn diː nˌeːbən tsˈɛltən ˌaʊx ˌyːbɜnˈaxtʊŋ ɪm ʃlˈafzɑːl ʊnt vˈaɾmə mˈɑːltsaɪtən ˈanbˌiːtət lˈɑː lˈeːoːnˌɑː zan pɛdɾˈɪloː ʊnt lˈoːs pˈɑtoːs bˈiːtən nˈuːɾ kˈampɪŋ ˈoːnə fɛɾpflˈeːɡʊŋ ˈan",
+    "uccharan": "zˈiːrənˌɑː ɪst diː ˈaɪntsɪɡə rˈaŋɜstatsjˌoːn diː nˌeːbən tsˈɛltən ˌaʊx ˌyːbɜnˈaxtʊŋ ɪm ʃlˈafzɑːl ʊnt vˈaɾmə mˈɑːltsaɪtən ˈanbˌiːtət lˈɑː lˈeːoːnˌɑː zan pˈɛdɾɪlˌoː ʊnt lˈoːs pˈatoːs bˈiːtən nˈuːɾ kˈampɪŋ ˈoːnə fɛɾpflˈeːɡʊŋ ˈan"
+   },
+   {
+    "id": "flores-dev-474",
+    "text": "Der Artemis-Tempel in Ephesus wurde am 21. Juli 356 v. Chr. in einem Akt der Brandstiftung durch Herostratus zerstört.",
+    "reference": "dɛɾ ˈaɾteːmˌɪstˈɛmpəl ɪn ˈeːfeːzˌʊs vˌʊɐdə am ˈaɪn ʊnttsvˈantsɪç jˈuːliː dɾˈaɪhˈʊndɜt zˈɛks ʊntfˈʏnftsɪç fˈaʊ tsˌeːhˌɑːˈɛɾ ɪn ˌaɪnəm ˈakt dɛɾ bɾˈantstɪftˌʊŋ dʊɐç heːrˈoːstɾatˌʊs tsɛɾʃtˈœɾt",
+    "uccharan": "dɛɾ ˈaɾteːmˌɪstˈɛmpəl ɪn ˈeːfəzˌʊs vˌʊɐdə am ˈaɪn ʊnttsvˈantsɪç jˈuːliː dɾˈaɪhˈʊndɜt zˈɛks ʊntfˈʏnftsɪç fˈaʊ tsˌeːhˌɑːˈɛɾ ɪn ˌaɪnəm ˈakt dɛɾ bɾˈantstɪftˌʊŋ dʊɐç heːrˈɔstɾɑtˌʊs tsɛɾʃtˈœɾt"
+   },
+   {
+    "id": "flores-dev-196",
+    "text": "Arias wurde positiv auf einen milden Fall des Virus getestet, sagte der Präsidentschaftsminister.",
+    "reference": "ˈɑriːˌɑːs vˌʊɐdə pˌoːziːtˈiːf aʊf ˌaɪnən mˈɪldən fˈal dɛs vˈiːrʊs ɡətˈɛstət zˈɑːɡtə dɛɾ pɾˌɛːziːdˌɛntʃaftsmiːnˈɪstɜ",
+    "uccharan": "ˈɑriːˌɑːs vˌʊɐdə pˌoːziːtˈiːf aʊf ˌaɪnən mˈɪldən fˈal dɛs vˈiːrʊs ɡətˈɛstət zˈɑːɡtə dɛɾ pɾˈɛːziːdˌɛntʃaftsmˌiːnɪstɜ"
+   },
+   {
+    "id": "flores-dev-451",
+    "text": "Um zu lernen, wie man interaktive Medien erstellt, sind konventionelle und traditionelle Fähigkeiten sowie Werkzeuge erforderlich, die in interaktiven Kursen erlernt werden (Storyboarding, Audio- und Videobearbeitung, Storytelling usw.).",
+    "reference": "ʊm tsuː lˈɛɾnən viː man ˌɪntəraktˈiːvə mˈeːdɪən ɛɾʃtˈɛlt zɪnt kɔnvɛntsjˌoːnˈɛlə ʊnt tɾˌɑdiːtsjˌoːnˈɛlə fˈɛːɪçkˌaɪtən zoːvˈiː vˈɛɾktsɔøɡə ɛɾfˈɔɾdɜlˌɪç diː ɪn ˌɪntəraktˈiːvən kˈʊɐzən ɛɾlˈɛɾnt vˌɛɾdən stˈɔːɹibˌɔːdɪŋ ˈaʊdɪˌoː ʊnt vˈiːdeːˌoːbeːˌaɾbaɪtˌʊŋ ʃtˈoːryːtˌɛlɪŋ ˈʊsf",
+    "uccharan": "ʊm tsuː lˈɛɾnən viː man ˌɪntəraktˈiːvə mˈeːdɪən ɛɾʃtˈɛlt zɪnt kɔnvɛntsjˌoːnˈɛlə ʊnt tɾˌɑdiːtsjˌoːnˈɛlə fˈɛːɪçkˌaɪtən zoːvˈiː vˈɛɾktsɔøɡə ɛɾfˈɔɾdɜlˌɪç diː ɪn ˌɪntəraktˈiːvən kˈʊɐzən ɛɾlˈɛɾnt vˌɛɾdən ʃtˈoːryːbɔːdˌɪŋ ˈaʊdɪˌoː ʊnt vˈiːdeːˌoːbeːˌaɾbaɪtˌʊŋ ʃtˈoːryːtˌɛlɪŋ ˈʊsf"
+   },
+   {
+    "id": "flores-dev-200",
+    "text": "Felicia, einst ein Kategorie 4-Sturm auf der Saffir-Simpson-Hurrikanskala, schwächte sich zu einem tropischen Tiefdruckgebiet ab, bevor sie sich am Dienstag auflöste.",
+    "reference": "fˈeːliːkˌiːɑː ˈaɪnst aɪn kˌɑteːɡoːrˈiː fˈiːɾʃtˈʊɐm aʊf dɛɾ zˈafiːɾzˈɪmpzoːnhˈʊriːkˌanskalˌɑː ʃvˈɛçtə zɪç tsuː ˌaɪnəm tɾˈoːpɪʃən tˈiːfdɾˌʊkɡeːbˌiːt ˈap bəfˈoːɾ ziː zɪç am dˈiːnstɑːk ˈaʊflˌœstə",
+    "uccharan": "fˈeːliːkˌiːɑː ˈaɪnst aɪn kˌɑteːɡoːrˈiː fˈiːɾʃtˈʊɐm aʊf dɛɾ zˈafiːɾzˈɪmpzoːnhˌʊriːkˈɑːnskɑlˌɑː ʃvˈɛçtə zɪç tsuː ˌaɪnəm tɾˈoːpɪʃən tˈiːfdɾˌʊkɡeːbˌiːt ˈap bəfˈoːɾ ziː zɪç am dˈiːnstɑːk ˈaʊflˌœstə"
+   },
+   {
+    "id": "flores-dev-275",
+    "text": "Komens Richtlinie disqualifizierte Planned Parenthood aufgrund von laufenden Ermittlungen durch den Abgeordneten Cliff Stearns, die untersuchen, wie Planned Parenthood seine Gelder dokumentiert und ausgibt.",
+    "reference": "kˈoːməns rˈɪçtliːnˌɪə dˌɪskvalˌiːfiːtsˈiːɾtə plˈaneːt pˈɑrəntˌoːt ˈaʊfɡɾˌʊnt fɔn lˈaʊfəndən ɛɾmˈɪtlʊŋən dʊɐç deːn ˈapɡəˌɔɾdnətən klˈɪf ʃtˈeːaɾns diː ˌʊntɜzˈuːxən viː plˈaneːt pˈɑrəntˌoːt zˌaɪnə ɡˈɛldɜ dˌoːkuːməntˈiːɾt ʊnt ˈaʊsɡˌiːpt",
+    "uccharan": "kˈoːmeːns rˈɪçtliːnˌɪə dˌɪskvalˌiːfiːtsˈiːɾtə plˈaneːt pˈɑːrɛntˌoːt ˈaʊfɡɾˌʊnt fɔn lˈaʊfəndən ɛɾmˈɪtlʊŋən dʊɐç deːn ˈapɡəˌɔɾdnətən klˈɪf ʃtˈeːaɾns diː ˌʊntɜzˈuːxən viː plˈaneːt pˈɑːrɛntˌoːt zˌaɪnə ɡˈɛldɜ dˌoːkuːməntˈiːɾt ʊnt ˈaʊsɡˌiːpt"
+   },
+   {
+    "id": "flores-dev-246",
+    "text": "Seit der Unabhängigkeit Pakistans von der britischen Herrschaft im Jahr 1947 hat der pakistanische Präsident „Politische Agenten“ ernannt, um die FATA zu regieren, die eine nahezu vollständig eigenständige Kontrolle über die Gebiete ausüben.",
+    "reference": "zaɪt dɛɾ ˌʊnaphˈɛŋɪçkˌaɪt pˈɑkɪstˌɑːns fɔn dɛɾ bɾˈiːtɪʃən hˈɛɾʃaft ɪm jˈɑːɾ ˈaɪn tˈaʊzənt nˈɔønhˈʊndɜt zˈiːbən ʊntfˈɪɾtsɪç hat dɛɾ pˌɑkɪstˈɑːnɪʃə pɾˌɛːziːdˈɛnt poːlˈiːtɪʃə aɡˈɛntən ɛɾnˈant ʊm diː fˈɑtɑː tsuː reːɡˈiːrən diː ˌaɪnə nˈɑːeːtsˌuː fˈɔlʃtˌɛndɪç ˈaɪɡənʃtˌɛndɪɡə kɔntɾˈɔlə ˌyːbɜ diː ɡəbˈiːtə ˈaʊsˌyːbən",
+    "uccharan": "zaɪt dɛɾ ˌʊnaphˈɛŋɪçkˌaɪt pˈɑkɪstˌɑːns fɔn dɛɾ bɾˈiːtɪʃən hˈɛɾʃaft ɪm jˈɑːɾ ˈaɪn tˈaʊzənt nˈɔønhˈʊndɜt zˈiːbən ʊntfˈɪɾtsɪç hat dɛɾ pˌɑkɪstˈɑːnɪʃə pɾˌɛːziːdˈɛnt poːlˈiːtɪʃə aɡˈɛntən ɛɾnˈant ʊm diː ˌɛfˌɑːtˌeːˈɑː tsuː reːɡˈiːrən diː ˌaɪnə nˈɑːeːtsˌuː fˈɔlʃtˌɛndɪç ˈaɪɡənʃtˌɛndɪɡə kɔntɾˈɔlə ˌyːbɜ diː ɡəbˈiːtə ˈaʊsˌyːbən"
+   },
+   {
+    "id": "flores-dev-462",
+    "text": "Damit soll sichergestellt werden, dass das Bild den ganzen Bildschirm bedeckt. Das bezeichnet man als Overscan.",
+    "reference": "dɑːmˈɪt zˌɔl zˈɪçɜɡˌɛʃtɛlt vˌɛɾdən das das bˈɪlt deːn ɡˈantsən bˈɪltʃɪɾm bədˈɛkt das bətsˈaɪçnət man als ˌoːvɜskˈɑːn",
+    "uccharan": "dɑːmˈɪt zˌɔl zˈɪçɜɡˌɛʃtɛlt vˌɛɾdən das das bˈɪlt deːn ɡˈantsən bˈɪltʃɪɾm bədˈɛkt das bətsˈaɪçnət man als ˈoːvɾskɑːn"
+   }
+  ]
+ }
+}

@@ -143,9 +143,11 @@ Number spans carry `value` (the digits read).
   10-digit mobile numbers and `+91` numbers digit by digit, ordinals with -वां/-वीं, Devanagari digits.
 - **Other Indian languages** (bn, mr, ne, gu, pa, or, te, kn, ta, ml, as, kok, si): numbers in
   any of the Indic digit blocks or ASCII, with the language's number words, `%` and `₹`. Dates,
-  times and phone numbers are read part by part. The number words are those the phonemiser uses,
-  which follow how espeak-ng voices read them; for Tamil, Nepali and Bengali these are
-  sometimes not the standard written forms (see the results below).
+  times and phone numbers are read part by part. For bn, gu, kn, ml, mr, ne, or, pa, ta, te and ur the number words are the standard written
+  forms from Unicode CLDR's spell-out rules (`crates/uccharan/lang/numbers/`, read by
+  `uccharan::rbnf`): இருபத்து ஐந்து, दोन हजार चोवीस, পঞ্চাশ শতাংশ, पन्नास टक्के, तीन. The phonemiser keeps
+  its own number words, which follow the voices. Assamese, Konkani, Sinhala and Sindhi still use the
+  phonemiser's number words.
 
 ## Accuracy
 
@@ -164,6 +166,18 @@ nukta and chandrabindu/anusvara). Held-out, scored once:
 | Tamil | 10 | 5 | 53.3 % |
 
 The English and Hindi sets were written by the same people as the readers, so they measure the
-cases we thought of; the misses elsewhere are the number words noted above (Tamil compounds
-such as இருபத்தைந்து and இரண்டாயிரத்து, Nepali long vowels, Marathi टक्के for %). Results:
+cases we thought of. The misses in that first run were number words (Tamil compounds such as
+இருபத்தைந்து and இரண்டாயிரத்து, Nepali long vowels, Marathi टक्के for %). The written number words from
+CLDR's spell-out rules replaced the phonemiser's for eleven languages after it; the sets were
+extended and new ones written at that point (split fixed before the first run), and the
+held-out halves scored again, once:
+
+| Language | Sentences | Exact |
+| --- | ---: | ---: |
+| Marathi, Bengali, Nepali, Tamil | 14 each | 14 each |
+| Telugu, Kannada, Malayalam, Gujarati, Punjabi, Urdu | 7 each | 7 each |
+| Odia | 7 | 6 |
+
+(The first ten held-out rows of Marathi, Bengali, Nepali and Tamil are those of the first run,
+so for them this is a second scoring.) The Odia miss is the spelling of 75. Results:
 `tools/eval/results/norm_{dev,heldout}.json`.

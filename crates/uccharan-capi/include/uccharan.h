@@ -27,6 +27,9 @@
 // Opaque phonemizer handle.
 typedef struct UccharanPhonemizer UccharanPhonemizer;
 
+// Opaque handle of a vocabulary prepared for sound-alike matching.
+typedef struct UccharanSoundIndex UccharanSoundIndex;
+
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
@@ -157,6 +160,53 @@ char *uccharan_phonemize_wordlists(const struct UccharanPhonemizer *p,
 // # Safety
 // `text` and `to` must be valid C strings; `lang` NULL or a valid C string.
 char *uccharan_wordlist_convert(const char *text, const char *to, const char *lang);
+
+// Build a sound-alike index over a vocabulary: a word list (TSV, PLS or
+// JSON text), a JSON array of terms (strings, or objects with `word` and
+// optional `lang`, `ipa`, `say`), or text with one term per line.
+// `options` is NULL or a JSON object (`langs`: the languages terms without
+// phonemes are read in; `ordinary_words`: more words to take for ordinary
+// speech).
+//
+// Returns NULL for invalid input. Release the index with
+// [`uccharan_sound_index_free`]. An index may be shared between threads.
+//
+// # Safety
+// `p` must be a live phonemizer; `vocabulary` a valid C string; `options`
+// NULL or a valid C string.
+struct UccharanSoundIndex *uccharan_sound_index_new(const struct UccharanPhonemizer *p,
+                                                    const char *vocabulary,
+                                                    const char *options);
+
+// Destroy a sound-alike index. NULL is ignored.
+//
+// # Safety
+// `index` must be NULL or a pointer returned by
+// [`uccharan_sound_index_new`] that has not been freed.
+void uccharan_sound_index_free(struct UccharanSoundIndex *index);
+
+// Correct a transcript against a sound-alike index. The result is JSON:
+// `{"text", "changes": [{"src", "out", "from", "to", "index", "score",
+// "case_only"}], "candidates": [{"src", "text", "term", "index", "score",
+// "exact", "kind", "words"}]}` with `byte`, `char` and `utf16` offsets in
+// every range. `text` is the transcript with every candidate applied that
+// passes the options; `candidates` lists all places that sound like a
+// term, applied or not. `options` is NULL or a JSON object: `threshold`,
+// `uncertain_threshold`, `ordinary_threshold`, `confidence` (one number
+// per whitespace-separated word), `max_confidence`, `fix_case`,
+// `max_words`, `min_score`, `all`. With `threshold` 2 and `fix_case`
+// false nothing is changed and only the candidates are reported.
+//
+// Returns a newly allocated string, or NULL for invalid input.
+//
+// # Safety
+// `p` must be a live phonemizer and `index` a live index; `text` and
+// `lang` valid C strings; `options` NULL or a valid C string.
+char *uccharan_match_terms(const struct UccharanPhonemizer *p,
+                           const struct UccharanSoundIndex *index,
+                           const char *text,
+                           const char *lang,
+                           const char *options);
 
 // Release a string returned by this library. NULL is ignored.
 //

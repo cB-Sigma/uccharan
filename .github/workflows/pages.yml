@@ -38,7 +38,7 @@ jobs:
         run: node bindings/wasm/build.mjs
       - name: Check it before publishing
         working-directory: bindings/wasm
-        run: node --test test/node.test.mjs
+        run: npm test
       - name: Assemble the site
         run: node demo/build.mjs
       - uses: actions/configure-pages@v6

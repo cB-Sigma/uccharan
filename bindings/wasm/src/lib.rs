@@ -247,3 +247,50 @@ pub fn convert_wordlist(text: &str, to: &str, lang_tag: &str) -> Result<String, 
         ))),
     }
 }
+
+// ---------------------------------------------------------------------------
+// Sound-alike matching.
+
+/// A vocabulary prepared for sound-alike matching: a word list (TSV, PLS
+/// or JSON), a JSON array of terms, or one term per line; `options` is a
+/// JSON object (`langs`) or empty.
+#[wasm_bindgen]
+pub struct SoundIndex {
+    inner: uccharan::soundalike::SoundIndex,
+}
+
+#[wasm_bindgen]
+impl SoundIndex {
+    /// Build the index.
+    #[wasm_bindgen(constructor)]
+    pub fn new(vocabulary: &str, options: &str) -> Result<SoundIndex, JsError> {
+        ENGINE
+            .with(|e| uccharan::soundalike::SoundIndex::from_text(&e.borrow(), vocabulary, options))
+            .map(|inner| SoundIndex { inner })
+            .map_err(|e| JsError::new(&e))
+    }
+
+    /// Number of terms.
+    #[wasm_bindgen(getter)]
+    pub fn length(&self) -> usize {
+        self.inner.len()
+    }
+
+    /// Candidates as JSON; options as JSON.
+    #[wasm_bindgen(js_name = findJson)]
+    pub fn find_json(&self, text: &str, lang_tag: &str, options: &str) -> Result<String, JsError> {
+        let l = lang(lang_tag)?;
+        ENGINE
+            .with(|e| self.inner.find_json(&e.borrow(), text, l, options))
+            .map_err(|e| JsError::new(&e))
+    }
+
+    /// The corrected text with its changes, as JSON; options as JSON.
+    #[wasm_bindgen(js_name = applyJson)]
+    pub fn apply_json(&self, text: &str, lang_tag: &str, options: &str) -> Result<String, JsError> {
+        let l = lang(lang_tag)?;
+        ENGINE
+            .with(|e| self.inner.apply_json(&e.borrow(), text, l, options))
+            .map_err(|e| JsError::new(&e))
+    }
+}

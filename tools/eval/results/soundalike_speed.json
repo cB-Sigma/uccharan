@@ -1,0 +1,34 @@
+{
+ "651": {
+  "terms": 651,
+  "sequences": 2078,
+  "build_ms": 24.0,
+  "transcripts_per_s": 8461.0,
+  "words_per_s": 65837.0,
+  "span_lookups_per_s": 197511
+ },
+ "1000": {
+  "terms": 1000,
+  "sequences": 3289,
+  "build_ms": 41.4,
+  "transcripts_per_s": 7844.0,
+  "words_per_s": 61036.0,
+  "span_lookups_per_s": 183108
+ },
+ "10000": {
+  "terms": 10000,
+  "sequences": 33409,
+  "build_ms": 301.4,
+  "transcripts_per_s": 1468.0,
+  "words_per_s": 11425.0,
+  "span_lookups_per_s": 34275
+ },
+ "50000": {
+  "terms": 50000,
+  "sequences": 182094,
+  "build_ms": 2600.0,
+  "transcripts_per_s": 315.0,
+  "words_per_s": 2450.0,
+  "span_lookups_per_s": 7350
+ }
+}

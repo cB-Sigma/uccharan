@@ -20,6 +20,19 @@ fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str) {
         .chars()
         .map(|c| digit(c).map_or(c, |d| char::from(b'0' + d)))
         .collect();
+    // With a decimal comma the two signs swap their roles.
+    let ascii: String = if nums.decimal_comma {
+        ascii
+            .chars()
+            .map(|c| match c {
+                ',' => '.',
+                '.' => ',',
+                c => c,
+            })
+            .collect()
+    } else {
+        ascii
+    };
     let (int, frac) = match ascii.split_once('.') {
         Some((a, b)) if !b.is_empty() && b.bytes().all(|x| x.is_ascii_digit()) => (a, Some(b)),
         _ => (ascii.as_str(), None),
@@ -47,7 +60,10 @@ fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str) {
     }
     if let Some(f) = frac {
         words.extend(nums.point.iter().map(|w| (w.clone(), false)));
-        nums.digits(f, &mut words);
+        match f.parse::<u64>() {
+            Ok(v) if nums.fraction_number && !f.starts_with('0') => nums.cardinal(v, &mut words),
+            _ => nums.digits(f, &mut words),
+        }
     }
     for (k, (w, glue)) in words.into_iter().enumerate() {
         let mut it = Item::word(&w);

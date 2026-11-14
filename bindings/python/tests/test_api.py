@@ -128,4 +128,4 @@ def test_packs_are_verified(tmp_path, monkeypatch):
     with pytest.raises(uccharan.PackError, match="releases/download"):
         packs.fetch("kokoro-en-gb")
     with pytest.raises(uccharan.PackError, match="unknown pack"):
-        packs.fetch("fr")
+        packs.fetch("zz")

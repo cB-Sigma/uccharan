@@ -1,0 +1,481 @@
+# German. espeak-ng voice "de". Written for uccharan from specs/de.md:
+# vowel length from the spelling, unstressed prefixes and endings, stressed
+# loan suffixes, final devoicing, the r allophones.
+
+[meta]
+tag = de
+vowels = a ɑ e ɛ i ɪ o ɔ u ʊ y ʏ ø œ ə ɜ ᴇ ã õ
+unstressable = ə ɜ ᴇ
+stress = initial
+secondary = auto
+spell-vowels = aeiouäöüy
+
+[classes]
+V = a e i o u ä ö ü y ă ĕ ĭ ŏ ŭ
+C = b c d f g h j k l m n p q r s t v w x z ß
+# Single consonant letters after which a syllable break leaves the vowel long.
+L = b d f g k l m n p r s t v w z ß
+BDG = b d g
+STOPL = b d g p t k
+E = e
+N = n
+Kc = c
+M = m
+FV = e i ä ö ü y
+# Stem vowels other than a plain e, for the unstressed prefixes.
+FULL = a i o u ä ö ü y ei eu ee eh
+# Morpheme boundaries: plain, with secondary and with primary stress on
+# the syllable after it.
+B = ‧ ¦ ‖
+# Consonant letters before which a stem-final b d g is voiceless.
+DV = b f g h k m p t v w z
+CC = b d f g k h m p t ß z
+GV = b d f h k m p v w z
+# Phoneme classes for [post].
+PV = a ɑ e ɛ i ɪ o ɔ u ʊ y ʏ ø œ ə ɜ ᴇ ˈ ˌ ã õ
+SM = ˈ ˌ
+LEN = ː
+STOP = p t k b d ɡ
+
+[pre]
+' -> ‧
+’ -> ‧
+# Pass 1: particles that carry the stress; the stem after them has
+# secondary stress. über- and unter- leave the primary to the stem.
+zurück -> zu‖rück¦ / # _ {C}
+zusammen -> zu‖sammen¦ / # _ {C}
+wieder -> wieder‖ / # _ {C} {C}* {V}
+über -> über‖ / # _ {C} {C}* {V}
+unter -> ŭnter‖ / # _ {C} {C}* {V}
+auf -> auf¦ / # _ {C} {C}* {V} | # _ {V} {C}
+aus -> aus¦ / # _ {C} {C}* {V} | # _ {V} {C}
+ein -> ein¦ / # _ {C} {C}* {V}
+ab -> ăb¦ / # _ g e | # _ z u | # _ {GV} | # _ s | # _ l | # _ n | # _ r
+an -> ăn¦ / # _ g e | # _ z u | # _ k | # _ f | # _ b | # _ r | # _ l | # _ m | # _ h | # _ w | # _ s t | # _ s p | # _ s c h
+um -> ŭm¦ / # _ g e | # _ z u | # _ {GV} | # _ s | # _ l
+unser -> ŭnser / # _
+unten -> ŭnten / # _
+beide -> beide / # _
+un -> ŭn¦ / # _ {C} {C}* {V} {C} | # _ a n | # _ e n d | # _ e r | # _ a b | # _ a u f | # _ i n
+vor -> vor¦ / # _ {C} {C}* {V} {C}
+nach -> năch‧ / # _ {C} {C}* {V}
+mit -> mĭt¦ / # _ {C} {C}* {V}
+bei -> bei¦ / # _ {C} {C}* {V} {C}
+weg -> wĕɡ¦ / # _ {C} {C}* {V} {C}
+heraus -> hĕ‖raus‧ / # _ {C}
+hinaus -> hĭn‖aus‧ / # _ {C}
+herein -> hĕ‖rein‧ / # _ {C}
+hinein -> hĭn‖ein‧ / # _ {C}
+herum -> hĕ‖rŭm‧ / # _ {C}
+hinzu -> hĭn‖zu‧ / # _ {C}
+herunter -> hĕ‖rŭnter‧ / # _ {C}
+hinunter -> hĭn‖ŭnter‧ / # _ {C}
+herauf -> hĕ‖rauf‧ / # _ {C}
+hinauf -> hĭn‖auf‧ / # _ {C}
+vorbei -> vor‖bei‧ / # _ {C}
+her -> hĕ‖r / # _ a u | # _ u m | # _ e i n | # _ ü b e r | # _ u n t e r | # _ a b | # _ a n | # _ v o r
+hin -> hĭn¦ / # _ g e
+hin -> hĭn‖ / # _ a u | # _ e i n | # _ ü b e r | # _ u n t e r | # _ a b | # _ z u | # _ w e g
+
+[pre.2]
+# Pass 2: unstressed prefixes and native suffixes.
+gehen -> gehen / {B} _ #
+gehe -> gehe / {B} _ #
+geht -> geht / {B} _ #
+geben -> geben / {B} _ #
+gegen -> gegen / {B} _
+ge -> gə‧ / # _ {C} {C}* {FULL} | # _ {C} {C}* e {C} {C}* {V} | # _ {C} {C}* e {C} {C} t # | {B} _ {C} {C}* {V} | # _ a | # _ ä | # _ ö | # _ ü
+be -> bə‧ / # _ {C} {C}* {FULL} | # _ {C} {C}* e {C} {C}* {V} | # _ {C} {C}* e {C} {C} t # | {B} _ {C} {C}* {V} | # _ a | # _ ä | # _ ö | # _ o | # _ e i | # _ e n d
+ver -> fᴇɾ‧ / # _ {C}* {V}
+ver -> fᴇɾ‧ / {B} _ {C}* {V}
+ver -> fɜ‧ / {C} _ {C} {C}* {V} {C}
+zer -> zᴇɾ‧ / # _ {C}* {V}
+er -> ᴇɾ‧ / # _ {C} {C}* {V} | # _ i n n | # _ ö | # _ ei | # _ a | {B} _ {C} {C}* {V}
+ent -> ᴇnt‧ / # _ {C}* {V}
+emp -> ᴇmp‧ / # _ f
+zu -> zu‧ / {B} _ {C} {C}* {V} {C}
+lich -> ‧lich / {C} _ # | {C} _ e | {C} _ k | {C} _ s
+heit -> ‧heit / {C} _ # | {C} _ e n # | {V} _ # | {V} _ e n #
+keit -> ‧keit / {C} _ # | {C} _ e n #
+schaft -> ‧schaft / {C} _ # | {C} _ e n #
+chen -> ‧chen / {BDG} _ # | {BDG} _ s #
+bar -> ‧bar / {C} _ # | {C} _ e
+los -> ‧los / {C} _ # | {C} _ e
+sam -> ‧sam / {C} _ # | {C} _ e
+nis -> ‧nĭs / {C} _ # | {C} _ s e
+
+[pre.3]
+# Stressed loan suffixes.
+tion -> tsjˈoːn / _ # | _ e n # | _ s
+sion -> zjˈoːn / _ # | _ e n #
+ion -> jˈoːn / {C} _ # | {C} _ e n #
+ität -> iːtˈɛːt / _ # | _ e n #
+ieren -> ˈiːrən / {C} _ #
+iert -> ˈiːrt / {C} _ # | {C} _ e
+iere -> ˈiːrə / {C} _ #
+erei -> eːrˈaI / _ #
+logie -> loːɡˈiː / _ #
+ei -> ˈaI / {C} {C}* {V} {V}* {C} {C}* _ #
+lie -> l°ɪə / {V} {C}* _ #
+ien -> °iːən / r _ #
+ien -> °ɪən / {V} {C} {C}* _ #
+ie -> ˈiː / {V} {C} {C}* _ #
+ium -> iːʊm / _ #
+ius -> iːʊs / _ #
+ant -> ˈant / {V} {C} {C}* _ # | {V} {C} {C}* _ e
+ent -> ˈɛnt / {V} {C} {C}* _ # | {V} {C} {C}* _ e n # | {V} {C} {C}* _ e #
+een -> ˈeːən / {C} _ #
+enz -> ˈɛnts / {V} {C} {C}* _ #
+anz -> ˈants / {V} {C} {C}* _ #
+ur -> ˈuːr / {V} {C} {C}* _ #
+al -> ˈɑːl / {V} {C} {C}* {!M} _ #
+an -> ˈɑːn / {V} {C} {C}* _ #
+ar -> ˈɑːr / {V} {C} {C}* _ #
+ol -> ˈoːl / {V} {C} {C}* _ #
+om -> ˈoːm / {V} {C} {C}* _ #
+erin -> ərɪn / {V} {C} {C}* _ #
+in -> ɪn / {V} {C} {C}* _ #
+il -> ˈiːl / {V} {C} {C}* _ #
+id -> ˈiːt / {V} {C} {C}* _ #
+it -> ˈɪt / {V} {C} {C}* _ #
+iv -> ˈiːf / {V} {C} {C}* _ #
+ive -> ˈiːvə / {V} {C} {C}* _ #
+ell -> ˈɛl / {V} {C} {C}* _ # | {V} {C} {C}* _ e
+ist -> ˈɪst / {V} {C} {C}* _ # | {V} {C} {C}* _ e n #
+ismus -> ˈɪsmʊs / _ #
+eur -> ˈøːr / _ #
+ekt -> ˈɛkt / {V} {C} {C}* _ #
+thek -> tˈeːk / _ #
+ös -> ˈøːs / {V} {C} {C}* _ #
+ee -> ˈeː / {V} {C} {C}* _ #
+# Unstressed endings: e is a schwa outside the first syllable of a stem.
+e -> ə / {V} {C} {C}* _ # | {V} {C} {C}* _ {B} | {V} _ #
+er -> ɜ / {V} {C} {C}* _ {C} | {V} _ {C} | {V} {C} {C}* _ # | {V} _ # | {V} {C} {C}* _ {B} | {V} {C}* _ n # | {V} {C}* _ t # | {V} {C}* _ s # | {V} {C}* _ t e # | {V} {C}* _ t e n # | {V} {C}* _ n d # | {V} {C}* _ s t #
+e -> ə / {V} {C} {C}* _ r e | {V} {C} {C}* _ r u n g
+e -> ə / {V} {C} {C}* _ n # | {V} {C} {C}* _ n {!N} | {V} {V}* _ n # | {V} {C} {C}* _ s # | {V} _ s # | {V} {C} {C}* _ m # | {V} _ m # | {V} {C} {C}* _ l # | {V} _ l # | {V} {C} {C}* _ t # | {V} _ t # | {V} {C} {C}* _ s t # | {V} {C} {C}* _ l n # | {V} {C} {C}* _ l t | {V} {C} {C}* _ t e # | {V} {C} {C}* _ t e n # | {V} {C} {C}* _ l | {V} {C} {C}* _ s t e | {V} {C} {C}* _ n {B} | {V} {C} {C}* _ l {B}
+# The syllable before -ien and -ium is stressed.
+a -> ˈɑ / _ {C} i e n # | _ {C} i u m #
+e -> ˈeː / _ {C} i e n # | _ {C} i u m #
+i -> ˈiː / _ {C} i e n # | _ {C} i u m #
+o -> ˈoː / _ {C} i e n # | _ {C} i u m #
+u -> ˈuː / _ {C} i e n # | _ {C} i u m #
+# Vowels: digraphs and length marks.
+aa -> ɑː
+ah -> ɑː
+ee -> eː
+eh -> eː
+ie -> iː
+ieh -> iː
+ih -> iː
+oo -> oː
+oh -> oː
+uh -> uː
+äh -> ɛː
+öh -> øː
+üh -> yː
+ei -> aI
+ai -> aI
+ey -> aI
+ay -> aI
+au -> aU
+eu -> ɔY
+äu -> ɔY
+ă -> a
+ĕ -> ɛ
+ĭ -> ɪ
+ŏ -> ɔ
+ŭ -> ʊ
+# a is long before a single final consonant and before one consonant and
+# an inflection; elsewhere in an open syllable it is ɑ (a when unstressed).
+a -> ɑː / _ ß | _ {L} # | _ # | _ {BDG} t | _ {L} {B} | _ {B} | _ {L} e # | _ {L} e n # | _ {L} e r # | _ {L} e s # | _ {L} e m # | _ {L} e s t # | _ {L} e n d # | _ {L} e t #
+a -> ɑ / _ {L} {V} | _ p h {V} | _ {STOPL} r {V} | _ {V}
+ä -> ɛː / _ {L} {V} | _ ß | _ {L} # | _ # | _ {BDG} t | _ {L} {B} | _ {STOPL} r {V} | _ {B}
+e -> eː / _ {L} {V} | _ {L} # | _ # | _ {BDG} t | _ {L} {B} | _ {STOPL} r {V} | _ {V} | _ p h {V} | _ {B}
+i -> iː / _ {L} {V} | _ # | _ {STOPL} r {V} | _ {V} | _ {L} # | _ {B}
+o -> oː / _ {L} {V} | _ ß | _ {L} # | _ # | _ {BDG} t | _ {L} {B} | _ p h {V} | _ {STOPL} r {V} | _ {V} | _ {B}
+u -> ʊ / _ m # | _ s #
+u -> uː / _ {L} {V} | _ ß | _ {L} # | _ # | _ {BDG} t | _ {L} {B} | _ {STOPL} r {V} | _ {V} | _ {B}
+ö -> øː / _ {L} {V} | _ ß | _ {L} # | _ # | _ {BDG} t | _ {L} {B} | _ {B}
+ü -> yː / _ {L} {V} | _ ß | _ {L} # | _ # | _ {BDG} t | _ {L} {B} | _ {B}
+y -> yː / _ {L} {V}
+y -> iː / _ #
+y -> j / # _ {V}
+is -> ɪs / {V} {C} {C}* _ #
+ik -> ɪk / {V} {C} {C}* _ #
+ig -> ɪç / _ # | _ s t | _ k | _ {B} k | _ t | _ s # | _ g
+ig -> ɪɡ / {V} {C} {C}* _
+ä -> ɛ
+e -> ɛ
+i -> ɪ
+o -> ɔ
+u -> ʊ
+ö -> œ
+ü -> ʏ
+y -> ʏ
+# Consonants.
+tsch -> tʃ
+dsch -> dʒ
+sch -> ʃ
+chst -> kst
+ch -> ç / e u _ | ä u _
+ch -> x / a _ | o _ | u _ | ă _ | ŏ _ | ŭ _
+ch -> k / # _ r | # _ a | # _ o | # _ l
+ch -> ç
+ck -> k
+ng -> ŋ
+nk -> nk / {V} {C} {C}* e _
+nk -> ŋk
+ph -> f
+th -> t
+dt -> t
+tz -> ts
+zz -> ts
+z -> ts
+qu -> kv
+x -> ks
+st -> ʃt / # _ | {B} _ | h _ {V} | h r _ | h l _ | {V} {C} {C}* e r _ {V} | {V} {C} {C}* e r _ r
+sp -> ʃp / # _ | {B} _ | h _ | h r _ | h l _ | {V} {C} {C}* e r _ | e i _ | a u _
+ss -> s
+ß -> s
+s -> z / _ {V}
+c -> ts / _ {FV}
+c -> k
+v -> f / # _ o r | # _ o l | # _ i e | # _ ö | {B} _ ö | {B} _ a t e r | # _ a t e r | # _ o n # | # _ o m # | _ # | _ {B} | {B} _ o r | {B} _ o l | {B} _ i e | _ s | _ t
+v -> v
+w -> v
+bb -> b
+dd -> d
+ff -> f
+gg -> ɡ
+kk -> k
+ll -> l
+mm -> m
+nn -> n
+pp -> p
+rr -> r
+tt -> t
+b -> p / _ # | _ s | _ t | _ {B} {!N} | _ {GV}
+d -> t / _ # | _ s # | _ t | _ s t # | _ {B} {!Kc} | _ {DV}
+g -> k / _ # | _ s # | _ t | _ s t # | _ {B} {!N} | _ {GV}
+h -> 0 / e i _ e
+g -> ɡ
+
+[post]
+I -> ɪ
+U -> ʊ
+Y -> ø
+ᴇ -> ɛ
+‧ -> 0
+# The open a is a plain a without stress.
+ɑ -> a / {!SM} _ {!LEN} | # _ {!LEN}
+# r is a tap in the coda and after a stop; ur before a consonant is ʊɐ.
+r -> ɐ / ʊ _ {!PV}
+r -> ɾ / _ {!PV} | _ # | {STOP} _
+
+[post.improved]
+# The -er vowel and the long a in standard transcription.
+ɜ -> ɐ
+ɑ -> a
+
+[words]
+einnum ˈaɪn
+komma kɔmɑː
+punkt pʊŋkt
+null nˈʊl
+einsnum ˈaɪns
+zwei tsvˈaɪ
+drei dɾˈaɪ
+vier fˈiːɾ
+fünf fˈʏnf
+sechs zˈɛks
+sieben zˈiːbən
+acht ˈaxt
+neun nˈɔøn
+zehn tsˈeːn
+elf ˈɛlf
+zwölf tsvˈœlf
+dreizehn dɾˈaɪtseːn
+vierzehnnum fˈɪɾtseːn
+fünfzehn fˈʏnftseːn
+sechzehn zˈɛçtseːn
+siebzehn zˈiːptseːn
+achtzehn ˈaxtseːn
+neunzehn nˈɔøntseːn
+zwanzig tsvˈantsɪç
+dreißig dɾˈaɪsɪç
+vierzignum fˈɪɾtsɪç
+fünfzig fˈʏnftsɪç
+sechzig zˈɛçtsɪç
+siebzig zˈiːptsɪç
+achtzig ˈaxtsɪç
+neunzig nˈɔøntsɪç
+undzwanzig ʊnttsvˈantsɪç
+unddreißig ʊntdɾˈaɪsɪç
+undvierzignum ʊntfˈɪɾtsɪç
+undfünfzig ʊntfˈʏnftsɪç
+undsechzig ʊntzˈɛçtsɪç
+undsiebzig ʊntzˈiːptsɪç
+undachtzig ʊntˈaxtsɪç
+undneunzig ʊntnˈɔøntsɪç
+hundert hˈʊndɜt
+tausend tˈaʊzənt
+einenum ˈaɪnə
+million mɪljˈoːn
+millionen mɪljˈoːnən
+milliardenum mɪljˈaɾdə
+milliardennum mɪljˈaɾdən
+prozent pɾoːtsˈɛnt
+
+[numbers]
+decimal comma
+point komma
+percent prozent
+swap-tens und
+glue-hundred yes
+0 null
+1 einsnum
+1u einnum
+1x einnum
+2 zwei
+3 drei
+4 vier
+5 fünf
+6 sechs
+7 sieben
+8 acht
+9 neun
+10 zehn
+11 elf
+12 zwölf
+13 dreizehn
+14 vierzehnnum
+15 fünfzehn
+16 sechzehn
+17 siebzehn
+18 achtzehn
+19 neunzehn
+20 zwanzig
+30 dreißig
+40 vierzignum
+50 fünfzig
+60 sechzig
+70 siebzig
+80 achtzig
+90 neunzig
+1000000 einenum million
+1000000000 einenum milliardenum
+scale1000000000 milliardennum
+scale1000000 millionen
+scale1000 tausend
+scale100 hundert
+
+[spell]
+a ˈɑː
+b bˈeː
+c tsˈeː
+d dˈeː
+e ˈeː
+f ˈɛf
+g ɡˈeː
+h hˈɑː
+i ˈiː
+j jˈɔt
+k kˈɑː
+l ˈɛl
+m ˈɛm
+n ˈɛn
+o ˈoː
+p pˈeː
+q kˈuː
+r ˈɛɾ
+s ˈɛs
+t tˈeː
+u ˈuː
+v fˈaʊ
+w vˈeː
+x ˈɪks
+y ˈʏpsiːlˌɔn
+z tsˈɛt
+
+# Words without stress inside a clause and with stress at its end.
+[unstressed]
+an 0 p
+haben s p
+aus s p
+auf 0 p
+können s p
+mir 0 p
+ein 0 p
+ab 0 p
+vor s p
+zu 0 p
+mit 0 p
+oder s p
+dich 0 p
+so 0 p
+da 0 p
+uns 0 p
+dir 0 p
+ihn 0 p
+ihm 0 p
+nach 0 p
+um 0 p
+schon s p
+euch 0 p
+und 0 p
+jetzt s p
+ihnen s p
+als 0 p
+von 0 p
+bei 0 p
+doch 0 p
+durch 0 p
+aber s p
+denn 0 p
+meine s p
+in 0 p
+entgegen s p
+eins 0 p
+für 0 p
+dass 0 p
+bewegen s p
+im 0 p
+meinen s p
+voran s p
+unter s p
+über s p
+zuvor s p
+zum 0 p
+meins 0 p
+meiner s p
+wegen s p
+beim 0 p
+seine s p
+deine s p
+zur 0 p
+deiner s p
+nebenan s p
+wenn s p
+nachbar s p
+vom 0 p
+am 0 p
+deins 0 p
+meines s p
+gegen s p
+ob s p
+einige s p
+mein 0 p
+deines s p
+einiges s p
+veranda s p
+ins 0 p
+meinem s p
+amen s p
+bis 0 p
+deren s p
+deinen s p
+dein 0 p
+wiederum 0 p
+deinem s p
+uneins s p
+vorab s p

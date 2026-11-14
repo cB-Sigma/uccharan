@@ -1,0 +1,2 @@
+{"audio": {"path": "clips/one.flac", "sampling_rate": 48000}, "sentence": "रउआ कइसन बानी?", "language": "bho", "duration": 1.9}
+{"audio_filepath": "clips/two.wav", "text": "नमस्ते दुनिया।", "lang": "hi", "speaker_id": 7, "duration": 1.4}

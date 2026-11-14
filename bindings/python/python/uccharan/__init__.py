@@ -25,11 +25,11 @@ from .packs import PackError
 
 __version__: str = _native.__version__
 
-Lang = Literal["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag"]
+Lang = Literal["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag", "es", "de", "nl", "fr"]
 Profile = Literal["espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx"]
 NormalizeMode = Literal["natural", "espeak", "off"]
 
-LANGUAGES: tuple[str, ...] = ("en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag")
+LANGUAGES: tuple[str, ...] = ("en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag", "es", "de", "nl", "fr")
 PROFILES: tuple[str, ...] = ("espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx")
 
 __all__ = [
@@ -62,12 +62,13 @@ _LATIN = re.compile(r"[A-Za-z]")
 
 def _need(lang: str, profile: str = "espeak-ipa", text: object = "") -> None:
     # en-gb and the Kokoro English data are packs, fetched on first use.
-    # Indic languages read English words in Latin script with the en-gb data.
+    # Indic languages read English words in Latin script with the en-gb data
+    # (Latin-script languages such as Spanish read them themselves).
     key = (lang, "kokoro" if profile == "kokoro" else "")
     if key not in _ready:
         _packs.ensure(lang, profile)
         _ready.add(key)
-    if ("en-gb", "") not in _ready and lang.lower().replace("_", "-") not in ("en", "en-us", "en-gb", "en-gb-x-rp", "en-uk", "a", "b"):
+    if ("en-gb", "") not in _ready and lang.lower().replace("_", "-") not in ("en", "en-us", "en-gb", "en-gb-x-rp", "en-uk", "a", "b", "es", "es-es", "spa", "spanish", "de", "de-de", "deu", "german", "nl", "nl-nl", "nl-be", "nld", "dutch", "fr", "fr-fr", "fra", "french"):
         texts = [text] if isinstance(text, str) else text
         if any(_LATIN.search(t) for t in texts):  # type: ignore[union-attr]
             _need("en-gb")
@@ -285,3 +286,8 @@ def has_misaki(lang: str = "en-us") -> bool:
 from .textnorm import Normalized, Respelling, Span, WordList, normalize, phonemize_wordlists, respell  # noqa: E402
 
 __all__ += ["Normalized", "Respelling", "Span", "WordList", "normalize", "phonemize_wordlists", "respell"]
+
+# Sound-alike matching against a vocabulary (see uccharan.soundalike).
+from .soundalike import Candidate, Change, Corrected, SoundIndex, match_terms  # noqa: E402
+
+__all__ += ["Candidate", "Change", "Corrected", "SoundIndex", "match_terms"]

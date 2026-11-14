@@ -11,16 +11,19 @@ homepage.workspace = true
 readme = "README.md"
 keywords = ["g2p", "phonemizer", "tts", "ipa", "hindi"]
 categories = ["text-processing", "multimedia::audio", "wasm"]
-include = ["src/**", "data/*.ucd", "lang/*.lang", "benches/**", "tests/**", "README.md", "LICENSE", "NOTICE", "DATA_LICENSES.md"]
+include = ["src/**", "data/*.ucd", "lang/*.lang", "lang/numbers/*.txt", "examples/**", "benches/**", "tests/**", "README.md", "LICENSE", "NOTICE", "DATA_LICENSES.md"]
 
 [features]
-default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-ur", "embed-sd", "embed-kokoro"]
+default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-ur", "embed-sd", "embed-kokoro", "embed-de", "embed-nl", "embed-fr"]
 # Compile the language data into the library. Without these, load data at run time with `Phonemizer::load`.
 embed-en-us = []
 embed-en-gb = []
 embed-hi = []
 embed-ur = []
 embed-sd = []
+embed-de = []
+embed-nl = []
+embed-fr = []
 # misaki's English dictionaries for the Kokoro profile (about 3 MB per accent).
 embed-kokoro = []
 

@@ -1,0 +1,15 @@
+# split	class	input	expected	options
+dev	cardinal	7	ഏഴ്	
+heldout	cardinal	12	പന്ത്രണ്ട്	
+dev	cardinal	19	പത്തൊൻപത് || പത്തൊമ്പത്	
+heldout	cardinal	36	മുപ്പത്തിയാറ് || മുപ്പത്തിആറ് || മുപ്പത്താറ്	
+dev	cardinal	48	നാൽപ്പത്തിയെട്ട് || നാല്പത്തിയെട്ട് || നാൽപ്പത്തെട്ട് || നാല്പത്തെട്ട്	
+heldout	cardinal	100	നൂറ്	
+dev	cardinal	250	ഇരുനൂറ്റി അൻപത് || ഇരുനൂറ്റിയമ്പത് || ഇരുനൂറ്റി അമ്പത് || ഇരുനൂറ്റിഅൻപത് || ഇരുനൂറ്റമ്പത്	
+heldout	cardinal	1000	ആയിരം	
+dev	cardinal	5000	അയ്യായിരം || അഞ്ചായിരം	
+heldout	percent	75%	എഴുപത്തിയഞ്ച് ശതമാനം || എഴുപത്തഞ്ച് ശതമാനം	
+dev	cardinal	1,00,000	ഒരു ലക്ഷം || ലക്ഷം	
+heldout	decimal	1.5	ഒന്ന് ദശാംശം അഞ്ച് || ഒന്ന് പോയിന്റ് അഞ്ച്	
+dev	cardinal	എന്റെ കൈയിൽ 3 പുസ്തകങ്ങൾ ഉണ്ട്.	എന്റെ കൈയിൽ മൂന്ന് പുസ്തകങ്ങൾ ഉണ്ട്.	
+heldout	cardinal	64	അറുപത്തിനാല് || അറുപത്തി നാല്	

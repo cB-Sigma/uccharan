@@ -4,4 +4,4 @@ cpp_compat = true
 documentation_style = "c99"
 header = "/* uccharan C API, written by cbindgen from crates/uccharan-capi/src/lib.rs; do not edit.\n * SPDX-License-Identifier: Apache-2.0 */"
 [export]
-include = ["UccharanPhonemizer"]
+include = ["UccharanPhonemizer", "UccharanSoundIndex"]

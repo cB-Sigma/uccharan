@@ -9,7 +9,7 @@
 tag = sd
 block = 0600
 stress = penult
-deletion = final
+deletion = medial
 inherent = ə ʌ
 anusvara = split
 visarga = h
@@ -124,6 +124,7 @@ final-release-not-after = r n
 Ñ candrabindu
 Ӗ eː vowel
 Ŏ oː vowel
+Ů uː vowel
 
 [classes]
 CC = ٻ ڀ ٽ ٿ ٺ ڄ ڃ ڇ ڌ ڊ ڏ ڍ ڙ ڦ ڪ ڳ ڱ ڻ ب پ ت ٹ ث ج چ ح خ د ڈ ذ ر ڑ ز ژ س ش ص ض ط ظ غ ف ق ک ك گ ل م ن ہ ه ۂ ۃ ة و ی ي ى Ḃ Ṕ Ṫ Ť Ĵ Ĉ Ḋ Ď Ḱ Ġ Ř Ŕ Ĺ Ṁ Ń ھ
@@ -183,7 +184,8 @@ S = ˈ ˌ
 # Alif: a long vowel after a consonant, a short one at the start of a word.
 ا -> Ā / {CC} _
 ای -> Ӗ / # _
-او -> Ŏ / # _
+اي -> Ӗ / # _
+او -> Ů / # _
 اً -> ȦṈ / {CC} _
 ا -> Ă / # _ {CC}
 ع -> Ā / {CC} _
@@ -212,9 +214,20 @@ S = ˈ ˌ
 ں -> Ñ / ا _ | و _
 ں -> Ṉ
 
+# Consonant pairs read without a vowel between them after the first
+# syllable (checked black-box against the reference reading).
+خ -> خْ / . _ ت
+ر -> رْ / . _ د | . _ چ
+س -> سْ / . _ ت
+ش -> شْ / . _ ت
+م -> مْ / . _ پ
+م -> مْ / . _ ب #
+ن -> نْ / . _ د | . _ س | . _ پ | . _ چ | . _ ڊ | . _ ڌ | . _ گ
+ن -> نْ / . _ ب #
+
 [post]
-# Final unstressed ii is short.
-iː -> i / {!S} _ #
+# Unstressed ii is short.
+iː -> i / {!S} _
 
 [post.improved]
 # ص and ظ are s and z in Urdu.

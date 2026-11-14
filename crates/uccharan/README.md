@@ -1,7 +1,7 @@
 # uccharan
 
 **5× faster than espeak-ng. Just as accurate. Free to ship.**
-A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English, Hindi and nineteen more South Asian languages, in Rust, Python,
+A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English, Hindi, nineteen more South Asian languages, Spanish, French, German and Dutch, in Rust, Python,
 C and the browser. Apache-2.0. ([measurements](https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md))
 
 Permissively licensed text-to-phoneme conversion for neural text-to-speech: English (US and
@@ -25,7 +25,7 @@ assert!(p.phonemize("I read it yesterday.", &o).contains("ɹˈɛd"));
 ```
 
 `Phonemizer` is `Sync`; share one instance between threads. The language data (about 0.7 MB per
-English accent, 3 KB for Hindi, and 2 MB per accent of misaki's dictionaries for the Kokoro
+English accent, 3 KB for Hindi, 0.5 MB for Urdu, 0.2 MB for Sindhi, 0.36 MB for German, 0.23 MB for Dutch, 0.17 MB for French, and 2 MB per accent of misaki's dictionaries for the Kokoro
 profile) is compiled in through the default `embed-*` features; turn them
 off and use `Phonemizer::load`, or `Phonemizer::load_pack` on a shared phonemizer, to supply the
 `.ucd` packs (attached to each GitHub release) at run time.

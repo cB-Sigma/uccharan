@@ -33,14 +33,17 @@ pub mod kaithi;
 pub mod known;
 pub mod kokoro;
 pub mod langdef;
+pub mod latin;
 pub mod lex2;
 pub mod minijson;
 pub mod names;
 pub mod norm;
 pub mod normalize_api;
 pub mod profile;
+pub mod rbnf;
 pub mod respell;
 pub mod rules;
+pub mod soundalike;
 pub mod text;
 pub mod wiki;
 pub mod wordlist;
@@ -138,6 +141,14 @@ languages! {
     Mai "mai" ["mai-in", "maithili"] Devanagari, None;
     /// Magahi in Devanagari or Kaithi (no espeak voice: compatible mode is the `hi` reading).
     Mag "mag" ["mag-in", "magahi"] Devanagari, None;
+    /// Spanish (espeak voice `es`).
+    Es "es" ["es-es", "spa", "spanish"] Latin, Some(include_str!("../lang/es.lang"));
+    /// German (espeak voice `de`).
+    De "de" ["de-de", "deu", "ger", "german"] Latin, Some(include_str!("../lang/de.lang"));
+    /// Dutch (espeak voice `nl`).
+    Nl "nl" ["nl-nl", "nl-be", "nld", "dut", "dutch"] Latin, Some(include_str!("../lang/nl.lang"));
+    /// French (espeak voice `fr`).
+    Fr "fr" ["fr-fr", "fra", "fre", "french"] Latin, Some(include_str!("../lang/fr.lang"));
 }
 
 impl Lang {
@@ -178,9 +189,26 @@ impl Lang {
     pub fn indic(self) -> Option<&'static indic::Indic> {
         use std::sync::OnceLock;
         static CELLS: [OnceLock<indic::Indic>; LANGS] = [const { OnceLock::new() }; LANGS];
+        if self.script() == text::Script::Latin {
+            return None;
+        }
         let text = self.file()?;
         Some(CELLS[self.index()].get_or_init(|| {
             indic::Indic::from_text(text)
+                .unwrap_or_else(|e| panic!("lang/{}.lang: {e}", self.tag()))
+        }))
+    }
+
+    /// The Latin-script front end of a data-driven language (Spanish, ...).
+    pub fn latin(self) -> Option<&'static latin::Latin> {
+        use std::sync::OnceLock;
+        static CELLS: [OnceLock<latin::Latin>; LANGS] = [const { OnceLock::new() }; LANGS];
+        if self.script() != text::Script::Latin {
+            return None;
+        }
+        let text = self.file()?;
+        Some(CELLS[self.index()].get_or_init(|| {
+            latin::Latin::from_text(text)
                 .unwrap_or_else(|e| panic!("lang/{}.lang: {e}", self.tag()))
         }))
     }
@@ -336,6 +364,20 @@ impl Phonemizer {
                 p.data[Lang::Sd.index()] = d.into();
             }
         }
+        // Word tables of the Latin-script languages.
+        macro_rules! table {
+            ($feature:literal, $lang:expr, $file:literal) => {
+                #[cfg(feature = $feature)]
+                {
+                    if let Ok(d) = Data::from_static(include_bytes!($file)) {
+                        p.data[$lang.index()] = d.into();
+                    }
+                }
+            };
+        }
+        table!("embed-de", Lang::De, "../data/de.ucd");
+        table!("embed-nl", Lang::Nl, "../data/nl.ucd");
+        table!("embed-fr", Lang::Fr, "../data/fr.ucd");
         p
     }
 
@@ -474,7 +516,9 @@ impl Phonemizer {
                 } else {
                     self.generic_for_chunk(&chunk.text, opt.lang)
                 };
-                if let Some(g) = generic {
+                if let Some(l) = opt.lang.latin() {
+                    items.extend(gnorm::expand(chunk, &l.numbers, false));
+                } else if let Some(g) = generic {
                     items.extend(gnorm::expand(
                         chunk,
                         &g.numbers,
@@ -587,6 +631,10 @@ impl Phonemizer {
                     out.extend(bho::span(&hi, span, last, compat, lang))
                 }
                 Lang::Sa if compat => out.extend(bho::span(&hi, span, last, true, lang)),
+                l if l.latin().is_some() => {
+                    let t = self.data[l.index()].get();
+                    out.extend(l.latin().unwrap().span(span, last, compat, l, t));
+                }
                 l if l.indic().is_some() => {
                     let g = l.indic().unwrap();
                     out.extend(g.span(span, last, compat, l, self.data[l.index()].get()));

@@ -1,0 +1,261 @@
+# Hand-written mishearings: what a recogniser plausibly writes, the term that was said, language of the transcript.
+# Latin-script rows are English transcripts; Devanagari rows are Hindi transcripts matched against the Latin vocabulary.
+Coat Harry	Kothari	en
+Kotari	Kothari	en
+Kotharee	Kothari	en
+pay tm	Paytm	en
+pay team	Paytm	en
+PTM	Paytm	en
+pay T.M.	Paytm	en
+cube control	kubectl	en
+cube cuddle	kubectl	en
+kube CTL	kubectl	en
+engine x	nginx	en
+engine ex	nginx	en
+postgres ql	PostgreSQL	en
+post gress Q L	PostgreSQL	en
+my sequel	MySQL	en
+my S Q L	MySQL	en
+zero the	Zerodha	en
+zero dha	Zerodha	en
+Zeroda	Zerodha	en
+so mato	Zomato	en
+zoo mato	Zomato	en
+Zomatto	Zomato	en
+swiggie	Swiggy	en
+sweegy	Swiggy	en
+flip cart	Flipkart	en
+flipcard	Flipkart	en
+mintra	Myntra	en
+min tra	Myntra	en
+nyka	Nykaa	en
+naika	Nykaa	en
+phone pay	PhonePe	en
+phone pe	PhonePe	en
+razor pay	Razorpay	en
+raiser pay	Razorpay	en
+blink it	Blinkit	en
+big basket	BigBasket	en
+me show	Meesho	en
+misho	Meesho	en
+lens cart	Lenskart	en
+up stocks	Upstox	en
+bharat pay	BharatPe	en
+barrett pay	BharatPe	en
+in fosses	Infosys	en
+infosis	Infosys	en
+we pro	Wipro	en
+vipro	Wipro	en
+ma hindra	Mahindra	en
+mohindra	Mahindra	en
+geo	Jio	en
+gio	Jio	en
+air tell	Airtel	en
+airtell	Airtel	en
+vistaara	Vistara	en
+this tara	Vistara	en
+red is	Redis	en
+reddis	Redis	en
+cafe ka	Kafka	en
+kaufka	Kafka	en
+terra form	Terraform	en
+answerable	Ansible	en
+ansibel	Ansible	en
+graph ana	Grafana	en
+gra fauna	Grafana	en
+key bana	Kibana	en
+kebana	Kibana	en
+cooper netties	Kubernetes	en
+cuban eighties	Kubernetes	en
+kubernetis	Kubernetes	en
+oh auth	OAuth	en
+o auth	OAuth	en
+G RPC	gRPC	en
+gee RPC	gRPC	en
+graph ql	GraphQL	en
+mongo db	MongoDB	en
+mango DB	MongoDB	en
+pie torch	PyTorch	en
+pi torch	PyTorch	en
+num pie	NumPy	en
+numb pie	NumPy	en
+jango	Django	en
+d jango	Django	en
+gira	Jira	en
+jeera	Jira	en
+yamal	YAML	en
+yammel	YAML	en
+aadhar	Aadhaar	en
+adhar	Aadhaar	en
+other	Aadhaar	en
+fast tag	FASTag	en
+digi locker	DigiLocker	en
+digit locker	DigiLocker	en
+d mat	demat	en
+de mat	demat	en
+para cetamol	paracetamol	en
+paracetamal	paracetamol	en
+met forman	metformin	en
+met for min	metformin	en
+azithro mycin	azithromycin	en
+a zithromycin	azithromycin	en
+panto prazole	pantoprazole	en
+crow sin	Crocin	en
+crossin	Crocin	en
+panchayath	panchayat	en
+punch ayat	panchayat	en
+tehsil dar	tehsildar	en
+tesildar	tehsildar	en
+jugad	jugaad	en
+you guard	jugaad	en
+low kpal	lokpal	en
+lock pal	lokpal	en
+a garwal	Agarwal	en
+Agrawal	Agarwal	en
+Aggarwal	Agarwal	en
+shrivastav	Srivastava	en
+Srivastav	Srivastava	en
+chatter g	Chatterjee	en
+Chatterji	Chatterjee	en
+mukherji	Mukherjee	en
+mooker g	Mukherjee	en
+banner g	Banerjee	en
+Banerji	Banerjee	en
+bhatta charya	Bhattacharya	en
+Bhattacharjee	Bhattacharya	en
+chakra borty	Chakraborty	en
+Chakravarti	Chakraborty	en
+I year	Iyer	en
+ayer	Iyer	en
+nayar	Nair	en
+nayer	Nair	en
+Mr. Ready	Reddy	en
+Reddi	Reddy	en
+josie	Joshi	en
+Joshy	Joshi	en
+the sigh	Desai	en
+desigh	Desai	en
+may ta	Mehta	en
+Mehtha	Mehta	en
+goopta	Gupta	en
+Guptha	Gupta	en
+Sherma	Sharma	en
+Sharmah	Sharma	en
+tea wari	Tiwari	en
+Tiwary	Tiwari	en
+pandy	Pandey	en
+Pande	Pandey	en
+true vedi	Trivedi	en
+Thrivedi	Trivedi	en
+cool carney	Kulkarni	en
+coolkarni	Kulkarni	en
+desh pandey	Deshpande	en
+Deshpanday	Deshpande	en
+ten dulkar	Tendulkar	en
+Tendolkar	Tendulkar	en
+subra manian	Subramanian	en
+Subramanyan	Subramanian	en
+venkat raman	Venkataraman	en
+Venkatraman	Venkataraman	en
+krishnon	Krishnan	en
+Krishna n	Krishnan	en
+naraynan	Narayanan	en
+Narayan an	Narayanan	en
+rama chandran	Ramachandran	en
+swami nathan	Swaminathan	en
+vishwanathan	Viswanathan	en
+abhi shake	Abhishek	en
+Abishek	Abhishek	en
+sid arth	Siddharth	en
+Siddhart	Siddharth	en
+Aishwariya	Aishwarya	en
+ash warya	Aishwarya	en
+Laxmi	Lakshmi	en
+lakshmy	Lakshmi	en
+Puja	Pooja	en
+pria	Priya	en
+Preeya	Priya	en
+Sweta	Shweta	en
+Shwetha	Shweta	en
+neeha	Neha	en
+Raul	Rahul	en
+rah hull	Rahul	en
+row hit	Rohit	en
+Rohith	Rohit	en
+vikrum	Vikram	en
+Wickram	Vikram	en
+kartik	Karthik	en
+Karthick	Karthik	en
+har preet	Harpreet	en
+Harprit	Harpreet	en
+gur preet	Gurpreet	en
+Gurprit	Gurpreet	en
+Shri nivas	Srinivas	en
+Sreenivas	Srinivas	en
+moorthy	Murthy	en
+Murti	Murthy	en
+shetti	Shetty	en
+hegday	Hegde	en
+Hegade	Hegde	en
+siddiqi	Siddiqui	en
+Siddiquee	Siddiqui	en
+kureshi	Qureshi	en
+Koreshi	Qureshi	en
+hussein	Hussain	en
+Hossain	Hussain	en
+chowdhury	Choudhary	en
+Chaudhary	Choudhary	en
+tripati	Tripathi	en
+Tripathy	Tripathi	en
+upadhyaya	Upadhyay	en
+Upadhyai	Upadhyay	en
+पेटीएम	Paytm	hi
+पे टी एम	Paytm	hi
+ज़ोमैटो	Zomato	hi
+जोमाटो	Zomato	hi
+स्विगी	Swiggy	hi
+फ्लिपकार्ट	Flipkart	hi
+फ्लिप कार्ट	Flipkart	hi
+जियो	Jio	hi
+एयरटेल	Airtel	hi
+कुबेरनेटीस	Kubernetes	hi
+कूबरनेटिस	Kubernetes	hi
+इंफोसिस	Infosys	hi
+इन्फ़ोसिस	Infosys	hi
+फोनपे	PhonePe	hi
+फ़ोन पे	PhonePe	hi
+आधार	Aadhaar	hi
+अगरवाल	Agarwal	hi
+अग्रवाल	Agarwal	hi
+श्रीवास्तव	Srivastava	hi
+कोठारी	Kothari	hi
+कोटारी	Kothari	hi
+शर्मा	Sharma	hi
+मेहता	Mehta	hi
+ज़ेरोधा	Zerodha	hi
+जीरोधा	Zerodha	hi
+मिंत्रा	Myntra	hi
+नायका	Nykaa	hi
+रेडिस	Redis	hi
+डॉकर	Docker	hi
+पैरासिटामोल	paracetamol	hi
+पेरासिटामॉल	paracetamol	hi
+रेज़रपे	Razorpay	hi
+विप्रो	Wipro	hi
+महिंद्रा	Mahindra	hi
+मारुति	Maruti	hi
+अमूल	Amul	hi
+पतंजलि	Patanjali	hi
+नेटफ्लिक्स	Netflix	hi
+उबर	Uber	hi
+सैमसंग	Samsung	hi
+चटर्जी	Chatterjee	hi
+मुखर्जी	Mukherjee	hi
+अय्यर	Iyer	hi
+रेड्डी	Reddy	hi
+कुलकर्णी	Kulkarni	hi
+देशपांडे	Deshpande	hi
+सुब्रमण्यम	Subramanian	hi
+अभिषेक	Abhishek	hi
+ऐश्वर्या	Aishwarya	hi
+लक्ष्मी	Lakshmi	hi

@@ -18,14 +18,17 @@ crate-type = ["cdylib", "staticlib"]
 doc = false
 
 [dependencies]
-uccharan_core = { package = "uccharan", path = "../uccharan", version = "0.2.0", default-features = false }
+uccharan_core = { package = "uccharan", path = "../uccharan", version = "0.3.0", default-features = false }
 
 [features]
-default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-ur", "embed-sd", "embed-kokoro"]
+default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-ur", "embed-sd", "embed-kokoro", "embed-de", "embed-nl", "embed-fr"]
 # Compile the language data into the library; without them, load packs with uccharan_load().
 embed-en-us = ["uccharan_core/embed-en-us"]
 embed-en-gb = ["uccharan_core/embed-en-gb"]
 embed-hi = ["uccharan_core/embed-hi"]
 embed-ur = ["uccharan_core/embed-ur"]
 embed-sd = ["uccharan_core/embed-sd"]
+embed-de = ["uccharan_core/embed-de"]
+embed-nl = ["uccharan_core/embed-nl"]
+embed-fr = ["uccharan_core/embed-fr"]
 embed-kokoro = ["uccharan_core/embed-kokoro"]

@@ -1,0 +1,248 @@
+{
+ "language": "fr",
+ "reference": "espeak-ng 1.52.0 voice fr (library API)",
+ "set": "dev",
+ "sentence_level": {
+  "sentences": 997,
+  "reference_symbols": 142001,
+  "per": 0.008387264878416349,
+  "per_without_stress": 0.0066379801797721225,
+  "exact_sentence": 0.555667001003009,
+  "exact_sentence_without_stress": 0.6228686058174524,
+  "piper_shape_per": 0.008444050373366952,
+  "piper_shape_exact_sentence": 0.5416248746238717,
+  "word_count_mismatch_sentences": 169,
+  "errors_by_class": {
+   "consonant": {
+    "count": 428,
+    "share": 0.3593618807724601,
+    "per_contribution": 0.003014063281244498
+   },
+   "stress": {
+    "count": 348,
+    "share": 0.29219143576826195,
+    "per_contribution": 0.00245068696699319
+   },
+   "vowel": {
+    "count": 241,
+    "share": 0.20235096557514692,
+    "per_contribution": 0.0016971711466820657
+   },
+   "other": {
+    "count": 124,
+    "share": 0.10411418975650713,
+    "per_contribution": 0.0008732332870895276
+   },
+   "word-boundary": {
+    "count": 44,
+    "share": 0.036943744752308987,
+    "per_contribution": 0.00030985697283821944
+   },
+   "length": {
+    "count": 3,
+    "share": 0.0025188916876574307,
+    "per_contribution": 2.1126611784424055e-05
+   },
+   "diacritic": {
+    "count": 3,
+    "share": 0.0025188916876574307,
+    "per_contribution": 2.1126611784424055e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "∅→ˈ",
+    "count": 137
+   },
+   {
+    "edit": "z→∅",
+    "count": 109
+   },
+   {
+    "edit": "∅→z",
+    "count": 103
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 81
+   },
+   {
+    "edit": "t→∅",
+    "count": 46
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 36
+   },
+   {
+    "edit": "∅→ ",
+    "count": 23
+   },
+   {
+    "edit": "∅→s",
+    "count": 23
+   },
+   {
+    "edit": "∅→e",
+    "count": 22
+   },
+   {
+    "edit": " →∅",
+    "count": 21
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 19
+   },
+   {
+    "edit": "∅→t",
+    "count": 17
+   },
+   {
+    "edit": "ə→∅",
+    "count": 13
+   },
+   {
+    "edit": "s→∅",
+    "count": 12
+   },
+   {
+    "edit": "∅→n",
+    "count": 12
+   },
+   {
+    "edit": "∅→ɛ",
+    "count": 11
+   },
+   {
+    "edit": "∅→ə",
+    "count": 11
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 11
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 11
+   },
+   {
+    "edit": "∅→ʁ",
+    "count": 11
+   },
+   {
+    "edit": "o→∅",
+    "count": 11
+   },
+   {
+    "edit": "a→∅",
+    "count": 10
+   },
+   {
+    "edit": "∅→o",
+    "count": 10
+   },
+   {
+    "edit": "z→s",
+    "count": 8
+   },
+   {
+    "edit": "ʁ→∅",
+    "count": 8
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 19589,
+    "wrong": 462,
+    "rate": 0.02358466486293328
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 207,
+    "per": 0.013605235124029828,
+    "exact_sentence": 0.3719806763285024
+   },
+   "no-digits": {
+    "sentences": 790,
+    "per": 0.006816557638392611,
+    "exact_sentence": 0.6037974683544304
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-dev-850",
+    "text": "On cuit un repas hangi dans une fosse chaude creusée dans le sol.",
+    "reference": "ɔ̃ kyˈi œ̃ ʁəpˈa ɑ̃ʒˈi dɑ̃z yn fˈɔs ʃˈod kʁøzˈe dɑ̃ lə- sˈɔl",
+    "uccharan": "ɔ̃ kyˈi œ̃ ʁəpˈaz ɑ̃ʒˈi dɑ̃z yn fˈɔs ʃˈod kʁøzˈe dɑ̃ lə- sˈɔl"
+   },
+   {
+    "id": "flores-dev-978",
+    "text": "Elles sont distinctes des langues véhiculaires, qui sont des langues naturelles ou organiques qui deviennent dominantes pour une raison ou une autre en tant que moyen de communication entre les locuteurs d'autres langues.",
+    "reference": "ɛl sɔ̃ distˈɛ̃kt de- lˈɑ̃ɡ veikylˈɛʁ ki sɔ̃ de- lˈɑ̃ɡ natyʁˈɛl u ɔʁɡanˈik ki dəvjˈɛn dominˈɑ̃t puʁ yn ʁɛzˈɔ̃ u yn otʁ ɑ̃ tɑ̃ kə mwajˈɛ̃ də- kɔmynikasjˈɔ̃ ɑ̃tʁ le- lokytˈœʁ dotʁ lˈɑ̃ɡ",
+    "uccharan": "ɛl sˈɔ̃ distˈɛ̃kt de- lˈɑ̃ɡ veikylˈɛʁ ki sˈɔ̃ de- lˈɑ̃ɡ natyʁˈɛlz u ɔʁɡanˈik ki dəvjˈɛn dominˈɑ̃t puʁ yn ʁɛzˈɔ̃ u yn otʁ ɑ̃ tɑ̃ kə mwajˈɛ̃ də- kɔmynikasjˈɔ̃ ɑ̃tʁ le- lokytˈœʁ dotʁ lˈɑ̃ɡ"
+   },
+   {
+    "id": "flores-dev-526",
+    "text": "Les choses prirent une mauvaise tournure pour les Italiens en Afrique du Nord quasiment dès le début. Une semaine après la déclaration de guerre de l’Italie le 10 juin 1940, les 11e hussards britanniques s’emparèrent du Fort Capuzzo en Libye.",
+    "reference": "le- ʃˈoz pʁˈiʁt yn movˈɛz tuʁnˈyʁ puʁ le-z italjˈɛ̃z ɑ̃n afʁˈik dy- nˈɔʁ kazimˈɑ̃ dɛ lə- debˈy yn səmˈɛn apʁˌɛ la- deklaʁasjˈɔ̃ də- ɡˈɛʁ də- litalˈi lə- dˈi ʒyˈɛ̃ mil nœfsɑ̃ kaʁˈɑ̃t le- ˈɔ̃z ˈə ysˈaʁ bʁitanˈik sɑ̃paʁˈɛʁ dy- fˈɔʁ kapœzˈo ɑ̃ libˈi",
+    "uccharan": "le- ʃˈoz pʁˈiʁt yn movˈɛz tuʁnˈyʁ puʁ le-z italjˈɛ̃z ɑ̃n afʁˈik dy- nˈɔʁ kazimˈɑ̃ dɛ lə- debˈy yn səmˈɛn apʁˌɛ la- deklaʁasjˈɔ̃ də- ɡˈɛʁ də- litalˈi lə- dˈis ʒyˈɛ̃ mil nœfsɑ̃ kaʁˈɑ̃t le-z ˈɔ̃z ˈə ysˈaʁ bʁitanˈik sɑ̃paʁˈɛʁ dy- fˈɔʁ kapʌzzˈo ɑ̃ libˈi"
+   },
+   {
+    "id": "flores-dev-273",
+    "text": "Certaines études suggèrent que la maladie doit devenir moins mortelle avant de pouvoir provoquer une épidémie mondiale, a-t-il noté.",
+    "reference": "sɛʁtˈɛnz etˈyd syɡʒˈɛʁ kə la- maladˈi dwˈa dəvnˈiʁ mwˈɛ̃ mɔʁtˈɛl avˌɑ̃ də- puvwˈaʁ pʁovokˈe yn epidemˈi mɔ̃djˈal atil notˈe",
+    "uccharan": "sɛʁtˈɛnz etˈyd syɡʒˈɛʁ kə la- maladˈi dwˈa dəvnˈiʁ mwˈɛ̃ mɔʁtˈɛl avˌɑ̃ də- puvwˈaʁ pʁovokˈe yn epidemˈi mɔ̃djˈal atˈeil notˈe"
+   },
+   {
+    "id": "flores-dev-214",
+    "text": "A l'époque, près de 100 habitants ont été évacués de la zone.",
+    "reference": "a lepˈok pʁɛ də- sˈɑ̃t abitˈɑ̃z ˈɔ̃t etˈe evakyˈe də- la- zˈon",
+    "uccharan": "a lepˈok pʁɛ də- sˈɑ̃ abitˈɑ̃z ˈɔ̃t etˈe evakyˈe də- la- zˈon"
+   },
+   {
+    "id": "flores-dev-160",
+    "text": "En troisième position, Hamlin a vingt points de retard, mais cinq d'avance sur Bowyer. Kahne et Truex, Jr. sont respectivement cinquième et sixième avec 2 220 et 2 207 points.",
+    "reference": "ɑ̃ tʁwazjˈɛm pozisjˈɔ̃ amlˈɛ̃ a vˈɛ̃ pwˌɛ̃ də- ʁətˈaʁ mɛ sˈɛ̃k davˈɑ̃s syʁ bowjˈe kˈɑːn e tʁyˈɛks ʒjˈɛʁ sˈɔ̃ ʁɛspɛktivmˈɑ̃ sɛ̃kjˈɛm e sizjˈɛm avˌɛk dˈø døsɑ̃ vˈɛ̃t e dˈø døsɑ̃ sˈɛt pwˈɛ̃",
+    "uccharan": "ɑ̃ tʁwazjˈɛm pozisjˈɔ̃ amlˈɛ̃ a vˈɛ̃ pwˈɛ̃ də- ʁətˈaʁ mɛ sˈɛ̃k davˈɑ̃s syʁ bwjˈe kˈɑːn e tʁyˈɛks ʒjˈɛʁ sˈɔ̃ ʁɛspɛktivmˈɑ̃ sɛ̃kjˈɛm e sizjˈɛm avˌɛk dˈø døsɑ̃ vˈɛ̃ e dˈø døsɑ̃ sˈɛt pwˈɛ̃"
+   },
+   {
+    "id": "flores-dev-62",
+    "text": "Lors de son discours de deux heures, il affirma que « Aujourd'hui, Apple réinvente le téléphone ; nous allons entrer dans l'histoire aujourd'hui. »",
+    "reference": "lɔʁ də- sˈɔ̃ diskˈuʁ də- dˈøz ˈœʁ il afiʁmˈa kə oʒuʁdyˈi ˈapəl ʁeɛ̃vˈɑ̃t lə- telefˈɔn nuz alˈɔ̃z ɑ̃tʁˈe dɑ̃ listwˈaʁ oʒuʁdyˈi",
+    "uccharan": "lɔʁ də- sɔ̃ diskˈuʁ də- dˈøz ˈœʁ il afiʁmˈa kˈə oʒuʁdyˈi ˈapəl ʁeɛ̃vˈɑ̃t lə- telefˈɔn nuz alˈɔ̃z ɑ̃tʁˈe dɑ̃ listwˈaʁ oʒuʁdyˈi"
+   },
+   {
+    "id": "flores-dev-112",
+    "text": "« Elle survolera la côte ouest de la Californie du Nord et illuminera le ciel de l’Oregon, du Nevada, de l’Idaho et de l’Utah », a déclaré le directeur de projet de Stardust, Tom Duxbury.",
+    "reference": "ɛl syʁvolʁˈa la- kˈoːt wˈɛst də- la- kalifɔʁnˈi dy- nˈɔʁ e ilyminʁˈa lə- sjˈɛl də- loʁɡˈɔ̃ dy- nəvadˈa də- lidaˈo e də- lytˈa a deklaʁˈe lə- diʁɛktˈœʁ də- pʁoʒˈɛ də- stˈɑːdʌst tˈɔm dˈʌksbɹi",
+    "uccharan": "ɛl syʁvolʁˈa la- kˈoːt wˈɛst də- la- kalifɔʁnˈi dy- nˈɔʁ e ilyminʁˈa lə- sjˈɛl də- loʁɡˈɔ̃ dy- nəvadˈa də- lidaˈo e də- lytˈa a deklaʁˈe lə- diʁɛktˈœʁ də- pʁoʒˈɛ də- stˈɑːdʌst tˈɔm dksbɹˈi"
+   },
+   {
+    "id": "flores-dev-247",
+    "text": "Depuis l'indépendance du Pakistan, qui s'est affranchi de la domination britannique en 1947, le président pakistanais a nommé des « agents politiques » pour gouverner les zones tribales, ceux-ci exerçant un contrôle indépendant quasi complet sur ces régions.",
+    "reference": "dəpyˌi lɛ̃depɑ̃dˈɑ̃s dy- pakistˈɑ̃ ki sɛt afʁɑ̃ʃˈi də- la- dominasjˈɔ̃ bʁitanˈik ɑ̃ mil nœfsɑ̃ kaʁɑ̃tsˈɛt lə- pʁezidˈɑ̃ pakistanˈɛz a nɔmˈe de- aʒˈɑ̃ politˈik puʁ ɡuvɛʁnˈe le- zˈon tʁibˈal sø sˌi ɛɡzɛʁsˈɑ̃t œ̃ kɔ̃tʁˈoːl ɛ̃depɑ̃dˈɑ̃ kazˈi kɔ̃plˈɛ syʁ se ʁeʒjˈɔ̃",
+    "uccharan": "dəpyˌi lɛ̃depɑ̃dˈɑ̃s dy- pakistˈɑ̃ ki sɛt afʁɑ̃ʃˈi də- la- dominasjˈɔ̃ bʁitanˈik ɑ̃ mil nœfsɑ̃ kaʁɑ̃tsˈɛt lə- pʁezidˈɑ̃ pakistanˈɛ a nɔmˈe de- aʒˈɑ̃ politˈik puʁ ɡuvɛʁnˈe le- zˈon tʁibˈal søsˈi ɛɡzɛʁsˈɑ̃ œ̃ kɔ̃tʁˈoːl ɛ̃depɑ̃dˈɑ̃ kazˈi kɔ̃plˈɛ syʁ se ʁeʒjˈɔ̃"
+   },
+   {
+    "id": "flores-dev-921",
+    "text": "Si vous n’avez pas de connexion de données sur votre téléphone, ou s’il est hors de portée, ses performances peuvent être limitées ou indisponibles.",
+    "reference": "sˈi vu navˈe pa də- kɔnɛksjˈɔ̃ də- dɔnˈe syʁ votʁ telefˈɔn u sil ɛ ˈɔʁ də- pɔʁtˈe se- pɛʁfɔʁmˈɑ̃s pˈøvt ˈɛtʁ limitˈe u ɛ̃disponˈibl",
+    "uccharan": "sˈi vu navˈe pa də- kɔnɛksjˈɔ̃ də- dɔnˈe syʁ votʁ telefˈɔn u sil ɛt ˈɔʁ də- pɔʁtˈe se- pɛʁfɔʁmˈɑ̃s pˈøvt ˈɛtʁ limitˈez u ɛ̃disponˈibl"
+   },
+   {
+    "id": "flores-dev-504",
+    "text": "MySpace est le troisième site Internet le plus populaire utilisé aux États-Unis et compte actuellement 54 millions de profils.",
+    "reference": "mˈi spˈas ɛ lə- tʁwazjˈɛm sˈit ɛ̃tɛʁnˈɛt lə- ply popylˈɛʁ ytilizˈe oz etˈazynˈi e kˈɔ̃t aktyɛlmˈɑ̃ sɛ̃kɑ̃tkˈatʁ miljˈɔ̃ də- pʁofˈil",
+    "uccharan": "mispˈas ɛ lə- tʁwazjˈɛm sˈit ɛ̃tɛʁnˈɛt lə- ply popylˈɛʁ ytilizˈe oz etˈazynˈi e kˈɔ̃t aktyɛlmˈɑ̃ sɛ̃kɑ̃tkˈatʁ miljˈɔ̃ də- pʁofˈil"
+   },
+   {
+    "id": "flores-dev-407",
+    "text": "Oui ! Le roi Toutankhamon, parfois appelé « Roi Tout » ou « L’Enfant roi », est l’un des anciens monarques égyptiens les plus connus des temps modernes.",
+    "reference": "wˈi lə- ʁwˈa tutɑ̃kamˈɔ̃ paʁfwˈaz aplˈe ʁwˈa tu u lɑ̃fˈɑ̃ ʁwˈa ɛ lœ̃ de-z ɑ̃sjˈɛ̃ monˈaʁkz eʒiptjˈɛ̃ le- ply kɔnˈy de- tˈɑ̃ modˈɛʁn",
+    "uccharan": "wˈi lə- ʁwˈa tutɑ̃kamˈɔ̃ paʁfwˈaz aplˈe ʁwˈa tˈu u lɑ̃fˈɑ̃ ʁwˈa ɛ lœ̃ de-z ɑ̃sjˈɛ̃ monˈaʁk eʒiptjˈɛ̃ le- ply kɔnˈy de- tˈɑ̃ modˈɛʁn"
+   }
+  ]
+ }
+}

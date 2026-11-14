@@ -13,7 +13,7 @@ use std::hash::BuildHasherDefault;
 /// A hash map with a fixed hasher, so that iteration order (and therefore the
 /// built data) is the same on every run.
 type HashMap<K, V> = std::collections::HashMap<K, V, BuildHasherDefault<DefaultHasher>>;
-use uccharan::data::context_hash;
+use uccharan::data::{shape_hash, stress_state};
 
 pub const SHAPES: [(u8, u8); 8] = [
     (4, 4),
@@ -33,6 +33,30 @@ pub struct Model {
 
 /// `examples`: for each word, its letters and one output string per letter.
 pub fn train(examples: &[(Vec<u8>, Vec<String>)], min_count: u32) -> Model {
+    train_shapes(examples, min_count, &SHAPES)
+}
+
+/// [`train`] with a chosen back-off chain, most specific shape first. The
+/// shape bytes may carry the flags of [`shape_hash`].
+pub fn train_shapes(
+    examples: &[(Vec<u8>, Vec<String>)],
+    min_count: u32,
+    shapes: &[(u8, u8)],
+) -> Model {
+    train_full(examples, None, min_count, shapes)
+}
+
+/// A letter that the model does not decide (see [`train_full`]).
+pub const SKIP: &str = "\u{1}";
+
+/// [`train_shapes`] with the stress states given (`None`: from the outputs
+/// themselves). Letters whose output is [`SKIP`] are not learned.
+pub fn train_full(
+    examples: &[(Vec<u8>, Vec<String>)],
+    given: Option<&[Vec<u32>]>,
+    min_count: u32,
+    shapes: &[(u8, u8)],
+) -> Model {
     let mut out_ids: HashMap<String, u16> = HashMap::default();
     let mut outputs: Vec<String> = Vec::new();
     let mut id_of = |s: &str| -> u16 {
@@ -44,14 +68,32 @@ pub fn train(examples: &[(Vec<u8>, Vec<String>)], min_count: u32) -> Model {
         out_ids.insert(s.to_string(), i);
         i
     };
+    // The stress state before each letter, from the outputs to its left.
+    let own: Vec<Vec<u32>> = examples
+        .iter()
+        .map(|(_, outs)| {
+            let mut s = 0u8;
+            outs.iter()
+                .map(|o| {
+                    let before = s as u32;
+                    s = stress_state(s, o);
+                    before
+                })
+                .collect()
+        })
+        .collect();
+    let states: &[Vec<u32>] = given.unwrap_or(&own);
     // counts[shape][context hash][output] = n
     let mut counts: Vec<HashMap<u32, HashMap<u16, u32>>> =
-        SHAPES.iter().map(|_| HashMap::default()).collect();
-    for (letters, outs) in examples {
+        shapes.iter().map(|_| HashMap::default()).collect();
+    for ((letters, outs), st) in examples.iter().zip(states) {
         for (i, o) in outs.iter().enumerate() {
+            if o == SKIP {
+                continue;
+            }
             let oid = id_of(o);
-            for (si, &(l, r)) in SHAPES.iter().enumerate() {
-                let h = context_hash(letters, i, l as usize, r as usize);
+            for (si, &(l, r)) in shapes.iter().enumerate() {
+                let h = shape_hash(letters, i, l, r, st[i]);
                 *counts[si].entry(h).or_default().entry(oid).or_insert(0) += 1;
             }
         }
@@ -72,27 +114,30 @@ pub fn train(examples: &[(Vec<u8>, Vec<String>)], min_count: u32) -> Model {
         })
         .collect();
     // Prune from narrow to wide: keep an entry only if the narrower chain disagrees.
-    let mut kept: Vec<HashMap<u32, u16>> = SHAPES.iter().map(|_| HashMap::default()).collect();
-    let last = SHAPES.len() - 1;
+    let mut kept: Vec<HashMap<u32, u16>> = shapes.iter().map(|_| HashMap::default()).collect();
+    let last = shapes.len() - 1;
     for (&h, &(o, _)) in &best[last] {
         kept[last].insert(h, o);
     }
     for si in (0..last).rev() {
-        let (l, r) = SHAPES[si];
-        let wide = (l + r) >= 4;
+        let (l, r) = shapes[si];
+        let wide = (l & 15) + (r & 15) >= 4;
         // Re-walk the examples so that the back-off prediction can be computed per context.
         let mut decided: HashMap<u32, bool> = HashMap::default();
-        for (letters, outs) in examples {
+        for ((letters, outs), st) in examples.iter().zip(states) {
             for i in 0..outs.len() {
-                let h = context_hash(letters, i, l as usize, r as usize);
+                if outs[i] == SKIP {
+                    continue;
+                }
+                let h = shape_hash(letters, i, l, r, st[i]);
                 if decided.contains_key(&h) {
                     continue;
                 }
                 let (o, n) = best[si][&h];
                 let mut fallback = None;
-                for sj in si + 1..SHAPES.len() {
-                    let (l2, r2) = SHAPES[sj];
-                    let h2 = context_hash(letters, i, l2 as usize, r2 as usize);
+                for sj in si + 1..shapes.len() {
+                    let (l2, r2) = shapes[sj];
+                    let h2 = shape_hash(letters, i, l2, r2, st[i]);
                     if let Some(&v) = kept[sj].get(&h2) {
                         fallback = Some(v);
                         break;
@@ -106,12 +151,25 @@ pub fn train(examples: &[(Vec<u8>, Vec<String>)], min_count: u32) -> Model {
             }
         }
     }
-    let tables = SHAPES
+    let tables = shapes
         .iter()
         .zip(kept)
         .map(|(&(l, r), m)| {
             let mut v: Vec<(u32, u16)> = m.into_iter().collect();
             v.sort_unstable();
+            (l, r, v)
+        })
+        .collect::<Vec<_>>();
+    // A table holds at most 65 535 contexts: the best supported ones stay.
+    let tables = tables
+        .into_iter()
+        .zip(&best)
+        .map(|((l, r, mut v), b)| {
+            if v.len() > 65_535 {
+                v.sort_by_key(|&(h, _)| (std::cmp::Reverse(b[&h].1), h));
+                v.truncate(65_535);
+                v.sort_unstable();
+            }
             (l, r, v)
         })
         .collect();

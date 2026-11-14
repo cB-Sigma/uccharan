@@ -1,7 +1,7 @@
 # uccharan (JavaScript / WebAssembly)
 
 **5× faster than espeak-ng. Just as accurate. Free to ship.**
-A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English, Hindi and nineteen more South Asian languages, in Rust, Python,
+A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English, Hindi, nineteen more South Asian languages, Spanish, French, German and Dutch, in Rust, Python,
 C and the browser. Apache-2.0. ([measurements](https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md))
 
 Permissively licensed text-to-phoneme conversion for neural TTS in the browser and in Node:
@@ -23,8 +23,8 @@ await phonemize("I read it yesterday.", { improved: true });          // "aɪ ɹ
 kokoroIds(await phonemize("नमस्ते", { lang: "hi", profile: "kokoro" })); // [0, …, 0]
 ```
 
-The WebAssembly core is about 1 MiB (about 383 KiB gzipped). Language data is fetched the first time a language is used
-(`data/en-us.ucd` and `data/en-gb.ucd` about 0.7 MB each, `data/hi.ucd` 3 KB; `data/kokoro-en-*.ucd`, misaki's dictionaries for the Kokoro profile,
+The WebAssembly core is about 1.3 MiB (about 484 KiB gzipped). Language data is fetched the first time a language is used
+(`data/en-us.ucd` and `data/en-gb.ucd` about 0.7 MB each, `data/hi.ucd` 3 KB; `data/ur.ucd` 0.5 MB, `data/de.ucd` 0.36 MB, `data/nl.ucd` 0.23 MB, `data/sd.ucd` 0.19 MB, `data/fr.ucd` 0.17 MB; `data/kokoro-en-*.ucd`, misaki's dictionaries for the Kokoro profile,
 about 2 MB each) and checked against the SHA-256 sums the package was built with; point
 `init({ dataBaseUrl })` elsewhere to host it yourself. After `await init()` and
 `await loadLanguage(...)`, `phonemizeSync` runs without awaiting.

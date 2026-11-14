@@ -77,6 +77,9 @@ struct Letter {
     kind: Kind,
     /// The vowel of this letter attracts primary stress (`stressed` in the file).
     attract: bool,
+    /// A weak vowel (`weak` in the file): it lets the inherent vowel before
+    /// it stand, as an inherent vowel would, and never takes secondary stress.
+    weak: bool,
     /// Sounds, space-separated in the file (a sign such as ृ can be "ɾ ɪ").
     sym: Vec<String>,
 }
@@ -149,6 +152,7 @@ struct Ph {
     conjunct: bool,
     independent: bool,
     attract: bool,
+    weak: bool,
 }
 
 impl Ph {
@@ -163,6 +167,7 @@ impl Ph {
             conjunct: false,
             independent: false,
             attract: false,
+            weak: false,
         }
     }
     fn v(s: &str) -> Ph {
@@ -279,6 +284,9 @@ pub struct Indic {
     unstressed: HashMap<String, (u8, u8)>,
     /// Number words.
     pub numbers: Numbers,
+    /// Number words as they are written (normalise-only mode), for the
+    /// languages with a rule file in `lang/numbers`.
+    pub numbers_text: Option<Numbers>,
 }
 
 fn list(meta: &HashMap<String, String>, k: &str) -> Vec<String> {
@@ -301,6 +309,10 @@ impl Indic {
             let mut parts = l.split_whitespace();
             let Some(key) = parts.next() else { continue };
             let mut rest: Vec<String> = parts.map(str::to_string).collect();
+            let weak = rest.last().is_some_and(|x| x == "weak");
+            if weak {
+                rest.pop();
+            }
             let attract = rest.last().is_some_and(|x| x == "stressed");
             if attract {
                 rest.pop();
@@ -332,13 +344,22 @@ impl Indic {
                 _ => default_kind((c as u32).wrapping_sub(base))
                     .ok_or_else(|| format!("{tag}: no default class for {c:?}"))?,
             };
-            letters.insert(c, Letter { kind, attract, sym });
+            letters.insert(
+                c,
+                Letter {
+                    kind,
+                    attract,
+                    weak,
+                    sym,
+                },
+            );
         }
         for off in [0x01, 0x02, 0x03, 0x3c, 0x4d] {
             if let Some(c) = char::from_u32(base + off) {
                 letters.entry(c).or_insert(Letter {
                     kind: default_kind(off).unwrap(),
                     attract: false,
+                    weak: false,
                     sym: Vec::new(),
                 });
             }
@@ -461,6 +482,11 @@ impl Indic {
             post_improved,
             words: langdef::words(&f),
             unstressed: langdef::unstressed(&f),
+            numbers_text: f
+                .meta()
+                .get("tag")
+                .and_then(|t| crate::rbnf::rules_for(t))
+                .map(|rules| Numbers::parse(&f).with_speller(rules)),
             numbers: Numbers::parse(&f),
         })
     }
@@ -527,7 +553,7 @@ impl Indic {
                             i += 1;
                         }
                         Some(l) if l.kind == Kind::Sign => {
-                            self.push_sign(&l.sym, l.attract, &mut out);
+                            self.push_sign(l, &mut out);
                             i += 1;
                         }
                         _ => {
@@ -540,7 +566,7 @@ impl Indic {
                 Kind::Vowel | Kind::Sign => {
                     after_virama = false;
                     let start = out.len();
-                    self.push_sign(&letter.sym, letter.attract, &mut out);
+                    self.push_sign(letter, &mut out);
                     if letter.kind == Kind::Vowel {
                         for p in out[start..].iter_mut().filter(|p| p.vowel) {
                             p.independent = true;
@@ -665,14 +691,16 @@ impl Indic {
         out
     }
 
-    fn push_sign(&self, sym: &[String], attract: bool, out: &mut Vec<Ph>) {
+    fn push_sign(&self, letter: &Letter, out: &mut Vec<Ph>) {
+        let sym = &letter.sym;
         // Symbols before the vowel are consonants (ृ = "ɾ ɪ"); symbols written
         // with a leading `+` follow the vowel as a glide (ঐ = "o +j").
         let vowel_at = sym.iter().rposition(|s| !s.starts_with('+')).unwrap_or(0);
         for (k, s) in sym.iter().enumerate() {
             if k == vowel_at {
                 let mut v = Ph::v(s);
-                v.attract = attract;
+                v.attract = letter.attract;
+                v.weak = letter.weak;
                 out.push(v);
             } else {
                 let mut p = Ph::c(s.trim_start_matches('+'));
@@ -822,7 +850,8 @@ impl Indic {
             let avoid = self.secondary_avoid.iter().any(|v| *v == ph[vs[k]].s)
                 && k + 2 < n
                 && !(k > 0 && ph[vs[k - 1]].stress != 0);
-            let unstressable = self.unstressable.iter().any(|v| *v == ph[vs[k]].s);
+            let unstressable =
+                ph[vs[k]].weak || self.unstressable.iter().any(|v| *v == ph[vs[k]].s);
             if !prev && !next && !avoid && !unstressable {
                 ph[vs[k]].stress = 2;
             }
@@ -930,7 +959,7 @@ impl Indic {
                         && self.keep_after_schwa_of.iter().any(|k| *k == ph[i - 3].s);
                     let vc = i >= 2 && ph[i - 2].vowel && !ph[i - 1].vowel && !protected;
                     let next_vowel = ph[i + 1..].iter().find(|p| p.vowel);
-                    let next_is_schwa = next_vowel.is_some_and(|p| p.schwa);
+                    let next_is_schwa = next_vowel.is_some_and(|p| p.schwa || p.weak);
                     if vc && !next_is_schwa && next_vowel.is_some() {
                         ph.remove(i);
                         continue;

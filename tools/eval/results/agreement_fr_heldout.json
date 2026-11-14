@@ -1,0 +1,248 @@
+{
+ "language": "fr",
+ "reference": "espeak-ng 1.52.0 voice fr (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 149920,
+  "per": 0.008531216648879403,
+  "per_without_stress": 0.006892017669567273,
+  "exact_sentence": 0.5721343873517787,
+  "exact_sentence_without_stress": 0.6363636363636364,
+  "piper_shape_per": 0.008917732441778821,
+  "piper_shape_exact_sentence": 0.5434782608695652,
+  "word_count_mismatch_sentences": 150,
+  "errors_by_class": {
+   "consonant": {
+    "count": 478,
+    "share": 0.3737294761532447,
+    "per_contribution": 0.0031883671291355387
+   },
+   "stress": {
+    "count": 346,
+    "share": 0.2705238467552776,
+    "per_contribution": 0.002307897545357524
+   },
+   "vowel": {
+    "count": 263,
+    "share": 0.20562939796716184,
+    "per_contribution": 0.0017542689434364995
+   },
+   "other": {
+    "count": 112,
+    "share": 0.0875684128225176,
+    "per_contribution": 0.0007470651013874066
+   },
+   "word-boundary": {
+    "count": 65,
+    "share": 0.0508209538702111,
+    "per_contribution": 0.00043356456776947705
+   },
+   "diacritic": {
+    "count": 9,
+    "share": 0.007036747458952306,
+    "per_contribution": 6.003201707577375e-05
+   },
+   "length": {
+    "count": 6,
+    "share": 0.004691164972634871,
+    "per_contribution": 4.0021344717182494e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "z→∅",
+    "count": 178
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 137
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 74
+   },
+   {
+    "edit": "∅→z",
+    "count": 74
+   },
+   {
+    "edit": "t→∅",
+    "count": 40
+   },
+   {
+    "edit": "∅→ ",
+    "count": 36
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 29
+   },
+   {
+    "edit": " →∅",
+    "count": 29
+   },
+   {
+    "edit": "∅→e",
+    "count": 26
+   },
+   {
+    "edit": "∅→s",
+    "count": 24
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 23
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 22
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 21
+   },
+   {
+    "edit": "s→∅",
+    "count": 18
+   },
+   {
+    "edit": "∅→ɛ",
+    "count": 16
+   },
+   {
+    "edit": "∅→ə",
+    "count": 16
+   },
+   {
+    "edit": "∅→ʁ",
+    "count": 14
+   },
+   {
+    "edit": "∅→o",
+    "count": 14
+   },
+   {
+    "edit": "∅→t",
+    "count": 11
+   },
+   {
+    "edit": "∅→a",
+    "count": 10
+   },
+   {
+    "edit": "e→∅",
+    "count": 10
+   },
+   {
+    "edit": "z→s",
+    "count": 10
+   },
+   {
+    "edit": "o→∅",
+    "count": 10
+   },
+   {
+    "edit": "∅→n",
+    "count": 10
+   },
+   {
+    "edit": "ə→∅",
+    "count": 8
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 21347,
+    "wrong": 481,
+    "rate": 0.022532440155525368
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 189,
+    "per": 0.016182572614107885,
+    "exact_sentence": 0.4074074074074074
+   },
+   "no-digits": {
+    "sentences": 823,
+    "per": 0.006509823762543216,
+    "exact_sentence": 0.6099635479951397
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-356",
+    "text": "Le satellite a été envoyé dans l'espace par une fusée. Les scientifiques utilisent des télescopes dans l'espace parce que l'atmosphère terrestre déforme une partie de notre lumière et de notre vision.",
+    "reference": "lə- satɛlˈit a etˈe ɑ̃vwajˈe dɑ̃ lɛspˈas paʁ yn fyzˈe le- sjɑ̃tifˈikz ytilˈiz de- telɛskˈop dɑ̃ lɛspˈas paʁskˌə latmɔsfˈɛʁ tɛʁˈɛstʁ defˈɔʁm yn paʁtˈi də- notʁ lymjˈɛʁ e də- notʁ vizjˈɔ̃",
+    "uccharan": "lə- satɛlˈit a etˈe ɑ̃vwajˈe dɑ̃ lɛspˈas paʁ yn fyzˈe le- sjɑ̃tifˈikz ytilˈiz de- telɛskˈop dɑ̃ lɛspˈas pˈaʁs kə latmɔsfˈɛʁ tɛʁˈɛstʁ defˈɔʁm yn paʁtˈi də- notʁ lymjˈɛʁ e də- notʁ vizjˈɔ̃"
+   },
+   {
+    "id": "flores-devtest-531",
+    "text": "Les ressources végétales les plus facilement accessibles seraient les protéines contenues dans les feuilles et les légumineuses, mais celles-ci sont difficiles à digérer pour des primates comme nous, à moins d'être cuites.",
+    "reference": "le- ʁəsˈuʁs veʒetˈal le- ply fasilmˈɑ̃ aksɛsˈibl səʁˈɛ le- pʁoteˈin kɔ̃tənˈy dɑ̃ le- fˈœjz e le- leɡyminˈøz mɛ sɛl sˌi sɔ̃ difisˈilz a diʒeʁˈe puʁ de- pʁimˈat kɔm nˈu a mwˈɛ̃ dˈɛtʁ kyˈit",
+    "uccharan": "le- ʁəsˈuʁs veʒetˈal le- ply fasilmˈɑ̃ aksɛsˈibl səʁˈɛ le- pʁoteˈin kɔ̃tənˈy dɑ̃ le- fˈœjz e le- leɡyminˈøz mɛ sɛlsˈi sˈɔ̃ difisˈilz a diʒeʁˈe puʁ de- pʁimˈat kɔm nˈu a mwˈɛ̃ dˈɛtʁ kyˈit"
+   },
+   {
+    "id": "flores-devtest-978",
+    "text": "Veuillez également vous assurer de prononcer « r » et « rr » d’une manière distincte : « caro » signifie « cher », tandis que « carro » signifie « chariot ».",
+    "reference": "vœjˈez eɡalmˈɑ̃ vuz asyʁˈe də- pʁonɔ̃sˈe ˈɛʁ e ˌɛʁˈɛʁ dyn manjˈɛʁ distˈɛ̃kt kaʁˈo siɲifˈi ʃˈɛʁ tɑ̃dˌi kə kaʁˈo siɲifˈi ʃaʁjˈo",
+    "uccharan": "vœjˈez eɡalmˈɑ̃ vuz asyʁˈe də- pʁonɔ̃sˈe ˈɛʁ ˈe ˌɛʁˈɛʁ dyn manjˈɛʁ distˈɛ̃kt kaʁˈo siɲifˈi ʃˈɛʁ tɑ̃dˌi kˈə kaʁˈo siɲifˈi ʃaʁjˈo"
+   },
+   {
+    "id": "flores-devtest-901",
+    "text": "Habituellement, on entend toujours le bruit des touristes et des vendeurs. L’histoire du son et de la lumière est comme un livre d’histoire.",
+    "reference": "abityɛlmˈɑ̃ ɔ̃n ɑ̃tˈɑ̃ tuʒˌuʁ lə- bʁyˈi de- tuʁˈistz e de- vɑ̃dˈœʁ listwˈaʁ dy- sˈɔ̃ e də- la- lymjˈɛʁ ɛ kɔm œ̃ lˈivʁ distwˈaʁ",
+    "uccharan": "abityɛlmˈɑ̃ ɔ̃n ɑ̃tˈɑ̃ tuʒˌuʁ lə- bʁyˈi de- tuʁˈistz e de- vɑ̃dˈœʁ listwˈaʁ dy- sɔ̃n e də- la- lymjˈɛʁ ɛ kɔm œ̃ lˈivʁ distwˈaʁ"
+   },
+   {
+    "id": "flores-devtest-102",
+    "text": "Cependant, le pourcentage de TB-UR dans l’ensemble du groupe de personnes atteintes de tuberculose semble encore faible ; 6 000 personnes sur un total de 330 000 ont été infectées à un moment donné en Afrique du Sud.",
+    "reference": "səpɑ̃dˈɑ̃ lə- puʁsɑ̃tˈaʒ də- tˌebˈeˌyˈɛʁ dɑ̃ lɑ̃sˈɑ̃bl dy- ɡʁˈup də- pɛʁsˈɔnz atˈɛ̃t də- tybɛʁkylˈɔz sˈɑ̃bl ɑ̃kˌɔʁ fˈɛbl sˈi zeʁozeʁo zeʁˈo pɛʁsˈɔn syʁ œ̃ totˈal də- tʁwasɑ̃ tʁˈɑ̃t zeʁozeʁo zeʁˈo ˈɔ̃t etˈe ɛ̃fɛktˈez a œ̃ momˈɑ̃ dɔnˈe ɑ̃n afʁˈik dy- sˈyd",
+    "uccharan": "səpɑ̃dˈɑ̃ lə- puʁsɑ̃tˈaʒ də- tˌebˈeˌyˈɛʁ dɑ̃ lɑ̃sˈɑ̃bl dy- ɡʁˈup də- pɛʁsˈɔnz atˈɛ̃t də- tybɛʁkylˈɔz sˈɑ̃bl ɑ̃kˌɔʁ fˈɛbl sˈis zeʁo zeʁo zeʁˈo pɛʁsˈɔn syʁ œ̃ totˈal də- tʁwasɑ̃ tʁˈɑ̃t zeʁo zeʁo zeʁˈo ˈɔ̃t etˈe ɛ̃fɛktˈe a œ̃ momˈɑ̃ dɔnˈe ɑ̃n afʁˈik dy- sˈyd"
+   },
+   {
+    "id": "flores-devtest-776",
+    "text": "Presque toutes les plages sont sablonneuses et permettent de se baigner en toute sécurité, et la plupart sont ombragées par des pohutukawa.",
+    "reference": "pʁˌɛskə tut le- plˈaʒ sˈɔ̃ sablɔnˈøzz e pɛʁmˈɛt də- sə- bɛnjˈe ɑ̃ tut sekyʁitˈe e la- plypˌaʁ sˈɔ̃t ɔ̃bʁaʒˈe paʁ de- poytykawˈa",
+    "uccharan": "pʁˌɛskə tut le- plˈaʒ sˈɔ̃ sablɔnˈøz e pɛʁmˈɛt də- sə- bɛnjˈe ɑ̃ tut sekyʁitˈe e la- plypˌaʁ sˈɔ̃t ɔ̃bʁaʒˈe paʁ de- pɔytykawˈa"
+   },
+   {
+    "id": "flores-devtest-98",
+    "text": "Le Dr Tony Moll a découvert la tuberculose multirésistante (TB-MR) dans la région sud-africaine du KwaZulu-Natal.",
+    "reference": "lə- doktˈøʁ tˈəʊni mˈɒl a dekuvˈɛʁ la- tybɛʁkylˈɔz myltiʁezistˈɑ̃t tˌebˈeməsjˈø dɑ̃ la- ʁeʒjˈɔ̃ sˈydafʁikˈɛn dy- kwˈa zylˈynatˈal",
+    "uccharan": "lə- doktˈøʁ tˈəʊni mˈɒl a dekuvˈɛʁ la- tybɛʁkylˈɔz myltiʁezistˈɑ̃t tˌebˈeməsjˈø dɑ̃ la- ʁeʒjˈɔ̃ sˈydafʁikˈɛn dy- kwazylˈynatˈal"
+   },
+   {
+    "id": "flores-devtest-833",
+    "text": "Les pâtisseries allemandes sont plutôt bonnes, et en Bavière, elles sont très riches et variées, semblables à celles de leur voisin du sud, l'Autriche.",
+    "reference": "le- patisəʁˈiz almˈɑ̃d sˈɔ̃ plytˈoː bˈɔn e ɑ̃ bavjˈɛʁ ɛl sɔ̃ tʁɛ ʁˈiʃz e vaʁjˈe sɑ̃blˈablz a sɛl də- lœʁ vwazˈɛ̃ dy- sˈyd lotʁˈiʃ",
+    "uccharan": "le- patisəʁˈi almˈɑ̃d sˈɔ̃ plytˈoː bˈɔn e ɑ̃ bavjˈɛʁ ɛl sˈɔ̃ tʁɛ ʁˈiʃz e vaʁjˈe sɑ̃blˈablz a sɛl də- lœʁ vwazˈɛ̃ dy- sˈyd lotʁˈiʃ"
+   },
+   {
+    "id": "flores-devtest-785",
+    "text": "Néanmoins, suivez les conseils des autorités, obéissez à tous les panneaux et prêtez une attention particulière aux avertissements de sécurité.",
+    "reference": "neɑ̃mwˈɛ̃ syivˈe le- kɔ̃sˈɛj de-z otoʁitˈe obeisˈez a tu le- panˈoz e pʁɛtˈez yn atɑ̃sjˈɔ̃ paʁtikyljˈɛʁ oz avɛʁtismˈɑ̃ də- sekyʁitˈe",
+    "uccharan": "neɑ̃mwˈɛ̃ syivˈe le- kɔ̃sˈɛj de-z otoʁitˈe obeisˈe a tu le- panˈoz e pʁɛtˈe yn atɑ̃sjˈɔ̃ paʁtikyljˈɛʁ oz avɛʁtismˈɑ̃ də- sekyʁitˈe"
+   },
+   {
+    "id": "flores-devtest-405",
+    "text": "Bien que personne ne sache vraiment qui l'a rédigé, on sait qu'à un stade précoce de son existence, le grand parchemin (qui mesure environ 29 pouces trois quarts sur 24 pouces) était entreposé roulé.",
+    "reference": "bjˈɛ̃ kə pɛʁsˈɔn nə- sˈaʃ vʁɛmˈɑ̃ ki la ʁediʒˈe ɔ̃ sˈɛ ka œ̃ stˈad pʁekˈɔs də- sˈɔ̃ ɛɡzistˈɑ̃s lə- ɡʁˈɑ̃ paʁʃmˈɛ̃ ki məzˈyʁ ɑ̃viʁˈɔ̃ vɛ̃tnˈœf pˈus tʁwˈa kˈaʁ syʁ vɛ̃tkˈatʁ pˈus etˈɛt ɑ̃tʁəpozˈe ʁulˈe",
+    "uccharan": "bjˈɛ̃ kə pɛʁsˈɔn nə- sˈaʃ vʁɛmˈɑ̃ ki la ʁediʒˈe ɔ̃ sˈɛ ka œ̃ stˈad pʁekˈɔs də- sɔ̃n ɛɡzistˈɑ̃s lə- ɡʁˈɑ̃ paʁʃmˈɛ̃ ki məzˈyʁ ɑ̃viʁˈɔ̃ vɛ̃tnˈœf pˈus tʁwˈa kˈaʁ syʁ vɛ̃tkˈatʁ pˈusz etˈɛt ɑ̃tʁəpozˈe ʁulˈe"
+   },
+   {
+    "id": "flores-devtest-836",
+    "text": "Si vous voulez de petites mais copieuses pâtisseries, essayez les boules de Berlin, aussi appelées Berliner, Pfannkuchen ou Krapfen selon les régions.",
+    "reference": "sˈi vu vulˈe də- pətˈit mɛ kopjˈøz patisəʁˈi esɛjˈe le- bˈul də- bɛʁlˈɛ̃ osˌi aplˈe bɛʁlinˈe pfɑ̃nkyʃˈɛn u kʁapfˈɛn səlˈɔ̃ le- ʁeʒjˈɔ̃",
+    "uccharan": "sˈi vu vulˈe də- pətˈit mɛ kopjˈøz patisəʁˈi esɛjˈe le- bˈul də- bɛʁlˈɛ̃ osˌi aplˈe bɛʁlinˈe pfankyʃˈɛn u kʁapfˈɛn səlˈɔ̃ le- ʁeʒjˈɔ̃"
+   },
+   {
+    "id": "flores-devtest-271",
+    "text": "Edgar Veguilla a été blessé au bras et à la mâchoire tandis que Kristoffer Schneider a dû subir une chirurgie reconstructive pour son visage.",
+    "reference": "ɛdɡˈaʁ vəɡijˈa a etˈe blɛsˈe o bʁˈaz e a la- maʃwˈaʁ tɑ̃dˌi kə kʁistɔfˈe ʃnɛdˈe a dˈyː sybˈiʁ yn ʃiʁyʁʒˈi ʁəkɔ̃stʁyktˈiv puʁ sɔ̃ vizˈaʒ",
+    "uccharan": "ɛdɡˈaʁ vɡiˈa a etˈe blɛsˈe o bʁˈaz e a la- maʃwˈaʁ tɑ̃dˌi kə kʁistɔfˈe ʃnɛdˈe a dˈyː sybˈiʁ yn ʃiʁyʁʒˈi ʁəkɔ̃stʁyktˈiv puʁ sɔ̃ vizˈaʒ"
+   }
+  ]
+ }
+}

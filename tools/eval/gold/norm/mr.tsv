@@ -19,3 +19,11 @@ dev	cardinal	0	शून्य
 heldout	cardinal	1,00,00,000	एक कोटी	
 dev	cardinal	२०	वीस	
 heldout	cardinal	70	सत्तर	
+dev	cardinal	36	छत्तीस	
+heldout	cardinal	48	अठ्ठेचाळीस	
+dev	cardinal	250	दोनशे पन्नास	
+heldout	percent	75%	पंच्याहत्तर टक्के	
+dev	cardinal	5000	पाच हजार	
+heldout	decimal	1.5	एक दशांश पाच || एक पूर्णांक पाच दशांश	
+dev	cardinal	64	चौसष्ट	
+heldout	cardinal	19	एकोणीस	

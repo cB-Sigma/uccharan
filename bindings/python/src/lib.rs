@@ -7,6 +7,8 @@ use std::sync::OnceLock;
 use uccharan::profile::{self, PhonemeIdMap, Profile};
 use uccharan::{Lang, Mode, Normalize, Options, Phonemizer};
 
+mod train;
+
 fn engine() -> &'static Phonemizer {
     static ENGINE: OnceLock<Phonemizer> = OnceLock::new();
     ENGINE.get_or_init(Phonemizer::new)
@@ -134,8 +136,10 @@ fn missing_packs(lang: &str, profile: &str) -> Vec<String> {
     };
     let e = engine();
     let mut out = Vec::new();
-    if !e.has(l) {
-        out.push(l.tag().to_string());
+    // Bhojpuri, Maithili and Magahi are read with the Hindi data.
+    let data = if l.hindi_like() { Lang::Hi } else { l };
+    if !e.has(data) {
+        out.push(data.tag().to_string());
     }
     if profile == "kokoro" && l.is_english() && !e.has_misaki(l) {
         out.push(format!("kokoro-{}", l.tag()));
@@ -379,6 +383,58 @@ fn respell(
         .map(|r| (r.text, r.readback, r.distance)))
 }
 
+// ---------------------------------------------------------------------------
+// Sound-alike matching.
+
+/// A vocabulary prepared for sound-alike matching (see the Python wrapper).
+#[pyclass(name = "SoundIndex", frozen, module = "uccharan._native")]
+struct PySoundIndex {
+    inner: uccharan::soundalike::SoundIndex,
+}
+
+#[pymethods]
+impl PySoundIndex {
+    #[new]
+    #[pyo3(signature = (vocabulary, options=""))]
+    fn new(py: Python<'_>, vocabulary: &str, options: &str) -> PyResult<Self> {
+        py.detach(|| uccharan::soundalike::SoundIndex::from_text(engine(), vocabulary, options))
+            .map(|inner| PySoundIndex { inner })
+            .map_err(PyValueError::new_err)
+    }
+
+    fn __len__(&self) -> usize {
+        self.inner.len()
+    }
+
+    fn terms(&self) -> Vec<String> {
+        self.inner.terms().iter().map(|t| t.word.clone()).collect()
+    }
+
+    fn sounds(&self, index: usize) -> Vec<String> {
+        self.inner.sounds(index)
+    }
+
+    fn skipped(&self) -> Vec<(usize, String)> {
+        self.inner.skipped().to_vec()
+    }
+
+    /// Candidates as JSON.
+    fn find(&self, py: Python<'_>, text: &str, lang: &str, options: &str) -> PyResult<String> {
+        let l = Lang::parse(lang)
+            .ok_or_else(|| PyValueError::new_err(format!("unknown language {lang:?}")))?;
+        py.detach(|| self.inner.find_json(engine(), text, l, options))
+            .map_err(PyValueError::new_err)
+    }
+
+    /// The corrected text with its changes, as JSON.
+    fn apply(&self, py: Python<'_>, text: &str, lang: &str, options: &str) -> PyResult<String> {
+        let l = Lang::parse(lang)
+            .ok_or_else(|| PyValueError::new_err(format!("unknown language {lang:?}")))?;
+        py.detach(|| self.inner.apply_json(engine(), text, l, options))
+            .map_err(PyValueError::new_err)
+    }
+}
+
 #[pymodule]
 fn _native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add("__version__", env!("CARGO_PKG_VERSION"))?;
@@ -400,5 +456,7 @@ fn _native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(normalize, m)?)?;
     m.add_function(wrap_pyfunction!(render_wordlists, m)?)?;
     m.add_function(wrap_pyfunction!(respell, m)?)?;
+    m.add_class::<PySoundIndex>()?;
+    train::register(m)?;
     Ok(())
 }

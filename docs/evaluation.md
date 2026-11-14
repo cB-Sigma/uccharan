@@ -54,6 +54,43 @@ For comparison, the development sets (which the rules were tuned on) give en-US 
 Hindi 0.15 %: held-out and development agree, so the rules are not over-fitted to the development
 sample.
 
+**German** (`de`, FLORES-200 devtest, 1,012 sentences, scored once): PER **1.29 %**, without stress 0.87 %, identical sentences 56.1 %; sentences without digits 1.14 % (first scoring 1.30 %; scored again after two small fixes found on other data: n before k after a linking -en-, and the numeral 1 keeping its stress). Development set (FLORES dev): 1.28 %. By word (sentences whose words align, 819 of 1,012): words in the word table 0.1 % wrong (7,442), words of the word list that the rules read as the reference does 0.0 % (8,916), words outside the word list 53.8 % (813; mostly the stress of long compounds and names).
+
+**Dutch** (`nl`, FLORES-200 devtest, 1,012 sentences, scored once): PER **1.91 %**, without stress 1.35 %, identical sentences 34.1 %; sentences without digits 1.56 %. Development set (FLORES dev): 1.86 %. By word (863 aligned sentences): words in the word table 2.1 % wrong (8,663), listed words read by the rules 1.5 % (9,706), words outside the word list 60.4 % (804). Known gaps: the reference keeps a final d voiced before brackets and dashes, and reads "een" as the numeral in some contexts.
+
+**French** (`fr`, FLORES-200 devtest, 1,012 sentences, scored once): PER **0.98 %**, without stress 0.79 %, identical sentences 54.8 %; sentences without digits 0.76 %. Development set (FLORES dev): 0.94 %. By word (862 aligned sentences): words in the word table 1.6 % wrong (11,236), listed words read by the rules 1.6 % (8,354), words outside the word list 34.6 % (332), tokens with an apostrophe, hyphen or digit 6.9 % (1,425). Known gaps: liaison before h aspiré and before numbers, the stress of *sont* and *ont* before a participle, spaces as thousands separators.
+
+**Word-table model (German, Dutch, French).** After the scorings above, a letter-to-sound model was added to the word tables: back-off tables over letter contexts, trained on the full word lists (139 k German, 80 k Dutch, 100 k French words), with stress marks chosen so that the language's own stress rule gives the reference pattern. It reads words the table does not list, and the tables now keep only the words the model and the rules get wrong (`de.ucd` 54 k → 16 k entries, 748 → 357 KB; `nl.ucd` 41 k → 12 k, 512 → 231 KB; `fr.ucd` 24 k → 12 k, 225 → 170 KB). The model's settings were chosen on words held out of its own training list (every tenth word: German 62.1 → 69.0 % of those words right, Dutch 48.6 → 59.4 %, French 83.7 → 86.4 %), not on FLORES. The FLORES-200 held-out sentences were then scored again (one earlier variant of the model was also scored on them), so these are not first scorings:
+
+| | PER | Without stress | Identical sentences | Sentences without digits | Listed words wrong | Words outside the list wrong |
+|---|---|---|---|---|---|---|
+| German | **1.01 %** (was 1.29 %) | 0.57 % | 59.0 % | 0.82 % | 0.1 % of 16,360 | 46.7 % of 811 (was 53.8 %) |
+| Dutch | **1.77 %** (was 1.91 %) | 1.11 % | 37.3 % | 1.39 % | 1.8 % of 18,370 | 54.7 % of 803 (was 60.4 %) |
+| French | **0.85 %** (was 0.98 %) | 0.69 % | 57.2 % | 0.65 % | 1.6 % of 19,592 | 32.4 % of 330 (was 34.6 %) |
+
+Speed against the same espeak-ng voices with the model in place (p50 per held-out sentence, one thread, a busy machine): German 2.4×, Dutch 1.8×, French 2.8×.
+
+**Spanish** (`es`, FLORES-200 devtest, 1,012 sentences, scored once): PER **0.74 %**, without
+stress 0.57 %, identical sentences 66.3 %; sentences without digits 0.45 %. Development set (FLORES
+dev, used for the rules): 0.73 %.
+
+**Urdu and Sindhi** (FLORES-200 devtest, 1,012 sentences each; `python tools/eval/run_eval.py --lang
+ur --set heldout`): PER **1.44 %** (Urdu) and **1.52 %** (Sindhi), without stress 1.08 % and 1.15 %,
+identical sentences 56.1 % and 51.1 %. The word tables are built from corpus word lists (120 k Urdu,
+61 k Sindhi words), not from FLORES, but they contain many held-out words, so word errors are
+reported by group (aligned sentences only):
+
+| Held-out words | Urdu: words / differ | Sindhi: words / differ |
+| --- | ---: | ---: |
+| in the word table | 13,517 / 0.4 % | 7,950 / 0.4 % |
+| in the word lists, read by the letter rules | 8,296 / 0.9 % | 11,335 / 0.8 % |
+| outside the word lists | 719 / 47.6 % | 895 / 29.8 % |
+
+This is the second scoring of these held-out halves. The first (with 40 k / 20 k-word tables and the
+earlier letter rules) gave PER 2.18 % and 2.79 %; its "outside the table" figure of 27 % counted
+words with attached Arabic punctuation (گیا۔) as outside the table, so it is not comparable with the
+last row. Development halves: Urdu 2.17 → 1.49 %, Sindhi 2.79 → 1.45 %.
+
 ### Breakdown
 
 **By kind of edit** (share of all edit operations, held-out):
@@ -605,3 +642,158 @@ was rebuilt from espeak-ng's unpunctuated output (plus a final full stop), while
 clause punctuation: ignoring punctuation, 298 of the 300 token strings are identical. The uccharan English side was run
 with misaki's JSON dictionaries loaded; the built-in compiled copy gives byte-identical tokens on
 all 6 000 English evaluation sentences.
+
+## 7. Sound-alike matching
+
+```sh
+python tools/eval/soundalike/build_items.py                    # sentences from the term sets
+python tools/eval/soundalike/make_confusions.py --models /models --out raw.jsonl   # voices and recognisers
+python tools/eval/soundalike/make_confusions.py --merge raw.jsonl --out tools/eval/soundalike/data/confusions.jsonl
+python tools/eval/soundalike/eval.py --split dev               # thresholds are chosen here
+python tools/eval/soundalike/eval.py --split heldout --systems uccharan,uccharan-plain,uccharan-words,chars,metaphone \
+    --thresholds uccharan=0.80,uccharan-plain=0.80,uccharan-words=0.80,chars=0.84,metaphone=1.0 \
+    --out tools/eval/results/soundalike_heldout.json
+python tools/eval/soundalike/eval.py --speed --out tools/eval/results/soundalike_speed.json
+```
+
+Run on 2026-11-14. **What is measured.** [Sound-alike matching](soundalike.md) is given the whole
+vocabulary and a transcript and corrects what it finds. Three things can happen: a term the
+recogniser got wrong is put back (*recovery*), another span or another term is corrected (*wrong
+correction*), or a sentence that has no term in it is changed (*false correction*).
+
+**Terms** (hand-written, `tools/eval/soundalike/terms/`): 310 Indian personal names (given names
+and surnames from across the country, each with its Devanagari form), 173 brand and product names
+(Indian and international), 168 technical and domain terms (software, Indian finance and
+administration, medicines, Hindi words used in English). 97 of the brands and terms carry a spoken
+form (`pay T M`, `engine X`, `cube control`), as a word list would. Every term belongs to the
+development or the held-out half by a hash of its spelling; all 651 are in the vocabulary for every
+transcript of either half, as they would be in use.
+
+**Transcripts** (`data/confusions.jsonl`): each term is put into an English sentence, a Hindi
+sentence in Devanagari (a name in Devanagari; brands and jargon in Latin script, as they are
+written in India) and a romanised Hindi sentence, from six to eight hand-written templates per
+kind. The 1 953 sentences are spoken by synthetic voices through sherpa-onnx 2.0.1 (Piper
+`en_US-amy-low` and `hi_IN-rohan-medium`; Kokoro v1.0 speakers 3, 11, 24 for English and 31, 33
+for Hindi; two voices for a name in an English sentence, one otherwise) and transcribed by small
+recognisers (Whisper tiny and base and Moonshine tiny for English; Whisper base told the language
+is Hindi; for the romanised sentences also Whisper base told it is English): 2 263 recordings,
+4 836 transcripts. Whisper base writes Hindi speech in Devanagari, in Arabic script or in Latin
+letters as it pleases, and translates when told the speech is English; all of it is kept, because
+a matcher behind a recogniser is handed exactly that. A further 259 mishearings were written by
+hand (`terms/mishearings.tsv`: *Coat Harry*, *cube cuddle*, *ज़ोमैटो*). Transcripts that are equal
+for the same term count once. The names are also scored the other way round: the vocabulary holds
+their Devanagari forms and the transcripts are the Latin-script ones.
+
+**Sentences without a term**: per half, 500 Tatoeba sentences (the held-out half has 100 Sherlock
+Holmes sentences among its 300 English ones) and 30 hand-written romanised Hindi ones, as written,
+plus what the recognisers made of half of them (265 and 270 recordings).
+
+**Systems.** *uccharan*: the matcher at its defaults, with the term sets as a word list (spoken
+forms included). *Plain list*: the same without the spoken forms. *Character edit distance*: one
+minus the Levenshtein distance between the letters of a span and of a term (or its spoken form),
+over the longer of the two. *Metaphone*: the same over Metaphone codes (the `jellyfish`
+implementation). The baselines search the same spans of one to three words and settle overlaps the
+same way; they have no notion of ordinary words and cannot cross scripts. Each baseline runs at the
+lowest threshold that changes at most 1 % of the development sentences without a term (Metaphone
+never gets there: 40 % at an exact match of codes). For uccharan that rule gave 0.65; its default
+was set to 0.80, because below it wrong corrections on the development half rise quickly (26 at
+0.80, 57 at 0.70, 119 at 0.65). The other two thresholds (0.90 for uncertain spans, 0.92 for
+ordinary words), the costs and the pre-filter were also settled on the development half; the
+held-out half was scored once, after that.
+
+### Held-out results
+
+| System | Threshold | Terms put back | Wrong corrections | Sentences without a term that were changed | Precision |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| **uccharan**, word list with spoken forms | 0.80 | 43.9 % (1118 / 2546) | 23 | 0.3 % (2 / 775) | 97.8 % |
+| uccharan, plain list of terms | 0.80 | 43.4 % (1105 / 2546) | 24 | 0.3 % (2 / 775) | 97.7 % |
+| character edit distance | 0.84 | 8.8 % (224 / 2546) | 5 | 0.9 % (7 / 775) | 94.5 % |
+| Metaphone codes | 1.00 | 18.7 % (477 / 2546) | 1455 | 38.2 % (296 / 775) | 19.9 % |
+
+Of the sentences without a term, uccharan changed none of the 397 English ones and 2 of the 378
+Hindi and romanised Hindi ones (*गाना* "song" became the brand "Gaana"; a recogniser's *سنائد* became
+"Sunita"); on the development half 6 of 725. *Wrong corrections* count every correction to
+something other than the sentence's term, including a term that sounds the same as the right one
+(`Sentho` to "Sandhu" where "Senthil" was said).
+
+Passing the words that occur twice or more in the development sentences as `ordinary_words`
+(`uccharan-words`) changed nothing on the held-out half: the same 2 sentences.
+
+### By kind of transcript (uccharan, held-out)
+
+| Transcripts (Latin-script vocabulary unless said) | Term not written right | Put back | Wrong corrections |
+| --- | ---: | ---: | ---: |
+| English sentences | 857 | 64.2 % (550) | 11 |
+| Hindi sentences written in Devanagari by the recogniser | 30 | 50.0 % (15) | 0 |
+| Hindi sentences written in Arabic script by the recogniser | 431 | 19.5 % (84) | 0 |
+| Hindi and Hinglish sentences written in Latin letters (or translated) | 375 | 25.1 % (94) | 7 |
+| Latin-script transcripts against the names in Devanagari | 853 | 44.0 % (375) | 5 |
+| *of the Latin-vocabulary rows:* | | | |
+| Personal names | 904 | 46.8 % (423) | 14 |
+| Brands and products | 385 | 36.6 % (141) | 1 |
+| Technical and domain terms | 404 | 44.3 % (179) | 3 |
+| Terms with a spoken form | 273 | 50.9 % (139) | 3 |
+| Terms without one | 1420 | 42.5 % (604) | 15 |
+| Hand-written mishearings | 132 | 76.5 % (101) | 0 |
+| Recogniser transcripts | 2414 | 42.1 % (1017) | 23 |
+
+- Spoken forms matter where the spelling hides the sound: for the terms that have one, recovery is
+  46.2 % from the plain list and 50.9 % with them (development half: 38.0 % and 52.0 %).
+- "Term not written right" includes transcripts no matcher could repair: Whisper told that
+  romanised Hindi is English answers with a translation (*"We will come to the wedding in the
+  meeting tomorrow"* for a sentence about Vinod), and the Arabic-script transcripts drop most short
+  vowels. That, not the cross-script comparison, is why those rows are low: Devanagari transcripts
+  recover half of their terms, and the Devanagari vocabulary 44 % from Latin transcripts.
+- The pre-filter costs almost nothing: on the development half, comparing every span with every
+  term recovers 1 281 terms against 1 278 (and makes 32 wrong corrections against 26).
+- Without the romanised-Indic reading of Latin-script words, recovery on the development half
+  falls from 43.6 % to 36.6 %.
+
+### Precision and recall across thresholds (held-out)
+
+`threshold` varies; uncertain spans still need 0.90 and ordinary words 0.92.
+
+| `threshold` | 0.70 | 0.75 | 0.80 | 0.85 | 0.90 | 0.95 | 1.00 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Terms put back (recall) | 50.1 % | 47.6 % | 43.9 % | 39.2 % | 30.6 % | 13.8 % | 5.2 % |
+| Precision | 94.2 % | 95.7 % | 97.8 % | 98.7 % | 99.4 % | 100.0 % | 100.0 % |
+| Sentences without a term that were changed | 0.9 % | 0.7 % | 0.3 % | 0.3 % | 0.3 % | 0.0 % | 0.0 % |
+| Wrong corrections | 71 | 49 | 23 | 11 | 3 | 0 | 0 |
+
+The baselines at the same thresholds (terms put back / sentences without a term that were changed):
+
+| | 0.70 | 0.75 | 0.80 | 0.85 | 0.90 | 0.95 | 1.00 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| character edit distance | 20.8 % / 22.8 % | 17.8 % / 19.2 % | 15.0 % / 6.5 % | 8.7 % / 0.9 % | 4.6 % / 0.4 % | 3.7 % / 0.4 % | 3.7 % / 0.4 % |
+| Metaphone codes | 27.3 % / 59.7 % | 27.1 % / 59.7 % | 23.5 % / 43.6 % | 19.6 % / 38.2 % | 18.7 % / 38.2 % | 18.7 % / 38.2 % | 18.7 % / 38.2 % |
+
+### Speed
+
+`uccharan -l en-us --match-terms FILE --match-stats` on 3 000 held-out transcripts (7.8 words
+each), one thread, best of three runs on the development machine while it was busy with other work.
+The vocabularies are the 651 terms filled up with pairs of the names and with English words.
+
+| Terms | Stored sequences | Building the index | Transcripts per second | Words per second |
+| ---: | ---: | ---: | ---: | ---: |
+| 1 000 | 3 289 | 0.04 s | 7 844 | 61 036 |
+| 10 000 | 33 409 | 0.30 s | 1 468 | 11 425 |
+| 50 000 | 182 094 | 2.60 s | 315 | 2 450 |
+
+Every word starts up to three spans, each looked up in up to three readings, so the last row is
+about 7 000 spans a second. Above 10 000 terms the time goes into reading the pre-filter's
+lists, which grow with the vocabulary.
+
+With these filler vocabularies the matcher also shows its limit: 1.4 % of the development
+sentences without a term change against the 1 000 terms, and 11.6 % against the 10 000, because
+rare English words (*alighted*, *likelier*) sound like common ones (*lighted*, *likely*). A large
+vocabulary of ordinary-looking words needs recogniser confidences or higher thresholds.
+
+### What this does not show
+
+- The speech is synthetic and the voices read uccharan's own phonemes, so a term is pronounced the
+  way one of its stored readings says. Real speakers, accents and larger recognisers make other
+  errors, and a term uccharan reads wrongly would be missed where here it is found.
+- The recognisers give no word confidences in this set-up, so the confidence gate is covered by
+  unit tests only.
+- Hindi precision rests on a hand-written list of about 950 frequent words; the 2 false
+  corrections above are words outside it.

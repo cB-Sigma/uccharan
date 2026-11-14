@@ -1,0 +1,978 @@
+{
+ "split": "dev",
+ "cases": 3976,
+ "results": [
+  {
+   "system": "uccharan",
+   "threshold": 0.65,
+   "overall": {
+    "with_term": 3251,
+    "term_already_right": 321,
+    "corrupted": 2930,
+    "recovered": 1507,
+    "recovery": 0.5143,
+    "wrong_corrections": 119,
+    "without_term": 725,
+    "false_corrected": 7,
+    "false_correction_rate": 0.0097,
+    "precision": 0.9228
+   },
+   "groups": {
+    "English transcripts, Latin vocabulary": {
+     "with_term": 1213,
+     "term_already_right": 214,
+     "corrupted": 999,
+     "recovered": 709,
+     "recovery": 0.7097,
+     "wrong_corrections": 48,
+     "without_term": 363,
+     "false_corrected": 3,
+     "false_correction_rate": 0.0083,
+     "precision": 0.9329
+    },
+    "Hindi sentences, Devanagari transcript, Latin vocabulary": {
+     "with_term": 38,
+     "term_already_right": 0,
+     "corrupted": 38,
+     "recovered": 19,
+     "recovery": 0.5,
+     "wrong_corrections": 1,
+     "without_term": 200,
+     "false_corrected": 1,
+     "false_correction_rate": 0.005,
+     "precision": 0.9048
+    },
+    "Hindi sentences, Arabic-script transcript, Latin vocabulary": {
+     "with_term": 499,
+     "term_already_right": 33,
+     "corrupted": 466,
+     "recovered": 80,
+     "recovery": 0.1717,
+     "wrong_corrections": 5,
+     "without_term": 83,
+     "false_corrected": 2,
+     "false_correction_rate": 0.0241,
+     "precision": 0.9195
+    },
+    "Hindi and Hinglish sentences, Latin transcript, Latin vocabulary": {
+     "with_term": 507,
+     "term_already_right": 74,
+     "corrupted": 433,
+     "recovered": 138,
+     "recovery": 0.3187,
+     "wrong_corrections": 33,
+     "without_term": 79,
+     "false_corrected": 1,
+     "false_correction_rate": 0.0127,
+     "precision": 0.8023
+    },
+    "Latin transcripts, Devanagari vocabulary (names)": {
+     "with_term": 994,
+     "term_already_right": 0,
+     "corrupted": 994,
+     "recovered": 561,
+     "recovery": 0.5644,
+     "wrong_corrections": 32,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.946
+    },
+    "names": {
+     "with_term": 1259,
+     "term_already_right": 202,
+     "corrupted": 1057,
+     "recovered": 560,
+     "recovery": 0.5298,
+     "wrong_corrections": 56,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9091
+    },
+    "brands": {
+     "with_term": 496,
+     "term_already_right": 54,
+     "corrupted": 442,
+     "recovered": 187,
+     "recovery": 0.4231,
+     "wrong_corrections": 13,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.935
+    },
+    "jargon": {
+     "with_term": 502,
+     "term_already_right": 65,
+     "corrupted": 437,
+     "recovered": 199,
+     "recovery": 0.4554,
+     "wrong_corrections": 18,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9171
+    },
+    "terms with a spoken-form hint": {
+     "with_term": 253,
+     "term_already_right": 24,
+     "corrupted": 229,
+     "recovered": 121,
+     "recovery": 0.5284,
+     "wrong_corrections": 7,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9453
+    },
+    "terms without a hint": {
+     "with_term": 2004,
+     "term_already_right": 297,
+     "corrupted": 1707,
+     "recovered": 825,
+     "recovery": 0.4833,
+     "wrong_corrections": 80,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9116
+    },
+    "hand-written mishearings": {
+     "with_term": 127,
+     "term_already_right": 0,
+     "corrupted": 127,
+     "recovered": 107,
+     "recovery": 0.8425,
+     "wrong_corrections": 1,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9907
+    },
+    "recogniser transcripts": {
+     "with_term": 3124,
+     "term_already_right": 321,
+     "corrupted": 2803,
+     "recovered": 1400,
+     "recovery": 0.4995,
+     "wrong_corrections": 118,
+     "without_term": 195,
+     "false_corrected": 4,
+     "false_correction_rate": 0.0205,
+     "precision": 0.9198
+    },
+    "sentences as written (no term)": {
+     "with_term": 0,
+     "term_already_right": 0,
+     "corrupted": 0,
+     "recovered": 0,
+     "recovery": null,
+     "wrong_corrections": 0,
+     "without_term": 530,
+     "false_corrected": 3,
+     "false_correction_rate": 0.0057,
+     "precision": 0.0
+    },
+    "English sentences without a term": {
+     "with_term": 0,
+     "term_already_right": 0,
+     "corrupted": 0,
+     "recovered": 0,
+     "recovery": null,
+     "wrong_corrections": 0,
+     "without_term": 363,
+     "false_corrected": 3,
+     "false_correction_rate": 0.0083,
+     "precision": 0.0
+    },
+    "Hindi and Hinglish sentences without a term": {
+     "with_term": 0,
+     "term_already_right": 0,
+     "corrupted": 0,
+     "recovered": 0,
+     "recovery": null,
+     "wrong_corrections": 0,
+     "without_term": 362,
+     "false_corrected": 4,
+     "false_correction_rate": 0.011,
+     "precision": 0.0
+    }
+   },
+   "curve": {
+    "0.7": {
+     "recovery": 0.4983,
+     "precision": 0.9586,
+     "false_correction_rate": 0.0083,
+     "wrong_corrections": 57
+    },
+    "0.75": {
+     "recovery": 0.472,
+     "precision": 0.9665,
+     "false_correction_rate": 0.0083,
+     "wrong_corrections": 42
+    },
+    "0.8": {
+     "recovery": 0.4358,
+     "precision": 0.9756,
+     "false_correction_rate": 0.0083,
+     "wrong_corrections": 26
+    },
+    "0.85": {
+     "recovery": 0.3703,
+     "precision": 0.9757,
+     "false_correction_rate": 0.0083,
+     "wrong_corrections": 21
+    },
+    "0.9": {
+     "recovery": 0.2908,
+     "precision": 0.9715,
+     "false_correction_rate": 0.0083,
+     "wrong_corrections": 19
+    },
+    "0.95": {
+     "recovery": 0.1195,
+     "precision": 0.9831,
+     "false_correction_rate": 0.0041,
+     "wrong_corrections": 3
+    },
+    "1.0": {
+     "recovery": 0.0474,
+     "precision": 0.9789,
+     "false_correction_rate": 0.0,
+     "wrong_corrections": 3
+    }
+   },
+   "seconds": 3.6
+  },
+  {
+   "system": "uccharan-plain",
+   "threshold": 0.65,
+   "overall": {
+    "with_term": 3251,
+    "term_already_right": 321,
+    "corrupted": 2930,
+    "recovered": 1475,
+    "recovery": 0.5034,
+    "wrong_corrections": 121,
+    "without_term": 725,
+    "false_corrected": 7,
+    "false_correction_rate": 0.0097,
+    "precision": 0.9201
+   },
+   "groups": {
+    "English transcripts, Latin vocabulary": {
+     "with_term": 1213,
+     "term_already_right": 214,
+     "corrupted": 999,
+     "recovered": 693,
+     "recovery": 0.6937,
+     "wrong_corrections": 47,
+     "without_term": 363,
+     "false_corrected": 3,
+     "false_correction_rate": 0.0083,
+     "precision": 0.9327
+    },
+    "Hindi sentences, Devanagari transcript, Latin vocabulary": {
+     "with_term": 38,
+     "term_already_right": 0,
+     "corrupted": 38,
+     "recovered": 16,
+     "recovery": 0.4211,
+     "wrong_corrections": 1,
+     "without_term": 200,
+     "false_corrected": 1,
+     "false_correction_rate": 0.005,
+     "precision": 0.8889
+    },
+    "Hindi sentences, Arabic-script transcript, Latin vocabulary": {
+     "with_term": 499,
+     "term_already_right": 33,
+     "corrupted": 466,
+     "recovered": 72,
+     "recovery": 0.1545,
+     "wrong_corrections": 6,
+     "without_term": 83,
+     "false_corrected": 2,
+     "false_correction_rate": 0.0241,
+     "precision": 0.9
+    },
+    "Hindi and Hinglish sentences, Latin transcript, Latin vocabulary": {
+     "with_term": 507,
+     "term_already_right": 74,
+     "corrupted": 433,
+     "recovered": 133,
+     "recovery": 0.3072,
+     "wrong_corrections": 35,
+     "without_term": 79,
+     "false_corrected": 1,
+     "false_correction_rate": 0.0127,
+     "precision": 0.787
+    },
+    "Latin transcripts, Devanagari vocabulary (names)": {
+     "with_term": 994,
+     "term_already_right": 0,
+     "corrupted": 994,
+     "recovered": 561,
+     "recovery": 0.5644,
+     "wrong_corrections": 32,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.946
+    },
+    "names": {
+     "with_term": 1259,
+     "term_already_right": 202,
+     "corrupted": 1057,
+     "recovered": 560,
+     "recovery": 0.5298,
+     "wrong_corrections": 56,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9091
+    },
+    "brands": {
+     "with_term": 496,
+     "term_already_right": 54,
+     "corrupted": 442,
+     "recovered": 176,
+     "recovery": 0.3982,
+     "wrong_corrections": 14,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9263
+    },
+    "jargon": {
+     "with_term": 502,
+     "term_already_right": 65,
+     "corrupted": 437,
+     "recovered": 178,
+     "recovery": 0.4073,
+     "wrong_corrections": 19,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9036
+    },
+    "terms with a spoken-form hint": {
+     "with_term": 253,
+     "term_already_right": 24,
+     "corrupted": 229,
+     "recovered": 89,
+     "recovery": 0.3886,
+     "wrong_corrections": 9,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9082
+    },
+    "terms without a hint": {
+     "with_term": 2004,
+     "term_already_right": 297,
+     "corrupted": 1707,
+     "recovered": 825,
+     "recovery": 0.4833,
+     "wrong_corrections": 80,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9116
+    },
+    "hand-written mishearings": {
+     "with_term": 127,
+     "term_already_right": 0,
+     "corrupted": 127,
+     "recovered": 96,
+     "recovery": 0.7559,
+     "wrong_corrections": 1,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9897
+    },
+    "recogniser transcripts": {
+     "with_term": 3124,
+     "term_already_right": 321,
+     "corrupted": 2803,
+     "recovered": 1379,
+     "recovery": 0.492,
+     "wrong_corrections": 120,
+     "without_term": 195,
+     "false_corrected": 4,
+     "false_correction_rate": 0.0205,
+     "precision": 0.9175
+    },
+    "sentences as written (no term)": {
+     "with_term": 0,
+     "term_already_right": 0,
+     "corrupted": 0,
+     "recovered": 0,
+     "recovery": null,
+     "wrong_corrections": 0,
+     "without_term": 530,
+     "false_corrected": 3,
+     "false_correction_rate": 0.0057,
+     "precision": 0.0
+    },
+    "English sentences without a term": {
+     "with_term": 0,
+     "term_already_right": 0,
+     "corrupted": 0,
+     "recovered": 0,
+     "recovery": null,
+     "wrong_corrections": 0,
+     "without_term": 363,
+     "false_corrected": 3,
+     "false_correction_rate": 0.0083,
+     "precision": 0.0
+    },
+    "Hindi and Hinglish sentences without a term": {
+     "with_term": 0,
+     "term_already_right": 0,
+     "corrupted": 0,
+     "recovered": 0,
+     "recovery": null,
+     "wrong_corrections": 0,
+     "without_term": 362,
+     "false_corrected": 4,
+     "false_correction_rate": 0.011,
+     "precision": 0.0
+    }
+   },
+   "curve": {
+    "0.7": {
+     "recovery": 0.4877,
+     "precision": 0.9565,
+     "false_correction_rate": 0.0083,
+     "wrong_corrections": 59
+    },
+    "0.75": {
+     "recovery": 0.4614,
+     "precision": 0.9657,
+     "false_correction_rate": 0.0083,
+     "wrong_corrections": 42
+    },
+    "0.8": {
+     "recovery": 0.4249,
+     "precision": 0.9749,
+     "false_correction_rate": 0.0083,
+     "wrong_corrections": 26
+    },
+    "0.85": {
+     "recovery": 0.3587,
+     "precision": 0.9741,
+     "false_correction_rate": 0.0083,
+     "wrong_corrections": 22
+    },
+    "0.9": {
+     "recovery": 0.2775,
+     "precision": 0.969,
+     "false_correction_rate": 0.0083,
+     "wrong_corrections": 20
+    },
+    "0.95": {
+     "recovery": 0.1092,
+     "precision": 0.9816,
+     "false_correction_rate": 0.0041,
+     "wrong_corrections": 3
+    },
+    "1.0": {
+     "recovery": 0.041,
+     "precision": 0.9756,
+     "false_correction_rate": 0.0,
+     "wrong_corrections": 3
+    }
+   },
+   "seconds": 2.5
+  },
+  {
+   "system": "chars",
+   "threshold": 0.84,
+   "overall": {
+    "with_term": 3251,
+    "term_already_right": 321,
+    "corrupted": 2930,
+    "recovered": 230,
+    "recovery": 0.0785,
+    "wrong_corrections": 7,
+    "without_term": 725,
+    "false_corrected": 1,
+    "false_correction_rate": 0.0014,
+    "precision": 0.9664
+   },
+   "groups": {
+    "English transcripts, Latin vocabulary": {
+     "with_term": 1213,
+     "term_already_right": 214,
+     "corrupted": 999,
+     "recovered": 174,
+     "recovery": 0.1742,
+     "wrong_corrections": 1,
+     "without_term": 363,
+     "false_corrected": 1,
+     "false_correction_rate": 0.0028,
+     "precision": 0.9886
+    },
+    "Hindi sentences, Devanagari transcript, Latin vocabulary": {
+     "with_term": 38,
+     "term_already_right": 0,
+     "corrupted": 38,
+     "recovered": 1,
+     "recovery": 0.0263,
+     "wrong_corrections": 0,
+     "without_term": 200,
+     "false_corrected": 0,
+     "false_correction_rate": 0.0,
+     "precision": 1.0
+    },
+    "Hindi sentences, Arabic-script transcript, Latin vocabulary": {
+     "with_term": 499,
+     "term_already_right": 33,
+     "corrupted": 466,
+     "recovered": 12,
+     "recovery": 0.0258,
+     "wrong_corrections": 0,
+     "without_term": 83,
+     "false_corrected": 0,
+     "false_correction_rate": 0.0,
+     "precision": 1.0
+    },
+    "Hindi and Hinglish sentences, Latin transcript, Latin vocabulary": {
+     "with_term": 507,
+     "term_already_right": 74,
+     "corrupted": 433,
+     "recovered": 43,
+     "recovery": 0.0993,
+     "wrong_corrections": 6,
+     "without_term": 79,
+     "false_corrected": 0,
+     "false_correction_rate": 0.0,
+     "precision": 0.8776
+    },
+    "Latin transcripts, Devanagari vocabulary (names)": {
+     "with_term": 994,
+     "term_already_right": 0,
+     "corrupted": 994,
+     "recovered": 0,
+     "recovery": 0.0,
+     "wrong_corrections": 0,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": null
+    },
+    "names": {
+     "with_term": 1259,
+     "term_already_right": 202,
+     "corrupted": 1057,
+     "recovered": 88,
+     "recovery": 0.0833,
+     "wrong_corrections": 5,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9462
+    },
+    "brands": {
+     "with_term": 496,
+     "term_already_right": 54,
+     "corrupted": 442,
+     "recovered": 60,
+     "recovery": 0.1357,
+     "wrong_corrections": 1,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9836
+    },
+    "jargon": {
+     "with_term": 502,
+     "term_already_right": 65,
+     "corrupted": 437,
+     "recovered": 82,
+     "recovery": 0.1876,
+     "wrong_corrections": 1,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.988
+    },
+    "terms with a spoken-form hint": {
+     "with_term": 253,
+     "term_already_right": 24,
+     "corrupted": 229,
+     "recovered": 88,
+     "recovery": 0.3843,
+     "wrong_corrections": 2,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.9778
+    },
+    "terms without a hint": {
+     "with_term": 2004,
+     "term_already_right": 297,
+     "corrupted": 1707,
+     "recovered": 142,
+     "recovery": 0.0832,
+     "wrong_corrections": 5,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.966
+    },
+    "hand-written mishearings": {
+     "with_term": 127,
+     "term_already_right": 0,
+     "corrupted": 127,
+     "recovered": 48,
+     "recovery": 0.378,
+     "wrong_corrections": 0,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 1.0
+    },
+    "recogniser transcripts": {
+     "with_term": 3124,
+     "term_already_right": 321,
+     "corrupted": 2803,
+     "recovered": 182,
+     "recovery": 0.0649,
+     "wrong_corrections": 7,
+     "without_term": 195,
+     "false_corrected": 0,
+     "false_correction_rate": 0.0,
+     "precision": 0.963
+    },
+    "sentences as written (no term)": {
+     "with_term": 0,
+     "term_already_right": 0,
+     "corrupted": 0,
+     "recovered": 0,
+     "recovery": null,
+     "wrong_corrections": 0,
+     "without_term": 530,
+     "false_corrected": 1,
+     "false_correction_rate": 0.0019,
+     "precision": 0.0
+    },
+    "English sentences without a term": {
+     "with_term": 0,
+     "term_already_right": 0,
+     "corrupted": 0,
+     "recovered": 0,
+     "recovery": null,
+     "wrong_corrections": 0,
+     "without_term": 363,
+     "false_corrected": 1,
+     "false_correction_rate": 0.0028,
+     "precision": 0.0
+    },
+    "Hindi and Hinglish sentences without a term": {
+     "with_term": 0,
+     "term_already_right": 0,
+     "corrupted": 0,
+     "recovered": 0,
+     "recovery": null,
+     "wrong_corrections": 0,
+     "without_term": 362,
+     "false_corrected": 0,
+     "false_correction_rate": 0.0,
+     "precision": null
+    }
+   },
+   "curve": {
+    "0.7": {
+     "recovery": 0.2058,
+     "precision": 0.4722,
+     "false_correction_rate": 0.2566,
+     "wrong_corrections": 455
+    },
+    "0.75": {
+     "recovery": 0.1737,
+     "precision": 0.4951,
+     "false_correction_rate": 0.2193,
+     "wrong_corrections": 339
+    },
+    "0.8": {
+     "recovery": 0.1447,
+     "precision": 0.619,
+     "false_correction_rate": 0.0483,
+     "wrong_corrections": 220
+    },
+    "0.85": {
+     "recovery": 0.0778,
+     "precision": 0.9661,
+     "false_correction_rate": 0.0014,
+     "wrong_corrections": 7
+    },
+    "0.9": {
+     "recovery": 0.0382,
+     "precision": 0.9825,
+     "false_correction_rate": 0.0,
+     "wrong_corrections": 2
+    },
+    "0.95": {
+     "recovery": 0.0307,
+     "precision": 0.9783,
+     "false_correction_rate": 0.0,
+     "wrong_corrections": 2
+    },
+    "1.0": {
+     "recovery": 0.0307,
+     "precision": 0.9783,
+     "false_correction_rate": 0.0,
+     "wrong_corrections": 2
+    }
+   },
+   "seconds": 6.0
+  },
+  {
+   "system": "metaphone",
+   "threshold": 1.0,
+   "overall": {
+    "with_term": 3251,
+    "term_already_right": 321,
+    "corrupted": 2930,
+    "recovered": 570,
+    "recovery": 0.1945,
+    "wrong_corrections": 1818,
+    "without_term": 725,
+    "false_corrected": 291,
+    "false_correction_rate": 0.4014,
+    "precision": 0.2011
+   },
+   "groups": {
+    "English transcripts, Latin vocabulary": {
+     "with_term": 1213,
+     "term_already_right": 214,
+     "corrupted": 999,
+     "recovered": 452,
+     "recovery": 0.4525,
+     "wrong_corrections": 1262,
+     "without_term": 363,
+     "false_corrected": 234,
+     "false_correction_rate": 0.6446,
+     "precision": 0.2185
+    },
+    "Hindi sentences, Devanagari transcript, Latin vocabulary": {
+     "with_term": 38,
+     "term_already_right": 0,
+     "corrupted": 38,
+     "recovered": 1,
+     "recovery": 0.0263,
+     "wrong_corrections": 1,
+     "without_term": 200,
+     "false_corrected": 0,
+     "false_correction_rate": 0.0,
+     "precision": 0.5
+    },
+    "Hindi sentences, Arabic-script transcript, Latin vocabulary": {
+     "with_term": 499,
+     "term_already_right": 33,
+     "corrupted": 466,
+     "recovered": 25,
+     "recovery": 0.0536,
+     "wrong_corrections": 89,
+     "without_term": 83,
+     "false_corrected": 12,
+     "false_correction_rate": 0.1446,
+     "precision": 0.1866
+    },
+    "Hindi and Hinglish sentences, Latin transcript, Latin vocabulary": {
+     "with_term": 507,
+     "term_already_right": 74,
+     "corrupted": 433,
+     "recovered": 92,
+     "recovery": 0.2125,
+     "wrong_corrections": 466,
+     "without_term": 79,
+     "false_corrected": 45,
+     "false_correction_rate": 0.5696,
+     "precision": 0.1463
+    },
+    "Latin transcripts, Devanagari vocabulary (names)": {
+     "with_term": 994,
+     "term_already_right": 0,
+     "corrupted": 994,
+     "recovered": 0,
+     "recovery": 0.0,
+     "wrong_corrections": 0,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": null
+    },
+    "names": {
+     "with_term": 1259,
+     "term_already_right": 202,
+     "corrupted": 1057,
+     "recovered": 336,
+     "recovery": 0.3179,
+     "wrong_corrections": 1285,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.2073
+    },
+    "brands": {
+     "with_term": 496,
+     "term_already_right": 54,
+     "corrupted": 442,
+     "recovered": 113,
+     "recovery": 0.2557,
+     "wrong_corrections": 210,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.3498
+    },
+    "jargon": {
+     "with_term": 502,
+     "term_already_right": 65,
+     "corrupted": 437,
+     "recovered": 121,
+     "recovery": 0.2769,
+     "wrong_corrections": 323,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.2725
+    },
+    "terms with a spoken-form hint": {
+     "with_term": 253,
+     "term_already_right": 24,
+     "corrupted": 229,
+     "recovered": 83,
+     "recovery": 0.3624,
+     "wrong_corrections": 173,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.3242
+    },
+    "terms without a hint": {
+     "with_term": 2004,
+     "term_already_right": 297,
+     "corrupted": 1707,
+     "recovered": 487,
+     "recovery": 0.2853,
+     "wrong_corrections": 1645,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.2284
+    },
+    "hand-written mishearings": {
+     "with_term": 127,
+     "term_already_right": 0,
+     "corrupted": 127,
+     "recovered": 66,
+     "recovery": 0.5197,
+     "wrong_corrections": 117,
+     "without_term": 0,
+     "false_corrected": 0,
+     "false_correction_rate": null,
+     "precision": 0.3607
+    },
+    "recogniser transcripts": {
+     "with_term": 3124,
+     "term_already_right": 321,
+     "corrupted": 2803,
+     "recovered": 504,
+     "recovery": 0.1798,
+     "wrong_corrections": 1701,
+     "without_term": 195,
+     "false_corrected": 77,
+     "false_correction_rate": 0.3949,
+     "precision": 0.2167
+    },
+    "sentences as written (no term)": {
+     "with_term": 0,
+     "term_already_right": 0,
+     "corrupted": 0,
+     "recovered": 0,
+     "recovery": null,
+     "wrong_corrections": 0,
+     "without_term": 530,
+     "false_corrected": 214,
+     "false_correction_rate": 0.4038,
+     "precision": 0.0
+    },
+    "English sentences without a term": {
+     "with_term": 0,
+     "term_already_right": 0,
+     "corrupted": 0,
+     "recovered": 0,
+     "recovery": null,
+     "wrong_corrections": 0,
+     "without_term": 363,
+     "false_corrected": 234,
+     "false_correction_rate": 0.6446,
+     "precision": 0.0
+    },
+    "Hindi and Hinglish sentences without a term": {
+     "with_term": 0,
+     "term_already_right": 0,
+     "corrupted": 0,
+     "recovered": 0,
+     "recovery": null,
+     "wrong_corrections": 0,
+     "without_term": 362,
+     "false_corrected": 57,
+     "false_correction_rate": 0.1575,
+     "precision": 0.0
+    }
+   },
+   "curve": {
+    "0.7": {
+     "recovery": 0.2754,
+     "precision": 0.1509,
+     "false_correction_rate": 0.5917,
+     "wrong_corrections": 3467
+    },
+    "0.75": {
+     "recovery": 0.273,
+     "precision": 0.1501,
+     "false_correction_rate": 0.5917,
+     "wrong_corrections": 3459
+    },
+    "0.8": {
+     "recovery": 0.2348,
+     "precision": 0.209,
+     "false_correction_rate": 0.451,
+     "wrong_corrections": 2070
+    },
+    "0.85": {
+     "recovery": 0.2017,
+     "precision": 0.207,
+     "false_correction_rate": 0.4014,
+     "wrong_corrections": 1818
+    },
+    "0.9": {
+     "recovery": 0.1945,
+     "precision": 0.2011,
+     "false_correction_rate": 0.4014,
+     "wrong_corrections": 1818
+    },
+    "0.95": {
+     "recovery": 0.1945,
+     "precision": 0.2011,
+     "false_correction_rate": 0.4014,
+     "wrong_corrections": 1818
+    },
+    "1.0": {
+     "recovery": 0.1945,
+     "precision": 0.2011,
+     "false_correction_rate": 0.4014,
+     "wrong_corrections": 1818
+    }
+   },
+   "seconds": 4.8
+  }
+ ]
+}

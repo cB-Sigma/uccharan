@@ -136,3 +136,89 @@ export function respell(
 ): Promise<{ text: string; readback: string; distance: number } | null>;
 /** Convert a word list between TSV, JSON and PLS. */
 export function convertWordlist(text: string, to: "tsv" | "json" | "pls", lang?: string): Promise<string>;
+
+export interface SoundCandidate {
+  /** UTF-16 offsets of the span in the transcript. */
+  start: number;
+  end: number;
+  /** The span as the transcript has it. */
+  text: string;
+  term: string;
+  /** Position of the term in the vocabulary. */
+  index: number;
+  /** Similarity, 0 to 1. */
+  score: number;
+  /** The transcript already has the term here (any case). */
+  exact: boolean;
+  /** `unknown`: an English transcript has a word here that is not in the lexicon; `ordinary`: every word is an ordinary word. */
+  kind: "unknown" | "uncertain" | "ordinary";
+  /** Whitespace-separated words the span covers. */
+  words: [number, number];
+  src: Offsets;
+}
+
+export interface SoundChange {
+  /** UTF-16 offsets of the replaced text in the transcript. */
+  start: number;
+  end: number;
+  /** UTF-16 offsets of the replacement in the new text. */
+  outStart: number;
+  outEnd: number;
+  from: string;
+  to: string;
+  index: number;
+  score: number;
+  caseOnly: boolean;
+  src: Offsets;
+  out: Offsets;
+}
+
+export interface SoundFindOptions {
+  /** Language of the transcript (default `en-us`). */
+  lang?: Lang | string;
+  /** Longest span in words (default 3). */
+  maxWords?: number;
+  /** Lowest score reported (default 0.6). */
+  minScore?: number;
+  /** Report every span and term instead of the best non-overlapping ones. */
+  all?: boolean;
+}
+
+export interface SoundApplyOptions {
+  lang?: Lang | string;
+  maxWords?: number;
+  /** Lowest score that is applied. */
+  threshold?: number;
+  /** Lowest score applied to a span of the `uncertain` kind. */
+  uncertainThreshold?: number;
+  /** Lowest score applied to a span of ordinary words. */
+  ordinaryThreshold?: number;
+  /** Recogniser confidence per whitespace-separated word, 0 to 1. */
+  confidence?: ArrayLike<number>;
+  /** With `confidence`: correct only spans whose mean confidence is at most this (default 0.9). */
+  maxConfidence?: number;
+  /** Restore the term's capitals where only the case differs (default true). */
+  fixCase?: boolean;
+}
+
+export type SoundVocabulary = string | Iterable<string | { word: string; lang?: string; ipa?: string; say?: string }>;
+
+/** A vocabulary prepared for sound-alike matching (see `createSoundIndex`). */
+export class SoundIndex {
+  private constructor();
+  readonly length: number;
+  /** Places in `text` that sound like a term. */
+  find(text: string, options?: SoundFindOptions): SoundCandidate[];
+  /** `text` with what sounds like a term replaced by the term, and every change made. */
+  apply(text: string, options?: SoundApplyOptions): { text: string; changes: SoundChange[]; candidates: SoundCandidate[] };
+  /** Release the WebAssembly memory of the index. */
+  free(): void;
+}
+
+/** Build a sound-alike index (loads English, Hindi and `langs`). */
+export function createSoundIndex(
+  vocabulary: SoundVocabulary,
+  options?: { langs?: (Lang | string)[]; ordinaryWords?: Iterable<string> },
+): Promise<SoundIndex>;
+/** Places in `text` that sound like a term of `vocabulary`. */
+export function matchTerms(text: string, vocabulary: SoundVocabulary | SoundIndex, options?: SoundFindOptions & { langs?: (Lang | string)[] }): Promise<SoundCandidate[]>;

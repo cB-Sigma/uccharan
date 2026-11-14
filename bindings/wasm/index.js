@@ -6,17 +6,19 @@
 import initWasm, * as wasm from "./dist/uccharan_wasm.js";
 import { PACKS } from "./packs.js";
 
-export const LANGUAGES = Object.freeze(["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag"]);
+export const LANGUAGES = Object.freeze(["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag", "es", "de", "nl", "fr"]);
 export const PROFILES = Object.freeze(["espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx"]);
 
-const ALIASES = { en: "en-us", "en-us": "en-us", "en-gb": "en-gb", "en-gb-x-rp": "en-gb", "en-uk": "en-gb", hi: "hi", "hi-in": "hi", bn: "bn", "bn-in": "bn", "bn-bd": "bn", mr: "mr", te: "te", ne: "ne", "ne-np": "ne", kn: "kn", ta: "ta", ml: "ml", as: "as", gu: "gu", bho: "bho", bhojpuri: "bho", mai: "mai", maithili: "mai", pa: "pa", "pa-in": "pa", or: "or", odia: "or", oriya: "or", kok: "kok", gom: "kok", konkani: "kok", si: "si", sinhala: "si", sa: "sa", sanskrit: "sa", ur: "ur", "ur-pk": "ur", urdu: "ur", sd: "sd", sindhi: "sd", mag: "mag", magahi: "mag" };
+const ALIASES = { en: "en-us", "en-us": "en-us", "en-gb": "en-gb", "en-gb-x-rp": "en-gb", "en-uk": "en-gb", hi: "hi", "hi-in": "hi", bn: "bn", "bn-in": "bn", "bn-bd": "bn", mr: "mr", te: "te", ne: "ne", "ne-np": "ne", kn: "kn", ta: "ta", ml: "ml", as: "as", gu: "gu", bho: "bho", bhojpuri: "bho", mai: "mai", maithili: "mai", pa: "pa", "pa-in": "pa", or: "or", odia: "or", oriya: "or", kok: "kok", gom: "kok", konkani: "kok", si: "si", sinhala: "si", sa: "sa", sanskrit: "sa", ur: "ur", "ur-pk": "ur", urdu: "ur", sd: "sd", sindhi: "sd", mag: "mag", magahi: "mag", es: "es", "es-es": "es", spanish: "es", de: "de", "de-de": "de", deu: "de", german: "de", nl: "nl", "nl-nl": "nl", "nl-be": "nl", nld: "nl", dutch: "nl", fr: "fr", "fr-fr": "fr", fra: "fr", french: "fr" };
 const isNode = typeof process !== "undefined" && process.versions != null && process.versions.node != null && typeof window === "undefined";
 
 let ready = null;
 let wasmReady = false;
 let dataBase = new URL("./data/", import.meta.url);
 const loading = new Map();
-const WORD_TABLES = new Set(["ur", "sd"]);
+// Latin-script languages read Latin text themselves.
+const LATIN = new Set(["es", "de", "nl", "fr"]);
+const WORD_TABLES = new Set(["ur", "sd", "de", "nl", "fr"]);
 const tablesLoaded = new Set();
 
 function canonical(lang) {
@@ -162,7 +164,9 @@ export function languagesFor(text, lang = "en-us") {
   const tag = canonical(lang);
   const need = [tag];
   const english = tag === "en-us" || tag === "en-gb";
-  if (!english && HAS_LATIN.test(text)) need.push("en-gb");
+  // Latin-script languages read Latin text themselves.
+  const latin = LATIN.has(tag);
+  if (!english && !latin && HAS_LATIN.test(text)) need.push("en-gb");
   if (tag !== "hi" && HAS_DEVANAGARI.test(text)) need.push("hi");
   return need;
 }
@@ -313,4 +317,108 @@ export async function convertWordlist(text, to, lang = "") {
   await init();
   wasmReady = true;
   return wasm.convertWordlist(text, to, lang ? canonical(lang) : "");
+}
+
+// Sound-alike matching.
+
+function soundCandidates(items) {
+  return items.map((c) => ({
+    start: c.src.utf16[0],
+    end: c.src.utf16[1],
+    text: c.text,
+    term: c.term,
+    index: c.index,
+    score: c.score,
+    exact: c.exact,
+    kind: c.kind,
+    words: c.words,
+    src: c.src,
+  }));
+}
+
+/**
+ * A vocabulary prepared for sound-alike matching; make one with
+ * `createSoundIndex`. `find` and `apply` are synchronous: the language of
+ * the transcript must be loaded (`createSoundIndex` loads English, Hindi and
+ * the languages it is given).
+ */
+export class SoundIndex {
+  constructor(native) {
+    this.native = native;
+  }
+
+  /** Number of terms. */
+  get length() {
+    return this.native.length;
+  }
+
+  /** Places in `text` that sound like a term (UTF-16 `start`/`end`). */
+  find(text, options = {}) {
+    const lang = canonical(options.lang ?? "en-us");
+    const opts = { max_words: options.maxWords ?? 3, min_score: options.minScore ?? 0.6, all: Boolean(options.all) };
+    return soundCandidates(JSON.parse(this.native.findJson(text, lang, JSON.stringify(opts))).candidates);
+  }
+
+  /** `text` with what sounds like a term replaced by the term, and every change made. */
+  apply(text, options = {}) {
+    const lang = canonical(options.lang ?? "en-us");
+    const opts = { max_words: options.maxWords ?? 3, fix_case: options.fixCase !== false };
+    if (options.threshold != null) opts.threshold = options.threshold;
+    if (options.uncertainThreshold != null) opts.uncertain_threshold = options.uncertainThreshold;
+    if (options.ordinaryThreshold != null) opts.ordinary_threshold = options.ordinaryThreshold;
+    if (options.confidence != null) opts.confidence = Array.from(options.confidence);
+    if (options.maxConfidence != null) opts.max_confidence = options.maxConfidence;
+    const r = JSON.parse(this.native.applyJson(text, lang, JSON.stringify(opts)));
+    return {
+      text: r.text,
+      changes: r.changes.map((c) => ({
+        start: c.src.utf16[0],
+        end: c.src.utf16[1],
+        outStart: c.out.utf16[0],
+        outEnd: c.out.utf16[1],
+        from: c.from,
+        to: c.to,
+        index: c.index,
+        score: c.score,
+        caseOnly: c.case_only,
+        src: c.src,
+        out: c.out,
+      })),
+      candidates: soundCandidates(r.candidates),
+    };
+  }
+
+  /** Release the WebAssembly memory of the index. */
+  free() {
+    this.native.free();
+  }
+}
+
+/**
+ * Build a sound-alike index over a vocabulary: an array of terms (strings,
+ * or objects with `word` and optional `lang`, `ipa`, `say`), word-list text
+ * (TSV, PLS or JSON), or text with one term per line. `options.langs` are
+ * the languages a term without phonemes is read in (default en-us and hi);
+ * `options.ordinaryWords` adds to the words taken for ordinary speech.
+ */
+export async function createSoundIndex(vocabulary, options = {}) {
+  await init();
+  wasmReady = true;
+  const langs = (options.langs ?? ["en-us", "hi"]).map(canonical);
+  await Promise.all([...new Set(["en-us", "hi", ...langs])].map((l) => loadLanguage(l)));
+  const text = typeof vocabulary === "string" ? vocabulary : JSON.stringify(Array.from(vocabulary));
+  const ordinary = Array.from(options.ordinaryWords ?? []);
+  return new SoundIndex(new wasm.SoundIndex(text, JSON.stringify({ langs, ordinary_words: ordinary })));
+}
+
+/** Places in `text` that sound like a term of `vocabulary` (a `SoundIndex`, or anything `createSoundIndex` takes). */
+export async function matchTerms(text, vocabulary, options = {}) {
+  const own = !(vocabulary instanceof SoundIndex);
+  const index = own ? await createSoundIndex(vocabulary, options) : vocabulary;
+  await Promise.all(languagesFor(text, options.lang).map((l) => loadLanguage(l)));
+  try {
+    return index.find(text, options);
+  } finally {
+    if (own) index.free();
+  }
 }

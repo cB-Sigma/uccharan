@@ -1,19 +1,19 @@
 {
  "bn": {
   "ALL": {
-   "exact": 8,
-   "n": 10,
-   "wer": 18.75
+   "exact": 14,
+   "n": 14,
+   "wer": 0.0
   },
   "cardinal": {
-   "exact": 8,
-   "n": 9,
-   "wer": 15.38
+   "exact": 13,
+   "n": 13,
+   "wer": 0.0
   },
   "year": {
-   "exact": 0,
+   "exact": 1,
    "n": 1,
-   "wer": 33.33
+   "wer": 0.0
   }
  },
  "en-us": {
@@ -115,6 +115,18 @@
   "year": {
    "exact": 4,
    "n": 4,
+   "wer": 0.0
+  }
+ },
+ "gu": {
+  "ALL": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 7,
+   "n": 7,
    "wer": 0.0
   }
  },
@@ -225,45 +237,117 @@
    "wer": 0.0
   }
  },
- "mr": {
+ "kn": {
   "ALL": {
-   "exact": 10,
-   "n": 10,
+   "exact": 7,
+   "n": 7,
    "wer": 0.0
   },
   "cardinal": {
-   "exact": 10,
-   "n": 10,
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
+  }
+ },
+ "ml": {
+  "ALL": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
+  }
+ },
+ "mr": {
+  "ALL": {
+   "exact": 14,
+   "n": 14,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 14,
+   "n": 14,
    "wer": 0.0
   }
  },
  "ne": {
   "ALL": {
-   "exact": 6,
-   "n": 10,
-   "wer": 25.0
+   "exact": 14,
+   "n": 14,
+   "wer": 0.0
   },
   "cardinal": {
-   "exact": 6,
-   "n": 9,
-   "wer": 23.08
+   "exact": 13,
+   "n": 13,
+   "wer": 0.0
   },
   "year": {
-   "exact": 0,
+   "exact": 1,
    "n": 1,
-   "wer": 33.33
+   "wer": 0.0
+  }
+ },
+ "or": {
+  "ALL": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
+  }
+ },
+ "pa": {
+  "ALL": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
   }
  },
  "ta": {
   "ALL": {
-   "exact": 5,
-   "n": 10,
-   "wer": 50.0
+   "exact": 14,
+   "n": 14,
+   "wer": 0.0
   },
   "cardinal": {
-   "exact": 5,
-   "n": 10,
-   "wer": 50.0
+   "exact": 14,
+   "n": 14,
+   "wer": 0.0
+  }
+ },
+ "te": {
+  "ALL": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
+  }
+ },
+ "ur": {
+  "ALL": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 7,
+   "n": 7,
+   "wer": 0.0
   }
  }
 }

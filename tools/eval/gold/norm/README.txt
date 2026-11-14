@@ -12,3 +12,7 @@ One file per language: <lang>.tsv with columns
 Comparison folds case, punctuation, hyphens, the nukta sign and
 chandrabindu/anusvara before matching (see tools/eval/norm_eval.py).
 Never tune on the heldout rows.
+
+te, kn, ml, gu, pa, or and ur, and the rows after the tenth pair of bn, mr, ne
+and ta, were written by hand when the written number words were added (the
+split column was fixed then, before the first run).

@@ -5,243 +5,243 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 193369,
-  "per": 0.021761502619344363,
-  "per_without_stress": 0.01595849713680507,
-  "exact_sentence": 0.42292490118577075,
-  "exact_sentence_without_stress": 0.45652173913043476,
-  "piper_shape_per": 0.02158741212192587,
-  "piper_shape_exact_sentence": 0.4209486166007905,
+  "per": 0.014407686857769343,
+  "per_without_stress": 0.01080055767976496,
+  "exact_sentence": 0.5612648221343873,
+  "exact_sentence_without_stress": 0.5988142292490118,
+  "piper_shape_per": 0.014306268849302865,
+  "piper_shape_exact_sentence": 0.558300395256917,
   "word_count_mismatch_sentences": 174,
   "errors_by_class": {
    "stress": {
-    "count": 1637,
-    "share": 0.3890209125475285,
-    "per_contribution": 0.008465679607382776
+    "count": 1056,
+    "share": 0.37903804737975594,
+    "per_contribution": 0.005461061493827863
    },
    "vowel": {
-    "count": 1189,
-    "share": 0.2825570342205323,
-    "per_contribution": 0.006148865640304289
+    "count": 788,
+    "share": 0.2828427853553482,
+    "per_contribution": 0.004075110281379125
    },
    "other": {
-    "count": 644,
-    "share": 0.15304182509505704,
-    "per_contribution": 0.0033304200776753255
+    "count": 379,
+    "share": 0.13603732950466618,
+    "per_contribution": 0.0019599832444704168
    },
    "consonant": {
-    "count": 422,
-    "share": 0.1002851711026616,
-    "per_contribution": 0.002182356013631968
-   },
-   "length": {
-    "count": 180,
-    "share": 0.04277566539923954,
-    "per_contribution": 0.0009308627546297494
+    "count": 331,
+    "share": 0.11880832735104092,
+    "per_contribution": 0.0017117531765691502
    },
    "word-boundary": {
-    "count": 125,
-    "share": 0.02970532319391635,
-    "per_contribution": 0.0006464324684928815
+    "count": 126,
+    "share": 0.04522613065326633,
+    "per_contribution": 0.0006516039282408245
+   },
+   "length": {
+    "count": 97,
+    "share": 0.034816941852117735,
+    "per_contribution": 0.000501631595550476
    },
    "diacritic": {
-    "count": 11,
-    "share": 0.0026140684410646386,
-    "per_contribution": 5.6886057227373574e-05
+    "count": 9,
+    "share": 0.003230437903804738,
+    "per_contribution": 4.654313773148747e-05
    }
   },
   "top_confusions": [
    {
     "edit": "ˈ→∅",
-    "count": 297
-   },
-   {
-    "edit": "∅→ˌ",
-    "count": 254
-   },
-   {
-    "edit": "∅→ə",
-    "count": 245
-   },
-   {
-    "edit": "∅→ˈ",
-    "count": 192
-   },
-   {
-    "edit": "ˌ→∅",
-    "count": 174
+    "count": 239
    },
    {
     "edit": "a→∅",
-    "count": 137
+    "count": 135
    },
    {
-    "edit": "ˈ→ˌ",
-    "count": 137
-   },
-   {
-    "edit": "ˌ→ˈ",
-    "count": 131
+    "edit": "∅→ˈ",
+    "count": 122
    },
    {
     "edit": " →∅",
     "count": 114
    },
    {
-    "edit": "∅→ː",
-    "count": 95
+    "edit": "∅→ˌ",
+    "count": 112
    },
    {
-    "edit": "e→∅",
-    "count": 92
+    "edit": "ˌ→∅",
+    "count": 104
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 103
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 88
+   },
+   {
+    "edit": "∅→ə",
+    "count": 80
    },
    {
     "edit": "ː→∅",
-    "count": 85
-   },
-   {
-    "edit": "a→ə",
-    "count": 77
-   },
-   {
-    "edit": "ɪ→ː",
-    "count": 61
+    "count": 78
    },
    {
     "edit": "ɪ→∅",
-    "count": 61
+    "count": 60
+   },
+   {
+    "edit": "a→ə",
+    "count": 57
+   },
+   {
+    "edit": "e→∅",
+    "count": 54
    },
    {
     "edit": "i→j",
-    "count": 56
-   },
-   {
-    "edit": "e→i",
-    "count": 45
-   },
-   {
-    "edit": "∅→a",
-    "count": 44
-   },
-   {
-    "edit": "ː→ˈ",
-    "count": 43
-   },
-   {
-    "edit": "ː→ɪ",
-    "count": 42
+    "count": 49
    },
    {
     "edit": "t→∅",
     "count": 39
    },
    {
-    "edit": "u→o",
-    "count": 36
+    "edit": "ː→ˈ",
+    "count": 39
+   },
+   {
+    "edit": "i→e",
+    "count": 30
+   },
+   {
+    "edit": "s→∅",
+    "count": 28
+   },
+   {
+    "edit": "l→∅",
+    "count": 28
    },
    {
     "edit": "ə→∅",
-    "count": 36
+    "count": 28
    },
    {
-    "edit": "∅→j",
-    "count": 33
+    "edit": "ː→ʋ",
+    "count": 27
    },
    {
-    "edit": "ɪ→a",
-    "count": 32
+    "edit": "ʃ→∅",
+    "count": 27
+   },
+   {
+    "edit": "u→o",
+    "count": 27
+   },
+   {
+    "edit": "i→∅",
+    "count": 24
+   },
+   {
+    "edit": "u→a",
+    "count": 23
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 22634,
-    "wrong": 820,
-    "rate": 0.03622868251303349
+    "wrong": 496,
+    "rate": 0.021913934788371475
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 193,
-    "per": 0.03270353992764076,
-    "exact_sentence": 0.22797927461139897
+    "per": 0.02452174324292369,
+    "exact_sentence": 0.34196891191709844
    },
    "no-digits": {
     "sentences": 819,
-    "per": 0.018698702674079956,
-    "exact_sentence": 0.46886446886446886
+    "per": 0.011576648133439237,
+    "exact_sentence": 0.612942612942613
    }
   },
   "examples_of_disagreement": [
    {
-    "id": "flores-devtest-422",
-    "text": "جاپان کے پاس جزیروں کے مجموعہ/گروہ کی وجہ سے، جاپان کو جغرافیائی اصطلاح میں \"بحر الجزائر\" کہا جاتا ہے۔",
-    "reference": "ɟaːpˈaːn keː pˈaːs ɟəzˈiːrõː keː mˌaɟmˈuːa slˈaʃ ɡɪrˈoːh ki ʋˈʌɟˌa seː ɟaːpˈaːn kˈoː ɟˌəɣrˈaːfjaːˌiː ˌɪʂtɪlˈaːh mˈẽ bˈɛhɛr alɟəzˈaɪr kˈʌhaː ɟˈaːtaː hɛ",
-    "uccharan": "ɟaːpˈaːn keː pˈaːs ɟəzˈiːrõː keː mˌaɟmˈuːa ɡɪrˈoːh ki ʋˈʌɟˌa seː ɟaːpˈaːn kˈoː ɟˌəɣrˈaːfjaːˌiː ˌɪʂtɪlˈaːh mˈẽ bˈɛhɛr alɟəzˈaɪr kˈʌhaː ɟˈaːtaː hɛ"
+    "id": "flores-devtest-221",
+    "text": "اس ہفتے کے شروع میں ایک پولیس ہیلی کاپٹر حادثے میں تین افراد ہلاک اور تین زخمی ہُوئے تھے۔",
+    "reference": "ɪs hˈʌftˌeː keː ʃˈʊruː mˈẽ ˈeːk pʊlˈiːs hˈeːli kˈaːpʈar hˈaːdsˌeː mˈẽ tˈiːn ˌafrˈaːd həlˈaːk ɔr tˈiːn zˈʌxmˌiː hˈuːeː tʰeː",
+    "uccharan": "ɪs hˈʌftˌeː keː ʃˈʊruː mˈẽ ˈeːk pʊlˈiːs hˈeːli kˈaːpʈar hˈaːdsˌeː mˈẽ tˈiːn ˌafrˈaːd həlˈaːk ɔr tˈiːn zˈʌxmˌiː hˈʊʋaˌeː tʰeː"
    },
    {
-    "id": "flores-devtest-776",
-    "text": "تماکی ڈرائیو مشن بے کے بالامنڈی کے مضافات میں ساحل سمندر ویٹماٹا ہاربر پر واقع ہے اور سینٹ ہیلیرز سنٹرل آکلینڈ میں واقع ہے۔",
-    "reference": "təmˈaːki ɖraːˈiːʋ mɪʃˈan beː keː bɪlamˈʌnɖi keː mˌəzaːfˈaːt mˈẽ sˈaːhɪl səmˈʌndər ʋˌeːʈmˈaːʈaː hˈaːrəbˌər pˈʌr ʋˈaːqeː hɛ ɔr sˈeːnʈ heːlˈiːrz sɪnʈrˈal ˌaːklˈiːnɖ mˈẽ ʋˈaːqeː hɛ",
-    "uccharan": "təmˈaːki ɖraːˈiːʋ mɪʃˈan beː keː baːlˈaːmənɖi keː mˌəzaːfˈaːt mˈẽ sˈaːhɪl səmˈʌndər ʋˌeːʈmˈaːʈaː hˈaːrəbˌər pˈʌr ʋˈaːqeː hɛ ɔr sˈeːnʈ heːlˈiːrəz sɪnʈrˈal ˌaːklˈiːnɖ mˈẽ ʋˈaːqeː hɛ"
+    "id": "flores-devtest-146",
+    "text": "حکمران جماعت، ساوتھ ویسٹ افریقہ پیپلز آرگنائزیشن، (ایس ڈبلیو اے پی او) نے بھی پارلیمانی الیکشنز میں اپنی اکثرییت برقرار رکھی۔",
+    "reference": "hˌʊkmarˈaːn ɟamˈaːt sˈaːʋətʰ ʋˈeːsʈ ˌafrˈiːqˌa pˈeːpəlˌəz ˈaːrɡanˌaɪzeːʃˌan ˈeːs ɖˌəblˈeːoː ˈeː pˈiː ˈoː neː bʰˈiː pˌaːrlimˈaːni aljˌəkʃˈanz mˈẽ ˈapnˌiː ˌaksˈariˌiːat bˌarqarˈaːr rˈʌkʰi",
+    "uccharan": "hˌʊkmarˈaːn ɟamˈaːt sˈaːʋətʰ ʋˈeːsʈ ˌafrˈiːqˌa pˈeːpəlˌəz ˈaːrɡanˌaɪzeːʃˌan ˈeːs ɖˌəblˈeːoː ˈeː pˈiː ˈoː neː bʰˈiː pˌaːrlimˈaːni aljˌəkʃˈanz mˈẽ ˈapnˌiː ˌakəsrjˈiːt bˌarqarˈaːr rˈʌkʰi"
    },
    {
-    "id": "flores-devtest-168",
-    "text": "آوسس کو جمہوریہ چین کے ایگزکٹیو یوان کے ذریعہ 2007 تائیوان پائیدار ایوارڈ دیے جانے کے بعد لیپ ٹاپ کمپیوٹر سے جڑا صارفین کا بازار یکسر مختلف اور تبدیل شدہ ہوگا۔",
-    "reference": "aːˈoːsəs kˈoː ɟˌəmhuːrˈiːa cˈeːn keː ˌeːɡəzˌəkʈˈeːoː jɔˈaːn keː zarˈiːa dˈoː hazˈaːr sˈaːt tˌaːeːʋˈaːn pˌaːidˈaːr eːʋˈaːrɖ djˈeː ɟˈaːneː keː bˈaːd lˈeːp ʈˈaːp kˌəmpeːˈoːʈər seː ɟˈʌr.aː ʂˌaːrfˈiːn kaː baːzˈaːr jˈaksar mˌʊxtˈalɪf ɔr tˌəbdˈiːl ʃˈʊdˌa hˈoːɡaː",
-    "uccharan": "ˈaːʋəsˌəs kˈoː ɟˌəmhuːrˈiːa cˈeːn keː ˌeːɡəzəkˈʌʈjoː jɔˈaːn keː zarˈiːa dˈoː hazˈaːr sˈaːt tˌaːeːʋˈaːn pˌaːidˈaːr eːʋˈaːrɖ djˈeː ɟˈaːneː keː bˈaːd lˈeːp ʈˈaːp kˌəmpeːˈoːʈər seː ɟˈʌr.aː ʂˌaːrfˈiːn kaː baːzˈaːr jˈaksar mˌʊxtˈalɪf ɔr tˌəbdˈiːl ʃˈʊdˌa hˈoːɡaː"
-   },
-   {
-    "id": "flores-devtest-578",
-    "text": "ایک بائنری عدد کی ایک یا دو قدریں ہوتی ہیں یعنی 0 یا 1، اور ان اعداد کو بائنری ڈیجٹس یا بٹس کے نام سے جانا جاتا ہے، تاکہ کمپیوٹر کی زبان کا استعمال کیا جائے۔",
-    "reference": "ˈeːk bˈaɪnrˌiː ˈadəd ki ˈeːk jˈaː dˈoː qˈʌdrˌẽː hˈoːti hẽ jˈaːni sˈɪfar jˈaː ˈeːk ɔr ɪn aːdˈaːd kˈoː bˈaɪnrˌiː ɖeːɟˈʌʈs jˈaː bˈʌʈəs keː nˈaːm seː ɟˈaːnaː ɟˈaːtaː hɛ tˈaːkeːh kˌəmpeːˈoːʈər ki zəbˈaːn kaː ˌɪsteːmˈaːl kˈiːaː ɟˌaːeː",
-    "uccharan": "ˈeːk bˈaɪnrˌiː ˈadəd ki ˈeːk jˈaː dˈoː qˈʌdrˌẽː hˈoːti hẽ jˈaːni sˈɪfar jˈaː ˈeːk ɔr ɪn aːdˈaːd kˈoː bˈaɪnrˌiː ɖˈeːɟəʈˌəs jˈaː bˈʌʈəs keː nˈaːm seː ɟˈaːnaː ɟˈaːtaː hɛ tˈaːkeːh kˌəmpeːˈoːʈər ki zəbˈaːn kaː ˌɪsteːmˈaːl kjˈaː ɟˈaːeː"
-   },
-   {
-    "id": "flores-devtest-161",
-    "text": "ایریزونا کے فلیگ اسٹاف میں واقع یونائٹیایریزونا کے فلیگ اسٹاف میں واقع ریاستہائے متحدہ جیولوجیکل سروے (یو ایس جی ایس) ایسٹروجولوجی ٹیم اور ناردرن ایریزونا یونیورسٹی کے گلین کشنگ نے کہا کہ ان کا حرارتی سلوک اتنا مستحکم نہیں ہے جتنا کہ زمین پر بڑی غاروں میں ہے جو اکثر کافی حد درجہ حرارت برقرار رکھتے ہیں، لیکن یہ زمین کے گہرے سوراخ ہونے کے برابر ہے۔",
-    "reference": "ˌeːrizˈoːnaː keː flˈeːɡ ɪsʈˈaːf mˈẽ ʋˈaːqeː jɔnˈaɪʈjaːˌiːrizˌoːnaː keː flˈeːɡ ɪsʈˈaːf mˈẽ ʋˈaːqeː rjˌaːsəthˈaːeː mʊtˈahɪdˌa ɟˌeːoːloːɟˈiːkəl sˈʌrʋeː jˈɔ ˈeːs ɟˈiː ˈeːs ˈiːsʈərˌoːɟoːlˌoːɟi ʈˈiːm ɔr nˈaːrdərˌən ˌeːrizˈoːnaː jˌuːniʋˈarsɪʈˌiː keː ɡəlˈiːn kˈʌʃənɡ neː kˈʌhaː ke ɪn kaː hərˈaːrtˌiː sʊlˈuːk ˈɪtnaː mˌʊstɛhkˈam nahˈiːn hɛ ɟˈɪtnaː ke zəmˈiːn pˈʌr bˈʌr.i ɣˈaːrõː mˈẽ hɛ ɟˈoː ˌaksˈar kˈaːfi hˈʌd dˈarɟa hərˈaːrət bˌarqarˈaːr rˈʌkʰtˌeː hẽ lˈeːkɪn jeːh zəmˈiːn keː ɡˈɛhreː soːrˈaːx hˈoːneː keː bˌaraːbˈar hɛ",
-    "uccharan": "ˌeːrizˈoːnaː keː flˈeːɡ ɪsʈˈaːf mˈẽ ʋˈaːqeː joːnˈaːʈjaːjriːzˌoːnaː keː flˈeːɡ ɪsʈˈaːf mˈẽ ʋˈaːqeː rjˌaːsəthˈaːeː mʊtˈahɪdˌa ɟjˌoːloːɟˈiːkəl sˈʌrʋeː jˈɔ ˈeːs ɟˈiː ˈeːs ˌeːsəʈroːɟoːlˈoːɟi ʈˈiːm ɔr nˈaːrdərˌən ˌeːrizˈoːnaː jˌuːniʋˈarsɪʈˌiː keː ɡəlˈiːn kəʃˈɪnɡ neː kˈʌhaː ke ɪn kaː hərˈaːrtˌiː sʊlˈuːk ˈɪtnaː mˌʊstɛhkˈam nahˈiːn hɛ ɟˈɪtnaː ke zəmˈiːn pˈʌr bˈʌr.i ɣˈaːrõː mˈẽ hɛ ɟˈoː ˌaksˈar kˈaːfi hˈʌd dˈarɟa hərˈaːrət bˌarqarˈaːr rˈʌkʰtˌeː hẽ lˈeːkɪn jeːh zəmˈiːn keː ɡˈɛhreː soːrˈaːx hˈoːneː keː bˌaraːbˈar hɛ"
-   },
-   {
-    "id": "flores-devtest-887",
-    "text": "قبل ازعملیاتی مخنث افراد کو اپنی پرائیویسی اور عزت کے ساتھ اسکینرز سے گپزرنے کی توقع نہیں رکھنی چاہیے۔",
-    "reference": "qˈabl ˌazaːmljˈaːti mˈʌxənˌəs ˌafrˈaːd kˈoː ˈapnˌiː pˌəraːeːʋˈiːsi ɔr ɪzzˈat keː sˈaːtʰ ˌaskinˈʌrz seː ɡˈʌpəzˌərnˌeː ki taʋˈaqoː nahˈiːn rˈʌkʰnˌiː cˈaːhjeː",
-    "uccharan": "qˈabl ˌazaːmljˈaːti mˈʌxənˌəs ˌafrˈaːd kˈoː ˈapnˌiː pˌəraːeːʋˈiːsi ɔr ɪzzˈat keː sˈaːtʰ ˌaskˈiːnərˌəz seː ɡˈʌpəzˌərnˌeː ki taʋˈaqoː nahˈiːn rˈʌkʰnˌiː cˈaːhjeː"
-   },
-   {
-    "id": "flores-devtest-973",
-    "text": "کچھ افعال اور مفعولات میں فرق کرنے کا یہ ایک اہم طریقہ ہے۔",
-    "reference": "kʊcʰ afˈaːl ɔr mˌafuːlˈaːt mˈẽ fˈarq kˌarneː kaː jeːh ˈeːk ˈɛhɛm tərˈiːqˌa hɛ",
-    "uccharan": "kʊcʰ afˈaːl ɔr mˌəfaːʋlˈaːt mˈẽ fˈarq kˌarneː kaː jeːh ˈeːk ˈɛhɛm tərˈiːqˌa hɛ"
+    "id": "flores-devtest-133",
+    "text": "مذاکرہ کاروں نے صورتِ حال کی اصلاح کی کوشش کی لیکن قیدیوں کے مطالبات واضح نہیں ہیں۔",
+    "reference": "mʊzˈaːkɪrˌa kˈaːrõː neː ʂˌuːratˈeː hˈaːl ki ˌɪʂlˈaːh ki kˈoːʃɪʃ ki lˈeːkɪn qˈeːdiˌõː keː mʊtˈaːlɪbˌaːt ʋˈaːzɛh nahˈiːn hẽ",
+    "uccharan": "mʊzˈaːkɪrˌa kˈaːrõː neː ʂˈoːrtˌeː hˈaːl ki ˌɪʂlˈaːh ki kˈoːʃɪʃ ki lˈeːkɪn qˈeːdiˌõː keː mʊtˈaːlɪbˌaːt ʋˈaːzɛh nahˈiːn hẽ"
    },
    {
     "id": "flores-devtest-940",
     "text": "سیاسی مفاوضات کی ناکامی کے با وجود مولڈووا کے ان دونوں حصوں کے ما بین اقتصادی روابط دوبارہ قائم ہو گئے ہیں۔",
     "reference": "sjˈaːsi mˌəfaːʋˌəzˈaːt ki naːkˈaːmi keː bˈaː ʋʊɟˈuːd mˈoːlɖʋʋaː keː ɪn dˈoːnõː hɪʂˈoːn keː mˈaː bˈeːn ˌɪqtɪʂˈaːdi raʋˈaːbət doːbˈaːrˌa qˈaɪm hˈoː ɡˈaeː hẽ",
-    "uccharan": "sjˈaːsi mˌəfaːʋzˈaːt ki naːkˈaːmi keː bˈaː ʋʊɟˈuːd mˌoːlɖˈoːʋaː keː ɪn dˈoːnõː hɪʂˈoːn keː mˈaː bˈeːn ˌɪqtɪʂˈaːdi raʋˈaːbət doːbˈaːrˌa qˈaɪm hˈoː ɡˈaeː hẽ"
+    "uccharan": "sjˈaːsi mˌəfaːʋzˈaːt ki naːkˈaːmi keː bˈaː ʋʊɟˈuːd mˈoːlɖoːʋˌaː keː ɪn dˈoːnõː hɪʂˈoːn keː mˈaː bˈeːn ˌɪqtɪʂˈaːdi raʋˈaːbət doːbˈaːrˌa qˈaɪm hˈoː ɡˈaeː hẽ"
    },
    {
-    "id": "flores-devtest-476",
-    "text": "وہ مصارف بڑے حصہ اور فلیپین حکومت کے نام سے وال اسٹریٹ کے بینکوں کے ذریعہ جاری بانڈس کے سود کی ادائیگی کی غرض سے ولایاتِ متحدہ کی حکومت کو ٹیکس ادا کرتے تھے۔",
-    "reference": "woː məʂˈaːrəf bˈʌr.eː hˈɪʂˌa ɔr fleːpˈiːn hˌʊkuːmˈat keː nˈaːm seː ʋˈaːl ˌɪsʈərˈiːʈ keː bˈeːnkˌõː keː zarˈiːa ɟˈaːri bˈaːnɖəs keː sˈuːd ki ˌadaːˈiːɡi ki ɣˈʌrəz seː ʋˌəlaːjaːtˈeː mʊtˈahɪdˌa ki hˌʊkuːmˈat kˈoː ʈˈeːks ˈadaː kˌarteː tʰeː",
-    "uccharan": "woː məʂˈaːrəf bˈʌr.eː hˈɪʂˌa ɔr fˌəliːpˈiːn hˌʊkuːmˈat keː nˈaːm seː ʋˈaːl ˌɪsʈərˈiːʈ keː bˈeːnkˌõː keː zarˈiːa ɟˈaːri bˈaːnəɖˌəs keː sˈuːd ki ˌadaːˈiːɡi ki ɣˈʌrəz seː ʋˌəlaːjˈaːtɪ mʊtˈahɪdˌa ki hˌʊkuːmˈat kˈoː ʈˈeːks ˈadaː kˌarteː tʰeː"
+    "id": "flores-devtest-150",
+    "text": "میڈیکل چیرٹی منگولا، میڈیسنس سینس فرنٹیئرز اور عالمی ادارہ صحت کا کہنا ہے کہ یہ ملک میں سب سے شدید پھیلاؤ ہے۔",
+    "reference": "meːɖˈiːkəl cˈeːrʈi mˌənɡˈoːlaː mˌeːɖisˈʌns sˈeːns fˌərənʈˈiːrz ɔr ˈaːlmˌiː ɪdˈaːrˌa ʂeːhˈat kaː kˈɛhnaː hɛ ke jeːh mˈʊlk mˈẽ sˈʌb seː ʃədˈiːd pʰeːlˈaːoː hɛ",
+    "uccharan": "meːɖˈiːkəl cˈeːrʈi mˌənɡˈoːlaː mˌeːɖisˈʌns sˈeːns fˌərənˌəʈjˈarz ɔr ˈaːlmˌiː ɪdˈaːrˌa ʂeːhˈat kaː kˈɛhnaː hɛ ke jeːh mˈʊlk mˈẽ sˈʌb seː ʃədˈiːd pʰeːlˈaːoː hɛ"
    },
    {
-    "id": "flores-devtest-219",
-    "text": "ایران میں ہوائی حادثے عام ہیں، جس کے پاس پرانے جہاز ہیں جن کی شہری اور فوجی دونوں آپریشنزکے لئے بھی اچھی طرح دیکھ بھال نہیں کی جاتی۔",
-    "reference": "irˈaːn mˈẽ haʋˈaːi hˈaːdsˌeː ˈaːm hẽ ɟɪs keː pˈaːs pʊrˈaːneː ɟəhˈaːz hẽ ɟɪn ki ʃˈɛhri ɔr fˈoːɟi dˈoːnõː ˌaːpreːʃˈanzkeː lˌiːeː bʰˈiː ˈacʰi tˌərˈah dˈeːkʰ bʰˈaːl nahˈiːn ki ɟˈaːti",
-    "uccharan": "irˈaːn mˈẽ haʋˈaːi hˈaːdsˌeː ˈaːm hẽ ɟɪs keː pˈaːs pʊrˈaːneː ɟəhˈaːz hẽ ɟɪn ki ʃˈɛhri ɔr fˈoːɟi dˈoːnõː ˌaːprˈiːʃənˌəzkˌeː lˌiːeː bʰˈiː ˈacʰi tˌərˈah dˈeːkʰ bʰˈaːl nahˈiːn ki ɟˈaːti"
+    "id": "flores-devtest-745",
+    "text": "گوارنی سب سے اہم دیسی جماعت تھی، جو فی الحال مشرقی پراگوے میں آباد نیم خانہ بدوش شکار کے طور پر زندگی گزار رہے ہیں، جو بقدر ضرورت زراعت بھی کرتے ہیں۔",
+    "reference": "ɡaʋˈaːrnˌiː sˈʌb seː ˈɛhɛm dˈeːsi ɟamˈaːt tʰi ɟˈoː fˌɪlhˈaːl mˈaʃrˌɪqi pərˈaːɡʋeː mˈẽ aːbˈaːd nˈiːm xˈaːnˌa bədˈoːʃ ʃɪkˈaːr keː tˈɔːr pˈʌr zˌɪndˈaɡi ɡʊzˈaːr rˈʌheː hẽ ɟˈoː bˈʌqədˌər zˌaruːrˈat zərˈaːat bʰˈiː kˌarteː hẽ",
+    "uccharan": "ɡəʋˈaːrnˌiː sˈʌb seː ˈɛhɛm dˈeːsi ɟamˈaːt tʰi ɟˈoː fˈiː alhˈaːl mˈaʃrˌɪqi pərˈaːɡʋˌeː mˈẽ aːbˈaːd nˈiːm xˈaːnˌa bədˈoːʃ ʃɪkˈaːr keː tˈɔːr pˈʌr zˌɪndˈaɡi ɡʊzˈaːr rˈʌheː hẽ ɟˈoː bˈʌqədˌər zˌaruːrˈat zərˈaːat bʰˈiː kˌarteː hẽ"
    },
    {
-    "id": "flores-devtest-167",
-    "text": "عالمی پیمانے پر قیمت بچانے اور کام کے عوامل کو مد نظر رکھتے ہوئے لانچ کیا گیا اے ایس یو ایس ای کمپیوٹر 2007 کے تائپے آئی ٹی ماہ میں موضوع بحث بن گیا۔",
-    "reference": "ˈaːlmˌiː peːmˈaːneː pˈʌr qimˈat bəcˈaːneː ɔr kˈaːm keː aʋˈaːməl kˈoː mˌadeː naʐˈar rˈʌkʰtˌeː hˈuːeː lˈaːnc kˈiːaː ɡˈajaː ˈeː ˈeːs jˈɔ ˈeːs ˈiː kˌəmpeːˈoːʈər dˈoː hazˈaːr sˈaːt keː tˈaɪpeː ˈaːi ʈˈiː mˈaːh mˈẽ mˈoːzuː bˈɛhɛs bˈʌn ɡˌajaː",
-    "uccharan": "ˈaːlmˌiː peːmˈaːneː pˈʌr qimˈat bəcˈaːneː ɔr kˈaːm keː aʋˈaːməl kˈoː mˈʌd naʐˈar rˈʌkʰtˌeː hˈuːeː lˈaːnc kjˈaː ɡˌajaː ˈeː ˈeːs jˈɔ ˈeːs ˈiː kˌəmpeːˈoːʈər dˈoː hazˈaːr sˈaːt keː tˈaːpeː ˈaːi ʈˈiː mˈaːh mˈẽ mˈoːzuː bˈɛhɛs bˈʌn ɡˌajaː"
+    "id": "flores-devtest-265",
+    "text": "اس بل کے تحت ریاست کیلیفورنیا میں بیچنے والے پرتشدد ویڈیو گیمز پر \"18\" ڈیک ریڈنگ کا لیبل لگایا جانا ہے اور ان کی فروخت کی معمولی سزا فی جرم $ 1000 کا جرمانہ ہوگا۔",
+    "reference": "ɪs bˈʌl keː tˈɛhɛt rjaːsˈat kˌeːlifoːrˈʌnjaː mˈẽ bˈeːcnˌeː ʋˈaːleː pˌʊrtaʃˈadʊd ʋeːɖˈeːoː ɡˈeːməz pˈʌr atʰˈaːrah ɖˈeːk rˈiɖɪnɡ kaː lˈeːbəl ləɡˈaːjaː ɟˈaːnaː hɛ ɔr ɪn ki fərˈoːxt ki mˈaːmuːlˌiː sˈʌzaː fˈiː ɟˈʊrm dˈoːlər ˈeːk hazˈaːr kaː ɟʊrmˈaːna hˈoːɡaː",
+    "uccharan": "ɪs bˈʌl keː tˈɛhɛt rjaːsˈat kˌeːlifoːrˈʌnjaː mˈẽ bˈeːcnˌeː ʋˈaːleː pˌʊrtaʃˈadʊd ʋeːɖˈeːoː ɡˈeːməz pˈʌr atʰˈaːrah ɖˈeːk rˈiɖɪnɡ kaː lˈeːbəl ləɡˈaːjaː ɟˈaːnaː hɛ ɔr ɪn ki fərˈoːxt ki mˈaːmuːlˌiː sˈʌzaː fˈiː ɟˈʊrm ˈeːk hazˈaːr kaː ɟʊrmˈaːna hˈoːɡaː"
    },
    {
-    "id": "flores-devtest-580",
-    "text": "اندرونی زہرخوری کی بہترین نشاندہی ادویات یا زہریلے گھریلو کیمیائی اجزاء کی کُھلی بوتل کی موجودگی ہوسکتی ہے۔",
-    "reference": "ˈandruːnˌiː zˈɛhrəxˌoːri ki bˈɛhtərˌiːn nɪʃˈaːndəhˌiː ˈadʋiˌaːt jˈaː zˈɛhrilˌeː ɡʰarˈeːluː kˌiːmiˈaːi ˈaɟzˌaː ki kˈʊhəlˌiː bˈoːtəl ki moːɟˈuːdɡi hˈoːsəkti hɛ",
-    "uccharan": "ˈandruːnˌiː zˌəhərxˈoːri ki bˈɛhtərˌiːn nɪʃˈaːndəhˌiː ˈadʋiˌaːt jˈaː zˈɛhrilˌeː ɡʰarˈeːluː kˌiːmiˈaːi ˈaɟzˌaː ki kˈʊhlˌiː bˈoːtəl ki moːɟˈuːdɡi hˈoːsəkti hɛ"
+    "id": "flores-devtest-807",
+    "text": "سفاری غالباً افریقہ میں اعلیٰ پیمانے پر سیاحت لانے کا مرکز ہیں اور بہت سے دورہ کرنے والوں کے لیے نُمایاں ہیں۔",
+    "reference": "səfˈaːri ɣˌaːlɪbˈan ˌafrˈiːqˌa mˈẽ ˈaːlaː peːmˈaːneː pˈʌr sˌaiˈaːhət lˈaːneː kaː mˌarkˈaz hẽ ɔr bˈahʊt seː dˈoːrˌa kˌarneː ʋˈaːloːn keː lˈiːeː nʊmˈaːjãː hẽ",
+    "uccharan": "səfˈaːri ɣˈaːlbˌan ˌafrˈiːqˌa mˈẽ ˈaːljˌaː peːmˈaːneː pˈʌr sˌaiˈaːhət lˈaːneː kaː mˌarkˈaz hẽ ɔr bˈahʊt seː dˈoːrˌa kˌarneː ʋˈaːloːn keː lˈiːeː nʊmˈaːjãː hẽ"
+   },
+   {
+    "id": "flores-devtest-987",
+    "text": "جاپان میں پہلی چیری بلازم پارٹیوں کی ضیافت شہنشاہ فقط اپنے لئے اور شہنشاہی دربار کے گرد و پیش کے ارکانِ اشرافیہ کے لئے کرتا تھا۔",
+    "reference": "ɟaːpˈaːn mˈẽ pˈɛhli cˈeːri bəlˈaːzəm pˈaːrʈiˌõː ki zjˈaːfət ʃˈɛhnəʃˌaːh faqˈat ˈapnˌeː lˌiːeː ɔr ʃˈɛhnəʃˌaːhi dˌərbˈaːr keː ɡˌɪrdoː pˈeːʃ keː ˌarkˌaːnˈeː ˌaʃraːfˈiːa keː lˌiːeː kˌartaː tʰaː",
+    "uccharan": "ɟaːpˈaːn mˈẽ pˈɛhli cˈeːri bəlˈaːzəm pˈaːrʈiˌõː ki zjˈaːfət ʃˈɛhnəʃˌaːh faqˈat ˈapnˌeː lˌiːeː ɔr ʃˈɛhnəʃˌaːhi dˌərbˈaːr keː ɡˈʌrd ˈoː pˈeːʃ keː ˌarkˈaːneː ˌaʃraːfˈiːa keː lˌiːeː kˌartaː tʰaː"
+   },
+   {
+    "id": "flores-devtest-758",
+    "text": "یہ تقریباً نامُمکن ہے کہ فالک لینڈز کی کرنسی کا تبادلہ جزائر سے باہر کیا جائے، لہٰذا جزائر کو چھوڑنے سے قبل پیسوں کا تبادلہ کرلیں۔",
+    "reference": "jeːh tˌəqrˌiːbˈan nˈaːmʊmˌəkən hɛ ke fˈaːlɪk lˈeːnɖz ki kərˈʌnsi kaː təbˈaːdəla ɟəzˈaɪr seː bˈaːhər kˈiːaː ɟˌaːeː lɪhˈaːzaː ɟəzˈaɪr kˈoː cʰˈoːr.nˌeː seː qˈabl pˈeːsõː kaː təbˈaːdəla kˈʌrlˌẽː",
+    "uccharan": "jeːh tˌəqrˌiːbˈan nˈaːmʊmˌəkən hɛ ke fˈaːlək lˈeːnɖz ki kərˈʌnsi kaː təbˈaːdəla ɟəzˈaɪr seː bˈaːhər kjˈaː ɟˈaːeː ləhˈaːzaː ɟəzˈaɪr kˈoː cʰˈoːr.nˌeː seː qˈabl pˈeːsõː kaː təbˈaːdəla kˈʌrlˌẽː"
+   },
+   {
+    "id": "flores-devtest-206",
+    "text": "دستوں کی آمد سے قبل، ہیٹی کو اٹھارویں صدی سے بیماری سے متعلق مسائل کا سامنا نہیں ہوا تھا۔",
+    "reference": "dˈʌstˌõː ki ˈaːməd seː qˈabl hˈeːʈi kˈoː aʈʰˈaːrʋẽː ʂˈʌdi seː bimˈaːri seː mʊtˈaːlɪq məsˈaɪl kaː sˈaːmnˌaː nahˈiːn hˈuːa tʰˌaː",
+    "uccharan": "dˈʌstˌõː ki ˈaːməd seː qˈabl hˈeːʈi kˈoː aʈʰˈaːrʋẽː ʂˈʌdi seː bimˈaːri seː mʊtˈaːlɪq məsˈaɪl kaː sˈaːmnˌaː nahˈiːn hˈaʋaː tʰaː"
+   },
+   {
+    "id": "flores-devtest-655",
+    "text": "یہ نظریات تجویز دیتے ہیں کہ لوگوں کی مخصوص ضروریات اور/یا خواہشات ہوتی ہیں جو اندر پائی جاتی ہیں جب وہ بلوغت کی جانب قدم رکھتے ہیں۔",
+    "reference": "jeːh naʐˈariˌaːt təɟʋˈiːz dˈeːteː hẽ ke lˈoːɡõː ki mˌəxʂˈuːʂ zˌaruːriˈaːt ɔr slˈaʃ jˈaː xʋˈaːhɪʃˌaːt hˈoːti hẽ ɟˈoː ˈandar pˈaːi ɟˈaːti hẽ ɟˈʌb woː bˌaluːɣˈat ki ɟˈaːnɪb qˈʌdəm rˈʌkʰtˌeː hẽ",
+    "uccharan": "jeːh naʐˈariˌaːt təɟʋˈiːz dˈeːteː hẽ ke lˈoːɡõː ki mˌəxʂˈuːʂ zˌaruːriˈaːt ɔr jˈaː xʋˈaːhɪʃˌaːt hˈoːti hẽ ɟˈoː ˈandar pˈaːi ɟˈaːti hẽ ɟˈʌb woː bˌaluːɣˈat ki ɟˈaːnɪb qˈʌdəm rˈʌkʰtˌeː hẽ"
    }
   ]
  }

@@ -9,8 +9,8 @@
 <h3 align="center">5× faster than espeak-ng. Just as accurate. Free to ship.</h3>
 
 <p align="center">
-  A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English, Hindi and nineteen more
-  South Asian languages, in Rust, Python, C and the browser. Apache-2.0.
+  A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English, Hindi, nineteen more
+  South Asian languages, Spanish, French, German and Dutch, in Rust, Python, C and the browser. Apache-2.0.
 </p>
 
 <p align="center"><sub>
@@ -37,7 +37,7 @@
 </p>
 
 **uccharan** (उच्चारण, "pronunciation") turns text into the phoneme streams that neural
-text-to-speech voices expect — for **English (US and British), Hindi, code-mixed Hindi + English and nineteen more South Asian
+text-to-speech voices expect — for **English (US and British), Hindi, code-mixed Hindi + English, Spanish, French, German, Dutch and nineteen more South Asian
 languages** (see [Measured compatibility](#measured-compatibility)) — under the Apache-2.0 licence, with no GPL code or data. It is written in Rust and runs
 from Python, JavaScript (WebAssembly, in the browser and Node), Rust and C.
 
@@ -138,6 +138,67 @@ export) apply to both kinds of voice: phoneme voices get the entry's IPA in thei
 text voices its spoken form or a respelling chosen by reading candidates back with uccharan.
 See [docs/normalize.md](docs/normalize.md) and [docs/wordlists.md](docs/wordlists.md).
 
+## Correcting speech-recognition output by sound
+
+A recogniser writes a name it does not know as the nearest words it does know: "Kothari" as *Coat
+Harry*, "Paytm" as *pay tm*. **Sound-alike matching** compares a transcript with your vocabulary
+(names, products, jargon; a plain list or a [word list](docs/wordlists.md)) as phonemes and puts
+the terms back. Close sounds are cheap to exchange (voicing, aspiration, vowel length,
+retroflex / dental), unrelated ones are not, and because everything is phonemes a Latin-script
+vocabulary matches a Devanagari transcript and the other way round.
+
+```python
+index = uccharan.SoundIndex(["Kothari", "Paytm", {"word": "nginx", "say": "engine X"}])
+fixed = index.apply("send it to Coat Harry", "en-us")
+fixed.text                                          # 'send it to Kothari'
+[(c.old, c.new, c.score) for c in fixed.changes]    # every change is reported, nothing is silent
+index.apply(text, "hi", confidence=word_confidences, max_confidence=0.6)  # only where the recogniser was unsure
+uccharan.match_terms("कोठारी जी को फ़ोन करना है।", ["Kothari"], "hi")     # candidates only
+```
+
+Held-out, with 651 terms (Indian names, brands, technical and domain terms) in English, Hindi and
+Hinglish sentences spoken by synthetic voices and transcribed by small recognisers: at the default
+thresholds 43.9 % of the terms the recognisers got wrong are put back (64.2 % in English
+sentences), 97.8 % of the corrections are right, and 2 of 775 sentences without any term are
+changed. Character edit distance puts back 8.8 % (and changes 7 of those sentences); Metaphone
+codes 18.7 % while changing 38 % of them. About 7 800 transcripts a second against 1 000
+terms and 300 against 50 000. In Rust, Python, JavaScript, C and `uccharan --match-terms`; see
+[docs/soundalike.md](docs/soundalike.md) and
+[the evaluation](docs/evaluation.md#7-sound-alike-matching).
+
+## Training your own voices
+
+`uccharan.train` (Python) and the `uccharan-train` command are the front end for people who train
+voices and check pronunciation. Nothing in it reads audio.
+
+```sh
+uccharan-train label metadata.csv -l hi --improved -o labels/        # phonemes for Piper, Matcha-TTS, icefall
+uccharan-train select corpus.txt -l bho --improved -n 500 -o script/ # what to record
+uccharan-train coverage labels/labels.jsonl -l hi --reference corpus.txt --alignments aligned/
+uccharan-train score -l hi --reference "मेरा घोड़ा तेज़ है" --heard "मेरा कीड़ा तेज़ है"
+uccharan-train mfa-dict corpus.txt -l bho -o bho.dict                # dictionary for a forced aligner
+```
+
+- **Labelling** turns a manifest (LJSpeech `metadata.csv`, JSON lines, Hugging Face rows) into
+  Piper's `--data.phoneme_type text` CSV, a phoneme-id CSV and id map, Matcha-TTS filelists,
+  `tokens.txt` and per-utterance token lists for icefall-style recipes, and a `voice.json` that
+  records the uccharan version, mode, profile and language the voice must be driven with. Every
+  symbol is one code point; symbols outside a target table (a base checkpoint's, for a warm
+  start) are reported; each utterance gets warnings for unknown characters, unread numbers and
+  mixed scripts. Word lists apply.
+- **Script selection** picks the few sentences that cover every phone and as many diphones as
+  possible (greedy set cover with length, digit, script and rare-symbol filters).
+- **Coverage** counts phones and diphones, lists what a dataset lacks against a reference corpus,
+  gives the duration per phone from alignments, and names outlier utterances.
+- **Scoring** aligns a reference with a recogniser's text or a phone recogniser's output using the
+  weighted phoneme distance of the sound-alike matcher, and reports the error rate, a score per
+  word, and the words that were mispronounced, missing or extra: for text → voice → recogniser
+  round trips and for language-learning feedback.
+
+The file layouts were checked against the Piper, Matcha-TTS, icefall and Montreal Forced Aligner
+sources and documentation; no voice has been trained with them yet. See
+[docs/training.md](docs/training.md) and the [example](examples/train).
+
 ## Output profiles
 
 | Profile | Gives you | For |
@@ -203,12 +264,16 @@ held-out sentence, one thread, against the same espeak-ng voice.
 | Odia | `or` | FLORES-200, 1,012 sentences | PER 0.50 % | 0.28 % | 2.4× | MMS (character input) |
 | Sinhala | `si` | FLORES-200, 1,012 sentences | PER 0.86 % | 0.24 % | 2.3× | MMS (character input) |
 | Konkani | `kok` | Sangraha, 1,000 sentences | PER 0.20 % | 0.13 % | 5.1× | none |
-| Urdu | `ur` | FLORES-200, 1,012 sentences | PER 2.18 % | 1.87 % | 4.6× | Piper `ur_PK` (2) |
-| Sindhi | `sd` | FLORES-200, 1,012 sentences | PER 2.79 % | 2.14 % | 2.7× | none |
+| Urdu | `ur` | FLORES-200, 1,012 sentences | PER 1.44 % | 1.16 % | 4.0× | Piper `ur_PK` (2) |
+| Sindhi | `sd` | FLORES-200, 1,012 sentences | PER 1.52 % | 0.92 % | 2.1× | none |
 | Sanskrit | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.64 % against `hi` | 0.43 % | 4.2× | none |
 | Bhojpuri | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.51 % against `hi` | 0.33 % | 3.3× | SYSPIN (character input) |
 | Maithili | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.46 % against `hi` | 0.29 % | 3.0× | MMS, SYSPIN (character input) |
 | Magahi | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.40 % against `hi` | 0.23 % | 2.8× | MMS (character input) |
+| Spanish | `es` | FLORES-200, 1,012 sentences | PER 0.74 % | 0.45 % | 2.3× | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
+| German | `de` | FLORES-200, 1,012 sentences | PER 1.01 % | 0.82 % | 2.4× | Piper `de_DE` (11) |
+| Dutch | `nl` | FLORES-200, 1,012 sentences | PER 1.77 % | 1.39 % | 1.8× | Piper `nl_NL`, `nl_BE` (11) |
+| French | `fr` | FLORES-200, 1,012 sentences | PER 0.85 % | 0.65 % | 2.8× | Piper `fr_FR` (7), Kokoro `ff_siwis` |
 <!-- @@END@@ -->
 
 FLORES-200 sentences are longer news-style text with many numbers, so their rates are not
@@ -240,13 +305,39 @@ in -əi such as हलई hələi and गेलय ɡeːləi, a said final short
 Magahi gold set (270 words, 73 sentences) improved mode gets 98.5 % of words right against
 64.4 % for the Hindi voice, and sentence PER 0.71 % against 7.67 %.
 
-**Urdu and Sindhi** are written without most short vowels. uccharan reads them in two layers: a word
-table (`ur.ucd`, 40 k words, 378 KB; `sd.ucd`, 20 k words, 187 KB) with the readings espeak-ng's
-voices give the most frequent words of the AI4Bharat Sangraha corpus in running text, and letter
-rules for every other word (each consonant carries a short vowel unless a vowel letter or mark
-follows, with the Hindi-type deletion and stress for Urdu and penultimate stress for Sindhi). On the
-held-out sentences, words found in the table differ from espeak-ng in 0.6 % (Urdu) and 0.7 %
-(Sindhi) of cases, the other words (about one in nine) in 27 %. Improved mode uses the same table,
+**German, Dutch and French** (`de`, `nl`, `fr`) run on the same Latin-script engine as Spanish,
+each with letter rules and a **word table** (`de.ucd` 16 k entries, 357 KB; `nl.ucd` 12 k, 231 KB;
+`fr.ucd` 12 k, 170 KB; compiled in by the `embed-de`, `embed-nl` and `embed-fr` features, fetched
+on demand in the browser). The tables were made by running espeak-ng 1.52.0 over the words of
+Tatoeba and Leipzig Corpora Collection sentences (139 k German, 80 k Dutch and 100 k French
+words), alone and in running text, so they also hold what a word does inside a clause: German
+and Dutch words that lose their stress there, French liaison consonants (`les amis` → `le-z amˈi`,
+`les livres` → `le- lˈivʁ`). Each table also carries a small **letter-to-sound model** trained on
+the whole word list (back-off tables over letter contexts, with the stress placed by the
+language's own stress rule); it reads the words the table does not list, and the table keeps only
+the words that the model and the rules get wrong. Held-out sentences are FLORES-200, not part of
+those word lists; the rows above count every word, and words outside the word lists are wrong far
+more often (German 47 % of 811 such words, Dutch 55 % of 803, French 32 % of 330, mostly the
+stress of long compounds and names) than listed words (German 0.1 %, Dutch 1.8 %, French 1.6 %).
+Numbers follow each voice: German units before tens (`ˈaɪn ʊnttsvˈantsɪç`), Dutch one-word tens
+and years counted in hundreds, French one-word readings stressed on the last word.
+
+**Spanish** (`es`) is the first language on the Latin-script engine (`crates/uccharan/src/latin.rs`):
+letter rules, the Spanish stress rule with written accents, secondary stress on alternate syllables,
+two stresses on -mente adverbs, spirant b d g and nasal place across words inside a clause, Roman
+numerals, acronyms spelled with Spanish letter names, and Spanish number words. Improved mode drops
+the voice's open ɛ before n + consonant and its aɪ eɪ diphthong notation, and keeps d a stop after
+l and n.
+
+**Urdu and Sindhi** are written without most short vowels. uccharan reads them in two layers:
+letter rules (each consonant carries a short vowel unless a vowel letter or mark follows, the
+Hindi-type deletion, weight stress for Urdu and penultimate stress for Sindhi, and the consonant
+pairs both voices say without a vowel), and a table of the words among the 120,000 most frequent
+Urdu and 61,000 most frequent Sindhi words of the AI4Bharat Sangraha corpus that the rules do not
+read as espeak-ng's voices do in running text (`ur.ucd`, 47 k entries, 495 KB; `sd.ucd`, 18 k
+entries, 192 KB). On the held-out sentences, words in the table differ from espeak-ng in 0.4 % of
+cases (both languages), listed words left to the rules in 0.9 % (Urdu) and 0.8 % (Sindhi), and
+words outside the lists (about one word in thirty) in 48 % (Urdu) and 30 % (Sindhi). Improved mode uses the same table,
 reads ص and ظ as s and z, and reads the Urdu digits ۰–۹, which the espeak-ng voices skip. In the
 browser the tables load with the language (`loadLanguage("ur")`).
 
@@ -450,6 +541,8 @@ originally come from (details in [DATA_LICENSES.md](DATA_LICENSES.md)).
   directly with onnxruntime.
 - Windows and macOS builds (built by the release workflow, not run here).
 - A human listening test.
+- Training a voice from the files `uccharan-train label` writes, an aligner run with the exported
+  dictionary, and pronunciation scores against human judgements.
 - Integration inside [bolo](https://github.com/cB-Sigma/bolo).
 - Side-by-side speed against espeak-ng's WebAssembly build.
 - Downloading packs from a real GitHub release (the code path is tested against local files;
@@ -470,6 +563,8 @@ originally come from (details in [DATA_LICENSES.md](DATA_LICENSES.md)).
 [Architecture](docs/architecture.md) · [Profiles](docs/profiles.md) ·
 [Improved mode](docs/improved-mode.md) · [Evaluation](docs/evaluation.md) ·
 [Normalise-only mode](docs/normalize.md) · [Word lists](docs/wordlists.md) ·
+[Sound-alike matching](docs/soundalike.md) ·
+[Training voices and checking pronunciation](docs/training.md) ·
 [Adding a language](docs/adding-a-language.md) ·
 Integrations: [sherpa-onnx](docs/integrations/sherpa-onnx.md), [Piper](docs/integrations/piper.md),
 [Kokoro](docs/integrations/kokoro.md), [bolo](docs/integrations/bolo.md) ·

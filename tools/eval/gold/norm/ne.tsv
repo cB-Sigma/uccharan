@@ -19,3 +19,11 @@ dev	cardinal	33	तेत्तीस
 heldout	cardinal	2	दुई	
 dev	cardinal	१०	दश || दस	
 heldout	cardinal	70	सत्तरी || सत्तर	
+dev	cardinal	36	छत्तीस || छत्तिस	
+heldout	cardinal	48	अठचालीस || अठचालिस || अठ्चालीस	
+dev	cardinal	250	दुई सय पचास	
+heldout	percent	75%	पचहत्तर प्रतिशत	
+dev	cardinal	5000	पाँच हजार	
+heldout	decimal	1.5	एक दशमलव पाँच	
+dev	cardinal	64	चौसट्ठी || चौँसट्ठी	
+heldout	cardinal	19	उन्नाइस || उन्नाईस	
