@@ -5,58 +5,58 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 176763,
-  "per": 0.010120896341428919,
-  "per_without_stress": 0.005739864757611353,
-  "exact_sentence": 0.5899209486166008,
-  "exact_sentence_without_stress": 0.7312252964426877,
-  "piper_shape_per": 0.010150673185072998,
-  "piper_shape_exact_sentence": 0.5820158102766798,
+  "per": 0.009470307700140866,
+  "per_without_stress": 0.005270008571700689,
+  "exact_sentence": 0.5928853754940712,
+  "exact_sentence_without_stress": 0.7371541501976284,
+  "piper_shape_per": 0.009510339989086495,
+  "piper_shape_exact_sentence": 0.5849802371541502,
   "word_count_mismatch_sentences": 193,
   "errors_by_class": {
    "stress": {
-    "count": 903,
-    "share": 0.504751257685858,
-    "per_contribution": 0.005108535157244446
+    "count": 860,
+    "share": 0.5137395459976105,
+    "per_contribution": 0.0048652715783280434
    },
    "vowel": {
-    "count": 300,
-    "share": 0.16769144773616546,
-    "per_contribution": 0.0016971877598818757
-   },
-   "consonant": {
-    "count": 233,
-    "share": 0.13024035774175516,
-    "per_contribution": 0.0013181491601749235
+    "count": 271,
+    "share": 0.16188769414575865,
+    "per_contribution": 0.0015331262764266278
    },
    "other": {
-    "count": 215,
-    "share": 0.12017887087758525,
-    "per_contribution": 0.0012163178945820109
+    "count": 213,
+    "share": 0.12724014336917563,
+    "per_contribution": 0.0012050033095161318
+   },
+   "consonant": {
+    "count": 209,
+    "share": 0.12485065710872162,
+    "per_contribution": 0.0011823741393843733
    },
    "word-boundary": {
-    "count": 78,
-    "share": 0.043599776411403016,
-    "per_contribution": 0.0004412688175692877
+    "count": 74,
+    "share": 0.04420549581839905,
+    "per_contribution": 0.00041863964743752937
    },
    "length": {
-    "count": 59,
-    "share": 0.03297931805477921,
-    "per_contribution": 0.0003337802594434356
+    "count": 46,
+    "share": 0.027479091995221028,
+    "per_contribution": 0.00026023545651522096
    },
    "diacritic": {
     "count": 1,
-    "share": 0.0005589714924538849,
+    "share": 0.0005973715651135006,
     "per_contribution": 5.657292532939586e-06
    }
   },
   "top_confusions": [
    {
-    "edit": "∅→ˌ",
-    "count": 161
+    "edit": "ˈ→∅",
+    "count": 149
    },
    {
-    "edit": "ˈ→∅",
-    "count": 146
+    "edit": "∅→ˌ",
+    "count": 144
    },
    {
     "edit": "ˌ→ˈ",
@@ -64,38 +64,34 @@
    },
    {
     "edit": "ˌ→∅",
-    "count": 141
+    "count": 135
    },
    {
     "edit": "ˈ→ˌ",
-    "count": 114
+    "count": 104
    },
    {
     "edit": "∅→ˈ",
-    "count": 94
+    "count": 87
    },
    {
     "edit": " →∅",
-    "count": 47
+    "count": 43
    },
    {
     "edit": "ː→∅",
-    "count": 38
+    "count": 33
    },
    {
     "edit": "∅→ ",
     "count": 31
    },
    {
-    "edit": "∅→e",
-    "count": 23
-   },
-   {
     "edit": "e→∅",
-    "count": 23
+    "count": 22
    },
    {
-    "edit": "∅→ː",
+    "edit": "u→∅",
     "count": 21
    },
    {
@@ -107,15 +103,11 @@
     "count": 21
    },
    {
-    "edit": "u→∅",
-    "count": 20
-   },
-   {
     "edit": "t→∅",
-    "count": 19
+    "count": 18
    },
    {
-    "edit": "∅→ɛ",
+    "edit": "ː→a",
     "count": 18
    },
    {
@@ -127,7 +119,7 @@
     "count": 17
    },
    {
-    "edit": "ː→a",
+    "edit": "ɑ→∅",
     "count": 17
    },
    {
@@ -139,97 +131,51 @@
     "count": 16
    },
    {
-    "edit": "ɑ→∅",
-    "count": 16
-   },
-   {
-    "edit": "ɪ→∅",
+    "edit": "∅→e",
     "count": 14
    },
    {
     "edit": "ɛ→∅",
+    "count": 13
+   },
+   {
+    "edit": "∅→ː",
+    "count": 13
+   },
+   {
+    "edit": "∅→c",
     "count": 12
+   },
+   {
+    "edit": "ˈ→a",
+    "count": 11
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 17344,
-    "wrong": 415,
-    "rate": 0.023927583025830257
+    "wrong": 413,
+    "rate": 0.023812269372693727
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 195,
-    "per": 0.01655894583896989,
-    "exact_sentence": 0.4564102564102564
+    "per": 0.015431634851445462,
+    "exact_sentence": 0.46153846153846156
    },
    "no-digits": {
     "sentences": 817,
-    "per": 0.008242902553984435,
-    "exact_sentence": 0.6217870257037944
+    "per": 0.0077313749132229895,
+    "exact_sentence": 0.6242350061199511
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-256",
-    "text": "Sowohl Cyanursäure als auch Melamin wurden in Urinproben von Haustieren gefunden, die nach dem Verzehr kontaminierter Haustiernahrung starben.",
-    "reference": "zoːvˈoːl sˈyːanˌʊɐzɔørə als ˌaʊx mˌeːlamˈiːn vˌʊɐdən ɪn ˈuːrɪnpɾˌoːbən fɔn hˈaʊstˌiːrən ɡəfˈʊndən diː nɑːx deːm fɛɾtsˈeːɾ kɔntˌɑmiːnˈiːɾtɜ hˈaʊstˌiːɾnɑːrˌʊŋ ʃtˈaɾbən",
-    "uccharan": "zoːvˈoːl sˌyːanʊɐzˈɔørə als ˌaʊx mˌeːlɑmˈiːn vˌʊɐdən ɪn ˈuːrɪnpɾˌoːbən fɔn hˈaʊstˌiːrən ɡəfˈʊndən diː nɑːx deːm fɛɾtsˈeːɾ kɔntˌɑmiːnˈiːɾtɜ hˈaʊstˌiːɾnɑːrˌʊŋ ʃtˈaɾbən"
-   },
-   {
-    "id": "flores-devtest-619",
-    "text": "Die meisten Insekten können ihre Flügel entlang ihres Körpers zurückklappen.",
-    "reference": "diː mˈaɪstən ɪnzˈɛktən kˌœnən ˌiːrə flˈyːɡəl ɛntlˈaŋ ˌiːrəs kˈœɾpɜs tsuːrˈʏkklˌapən",
-    "uccharan": "diː mˈaɪstən ɪnzˈɛktən kˌœnən ˌiːrə flˈyːɡəl ɛntlˈaŋ ˌiːrəs kˈœɾpɜs tsuːrˈʏklapən"
-   },
-   {
-    "id": "flores-devtest-982",
-    "text": "Vormoderne Sternwarten sind heute normalerweise nicht mehr in Betrieb und dienen als Museen oder Bildungsorte.",
-    "reference": "foːɾmˈoːdˌɛɾnə ʃtˈɛɾnvaɾtən zɪnt hˈɔøtə nˈɔɾmalɜvˌaɪzə nˈɪçt mˌeːɾ ɪn bətɾˈiːp ʊnt dˈiːnən als muːzˈeːən ˌoːdɜ bˈɪldʊŋsˌɔɾtə",
-    "uccharan": "fˈoːɾmoːdˌɛɾnə ʃtˈɛɾnvaɾtən zɪnt hˈɔøtə nˈɔɾmalɜvˌaɪzə nˈɪçt mˈeːɾ ɪn bətɾˈiːp ʊnt dˈiːnən als muːzˈeːən ˌoːdɜ bˈɪldʊŋsˌɔɾtə"
-   },
-   {
-    "id": "flores-devtest-296",
-    "text": "Laut Mick O‘Flynn, dem geschäftsführenden Direktor von Park Conservation and Heritage im NPWS, erhielten die vier für die erste Jagdoperation ausgewählten Schützen umfassenden Sicherheits- und Trainingsunterricht.",
-    "reference": "lˈaʊt mˈɪk ˈoːflʏn deːm ɡəʃˈɛftsfyːrəndən diːrˈɛktoːɾ fɔn pˈaɾk kˌɔnzɛɾvatsjˈoːn ˈant hˈeːriːtˌɑːɡə ɪm ˌɛnpˌeːvˌeːˈɛs ɛɾhˈiːltən diː fˈiːɾ fyːɾ diː ˈeːɾstə jˌɑːkdoːpˌeːratsjˈoːn ˈaʊsɡəvˌɛːltən ʃˈʏtsən ˈʊmfˌasəndən zˈɪçɜhˌaɪts ʊnt tɾˈɛnɪŋzˌʊntɜrˌɪçt",
-    "uccharan": "lˈaʊt mˈɪk ˈoː flˈʏn deːm ɡəʃˈɛftsfyːrəndən diːrˈɛktoːɾ fɔn pˈaɾk kˌɔnzɛɾvatsjˈoːn ˈant hˈeːriːtˌɑːɡə ɪm ˌɛnpˌeːvˌeːˈɛs ɛɾhˈiːltən diː fˈiːɾ fyːɾ diː ˈeːɾstə jˈɑːkdɔpˌeːratsjˌoːn ˈaʊsɡəvˌɛːltən ʃˈʏtsən ˈʊmfˌasəndən zˈɪçɜhˌaɪts ʊnt tɾˈɛnɪŋzˌʊntɜrˌɪçt"
-   },
-   {
-    "id": "flores-devtest-805",
-    "text": "Die Sichtweite kann auch durch fallenden oder umherwehenden Schnee oder durch Kondensation oder Eis auf den Fahrzeugfenstern beeinträchtigt werden.x",
-    "reference": "diː zˈɪçtvaɪtə kˌan ˌaʊx dʊɐç fˈaləndən ˌoːdɜ ˈʊmhˌɛɾveːəndən ʃnˈeː ˌoːdɜ dʊɐç kɔndˌɛnzatsjˈoːn ˌoːdɜ ˈaɪs aʊf deːn fˈɑːɾtsɔøkfˌɛnstɜn bəˈaɪntɾˌɛçtɪçt vˌɛɾdən ˈɪks",
-    "uccharan": "diː zˈɪçtvaɪtə kˌan ˌaʊx dʊɐç fˈaləndən ˌoːdɜ ˈʊmhˌɛɜvˌeːəndən ʃnˈeː ˌoːdɜ dʊɐç kɔndˌɛnzatsjˈoːn ˌoːdɜ ˈaɪs aʊf deːn fˈɑːɾtsɔˌøkfɛnstɜn bəˈaɪntɾˌɛçtɪçt vˌɛɾdən ˈɪks"
-   },
-   {
-    "id": "flores-devtest-732",
-    "text": "Die Sundarbans sind der größte Mangrovengürtel der Welt und erstrecken sich über 80 km vom bangladeschischen und indischen Hinterland bis an die Küste.",
-    "reference": "diː zˌʊndaɾbˈɑːns zɪnt dɛɾ ɡɾˈœstə mˈaŋɡɾoːvˌɛnɡʏɾtəl dɛɾ vˈɛlt ʊnt ɛɾʃtɾˈɛkən zɪç ˌyːbɜ ˈaxtsɪç kˌɑːˈɛm fɔm bˌaŋladˈɛʃɪʃən ʊnt ˈɪndɪʃən hˌɪntɜlˈant bɪs an diː kˈʏstə",
-    "uccharan": "diː zˈʊndaɾbˌɑːns zɪnt dɛɾ ɡɾˈœstə mˈaŋɡɾoːvˌɛnɡʏɾtəl dɛɾ vˈɛlt ʊnt ɛɾʃtɾˈɛkən zɪç ˌyːbɜ ˈaxtsɪç kˌɑːˈɛm fɔm bˈaŋladˌɛʃɪʃən ʊnt ˈɪndɪʃən hˌɪntɜlˈant bɪs an diː kˈʏstə"
-   },
-   {
-    "id": "flores-devtest-589",
-    "text": "Diese Paare können sich für einen Adoptionsplan für ihr Baby entscheiden.",
-    "reference": "dˌiːzə pˈɑːrə kˌœnən zɪç fyːɾ ˌaɪnən ˌɑdɔptsjˌoːnsplˈɑːn fyːɾ iːɾ bˈeɪbi ɛntʃˈaɪdən",
-    "uccharan": "dˌiːzə pˈɑːrə kˌœnən zɪç fyːɾ ˌaɪnən ˈɑdɔptsjˌoːnsplɑːn fyːɾ iːɾ bˈeɪbi ɛntʃˈaɪdən"
-   },
-   {
-    "id": "flores-devtest-285",
-    "text": "Er wurde infolgedessen in das Addenbrooke’s Hospital in Cambridge verlegt.",
-    "reference": "ɛɾ vˌʊɐdə ˈɪnfɔlɡˌeːdɛsən ɪn das ˈadənbɾˌoːkeːs hˌɔspiːtˈɑːl ɪn kˈeɪmbɹɪdʒ fɛɾlˈeːkt",
-    "uccharan": "ɛɾ vˌʊɐdə ˈɪnfɔlɡˌeːdɛsən ɪn das ˈadənbɾˌoːkəs hˌɔspiːtˈɑːl ɪn kˈeɪmbɹɪdʒ fɛɾlˈeːkt"
-   },
    {
     "id": "flores-devtest-279",
     "text": "Die Namen der Angeklagten sind Baba Kanjar, Bhutha Kanja, Rampro Kanjar, Gaza Kanjar und Vishnu Kanjar.",
     "reference": "diː nˈɑːmən dɛɾ ˈanɡəklˌɑːktən zɪnt bˈɑbɑː kˈanjɑːɾ bˈeːhˈʊtɑː kˈanjɑː rˈampɾoː kˈanjɑːɾ ɡˈɑtsɑː kˈanjɑːɾ ʊnt vˈɪʃnuː kˈanjɑːɾ",
     "uccharan": "diː nˈɑːmən dɛɾ ˈanɡəklˌɑːktən zɪnt bˈɑbɑː kˈanjɑːɾ bˈeːhˌʊtɑː kˈanjɑː rˈampɾoː kˈanjɑːɾ ɡˈɑtsɑː kˈanjɑːɾ ʊnt vˈiːʃnuː kˈanjɑːɾ"
-   },
-   {
-    "id": "flores-devtest-471",
-    "text": "Der in Panik versetzte König Ludwig der XIV., Königin Marie-Antoinette, ihre beiden kleinen Kinder (die 11 Jahre alte Marie-Therese und der 4 Jahre alte Louis-Charles) sowie die Schwester des Königs, Madame Elisabeth wurden am 6. Oktober 1789 in Versailles von einem Mob aus Marktfrauen zur Rückkehr nach Paris gezwungen.",
-    "reference": "dɛɾ ɪn pˈɑnɪk fɛɾzˈɛtstə kˈøːnɪç lˈʊdvɪç dɛɾ rˌøːmɪʃ fˈɪɾtseːntə kˈøːnɪɡˌɪn marˈiːˈantˌoːiːnˌɛtə ˌiːrə bˈaɪdən klˈaɪnən kˈɪndɜ diː ˈɛlf jˈɑːrə ˈaltə marˈiːtˈeːrəsə ʊnt dɛɾ fˈiːɾ jˈɑːrə ˈaltə lˈuːɪsʃˈaɾləs zoːvˈiː diː ʃvˈɛstɜ dɛs kˈøːnɪçs mˈɑdɑːmə ˈeːliːzˌɑbeːt vˌʊɐdən am zˈɛks ɔktˈoːbɜ ˈaɪn tˈaʊzənt zˈiːbənhˈʊndɜt nˈɔøn ʊntˈaxtsɪç ɪn fɛɾzˈaɪləs fɔn ˌaɪnəm mˈoːp ˌaʊs mˈaɾktfraʊən tsuːɾ rˈʏkeːɾ nɑːx pˈɑrɪs ɡətsvˈʊŋən",
-    "uccharan": "dɛɾ ɪn pˈɑnɪk fɛɾzˈɛtstə kˈøːnɪç lˈʊdvɪç dɛɾ fˈɪɾtseːn kˈøːnɪɡˌɪn marˈiːˈantˌoːiːnˌɛtə ˌiːrə bˈaɪdən klˈaɪnən kˈɪndɜ diː ˈɛlf jˈɑːrə ˈaltə marˈiːtˈeːrəsə ʊnt dɛɾ fˈiːɾ jˈɑːrə ˈaltə lˈuːɪsʃˈaɾləs zoːvˈiː diː ʃvˈɛstɜ dɛs kˈøːnɪçs mˈɑdɑːmə ˈeːliːzˌɑbeːt vˌʊɐdən am zˈɛks ɔktˈoːbɜ ˈaɪn tˈaʊzənt zˈiːbənhˈʊndɜt nˈɔøn ʊntˈaxtsɪç ɪn fɛɾzˈaɪləs fɔn ˌaɪnəm mˈoːp ˌaʊs mˈaɾktfraʊən tsuːɾ rˈʏkeːɾ nɑːx pˈɑrɪs ɡətsvˈʊŋən"
    },
    {
     "id": "flores-devtest-1",
@@ -242,6 +188,60 @@
     "text": "Casablanca ist einer der uninteressantesten Orte zum Shoppen in ganz Marokko.",
     "reference": "kˌɑzablˈankɑː ɪst ˌaɪnɜ dɛɾ ˈʊnˌɪntərɛsˌantəstən ˈɔɾtə tsʊm ʃˈɒpən ɪn ɡˌants marˈɔkoː",
     "uccharan": "kˌɑzablˈankɑː ɪst ˌaɪnɜ dɛɾ ˈʊnˌɪnteːrɛsˌantəstən ˈɔɾtə tsʊm ʃˈɒpən ɪn ɡˌants marˈɔkoː"
+   },
+   {
+    "id": "flores-devtest-351",
+    "text": "Reste von Abwassersystemen fand man in den Häusern der minoischen Städte auf Kreta und Santorini in Griechenland.",
+    "reference": "rˈɛstə fɔn ˈapvˌasɜzʏstˌeːmən fˈant man ɪn deːn hˈɔøzɜn dɛɾ miːnˈoːɪʃən ʃtˈɛtə aʊf kɾˈeːtɑː ʊnt zˈantoːrˌiːniː ɪn ɡɾˈiːçənlˌant",
+    "uccharan": "rˈɛstə fɔn ˈapvˌasɜzʏstˌeːmən fˈant man ɪn deːn hˈɔøzɜn dɛɾ mˈiːnoːˌɪʃən ʃtˈɛtə aʊf kɾˈeːtɑː ʊnt zˈantoːrˌiːniː ɪn ɡɾˈiːçənlˌant"
+   },
+   {
+    "id": "flores-devtest-381",
+    "text": "Der Mosasaurus war das größte Raubtier seiner Zeit, somit fürchtete er sich vor nichts außer anderen Mosasauriern.",
+    "reference": "dɛɾ mˈoːzazˌaʊrʊs vɑːɾ das ɡɾˈœstə raʊptˈiːɾ zˌaɪnɜ tsˈaɪt zoːmˈɪt fˈʏɾçtətə ɛɾ zɪç fˌɔɾ nˈɪçts ˈaʊsɜ ˈandərən mˈoːzazˌaʊriːɾn",
+    "uccharan": "dɛɾ mˈoːzɑzˌaʊrˌʊs vɑːɾ das ɡɾˈœstə raʊptˈiːɾ zˌaɪnɜ tsˈaɪt zoːmˈɪt fˈʏɾçtətə ɛɾ zɪç fˌɔɾ nˈɪçts ˈaʊsɜ ˈandərən mˈoːzɑzˌaʊriːɾn"
+   },
+   {
+    "id": "flores-devtest-89",
+    "text": "Der Effekt, nach dem das Team suchte, würde von Gezeitenkräften zwischen der dunklen Materie der Galaxie und der dunklen Materie der Milchstraße verursacht werden.",
+    "reference": "dɛɾ ɛfˈɛkt nɑːx deːm das tˈiːm zˈuːxtə vˈʏɾdə fɔn ɡətsˈaɪtˌɛŋkɾɛftən tsvˈɪʃən dɛɾ dˈʊŋklən matˈeːrɪə dɛɾ ɡˌɑlaksˈiː ʊnt dɛɾ dˈʊŋklən matˈeːrɪə dɛɾ mˈɪlkstɾɑːsə fɛɾˈʊɐzaxt vˌɛɾdən",
+    "uccharan": "dɛɾ ɛfˈɛkt nɑːx deːm das tˈiːm zˈuːxtə vˈʏɾdə fɔn ɡətsˈaɪtənkɾˌɛftən tsvˈɪʃən dɛɾ dˈʊŋklən matˈeːrɪə dɛɾ ɡˌɑlaksˈiː ʊnt dɛɾ dˈʊŋklən matˈeːrɪə dɛɾ mˈɪlkstɾɑːsə fɛɾˈʊɐzaxt vˌɛɾdən"
+   },
+   {
+    "id": "flores-devtest-838",
+    "text": "Im Landesinneren Nordindiens und Pakistans wird Joghurt üblicherweise in Currys verwendet; in Südindien und einigen anderen Küstenregionen des Subkontinents wird üblicherweise Kokosmilch verwendet.",
+    "reference": "ɪm lˈandəsˌɪnərən nɔɾdˈɪndɪəns ʊnt pˈɑkɪstˌɑːns vˌɪɾt jˈɔkhʊɐt ˈʏblɪçɜvˌaɪzə ɪn kˈʊryːs fɛɾvˈɛndət ɪn zyːdˈɪndɪən ʊnt ˈaɪnɪɡən ˈandərən kˌʏstənrˌeːɡiˈoːnən dɛs zˌʊpkɔntiːnˈɛnts vˌɪɾt ˈʏblɪçɜvˌaɪzə kˈoːkɔsmˌɪlç fɛɾvˈɛndət",
+    "uccharan": "ɪm lˈandəsˌɪnərən nɔɾdˈɪndiːəns ʊnt pˈɑkɪstˌɑːns vˌɪɾt jˈɔkhʊɐt ˈʏblɪçɜvˌaɪzə ɪn kˈʊryːs fɛɾvˈɛndət ɪn zˈyːdɪndˌɪən ʊnt ˈaɪnɪɡən ˈandərən kˌʏstənrˌeːɡiˈoːnən dɛs zˌʊpkɔntiːnˈɛnts vˌɪɾt ˈʏblɪçɜvˌaɪzə kˈoːkɔsmˌɪlç fɛɾvˈɛndət"
+   },
+   {
+    "id": "flores-devtest-976",
+    "text": "Die wichtigsten Buchstaben, auf die man achten muss, sind c und g, da ihre Aussprache je nach Folgevokal variiert.",
+    "reference": "diː vˈɪçtɪçstən bˈuːxʃtɑːbən aʊf diː man ˈaxtən mˈʊs zɪnt tsˈeː ʊnt ɡˈeː dɑː ˌiːrə ˈaʊsʃpɾˌɑːxə jeː nɑːx fˌɔlɡeːvoːkˈɑːl vˌɑriːˈiːɾt",
+    "uccharan": "diː vˈɪçtɪçstən bˈuːxʃtɑːbən aʊf diː man ˈaxtən mˈʊs zɪnt tsˈeː ʊnt ɡˈeː dɑː ˌiːrə ˈaʊsʃpɾˌɑːxə jeː nɑːx fˈɔlɡeːvˌoːkɑːl vˌɑriːˈiːɾt"
+   },
+   {
+    "id": "flores-devtest-191",
+    "text": "Der ehemalige Sprecher des Repräsentantenhauses Newt Gingrich, der texanische Gouverneur Rick Perry und die Kongressabgeordnete Michele Bachmann erreichten jeweils den vierten, fünften und sechsten Platz.",
+    "reference": "dɛɾ ˈeːeːmˌɑlɪɡə ʃpɾˈɛçɜ dɛs rˈɛpɾɛːzˌɛntantˌɛnhaʊzəs njˈuːt ɡˈɪŋɡɾɪç dɛɾ tɛksˈɑnɪʃə ɡˌuːvɜnˈøːɾ rˈɪk pˈɛriː ʊnt diː kɔŋɡɾˈɛsabɡˌeːɔɾdnətə mˈɪçələ bˈaxman ɛɾrˈaɪçtən jˈeːvaɪls deːn fˈiːɾtən fˈʏnftən ʊnt zˈɛkstˌeːn plˈats",
+    "uccharan": "dɛɾ ˈeːeːmˌɑlɪɡə ʃpɾˈɛçɜ dɛs rˈɛpɾɛːzˌɛntantˌɛnhaʊzəs nft ɡˈɪnɡɾɪç dɛɾ tɛksˈɑnɪʃə ɡˌuːvɜnˈøːɾ rˈɪk pˈɛriː ʊnt diː kɔŋɡɾˈɛsabɡˌeːɔɾdnətə mˈɪçələ bˈaxman ɛɾrˈaɪçtən jˈeːvaɪls deːn fˈiːɾtən fˈʏnftən ʊnt zˈɛkstˌeːn plˈats"
+   },
+   {
+    "id": "flores-devtest-924",
+    "text": "Wenn Sie nur im Zuge der Bordexkursionen an Land gehen, brauchen Sie kein separates Visum (Stand 2009).",
+    "reference": "vˌɛn ziː nˈuːɾ ɪm tsˈuːɡə dɛɾ bˌɔɾdɛkskʊɐzjˈoːnən an lˈant ɡˈeːən bɾˈaʊxən ziː kˈaɪn zˌeːparˈɑːtəs vˈiːzʊm ʃtˈant tsvˈaɪ tˈaʊzənt nˈɔøn",
+    "uccharan": "vˌɛn ziː nˈuːɾ ɪm tsˈuːɡə dɛɾ bˈɔɾdɛkskˌʊɐzjoːnən an lˈant ɡˈeːən bɾˈaʊxən ziː kˈaɪn zˌeːparˈɑːtəs vˈiːzʊm ʃtˈant tsvˈaɪ tˈaʊzənt nˈɔøn"
+   },
+   {
+    "id": "flores-devtest-64",
+    "text": "Der Kongress begann im August 2005 mit der Finanzierung der anti-Obszönitätsinitiative und legte fest, dass das FBI 10 Agenten für die Erwachsenenpornographie einsetzen muss.",
+    "reference": "dɛɾ kɔŋɡɾˈɛs bəɡˈan ɪm ˈaʊɡʊst tsvˈaɪ tˈaʊzənt fˈʏnf mɪt dɛɾ fˌiːnantsˈiːrʊŋ dɛɾ ˈantˌiːˌɔpstsøːnˌiːtɛtsˌiːniːtˌiːatˈiːvə ʊnt lˈeːktə fˈɛst das das ˌɛfbˌeːˈiː tsˈeːn aɡˈɛntən fyːɾ diː ɛɾvˌaxzənˌɛnpɔɾnˌɔɡɾafˈiː ˈaɪnzˌɛtsən mˈʊs",
+    "uccharan": "dɛɾ kɔŋɡɾˈɛs bəɡˈan ɪm ˈaʊɡʊst tsvˈaɪ tˈaʊzənt fˈʏnf mɪt dɛɾ fˌiːnantsˈiːrʊŋ dɛɾ ˈantiːˈɔpstsøːnˌiːtɛtsˌiːniːtˌiːatˌiːvə ʊnt lˈeːktə fˈɛst das das ˌɛfbˌeːˈiː tsˈeːn aɡˈɛntən fyːɾ diː ɛɾvˈaxzənˌɛnpɔɾnˌɔɡɾafˌiː ˈaɪnzˌɛtsən mˈʊs"
+   },
+   {
+    "id": "flores-devtest-556",
+    "text": "Hausziegen wurden normalerweise in Herden gehalten, die auf Hügeln oder anderen Weideflächen umherwanderten.  Betreut wurden die Ziegen von Ziegenhirten, ganz ähnlich wie die bekannteren Schafhirten; oft waren das Kinder oder Heranwachsende. Diese Weideverfahren werden heute noch angewendet.",
+    "reference": "hˈaʊstsˌiːɡən vˌʊɐdən nˈɔɾmalɜvˌaɪzə ɪn hˈeːɾdən ɡəhˈaltən diː aʊf hˈyːɡəln ˌoːdɜ ˈandərən vˈaɪdɛflˌɛçən ˈʊmhˌɛɾvandɜtən bətɾˈɔøt vˌʊɐdən diː tsˈiːɡən fɔn tsˈiːɡˌɛnhɪɾtən ɡˌants ˈɛːnlɪç viː diː bəkˈantərən ʃˈafhɪɾtən ˈɔft vɑːrən das kˈɪndɜ ˌoːdɜ hɛrˈanvˌaxzəndə dˌiːzə vˈaɪdəfɛɾfˌɑːrən vˌɛɾdən hˈɔøtə nɔx ˈanɡəvˌɛndət",
+    "uccharan": "hˈaʊstsˌiːɡən vˌʊɐdən nˈɔɾmalɜvˌaɪzə ɪn hˈeːɾdən ɡəhˈaltən diː aʊf hˈyːɡəln ˌoːdɜ ˈandərən vˈaɪdɛflˌɛçən ˈʊmhˌɛɾvˌandɜtən bətɾˈɔøt vˌʊɐdən diː tsˈiːɡən fɔn tsˈiːɡənhˌɪɾtən ɡˌants ˈɛːnlɪç viː diː bəkˈantərən ʃˈafhɪɾtən ˈɔft vɑːrən das kˈɪndɜ ˌoːdɜ hɛrˈanvˌaxzəndə dˌiːzə vˈaɪdˌeːfɛɾfˌɑːrən vˌɛɾdən hˈɔøtə nɔx ˈanɡəvˌɛndət"
    }
   ]
  }

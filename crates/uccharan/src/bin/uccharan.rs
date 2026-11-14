@@ -24,6 +24,11 @@
 //! `--match-options JSON` sets the matching options, `--index-options JSON`
 //! the languages the vocabulary is read in, and `--match-stats` prints
 //! timings to standard error.
+//! English and Hindi are built in; the word table of another language is a
+//! pack, looked for in `$UCCHARAN_DATA_DIR` and the cache at first use (see
+//! `uccharan::packs`). `--packs` lists the packs of this version and
+//! `--download NAME...` fetches packs into the cache (cargo feature
+//! `download`).
 //! Without TEXT arguments, lines are read from standard input.
 
 use std::io::{BufRead, Write};
@@ -73,6 +78,29 @@ fn main() {
             "--threads" => threads = args.next().and_then(|v| v.parse().ok()),
             "--misaki" => misaki = args.next(),
             "--pack" => packs.extend(args.next()),
+            "--packs" => {
+                // The packs of this version and where each one stands.
+                let ph = Phonemizer::new();
+                for k in uccharan::packs::PACKS {
+                    let built_in = Lang::parse(k.name).is_some_and(|l| ph.data(l).is_some());
+                    let state = if built_in {
+                        "built in"
+                    } else if on_disk(k.name) {
+                        "installed"
+                    } else {
+                        "not installed"
+                    };
+                    println!("{:16} {:>9} bytes  {state}", k.name, k.size);
+                }
+                return;
+            }
+            "--download" => {
+                // Fetch packs into the cache (cargo feature `download`).
+                for name in args.by_ref() {
+                    fetch(&name);
+                }
+                return;
+            }
             "--norm-options" => norm_options = args.next().unwrap_or_default(),
             "--translit-options" => translit_options = args.next().unwrap_or_default(),
             "--wordlist" => {
@@ -92,7 +120,7 @@ fn main() {
             }
             "-h" | "--help" => {
                 println!(
-                    "usage: uccharan [-l en-us|en-gb|hi] [-p espeak-ipa|piper|kokoro|kitten|matcha|sherpa-onnx]\n                [--normalize natural|espeak|off] [--improved] [--hinglish] [--no-punctuation]\n                [--ids [--voice-config FILE]] [--threads N] [--misaki DIR] [--pack FILE.ucd]... [TEXT...]\n                [--match-terms FILE [--match-options JSON] [--index-options JSON] [--match-stats]]\n                [-p native|native-json --pack xlit-LANG.ucd [--translit-options JSON]]\n\nReads lines from standard input when no TEXT is given."
+                    "usage: uccharan [-l en-us|en-gb|hi] [-p espeak-ipa|piper|kokoro|kitten|matcha|sherpa-onnx]\n                [--normalize natural|espeak|off] [--improved] [--hinglish] [--no-punctuation]\n                [--ids [--voice-config FILE]] [--threads N] [--misaki DIR] [--pack FILE.ucd]... [TEXT...]\n                [--packs] [--download NAME...]\n                [--match-terms FILE [--match-options JSON] [--index-options JSON] [--match-stats]]\n                [-p native|native-json --pack xlit-LANG.ucd [--translit-options JSON]]\n\nReads lines from standard input when no TEXT is given."
                 );
                 return;
             }
@@ -101,6 +129,7 @@ fn main() {
     }
     if let Some(f) = &match_terms {
         let p = Phonemizer::new();
+        p.ensure(lang).unwrap_or_else(|e| die(&e.to_string()));
         let vocabulary = std::fs::read_to_string(f).unwrap_or_else(|e| die(&format!("{f}: {e}")));
         let t0 = std::time::Instant::now();
         let index = uccharan::soundalike::SoundIndex::from_text(&p, &vocabulary, &index_options)
@@ -170,7 +199,8 @@ fn main() {
         return;
     }
     if prof == "text" || prof == "text-json" {
-        let p = Phonemizer::new();
+        // The spoken form needs no word table.
+        let p = Phonemizer::new().rules_fallback(true);
         let mut o = uccharan::normalize_api::options_from_json(&norm_options)
             .unwrap_or_else(|e| die(&format!("--norm-options: {e}")));
         if mode == Mode::Improved {
@@ -207,6 +237,7 @@ fn main() {
         p.load_pack(bytes)
             .unwrap_or_else(|e| die(&format!("{f}: {e}")));
     }
+    p.ensure(lang).unwrap_or_else(|e| die(&e.to_string()));
     if let Some(dir) = &misaki {
         let accent = if lang == Lang::EnGb { "gb" } else { "us" };
         let read = |name: &str| {
@@ -305,6 +336,34 @@ fn main() {
             emit(t);
         }
     }
+}
+
+/// True when a verified copy of the pack is in the data directory or the cache.
+fn on_disk(name: &str) -> bool {
+    let file = format!("{name}.ucd");
+    let mut dirs: Vec<std::path::PathBuf> = std::env::var_os("UCCHARAN_DATA_DIR")
+        .map(|v| std::env::split_paths(&v).collect())
+        .unwrap_or_default();
+    dirs.extend(uccharan::packs::cache_dir());
+    dirs.into_iter()
+        .any(|d| std::fs::read(d.join(&file)).is_ok_and(|b| uccharan::packs::verify(name, &b)))
+}
+
+#[cfg(feature = "download")]
+fn fetch(name: &str) {
+    match uccharan::packs::download(name) {
+        Ok(b) => eprintln!("uccharan: {name}.ucd, {} bytes", b.len()),
+        Err(e) => die(&e.to_string()),
+    }
+}
+
+#[cfg(not(feature = "download"))]
+fn fetch(name: &str) {
+    die(&format!(
+        "this build cannot download (cargo feature `download`): get {} and put it into the \
+         directory named by UCCHARAN_DATA_DIR",
+        uccharan::packs::url(name)
+    ))
 }
 
 fn die(msg: &str) -> ! {

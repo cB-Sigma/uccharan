@@ -250,6 +250,8 @@ menos# mˈenʊs
 por-cento# pˌorsˈeɪŋtʊ
 
 [numbers]
+roman max 3999
+roman-skip VI CC CD MM
 decimal comma
 tail-secondary no
 point vírgula#

@@ -113,6 +113,16 @@ def _try_need(lang: str, text: str = "") -> None:
         pass
 
 
+def _need_table(lang: str) -> None:
+    # Matching by sound reads the text: a language other than English is not
+    # read without its word table (PackError when it cannot be had).
+    from .packs import ensure
+
+    if lang.lower().replace("_", "-") not in ("en", "en-us", "en-gb", "en-gb-x-rp", "en-uk", "a", "b"):
+        ensure(lang)
+    _try_need(lang)
+
+
 def _lists(wordlists: Sequence[WordList | str]) -> list[_native.WordList]:
     return [
         w._native if isinstance(w, WordList) else WordList(w)._native for w in wordlists

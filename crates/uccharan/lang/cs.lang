@@ -2,6 +2,7 @@
 # word table, the number words and the letter names.
 
 [meta]
+spell-stress = first
 tag = cs
 vowels = a e i o u ɪ ʊ
 stress = initial

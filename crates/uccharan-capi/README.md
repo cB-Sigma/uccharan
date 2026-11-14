@@ -31,9 +31,15 @@ Build: `cargo build --release -p uccharan-capi` → `target/release/libuccharan.
 `uccharan_string_free`. Flags: `UCCHARAN_IMPROVED`, `UCCHARAN_HINGLISH`,
 `UCCHARAN_NORMALIZE_ESPEAK`, `UCCHARAN_NORMALIZE_OFF`, `UCCHARAN_NO_PUNCTUATION`.
 
-Every language pack is compiled in by default. Build with `--no-default-features --features
-embed-en-us,embed-hi` (or no features at all) for a smaller library, and load the `.ucd` packs
-attached to each GitHub release with `uccharan_load`. The transliteration packs (`xlit-*.ucd`)
+English and Hindi are compiled in. The word tables of the other languages (`de.ucd`, `fr.ucd`,
+`ur.ucd` …, attached to each GitHub release) are read at a language's first use from the directory
+named by `UCCHARAN_DATA_DIR` or from `~/.cache/uccharan/<version>/`, and checked against SHA-256
+sums compiled into the library. When a table is missing, the call returns NULL and
+`uccharan_last_error()` names the pack, its URL and where the file is looked for; a language is
+never read without its table. `uccharan_ensure(p, "de")` does the check ahead of time. Build with
+`--features bundle` to compile every table in, with `--features download` to fetch a missing table
+from the release on first use (`UCCHARAN_OFFLINE=1` forbids it), or load a file yourself with
+`uccharan_load_pack`. The transliteration packs (`xlit-*.ucd`)
 and Wiktionary packs (`wikipron-*.ucd`) are CC BY-SA 4.0 and never compiled in; load one with
 `uccharan_load_pack`.
 

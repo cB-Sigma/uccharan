@@ -2,6 +2,7 @@
 # table, the number words and the letter names.
 
 [meta]
+caps-words = vi
 tag = it
 vowels = a e ɛ i o ɔ u ɪ ʊ
 stress = penult
@@ -65,6 +66,51 @@ k -> k
 i -> ɪ / {!S} _ #
 
 [words]
+ord2# sekˈondo
+ord3# tˈɛrtso
+ord4# kwˈaːrto
+ord7# sˈɛtːimo
+ord8# otːˈavo
+ord9# nˈono
+ord11# ʊnditʃˈɛzimo
+ord12# doditʃˈɛzimo
+ord13# treditʃˈɛzimo
+ord14# kwatːorditʃˈɛzimo
+ord15# kwinditʃˈɛzimo
+ord16# seditʃˈɛzimo
+ord17# ditʃassetːˈɛzimo
+ord18# ditʃotːˈɛzimo
+ord19# ditʃannovˈɛzimo
+ord20# ventˈɛzimo
+ord21# vˈentʊnˈɛzimo
+ord22# vˈentɪdʊˈɛzimo
+ord23# vˈentɪtreˈɛzimo
+ord24# vˈentɪkwatːrˈɛzimo
+ord25# vˈentɪtʃinkwˈɛzimo
+ord26# vˈentɪsejˈɛzimo
+ord27# vˈentɪsetːˈɛzimo
+ord28# vˈentotːˈɛzimo
+ord29# vˈentɪnovˈɛzimo
+ord30# trentˈɛzimo
+ord31# trˈeːntʊnˈɛzimo
+ord32# trˈeːntadʊˈɛzimo
+ord33# trˈeːntatreˈɛzimo
+ord34# trˈeːntakwatːrˈɛzimo
+ord35# trˈeːntatʃinkwˈɛzimo
+ord36# trˈeːntasejˈɛzimo
+ord37# trˈeːntasetːˈɛzimo
+ord38# trˈeːntotːˈɛzimo
+ord39# trˈeːntanovˈɛzimo
+ord40# kʊaɾaːntˈɛzimo
+ord41# kʊaɾˈaːntʊnˈɛzimo
+ord42# kʊaɾˈaːntadʊˈɛzimo
+ord43# kʊaɾˈaːntatreˈɛzimo
+ord44# kʊaɾˈaːntakwatːrˈɛzimo
+ord45# kʊaɾˈaːntatʃinkwˈɛzimo
+ord46# kʊaɾˈaːntasejˈɛzimo
+ord47# kʊaɾˈaːntasetːˈɛzimo
+ord48# kʊaɾˈaːntotːˈɛzimo
+ord49# kʊaɾˈaːntanovˈɛzimo
 zero# dzˈɛɾo
 uno# ˈuno
 due# dˈue
@@ -183,6 +229,52 @@ meno# mˈeno
 percento# pertʃˈɛŋto
 
 [numbers]
+roman-skip VI
+ord2 ord2#
+ord3 ord3#
+ord4 ord4#
+ord7 ord7#
+ord8 ord8#
+ord9 ord9#
+ord11 ord11#
+ord12 ord12#
+ord13 ord13#
+ord14 ord14#
+ord15 ord15#
+ord16 ord16#
+ord17 ord17#
+ord18 ord18#
+ord19 ord19#
+ord20 ord20#
+ord21 ord21#
+ord22 ord22#
+ord23 ord23#
+ord24 ord24#
+ord25 ord25#
+ord26 ord26#
+ord27 ord27#
+ord28 ord28#
+ord29 ord29#
+ord30 ord30#
+ord31 ord31#
+ord32 ord32#
+ord33 ord33#
+ord34 ord34#
+ord35 ord35#
+ord36 ord36#
+ord37 ord37#
+ord38 ord38#
+ord39 ord39#
+ord40 ord40#
+ord41 ord41#
+ord42 ord42#
+ord43 ord43#
+ord44 ord44#
+ord45 ord45#
+ord46 ord46#
+ord47 ord47#
+ord48 ord48#
+ord49 ord49#
 decimal comma
 point virgola#
 minus meno#

@@ -5,7 +5,7 @@
 // Requirements: the wasm32-unknown-unknown Rust target and a wasm-bindgen CLI
 // whose version matches the `wasm-bindgen` crate pinned in Cargo.toml.
 import { execFileSync } from "node:child_process";
-import { cpSync, mkdirSync, rmSync, statSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, rmSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -27,7 +27,9 @@ rmSync(join(here, "dist", ".gitignore"), { force: true });
 
 mkdirSync(join(here, "data"), { recursive: true });
 for (const name of ["en-us", "en-gb", "hi", "ur", "sd", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da", "kokoro-en-us", "kokoro-en-gb"]) {
-  cpSync(join(root, "crates", "uccharan", "data", `${name}.ucd`), join(here, "data", `${name}.ucd`));
+  const builtIn = join(root, "crates", "uccharan", "data", `${name}.ucd`);
+  const table = join(root, "crates", "uccharan-data", "data", `${name}.ucd`);
+  cpSync(existsSync(builtIn) ? builtIn : table, join(here, "data", `${name}.ucd`));
 }
 for (const f of ["LICENSE", "NOTICE", "DATA_LICENSES.md"]) {
   cpSync(join(root, f), join(here, f));

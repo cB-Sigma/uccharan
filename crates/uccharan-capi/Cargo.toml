@@ -18,14 +18,20 @@ crate-type = ["cdylib", "staticlib"]
 doc = false
 
 [dependencies]
-uccharan_core = { package = "uccharan", path = "../uccharan", version = "0.4.0", default-features = false }
+uccharan_core = { package = "uccharan", path = "../uccharan", version = "0.5.0", default-features = false }
 
 [features]
-default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-ur", "embed-sd", "embed-kokoro", "embed-de", "embed-nl", "embed-fr", "embed-it", "embed-pt-br", "embed-pt", "embed-pl", "embed-tr", "embed-cs", "embed-sv", "embed-ca", "embed-ro", "embed-hu", "embed-fi", "embed-nb", "embed-da"]
-# Compile the language data into the library; without them, load packs with uccharan_load().
+default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-kokoro"]
+# Compile language data into the library. Without a word table, its pack is
+# looked for in $UCCHARAN_DATA_DIR and the cache, or loaded with uccharan_load_pack().
 embed-en-us = ["uccharan_core/embed-en-us"]
 embed-en-gb = ["uccharan_core/embed-en-gb"]
 embed-hi = ["uccharan_core/embed-hi"]
+embed-kokoro = ["uccharan_core/embed-kokoro"]
+# Every word table compiled in.
+bundle = ["uccharan_core/bundle"]
+# Fetch a missing pack from the GitHub release on first use.
+download = ["uccharan_core/download"]
 embed-ur = ["uccharan_core/embed-ur"]
 embed-sd = ["uccharan_core/embed-sd"]
 embed-de = ["uccharan_core/embed-de"]
@@ -44,4 +50,3 @@ embed-hu = ["uccharan_core/embed-hu"]
 embed-fi = ["uccharan_core/embed-fi"]
 embed-nb = ["uccharan_core/embed-nb"]
 embed-da = ["uccharan_core/embed-da"]
-embed-kokoro = ["uccharan_core/embed-kokoro"]

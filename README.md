@@ -71,6 +71,21 @@ npm install uccharan
 [release](https://github.com/cB-Sigma/uccharan/releases), or build them with
 `cargo build --release -p uccharan-capi`.
 
+**Language packs**: English and Hindi are built in. The word tables of German, Dutch, French,
+Italian, Portuguese, Polish, Turkish, Czech, Swedish, Catalan, Romanian, Hungarian, Finnish,
+Norwegian, Danish, Urdu and Sindhi are small packs attached to each GitHub release. The wheel and
+the npm package download a language's pack the first time it is used, check its SHA-256 sum and
+cache it. To install packs ahead of time, or for a machine without network access:
+
+```sh
+python -m uccharan.packs                 # list the packs and which are installed
+python -m uccharan.packs de fr           # download into the cache
+python -m uccharan.packs --dir DIR --all # or into a directory; then set UCCHARAN_DATA_DIR=DIR
+```
+
+In Rust, the `download` feature fetches packs on first use and `bundle` compiles every word table
+in. See [Packs and their licences](#packs-and-their-licences).
+
 ## Thirty seconds of each function
 
 ```python
@@ -220,28 +235,28 @@ second) and are the lower of two runs. The measurements vary by about ±10 % bet
 | Sinhala | `si` | `si` | FLORES-200, 1,012 sentences | 0.86 % | 0.24 % | 2.3× | MMS (character input) |
 | Konkani | `kok` | `kok` | Sangraha, 1,000 sentences | 0.20 % | 0.13 % | 5.1× | none |
 | Urdu | `ur` | `ur` | FLORES-200, 1,012 sentences | 1.44 % | 1.16 % | 4.0× | Piper `ur_PK` (2) |
-| Sindhi | `sd` | `sd` | FLORES-200, 1,012 sentences | 1.52 % | 0.92 % | 2.1× | none |
+| Sindhi | `sd` | `sd` | FLORES-200, 1,012 sentences | 1.30 % | 0.70 % | 2.2× | none |
 | Sanskrit | `sa` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.64 % | 0.43 % | 4.2× | none |
 | Bhojpuri | `bho` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.51 % | 0.33 % | 3.3× | SYSPIN (character input) |
 | Maithili | `mai` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.46 % | 0.29 % | 3.0× | MMS, SYSPIN (character input) |
 | Magahi | `mag` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.40 % | 0.23 % | 2.8× | MMS (character input) |
-| Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.74 % | 0.45 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
-| German | `de` | `de` | FLORES-200, 1,012 sentences | 1.01 % | 0.82 % | 5.8× † | Piper `de_DE` (11) |
-| Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.77 % | 1.39 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
-| French | `fr` | `fr` | FLORES-200, 1,012 sentences | 0.85 % | 0.65 % | 5.9× † | Piper `fr_FR` (7), Kokoro `ff_siwis` |
-| Italian | `it` | `it` | FLORES-200, 1,012 sentences | 0.66 % | 0.48 % | 4.6× † | Piper `it_IT` (4), Kokoro `if_sara`, `im_nicola` |
-| Portuguese (Brazil) | `pt-br` | `pt-br` | FLORES-200, 1,012 sentences | 0.67 % | 0.46 % | 5.1× † | Piper `pt_BR` (4), Kokoro `pf_dora`, `pm_alex`, `pm_santa` |
-| Portuguese (Portugal) | `pt` | `pt` | FLORES-200, 1,012 sentences | 0.89 % | 0.64 % | 5.2× † | Piper `pt_PT` (1) |
-| Polish | `pl` | `pl` | FLORES-200, 1,012 sentences | 1.33 % | 1.05 % | 3.1× † | Piper `pl_PL` (5) |
-| Turkish | `tr` | `tr` | FLORES-200, 1,012 sentences | 0.72 % | 0.51 % | 2.7× † | Piper `tr_TR` (1) |
-| Czech | `cs` | `cs` | FLORES-200, 1,012 sentences | 1.40 % | 1.13 % | 1.8× † | Piper `cs_CZ` (3) |
-| Swedish | `sv` | `sv` | FLORES-200, 1,012 sentences | 1.51 % | 0.88 % | 3.7× † | Piper `sv_SE` (3) |
-| Catalan | `ca` | `ca` | FLORES-200, 1,012 sentences | 1.86 % | 1.53 % | 4.9× † | Piper `ca_ES` (3) |
-| Romanian | `ro` | `ro` | FLORES-200, 1,012 sentences | 1.00 % | 0.89 % | 3.3× † | Piper `ro_RO` (1) |
-| Hungarian | `hu` | `hu` | FLORES-200, 1,012 sentences | 2.08 % | 1.61 % | 13.1× † | Piper `hu_HU` (3) |
-| Finnish | `fi` | `fi` | FLORES-200, 1,012 sentences | 1.64 % | 1.13 % | 1.7× † | Piper `fi_FI` (2) |
-| Norwegian Bokmål | `nb` | `nb` | FLORES-200, 1,012 sentences | 1.11 % | 0.52 % | 2.3× † | Piper `no_NO` (2) |
-| Danish | `da` | `da` | FLORES-200, 1,012 sentences | 2.26 % | 1.81 % | 27.1× † | Piper `da_DK` (1) |
+| Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.55 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
+| German | `de` | `de` | FLORES-200, 1,012 sentences | 0.95 % | 0.77 % | 5.8× † | Piper `de_DE` (11) |
+| Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.69 % | 1.32 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
+| French | `fr` | `fr` | FLORES-200, 1,012 sentences | 0.79 % | 0.59 % | 5.9× † | Piper `fr_FR` (7), Kokoro `ff_siwis` |
+| Italian | `it` | `it` | FLORES-200, 1,012 sentences | 0.53 % | 0.37 % | 4.6× † | Piper `it_IT` (4), Kokoro `if_sara`, `im_nicola` |
+| Portuguese (Brazil) | `pt-br` | `pt-br` | FLORES-200, 1,012 sentences | 0.61 % | 0.40 % | 5.1× † | Piper `pt_BR` (4), Kokoro `pf_dora`, `pm_alex`, `pm_santa` |
+| Portuguese (Portugal) | `pt` | `pt` | FLORES-200, 1,012 sentences | 0.84 % | 0.60 % | 5.2× † | Piper `pt_PT` (1) |
+| Polish | `pl` | `pl` | FLORES-200, 1,012 sentences | 1.19 % | 0.92 % | 3.1× † | Piper `pl_PL` (5) |
+| Turkish | `tr` | `tr` | FLORES-200, 1,012 sentences | 0.68 % | 0.47 % | 2.7× † | Piper `tr_TR` (1) |
+| Czech | `cs` | `cs` | FLORES-200, 1,012 sentences | 1.32 % | 1.07 % | 1.8× † | Piper `cs_CZ` (3) |
+| Swedish | `sv` | `sv` | FLORES-200, 1,012 sentences | 1.44 % | 0.83 % | 3.7× † | Piper `sv_SE` (3) |
+| Catalan | `ca` | `ca` | FLORES-200, 1,012 sentences | 1.51 % | 1.18 % | 4.9× † | Piper `ca_ES` (3) |
+| Romanian | `ro` | `ro` | FLORES-200, 1,012 sentences | 0.97 % | 0.86 % | 3.3× † | Piper `ro_RO` (1) |
+| Hungarian | `hu` | `hu` | FLORES-200, 1,012 sentences | 1.37 % | 0.95 % | 13.1× † | Piper `hu_HU` (3) |
+| Finnish | `fi` | `fi` | FLORES-200, 1,012 sentences | 1.57 % | 1.08 % | 1.7× † | Piper `fi_FI` (2) |
+| Norwegian Bokmål | `nb` | `nb` | FLORES-200, 1,012 sentences | 1.03 % | 0.46 % | 2.3× † | Piper `no_NO` (2) |
+| Danish | `da` | `da` | FLORES-200, 1,012 sentences | 2.22 % | 1.78 % | 27.1× † | Piper `da_DK` (1) |
 
 ‡ espeak-ng has no voice for Sanskrit, Bhojpuri, Maithili or Magahi; text in them is read with its
 Hindi voice, and compatible mode is measured against that reading. Improved mode reads them as
@@ -254,8 +269,8 @@ How to read it:
 - **Words outside the word tables are where the errors are.** The sixteen European languages
   after Spanish use a word table plus a letter-to-sound model, both made by running espeak-ng
   1.52.0 over word lists from Tatoeba and the Leipzig Corpora Collection. On the held-out text,
-  words outside those lists are wrong far more often than listed ones: from 3.8 % (Hungarian)
-  and 11.4 % (Czech) to 50.2 % (European Portuguese) and 68.2 % (Danish) of such words. Each
+  words outside those lists are wrong far more often than listed ones: from 2.0 % (Hungarian)
+  and 9.2 % (Czech) to 49.0 % (European Portuguese) and 68.1 % (Danish) of such words. Each
   language's figures are in [docs/languages.md](docs/languages.md).
 - **Assamese (7.21 %), Tamil (4.09 %) and Nepali (2.67 %) are furthest from espeak-ng**; the
   reasons are in the language notes.
@@ -463,7 +478,8 @@ and nothing downloads it unless you ask.
 
 | Pack | What it is | Size | Licence | In the packages? |
 | --- | --- | ---: | --- | --- |
-| language data for the 39 languages (`en-us`, `hi`, `de`, …) | lexicons, word tables, letter-to-sound models | 3 KB to 0.7 MB each | Apache-2.0 (includes CMUdict, BSD-2-Clause) | yes; the wheel downloads British English on first use, the npm package loads each language's file on first use |
+| `en-us`, `en-gb`, `hi` | English lexicons and letter-to-sound models, Hindi exceptions | 0.7 MB, 0.7 MB, 3 KB | Apache-2.0 (includes CMUdict, BSD-2-Clause) | yes (the wheel fetches `en-gb` on first use) |
+| `de`, `nl`, `fr`, `it`, `pt-br`, `pt`, `pl`, `tr`, `cs`, `sv`, `ca`, `ro`, `hu`, `fi`, `nb`, `da`, `ur`, `sd` | word table of the language: a letter-to-sound model and its exceptions | 46 KB to 0.5 MB each, 4.0 MB together | Apache-2.0 | **fetched the first time the language is used** (wheel, npm package; crate with the `download` feature), or compiled in with the crate's `bundle` feature |
 | `kokoro-en-us`, `kokoro-en-gb` | misaki 0.9.4's English dictionaries, for the `kokoro` profile | 1.9 and 2.1 MB | Apache-2.0 | crate and C library yes; wheel and npm fetch them on first use |
 | `wikipron-en-us`, `wikipron-en-gb`, `wikipron-hi` | Wiktionary pronunciations (80.8 k, 81.3 k and 30.4 k words) for improved mode's words outside the built-in lexicon | 0.3 to 0.7 MB | **CC BY-SA 4.0** (Wiktionary contributors, via WikiPron) | **no**: on request only |
 | `xlit-hi`, `xlit-mr`, `xlit-bn`, `xlit-ta`, `xlit-te`, `xlit-gu`, `xlit-pa`, `xlit-kn`, `xlit-ml` | transliteration model, spelling lexicon and word counts per language | 3.1 to 8.7 MB, 60 MB together | **CC BY-SA 4.0** (trained on the Dakshina and Aksharantar word pairs; counts from corpora that include Wikipedia text) | **no**: on request only |
@@ -474,9 +490,18 @@ uccharan.load_pack("/path/to/xlit-hi.ucd") # or a file you fetched yourself
 ```
 
 Downloads are checked against SHA-256 sums built into the package and cached in
-`~/.cache/uccharan`. Offline: put the `.ucd` files in a directory named by `UCCHARAN_DATA_DIR`
-and set `UCCHARAN_OFFLINE=1`. In Rust and C, `load_pack` takes the file's bytes; in JavaScript,
-`loadTranslit` and `loadWikipron` take the bytes or read the file from the data directory.
+`~/.cache/uccharan/<version>/`. A language is never read without its word table: when the pack
+cannot be had, Python raises `PackError`, the C calls return NULL with the reason in
+`uccharan_last_error()`, Rust's `Phonemizer::ensure` returns the error, and the synchronous
+JavaScript calls throw; each message names the pack and its URL.
+
+Offline: fetch the files once (`python -m uccharan.packs --dir DIR de fr ur`, or `--all`, or take
+them from the release page), name the directory in `UCCHARAN_DATA_DIR` and set
+`UCCHARAN_OFFLINE=1`. In Rust, `features = ["bundle"]` compiles every word table in and
+`features = ["download"]` fetches on first use; without either, the tables are read from
+`UCCHARAN_DATA_DIR` or the cache. In Rust and C, `load_pack` also takes a file's bytes; in
+JavaScript, the npm package carries the files and loads each on first use, and `loadTranslit` and
+`loadWikipron` take the bytes or read the file from the data directory.
 Compatible mode never uses the WikiPron packs. Every file, its source and its licence are listed
 in [DATA_LICENSES.md](DATA_LICENSES.md).
 

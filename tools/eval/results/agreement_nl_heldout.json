@@ -5,43 +5,43 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 164824,
-  "per": 0.01767946415570548,
-  "per_without_stress": 0.01105826883244304,
-  "exact_sentence": 0.3725296442687747,
-  "exact_sentence_without_stress": 0.49407114624505927,
-  "piper_shape_per": 0.017570440458723836,
-  "piper_shape_exact_sentence": 0.3705533596837945,
+  "per": 0.01692714653205844,
+  "per_without_stress": 0.010540444783604056,
+  "exact_sentence": 0.3784584980237154,
+  "exact_sentence_without_stress": 0.5029644268774703,
+  "piper_shape_per": 0.01682785878971165,
+  "piper_shape_exact_sentence": 0.37648221343873517,
   "word_count_mismatch_sentences": 149,
   "errors_by_class": {
    "stress": {
-    "count": 1307,
-    "share": 0.44852436513383664,
-    "per_contribution": 0.007929670436344221
+    "count": 1258,
+    "share": 0.45089605734767024,
+    "per_contribution": 0.007632383633451439
    },
    "consonant": {
-    "count": 762,
-    "share": 0.26149622512010984,
-    "per_contribution": 0.004623113138863272
+    "count": 752,
+    "share": 0.26953405017921145,
+    "per_contribution": 0.004562442362762704
    },
    "vowel": {
-    "count": 498,
-    "share": 0.17089910775566233,
-    "per_contribution": 0.00302140464980828
+    "count": 462,
+    "share": 0.16559139784946236,
+    "per_contribution": 0.002802989855846236
    },
    "other": {
-    "count": 246,
-    "share": 0.08442004118050789,
-    "per_contribution": 0.0014925010920739698
+    "count": 233,
+    "share": 0.08351254480286738,
+    "per_contribution": 0.0014136290831432315
    },
    "word-boundary": {
     "count": 68,
-    "share": 0.023335621139327384,
+    "share": 0.024372759856630826,
     "per_contribution": 0.00041256127748386155
    },
    "length": {
-    "count": 33,
-    "share": 0.011324639670555936,
-    "per_contribution": 0.000200213561131874
+    "count": 17,
+    "share": 0.0060931899641577065,
+    "per_contribution": 0.00010314031937096539
    }
   },
   "top_confusions": [
@@ -50,28 +50,28 @@
     "count": 241
    },
    {
-    "edit": "∅→ˌ",
-    "count": 217
-   },
-   {
     "edit": "d→t",
     "count": 204
    },
    {
+    "edit": "∅→ˌ",
+    "count": 198
+   },
+   {
     "edit": "ˈ→ˌ",
-    "count": 200
+    "count": 192
    },
    {
     "edit": "ˌ→ˈ",
-    "count": 193
+    "count": 192
    },
    {
     "edit": "ˌ→∅",
-    "count": 180
+    "count": 171
    },
    {
     "edit": "∅→ˈ",
-    "count": 146
+    "count": 139
    },
    {
     "edit": "t→d",
@@ -79,7 +79,7 @@
    },
    {
     "edit": "t→∅",
-    "count": 62
+    "count": 60
    },
    {
     "edit": " →∅",
@@ -106,23 +106,15 @@
     "count": 30
    },
    {
-    "edit": "∅→e",
-    "count": 29
-   },
-   {
     "edit": "o→∅",
     "count": 28
-   },
-   {
-    "edit": "s→∅",
-    "count": 26
    },
    {
     "edit": "ː→ɑ",
     "count": 26
    },
    {
-    "edit": "ɛ→∅",
+    "edit": "s→∅",
     "count": 25
    },
    {
@@ -138,76 +130,42 @@
     "count": 25
    },
    {
+    "edit": "ɛ→∅",
+    "count": 21
+   },
+   {
     "edit": "i→ɪ",
     "count": 21
    },
    {
     "edit": "e→ə",
     "count": 20
+   },
+   {
+    "edit": "∅→e",
+    "count": 20
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 19418,
-    "wrong": 839,
-    "rate": 0.043207333401998144
+    "wrong": 832,
+    "rate": 0.042846843135235346
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 195,
-    "per": 0.030836410684924122,
-    "exact_sentence": 0.2
+    "per": 0.029650394889350118,
+    "exact_sentence": 0.2205128205128205
    },
    "no-digits": {
     "sentences": 817,
-    "per": 0.013857897827363476,
-    "exact_sentence": 0.41370869033047736
+    "per": 0.013231552162849873,
+    "exact_sentence": 0.41615667074663404
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-33",
-    "text": "Gistermorgen ontplofte een autobom bij het hoofdbureau van de politie in Gaziantep, Turkije. Hierbij kwamen twee politieagenten om het leven en raakten meer dan twintig andere personen gewond.",
-    "reference": "ɣˈɪstərmˌɔrɣən ɔntplˈɔftə ən ˈʌʊtoːbˌɔm bɛɪ hət hˌoːvdbyrˈoː vɑn də poːlˈitsi ɪn ɣˈaːziˌɑntɛp tɵrkˈɛɪə hirbˈɛɪ kʋˈaːmən tʋˈeː poːlˈitsiaːɣˌɛntən ɔm hət lˈeːvən ɛn rˈaːktən mˈɪːr dˈɑn tʋˈɪntəx ˈɑndərə pɛrsˈɔnən ɣəʋˈɔnt",
-    "uccharan": "ɣˈɪstərmˌɔrɣən ɔntplˈɔftə ən ˈʌʊtoːbˌɔm bɛɪ hət hˈoːvdbyrˌoː vɑn də poːlˈitsi ɪn ɣaːzˈiɑntˌɛp tɵrkˈɛɪə hirbˈɛɪ kʋˈaːmən tʋˈeː poːlˈitsiaːɣˌɛntən ɔm hət lˈeːvən ɛn rˈaːktən mˈɪːr dˈɑn tʋˈɪntəx ˈɑndərə pɛrsˈɔnən ɣəʋˈɔnt"
-   },
-   {
-    "id": "flores-devtest-18",
-    "text": "Hij adviseerde tijdens de selecties van 1976 Carter op het gebied van buitenlands beleid. Vervolgens volgde hij Henry Kissinger op als National Security Advisor (NSA); deze functie vervulde hij van 1977 tot 1981.",
-    "reference": "hɛɪ ˌɑdvizˈɪrdə tˈɛɪdəns də seːlˈɛksis vɑn nˈeːɣəntinhˌɔndərt zˌɛsɛnzˌeːvəntəx kˈɑrtər ɔp hət ɣəbˈit vɑn bˈœytənlˌɑnts bəlˈɛɪt vərvˈɔlɣəns vˈɔlɣdə hɛɪ hˈɛnri kˈɪsɪŋər ɔp ɑls nˈaːʃoːnˌɑl sˈeːkyrˌiti ˈɑdvizˌɔr ˌɛnˌɛsˈaː dˌeːzə fˈɵnksi vərvˈɵldə hɛɪ vɑn nˈeːɣəntinhˌɔndərt zˌeːvənɛnzˌeːvəntəx tɔt nˈeːɣəntinhˌɔndərt ˌeːnɛntˌɑxtəx",
-    "uccharan": "hɛɪ ˌɑdvizˈɪrdə tˈɛɪdəns də seːlˈɛksi vɑn nˈeːɣəntˌinhˌɔndərt zˌɛsɛnzˌeːvəntəx kˈɑrtər ɔp hət ɣəbˈit vɑn bˈœytənlˌɑnts bəlˈɛɪt vərvˈɔlɣəns vˈɔlɣdə hɛɪ hˈɛnri kˈɪsɪŋər ɔp ɑls nˈaːʃoːnˌɑl sˈeːkyrˌiti ˈɑdvizɔr nsˈaː dˌeːzə fˈɵnksi vərvˈɵldə hɛɪ vɑn nˈeːɣəntˌinhˌɔndərt zˌeːvənɛnzˌeːvəntəx tɔt nˈeːɣəntˌinhˌɔndərt ˌeːnɛntˌɑxtəx"
-   },
-   {
-    "id": "flores-devtest-540",
-    "text": "Het Tibetaanse boeddhisme heeft zijn basis in de leer van Boeddha. Deze vorm van boeddhisme is echter uitgebreid met het mahayana-pad van de liefde en met een groot aantal technieken uit de Indiase yoga.",
-    "reference": "hə tˈibətˌaːnsə budhˈɪsmə heːft zɛɪn bˈaːzɪs ɪn də lˈɪːr vɑn bˈudhaː dˌeːzə vˈɔrm vɑn budhˈɪsmə ɪs ˈɛxtər ˈœytɣəbrˌɛɪd mɛt hət mˌaːhaːjˈaːnaːpˈɑt vɑn də lˈivdə ɛn mɛt ən ɣrˈoːt ˈaːntˌɑl tɛxnˈikən œy tə ˈɪndˌiaːzə jˈoːɣaː",
-    "uccharan": "hə tˈibətˌaːnsə budhˈɪsmə heːft zɛɪn pˈaːzɪs ɪn də lˈɪːr vɑn bˈudhaː dˌeːzə vˈɔrm vɑn budhˈɪsmə ɪs ˈɛxtər ˈœytɣəbrˌɛɪt mɛt hət maːhˈaːjaːnˌaːpˈɑt vɑn də lˈivdə ɛn mɛt ən ɣrˈoːt ˈaːntˌɑl tɛxnˈikən œy tə ˈɪndˌiaːzə jˈoːɣaː"
-   },
-   {
-    "id": "flores-devtest-893",
-    "text": "De shock van het terugkeren is erger dan de cultuurshock (je hebt een minder groot 'huwelijksreisgevoel'), het duurt langer, en het kan intenser zijn.",
-    "reference": "də ʃˈɔk vɑn hə tərˈɵxkˌɪːrən ɪs ˈɛrɣər dˈɑn də kˈɵltyrshˌɔk jə hɛpt ən mˈɪndər ɣrˈoːt hˌywələksrˌɛɪsxəvˈul hə tˈyrt lˈɑŋər ɛn hət kɑn ˈɪntˌɛnsər zɛɪn",
-    "uccharan": "də ʃˈɔk vɑn hə tərˈɵxkˌɪːrən ɪs ˈɛrɣər dˈɑn də kˈɵltyrsɔk jə hɛpt ən mˈɪndər ɣrˈoːt hˈywələksrˌɛɪsxəvˌul hə tˈyrt lˈɑŋər ɛn hət kɑn ˈɪntˌɛnsər zɛɪn"
-   },
-   {
-    "id": "flores-devtest-916",
-    "text": "Normaliter moet er voor de inschrijving voor deze educatieve programma's collegegeld worden betaald.",
-    "reference": "nˈɔrmaːlˌitər mˈut ər vɔːr də ˈɪnsxrˌɛɪvɪŋ vɔːr dˌeːzə ˌeːdykaːtˈivə proːɣrˈɑmaːs kˈɔləɣˌeːɣəlt ʋˌɔrdən bətˈaːlt",
-    "uccharan": "nˈɔrmaːlˌitər mˈut ər vɔːr də ˈɪnsxrˌɛɪvɪŋ vɔːr dˌeːzə ˌeːdykaːtˈivə prˌoːɣrɑmˈaːs kˈɔləɣˌeːɣəlt ʋˌɔrdən bətˈaːlt"
-   },
-   {
-    "id": "flores-devtest-674",
-    "text": "De correlatie tussen de pathologie van het brein en gedrag helpt wetenschappers tijdens hun onderzoek.",
-    "reference": "də kˌɔɾrəlˈaːtsi tˈɵsən də pˌɑtoːloːɣˈi vɑn hət brˈɛɪn ɛn ɣədrˈɑx hˈɛlpt ʋˈeːtənsxˌɑpərs tˈɛɪdəns hɵn ˈɔndərzˌuk",
-    "uccharan": "də kˌɔɾrəlˈaːtsi tˈɵsən də pˈɑtoːlˌoːɣi vɑn hət brˈɛɪn ɛn ɣədrˈɑx hˈɛlpt ʋˈeːtənsxˌɑpərs tˈɛɪdəns hɵn ˈɔndərzˌuk"
-   },
-   {
-    "id": "flores-devtest-645",
-    "text": "Tegenwoordig schrijft men berichten op een computerscherm zonder ooit een puntenslijper nodig te hebben.",
-    "reference": "tˈeːɣənʋˌɔːrdəx sxrˈɛɪft mˈɛn bərˈɪxtən ɔp ən kɔmpjˈutərsxˌɛrm zˈɔndər ˈoːjt ən pˈɵntənslˌɛɪpər nˈoːdəx tə hˌɛbən",
-    "uccharan": "tˈeːɣənʋˌɔːrdəx sxrˈɛɪft mˈɛn bərˈɪxtən ɔp ən kɔmpjˈutərsxˌɛrm zˈɔndər ˈoːjt ən pˌɵntɛnslˈɛɪpər nˈoːdəx tə hˌɛbən"
-   },
    {
     "id": "flores-devtest-63",
     "text": "Historici hebben kritiek geuit op eerdere beleidsregels van de FBI, omdat ze hun middelen focusten op gemakkelijk op te lossen zaken, voornamelijk zaken met gestolen auto's, om op deze manier de succesratio van het bureau op te krikken.",
@@ -233,10 +191,52 @@
     "uccharan": "vɑnʋˈeːɣə də ˈɔndərʋˌaːtərtˌoːpoːlˌoːɣi bəvˈɪn tə rˈeːtuːrstrˌoːm zɪx ɪn ˈɛŋkələ dˈipərə dˈeːlən ʋˈaːr ən snˈɛlə strˈoːmɪŋ naːr dˈip ʋˈaːtər kɑn ɔntstˈaːn"
    },
    {
+    "id": "flores-devtest-13",
+    "text": "Het Amerikaanse Olympisch Comité heeft de steun van USA Gymnastics en begrijpt dat het noodzakelijk is dat de olympische familie een veilige plek promoot voor alle sporters.",
+    "reference": "hət ˈaːmɪːrˌikaːnsə oːlˈɪmpis kˌoːmitˈeː heːf tə stˈøːn vɑn yˌɛsˈaː ɣˈɪmnɑstˌɪks ɛn bəɣrˈɛɪp tɑt hət nˈoːdzaːkələk ɪs dɑ tə oːlˈɪmpisə faːmˈilˌi ən vˈɛɪləɣə plˈɛk proːmˈoːt vɔːr ˈɑlə spˈɔrtˌərs",
+    "uccharan": "hət ˈaːmɪːrˌikaːnsə oːlˈɪmpis kˌoːmitˈeː heːf tə stˈøːn vɑn ˌyˌɛsˈaː ɣˌɪmnɑstˈɪks ɛn bəɣrˈɛɪpt dɑt hət nˈoːdzaːkələk ɪs dɑ tə oːlˈɪmpisə faːmˈilˌi ən vˈɛɪləɣə plˈɛk proːmˈoːt vɔːr ˈɑlə spˈɔrtˌərs"
+   },
+   {
     "id": "flores-devtest-72",
     "text": "Tijdens de vergadering met de Minister-president vroeg Layton om veranderingen in de milieuwet van de conservatieven, waarbij hij vroeg om het 'grondig en volledig herschrijven' van de milieuwet van de conservatieve partij.",
     "reference": "tˈɛɪdəns də vərɣˈaːdərˌɪŋ mɛ tə mˈinɪstərprˌeːzidˈɛnt vrˈux laːjtˈɔn ɔm vərˈɑndərˌɪŋən ɪn də mɪljˈøːʋɛt vɑn də kˌɔnsərvaːtˈivən ʋaːrbˈɛɪ hɛɪ vrˈux ɔm hət ɣrˈɔndəx ɛn vɔlˈeːdəx hɛrsxrˈɛɪvən vɑn də mɪljˈøːʋɛt vɑn də kˌɔnsərvaːtˈivə pɑrtˈɛɪ",
     "uccharan": "tˈɛɪdəns də vərɣˈaːdərˌɪŋ mɛ tə mˈinɪstərprˌeːzidˈɛnt vrˈux laːjtˈɔn ɔm vərˈɑndərˌɪŋən ɪn də mɪljˈɛt vɑn də kˌɔnsərvaːtˈivən ʋaːrbˈɛɪ hɛɪ vrˈux ɔm hət ɣrˈɔndəx ɛn vɔlˈeːdəx hɛrsxrˈɛɪvən vɑn də mɪljˈɛt vɑn də kˌɔnsərvaːtˈivə pɑrtˈɛɪ"
+   },
+   {
+    "id": "flores-devtest-329",
+    "text": "Verschillende mensen verifieerden begin februari de ontdekking met behulp van verschillende hardware en software en deze is op dinsdag aangekondigd.",
+    "reference": "vərsxˈɪləndə mˈɛnsən vərˈifiˌeːrdən bəɣˈɪn fˌeːbryˈaːri də ɔntdˈɛkɪŋ mɛt bəhˈɵlp vɑn vərsxˈɪləndə hˈɑːdweə ɛn sˈɒftweə ɛn dˌeːzə ɪs ɔp dˈɪnzdɑx ˈaːnɣəkˌɔndɪxt",
+    "uccharan": "vərsxˈɪləndə mˈɛnsən vərˌifiˈeːrdən bəɣˈɪn fˌeːbryˈaːri də ɔntdˈɛkɪŋ mɛt bəhˈɵlp vɑn vərsxˈɪləndə hˈɑːdweə ɛn sˈɒftweə ɛn dˌeːzə ɪs ɔp dˈɪnzdɑx ˈaːnɣəkˌɔndɪɣd"
+   },
+   {
+    "id": "flores-devtest-344",
+    "text": "Dit wordt de pH-waarde van een chemische stof genoemd. Je maakt al een indicator met behulp van rode koolsap.",
+    "reference": "dɪt ʋɔr tə pˈeː hˈaːʋˈaːrdə vɑn ən xˈeːmisə stˈɔf ɣənˈumt jə mˈaːkt ˈɑl ən ˈɪndikˌaːtɔr mɛt bəhˈɵlp vɑn rˈoːdə kˈoːlsɑp",
+    "uccharan": "dɪt ʋɔr tə pˌeːhˈaːʋˈaːrdə vɑn ən xˈeːmisə stˈɔf ɣənˈumd jə mˈaːkt ˈɑl ən ˈɪndikˌaːtɔr mɛt bəhˈɵlp vɑn rˈoːdə kˈoːlsɑp"
+   },
+   {
+    "id": "flores-devtest-354",
+    "text": "Zodra de ruimtesatelliet de oproep ontvangt, wordt deze meteen teruggezonden.",
+    "reference": "zɔdrˈaː də rˌœymtəzˌaːtɛlˈi tə ɔprˈup ɔntvˈɑŋt ʋɔr tˌeːzə mɛtˈeːn tərˈɵxəzˌɔndən",
+    "uccharan": "zɔdrˈaː də rˈœymtəzˌaːtɛlˌi tə ɔprˈup ɔntvˈɑŋt ʋɔr tˌeːzə mɛtˈeːn tərˈɵxəzˌɔndən"
+   },
+   {
+    "id": "flores-devtest-168",
+    "text": "De consumentenmarkt voor laptopcomputers is echter zeer uiteenlopend en veranderd, nadat ASUS in 2007 de Taiwan Sustainable Award kreeg toegekend door de uitvoerende yuan van de Republiek van China.",
+    "reference": "də kˈɔnsymˌɛntənmˌɑrkt vɔːr lˈɑptɔpkˌɔmpytərs ɪs ˈɛxtər zˈɪːr ˈœytˌeːnloːpənd ɛn vərˈɑndərt naːdˌɑt ˈaːzɵs ɪn tʋˈeː dˌœyzɛnt zˌeːvən də tˈɑjʋɑn sˈɵstɑjnˌɑblə ˈaːʋɑrt krˈeːx tˈuɣəkˌɛnd doːr də ˈœytvˌurəndə jˈyɑn vɑn də rˌeːpɵblˈik vɑn ʃˈinaː",
+    "uccharan": "də kˈɔnsymˌɛntənmˌɑrkt vɔːr lˈaptɔpkˌɔmpjutərs ɪs ˈɛxtər zˈɪːr ˈœytˌeːnloːpənt ɛn vərˈɑndərd naːdˌɑt ˈaːzɵs ɪn tʋˈeː dˌœyzɛnt zˌeːvən də tˈɑjʋɑn sˈɵstɑjnˌɑblə ˈaːʋɑrd krˈeːx tˈuɣəkˌɛnd doːr də ˈœytvˌurəndə jˈyɑn vɑn də rˌeːpɵblˈik vɑn ʃˈinaː"
+   },
+   {
+    "id": "flores-devtest-625",
+    "text": "De rivier de Amazone is 's werelds grootste en op een na langste rivier en vervoert meer dan 8 keer zoveel water als de op de een na grootste.",
+    "reference": "də rivˈir də ˌaːmaːzˈoːnə ɪs s ʋˈɪːrəlts ɣrˈoːtstə ɛn ɔp ən naː lˈɑŋstə rivˈir ɛn vərvˈurt mˈɪːr dˈɑn ˈɑxt kˈɪːr zoːvˈeːl ʋˈaːtər ɑls də ɔp də ˈeːn naː ɣrˈoːtstə",
+    "uccharan": "də rivˈir də ˌaːmaːzˈoːnə ɪ s ʋˈɪːrəlts ɣrˈoːtstə ɛn ɔp ən naː lˈɑŋstə rivˈir ɛn vərvˈurt mˈɪːr dˈɑn ˈɑxt kˈɪːr zoːvˈeːl ʋˈaːtər ɑls də ɔp də ən naː ɣrˈoːtstə"
+   },
+   {
+    "id": "flores-devtest-984",
+    "text": "De meeste moderne onderzoekstelescopen zijn enorme faciliteiten die gebouwd zijn in afgelegen gebieden met gunstige atmosferische omstandigheden.",
+    "reference": "də mˈeːstə mˈoːdɛrnə ˈɔndərzˌukstəlɛskˌoːpən zɛɪn eːnˈɔrmə fˈaːsilˌitɛɪtən di ɣəbˈʌʊt zɛɪn ɪn ˈɑfɣəlˌeːɣən ɣəbˈidən mɛt ɣˈɵnstəɣə ˌɑtmɔsfˈɪːrisə ˈɔmstɑndˌɪxheːdən",
+    "uccharan": "də mˈeːstə mˈoːdɛrnə ˈɔndərzˌuksteːlˌɛskoːpən zɛɪn eːnˈɔrmə fˈaːsilˌitɛɪtən di ɣəbˈʌʊt zɛɪn ɪn ˈɑfɣəlˌeːɣən ɣəbˈidən mɛt ɣˈɵnstəɣə ˌɑtmɔsfˈɪːrisə ˈɔmstɑndˌɪxheːdən"
    }
   ]
  }

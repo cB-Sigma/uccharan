@@ -50,6 +50,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
+# The word tables are packs; inside the repository they are read from the source tree.
+os.environ.setdefault("UCCHARAN_DATA_DIR", os.pathsep.join(str(ROOT / "crates" / d / "data") for d in ("uccharan", "uccharan-data")))
 MAX_WORDS = 3
 FLOOR = 0.5
 PUNCT = set("।॥،؛؟۔")

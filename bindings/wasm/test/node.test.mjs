@@ -67,3 +67,12 @@ test("data-driven Indic languages need no data file", async () => {
   assert.equal(await phonemize("কমলা", { lang: "bn" }), "kˈɔmɔlˌa");
   assert.equal(await phonemize("తెలుగు", { lang: "te" }), "tˈeluɡu");
 });
+
+test("a word table is fetched on first use, and the sync call says when it is missing", async () => {
+  // Swedish has not been used by any test above.
+  assert.equal(uccharan.isLoaded("sv"), false);
+  assert.throws(() => uccharan.phonemizeSync("Hej", { lang: "sv" }), /language data for "sv" is not loaded/);
+  assert.ok((await uccharan.phonemize("Hej", { lang: "sv" })).length > 0);
+  assert.equal(uccharan.isLoaded("sv"), true);
+  assert.ok(uccharan.phonemizeSync("Hej", { lang: "sv" }).length > 0);
+});

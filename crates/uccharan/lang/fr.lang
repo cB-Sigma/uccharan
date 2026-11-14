@@ -3,6 +3,8 @@
 # last full syllable, liaison consonants before a vowel inside a clause.
 
 [meta]
+caps-entries = yes
+caps-words = a es et la les est
 tag = fr
 vowels = a ɑ e ɛ i o ɔ u y ø œ ə
 unstressable = ə
@@ -191,6 +193,16 @@ dd -> d
 ː -> ː / ˈ a _ | ˈ o _ | ˈ y _
 ː -> 0
 
+[aspirated]
+# Words with h aspiré, and the numerals huit and onze: no liaison before them.
+hache* haie haies haine* haïr haï haïs haïssent hall halls halle halles halte* hamac* hameau*
+hamburger* hamster* hanche* handball handicap* hangar* hanneton* hant* harc* hard* harem*
+hareng* hargn* haricot* harnais harpe* harpon* hasard* haschisch hâte* hâti* hauss* haut*
+havre* henni* hérisson* hernie* héron* héros hêtre* heurt* hibou* hideu* hiérarch* hiss*
+hoch* hockey holland* homard* hongr* honte* honteu* hoquet* hormis hors houblon* houle*
+houss* hublot* huée* huer hurl* hussard* hutte*
+huit* onze* dix-huit* vingt-huit* trente-huit* quarante-huit* cinquante-huit* soixante-huit*
+
 [clause]
 # A latent final consonant is said before a vowel of the next word.
 ᶻ -> z / _ ‿ {VW}
@@ -209,6 +221,15 @@ dd -> d
 y -> ɥ / _ i | _ ˈ i
 
 [words]
+roman6# si
+roman8# yi
+roman18# dizyi
+roman26# vɛ̃tsi
+roman28# vɛ̃tyi
+roman36# tʁɑ̃tsi
+roman38# tʁɑ̃tyi
+roman46# kaʁɑ̃tsi
+roman48# kaʁɑ̃tyi
 l' l
 j' ʒ
 d' d
@@ -366,6 +387,17 @@ neuf-cents# nœfsˈɑ̃
 neuf-centsx# nœfsɑ̃
 
 [numbers]
+group space
+roman6 roman6#
+roman8 roman8#
+roman18 roman18#
+roman26 roman26#
+roman28 roman28#
+roman36 roman36#
+roman38 roman38#
+roman46 roman46#
+roman48 roman48#
+roman-after romain
 decimal comma
 fraction number
 stress last

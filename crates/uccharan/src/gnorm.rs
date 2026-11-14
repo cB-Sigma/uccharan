@@ -15,6 +15,33 @@ fn digit(c: char) -> Option<u8> {
     }
 }
 
+/// Chunks with numbers written in groups of three digits ("1 250 000")
+/// joined into one chunk each. A group that carries a decimal part ends
+/// the number ("12 500,50"). `first_max` is the most digits the first
+/// group may have (the reference voices also join "2020 100").
+pub fn join_groups(chunks: &[Chunk], first_max: usize) -> Vec<Chunk> {
+    let digits = |s: &str, n: std::ops::RangeInclusive<usize>| {
+        n.contains(&s.len()) && s.bytes().all(|b| b.is_ascii_digit())
+    };
+    let mut out: Vec<Chunk> = Vec::with_capacity(chunks.len());
+    let mut open = false;
+    for c in chunks {
+        let head = c.text.split([',', '.']).next().unwrap_or("");
+        let whole = head.len() == c.text.len();
+        if open && digits(head, 3..=3) && !out.last().is_some_and(|p| p.dot) {
+            if let Some(prev) = out.last_mut() {
+                prev.text.push_str(&c.text);
+                prev.dot = c.dot;
+                open = whole;
+                continue;
+            }
+        }
+        open = whole && digits(&c.text, 1..=first_max) && !c.text.starts_with('0');
+        out.push(c.clone());
+    }
+    out
+}
+
 fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str) {
     let ascii: String = s
         .chars()
@@ -51,10 +78,14 @@ fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str) {
         groups.iter().map(|g| g.to_string()).collect()
     };
     let mut words: Vec<(String, bool)> = Vec::new();
+    // Words that start a group of digits and keep their stress.
+    let mut heads: Vec<usize> = Vec::new();
     for p in &parts {
         if p.len() > 1 && p.starts_with('0') || p.len() > 15 {
             nums.digits(p, &mut words);
         } else if let Ok(n) = p.parse::<u64>() {
+            let base = words.len();
+            heads.extend(nums.group_starts(n).into_iter().map(|k| base + k));
             nums.cardinal(n, &mut words);
         }
     }
@@ -68,7 +99,7 @@ fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str) {
     for (k, (w, glue)) in words.into_iter().enumerate() {
         let mut it = Item::word(&w);
         it.glue = glue;
-        it.number_tail = k > 0;
+        it.number_tail = k > 0 && !heads.contains(&k);
         out.push(it);
     }
 }

@@ -43,6 +43,8 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+# The word tables are packs; inside the repository they are read from the source tree.
+os.environ.setdefault("UCCHARAN_DATA_DIR", os.pathsep.join(str(ROOT / "crates" / d / "data") for d in ("uccharan", "uccharan-data")))
 VOICES = {"bho": "hi", "mai": "hi", "mag": "hi", "en-us": "en-us", "en-gb": "en-gb-x-rp", "hi": "hi", "bn": "bn", "mr": "mr", "te": "te", "ne": "ne", "kn": "kn", "ta": "ta", "ml": "ml", "as": "as", "gu": "gu", "pa": "pa", "or": "or", "kok": "kok", "si": "si", "sa": "hi", "ur": "ur", "sd": "sd", "es": "es", "da": "da", "nb": "nb", "fi": "fi", "hu": "hu", "ro": "ro", "ca": "ca", "sv": "sv", "cs": "cs", "tr": "tr", "pl": "pl", "pt": "pt", "pt-br": "pt-br", "it": "it", "fr": "fr", "de": "de", "nl": "nl"}
 FLAGS = 4 | 16  # reference-style number reading, no punctuation: same output shape as the reference call
 

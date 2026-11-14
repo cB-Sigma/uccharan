@@ -2,6 +2,7 @@
 # word table, the number words and the letter names.
 
 [meta]
+caps-words = er
 tag = nb
 vowels = a e i o u y ø œ ɛ ɔ ə ɪ ʊ ɑ ʉ
 stress = initial
@@ -167,6 +168,8 @@ minus# mˈiːnʉːs
 prosent# prˈuːsˈɛnt
 
 [numbers]
+group space
+roman off
 decimal comma
 point komma#
 minus minus#

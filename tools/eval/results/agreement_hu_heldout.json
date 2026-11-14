@@ -5,101 +5,93 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 165134,
-  "per": 0.020837622779076387,
-  "per_without_stress": 0.010608537444512083,
-  "exact_sentence": 0.19268774703557312,
-  "exact_sentence_without_stress": 0.5899209486166008,
-  "piper_shape_per": 0.020712860673555072,
-  "piper_shape_exact_sentence": 0.18972332015810275,
-  "word_count_mismatch_sentences": 392,
+  "per": 0.013667688059394188,
+  "per_without_stress": 0.009302134703118267,
+  "exact_sentence": 0.4871541501976285,
+  "exact_sentence_without_stress": 0.6067193675889329,
+  "piper_shape_per": 0.013661674061281005,
+  "piper_shape_exact_sentence": 0.4841897233201581,
+  "word_count_mismatch_sentences": 391,
   "errors_by_class": {
    "stress": {
-    "count": 1909,
-    "share": 0.5547805870386515,
-    "per_contribution": 0.011560308597865976
+    "count": 923,
+    "share": 0.40894993354009745,
+    "per_contribution": 0.005589400123536038
    },
    "consonant": {
-    "count": 446,
-    "share": 0.12961348445219412,
-    "per_contribution": 0.0027008368960965033
+    "count": 424,
+    "share": 0.18785999113867966,
+    "per_contribution": 0.0025676117577240302
    },
    "word-boundary": {
     "count": 423,
-    "share": 0.12292938099389712,
+    "share": 0.18741692512184316,
     "per_contribution": 0.0025615560696161904
    },
    "vowel": {
-    "count": 416,
-    "share": 0.12089508863702413,
-    "per_contribution": 0.002519166252861313
+    "count": 328,
+    "share": 0.14532565352237484,
+    "per_contribution": 0.0019862656993714194
    },
    "other": {
-    "count": 170,
-    "share": 0.04940424295263005,
-    "per_contribution": 0.0010294669783327479
+    "count": 129,
+    "share": 0.057155516171909615,
+    "per_contribution": 0.0007811837659113205
    },
    "length": {
-    "count": 77,
-    "share": 0.022377215925603024,
-    "per_contribution": 0.00046628798430365645
+    "count": 30,
+    "share": 0.01329198050509526,
+    "per_contribution": 0.00018167064323519082
    }
   },
   "top_confusions": [
-   {
-    "edit": "ˌ→ˈ",
-    "count": 1242
-   },
    {
     "edit": "∅→ ",
     "count": 362
    },
    {
-    "edit": "∅→ˈ",
-    "count": 228
+    "edit": "ˌ→ˈ",
+    "count": 330
    },
    {
     "edit": "ˈ→∅",
-    "count": 208
+    "count": 207
    },
    {
-    "edit": "ˈ→ˌ",
-    "count": 106
+    "edit": "∅→ˈ",
+    "count": 192
    },
    {
     "edit": "∅→ˌ",
-    "count": 87
+    "count": 101
    },
    {
     "edit": "∅→ɑ",
-    "count": 73
+    "count": 78
    },
    {
     "edit": " →∅",
     "count": 61
    },
    {
-    "edit": "∅→ː",
-    "count": 56
-   },
-   {
     "edit": "n→∅",
-    "count": 53
+    "count": 54
    },
    {
-    "edit": "∅→ɛ",
-    "count": 49
-   },
-   {
-    "edit": "i→∅",
-    "count": 48
+    "edit": "t→∅",
+    "count": 47
    },
    {
     "edit": "ɛ→∅",
     "count": 47
    },
    {
-    "edit": "t→∅",
-    "count": 45
+    "edit": "i→∅",
+    "count": 46
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 44
    },
    {
     "edit": "p→∅",
@@ -107,23 +99,11 @@
    },
    {
     "edit": "o→∅",
-    "count": 40
-   },
-   {
-    "edit": "d→∅",
     "count": 39
    },
    {
-    "edit": "t→ ",
-    "count": 37
-   },
-   {
-    "edit": "∅→t",
-    "count": 33
-   },
-   {
-    "edit": "e→ø",
-    "count": 32
+    "edit": "d→∅",
+    "count": 38
    },
    {
     "edit": "l→∅",
@@ -134,109 +114,129 @@
     "count": 23
    },
    {
-    "edit": "∅→l",
-    "count": 22
-   },
-   {
     "edit": "s→∅",
     "count": 22
    },
    {
+    "edit": "ː→∅",
+    "count": 19
+   },
+   {
+    "edit": "∅→l",
+    "count": 19
+   },
+   {
+    "edit": "k→∅",
+    "count": 18
+   },
+   {
+    "edit": "m→∅",
+    "count": 18
+   },
+   {
+    "edit": "ɑ→∅",
+    "count": 15
+   },
+   {
+    "edit": "r→∅",
+    "count": 14
+   },
+   {
     "edit": "∅→e",
-    "count": 21
+    "count": 12
    }
   ],
   "word_error_by_class": {
    "lexicon": {
-    "words": 10633,
-    "wrong": 736,
-    "rate": 0.06921847079845764
+    "words": 10652,
+    "wrong": 197,
+    "rate": 0.01849417949680811
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 189,
-    "per": 0.03825861241994188,
-    "exact_sentence": 0.09523809523809523
+    "per": 0.029004316790339418,
+    "exact_sentence": 0.2328042328042328
    },
    "no-digits": {
     "sentences": 823,
-    "per": 0.01607667455721677,
-    "exact_sentence": 0.21506682867557717
+    "per": 0.009476370758186766,
+    "exact_sentence": 0.5455650060753341
    }
   },
   "examples_of_disagreement": [
    {
-    "id": "flores-devtest-959",
-    "text": "A rendszerinti bejelentések a metróban csak katalán nyelven hallhatóak, de a váratlan zavarok egy automatizált rendszeren keresztül több nyelven is hallhatóak, pl. spanyol, angol, francia, arab és japán.",
-    "reference": "ˌɑ rˈɛndsɛrinti bˈɛjɛlɛnteːʃɛk ˌɑ mˈɛtroːbɑn tʃˈɑk kˈɑtɑlaːn ɲˈɛlvɛn hˈɑlhɑtoːɑk dˌɛ ˌɑ vˈaːrɑtlɑn zˈɑvɑrok ˈɛɟ ˈɑutomɑtizaːlt rˈɛntsɛrɛn kˈɛrɛstyl tˈøbː ɲˈɛlvɛn ˈiʃ hˈɑlhɑtoːɑk pˈeːldaːul ʃpˈɑɲol ˈɑnɡol frˈɑntsiɑ ˈɑrɑb ˌeːʃ jˈɑpaːn",
-    "uccharan": "ˌɑ rˈɛntsɛrinti bˈɛjɛlɛnteːʃɛk ˌɑ mˈɛtroːbɑn tʃˈɑk kˈɑtɑlaːn ɲˈɛlvɛn hˈɑlhɑtoːɑk dˌɛ ˌɑ vˈaːrɑtlɑn zˈɑvɑrok ˈɛɟ ˈɑutomɑtizaːlt rˈɛntsɛrɛn kˈɛrɛstyl tˈøbː ɲˈɛlvɛn ˈiʃ hˈɑlhɑtoːɑk pˈeːˌɛll ʃpˈɑɲol ˈɑnɡol frˈɑntsiɑ ˈɑrɑb ˌeːʃ jˈɑpaːn"
+    "id": "flores-devtest-416",
+    "text": "A kongresszusnak nem volt hatalma az adók kivetésére, és nem volt nemzeti végrehajtási vagy igazságszolgáltatási szerv sem, ezért a gyakran a vonakodó állami hatóságokra hagyatkozott törvényeinek érvényesítésére.",
+    "reference": "ˌɑ kˈonɡrɛssuʃnɑk nˈɛmvolt hˈɑtɑlmɑ ˌɑz ˈɑdoːk kˈivɛteːʃeːrɛ ˌeːʃ nˈɛmvolt nˈɛmzɛti vˈeːɡrɛhɑjtaːʃi vˌɑɟ ˈiɡɑʃʃaːɡsolɡaːltɑtaːʃi sˈɛrv ʃˌɛm ˈɛzeːrt ˌɑ ɟˈɑkrɑn ˌɑ vˈonɑkodoː ˈaːllɑmi hˈɑtoːʃaːɡokrɑ hˈɑɟɑtkozotː tˈørveːɲɛinɛk ˈeːrveːɲɛʃiːteːʃeːrɛ",
+    "uccharan": "ˌɑ kˈonɡrɛssuʃnɑk nɛm vˈolt hˈɑtɑlmɑ ˌɑz ˈɑdoːk kˈivɛteːʃeːrɛ ˌeːʃ nɛm vˈolt nˈɛmzɛti vˈeːɡrɛhɑjtaːʃi vˌɑɟ ˈiɡɑʃʃaːɡsolɡaːltɑtaːʃi sˈɛrv ʃˌɛm ˈɛzeːrt ˌɑ ɟˈɑkrɑn ˌɑ vˈonɑkodoː ˈaːllɑmi hˈɑtoːʃaːɡokrɑ hˈɑɟɑtkozotː tˈørveːɲɛinɛk ˈeːrveːɲɛʃiːteːʃeːrɛ"
    },
    {
-    "id": "flores-devtest-1003",
-    "text": "Az összes állat, amely eredetileg a szigetekre érkezett, úszással, repüléssel vagy lebegéssel került ide.",
-    "reference": "ˌɑz ˈøssɛʃ ˌaːllɑt ˈɑmɛj ˈɛrɛdɛtilɛɡ ˌɑ sˈiɡɛtɛkrɛ ˌeːrkɛzɛtː ˈuːsaːʃʃɑl rˈɛpyleːʃʃɛl vˌɑɟ lˈɛbɛɡeːʃʃɛl kˈɛrylt ˌidɛ",
-    "uccharan": "ˌɑz ˈøssɛʃ ˈaːllɑt ˈɑmɛj ˈɛrɛdɛtilɛɡ ˌɑ sˈiɡɛtɛkrɛ ˈeːrkɛzɛtː ˈuːsaːʃʃɑl rˈɛpyleːʃʃɛl vˌɑɟ lˈɛbɛɡeːʃʃɛl kˈɛrylt ˈidɛ"
+    "id": "flores-devtest-32",
+    "text": "A toll szerkezete azt sugallja, hogy nem repülésre, hanem hőmérséklet-szabályozására vagy feltűnéskeltésre használták. A kutatók megállapították, hogy bár ez egy fiatal dinoszaurusz farka, a minta felnőtt tollazatra, nem pedig egy fióka tollazatára utal.",
+    "reference": "ˌɑ tˈoll sˈɛrkɛzɛtɛ ˈɑst ʃˈuɡɑjjjɑ hˈoɟ nˈɛmrɛpyleːʃrɛ hˈɑnɛm hˈøːmeːrʃeːklɛtsˌɑbaːjozaːʃaːrɑ vˌɑɟ fˈɛltyːneːʃkɛlteːʃrɛ hˈɑsnaːltaːk ˌɑ kˈutɑtoːk mˈɛɡaːllɑpiːtotːaːk hˈoɟ bˌaːr ˈɛz ˈɛɟ fˈiɑtɑl dˈinosɑurus fˈɑrkɑ ˌɑ mˈintɑ fˈɛlnøːtː tˈollɑzɑtrɑ nˈɛmpɛdiɡ ˈɛɟ fˈioːkɑ tˈollɑzɑtaːrɑ ˌutɑl",
+    "uccharan": "ˌɑ tˈoll sˈɛrkɛzɛtɛ ˈɑst ʃˈuɡɑjjjɑ hˈoɟ nɛm rˈɛpyleːʃrɛ hˈɑnɛm hˈøːmeːrʃeːklɛtsˈɑbaːjozaːʃaːrɑ vˌɑɟ fˈɛltyːneːʃkɛlteːʃrɛ hˈɑsnaːltaːk ˌɑ kˈutɑtoːk mˈɛɡaːllɑpiːtotːaːk hˈoɟ bˌaːr ˈɛz ˈɛɟ fˈiɑtɑl dˈinosɑurus fˈɑrkɑ ˌɑ mˈintɑ fˈɛlnøːtː tˈollɑzɑtrɑ nɛm pˈɛdiɡ ˈɛɟ fˈioːkɑ tˈollɑzɑtaːrɑ ˌutɑl"
    },
    {
-    "id": "flores-devtest-468",
-    "text": "A „felfelé húzás” jelzés V-alakú, a „lefelé húzás” pedig olyan tűzőkapocsnak vagy négyzetnek néz ki, aminek hiányzik az alsó oldala.",
-    "reference": "ˌɑ fˈɛlfɛleː hˈuːzaːʃ jˈɛlzeːʃ vˈeːˌɑlɑkuː ˌɑ lˈɛfɛleː hˈuːzaːʃ pˈɛdiɡ ˈojɑn tˈyːzøːkɑpotʃnɑk vˌɑɟ nˈeːɟzɛtnɛk nˌeːzki ˈɑminɛk hˈiaːɲzik ˌɑz ˈɑlʃoː ˈoldɑlɑ",
-    "uccharan": "ˌɑ fˈɛlfɛleː hˈuːzaːʃ jˈɛlzeːʃ vˈeːˈɑlɑkuː ˌɑ lˈɛfɛleː hˈuːzaːʃ pˈɛdiɡ ˈojɑn tˈyːzøːkɑpotʃnɑk vˌɑɟ nˈeːɟzɛtnɛk nˈeːz kˈi ˈɑminɛk hˈiaːɲzik ˌɑz ˈɑlʃoː ˈoldɑlɑ"
+    "id": "flores-devtest-717",
+    "text": "A Gomán belüli közlekedéshez a boda-bodát (motortaxit) lehet használni. Egy rövidebb út szokásos (helyi) díjszabása 500 kongói frank körül van.",
+    "reference": "ˌɑ ɡˈomaːn bˈɛlyli kˈøzlɛkɛdeːʃhɛz ˌɑ bˈodɑbˌodaːt mˈotortɑksit lˌɛhɛthɑsnaːlni ˈɛɟ rˈøvidɛbː ˈuːt sˈokaːʃoʃ hˈɛji dˈiːjsɑbaːʃɑ ˈøtsaːz kˈonɡoːi frˈɑnk kˈøryl vˌɑn",
+    "uccharan": "ˌɑ ɡˈomaːn bˈɛlyli kˈøzlɛkɛdeːʃhɛz ˌɑ bˈodɑbˈodaːt mˈotortɑksit lˈɛhɛt hˌɑsnaːlni ˈɛɟ rˈøvidɛbː ˈuːt sˈokaːʃoʃ hˈɛji dˈiːjsɑbaːʃɑ ˈøtsaːz kˈonɡoːi frˈɑnk kˈøryl vˌɑn"
    },
    {
-    "id": "flores-devtest-80",
-    "text": "\"Bush szóvivője, Gordon Johndroe Észak-Korea ígéretéről azt nyilatkozta, hogy „ez egy hatalmas előrelépés a Koreai-félsziget bizonyítható nukleáris leszerelése érdekében\"\".\"",
-    "reference": "bˈuʃh sˈoːvivøːjɛ ɡˈordon jˈohndroɛ ˈeːsɑkːˌorɛɑ ˈiːɡeːrɛteːrøːl ˈɑst ɲˌilɑtkoztɑ hˈoɟ ˈɛz ˈɛɟ hˈɑtɑlmɑʃ ˈɛløːrɛleːpeːʃ ˌɑ kˈorɛɑifˌeːlsiɡɛt bˈizˌoɲiːthɑtoː nˈuklɛaːriʃ lˈɛsɛrɛleːʃɛ ˌeːrdɛkeːbɛn",
-    "uccharan": "bˈuʃh sˈoːvivøːjɛ ɡˈordon jˈohndroɛ ˈeːsɑkkˈorɛɑ ˈiːɡeːrɛteːrøːl ˈɑst ɲˈilɑtkoztɑ hˈoɟ ˈɛz ˈɛɟ hˈɑtɑlmɑʃ ˈɛløːrɛleːpeːʃ ˌɑ kˈorɛɑifˈeːlsiɡɛt bˈizˌoɲiːthɑtoː nˈuklɛaːriʃ lˈɛsɛrɛleːʃɛ ˈeːrdɛkeːbɛn"
+    "id": "flores-devtest-702",
+    "text": "Az európai hatás és gyarmatosítás a 15. században vette kezdetét, amikor a portugál felfedező, Vasco da Gama felfedezte a Cape Route útvonalat Európából Indiába.",
+    "reference": "ˌɑz ˈɛuroːpɑi hˈɑtaːʃ ˌeːʃ ɟˈɑrmɑtoʃiːtaːʃ ˌɑ tˈizɛnøtødik sˈaːzɑdbɑn vˈɛtːɛ kˈɛzdɛteːt ˈɑmikor ˌɑ pˈortuɡaːl fˈɛlfɛdɛzøː vˈɑʃtso dˈɑ ɡˈɑmɑ fˈɛlfɛdɛstɛ ˌɑ tsˈɑpɛ rˈoutɛ ˈuːtvonɑlɑt ˈɛuroːpaːboːl ˈindiaːbɑ",
+    "uccharan": "ˌɑz ˈɛuroːpɑi hˈɑtaːʃ ˌeːʃ ɟˈɑrmɑtoʃiːtaːʃ ˌɑ tˈizɛnøt sˈaːzɑdbɑn vˈɛtːɛ kˈɛzdɛteːt ˈɑmikor ˌɑ pˈortuɡaːl fˈɛlfɛdɛzøː vˈɑʃtso dˈɑ ɡˈɑmɑ fˈɛlfɛdɛstɛ ˌɑ tsˈɑpɛ rˈoutɛ ˈuːtvonɑlɑt ˌɛuroːpaːboːl ˈindiaːbɑ"
    },
    {
-    "id": "flores-devtest-536",
-    "text": "Ha álmában visszaállítja az órát, tegye a szoba másik felébe, ezzel arra késztetve magát, hogy kikeljen az ágyból és kikapcsolja azt.",
-    "reference": "hˌɑ ˈaːlmaːbɑn vˈissɑaːlliːcːɑ ˈɑz ˌoːraːt tˈɛɟɛ ˌɑ sˈobɑ mˈaːʃik fˈɛleːbɛ ˈɛzzɛl ˈɑrrɑ kˈeːstɛtvɛ mˌɑɡaːt hˈoɟ kˈikɛʎjɛn ˌɑz ˈaːɟboːl ˌeːʃ kˈikɑptʃoʎjɑ ˌɑst",
-    "uccharan": "hˌɑ ˈaːlmaːbɑn vˈissɑaːlliːcːɑ ˌɑz ˈoːraːt tˈɛɟɛ ˌɑ sˈobɑ mˈaːʃik fˈɛleːbɛ ˈɛzzɛl ˈɑrrɑ kˈeːstɛtvɛ mˈɑɡaːt hˈoɟ kˈikɛʎjɛn ˌɑz ˈaːɟboːl ˌeːʃ kˈikɑptʃoʎjɑ ˈɑst"
+    "id": "flores-devtest-951",
+    "text": "Északon látogassa meg a Fátimai Miasszonyunk nagyszentélyt is, amely egy világszerte híres Mária-jelenés helyszíne.",
+    "reference": "ˈeːsɑkon lˈaːtoɡɑʃʃɑ mˈɛɡɑ fˈaːtimɑi mˈiɑssoɲunk nˈɑɟsɛnteːjt ˌiʃ ˈɑmɛj ˈɛɟ vˈilaːɡsɛrtɛ hˈiːrɛʃ mˈaːriɑjˌɛlɛneːʃ hˈɛjsiːnɛ",
+    "uccharan": "ˈeːsɑkon lˈaːtoɡɑʃʃɑ mˈɛɡ ˌɑ fˈaːtimɑi mˈiɑssoɲunk nˈɑɟsɛnteːjt ˌiʃ ˈɑmɛj ˈɛɟ vˈilaːɡsɛrtɛ hˈiːrɛʃ mˈaːriɑjˈɛlɛneːʃ hˈɛjsiːnɛ"
    },
    {
-    "id": "flores-devtest-712",
-    "text": "A régi medina környékén könnyen találni tradicionális marokkói termékeket árusító helyeket pl. tazsint, cserepeket, bőrárut, vízipipát és mindenféle csecsebecsét, de itt minden a turistáknak szól.",
-    "reference": "ˌɑ rˈeːɡi mˈɛdinɑ kˈørɲeːkeːn kˈøɲɲɛn tˈɑlaːlni trˈɑditsionaːliʃ mˈɑrokːoːi tˈɛrmeːkɛkɛt ˈaːruʃiːtoː hˈɛjɛkɛt pˈeːldaːul tˈɑʒint tʃˈɛrɛpɛkɛt bˈøːraːrut vˈizipipaːt ˌeːʃ mˈindɛnfeːlɛ tʃˈɛtʃɛbɛtʃeːt dˌɛ ˈitː mˈindɛn ˌɑ tˈuriʃtaːknɑk sˌoːl",
-    "uccharan": "ˌɑ rˈeːɡi mˈɛdinɑ kˈørɲeːkeːn kˈøɲɲɛn tˈɑlaːlni trˈɑditsionaːliʃ mˈɑrokːoːi tˈɛrmeːkɛkɛt ˈaːruʃiːtoː hˈɛjɛkɛt pˈeːˌɛll tˈɑʒint tʃˈɛrɛpɛkɛt bˈøːraːrut vˈizipipaːt ˌeːʃ mˈindɛnfeːlɛ tʃˈɛtʃɛbɛtʃeːt dˌɛ ˈitː mˈindɛn ˌɑ tˈuriʃtaːknɑk sˈoːl"
+    "id": "flores-devtest-774",
+    "text": "Sok strand van, mivel Aucklandot két kikötő fogja közre. A legnépszerűbbek három területen helyezkednek el.",
+    "reference": "ʃˈok ʃtrˈɑnd vˌɑn mˈivɛl ˈɑutsklɑndot kˈeːt kˈikøtøː fˈoɡjɑ kˈøzrɛ ˌɑ lˈɛɡneːpsɛryːbːɛk hˈaːrom tˈɛrylɛtɛn hˈɛjɛskɛdnɛk ˌɛl",
+    "uccharan": "ʃˈok ʃtrˈɑnd vˌɑn mˈivɛl ɑˌutsklɑndˈot kˈeːt kˈikøtøː fˈoɡjɑ kˈøzrɛ ˌɑ lˈɛɡneːpsɛryːbːɛk hˈaːrom tˈɛrylɛtɛn hˈɛjɛskɛdnɛk ˌɛl"
    },
    {
-    "id": "flores-devtest-313",
-    "text": "Hat túszt, köztük gyermekeket és időseket engedtek el korábban, csakúgy, mint a filippínó fényképészeket.",
-    "reference": "hˈɑt tˈuːst kˈøstyk ɟˈɛrmɛkɛkɛt ˌeːʃ ˈidøːʃɛkɛt ˈɛnɡɛtːɛk ˈɛl kˈoraːbːɑn tʃˈɑkuːɟ mˈintɑ fˈilipːiːnoː fˈeːɲkeːpeːsɛkɛt",
-    "uccharan": "hˈɑt tˈuːst kˈøstyk ɟˈɛrmɛkɛkɛt ˌeːʃ ˈidøːʃɛkɛt ˈɛnɡɛtːɛk ˈɛl kˈoraːbːɑn tʃˈɑkuːɟ mˈintɑ ˌɑ fˈilipːiːnoː fˈeːɲkeːpeːsɛkɛt"
+    "id": "flores-devtest-434",
+    "text": "Ennek a formátumnak az oldalaránya (12-es osztás után a legegyszerűbb egész szám arány eléréséhez) ennél fogva 3:2-re tehető.",
+    "reference": "ˈɛnnɛk ˌɑ fˈormaːtumnɑk ˌɑz ˈoldɑlɑraːɲɑ tˈizɛnkɛtːˌɛʃ ˈostaːʃ ˈutaːn ˌɑ lˈɛɡɛɟsɛryːbː ˈɛɡeːs sˈaːm ˈɑraːɲ ˈɛleːreːʃeːhɛz ˈɛnneːl fˈoɡvɑ hˈaːrom kˈɛtːøːrˌɛ tˈɛhɛtøː",
+    "uccharan": "ˈɛnnɛk ˌɑ fˈormaːtumnɑk ˌɑz ˈoldɑlɑraːɲɑ tˈizɛnkɛtːøːˌɛʃ ˈostaːʃ ˈutaːn ˌɑ lˈɛɡɛɟsɛryːbː ˈɛɡeːs sˈaːm ˈɑraːɲ ˈɛleːreːʃeːhɛz ˈɛnneːl fˈoɡvɑ hˈaːrom kɛtːøːrˈɛ tˈɛhɛtøː"
    },
    {
-    "id": "flores-devtest-748",
-    "text": "A 16. századi Paraguay, előző nevén „Az indiánok óriási tartománya” a spanyol hódítók és az őslakosok csoportjai közötti találkozás eredményeként jött létre.",
-    "reference": "ˌɑ tˈizɛnhɑtodik sˈaːzɑdi pˈɑrɑɡuɑi ˈɛløːzøː nˈɛveːn ˌɑz ˈindiaːnok ˈoːriaːʃi tˈɑrtomaːɲɑ ˌɑ ʃpˈɑɲol hˈoːdiːtoːk ˌeːʃ ˌɑz ˈøːʃlɑkoʃok tʃˈoporcɑi kˈøzøtːi tˈɑlaːlkozaːʃ ˈɛrɛdmeːɲɛkeːnt jˈøtː lˌeːtrɛ",
-    "uccharan": "ˌɑ tˈizɛnhɑt sˈaːzɑdi pˈɑrɑɡuɑi ˈɛløːzøː nˈɛveːn ˌɑz ˈindiaːnok ˈoːriaːʃi tˈɑrtomaːɲɑ ˌɑ ʃpˈɑɲol hˈoːdiːtoːk ˌeːʃ ˌɑz ˈøːʃlɑkoʃok tʃˈoporcɑi kˈøzøtːi tˈɑlaːlkozaːʃ ˈɛrɛdmeːɲɛkeːnt jˈøtː lˈeːtrɛ"
+    "id": "flores-devtest-485",
+    "text": "Viszont az országra kiterjedő úthálózat gazdaságilag nem életképes kevés autó esetén, így új gyártási módszereket fejlesztettek ki az autóbirtoklás költségeinek csökkentésére.",
+    "reference": "vˈisontɑz ˈorsaːɡrɑ kˈitɛrjɛdøː ˈuːthaːloːzɑt ɡˈɑzdɑʃaːɡilɑɡ nˈɛmeːlɛtkeːpɛʃ kˈɛveːʃ ˈɑutoː ˌɛʃɛteːn ˈiːɟ ˈuːj ɟˈaːrtaːʃi mˈoːtsːɛrɛkɛt fˈɛjlɛstɛtːɛk kˈi ˌɑz ˈɑutoːbirtoklaːʃ kˈøltʃeːɡɛinɛk tʃˈøkːɛnteːʃeːrɛ",
+    "uccharan": "vˈisont ˌɑz ˈorsaːɡrɑ kˈitɛrjɛdøː ˈuːthaːloːzɑt ɡˈɑzdɑʃaːɡilɑɡ nɛm ˈeːlɛtkeːpɛʃ kˈɛveːʃ ˈɑutoː ˌɛʃɛteːn ˈiːɟ ˈuːj ɟˈaːrtaːʃi mˈoːtsːɛrɛkɛt fˈɛjlɛstɛtːɛk kˈi ˌɑz ˈɑutoːbirtoklaːʃ kˈøltʃeːɡɛinɛk tʃˈøkːɛnteːʃeːrɛ"
    },
    {
-    "id": "flores-devtest-242",
-    "text": "Michael Schumacher nem sokkal Alonso után fejezte be a versenyt, a futóművének a verseny közbeni összecsapások miatti károsodásai miatt.",
-    "reference": "mˈitshɑɛl ʃtshˈumɑtshɛr nˈɛmʃokːɑl ˈɑlonʃo ˈutaːn fˈɛjɛstɛ bˈɛ ˌɑ vˈɛrʃɛɲt ˌɑ fˈutoːmyːveːnɛk ˌɑ vˈɛrʃɛɲ kˈøzbɛni ˈøssɛtʃɑpaːʃok mˈiɑtːi kˈaːroʃodaːʃɑi mˌiɑtː",
-    "uccharan": "mˈitshɑɛl ʃtshˈumɑtshɛr nɛm ʃˈokːɑl ˈɑlonʃo ˈutaːn fˈɛjɛstɛ bˈɛ ˌɑ vˈɛrʃɛɲt ˌɑ fˈutoːmyːveːnɛk ˌɑ vˈɛrʃɛɲ kˈøzbɛni ˈøssɛtʃɑpaːʃok mˈiɑtːi kˈaːroʃodaːʃɑi mˈiɑtː"
+    "id": "flores-devtest-726",
+    "text": "Akárcsak az összes dél-afrikai nemzeti parkban, itt is természetvédelmi és belépési napidíjat kell váltani.",
+    "reference": "ˈɑkaːrtʃɑk ˌɑz ˈøssɛʃ dˈeːlˌɑfrikɑi nˈɛmzɛti pˌɑrkbɑn ˈitːiʃ tˈɛrmeːsɛtveːdɛlmi ˌeːʃ bˈɛleːpeːʃi nˈɑpidiːjɑt kˈɛll vˈaːltɑni",
+    "uccharan": "ˈɑkaːrtʃɑk ˌɑz ˈøssɛʃ dˈeːlˈɑfrikɑi nˈɛmzɛti pˌɑrkbɑn ˈitː ˈiʃ tˈɛrmeːsɛtveːdɛlmi ˌeːʃ bˈɛleːpeːʃi nˈɑpidiːjɑt kˈɛll vˈaːltɑni"
    },
    {
-    "id": "flores-devtest-943",
-    "text": "İzmir körülbelül 3,7 millió lakosával Törökország harmadik legnagyobb városa, Isztambul után a második legnagyobb kikötő és nagyon jó közlekedési csomópont.",
-    "reference": "ˈizmir kˈørylbɛlyl hˈaːrom ɛɡeːs heːttizɛd mˈilioː lˈɑkoʃaːvɑl tˈørøkorsaːɡ hˈɑrmɑdik lˈɛɡnɑɟobː vˈaːroʃɑ ˈistɑmbul ˈutaːn ˌɑ mˈaːʃodik lˈɛɡnɑɟobː kˈikøtøː ˌeːʃ nˈɑɟon jˈoː kˈøzlɛkɛdeːʃi tʃˈomoːpont",
-    "uccharan": "ˈizmir kˈørylbɛlyl hˈaːrom ɛɡeːs heːt mˈilioː lˈɑkoʃaːvɑl tˈørøkorsaːɡ hˈɑrmɑdik lˈɛɡnɑɟobː vˈaːroʃɑ ˈistɑmbul ˈutaːn ˌɑ mˈaːʃodik lˈɛɡnɑɟobː kˈikøtøː ˌeːʃ nˈɑɟon jˈoː kˈøzlɛkɛdeːʃi tʃˈomoːpont"
+    "id": "flores-devtest-935",
+    "text": "Ez azonban nem olcsó: általánosan számíthat arra, hogy üzleti osztályon a szokásos viteldíj négyszeresét, az első osztályon a tizenegyszeresét fizeti!",
+    "reference": "ˈɛz ˈɑzonbɑn nˈɛmoltʃoː ˈaːltɑlaːnoʃɑn sˈaːmiːthɑt ˌɑrrɑ hˈoɟ ˈyzlɛti ˈostaːjon ˌɑ sˈokaːʃoʃ vˈitɛldiːj nˈeːɟsɛrɛʃeːt ˌɑz ˈɛlʃøː ˈostaːjon ˌɑ tˈizɛnɛɟsɛrɛʃeːt fˌizɛti",
+    "uccharan": "ˈɛz ˈɑzonbɑn nɛm ˌoltʃoː ˈaːltɑlaːnoʃɑn sˈaːmiːthɑt ˌɑrrɑ hˈoɟ ˈyzlɛti ˈostaːjon ˌɑ sˈokaːʃoʃ vˈitɛldiːj nˈeːɟsɛrɛʃeːt ˌɑz ˈɛlʃøː ˈostaːjon ˌɑ tˈizɛnɛɟsɛrɛʃeːt fˈizɛti"
    },
    {
-    "id": "flores-devtest-180",
-    "text": "Ez volt az utolsó mérkőzés az All Blacks számára, akik már két héttel ezelőtt megnyerték a kupát.",
-    "reference": "ˈɛz vˈolt ˌɑz ˈutolʃoː mˈeːrkøːzeːʃ ˌɑz ˈɑll blˈɑtskʃ sˌaːmaːrɑ ˈɑkik mˈaːr kˈeːt hˈeːtːɛlɛzɛløːtː mˈɛɡɲɛrteːk ˌɑ kˈupaːt",
-    "uccharan": "ˈɛz vˈolt ˌɑz ˈutolʃoː mˈeːrkøːzeːʃ ˌɑz ˈɑll blˈɑtskʃ sˈaːmaːrɑ ˈɑkik mˈaːr kˈeːt hˈeːtːɛl ˈɛzɛløːtː mˈɛɡɲɛrteːk ˌɑ kˈupaːt"
+    "id": "flores-devtest-922",
+    "text": "Norvégia, Svédország és Új-Zéland esetében is ez a helyzet, de egyébként meglehetősen egyedi (például Hollandiában ez az arány egy a negyvenhez).",
+    "reference": "nˈorveːɡiɑ ʃvˈeːdorsaːɡ ˌeːʃ ˈuːjzˌeːlɑnd ˈɛʃɛteːbɛn ˈiʃ ˈɛz ˌɑ hˌɛjzɛt dˌɛ ˈɛɟeːbkeːnt mˈɛɡlɛhɛtøːʃɛn ˈɛɟɛdi pˈeːldaːul hˈollɑndiaːbɑn ˈɛzɑz ˈɑraːɲ ˈɛɟ ˌɑ nˈɛɟvɛnhɛz",
+    "uccharan": "nˈorveːɡiɑ ʃvˈeːdorsaːɡ ˌeːʃ ˈuːjzˈeːlɑnd ˈɛʃɛteːbɛn ˈiʃ ˈɛz ˈɑ hˌɛjzɛt dˌɛ ˈɛɟeːbkeːnt mˈɛɡlɛhɛtøːʃɛn ˈɛɟɛdi pˈeːldaːul hˈollɑndiaːbɑn ˈɛz ˌɑz ˈɑraːɲ ˈɛɟ ˌɑ nˈɛɟvɛnhɛz"
    },
    {
-    "id": "flores-devtest-901",
-    "text": "Általában mindig hallatszik itt a turisták és az eladók hangja. A hang és a fény által elmesélt történet pont olyan, mint egy mesekönyvé.",
-    "reference": "ˈaːltɑlaːbɑn mˈindiɡ hˈɑllɑtsːik ˈitː ˌɑ tˈuriʃtaːk ˌeːʃ ˌɑz ˈɛlɑdoːk hˈɑnɡjɑ ˌɑ hˈɑnɡ ˌeːʃ ˌɑ fˈeːɲ ˈaːltɑl ˈɛlmɛʃeːlt tˈørteːnɛt pˈont ˌojɑn mˈintɛɟ mˈɛʃɛkøɲveː",
-    "uccharan": "ˈaːltɑlaːbɑn mˈindiɡ hˈɑllɑtsːik ˈitː ˌɑ tˈuriʃtaːk ˌeːʃ ˌɑz ˈɛlɑdoːk hˈɑnɡjɑ ˌɑ hˈɑnɡ ˌeːʃ ˌɑ fˈeːɲ ˈaːltɑl ˈɛlmɛʃeːlt tˈørteːnɛt pˈont ˈojɑn mˈintɑ ˈɛɟ mˈɛʃɛkøɲveː"
+    "id": "flores-devtest-824",
+    "text": "Az utazók olyan kártevő állatokkal találkozhatnak, amelyekkel korábban esetleg még nem találkoztak otthonukban.",
+    "reference": "ˌɑz ˈutɑzoːk ˈojɑn kˈaːrtɛvøː ˈaːllɑtokːɑl tˈɑlaːlkozhɑtnɑk ˈɑmɛjɛkːɛl kˈoraːbːɑn ˈɛʃɛtlɛɡ mˈeːɡ nˈɛmtɑlaːlkostɑk ˈothonukbɑn",
+    "uccharan": "ˌɑz ˈutɑzoːk ˈojɑn kˈaːrtɛvøː ˈaːllɑtokːɑl tˈɑlaːlkozhɑtnɑk ˈɑmɛjɛkːɛl kˈoraːbːɑn ˈɛʃɛtlɛɡ mˈeːɡ nɛm tˈɑlaːlkostɑk ˈothonukbɑn"
    }
   ]
  }

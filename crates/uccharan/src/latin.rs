@@ -71,6 +71,21 @@ pub struct Latin {
     /// A letter name's open e is close when the name loses its stress
     /// (`spell-close-e = yes`).
     spell_close_e: bool,
+    /// The main stress of a spelled abbreviation is on its first letter
+    /// (`spell-stress = first`), not its last.
+    spell_first: bool,
+    /// A single consonant letter is read by its name even when the word
+    /// table has an entry for it (`letter-names = yes`).
+    letter_names: bool,
+    /// The table's entries for two- and three-letter capitals are used
+    /// (`caps-entries = yes`); otherwise such a token is spelled.
+    caps_entries: bool,
+    /// Capital `I` is the dotless `ı` (`dotless-i = yes`, Turkish).
+    dotless_i: bool,
+    /// Small words that are read as words when written in capitals
+    /// (`caps-words = de het`; `*` stands for the `[unstressed]` list).
+    /// Other capitals of two or three letters are spelled.
+    caps_words: Vec<String>,
     stress: Stress,
     secondary: bool,
     /// `elision = yes`: `l'`, `qu'` and the like are read with the next word.
@@ -79,12 +94,21 @@ pub struct Latin {
     /// numbers written in digits, take no part in the `[clause]` rules
     /// with the word before them.
     sandhi_block: Option<String>,
+    /// `[aspirated]`: words (or, with a final `*`, beginnings of words)
+    /// that no clause rule reaches into.
+    aspirated: Vec<(String, bool)>,
     /// `fuse = na do ...`: these words make one word with the word after
     /// them, stressed again as a whole (Czech prepositions).
     fuse: Vec<String>,
+    /// `promote-before-final = a az`: these words take primary stress
+    /// before a last word of a clause that has only secondary stress there
+    /// (`word p s` in `[unstressed]`).
+    promote: Vec<String>,
     /// `vowel-mark = yes`: inside a clause, a word written with a vowel
     /// letter first has `⁑` before its phonemes for the `[clause]` rules.
     vowel_mark: bool,
+    /// `vowel-mark = h`: also words written with a silent h and a vowel.
+    vowel_mark_h: bool,
     /// `secondary = auto`: trochaic secondary stresses.
     auto_secondary: bool,
     /// `stress-options =` words (see [`Latin::from_text`]).
@@ -174,15 +198,39 @@ impl Latin {
                 .cloned()
                 .unwrap_or_else(|| "aeiouáéíóúüy".to_string()),
             spell_close_e: meta.get("spell-close-e").is_some_and(|v| v == "yes"),
+            spell_first: meta.get("spell-stress").is_some_and(|v| v == "first"),
+            letter_names: meta.get("letter-names").is_some_and(|v| v == "yes"),
+            caps_entries: meta.get("caps-entries").is_some_and(|v| v == "yes"),
+            dotless_i: meta.get("dotless-i").is_some_and(|v| v == "yes"),
+            caps_words: meta
+                .get("caps-words")
+                .map(|v| v.split_whitespace().map(str::to_string).collect())
+                .unwrap_or_default(),
             stress,
             secondary: meta.get("secondary").is_some_and(|v| v == "alternate"),
             elision: meta.get("elision").is_some_and(|v| v == "yes"),
             sandhi_block: meta.get("sandhi-block").cloned(),
+            aspirated: f
+                .lines("aspirated")
+                .iter()
+                .flat_map(|l| l.split_whitespace().map(str::to_string).collect::<Vec<_>>())
+                .map(|w| match w.strip_suffix('*') {
+                    Some(p) => (p.to_string(), true),
+                    None => (w, false),
+                })
+                .collect(),
             fuse: meta
                 .get("fuse")
                 .map(|v| v.split_whitespace().map(str::to_string).collect())
                 .unwrap_or_default(),
-            vowel_mark: meta.get("vowel-mark").is_some_and(|v| v == "yes"),
+            promote: meta
+                .get("promote-before-final")
+                .map(|v| v.split_whitespace().map(str::to_string).collect())
+                .unwrap_or_default(),
+            vowel_mark: meta
+                .get("vowel-mark")
+                .is_some_and(|v| v == "yes" || v == "h"),
+            vowel_mark_h: meta.get("vowel-mark").is_some_and(|v| v == "h"),
             auto_secondary: meta
                 .get("secondary")
                 .is_some_and(|v| v == "auto" || v == "none"),
@@ -469,30 +517,70 @@ impl Latin {
         }
     }
 
-    /// The value of a Roman numeral of at least two letters (I V X L).
+    /// The value of a Roman numeral of at least two letters in its usual
+    /// spelling (`XIV`, not `XIIII`), up to 3999.
     fn roman(w: &str) -> Option<u64> {
-        if w.chars().count() < 2 || !w.chars().all(|c| matches!(c, 'I' | 'V' | 'X' | 'L')) {
+        const PARTS: [(u64, &str); 13] = [
+            (1000, "M"),
+            (900, "CM"),
+            (500, "D"),
+            (400, "CD"),
+            (100, "C"),
+            (90, "XC"),
+            (50, "L"),
+            (40, "XL"),
+            (10, "X"),
+            (9, "IX"),
+            (5, "V"),
+            (4, "IV"),
+            (1, "I"),
+        ];
+        if w.len() < 2 || w.len() > 15 {
             return None;
         }
-        let val = |c| match c {
-            'I' => 1,
-            'V' => 5,
-            'X' => 10,
-            _ => 50,
-        };
-        let cs: Vec<u64> = w.chars().map(val).collect();
-        let mut n = 0u64;
-        for (i, &v) in cs.iter().enumerate() {
-            if cs.get(i + 1).is_some_and(|&nx| nx > v) {
-                n = n.saturating_sub(v);
-                if !matches!(v, 1 | 10) {
-                    return None;
-                }
+        let (mut rest, mut n) = (w, 0u64);
+        for (v, s) in PARTS {
+            // A subtractive pair or V, L, D once; I, X, C, M up to three times.
+            let most = if s.len() == 2 || matches!(v, 5 | 50 | 500) {
+                1
             } else {
-                n += v;
+                3
+            };
+            for _ in 0..most {
+                match rest.strip_prefix(s) {
+                    Some(r) => {
+                        rest = r;
+                        n += v;
+                    }
+                    None => break,
+                }
             }
         }
-        (n > 0 && n < 90).then_some(n)
+        // Reading the value back gives the same letters only for a proper numeral.
+        let mut back = String::new();
+        let mut m = n;
+        for (v, s) in PARTS {
+            while m >= v {
+                back.push_str(s);
+                m -= v;
+            }
+        }
+        (rest.is_empty() && back == w).then_some(n)
+    }
+
+    /// The value of a token that this language reads as a Roman numeral.
+    /// Compatible mode follows the voice (`roman` lines of the language
+    /// file); improved mode reads the numerals up to 49 in every language.
+    fn roman_number(&self, w: &str, compat: bool) -> Option<u64> {
+        if self.numbers.is_empty() || (compat && self.numbers.roman_off) {
+            return None;
+        }
+        let n = Self::roman(w)?;
+        let max = match self.numbers.roman_max {
+            m if compat && m > 0 => m,
+            _ => 49,
+        };
+        (n <= max && !self.numbers.roman_skip.iter().any(|s| s == w)).then_some(n)
     }
 
     /// The word table's reading: the word as written when it is all in
@@ -512,10 +600,20 @@ impl Latin {
         let t = table?;
         let mut found = String::new();
         let caps = w.chars().nth(1).is_some() && w.chars().all(|c| !c.is_lowercase());
-        if caps && t.lookup_uncached(w, &mut found) {
+        // Two or three capitals are an abbreviation, also when the letters
+        // make a word of the language ("TA", "OB"), unless the language file
+        // names it as a small word that stays a word.
+        let short = caps && w.chars().count() <= 3 && w.chars().all(char::is_uppercase);
+        // Where Roman numerals are not read as numbers, a short one is
+        // spelled whatever the table says about its letters.
+        let numeral = short && self.numbers.roman_off && Self::roman(w).is_some();
+        if caps && !numeral && (!short || self.caps_entries) && t.lookup_uncached(w, &mut found) {
             return Some(found);
         }
-        if own || (caps && w == lower) {
+        if (own && !short) || (caps && w == lower) {
+            return None;
+        }
+        if short && !self.caps_word(lower) {
             return None;
         }
         t.lookup_uncached(lower, &mut found).then_some(found)
@@ -670,34 +768,63 @@ impl Latin {
             .collect()
     }
 
+    /// True for a small word that is read as a word when in capitals.
+    fn caps_word(&self, lower: &str) -> bool {
+        self.caps_words
+            .iter()
+            .any(|c| c == lower || (c == "*" && self.unstressed.contains_key(lower)))
+            || self
+                .numbers
+                .roman_skip
+                .iter()
+                .any(|r| r.eq_ignore_ascii_case(lower))
+    }
+
     /// A word read letter by letter: an acronym in capitals, or a word
     /// without vowels. `lower` is `w` in lower case.
     fn spelled(&self, w: &str, lower: &str, own: bool) -> Option<String> {
-        if self.spell.is_empty() || own {
+        if self.spell.is_empty() {
             return None;
         }
         let n = w.chars().count();
-        let caps = (2..=5).contains(&n) && w.chars().all(|c| c.is_uppercase());
+        // Capitals of two or three letters are an abbreviation; longer ones
+        // are read as a word when they have a vowel (`NATO`, `COVID`).
+        let caps = (2..=3).contains(&n) && w.chars().all(|c| c.is_uppercase());
         let no_vowel = n >= 2
             && w.chars().all(char::is_alphabetic)
             && !lower.chars().any(|c| self.spell_vowels.contains(c));
-        if !caps && !no_vowel {
+        // A word of the language file is spelled only as a short abbreviation.
+        let abbreviation = caps && !self.caps_word(lower);
+        if !(abbreviation || (no_vowel && !own)) {
             return None;
         }
-        let names: Vec<&String> = lower
-            .chars()
-            .map(|c| self.spell.get(&c))
-            .collect::<Option<Vec<_>>>()?;
+        // Turkish capital I is the dotless letter.
+        let names: Vec<&String> = if self.dotless_i && caps {
+            w.chars()
+                .map(|c| match c {
+                    'I' => 'ı',
+                    'İ' => 'i',
+                    c => c.to_lowercase().next().unwrap_or(c),
+                })
+                .map(|c| self.spell.get(&c))
+                .collect::<Option<Vec<_>>>()?
+        } else {
+            lower
+                .chars()
+                .map(|c| self.spell.get(&c))
+                .collect::<Option<Vec<_>>>()?
+        };
+        // The main stress is on the last letter (or the first, by the
+        // language file); the others have secondary stress.
+        let main = if self.spell_first { 0 } else { names.len() - 1 };
         let mut out = String::new();
         for (k, name) in names.iter().enumerate() {
-            if k + 1 < names.len() {
-                if self.spell_close_e {
-                    out.push_str(&name.replace("ˈɛ", "ˌe").replace('ˈ', "ˌ"));
-                } else {
-                    out.push_str(&name.replace('ˈ', "ˌ"));
-                }
-            } else {
+            if k == main {
                 out.push_str(name);
+            } else if self.spell_close_e {
+                out.push_str(&name.replace("ˈɛ", "ˌe").replace('ˈ', "ˌ"));
+            } else {
+                out.push_str(&name.replace('ˈ', "ˌ"));
             }
         }
         Some(out)
@@ -714,6 +841,24 @@ impl Latin {
         table: Option<&crate::data::Data>,
     ) -> String {
         let own = self.words.contains_key(lower);
+        // With `letter-names = yes` a consonant letter by itself is said by
+        // its name (elsewhere it may be a word: Polish `w`, Czech `k`).
+        let mut one = lower.chars();
+        let letter = match (one.next(), one.next()) {
+            (Some(c), None)
+                if !own
+                    && c.is_alphabetic()
+                    && !self.spell_vowels.contains(c)
+                    && !self.unstressed.contains_key(lower)
+                    && !self.fuse.iter().any(|f| f == lower) =>
+            {
+                self.spell.get(&c)
+            }
+            _ => None,
+        };
+        if let Some(name) = letter.filter(|_| self.letter_names) {
+            return name.clone();
+        }
         if let Some(s) = self.listed_as(w, lower, own, table) {
             return s;
         }
@@ -819,11 +964,28 @@ impl Latin {
         let mut out: Vec<crate::WordOut> = Vec::with_capacity(n);
         let mut fuse_at: Option<usize> = None;
         for (i, it) in items.iter().enumerate() {
-            if let Some(v) = Self::roman(&it.text).filter(|_| !self.numbers.is_empty()) {
-                let mut ws = Vec::new();
-                self.numbers.cardinal(v, &mut ws);
-                for (w, glue) in ws {
-                    out.push(crate::WordOut::new(&w, self.word(&w, compat), lang, glue));
+            if let Some(v) = self.roman_number(&it.text, compat) {
+                let mut ws: Vec<(String, bool)> = Vec::new();
+                let said = |list: &[String]| -> Vec<(String, bool)> {
+                    list.iter()
+                        .filter(|_| compat)
+                        .map(|w| (w.clone(), false))
+                        .collect()
+                };
+                ws.extend(said(&self.numbers.roman_before));
+                match self.numbers.ordinal(v, compat) {
+                    Some(o) => ws.push((o.to_string(), false)),
+                    None => self.numbers.cardinal(v, &mut ws),
+                }
+                ws.extend(said(&self.numbers.roman_after));
+                let last = ws.len() - 1;
+                for (k, (w, glue)) in ws.into_iter().enumerate() {
+                    let mut ipa = self.word(&w, compat);
+                    // Only the last word keeps its stress (French).
+                    if self.numbers.stress_last && k < last {
+                        ipa.retain(|c| c != 'ˈ' && c != 'ˌ');
+                    }
+                    out.push(crate::WordOut::new(&w, ipa, lang, glue));
                 }
                 continue;
             }
@@ -832,6 +994,13 @@ impl Latin {
             let key = ipa.get(at + 1..).unwrap_or("");
             let unstressed = self.unstressed.get(key).copied();
             let fuses = !self.fuse.is_empty() && self.fuse.iter().any(|f| f == key);
+            let promoted = !self.promote.is_empty()
+                && i + 2 == n
+                && clause_final
+                && self.promote.iter().any(|p| p == key)
+                && items.get(i + 1).is_some_and(|x| {
+                    self.unstressed.get(x.text.to_lowercase().as_str()) == Some(&(b'p', b's'))
+                });
             ipa.truncate(at);
             // Number words before the last of a number lose their stress.
             if self.numbers.stress_last && items.get(i + 1).is_some_and(|x| x.number_tail) {
@@ -846,7 +1015,9 @@ impl Latin {
             if it.number_tail && self.numbers.demote_tail {
                 ipa = ipa.replace('ˈ', "ˌ");
             }
-            if let Some((mid, fin)) = unstressed {
+            if promoted {
+                ipa = ipa.replace('ˌ', "ˈ");
+            } else if let Some((mid, fin)) = unstressed {
                 let level = if i + 1 == n && clause_final { fin } else { mid };
                 ipa = match level {
                     b'0' => crate::ipa::strip_stress(&ipa),
@@ -859,10 +1030,24 @@ impl Latin {
                 && it
                     .text
                     .chars()
-                    .next()
+                    // A silent h before the vowel counts with `vowel-mark = h`.
+                    .find(|c| !(self.vowel_mark_h && matches!(c, 'h' | 'H')))
                     .is_some_and(|c| c.to_lowercase().any(|l| self.spell_vowels.contains(l)))
             {
                 ipa.insert(0, VOWEL);
+            }
+            // Words before which nothing links (French h aspiré, huit, onze).
+            if !self.aspirated.is_empty() {
+                let low = it.text.to_lowercase();
+                if self.aspirated.iter().any(|(w, prefix)| {
+                    if *prefix {
+                        low.starts_with(w.as_str())
+                    } else {
+                        low == *w
+                    }
+                }) {
+                    ipa.insert(0, BLOCK);
+                }
             }
             if let Some(block) = &self.sandhi_block {
                 let first = it
@@ -915,7 +1100,7 @@ impl Latin {
             }
         }
         for w in &mut out {
-            if self.sandhi_block.is_some() || self.vowel_mark {
+            if self.sandhi_block.is_some() || self.vowel_mark || !self.aspirated.is_empty() {
                 w.ipa.retain(|c| c != BLOCK && c != VOWEL);
             }
             let mode = if compat {

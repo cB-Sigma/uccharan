@@ -28,7 +28,10 @@ never touches the linguistic code.
 
 ## Language data
 
-`crates/uccharan/data/*.ucd` are small read-only images (`data.rs`):
+`crates/uccharan/data/*.ucd` (English, Hindi and the Kokoro dictionaries, compiled into the
+library) and `crates/uccharan-data/data/*.ucd` (the word tables of the other languages: packs
+found at first use, see `packs.rs`, or compiled in through the `uccharan-data` crate with the
+`bundle` feature) are small read-only images (`data.rs`):
 
 - a lexicon (`LEX2`, `lex2.rs`): the sorted word → pronunciation table, front-coded in blocks of
   8 entries and entropy-coded with canonical Huffman codes, used in place (no parsing at load

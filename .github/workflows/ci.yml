@@ -33,8 +33,12 @@ jobs:
         run: cargo fmt --all -- --check
       - name: Clippy
         run: cargo clippy --workspace --all-targets -- -D warnings
-      - name: Tests
+      - name: Tests (word tables read as packs from the source tree, see .cargo/config.toml)
         run: cargo test --workspace
+      - name: Tests with every word table compiled in, and the downloader builds
+        run: |
+          cargo test -p uccharan --features bundle
+          cargo check -p uccharan --features download
       - name: Compiled language data is up to date
         run: |
           cargo run --release -p uccharan-lexgen -- check
@@ -43,7 +47,7 @@ jobs:
           python3 tools/packs.py --check
       - name: Licence files in the packages match the repository's
         run: |
-          for d in crates/uccharan crates/uccharan-capi bindings/python bindings/wasm; do
+          for d in crates/uccharan crates/uccharan-data crates/uccharan-capi bindings/python bindings/wasm; do
             for f in LICENSE NOTICE DATA_LICENSES.md; do cmp "$f" "$d/$f"; done
           done
       - name: C example builds and runs against the C library
@@ -53,8 +57,13 @@ jobs:
           LD_LIBRARY_PATH=target/release ./hello
       - name: Benchmarks compile
         run: cargo bench -p uccharan --no-run
-      - name: The crate packages
-        run: cargo package -p uccharan --allow-dirty
+      - name: The crates package, and stay well under the registry's 10 MiB limit
+        run: |
+          cargo package -p uccharan-data -p uccharan --allow-dirty
+          for f in target/package/uccharan-*.crate; do
+            size=$(wc -c < "$f"); echo "$f: $size bytes"
+            test "$size" -lt 8000000
+          done
 
   python:
     name: Python ${{ matrix.python }} on ${{ matrix.os }} (wheel + pytest)

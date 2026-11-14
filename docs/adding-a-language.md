@@ -81,15 +81,120 @@ At each position the longest match wins, then file order; environments look at t
 pass. The full option list is in `crates/uccharan/src/indic.rs` and `langdef.rs`.
 
 For a new Brahmic language, start from a related file (Kannada was derived from Telugu by moving
-every letter 0x80 code points), read the language specification, compare a few dozen specified
+every letter 0x80 code points), read a description of the language, compare a few dozen specified
 words with the reference, then iterate on the dev set with
 `python tools/eval/run_eval.py --lang <tag> --set dev --show 20`.
+
+### Latin-script languages
+
+A Latin-script language (Spanish, German, Czech, …) is registered with the script `Latin` and read
+by `latin.rs`. Its file has the same sections, with letter rules instead of a letter table, and
+these `[meta]` options:
+
+```text
+[meta]
+tag = cs
+vowels = a e i o u ɪ ʊ      ; the phonemes that count as syllables for the stress rule
+unstressable = ə            ; vowels that never take stress
+stress = initial            ; initial | penult (default) | antepenult | final | spanish
+secondary = auto            ; alternate | auto (every other free syllable) | none
+stress-options = final-no-secondary   ; also: initial-secondary, two-syllable-secondary,
+                            ; final-vowel-unstressed, final-long
+suffix = mente mˈente       ; a suffix read apart from its stem
+elision = yes               ; l', qu', … are read with the next word
+spell-vowels = aeiouyáéíóúůýě   ; a word without one of these letters is spelled out
+spell-close-e = no
+sandhi-block = h            ; no clause rule reaches into a word that starts with one of these
+                            ; letters, nor into a number written in digits
+vowel-mark = yes            ; clause rules can tell a word written with a vowel first
+                            ; (`h`: also a word written with h and a vowel)
+caps-words = de het een     ; small words that stay words in capitals; other capitals of two
+                            ; or three letters are spelled (`*`: the [unstressed] words)
+caps-entries = yes          ; use the table's entries for two- and three-letter capitals
+spell-stress = first        ; a spelled abbreviation has its main stress on the first letter
+letter-names = yes          ; a single consonant letter is said by its name
+dotless-i = yes             ; capital I is the dotless ı (Turkish)
+fuse = na do pro o bez      ; these words are said as one word with the next, stressed again
+                            ; as a whole (Czech prepositions)
+promote-before-final = a az ; these words take primary stress before a last word of the
+                            ; clause that is `word p s` in [unstressed] (Hungarian)
+
+[pre]                       ; letters to phonemes; rules may write ˈ ˌ ° before a vowel
+[post]                      ; on phonemes, after the stress rule
+[clause]                    ; on the words of a clause joined by a boundary sign: what a word
+                            ; does to its neighbour (liaison, voicing, final s before a vowel)
+[spell]                     ; letter names for acronyms and words without vowels
+[numbers]                   ; as above, plus:
+decimal comma               ; the comma is the decimal sign
+swap-tens und               ; units before tens (German)
+year-hundreds yes           ; 1100–1999 counted in hundreds (Dutch)
+many1000 tysięcy            ; the scale word after counts not ending in 2, 3, 4 (Slavic)
+and-below-hundred e         ; a word between a thousand and a rest below 100 (Portuguese)
+tail-secondary no           ; words of a number after its first lose secondary stress
+tail-stress no              ; … or all stress
+group-stress 10000          ; from this value on, the first word of each group of three
+                            ; digits keeps its stress (Hungarian)
+stress last                 ; only the last word of a number keeps its stress (French)
+fraction number             ; digits after the decimal sign are read as one number
+roman off                   ; Roman numerals are not numbers in compatible mode (they are
+                            ; spelled like other capitals); `roman max 3999` raises the
+                            ; default limit of 49
+roman-skip VI               ; spellings that are words, not numerals
+roman-before römisch#       ; a word said with the numeral in compatible mode (German);
+roman-after romain          ; … or after it (French)
+ord2 secondo#               ; the ordinal a Roman numeral of this value is read as (Italian)
+roman6 si#                  ; a compatible-mode reading of one Roman numeral (French)
+20h kaksikymmentä-h#        ; the form of a rest after a hundred (Finnish)
+```
+
+### A word table with a model
+
+Letter rules alone rarely reach the reference voice's agreement in a language with a large
+exceptions dictionary. A language can ship a **word table** (`crates/uccharan-data/data/<tag>.ucd`),
+built by `tools/lexgen` from `data/sources/<tag>/words.tsv`:
+
+```text
+# comment lines: what the list is and where it comes from
+#model
+word<TAB>reading in compatible mode
+```
+
+- Without a `#model` line the file lists exceptions only: every row becomes a table entry.
+- With `#model`, the file is a **full** list of words with their readings (for the existing
+  languages: the words of a corpus that occur at least twice, read by the reference voice alone
+  and inside sentences). `lexgen` trains a letter-to-sound model on it, stores the model in the
+  table and keeps as entries only the words that the run-time reads differently without an entry.
+  At run time the order is: `[words]` of the language file, table entry, spelled word, model,
+  letter rules. For a Latin-script language the model reads the spelling, and its stress marks
+  are the ones the language's stress rule cannot derive.
+- For a language read by a letter table (Sindhi), the model reads what the letter rules give for
+  the word and corrects it; `#model 3` asks that a wide context be seen three times. Measure
+  first: for Urdu such a model made unlisted words worse, and it is not used.
+
+Add the table to `LATIN_TABLES` (or the word-table list) in `tools/lexgen/src/main.rs`; to the
+`uccharan-data` crate (a feature named after the tag in its `Cargo.toml`, the tag in `TAGS` and an
+arm in `table()`); to the `embed-<tag>` features and the `bundle` list of `crates/uccharan` and
+`crates/uccharan-capi`; to the lists in `bindings/wasm/build.mjs` and `index.js`; and to
+`DATA_LICENSES.md` with its copies, as a row that
+says what the list was derived from. Then:
+
+```sh
+LEXGEN_ONLY=<tag> cargo run --release -p uccharan-lexgen -- build   # one table
+cargo run --release -p uccharan-lexgen -- check                     # all tables are up to date
+python3 tools/packs.py                                              # new SHA-256 sums; tests load tables by them
+cargo run --release -p uccharan-lexgen -- g2p-eval <tag> words.tsv 1  # every tenth word held out
+```
+
+`check` builds the tables on all cores and remembers, under `target/lexgen-check`, the tables it
+found up to date with unchanged inputs (`LEXGEN_NO_CACHE=1` to check afresh). Report held-out
+results in three groups: words in the table, other listed words, words outside the list.
 
 ## 5. Gates before a language ships
 
 - held-out agreement measured and written into the README language table, honestly, including
   where it falls short;
-- unit tests with words from the specification (`crates/uccharan/tests/indic_languages.rs`);
+- unit tests with words from the language's description (`crates/uccharan/tests/indic_languages.rs`,
+  `latin_languages.rs`);
 - `cargo test`, the Python tests and the WebAssembly tests pass;
 - speed measured against the same espeak-ng voice (`tools/bench/compare.py --langs <tag>`);
 - every data source recorded in `DATA_LICENSES.md` (number words from CLDR: Unicode License v3,

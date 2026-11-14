@@ -4,6 +4,7 @@
 # place assimilation inside the clause.
 
 [meta]
+letter-names = yes
 tag = es
 vowels = a e ɛ i o u ı
 stress = spanish
@@ -220,6 +221,7 @@ y ˌiɣɾjˈeɣa
 z θˈeta
 
 [numbers]
+roman-skip VI
 point coma
 percent por ciento
 join-tens yes

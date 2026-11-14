@@ -1,0 +1,38 @@
+[package]
+name = "uccharan-data"
+description = "Word tables of uccharan's languages other than English and Hindi, for builds that compile them in."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+readme = "README.md"
+keywords = ["g2p", "phonemizer", "tts"]
+categories = ["text-processing"]
+include = ["src/**", "data/*.ucd", "README.md", "LICENSE", "NOTICE", "DATA_LICENSES.md"]
+
+[features]
+default = ["ur", "sd", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da"]
+# One feature per word table.
+ur = []
+sd = []
+de = []
+nl = []
+fr = []
+it = []
+pt-br = []
+pt = []
+pl = []
+tr = []
+cs = []
+sv = []
+ca = []
+ro = []
+hu = []
+fi = []
+nb = []
+da = []
+
+[dependencies]

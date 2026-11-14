@@ -12,7 +12,9 @@ mod translit;
 
 fn engine() -> &'static Phonemizer {
     static ENGINE: OnceLock<Phonemizer> = OnceLock::new();
-    ENGINE.get_or_init(Phonemizer::new)
+    // The Python layer fetches a language's pack before its first use and
+    // raises when it cannot; the engine itself never stops the process.
+    ENGINE.get_or_init(|| Phonemizer::new().rules_fallback(true))
 }
 
 fn options(lang: &str, normalize: &str, improved: bool, hinglish: bool) -> PyResult<Options> {
@@ -136,12 +138,7 @@ fn missing_packs(lang: &str, profile: &str) -> Vec<String> {
         return Vec::new();
     };
     let e = engine();
-    let mut out = Vec::new();
-    // Bhojpuri, Maithili and Magahi are read with the Hindi data.
-    let data = if l.hindi_like() { Lang::Hi } else { l };
-    if !e.has(data) {
-        out.push(data.tag().to_string());
-    }
+    let mut out: Vec<String> = e.missing_packs(l).into_iter().map(String::from).collect();
     if profile == "kokoro" && l.is_english() && !e.has_misaki(l) {
         out.push(format!("kokoro-{}", l.tag()));
     }

@@ -3,6 +3,7 @@
 # loan suffixes, final devoicing, the r allophones.
 
 [meta]
+caps-words = *
 tag = de
 vowels = a ɑ e ɛ i ɪ o ɔ u ʊ y ʏ ø œ ə ɜ ᴇ ã õ
 unstressable = ə ɜ ᴇ
@@ -278,6 +279,7 @@ r -> ɾ / _ {!PV} | _ # | {STOP} _
 ɑ -> a
 
 [words]
+römisch# rˌøːmɪʃ
 einnum ˈaɪn
 komma kɔmɑː
 punkt pʊŋkt
@@ -327,6 +329,8 @@ milliardennum mɪljˈaɾdən
 prozent pɾoːtsˈɛnt
 
 [numbers]
+group space
+roman-before römisch#
 decimal comma
 point komma
 percent prozent

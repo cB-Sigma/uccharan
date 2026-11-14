@@ -65,12 +65,25 @@ a recogniser's output against a reference word by word
 English for Kokoro uses a port of misaki with misaki 0.9.4's dictionaries; `load_misaki(dir)`
 loads another copy.
 
-The wheel (about 5 MB) carries the data of every language except British English. British
-English and the Kokoro English data are language packs: downloaded from the GitHub release of the
-same version the first time they are needed, checked against SHA-256 sums inside the wheel, and
-cached in `~/.cache/uccharan`. On an offline machine put the `.ucd` files (from the release page)
-in a directory named by `UCCHARAN_DATA_DIR`, set `UCCHARAN_OFFLINE=1` to forbid downloads, or call
-`uccharan.load_pack(path)`. The transliteration packs (`xlit-hi`, …) and the Wiktionary packs
+The wheel (about 2 MB) carries American English, Hindi and the languages read by rules alone.
+British English, the word tables of the other languages (`de`, `fr`, `it`, `ur` …, 46 KB to
+0.5 MB each) and the Kokoro English data are language packs: downloaded from the GitHub release
+of the same version the first time their language is used, checked against SHA-256 sums inside
+the wheel, and cached in `~/.cache/uccharan`. When a pack cannot be had, the call raises
+`uccharan.packs.PackError` naming the pack and its URL; a language is never read without its
+word table.
+
+For a machine without network access, fetch the packs elsewhere and point `UCCHARAN_DATA_DIR` at
+them:
+
+```sh
+python -m uccharan.packs --dir /opt/uccharan-data de fr ur    # or --all; no arguments lists the packs
+UCCHARAN_DATA_DIR=/opt/uccharan-data UCCHARAN_OFFLINE=1 python app.py
+```
+
+`UCCHARAN_OFFLINE=1` forbids downloads; `uccharan.load_pack(path)` loads a file directly. A wheel
+with every word table compiled in is built from the source distribution with
+`pip install uccharan --no-binary uccharan --config-settings=build-args="--features bundle"`. The transliteration packs (`xlit-hi`, …) and the Wiktionary packs
 (`wikipron-en-us`, …) are CC BY-SA 4.0 and are fetched only when you call `load_pack` with their
 name.
 

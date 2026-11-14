@@ -2,6 +2,7 @@
 # word table, the number words and the letter names.
 
 [meta]
+dotless-i = yes
 tag = tr
 vowels = a e i o u y ø œ ɛ ɔ ɪ ʊ æ ɯ
 stress = final
@@ -152,6 +153,7 @@ virgül# virɡˌøl
 yüzde# jøzdˈɛ
 
 [numbers]
+roman off
 decimal comma
 point virgül#
 minus eksi

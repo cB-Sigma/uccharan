@@ -3,6 +3,7 @@
 # final devoicing, g and ch.
 
 [meta]
+caps-words = de het een
 tag = nl
 vowels = a ɑ e ɛ i ɪ o ɔ u y ø œ ʌ ɵ ə ᴇ ᴐ
 unstressable = ə ᴇ
@@ -303,6 +304,8 @@ achtennegentig ˈɑxtɛnnˌeːɡəntəx
 negenennegentig nˈeːɣənɛnnˌeːɡəntəx
 
 [numbers]
+group space
+roman off
 decimal comma
 point komma
 percent procent

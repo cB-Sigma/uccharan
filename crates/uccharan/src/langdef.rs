@@ -164,8 +164,9 @@ pub fn unstressed(f: &LangFile) -> HashMap<String, (u8, u8)> {
 #[derive(Clone, Debug, Default)]
 pub struct Numbers {
     /// Exact values: `n` -> words. Keys may carry a `+` suffix for the form
-    /// used when more follows (`100+` "one hundred and…"), or an `x` suffix
-    /// for the form used before a scale word (`2x`).
+    /// used when more follows (`100+` "one hundred and…"), an `x` suffix
+    /// for the form used before a scale word (`2x`), or an `h` suffix for
+    /// the form of a rest after a hundred (`20h`).
     table: HashMap<String, Vec<String>>,
     /// Scale words from the largest down: (value, word, form when more follows).
     scales: Vec<(u64, String, String)>,
@@ -206,11 +207,36 @@ pub struct Numbers {
     /// `and-below-hundred e`: this word stands between a thousand or a
     /// million and a rest below one hundred ("dois mil e um").
     pub and_small: Option<String>,
+    /// `group-stress 10000`: in a number of at least this value, the
+    /// first word of each group of three digits keeps its stress where
+    /// `tail-stress no` or the like would take it (Hungarian). 0: off.
+    pub group_stress: u64,
     /// `stress last`: only the last word of a number keeps its stress.
     pub stress_last: bool,
     /// `fraction number`: the digits after the decimal sign are read as
     /// one number.
     pub fraction_number: bool,
+    /// `group space`: a space separates groups of three digits ("10 000").
+    pub group_space: bool,
+    /// `roman off`: Roman numerals are read as ordinary words in
+    /// compatible mode.
+    pub roman_off: bool,
+    /// `roman max N`: the largest Roman numeral read as a number in
+    /// compatible mode (0: the default, 49). From 100 the letters C, D and M
+    /// count as well.
+    pub roman_max: u64,
+    /// `roman-skip VI CD`: spellings that are words, not numerals.
+    pub roman_skip: Vec<String>,
+    /// `roman-before w` / `roman-after w`: word(s) said with a Roman
+    /// numeral in compatible mode ("römisch vier", "quatre romain").
+    pub roman_before: Vec<String>,
+    /// See `roman_before`.
+    pub roman_after: Vec<String>,
+    /// `ordN word`: the ordinal a Roman numeral of value N is read as.
+    ordinals: HashMap<u64, String>,
+    /// `romanN word`: the word a Roman numeral of value N is read as in
+    /// compatible mode, where it is not the cardinal.
+    roman_forms: HashMap<u64, String>,
     /// Rules for the written number words of normalise-only mode; when
     /// set, they replace the table above.
     pub speller: Option<std::sync::Arc<crate::rbnf::Rbnf>>,
@@ -238,6 +264,26 @@ impl Numbers {
                 "stress" => n.stress_last = v.trim() == "last",
                 "year-hundreds" => n.year_hundreds = v.trim() == "yes",
                 "decimal" => n.decimal_comma = v.trim() == "comma",
+                "group" => n.group_space = v.trim() == "space",
+                "roman" => match v.trim() {
+                    "off" => n.roman_off = true,
+                    m => {
+                        n.roman_max = m
+                            .strip_prefix("max")
+                            .map_or(0, |x| x.trim().parse().unwrap_or(0))
+                    }
+                },
+                "roman-skip" => n.roman_skip = words,
+                "roman-before" => n.roman_before = words,
+                "roman-after" => n.roman_after = words,
+                k if k.starts_with("ord") && k[3..].parse::<u64>().is_ok() => {
+                    n.ordinals
+                        .insert(k[3..].parse().unwrap_or(0), v.trim().to_string());
+                }
+                k if k.starts_with("roman") && k[5..].parse::<u64>().is_ok() => {
+                    n.roman_forms
+                        .insert(k[5..].parse().unwrap_or(0), v.trim().to_string());
+                }
                 "swap-tens" => n.swap_tens = Some(v.trim().to_string()),
                 "tail-secondary" => n.tail_plain = v.trim() == "no",
                 k if k.starts_with("many") && k[4..].parse::<u64>().is_ok() => {
@@ -245,6 +291,7 @@ impl Numbers {
                         .insert(k[4..].parse().unwrap_or(0), v.trim().to_string());
                 }
                 "tail-stress" => n.tail_unstressed = v.trim() == "no",
+                "group-stress" => n.group_stress = v.trim().parse().unwrap_or(0),
                 "and-below-hundred" => n.and_small = Some(v.trim().to_string()),
                 "glue-hundred" => n.glue_hundred = v.trim() == "yes",
                 "one-before-scale" => n.one_before_scale = v.trim() != "no",
@@ -308,6 +355,16 @@ impl Numbers {
         self.table.get(&n.to_string())
     }
 
+    /// The ordinal word a Roman numeral of this value is read as, if the
+    /// language reads them so.
+    pub fn ordinal(&self, n: u64, compat: bool) -> Option<&str> {
+        self.roman_forms
+            .get(&n)
+            .filter(|_| compat)
+            .or_else(|| self.ordinals.get(&n))
+            .map(String::as_str)
+    }
+
     /// Words for `n`; each entry is `(word, glued to the previous one)`.
     pub fn cardinal(&self, n: u64, out: &mut Vec<(String, bool)>) {
         if let Some(r) = &self.speller {
@@ -364,7 +421,11 @@ impl Numbers {
                     if let (Some(and), true) = (&self.and_small, *val >= 1000 && r < 100) {
                         out.push((and.clone(), false));
                     }
-                    self.cardinal(r, out);
+                    // A rest's own form after a hundred ("20h" in the file).
+                    match self.table.get(&format!("{r}h")).filter(|_| *val == 100) {
+                        Some(w) => out.extend(w.iter().map(|x| (x.clone(), false))),
+                        None => self.cardinal(r, out),
+                    }
                 }
                 return;
             }
@@ -400,6 +461,32 @@ impl Numbers {
                 out.extend(w.iter().map(|x| (x.clone(), false)));
             }
         }
+    }
+
+    /// The places in the words of [`Numbers::cardinal`] for `n` where a
+    /// later group of three digits starts, for languages with
+    /// `group-stress` and numbers it applies to.
+    pub fn group_starts(&self, n: u64) -> Vec<usize> {
+        let mut starts = Vec::new();
+        if self.group_stress == 0 || n < self.group_stress || self.speller.is_some() {
+            return starts;
+        }
+        let count = |v: u64| {
+            let mut w = Vec::new();
+            self.cardinal(v, &mut w);
+            w.len()
+        };
+        let total = count(n);
+        for unit in [1_000_000_000u64, 1_000_000, 1_000] {
+            let rest = n % unit;
+            if rest > 0 && rest < n {
+                let at = total.saturating_sub(count(rest));
+                if at > 0 && !starts.contains(&at) {
+                    starts.push(at);
+                }
+            }
+        }
+        starts
     }
 
     /// Words for a digit string, one per digit.

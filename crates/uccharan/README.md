@@ -38,12 +38,28 @@ let fixed = index.apply(&p, "send it to Coat Harry", Lang::EnUs, &ApplyOptions::
 assert_eq!(fixed.text, "send it to Kothari");
 ```
 
-`Phonemizer` is `Sync`; share one instance between threads. The language data (about 0.7 MB per
-English accent, 3 KB for Hindi, 46 KB to 0.5 MB for each of Urdu, Sindhi and the European word
-tables, and 2 MB per accent of misaki's dictionaries for the Kokoro profile) is compiled in
-through the default `embed-*` features; turn them off and use `Phonemizer::load`, or
-`Phonemizer::load_pack` on a shared phonemizer, to supply the `.ucd` packs (attached to each
-GitHub release) at run time.
+`Phonemizer` is `Sync`; share one instance between threads.
+
+### Language data
+
+English (0.7 MB per accent), Hindi (3 KB) and misaki's dictionaries for the Kokoro profile (2 MB
+per accent) are compiled in through the default features. The languages read by rules alone
+(Spanish, the Indic scripts) need no data. The other languages have a **word table** (46 KB to
+0.5 MB each: `de`, `nl`, `fr`, `it`, `pt-br`, `pt`, `pl`, `tr`, `cs`, `sv`, `ca`, `ro`, `hu`, `fi`,
+`nb`, `da`, `ur`, `sd`), which is not in this crate. Choose how your program gets them:
+
+| | |
+| --- | --- |
+| `features = ["bundle"]` | every word table compiled in (from the `uccharan-data` crate, 3.5 MB); `embed-de`, `embed-fr` … compile in single ones |
+| `features = ["download"]` | a table is fetched from the GitHub release of this version the first time its language is used, checked against the SHA-256 sum compiled into the crate, and cached in `~/.cache/uccharan/<version>/`; `UCCHARAN_OFFLINE=1` forbids it |
+| neither | the table is read from the directory named by `UCCHARAN_DATA_DIR`, or from the cache; the `.ucd` files are attached to each [GitHub release](https://github.com/cB-Sigma/uccharan/releases) |
+
+A language is never read without its table by accident. `Phonemizer::ensure(lang)` loads what a
+language needs and returns an error that names the missing pack, its URL and the directories
+looked in; call it once per language at start-up. Without that call, `phonemize` loads the table
+at first use and panics with the same message when it cannot. `Phonemizer::missing_packs(lang)`
+lists what is not loaded, `Phonemizer::load_pack(bytes)` takes a pack you read yourself, and
+`Phonemizer::new().rules_fallback(true)` accepts the letter rules alone (far less accurate).
 
 `translit::transliterate` works by rule without data and far better with a language's
 transliteration pack (`xlit-hi.ucd`, …), loaded with `Phonemizer::load_pack`. Those packs and the

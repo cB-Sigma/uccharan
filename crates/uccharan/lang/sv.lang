@@ -2,6 +2,7 @@
 # word table, the number words and the letter names.
 
 [meta]
+caps-words = en är av ett och
 tag = sv
 vowels = a e i o u y ø œ ɛ ɔ ə ɪ ʊ ɑ ʉ ɵ
 stress = initial
@@ -160,6 +161,8 @@ minus# mˈiːnɵs
 procent# prɔsˈɛnt
 
 [numbers]
+group space
+roman off
 decimal comma
 point komma#
 minus minus#
@@ -293,7 +296,7 @@ e ˈeː
 f ˈɛf
 g ɡˈeː
 h hˈoː
-i iː
+i ˈiː
 j jˈiː
 k kˈoː
 l ˈɛl

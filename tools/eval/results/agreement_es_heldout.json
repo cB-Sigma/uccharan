@@ -5,65 +5,53 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 177619,
-  "per": 0.007380967126264645,
-  "per_without_stress": 0.005679808057222619,
-  "exact_sentence": 0.6630434782608695,
-  "exact_sentence_without_stress": 0.7114624505928854,
-  "piper_shape_per": 0.007342591463752535,
-  "piper_shape_exact_sentence": 0.6620553359683794,
+  "per": 0.005472387526109256,
+  "per_without_stress": 0.004309707132886925,
+  "exact_sentence": 0.6808300395256917,
+  "exact_sentence_without_stress": 0.7312252964426877,
+  "piper_shape_per": 0.005475079521650947,
+  "piper_shape_exact_sentence": 0.6788537549407114,
   "word_count_mismatch_sentences": 135,
   "errors_by_class": {
+   "consonant": {
+    "count": 325,
+    "share": 0.3343621399176955,
+    "per_contribution": 0.0018297592036887946
+   },
    "stress": {
-    "count": 439,
-    "share": 0.3348588863463005,
-    "per_contribution": 0.0024715824320596332
+    "count": 315,
+    "share": 0.32407407407407407,
+    "per_contribution": 0.0017734589204983701
    },
    "vowel": {
-    "count": 366,
-    "share": 0.2791762013729977,
-    "per_contribution": 0.0020605903647695346
-   },
-   "consonant": {
-    "count": 365,
-    "share": 0.2784134248665141,
-    "per_contribution": 0.0020549603364504922
-   },
-   "other": {
-    "count": 81,
-    "share": 0.06178489702517163,
-    "per_contribution": 0.00045603229384243805
+    "count": 231,
+    "share": 0.23765432098765432,
+    "per_contribution": 0.0013005365416988047
    },
    "word-boundary": {
-    "count": 59,
-    "share": 0.04500381388253242,
-    "per_contribution": 0.00033217167082350425
+    "count": 55,
+    "share": 0.056584362139917695,
+    "per_contribution": 0.00030965155754733445
+   },
+   "other": {
+    "count": 45,
+    "share": 0.046296296296296294,
+    "per_contribution": 0.00025335127435691004
    },
    "length": {
     "count": 1,
-    "share": 0.0007627765064836003,
+    "share": 0.00102880658436214,
     "per_contribution": 5.630028319042445e-06
    }
   },
   "top_confusions": [
    {
     "edit": "ˈ→∅",
-    "count": 165
+    "count": 109
    },
    {
     "edit": "∅→ˈ",
-    "count": 80
-   },
-   {
-    "edit": "e→∅",
-    "count": 65
-   },
-   {
-    "edit": "∅→e",
-    "count": 63
-   },
-   {
-    "edit": "∅→ˌ",
-    "count": 61
+    "count": 69
    },
    {
     "edit": "e→ɛ",
@@ -71,27 +59,19 @@
    },
    {
     "edit": "ɛ→e",
-    "count": 44
-   },
-   {
-    "edit": "ˈ→ˌ",
-    "count": 36
+    "count": 47
    },
    {
     "edit": " →∅",
-    "count": 36
-   },
-   {
-    "edit": "a→∅",
-    "count": 31
+    "count": 29
    },
    {
     "edit": "ˌ→∅",
-    "count": 31
+    "count": 28
    },
    {
-    "edit": "ɛ→∅",
-    "count": 27
+    "edit": "∅→k",
+    "count": 28
    },
    {
     "edit": "ʃ→s",
@@ -102,7 +82,7 @@
     "count": 26
    },
    {
-    "edit": "∅→k",
+    "edit": "∅→ ",
     "count": 26
    },
    {
@@ -114,27 +94,31 @@
     "count": 25
    },
    {
-    "edit": "∅→ ",
+    "edit": "e→∅",
+    "count": 25
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 24
+   },
+   {
+    "edit": "a→∅",
     "count": 23
    },
    {
-    "edit": "ð→d",
+    "edit": "ˈ→ˌ",
     "count": 20
+   },
+   {
+    "edit": "ð→d",
+    "count": 17
    },
    {
     "edit": "ɪ→i",
     "count": 13
    },
    {
-    "edit": "t→∅",
-    "count": 13
-   },
-   {
-    "edit": "u→ˈ",
-    "count": 12
-   },
-   {
-    "edit": "θ→∅",
+    "edit": "∅→o",
     "count": 12
    },
    {
@@ -142,101 +126,117 @@
     "count": 12
    },
    {
-    "edit": "∅→o",
-    "count": 11
+    "edit": "∅→e",
+    "count": 10
+   },
+   {
+    "edit": "t→∅",
+    "count": 9
+   },
+   {
+    "edit": "u→ˈ",
+    "count": 9
+   },
+   {
+    "edit": "b→β",
+    "count": 9
+   },
+   {
+    "edit": "m→n",
+    "count": 9
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 22261,
-    "wrong": 328,
-    "rate": 0.014734288666277346
+    "wrong": 300,
+    "rate": 0.01347648353622928
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 184,
-    "per": 0.018250707081487808,
-    "exact_sentence": 0.28804347826086957
+    "per": 0.013848124232883292,
+    "exact_sentence": 0.33152173913043476
    },
    "no-digits": {
     "sentences": 828,
-    "per": 0.004474065405555833,
-    "exact_sentence": 0.7463768115942029
+    "per": 0.003232458737985315,
+    "exact_sentence": 0.7584541062801933
    }
   },
   "examples_of_disagreement": [
    {
-    "id": "flores-devtest-18",
-    "text": "Asesoró a Carter en materia de política exterior en las elecciones de 1976. Posteriormente, trabajó como asesor de seguridad nacional (ASN) entre 1977 y 1981, luego de Henry Kissinger.",
-    "reference": "ˌasesoɾˈo a kaɾtˈeɾ en matˈeɾja ðe polˈitika ˌeksteɾjˈoɾ en las ˌelekθjˈones ðe mˈil nˌoβeθjˈɛntos sɛtˌɛntaisˈeɪs pˌosteɾjˈoɾmˈente tɾˌaβaxˈo kˌomo ˌasesˈoɾ ðe sˌeɣuɾiðˈad nˌaθjonˈal ˌaˌeseˈɛne ˌentɾe mˈil nˌoβeθjˈɛntos sɛtˌɛntaisjˈete i mˈil nˌoβeθjˈɛntos otʃˌɛntaiˈuno luˈeɣo ðe ˈɛnɾi kˌissiŋxˈeɾ",
-    "uccharan": "ˌasesoɾˈo a kaɾtˈeɾ en matˈeɾja ðe polˈitika ˌeksteɾjˈoɾ en las ˌelekθjˈones ðe mˈil nˌoβeθjˈɛntos setˌɛntaisˈeɪs pˌosteɾjˈoɾmˈente tɾˌaβaxˈo kˌomo ˌasesˈoɾ ðe sˌeɣuɾiðˈad nˌaθjonˈal ˌaˌeseˈɛne ˌentɾe mˈil nˌoβeθjˈɛntos setˌɛntaisjˈete i mˈil nˌoβeθjˈɛntos otʃˌɛntaiˈuno luˈeɣo ðe enrˈi kˌissiŋxˈeɾ"
+    "id": "flores-devtest-852",
+    "text": "Como disciplina, el esquí alpino data de no después del siglo XVII. En 1861 los noruegos inauguraron el primer club recreativo de esquí en Australia.",
+    "reference": "kˌomo ðˌisθiplˈina el eskˈi alpˈino ðˈata ðe nˈo ðespwˈes ðel sˈiɣlo ðjˌeθisjˈete en mˈil otʃoθjˈentos sɛsˌɛntaiˈuno los nˌoɾuˈeɣos ˌinaʊɣuɾˈaɾon el pɾimˈeɾ klˈuβ rˌekɾeatˈiβo ðe eskˈi en aʊstɾˈalja",
+    "uccharan": "kˌomo ðˌisθiplˈina el eskˈi alpˈino ðˈata ðe nˈo ðespwˈes ðel sˈiɣlo ðjˌeθisjˈete en mˈil ˌotʃoθjˈɛntos sɛsˌɛntaiˈuno los nˌoɾuˈeɣos ˌinaʊɣuɾˈaɾon el pɾimˈeɾ klˈub rˌekɾeatˈiβo ðe eskˈi en aʊstɾˈalja"
    },
    {
-    "id": "flores-devtest-180",
-    "text": "El partido final de la serie se jugará en Ellis Park, Johannesbrugo, la semana entrante, en un enfrentamiento entre Springboks y Australia.",
-    "reference": "el paɾtˈiðo finˈal ðe la sˈeɾje se xˌuɣaɾˈa en ˈeʎis pˈaɾk xˌoannesβɾˈuɣo la semˈana entɾˈante en ˈun ˌemfɾentamjˈɛnto ˌentɾe spɾiŋɡβˈoks i aʊstɾˈalja",
-    "uccharan": "el paɾtˈiðo finˈal ðe la sˈeɾje se xˌuɣaɾˈa en ˈeʎis pˈaɾk xˌoannesβɾˈuɣo la semˈana entɾˈante en ˈun ˌemfɾentamjˈɛnto ˌentɾe spɾˈiŋɡboks i aʊstɾˈalja"
+    "id": "flores-devtest-448",
+    "text": "En 1884, Tesla se mudó a EE. UU. a fin de tomar un empleo en la compañía Edison en Nueva York.",
+    "reference": "en mˈil otʃoθjˈentos otʃˌɛntaikwˈatɾo tˈesla se muðˈo a ˌeˈe ˌuˈu a fˈin de tomˈaɾ ˈun emplˈeo en la kˌompaɲˈia eðˈison en nwˈeβa ʝˈoɾk",
+    "uccharan": "en mˈil ˌotʃoθjˈɛntos otʃˌɛntaikwˈatɾo tˈesla se muðˈo a ˌeˈe ˌuˈu a fˈin de tomˈaɾ ˈun emplˈeo en la kˌompaɲˈia eðˈison en nwˈeβa ʝˈoɾk"
    },
    {
-    "id": "flores-devtest-1",
-    "text": "La investigación todavía se ubica en su etapa inicial, conforme indicara el Dr. Ehud Ur, docente en la carrera de medicina de la Universidad de Dalhousie, en Halifax, Nueva Escocia, y director del departamento clínico y científico de la Asociación Canadiense de Diabetes.",
-    "reference": "la ˌimbestˌiɣaθjˈon tˌoðaβˈia se uβˈika en su etˈapa ˌiniθjˈal konfˈoɾme ˌindikˈaɾa el ðoktˈoɾ eˈuð ˈuɾ doθˈɛnte en la karˈeɾa ðe mˌeðiθˈina ðe la ˌuniβˌeɾsiðˈad ðe ðalˈowsje en ˌalifˈaks nwˈeβa eskˈoθja i ðˌiɾektˈoɾ ðel ðˌepaɾtamˈɛnto klˈiniko i θjentˈifiko ðe la ˌasoθjaθjˈon kˌanaðjˈɛnse ðe ðjaβˈetes",
-    "uccharan": "la ˌimbestˌiɣaθjˈon tˌoðaβˈia se uβˈika en su etˈapa ˌiniθjˈal konfˈoɾme ˌindikˈaɾa el ðˌeˈere eˈuð ˈuɾ doθˈɛnte en la karˈeɾa ðe mˌeðiθˈina ðe la ˌuniβˌeɾsiðˈad ðe ðalˈowsje en ˌalifˈaks nwˈeβa eskˈoθja i ðˌiɾektˈoɾ ðel ðˌepaɾtamˈɛnto klˈiniko i θjentˈifiko ðe la ˌasoθjaθjˈon kˌanaðjˈɛnse ðe ðjaβˈetes"
+    "id": "flores-devtest-728",
+    "text": "Se ha comparado el despliegue de edificaciones que delimitan el horizonte de Hong Kong con un gráfico de barras luminoso que se evidencia por la presencia de las aguas del Puerto Victoria.",
+    "reference": "se ˈa kˌompaɾˈaðo el ðˌespliˈeɣe ðe ˌeðifˌikaθjˈones ke ðˌelimˈitan el ˌoɾiθˈonte ðe ˈoŋ kˈoŋ kon ˈuŋ ɡɾˈafiko ðe βˈaras lˌuminˈoso ke se ˌeβiðˈɛnθja poɾ la pɾesˈɛnθja ðe las ˈaɣwas ðel pwˈeɾto βiktˈoɾja",
+    "uccharan": "se ˈa kˌompaɾˈaðo el ðespliˈeɣe ðe ˌeðifˌikaθjˈones ke ðˌelimˈitan el ˌoɾiθˈonte ðe ˈoŋɡ kˈoŋɡ kon ˈuŋ ɡɾˈafiko ðe βˈaras lˌuminˈoso ke se ˌeβiðˈɛnθja poɾ la pɾesˈɛnθja ðe las ˈaɣwas ðel pwˈeɾto βiktˈoɾja"
    },
    {
-    "id": "flores-devtest-278",
-    "text": "El inspector general adjunto, D.K. Arya, declaró: «Hemos puesto bajo arresto a cinco individuos que abusaron de la mujer suiza y recuperamos su teléfono móvil y su computadora portátil».",
-    "reference": "el ˌinspektˈoɾ xˌeneɾˈal aðxˈunto dˌekˈa ˈaɾʝa dˌeklaɾˈo ˈemos pwˈesto βˌaxo arˈesto a θˈinko ˌindiβˈiðwos ke ˌaβusˈaɾon de la muxˈeɾ swˈiθa i rˌekupeɾˈamos su telˈefono mˈoβil i su kˌomputaðˈoɾa poɾtˈatil",
-    "uccharan": "el ˌinspektˈoɾ xˌeneɾˈal aðxˈunto d k ˈaɾʝa dˌeklaɾˈo ˈemos pwˈesto βˌaxo arˈesto a θˈinko ˌindiβˈiðwos ke ˌaβusˈaɾon de la muxˈeɾ swˈiθa i rˌekupeɾˈamos su telˈefono mˈoβil i su kˌomputaðˈoɾa poɾtˈatil"
+    "id": "flores-devtest-139",
+    "text": "Como resultado, se han extinguido dos especies de peces y otras dos corren peligro de extinción, entre ellas la gila cypha.",
+    "reference": "kˌomo rˌesultˈaðo se ˈan ˌekstiŋɡˈiðo ðˈos espˈeθjes ðe pˈeθes i ˈotɾas ðˈos kˈorem pelˈiɣɾo ðe ˌekstinθjˈon ˌentɾe ˈeʎas la xˈila θˈifa",
+    "uccharan": "kˌomo rˌesultˈaðo se ˈan ˌekstiŋɡˈiðo ðˈos espˈeθjes ðe pˈeθes i ˈotɾas ðˈos kˈorem pelˈiɣɾo ðe ˌekstinθjˈon ˌentɾe ˈeʎas la xˈila kˈipa"
    },
    {
-    "id": "flores-devtest-464",
-    "text": "La Gran Pirámide, levantada por el pueblo egipcio en el siglo III a. C., es una de las tantas estructuras de forma piramidal y gran tamaño construidas para venerar al faraón fallecido.",
-    "reference": "la ɣɾˈam piɾˈamiðe lˌeβantˈaða poɾ el pwˈeβlo exˈipθjo en el sˈiɣlo tɾˈes ˈa θˈe ˈes ˈuna ðe las tˈantas ˌestɾuktˈuɾas ðe fˈoɾma pˌiɾamiðˈal i ɣɾˈan tamˈaɲo kˌonstɾuˈiðas pˌaɾa βˌeneɾˈaɾ al fˌaɾaˈon fˌaʎeθˈiðo",
-    "uccharan": "la ɣɾˈam piɾˈamiðe lˌeβantˈaða poɾ el pwˈeβlo exˈipθjo en el sˈiɣlo tɾˈes a k ˈes ˈuna ðe las tˈantas ˌestɾuktˈuɾas ðe fˈoɾma pˌiɾamiðˈal i ɣɾˈan tamˈaɲo kˌonstɾuˈiðas pˌaɾa βˌeneɾˈaɾ al fˌaɾaˈon fˌaʎeθˈiðo"
+    "id": "flores-devtest-158",
+    "text": "El diámetro de todas las entradas a la cueva, conocidas como «Las Siete Hermanas», es de, cuando menos, 100 m a 250 m (328 a 820 pies).",
+    "reference": "el ðjˈametɾo ðe tˈoðas las entɾˈaðas a la kwˈeβa kˌonoθˈiðas kˌomo las sjˈete eɾmˈanas ˈes ðˈe kwˌando mˈenos θjˈen ˈɛme a ðosθjˈentos θinkwˈɛnta ˈɛme tɾesθjˈentos βˌeɪntiˈotʃo a ˌotʃoθjˈentos βˈeɪnte pjˈes",
+    "uccharan": "el ðjˈametɾo ðe tˈoðas las entɾˈaðas a la kwˈeβa kˌonoθˈiðas kˌomo las sjˈete eɾmˈanas ˈes ðe kwˌando mˈenos θjˈen ˈɛme a ðosθjˈentos θinkwˈɛnta ˈɛme tɾesθjˈɛntos βˌeɪntiˈotʃo a ˌotʃoθjˈɛntos βˈeɪnte pjˈes"
    },
    {
-    "id": "flores-devtest-467",
-    "text": "La marca de «arco hacia arriba» se asemeja a una V y la marca de «arco hacia abajo» es similar a una grapa o un cuadrado sin su borde inferior.",
-    "reference": "la mˈaɾka ðe ˈaɾko ˌaθja arˈiβa se ˌasemˈexa a ˈuna ˈuβe i la mˈaɾka ðe ˈaɾko ˌaθja aβˈaxo ˈes sˌimilˈaɾ a ˈuna ɣɾˈapa o ˈun kwaðɾˈaðo sin su βˈoɾðe ˌinfeɾjˈoɾ",
-    "uccharan": "la mˈaɾka ðe ˈaɾko ˌaθja arˈiβa se ˌasemˈexa a ˈuna β i la mˈaɾka ðe ˈaɾko ˌaθja aβˈaxo ˈes sˌimilˈaɾ a ˈuna ɣɾˈapa o ˈun kwaðɾˈaðo sin su βˈoɾðe ˌinfeɾjˈoɾ"
+    "id": "flores-devtest-302",
+    "text": "Se han denunciado cerca de 60 casos de iPods con problemas de funcionamiento y calentamiento exesivo, lo que originó seis incendios y provocó quemaduras menores a cuatro personas.",
+    "reference": "se ˈan dˌenunθjˈaðo θˈeɾka ðe sɛsˈɛnta kˈasos ðe ˈi pˈods kom pɾoβlˈemas ðe fˌunθjonamjˈɛnto i kˌalentamjˈɛnto ˌeksesˈiβo lo ke ˌoɾixinˈo sˈeɪs inθˈɛndjos i pɾˌoβokˈo kˌemaðˈuɾas menˈoɾes a kwˈatɾo peɾsˈonas",
+    "uccharan": "se ˈan dˌenunθjˈaðo θˈeɾka ðe sɛsˈɛnta kˈasos ðe ˈipoðs kom pɾoβlˈemas ðe fˌunθjonamjˈɛnto i kˌalentamjˈɛnto ˌeksesˈiβo lo ke ˌoɾixinˈo sˈeɪs inθˈɛndjos i pɾˌoβokˈo kˌemaðˈuɾas menˈoɾes a kwˈatɾo peɾsˈonas"
    },
    {
-    "id": "flores-devtest-15",
-    "text": "USA Gymnastics respalda a una investigación independiente que puede esclarecer de qué modo el abuso de la proporción que los sobrevivientes de Larry Nassa describieron con tanto coraje pudo haber pasado sin ser visto por tanto tiempo y acepta cualquier cambio necesario y adecuado.",
-    "reference": "ˌuˌeseˈa xˌimnastˈiks respˈalða a ˈuna ˌimbestˌiɣaθjˈon ˌindependjˈɛnte ke pwˈeðe ˌesklaɾeθˈeɾ ðe kˈe mˈoðo el aβˈuso ðe la pɾˌopoɾθjˈon ke los sˌoβɾeβiβjˈɛntes ðe lˈari nˈassa ðˌeskɾiβjˈeɾon kon tˈanto koɾˈaxe pˈuðo aβˈeɾ pasˈaðo sin sˈer βˈisto poɾ tˈanto tjˈempo i aθˈepːta kwalkjˈeɾ kˈambjo nˌeθesˈaɾjo i ˌaðekwˈaðo",
-    "uccharan": "ˌuˌeseˈa ɣimnˈastiks respˈalða a ˈuna ˌimbestˌiɣaθjˈon ˌindependjˈɛnte ke pwˈeðe ˌesklaɾeθˈeɾ ðe kˈe mˈoðo el aβˈuso ðe la pɾˌopoɾθjˈon ke los sˌoβɾeβiβjˈɛntes ðe larˈi nˈassa ðˌeskɾiβjˈeɾon kon tˈanto koɾˈaxe pˈuðo aβˈeɾ pasˈaðo sin sˈer βˈisto poɾ tˈanto tjˈempo i aθˈepːta kwalkjˈeɾ kˈambjo nˌeθesˈaɾjo i ˌaðekwˈaðo"
+    "id": "flores-devtest-769",
+    "text": "Apia se fundó en la década de 1850 y es capital de Samoa desde el año 1959.",
+    "reference": "ˈapja se fundˈo en la ðˈekaða ðe mˈil otʃoθjˈentos θinkwˈɛnta i ˈes kˌapitˈal ðe samˈoa ðˌesðe el ˈaɲo mˈil nˌoβeθjˈɛntos θinkwˌɛntainwˈeβe",
+    "uccharan": "ˈapja se fundˈo en la ðˈekaða ðe mˈil ˌotʃoθjˈɛntos θinkwˈɛnta i ˈes kˌapitˈal ðe samˈoa ðˌesðe el ˈaɲo mˈil nˌoβeθjˈɛntos θinkwˌɛntainwˈeβe"
    },
    {
-    "id": "flores-devtest-194",
-    "text": "Bachmann, quien resultó triunfante en la Straw Poll de Ames en agosto, decidió dar fin a su campaña.",
-    "reference": "batʃmˈann kjen rˌesultˈo tɾiunfˈante en la stɾˈaw pˈoʎ ðe ˈames en aɣˈosto dˌeθiðjˈo ðˈaɾ fˈin a su kampˈaɲa",
-    "uccharan": "bˈatʃmann kjen rˌesultˈo tɾiunfˈante en la stɾˈaw pˈoʎ ðe ˈames en aɣˈosto dˌeθiðjˈo ðˈaɾ fˈin a su kampˈaɲa"
+    "id": "flores-devtest-729",
+    "text": "La forma de disfrutar las mejores vistas de Hong Kong es salir de la isla y dirigirse a la ribera de Kowloon, ubicada en frente.",
+    "reference": "la fˈoɾma ðe ðˌisfɾutˈaɾ las mexˈoɾes βˈistas ðe ˈoŋ kˈoŋ ˈes salˈiɾ ðe la ˈisla i ðˌiɾixˈiɾse a la riβˈeɾa ðe kowlˈoon ˌuβikˈaða em fɾˈɛnte",
+    "uccharan": "la fˈoɾma ðe ðˌisfɾutˈaɾ las mexˈoɾes βˈistas ðe ˈoŋɡ kˈoŋɡ ˈes salˈiɾ ðe la ˈisla i ðˌiɾixˈiɾse a la riβˈeɾa ðe kowlˈoon ˌuβikˈaða em fɾˈɛnte"
    },
    {
-    "id": "flores-devtest-188",
-    "text": "Chambers, agnóstico, alega que su reclamo «no tiene mérito» y que «cualquiera puede demandar a cualquiera».",
-    "reference": "tʃambˈeɾs aɡnˈostiko alˈeɣa ke su reklˈamo nˈo tjˈene mˈeɾito i ke kwalkjˈeɾa pwˈeðe ðˌemandˈaɾ a kwalkjˈeɾa",
-    "uccharan": "tʃˈambeɾs aɡnˈostiko alˈeɣa ke su reklˈamo nˈo tjˈene mˈeɾito i ke kwalkjˈeɾa pwˈeðe ðˌemandˈaɾ a kwalkjˈeɾa"
+    "id": "flores-devtest-223",
+    "text": "El mismo mes, otro avión de pasajeros sobrepasó una pista en Mashhad y colisionó contra una pared, dejando 17 muertos.",
+    "reference": "el mˈismo mˈes ˈotɾo aβjˈon de pˌasaxˈeɾos sˌoβɾepasˈo ˈuna pˈista en maʃˈað i kˌolisjonˈo kˈontɾa ˈuna paɾˈed dexˈando ðjˌɛθisjˈete mwˈeɾtos",
+    "uccharan": "el mˈismo mˈes ˈotɾo aβjˈon de pˌasaxˈeɾos sˌoβɾepasˈo ˈuna pˈista en masˈað i kˌolisjonˈo kˈontɾa ˈuna paɾˈed dexˈando ðjˌeθisjˈete mwˈeɾtos"
    },
    {
-    "id": "flores-devtest-13",
-    "text": "USA Gymnastics respalda la nota del Comité Olímpico de los Estados Unidos y reconoce que resulta imperioso que la familia olímpica fomente un entorno seguro para todos nuestros deportistas.",
-    "reference": "ˌuˌeseˈa xˌimnastˈiks respˈalða la nˈota ðel kˌomitˈe olˈimpiko ðe los estˈaðos unˈiðos i rˌekonˈoθe ke resˈulta ˌimpeɾjˈoso ke la famˈilja olˈimpika fomˈɛnte ˈun entˈoɾno seɣˈuɾo pˌaɾa tˈoðos nwˌestɾos ðˌepoɾtˈistas",
-    "uccharan": "ˌuˌeseˈa ɣimnˈastiks respˈalða la nˈota ðel kˌomitˈe olˈimpiko ðe los estˈaðos unˈiðos i rˌekonˈoθe ke resˈulta ˌimpeɾjˈoso ke la famˈilja olˈimpika fomˈɛnte ˈun entˈoɾno seɣˈuɾo pˌaɾa tˈoðos nwˌestɾos ðˌepoɾtˈistas"
+    "id": "flores-devtest-259",
+    "text": "Al ser comparados a través del uso de la espectroscopia infrarroja (FTIR), pudo determinarse que la composición de los cristales coincide con la encontrada en la orina de las mascotas afectadas.",
+    "reference": "al sˈer kˌompaɾˈaðos a tɾaβˈes ðel ˈuso ðe la ˌespektɾoskˈopja ˌimfɾarˈoxa ˈɛfetˈiɾ pˈuðo ðˌeteɾminˈaɾse ke la kˌomposiθjˈon de los kɾistˈales koɪnθˈiðe kon la ˌenkontɾˈaða en la oɾˈina ðe las maskˈotas ˌafektˈaðas",
+    "uccharan": "al sˈer kˌompaɾˈaðos a tɾaβˈes ðel ˈuso ðe la ˌespektɾoskˈopja ˌimfɾarˈoxa ftˈiɾ pˈuðo ðˌeteɾminˈaɾse ke la kˌomposiθjˈon de los kɾistˈales koɪnθˈiðe kon la ˌenkontɾˈaða en la oɾˈina ðe las maskˈotas ˌafektˈaðas"
    },
    {
-    "id": "flores-devtest-871",
-    "text": "Las advertencias de viaje son tan solo un resumen conciso de la situación política en otro país.",
-    "reference": "las ˌaðβeɾtˈɛnθjas ðe βjˈaxe sˈon tˈan sˈolo ˈun resˈumen konθˈiso ðe la sˌitwaθjˈom polˈitika en ˈotɾo paˈis",
-    "uccharan": "las ˌadbeɾtˈɛnθjas ðe βjˈaxe sˈon tˈan sˈolo ˈun resˈumen konθˈiso ðe la sˌitwaθjˈom polˈitika en ˈotɾo paˈis"
+    "id": "flores-devtest-37",
+    "text": "La intensidad de la luz y la rotación se combinan para calcular el número de Rossby de una estrella, vinculado al flujo de plasma.",
+    "reference": "la ˌintensiðˈad ðe la lˈuθ i la rˌotaθjˈon se kombˈinam pˌaɾa kˌalkulˈaɾ el nˈumeɾo ðe rˈossβi ðe ˈuna estɾˈeʎa bˌinkulˈaðo al flˈuxo ðe plˈasma",
+    "uccharan": "la ˌintensiðˈad ðe la lˈuθ i la rˌotaθjˈon se kombˈinam pˌaɾa kˌalkulˈaɾ el nˈumeɾo ðe rossβˈi ðe ˈuna estɾˈeʎa bˌinkulˈaðo al flˈuxo ðe plˈasma"
    },
    {
-    "id": "flores-devtest-200",
-    "text": "Están incluidos los Países Bajos, con Anna Jochemsen, quien ayer obtuvo la novena plaza en la categoría femenina en el Super-G, y Finlandia, con Katjia Saarinen en el décimo lugar en el mismo evento.",
-    "reference": "estˈan ˌinkluˈiðos los paˈises βˈaxos kon ˈanna xotʃˈemsen kjen aʝˈeɾ obtˈuβo la noβˈena plˈaθa en la kˌateɣoɾˈia fˌemenˈina en el supˈeɾxˈe i finlˈandja koŋ kˈatxja sˌaaɾˈinen en el ðˈeθimo luɣˈaɾ en el mˈismo eβˈɛnto",
-    "uccharan": "estˈan ˌinkluˈiðos los paˈises βˈaxos kon ˈanna xotʃˈemsen kjen aʝˈeɾ obtˈuβo la noβˈena plˈaθa en la kˌateɣoɾˈia fˌemenˈina en el supˈeɾɣ i finlˈandja kon kˈatxja sˌaaɾˈinen en el ðˈeθimo luɣˈaɾ en el mˈismo eβˈɛnto"
+    "id": "flores-devtest-142",
+    "text": "Aun cuando no hubo amenaza de tsunami, los habitantes comenzaron a dejarse llevar por el pánico y a dejar sus negocios y sus casas.",
+    "reference": "ˈaʊn kwˌando nˈo ˈuβo ˌamenˈaθa ðe tˈesunˈami los ˌaβitˈantes kˌomenθˈaɾon a ðexˈaɾse ʎeβˈaɾ poɾ el pˈaniko i a ðexˈaɾ sus neɣˈoθjos i sus kˈasas",
+    "uccharan": "ˈaʊn kwˌando nˈo ˈuβo ˌamenˈaθa ðe tsunˈami los ˌaβitˈantes kˌomenθˈaɾon a ðexˈaɾse ʎeβˈaɾ poɾ el pˈaniko i a ðexˈaɾ sus neɣˈoθjos i sus kˈasas"
    }
   ]
  }

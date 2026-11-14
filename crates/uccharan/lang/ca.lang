@@ -2,11 +2,14 @@
 # word table, the number words and the letter names.
 
 [meta]
+letter-names = yes
+caps-entries = yes
+caps-words = el
 tag = ca
 vowels = a e i o u ɛ ɔ ə
 stress = spanish
 secondary = none
-vowel-mark = yes
+vowel-mark = h
 spell-vowels = aeiouàèéíïòóúü
 
 [classes]
@@ -14,6 +17,8 @@ V = a e i o u à è é í ï ò ó ú ü
 FV = e i è é í
 VC = b β d ð ɡ ɣ m n l ʎ r ɾ ʒ z v
 PV = a e i o u ɛ ɔ ə
+NU = a e i o ɛ ɔ ə
+CN = p t k b d ɡ f s z ʃ ʒ m n ɲ ŋ l ʎ r ɾ β ð ɣ
 SP = a e i o u ɛ ɔ ə z s ɾ r ʃ ʒ j w
 
 [pre]
@@ -59,7 +64,11 @@ y -> i
 # vowel; a final n takes the place of the next consonant; b d ɡ at the
 # start of a word are spirants after a vowel or a continuant; i and u at
 # the start of a word are glides after a vowel.
+s -> ʒ / _ ‿ ʒ
+z -> ʒ / _ ‿ ʒ
 s -> z / _ ‿ {VC} | _ ‿ ⁑
+ʃ -> ʒ / _ ‿ {VC} | _ ‿ ⁑
+m -> ɱ / _ ‿ f
 t -> d / _ ‿ {VC}
 p -> b / _ ‿ {VC}
 k -> ɡ / _ ‿ {VC}
@@ -72,6 +81,9 @@ d -> ð / {SP} ‿ _ | {SP} ‿ ⁑ _
 b -> β / {SP} ‿ _ | l ‿ _ | ʎ ‿ _
 ɡ -> ɣ / {SP} ‿ _ | l ‿ _ | ʎ ‿ _
 i -> j / {PV} ‿ ⁑ _
+# The conjunction i and an unstressed final i are a glide before a vowel
+# other than u.
+i -> j / ‿ ⁑ _ ‿ ⁑ {NU} | ‿ ⁑ _ ‿ ⁑ ˈ {NU} | # ⁑ _ ‿ ⁑ {NU} | # ⁑ _ ‿ ⁑ ˈ {NU} | {CN} _ ‿ ⁑ {NU} | {CN} _ ‿ ⁑ ˈ {NU}
 u -> w / {PV} ‿ ⁑ _
 
 [words]
@@ -258,6 +270,7 @@ coma# kˌomə
 per-cent# pərsˈen
 
 [numbers]
+roman-skip VI
 decimal comma
 point coma#
 minus menys
@@ -448,7 +461,7 @@ scale1000000 milions#
 scale1000000+ milions#
 
 [spell]
-a ə
+a ˈa
 b bˈe
 c sˈe
 d dˈe
@@ -456,7 +469,7 @@ e ˈɛ
 f ˈefə
 g ʒˈe
 h ˈak
-i i
+i ˈi
 j ʒˈɔtə
 k kˈa
 l ˈelə

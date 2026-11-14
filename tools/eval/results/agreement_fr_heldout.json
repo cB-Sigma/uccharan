@@ -5,58 +5,58 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 149920,
-  "per": 0.008531216648879403,
-  "per_without_stress": 0.006892017669567273,
-  "exact_sentence": 0.5721343873517787,
-  "exact_sentence_without_stress": 0.6363636363636364,
-  "piper_shape_per": 0.008917732441778821,
-  "piper_shape_exact_sentence": 0.5434782608695652,
+  "per": 0.007884204909284952,
+  "per_without_stress": 0.006463574984856767,
+  "exact_sentence": 0.5770750988142292,
+  "exact_sentence_without_stress": 0.6413043478260869,
+  "piper_shape_per": 0.008281220266022718,
+  "piper_shape_exact_sentence": 0.5484189723320159,
   "word_count_mismatch_sentences": 150,
   "errors_by_class": {
    "consonant": {
-    "count": 478,
-    "share": 0.3737294761532447,
-    "per_contribution": 0.0031883671291355387
+    "count": 463,
+    "share": 0.3917089678510998,
+    "per_contribution": 0.003088313767342583
    },
    "stress": {
-    "count": 346,
-    "share": 0.2705238467552776,
-    "per_contribution": 0.002307897545357524
+    "count": 311,
+    "share": 0.26311336717428085,
+    "per_contribution": 0.0020744397011739596
    },
    "vowel": {
-    "count": 263,
-    "share": 0.20562939796716184,
-    "per_contribution": 0.0017542689434364995
+    "count": 231,
+    "share": 0.19543147208121828,
+    "per_contribution": 0.0015408217716115261
    },
    "other": {
-    "count": 112,
-    "share": 0.0875684128225176,
-    "per_contribution": 0.0007470651013874066
+    "count": 101,
+    "share": 0.08544839255499154,
+    "per_contribution": 0.000673692636072572
    },
    "word-boundary": {
-    "count": 65,
-    "share": 0.0508209538702111,
-    "per_contribution": 0.00043356456776947705
+    "count": 61,
+    "share": 0.051607445008460234,
+    "per_contribution": 0.0004068836712913554
    },
    "diacritic": {
     "count": 9,
-    "share": 0.007036747458952306,
+    "share": 0.007614213197969543,
     "per_contribution": 6.003201707577375e-05
    },
    "length": {
     "count": 6,
-    "share": 0.004691164972634871,
+    "share": 0.005076142131979695,
     "per_contribution": 4.0021344717182494e-05
    }
   },
   "top_confusions": [
    {
     "edit": "z→∅",
-    "count": 178
+    "count": 177
    },
    {
     "edit": "∅→ˈ",
-    "count": 137
+    "count": 135
    },
    {
     "edit": "ˈ→∅",
@@ -68,27 +68,15 @@
    },
    {
     "edit": "t→∅",
-    "count": 40
+    "count": 42
    },
    {
     "edit": "∅→ ",
     "count": 36
    },
    {
-    "edit": "∅→ˌ",
-    "count": 29
-   },
-   {
     "edit": " →∅",
-    "count": 29
-   },
-   {
-    "edit": "∅→e",
-    "count": 26
-   },
-   {
-    "edit": "∅→s",
-    "count": 24
+    "count": 25
    },
    {
     "edit": "ˌ→∅",
@@ -99,20 +87,24 @@
     "count": 22
    },
    {
-    "edit": "ɛ→∅",
-    "count": 21
+    "edit": "∅→e",
+    "count": 20
+   },
+   {
+    "edit": "∅→s",
+    "count": 20
    },
    {
     "edit": "s→∅",
     "count": 18
    },
    {
-    "edit": "∅→ɛ",
-    "count": 16
+    "edit": "ɛ→∅",
+    "count": 17
    },
    {
     "edit": "∅→ə",
-    "count": 16
+    "count": 15
    },
    {
     "edit": "∅→ʁ",
@@ -139,92 +131,46 @@
     "count": 10
    },
    {
-    "edit": "o→∅",
-    "count": 10
-   },
-   {
     "edit": "∅→n",
     "count": 10
    },
    {
     "edit": "ə→∅",
     "count": 8
+   },
+   {
+    "edit": "∅→-",
+    "count": 8
+   },
+   {
+    "edit": "ʌ→y",
+    "count": 7
+   },
+   {
+    "edit": "i→∅",
+    "count": 7
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 21347,
-    "wrong": 481,
-    "rate": 0.022532440155525368
+    "wrong": 475,
+    "rate": 0.022251370215955402
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 189,
-    "per": 0.016182572614107885,
-    "exact_sentence": 0.4074074074074074
+    "per": 0.015256942227896584,
+    "exact_sentence": 0.4126984126984127
    },
    "no-digits": {
     "sentences": 823,
-    "per": 0.006509823762543216,
-    "exact_sentence": 0.6099635479951397
+    "per": 0.005936419596930601,
+    "exact_sentence": 0.6148238153098421
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-356",
-    "text": "Le satellite a été envoyé dans l'espace par une fusée. Les scientifiques utilisent des télescopes dans l'espace parce que l'atmosphère terrestre déforme une partie de notre lumière et de notre vision.",
-    "reference": "lə- satɛlˈit a etˈe ɑ̃vwajˈe dɑ̃ lɛspˈas paʁ yn fyzˈe le- sjɑ̃tifˈikz ytilˈiz de- telɛskˈop dɑ̃ lɛspˈas paʁskˌə latmɔsfˈɛʁ tɛʁˈɛstʁ defˈɔʁm yn paʁtˈi də- notʁ lymjˈɛʁ e də- notʁ vizjˈɔ̃",
-    "uccharan": "lə- satɛlˈit a etˈe ɑ̃vwajˈe dɑ̃ lɛspˈas paʁ yn fyzˈe le- sjɑ̃tifˈikz ytilˈiz de- telɛskˈop dɑ̃ lɛspˈas pˈaʁs kə latmɔsfˈɛʁ tɛʁˈɛstʁ defˈɔʁm yn paʁtˈi də- notʁ lymjˈɛʁ e də- notʁ vizjˈɔ̃"
-   },
-   {
-    "id": "flores-devtest-531",
-    "text": "Les ressources végétales les plus facilement accessibles seraient les protéines contenues dans les feuilles et les légumineuses, mais celles-ci sont difficiles à digérer pour des primates comme nous, à moins d'être cuites.",
-    "reference": "le- ʁəsˈuʁs veʒetˈal le- ply fasilmˈɑ̃ aksɛsˈibl səʁˈɛ le- pʁoteˈin kɔ̃tənˈy dɑ̃ le- fˈœjz e le- leɡyminˈøz mɛ sɛl sˌi sɔ̃ difisˈilz a diʒeʁˈe puʁ de- pʁimˈat kɔm nˈu a mwˈɛ̃ dˈɛtʁ kyˈit",
-    "uccharan": "le- ʁəsˈuʁs veʒetˈal le- ply fasilmˈɑ̃ aksɛsˈibl səʁˈɛ le- pʁoteˈin kɔ̃tənˈy dɑ̃ le- fˈœjz e le- leɡyminˈøz mɛ sɛlsˈi sˈɔ̃ difisˈilz a diʒeʁˈe puʁ de- pʁimˈat kɔm nˈu a mwˈɛ̃ dˈɛtʁ kyˈit"
-   },
-   {
-    "id": "flores-devtest-978",
-    "text": "Veuillez également vous assurer de prononcer « r » et « rr » d’une manière distincte : « caro » signifie « cher », tandis que « carro » signifie « chariot ».",
-    "reference": "vœjˈez eɡalmˈɑ̃ vuz asyʁˈe də- pʁonɔ̃sˈe ˈɛʁ e ˌɛʁˈɛʁ dyn manjˈɛʁ distˈɛ̃kt kaʁˈo siɲifˈi ʃˈɛʁ tɑ̃dˌi kə kaʁˈo siɲifˈi ʃaʁjˈo",
-    "uccharan": "vœjˈez eɡalmˈɑ̃ vuz asyʁˈe də- pʁonɔ̃sˈe ˈɛʁ ˈe ˌɛʁˈɛʁ dyn manjˈɛʁ distˈɛ̃kt kaʁˈo siɲifˈi ʃˈɛʁ tɑ̃dˌi kˈə kaʁˈo siɲifˈi ʃaʁjˈo"
-   },
-   {
-    "id": "flores-devtest-901",
-    "text": "Habituellement, on entend toujours le bruit des touristes et des vendeurs. L’histoire du son et de la lumière est comme un livre d’histoire.",
-    "reference": "abityɛlmˈɑ̃ ɔ̃n ɑ̃tˈɑ̃ tuʒˌuʁ lə- bʁyˈi de- tuʁˈistz e de- vɑ̃dˈœʁ listwˈaʁ dy- sˈɔ̃ e də- la- lymjˈɛʁ ɛ kɔm œ̃ lˈivʁ distwˈaʁ",
-    "uccharan": "abityɛlmˈɑ̃ ɔ̃n ɑ̃tˈɑ̃ tuʒˌuʁ lə- bʁyˈi de- tuʁˈistz e de- vɑ̃dˈœʁ listwˈaʁ dy- sɔ̃n e də- la- lymjˈɛʁ ɛ kɔm œ̃ lˈivʁ distwˈaʁ"
-   },
-   {
-    "id": "flores-devtest-102",
-    "text": "Cependant, le pourcentage de TB-UR dans l’ensemble du groupe de personnes atteintes de tuberculose semble encore faible ; 6 000 personnes sur un total de 330 000 ont été infectées à un moment donné en Afrique du Sud.",
-    "reference": "səpɑ̃dˈɑ̃ lə- puʁsɑ̃tˈaʒ də- tˌebˈeˌyˈɛʁ dɑ̃ lɑ̃sˈɑ̃bl dy- ɡʁˈup də- pɛʁsˈɔnz atˈɛ̃t də- tybɛʁkylˈɔz sˈɑ̃bl ɑ̃kˌɔʁ fˈɛbl sˈi zeʁozeʁo zeʁˈo pɛʁsˈɔn syʁ œ̃ totˈal də- tʁwasɑ̃ tʁˈɑ̃t zeʁozeʁo zeʁˈo ˈɔ̃t etˈe ɛ̃fɛktˈez a œ̃ momˈɑ̃ dɔnˈe ɑ̃n afʁˈik dy- sˈyd",
-    "uccharan": "səpɑ̃dˈɑ̃ lə- puʁsɑ̃tˈaʒ də- tˌebˈeˌyˈɛʁ dɑ̃ lɑ̃sˈɑ̃bl dy- ɡʁˈup də- pɛʁsˈɔnz atˈɛ̃t də- tybɛʁkylˈɔz sˈɑ̃bl ɑ̃kˌɔʁ fˈɛbl sˈis zeʁo zeʁo zeʁˈo pɛʁsˈɔn syʁ œ̃ totˈal də- tʁwasɑ̃ tʁˈɑ̃t zeʁo zeʁo zeʁˈo ˈɔ̃t etˈe ɛ̃fɛktˈe a œ̃ momˈɑ̃ dɔnˈe ɑ̃n afʁˈik dy- sˈyd"
-   },
-   {
-    "id": "flores-devtest-776",
-    "text": "Presque toutes les plages sont sablonneuses et permettent de se baigner en toute sécurité, et la plupart sont ombragées par des pohutukawa.",
-    "reference": "pʁˌɛskə tut le- plˈaʒ sˈɔ̃ sablɔnˈøzz e pɛʁmˈɛt də- sə- bɛnjˈe ɑ̃ tut sekyʁitˈe e la- plypˌaʁ sˈɔ̃t ɔ̃bʁaʒˈe paʁ de- poytykawˈa",
-    "uccharan": "pʁˌɛskə tut le- plˈaʒ sˈɔ̃ sablɔnˈøz e pɛʁmˈɛt də- sə- bɛnjˈe ɑ̃ tut sekyʁitˈe e la- plypˌaʁ sˈɔ̃t ɔ̃bʁaʒˈe paʁ de- pɔytykawˈa"
-   },
-   {
-    "id": "flores-devtest-98",
-    "text": "Le Dr Tony Moll a découvert la tuberculose multirésistante (TB-MR) dans la région sud-africaine du KwaZulu-Natal.",
-    "reference": "lə- doktˈøʁ tˈəʊni mˈɒl a dekuvˈɛʁ la- tybɛʁkylˈɔz myltiʁezistˈɑ̃t tˌebˈeməsjˈø dɑ̃ la- ʁeʒjˈɔ̃ sˈydafʁikˈɛn dy- kwˈa zylˈynatˈal",
-    "uccharan": "lə- doktˈøʁ tˈəʊni mˈɒl a dekuvˈɛʁ la- tybɛʁkylˈɔz myltiʁezistˈɑ̃t tˌebˈeməsjˈø dɑ̃ la- ʁeʒjˈɔ̃ sˈydafʁikˈɛn dy- kwazylˈynatˈal"
-   },
-   {
-    "id": "flores-devtest-833",
-    "text": "Les pâtisseries allemandes sont plutôt bonnes, et en Bavière, elles sont très riches et variées, semblables à celles de leur voisin du sud, l'Autriche.",
-    "reference": "le- patisəʁˈiz almˈɑ̃d sˈɔ̃ plytˈoː bˈɔn e ɑ̃ bavjˈɛʁ ɛl sɔ̃ tʁɛ ʁˈiʃz e vaʁjˈe sɑ̃blˈablz a sɛl də- lœʁ vwazˈɛ̃ dy- sˈyd lotʁˈiʃ",
-    "uccharan": "le- patisəʁˈi almˈɑ̃d sˈɔ̃ plytˈoː bˈɔn e ɑ̃ bavjˈɛʁ ɛl sˈɔ̃ tʁɛ ʁˈiʃz e vaʁjˈe sɑ̃blˈablz a sɛl də- lœʁ vwazˈɛ̃ dy- sˈyd lotʁˈiʃ"
-   },
-   {
-    "id": "flores-devtest-785",
-    "text": "Néanmoins, suivez les conseils des autorités, obéissez à tous les panneaux et prêtez une attention particulière aux avertissements de sécurité.",
-    "reference": "neɑ̃mwˈɛ̃ syivˈe le- kɔ̃sˈɛj de-z otoʁitˈe obeisˈez a tu le- panˈoz e pʁɛtˈez yn atɑ̃sjˈɔ̃ paʁtikyljˈɛʁ oz avɛʁtismˈɑ̃ də- sekyʁitˈe",
-    "uccharan": "neɑ̃mwˈɛ̃ syivˈe le- kɔ̃sˈɛj de-z otoʁitˈe obeisˈe a tu le- panˈoz e pʁɛtˈe yn atɑ̃sjˈɔ̃ paʁtikyljˈɛʁ oz avɛʁtismˈɑ̃ də- sekyʁitˈe"
-   },
    {
     "id": "flores-devtest-405",
     "text": "Bien que personne ne sache vraiment qui l'a rédigé, on sait qu'à un stade précoce de son existence, le grand parchemin (qui mesure environ 29 pouces trois quarts sur 24 pouces) était entreposé roulé.",
@@ -242,6 +188,60 @@
     "text": "Edgar Veguilla a été blessé au bras et à la mâchoire tandis que Kristoffer Schneider a dû subir une chirurgie reconstructive pour son visage.",
     "reference": "ɛdɡˈaʁ vəɡijˈa a etˈe blɛsˈe o bʁˈaz e a la- maʃwˈaʁ tɑ̃dˌi kə kʁistɔfˈe ʃnɛdˈe a dˈyː sybˈiʁ yn ʃiʁyʁʒˈi ʁəkɔ̃stʁyktˈiv puʁ sɔ̃ vizˈaʒ",
     "uccharan": "ɛdɡˈaʁ vɡiˈa a etˈe blɛsˈe o bʁˈaz e a la- maʃwˈaʁ tɑ̃dˌi kə kʁistɔfˈe ʃnɛdˈe a dˈyː sybˈiʁ yn ʃiʁyʁʒˈi ʁəkɔ̃stʁyktˈiv puʁ sɔ̃ vizˈaʒ"
+   },
+   {
+    "id": "flores-devtest-81",
+    "text": "La tempête subtropicale Jerry, 10ème tempête de la saison des ouragans à porter un nom, est apparue ce jour dans l'océan Atlantique.",
+    "reference": "la- tɑ̃pˈɛt sybtʁopikˈal dʒˈɛɹi dˈiz jˈɛm tɑ̃pˈɛt də- la- sɛzˈɔ̃ de-z uʁaɡˈɑ̃z a pɔʁtˈe œ̃ nˈɔ̃ ɛt apaʁˈy sə- ʒˈuʁ dɑ̃ loseˈɑ̃ atlɑ̃tˈik",
+    "uccharan": "la- tɑ̃pˈɛt sybtʁopikˈal dʒˈɛɹi dˈis jˈɛm tɑ̃pˈɛt də- la- sɛzˈɔ̃ de-z uʁaɡˈɑ̃ a pɔʁtˈe œ̃ nˈɔ̃ ɛt apaʁˈy sə- ʒˈuʁ dɑ̃ loseˈɑ̃ atlɑ̃tˈik"
+   },
+   {
+    "id": "flores-devtest-906",
+    "text": "Autres exemples : l'île de Livingston et de la Déception, où la caldeira inondée d'un volcan encore actif offre un port naturel spectaculaire.",
+    "reference": "otʁz ɛɡzˈɑ̃pl lˈil də- lˈɪvɪŋstən e də- la- desɛpsjˈɔ̃ u la- kaldɛʁˈa inɔ̃dˈe dœ̃ vɔlkˈɑ̃ ɑ̃kˌɔʁ aktˈif ˈɔfʁ œ̃ pˈɔʁ natyʁˈɛl spɛktakylˈɛʁ",
+    "uccharan": "otʁz ɛɡzˈɑ̃pl lˈil də- lɪvɪŋstˈən e də- la- desɛpsjˈɔ̃ u la- kaldɛʁˈa inɔ̃dˈe dœ̃ vɔlkˈɑ̃ ɑ̃kˌɔʁ aktˈif ˈɔfʁ œ̃ pˈɔʁ natyʁˈɛl spɛktakylˈɛʁ"
+   },
+   {
+    "id": "flores-devtest-68",
+    "text": "Mais après avoir perdu le guichet de son capitaine, l'Inde n'a réalisé que 36 courses et perdu sept guichets jusqu'à la fin de la manche.",
+    "reference": "mɛz apʁˌɛz avwˈaʁ pɛʁdˈy lə- ɡiʃˈɛ də- sˈɔ̃ kapitˈɛn lˈɛ̃d na ʁealizˈe kə tʁɑ̃tsˈi kˈuʁsz e pɛʁdˈy sˈɛt ɡiʃˈɛ ʒyska la- fˈɛ̃ də- la- mˈɑ̃ʃ",
+    "uccharan": "mɛz apʁˌɛz avwˈaʁ pɛʁdˈy lə- ɡiʃˈɛ də- sɔ̃ kapitˈɛn lˈɛ̃d na ʁealizˈe kə tʁɑ̃tsˈis kˈuʁsz e pɛʁdˈy sˈɛt ɡiʃˈɛ ʒyska la- fˈɛ̃ də- la- mˈɑ̃ʃ"
+   },
+   {
+    "id": "flores-devtest-542",
+    "text": "En principe, le bouddhisme tibétain est très simple. Il se compose du Kundalini Yoga, de la méditation et de la voie de l'amour universel.",
+    "reference": "ɑ̃ pʁɛ̃sˈip lə- budˈism tibetˈɛ̃ ɛ tʁɛ sˈɛ̃pl il sə- kɔ̃pˈɔz dy- kœ̃dalinˈi joɡˈa də- la- meditasjˈɔ̃ e də- la- vwˈa də- lamˈuʁ ynivɛʁsˈɛl",
+    "uccharan": "ɑ̃ pʁɛ̃sˈip lə- budˈism tibetˈɛ̃ ɛ tʁɛ sˈɛ̃pl il sə- kɔ̃pˈɔz dy- kʌdalinˈi joɡˈa də- la- meditasjˈɔ̃ e də- la- vwˈa də- lamˈuʁ ynivɛʁsˈɛl"
+   },
+   {
+    "id": "flores-devtest-472",
+    "text": "Le 6 octobre 1789, le roi Louis XVI, la reine Marie-Antoinette, leurs deux jeunes enfants (Marie-Thérèse, 11 ans, et Louis-Charles, 4 ans) et la sœur du roi, madame Élisabeth, tous terrifiés, sont contraints de rentrer à Paris depuis Versailles par une foule de vendeuses.",
+    "reference": "lə- sˈiz ɔktˈɔbʁ mil sɛtsɑ̃ katʁəvɛ̃nˈœf lə- ʁwˈa lwˈi sɛz ʁomˈɛ̃ la- ʁˈɛn maʁˈjɑ̃twanˈɛt lœʁ dˈø ʒˈønz ɑ̃fˈɑ̃ maʁˈiteʁˈɛz ˈɔ̃z ˈɑ̃ e lwˈiʃˈaʁl kˈatʁ ˈɑ̃ e la- sˈœʁ dy- ʁwˈa madˈam ɪlˈɪseɪbəθ tus tɛʁifjˈe sˈɔ̃ kɔ̃tʁˈɛ̃ də- ʁɑ̃tʁˈe a paʁˈi dəpyˌi vɛʁsˈaj paʁ yn fˈul də- vɑ̃dˈøz",
+    "uccharan": "lə- sˈis ɔktˈɔbʁ mil sɛtsɑ̃ katʁəvɛ̃nˈœf lə- ʁwˈa lwˈi sɛz ʁomˈɛ̃ la- ʁˈɛn maʁˈiɑ̃twanˈɛt lœʁ dˈø ʒˈønz ɑ̃fˈɑ̃ maʁˈiteʁˈɛz ˈɔ̃z ˈɑ̃ e lwˈiʃˈaʁl kˈatʁ ˈɑ̃z e la- sˈœʁ dy- ʁwˈa madˈam ɪlˈɪseɪbəθ tu tɛʁifjˈe sˈɔ̃ kɔ̃tʁˈɛ̃ də- ʁɑ̃tʁˈe a paʁˈi dəpyˌi vɛʁsˈaj paʁ yn fˈul də- vɑ̃dˈøz"
+   },
+   {
+    "id": "flores-devtest-707",
+    "text": "Soyez ferme dans le refus des avances hommes, et n'ayez pas peur de tenir bon (différences culturelles ou non, ça ne veut pas dire que c'est acceptable !)",
+    "reference": "swajˈe fˈɛʁm dɑ̃ lə- ʁəfˈy de-z avˈɑ̃sz ˈɔm e nɛjˈe pa pˈœʁ də- tənˈiʁ bˈɔ̃ difeʁˈɑ̃s kyltyʁˈɛl u nˈɔ̃ sa nə- vˈø pa dˈiʁ kə sɛt aksɛptˈabl",
+    "uccharan": "swajˈe fˈɛʁm dɑ̃ lə- ʁəfˈy de-z avˈɑ̃s ˈɔm e nɛjˈe pa pˈœʁ də- tənˈiʁ bˈɔ̃ difeʁˈɑ̃s kyltyʁˈɛlz u nˈɔ̃ sa nə- vˈø pa dˈiʁ kə sɛt aksɛptˈabl"
+   },
+   {
+    "id": "flores-devtest-161",
+    "text": "« Ils sont plus frais que la surface environnante le jour et plus chauds la nuit ».",
+    "reference": "il sɔ̃ ply fʁˈɛ kə la- syʁfˈas ɑ̃viʁɔnˈɑ̃t lə- ʒˈuʁ e ply ʃˈo la- nyˈi",
+    "uccharan": "il sˈɔ̃ ply fʁˈɛ kə la- syʁfˈas ɑ̃viʁɔnˈɑ̃t lə- ʒˈuʁ e ply ʃˈo la- nyˈi"
+   },
+   {
+    "id": "flores-devtest-960",
+    "text": "Les Parisiens ont la réputation d'être égocentriques, grossiers et arrogants.",
+    "reference": "le- paʁizjˈɛ̃z ˈɔ̃ la- ʁepytasjˈɔ̃ dˈɛtʁ eɡosɑ̃tʁˈik ɡʁosjˈez e aʁoɡˈɑ̃",
+    "uccharan": "le- paʁizjˈɛ̃z ˈɔ̃ la- ʁepytasjˈɔ̃ dˈɛtʁ eɡosɑ̃tʁˈik ɡʁosjˈe e aʁoɡˈɑ̃"
+   },
+   {
+    "id": "flores-devtest-905",
+    "text": "L’archipel se trouve à 120 km au nord de la péninsule. L’île du Roi-George, avec le village de Villa Las Estrellas, est la plus grande.",
+    "reference": "laʁʃipˈɛl sə- tʁˈuv a sɑ̃ vˈɛ̃ kilomˈɛtʁ o nˈɔʁ də- la- penɛ̃sˈyl lˈil dy- ʁwˈaʒˈɔʁʒ avˌɛk lə- vilˈaʒ də- vilˈa la-z ɛstʁɛlˈa ɛ la- ply ɡʁˈɑ̃d",
+    "uccharan": "laʁʃipˈɛl sə- tʁˈuv a sɑ̃ vˈɛ̃ kilomˈɛtʁ o nˈɔʁ də- la- penɛ̃sˈyl lˈil dy- ʁwˈaʒˈɔʁʒ avˌɛk lə- vilˈaʒ də- vilˈa la- ɛstʁəlˈa ɛ la- ply ɡʁˈɑ̃d"
    }
   ]
  }

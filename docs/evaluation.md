@@ -70,19 +70,61 @@ Known gaps: German and Dutch stress of long compounds and names outside the list
 
 | language | voice | PER | without stress | without digits | identical sentences | in table | other listed | outside list (words) | speed |
 |---|---|---|---|---|---|---|---|---|---|
-| Italian | `it` | 0.66 % | 0.48 % | 0.48 % | 75.0 % | 0.5 % | 0.1 % | 32.2 % (503) | 4.6× |
-| Portuguese (Brazil) | `pt-br` | 0.67 % | 0.42 % | 0.46 % | 61.2 % | 0.7 % | 0.8 % | 42.0 % (490) | 5.1× |
-| Portuguese (Portugal) | `pt` | 0.89 % | 0.68 % | 0.64 % | 50.0 % | 1.3 % | 1.8 % | 50.2 % (484) | 5.2× |
-| Polish | `pl` | 1.33 % | 1.03 % | 1.05 % | 36.0 % | 3.6 % | 2.7 % | 30.7 % (1058) | 3.1× |
-| Turkish | `tr` | 0.72 % | 0.39 % | 0.51 % | 66.5 % | 0.1 % | 0.0 % | 22.3 % (1087) | 2.7× |
-| Czech | `cs` | 1.40 % | 0.84 % | 1.13 % | 44.5 % | 0.9 % | 2.9 % | 11.4 % (501) | 1.8× |
-| Swedish | `sv` | 1.51 % | 1.11 % | 0.88 % | 58.7 % | 0.1 % | 0.0 % | 32.7 % (1161) | 3.7× |
-| Catalan | `ca` | 1.86 % | 1.74 % | 1.53 % | 20.8 % | 7.3 % | 4.4 % | 41.8 % (553) | 4.9× |
-| Romanian | `ro` | 1.00 % | 0.43 % | 0.89 % | 51.4 % | 0.1 % | 0.0 % | 49.1 % (629) | 3.3× |
-| Hungarian | `hu` | 2.08 % | 1.06 % | 1.61 % | 19.3 % | 2.7 % | 6.6 % | 3.8 % (1119) | 13.1× |
-| Finnish | `fi` | 1.64 % | 1.30 % | 1.13 % | 29.0 % | 5.7 % | 4.5 % | 24.6 % (1938) | 1.7× |
-| Norwegian Bokmål | `nb` | 1.11 % | 0.95 % | 0.52 % | 67.9 % | 1.3 % | 0.0 % | 15.9 % (1119) | 2.3× |
-| Danish | `da` | 2.26 % | 1.42 % | 1.81 % | 37.6 % | 0.7 % | 0.4 % | 68.2 % (1025) | 27.1× |
+| Italian | `it` | 0.53 % | 0.38 % | 0.37 % | 76.0 % | 0.5 % | 0.1 % | 31.6 % (503) | 4.6× |
+| Portuguese (Brazil) | `pt-br` | 0.61 % | 0.38 % | 0.40 % | 61.8 % | 0.7 % | 0.8 % | 41.0 % (490) | 5.1× |
+| Portuguese (Portugal) | `pt` | 0.84 % | 0.66 % | 0.60 % | 49.8 % | 1.5 % | 1.8 % | 49.0 % (484) | 5.2× |
+| Polish | `pl` | 1.19 % | 0.90 % | 0.92 % | 36.4 % | 3.4 % | 2.6 % | 29.8 % (1058) | 3.1× |
+| Turkish | `tr` | 0.68 % | 0.37 % | 0.47 % | 66.8 % | 0.1 % | 0.0 % | 22.0 % (1087) | 2.7× |
+| Czech | `cs` | 1.32 % | 0.80 % | 1.07 % | 45.2 % | 1.1 % | 2.9 % | 9.2 % (501) | 1.8× |
+| Swedish | `sv` | 1.44 % | 1.06 % | 0.83 % | 59.1 % | 0.1 % | 0.0 % | 32.3 % (1161) | 3.7× |
+| Catalan | `ca` | 1.51 % | 1.38 % | 1.18 % | 29.2 % | 4.8 % | 2.9 % | 40.3 % (553) | 4.9× |
+| Romanian | `ro` | 0.97 % | 0.41 % | 0.86 % | 51.7 % | 0.1 % | 0.0 % | 48.2 % (629) | 3.3× |
+| Hungarian | `hu` | 1.37 % | 0.93 % | 0.95 % | 48.7 % | 1.9 % | 0.2 % | 2.0 % (1121) | 13.1× |
+| Finnish | `fi` | 1.57 % | 1.26 % | 1.08 % | 30.1 % | 5.7 % | 4.5 % | 24.2 % (1938) | 1.7× |
+| Norwegian Bokmål | `nb` | 1.03 % | 0.89 % | 0.46 % | 68.7 % | 1.3 % | 0.0 % | 15.3 % (1119) | 2.3× |
+| Danish | `da` | 2.22 % | 1.40 % | 1.78 % | 37.5 % | 0.7 % | 0.4 % | 68.1 % (1025) | 27.1× |
+
+**Capitals, Roman numerals and single letters: all seventeen Latin-script languages scored again.**
+After the scores above, four things were changed on the development sentences and on probes of the
+reference voices, and every held-out half was then scored once more (a documented re-score: the
+second for most languages, the third for German, Dutch, French and Hungarian). (1) A token in
+capitals is spelled only when it has two or three letters or no vowel; longer capitals with a vowel
+are read as a word (`NATO`, `COVID`), and a short one is spelled even when its letters make a word,
+apart from a few small words per language. Finnish, Hungarian and Czech put the main stress of a
+spelled abbreviation on its first letter; Turkish capital I is the dotless letter. (2) Roman
+numerals follow each voice: cardinals up to 49 (Spanish, Catalan, Czech, Romanian; any value in
+Portuguese), "römisch" + cardinal (German), cardinal + "romain" (French), ordinals (Italian,
+Danish), letters like any abbreviation (Dutch, Polish, Turkish, Swedish, Hungarian, Finnish,
+Norwegian). A fault that read `IV` as five and `IX` as ten in every language was fixed with it.
+(3) Catalan: final s and ʃ are voiced before a word written with h and a vowel, ʃ and z before
+voiced sounds, the conjunction *i* is a glide before a vowel; Spanish and Catalan read a single
+consonant letter by its name. (4) Finnish tens after a hundred carry secondary stress
+(`kˈolmesˌataː vˌiːsikymmentæ`).
+
+| language | PER before | PER now | without digits | identical sentences |
+|---|---|---|---|---|
+| Spanish | 0.74 % | **0.55 %** | 0.32 % | 68.1 % |
+| German | 1.01 % | **0.95 %** | 0.77 % | 59.3 % |
+| Dutch | 1.77 % | **1.69 %** | 1.32 % | 37.8 % |
+| French | 0.85 % | **0.79 %** | 0.59 % | 57.7 % |
+| Italian | 0.66 % | **0.53 %** | 0.37 % | 76.0 % |
+| Brazilian Portuguese | 0.67 % | **0.61 %** | 0.40 % | 61.8 % |
+| European Portuguese | 0.89 % | **0.84 %** | 0.60 % | 49.8 % |
+| Polish | 1.33 % | **1.19 %** | 0.92 % | 36.4 % |
+| Turkish | 0.72 % | **0.68 %** | 0.47 % | 66.8 % |
+| Czech | 1.40 % | **1.32 %** | 1.07 % | 45.2 % |
+| Swedish | 1.51 % | **1.44 %** | 0.83 % | 59.1 % |
+| Catalan | 1.86 % | **1.51 %** | 1.18 % | 29.2 % |
+| Romanian | 1.00 % | **0.97 %** | 0.86 % | 51.7 % |
+| Hungarian | 1.44 % | **1.37 %** | 0.95 % | 48.7 % |
+| Finnish | 1.64 % | **1.57 %** | 1.08 % | 30.1 % |
+| Norwegian | 1.11 % | **1.03 %** | 0.46 % | 68.7 % |
+| Danish | 2.26 % | **2.22 %** | 1.78 % | 37.5 % |
+
+The table of the thirteen languages above shows the new numbers in every column. Words outside the
+word lists are now wrong in: German 46.6 %, Dutch 53.7 %, French 31.6 %.
+
+Hungarian was scored a second time. The first scoring gave PER 2.08 % (without digits 1.61 %, identical sentences 19.3 %; listed words outside the table 6.6 % wrong): the voice gives about 2,400 frequent words only secondary stress at the end of a clause, and reads numbers from 10,000 with one stress per group of three digits, 2,000 and 2,000,000 as one word. Both were added from the word list's clause-final readings and from number probes (development half 1.92 → 1.38 %), not from the held-out half.
 
 
 **Spanish** (`es`, FLORES-200 devtest, 1,012 sentences, scored once): PER **0.74 %**, without
@@ -105,6 +147,21 @@ This is the second scoring of these held-out halves. The first (with 40 k / 20 k
 earlier letter rules) gave PER 2.18 % and 2.79 %; its "outside the table" figure of 27 % counted
 words with attached Arabic punctuation (گیا۔) as outside the table, so it is not comparable with the
 last row. Development halves: Urdu 2.17 → 1.49 %, Sindhi 2.79 → 1.45 %.
+
+**A correcting model for words outside the lists (Sindhi).** The word-table model of the
+Latin-script languages reads spellings; Urdu and Sindhi spellings leave out most short vowels, and a
+model on the spelling alone was worse than the letter rules (every tenth word of the lists held out
+of training, whole word with stress: Urdu 41.6 % against 55.3 % for the rules, Sindhi 38.7 % against
+70.4 %). A model that reads the rules' reading and corrects it was better on those words (Urdu
+61.5 %, Sindhi 74.8 %). In running text (development sentences, words outside the lists) it helped
+Sindhi (28.4 % wrong → 21.6 %; 19.4 % when a change of stress alone is not taken) and hurt Urdu
+(45.7 % → 49.6 %; 47.0 % with that guard; with contexts seen at least 3 or 6 times 47.9 % and
+48.2 %): Urdu's unlisted words are mostly foreign names, which the rules already read as the
+voice's own rules do. So Sindhi uses the model and Urdu keeps its table of exceptions. The Sindhi
+held-out half was scored a third time with it: PER **1.30 %** (was 1.52 %), without stress 0.90 %,
+identical sentences 54.9 %, sentences without digits 0.70 %; words in the table 0.9 % wrong
+(4,257), other listed words 0.5 % (15,028), words outside the list 21.9 % (895; was 29.8 %: 100
+words fixed, 29 broken). Development half 1.45 → 1.23 %. `sd.ucd` 209 → 120 KB.
 
 ### Breakdown
 

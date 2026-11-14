@@ -14,7 +14,7 @@ ordinary GitHub practice (fork, branch, pull request).
 
 ```sh
 cargo test --workspace                           # core, C API and tools
-cargo run --release -p uccharan-lexgen           # rebuild crates/uccharan/data/*.ucd after changing data/sources
+cargo run --release -p uccharan-lexgen           # rebuild the .ucd files after changing data/sources, then: python3 tools/packs.py
 cargo fmt --all && cargo clippy --workspace --all-targets -- -D warnings
 
 # Python

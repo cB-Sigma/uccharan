@@ -14,33 +14,47 @@ categories = ["text-processing", "multimedia::audio", "wasm"]
 include = ["src/**", "data/*.ucd", "lang/*.lang", "lang/numbers/*.txt", "examples/**", "benches/**", "tests/**", "README.md", "LICENSE", "NOTICE", "DATA_LICENSES.md"]
 
 [features]
-default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-ur", "embed-sd", "embed-kokoro", "embed-de", "embed-nl", "embed-fr", "embed-it", "embed-pt-br", "embed-pt", "embed-pl", "embed-tr", "embed-cs", "embed-sv", "embed-ca", "embed-ro", "embed-hu", "embed-fi", "embed-nb", "embed-da"]
-# Compile the language data into the library. Without these, load data at run time with `Phonemizer::load`.
+# English and Hindi are compiled in. The word tables of the other languages are
+# packs (see src/packs.rs): found in $UCCHARAN_DATA_DIR or the cache at first
+# use, downloaded with `download`, or compiled in with `bundle`.
+default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-kokoro"]
 embed-en-us = []
 embed-en-gb = []
 embed-hi = []
-embed-ur = []
-embed-sd = []
-embed-de = []
-embed-nl = []
-embed-fr = []
-embed-it = []
-embed-pt-br = []
-embed-pt = []
-embed-pl = []
-embed-tr = []
-embed-cs = []
-embed-sv = []
-embed-ca = []
-embed-ro = []
-embed-hu = []
-embed-fi = []
-embed-nb = []
-embed-da = []
-# misaki's English dictionaries for the Kokoro profile (about 3 MB per accent).
+# misaki's English dictionaries for the Kokoro profile (about 2 MB per accent).
 embed-kokoro = []
+# Every word table compiled in (from the uccharan-data crate): nothing is
+# looked for on disk or fetched.
+bundle = ["embed-ur", "embed-sd", "embed-de", "embed-nl", "embed-fr", "embed-it", "embed-pt-br", "embed-pt", "embed-pl", "embed-tr", "embed-cs", "embed-sv", "embed-ca", "embed-ro", "embed-hu", "embed-fi", "embed-nb", "embed-da"]
+# Fetch a missing pack from the GitHub release on first use (SHA-256 checked,
+# cached; UCCHARAN_OFFLINE=1 turns it off).
+download = ["dep:ureq"]
+# One word table compiled in.
+tables = ["dep:uccharan-data"]
+embed-ur = ["tables", "uccharan-data/ur"]
+embed-sd = ["tables", "uccharan-data/sd"]
+embed-de = ["tables", "uccharan-data/de"]
+embed-nl = ["tables", "uccharan-data/nl"]
+embed-fr = ["tables", "uccharan-data/fr"]
+embed-it = ["tables", "uccharan-data/it"]
+embed-pt-br = ["tables", "uccharan-data/pt-br"]
+embed-pt = ["tables", "uccharan-data/pt"]
+embed-pl = ["tables", "uccharan-data/pl"]
+embed-tr = ["tables", "uccharan-data/tr"]
+embed-cs = ["tables", "uccharan-data/cs"]
+embed-sv = ["tables", "uccharan-data/sv"]
+embed-ca = ["tables", "uccharan-data/ca"]
+embed-ro = ["tables", "uccharan-data/ro"]
+embed-hu = ["tables", "uccharan-data/hu"]
+embed-fi = ["tables", "uccharan-data/fi"]
+embed-nb = ["tables", "uccharan-data/nb"]
+embed-da = ["tables", "uccharan-data/da"]
 
 [dependencies]
+uccharan-data = { version = "0.5.0", path = "../uccharan-data", optional = true, default-features = false }
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+ureq = { version = "3", optional = true, default-features = false, features = ["rustls", "platform-verifier"] }
 
 [dev-dependencies]
 criterion = { version = "0.5", default-features = false }

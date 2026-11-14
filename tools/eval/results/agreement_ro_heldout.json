@@ -5,69 +5,65 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 176030,
-  "per": 0.010049423393739704,
-  "per_without_stress": 0.004316172646905876,
-  "exact_sentence": 0.5138339920948617,
-  "exact_sentence_without_stress": 0.7144268774703557,
-  "piper_shape_per": 0.010076595554212756,
-  "piper_shape_exact_sentence": 0.5059288537549407,
+  "per": 0.009663125603590297,
+  "per_without_stress": 0.004069162766510661,
+  "exact_sentence": 0.516798418972332,
+  "exact_sentence_without_stress": 0.7183794466403162,
+  "piper_shape_per": 0.009690540532979729,
+  "piper_shape_exact_sentence": 0.508893280632411,
   "word_count_mismatch_sentences": 253,
   "errors_by_class": {
    "stress": {
-    "count": 1118,
-    "share": 0.6319954776710006,
-    "per_contribution": 0.006351190138044652
+    "count": 1083,
+    "share": 0.63668430335097,
+    "per_contribution": 0.00615236039311481
    },
    "vowel": {
-    "count": 215,
-    "share": 0.1215375918598078,
-    "per_contribution": 0.0012213827188547407
+    "count": 202,
+    "share": 0.11875367430922987,
+    "per_contribution": 0.0011475316707379424
    },
    "other": {
-    "count": 171,
-    "share": 0.0966647823629169,
-    "per_contribution": 0.0009714253252286542
+    "count": 162,
+    "share": 0.09523809523809523,
+    "per_contribution": 0.0009202976765324092
    },
    "consonant": {
-    "count": 159,
-    "share": 0.08988128886376484,
-    "per_contribution": 0.0009032551269669943
+    "count": 147,
+    "share": 0.08641975308641975,
+    "per_contribution": 0.0008350849287053344
    },
    "word-boundary": {
-    "count": 105,
-    "share": 0.059355568117580554,
-    "per_contribution": 0.0005964892347895245
+    "count": 106,
+    "share": 0.06231628453850676,
+    "per_contribution": 0.0006021700846446629
    },
    "length": {
     "count": 1,
-    "share": 0.0005652911249293386,
+    "share": 0.0005878894767783657,
     "per_contribution": 5.680849855138329e-06
    }
   },
   "top_confusions": [
    {
     "edit": "∅→ˈ",
-    "count": 391
+    "count": 389
    },
    {
     "edit": "ˈ→∅",
-    "count": 298
+    "count": 299
    },
    {
     "edit": "ˌ→∅",
-    "count": 182
+    "count": 175
    },
    {
     "edit": "∅→e",
-    "count": 97
+    "count": 88
    },
    {
     "edit": "∅→ ",
     "count": 82
-   },
-   {
-    "edit": "∅→ˌ",
-    "count": 70
    },
    {
     "edit": "ˌ→e",
@@ -78,8 +74,12 @@
     "count": 62
    },
    {
+    "edit": "∅→ˌ",
+    "count": 55
+   },
+   {
     "edit": "ʲ→i",
-    "count": 45
+    "count": 43
    },
    {
     "edit": "ʲ→∅",
@@ -90,27 +90,23 @@
     "count": 28
    },
    {
-    "edit": "e→∅",
-    "count": 24
-   },
-   {
     "edit": " →∅",
-    "count": 23
+    "count": 24
    },
    {
     "edit": "ʲ→ ",
     "count": 23
    },
    {
-    "edit": "ˈ→ˌ",
-    "count": 17
+    "edit": "e→∅",
+    "count": 21
    },
    {
     "edit": "ˌ→ˈ",
-    "count": 17
+    "count": 16
    },
    {
-    "edit": "∅→u",
+    "edit": "ˈ→ˌ",
     "count": 13
    },
    {
@@ -122,98 +118,54 @@
     "count": 12
    },
    {
+    "edit": "∅→u",
+    "count": 11
+   },
+   {
     "edit": "d→∅",
     "count": 10
    },
    {
-    "edit": "ˈ→e",
-    "count": 9
-   },
-   {
-    "edit": "∅→t",
-    "count": 9
-   },
-   {
-    "edit": "∅→ʃ",
-    "count": 9
-   },
-   {
     "edit": "ʃ→∅",
-    "count": 9
+    "count": 8
    },
    {
     "edit": "∅→s",
+    "count": 7
+   },
+   {
+    "edit": "s→∅",
+    "count": 7
+   },
+   {
+    "edit": "l→∅",
+    "count": 7
+   },
+   {
+    "edit": "i→ɪ",
     "count": 7
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 17108,
-    "wrong": 420,
-    "rate": 0.024549918166939442
+    "wrong": 415,
+    "rate": 0.02425765723638064
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 194,
-    "per": 0.014053590351718222,
-    "exact_sentence": 0.4381443298969072
+    "per": 0.013321895342382803,
+    "exact_sentence": 0.4484536082474227
    },
    "no-digits": {
     "sentences": 818,
-    "per": 0.008885891081849907,
-    "exact_sentence": 0.5317848410757946
+    "per": 0.00859995894307751,
+    "exact_sentence": 0.5330073349633252
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-500",
-    "text": "Subculturile adună laolaltă indivizi cu gândire similară, care se simt dați la o parte de standardele societății, permițându-le să-și dezvolte un simț al identității.",
-    "reference": "sˌubkultˈurile adˈunə lˌaolˈaltə ˌindivˈizʲʲ ku ɡɨndˈiɾe sˌimilˈaɾə kˌaɾe se sˈimt dˈatsʲʲ la o pˈarte de stˈandardˌele sˌotʃjetˈətsiɪ pˌermitsˈɨndule sˌəʃʲʲ dezvˈolte un sˈimts al ˌidentitˈətsiɪ",
-    "uccharan": "sˌubkultˈurile adˈunə lˌaolˈaltə ˌindivˈizʲʲ ku ɡɨndˈiɾe sˌimilˈaɾə kˌaɾe se sˈimt dˈatsʲʲ la o pˈarte de stˈandardˌele sˌotʃjetˈətsiɪ permitsˈɨndule səʃi dezvˈolte un sˈimts al ˌidentitˈətsiɪ"
-   },
-   {
-    "id": "flores-devtest-215",
-    "text": "În 1989 a participat la crearea Familiei Simpson alături de Brooks și Groening și s-a ocupat de angajarea primei echipe de scenariști a serialului.",
-    "reference": "ɨn ˌomˈie nˈoʊəsˈute ˈoptzetʃʲʃinˈoʊə a pˌartitʃipˈat la krˈeaɾea fˌamilˈieɪ simpsˈon alˈəturʲ de broˈoks ʃi ɡroˈeniŋɡ ʃi sa ˌokupˈat de ˌaŋɡaʒˈaɾea prˈimeɪ ekˈipe de stʃˌenaɾˈiʃtʲʲ a seɾjˈaluluɪ",
-    "uccharan": "ɨn ˌomˈie nˈoʊəsˈute ˈoptzetʃʲʃinˈoʊə a pˌartitʃipˈat la krˈeaɾea fˌamilˈieɪ simpsˈon alˈəturʲ de broˈoks ʃi ɡrˈoeniŋɡ ʃi sˈea ˌokupˈat de ˌaŋɡaʒˈaɾea prˈimeɪ ekˈipe de stʃˌenaɾˈiʃtʲʲ a seɾjˈaluluɪ"
-   },
-   {
-    "id": "flores-devtest-60",
-    "text": "Peste patru milioane de persoane s-au deplasat la Roma pentru a lua parte la funeralii.",
-    "reference": "pˈeste pˈatru mˌiljɔˈane de persˈɔane saʊ dˌeplasˈat la rˈoma pˌentru a lwˈa pˈarte la fˌuneɾˈaliɪ",
-    "uccharan": "pˈeste pˈatru mˌiljɔˈane de persˈɔane sˈeaʊ dˌeplasˈat la rˈoma pˌentru a lwˈa pˈarte la fˌuneɾˈaliɪ"
-   },
-   {
-    "id": "flores-devtest-1009",
-    "text": "Cultura japoneză a muncii are un caracter mai puternic ierarhizat și mai formal decât cea cu care sunt obișnuiți occidentalii.",
-    "reference": "kultˈuɾa ʒˌaponˈezə a mˈuntʃiɪ ˌaɾe un kˌaɾaktˈer maɪ putˈernik jˌeɾarhizˈat ʃi maɪ formˈal dekˈɨt tʃea ku kˌaɾe sunt ˌobiʃnwˈitsʲʲ ˌoktʃidentˈaliɪ",
-    "uccharan": "kultˈuɾa ʒˌaponˈezə a mˈuntʃiɪ ˌaɾe un kˌaɾaktˈer maɪ putˈernik jeɾarhˈizat ʃi maɪ formˈal dekˈɨt tʃea ku kˌaɾe sunt ˌobiʃnwˈitsʲʲ ˌoktʃidentˈaliɪ"
-   },
-   {
-    "id": "flores-devtest-817",
-    "text": "Este așteptat faptul că majoritatea biletelor la evenimente vor costa între 2500 ¥ și 130.000 ¥, biletele obișnuite costând în jur de 7000 ¥.",
-    "reference": "jˌeste ˌaʃteptˈat fˈaptul kə mˌaʒoɾitˈatea bˌiletˈelor la ˌevenimˈente vor kostˈa ˈɨntre dˈouə mˈiɪ tʃˈintʃʲsˈute ʃi ˌosˈutə treɪzˈetʃʲ demˈiɪ bˌiletˈele ˌobiʃnwˈite kostˈɨnd ɨn ʒˈur de ʃˈapte mˈiɪ",
-    "uccharan": "jˌeste ˌaʃteptˈat fˈaptul kə mˌaʒoɾitˈatea bˌiletˈelor la ˌevenimˈente vor kostˈa ˈɨntre dˈouə mˈiɪ tʃˈintʃʲsˈute ʃi ˌosˈutə treɪzˈetʃʲ mˈiɪ bˌiletˈele ˌobiʃnwˈite kˈostɨnd ɨn ʒˈur de ʃˈapte mˈiɪ"
-   },
-   {
-    "id": "flores-devtest-248",
-    "text": "La cinci minute de la începerea prezentării, vântul își face simțită prezența; aproximativ un minut mai târziu, vântul ajunge la 70 km/h... apoi vine ploaia, dar atât de tare și cu picături atât de mari încât îți lovește pielea ca un ac, apoi a căzut grindina, iar oamenii au intrat în panică, țipând și călcându-se în picioare.",
-    "reference": "la tʃˈintʃʲ minˈute dˌela ɨntʃˈepeɾˌea prˌezentəɾˈiɪ vˈɨntul ˈɨʃʲʲ fˌatʃe simtsˈitə prezˈentsa ˌaproksˌimatˈiv un minˈut maɪ tɨrzˈiu vˈɨntul aʒˈuŋdʒe la ʃˌaptezˈetʃʲ kˌilomˈetripe ˈorə apˈoj vˈine plˈɔaja dar atˈɨt de tˈaɾe ʃi ku pˌikətˈurʲ atˈɨt de mˈaɾʲʲ ɨnkˈɨt ˌɨtsʲʲ lovˈeʃte pjˈelea ka un ˈak apˈoj a kəzˈut ɡrindˈina jˈar ˈɔamenˌiɪ aʊ intrˈat ɨn panˈikə tsipˈɨnd ʃi kəlkˈɨnduse ɨn pitʃˈɔaɾe",
-    "uccharan": "la tʃˈintʃʲ minˈute de la ɨntʃˈepeɾˌea prˌezentəɾˈiɪ vˈɨntul ˈɨʃʲʲ fˌatʃe simtsˈitə prezˈentsa ˌaproksˌimatˈiv un minˈut maɪ tɨrzˈiu vˈɨntul aʒˈuŋdʒe la ʃˌaptezˈetʃʲ kˌilomˈetri hˈaʃ apˈoj vˈine plˈɔaja dar atˈɨt de tˈaɾe ʃi ku pˌikətˈurʲ atˈɨt de mˈaɾʲʲ ɨnkˈɨt ˌɨtsʲʲ lovˈeʃte pjˈelea ka un ˈak apˈoj a kəzˈut ɡrindˈina jˈar ˈɔamenˌiɪ aʊ intrˈat ɨn panˈikə tsipˈɨnd ʃi kəlkˈɨnduse ɨn pitʃˈɔaɾe"
-   },
-   {
-    "id": "flores-devtest-14",
-    "text": "USA Gymnastics sprijină scrisoarea Comitetului Olimpic al SUA și acceptă nevoia absolută a familiei olimpice de a promova un mediu sigur pentru toți atleții noștri.",
-    "reference": "ˌusˌeˈa ɡˌimnastˈiks sprˈiʒinˌə skrisˈɔaɾea kˌomitˈetuluɪ olˈimpik al sˌeˌuˈa ʃi aktʃˈeptə nevˈoɪa ˌabsolˈutə a fˌamilˈieɪ olˈimpitʃˌe dea prˌomovˈa un mˈedju sˈiɡur pˌentru tˈotsʲʲ atlˈetsiɪ nˈoʃtɾi",
-    "uccharan": "ˌusˌeˈa ɡimnˈastiks sprˈiʒinˌə skrisˈɔaɾea kˌomitˈetuluɪ olˈimpik al sˌeˌuˈa ʃi aktʃˈeptə nevˈoɪa ˌabsolˈutə a fˌamilˈieɪ olˈimpitʃˌe de a prˌomovˈa un mˈedju sˈiɡur pˌentru tˈotsʲʲ atlˈetsiɪ nˈoʃtɾi"
-   },
-   {
-    "id": "flores-devtest-909",
-    "text": "În partea de nord, numită lanțul Sentinel, se află cei mai înalți munți din Antarctica, Masivul Vinson, cu Muntele Vinson înălțându-se la 4892 m.",
-    "reference": "ɨn pˈartea de nˈord numˈitə lˈantsul sˌentinˈel se ˈaflə tʃeɪ maɪ ɨnˈaltsʲʲ mˈuntsʲʲ din antˈarktikˌa masˈivul vinsˈon ku muntˈele vinsˈon ˌɨnəltsˈɨnduse la pˈatru mˈiɪ ˈoptsˈute nˈoʊəzˌetʃʲʃidˈoɪ mˈe",
-    "uccharan": "ɨn pˈartea de nˈord numˈitə lˈantsul sˌentinˈel se ˈaflə tʃeɪ maɪ ɨnˈaltsʲʲ mˈuntsʲʲ din antˈarktikˌa masˈivul vˈinson ku muntˈele vˈinson ˌɨnəltsˈɨnduse la pˈatru mˈiɪ ˈoptsˈute nˈoʊəzˌetʃʲʃidˈoɪ mˈe"
-   },
    {
     "id": "flores-devtest-777",
     "text": "Plajele Tamaki Drive se află în portul Waitemata, în suburbiile de pe piață din Mission Bay și St Heliers din centrul Auckland-ului.",
@@ -227,6 +179,12 @@
     "uccharan": "nu ʃtˈim ku sˌiɡuɾˈantsə dar ar fˈi putˈut avˌea lˈimba bˌifurkˈatə hrˈana sa inklˈudea brˈɔaʃte tsestˈɔase pˈeʃtʲʲ mˈaɾʲʲ ˈalte spˈetʃiɪ de mosasaˈuɾjenʲʲ ʃi je posˈibil kjˈar sə fˈi fost kˌanibˈal"
    },
    {
+    "id": "flores-devtest-231",
+    "text": "Programul a început la 8:30 p.m. ora locală (15:00 UTC).",
+    "reference": "proɡrˈamul a ˌɨntʃepˈut la ˈopt treɪzˈetʃʲ pˌemˈe ˈoɾa lokˈalə tʃˈinsprezˌetʃe zˈeɾo zˈeɾo ˌutˌetʃˈe",
+    "uccharan": "proɡrˈamul a ˌɨntʃepˈut la ˈopt treɪzˈetʃʲ pˈe mˈe ˈoɾa lokˈalə tʃˈinsprezˌetʃe zˈeɾo zˈeɾo ˌutˌetʃˈe"
+   },
+   {
     "id": "flores-devtest-70",
     "text": "A fost întâmpinat de Vice Prim Ministrul Singapore-ului, Wong Kan Seng, și a purtat discuții cu privire la comerț și terorism cu Primul Ministru al Singapore-ului, Lee Hsien Loong.",
     "reference": "a fost ˌɨntɨmpinˈat de vˈitʃe prˈim minˈistrul sˌiŋɡapˈoɾeˈuluɪ wˈoŋɡ kˈan sˈeŋɡ ʃʲa purtˈat diskˈutsiɪ ku privˈiɾe la komˈerts ʃi tˌeɾoɾˈism ku prˈimul minˈistru al sˌiŋɡapˈoɾeˈuluɪ lˈee hsjˈen loˈoŋɡ",
@@ -237,6 +195,48 @@
     "text": "Congresul nu avea nicio putere de a impune taxe și, pentru că nu exista autoritate executivă sau judiciară la nivel național, se baza pe autoritățile statale, adesea necooperante, pentru a-i pune în aplicare deciziile.",
     "reference": "koŋɡrˈesul nu avˌea nˌitʃo putˈeɾe dea impˈune tˈakse ʃi pˌentru kə nu ˌeɡzistˈa ˌaʊtoɾitˈate ˌeɡzekutˈivə saʊ ʒˌuditʃjˈaɾə la nivˈel nˌatsjonˈal se bˈaza pe ˌaʊtoɾˌitətsʲˈile statˈale adˈesea nˌekoˌopeɾˈante pˌentru aj pˈune ɨn ˌaplikˈaɾe dˌetʃizˈiɪle",
     "uccharan": "koŋɡrˈesul nu avˌea nˌitʃo putˈeɾe de a impˈune tˈakse ʃi pˌentru kə nu ˌeɡzistˈa ˌaʊtoɾitˈate ˌeɡzekutˈivə saʊ ʒˌuditʃjˈaɾə la nivˈel nˌatsjonˈal se bˈaza pe ˌaʊtoɾˌitətsʲˈile statˈale adˈesea nˌekoopˌeɾˈante pˌentru aˈi pˈune ɨn ˌaplikˈaɾe dˌetʃizˈiɪle"
+   },
+   {
+    "id": "flores-devtest-393",
+    "text": "Uneori, ca parte a templelor, se construiau și turnuri în formă de piramidă numite zigurate.",
+    "reference": "unˈeoɾʲʲ ka pˈarte a templˈelor se konstrwjˈaʊ ʃi turnˈurʲ ɨn fˈormə de pˌiɾamˈidə numˈite zˌiɡuɾˈate",
+    "uccharan": "unˈeoɾʲʲ ka pˈarte a tˌemplˈelor se konstrwjˈaʊ ʃi turnˈurʲ ɨn fˈormə de pˌiɾamˈidə numˈite ziɡuɾˈate"
+   },
+   {
+    "id": "flores-devtest-904",
+    "text": "Insulele Shetland de Sud, descoperite în 1819, sunt revendicate de mai multe țări și au cele mai multe baze, șaisprezece fiind active în 2020.",
+    "reference": "ˌinsulˈele ʃetlˈand de sˈud dˌeskopeɾˈite ɨn ˌomˈie ˈoptsˈute nˈoʊəsprezˌetʃe sunt revˌendikˈate de maɪ mˈulte tsˈəɾʲʲ ʃi aʊ tʃele maɪ mˈulte bˈaze ʃˈaɪsprezˌetʃe fiˈind aktˈive ɨn dˈouə mˈiɪ doˌuəzˈetʃʲ",
+    "uccharan": "ˌinsulˈele ʃˈetland de sˈud dˌeskopeɾˈite ɨn ˌomˈie ˈoptsˈute nˈoʊəsprezˌetʃe sunt revˌendikˈate de maɪ mˈulte tsˈəɾʲʲ ʃi aʊ tʃele maɪ mˈulte bˈaze ʃˈaɪsprezˌetʃe fiˈind aktˈive ɨn dˈouə mˈiɪ dˌouəzˈetʃʲ"
+   },
+   {
+    "id": "flores-devtest-733",
+    "text": "Sundarbans este cea mai mare centură de mangrove litorale din lume, întinzându-se pe 80 km (50 de mile), de pe coastă până în interiorul Bangladeshului și al Indiei.",
+    "reference": "sˌundarbˈans jˌeste tʃea maɪ mˈaɾe tʃentˈuɾə de maŋɡrˈove lˌitoɾˈale din lˈume ˌɨntinzˈɨnduse pe optzˈetʃʲ kˌilomˈetri tʃinzˈetʃʲ de mile de pe kˈɔastə pˈɨnə ɨn ˌinteɾjˈorul bˌaŋɡladˈeʃuluɪ ʃi al indˈieɪ",
+    "uccharan": "sundˈarbans jˌeste tʃea maɪ mˈaɾe tʃentˈuɾə de maŋɡrˈove lˌitoɾˈale din lˈume ɨntinzˈɨnduse pe optzˈetʃʲ kˌilomˈetri tʃinzˈetʃʲ de mile de pe kˈɔastə pˈɨnə ɨn ˌinteɾjˈorul bˌaŋɡladˈeʃuluɪ ʃi al indˈieɪ"
+   },
+   {
+    "id": "flores-devtest-993",
+    "text": "Există și câteva autobuze care merg înspre nord, la Hebron, locul unde conform tradiției au fost înmormântați patriarhii biblici Avraam, Isaac și Iacob, alături de soțiile lor.",
+    "reference": "eɡzˌistə ʃi kˌɨtevˈa ˌaʊtobˈuze kˌaɾe mˈerɡ ˈɨnspre nˈord la hebrˈon lˈokul ˈunde konfˈorm trˌaditsˈieɪ aʊ fost ˌɨnmormɨntˈatsʲʲ patrjˈarhiɪ biblˈitʃʲ ˌavraˈam ˌisaˈak ʃi jakˈob alˈəturʲ de sotsˈiɪle lˈor",
+    "uccharan": "eɡzˌistə ʃi kˌɨtevˈa ˌaʊtobˈuze kˌaɾe mˈerɡ ˈɨnspre nˈord la hˈebron lˈokul ˈunde konfˈorm trˌaditsˈieɪ aʊ fost ˌɨnmormɨntˈatsʲʲ patrjarhˈiɪ biblˈitʃʲ ˌavraˈam ˌisaˈak ʃi jakˈob alˈəturʲ de sotsˈiɪle lˈor"
+   },
+   {
+    "id": "flores-devtest-176",
+    "text": "Mai mulți locuitori din Bishkek au dat vina pe protestatarii din sud pentru haosul creat.",
+    "reference": "maɪ mˈultsʲʲ lˌokwitˈoɾʲʲ din biʃkˈek aʊ dˈat vˈina pe prˌotestatˈaɾiɪ din sˈud pˌentru haˈosul krˈeat",
+    "uccharan": "maɪ mˈultsʲʲ lˌokwitˈoɾʲʲ din bˈiʃkek aʊ dˈat vˈina pe prˌotestatˈaɾiɪ din sˈud pˌentru haˈosul krˈeat"
+   },
+   {
+    "id": "flores-devtest-721",
+    "text": "A fost unul dintre popasurile principale în timpul emisiunii speciale de la PBS a lui Henry Louis Gates, Minuni ale lumii africane.",
+    "reference": "a fost unul dˈintre pˌopasˈurile prˌintʃipˈale ɨn tˈimpul ˌemisjˈuniɪ spetʃjˈale dˌela pˌebˌesˈe a luɪ hˈenri loʊˈis ɡatˈes minˈunʲʲ ale lˈumiɪ ˌafrikˈane",
+    "uccharan": "a fost unul dˈintre popasˈurile prˌintʃipˈale ɨn tˈimpul ˌemisjˈuniɪ spetʃjˈale de la pˌebˌesˈe a luɪ hˈenri loʊˈis ɡatˈes minˈunʲʲ ale lˈumiɪ ˌafrikˈane"
+   },
+   {
+    "id": "flores-devtest-375",
+    "text": "Populația inițială nu s-a schimbat deloc, are nevoie de aceleași adaptări ca și înainte.",
+    "reference": "pˌopulˈatsja ˌinitsjˈalə nu sa skimbˈat delˈok ˌaɾe nevˈoje de atʃˈeleaʃʲˌʲ ˌadaptˈəɾʲʲ ka ʃi ˌɨnaˈinte",
+    "uccharan": "pˌopulˈatsja ˌinitsjˈalə nu sˈea skimbˈat delˈok ˌaɾe nevˈoje de atʃˈeleaʃʲˌʲ ˌadaptˈəɾʲʲ ka ʃi ˌɨnaˈinte"
    }
   ]
  }

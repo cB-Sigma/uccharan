@@ -5,73 +5,69 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 178680,
-  "per": 0.006749496306245803,
-  "per_without_stress": 0.004240705570153758,
-  "exact_sentence": 0.6116600790513834,
-  "exact_sentence_without_stress": 0.733201581027668,
-  "piper_shape_per": 0.006793530705986799,
-  "piper_shape_exact_sentence": 0.6037549407114624,
+  "per": 0.006089097828520259,
+  "per_without_stress": 0.0037724067955355518,
+  "exact_sentence": 0.6175889328063241,
+  "exact_sentence_without_stress": 0.7401185770750988,
+  "piper_shape_per": 0.006142851628627674,
+  "piper_shape_exact_sentence": 0.6096837944664032,
   "word_count_mismatch_sentences": 147,
   "errors_by_class": {
    "stress": {
-    "count": 562,
-    "share": 0.4660033167495854,
-    "per_contribution": 0.0031452876650996196
+    "count": 517,
+    "share": 0.47518382352941174,
+    "per_contribution": 0.0028934407880008956
    },
    "vowel": {
-    "count": 232,
-    "share": 0.19237147595356552,
-    "per_contribution": 0.0012984105663756437
-   },
-   "other": {
-    "count": 187,
-    "share": 0.1550580431177446,
-    "per_contribution": 0.0010465636892769195
+    "count": 193,
+    "share": 0.17738970588235295,
+    "per_contribution": 0.001080143272890083
    },
    "consonant": {
-    "count": 184,
-    "share": 0.15257048092868988,
-    "per_contribution": 0.001029773897470338
+    "count": 173,
+    "share": 0.15900735294117646,
+    "per_contribution": 0.0009682113275128721
+   },
+   "other": {
+    "count": 164,
+    "share": 0.15073529411764705,
+    "per_contribution": 0.0009178419520931274
    },
    "word-boundary": {
     "count": 40,
-    "share": 0.03316749585406302,
+    "share": 0.03676470588235294,
     "per_contribution": 0.00022386389075442132
    },
    "diacritic": {
     "count": 1,
-    "share": 0.0008291873963515755,
+    "share": 0.0009191176470588235,
     "per_contribution": 5.596597268860533e-06
    }
   },
   "top_confusions": [
    {
     "edit": "ˌ→∅",
-    "count": 157
+    "count": 154
    },
    {
     "edit": "ˈ→∅",
-    "count": 119
+    "count": 118
    },
    {
     "edit": "∅→ˈ",
-    "count": 97
-   },
-   {
-    "edit": "∅→ˌ",
-    "count": 73
+    "count": 96
    },
    {
     "edit": "s→z",
     "count": 57
    },
    {
-    "edit": "j→y",
-    "count": 40
+    "edit": "∅→ˌ",
+    "count": 44
    },
    {
-    "edit": "ˈ→ˌ",
-    "count": 25
+    "edit": "j→y",
+    "count": 40
    },
    {
     "edit": "y→j",
@@ -82,7 +78,7 @@
     "count": 24
    },
    {
-    "edit": "ˌ→ˈ",
+    "edit": "ˈ→ˌ",
     "count": 22
    },
    {
@@ -98,6 +94,10 @@
     "count": 19
    },
    {
+    "edit": "ˌ→ˈ",
+    "count": 19
+   },
+   {
     "edit": "w→ʊ",
     "count": 17
    },
@@ -110,28 +110,20 @@
     "count": 17
    },
    {
-    "edit": "∅→ɛ",
-    "count": 16
-   },
-   {
     "edit": "s→∅",
-    "count": 16
+    "count": 14
    },
    {
     "edit": "e→∅",
-    "count": 14
+    "count": 13
+   },
+   {
+    "edit": "ɔ→o",
+    "count": 12
    },
    {
     "edit": "∅→ʊ",
     "count": 12
-   },
-   {
-    "edit": "ɔ→o",
-    "count": 11
-   },
-   {
-    "edit": "∅→y",
-    "count": 10
    },
    {
     "edit": "∅→z",
@@ -144,82 +136,36 @@
    {
     "edit": "o→ɔ",
     "count": 8
+   },
+   {
+    "edit": "m→∅",
+    "count": 8
+   },
+   {
+    "edit": "z→s",
+    "count": 7
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 19756,
-    "wrong": 385,
-    "rate": 0.019487750556792874
+    "wrong": 375,
+    "rate": 0.018981575217655394
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 196,
-    "per": 0.014203051025775907,
-    "exact_sentence": 0.336734693877551
+    "per": 0.013426517371809324,
+    "exact_sentence": 0.3469387755102041
    },
    "no-digits": {
     "sentences": 816,
-    "per": 0.004605106695781895,
-    "exact_sentence": 0.6776960784313726
+    "per": 0.003978120338140228,
+    "exact_sentence": 0.6825980392156863
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-583",
-    "text": "O termo \"insetos\" é utilizado por entomologistas em um sentido formal para tratar desse grupo de insetos.",
-    "reference": "ʊ tˈeɾəmʊ ˌiŋsˈɛtʊs ɛ ˌutʃilizˈadʊ poɾ ˌeɪŋtomˌoloʒˈistæz ˈeɪŋ ũŋ sˌeɪŋtʃˈidʊ foɾəmˈaʊ pˌaɾæ tratˈar dˈesy ɡrˈupʊ dʒj ˌiŋsˈɛtʊs",
-    "uccharan": "ʊ tˈeɾəmw ˌiŋsˈɛtʊz ɛ ˌutʃilizˈadʊ poɾ ˌeɪŋtomˌoloʒˈistæz ˈeɪŋ ũŋ sˌeɪŋtʃˈidʊ foɾəmˈaʊ pˌaɾæ tratˈar dˈesy ɡrˈupʊ dʒj ˌiŋsˈɛtʊs"
-   },
-   {
-    "id": "flores-devtest-287",
-    "text": "Adekoya tem estado no Tribunal do Xerife de Edimburgo desde então, acusada pelo assassinato de seu filho.",
-    "reference": "ˌadekˈɔɪæ teɪŋ ˌestˈadʊ nʊ trˌibunˈaʊ dʊ ʃˌeɾˈify dʒj ˌedʒimbˈuɾəɡʊ dˌezdʒj eɪŋtˈɐ̃ʊ̃ ˌakuzˈadæ pˈelw ˌasasinˈatʊ dʒy seʊ fˈiljʊ",
-    "uccharan": "ˌadʒekˈɔɪæ teɪŋ ˌestˈadʊ nʊ trˌibunˈaʊ dʊ ʃˌeɾˈify dʒj ˌedʒimbˈuɾəɡʊ dˌezdʒy eɪŋtˈɐ̃ʊ̃ ˌakuzˈadæ pˈelw ˌasasinˈatʊ dʒy seʊ fˈiljʊ"
-   },
-   {
-    "id": "flores-devtest-317",
-    "text": "Embora estivesse trabalhando no hospital, Liggins começou a investigar partos prematuros em seu tempo livre.",
-    "reference": "ˌeɪmbˈɔɾæ ˌestʃivˈɛsy trˌabaljˈɐ̃ŋdʊ nʊ ˌospitˈaʊ liʒˈiŋs kˌomesˈow a ˌiŋvestʃiɡˈar pˈaɾətʊs prˌematˈuɾʊz ˈeɪŋ seʊ tˈeɪmpʊ lˈivry",
-    "uccharan": "ˌeɪmbˈɔɾæ ˌestʃivˈɛsy trˌabaljˈɐ̃ŋdʊ nʊ ˌospitˈaʊ lˈiʒiŋs kˌomesˈow a ˌiŋvestʃiɡˈar pˈaɾətʊs prˌematˈuɾʊz ˈeɪŋ seʊ tˈeɪmpʊ lˈivry"
-   },
-   {
-    "id": "flores-devtest-154",
-    "text": "A principal seleção do torneio, a África do Sul, começou com pé direito conquistando uma vitória confortável por 26 a 0 sobre a 5ª colocada, a Zâmbia.",
-    "reference": "a prˌiŋsipˈaʊ sˌelesˈɐ̃ʊ̃ dʊ tˌoɾənˈeɪʊ a ˈafrikæ dʊ sˈuw kˌomesˈow koŋ pˈɛ dʒˌiɾˈeɪtʊ kˌoŋkistˈɐ̃ŋdw ˌumæ vˌitˈɔɾjæ kˌoŋfoɾətˈaveʊ por vˈiŋtʃyisˈeɪz a zˈɛɾʊ sˈobri a kˈiŋtæ kˌolokˈadæ a zˈɐ̃mbjæ",
-    "uccharan": "a prˌiŋsipˈaʊ sˌelesˈɐ̃ʊ̃ dʊ tˌoɾənˈeɪʊ a ˈafrikæ dʊ sˈuw kˌomesˈow koŋ pˈɛ dʒˌiɾˈeɪtʊ kˌoŋkistˈɐ̃ŋdw ˌumæ vˌitˈɔɾjæ kˌoŋfoɾətˈaveʊ por vˈiŋtʃyisˈeɪz a zˈɛɾʊ sˈobri a sˈiŋkʊ kˌolokˈadæ a zˈɐ̃mbjæ"
-   },
-   {
-    "id": "flores-devtest-511",
-    "text": "Os scaffolds podem ser virtuais ou presenciais, em outras palavras, um professor pode ser considerado um scaffold, assim como aquele clipezinho falante do Microsoft Office.",
-    "reference": "ʊs skafˈowds pˌɔdeɪŋ ser vˌiɾətuˈaɪz ow prˌezeɪŋsiˈaɪs ˈeɪŋ ˈowtræs pˌalˈavræs ũŋ prˌofesˈor pˌɔdʒy ser kˌoŋsideɾˈadw ũŋ skafˈowd asˈiŋ kˌomʊ ˌakˈely klˌipezˈiɲʊ fˌalˈɐ̃ŋtʃy dʊ mˈaɪkrowsˈɔft ˈɔfsy",
-    "uccharan": "ʊs skˈafowds pˌɔdeɪŋ ser vˌiɾətuˈaɪz ow prˌezeɪŋsiˈaɪs ˈeɪŋ ˈowtræs pˌalˈavræs ũŋ prˌofesˈor pˌɔdʒy ser kˌoŋsideɾˈadw ũŋ skafˈowd asˈiŋ kˌomʊ ˌakˈely klipezˈiɲʊ fˌalˈɐ̃ŋtʃy dʊ mˈaɪkrowsˈɔft ˈɔfsy"
-   },
-   {
-    "id": "flores-devtest-643",
-    "text": "Os átomos são tão assombrosamente pequenos que seria possível trilhões deles caberem no ponto final desta frase.",
-    "reference": "ʊz ˈatomʊs sɐ̃ʊ̃ tˈɐ̃ʊ̃ ˌasombrˌozæmˈeɪŋtʃy pˌekˈenʊs ky seɾˌiæ pˌosˈiveʊ triljˈõjz dˌelys kˌabˈeɾeɪŋ nʊ pˈoŋtʊ finˈaʊ dˈɛstæ frˈazy",
-    "uccharan": "ʊz ˈatomʊs sɐ̃ʊ̃ tˈɐ̃ʊ̃ ˌasombrˌozæmˈeɪŋtʃy pˌekˈenʊs ky seɾˌiæ pˌosˈiveʊ triljˈõjz dˌelys kˌabeɾˈeɪŋ nʊ pˈoŋtʊ finˈaʊ dˈɛstæ frˈazy"
-   },
-   {
-    "id": "flores-devtest-234",
-    "text": "Então, Lakkha Singh tomou a frente para cantar os bhajans.",
-    "reference": "eɪŋtˈɐ̃ʊ̃ lˈakæ sˈiŋɡ tomˈow a frˈeɪŋtʃy pˌaɾæ kɐ̃ŋtˈaɾ ʊz baʒˈɐ̃ŋs",
-    "uccharan": "eɪŋtˈɐ̃ʊ̃ lˈakkæ sˈiŋɡ tomˈow a frˈeɪŋtʃy pˌaɾæ kɐ̃ŋtˈaɾ ʊz baʒˈɐ̃ŋs"
-   },
-   {
-    "id": "flores-devtest-520",
-    "text": "Por exemplo, \"aprendizado\" e \"socialização\" são indicados como motivações importantes para a utilização da internet  (James et al., 1995).",
-    "reference": "poɾ ˌezˈeɪmplʊ ˌapreɪŋdʒizˈadʊ i sˌosiˌalizasˈɐ̃ʊ̃ sɐ̃ʊ̃ ˌiŋdʒikˈadʊs kˌomʊ mˌotʃivasˈõjz ˌimpoɾətˈɐ̃ŋtʃys pˌaɾæ a ˌutʃilˌizasˈɐ̃ʊ̃ da ˌiŋteɾənˈɛtʃ ʒˈeimys ˈɛtʃ ˈaʊ mˈiʊ nˈɔvysˈeɪŋtʊzˌi novˈeɪŋtæisˈiŋkʊ",
-    "uccharan": "poɾ ˌezˈeɪmplʊ ˌapreɪŋdʒizˈadw i sˌosiˌalizasˈɐ̃ʊ̃ sɐ̃ʊ̃ ˌiŋdʒikˈadʊs kˌomʊ mˌotʃivasˈõjz ˌimpoɾətˈɐ̃ŋtʃys pˌaɾæ a ˌutʃilˌizasˈɐ̃ʊ̃ da ˌiŋteɾənˈɛtʃ ʒˈeimyz ˈɛtʃ ˈaʊ mˈiʊ nˈɔvysˈeɪŋtʊzi novˈeɪŋtæisˈiŋkʊ"
-   },
-   {
-    "id": "flores-devtest-843",
-    "text": "Para que os pés de um cavaleiro tenham apoio, são usados estribos, que ficam pendurados em ambos os lados da sela.",
-    "reference": "pˌaɾækj ʊs pˈɛz dʒj ũŋ kˌavalˈeɪɾʊ tˈeɲɐ̃ʊ̃ ˌapˈoɪʊ sɐ̃ʊ̃ ˌuzˈadʊz ˌestrˈibʊs ky fˈikɐ̃ʊ̃ pˌeɪŋduɾˈadʊz ˈeɪŋ ˈɐ̃mbʊz ʊz lˈadʊz da sˈɛlæ",
-    "uccharan": "pˌaɾæ ky ʊs pˈɛz dʒj ũŋ kˌavalˈeɪɾʊ tˈeɲɐ̃ʊ̃ ˌapˈoɪʊ sɐ̃ʊ̃ ˌuzˈadʊz ˌestrˈibʊs ky fˈikɐ̃ʊ̃ pˌeɪŋduɾˈadʊz ˈeɪŋ ˈɐ̃mbʊz ʊz lˈadʊz da sˈɛlæ"
-   },
    {
     "id": "flores-devtest-517",
     "text": "Supõe-se que os cuidados adotivos satisfaçam a todas as necessidades que faltavam na casa de onde foram tirados.",
@@ -227,16 +173,70 @@
     "uccharan": "supˈõjsy ky ʊs kˌuɪdˈadʊz ˌadotʃˈivʊs sˌatʃisfasɐ̃ˈʊ̃ a tˈodæz az nˌesesidˈadʒys ky fˌaʊtˈavɐ̃ʊ̃ na kˈazæ dʒj ˌoŋdʒy fˌoɾɐ̃ʊ̃ tʃˌiɾˈadʊs"
    },
    {
-    "id": "flores-devtest-294",
-    "text": "Israel exige uma presença militar contínua no vale por dez anos assim que um acordo seja assinado, ao passo que a AP concorda em deixar essa presença por apenas cinco anos.",
-    "reference": "ˌizxaˈɛʊ ˌezˈiʒj ˌumæ prˌezˈeɪŋsæ mˌilitˈar kˌoŋtʃˈinuæ nʊ vˈaly por dˈɛz ˈɐ̃nʊz asˈiŋ ky ũŋ ˌakˈoɾədʊ sˈeʒæ ˌasinˈadʊ aʊ pˈasʊ ky a ˌapˈe kˌoŋkˈɔɾədæ ˈeɪŋ deɪʃˈaɾ ˈɛsæ prˌezˈeɪŋsæ poɾ ˌapˈenæs sˈiŋkw ˈɐ̃nʊs",
-    "uccharan": "ˌizxaˈɛʊ ˌezˈiʒj ˌumæ prˌezˈeɪŋsæ mˌilitˈar kˌoŋtʃˈinuæ nʊ vˈaly por dˈɛz ˈɐ̃nʊz asˈiŋ ky ũŋ ˌakˈoɾədʊ sˈeʒæ ˌasinˈadʊ aʊ pˈasʊ ky a ˈap kˌoŋkˈɔɾədæ ˈeɪŋ deɪʃˈaɾ ˈɛsæ prˌezˈeɪŋsæ poɾ ˌapˈenæs sˈiŋkw ˈɐ̃nʊs"
-   },
-   {
     "id": "flores-devtest-290",
     "text": "A professora Pamela Ferguson, da Universidade de Dundee, observa que \"os jornalistas parecem ir numa direção perigosa quando publicam fotos, vídeos, etc. de suspeitos\".",
     "reference": "a prˌofesˈoɾæ pˈɐ̃melæ fˌeɾəɡˈuzoŋ da ˌunivˌeɾəsidˈadʒy dʒy dũŋdˈi ˌobsˈɛɾəvæ ky ʊz ʒˌoɾənalˈistæs pˌaɾˈɛseɪŋ ˈir nˌumæ dʒˌiɾesˈɐ̃ʊ̃ pˌeɾiɡˈɔzæ kwˈɐ̃ŋdʊ pˌublˈikɐ̃ʊ̃ fˈɔtʊs vˈidʒjʊs ˌetsˈɛteɾæ dʒy sˌuspˈeɪtʊs",
     "uccharan": "a prˌofesˈoɾæ pˈɐ̃melæ fˌeɾəɡˈuzoŋ da ˌunivˌeɾəsidˈadʒy dʒy dˈũŋde ˌobsˈɛɾəvæ ky ʊz ʒˌoɾənalˈistæs pˌaɾˈɛseɪŋ ˈir nˌumæ dʒˌiɾesˈɐ̃ʊ̃ pˌeɾiɡˈɔzæ kwˈɐ̃ŋdʊ pˌublˈikɐ̃ʊ̃ fˈɔtʊs vˈidʒjʊs ˌetsˈɛteɾæ dʒy sˌuspˈeɪtʊs"
+   },
+   {
+    "id": "flores-devtest-184",
+    "text": "O epicentro do tremor foi a cerca de 20 km (15 milhas) de distância do norte/nordeste de Dillon e a cerca de 65 km (40 milhas) do sul de Butte.",
+    "reference": "u ˌepisˈeɪŋtrʊ dʊ tremˈor foɪ a sˈeɾəkæ dʒy vˈiŋtʃy kˌaˈeme kˈiŋzy mˈiljæs dʒy dʒˌistˈɐ̃ŋsjæ dʊ nˈɔɾətʃy nˌoɾədˈɛstʃy dʒy dʒilˈoŋ i a sˈeɾəkæ dʒy sˌesˈeɪŋtæisˈiŋkʊ kˌaˈeme kwˌaɾˈeɪŋtæ mˈiljæs dʊ sˈuw dʒy bˈutʃy",
+    "uccharan": "u ˌepisˈeɪŋtrʊ dʊ tremˈor foɪ a sˈeɾəkæ dʒy vˈiŋtʃy kˌaˈeme kˈiŋzy mˈiljæz dʒy dʒˌistˈɐ̃ŋsjæ dʊ nˈɔɾətʃy nˌoɾədˈɛstʃy dʒy dʒilˈoŋ i a sˈeɾəkæ dʒy sˌesˈeɪŋtæisˈiŋkʊ kˌaˈeme kwˌaɾˈeɪŋtæ mˈiljæz dʊ sˈuw dʒy bˈuty"
+   },
+   {
+    "id": "flores-devtest-62",
+    "text": "Várias TVs grandes foram instaladas em diversos lugares de Roma para que o povo pudesse assistir à cerimônia.",
+    "reference": "vˈaɾjæs tˌevˌeˈɛsy ɡrˈɐ̃ŋdʒys fˌoɾɐ̃ʊ̃ ˌiŋstalˈadæz ˈeɪŋ dʒˌivˈɛɾəsʊz lˌuɡˈaɾyz dʒy xˈomæ pˌaɾækj ʊ pˈovʊ pˌudˈɛsj ˌasistʃˈiɾ ˌaː sˌeɾimˈonjæ",
+    "uccharan": "vˈaɾjæs tˌevˌeˈɛsy ɡrˈɐ̃ŋdʒys fˌoɾɐ̃ʊ̃ ˌiŋstalˈadæz ˈeɪŋ dʒˌivˈɛɾəsʊz lˌuɡˈaɾyz dʒy xˈomæ pˌaɾæ ky ʊ pˈovʊ pˌudˈɛsj ˌasistʃˈiɾ ˌaː sˌeɾimˈonjæ"
+   },
+   {
+    "id": "flores-devtest-842",
+    "text": "Agora amplamente disponível pelo arquipélago, a culinária javanesa inclui uma variedade de pratos temperados de maneira simples, os condimentos predominantes de preferência javanesa sendo amendoim, pimentas, açúcar (principalmente açúcar de coco javanês) e várias especiarias aromáticas.",
+    "reference": "ˌaɡˈɔɾæ ˌɐ̃mplæmˈeɪŋtʃy dʒˌisponˈiveʊ pˈelw ˌaɾəkipˈɛlæɡʊ a kˌulinˈaɾjæ ʒˌavænˈezæ iŋklˈuɪ ˌumæ vˌaɾiedˈadʒy dʒy prˈatʊs tˌeɪmpeɾˈadʊz dʒy mˌænˈeɪɾæ sˈimplys ʊs kˌoŋdʒimˈeɪŋtʊs prˌedominˈɐ̃ŋtʃyz dʒy prˌefeɾˈeɪŋsjæ ʒˌavænˈezæ sˈeɪŋdw ˌæmeɪŋdoˈiŋ pˌimˈeɪŋtæs ˌasˈukar prˌiŋsipaʊmˈeɪŋtʃj ˌasˈukar dʒy kˈokʊ ʒˌavɐ̃nˈes i vˈaɾjæz ˌespesˌiaɾˈiæz ˌaɾomˈatʃikæs",
+    "uccharan": "ˌaɡˈɔɾæ ˌɐ̃mplæmˈeɪŋtʃy dʒˌisponˈiveʊ pˈelw ˌaɾəkipˈɛlæɡʊ a kˌulinˈaɾjæ ʒˌavɐ̃nˈezæ iŋklˈuɪ ˌumæ vˌaɾiedˈadʒy dʒy prˈatʊs tˌeɪmpeɾˈadʊz dʒy mˌænˈeɪɾæ sˈimplys ʊs kˌoŋdʒimˈeɪŋtʊs prˌedominˈɐ̃ŋtʃyz dʒy prˌefeɾˈeɪŋsjæ ʒˌavɐ̃nˈezæ sˈeɪŋdw ˌæmeɪŋdoˈiŋ pˌimˈeɪŋtæs ˌasˈukar prˌiŋsipaʊmˈeɪŋtʃj ˌasˈukar dʒy kˈokʊ ʒˌavɐ̃nˈez i vˈaɾjæz ˌespesˌiaɾˈiæz ˌaɾomˈatʃikæs"
+   },
+   {
+    "id": "flores-devtest-12",
+    "text": "Um coquetel de anticorpos, ZMapp, inicialmente se mostrou promissor na área, mas estudos formais indicaram que ele tinha menos benefícios do que buscado na prevenção da morte.",
+    "reference": "ũŋ kˌoketˈɛʊ dʒj ˌɐ̃ŋtʃikˈoɾəpʊs zˈe mˈap ˌinisˌiaʊmˈeɪŋtʃy sy mostrˈow prˌomisˈor na ˈaɾeæ maz ˌestˈudʊs foɾəmˈaɪz ˌiŋdʒikˈaɾɐ̃ʊ̃ ky ˌely tʃˌiɲæ mˈenʊz bˌenefˈisjʊz dʊ ky bˌuskˈadʊ na prˌeveɪŋsˈɐ̃ʊ̃ da mˈɔɾətʃy",
+    "uccharan": "ũŋ kˌoketˈɛʊ dʒj ˌɐ̃ŋtʃikˈoɾəpʊs zmˈap ˌinisˌiaʊmˈeɪŋtʃy sy mostrˈow prˌomisˈor na ˈaɾeæ maz ˌestˈudʊs foɾəmˈaɪz ˌiŋdʒikˈaɾɐ̃ʊ̃ ky ˌely tʃˌiɲæ mˈenʊz bˌenefˈisjʊz dʊ ky bˌuskˈadʊ na prˌeveɪŋsˈɐ̃ʊ̃ da mˈɔɾətʃy"
+   },
+   {
+    "id": "flores-devtest-820",
+    "text": "Cuidado para não deixar o tecido esquentar muito (o que pode fazê-lo encolher ou, em casos mais graves, causar queimaduras).",
+    "reference": "kˌuɪdˈadʊ pˌaɾæ nˌɐ̃ʊ̃ deɪʃˈaɾ ʊ tˌesˈidw ˌeskeɪŋtˈar mwˈiŋtʊ ʊ ky pˌɔdʒy fazˈelw ˌeɪŋkoljˈeɾ ow ˈeɪŋ kˈazʊz mˈaɪz ɡrˈavys kaʊzˈar kˌeɪmadˈuɾæs",
+    "uccharan": "kˌuɪdˈadʊ pˌaɾæ nˌɐ̃ʊ̃ deɪʃˈaɾ ʊ tˌesˈidw ˌeskeɪŋtˈar mwˈiŋtw ʊ ky pˌɔdʒy fazˈelʊ ˌeɪŋkoljˈeɾ ow ˈeɪŋ kˈazʊz mˈaɪz ɡrˈavys kaʊzˈar kˌeɪmadˈuɾæs"
+   },
+   {
+    "id": "flores-devtest-833",
+    "text": "Os doces alemães são muito bons e, na Baviera, são bem caprichados e variados, parecidos com os do vizinho do sul, a Áustria.",
+    "reference": "ʊz dˈosyz ˌalemˈɐ̃ys sɐ̃ʊ̃ mwˈiŋtʊ bˈoŋz ˈɛ na bˌaviˈɛɾæ sɐ̃ʊ̃ bˈeɪŋ kˌapriʃˈadʊz i vˌaɾiˈadʊs pˌaɾesˈidʊs koŋ ʊz dʊ vˌizˈiɲʊ dʊ sˈuw a ˈaʊstriæ",
+    "uccharan": "ʊz dˈosyz ˌalemˈɐ̃ys sɐ̃ʊ̃ mwˈiŋtʊ bˈoŋz i na bˌaviˈɛɾæ sɐ̃ʊ̃ bˈeɪŋ kˌapriʃˈadʊz i vˌaɾiˈadʊs pˌaɾesˈidʊs koŋ ʊz dʊ vˌizˈiɲʊ dʊ sˈuw a ˈaʊstriæ"
+   },
+   {
+    "id": "flores-devtest-103",
+    "text": "Os satélites, ambos com peso superior a 1.000 libras e viajando a aproximadamente 17.500 milhas por hora, colidiram a 491 milhas de altitude.",
+    "reference": "ʊs sˌatˈɛlitʃys ˈɐ̃mbʊs koŋ pˈezʊ sˌupeɾiˈoɾ a mˈiʊ lˈibræz i vˌiaʒˈɐ̃ŋdw a ˌaprosˌimadæmˈeɪŋtʃy dˌezesˈɛtʃy mˈiʊ kˌiɲˈeɪŋtʊz mˈiljæs poɾ ˈɔɾæ kˌolidʒˈiɾɐ̃ʊ̃ a kwˈatrʊsˈeɪŋtʊzˌi novˈeɪŋtæiˈũŋ mˈiljæz dʒj ˌaʊtʃitˈudʒy",
+    "uccharan": "ʊs sˌatˈɛlitʃys ˈɐ̃mbʊs koŋ pˈezʊ sˌupeɾiˈoɾ a mˈiʊ lˈibræz i vˌiaʒˈɐ̃ŋdw a ˌaprosˌimadæmˈeɪŋtʃy dˌezesˈɛtʃy mˈiʊ kiɲˈeɪŋtʊz mˈiljæs por ˈɔɾæ kˌolidʒˈiɾɐ̃ʊ̃ a kwˈatrʊsˈeɪŋtʊzi novˈeɪŋtæiˈũŋ mˈiljæz dʒj ˌaʊtʃitˈudʒy"
+   },
+   {
+    "id": "flores-devtest-540",
+    "text": "Todo mundo pode alcançar o esclarecimento. A única coisa que atrapalha essa meta é a nossa própria tensão e negatividade.",
+    "reference": "tˈodʊ mˈũŋdʊ pˌɔdʒj ˌaʊkɐ̃ŋsˈaɾ u ˌesklaɾˌesimˈeɪŋtʊ a ˈunikæ kˈoɪzæ ky ˌatrapˈaljæ ˈɛsæ mˈetæ ɛ a nˌɔsæ prˈɔprjæ teɪŋsˈɐ̃ʊ̃ i nˌeɡatʃˌividˈadʒy",
+    "uccharan": "tˈodʊ mˈũŋdʊ pˌɔdʒy ˌaʊkɐ̃ŋsˈaɾ u ˌesklaɾˌesimˈeɪŋtʊ a ˈunikæ kˈoɪzæ ky ˌatrapˈaljæ ˈɛsæ mˈɛtæ ɛ a nˌɔsæ prˈɔprjæ teɪŋsˈɐ̃ʊ̃ i nˌeɡatʃˌividˈadʒy"
+   },
+   {
+    "id": "flores-devtest-396",
+    "text": "A maior parte da vida familiar hebraica acontecia ao ar livre.",
+    "reference": "a maɪˈɔr pˈaɾətʃy da vˈidæ fˌæmiliˈaɾ ˌebrˈaɪkæ ˌakoŋtesˈiæ aʊ ˈar lˈivry",
+    "uccharan": "a maɪˈɔr pˈaɾətʃy da vˈidæ fˌæmiliˈar ˌebrˈaɪkæ ˌakoŋtesˈiæ aʊ ˈar lˈivry"
+   },
+   {
+    "id": "flores-devtest-159",
+    "text": "Todas as entradas de cavernas, que foram nomeadas de \"As Sete Irmãs\", têm pelo menos de 100 a 250 metros (328 a 820 pés) de diâmetro.",
+    "reference": "tˈodæz az ˌeɪŋtrˈadæz dʒy kˌavˈɛɾənæs ky fˌoɾɐ̃ʊ̃ nˌomeˈadæz dʒy as sˈɛtʃj iɾəmˈɐ̃s teɪŋ pˈelʊ mˈenʊz dʒy sˈeɪŋ a dˌuzˈeɪŋtʊzˌi siŋkwˈeɪŋtæ mˈɛtrʊs trˌezˈeɪŋtʊzi vˈiŋtʃyiˈoɪtw a ˈoɪtʊsˈeɪŋtʊzi vˈiŋtʃy pˈɛs dʒy dʒjˈɐ̃metrʊ",
+    "uccharan": "tˈodæz az ˌeɪŋtrˈadæz dʒy kˌavˈɛɾənæs ky fˌoɾɐ̃ʊ̃ nˌomeˈadæz dʒj as sˈɛtʃj iɾəmˈɐ̃s teɪŋ pˈelʊ mˈenʊz dʒy sˈeɪŋ a dˌuzˈeɪŋtʊzi siŋkwˈeɪŋtæ mˈɛtrʊs trˌezˈeɪŋtʊzi vˈiŋtʃyiˈoɪtw a ˈoɪtʊsˈeɪŋtʊzi vˈiŋtʃy pˈɛz dʒy dʒjˈɐ̃metrʊ"
    }
   ]
  }

@@ -39,6 +39,7 @@ pub mod minijson;
 pub mod names;
 pub mod norm;
 pub mod normalize_api;
+pub mod packs;
 pub mod profile;
 pub mod rbnf;
 pub mod respell;
@@ -355,6 +356,13 @@ pub struct Phonemizer {
     wikipron: [std::sync::OnceLock<Data>; LANGS],
     /// Optional transliteration packs (`xlit-<lang>.ucd`, loaded at run time).
     translit: [std::sync::OnceLock<std::sync::Arc<translit::TranslitPack>>; LANGS],
+    /// Read a language whose word table is not available with its letter
+    /// rules alone instead of stopping.
+    rules_fallback: bool,
+    /// Look for the pack of a language at its first use.
+    auto: bool,
+    /// Languages whose pack was looked for and not found (rules fallback only).
+    looked: [std::sync::OnceLock<()>; LANGS],
 }
 
 impl Default for Phonemizer {
@@ -365,6 +373,9 @@ impl Default for Phonemizer {
             kokoro_packs: Default::default(),
             wikipron: std::array::from_fn(|_| std::sync::OnceLock::new()),
             translit: std::array::from_fn(|_| std::sync::OnceLock::new()),
+            rules_fallback: false,
+            auto: true,
+            looked: std::array::from_fn(|_| std::sync::OnceLock::new()),
         }
     }
 }
@@ -393,51 +404,97 @@ impl Phonemizer {
                 p.data[2] = d.into();
             }
         }
-        #[cfg(feature = "embed-ur")]
-        {
-            if let Ok(d) = Data::from_static(include_bytes!("../data/ur.ucd")) {
-                p.data[Lang::Ur.index()] = d.into();
+        // Word tables compiled in with `bundle` or an `embed-<tag>` feature.
+        #[cfg(feature = "tables")]
+        for l in Lang::ALL {
+            if let Some(d) = uccharan_data::table(l.tag()).and_then(|b| Data::from_static(b).ok()) {
+                p.data[l.index()] = d.into();
             }
         }
-        #[cfg(feature = "embed-sd")]
-        {
-            if let Ok(d) = Data::from_static(include_bytes!("../data/sd.ucd")) {
-                p.data[Lang::Sd.index()] = d.into();
-            }
-        }
-        // Word tables of the Latin-script languages.
-        macro_rules! table {
-            ($feature:literal, $lang:expr, $file:literal) => {
-                #[cfg(feature = $feature)]
-                {
-                    if let Ok(d) = Data::from_static(include_bytes!($file)) {
-                        p.data[$lang.index()] = d.into();
-                    }
-                }
-            };
-        }
-        table!("embed-de", Lang::De, "../data/de.ucd");
-        table!("embed-nl", Lang::Nl, "../data/nl.ucd");
-        table!("embed-fr", Lang::Fr, "../data/fr.ucd");
-        table!("embed-it", Lang::It, "../data/it.ucd");
-        table!("embed-pt-br", Lang::PtBr, "../data/pt-br.ucd");
-        table!("embed-pt", Lang::Pt, "../data/pt.ucd");
-        table!("embed-pl", Lang::Pl, "../data/pl.ucd");
-        table!("embed-tr", Lang::Tr, "../data/tr.ucd");
-        table!("embed-cs", Lang::Cs, "../data/cs.ucd");
-        table!("embed-sv", Lang::Sv, "../data/sv.ucd");
-        table!("embed-ca", Lang::Ca, "../data/ca.ucd");
-        table!("embed-ro", Lang::Ro, "../data/ro.ucd");
-        table!("embed-hu", Lang::Hu, "../data/hu.ucd");
-        table!("embed-fi", Lang::Fi, "../data/fi.ucd");
-        table!("embed-nb", Lang::Nb, "../data/nb.ucd");
-        table!("embed-da", Lang::Da, "../data/da.ucd");
         p
     }
 
-    /// A phonemizer with no data; load languages with [`Phonemizer::load`].
+    /// A phonemizer with no data; load languages with [`Phonemizer::load`]
+    /// or [`Phonemizer::load_pack`]. It never looks for packs by itself and
+    /// reads a language whose word table is not loaded with the letter rules
+    /// alone (see [`Phonemizer::rules_fallback`]).
     pub fn empty() -> Phonemizer {
-        Phonemizer::default()
+        let mut p = Phonemizer::default().rules_fallback(true);
+        p.auto = false;
+        p
+    }
+
+    /// Choose what happens when the word table of the requested language is
+    /// neither compiled in nor found as a pack. By default (`false`) that is
+    /// an error: [`Phonemizer::ensure`] returns it and the infallible calls
+    /// ([`Phonemizer::phonemize`], [`Phonemizer::analyze`] …) panic with the
+    /// same message, because the letter rules alone read such a language far
+    /// less accurately. With `true` the rules are used.
+    pub fn rules_fallback(mut self, yes: bool) -> Phonemizer {
+        self.rules_fallback = yes;
+        self
+    }
+
+    /// The language whose data image `lang` is read with.
+    fn data_lang(lang: Lang) -> Lang {
+        // Bhojpuri, Maithili and Magahi are read with the Hindi data.
+        if lang.hindi_like() {
+            Lang::Hi
+        } else {
+            lang
+        }
+    }
+
+    /// Names of the packs `lang` needs that are not loaded: its word table
+    /// when it has one. Empty for a language that is ready or needs no data.
+    pub fn missing_packs(&self, lang: Lang) -> Vec<&'static str> {
+        let l = Self::data_lang(lang);
+        match packs::pack(l.tag()) {
+            Some(p) if self.data[l.index()].get().is_none() => vec![p.name],
+            _ => Vec::new(),
+        }
+    }
+
+    /// Make `lang` ready: load its word table from `$UCCHARAN_DATA_DIR`, the
+    /// cache or (cargo feature `download`) the release when it is not loaded
+    /// yet. Call this once per language to get an error instead of a panic
+    /// in [`Phonemizer::phonemize`].
+    pub fn ensure(&self, lang: Lang) -> Result<(), packs::PackError> {
+        for name in self.missing_packs(lang) {
+            let bytes = packs::find(name)?;
+            self.load_pack(bytes)
+                .map_err(|reason| packs::PackError::Invalid {
+                    name: name.to_string(),
+                    reason,
+                })?;
+        }
+        Ok(())
+    }
+
+    /// `ensure` for the infallible calls. `main` is the requested language:
+    /// without its table the call stops unless the rules fallback is on. A
+    /// language met inside the text (another script) is loaded when its pack
+    /// is at hand and read with its rules otherwise.
+    fn want(&self, lang: Lang, main: bool) {
+        let l = Self::data_lang(lang);
+        if self.data[l.index()].get().is_some() || self.looked[l.index()].get().is_some() {
+            return;
+        }
+        if packs::pack(l.tag()).is_none() {
+            return;
+        }
+        if !self.auto {
+            // An empty phonemizer is filled by its owner.
+            let _ = self.looked[l.index()].set(());
+            return;
+        }
+        match self.ensure(l) {
+            Ok(()) => {}
+            Err(e) if main && !self.rules_fallback => panic!("uccharan: {e}"),
+            Err(_) => {
+                let _ = self.looked[l.index()].set(());
+            }
+        }
     }
 
     /// Load (or replace) the data image of a language.
@@ -479,10 +536,12 @@ impl Phonemizer {
         Ok(name)
     }
 
-    /// True when the language's data is available (always, for the
-    /// data-driven languages, whose rules are compiled in).
+    /// True when the language's data is loaded: its data image or word
+    /// table, or nothing at all for a language read by compiled-in rules
+    /// alone.
     pub fn has(&self, lang: Lang) -> bool {
-        self.data[lang.index()].get().is_some() || lang.file().is_some()
+        self.data[lang.index()].get().is_some()
+            || (lang.file().is_some() && packs::pack(lang.tag()).is_none())
     }
 
     /// True when the optional WikiPron pack of the language is loaded.
@@ -507,6 +566,7 @@ impl Phonemizer {
     /// Analyse text into sentences, clauses and words.
     pub fn analyze(&self, text: &str, opt: &Options) -> Vec<Sentence> {
         let compat = opt.mode == Mode::Compatible;
+        self.want(opt.lang, true);
         // Kaithi is read as the Devanagari it transliterates to.
         let owned_kaithi;
         let text = if kaithi::has_kaithi(text) {
@@ -541,7 +601,17 @@ impl Phonemizer {
         let mut cur = Sentence::default();
         for raw in text::clauses(text) {
             let mut items: Vec<norm::Item> = Vec::new();
-            for (ci, chunk) in raw.chunks.iter().enumerate() {
+            // "10 000": groups of three digits after a space are one number
+            // where the language writes numbers so.
+            let grouped;
+            let chunks: &[text::Chunk] = if opt.lang.latin().is_some_and(|l| l.numbers.group_space)
+            {
+                grouped = gnorm::join_groups(&raw.chunks, if compat { 6 } else { 3 });
+                &grouped
+            } else {
+                &raw.chunks
+            };
+            for (ci, chunk) in chunks.iter().enumerate() {
                 // "Maple Dr." / "Baker St.": after a capitalised name and not before
                 // another one, these are "drive" and "street", not titles.
                 if opt.normalize == Normalize::Natural
@@ -559,8 +629,8 @@ impl Phonemizer {
                         "Blvd" => Some("boulevard"),
                         _ => None,
                     };
-                    let prev = &raw.chunks[ci - 1];
-                    let next_is_name = raw.chunks.get(ci + 1).is_some_and(capital);
+                    let prev = &chunks[ci - 1];
+                    let next_is_name = chunks.get(ci + 1).is_some_and(capital);
                     if let Some(word) = road {
                         if capital(prev) && !prev.dot && !next_is_name {
                             items.push(norm::Item::word(word));
@@ -693,11 +763,13 @@ impl Phonemizer {
                 }
                 Lang::Sa if compat => out.extend(bho::span(&hi, span, last, true, lang)),
                 l if l.latin().is_some() => {
+                    self.want(l, false);
                     let t = self.data[l.index()].get();
                     out.extend(l.latin().unwrap().span(span, last, compat, l, t));
                 }
                 l if l.indic().is_some() => {
                     let g = l.indic().unwrap();
+                    self.want(l, false);
                     out.extend(g.span(span, last, compat, l, self.data[l.index()].get()));
                 }
                 l => {

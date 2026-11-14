@@ -5,74 +5,66 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 154565,
-  "per": 0.007226733089638664,
-  "per_without_stress": 0.0039454467510008934,
-  "exact_sentence": 0.6650197628458498,
-  "exact_sentence_without_stress": 0.8191699604743083,
-  "piper_shape_per": 0.00726518896507734,
-  "piper_shape_exact_sentence": 0.6551383399209486,
+  "per": 0.00678678872966066,
+  "per_without_stress": 0.003698402203056086,
+  "exact_sentence": 0.6679841897233202,
+  "exact_sentence_without_stress": 0.8231225296442688,
+  "piper_shape_per": 0.006831446340296603,
+  "piper_shape_exact_sentence": 0.658102766798419,
   "word_count_mismatch_sentences": 149,
   "errors_by_class": {
    "stress": {
-    "count": 582,
-    "share": 0.5210384959713519,
-    "per_contribution": 0.0037654061398117297
+    "count": 547,
+    "share": 0.5214489990467112,
+    "per_contribution": 0.0035389641898230517
    },
    "vowel": {
-    "count": 248,
-    "share": 0.22202327663384064,
-    "per_contribution": 0.0016045029599197748
+    "count": 226,
+    "share": 0.21544327931363202,
+    "per_contribution": 0.0014621680199268915
    },
    "consonant": {
-    "count": 181,
-    "share": 0.162041181736795,
-    "per_contribution": 0.0011710283699414485
+    "count": 173,
+    "share": 0.16491897044804577,
+    "per_contribution": 0.0011192702099440364
    },
    "other": {
-    "count": 75,
-    "share": 0.06714413607878246,
-    "per_contribution": 0.00048523274997573835
+    "count": 72,
+    "share": 0.06863679694947569,
+    "per_contribution": 0.00046582343997670885
    },
    "word-boundary": {
     "count": 27,
-    "share": 0.024171888988361683,
+    "share": 0.025738798856053385,
     "per_contribution": 0.0001746837899912658
    },
    "length": {
     "count": 3,
-    "share": 0.0026857654431512983,
+    "share": 0.002859866539561487,
     "per_contribution": 1.9409309999029535e-05
    },
    "diacritic": {
     "count": 1,
-    "share": 0.0008952551477170994,
+    "share": 0.0009532888465204957,
     "per_contribution": 6.469769999676511e-06
    }
   },
   "top_confusions": [
    {
     "edit": "ˈ→∅",
-    "count": 271
+    "count": 272
    },
    {
     "edit": "∅→ˈ",
-    "count": 227
-   },
-   {
-    "edit": "∅→ɛ",
-    "count": 29
-   },
-   {
-    "edit": "ɛ→∅",
-    "count": 28
+    "count": 223
    },
    {
     "edit": "o→ɔ",
     "count": 27
    },
    {
-    "edit": "∅→ˌ",
-    "count": 25
+    "edit": "ɛ→∅",
+    "count": 26
    },
    {
     "edit": "i→ɪ",
@@ -83,16 +75,16 @@
     "count": 20
    },
    {
-    "edit": "ˌ→∅",
-    "count": 19
-   },
-   {
     "edit": "u→ʊ",
-    "count": 17
+    "count": 18
    },
    {
     "edit": "ɔ→o",
-    "count": 15
+    "count": 16
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 16
    },
    {
     "edit": "ɪ→i",
@@ -100,22 +92,30 @@
    },
    {
     "edit": "ʊ→u",
-    "count": 14
-   },
-   {
-    "edit": "e→ɛ",
     "count": 13
    },
    {
-    "edit": "∅→ɯ",
-    "count": 12
+    "edit": "e→ɛ",
+    "count": 11
    },
    {
-    "edit": "ɯ→i",
+    "edit": "∅→ɯ",
     "count": 11
    },
    {
     "edit": "ɪ→∅",
+    "count": 10
+   },
+   {
+    "edit": "∅→ɛ",
+    "count": 10
+   },
+   {
+    "edit": "ɛ→e",
+    "count": 10
+   },
+   {
+    "edit": "ɯ→ɪ",
     "count": 10
    },
    {
@@ -131,10 +131,6 @@
     "count": 8
    },
    {
-    "edit": "ɛ→e",
-    "count": 8
-   },
-   {
     "edit": "i→∅",
     "count": 7
    },
@@ -147,84 +143,34 @@
     "count": 7
    },
    {
-    "edit": "ɯ→ɪ",
-    "count": 7
+    "edit": "ɡ→ɟ",
+    "count": 6
+   },
+   {
+    "edit": "ɯ→i",
+    "count": 6
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 14882,
-    "wrong": 329,
-    "rate": 0.022107243650047036
+    "wrong": 325,
+    "rate": 0.021838462572234915
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 201,
-    "per": 0.014698691212426292,
-    "exact_sentence": 0.527363184079602
+    "per": 0.013979577160937725,
+    "exact_sentence": 0.5323383084577115
    },
    "no-digits": {
     "sentences": 811,
-    "per": 0.005058430717863105,
-    "exact_sentence": 0.6991368680641183
+    "per": 0.004699499165275459,
+    "exact_sentence": 0.7016029593094945
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-548",
-    "text": "17 Eylül 1939'da Polonya savunması çoktan dağılmıştı ve tek ümit Romanya köprübaşı boyunca geri çekilip yeniden örgütlenmekti.",
-    "reference": "ˌonjedˈi ɛjlˈøl bˈin dˈokuzjˈyz otˌuzdˈokuz dˈa poɫɔnjˈa savʊnmasˈɯ tʃɔktˈan daːɯɫmɯʃtˈɯ vɛ tˈɛk ymˈɪt romanjˈa kœprybaʃˈɯ bojʊndʒˈa ɟeɾˈɪ tʃekilˈɪp jenidˈæn œrɟøtlænmɛktˈɪ",
-    "uccharan": "ˌonjedˈi ɛjlˈøl bˈin dˈokuzjˈyz otˌuzdˈokuz da poɫɔnjˈa savʊnmasˈɯ tʃɔktˈan daːɯɫmɯʃtˈɯ vɛ tˈɛk ymˈɪt romanjˈa kœprybaʃˈɯ bojʊndʒˈa ɟeɾˈɪ tʃekilˈɪp jenidˈæn œrɟøtlˈænmɛktɪ"
-   },
-   {
-    "id": "flores-devtest-985",
-    "text": "Çoğu modern araştırma teleskobu, uygun atmosfer koşullarına sahip ücra bölgelerdeki devasa tesislerdir.",
-    "reference": "tʃoːˈʊ modˈɛrn aɾˈaʃtɯrma telɛskobˈʊ ʊjɡˈʊn atmɔsfˈɛr koʃʊɫɫaɾɯnˈa sahˈɪp ødʒrˈa bœlɟelɛrdekˈɪ devˈasa tesɪslˈɛrdɪr",
-    "uccharan": "tʃoːˈʊ modˈɛrn aɾˈaʃtɯrma telɛskobˈʊ ʊjɡˈʊn atmɔsfˈɛr koʃʊɫɫaɾɯnˈa sahˈɪp ødʒrˈa bœlɟelɛrdekˈɪ devˈasa tesɪslɛrdˈɪr"
-   },
-   {
-    "id": "flores-devtest-607",
-    "text": "Bir örnek de Borneo'daki orangutanları ziyaret etmek, fotoğraflarını çekmek ve haklarında bilgi edinmektir.",
-    "reference": "bɪr œrnˈɛk dɛ bɔrneodakˈɪ oɾanɡutanɫaɾˈɯ zijaɾˈɛt ɛtmˈɛk fotoːɾafɫaɾɯnˈɯ tʃɛkmˈɛk vɛ hakɫaɾɯndˈa bɪlɡˈɪ edɪnmˈɛktɪr",
-    "uccharan": "bɪr œrnˈɛk dɛ bɔrneɔdakˈɪ oɾanɡʊtanɫaɾˈɯ zijaɾˈɛt ɛtmˈɛk fotoːɾafɫaɾɯnˈɯ tʃɛkmˈɛk vɛ hakɫaɾɯndˈa bɪlɡˈɪ edɪnmˈɛktɪr"
-   },
-   {
-    "id": "flores-devtest-240",
-    "text": "Gianarlo Fisichella arabasının kontrolünü kaybetti ve starttan çok kısa bir süre sonra yarışı bitirdi.",
-    "reference": "ɟianarɫˈɔ fisɪdʒhˈælɫa aɾabasɯnˈɯn kɔntrolynˈø kajbetːˈɪ vɛ startːˈan tʃˈɔk kˈɯsa bɪr syɾˈɛ sɔnrˈa jaɾɯʃˈɯ bitɪrdˈɪ",
-    "uccharan": "ɟianarɫˈɔ fisɪdʒhælɫˈa aɾabasɯnˈɯn kɔntrolynˈø kajbetːˈɪ vɛ startːˈan tʃˈɔk kˈɯsa bɪr syɾˈɛ sɔnrˈa jaɾɯʃˈɯ bitɪrdˈɪ"
-   },
-   {
-    "id": "flores-devtest-139",
-    "text": "Bu çökelti, vahşi yaşam habitatları yaratan kumsalların ve sahil kordonlarının oluşması için gerekliydi.",
-    "reference": "bʊ tʃœkæltˈɪ vahʃˈɪ jaʃˈam habitatɫaɾˈɯ jˈaɾatan kʊmsaɫɫaɾˈɯn vɛ sahˈɪl kɔrdɔnɫaɾɯnˈɯn oɫʊʃmasˈɯ itʃˈɪn ɟeɾɛklɪjdˈɪ",
-    "uccharan": "bʊ iœkæltˈɪ vahʃˈɪ jaʃˈam habitatɫaɾˈɯ jˈaɾatan kʊmsaɫɫaɾˈɯn vɛ sahˈɪl kɔrdɔnɫaɾɯnˈɯn oɫʊʃmasˈɯ itʃˈɪn ɟeɾɛklɪjdˈɪ"
-   },
-   {
-    "id": "flores-devtest-237",
-    "text": "Perşembe günkü Tokyo Game Show'un açılış sunumunda Nintendo başkanı Satoru Iwata, şirketin yeni Nintendo Revolution konsolunun kumanda tasarımını açıkladı.",
-    "reference": "pɛrʃæmbˈɛ ɟønkˈø tɔkjˈɔ ɡˈamɛ showˈʊn atʃɯɫˈɯʃ sunumʊndˈa nɪntændˈɔ baʃkanˈɯ satoɾˈʊ ɯwatˈa ʃɪrketˈɪn jenˈɪ nɪntændˈɔ revoɫutiˈɔn kɔnsoɫunˈʊn kumandˈa tasaɾɯmɯnˈɯ atʃˈɯkɫadɯ",
-    "uccharan": "pɛrʃæmbˈɛ ɟønkˈø tɔkjˈɔ ɡˈamɛ showˈʊn atʃɯɫˈɯʃ sunumʊndˈa nɪntændˈɔ baʃkanˈɯ satoɾˈʊ iwatˈa ʃɪrketˈɪn jenˈɪ nɪntændˈɔ rɛvoɫʊtiˈɔn kɔnsoɫunˈʊn kumandˈa tasaɾɯmɯnˈɯ atʃˈɯkɫadɯ"
-   },
-   {
-    "id": "flores-devtest-972",
-    "text": "Özellikle yazın popüler bir akşam yemeği; ekmek, zeytinyağı, domates ve kolaylıkla bulunabilen peynir, tonbalığı vb. lezzet vericileri içeren Pa amb Oli'dir.",
-    "reference": "œzællˈɪklɛ jazˈɯn popylˈɛr bɪr akʃˈam jemejˈɪ ɛkmˈɛk zɛjtɪnjaːˈɯ domatˈɛs vɛ koɫajɫˈɯkɫa buɫunabilˈæn pɛjnˈɪr tɔnbaɫɯɯˈɯ vˌɛbˈɛ lɛzzˈɛt veɾidʒileɾˈɪ itʃeɾˈæn pˈa ˈamb olˈidɪr",
-    "uccharan": "œzællˈɪklɛ jazˈɯn popylˈɛr bɪr akʃˈam jemejˈɪ ɛkmˈɛk zɛjtɪnjaːˈɯ domatˈɛs vɛ koɫajɫˈɯkɫa buɫunabilˈæn pɛjnˈɪr tɔnbaɫɯɯˈɯ vˌɛbˈɛ lɛzzˈɛt veɾidʒileɾˈɪ itʃeɾˈæn pˈa ˈamb olɪdˈɪr"
-   },
-   {
-    "id": "flores-devtest-756",
-    "text": "FIC West mağazasının karşısındaki Stanley'de bulunan adaların tek bankasında döviz bozdura bilirsiniz.",
-    "reference": "fˌɛˌɯdʒˈɛ wˈɛst maːzasɯnˈɯn karʃɯsɯndakˈɪ stanlɛjdˈɛ buɫunˈan adaɫaɾˈɯn tˈɛk bankasɯndˈa dˈœvɪz bɔzduɾˈa bilˈɪrsinɪz",
-    "uccharan": "fˌɛˌidʒˈɛ wˈɛst maːzasɯnˈɯn karʃɯsɯndakˈɪ stanlejdˈɛ buɫunˈan adaɫaɾˈɯn tˈɛk bankasɯndˈa dˈœvɪz bɔzduɾˈa bilˈɪrsinɪz"
-   },
-   {
-    "id": "flores-devtest-946",
-    "text": "Haldarsvík köyü, yakındaki Eysturoy adasından manzaralar sunar ve sıra dışı bir sekizgen kiliseye sahiptir.",
-    "reference": "haɫdarsvˈɪk kœjˈø jakɯndakˈɪ ɛjstuɾˈɔj adasɯndˈan manzˈaɾaɫar sunˈar vɛ sɯɾˈa dɯʃˈɯ bɪr sekɪzɟˈæn kilˈisejɛ sahˈɪptɪr",
-    "uccharan": "haɫdarsvˈik kœjˈø jakɯndakˈɪ ɛjstʊɾˈɔj adasɯndˈan manzˈaɾaɫar sunˈar vɛ sɯɾˈa dɯʃˈɯ bɪr sekɪzɟˈæn kilˈisejɛ sahˈɪptɪr"
-   },
    {
     "id": "flores-devtest-658",
     "text": "İki popüler içerik teorisi, Maslow'un İhtiyaçlar Hiyerarşisi Teorisi ve Hertzberg'in İki Faktör Teorisidir.",
@@ -242,6 +188,60 @@
     "text": "Pullu ayakları ve pençeleri var, yumurtluyorlar ve bir T-Rex gibi iki arka ayakları üzerinde yürüyorlar.",
     "reference": "pʊɫɫˈʊ ajakɫaɾˈɯ vɛ pæntʃeleɾˈɪ vˈar jumʊrtɫˈujɔrɫar vɛ bɪr tˈɛɾˈɛks ɟibˈɪ ikˈɪ arkˈa ajakɫaɾˈɯ yzeɾɪndˈɛ jyɾˈyjɔrɫar",
     "uccharan": "pʊɫɫˈʊ ajakɫaɾˈɯ vɛ pæntʃeleɾˈɪ vˈar jumʊrtlˈujɔrɫar vɛ bɪr tˈɛrˈɛks ɟibˈɪ ikˈɪ arkˈa ajakɫaɾˈɯ yzeɾɪndˈɛ jyɾˈyjɔrɫar"
+   },
+   {
+    "id": "flores-devtest-13",
+    "text": "PALM deneyinde ZMapp kontrol grubunda kullanıldı. Yani bilim adamları bu numuneyi referans aldı ve diğer üç tedaviyi bu numunenin verileriyle karşılaştırdı.",
+    "reference": "pˈaɫm denejɪndˈɛ zˈɛ mˈapː kɔntrˈɔɫ ɡrubʊndˈa kʊɫɫanɯɫdˈɯ janˈɪ bˈilɪm adamɫaɾˈɯ bʊ numunejˈɪ refeɾˈans aɫdˈɯ vɛ dijˈɛr ˈøtʃ tedavijˈɪ bʊ numunenˈɪn veɾileɾˈɪjlɛ karʃɯɫˈaʃtɯrdɯ",
+    "uccharan": "pˈaɫm denejɪndˈɛ zmˈapː kɔntrˈɔɫ ɡrubʊndˈa kʊɫɫanɯɫdˈɯ janˈɪ bˈilɪm adamɫaɾˈɯ bʊ numunejˈɪ refeɾˈans aɫdˈɯ vɛ dijˈɛr ˈøtʃ tedavijˈɪ bʊ numunenˈɪn veɾileɾˈɪjlɛ karʃɯɫˈaʃtɯrdɯ"
+   },
+   {
+    "id": "flores-devtest-622",
+    "text": "Günümüzde, kanatlarını geriye doğru katlayamayan böcek türleri yalnızca yusufçuklar ve mayıs sinekleridir.",
+    "reference": "ɟynˈymøzdɛ kanatɫaɾɯnˈɯ ɟeɾijˈɛ doːɾˈʊ katɫajamajˈan bœdʒˈɛk tørleɾˈɪ jaɫnɯzdʒˈa jusʊftʃʊkɫˈar vɛ majˈɯs sinɛkleɾˈidɪr",
+    "uccharan": "ɟynˈymøzdɛ kanatɫaɾɯnˈɯ ɟeɾijˈɛ doːɾˈʊ katɫajˈamajan bœdʒˈɛk tørleɾˈɪ jaɫnɯzdʒˈa jusʊftʃʊkɫˈar vɛ majˈɯs sinɛkleɾˈidɪr"
+   },
+   {
+    "id": "flores-devtest-15",
+    "text": "USOC'nin; lisans iptali yerine kurumumuzda mantıklı değişiklikler yapmaya devam ederek atletlerimizin, kulüplerimizin ve yaptıkları sporların çıkarlarına daha iyi hizmet edilebileceği yönündeki beyanına katılıyoruz.",
+    "reference": "usɔdʒnˈɪn lisˈans ɪptalˈɪ jeɾinˈɛ kuɾumˈumʊzda mantɯkɫˈɯ dejiʃɪklɪklˈɛr jˈapmaja devˈam edeɾˈɛk atlɛtleɾˈimizɪn kuløpleɾˈimizɪn vɛ japtɯkɫaɾˈɯ spɔrɫaɾˈɯn tʃɯkarɫaɾɯnˈa dahˈa ijˈi hɪzmˈɛt edilebiledʒejˈɪ jœnøndekˈɪ bejanɯnˈa katɯɫˈɯjoɾʊz",
+    "uccharan": "ʊsodʒnˈɪn lisˈans ɪptalˈɪ jeɾinˈɛ kuɾumˈumʊzda mantɯkɫˈɯ dejiʃɪklɪklˈɛr jˈapmaja devˈam edeɾˈɛk atlɛtlˈeɾimizɪn kuløpleɾˈimizɪn vɛ japtɯkɫaɾˈɯ spɔrɫaɾˈɯn tʃɯkarɫaɾɯnˈa dahˈa ijˈi hɪzmˈɛt edilebiledʒejˈɪ jœnøndekˈɪ bejanɯnˈa katɯɫˈɯjoɾʊz"
+   },
+   {
+    "id": "flores-devtest-687",
+    "text": "Örneğin, Kuzey Carolina'daki Bennet Okulu'ndan öğrenciler her yıl Eyalet Başkenti'ne yaptıkları gezilerle ilgili bir web sitesi tasarlarlar, her yıl web sitesi yeniden düzenlenir, ancak eski sürümler bir not defteri olarak kullanılmak üzere çevrimiçi olarak tutulur.",
+    "reference": "œrnejˈɪn kuzˈɛj dʒaɾolinadakˈɪ bænnˈɛt okuɫʊndˈan œːɾændʒilˈɛr hˈɛr jˈɯɫ ejalˈɛt baʃkæntinˈɛ japtɯkɫaɾˈɯ ɟezilˈɛrlɛ ɪlɟilˈɪ bɪr wˈɛb sitesˈɪ tasarɫarɫˈar hˈɛr jˈɯɫ wˈɛb sitesˈɪ jenidˈæn dyzænlenˈɪr andʒˈak ɛskˈɪ sˈyɾømlɛr bɪr nˈɔt dɛfteɾˈɪ oɫaɾˈak kʊɫɫanɯɫmˈak yzeɾˈɛ tʃɛvrimitʃˈɪ oɫaɾˈak tutuɫˈʊr",
+    "uccharan": "œrnejˈɪn kuzˈɛj dʒaɾolinadakˈɪ bænnˈɛt okuɫʊndˈan œːɾændʒilˈɛr hˈɛr jˈɯɫ ejalˈɛt baʃkæntɪnˈɛ japtɯkɫaɾˈɯ ɟezilˈɛrlɛ ɪlɟilˈɪ bɪr wˈɛb sitesˈɪ tasarɫˈarɫar hˈɛr jˈɯɫ wˈɛb sitesˈɪ jenidˈæn dyzænlenˈɪr andʒˈak ɛskˈɪ syɾømlˈɛr bɪr nˈɔt dɛfteɾˈɪ oɫaɾˈak kʊɫɫanɯɫmˈak yzeɾˈɛ tʃɛvrimitʃˈɪ oɫaɾˈak tutuɫˈʊr"
+   },
+   {
+    "id": "flores-devtest-379",
+    "text": "Bitkiler insanların soluduğu oksijeni üretir ve insanların çıkardığı (yani soluk verdiği) karbondioksiti alır.",
+    "reference": "bɪtkilˈɛr ɪnsanɫaɾˈɯn soɫudˈʊː ɔksiʒenˈɪ yɾetˈɪr vɛ ɪnsanɫaɾˈɯn tʃɯkardɯɯˈɯ janˈɪ soɫˈʊk vɛrdijˈɪ karbɔndiɔksitˈɪ aɫˈɯr",
+    "uccharan": "bɪtkilˈɛr ɪnsanɫaɾˈɯn soɫˈudʊː ɔksiʒenˈɪ yɾetˈɪr vɛ ɪnsanɫaɾˈɯn tʃɯkardɯɯˈɯ janˈɪ soɫˈʊk vɛrdijˈɪ karbɔndiɔksitˈɪ aɫˈɯr"
+   },
+   {
+    "id": "flores-devtest-581",
+    "text": "İç zehirlenmenin en önemli belirtisi, açık bir ilaç kabı veya zehirli ev kimyasalları bulunması olabilir.",
+    "reference": "ˈɪtʃ zehɪrlˈænmenɪn ˈæn œnæmlˈɪ belɪrtisˈɪ atʃˈɯk bɪr iɫˈatʃ kabˈɯ vejˌa zehɪrlˈɪ ˈɛv kɪmjasaɫɫaɾˈɯ buɫʊnmasˈɯ oɫabilˈɪr",
+    "uccharan": "ˈɪtʃ zehɪrlænmˈenɪn ˈæn œnæmlˈɪ belɪrtisˈɪ atʃˈɯk bɪr iɫˈatʃ kabˈɯ vejˌa zehɪrlˈɪ ˈɛv kɪmjasaɫɫaɾˈɯ buɫʊnmasˈɯ oɫabilˈɪr"
+   },
+   {
+    "id": "flores-devtest-540",
+    "text": "Herkes aydınlanmaya erişebilir. Bu hedefin yolunda engel olan tek şey kendi gerginliğimiz ve olumsuzluğumuzdur.",
+    "reference": "hɛrkˈɛs ajdɯnɫˈanmaja eɾiʃebilˈɪr bʊ hedefˈɪn joɫʊndˈa ænɟˈæl oɫˈan tˈɛk ʃˈɛj kændˈɪ ɟɛrɟɪnlˈijimɪz vɛ oɫʊmsʊzɫˈuːmʊzdʊr",
+    "uccharan": "hɛrkˈɛs ajdɯnɫˈanmaja eɾiʃebilˈɪr bʊ hedefˈɪn joɫʊndˈa ænɟˈæl oɫˈan tˈɛk ʃˈɛj kændˈɪ ɟɛrɟɪnlˈijimɪz vɛ oɫʊmsʊzɫuːˈuːmʊzdʊr"
+   },
+   {
+    "id": "flores-devtest-407",
+    "text": "Normandiya Çıkarması ve sonraki savaşlar Fransa'nın kuzeyini özgürleştirdi ancak güney hala işgal altındaydı.",
+    "reference": "nɔrmandijˈa tʃɯkarmasˈɯ vɛ sɔnrakˈɪ savaʃɫˈar fransanˈɯn kuzejinˈɪ œzɟørlˈɛʃtɪrdɪ andʒˈak ɟynˈɛj hˈaɫa ɪʃɡˈaɫ aɫtɯndajdˈɯ",
+    "uccharan": "nɔrmandijˈa tʃɯkarmasˈɯ vɛ sɔnrakˈɪ savaʃɫˈar fransanˈɯn kuzejinˈɪ œzɟørlɛʃtɪrdˈɪ andʒˈak ɟynˈɛj hˈaɫa ɪʃɡˈaɫ aɫtɯndajdˈɯ"
+   },
+   {
+    "id": "flores-devtest-153",
+    "text": "Oyunlar gündüz saat 10:00'da başladı, hava harikaydı ve erken saatlerde hafifçe çiseleyen yağmurun dışında gün 7's ragbi için harikulade bir gündü.",
+    "reference": "ojʊnɫˈar ɟˈøndøz saˈat ˈon sɯfˈɯr sɯfˈɯr dˈa bˈaʃɫadɯ havˈa haɾikajdˈɯ vɛ ˈɛrcæn saatlɛrdˈɛ hafˈɪftʃɛ tʃiselejˈæn jaːmuɾˈʊn dɯʃɯndˈa ɟˈøn jedˈi s raɡbˈɪ itʃˈɪn haɾikˈuɫadɛ bɪr ɟøndˈø",
+    "uccharan": "ojʊnɫˈar ɟˈøndøz saˈat ˈon sɯfˈɯr sɯfˈɯr da bˈaʃɫadɯ havˈa haɾikajdˈɯ vɛ ˈɛrcæn saatlɛrdˈɛ hafˈɪftʃɛ tʃiselejˈæn jaːmuɾˈʊn dɯʃɯndˈa ɟˈøn jedˈi sˈɛ raɡbˈɪ itʃˈɪn haɾikˈuɫadɛ bɪr ɟøndˈø"
    }
   ]
  }

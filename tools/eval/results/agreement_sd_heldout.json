@@ -5,141 +5,125 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 198107,
-  "per": 0.015193809406028056,
-  "per_without_stress": 0.011479364475763806,
-  "exact_sentence": 0.5108695652173914,
-  "exact_sentence_without_stress": 0.5335968379446641,
-  "piper_shape_per": 0.01515280114632064,
-  "piper_shape_exact_sentence": 0.5059288537549407,
+  "per": 0.012952596324208634,
+  "per_without_stress": 0.009043267459685565,
+  "exact_sentence": 0.549407114624506,
+  "exact_sentence_without_stress": 0.6106719367588933,
+  "piper_shape_per": 0.012936048688671096,
+  "piper_shape_exact_sentence": 0.5444664031620553,
   "word_count_mismatch_sentences": 814,
   "errors_by_class": {
    "stress": {
-    "count": 1115,
-    "share": 0.3704318936877076,
-    "per_contribution": 0.005628271590605077
+    "count": 1058,
+    "share": 0.4123148869836321,
+    "per_contribution": 0.005340548289560692
    },
    "vowel": {
-    "count": 803,
-    "share": 0.26677740863787375,
-    "per_contribution": 0.004053365100677916
-   },
-   "other": {
-    "count": 435,
-    "share": 0.14451827242524917,
-    "per_contribution": 0.002195783086917676
+    "count": 659,
+    "share": 0.2568199532346064,
+    "per_contribution": 0.003326485182249996
    },
    "consonant": {
-    "count": 378,
-    "share": 0.12558139534883722,
-    "per_contribution": 0.0019080597858732906
+    "count": 323,
+    "share": 0.12587685113016367,
+    "per_contribution": 0.0016304320392515157
+   },
+   "other": {
+    "count": 260,
+    "share": 0.10132501948558068,
+    "per_contribution": 0.0013124220749393006
    },
    "word-boundary": {
-    "count": 160,
-    "share": 0.053156146179401995,
-    "per_contribution": 0.0008076443538088003
+    "count": 161,
+    "share": 0.0627435697583788,
+    "per_contribution": 0.0008126921310201053
    },
    "length": {
-    "count": 117,
-    "share": 0.03887043189368771,
-    "per_contribution": 0.0005905899337226852
+    "count": 102,
+    "share": 0.03975058456742011,
+    "per_contribution": 0.0005148732755531102
    },
    "diacritic": {
-    "count": 2,
-    "share": 0.000664451827242525,
-    "per_contribution": 1.0095554422610004e-05
+    "count": 3,
+    "share": 0.0011691348402182386,
+    "per_contribution": 1.5143331633915005e-05
    }
   },
   "top_confusions": [
+   {
+    "edit": "∅→ˈ",
+    "count": 225
+   },
    {
     "edit": "ˌ→ˈ",
     "count": 222
    },
    {
-    "edit": "∅→ˈ",
-    "count": 206
-   },
-   {
     "edit": "ˈ→∅",
-    "count": 179
+    "count": 219
    },
    {
     "edit": "ˌ→∅",
-    "count": 171
-   },
-   {
-    "edit": "∅→a",
-    "count": 147
+    "count": 176
    },
    {
     "edit": " →∅",
-    "count": 144
+    "count": 145
    },
    {
     "edit": "e→∅",
-    "count": 141
+    "count": 144
    },
    {
     "edit": "ː→i",
-    "count": 126
+    "count": 124
    },
    {
-    "edit": "ː→∅",
-    "count": 103
+    "edit": "∅→a",
+    "count": 104
    },
    {
     "edit": "∅→b",
-    "count": 101
+    "count": 100
    },
    {
-    "edit": "∅→ˌ",
-    "count": 89
+    "edit": "ː→∅",
+    "count": 86
    },
    {
     "edit": "a→∅",
-    "count": 75
+    "count": 81
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 71
    },
    {
     "edit": "ˈ→ˌ",
     "count": 68
    },
    {
-    "edit": "ə→∅",
-    "count": 58
-   },
-   {
-    "edit": "h→∅",
-    "count": 55
-   },
-   {
     "edit": "i→∅",
-    "count": 48
+    "count": 52
    },
    {
     "edit": "ɪ→∅",
-    "count": 47
+    "count": 42
    },
    {
-    "edit": "∅→ə",
-    "count": 34
+    "edit": "h→∅",
+    "count": 26
    },
    {
-    "edit": "ə→ʌ",
-    "count": 28
-   },
-   {
-    "edit": "ʋ→ː",
-    "count": 24
+    "edit": "ə→∅",
+    "count": 23
    },
    {
     "edit": "l→∅",
     "count": 22
    },
    {
-    "edit": "j→i",
-    "count": 22
-   },
-   {
-    "edit": "ɪ→a",
+    "edit": "∅→e",
     "count": 19
    },
    {
@@ -147,101 +131,117 @@
     "count": 19
    },
    {
-    "edit": "h→a",
+    "edit": "i→ː",
     "count": 18
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 17
+   },
+   {
+    "edit": "ə→ʌ",
+    "count": 17
+   },
+   {
+    "edit": "∅→ə",
+    "count": 17
+   },
+   {
+    "edit": "∅→ː",
+    "count": 16
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 4253,
-    "wrong": 85,
-    "rate": 0.019985892311309664
+    "wrong": 77,
+    "rate": 0.018104867152598167
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 201,
-    "per": 0.03642573871581505,
-    "exact_sentence": 0.19402985074626866
+    "per": 0.03404167526304931,
+    "exact_sentence": 0.22388059701492538
    },
    "no-digits": {
     "sentences": 811,
-    "per": 0.009198363584578338,
-    "exact_sentence": 0.5893958076448829
+    "per": 0.006997488413039538,
+    "exact_sentence": 0.6300863131935882
    }
   },
   "examples_of_disagreement": [
    {
-    "id": "flores-devtest-141",
-    "text": "سونامي جي ڪا بہ آگاهي جاري نہ ڪئي ويئي آهي، ۽ جڪارتا جي جيو فزڪس جي ايجنسي موجب ڪا بہ سونامي آگاهي جاري نہ ڪئي ويندي ڇاڪاڻ تہ زلزلو 6.5 ميگنيٽيوڊ جي گهربل مقدار تي پورو نٿو لهي.",
-    "reference": "soːnˈaːmi ɟˈeː kˈaː bˈɪ aːɡˈaːhi ɟˈaːri nˈʌh kˈʌi ʋˈeːi ˌaːheː ˈaẽ ɟˌəkaːrˈʌt̪aː ɟˈeː ɟjˈoː fˌəzəkˈʌs ɟˈeː eːɟˈʌnsi moːɟˈʌb kˈaː bˈɪ soːnˈaːmi aːɡˈaːhi ɟˈaːri nˈʌh kˈʌi ʋˈeːndi cʰaːkˈaːɳ t̪ˈʌh zˌalzˈaloː cʰˌaha ɖˌahaːi pˈanɟa mˌeːɡniʈjˈoːɖ ɟˈeː ɡˌəhərəbˈʌl mˌəqdˈaːr t̪ˈeː pˈoːroː nˈʌtʰoː lˈʌhi",
-    "uccharan": "soːnˈaːmi ɟˈeː kˈaː bˈɪ aːɡˈaːhi ɟˈaːri nˈʌh kˈʌi ʋˈeːi ˌaːheː ˈaẽ ɟˌəkaːrˈʌt̪aː ɟˈeː ɟjˈoː fˌəzəkˈʌs ɟˈeː eːɟˈʌnsi moːɟˈʌb kˈaː bˈɪ soːnˈaːmi aːɡˈaːhi ɟˈaːri nˈʌh kˈʌi ʋˈeːndi cʰaːkˈaːɳ t̪ˈʌh zˌalzˈaloː cʰˈaha pˈanɟa mˌeːɡniʈjˈoːɖ ɟˈeː ɡˌəhərəbˈʌl mˌəqdˈaːr t̪ˈeː pˈoːroː nˈʌtʰoː lˈʌhi"
+    "id": "flores-devtest-720",
+    "text": "آفريقي دنيا جي خاص عجوبن جي هينري لوئيس گيٽس جي PBS دوران اهو هڪ وڏين رڪاوٽن مان هڪ هئي.",
+    "reference": "ˌaːfrˈiːqi dˈʌnjaː ɟˈeː xˈaːʂ ˌaɟoːbˈʌn ɟˈeː heːnˈʌri loːˈiːs ɡeːʈˈʌs ɟˈeː pˈiː bˈiː ˈɛs doːrˈaːn ˈɪhoː hˈɪkʊ ʋəɖˈiːn rˌəkaːoːʈˈʌn mˈaːn hˈɪkʊ hˈʊi",
+    "uccharan": "ˌaːfrˈiːqi dˈʌnjaː ɟˈeː xˈaːʂ ˌaɟoːbˈʌn ɟˈeː heːnˈʌri loːˈiːs ɡeːʈˈʌs ɟˈeː pˌiːbˌiːˈɛs doːrˈaːn ˈɪhoː hˈɪkʊ ʋəɖˈiːn rˌəkaːoːʈˈʌn mˈaːn hˈɪkʊ hˈʊi"
    },
    {
-    "id": "flores-devtest-776",
-    "text": "تماڪي ڊرائيو جا ساحل سينٽرل آڪلينڊ مشن بي ۽ سينٽ هيليئرز جي اپ مارڪيٽ سب اربس وائٽيمٽا بندرگاه تي آهي.",
-    "reference": "t̪əmˈaːki ɖərˈaːjoː ɟˈaː saːhˈʌl sˌeːnəʈərˈʌl ˌaːklˈiːnɖ məʃˈʌn bˈeː ˈaẽ seːnˈʌʈ hˌeːliˈɪrəz ɟˈeː ˈap mˌaːrkˈiːʈ sˈʌb ˌarəbˈʌs ʋˌaːʈimˈʌʈaː bˌəndərɡˈaːh t̪ˈeː ˌaːheː",
-    "uccharan": "t̪əmˈaːki ɖərˈaːjoː ɟˈaː saːhˈʌl sˌeːnəʈərˈʌl ˌaːklˈiːnɖ məʃˈʌn bˈeː ˈaẽ seːnˈʌʈ hˌeːljarˈʌz ɟˈeː ˈap mˌaːrkˈiːʈ sˈʌb ˌarəbˈʌs ʋˌaːʈimˈʌʈaː bˌəndərɡˈaːh t̪ˈeː ˌaːheː"
+    "id": "flores-devtest-907",
+    "text": "پيننسولا جا جبل هتي مٿانهن پٽ ۾ ضم ٿين ٿا، پوءِ ايلس ورٿ جبلن جي 360 ڪلوميٽر جي زنجير ٺاهڻ لاءِ ٻيهر ظاهر ٿين ٿا، جيڪو منيسوٽا گليشير ذريعي ٻن حصن ۾ ٽٽي ٿو.",
+    "reference": "pˌeːnnsˈoːlaː ɟˈaː ɟəbˈʌl hˈʌt̪i mˌətʰaːnəhˈʌn pˈʌʈ mẽ zˈʌm tʰˈeːn tʰˈaː pˈoːɪ eːlˈʌs ʋərˈʌʈ ɟˌəbəlˈʌn ɟˈeː ʈesˈaʊ saʈʰˌɪ kˌəloːmiʈˈʌr ɟˈeː zˌənɟˈiːr ʈʰaːhˈʌɳ lˈaːɪ beːhˈʌr ʐaːhˈʌr tʰˈeːn tʰˈaː ɟˈeːkoː mˌənisˈoːʈaː ɡˌəliʃˈiːr zərˈiːi bˈʌn həʂˈʌn mẽ ʈˈʌʈeː tʰˈoː",
+    "uccharan": "pˌeːnnsˈoːlaː ɟˈaː ɟəbˈʌl hˈʌt̪i mˌətʰaːnəhˈʌn pˈʌʈ mẽ zˈʌm tʰˈeːn tʰˈaː pˈoːɪ eːlˈʌs ʋərˈʌʈ ɟˌəbəlˈʌn ɟˈeː ʈˈebasˈaʊ sˈaʈʰɪ kˌəloːmiʈˈʌr ɟˈeː zˌənɟˈiːr ʈʰaːhˈʌɳ lˈaːɪ beːhˈʌr ʐaːhˈʌr tʰˈeːn tʰˈaː ɟˈeːkoː mˌənisˈoːʈaː ɡˌəliʃˈiːr zərˈiːi bˈʌn həʂˈʌn mẽ ʈˈʌʈi tʰˈoː"
    },
    {
-    "id": "flores-devtest-627",
-    "text": "پاڻي جو مڪمل 20 سيڪڙو جيڪو سياري (پلانيٽ) جي ندين کاڻ سمنڊن ۾ ڇوڙ ڪيو ويندو آهي اهو Amazon کان اچي ٿو.",
-    "reference": "pˈaːɳi ɟˈoː mˌəkəmˈʌl ʋˈiːha seːkˈʌr.oː ɟˈeːkoː sjˈaːri pˌəlaːnˈiːʈ ɟˈeː nədˈiːn kʰˈaːɳ sˌəmənɖˈʌn mẽ cʰˈoːr. kˈajoː ʋˈeːndoː ˌaːheː ˈɪhoː ˈaməzən kʰˈãː ˈaceː tʰˈoː",
-    "uccharan": "pˈaːɳi ɟˈoː mˌəkəmˈʌl ʋˈiːha seːkˈʌr.oː ɟˈeːkoː sjˈaːri pˌəlaːnˈiːʈ ɟˈeː nədˈiːn kʰˈaːɳ sˌəmənɖˈʌn mẽ cʰˈoːr. kˈajoː ʋˈeːndoː ˌaːheː ˈɪhoː ˈæməzˌɒn kʰˈãː ˈaci tʰˈoː"
+    "id": "flores-devtest-813",
+    "text": "ٽوڪيو واحد ايشيائي شهر هوندو جنهن ٻہ گرما اولمپڪس جي ميزباني ڪئي آهي، انهن 1964 ۾ راندين جي ميزباني ڪئي هئي.",
+    "reference": "ʈˈoːkjoː ʋaːhˈʌd eːʃjˈaːi ʃəhˈʌr hˈũːdoː ɟˈẽhɪ̃ bˈʌh ɡərˈʌmaː ˌuːləmpəkˈʌs ɟˈeː mˌeːzbˈaːni kˈʌi ˌaːheː ˌanəhˈʌn hˌɪkʊ hazˈaːɾ naʋasˈaʊ coːhˌaʈʰɪ mẽ raːndˈiːn ɟˈeː mˌeːzbˈaːni kˈʌi hˈʊi",
+    "uccharan": "ʈˈoːkjoː ʋaːhˈʌd eːʃjˈaːi ʃəhˈʌr hˈũːdoː ɟˈẽhɪ̃ bˈʌh ɡərˈʌmaː ˌuːləmpəkˈʌs ɟˈeː mˌeːzbˈaːni kˈʌi ˌaːheː ˌanəhˈʌn hˈɪkʊ hazˈaːɾ nˈaʋabasˈaʊ coːhˈaʈʰɪ mẽ raːndˈiːn ɟˈeː mˌeːzbˈaːni kˈʌi hˈʊi"
    },
    {
-    "id": "flores-devtest-854",
-    "text": "اهو ان سان لاڳاپيل آهي پر عام طور تي الپائن اسٽائل اسڪائي ٽوئرنگ يا مائونٽينرنگ شامل نہ ڪري رهيو آهي، پوءِ وارا جيڪي اسٽيپ ٽرين ۾ ڪيا ويا ۽ انهن کي وڌيڪ مضبوط اڪائيز ۽ بوٽن جي ضورت پوندي آهي.",
-    "reference": "ˈɪhoː ˈɪna sˈãː laːɡˈaːpjal ˌaːheː pˈʌr ˈaːm tˈoːr t̪ˈeː ˌalpaːˈɪn ˌasʈaːˈɪl ˌaskˈaːi ʈoːˈɪrənɡ jˈaː mˌaːoːnʈinərˈʌnɡ ʃˈaːmɪl nˈʌh kˈareː rˈʌhjoː ˌaːheː pˈoːɪ ʋˈaːraː ɟˈeːki ˌasʈˈiːp ʈərˈiːn mẽ kjˈaː ʋˈajaː ˈaẽ ˌanəhˈʌn kʰˈeː ʋədʰˈiːk mˌəzbˈuːt ˌakaːˈiːz ˈaẽ bˈoːʈən ɟˈeː zoːrˈʌt̪ pˈoːndi ˌaːheː",
-    "uccharan": "ˈɪhoː ˈɪna sˈãː laːɡˈaːpjal ˌaːheː pˈʌr ˈaːm tˈoːr t̪ˈeː ˌalpaːˈɪn ˌasʈaːˈɪl ˌaskˈaːi ʈˌəʋarˈʌnɡ jˈaː mˌaːʋənʈinərˈʌnɡ ʃˈaːmɪl nˈʌh kˈareː rˈʌhjoː ˌaːheː pˈoːɪ ʋˈaːraː ɟˈeːki ˌasʈˈiːp ʈərˈiːn mẽ kjˈaː ʋˈajaː ˈaẽ ˌanəhˈʌn kʰˈeː ʋədʰˈiːk mˌəzbˈuːt ˌakaːˈiz ˈaẽ bˈoːʈən ɟˈeː zoːrˈʌt̪ pˈoːndi ˌaːheː"
+    "id": "flores-devtest-302",
+    "text": "تقريبن 60 خراب ٿيل iPods اور هيٽنگ جا ڪيس رپورٽ ڪيا ويا آهن، جنهن جي نتيجي ۾ ٽوٽل ڇهه جڳهين تي ٻاهه لڳي چار ماڻهو باهه سان هلڪا زخمي ٿيا.",
+    "reference": "t̪ˌəqribˈʌn sˈaʈʰɪ xərˈaːb tʰˈɪal ˈaɪ pˈɒdz ˈuːr heːʈˈʌnɡ ɟˈaː kˈeːs rˌəpoːrˈʌʈ kjˈaː ʋˈajaː ˈaːhɪn ɟˈẽhɪ̃ ɟˈeː nət̪ˈiːɟi mẽ ʈoːʈˈʌl cʰəhˈʌh ɟˌəɡhˈiːn t̪ˈeː baːhˈʌh lˈʌɡi cˈaːr mˈaːɳhuː bˈaːhəh sˈãː həlˈʌkaː zəxˈʌmeː tʰjˈaː",
+    "uccharan": "t̪ˌəqribˈʌn sˈaʈʰɪ xərˈaːb tʰˈɪal ˈaɪpɒdz ˈuːr heːʈˈʌnɡ ɟˈaː kˈeːs rˌəpoːrˈʌʈ kjˈaː ʋˈajaː ˈaːhɪn ɟˈẽhɪ̃ ɟˈeː nət̪ˈiːɟi mẽ ʈoːʈˈʌl cʰəhˈʌh ɟˌəɡhˈiːn t̪ˈeː bˈaːhʌh lˈʌɡi cˈaːr mˈaːɳhuː bˈaːhəh sˈãː həlˈʌkaː zəxˈʌmi tʰjˈaː"
    },
    {
-    "id": "flores-devtest-701",
-    "text": "يورپي اثر ۽استعماريت 15 هين صدي ۾ شروع ٿي، جڏهن پرتگالي ايڪسپلورر واسڪو دا گاما يورپ کان انڊيا تائين ڪيپ روٽ ڳولهي ورتو.",
-    "reference": "joːrˈʌpi asˈʌr ˈaẽ ˌast̪aːmaːrˈiːt̪ pandɾˈaha hˈeːn ʂˈʌdi mẽ ʃˈʊruː tʰi ɟaɖˈẽhɪ̃ pˌərət̪ɡˈaːli ˌeːkəsˌəploːrˈʌr ʋaːsˈʌkoː dˈaː ɡˈaːmaː joːrˈʌp kʰˈãː ˈɪnɖjaː t̪aːˈiːn kˈeːp rˈoːʈ ɡoːlˈʌhi ʋərˈʌt̪oː",
-    "uccharan": "joːrˈʌpi asˈʌr ˌaːst̪aːmaːrˈiːt̪ pandɾˈaha hˈeːn ʂˈʌdi mẽ ʃˈʊruː tʰi ɟaɖˈẽhɪ̃ pˌərət̪ɡˈaːli ˌeːkəsˌəploːrˈʌr ʋaːsˈʌkoː dˈaː ɡˈaːmaː joːrˈʌp kʰˈãː ˈɪnɖjaː t̪aːˈiːn kˈeːp rˈoːʈ ɡoːlˈʌhi ʋərˈʌt̪oː"
+    "id": "flores-devtest-326",
+    "text": "اولمپڪ سوني جو تمغو 100 ميٽر ۽ 200 ميٽر فري اسٽائل ۽ ڪامن ويلٿ گيمز ۾ ٿري رليز ۾ ترڻ تي هو، پر هن جي شڪايت جي ڪري هن جي فٽنيس شڪي هئي.",
+    "reference": "ˌuːləmpˈʌk sˈoːni ɟˈoː t̪əmˈʌɣoː hˌɪkʊsˈaʊ meːʈˈʌr ˈaẽ basˈaʊ meːʈˈʌr fˈʌri ˌasʈaːˈɪl ˈaẽ kaːmˈʌn ʋeːlˈʌʈ ɡeːmˈʌz mẽ ʈˈʌri rəlˈiːz mẽ t̪ərˈʌɳ t̪ˈeː hˈoː pˈʌr hˈɪna ɟˈeː ʃˌəkaːˈiːt̪ ɟˈeː kˈareː hˈɪna ɟˈeː fˌəʈnˈiːs ʃˈʌki hˈʊi",
+    "uccharan": "ˌuːləmpˈʌk sˈoːni ɟˈoː t̪əmˈʌɣoː hˈɪkʊbasˈaʊ meːʈˈʌr ˈaẽ bˈabasˈaʊ meːʈˈʌr fˈʌri ˌasʈaːˈɪl ˈaẽ kaːmˈʌn ʋeːlˈʌʈ ɡeːmˈʌz mẽ ʈˈʌri rəlˈiːz mẽ t̪ərˈʌɳ t̪ˈeː hˈoː pˈʌr hˈɪna ɟˈeː ʃˌəkaːˈiːt̪ ɟˈeː kˈareː hˈɪna ɟˈeː fˌəʈnˈiːs ʃˈʌki hˈʊi"
    },
    {
-    "id": "flores-devtest-904",
-    "text": "آرڪيپليگو پيننسولا جي اتر ۾ 120 ڪلوميٽر تي آهي. سڀني کان وڏو ٻيٽ ڪنگ جيورج آهي جنهن تي ولا لاس ايسٽريلاس جي آبادي آهي.",
-    "reference": "ˌaːrkˌiːplˈiːɡoː pˌeːnnsˈoːlaː ɟˈeː at̪ˈʌr mẽ hˌɪkʊsˈaʊ ʋihˌa kˌəloːmiʈˈʌr t̪ˈeː ˌaːheː səbʰˈʌni kʰˈãː ʋˈʌɖoː bˈeːʈ kˈʌnɡ ɟjoːrˈʌɟ ˌaːheː ɟˈẽhɪ̃ t̪ˈeː ʋˈʌlaː lˈaːs ˌeːsəʈrilˈaːs ɟˈeː aːbˈaːdi ˌaːheː",
-    "uccharan": "ˌaːrkˌiːplˈiːɡoː pˌeːnnsˈoːlaː ɟˈeː at̪ˈʌr mẽ hˈɪkʊbasˈaʊ ʋˈiːha kˌəloːmiʈˈʌr t̪ˈeː ˌaːheː səbʰˈʌni kʰˈãː ʋˈʌɖoː bˈeːʈ kˈʌnɡ ɟjoːrˈʌɟ ˌaːheː ɟˈẽhɪ̃ t̪ˈeː ʋˈʌlaː lˈaːs ˌeːsəʈrilˈaːs ɟˈeː aːbˈaːdi ˌaːheː"
+    "id": "flores-devtest-258",
+    "text": "تحقيق ڪارن ٻلي جي پيشاب ۾ ٺهندڙ ڪرسٽرلز جو معائنو ڪيو جنهن ۾ ميلامائن ۽ سائنورڪ ايسڊ مليا.",
+    "reference": "t̪ˌəhqˈiːq kaːrˈʌn bˈʌli ɟˈeː peːʃˈaːb mẽ ʈʰˌəhəndˈʌr. kˌərəsˌəʈərəlˈʌz ɟˈoː maːˈɪnoː kˈajoː ɟˈẽhɪ̃ mẽ mˌeːlaːmaːˈɪn ˈaẽ sˌaːɪnoːrˈʌk eːsˈʌɖ mˈʌljaː",
+    "uccharan": "t̪ˌəhqˈiːq kaːrˈʌn bˈʌli ɟˈeː peːʃˈaːb mẽ ʈʰˌəhəndˈʌr. kˌərəsˌəʈərəlˈʌz ɟˈoː maːˈɪnoː kˈajoː ɟˈẽhɪ̃ mẽ mˌeːlaːmˈaːn ˈaẽ sˌaːnoːrˈʌk eːsˈʌɖ mˈʌljaː"
    },
    {
-    "id": "flores-devtest-731",
-    "text": "هي اهو جڳهہ آهي جتي برطانوي آبادگارن پنهنجو پاڻ آباد ڪئي هئي ۽ جيڪڏهن توهان هن علائقي جي ماضي جي آبادگارن جو ثبوت ڳولي رهيا آهيو تہ، اهو شروع ڪرڻ جي لاءِ سٺي جڳهہ آهي.",
-    "reference": "hˈiː ˈɪhoː ɟˌəɡəhˈʌh ˌaːheː ɟˈʌt̪i bˌərtˈaːnʋi aːbˈaːdɡˌaːrən pˈʌ̃hnɟoː pˈaːɳ aːbˈaːd kˈʌi hˈʊi ˈaẽ ɟˌeːkəɖəhˈʌn t̪oːhˈaːn hˈɪna ˌalaːˈɪqi ɟˈeː mˈaːzi ɟˈeː aːbˈaːdɡˌaːrən ɟˈoː səbˈoːt̪ ɡˈoːli rˈʌhjaː ˈaːhjoː t̪ˈʌh ˈɪhoː ʃˈʊruː kərˈʌɳ ɟˈeː lˈaːɪ sˈʌʈʰi ɟˌəɡəhˈʌh ˌaːheː",
-    "uccharan": "hˈiː ˈɪhoː ɟəɡˈʌha ˌaːheː ɟˈʌt̪i bˌərtˈaːnʋi aːbˈaːdɡˌaːrən pˈʌ̃hnɟoː pˈaːɳ aːbˈaːd kˈʌi hˈʊi ˈaẽ ɟˌeːkəɖəhˈʌn t̪oːhˈaːn hˈɪna ˌalaːˈɪqi ɟˈeː mˈaːzi ɟˈeː aːbˈaːdɡˌaːrən ɟˈoː səbˈoːt̪ ɡˈoːli rˈʌhjaː ˈaːhjoː t̪ˈʌh ˈɪhoː ʃˈʊruː kərˈʌɳ ɟˈeː lˈaːɪ sˈʌʈʰi ɟəɡˈʌha ˌaːheː"
+    "id": "flores-devtest-216",
+    "text": "ان کان پهريان چيي نيوز ايجنسي زنهوا هڪ جهاز هائي جيڪ ٿيڻ جي رپورٽ ڏني هئي.",
+    "reference": "ˈɪna kʰˈãː pˌəhərjˈaːn cjˈeː njˈoːz eːɟˈʌnsi zənˈʌhʋaː hˈɪkʊ ɟəhˈaːz hˈaːi ɟˈeːk tʰˈɪaɳ ɟˈeː rˌəpoːrˈʌʈ ɖˈʌni hˈʊi",
+    "uccharan": "ˈɪna kʰˈãː pˌəhərjˈaːn cjˈeː njˈoːz eːɟˈʌnsi zˌənəhʋaː hˈɪkʊ ɟəhˈaːz hˈaːi ɟˈeːk tʰˈɪaɳ ɟˈeː rˌəpoːrˈʌʈ ɖˈʌni hˈʊi"
    },
    {
-    "id": "flores-devtest-975",
-    "text": "اُچارڻ اندليسي ٻولي ۾ نسبتاً آسان آهن ڇاڪاڻ تہ گهڻن لفظن جا ائين ئي اچار ڪڍيا وڃن تا جيئن اهي لکيل آهن.",
-    "reference": "ˌʊcaːrˈʌɳ ˌandəlˈiːsi bˈoːli mẽ nˌəsəbˌət̪ˈan aːsˈaːn ˈaːhɪn cʰaːkˈaːɳ t̪ˈʌh ɡˌəhəɳˈʌn lˌəfəʐˈʌn ɟˈaː aˈiːn ˈiː acˈaːr kˈʌɖʰjaː ʋəɲˈʌn t̪ˈaː ɟˈiːʌ̃ ˈɪheː lˈʌkʰjal ˈaːhɪn",
-    "uccharan": "ˌaːʊcaːrˈʌɳ ˌandəlˈiːsi bˈoːli mẽ nˌəsəbˈʌt̪an aːsˈaːn ˈaːhɪn cʰaːkˈaːɳ t̪ˈʌh ɡˌəhəɳˈʌn lˌəfəʐˈʌn ɟˈaː aˈiːn ˈiː acˈaːr kˈʌɖʰjaː ʋəɲˈʌn t̪ˈaː ɟˈiːʌ̃ ˈɪheː lˈʌkʰjal ˈaːhɪn"
+    "id": "flores-devtest-586",
+    "text": "MS هڪ بيماري آهي جيڪو مکيہ تنتي سرشتي کي متاثر ڪري ٿي، جيڪو دماغ، ڪرنگهي جي هڏي ۽ اک جي تنت سان ٺهيل هوندو آهي.",
+    "reference": "ˈɛm ˈɛs hˈɪkʊ bˈeːmaːrˌiː ˌaːheː ɟˈeːkoː məkʰˈiːh t̪ənˈʌt̪i sərˈʌʃt̪i kʰˈeː mˌət̪aːsˈʌr kˈareː tʰi ɟˈeːkoː dəmˈaːɣ kˌərənɡˈʌhi ɟˈeː hˈʌɖi ˈaẽ ˈakʰ ɟˈeː t̪ənˈʌt̪ sˈãː ʈʰˈʌhjal hˈũːdoː ˌaːheː",
+    "uccharan": "mˈɪz hˈɪkʊ bˈeːmaːrˌiː ˌaːheː ɟˈeːkoː məkʰˈiːh t̪ənˈʌt̪i sərˈʌʃt̪i kʰˈeː mˌət̪aːsˈʌr kˈareː tʰi ɟˈeːkoː dəmˈaːɣ kˌərənɡˈʌhi ɟˈeː hˈʌɖi ˈaẽ ˈakʰ ɟˈeː t̪ənˈʌt̪ sˈãː ʈʰˈʌhjal hˈũːdoː ˌaːheː"
    },
    {
-    "id": "flores-devtest-753",
-    "text": "ٽورنامينٽس تي خبرن لاءِ ۽ پولو ميچن لاءِ ٽڪيٽ ڪٿي خريد ڪجن ان لاءِ، اسوسيئنيڪن ارجنٽائن ڊي پولو وٽ چيڪ ڪريو.",
-    "reference": "ʈˌoːrnˌaːminəʈˈʌs t̪ˈeː xˌəbərˈʌn lˈaːɪ ˈaẽ pˈoːloː meːcˈʌn lˈaːɪ ʈəkˈiːʈ kˈʌtʰi xərˈiːd kəɟˈʌn ˈɪna lˈaːɪ ˌasoːsiˈɪnikˌən ˌarəɟˌənʈaːˈɪn ɖˈeː pˈoːloː ʋˈʌʈ cˈeːk kˈʌrjoː",
-    "uccharan": "ʈˌoːrnˌaːminəʈˈʌs t̪ˈeː xˌəbərˈʌn lˈaːɪ ˈaẽ pˈoːloː meːcˈʌn lˈaːɪ ʈəkˈiːʈ kˈʌtʰi xərˈiːd kəɟˈʌn ˈɪna lˈaːɪ ˌasoːsjanikˈʌn ˌarəɟˌənʈaːˈɪn ɖˈeː pˈoːloː ʋˈʌʈ cˈeːk kˈʌrjoː"
+    "id": "flores-devtest-71",
+    "text": "وزير ايظم اسٽيفن هارپر PMO ۾ NDP اڳواڻ جيڪ ليٽن سان اڱاري جي ڏينهن 25 منٽن جي ميٽنگ کانپوءِ، ٻيو بل پيش ڪرڻ کان پهرين، حڪومت جو \"ڪلين ايئر ايڪٽ\" کي جائزي لاءِ ٻين آل پارٽي ڪميٽي ڏانهن موڪلڻ تي متفق ٿيو آهي.",
+    "reference": "ʋəzˈiːr eːʐˈʌm ˌasʈifˈʌn hˌaːrəpˈʌr pˈiː ˈɛm ˈəʊ mẽ ˈɛn dˈiː pˈiː aɡʋˈaːɳ ɟˈeːk leːʈˈʌn sˈãː ˌaŋ̩ˈaːri ɟˈeː ɖˈĩːhʊ̃ panɟʋˈiːha mˌənəʈˈʌn ɟˈeː meːʈˈʌnɡ kʰaːnpˈoːɪ bjˈoː bˈʌl pˈeːʃ kərˈʌɳ kʰˈãː pˌəhərˈiːn hˌəkoːmˈʌt̪ ɟˈoː kəlˈiːn eːˈɪr eːkˈʌʈ kʰˈeː ɟaːˈɪzi lˈaːɪ bˈɪan ˈaːl paːrˈʌʈi kəmˈiːʈi ɖˌaːnəhˈʌn mˌoːkəlˈʌɳ t̪ˈeː mˌət̪əfˈʌq tʰjˈoː ˌaːheː",
+    "uccharan": "ʋəzˈiːr eːʐˈʌm ˌasʈifˈʌn hˌaːrəpˈʌr pˈiːməʊ mẽ ˌɛndˌiːpˈiː aɡʋˈaːɳ ɟˈeːk leːʈˈʌn sˈãː ˌaŋ̩ˈaːri ɟˈeː ɖˈĩːhʊ̃ panɟʋˈiːha mˌənəʈˈʌn ɟˈeː meːʈˈʌnɡ kʰaːnpˈoːɪ bjˈoː bˈʌl pˈeːʃ kərˈʌɳ kʰˈãː pˌəhərˈiːn hˌəkoːmˈʌt̪ ɟˈoː kəlˈiːn eːˈɪr eːkˈʌʈ kʰˈeː ɟaːˈɪzi lˈaːɪ bˈɪan ˈaːl paːrˈʌʈi kəmˈiːʈi ɖˌaːnəhˈʌn mˌoːkəlˈʌɳ t̪ˈeː mˌət̪əfˈʌq tʰjˈoː ˌaːheː"
    },
    {
-    "id": "flores-devtest-439",
-    "text": "بادشاه کان وٺي عام ماڻهو تائين هن سموري طاقت اثر انداز ڪيو آهي.",
-    "reference": "ˈaɪbˈaːdʃˌaːh kʰˈãː ʋˈʌʈʰi ˈaːm mˈaːɳhuː t̪aːˈiːn hˈɪna səmˈoːri taːqˈʌt̪ asˈʌr andˈaːz kˈajoː ˌaːheː",
-    "uccharan": "bˈaːdʃˌaːh kʰˈãː ʋˈʌʈʰi ˈaːm mˈaːɳhuː t̪aːˈiːn hˈɪna səmˈoːri taːqˈʌt̪ asˈʌr andˈaːz kˈajoː ˌaːheː"
+    "id": "flores-devtest-939",
+    "text": "1994 ۾، هي تڪرار مشرقي مولودووا ۾ خود-ساخته ٽرانسنسٽريا ريپبلڪ جي ٺهڻ جو سبب بڻيو، جنهن جي پنهنجي حڪومت ۽ ڪرنسي آهي پر گڏيل قومن جي ڪنهن ميمبر ملڪ پاران تسليم ناهي ڪيو ويو.",
+    "reference": "hˌɪkʊ hazˈaːɾ naʋasˈaʊ coːrˌaːnaʋˌeː mẽ hˈiː t̪ˌəkrˈaːr mˈaʃrˌɪqi moːlˈoːdʋʋaː mẽ xˈʊdsaːxt̪ˈʌh ʈˌəraːnsˌənsəʈˈʌrjaː rˌeːpəbəlˈʌk ɟˈeː ʈʰəhˈʌɳ ɟˈoː səbˈʌb bˈʌɳjoː ɟˈẽhɪ̃ ɟˈeː pˈʌ̃hnɟi hˌəkoːmˈʌt̪ ˈaẽ kərˈʌnsi ˌaːheː pˈʌr ɡˈʌɖjal qoːmˈʌn ɟˈeː kˈʌ̃hɪ̃ meːmbˈʌr mˈʊlk paːrˈaːn t̪ˌəslˈiːm nˈaːhi kˈajoː ʋˈajoː",
+    "uccharan": "hˈɪkʊ hazˈaːɾ nˈaʋabasˈaʊ cˌoːraːnˈaʋeː mẽ hˈiː t̪ˌəkrˈaːr mˈaʃrˌɪqi moːlˈoːdʋʋaː mẽ xˈʊdsaːxt̪ˈʌh ʈˌəraːnsˌənsəʈˈʌrjaː rˌeːpəbəlˈʌk ɟˈeː ʈʰəhˈʌɳ ɟˈoː səbˈʌb bˈʌɳjoː ɟˈẽhɪ̃ ɟˈeː pˈʌ̃hnɟi hˌəkoːmˈʌt̪ ˈaẽ kərˈʌnsi ˌaːheː pˈʌr ɡˈʌɖjal qoːmˈʌn ɟˈeː kˈʌ̃hɪ̃ meːmbˈʌr mˈʊlk paːrˈaːn t̪ˌəslˈiːm nˈaːhi kˈajoː ʋˈajoː"
    },
    {
-    "id": "flores-devtest-921",
-    "text": "ان کي ناروي، سوئيڊن ۽ نيوزي لينڊ کان ميچ ڪيو آهي، پر ٻي صورت ۾ بلڪل الڳ آهي (مثال طور نيدرلينڊز ۾ اهو انگ هڪ کان چاليهہ تائين آهي).",
-    "reference": "ˈɪna kʰˈeː nˈaːrʋi sˌoːiɖˈʌn ˈaẽ njˈoːzi lˈeːnɖ kʰˈãː mˈeːc kˈajoː ˌaːheː pˈʌr bˈeː ʂoːrˈʌt̪ mẽ bˌələkˈʌl alˈʌɡ ˌaːheː məsˈaːl tˈoːr nˌeːdərlinɖˈʌz mẽ ˈɪhoː ˈanɡ hˈɪkʊ kʰˈãː cˌaːlihˈʌh t̪aːˈiːn ˌaːheː",
-    "uccharan": "ˈɪna kʰˈeː nˈaːrʋi sˌoːiɖˈʌn ˈaẽ njˈoːzi lˈeːnɖ kʰˈãː mˈeːc kˈajoː ˌaːheː pˈʌr bˈeː ʂoːrˈʌt̪ mẽ bˌələkˈʌl alˈʌɡ ˌaːheː məsˈaːl tˈoːr nˌeːdərlinɖˈʌz mẽ ˈɪhoː ˈanɡ hˈɪkʊ kʰˈãː caːlˈiːha t̪aːˈiːn ˌaːheː"
+    "id": "flores-devtest-679",
+    "text": "AI ۾ ٿيندڙ تحقيق ۾ ڪمن کي خودڪار ڪرڻ لاءِ مشينن کي شامل ڪن ٿا جنهن کي ذهين رويو گهربل آهي.",
+    "reference": "ˈeɪ ˈaɪ mẽ tʰĩːdˈʌr. t̪ˌəhqˈiːq mẽ kəmˈʌn kʰˈeː xˈʊdkaːr kərˈʌɳ lˈaːɪ mˌəʃinˈʌn kʰˈeː ʃˈaːmɪl kˈʌn tʰˈaː ɟˈẽhɪ̃ kʰˈeː zəhˈiːn rʋjˈoː ɡˌəhərəbˈʌl ˌaːheː",
+    "uccharan": "ˈaɪ mẽ tʰĩːdˈʌr. t̪ˌəhqˈiːq mẽ kəmˈʌn kʰˈeː xˈʊdkaːr kərˈʌɳ lˈaːɪ mˌəʃinˈʌn kʰˈeː ʃˈaːmɪl kˈʌn tʰˈaː ɟˈẽhɪ̃ kʰˈeː zəhˈiːn rʋjˈoː ɡˌəhərəbˈʌl ˌaːheː"
    },
    {
-    "id": "flores-devtest-25",
-    "text": "اهو اعلان ٽرمپ ۽ ترڪي جي صدر رجب طيب اردگان جي وچ ۾ فون تي ڳالهه ٻولهہ کانپوءِ ٿيو.",
-    "reference": "ˈɪhoː eːlˈaːn ʈərˈʌmp ˈaẽ t̪ərˈʌki ɟˈeː ʂədˈʌr rəɟˈʌb tˈeːb ˌardəɡˈaːn ɟˈeː ʋˈʌc mẽ fˈoːn t̪ˈeː ɡˌaːləhˈʌh bˌoːləhˈʌh kʰaːnpˈoːɪ tʰjˈoː",
-    "uccharan": "ˈɪhoː eːlˈaːn ʈərˈʌmp ˈaẽ t̪ərˈʌki ɟˈeː ʂədˈʌr rəɟˈʌb tˈeːb ˌardəɡˈaːn ɟˈeː ʋˈʌc mẽ fˈoːn t̪ˈeː ɡˌaːləhˈʌh boːlˈʌha kʰaːnpˈoːɪ tʰjˈoː"
+    "id": "flores-devtest-98",
+    "text": "هڪ انٽرويو ۾، هِن چيو ته \"نئون ويريئينٽ تمام گھڻي موت جي شرح جي ڪري تمام پريشان ڪندڙ ۽ خوفناڪ هو.\"",
+    "reference": "hˈɪkʊ ˌanəʈˈʌrʋjoː mẽ hˈɪn cˈajoː t̪ˈʌh nəˈoːn ʋˌeːriinˈʌʈ t̪əmˈaːm ɡʰˈʌɳi mˈoːt̪ ɟˈeː ʃˌərˈah ɟˈeː kˈareː t̪əmˈaːm pˌəriʃˈaːn kəndˈʌr. ˈaẽ xˌoːfnˈaːk hˈoː",
+    "uccharan": "hˈɪkʊ ˌanəʈˈʌrʋjoː mẽ hˈɪn cˈajoː t̪ˈʌh nəˈoːn ʋˌeːrjəˈiːnˈʌʈ t̪əmˈaːm ɡʰˈʌɳi mˈoːt̪ ɟˈeː ʃˌərˈah ɟˈeː kˈareː t̪əmˈaːm pˌəriʃˈaːn kəndˈʌr. ˈaẽ xˌoːfnˈaːk hˈoː"
    }
   ]
  }

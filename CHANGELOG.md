@@ -3,7 +3,83 @@
 All notable changes are listed here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow semantic versioning.
 
-## [Unreleased]
+## [0.5.0] - 2026-11-14
+
+Language data on demand: the word tables of sixteen Latin-script languages, Urdu and Sindhi
+are now packs that are downloaded and checked the first time a language is used, which makes the
+wheel, the crate and the C library much smaller; the tables themselves are in the new crate
+`uccharan-data`. Roman numerals such as IV and IX were read one step too high in every
+Latin-script language; that is fixed. Capitals, Roman numerals and single letters now follow each
+language's reading, which lowers the error rate in all seventeen Latin-script languages.
+
+### Fixed
+
+- **Roman numerals with a subtracted letter** (`IV`, `IX`, `XL`, `XIV` …) were read one step too
+  high in every Latin-script language (`Carlos IV` as "cinco"). Spellings that are not numerals
+  (`IIII`, `IL`) are no longer read as numbers.
+- **Spanish and Catalan single letters** (`plan B`, `vitamina C`) are said by their names instead
+  of as a bare consonant.
+
+### Changed
+
+- **Capitals, Roman numerals and Catalan sandhi in compatible mode** (all seventeen Latin-script
+  languages; held-out halves scored again, see docs/evaluation.md): a token in capitals is spelled
+  when it has two or three letters or no vowel and read as a word otherwise (`NATO`, `COVID`);
+  Finnish, Hungarian and Czech stress the first letter of a spelled abbreviation; Turkish capital
+  I is the dotless letter. Roman numerals follow each voice: cardinals (Spanish, Portuguese,
+  Catalan, Czech, Romanian), "römisch" + cardinal (German), cardinal + "romain" (French), ordinals
+  (Italian, Danish), letters (Dutch, Polish, Turkish, Swedish, Hungarian, Finnish, Norwegian);
+  improved mode reads them as numbers everywhere. Catalan voices final s, ʃ and z before voiced
+  sounds and before h-words and reads the conjunction *i* as a glide before a vowel; Finnish tens
+  after a hundred carry secondary stress. Held-out PER: Spanish 0.74 → 0.55 %, Italian 0.66 →
+  0.53 %, Catalan 1.86 → 1.51 %, Polish 1.33 → 1.19 %, German 1.01 → 0.95 %, Dutch 1.77 → 1.69 %,
+  French 0.85 → 0.79 %, Portuguese 0.67 → 0.61 % (Brazil) and 0.89 → 0.84 % (Portugal), Turkish
+  0.72 → 0.68 %, Czech 1.40 → 1.32 %, Swedish 1.51 → 1.44 %, Romanian 1.00 → 0.97 %, Hungarian
+  1.44 → 1.37 %, Finnish 1.64 → 1.57 %, Norwegian 1.11 → 1.03 %, Danish 2.26 → 2.22 %.
+  New language-file options: `roman`, `roman-skip`, `roman-before`, `roman-after`, `ordN`,
+  `romanN`, `Nh` number forms, `caps-words`, `caps-entries`, `spell-stress`, `letter-names`,
+  `dotless-i`, `vowel-mark = h`.
+- **Numbers written in groups of three digits with spaces** (`10 000`, `1 250 000`) are read as
+  one number in German, Dutch, French, Polish, Swedish, Romanian, Hungarian, Finnish and
+  Norwegian. French makes no liaison before words with h aspiré (`les haricots`) or before
+  *huit* and *onze*.
+
+- **Word tables are fetched when a language is first used** instead of being part of every
+  package. English, Hindi and the languages read by rules alone stay built in; the word tables
+  of German, Dutch, French, Italian, Portuguese (both), Polish, Turkish, Czech, Swedish, Catalan,
+  Romanian, Hungarian, Finnish, Norwegian, Danish, Urdu and Sindhi (46 KB to 0.5 MB each) are
+  packs attached to the GitHub release, checked against SHA-256 sums built into the package and
+  cached in `~/.cache/uccharan/<version>/`. Sizes: wheel 5.6 → 2.0 MB, crate 8.4 → 4.9 MB
+  compressed, C library 11.6 → 7.6 MB; the npm package already loaded each language's file on
+  first use.
+  - A language is never read without its table: Python raises `PackError`, the C calls return
+    NULL and the new `uccharan_last_error()` gives the reason (`uccharan_ensure()` checks ahead),
+    Rust's new `Phonemizer::ensure` returns the error (`phonemize` panics with the same message
+    when `ensure` was not called and the table cannot be loaded), and `phonemizeSync` in
+    JavaScript throws. Every message names the pack, its URL and where the file is looked for.
+  - Offline: `python -m uccharan.packs --dir DIR de fr …` (or `--all`) fetches packs for
+    `UCCHARAN_DATA_DIR`, which may now name several directories; `UCCHARAN_OFFLINE=1` forbids
+    downloads.
+  - Rust: `features = ["bundle"]` compiles every table in (they live in the new `uccharan-data`
+    crate; `embed-<tag>` features still select single tables), `features = ["download"]` fetches
+    a missing table on first use; without either, tables are read from `UCCHARAN_DATA_DIR` or
+    the cache. New module `uccharan::packs`, `Phonemizer::missing_packs`,
+    `Phonemizer::rules_fallback`. `Phonemizer::has` is now false for a language whose table is
+    not loaded, and `Phonemizer::empty()` reads such a language with its letter rules.
+  - Command line: `uccharan --packs` lists the packs, `uccharan --download NAME…` fetches them
+    (with the `download` feature). The C library builds with `--features bundle` or `download`
+    as well.
+
+- **Hungarian**: a list of 2.4 k words with only secondary stress at the end of a clause, and
+  number words with one stress per group of three digits. Held-out PER 2.08 → 1.44 % on
+  FLORES-200 (1.02 % without digits; second scoring of that half); words in the table 1.8 % wrong,
+  other listed words 0.2 %, words outside the word list 3.8 % (1121 words).
+- **Sindhi**, words outside the word list: `sd.ucd` now holds a model that corrects the letter
+  rules' reading of a word (trained on the readings of the 61 k-word list) and the words that
+  rules and model together get wrong (6.9 k entries, 120 KB; was 18 k entries, 209 KB). Held-out
+  PER 1.52 → 1.30 % (third scoring of that half, see docs/evaluation.md); words outside the list
+  29.8 → 21.9 % wrong. The same model made Urdu's unlisted words worse on the development
+  sentences (45.7 → 49.6 % wrong), so Urdu keeps its table of exceptions.
 
 ## [0.4.0] - 2026-11-14
 

@@ -28,6 +28,62 @@ pub const UCCHARAN_NORMALIZE_OFF: u32 = 8;
 /// Leave clause punctuation out of `espeak-ipa` output.
 pub const UCCHARAN_NO_PUNCTUATION: u32 = 16;
 
+thread_local! {
+    static LAST_ERROR: std::cell::RefCell<CString> = std::cell::RefCell::new(CString::default());
+}
+
+/// Make `lang` ready (see `uccharan_ensure`); on failure remember the message.
+fn ready(p: &Phonemizer, lang: Lang) -> bool {
+    match p.ensure(lang) {
+        Ok(()) => true,
+        Err(e) => {
+            let msg = CString::new(e.to_string()).unwrap_or_default();
+            LAST_ERROR.with(|l| *l.borrow_mut() = msg);
+            false
+        }
+    }
+}
+
+/// Why the last call on this thread returned NULL or an error code because
+/// of a language pack: a message that names the pack, where it is published
+/// and where the file is looked for. An empty string when no such error has
+/// happened. The pointer is valid until the next library call on the same
+/// thread; do not free it.
+#[no_mangle]
+pub extern "C" fn uccharan_last_error() -> *const c_char {
+    LAST_ERROR.with(|l| l.borrow().as_ptr())
+}
+
+/// Make a language ready before its first use. English and Hindi are built
+/// in; the word tables of the other languages are packs (`de.ucd`, `fr.ucd`
+/// …, attached to the release). A pack that is not loaded is read from the
+/// directory named by `UCCHARAN_DATA_DIR`, from the cache directory, or,
+/// when the library was built with the `download` feature and
+/// `UCCHARAN_OFFLINE` is not `1`, from the release, and checked against its
+/// SHA-256 sum. The phonemizing calls do the same at a language's first use.
+///
+/// Returns 0 when the language is ready, -1 for a bad argument and -2 when a
+/// pack is missing or damaged ([`uccharan_last_error`] says which).
+///
+/// # Safety
+/// `p` must be a live phonemizer; `lang` a valid C string.
+#[no_mangle]
+pub unsafe extern "C" fn uccharan_ensure(p: *const UccharanPhonemizer, lang: *const c_char) -> i32 {
+    if p.is_null() || lang.is_null() {
+        return -1;
+    }
+    // SAFETY: pointers were checked for NULL and the caller guarantees validity.
+    let (p, lang) = unsafe { (&*p, CStr::from_ptr(lang)) };
+    let Some(lang) = lang.to_str().ok().and_then(Lang::parse) else {
+        return -1;
+    };
+    if ready(&p.inner, lang) {
+        0
+    } else {
+        -2
+    }
+}
+
 /// Library version, e.g. "0.1.0". The pointer is static; do not free it.
 #[no_mangle]
 pub extern "C" fn uccharan_version() -> *const c_char {
@@ -38,7 +94,9 @@ pub extern "C" fn uccharan_version() -> *const c_char {
 #[no_mangle]
 pub extern "C" fn uccharan_new() -> *mut UccharanPhonemizer {
     Box::into_raw(Box::new(UccharanPhonemizer {
-        inner: Phonemizer::new(),
+        // A missing word table is reported by the calls (NULL and
+        // `uccharan_last_error`), never by stopping the process.
+        inner: Phonemizer::new().rules_fallback(true),
     }))
 }
 
@@ -120,7 +178,8 @@ pub unsafe extern "C" fn uccharan_load_pack(
 /// "sherpa-onnx" decimal codepoints separated by spaces with sentences
 /// separated by " | ". `flags` is a combination of the `UCCHARAN_*` constants.
 ///
-/// Returns a newly allocated string, or NULL when an argument is invalid.
+/// Returns a newly allocated string, or NULL when an argument is invalid or the
+/// language pack is missing (see [`uccharan_last_error`]).
 ///
 /// # Safety
 /// `p` must be a live phonemizer; `text`, `lang` and `profile` valid C strings.
@@ -151,6 +210,9 @@ pub unsafe extern "C" fn uccharan_phonemize(
     ) else {
         return std::ptr::null_mut();
     };
+    if !ready(&p.inner, lang) {
+        return std::ptr::null_mut();
+    }
     let opt = options(lang, flags);
     let out = match prof {
         Profile::Piper => profile::piper_sentences(&p.inner.analyze(text, &opt)).join("\n"),
@@ -183,7 +245,8 @@ fn options(lang: Lang, flags: u32) -> Options {
 /// by a space. `threads` is the number of worker threads; 0 uses every
 /// available core. Other arguments are as for [`uccharan_phonemize`].
 ///
-/// Returns a newly allocated string, or NULL when an argument is invalid.
+/// Returns a newly allocated string, or NULL when an argument is invalid or the
+/// language pack is missing (see [`uccharan_last_error`]).
 ///
 /// # Safety
 /// `p` must be a live phonemizer; `text`, `lang` and `profile` valid C strings.
@@ -215,6 +278,9 @@ pub unsafe extern "C" fn uccharan_phonemize_lines(
     ) else {
         return std::ptr::null_mut();
     };
+    if !ready(&p.inner, lang) {
+        return std::ptr::null_mut();
+    }
     let opt = options(lang, flags);
     let lines: Vec<&str> = text.split('\n').collect();
     let out = p
@@ -406,6 +472,9 @@ pub unsafe extern "C" fn uccharan_phonemize_wordlists(
     ) else {
         return std::ptr::null_mut();
     };
+    if !ready(&p.inner, lang) {
+        return std::ptr::null_mut();
+    }
     let wrapped = format!("{{\"wordlists\":{lists}}}");
     let Ok(o) = uccharan_core::normalize_api::options_from_json(&wrapped) else {
         return std::ptr::null_mut();
@@ -565,6 +634,9 @@ pub unsafe extern "C" fn uccharan_match_terms(
     let Some(lang) = Lang::parse(lang) else {
         return std::ptr::null_mut();
     };
+    if !ready(&p.inner, lang) {
+        return std::ptr::null_mut();
+    }
     match index.inner.apply_json(&p.inner, text, lang, options) {
         Ok(s) => CString::new(s).map_or(std::ptr::null_mut(), CString::into_raw),
         Err(_) => std::ptr::null_mut(),

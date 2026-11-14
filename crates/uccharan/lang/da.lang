@@ -2,6 +2,7 @@
 # word table, the number words and the letter names.
 
 [meta]
+caps-words = *
 tag = da
 vowels = a e i o u y œ ɛ ɔ ə ɪ ʊ ɑ ɐ ɜ ʌ ɒ
 stress = initial
@@ -30,6 +31,51 @@ r -> ʁ
 v -> ʋ
 
 [words]
+ord2# ˈanən
+ord3# tʁˈɛdjə
+ord4# fjˈeʌ
+ord7# sˈyʋnə
+ord8# ˈʌtnə
+ord9# nˈiənə
+ord11# ˈɛlfdə
+ord12# tˈʌlfdə
+ord13# tʁˈ?adənə
+ord14# fjˈoɐ̯dənə
+ord15# fˈɛmdənə
+ord16# sˈɑjsdənə
+ord17# sˈʔœdənə
+ord18# ˈadənə
+ord19# nˈʔedənə
+ord20# tˈyʋənə
+ord21# ˈeːnʌtˈyʋənə
+ord22# tˈoʌtˈyʋənə
+ord23# tʁˈʔeʌtˈyʋənə
+ord24# fˈiʌʌtˈyʋənə
+ord25# fˈεmʌtˈyʋənə
+ord26# sˈεɡsʌtˈyʋənə
+ord27# sˈʔywʌtˈyʋənə
+ord28# ˈɒɒdəʌtˈyʋənə
+ord29# nˈʔiʌtˈyʋənə
+ord30# tʁˈaftə
+ord31# ˈeːnʌtʁˈaftə
+ord32# tˈoʌtʁˈaftə
+ord33# tʁˈʔeʌtʁˈaftə
+ord34# fˈiʌʌtʁˈaftə
+ord35# fˈεmʌtʁˈaftə
+ord36# sˈεɡsʌtʁˈaftə
+ord37# sˈʔywʌtʁˈaftə
+ord38# ˈɒɒdəʌtʁˈaftə
+ord39# nˈʔiʌtʁˈaftə
+ord40# fˌœʌtˈyʋənə
+ord41# ˈeːnʌfˌœʌtˈyʋənə
+ord42# tˈoʌfˌœʌtˈyʋənə
+ord43# tʁˈʔeʌfˌœʌtˈyʋənə
+ord44# fˈiʌˌʌfœʌtˈyʋənə
+ord45# fˈεmʌfˌœʌtˈyʋənə
+ord46# sˈεɡsʌfˌœʌtˈyʋənə
+ord47# sˈʔywʌfˌœʌtˈyʋənə
+ord48# ˈɒɒdəˌʌfœʌtˈyʋənə
+ord49# nˈʔiʌfˌœʌtˈyʋənə
 nul# nˈɒl
 et# ˈeːn
 to# tˈo
@@ -161,6 +207,52 @@ komma# kˌʌmaa
 procent# pʁosˈɛnd
 
 [numbers]
+roman-skip VI
+ord2 ord2#
+ord3 ord3#
+ord4 ord4#
+ord7 ord7#
+ord8 ord8#
+ord9 ord9#
+ord11 ord11#
+ord12 ord12#
+ord13 ord13#
+ord14 ord14#
+ord15 ord15#
+ord16 ord16#
+ord17 ord17#
+ord18 ord18#
+ord19 ord19#
+ord20 ord20#
+ord21 ord21#
+ord22 ord22#
+ord23 ord23#
+ord24 ord24#
+ord25 ord25#
+ord26 ord26#
+ord27 ord27#
+ord28 ord28#
+ord29 ord29#
+ord30 ord30#
+ord31 ord31#
+ord32 ord32#
+ord33 ord33#
+ord34 ord34#
+ord35 ord35#
+ord36 ord36#
+ord37 ord37#
+ord38 ord38#
+ord39 ord39#
+ord40 ord40#
+ord41 ord41#
+ord42 ord42#
+ord43 ord43#
+ord44 ord44#
+ord45 ord45#
+ord46 ord46#
+ord47 ord47#
+ord48 ord48#
+ord49 ord49#
 decimal comma
 point komma#
 minus minus

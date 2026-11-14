@@ -17,5 +17,9 @@ doc = false
 [dependencies]
 # The wheel carries en-us and Hindi; en-gb and the Kokoro English data are
 # packs, fetched on first use (see python/uccharan/packs.py).
-uccharan = { path = "../../crates/uccharan", default-features = false, features = ["embed-en-us", "embed-hi", "embed-ur", "embed-sd", "embed-de", "embed-nl", "embed-fr", "embed-it", "embed-pt-br", "embed-pt", "embed-pl", "embed-tr", "embed-cs", "embed-sv", "embed-ca", "embed-ro", "embed-hu", "embed-fi", "embed-nb", "embed-da"] }
+uccharan = { path = "../../crates/uccharan", default-features = false, features = ["embed-en-us", "embed-hi"] }
 pyo3 = { version = "0.30", features = ["extension-module", "abi3-py39"] }
+
+[features]
+# Every word table compiled into the extension module (no downloads).
+bundle = ["uccharan/bundle"]

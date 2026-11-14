@@ -5,62 +5,62 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 161551,
-  "per": 0.014038910313151885,
-  "per_without_stress": 0.008357293734502272,
-  "exact_sentence": 0.44466403162055335,
-  "exact_sentence_without_stress": 0.4891304347826087,
-  "piper_shape_per": 0.014080643686568528,
-  "piper_shape_exact_sentence": 0.43774703557312256,
+  "per": 0.013153740923918763,
+  "per_without_stress": 0.008018198130735484,
+  "exact_sentence": 0.4515810276679842,
+  "exact_sentence_without_stress": 0.4881422924901186,
+  "piper_shape_per": 0.013208984791685715,
+  "piper_shape_exact_sentence": 0.44367588932806323,
   "word_count_mismatch_sentences": 637,
   "errors_by_class": {
    "stress": {
-    "count": 1091,
-    "share": 0.4810405643738977,
-    "per_contribution": 0.0067532853402331155
+    "count": 997,
+    "share": 0.4691764705882353,
+    "per_contribution": 0.006171425741716238
    },
    "consonant": {
-    "count": 707,
-    "share": 0.3117283950617284,
-    "per_contribution": 0.004376326980334384
-   },
-   "vowel": {
-    "count": 180,
-    "share": 0.07936507936507936,
-    "per_contribution": 0.0011141992312025304
+    "count": 703,
+    "share": 0.3308235294117647,
+    "per_contribution": 0.004351566997418772
    },
    "other": {
-    "count": 163,
-    "share": 0.0718694885361552,
-    "per_contribution": 0.0010089693038111804
+    "count": 162,
+    "share": 0.07623529411764705,
+    "per_contribution": 0.0010027793080822774
+   },
+   "vowel": {
+    "count": 151,
+    "share": 0.07105882352941177,
+    "per_contribution": 0.000934689355064345
    },
    "word-boundary": {
     "count": 80,
-    "share": 0.03527336860670194,
+    "share": 0.03764705882352941,
     "per_contribution": 0.0004951996583122358
    },
    "length": {
-    "count": 46,
-    "share": 0.020282186948853614,
-    "per_contribution": 0.00028473980352953555
+    "count": 31,
+    "share": 0.014588235294117647,
+    "per_contribution": 0.00019188986759599135
    },
    "diacritic": {
     "count": 1,
-    "share": 0.0004409171075837742,
+    "share": 0.00047058823529411766,
     "per_contribution": 6.189995728902947e-06
    }
   },
   "top_confusions": [
    {
     "edit": "∅→ˌ",
-    "count": 314
+    "count": 294
    },
    {
     "edit": "ˌ→∅",
-    "count": 222
+    "count": 218
    },
    {
     "edit": "ˈ→∅",
-    "count": 185
+    "count": 183
    },
    {
     "edit": "d→t",
@@ -107,40 +107,28 @@
     "count": 45
    },
    {
-    "edit": "ˈ→ˌ",
-    "count": 36
-   },
-   {
-    "edit": "ˌ→ˈ",
-    "count": 35
-   },
-   {
-    "edit": "e→∅",
-    "count": 34
-   },
-   {
-    "edit": "∅→ː",
-    "count": 32
-   },
-   {
     "edit": "a→∅",
     "count": 32
-   },
-   {
-    "edit": "∅→ˈ",
-    "count": 31
    },
    {
     "edit": " →ˈ",
     "count": 31
    },
    {
-    "edit": "∅→e",
-    "count": 29
+    "edit": "e→∅",
+    "count": 28
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 25
    },
    {
     "edit": "∅→ ",
     "count": 24
+   },
+   {
+    "edit": "ː→∅",
+    "count": 19
    },
    {
     "edit": "ˈ→o",
@@ -149,99 +137,111 @@
    {
     "edit": "t→∅",
     "count": 17
+   },
+   {
+    "edit": "l→∅",
+    "count": 16
+   },
+   {
+    "edit": "n→∅",
+    "count": 16
+   },
+   {
+    "edit": "ˈ→a",
+    "count": 15
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 6486,
-    "wrong": 216,
-    "rate": 0.03330249768732655
+    "wrong": 207,
+    "rate": 0.031914893617021274
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 193,
-    "per": 0.023120138288677615,
-    "exact_sentence": 0.2538860103626943
+    "per": 0.021499567847882456,
+    "exact_sentence": 0.2694300518134715
    },
    "no-digits": {
     "sentences": 819,
-    "per": 0.011338906421900472,
-    "exact_sentence": 0.4896214896214896
+    "per": 0.010672384302199522,
+    "exact_sentence": 0.4945054945054945
    }
   },
   "examples_of_disagreement": [
    {
-    "id": "flores-devtest-58",
-    "text": "\"Tuto diskuzi rozvířila kontroverze ohledně výdajů za pomoc a rekonstrukci po hurikánu Katrina; které někteří fiskální konzervativci humorně nazývali \"\"Bushův novoorleanský úděl.\"\"\"",
-    "reference": "tˈuto dˈiskuzi rˈozviːr̝ˌila kˈontrovˌerze ˈohledɲe vˈiːdajuː zˈapomots a rˈekonstrˌuktsi po hˈurikˌaːnu kˈatrina ktˈereː ɲˈekter̝iː fˈiskaːlɲiː kˈonzervˌatiftsi hˈumorɲe nˈaziːvˌali bˈushuːv nˈovoˌorleˌanskiː ˈuːɟel",
-    "uccharan": "tˈuto dˈiskuzi rˈozviːr̝ˌila kˈontrovˌerze ˈohledɲe vˈiːdajuː zˈapomots a rˈekonstrˌuktsi pˈohurˌikaːnu kˈatrina ktˈereː ɲˈekter̝iː fˈiskaːlɲiː kˈonzervˌatiftsi hˈumorɲe nˈaziːvˌali bˈusxuːv nˈovoˌorleˌanskiː ˈuːɟel"
+    "id": "flores-devtest-24",
+    "text": "Dvě písně z filmu Audition (The Fools Who Dream) a City of Stars získaly nominace na nejlepší originální píseň. Studio Lionsgate získalo 26 nominací – více než jakékoli jiné studio.",
+    "reference": "dvjˈe pˈiːsɲe s fˈilmu ˈaʊdicˌion thˈe fˈools fhˈo drˈeam a tsˈiti ˈof stˈarz zˈiːskali nˈominˌatse nˈaneɪlˌepʃiː ˈoriɡˌinaːlɲiː pˈiːseɲ stˈudijo lˈionzɡˌate zˈiːskalo dvˈatsetʃˈest nˈominˌatsiː vˈiːtse nˈeʒ jˈakeːkˌoli jˈineː stˈudijo",
+    "uccharan": "dvjˈe pˈiːsɲe s fˈilmu ˈaʊdˌicion thˈe fˈools fhˈo drˈeam a tsˈiti ˈof stˈars zˈiːskali nˈominˌatse nˈaneˌɪlepʃiː ˈoriɡˌinaːlɲiː pˈiːseɲ stˈudijo lˈionzɡˌate zˈiːskalo dvˈatsetʃˈest nˈominˌatsiː vˈiːtse nˈeʃ jˈakeːkˌoli jˈineː stˈudijo"
    },
    {
-    "id": "flores-devtest-930",
-    "text": "Zásilkové společnosti jsou dobře placeny za rychlé doručení zboží. Čas je často velmi důležitým faktorem u obchodních dokumentů, zboží nebo náhradních dílů pro naléhavou opravu.",
-    "reference": "zˈaːsilkˌoveː spˈoletʃnˌosci jsoʊ dˈobr̝e plˈatseni zˈarixleː dˈorutʃˌeɲiː zbˈoʒiː tʃˈas je tʃˈasto vˈelmi dˈuːleʒˌitiːm fˈaktorem ˈu ˈopxodɲiːɣ dˈokumˌentuː zbˈoʒiː nˌebo nˈaːhradɲiːɣ ɟˈiːluː pro nˈaleːhˌavoʊ ˈopravu",
-    "uccharan": "zˈaːsilkˌoveː spˈoletʃnˌosci jsoʊ dˈobr̝e plˈatseni zˈarixleː dˈorutʃˌeɲiː zbˈoʒiː tʃˈas je tʃˈasto vˈelmi dˈuːleʒˌitiːm fˈaktorem ˈu ˈopxodɲiːɣ dˈokumˌentuː zbˈoʒiː nˌebo nˈaːhradɲiːɣ ɟˈiːluː prˈonalˌeːhavˌoʊ ˈopravu"
+    "id": "flores-devtest-597",
+    "text": "Mnoho zaznamenaných rytmů ve fyziologii a chování často zásadně závisí na přítomnosti endogenních cyklů a jejich produkci prostřednictvím biologických hodin.",
+    "reference": "mnˈoho zˈaznamˌenaniːx rˈitmuː vˈe fˈiziˌoloɡˌiji a xˈovaːɲiː tʃˈasto zˈaːsadɲe zˈaːvisiː na pr̝̊ˈiːtomnˌosci ˈendoɡˌeɲiːx tsˈikluː a jˈejix prˈoduktsi prˈostr̝̊edɲˌitstviːm bˈiolˌoɡitskiːx hˈoɟin",
+    "uccharan": "mnˈoho zˈaznamˌenaniːx rˈitmuː vˈe fˈiziˌoloɡˌiji a xˈovaːɲiː tʃˈasto zˈaːsadɲe zˈaːvisiː nˈapr̝̊iːtˌomnosci ˈendoɡˌeɲiːx tsˈikluː a jˈejix prˈoduktsi prˈostr̝̊edɲˌitstviːm bˈiolˌoɡitskiːx hˈoɟin"
    },
    {
-    "id": "flores-devtest-733",
-    "text": "Sundarbans je největším pásem pobřežních mangrovů na světě, který se od pobřeží táhne 80 km (50 mil) do vnitrozemí Bangladéše a Indie.",
-    "reference": "sˈundarbans je nˈeɪvjetʃiːm pˈaːsem pˈobr̝eʒɲiːx mˈaŋɡrovuː nˈasvjece ktˈeriː se ˈotpobr̝ˌeʒiː tˈaːhne ˈosumdˌesaːt kˈilomˌetr̩ pˈadesaːt mˈil do vɲˈitrozˌemiː bˈaŋɡladˌeːʃe a ˈindie",
-    "uccharan": "sˈundarbans je nˈeɪvjetʃiːm pˈaːsem pˈobr̝eʒɲiːx mˈaŋɡrovuː nˈasvjece ktˈeriː se ˈotpobr̝ˌeʒiː tˈaːhne ˈosumdˌesaːt kˈilomˌetr̩ pˈadesaːt mˈil dˈovɲitrˌozemiː bˈaŋɡladˌeːʃe a ˈindie"
+    "id": "flores-devtest-193",
+    "text": "Po přijetí výsledků Gingrich pochválil Santoruma, tvrdá slova měl však pro Romneyho, kvůli kterému byly v Iowě spuštěny negativní reklamní kampaně vůči Gingrichovi.",
+    "reference": "pˈopr̝̊ijˌeciː vˈiːsletkuː ɡˈiŋɡrix pˈoxvaːlil sˈantorˌuma tvˈr̩daː slˈova mɲel fʃˈak pro rˈomneˌiho kvˈuːli ktˈereːmu bˌili v ˈiove spˈuʃceni nˈeɡatˌivɲiː rˈeklamɲiː kˈampaɲe vˈuːtʃi ɡˈiŋɡrixˌovi",
+    "uccharan": "pˈopr̝̊ijˌeciː vˈiːsletkuː ɡˈiŋɡrix pˈoxvaːlil sˈantorˌuma tvˈr̩daː slˈova mɲel fʃˈak prˈoromnˌeiho kvˈuːli ktˈereːmu bˌili v ˈiove spˈuʃceni nˈeɡatˌivɲiː rˈeklamɲiː kˈampaɲe vˈuːtʃi ɡˈiŋɡrixˌovi"
    },
    {
-    "id": "flores-devtest-499",
-    "text": "V historii se většina zemědělců zabývala samozásobitelským zemědělstvím, což se stále děje v mnoha rozvojových zemích.",
-    "reference": "v hˈistorˌiji se vjˈetʃina zˈemɲeɟˌeltsuː zˈabiːvˌala sˈamozˌaːsobˌitelskiːm zˈemɲeɟˌelstviːm tsˈoʃ se stˈaːle ɟˈeje v mnˈoha rˈozvojˌoviːɣ zˈemiːx",
-    "uccharan": "v hˈistorˌiji se vjˈetʃina zˈemɲeɟˌeltsuː zˈabiːvˌala sˈamozaːsˌobitˌelskiːm zˈemɲeɟˌelstviːm tsˈoʃ se stˈaːle ɟˈeje v mnˈoha rˈozvojˌoviːɣ zˈemiːx"
+    "id": "flores-devtest-461",
+    "text": "Při své poloze na vrcholu jedné z hor severně od Mekky je tato jeskyně kompletně izolována od zbytku světa.",
+    "reference": "pr̝̊ˈisveː pˈoloze nˈavr̩xˌolu jˈedneː s hˈor sˈeverɲe ˈodmeki je tˈato jˈeskiɲe kˈompletɲe ˈizolˌovaːna ˈodzbitku svjˈeta",
+    "uccharan": "pr̝̊ˈisveː pˈoloze nˈavr̩xolu jˈedneː s hˈor sˈeverɲe ˈotmeki je tˈato jˈeskiɲe kˈompletɲe ˈizolˌovaːna ˈotzbitku svjˈeta"
    },
    {
-    "id": "flores-devtest-57",
-    "text": "Paní Kirchner oznámila svůj záměr ucházet se o prezidentský úřad v Divadle Argentina, tedy na stejném místě, kde v roce 2005 zahájila svou kampaň do Senátu jakožto členka delegace z provincie Buenos Aires.",
-    "reference": "pˈaɲiː kˈirxner ˈoznaːmˌila svˈuːj zˈaːmɲer ˈuxaːzet se o prˈezidˌentskiː ˈuːr̝ad v ɟˈivadle ˈarɡentˌina tˈedi nˈasteɪneːm mˈiːsce kdˈe v rˈotse dvˈa cˈisiːtse pjˈed zˈahaːjˌila svˈoʊ kˈampaɲ dˈosenˌaːtu jˈakoʃto tʃlˈeŋka dˈeleɡˌatse s prˈovintsˌije bˈuenos ˈaires",
-    "uccharan": "pˈaɲiː kˈirxner ˈoznaːmˌila svˈuːj zˈaːmɲer ˈuxaːzet se ˈoprezˌidentskiː ˈuːr̝at v ɟˈivadle ˈarɡentˌina tˈedi nˈasteˌɪneːm mˈiːsce kdˈe v rˈotse dvˈa cˈisiːtse pjˈed zˈahaːjˌila svˈoʊ kˈampaɲ dˈosenˌaːtu jˈakoʃto tʃlˈeŋka dˈeleɡˌatse s prˈovintsˌije bˈuenos ˈaires"
+    "id": "flores-devtest-610",
+    "text": "Věda nyní naznačuje, že tato masivní karbonová ekonomika vykolejila biosféru z jejího stabilního stavu, který podporoval lidskou evoluci po dosavadní dva miliony let.",
+    "reference": "vjˈeda nˈiɲiː nˈaznatʃˌuje ʒe tˈato mˈasivɲiː kˈarbonˌovaː ˈekonˌomika vˈikolˌejila bˈiosfˌeːru s jˈejiːho stˈabilɲˌiːho stˈavu ktˈeriː pˈotporˌoval lˈitskoʊ ˈevolˌutsi po dˈosavˌadɲiː dvˈa mˈiliˌoni lˈet",
+    "uccharan": "vjˈeda nˈiɲiː nˈaznatʃˌuje ʒe tˈato mˈasivɲiː kˈarbonˌovaː ˈekonˌomika vˈikolˌejila bˈiosfˌeːru s jˈejiːho stˈabilɲˌiːho stˈavu ktˈeriː pˈotporˌoval lˈitskoʊ ˈevolˌutsi pˈodosˌavadɲiː dvˈa mˈiliˌoni lˈet"
    },
    {
-    "id": "flores-devtest-755",
-    "text": "Oficiální měnou Falklandských ostrovů je falklandská libra (FKP), jejíž hodnota odpovídá jedné britské libře (GBP).",
-    "reference": "ˈofitsˌiaːlɲiː mɲˈenoʊ fˈalklantskiːx ˈostrovuː je fˈalklantskaː lˈibra ˈefkˌaːpˌeː jˈejiːʃ hˈodnota ˈotpovˌiːdaː jˈedneː brˈitskeː lˈibr̝e ɡˈeːbˌeːpˌeː",
-    "uccharan": "ˈofitsˌiaːlɲiː mɲˈenoʊ fˈalklantskiːx ˈostrovuː je fˈalklantskaː lˈibra ˌefkˌaːpˈeː jˈejiːʃ hˈodnota ˈotpovˌiːdaː jˈedneː brˈitskeː lˈibr̝e ɡˌeːbˌeːpˈeː"
+    "id": "flores-devtest-512",
+    "text": "V softwaru jsou začleněny Virtuální konstrukce určené k analyzování, motivování a vysvětlování procedur, které by mohly být pro samotného studenta příliš náročné.",
+    "reference": "v sˈoftvaru jsoʊ zˈatʃleɲˌeni vˈirtuˌaːlɲiː kˈonstruktse ˈurtʃeneː k ˈanalˌizovˌaːɲiː mˈotivˌovaːɲiː a vˈisvjetlˌovaːɲiː prˈotsedur ktˈereː bi mˈohli biːt pro sˈamotnˌeːho stˈudenta pr̝̊ˈiːliʃ nˈaːrotʃneː",
+    "uccharan": "v sˈoftvaru jsoʊ zˈatʃleɲˌeni vˈirtuˌaːlɲiː kˈonstruktse ˈurtʃeneː k ˈanalˌizovˌaːɲiː mˈotivˌovaːɲiː a vˈisvjetlˌovaːɲiː prˈotsedur ktˈereː bi mˈohli biːt prˈosamˌotneːho stˈudenta pr̝̊ˈiːliʃ nˈaːrotʃneː"
    },
    {
-    "id": "flores-devtest-742",
-    "text": "Oyapock River Bridge je zavěšený most. Klene se přes řeku Oyapock a spojuje města Oiapoque v Brazílii a Saint-Georges de l'Oyapock ve Francouzské Guyaně.",
-    "reference": "ˈoiˌapotsk rˈiver brˈidɡe je zˈavjeʃˌeniː mˈost klˈene se pr̝̊ˈes r̝ˈeku ˈoiˌapotsk a spˈojuje mɲˈesta ˈoiˌapokve v brˈaziːlˌiji a sˈaindɡˈeorɡez dˈe ˈl̩oˌiapotsk vˈe frˈantsoʊsskeː ɡˈuiˌaɲe",
-    "uccharan": "ˈoiˌapotsk rˈiver brˈidɡe je zˈavjeʃˌeniː mˈost klˈene se pr̝̊ˈes r̝ˈeku ˈoiˌapotsk a spˈojuje mɲˈesta ˈoiˌapokve v brˈaziːlˌiji a sˈaindɡˈeorɡes dˈe lˈoiˌapotsk vˈe frˈantsoʊsskeː ɡˈuiˌaɲe"
+    "id": "flores-devtest-169",
+    "text": "Spotřebitelský trh s přenosnými počítači se však radikálně otřese a promění poté, co byl ASUS v roce 2007 oceněn cenou Taiwan Sustainable Award od premiéra vlády Čínské republiky.",
+    "reference": "spˈotr̝̊ebˌitelskiː tˈr̩x s pr̝̊ˈenosnˌiːmi pˈotʃiːtˌatʃi se fʃˈak rˈadikˌaːlɲe ˈotr̝̊ese a prˈomɲeɲiː pˈoteː tsˈo bil ˈasus v rˈotse dvˈa cˈisiːtse sˈedum ˈotseɲen tsˈenoʊ tˈaivan sˈustaˌinable ˈavard ot prˈemiˌeːra vlˈaːdi tʃˈiːnskeː rˈepublˌiki",
+    "uccharan": "spˈotr̝̊ebˌitelskiː tˈr̩x s pr̝̊ˈenosnˌiːmi pˈotʃiːtˌatʃi se fʃˈak rˈadikˌaːlɲe ˈotr̝̊ese a prˈomɲeɲiː pˈoteː tsˈo bil ˈasus v rˈotse dvˈa cˈisiːtse sˈedum ˈotseɲen tsˈenoʊ tˈaivan sˈustaˌinable ˈavart ˈotpremˌieːra vlˈaːdi tʃˈiːnskeː rˈepublˌiki"
    },
    {
-    "id": "flores-devtest-233",
-    "text": "Večer zahájil zpěvák Sanju Sharma a po něm následoval Jai Shankar Choudhary. Lakkha Singh zazpíval také chhappan bhog bhajan. Doprovázel jej zpěvák Raju Khandelwal.",
-    "reference": "vˈetʃer zˈahaːjil spjˈevaːk sˈanju shˈarma a pˈoɲem nˈaːsledˌoval jˈai shˈaŋkar xˈoʊthari lˈakha sˈiŋɡh zˈaspiːval tˈakeː xhˈappan phˈok phˈajan dˈoprovˌaːzel jˈeɪ spjˈevaːk rˈaju khˈandelval",
-    "uccharan": "vˈetʃer zˈahaːjil spjˈevaːk sˈanju shˈarma a pˈoɲem nˈaːsledˌoval jˈai shˈaŋkar xˈoʊthˌari lˈakkha sˈiŋkɣ zˈaspiːval tˈakeː xhˈapan phˈok phˈajan dˈoprovˌaːzel jˈeɪ spjˈevaːk rˈaju khˈandelval"
+    "id": "flores-devtest-307",
+    "text": "Zemětřesení udeřilo v Marianě v 7:19 místního času (pátek 20:19 GMT).",
+    "reference": "zˈemɲetr̝̊ˌeseɲiː ˈuder̝ˌilo v mˈariˌaɲe v sˈedum dˈevatˌenaːtst mˈiːstɲiːho tʃˈasu pˈaːtek dvˈatsed dˈevatˌenaːdʑd ɡˈeːˌemtˌeː",
+    "uccharan": "zˈemɲetr̝̊ˌeseɲiː ˈuder̝ˌilo v mˈariˌaɲe v sˈedum dˈevatˌenaːtst mˈiːstɲiːho tʃˈasu pˈaːteɡ dvˈatsed dˈevatˌenaːtsd ɡˈeːˌemtˌeː"
    },
    {
-    "id": "flores-devtest-819",
-    "text": "Pokud není k dispozici žehlička nebo neradi nosíte vyžehlené ponožky, můžete zkusit použít vysoušeč vlasů, pokud je k dispozici.",
-    "reference": "pˈokud nˈeɲiː k dˈispozˌitsi ʒˈehlitʃka nˌebo nˈeraɟi nˈosiːte vˈiʒehlˌeneː pˈonoʃki mˈuːʒete skˈusit pˈoʊʒiːt vˈisoʊʃetʃ vlˈasuː pˈokud je k dˈispozˌitsi",
-    "uccharan": "pˈokut nˈeɲiː ɡ dˈispozˌitsi ʒˈehlitʃka nˌebo nˈeraɟi nˈosiːte vˈiʒehlˌeneː pˈonoʃki mˈuːʒete skˈusit pˈoʊʒiːt vˈisoʊʃetʃ vlˈasuː pˈokut je ɡ dˈispozˌitsi"
+    "id": "flores-devtest-638",
+    "text": "Bylo to spíš jako čtyři skupenství hmoty (ve stejném pořadí): pevné, kapalné, plynné a plazma, přestože také teoretizoval, že se mění v nové látky utvářející to, co vidíme.",
+    "reference": "bˌilo tˈo spˈiːʃ jˈako tʃtˈir̝i skˈupenstviː hmˈoti vˈe stˈeɪneːm pˈor̝aɟiː pˈevneː kˈapalneː plˈineː a plˈazma pr̝̊ˈestoʒe tˈakeː tˈeorˌetizˌoval ʒe se mɲˈeɲiː v nˈoveː lˈaːtki ˈutvaːr̝ˌejiːtsiː tˈo tsˈo vˈiɟiːme",
+    "uccharan": "bˌilo tˈo spˈiːʃ jˈako tʃtˈir̝i skˈupenstviː hmˈoti vˈe stˈeɪneːm pˈor̝aɟiː pˈevneː kˈapalneː plˈineː a plˈazma pr̝̊ˈestoʒe tˈakeː tˈeorˌetizˌoval ʒe se mɲˈeɲiː v nˈoveː lˈaːtki tvˈaːr̝ejˌiːtsiː tˈo tsˈo vˈiɟiːme"
    },
    {
-    "id": "flores-devtest-773",
-    "text": "Během snah o nezávislost organizovaných hnutím Mau vyústilo pokojné shromáždění ve městě v zabití nejvyššího předsedy jménem Tupua Tamasese Lealofi III.",
-    "reference": "bjˈehem snˈah o nˈezaːvˌislost ˈorɡanˌizovˌaniːx hnˈuciːm mˈaʊ vˈiuːscˌilo pˈokojneː shrˈomaːʒɟˌeɲiː vˈe mɲˈesce v zˈabiciː nˈeɪviʃʃˌiːho pr̝̊ˈetsedi jmˈeːnem tˈupua tˈamasˌese lˈealˌofi tr̝̊ˈi",
-    "uccharan": "bjˈehem snˈah ˈonezˌaːvislost ˈorɡanˌizovˌaniːx hnˈuciːm mˈaʊ vˈiuːscˌilo pˈokojneː shrˈomaːʒɟˌeɲiː vˈe mɲˈesce v zˈabiciː nˈeɪviʃʃˌiːho pr̝̊ˈetsedi jmˈeːnem tˈupua tˈamasˌese lˈealˌofi tr̝̊ˈi"
+    "id": "flores-devtest-599",
+    "text": "Biologické hodiny jsou soběstačnými oscilátory, které pokračují v čase volně probíhajícího cyklu i bez přítomnosti vnějších podnětů.",
+    "reference": "bˈiolˌoɡitskeː hˈoɟini jsoʊ sˈobjestˌatʃniːmi ˈostsilˌaːtori ktˈereː pˈokratʃˌujiː v tʃˈase vˈolɲe prˈobiːhˌajiːtsˌiːho tsˈiklu i bˈes pr̝̊ˈiːtomnˌosci vɲˈejʃiːx pˈodɲetuː",
+    "uccharan": "bˈiolˌoɡitskeː hˈoɟini jsoʊ sˈobjestˌatʃniːmi ˈostsilˌaːtori ktˈereː pˈokratʃˌujiː v tʃˈase vˈolɲe prˈobiːhˌajiːtsˌiːho tsˈiklu i bˈespr̝̊iːtˌomnosci vɲˈejʃiːx pˈodɲetuː"
    },
    {
-    "id": "flores-devtest-131",
-    "text": "Fluke napsala, že snahy některých lidí o umlčení žen v otázce ženského zdraví byly neúspěšné.",
-    "reference": "flˈuke nˈapsala ʒe snˈahi ɲˈekteriːx lˈiɟiː o ˈuml̩tʃˌeɲiː ʒˈen v ˈotaːstse ʒˈenskeːho zdrˈaviː bˌili nˈeuːspjˌeʃneː",
-    "uccharan": "flˈuke nˈapsala ʒe snˈahi ɲˈekteriːx lˈiɟiː ˈouml̩tʃˌeɲiː ʒˈen v ˈotaːstse ʒˈenskeːho zdrˈaviː bˌili nˈeuːspjˌeʃneː"
+    "id": "flores-devtest-685",
+    "text": "Technologie nabízí řešení v podobě virtuálních exkurzí. Studenti se mohou dívat na artefakty z muzea, navštívit akvárium nebo obdivovat krásné umění, zatímco sedí ve třídě.",
+    "reference": "tˈexnolˌoɡije nˈabiːziː r̝ˈeʃeɲiː v pˈodobje vˈirtuˌaːlɲiːx ˈekskurziː stˈudenci se mˈohoʊ ɟˈiːvat na ˈartefˌakti s mˈuzea nˈafʃciːvit ˈakvaːrium nˌebo ˈobɟivˌovat krˈaːsneː ˈumɲeɲiː zˈaciːmtso sˈeɟiː vˈe tr̝̊ˈiːɟe",
+    "uccharan": "tˈexnolˌoɡije nˈabiːziː r̝ˈeʃeɲiː v pˈodobje vˈirtuˌaːlɲiːx ˈekskurziː stˈudenci se mˈohoʊ ɟˈiːvat nˈaartˌefakti s mˈuzea nˈafʃciːvit ˈakvaːrium nˌebo ˈobɟivˌovat krˈaːsneː ˈumɲeɲiː zˈaciːmtso sˈeɟiː vˈe tr̝̊ˈiːɟe"
    },
    {
-    "id": "flores-devtest-453",
-    "text": "V průběhu těchto období se odehrávala nelítostná válka mezi mnoha šlechtici bojujícími o trůn.",
-    "reference": "v prˈuːbjehu cˈexto ˈobdobiː se ˈodehrˌaːvala nˈeliːtˌostnaː vˈaːlka mˈezi mnˈoha ʃlˈexcitsi bˈojujˌiːtsiːmi o trˈuːn",
-    "uccharan": "v prˈuːbjehu cˈexto ˈobdobiː se ˈodehrˌaːvala nˈeliːtˌostnaː vˈaːlka mˈezi mnˈoha ʃlˈexcitsi bˈojujˌiːtsiːmi ˈotruːn"
+    "id": "flores-devtest-807",
+    "text": "Led a sníh jsou na druhou stranu v mnoha zemích normální a provoz pokračuje bez velkých přerušení po celý rok.",
+    "reference": "lˈed a sɲˈiːh jsoʊ nˈadruhoʊ strˈanu v mnˈoha zˈemiːx nˈormaːlɲiː a prˈovos pˈokratʃˌuje bˈezvelkiːx pr̝̊ˈeruʃˌeɲiː pˈotseliː rˈok",
+    "uccharan": "lˈet a sɲˈiːh jsoʊ nˈadruhˌoʊ strˈanu v mnˈoha zˈemiːx nˈormaːlɲiː a prˈovos pˈokratʃˌuje bˈesvelkiːx pr̝̊ˈeruʃˌeɲiː pˈotseliː rˈok"
    }
   ]
  }

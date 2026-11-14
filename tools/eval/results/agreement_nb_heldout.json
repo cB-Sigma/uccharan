@@ -5,57 +5,57 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 164950,
-  "per": 0.011124583207032433,
-  "per_without_stress": 0.009485938772577014,
-  "exact_sentence": 0.6788537549407114,
-  "exact_sentence_without_stress": 0.7144268774703557,
-  "piper_shape_per": 0.011202135107802599,
-  "piper_shape_exact_sentence": 0.6679841897233202,
+  "per": 0.010287966050318278,
+  "per_without_stress": 0.008945253950763461,
+  "exact_sentence": 0.6867588932806324,
+  "exact_sentence_without_stress": 0.7223320158102767,
+  "piper_shape_per": 0.010376336686394073,
+  "piper_shape_exact_sentence": 0.6758893280632411,
   "word_count_mismatch_sentences": 163,
   "errors_by_class": {
    "consonant": {
-    "count": 601,
-    "share": 0.32752043596730246,
-    "per_contribution": 0.0036435283419217943
+    "count": 594,
+    "share": 0.3500294637595757,
+    "per_contribution": 0.003601091239769627
    },
    "stress": {
-    "count": 495,
-    "share": 0.26975476839237056,
-    "per_contribution": 0.003000909366474689
+    "count": 436,
+    "share": 0.25692398350029466,
+    "per_contribution": 0.002643225219763565
    },
    "vowel": {
-    "count": 320,
-    "share": 0.17438692098092642,
-    "per_contribution": 0.0019399818126705063
+    "count": 276,
+    "share": 0.1626399528579847,
+    "per_contribution": 0.0016732343134283115
    },
    "other": {
-    "count": 214,
-    "share": 0.11662125340599455,
-    "per_contribution": 0.001297362837223401
-   },
-   "length": {
-    "count": 110,
-    "share": 0.05994550408719346,
-    "per_contribution": 0.0006668687481054866
+    "count": 206,
+    "share": 0.12139068945197407,
+    "per_contribution": 0.0012488632919066384
    },
    "word-boundary": {
     "count": 95,
-    "share": 0.051771117166212535,
+    "share": 0.05598114319387154,
     "per_contribution": 0.0005759321006365565
+   },
+   "length": {
+    "count": 90,
+    "share": 0.05303476723629935,
+    "per_contribution": 0.0005456198848135798
    }
   },
   "top_confusions": [
    {
     "edit": "∅→ˈ",
-    "count": 126
+    "count": 116
    },
    {
     "edit": "ˌ→∅",
-    "count": 109
+    "count": 98
    },
    {
     "edit": "∅→ˌ",
-    "count": 102
+    "count": 76
    },
    {
     "edit": "ɹ→r",
@@ -64,10 +64,6 @@
    {
     "edit": "ʉ→∅",
     "count": 60
-   },
-   {
-    "edit": "∅→ː",
-    "count": 58
    },
    {
     "edit": "ˈ→∅",
@@ -83,15 +79,19 @@
    },
    {
     "edit": "ː→∅",
-    "count": 52
+    "count": 47
+   },
+   {
+    "edit": "ə→ɛ",
+    "count": 43
+   },
+   {
+    "edit": "∅→ː",
+    "count": 43
    },
    {
     "edit": "k→∅",
     "count": 43
-   },
-   {
-    "edit": "ə→ɛ",
-    "count": 42
    },
    {
     "edit": "∅→ʉ",
@@ -106,19 +106,19 @@
     "count": 40
    },
    {
-    "edit": "∅→s",
-    "count": 35
-   },
-   {
     "edit": "∅→i",
-    "count": 34
+    "count": 33
    },
    {
-    "edit": "ˈ→t",
-    "count": 31
+    "edit": "∅→s",
+    "count": 32
    },
    {
     "edit": "n→ɛ",
+    "count": 30
+   },
+   {
+    "edit": "ˈ→t",
     "count": 30
    },
    {
@@ -149,83 +149,23 @@
   "word_error_by_class": {
    "lexicon": {
     "words": 17757,
-    "wrong": 283,
-    "rate": 0.015937376809145688
+    "wrong": 274,
+    "rate": 0.015430534437123389
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 216,
-    "per": 0.029432967907127055,
-    "exact_sentence": 0.4305555555555556
+    "per": 0.02801600914808462,
+    "exact_sentence": 0.44907407407407407
    },
    "no-digits": {
     "sentences": 796,
-    "per": 0.005219566559495843,
-    "exact_sentence": 0.7462311557788944
+    "per": 0.004570127402323549,
+    "exact_sentence": 0.7512562814070352
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-346",
-    "text": "Kåljuice vil endre farge helt avhengig av hvor surt eller basisk (alkaline) kjemikaliet er.",
-    "reference": "kˈɔjʉɪka viːl ˈɛnnra fˈɑrɡa hˈɛlt ˈɑvhəŋˌɪ av vˈuːr sˈʉrt ˌɛllər bˈasɪsk ˈɑlkalˌiːna xˈeːmiːkˌaliːət ˌɛːr",
-    "uccharan": "kˈoːjʉˌɪka viːl ˈɛnnra fˈɑrɡa hˈɛlt ˈɑvhəŋˌɪ av vˈuːr sˈʉrt ˌɛllər bˈasɪsk ˈɑlkalˌiːna xˈeːmiːkˌaliːət ˌɛːr"
-   },
-   {
-    "id": "flores-devtest-561",
-    "text": "Dette ble en vanlig praksis, men strykejernet skapte mer slitasje på trehjulene i vognene.",
-    "reference": "dˌɛtːa bleː eːn vˈɑnlɪ prˈɑksiːs meːn strˈyːkeːjˌarnət skˈɑpta mˈeːr ʃlˈiːtɑʃa poː trˈɛjʉːlˌɛna iː vˈɔŋnɛna",
-    "uccharan": "dˌɛtːa bleː eːn vˈɑnlɪ prˈɑksiːs meːn strˈyːkeːjˌarnət skˈɑpta mˈeːr ʃlˈiːtɑʃa poː trəjˈʉːlˌɛna iː vˈɔŋnɛna"
-   },
-   {
-    "id": "flores-devtest-233",
-    "text": "Sangeren Sanju Sharma startet kvelden, etterfulgt av Jai Shankar Choudhary. Chhappan bhog bhajan ble i tillegg presentert. Sangeren Raju Kvegwal ledsaget ham.",
-    "reference": "sˈɑŋeːrən sˈɑnjʉː shˈɑrmɑ stˈɑrtət kvˈɛllən ˈɛtːarfˌʉlɡt av jˈɑɪ shˈɑŋkar ʃˈuːʉdhˌaryː ʃhˈɑpːan bhˈuːɡ bhˈajan bleː iː tˈɪllɛɡː prˈeːsəntˌart sˈɑŋeːrən rˈajʉː kvˈɛɡval lˈɛdsaɡət hˈam",
-    "uccharan": "sˈɑŋeːrən sˈɑnjʉː shˈɑrmɑ stˈɑrtət kvˈɛllən ˈɛtːarfˌʉlɡt av jˈɑɪ shˈɑŋkar ʃˈuːʉːdhˌaryː ʃhhˈɑpːan bhˈuːɡ bhˈɑjan bleː iː tˈɪllɛɡː prˈeːsəntˌart sˈɑŋeːrən rˈajʉː kvˈeːɡval lˈɛdsaɡət hˈam"
-   },
-   {
-    "id": "flores-devtest-325",
-    "text": "34 prosent i meningsmålingen deler dette synspunkt, og ønsker dronning Elizabeth II som Australias siste monark.",
-    "reference": "trˈɛtːiːfˈiːrɛ prˈuːsɛnt iː mˈeːnɪŋsmˌoːlɪŋən dˈeːlər dˌɛtːa sˈynspʉŋkt uːɡ ˈœnskər drˈɔnnɪŋ ˈeːliːsˌabɛth ˌiːˈiː suːm ˈaʊstralˌiːas sˈɪsta mˈuːnɑrk",
-    "uccharan": "trˈɛtːiːfˈiːrɛ prˈuːsɛnt iː mˈeːnɪŋsmˌoːlɪŋən dˈeːlər dˌɛtːa sˈynspʉŋkt uːɡ ˈœnskər drˈɔnnɪŋ ˈeːliːsˌabɛth tˈuː suːm ˈaʊstralˌiːas sˈɪsta mˈuːnɑrk"
-   },
-   {
-    "id": "flores-devtest-194",
-    "text": "Perry uttalte at han ville «dra tilbake til Texas for å vurdere resultatene etter kveldens nominasjonsmøte for å avgjøre om han hadde en vei videre i løpet», men han sa senere at han kom til å fortsette og være med å konkurrere i primærvalget den 21. januar i Carolina.",
-    "reference": "pˈarryː ˈʉtːɑlta at han vˈɪlla drˈɑ tˈɪlbaka tiːl tˈeːksas fɔrr oː vˈʉrdeːra rˈeːsʉltˌatɛna ˌɛtːər kvˈɛlləns nˈuːmiːnˌɑʃɔnsmˌøːta fɔrr oː ˈɑvjøːra uːm han hˌɑdːa eːn vˈaɪ vˈiːdeːra iː lˈøːpət meːn han sˈɑ sˈeːneːra at han kˈɔm tiːl oː fˈʊrtsɛtːa uːɡ vˌaːra meːd oː kˈɔŋkʉrrˌeːra iː prˈiːmarvˌɑlɡət deːn ʂˈʉːəndafˈœrsta jˈanʉːˌar iː kˈaruːlˌiːnɑ",
-    "uccharan": "pˈarryː ˈʉtːɑlta at han vˈɪlla drˈɑ tˈɪlbaka tiːl tˈeːksas fɔrr oː vˈʉrdeːra rˈeːsʉltˌatɛna ˌɛtːər kvˈɛlləns nˈuːmiːnˌɑʃɔnsmˌøːta fɔrr oː ˈɑvjøːra uːm han hˌɑdːa eːn vˈaɪ vˈiːdeːra iː lˈøːpət meːn han sˈɑ sˈeːneːra at han kˈɔm tiːl oː fˈʊrtsɛtːa uːɡ vˌaːra meːd oː kˈɔŋkʉrrˌeːra iː prˈiːmarvˌɑlɡət deːn ʂˈʉːaˈeːn jˈanʉːˌar iː kˈaruːlˌiːnɑ"
-   },
-   {
-    "id": "flores-devtest-527",
-    "text": "Mutasjon tilfører en ny genvariasjon og utvalget fjerner den fra utvalget av uttrykt variasjon.",
-    "reference": "mˈʉːtɑʃˌuːn tˈɪlføːrər eːn nˈyː ɡˈɛnvarˌiːɑʃˌuːn uːɡ ˈʉtvɑlɡət fjˈarnər deːn frɑ ˈʉtvɑlɡət av ˈʉtːrykt vˈariːˌɑʃuːn",
-    "uccharan": "mˈʉːtɑʃˌuːn tˈɪlføːrər eːn nˈyː ɡənvˈarˌiːɑʃˌuːn uːɡ ˈʉtvɑlɡət fjˈarnər deːn frɑ ˈʉtvɑlɡət av ˈʉtːrykt vˈariːˌɑʃuːn"
-   },
-   {
-    "id": "flores-devtest-80",
-    "text": "Bush sin talsmann, Gordon Johndroe, kalte Nord-Koreas løfte «et svært skritt på veien til målet om å oppnå verifiserbart denuklarering av den koreanske halvøya».",
-    "reference": "bˈʉsh siːn tˈɑlsmɑn ɡˈɔrduːn jˈɔhnnrɔa kˈɑlta nˈɔrkˈuːreːˌas lˈœfta ɛt svˈart skrˈɪtː poː vˈaɪən tiːl mˈoːlət uːm oː ˈɔpːnoː vˈeːriːfˌiːsarbˌɑrt dˈeːnʉklˌareːrˌɪŋ av deːn kˈuːreːˌɑnska hˈɑlvøyˌɑ",
-    "uccharan": "bˈʉsh siːn tˈɑlsmɑn ɡˈɔrduːn jˈɔhnnrɔa kˈɑlta nˈɔrkˈuːreːˌas lˈœfta ɛt svˈart skrˈɪtː poː vˈaɪən tiːl mˈoːlət uːm oː ˈɔpːnoː vˈeːriːfˌiːsarbˌɑrt dənˈʉːklˌareːrˌɪŋ av deːn kˈuːreːˌɑnska hˈɑlvøyˌɑ"
-   },
-   {
-    "id": "flores-devtest-81",
-    "text": "Den subtropiske stormen Jerry, formet seg i Atlanterhavet i dag og er den 10. navngitte stormen i den atlantiske orkansesongen.",
-    "reference": "deːn sˈʉbtruːpˌɪska stˈɔrmən jˈarryː fˈɔrmət sˈeːɡ iː ˈɑtlɑntˌarhavət iː dˈaɡ uːɡ ˌɛːr deːn tˈiːənda nˈɑvŋɪtːa stˈɔrmən iː deːn ˈɑtlɑntˌɪska ˈɔrkɑnsˌeːsɔŋən",
-    "uccharan": "deːn sˈʉbtruːpˌɪska stˈɔrmən jˈarryː fˈɔrmət sˈeːɡ iː ˈɑtlɑntˌarhavət iː dˈaɡ uːɡ ˌɛːr deːn tˈiː nˈɑvŋɪtːa stˈɔrmən iː deːn ˈɑtlɑntˌɪska ˈɔrkɑnsˌeːsɔŋən"
-   },
-   {
-    "id": "flores-devtest-269",
-    "text": "Huhne og Pryce er planlagt å dukke opp på Westminster Magistrater-domstolen den 16. februar.",
-    "reference": "hˈʉhna uːɡ prˈyːka ˌɛːr plˈɑnlɑɡt oː dˈʉkːa ˈɔpː poː vˈɛstmɪnstər mˈajɪstrˌatərdˈɔmstuːlən deːn sˈɛkstənda fˈɛbrʉːˌar",
-    "uccharan": "hˈʉːhna uːɡ prˈyːka ˌɛːr plˈɑnlɑɡt oː dˈʉkːa ˈɔpː poː vˈɛstmɪnstər mˈajɪstrˌatərdˈɔmstuːlən deːn sˈɛkstən fˈɛbrʉːˌar"
-   },
-   {
-    "id": "flores-devtest-369",
-    "text": "Tigerbrølet er ikke som det fullvoksne brølet til en løve, men mer som en setning med gneldrete ord.",
-    "reference": "tˈiːɡarbrˌøːlət ˌɛːr ˌɪkːa suːm deː fˈʉlvɔksna brˈøːlət tiːl eːn lˈøːva meːn mˈeːr suːm eːn sˈɛtnɪŋ meːd ŋnˈɛllreːta ˈɔr",
-    "uccharan": "tˈiːɡarbrˌøːlət ˌɛːr ˌɪkːa suːm deː fˈʉlvɔksna brˈøːlət tiːl eːn lˈøːva meːn mˈeːr suːm eːn sˈɛtnɪŋ meːd ŋnəllrˈeːta ˈɔr"
-   },
    {
     "id": "flores-devtest-481",
     "text": "Høymiddelalderen kom etter tidlig middelalder og etterfulgt av den sene middelalderen, som etter konvensjon ender rundt 1500.",
@@ -233,10 +173,70 @@
     "uccharan": "hˈøymˌɪdːeːlˌɑlleːrən kˈɔm ˌɛtːər tˈɪdlɪ mˈɪdːeːlˌɑllər uːɡ ˈɛtːarfˌʉlɡt av deːn sˈeːna mˈɪdːeːlˌɑlleːrən suːm ˌɛtːər kˈɔnvənʃˌuːn ˈɛnnər rˈʉnnt ˈɛt tˈʉːsən fˈɛmhˈʉndra"
    },
    {
+    "id": "flores-devtest-336",
+    "text": "NextGen er et system som ifølge FAA vil gjøre det mulig å fly kortere ruter og årlig spare mye drivstoff og forminske karbonutslipp.",
+    "reference": "nˈɛkst ɡˈeːn ˌɛːr ɛt systˈeːm suːm ˈiːfœlɡa ˌɛfˌɑːˈɑː viːl jˈøːra deː mˈʉːlɪ oː flˈyː kˈʊrteːra rˈʉːtər uːɡ ˈɔrlɪ spˈara mˈyːa drˈɪvstɔff uːɡ fˈɔrmɪnska kˈɑrbuːnˌʉtʃlɪpː",
+    "uccharan": "nˈɛkstɡən ˌɛːr ɛt systˈeːm suːm ˈiːfœlɡa ˌɛfˌɑːˈɑː viːl jˈøːra deː mˈʉːlɪ oː flˈyː kˈʊrteːra rˈʉːtər uːɡ ˈɔrlɪ spˈara mˈyːa drˈɪvstɔff uːɡ fˈɔrmɪnska kˈɑrbuːnˌʉtʃlɪpː"
+   },
+   {
     "id": "flores-devtest-793",
     "text": "Diverse forandringer eller forespørsler bør foretas via reiseagenten først og ikke direkte med hotellet.",
     "reference": "dˈiːvarʃa fˈuːrɑnnrˌɪŋər ˌɛllər fˈuːrəspˌœrʃlər bøːr fˈuːreːtˌas vˈiːɑ rˈaɪseːˌaɡɛntən fˈœrʃt uːɡ ˌɪkːa dˈiːrɛkta meːd hˈuːtɛllət",
     "uccharan": "dˈiːvarʃa fˈuːrɑnnrˌɪŋər ˌɛllər fˈuːrəspˌœrʃlər bøːr fˈuːreːtˌas vˈiːɑ rˈaɪsˌeːaɡˌɛntən fˈœrʃt uːɡ ˌɪkːa dˈiːrɛkta meːd hˈuːtɛllət"
+   },
+   {
+    "id": "flores-devtest-500",
+    "text": "Delkulturer fører sammen likesinnede personer som føler seg utelatt fra de sosiale standardene og lar dem utvikle en identitetsfølelse.",
+    "reference": "dˈɛlkʉltˌʉːrər fˈøːrər sˈɑmmən lˈiːkeːsˌɪnneːda pˈarʃuːnər suːm fˈøːlər sˈeːɡ ˈʉːteːlˌɑtː frɑ diː sˈuːsiːˌala stˈɑnnɑrdˌɛna uːɡ lˈar dɛm ˈʉtvɪkla eːn ˈiːdəntˌiːtətsfˌøːlɛlsa",
+    "uccharan": "dəlkˈʉltˌʉːrər fˈøːrər sˈɑmmən lˈiːkeːsˌɪnneːda pˈarʃuːnər suːm fˈøːlər sˈeːɡ ˈʉːteːlˌɑtː frɑ diː sˈuːsiːˌala stˈɑnnɑrdˌɛna uːɡ lˈar dɛm ˈʉtvɪkla eːn ˈiːdəntˌiːtɛtsfˌøːlɛlsa"
+   },
+   {
+    "id": "flores-devtest-541",
+    "text": "Tibetansk buddhisme er basert på Buddhas lære, men ble utvidet til å inneholde mahayanas kjærlighetsretning og flere metoder fra indisk yoga.",
+    "reference": "tˈiːbeːtˌɑnsk bˈʉdːhɪsma ˌɛːr bˈasart poː bˈʉdːhas lˈaːra meːn bleː ˈʉtviːda tiːl oː ˈɪnneːhˌɔlla mˈahɑːˌyːanˌas xˈarlɪɡhˌɛtsrətnˌɪŋ uːɡ flˈeːra mˈeːtuːdər frɑ ˈɪnnɪsk ˈyːuːɡˌɑ",
+    "uccharan": "tˈiːbeːtˌɑnsk bˈʉdːhɪsma ˌɛːr bˈasart poː bˈʉdːhas lˈaːra meːn bleː ˈʉtviːda tiːl oː ˈɪnneːhˌɔlla mˈahɑːˌyːanˌas xˈarlɪɡhˌɛtsrɛˌənɪŋ uːɡ flˈeːra mˈeːtuːdər frɑ ˈɪnnɪsk ˈyːuːɡˌɑ"
+   },
+   {
+    "id": "flores-devtest-351",
+    "text": "Nesten alle hus i byene i Harappa og Mohenjo-daro hadde vannklosett som var tilknyttet et avansert kloakksystem.",
+    "reference": "nˈɛstən ˈɑlla hˈʉːs iː bˈyːɛna iː hˈarɑpːˌɑ uːɡ mˈuːhənjˌuːdˈaruː hˌɑdːa vˈɑnkluːsˌɛtː suːm var tˈɪlknytːət ɛt ˈavɑnsˌart klˈuːɑkːsˌystəm",
+    "uccharan": "nˈɛstən ˈɑlla hˈʉːs iː bˈyːɛna iː hˈarɑpːˌɑ uːɡ mˈuːhɛnjˌuːdˈaruː hˌɑdːa vˈɑnkluːsətː suːm var tˈɪlknytːət ɛt ˈavɑnsˌart klˈuːɑkːsˌystəm"
+   },
+   {
+    "id": "flores-devtest-98",
+    "text": "Dr. Tony Moll kom over tuberkulosen (XDR-TB) som var særdeles motstandsdyktig mot medisin i den sørafrikanske regionen KwaZulu-Natal.",
+    "reference": "dˌeːˈɛːr tˈuːnyː mˈɔl kˈɔm ˈuːvər tˈʉːbarkˌʉːluːsən ˌɛksdˌeːˈɛːrtˌeːbˈeː suːm var sˈardeːləs mˈɔtstɑnnsdˌyktɪ muːt mˈeːdiːsˌiːn iː deːn sˈøːrɑfrˌiːkɑnska rˈeːjiːˌuːnən kvˈɑ sˈʉːlʉːnˈatal",
+    "uccharan": "dˌeːˈɛːr tˈuːnyː mˈɔl kˈɔm ˈuːvər tˈʉːbarkˌʉːluːsən ˌɛksdˌeːˈɛːrtˌeːbˈeː suːm var sˈardeːləs mˈɔtstɑnnsdˌyktɪ muːt mˈeːdiːsˌiːn iː deːn sˈøːrɑfrˌiːkɑnska rˈeːjiːˌuːnən kvˈasʉːlˌʉːnˈatal"
+   },
+   {
+    "id": "flores-devtest-571",
+    "text": "Den første offentlige lesingen av dokumentet var ved John Nixon i hagen til uavhengighetshallen den 8. juli.",
+    "reference": "deːn fˈœrʃta ˈɔffəntlˌiːɡa lˈeːsɪŋən av dˈuːkʉːmˌɛntət var vˈeːd jˈɔhn nˈiːksuːn iː hˈaɡən tiːl ˈʉːɑvhˌɛŋɪɡhˌɛtshɑllən deːn ˈɔtːənda jˈʉːliː",
+    "uccharan": "deːn fˈœrʃta ˈɔffəntlˌiːɡa lˈeːsɪŋən av dˈuːkʉːmˌɛntət var vˈeːd jˈɔhn nˈiːksuːn iː hˈaɡən tiːl ˈʉːɑvhˌɛŋɪɡhˌɛtshɑllən deːn ˈɔtːa jˈʉːliː"
+   },
+   {
+    "id": "flores-devtest-303",
+    "text": "Rundt 60 tilfeller av overopphetede iPod-er har blitt rapportering, og har forårsaket totalt seks branner og gitt fire personer med mindre brannskader.",
+    "reference": "rˈʉnnt sˈɛkstiː tˈɪlfɛllər av ˈuːveːrˌɔpːheːtˌeːda iː pˈuːdˌɛːr har blɪtː rˈɑpːʊrtˌeːrɪŋ uːɡ har fˈuːrɔrʃˌakət tˈuːtɑlt sˈɛks brˈɑnnər uːɡ jˈɪtː fˈiːra pˈarʃuːnər meːd mˈɪnnra brˈɑnskadər",
+    "uccharan": "rˈʉnnt sˈɛkstiː tˈɪlfɛllər av ˈuːveːrˌɔpːheːtˌeːda ˈɪpuːdˌɛːr har blɪtː rˈɑpːʊrtˌeːrɪŋ uːɡ har fˈuːrɔrʃˌakət tˈuːtɑlt sˈɛks brˈɑnnər uːɡ jˈɪtː fˈiːra pˈarʃuːnər meːd mˈɪnnra brˈɑnskadər"
+   },
+   {
+    "id": "flores-devtest-887",
+    "text": "I tiden etter 11. september 2001 har søk ved sikkerhetskontrollpunkter også blitt langt mer påtrengende.",
+    "reference": "iː tˈiːdən ˌɛtːər ˈɛllɛvta sˈɛptɛmbər tˈuː tˈʉːsən uːɡ ˈeːn har sˈøːk vˈeːd sˈɪkːarhˌɛtskɔntrˌɔlpʉŋktər ˈɔɡsoː blɪtː lˈɑŋt mˈeːr pˈɔtrəŋˌɛnna",
+    "uccharan": "iː tˈiːdən ˌɛtːər ˈɛlva sˈɛptɛmbər tˈuː tˈʉːsən uːɡ ˈeːn har sˈøːk vˈeːd sˈɪkːarhˌɛtskɔntrˌɔlpʉŋktər ˈɔɡsoː blɪtː lˈɑŋt mˈeːr pˈɔtrəŋˌɛnna"
+   },
+   {
+    "id": "flores-devtest-838",
+    "text": "Avhengig av mengden væske man har i, kan en karrirett enten være tørr, eller fuktig.",
+    "reference": "ˈɑvhəŋˌɪ av mˈɛŋdən vˈaska mˈan har ˈiː kan eːn kˈɑrriːrˌɛtː ˈɛntən vˌaːra tˈœrr ˌɛllər fˈʉktɪ",
+    "uccharan": "ˈɑvhəŋˌɪ av mˈɛŋdən vˈaska mˈan har ˈiː kan eːn kˈɑrriːrətː ˈɛntən vˌaːra tˈœrr ˌɛllər fˈʉktɪ"
+   },
+   {
+    "id": "flores-devtest-250",
+    "text": "NHK meldte også om at atomkraftverket til Kashiwazaki Kariwa i Niigata-prefekturen var i drift som normalt.",
+    "reference": "ˌɛnhˌoːkˈoː mˈɛllta ˈɔɡsoː uːm at ˈatɔmkrˌɑftvarkət tiːl kˈɑshiːvˌasaxˌiː kˈariːvˌɑ iː nˈiːiːɡˌatɑprˈeːfəktˌʉːrən var iː drˈɪft suːm nˈɔrmɑlt",
+    "uccharan": "ˌɛnhˌoːkˈoː mˈɛllta ˈɔɡsoː uːm at ˈatɔmkrˌɑftvarkət tiːl kˈɑshiːvˌasaxˌiː kˈariːvˌɑ iː nˈiːɪɡˌatɑprˈeːfɛktˌʉːrən var iː drˈɪft suːm nˈɔrmɑlt"
    }
   ]
  }

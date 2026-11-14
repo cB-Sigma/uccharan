@@ -1228,11 +1228,24 @@ impl Indic {
 
     /// The reading of a word by the table's letter-to-sound model, when the
     /// table has one and the language file does not list the word itself.
+    /// A model made for it (`input=rules`) reads what the letter rules give
+    /// for the word and corrects it.
     pub fn model_word(&self, word: &str, table: &crate::data::Data) -> Option<String> {
         if !table.has_lts() || self.words.contains_key(word) {
             return None;
         }
-        crate::data::memo(table.id() * 2 + 1, word, || table.model_word(word))
+        crate::data::memo(table.id() * 2 + 1, word, || {
+            if table.reads_rules() {
+                let rules = self.word_as(word, true, false);
+                let m = table.model_word(&rules)?;
+                // A change of stress alone is not taken: there the rules
+                // are right more often.
+                let plain = crate::ipa::strip_stress;
+                Some(if plain(&m) == plain(&rules) { rules } else { m })
+            } else {
+                table.model_word(word)
+            }
+        })
     }
 
     /// The ASCII digit value of a digit of this script.

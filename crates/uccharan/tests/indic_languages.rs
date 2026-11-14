@@ -238,6 +238,12 @@ fn urdu_sindhi() {
         ],
     );
     check(Lang::Sd, &[("سنڌي ٻولي", "sˈɪndhi bˈoːli"), ("۽", "ˈaẽ")]);
+    // A listed word that has no table entry: the rules' reading, corrected
+    // by the table's model.
+    check(Lang::Sd, &[("آزارن", "ˌaːzaːrˈʌn")]);
+    let p = Phonemizer::new();
+    p.ensure(Lang::Sd).expect("the Sindhi word table");
+    assert!(p.data(Lang::Sd).is_some_and(|d| d.reads_rules()));
     // Improved mode reads ص and ظ as s and z, and the Urdu digits.
     let p = Phonemizer::new();
     let mut o = Options::new(Lang::Ur);

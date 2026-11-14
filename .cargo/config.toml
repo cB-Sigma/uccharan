@@ -1,0 +1,4 @@
+# Inside this repository the word tables are read from the source tree, so
+# tests, examples and tools need neither a download nor the `bundle` feature.
+[env]
+UCCHARAN_DATA_DIR = { value = "crates/uccharan-data/data", relative = true }

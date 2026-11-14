@@ -57,7 +57,8 @@ def main() -> int:
     ap.add_argument("--out", type=Path)
     args = ap.parse_args()
     res: dict = {"uccharan": {}, "espeak-ng": {}}
-    for f in sorted(args.data.glob("*.ucd")):
+    tables = ROOT / "crates/uccharan-data/data"
+    for f in sorted([*args.data.glob("*.ucd"), *(tables.glob("*.ucd") if args.data == ROOT / "crates/uccharan/data" else [])]):
         res["uccharan"][f.stem] = sizes(f.read_bytes())
     if args.code:
         res["uccharan"]["code"] = sizes(args.code.read_bytes())

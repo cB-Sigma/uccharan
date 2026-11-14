@@ -197,6 +197,8 @@ przecinek# pʃɛtɕˈinɛk
 procent# prˈɔtsɛnt
 
 [numbers]
+group space
+roman off
 decimal comma
 point przecinek#
 minus minus
@@ -328,7 +330,7 @@ many1000000 milionym#
 scale1000000+ miliony#
 
 [spell]
-a a
+a ˈa
 b bˈɛ
 c tsˈɛ
 d dˈɛ
@@ -336,7 +338,7 @@ e ˈɛ
 f ˈɛf
 g ɡjˈɛ
 h xˈa
-i i
+i ˈi
 j jˈɔt
 k kˈa
 l ˈɛl
@@ -350,7 +352,7 @@ s ˈɛs
 t tˈɛ
 u ˈu
 v fˈaw
-w vɨ
+w vˈu
 x ˈiks
 y ˈiɡrɛk
 z zɨ

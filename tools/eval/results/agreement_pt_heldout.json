@@ -5,61 +5,57 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 174168,
-  "per": 0.008922419732671903,
-  "per_without_stress": 0.006815805699273517,
-  "exact_sentence": 0.5,
-  "exact_sentence_without_stress": 0.5513833992094862,
-  "piper_shape_per": 0.008934781748163563,
-  "piper_shape_exact_sentence": 0.4950592885375494,
+  "per": 0.008428643608469982,
+  "per_without_stress": 0.0065678363670482265,
+  "exact_sentence": 0.4980237154150198,
+  "exact_sentence_without_stress": 0.549407114624506,
+  "piper_shape_per": 0.008448458184655927,
+  "piper_shape_exact_sentence": 0.49308300395256915,
   "word_count_mismatch_sentences": 138,
   "errors_by_class": {
    "stress": {
-    "count": 555,
-    "share": 0.35714285714285715,
-    "per_contribution": 0.003186578475954251
+    "count": 506,
+    "share": 0.3446866485013624,
+    "per_contribution": 0.0029052409168159477
    },
    "vowel": {
-    "count": 494,
-    "share": 0.3178893178893179,
-    "per_contribution": 0.0028363419227412615
+    "count": 466,
+    "share": 0.31743869209809267,
+    "per_contribution": 0.0026755776032336594
    },
    "consonant": {
-    "count": 296,
-    "share": 0.19047619047619047,
-    "per_contribution": 0.0016995085205089339
+    "count": 297,
+    "share": 0.20231607629427792,
+    "per_contribution": 0.0017052501033484912
    },
    "other": {
-    "count": 176,
-    "share": 0.11325611325611326,
-    "per_contribution": 0.0010105185797620688
+    "count": 166,
+    "share": 0.11307901907356949,
+    "per_contribution": 0.0009531027513664967
    },
    "word-boundary": {
     "count": 27,
-    "share": 0.017374517374517374,
+    "share": 0.018392370572207085,
     "per_contribution": 0.00015502273666804465
    },
    "diacritic": {
     "count": 6,
-    "share": 0.003861003861003861,
+    "share": 0.004087193460490463,
     "per_contribution": 3.444949703734326e-05
    }
   },
   "top_confusions": [
    {
     "edit": "ˌ→∅",
-    "count": 168
+    "count": 163
    },
    {
     "edit": "ˈ→∅",
-    "count": 99
+    "count": 96
    },
    {
     "edit": "∅→ˈ",
-    "count": 79
-   },
-   {
-    "edit": "∅→ˌ",
-    "count": 70
+    "count": 78
    },
    {
     "edit": "∅→ɨ",
@@ -82,6 +78,10 @@
     "count": 47
    },
    {
+    "edit": "∅→ˌ",
+    "count": 45
+   },
+   {
     "edit": "a→ɐ",
     "count": 42
    },
@@ -90,12 +90,12 @@
     "count": 35
    },
    {
-    "edit": "z→ʒ",
-    "count": 30
+    "edit": "ɐ→a",
+    "count": 32
    },
    {
-    "edit": "ɐ→a",
-    "count": 29
+    "edit": "z→ʒ",
+    "count": 30
    },
    {
     "edit": "e→ɛ",
@@ -110,12 +110,16 @@
     "count": 22
    },
    {
-    "edit": "ˌ→ˈ",
+    "edit": "ʲ→∅",
     "count": 20
    },
    {
     "edit": "ˈ→ˌ",
-    "count": 20
+    "count": 19
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 18
    },
    {
     "edit": "ɛ→i",
@@ -126,15 +130,11 @@
     "count": 17
    },
    {
-    "edit": "∅→ɛ",
-    "count": 14
+    "edit": "ɨ→e",
+    "count": 12
    },
    {
     "edit": "s→∅",
-    "count": 13
-   },
-   {
-    "edit": "ɨ→e",
     "count": 12
    },
    {
@@ -149,71 +149,23 @@
   "word_error_by_class": {
    "lexicon": {
     "words": 19990,
-    "wrong": 590,
-    "rate": 0.029514757378689346
+    "wrong": 593,
+    "rate": 0.029664832416208105
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 196,
-    "per": 0.017714153299518524,
-    "exact_sentence": 0.25
+    "per": 0.016941733824248822,
+    "exact_sentence": 0.2602040816326531
    },
    "no-digits": {
     "sentences": 816,
-    "per": 0.006399219679447864,
-    "exact_sentence": 0.5600490196078431
+    "per": 0.00598541332604246,
+    "exact_sentence": 0.5551470588235294
    }
   },
   "examples_of_disagreement": [
-   {
-    "id": "flores-devtest-151",
-    "text": "As instituições de caridade médica Mangola, Medecins Sans Frontieres e a Organização Mundial da Saúde, afirmam que é o pior surto registrado no país.",
-    "reference": "ɐz ˌiŋstituɪsˈõjʒ dɨ kˌɐɾidˈadɨ mˈɛdikɐ mˌɐ̃ŋɡˈɔlɐ mˌedɨsˈiŋʃ sˈɐ̃ŋʃ fɹˌuŋtiˈeɾɨz i ɐ ˌɔɾəɡɐnˌizɐsˈɐ̃ʊ̃ mˌũŋdiˈɑl dɐ sˌɐˈudɨ ˌɐfˈiɾəmɐ̃ʊ̃ kɨ ɛ ʊ piˈɔɹ sˈuɾətʊ ʁˌeʒiʃtɹˈadʊ nʊ pɐˈiʃ",
-    "uccharan": "ɐz ˌiŋstituɪsˈõjʒ dɨ kˌɐɾidˈadɨ mˈɛdikɐ mɐ̃ŋɡˈɔlɐ mˌedˈɨsiŋʃ sˈɐ̃ŋʃ fɹˌuŋtiˈeɾɨz i ɐ ˌɔɾəɡɐnˌizɐsˈɐ̃ʊ̃ mˌũŋdiˈɑl dɐ sˌɐˈudɨ ˌɐfˈiɾəmɐ̃ʊ̃ kɨ ɛ ʊ piˈɔɹ sˈuɾətʊ ʁˌeʒiʃtɹˈadʊ nʊ pɐˈiʃ"
-   },
-   {
-    "id": "flores-devtest-19",
-    "text": "Durante as eleições de 1976, ele aconselhou Carter sobre política externa, depois serviu como Conselheiro de Segurança Nacional (NSA) de 1977 a 1981, como sucessor de Henry Kissinger.",
-    "reference": "dˌuɾˈɐ̃ŋtɨ ɐz ˌeleɪsˈõjʒ dɨ mˈil nˈɔvɨsˈeɪŋtuʒˌi sɨtˈeɪŋtɐisˈeɪʃ ˌelɨ ˌɐkuŋsɨʎˈow kɐɾətˈeɹ sˈobɹɨ pˌulˈitikɐ ˌeʃtˈɛɾənɐ dɨpˈoɪʃ sɨɾəvˈiʊ kˈomʊ kˌuŋsɨʎˈeɪɾʊ dɨ sˌeɡuɾˈɐ̃ŋsɐ nˌɐsiunˈɑl ˌɛnʲˌɛsʲˈa dɨ mˈil nˈɔvɨsˈeɪŋtuʒˌi sɨtˈeɪŋtɐisˈɛtɨ ɐ mˈil nˈɔvɨsˈeɪŋtuʒˌi oɪtˈeɪŋtɐiˈum kˈomʊ sˌusɨsˈoɹ dɨ ˈeɪŋʁi kˌisiŋʒˈeɹ",
-    "uccharan": "dˌuɾˈɐ̃ŋtɨ ɐz ˌeleɪsˈõjʒ dɨ mˈil nˈɔvɨsˈeɪŋtuʒi sɨtˈeɪŋtɐisˈeɪʃ ˌelɨ ˌɐkuŋsɨʎˈow kɐɾətˈeɹ sˈobɹɨ pˌulˈitikɐ ˌeʃtˈɛɾənɐ dɨpˈoɪʃ sɨɾəvˈiʊ kˈomʊ kˌuŋsɨʎˈeɪɾʊ dɨ sˌeɡuɾˈɐ̃ŋsɐ nˌɐsiunˈɑl ˌɛnˌɛsˈa dɨ mˈil nˈɔvɨsˈeɪŋtuʒi sɨtˈeɪŋtɐisˈɛtɨ ɐ mˈil nˈɔvɨsˈeɪŋtuʒi oɪtˈeɪŋtɐiˈum kˈomʊ sˌusɨsˈoɹ dɨ ˈeɪŋʁi kˌisiŋʒˈeɹ"
-   },
-   {
-    "id": "flores-devtest-771",
-    "text": "O porto foi palco de um conhecido impasse naval em 1889, quando sete navios da Alemanha, EUA e Grã-Bretanha se recusaram a deixá-lo.",
-    "reference": "ʊ pˈoɾətʊ foɪ pˈɑlkʊ dɨ ũŋ kˌuɲɨsˈidw ˌimpˈasɨ nɐvˈɑl ˈeɪŋ mˈil ˈoɪtusˈeɪŋtuʒˌi oɪtˈeɪŋtɐinˈɔvɨ kwˈɐ̃ŋdʊ sˈɛtɨ nɐvˈiʊʒ d ˌɐlɨmˈɐ̃ɲɐ ˌɛˌuˈa i ɡɹˈɐ̃bɹˌetˈɐ̃ɲɐ sɨ ʁˌekuzˈaɾɐ̃ʊ̃ ɐ deɪʃˈalʊ",
-    "uccharan": "ʊ pˈoɾətʊ foɪ pˈɑlkʊ dɨ ũŋ kˌuɲɨsˈidw ˌimpˈasɨ nɐvˈɑl ˈeɪŋ mˈil ˈoɪtusˈeɪŋtuʒi oɪtˈeɪŋtɐinˈɔvɨ kwˈɐ̃ŋdʊ sˈɛtɨ nɐvˈiʊʒ dɐ ˌɐlɨmˈɐ̃ɲɐ ˌɛˌuˈa i ɡɹˈɐ̃bɹˌetˈɐ̃ɲɐ sɨ ʁˌekuzˈaɾɐ̃ʊ̃ ɐ dˌeɪʃˈalʊ"
-   },
-   {
-    "id": "flores-devtest-710",
-    "text": "O sultão marroquino reconstruiu a cidade como Daru l-Badya, que recebeu o nome de Casablanca pelos comerciantes espanhóis que estabeleceram bases comerciais lá.",
-    "reference": "ʊ suwtˈɐ̃ʊ̃ mˌɐʁukˈinʊ ʁˌekuŋstɹuˈiʊ ɐ sˌidˈadɨ kˈomʊ dɐɾˈu ˈɛlbˈadjɐ kɨ ʁˌesɨbˈeʊ ʊ nˈomɨ dɨ kˌɐzɐblˈɐ̃ŋkɐ pˈelʊʃ kˌumɨɾəsiˈɐ̃ŋtɨz ʃpɐ̃ɲˈɔɪʃ kɨ ʃtˌɐbɨlɨsˈeɾɐ̃ʊ̃ bˈazɨʃ kˌumɨɾəsiˈaɪʒ lˈa",
-    "uccharan": "ʊ suwtˈɐ̃ʊ̃ mˌɐʁukˈinʊ ʁˌekuŋstɹuˈiʊ ɐ sˌidˈadɨ kˈomʊ dˈaɾu ˈɛlbˈadjɐ kɨ ʁˌesɨbˈeʊ ʊ nˈomɨ dɨ kˌɐzɐblˈɐ̃ŋkɐ pˈelʊʃ kˌumɨɾəsiˈɐ̃ŋtɨz ʃpɐ̃ɲˈɔɪʃ kɨ ʃtˌɐbɨlɨsˈeɾɐ̃ʊ̃ bˈazɨʃ kˌumɨɾəsiˈaɪʒ lˈa"
-   },
-   {
-    "id": "flores-devtest-394",
-    "text": "O topo da torre era um santuário especial para o deus.",
-    "reference": "ʊ tˈopʊ dɐ tˈoʁɨ ˌɛɾɐ ũŋ sˌɐ̃ŋtwˈaɾjʊ ʃpˌesiˈɑl pˌɐɾɐ ʊ dˈeʊʃ",
-    "uccharan": "ʊ tˈopʊ dɐ tˈoʁɨ ˌɛɾɐ ũŋ sˌɐ̃ŋtwˈaɾjw ʃpˌesiˈɑl pˌɐɾɐ ʊ dˈeʊʃ"
-   },
-   {
-    "id": "flores-devtest-559",
-    "text": "Embora os vagões consistissem apenas em pranchas paralelas de madeira, isto permitia que os cavalos os puxassem para atingir velocidades maiores e carregar cargas maiores nas estradas um pouco mais acidentadas.",
-    "reference": "ˌeɪmbˈɔɾɐ uʒ vɐɡˈõjʃ kˌuŋsiʃtˈiseɪŋ ˌɐpˈenɐz ˈeɪŋ pɹˈɐ̃ŋʃɐʃ pˌɐɾɐlˈɛlɐʒ dɨ mˌɐdˈeɪɾɐ ˈiʃtʊ pˌeɾəmitˈiɐ kɨ uʃ kˌɐvˈalʊz uʃ pˌuʃˈaseɪŋ pˌɐɾɐ ˌɐtiŋʒˈiɹ vˌɨlusidˈadɨʒ mˌaɪˈɔɾɨz i kˌɐʁɨɡˈaɹ kˈaɾəɡɐʒ mˌaɪˈɔɾɨʒ nɐz ʃtɹˈadɐz ũŋ pˈowkʊ mˈaɪz ˌɐsidˌentˈadɐʃ",
-    "uccharan": "ˌeɪmbˈɔɾɐ uʒ vɐɡˈõjʃ kˌuŋsiʃtisˈeɪŋ ˌɐpˈenɐz ˈeɪŋ pɹˈɐ̃ŋʃɐʃ pˌɐɾɐlˈɛlɐʒ dɨ mˌɐdˈeɪɾɐ ˈiʃtʊ pˌeɾəmitˈiɐ kɨ uʃ kˌɐvˈalʊz uʃ pˌuʃasˈeɪŋ pˌɐɾɐ ˌɐtiŋʒˈiɹ vˌɨlusidˈadɨʒ mˌaɪˈɔɾɨz i kˌɐʁɨɡˈaɹ kˈaɾəɡɐʒ mˌaɪˈɔɾɨʒ nɐz ʃtɹˈadɐz ũŋ pˈowkʊ mˈaɪz ˌɐsidˌentˈadɐʃ"
-   },
-   {
-    "id": "flores-devtest-366",
-    "text": "Alcateias de leões agem de forma similar a grupos de lobos ou cães, animais surpreendentemente similares a leões (mas não a outros grandes felinos) em comportamento, e também muito mortais às suas presas.",
-    "reference": "ˌɑlkɐtˈɛɪɐʒ dɨ lɨˈõjz ˈaʒeɪŋ dɨ fˈɔɾəmɐ sˌimilˈaɹ ɐ ɡɹˈupʊʒ dɨ lˈobʊz ˈow kˈɐ̃ɨʃ ɐnimˈaɪʃ sˌuɾəpɹieɪŋdˌentɨmˈeɪŋtɨ sˌimilˈaɾɨz ɐ lɨˈõjʃ mɐʒ nˌɐ̃ʊ̃ ɐ ˈowtɹʊʒ ɡɹˈɐ̃ŋdɨʃ fˌelˈinʊʃ ˈeɪŋ kˌumpuɾətɐmˈeɪŋtʊ i tɐ̃mbˈeɪŋ mwˈiŋtʊ muɾətˈaɪz ɐɐʃ sˌuɐʃ pɹˈezɐʃ",
-    "uccharan": "ˌɑlkɐtˈeɪɐʒ dɨ lɨˈõjz ˈaʒeɪŋ dɨ fˈɔɾəmɐ sˌimilˈaɹ ɐ ɡɹˈupʊʒ dɨ lˈobʊz ˈow kˈɐ̃jʃ ɐnimˈaɪʃ sˌuɾəpɹieɪŋdˌentɨmˈeɪŋtɨ sˌimilˈaɾɨz ɐ lɨˈõjʒ mɐʒ nˌɐ̃ʊ̃ ɐ ˈowtɹʊʒ ɡɹˈɐ̃ŋdɨʃ fˌelˈinʊz ˈeɪŋ kˌumpuɾətɐmˈeɪŋtʊ i tɐ̃mbˈeɪŋ mwˈiŋtʊ muɾətˈaɪz ɐɐʃ sˌuɐʃ pɹˈezɐʃ"
-   },
-   {
-    "id": "flores-devtest-317",
-    "text": "Embora estivesse trabalhando no hospital, Liggins começou a investigar partos prematuros em seu tempo livre.",
-    "reference": "ˌeɪmbˈɔɾɐ ʃtˌivˈɛsɨ tɹˌɐbɐʎˈɐ̃ŋdʊ nʊ ˌuʃpitˈɑl liʒˈiŋʃ kˌumɨsˈow ɐ ˌiŋvɨʃtiɡˈaɹ pˈaɾətʊʃ pɹˌemɐtˈuɾʊz ˈeɪŋ seʊ tˈeɪmpʊ lˈivɹɨ",
-    "uccharan": "ˌeɪmbˈɔɾɐ ʃtˌivˈɛsɨ tɹˌɐbɐʎˈɐ̃ŋdʊ nʊ ˌuʃpitˈɑl lˈiʒiŋʃ kˌumɨsˈow ɐ ˌiŋvɨʃtiɡˈaɹ pˈaɾətʊʃ pɹˌemɐtˈuɾʊz ˈeɪŋ seʊ tˈeɪmpʊ lˈivɹɨ"
-   },
    {
     "id": "flores-devtest-225",
     "text": "O Aerosmith cancelou os shows restantes da sua turnê.",
@@ -237,6 +189,54 @@
     "text": "Por fim, existem muitos gatos pequenos (incluindo gatos de estimação soltos) que comem animais pequenos, muito mais numerosos, como insetos, roedores, lagartos e pássaros.",
     "reference": "puɹ fˈiŋ ˌezˈiʃteɪŋ mwˈiŋtʊʒ ɡˈatʊʃ pˌekˈenʊʃ ˌiŋkluˈiŋdʊ ɡˈatʊʒ dɨ ʃtˌimɐsˈɐ̃ʊ̃ sˈowtʊʃ kɨ kˈomeɪŋ ɐnimˈaɪʃ pˌekˈenʊʃ mwˈiŋtʊ mˈaɪʒ nˌumɨɾˈozʊʃ kˈomw ˌiŋsˈetʊʃ ʁˌuɨdˈoɾɨʃ lˌɐɡˈaɾətʊz i pˈasɐɾʊʃ",
     "uccharan": "puɹ fˈiŋ ˌezˈiʃteɪŋ mwˈiŋtʊʒ ɡˈatʊʃ pˌekˈenʊz ˌiŋkluˈiŋdʊ ɡˈatʊʒ dɨ ʃtˌimɐsˈɐ̃ʊ̃ sˈowtʊʃ kɨ kˈomeɪŋ ɐnimˈaɪʃ pˌekˈenʊʃ mwˈiŋtʊ mˈaɪʒ nˌumɨɾˈɔzʊʃ kˈomw ˌiŋsˈɛtʊʃ ʁˌuɨdˈoɾɨʃ lˌɐɡˈaɾətʊz i pˈasɐɾʊʃ"
+   },
+   {
+    "id": "flores-devtest-986",
+    "text": "A observação das flores de cerejeira, conhecida como hanami, faz parte da cultura japonesa desde o século oitavo.",
+    "reference": "ɐ ˌɔbsɨɾəvɐsˈɐ̃ʊ̃ dɐʃ flˈoɾɨʒ dɨ sˌeɾɨʒˈeɪɾɐ kˌuɲɨsˈidɐ kˈomw ɐnɐ̃mˈi fɐʃ pˈaɾətɨ dɐ kˌuwtˈuɾɐ ʒˌɐpunˈezɐ dˈeʒdɨ ʊ sˈɛkulw ˌoɪtˈavʊ",
+    "uccharan": "ɐ ˌɔbsɨɾəvɐsˈɐ̃ʊ̃ dɐʃ flˈoɾɨʒ dɨ sˌeɾɨʒˈeɪɾɐ kˌuɲɨsˈidɐ kˈomʊ ɐnɐmˈi fɐʃ pˈaɾətɨ dɐ kˌuwtˈuɾɐ ʒˌɐpunˈezɐ dˈeʒdɨ ʊ sˈɛkulw ˌoɪtˈavʊ"
+   },
+   {
+    "id": "flores-devtest-517",
+    "text": "Supõe-se que os cuidados adotivos satisfaçam a todas as necessidades que faltavam na casa de onde foram tirados.",
+    "reference": "supˈõjsɨ kɨ uʃ kˌuɪdˈadʊz ˌɐdutˈivʊʃ sˌɐtiʃfˈasɐ̃ʊ̃ ɐ tˈodɐz ɐʒ nˌesɨsidˈadɨʃ kɨ fˌɑltˈavɐ̃ʊ̃ nɐ kˈazɐ dɨ ˈoŋdɨ fˌoɾɐ̃ʊ̃ tˌiɾˈadʊʃ",
+    "uccharan": "supˈõjsɨ kɨ uʃ kˌuɪdˈadʊz ˌɐdutˈivʊʃ sˌɐtiʃfasɐ̃ˈʊ̃ ɐ tˈodɐz ɐʒ nˌesɨsidˈadɨʃ kɨ fˌɑltˈavɐ̃ʊ̃ nɐ kˈazɐ dɨ ˈoŋdɨ fˌoɾɐ̃ʊ̃ tˌiɾˈadʊʃ"
+   },
+   {
+    "id": "flores-devtest-972",
+    "text": "Um jantar simples e popular, especialmente no verão, é o Pa amb Oli: pão com azeite de oliva, tomate e qualquer ingrediente à disposição, como queijo, atum, etc.",
+    "reference": "ũŋ ʒɐ̃ŋtˈaɹ sˈimplɨz i pˌupulˈaɹ ʃpˌesiˌɑlmˈeɪŋtɨ nʊ vɨɾˈɐ̃ʊ̃ ɛ ʊ p ˈɐ̃mb ɔlˈi pˈɐ̃ʊ̃ kˈom ˌɐzˈeɪtɨ dɨ ˌɔlˈivɐ tˌumˈatɨ i kwˌɑlkˌɛɹ ˌiŋɡɹɨdiˈeɪŋtɨ ˌaː dˌiʃpuzisˈɐ̃ʊ̃ kˈomʊ kˈeɪʒʊ ɐtˈũŋ ˌetsˈɛtːɾɐ",
+    "uccharan": "ũŋ ʒɐ̃ŋtˈaɹ sˈimplɨz i pˌupulˈaɹ ʃpˌesiˌɑlmˈeɪŋtɨ nʊ vɨɾˈɐ̃ʊ̃ ɛ ʊ pɐ ˈɐ̃mb ˈɔli pˈɐ̃ʊ̃ kˈom ˌɐzˈeɪtɨ dɨ ˌɔlˈivɐ tˌumˈatɨ i kwˌɑlkˌɛɹ ˌiŋɡɹɨdiˈeɪŋtɨ ˌaː dˌiʃpuzisˈɐ̃ʊ̃ kˈomʊ kˈeɪʒʊ ɐtˈũŋ ˌetsˈɛtːɾɐ"
+   },
+   {
+    "id": "flores-devtest-56",
+    "text": "A atual senadora e primeira-dama da Argentina Cristina Fernandez de Kirchner anunciou sua candidatura à presidência ontem à tarde em La Plata, cidade distante 50 quilômetros (31 milhas) de Buenos Aires.",
+    "reference": "ɐ ˌɐtuˈɑl sˌenɐdˈoɾɐ i pɹˌimˈeɪɾɐdˈɐ̃mɐ d ˌɐɾəʒeɪŋtˈinɐ kɹˌiʃtˈinɐ fˌeɾənɐ̃ŋdˈeʒ dɨ kiɾəʃnˈeɹ ɐnˌũŋsiˈow sˌuɐ kˌɐ̃ŋdidɐtˈuɾ ˌaː pɹˌezidˈeɪŋsjɐ ˈoŋteɪŋ ˌaː tˈaɾədɨ ˈeɪŋ lɐ plˈatɐ sˌidˈadɨ dˌiʃtˈɐ̃ŋtɨ sˌiŋkwˈeɪŋtɐ kˌilˈomɨtɹʊʃ tɹˈiŋtɐiˈum mˈiʎɐʃ dɨ bˌuˈenʊz ˈaɪɾɨʃ",
+    "uccharan": "ɐ ˌɐtuˈɑl sˌenɐdˈoɾɐ i pɹˌimˈeɪɾɐdˈɐ̃mɐ dɐ ˌɐɾəʒeɪŋtˈinɐ kɹˌiʃtˈinɐ fˌeɾənɐ̃ŋdˈeʒ dɨ kiɾəʃnˈeɹ ɐnˌũŋsiˈow sˌuɐ kˌɐ̃ŋdidɐtˈuɾɐ ˌaː pɹˌezidˈeɪŋsjɐ ˈoŋteɪŋ ˌaː tˈaɾədɨ ˈeɪŋ lɐ plˈatɐ sˌidˈadɨ dˌiʃtˈɐ̃ŋtɨ sˌiŋkwˈeɪŋtɐ kˌilˈomɨtɹʊʒ tɹˈiŋtɐiˈum mˈiʎɐʒ dɨ bˌuˈenʊz ˈaɪɾɨʃ"
+   },
+   {
+    "id": "flores-devtest-520",
+    "text": "Por exemplo, \"aprendizado\" e \"socialização\" são indicados como motivações importantes para a utilização da internet  (James et al., 1995).",
+    "reference": "puɹ ˌezˈeɪmplʊ ˌɐpɹeɪŋdizˈadʊ i sˌusiˌɐlizɐsˈɐ̃ʊ̃ sɐ̃ʊ̃ ˌiŋdikˈadʊʃ kˈomʊ mˌutivɐsˈõjz ˌimpuɾətˈɐ̃ŋtɨʃ pˌɐɾɐ ɐ ˌutilˌizɐsˈɐ̃ʊ̃ dɐ ˈintˌɛɾənˈɛt ʒˈeimɨs ˈɛtʃ ˈɑl mˈil nˈɔvɨsˈeɪŋtuʒˌi nuvˈeɪŋtɐisˈiŋku",
+    "uccharan": "puɹ ˌezˈeɪmplʊ ˌɐpɹeɪŋdizˈadw i sˌusiˌɐlizɐsˈɐ̃ʊ̃ sɐ̃ʊ̃ ˌiŋdikˈadʊʃ kˈomʊ mˌutivɐsˈõjz ˌimpuɾətˈɐ̃ŋtɨʃ pˌɐɾɐ ɐ ˌutilˌizɐsˈɐ̃ʊ̃ dɐ ˈintˌɛɾənˈɛt ʒˈeimɨs ˈɛtz ˈɑl mˈil nˈɔvɨsˈeɪŋtuʒi nuvˈeɪŋtɐisˈiŋku"
+   },
+   {
+    "id": "flores-devtest-773",
+    "text": "Durante a luta pela independência organizada pelo movimento Mau, uma reunião pacífica na cidade resultou no assassinato do chefe supremo Tupua Tamasese Lealofi III.",
+    "reference": "dˌuɾˈɐ̃ŋtɨ ɐ lˈutɐ pˈelɐ ˌiŋdɨpeɪŋdˈeɪŋsjɐ ˌɔɾəɡɐnizˈadɐ pˈelʊ mˌuvimˈeɪŋtʊ mˈaʊ ˌumɐ ʁˌeuniˈɐ̃ʊ̃ pˌɐsˈifikɐ nɐ sˌidˈadɨ ʁˌezuwtˈow nʊ ˌɐsɐsinˈatʊ dʊ ʃˈɛfɨ sˌupɹˈemʊ tˌupˈuɐ tɐmɐzˈɛzɨ lˌiɐlufˈi tɹˈeʃ",
+    "uccharan": "dˌuɾˈɐ̃ŋtɨ ɐ lˈutɐ pˈelɐ ˌiŋdɨpeɪŋdˈeɪŋsjɐ ˌɔɾəɡɐnizˈadɐ pˈelʊ mˌuvimˈeɪŋtʊ mˈaʊ ˌumɐ ʁˌeuniˈɐ̃ʊ̃ pˌɐsˈifikɐ nɐ sˌidˈadɨ ʁˌezuwtˈow nʊ ˌɐsɐsinˈatʊ dʊ ʃˈɛfɨ sˌupɹˈemʊ tˌupˈuɐ tɐmɐzˈɛzɨ liɐlˈufi tɹˈeʃ"
+   },
+   {
+    "id": "flores-devtest-480",
+    "text": "A época em que tais eventos ocorreram é comumente denominada Alta Idade Média, período da história europeia entre os séculos XI, XII e XIII (1000–1300 d.C.).",
+    "reference": "ɐ ˈɛpukɐ ˈeɪŋ kɨ tˈaɪz ˌevˈeɪŋtʊz ˌɔkuʁˈeɾɐ̃ʊ̃ ɛ kˌumumˈeɪŋtɨ dˌɨnuminˈadɐ ˈɑltɐ ˌidˈadɨ mˈɛdjɐ pˌeɾˈiʊdʊ dɐ ˌiʃtˈɔɾjɐ ˌeʊɾupˈɛɪɐ ˈeɪŋtɹɨ uʃ sˈɛkulʊʒ ˈoŋzɨ dˈozɨ i tɹˈezɨ mˈil mˈil tɹɨzˈeɪŋtuʒ dˌesˈe",
+    "uccharan": "ɐ ˈɛpukɐ ˈeɪŋ kɨ tˈaɪz ˌevˈeɪŋtʊz ˌɔkuʁˈeɾɐ̃ʊ̃ ɛ kˌumumˈeɪŋtɨ dˌɨnuminˈadɐ ˈɑltɐ ˌidˈadɨ mˈɛdjɐ pˌeɾˈiʊdʊ dɐ ˌiʃtˈɔɾjɐ ˌeʊɾupˈɛɪɐ ˈeɪŋtɹɨ uʃ sˈɛkulʊʃ ˈoŋzɨ dˈozɨ i tɹˈezɨ mˈil mˈil tɹɨzˈeɪŋtuʒ dˈe sˈe"
+   },
+   {
+    "id": "flores-devtest-585",
+    "text": "Tanto barbeiros como percevejos são nidícolas, adaptados para viverem em ninhos ou abrigos de seus hospedeiros.",
+    "reference": "tˈɐ̃ŋtʊ bˌɐɾəbˈeɪɾʊʃ kˈomʊ pˌeɾəsɨvˈeʒʊʃ sɐ̃ʊ̃ nˌidˈikulɐʃ ˌɐdɐptˈadʊʃ pˌɐɾɐ vˌivˈeɾeɪŋ ˈeɪŋ nˈiɲʊz ˈow ˌɐbɹˈiɡʊʒ dɨ seʊʒ ˌuʃpɨdˈeɪɾʊʃ",
+    "uccharan": "tˈɐ̃ŋtʊ bˌɐɾəbˈeɪɾʊʃ kˈomʊ pˌeɾəsɨvˈeʒʊʃ sɐ̃ʊ̃ nˌidˈikulɐˈo ˌɐdɐptˈadʊʃ pˌɐɾɐ vˌivˈeɾeɪŋ ˈeɪŋ nˈiɲʊz ˈow ˌɐbɹˈiɡʊʒ dɨ seʊʒ ˌuʃpɨdˈeɪɾʊʃ"
    }
   ]
  }

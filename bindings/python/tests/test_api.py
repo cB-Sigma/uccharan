@@ -129,3 +129,38 @@ def test_packs_are_verified(tmp_path, monkeypatch):
         packs.fetch("kokoro-en-gb")
     with pytest.raises(uccharan.PackError, match="unknown pack"):
         packs.fetch("zz")
+
+
+def test_a_missing_word_table_is_an_error_not_a_silent_fallback(tmp_path):
+    # In a fresh process without the German table: phonemize() raises an
+    # error that names the pack; English and Hindi still work.
+    import os
+    import subprocess
+    import sys
+
+    code = (
+        "import uccharan\n"
+        "from uccharan.packs import PackError\n"
+        "assert uccharan.phonemize('hello', lang='en-us')\n"
+        "assert uccharan.phonemize('नमस्ते', lang='hi')\n"
+        "try:\n"
+        "    uccharan.phonemize('Guten Tag', lang='de')\n"
+        "except PackError as e:\n"
+        "    assert \"'de'\" in str(e) and 'de.ucd' in str(e) and 'UCCHARAN_DATA_DIR' in str(e), e\n"
+        "else:\n"
+        "    raise SystemExit('German was read without its word table')\n"
+    )
+    env = {**os.environ, "UCCHARAN_DATA_DIR": str(tmp_path), "XDG_CACHE_HOME": str(tmp_path), "UCCHARAN_OFFLINE": "1"}
+    r = subprocess.run([sys.executable, "-c", code], env=env, capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr
+
+
+def test_packs_command_copies_packs_for_offline_use(tmp_path, capsys):
+    from uccharan import packs
+
+    assert packs.main(["--dir", str(tmp_path), "de", "fr"]) == 0
+    assert sorted(f.name for f in tmp_path.iterdir()) == ["de.ucd", "fr.ucd"]
+    assert packs.main([]) == 0
+    listing = capsys.readouterr().out
+    assert "de " in listing and "xlit-hi" in listing and "CC BY-SA 4.0" in listing
+    assert packs.installed("de") and not packs.installed("no-such")

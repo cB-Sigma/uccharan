@@ -219,11 +219,11 @@ jobs:
       contents: write   # creates the tag and the release
     steps:
       - uses: actions/checkout@v7
-      - name: Language packs (the wheel fetches en-gb and Kokoro English from here, checked by SHA-256)
+      - name: Language packs (word tables, en-gb and Kokoro English are fetched from here on first use, checked by SHA-256)
         run: |
           python3 tools/packs.py --check
           mkdir -p dist
-          cp crates/uccharan/data/*.ucd data/packs/*.ucd dist/
+          cp crates/uccharan/data/*.ucd crates/uccharan-data/data/*.ucd data/packs/*.ucd dist/
           cp data/sources/wikipron/LICENSE-CC-BY-SA-4.0.txt dist/wikipron-LICENSE-CC-BY-SA-4.0.txt
           cp data/sources/translit/LICENSE-CC-BY-SA-4.0.txt dist/xlit-LICENSE-CC-BY-SA-4.0.txt
           cp data/sources/translit/NOTICE.txt dist/xlit-NOTICE.txt
@@ -271,20 +271,22 @@ jobs:
         run: echo "CARGO_REGISTRY_TOKEN is not set; skipping crates.io."
       - uses: actions/checkout@v7
         if: env.CARGO_REGISTRY_TOKEN != ''
-      - name: Publish uccharan, then uccharan-capi (dependency order; the other workspace crates are publish = false)
+      - name: Publish uccharan-data, uccharan, then uccharan-capi (dependency order; the other workspace crates are publish = false)
         if: env.CARGO_REGISTRY_TOKEN != ''
         run: |
           rustup toolchain install stable --profile minimal
           rustup default stable
           published() { curl -sf -A "uccharan-release (github.com/cB-Sigma/uccharan)" "https://crates.io/api/v1/crates/$1/$VERSION" > /dev/null; }
-          if published uccharan; then echo "uccharan $VERSION is already on crates.io"; else cargo publish -p uccharan; fi
-          # the index needs a moment before the dependent crate can resolve the new version
-          for i in 1 2 3 4 5 6 7 8 9 10; do
-            if published uccharan-capi; then echo "uccharan-capi $VERSION is already on crates.io"; break; fi
-            cargo publish -p uccharan-capi && break
-            sleep 30
+          if published uccharan-data; then echo "uccharan-data $VERSION is already on crates.io"; else cargo publish -p uccharan-data; fi
+          # the index needs a moment before a dependent crate can resolve the new version
+          for crate in uccharan uccharan-capi; do
+            for i in 1 2 3 4 5 6 7 8 9 10; do
+              if published "$crate"; then echo "$crate $VERSION is already on crates.io"; break; fi
+              cargo publish -p "$crate" && break
+              sleep 30
+            done
+            published "$crate"
           done
-          published uccharan-capi
 
   npm:
     name: publish to npm

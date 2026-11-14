@@ -24,7 +24,7 @@ from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass, field
 
 from . import _native
-from .textnorm import WordList, _try_need
+from .textnorm import WordList, _need_table
 
 __all__ = ["Candidate", "Change", "Corrected", "SoundIndex", "match_terms"]
 
@@ -129,7 +129,7 @@ class SoundIndex:
             opts["langs"] = list(langs)
         options = json.dumps(opts, ensure_ascii=False)
         for lang in langs if langs is not None else ("en-us", "hi"):
-            _try_need(lang)
+            _need_table(lang)
         self._native = _native.SoundIndex(text, options)
 
     def __len__(self) -> int:
@@ -161,7 +161,7 @@ class SoundIndex:
         Without ``all`` the candidates do not overlap (an exact occurrence
         wins, then the higher score); with it, every span and term above
         ``min_score`` is reported."""
-        _try_need(lang)
+        _need_table(lang)
         opts = json.dumps({"max_words": max_words, "min_score": min_score, "all": all})
         r = json.loads(self._native.find(text, lang, opts))
         return _candidates(r["candidates"], "byte" if byte_offsets else "char")
@@ -189,7 +189,7 @@ class SoundIndex:
         ``text``; with it, a span is corrected only when the mean confidence
         of its words is at most ``max_confidence`` (default 0.9). The
         result lists every change."""
-        _try_need(lang)
+        _need_table(lang)
         opts: dict[str, object] = {"max_words": max_words, "fix_case": fix_case}
         if threshold is not None:
             opts["threshold"] = threshold

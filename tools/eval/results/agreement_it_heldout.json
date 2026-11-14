@@ -5,53 +5,53 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 174556,
-  "per": 0.006593872453539265,
-  "per_without_stress": 0.004755849440488301,
-  "exact_sentence": 0.75,
-  "exact_sentence_without_stress": 0.8003952569169961,
-  "piper_shape_per": 0.006580656822983155,
-  "piper_shape_exact_sentence": 0.7440711462450593,
+  "per": 0.005344989573546598,
+  "per_without_stress": 0.003776703967446592,
+  "exact_sentence": 0.7598814229249012,
+  "exact_sentence_without_stress": 0.8092885375494071,
+  "piper_shape_per": 0.005343606312911644,
+  "piper_shape_exact_sentence": 0.7539525691699605,
   "word_count_mismatch_sentences": 148,
   "errors_by_class": {
    "stress": {
-    "count": 410,
-    "share": 0.35621198957428324,
-    "per_contribution": 0.0023488164256742824
+    "count": 348,
+    "share": 0.3729903536977492,
+    "per_contribution": 0.0019936295515479274
    },
    "vowel": {
-    "count": 358,
-    "share": 0.3110338835794961,
-    "per_contribution": 0.002050917757052178
+    "count": 288,
+    "share": 0.3086816720257235,
+    "per_contribution": 0.0016499003185224226
    },
    "consonant": {
-    "count": 190,
-    "share": 0.16507384882710685,
-    "per_contribution": 0.0010884759045807649
+    "count": 130,
+    "share": 0.13933547695605572,
+    "per_contribution": 0.0007447466715552602
    },
    "other": {
-    "count": 97,
-    "share": 0.0842745438748914,
-    "per_contribution": 0.0005556955933912326
+    "count": 81,
+    "share": 0.08681672025723473,
+    "per_contribution": 0.00046403446458443136
    },
    "word-boundary": {
     "count": 64,
-    "share": 0.05560382276281494,
+    "share": 0.06859592711682744,
     "per_contribution": 0.00036664451522720504
    },
    "length": {
-    "count": 32,
-    "share": 0.02780191138140747,
-    "per_contribution": 0.00018332225761360252
+    "count": 22,
+    "share": 0.023579849946409433,
+    "per_contribution": 0.00012603405210935174
    }
   },
   "top_confusions": [
    {
     "edit": "ˈ→∅",
-    "count": 150
+    "count": 140
    },
    {
     "edit": "∅→ˈ",
-    "count": 119
+    "count": 104
    },
    {
     "edit": " →∅",
@@ -59,27 +59,15 @@
    },
    {
     "edit": "ɛ→e",
-    "count": 37
+    "count": 39
    },
    {
     "edit": "a→∅",
     "count": 33
    },
    {
-    "edit": "e→∅",
-    "count": 28
-   },
-   {
-    "edit": "ˈ→ˌ",
-    "count": 26
-   },
-   {
     "edit": "ʊ→u",
-    "count": 23
-   },
-   {
-    "edit": "ː→∅",
-    "count": 23
+    "count": 26
    },
    {
     "edit": "e→ɛ",
@@ -90,35 +78,27 @@
     "count": 22
    },
    {
-    "edit": "ˌ→∅",
-    "count": 21
-   },
-   {
-    "edit": "∅→ˌ",
-    "count": 20
-   },
-   {
-    "edit": "ɛ→∅",
-    "count": 20
+    "edit": "ː→∅",
+    "count": 22
    },
    {
     "edit": "u→ʊ",
-    "count": 19
+    "count": 21
    },
    {
-    "edit": "t→∅",
-    "count": 14
+    "edit": "e→∅",
+    "count": 20
    },
    {
-    "edit": "∅→ɛ",
-    "count": 13
+    "edit": "ˈ→ˌ",
+    "count": 20
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 15
    },
    {
     "edit": "∅→ ",
-    "count": 13
-   },
-   {
-    "edit": "i→∅",
     "count": 13
    },
    {
@@ -126,117 +106,137 @@
     "count": 13
    },
    {
-    "edit": "z→∅",
-    "count": 12
-   },
-   {
-    "edit": "o→∅",
-    "count": 12
-   },
-   {
     "edit": "ɾ→∅",
-    "count": 12
+    "count": 11
    },
    {
-    "edit": "∅→e",
-    "count": 11
+    "edit": "d→∅",
+    "count": 10
    },
    {
     "edit": "∅→a",
-    "count": 11
+    "count": 10
+   },
+   {
+    "edit": "t→∅",
+    "count": 10
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 10
+   },
+   {
+    "edit": "b→∅",
+    "count": 10
+   },
+   {
+    "edit": "o→∅",
+    "count": 9
+   },
+   {
+    "edit": "ˈ→ʊ",
+    "count": 8
+   },
+   {
+    "edit": "p→∅",
+    "count": 7
+   },
+   {
+    "edit": "n→∅",
+    "count": 7
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 20452,
-    "wrong": 223,
-    "rate": 0.010903579112067279
+    "wrong": 216,
+    "rate": 0.01056131429689028
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 187,
-    "per": 0.01326655655602323,
-    "exact_sentence": 0.6149732620320856
+    "per": 0.01148169854547392,
+    "exact_sentence": 0.6363636363636364
    },
    "no-digits": {
     "sentences": 825,
-    "per": 0.004765797194529186,
-    "exact_sentence": 0.7806060606060606
+    "per": 0.003663752207739129,
+    "exact_sentence": 0.7878787878787878
    }
   },
   "examples_of_disagreement": [
    {
-    "id": "flores-devtest-227",
-    "text": "Ha annullato il tour dopo che il lead vocalist Steven Tyler si è infortunato a seguito di una caduta dal palco durante una performance il 5 agosto.",
-    "reference": "a annʊllˈato il tˈuːr dˈopo ke il lˈɛad vokˈalist stˈiven tilˈɛr sɪ e infortʊnˈato a sˈeːɡʊito dɪ ˌʊna kadˈuta dal pˈalko dʊrˈante ˌʊna perfˈɔrmans il tʃˈinkwe aɡˈosto",
-    "uccharan": "a annʊllˈato il tˈuːr dˈopo ke il lˈɛad vokˈalist stˈiven tilˈɛr sɪ e infortʊnˈato a seɡwˈito dɪ ˌʊna kadˈuta dal pˈalko dʊrˈante ˌʊna perfˈɔrmans il tʃˈinkwe aɡˈosto"
+    "id": "flores-devtest-137",
+    "text": "Le squadre antincendio alla fine sono riuscite a domare il fuoco alle 23:35.",
+    "reference": "le skwˈadre antintʃˈendio ˌalla fˈine sˌono riʊʃˈite a domˈare il fʊˈɔko ˌalle ventitrˈe e trˈeːntatʃˈinkwe",
+    "uccharan": "le skwˈadre antintʃˈendio ˌalla fˈine sˌono riʊʃˈite a domˈare il fʊˈɔko ˌalle ventitrˈe trˈeːntatʃˈinkwe"
    },
    {
-    "id": "flores-devtest-403",
-    "text": "Comunque, questo è falso. Anche se sul retro del documento c'è scritto qualcosa, non si tratta di una mappa del tesoro.",
-    "reference": "komˈunkwe kwˈesto ˌɛ fˈalso ˌanke se sʊl rˈɛtro del dokʊmˈento tʃe skrˈitːo kwalkˈɔza non sɪ trˈatːa dɪ ˌʊna mˈapːa del tezˈɔro",
-    "uccharan": "komˈunkwe kwˌesto e fˈalso ˌanke se sʊl rˈɛtro del dokʊmˈento tʃe skrˈitːo kwalkˈɔza non sɪ trˈatːa dɪ ˌʊna mˈapːa del tezˈɔro"
+    "id": "flores-devtest-88",
+    "text": "A seguito del disagio della comunità sono stati fatti sforzi per redigere una politica relativa ai contenuti sessuali sul sito, che ospita milioni di contenuti multimediali con licenza aperta.",
+    "reference": "a sˈeːɡʊito del dizˈadʒo dˌella komʊnitˈa sˌono stˈatɪ fˈatːɪ sfˈɔrtsɪ per redˈidʒere ˌʊna polˈitika relatˈiva aj kontenˈutɪ sessʊˈalɪ sʊl sˈito ke ˈɔspita miliˈonɪ dɪ kontenˈutɪ mʊltimedjˈalɪ kon litʃˈɛntsa apˈɛrta",
+    "uccharan": "a seɡwˈito del dizˈadʒo dˌella komʊnitˈa sˌono stˈatɪ fˈatːɪ sfˈɔrtsɪ per redˈidʒere ˌʊna polˈitika relatˈiva aj kontenˈutɪ sessʊˈalɪ sʊl sˈito ke ˈɔspita miliˈonɪ dɪ kontenˈutɪ mʊltimedjˈalɪ kon litʃˈɛntsa apˈɛrta"
    },
    {
-    "id": "flores-devtest-954",
-    "text": "Trattate il luogo con tutta la dignità, la serietà e il rispetto che merita. Evitate battute sull'olocausto o sui nazisti.",
-    "reference": "tratːˈate il lʊˈɔɡo kon tˈutːa la diɲitˈa la serietˈa e il rispˈɛtːo ke mˈɛrita evitˈate batːˈute sʊllolokˈaʊsto o sˌʊi natsˈistɪ",
-    "uccharan": "tratːˈate il lʊˈɔɡo kon tˈutːa la diɲitˈa la serietˈa e il rispˈɛtːo ke mˈɛrita evitˈate batːˈute sˌʊllolokaˈʊsto o sˌʊi natsˈistɪ"
+    "id": "flores-devtest-722",
+    "text": "Col suo tocco più arabeggiante che africano, la città si distingue nettamente dalle altre del Paese.",
+    "reference": "kol sˌʊo tˈokːo pjʊ aɾabedʒːˈante ke afrikˈano la tʃitːˈa sɪ distˈiŋɡwe netːamˈente dˌalle ˈaltre del paˈeze",
+    "uccharan": "kol sˌʊo tˈokːo pjʊ ˈaɾabedʒːante ke afrikˈano la tʃitːˈa sɪ distˈiŋɡwe netːamˈente dˌalle ˈaltre del paˈeze"
    },
    {
-    "id": "flores-devtest-177",
-    "text": "Il Sudafrica ha vinto contro gli All Blacks (Nuova Zelanda) nel match del torneo di rugby Tri Nations disputato in casa al Royal Bafokeng Stadium di Rustenburg.",
-    "reference": "il sʊdˈafrika a vˈinto kˌontro ʎɪ ˈal blˈɛːks nʊˈɔva dzelˈanda nel mˈattʃ del tornˈɛo dɪ rˈaɡbɪ trˈi nˈɛʃons dispʊtˈato in kˈaza al rˈojal bafˈokeŋɡ stˈadjʊm dɪ rʊstˈenbʊrɡ",
-    "uccharan": "il sʊdˈafrika a vˈinto kˌontro ʎɪ ˈal blˈɛːks nʊˈɔva dzelˈanda nel mˈattʃ del tornˈɛo dɪ rˈaɡbɪ trˈɪ nˈɛʃons dispʊtˈato in kˈaza al rˈojal bafˈokeŋɡ stˈadjʊm dɪ rˈustenbʊrɡ"
+    "id": "flores-devtest-31",
+    "text": "Siccome il piumaggio del dinosauro non è dotato della struttura di base, il cosiddetto rachide, ma ha invece altre caratteristiche tipiche delle piume, barbe e barbule, i ricercatori hanno concluso che il rachide sia probabilmente il risultato di uno sviluppo evolutivo successivo a tali caratteristiche.",
+    "reference": "sikːˈome il pjʊmˈadʒːo del dinozˈaʊro non e dotˈato dˌella strʊtːˈura dɪ bˈaze il kozidːˈetːo rˈakide ma a invˈetʃe ˈaltre kaɾatːerˈistike tˈipike dˌelle pjˈume bˈarbe e bˈarbʊle i ritʃerkatˈorɪ ˌanno konklˈuzo ke il rˈakide sˌia probabilmˈente il rizʊltˈato dɪ ˈuno zvilˈupːo evolʊtˈivo sʊtʃːessˈivo a tˈalɪ kaɾatːerˈistike",
+    "uccharan": "sikːˈome il pjʊmˈadʒːo del dinozˈaʊro non e dotˈato dˌella strʊtːˈura dɪ bˈaze il kozidːˈetːo rakˈide ma a invˈetʃe ˈaltre kaɾatːerˈistike tˈipike dˌelle pjˈume bˈarbe e barbˈʊle i ritʃerkatˈorɪ ˌanno konklˈuzo ke il rakˈide sˌia probabilmˈente il rizʊltˈato dɪ ˈuno zvilˈupːo evolʊtˈivo sʊtʃːessˈivo a tˈalɪ kaɾatːerˈistike"
    },
    {
-    "id": "flores-devtest-955",
-    "text": "Evitate di deturpare questi luoghi imbrattando le strutture con segni o graffiti.",
-    "reference": "evitˈate dɪ detʊrpˈare kwˌestɪ lʊˈɔɡɪ imbratːˈando le strʊtːˈure kon sˈeɲɲɪ o ɡraffˈitɪ",
-    "uccharan": "evitˈate dɪ detʊrpˈare kwˌestɪ lʊˈɔɡɪ imbrˈatːando le strʊtːˈure kon sˈeɲɲɪ o ɡraffˈitɪ"
+    "id": "flores-devtest-182",
+    "text": "Lunedì un terremoto di lieve entità ha colpito il Montana occidentale alle 22:08.",
+    "reference": "lʊnedˈi ʊn terɾemˈɔto dɪ liˈɛve entitˈa a kolpˈito il montˈana otʃːidentˈale ˌalle vˈentɪdˈue e dzˈɛɾo ˈɔtːo",
+    "uccharan": "lʊnedˈi ʊn terɾemˈɔto dɪ liˈɛve entitˈa a kolpˈito il montˈana otʃːidentˈale ˌalle vˈentɪdˈue dzˈɛɾo ˈɔtːo"
    },
    {
-    "id": "flores-devtest-110",
-    "text": "Ha indirizzato gli agenti verso la sua vecchia Oldsmobile Intrigue nera che si trovava a 500 piedi di distanza.",
-    "reference": "a indiritsːˈato ʎɪ adʒˈɛntɪ vˌɛrso la sˌʊa vˈɛkːia oldzmˈɔbile intrˈiɡwe nˈera ke sɪ trovˈava a tʃɪnkʊetʃˈɛnto pjˈedɪ dɪ distˈantsa",
-    "uccharan": "a indiritsːˈato ʎɪ adʒˈɛntɪ vˌɛrso la sˌʊa vˈɛkːia oldzmobˈile intrˈiɡwe nˈera ke sɪ trovˈava a tʃɪnkʊetʃˈɛnto pjˈedɪ dɪ distˈantsa"
+    "id": "flores-devtest-217",
+    "text": "In un primo momento l'agenzia di stampa cinese Xinhua aveva segnalato il dirottamento di un aereo.",
+    "reference": "in ʊn prˈimo momˈento ladʒentsˈia dɪ stˈampa tʃinˈeze ksˈinʊa avˌeva seɲalˈato il dirotːamˈento dɪ ʊn aˈɛːreo",
+    "uccharan": "in ʊn prˈimo momˈento ladʒentsˈia dɪ stˈampa tʃinˈeze ksinˈʊa avˌeva seɲalˈato il dirotːamˈento dɪ ʊn aˈɛːreo"
    },
    {
-    "id": "flores-devtest-723",
-    "text": "Il Parco nazionale Kruger (Kruger National Park, KNP) si trova a nord-est del Sudafrica e si snoda a est lungo il confine con il Mozambico, a nord confina con lo Zimbabwe, e il suo confine meridionale è rappresentato dal fiume Crocodile.",
-    "reference": "il pˈarko natsionˈale krʊdʒˈɛr krʊdʒˈɛr nˈaʃonal pˈark kˌapːaˌɛnnepˈi sɪ trˈɔva a nˈɔrdˈest del sʊdˈafrika e sɪ znˈɔda a ˈest lˈuŋɡo il konfˈine kon il modzambˈiko a nˈɔrd konfˈina kon lo dzimbˈabwe e il sˌʊo konfˈine meridjonˈale e rapːrezentˈato dal fjˈume krokˈɔdile",
-    "uccharan": "il pˈarko natsionˈale krˈudʒɛr krˈudʒɛr nˈaʃonal pˈark kˌapːaˌɛnnepˈi sɪ trˈɔva a nˈɔrdˈest del sʊdˈafrika e sɪ znˈɔda a ˈest lˈuŋɡo il konfˈine kon il modzambˈiko a nˈɔrd konfˈina kon lo dzimbˈabwe e il sˌʊo konfˈine meridjonˈale e rapːrezentˈato dal fjˈume krokˈɔdile"
+    "id": "flores-devtest-709",
+    "text": "I portoghesi la distrussero per ricostruirla con il nome di Casa Branca, che abbandonarono nel 1755 in seguito a un terremoto.",
+    "reference": "i portoɡˈezɪ la distrˈussero per rikostrʊˈirla kon il nˈome dɪ kˈaza brˈanka ke abːandonˈarono nel mˈille setːetʃˈɛnto tʃinkwˈantatʃˈinkwe in sˈeːɡwito a ʊn terɾemˈɔto",
+    "uccharan": "i portoɡˈezɪ la distrˈussero per rikostrʊˈirla kon il nˈome dɪ kˈaza brˈanka ke abːandonˈarono nel mˈille setːetʃˈɛnto tʃinkwˈantatʃˈinkwe in seɡwˈito a ʊn terɾemˈɔto"
    },
    {
-    "id": "flores-devtest-194",
-    "text": "Perry ha dichiarato: \"Tornerò in Texas per verificare i risultati della consultazione di stasera e vedere se per me c'è la possibilità di proseguire in questa competizione\"; tuttavia in seguito ha affermato che rimarrà in corsa e il 21 gennaio parteciperà alle primarie nel South Carolina.",
-    "reference": "pˈɛrɾɪ a dikjaɾˈato torneɾˈɔ in tˈeksas per verifikˈare i rizʊltˈatɪ dˌella konsʊltatsiˈone dɪ stˌa sˈera e vedˈere se per me tʃe la possibilitˈa dɪ prozeɡwˈire in kwˌesta kompetitsiˈone tʊtːavˈia in sˈeːɡwito a affermˈato ke rimarɾˈa in kˈorsa e il ventˈuno dʒennˈaio partetʃipeɾˈa ˌalle primˈarie nel sˈoʊt karolˈina",
-    "uccharan": "pˈɛrɾɪ a dikjaɾˈato torneɾˈɔ in tˈeksas per verifikˈare i rizʊltˈatɪ dˌella konsʊltatsiˈone dɪ stazˈɛra e vedˈere se per me tʃe la possibilitˈa dɪ prozeɡwˈire in kwˌesta kompetitsiˈone tʊtːavˈia in seɡwˈito a affermˈato ke rimarɾˈa in kˈorsa e il ventˈuno dʒennˈaio partetʃipeɾˈa ˌalle primˈarie nel sˈoʊt karolˈina"
+    "id": "flores-devtest-847",
+    "text": "In seguito alcune selle, specialmente quelle inglesi, hanno inserito barre di sicurezza, che fanno sì che una staffa di cuoio si stacchi dalla sella quando, in caso di caduta, il cavaliere la tira indietro.",
+    "reference": "in sˈeːɡwito alkˌʊne sˈɛlle spetʃalmˈente kwˌelle iŋɡlˈezɪ ˌanno inserˈito bˈarɾe dɪ sikʊrˈetsːa ke fˈanno sˈiː ke ˌʊna stˈaffa dɪ kʊˈɔjo sɪ stˈakːɪ dˌalla sˈɛlla kwˈando in kˈazo dɪ kadˈuta il kavaliˈɛre la tˈira indjˈɛtro",
+    "uccharan": "in seɡwˈito alkˌʊne sˈelle spetʃalmˈente kwˌelle iŋɡlˈezɪ ˌanno inserˈito bˈarɾe dɪ sikʊrˈetsːa ke fˈanno sˈiː ke ˌʊna stˈaffa dɪ kʊˈɔjo sɪ stˈakːɪ dˌalla sˈɛlla kwˈando in kˈazo dɪ kadˈuta il kavaliˈɛre la tˈira indjˈɛtro"
    },
    {
-    "id": "flores-devtest-233",
-    "text": "Il cantante Sanju Sharma ha aperto la serata, seguito da Jai Shankar Choudhary. Lakkha Singh, accompagnato dal cantante Raju Khandelwal, ha presentato anche il bhajan chhappan bhog.",
-    "reference": "il kantˈante sˈandʒʊ ʃˈarma a apˈɛrto la serˈata seɡwˈito da dʒˈaj ʃaŋkˈar tʃoʊdˈarɪ lˈakːa sˈiŋɡ akːompaɲˈato dal kantˈante rˈajʊ kandˈɛlwal a prezentˈato ˌanke il bˈajan kˈapːan bˈoɡ",
-    "uccharan": "il kantˈante sˈandʒʊ ʃˈarma a apˈɛrto la serˈata seɡwˈito da dʒˈaj ʃˈaŋkar tʃoʊdˈarɪ lˈakːka sˈiŋɡ akːompaɲˈato dal kantˈante rˈajʊ kandˈelwal a prezentˈato ˌanke il bˈajan kˈapːan bˈoɡ"
+    "id": "flores-devtest-271",
+    "text": "Edgar Veguilla ha riportato ferite al braccio e alla mascella, mentre Kristoffer Schneider dovrà subire un intervento chirurgico di ricostruzione del volto.",
+    "reference": "ˈedɡar veɡwˈilla a riportˈato ferˈite al brˈatʃːo e ˌalla maʃˈɛlla mˌentre kristoffˈɛr sknejdˈɛr dovrˈa sʊbˈire ʊn intervˈɛnto kirˈurdʒiko dɪ rikostrʊtsiˈone del vˈolto",
+    "uccharan": "ˈedɡar veɡwˈilla a riportˈato ferˈite al brˈatʃːo e ˌalla maʃˈɛlla mˌentre kristˈɔffˌɛr sknejdˈɛr dovrˈa sʊbˈire ʊn intervˈɛnto kirˈurdʒiko dɪ rikostrʊtsiˈone del vˈolto"
    },
    {
-    "id": "flores-devtest-1",
-    "text": "\"Abbiamo topi di quattro mesi che prima erano diabetici e ora non lo sono più\", ha aggiunto.",
-    "reference": "abːjˌamo tˈɔpɪ dɪ kwˈatːro mˈɛzɪ ke prˈima ˈɛrano djabˈɛtitʃɪ e ˈora non lo sˌono pjˈu a adʒːˈunto",
-    "uccharan": "abːjˌamo tˈɔpɪ dɪ kwˈatːro mˈɛzɪ ke prˈima ˈɛrano djabˈɛtitʃɪ e ˈora non lo sˌono pjʊ a adʒːˈunto"
+    "id": "flores-devtest-236",
+    "text": "Lakkha Singh ha inoltre presentato il bhajan per il chhappan bhog. Lo ha accompagnato il cantante Raju Khandelwal.",
+    "reference": "lˈakːa sˈiŋɡ a inˈoltre prezentˈato il bˈajan per il kˈapːan bˈoɡ lo a akːompaɲˈato il kantˈante rˈajʊ kandˈɛlwal",
+    "uccharan": "lˈakːka sˈiŋɡ a inˈoltre prezentˈato il bˈajan per il kˈapːan bˈoɡ lo a akːompaɲˈato il kantˈante rˈajʊ kandˈelwal"
    },
    {
-    "id": "flores-devtest-74",
-    "text": "Dacché il governo federale è intervenuto rilevando il finanziamento dell'ospedale Mersey di Devonport, in Tasmania, il governo statale e diversi deputati hanno criticato la misura come uno stratagemma preelettorale in vista delle consultazioni federali in calendario a novembre.",
-    "reference": "dakːˈe il ɡovˈɛrno federˈale e intervenˈuto rilevˈando il finantsjamˈento dellospedˈale mˈɛrseɪ dɪ devˈonport in tazmˈania il ɡovˈɛrno statˈale e divˈɛrsɪ depʊtˈatɪ ˌanno kritikˈato la mizˈura kˌome ˈuno stratadʒˈɛmma preeletːorˈale in vˈista dˌelle konsʊltatsiˈonɪ federˈalɪ in kalendˈario a novˈɛmbre",
-    "uccharan": "dˈakːe il ɡovˈɛrno federˈale e intervenˈuto rilevˈando il finantsjamˈento dellospedˈale mˈersɪ dɪ devˈonport in tazmˈania il ɡovˈɛrno statˈale e divˈɛrsɪ depʊtˈatɪ ˌanno kritikˈato la mizˈura kˌome ˈuno stratadʒˈɛmma prɛɛletːorˈale in vˈista dˌelle konsʊltatsiˈonɪ federˈalɪ in kalendˈario a novˈɛmbre"
+    "id": "flores-devtest-678",
+    "text": "Questo ci offre una grande quantità di informazioni e materiale per creare modelli di simulazione che ci aiutino a comprendere i nostri processi mentali.",
+    "reference": "kwˌesto tʃɪ ˈoffre ˌʊna ɡrˈande kwantitˈa dɪ informatsiˈonɪ e materiˈale per kreˈare modˈɛllɪ dɪ simʊlatsiˈone ke tʃɪ ajˈutino a komprˈɛndere i nˌɔstrɪ protʃˈɛssɪ mentˈalɪ",
+    "uccharan": "kwˌesto tʃɪ ˈoffre ˌʊna ɡrˈande kwantitˈa dɪ informatsiˈonɪ e materiˈale per kreˈare modˈɛllɪ dɪ simʊlatsiˈone ke tʃɪ ajʊtˈino a komprˈɛndere i nˌɔstrɪ protʃˈɛssɪ mentˈalɪ"
    },
    {
-    "id": "flores-devtest-854",
-    "text": "Escursionismo sugli sci: l'attività è chiamata anche fuoripista, sci alpinismo o trekking sugli sci.",
-    "reference": "eskʊrsjonˈizmo sˌʊʎɪ ʃˈi latːivitˈa e kjamˈata ˌanke fʊoripˈista ʃˈi alpinˈizmo o trˈekːiŋɡ sˌʊʎɪ ʃˈi",
-    "uccharan": "eskʊrsjonˈizmo sˌʊʎɪ ʃˈi latːivitˈa e kjamˈata ˌanke fʊorˈipista ʃˈi alpinˈizmo o trˈekːiŋɡ sˌʊʎɪ ʃˈi"
+    "id": "flores-devtest-214",
+    "text": "Negli anni '80 ha collaborato alla creazione di programmi come Taxi, Cheers e The Tracey Ullman Show.",
+    "reference": "nˈeʎɪ ˈannɪ otːˈanta a kollaborˈato ˌalla kreatsiˈone dɪ proɡrˈammɪ kˌome tˈaksɪ keˈɛrs e tˈe trˈatʃei ˈulman ʃˈow",
+    "uccharan": "nˈeʎɪ ˈannɪ otːˈanta a kollaborˈato ˌalla kreatsiˈone dɪ proɡrˈammɪ kˌome tˈaksɪ keˈers e tˈe trˈatʃei ˈʊlman ʃˈow"
    }
   ]
  }

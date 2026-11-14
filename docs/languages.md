@@ -42,28 +42,28 @@ Runs on that machine differ by about ±10 %.
 | Sinhala | `si` | `si` | FLORES-200, 1,012 sentences | 0.86 % | 0.24 % | 2.3× | MMS (character input) |
 | Konkani | `kok` | `kok` | Sangraha, 1,000 sentences | 0.20 % | 0.13 % | 5.1× | none |
 | Urdu | `ur` | `ur` | FLORES-200, 1,012 sentences | 1.44 % | 1.16 % | 4.0× | Piper `ur_PK` (2) |
-| Sindhi | `sd` | `sd` | FLORES-200, 1,012 sentences | 1.52 % | 0.92 % | 2.1× | none |
+| Sindhi | `sd` | `sd` | FLORES-200, 1,012 sentences | 1.30 % | 0.70 % | 2.2× | none |
 | Sanskrit | `sa` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.64 % | 0.43 % | 4.2× | none |
 | Bhojpuri | `bho` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.51 % | 0.33 % | 3.3× | SYSPIN (character input) |
 | Maithili | `mai` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.46 % | 0.29 % | 3.0× | MMS, SYSPIN (character input) |
 | Magahi | `mag` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.40 % | 0.23 % | 2.8× | MMS (character input) |
-| Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.74 % | 0.45 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
-| German | `de` | `de` | FLORES-200, 1,012 sentences | 1.01 % | 0.82 % | 5.8× † | Piper `de_DE` (11) |
-| Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.77 % | 1.39 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
-| French | `fr` | `fr` | FLORES-200, 1,012 sentences | 0.85 % | 0.65 % | 5.9× † | Piper `fr_FR` (7), Kokoro `ff_siwis` |
-| Italian | `it` | `it` | FLORES-200, 1,012 sentences | 0.66 % | 0.48 % | 4.6× † | Piper `it_IT` (4), Kokoro `if_sara`, `im_nicola` |
-| Portuguese (Brazil) | `pt-br` | `pt-br` | FLORES-200, 1,012 sentences | 0.67 % | 0.46 % | 5.1× † | Piper `pt_BR` (4), Kokoro `pf_dora`, `pm_alex`, `pm_santa` |
-| Portuguese (Portugal) | `pt` | `pt` | FLORES-200, 1,012 sentences | 0.89 % | 0.64 % | 5.2× † | Piper `pt_PT` (1) |
-| Polish | `pl` | `pl` | FLORES-200, 1,012 sentences | 1.33 % | 1.05 % | 3.1× † | Piper `pl_PL` (5) |
-| Turkish | `tr` | `tr` | FLORES-200, 1,012 sentences | 0.72 % | 0.51 % | 2.7× † | Piper `tr_TR` (1) |
-| Czech | `cs` | `cs` | FLORES-200, 1,012 sentences | 1.40 % | 1.13 % | 1.8× † | Piper `cs_CZ` (3) |
-| Swedish | `sv` | `sv` | FLORES-200, 1,012 sentences | 1.51 % | 0.88 % | 3.7× † | Piper `sv_SE` (3) |
-| Catalan | `ca` | `ca` | FLORES-200, 1,012 sentences | 1.86 % | 1.53 % | 4.9× † | Piper `ca_ES` (3) |
-| Romanian | `ro` | `ro` | FLORES-200, 1,012 sentences | 1.00 % | 0.89 % | 3.3× † | Piper `ro_RO` (1) |
-| Hungarian | `hu` | `hu` | FLORES-200, 1,012 sentences | 2.08 % | 1.61 % | 13.1× † | Piper `hu_HU` (3) |
-| Finnish | `fi` | `fi` | FLORES-200, 1,012 sentences | 1.64 % | 1.13 % | 1.7× † | Piper `fi_FI` (2) |
-| Norwegian Bokmål | `nb` | `nb` | FLORES-200, 1,012 sentences | 1.11 % | 0.52 % | 2.3× † | Piper `no_NO` (2) |
-| Danish | `da` | `da` | FLORES-200, 1,012 sentences | 2.26 % | 1.81 % | 27.1× † | Piper `da_DK` (1) |
+| Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.55 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
+| German | `de` | `de` | FLORES-200, 1,012 sentences | 0.95 % | 0.77 % | 5.8× † | Piper `de_DE` (11) |
+| Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.69 % | 1.32 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
+| French | `fr` | `fr` | FLORES-200, 1,012 sentences | 0.79 % | 0.59 % | 5.9× † | Piper `fr_FR` (7), Kokoro `ff_siwis` |
+| Italian | `it` | `it` | FLORES-200, 1,012 sentences | 0.53 % | 0.37 % | 4.6× † | Piper `it_IT` (4), Kokoro `if_sara`, `im_nicola` |
+| Portuguese (Brazil) | `pt-br` | `pt-br` | FLORES-200, 1,012 sentences | 0.61 % | 0.40 % | 5.1× † | Piper `pt_BR` (4), Kokoro `pf_dora`, `pm_alex`, `pm_santa` |
+| Portuguese (Portugal) | `pt` | `pt` | FLORES-200, 1,012 sentences | 0.84 % | 0.60 % | 5.2× † | Piper `pt_PT` (1) |
+| Polish | `pl` | `pl` | FLORES-200, 1,012 sentences | 1.19 % | 0.92 % | 3.1× † | Piper `pl_PL` (5) |
+| Turkish | `tr` | `tr` | FLORES-200, 1,012 sentences | 0.68 % | 0.47 % | 2.7× † | Piper `tr_TR` (1) |
+| Czech | `cs` | `cs` | FLORES-200, 1,012 sentences | 1.32 % | 1.07 % | 1.8× † | Piper `cs_CZ` (3) |
+| Swedish | `sv` | `sv` | FLORES-200, 1,012 sentences | 1.44 % | 0.83 % | 3.7× † | Piper `sv_SE` (3) |
+| Catalan | `ca` | `ca` | FLORES-200, 1,012 sentences | 1.51 % | 1.18 % | 4.9× † | Piper `ca_ES` (3) |
+| Romanian | `ro` | `ro` | FLORES-200, 1,012 sentences | 0.97 % | 0.86 % | 3.3× † | Piper `ro_RO` (1) |
+| Hungarian | `hu` | `hu` | FLORES-200, 1,012 sentences | 1.37 % | 0.95 % | 13.1× † | Piper `hu_HU` (3) |
+| Finnish | `fi` | `fi` | FLORES-200, 1,012 sentences | 1.57 % | 1.08 % | 1.7× † | Piper `fi_FI` (2) |
+| Norwegian Bokmål | `nb` | `nb` | FLORES-200, 1,012 sentences | 1.03 % | 0.46 % | 2.3× † | Piper `no_NO` (2) |
+| Danish | `da` | `da` | FLORES-200, 1,012 sentences | 2.22 % | 1.78 % | 27.1× † | Piper `da_DK` (1) |
 
 ‡ espeak-ng has no voice for Sanskrit, Bhojpuri, Maithili or Magahi; text in them is read with its
 Hindi voice, and compatible mode is measured against that reading.
@@ -123,10 +123,17 @@ word (`os amigos` → `ʊz ˌæmˈiɡʊs`; not before digits or h), Polish and C
 consonant before the next word's first, Czech prepositions said as one word with the next
 (`na stole` → `nˈastole`), Catalan spirants, voiced finals and nasal place, Finnish final n. Their
 letter rules are short and only read words when the table is not loaded. Words outside the word
-lists: Italian 32.2 % wrong, Brazilian Portuguese 42.0 %, European Portuguese 50.2 %, Polish 30.7 %,
-Turkish 22.3 %, Czech 11.4 %, Swedish 32.7 %, Catalan 41.8 %, Romanian 49.1 %, Hungarian 3.8 %,
-Finnish 24.6 %, Norwegian 15.9 %, Danish 68.2 %. Known gaps: Hungarian and Finnish numbers
-above 999 (the voices glue them), Roman numerals as ordinals, Danish stress of unlisted words.
+lists: Italian 31.6 % wrong, Brazilian Portuguese 41.0 %, European Portuguese 49.0 %, Polish 29.8 %,
+Turkish 22.0 %, Czech 9.2 %, Swedish 32.3 %, Catalan 40.3 %, Romanian 48.2 %, Hungarian 2.0 %,
+Finnish 24.2 %, Norwegian 15.3 %, Danish 68.1 %. Hungarian has, besides, a list of 2.4 k
+words that carry only secondary stress at the end of a clause (`város`, `volt`, `is`), as the voice
+reads them, and number words with one stress per group of three digits. Roman numerals and
+capitals follow each voice in compatible mode: cardinals in Spanish, Portuguese, Catalan, Czech
+and Romanian, "römisch vierzehn" in German, "quatorze romain" in French, ordinals in Italian and
+Danish, and letters in Dutch, Polish, Turkish, Swedish, Hungarian, Finnish and Norwegian; improved
+mode reads the numeral as a number in every language (an ordinal in Italian and Danish). Capitals
+of two or three letters are spelled, longer ones with a vowel are read as a word. Known gaps:
+Danish stress of unlisted words, Roman numerals above 49 outside Portuguese.
 
 **Spanish** (`es`) is the first language on the Latin-script engine (`crates/uccharan/src/latin.rs`):
 letter rules, the Spanish stress rule with written accents, secondary stress on alternate syllables,
@@ -138,12 +145,17 @@ l and n.
 **Urdu and Sindhi** are written without most short vowels. uccharan reads them in two layers:
 letter rules (each consonant carries a short vowel unless a vowel letter or mark follows, the
 Hindi-type deletion, weight stress for Urdu and penultimate stress for Sindhi, and the consonant
-pairs both voices say without a vowel), and a table of the words among the 120,000 most frequent
-Urdu and 61,000 most frequent Sindhi words of the AI4Bharat Sangraha corpus that the rules do not
-read as espeak-ng's voices do in running text (`ur.ucd`, 47 k entries, 543 KB; `sd.ucd`, 18 k
-entries, 209 KB). On the held-out sentences, words in the table differ from espeak-ng in 0.4 % of
-cases (both languages), listed words left to the rules in 0.9 % (Urdu) and 0.8 % (Sindhi), and
-words outside the lists (about one word in thirty) in 48 % (Urdu) and 30 % (Sindhi). Improved mode uses the same table,
+pairs both voices say without a vowel), and a word table made from the 120,000 most frequent
+Urdu and 61,000 most frequent Sindhi words of the AI4Bharat Sangraha corpus as espeak-ng's voices
+read them in running text. The Urdu table holds the words the rules read differently (`ur.ucd`,
+47 k entries, 543 KB). The Sindhi table (`sd.ucd`, 6.9 k entries, 120 KB) holds a model that
+corrects the rules' reading of a word, sound by sound in its context, and the words that rules and
+model together still get wrong. On the held-out sentences, words in the tables differ from
+espeak-ng in 0.4 % (Urdu) and 0.9 % (Sindhi) of cases, other listed words in 0.9 % and 0.5 %, and
+words outside the lists (about one word in thirty) in 48 % (Urdu) and 22 % (Sindhi; 30 % with the
+rules alone). The same kind of model did not help Urdu (on the development sentences, words
+outside the list went from 45.7 % wrong to 49.6 %: they are mostly foreign names, which the
+rules already read as the voice's own rules do), so Urdu does not use one. Improved mode uses the same table,
 reads ص and ظ as s and z, and reads the Urdu digits ۰–۹, which the espeak-ng voices skip. In the
 browser the tables load with the language (`loadLanguage("ur")`).
 

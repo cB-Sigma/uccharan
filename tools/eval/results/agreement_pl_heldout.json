@@ -5,49 +5,49 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 161757,
-  "per": 0.01326063168827315,
-  "per_without_stress": 0.010272354886242658,
-  "exact_sentence": 0.35968379446640314,
-  "exact_sentence_without_stress": 0.4841897233201581,
-  "piper_shape_per": 0.013305198635426611,
-  "piper_shape_exact_sentence": 0.34980237154150196,
+  "per": 0.011882020561706758,
+  "per_without_stress": 0.00898214147225336,
+  "exact_sentence": 0.36363636363636365,
+  "exact_sentence_without_stress": 0.4891304347826087,
+  "piper_shape_per": 0.011949138628251048,
+  "piper_shape_exact_sentence": 0.35375494071146246,
   "word_count_mismatch_sentences": 175,
   "errors_by_class": {
    "consonant": {
-    "count": 841,
-    "share": 0.39207459207459205,
-    "per_contribution": 0.005199156759831105
+    "count": 764,
+    "share": 0.3975026014568158,
+    "per_contribution": 0.004723134083841812
    },
    "stress": {
-    "count": 713,
-    "share": 0.3324009324009324,
-    "per_contribution": 0.004407846337407346
+    "count": 654,
+    "share": 0.34027055150884494,
+    "per_contribution": 0.004043101689571394
    },
    "length": {
     "count": 193,
-    "share": 0.08997668997668998,
+    "share": 0.1004162330905307,
     "per_contribution": 0.0011931477463108242
    },
    "vowel": {
-    "count": 175,
-    "share": 0.08158508158508158,
-    "per_contribution": 0.0010818697181574832
+    "count": 128,
+    "share": 0.06659729448491156,
+    "per_contribution": 0.0007913104224237591
    },
    "other": {
-    "count": 160,
-    "share": 0.07459207459207459,
-    "per_contribution": 0.0009891380280296989
+    "count": 120,
+    "share": 0.062434963579604576,
+    "per_contribution": 0.0007418535210222742
    },
    "word-boundary": {
     "count": 63,
-    "share": 0.02937062937062937,
+    "share": 0.032778355879292405,
     "per_contribution": 0.00038947309853669393
    }
   },
   "top_confusions": [
    {
     "edit": "ˌ→∅",
-    "count": 309
+    "count": 298
    },
    {
     "edit": "d→t",
@@ -59,15 +59,15 @@
    },
    {
     "edit": "∅→ˌ",
-    "count": 135
+    "count": 119
    },
    {
     "edit": "ˈ→∅",
-    "count": 73
+    "count": 78
    },
    {
     "edit": "∅→ˈ",
-    "count": 72
+    "count": 69
    },
    {
     "edit": "ʑ→z",
@@ -86,55 +86,43 @@
     "count": 40
    },
    {
-    "edit": "∅→ɛ",
-    "count": 39
-   },
-   {
-    "edit": "∅→ɕ",
-    "count": 38
-   },
-   {
-    "edit": "w→f",
-    "count": 36
+    "edit": "ɛ→∅",
+    "count": 34
    },
    {
     "edit": "t→d",
     "count": 33
    },
    {
-    "edit": "ɛ→∅",
-    "count": 29
+    "edit": "w→f",
+    "count": 31
    },
    {
     "edit": "∅→ː",
     "count": 25
    },
    {
-    "edit": "∅→t",
-    "count": 25
-   },
-   {
-    "edit": "ˌ→ˈ",
-    "count": 23
-   },
-   {
     "edit": "∅→ ",
     "count": 21
+   },
+   {
+    "edit": "∅→ɛ",
+    "count": 20
    },
    {
     "edit": "s→∅",
     "count": 20
    },
    {
+    "edit": "ˌ→ˈ",
+    "count": 19
+   },
+   {
+    "edit": "ɡ→k",
+    "count": 17
+   },
+   {
     "edit": "ˈ→ɛ",
-    "count": 18
-   },
-   {
-    "edit": "ˈ→ˌ",
-    "count": 18
-   },
-   {
-    "edit": "∅→ɔ",
     "count": 17
    },
    {
@@ -144,99 +132,111 @@
    {
     "edit": "ɛ→ ",
     "count": 16
+   },
+   {
+    "edit": "∅→ɔ",
+    "count": 16
+   },
+   {
+    "edit": "∅→t",
+    "count": 16
+   },
+   {
+    "edit": "∅→ʲ",
+    "count": 15
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 15751,
-    "wrong": 756,
-    "rate": 0.04799695257443972
+    "wrong": 735,
+    "rate": 0.04666370389181639
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 184,
-    "per": 0.022997531972178596,
-    "exact_sentence": 0.23369565217391305
+    "per": 0.021230648418218534,
+    "exact_sentence": 0.22826086956521738
    },
    "no-digits": {
     "sentences": 828,
-    "per": 0.010507450377078691,
-    "exact_sentence": 0.38768115942028986
+    "per": 0.009238626180601265,
+    "exact_sentence": 0.39371980676328505
    }
   },
   "examples_of_disagreement": [
    {
-    "id": "flores-devtest-218",
-    "text": "Z późniejszych raportów wynikało, że do samolotu dotarła informacja o zagrożeniu bombowym, więc zawrócił do Afganistanu i zszedł do lądowania w Kandaharze.",
-    "reference": "s puʑɲʲˈɛjʃɨx rapˈɔrtuv vˌɨɲikˈawɔ ʒˈɛ dɔ sˌamɔlˈɔtu dɔtˈarwa ˌinfɔrmˈatsja ɔ zˌaɡrɔʒˈɛɲʲu bɔmbˈɔvɨm vʲˈɛndʑ zavrˈutɕiw dɔː ˌavɡaɲistˈanu i sʃˈɛd dɔ lˌɔndɔvˈaɲʲa f kˌandaxˈaʒɛ",
-    "uccharan": "s puʑɲʲˈɛjʃɨx rapˈɔrtuv vˌɨɲikˈawɔ ʒˈɛ dɔ sˌamɔlˈɔtu dɔtˈarwa ˌinfɔrmˈatsja ɔ zˌaɡrɔʒˈɛɲʲu bɔmbˈɔvɨm vʲˈɛntz zavrˈutɕiw dɔ ˌavɡaɲistˈanu i sʃˈɛd dɔ lˌɔndɔvˈaɲʲa f kˌandaxˈaʒɛ"
+    "id": "flores-devtest-254",
+    "text": "Doszło do eksplozji pod biurem gubernatora generalnego.",
+    "reference": "dˈɔʃwɔ dɔː ɛksplˈɔzji pɔd bjˈurɛm ɡˌubɛrnatˈɔra ɡˌɛnɛralnˈɛɡɔ",
+    "uccharan": "dˈɔʃwɔ dɔ ɛksplˈɔzji pɔd bjˈurɛm ɡˌubɛrnatˈɔra ɡˌɛnɛralnˈɛɡɔ"
    },
    {
-    "id": "flores-devtest-613",
-    "text": "Skąd tyle skarg na systemy transportu, dlaczego każdego dnia są jakieś nieprawidłowości w ich funkcjonowaniu? Czy inżynierowie za nie odpowiedzialni są zwyczajnymi partaczami? A może problem leży dużo głębiej?",
-    "reference": "skˈɔnt tˈɨlɛ skˈark na sɨstˈɛmɨ transpˈɔrtu dlatʃˈɛɡɔ kaʒdˈɛɡɔ dɲʲˈa sɔ̃ jˈakʲɛɕ ɲʲˌɛpravˌidwɔvˈɔɕtɕi w ix fˌuŋktsjɔnɔvˈaɲʲu tʃɨ ˌinʒɨɲʲɛrˈɔvʲɛ zˈaɲʲɛ ˌɔtpɔvʲɛdʑˈalɲi sɔ̃ zvˌɨtʃajnˈɨmi pˌartatʃˈami a mˈɔʒɛ prˈɔblɛm lˈɛʒɨ dˈuʒɔ ɡwˈɛmbjɛj",
-    "uccharan": "skˈɔnt tˈɨlɛ skˈark na sɨstˈɛmɨ transpˈɔrtu dlatʃˈɛɡɔ kaʒdˈɛɡɔ dɲʲˈa sɔ̃ jˈakʲɛɕ ɲʲˌɛpravˌidwɔvˈɔɕtɕi w ix fˌuŋktsjɔnɔvˈaɲʲu tʃɨ ˌinʒɨɲʲɛrˈɔvʲɛ za ɲʲɛ ˌɔtpɔvʲɛdʑˈalɲi sɔ̃ zvɨtʃajnˈɨmi partatʃˈami a mˈɔʒɛ prˈɔblɛm lˈɛʒɨ dˈuʒɔ ɡwˈɛmbjɛj"
+    "id": "flores-devtest-250",
+    "text": "NHK doniosło też, iż elektrownia atomowa Kashiwazaki Kariwa w prefekturze Niigata działa tak jak zwykle.",
+    "reference": "ˌɛnxˌakˈa dɔɲʲˈɔswɔ tˈɛʃ ˈiʃ ˌɛlɛktrˈɔvɲʲa ˌatɔmˈɔva kˌaʃivazˈaki karˈiva f prˌɛfɛktˈuʒɛ ɲʲiɡˈata dʑˈawa tˈak jˈaɡ zvˈɨklɛ",
+    "uccharan": "ˌɛnxˌakˈa dɔɲʲˈɔswɔ tˈɛʃ ˈiʃ ˌɛlɛktrˈɔvɲʲa ˌatɔmˈɔva kaʃivazˈaki karˈiva f prˌɛfɛktˈuʒɛ ɲʲiiɡˈata dʑˈawa tˈak jˈaɡ zvˈɨklɛ"
    },
    {
-    "id": "flores-devtest-38",
-    "text": "Używa się jasności i rotacji razem, by określić numer gwiazdy Rossby'ego, odnoszący się do przepływu plazmy.",
-    "reference": "uʒˈɨva ɕɛ jasnˈɔɕtɕi i rɔtˈatsji rˈazɛm bˈɨ ɔkrˈɛɕlitɕ nˈumɛr ɡvʲˈazdɨ rɔzzbʲˈɛɡɔ ˌɔdnɔʃˈɔntsɨ ɕɛ dɔ pʃɛpwˈɨvu plˈazmɨ",
-    "uccharan": "uʒˈɨva ɕɛ jasnˈɔɕtɕi i rɔtˈatsji rˈazɛm bˈɨ ɔkrˈɛɕlitɕ nˈumɛr ɡvʲˈazdɨ rɔszbɨˈɛɡɔ ˌɔdnɔʃˈɔntsɨ ɕɛ dɔ pʃɛpwˈɨvu plˈazmɨ"
+    "id": "flores-devtest-37",
+    "text": "Okazało się, że Słońce działa tak samo jak inne gwiazdy: aktywność wszystkich gwiazd w układzie jest napędzana wyłącznie przez ich luminację i rotację, nic więcej.",
+    "reference": "ˌɔkazˈawɔ ɕɛ ʒˈɛ swˈɔɲtsɛ dʑˈawa tˈak sˈamɔ jˈak ˈinnɛ ɡvʲˈazdɨ aktˈɨvnɔɕtɕ fʃˈɨstkiɣ ɡvʲˈast w ukwˈadʑɛ jɛst nˌapɛndʑˈana vɨwˈɔntʃɲʲɛ pʃˈɛs ix lˌuminˈatsjɛ i rɔtˈatsjɛ ɲˈidʑ vʲˈɛntsɛj",
+    "uccharan": "ˌɔkazˈawɔ ɕɛ ʒˈɛ swˈɔɲtsɛ dʑˈawa tˈak sˈamɔ jˈak ˈinnɛ ɡvʲˈazdɨ aktˈɨvnɔɕtɕ fʃˈɨstkiɣ ɡvʲˈast w ukwˈadʑɛ jɛst nˌapɛndʑˈana vɨwˈɔntʃɲʲɛ pʃˈɛs ix luminˈatsjɛ i rɔtˈatsjɛ ɲˈitz vʲˈɛntsɛj"
    },
    {
-    "id": "flores-devtest-101",
-    "text": "W ciągu roku osoba zarażona może zarazić od 10 do 15 osób, z którymi miała bliski kontakt.",
-    "reference": "f tɕˈɔŋɡu rˈɔku ɔsˈɔba zˌaraʒˈɔna mˈɔʒɛ zarˈazitɕ ɔd dʑˈɛɕɛɲdʑ dɔ pjɛtnˈaɕtɕɛ ˈɔsup s kturˈɨmi mʲˈawa blˈiski kˈɔntakt",
-    "uccharan": "f tɕˈɔŋɡu rˈɔku ɔsˈɔba zˌaraʒˈɔna mˈɔʒɛ zarˈazitɕ ɔd dʑˈɛɕɛɲtʑ dɔ pjɛtnˈaɕtɕɛ ˈɔsup s kturˈɨmi mʲˈawa blˈiski kˈɔntaɡt"
+    "id": "flores-devtest-661",
+    "text": "Druga skrajność polega na nierozpoznawalnym przeobrażeniu się w kogoś, kto czuje, że musi zmienić wszystko, co zespół dotąd robił, podporządkować go własnej wizji.",
+    "reference": "drˈuɡa skrˈajnɔɕtɕ pɔlˈɛɡa na ɲʲˌɛrɔspˌɔznavˈalnɨm pʃˌɛɔbraʒˈɛɲʲu ɕɛ f kˈɔɡɔɕ ktˈɔ tʃˈujɛ ʒˈɛ mˈuɕi zmʲˈɛɲitɕ fʃˈɨstkɔ tsˈɔ zˈɛspuw dˈɔtɔnt rˈɔbʲiw pˌɔtpɔʒɔntkˈɔvadʑ ɡˈɔ vwˈasnɛj vˈizji",
+    "uccharan": "drˈuɡa skrˈajnɔɕtɕ pɔlˈɛɡa na ɲʲˌɛrɔspɔznavˈalnɨm pʃɛɔbraʒˈɛɲʲu ɕɛ f kˈɔɡɔɕ ktˈɔ tʃˈujɛ ʒˈɛ mˈuɕi zmʲˈɛɲitɕ fʃˈɨstkɔ tsˈɔ zˈɛspuw dˈɔtɔnt rˈɔbʲiw pˌɔtpɔʒɔntkˈɔvatʑ ɡˈɔ vwˈasnɛj vˈizji"
    },
    {
-    "id": "flores-devtest-524",
-    "text": "W artykule zatytułowanym „The President's Speech” (Mowa prezydenta) Oliver Sacks dowodzi, że ludzie, którzy wskutek uszkodzenia mózgu nie rozumieją mowy, są mimo to w stanie prawidłowo ocenić szczerość mówiącego.",
-    "reference": "w ˌartɨkˈulɛ zˌatɨtˌuwɔvˈanɨm dˈɛ prɛsˈidɛnts spˈɛɛx mˈɔva prˌɛzɨdˈɛnta ɔlˈivɛr sˈadʑɡz dɔvˈɔdʑi ʒˈɛ lˈudʑɛ ktˌuʒɨ fskˈutɛk ˌuʃkɔdʑˈɛɲʲa mˈuzɡu ɲʲɛ rˌɔzumjˈɛjɔ̃ mˈɔvɨ sɔ̃ mˈimɔ tɔ f stˈaɲʲɛ prˌavidwˈɔvɔː ɔtsˈɛɲitɕ ʃtʃˈɛrɔɕtɕ mˌuvʲɔntsˈɛɡɔ",
-    "uccharan": "w ˌartɨkˈulɛ zˌatɨtˌuwɔvˈanɨm dˈɛ prɛsˈidɛnts spˈɛɛx mˈɔva prˌɛzɨdˈɛnta ɔlˈivɛr sˈakz dɔvˈɔdʑi ʒˈɛ lˈudʑɛ ktˌuʒɨ fskˈutɛk ˌuʃkɔdʑˈɛɲʲa mˈuzɡu ɲʲɛ rˌɔzumjˈɛjɔ̃ mˈɔvɨ sɔ̃ mˈimɔ tɔ f stˈaɲʲɛ prˌavidwˈɔvɔ ɔtsˈɛɲitɕ ʃtʃˈɛrɔɕtɕ mˌuvʲɔntsˈɛɡɔ"
+    "id": "flores-devtest-552",
+    "text": "Kampania północnoatlantycka w czasie II wojny światowej była jednym z najznamienitszych przykładów w najnowszych dziejach. Aby pomóc Brytyjczykom, Amerykanie podjęli próbę przerzucenia ludzi i sprzętu przez Ocean Atlantycki.",
+    "reference": "kampˈaɲʲa pˌuwnɔtsnˌɔatlantˈɨtska f tʃˈaɕɛ ˌiˈi vˈɔjnɨ ɕfʲatˈɔvɛj bˌɨwa jˈɛdnɨm z nˌajznamjɛɲˈitʃɨx pʃɨkwˈaduf w najnˈɔfʃɨɣ dʑˈɛjax ˈabɨ pˈɔmudʑ brˌɨtɨjtʃˈɨkɔm ˌamɛrɨkˈaɲʲɛ pɔdjˈɛli prˈubɛ pʃˌɛʒutsˈɛɲʲa lˈudʑi i spʃˈɛntu pʃˈɛs ɔtsˈɛan ˌatlantˈɨtski",
+    "uccharan": "kampˈaɲʲa puwnɔtsnɔatlantˈɨtska f tʃˈaɕɛ ˌiˈi vˈɔjnɨ ɕfʲatˈɔvɛj bˌɨwa jˈɛdnɨm z nˌajznamjɛɲˈitʃɨx pʃɨkwˈaduf w najnˈɔfʃɨɣ dʑˈɛjax ˈabɨ pˈɔmutz brˌɨtɨjtʃˈɨkɔm ˌamɛrɨkˈaɲʲɛ pɔdjˈɛli prˈubɛ pʃˌɛʒutsˈɛɲʲa lˈudʑi i spʃˈɛntu pʃˈɛs ɔtsˈɛan ˌatlantˈɨtski"
    },
    {
-    "id": "flores-devtest-508",
-    "text": "Jeśli zdziczałym dzieckiem opiekują się tylko zwierzęta, zachowuje się ono prawie całkowicie (uwzględniając fizyczne ograniczenia) tak jak te właśnie zwierzęta, przejawiając strach lub obojętność wobec ludzi.",
-    "reference": "jˈɛɕli zdʑitʃˈawɨm dʑˈɛtskʲɛm ˌɔpʲɛkˈujɔ̃ ɕɛ tˌɨlkɔ zvʲɛʒˈɛnta zˌaxɔvˈujɛ ɕɛ ˌɔnɔ prˈavʲɛ tsˌawkɔvˈitɕɛ ˌuvzɡlɛndɲʲˈajɔnts fizˈɨtʃnɛ ˌɔɡraɲitʃˈɛɲʲa tˈak jˈak tɛ vwˈaɕɲʲɛ zvʲɛʒˈɛnta pʃˌɛjavʲˈajɔnts strˈax lˈup ˌɔbɔjˈɛntnɔʑdʑ vˈɔbɛts lˈudʑi",
-    "uccharan": "jˈɛɕli zdʑˌitʃˈawɨm dʑˈɛtskʲɛm ˌɔpʲɛkˈujɔ̃ ɕɛ tˌɨlkɔ zvʲɛʒˈɛnta zˌaxɔvˈujɛ ɕɛ ˌɔnɔ prˈavʲɛ tsˌawkɔvˈitɕɛ ˌuvzɡlɛndɲʲˈajɔnts fizˈɨtʃnɛ ˌɔɡraɲitʃˈɛɲʲa tˈak jˈak tɛ vwˈaɕɲʲɛ zvʲɛʒˈɛnta pʃɛjavʲˈajɔnts strˈax lˈup ˌɔbɔjˈɛntnɔɕtʑ vˈɔbɛts lˈudʑi"
+    "id": "flores-devtest-286",
+    "text": "Potem przeniesiono go do szpitala Addenbrooke w Cambridge.",
+    "reference": "pˈɔtɛm pʃˌɛɲʲɛɕˈɔnɔ ɡˈɔ dɔ ʃpitˈala ˌaddɛnbrɔˈɔkɛ f tsˈambridʒ",
+    "uccharan": "pˈɔtɛm pʃˌɛɲʲɛɕˈɔnɔ ɡˈɔ dɔ ʃpitˈala addɛnbrɔˈɔkɛ f tsˈambridʒ"
    },
    {
-    "id": "flores-devtest-10",
-    "text": "Ring doszedł także do ugody w procesie z ADT Corporation, konkurencyjną firmą z sektora zabezpieczeń.",
-    "reference": "rˈiŋɡ dˈɔʃɛt tˈaɡʒɛ dɔː uɡˈɔdɨ f prɔtsˈɛɕɛ z ˌadˌɛtˈɛ kˌɔrpɔrˈatjɔn kˌɔŋkurɛntsˈɨjnɔ̃ fˈirmɔ̃ s sɛktˈɔra zˌabɛspʲˈɛtʃɛɲ",
-    "uccharan": "rˈiŋɡ dˈɔʃɛt tˈaɡʒɛ dɔ uɡˈɔdɨ f prɔtsˈɛɕɛ z adˌɛtˈɛ kˌɔrpɔrˈatjɔn kˌɔŋkurɛntsˈɨjnɔ̃ fˈirmɔ̃ s sɛktˈɔra zˌabɛspʲˈɛtʃɛɲ"
+    "id": "flores-devtest-477",
+    "text": "Zmuszano ich do zapłaty podatków na rzecz amerykańskiego reżimu kolonialnego, aby pokryć większą część wydatków i odsetek od obligacji wprowadzonych na giełdę w imieniu rządu filipińskiego przez domy bankowe z Wall Street.",
+    "reference": "zmuʃˈanɔː iɣ dɔ zapwˈatɨ pɔdˈatkuf na ʒˈɛtʃ ˌamɛrˌɨkaɲskʲˈɛɡɔ rɛʒˈimu kˌɔlɔɲʲalnˈɛɡɔ ˈabɨ pˈɔkrɨdʑ vʲˈɛŋkʃɔ̃ tʃˈɛɲʑdʑ vɨdˈatkuf i ɔtsˈɛtɛk ɔt ˌɔbliɡˈatsji fprˌɔvadʑˈɔnɨx na ɡʲˈɛwdɛ w imjˈɛɲʲu ʒˈɔndu fˌilipiɲskʲˈɛɡɔ pʃˈɛz dˈɔmɨ baŋkˈɔvɛ z vˈall strˈit",
+    "uccharan": "zmuʃˈanɔ iɣ dɔ zapwˈatɨ pɔdˈatkuf na ʒˈɛtʃ ˌamɛrˌɨkaɲskʲˈɛɡɔ rɛʒˈimu kˌɔlɔɲʲalnˈɛɡɔ ˈabɨ pˈɔkrɨtʑ vʲˈɛŋkʃɔ̃ tʃˈɛɲɕtʑ vɨdˈatkuf i ɔtsˈɛtɛk ɔt ˌɔbliɡˈatsji fprˌɔvadʑˈɔnɨx na ɡʲˈɛwdɛ w imjˈɛɲʲu ʒˈɔndu fˌilipiɲskʲˈɛɡɔ pʃˈɛz dˈɔmɨ baŋkˈɔvɛ z vˈall strˈit"
    },
    {
-    "id": "flores-devtest-431",
-    "text": "Na przykład w fotografii najczęściej używany format to 35 mm, czyli najpowszechniejszy rozmiar taśmy filmowej u schyłku epoki filmów analogowych.",
-    "reference": "na pʃˈɨkwat wˈɛ fˌɔtɔɡrˈafji najtʃˈɛɲɕtɕɛj ˌuʒɨvˈanɨ fˈɔrmat tɔ tʃɨdʑˈɛɕcʲipʲˈɛɲtɕ ˌɛmˈɛm tʃˈɨli nˌajpɔfʃɛxɲʲˈɛjʃɨ rˈɔzmʲar tˈaɕmɨ filmˈɔvɛj ˈu sxˈɨwku ɛpˈɔki fˈilmuf ˌanalɔɡˈɔvɨx",
-    "uccharan": "na pʃˈɨkwat f fˌɔtɔɡrˈafji najtʃˈɛɲɕtɕɛj ˌuʒɨvˈanɨ fˈɔrmat tɔ tʃɨdʑˈɛɕcʲipʲˈɛɲtɕ ˌɛmˈɛm tʃˈɨli nˌajpɔfʃɛxɲʲˈɛjʃɨ rˈɔzmʲar tˈaɕmɨ filmˈɔvɛj ˈu sxˈɨwku ɛpˈɔki fˈilmuf ˌanalɔɡˈɔvɨx"
+    "id": "flores-devtest-993",
+    "text": "Jest też kilka autobusów, które jeżdżą na północ do Hebronu, tradycyjnego miejsca, w którym pochowani zostali biblijni patriarchowie: Abraham, Izaak, Jakub oraz ich żony.",
+    "reference": "jɛst tˈɛʃ kˈilka ˌawtɔbˈusuf ktˌurɛ jˈɛʒdʒɔ̃ na pˈuwnɔdʑ dɔ xɛbrˈɔnu trˌadɨtsɨjnˈɛɡɔ mʲˈɛjstsa f ktˌurɨm pˌɔxɔvˈaɲi zɔstˈali bʲiblˈijɲi pˌatrjarxˈɔvʲɛ abrˈaxam izˈaak jˈakup ˌɔras iɣ ʒˈɔnɨ",
+    "uccharan": "jɛst tˈɛʃ kˈilka ˌawtɔbˈusuf ktˌurɛ jˈɛʒdʒɔ̃ na pˈuwnɔtz dɔ xɛbrˈɔnu trˌadɨtsɨjnˈɛɡɔ mʲˈɛjstsa f ktˌurɨm pˌɔxɔvˈaɲi zɔstˈali bʲiblˈijɲi patrjarxˈɔvʲɛ abrˈaxam izˈaak jˈakup ˌɔras iɣ ʒˈɔnɨ"
    },
    {
-    "id": "flores-devtest-506",
-    "text": "Przed porzuceniem lub ucieczką zdziczałe dzieci mogły cierpieć z powodu doznanej traumy lub maltretowania.",
-    "reference": "pʃɛt pˌɔʒutsˈɛɲʲɛm lˈup utɕˈɛtʃkɔ̃ zdʑitʃˈawɛ dʑˈɛtɕi mˈɔɡwɨ tɕˈɛrpʲɛtɕ s pɔvˈɔdu dɔznˈanɛj trˈawmɨ lˈup mˌaltrɛtɔvˈaɲʲa",
-    "uccharan": "pʃɛt pˌɔʒutsˈɛɲʲɛm lˈup utɕˈɛtʃkɔ̃ zdʑˌitʃˈawɛ dʑˈɛtɕi mˈɔɡwɨ tɕˈɛrpʲɛtʑ s pɔvˈɔdu dɔznˈanɛj trˈawmɨ lˈup mˌaltrɛtɔvˈaɲʲa"
+    "id": "flores-devtest-957",
+    "text": "Jednak większość znaków ma tylko wersję katalońską, ponieważ zgodnie z prawem jest to pierwszy język oficjalny.",
+    "reference": "jˈɛdnaɡ vʲˈɛŋkʃɔʑdʑ znˈakuf mˈa tˌɨlkɔ vˈɛrsjɛ kˌatalˈɔɲskɔ̃ pɔɲʲˈɛvaʒ zɡˈɔdɲʲɛ s prˈavɛm jɛst tɔ pʲˈɛrʃɨ jˈɛ̃zɨk ˌɔfitsjˈalnɨ",
+    "uccharan": "jˈɛdnaɡ vʲˈɛŋkʃɔɕtʑ znˈakuf mˈa tˌɨlkɔ vˈɛrsjɛ kˌatalˈɔɲskɔ̃ pɔɲʲˈɛvaʒ zɡˈɔdɲʲɛ s prˈavɛm jɛst tɔ pʲˈɛrʃɨ jˈɛ̃zɨk ˌɔfitsjˈalnɨ"
    },
    {
-    "id": "flores-devtest-769",
-    "text": "Apia jest stolicą Samoa, położoną na wyspie Upolu i zamieszkałą przez niecałe 40 tysięcy ludzi.",
-    "reference": "ˈapja jɛst stɔlˈitsɔ̃ samˈɔa pˌɔwɔʒˈɔnɔ̃ na vˈɨspʲɛ upˈɔlu i zˌamjɛʃkˈawɔ̃ pʃˈɛs ɲʲɛtsˈawɛ tʃtɛrdʑˈɛɕcʲi tɨɕˈɛntsɨ lˈudʑi",
-    "uccharan": "ˈapʲja jɛst stɔlˈitsɔ̃ samˈɔa pˌɔwɔʒˈɔnɔ̃ na vˈɨspʲɛ ˌupˈɔlu i zˌamjɛʃkˈawɔ̃ pʃˈɛs ɲʲɛtsˈawɛ tʃtɛrdʑˈɛɕcʲi tɨɕˈɛntsɨ lˈudʑi"
+    "id": "flores-devtest-360",
+    "text": "Niżej są średniej wielkości koty, żywiące się średniej wielkości ofiarami: królikami, antylopami aż po jelenie.",
+    "reference": "ɲˈiʒɛj sɔ̃ ɕrˈɛdɲʲɛj vʲɛlkˈɔɕtɕi kˈɔtɨ ʒɨvʲˈɔntsɛ ɕɛ ɕrˈɛdɲʲɛj vʲɛlkˈɔɕtɕi ˌɔfjarˈami krˌulikˈami ˌantɨlɔpˈami ˈaʃ pɔ jɛlˈɛɲʲɛ",
+    "uccharan": "ɲˈiʒɛj sɔ̃ ɕrˈɛdɲʲɛj vʲɛlkˈɔɕtɕi kˈɔtɨ ʒɨvˈɔntsɛ ɕɛ ɕrˈɛdɲʲɛj vʲɛlkˈɔɕtɕi ˌɔfjarˈami krulikˈami ˌantɨlɔpˈami ˈaʃ pɔ jɛlˈɛɲʲɛ"
    },
    {
-    "id": "flores-devtest-73",
-    "text": "Podczas spotkania z premierem Layton zgłosił wniosek o zmiany w ustawie środowiskowej złożonej przez konserwatystów, nawołując do „gruntownego i kompletnego przeredagowania” tej ustawy autorstwa Partii Konserwatywnej.",
-    "reference": "pˈɔttʃas spɔtkˈaɲʲa s prɛmjˈɛrɛm laˈɨtɔn zɡwˈɔɕiw vɲʲˈɔsɛk ɔ zmʲˈanɨ w ustˈavʲɛ ɕrˌɔdɔviskˈɔvɛj zwɔʒˈɔnɛj pʃˈɛs kˌɔnsɛrvatˈɨstuf nˌavɔwˈujɔndʑ dɔ ɡrˌuntɔvnˈɛɡɔː i kˌɔmplɛtnˈɛɡɔ pʃˌɛrɛdˌaɡɔvˈaɲʲa tɛj ustˈavɨ awtˈɔrstfa pˈartji kˌɔnsɛrvatˈɨvnɛj",
-    "uccharan": "pˈɔttʃas spɔtkˈaɲʲa s prɛmjˈɛrɛm laˈɨtɔn zɡwˈɔɕiw vɲʲˈɔsɛk ɔ zmʲˈanɨ w ustˈavʲɛ ɕrˌɔdɔviskˈɔvɛj zwɔʒˈɔnɛj pʃˈɛs kˌɔnsɛrvatˈɨstuf nˌavɔwˈujɔntz dɔ ɡrˌuntɔvnˈɛɡɔ i kˌɔmplɛtnˈɛɡɔ pʃˌɛrɛdaɡɔvˈaɲʲa tɛj ustˈavɨ awtˈɔrstfa pˈartji kˌɔnsɛrvatˈɨvnɛj"
+    "id": "flores-devtest-29",
+    "text": "Według naukowców upierzenie tego zwierzęcia było kasztanowe na wierzchu, a pod spodem jasne lub w kolorze karotenu.",
+    "reference": "vˈɛdwuk nˌaukˈɔftsuf ˌupʲɛʒˈɛɲʲɛ tˌɛɡɔ zvʲɛʒˈɛɲtɕa bˌɨwɔ kˌaʃtanˈɔvɛ na vʲˈɛʃxu a pɔt spˈɔdɛm jˈasnɛ lˈup f kɔlˈɔʒɛ kˌarɔtˈɛnu",
+    "uccharan": "vˈɛdwuk nˌaukˈɔftsuf upʲɛʒˈɛɲʲɛ tˌɛɡɔ zvʲɛʒˈɛɲtɕa bˌɨwɔ kaʃtanˈɔvɛ na vʲˈɛʃxu a pɔt spˈɔdɛm jˈasnɛ lˈup f kɔlˈɔʒɛ kˌarɔtˈɛnu"
    },
    {
-    "id": "flores-devtest-324",
-    "text": "Nadzorująca Premier Julia Gillard stwierdziła w czasie kampanii przed wyborami w 2010 roku, iż według niej Australia powinna zamienić się w republikę wraz z końcem panowania królowej Elżbiety II.",
-    "reference": "nˌadʑɔrujˈɔntsa prˈɛmjɛr jˈulja ɡʲˈillart stfʲɛrdʑˈiwa f tʃˈaɕɛ kampˈaɲʲi pʃɛd vˌɨbɔrˈami w dvˈa tɨɕˈɔntsɛ dʑˈɛɕɛɲtɕ rˈɔku ˈiʒ vˈɛdwuk ɲʲˈɛj awstrˈalja pɔvˈinna zamjˈɛɲitɕ ɕɛ w rɛpˈublikˌɛ vrˈas s kˈɔɲtsɛm pˌanɔvˈaɲʲa krulˈɔvɛj ɛlʒbjˈɛtɨ ˌiˈi",
-    "uccharan": "nˌadʑɔrujˈɔntsa prˈɛmjɛr jˈulja ɡʲˈillart stfʲɛrdʑˈiwa f tʃˈaɕɛ kampˈaɲʲi pʃɛd vˌɨbɔrˈami w dvˈa tɨɕˈɔntsɛ dʑˈɛɕɛɲtɕ rˈɔku ˈiʒ vˈɛdwuk ɲʲˈɛj awstrˈalja pɔvˈinna zamjˈɛɲitɕ ɕɛ w rɛpˈublikˌɛ vrˈaz s kˈɔɲtsɛm pˌanɔvˈaɲʲa krulˈɔvɛj ɛlʒbjˈɛtɨ dvˈa"
+    "id": "flores-devtest-717",
+    "text": "Można korzystać z taksówek motocyklowych (tzw. boda-boda), aby poruszać się po Gomie. Standardowa (lokalna) cena za krótki kurs wykosi ok. 500 franków kongijskich.",
+    "reference": "mˈɔʒna kɔʒˈɨstatɕ s taksˈuvɛk mˌɔtɔtsɨklˈɔvɨx tˌɛzˌɛdvˈu bˈɔdabˈɔda ˈabɨ pɔrˈuʃatɕ ɕɛ pɔ ɡˈɔmjɛ stˌandardˈɔva lɔkˈalna tsˈɛna za krˈutki kˈurz vɨkˈɔɕi ɔkˈɔwɔ pʲˈɛɲtɕsɛt frˈaŋkuf kɔŋɡʲˈijskix",
+    "uccharan": "mˈɔʒna kɔʒˈɨstadʑ s taksˈuvɛk mˌɔtɔtsɨklˈɔvɨx tˌɛzˌɛdvˈu bˈɔdabˈɔda ˈabɨ pɔrˈuʃatɕ ɕɛ pɔ ɡˈɔmjɛ stˌandardˈɔva lɔkˈalna tsˈɛna za krˈutki kˈurz vˌɨkˈɔɕi ɔkˈɔwɔ pʲˈɛɲtɕsɛt frˈaŋkuf kɔŋɡʲˈijskix"
    }
   ]
  }

@@ -34,6 +34,28 @@ typedef struct UccharanSoundIndex UccharanSoundIndex;
 extern "C" {
 #endif // __cplusplus
 
+// Why the last call on this thread returned NULL or an error code because
+// of a language pack: a message that names the pack, where it is published
+// and where the file is looked for. An empty string when no such error has
+// happened. The pointer is valid until the next library call on the same
+// thread; do not free it.
+const char *uccharan_last_error(void);
+
+// Make a language ready before its first use. English and Hindi are built
+// in; the word tables of the other languages are packs (`de.ucd`, `fr.ucd`
+// …, attached to the release). A pack that is not loaded is read from the
+// directory named by `UCCHARAN_DATA_DIR`, from the cache directory, or,
+// when the library was built with the `download` feature and
+// `UCCHARAN_OFFLINE` is not `1`, from the release, and checked against its
+// SHA-256 sum. The phonemizing calls do the same at a language's first use.
+//
+// Returns 0 when the language is ready, -1 for a bad argument and -2 when a
+// pack is missing or damaged ([`uccharan_last_error`] says which).
+//
+// # Safety
+// `p` must be a live phonemizer; `lang` a valid C string.
+int32_t uccharan_ensure(const struct UccharanPhonemizer *p, const char *lang);
+
 // Library version, e.g. "0.1.0". The pointer is static; do not free it.
 const char *uccharan_version(void);
 
@@ -75,7 +97,8 @@ int32_t uccharan_load_pack(struct UccharanPhonemizer *p, const uint8_t *data, ui
 // "sherpa-onnx" decimal codepoints separated by spaces with sentences
 // separated by " | ". `flags` is a combination of the `UCCHARAN_*` constants.
 //
-// Returns a newly allocated string, or NULL when an argument is invalid.
+// Returns a newly allocated string, or NULL when an argument is invalid or the
+// language pack is missing (see [`uccharan_last_error`]).
 //
 // # Safety
 // `p` must be a live phonemizer; `text`, `lang` and `profile` valid C strings.
@@ -92,7 +115,8 @@ char *uccharan_phonemize(const struct UccharanPhonemizer *p,
 // by a space. `threads` is the number of worker threads; 0 uses every
 // available core. Other arguments are as for [`uccharan_phonemize`].
 //
-// Returns a newly allocated string, or NULL when an argument is invalid.
+// Returns a newly allocated string, or NULL when an argument is invalid or the
+// language pack is missing (see [`uccharan_last_error`]).
 //
 // # Safety
 // `p` must be a live phonemizer; `text`, `lang` and `profile` valid C strings.

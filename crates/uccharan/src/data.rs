@@ -66,6 +66,9 @@ pub struct Data {
     letters: Option<Box<[char]>>,
     /// `stress=latent` in `META`.
     stress_latent: bool,
+    /// `input=rules` in `META`: the model reads the letter rules' reading
+    /// of a word, not its spelling.
+    reads_rules: bool,
 }
 
 #[derive(Clone, Copy)]
@@ -206,6 +209,7 @@ impl Data {
         };
         let letters = meta_line("letters").map(|v| v.chars().collect());
         let stress_latent = meta_line("stress") == Some("latent");
+        let reads_rules = meta_line("input") == Some("rules");
         static NEXT_ID: std::sync::atomic::AtomicUsize = std::sync::atomic::AtomicUsize::new(1);
         Ok(Data {
             bytes,
@@ -218,6 +222,7 @@ impl Data {
             bloom,
             letters,
             stress_latent,
+            reads_rules,
         })
     }
 
@@ -606,6 +611,12 @@ impl Data {
     /// stress rule cannot derive (`stress=latent` in `META`).
     pub fn stress_latent(&self) -> bool {
         self.stress_latent
+    }
+
+    /// True when the model corrects the reading of the language's letter
+    /// rules instead of reading the spelling (`input=rules` in `META`).
+    pub fn reads_rules(&self) -> bool {
+        self.reads_rules
     }
 
     /// False when the key filter says `key` is not in the lexicon; true

@@ -1,4 +1,5 @@
-//! Builds uccharan's compiled language data (`crates/uccharan/data/*.ucd`)
+//! Builds uccharan's compiled language data (`crates/uccharan/data/*.ucd`,
+//! `crates/uccharan-data/data/*.ucd`)
 //! from the sources in `data/sources`.
 //!
 //! ```text
@@ -389,7 +390,15 @@ fn main() {
     let text = std::fs::read_to_string(root.join("data/sources/cmudict/cmudict.dict"))
         .expect("cmudict.dict");
     let entries = cmudict::load(&text);
-    let out_dir = root.join("crates/uccharan/data");
+    // English, Hindi and the Kokoro dictionaries are built into the library;
+    // the word tables of the other languages are packs with their own crate.
+    let built_in_dir = root.join("crates/uccharan/data");
+    let tables_dir = root.join("crates/uccharan-data/data");
+    let out_path = |name: &str| {
+        let built_in =
+            matches!(name, "en-us.ucd" | "en-gb.ucd" | "hi.ucd") || name.starts_with("kokoro-");
+        if built_in { &built_in_dir } else { &tables_dir }.join(name)
+    };
     match cmd {
         "dump" => {
             let out = std::io::stdout();
@@ -488,7 +497,7 @@ fn main() {
                     root.join("data/sources").join(lang).join("words.tsv"),
                     root.join("crates/uccharan/lang")
                         .join(format!("{lang}.lang")),
-                    out_dir.join(name),
+                    out_path(name),
                 ] {
                     h = digest_bytes(h, &std::fs::read(p).unwrap_or_default());
                 }
@@ -510,7 +519,7 @@ fn main() {
                         let Some((name, lang, job)) = jobs.get(k) else {
                             break;
                         };
-                        let path = out_dir.join(name);
+                        let path = out_path(name);
                         let mark = cache_dir.join(format!("{name}.ok"));
                         if let Some(lang) = lang.filter(|_| use_cache) {
                             if std::fs::read_to_string(&mark).is_ok_and(|m| m == stamp(name, lang))
@@ -535,7 +544,7 @@ fn main() {
                                 let _ = std::fs::write(&mark, stamp(name, lang));
                             }
                         } else {
-                            std::fs::create_dir_all(&out_dir).unwrap();
+                            std::fs::create_dir_all(path.parent().unwrap()).unwrap();
                             std::fs::write(&path, &bytes).unwrap();
                             println!(
                                 "{name}: {} entries, {} bytes, lts: {}",
@@ -585,7 +594,7 @@ fn main() {
         "prune-stats" => {
             // How many lexicon entries the letter-to-sound tables reproduce exactly.
             for name in ["en-us.ucd", "en-gb.ucd"] {
-                let bytes = std::fs::read(out_dir.join(name)).unwrap();
+                let bytes = std::fs::read(out_path(name)).unwrap();
                 let d = Data::from_vec(bytes).unwrap();
                 let lang = if name.starts_with("en-us") {
                     uccharan::Lang::EnUs

@@ -2,6 +2,7 @@
 # word table, the number words and the letter names.
 
 [meta]
+spell-stress = first
 tag = fi
 vowels = a e i o u y ø ɪ æ
 stress = initial
@@ -45,6 +46,14 @@ n -> ŋ / _ ‿ k | _ ‿ ɡ
 n -> m / _ ‿ p | _ ‿ b | _ ‿ m
 
 [words]
+kaksikymmentä-h# kˌaksikymmentæ
+kolmekymmentä-h# kˌolmekymmentæ
+neljäkymmentä-h# nˌeljækymmentæ
+viisikymmentä-h# vˌiːsikymmentæ
+kuusikymmentä-h# kˌuːsikymmentæ
+seitsemänkymmentä-h# sˌeitsemˌæŋkymmentæ
+kahdeksankymmentä-h# kˌahdeksˌaŋkymmentæ
+yhdeksänkymmentä-h# ˌyhdeksˌæŋkymmentæ
 nolla# nˈolla
 yksi# ˈyksi
 kaksi# kˈaksi
@@ -163,6 +172,16 @@ miinus# mˈiːnus
 prosenttia# prˈosentːɪ
 
 [numbers]
+group space
+20h kaksikymmentä-h#
+30h kolmekymmentä-h#
+40h neljäkymmentä-h#
+50h viisikymmentä-h#
+60h kuusikymmentä-h#
+70h seitsemänkymmentä-h#
+80h kahdeksankymmentä-h#
+90h yhdeksänkymmentä-h#
+roman off
 decimal comma
 point pilkku#
 minus miinus#

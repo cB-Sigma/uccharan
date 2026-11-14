@@ -30,9 +30,15 @@ pub fn build(root: &Path, lang: &str, source: &str) -> Vec<u8> {
     // A full word list: a letter-to-sound model learns it, and the table
     // keeps the words that the run-time reading without a table entry
     // (spelled word, model, elision) does not give back.
-    let latin = uccharan::Lang::parse(lang)
-        .and_then(uccharan::Lang::latin)
-        .expect("a Latin-script language");
+    let Some(latin) = uccharan::Lang::parse(lang).and_then(uccharan::Lang::latin) else {
+        // `#model N`: a context wider than three letters must be seen N times.
+        let min_count = text
+            .lines()
+            .find_map(|l| l.strip_prefix("#model"))
+            .and_then(|v| v.trim().parse().ok())
+            .unwrap_or(1);
+        return build_corrector(lang, &rows, min_count, b);
+    };
     let trainable = |w: &str| w == w.to_lowercase() && !w.contains(['\'', '’']);
     let train: Vec<(String, String)> = rows
         .iter()
@@ -63,18 +69,7 @@ pub fn build(root: &Path, lang: &str, source: &str) -> Vec<u8> {
         }
     }
     eprintln!("{lang}: {} words, {kept} table entries", rows.len());
-    if let Ok(dir) = std::env::var("LEXGEN_DUMP") {
-        let d = Data::from_vec(b.build().expect("build")).expect("image");
-        let mut out = String::new();
-        let mut found = String::new();
-        for (w, _) in &rows {
-            if d.lookup(w, &mut found) {
-                out.push_str(w);
-                out.push('\n');
-            }
-        }
-        let _ = std::fs::write(Path::new(&dir).join(format!("{lang}_entries.txt")), out);
-    }
+    dump_entries(lang, &rows, &mut b);
     b.build().expect("build")
 }
 
@@ -83,4 +78,55 @@ pub fn plain(r: &str) -> String {
     r.chars()
         .filter(|c| !matches!(c, 'ᶻ' | 'ᵗ' | 'ⁿ' | 'ʳ' | 'ᵖ'))
         .collect()
+}
+
+/// A word table for a language read by letter-decoding rules (Urdu,
+/// Sindhi): the model learns to correct the rules' reading of a word, and
+/// the table keeps the words that model and rules together still get wrong.
+fn build_corrector(
+    lang: &str,
+    rows: &[(String, String)],
+    min_count: u32,
+    mut b: Builder,
+) -> Vec<u8> {
+    let indic = uccharan::Lang::parse(lang)
+        .and_then(uccharan::Lang::indic)
+        .expect("a language with a language file");
+    let train: Vec<(String, String)> = rows
+        .iter()
+        .map(|(w, r)| (indic.word(w, true), r.clone()))
+        .collect();
+    let (letters, model) = crate::g2p::train(&train, min_count, &crate::g2p::SHAPES, None);
+    b.lts(model.outputs, model.tables);
+    b.meta("letters", &letters);
+    b.meta("input", "rules");
+    let first = Data::from_vec(b.build().expect("build")).expect("image");
+    let mut kept = 0usize;
+    for (w, r) in rows {
+        if indic.read(w, true, false, Some(&first)) != *r {
+            b.entry(w, r);
+            kept += 1;
+        }
+    }
+    eprintln!("{lang}: {} words, {kept} table entries", rows.len());
+    dump_entries(lang, rows, &mut b);
+    b.build().expect("build")
+}
+
+/// `LEXGEN_DUMP=<dir>`: write the words that became table entries to
+/// `<dir>/<lang>_entries.txt`.
+fn dump_entries(lang: &str, rows: &[(String, String)], b: &mut Builder) {
+    let Ok(dir) = std::env::var("LEXGEN_DUMP") else {
+        return;
+    };
+    let d = Data::from_vec(b.build().expect("build")).expect("image");
+    let mut out = String::new();
+    let mut found = String::new();
+    for (w, _) in rows {
+        if d.lookup(w, &mut found) {
+            out.push_str(w);
+            out.push('\n');
+        }
+    }
+    let _ = std::fs::write(Path::new(&dir).join(format!("{lang}_entries.txt")), out);
 }

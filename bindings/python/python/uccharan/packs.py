@@ -1,19 +1,34 @@
-"""Language packs that are not inside the wheel.
+"""Language packs: the data that is not inside the wheel.
 
-The wheel carries the en-us and Hindi data. British English (``en-gb``) and
-the Kokoro English dictionaries (``kokoro-en-us``, ``kokoro-en-gb``) are packs:
-``.ucd`` files attached to the GitHub release of the same version. They are
-fetched on first use, checked against the SHA-256 sums below (which are part
-of the wheel), and kept in a cache directory, so each is downloaded once.
+The wheel carries American English and Hindi. Everything else is a pack, a
+``.ucd`` file attached to the GitHub release of the same version: British
+English (``en-gb``), the word tables of the other languages (``de``, ``fr``,
+``ur``, ``sd`` … one per language tag) and
+the Kokoro English dictionaries (``kokoro-en-us``, ``kokoro-en-gb``). A pack
+is fetched the first time its language is used, checked against the SHA-256
+sums below (which are part of the wheel), and kept in a cache directory, so
+each is downloaded once.
 
 Where a pack comes from, first match wins:
 
-1. ``$UCCHARAN_DATA_DIR/<name>.ucd`` (for offline machines and containers);
+1. ``$UCCHARAN_DATA_DIR/<name>.ucd`` (for offline machines and containers;
+   several directories may be given, separated like ``PATH``);
 2. the cache, ``$XDG_CACHE_HOME/uccharan/<version>/`` or
    ``~/.cache/uccharan/<version>/``;
 3. the release download (skipped when ``UCCHARAN_OFFLINE=1``).
 
-Every file is checked against its SHA-256 sum before it is used.
+Every file is checked against its SHA-256 sum before it is used. When a pack
+cannot be had, the call raises :class:`PackError`, which names the pack and
+its URL; a language is never read without its word table.
+
+For a machine without network access, fetch the packs somewhere else and
+point ``UCCHARAN_DATA_DIR`` at them::
+
+    python -m uccharan.packs --dir /opt/uccharan-data de fr ur   # or --all
+    UCCHARAN_DATA_DIR=/opt/uccharan-data UCCHARAN_OFFLINE=1 python app.py
+
+Without ``--dir`` the packs go to the cache. ``python -m uccharan.packs``
+alone lists the packs and whether each is installed.
 
 Optional packs are never fetched automatically. ``wikipron-en-us``,
 ``wikipron-en-gb`` and ``wikipron-hi`` hold pronunciations from Wiktionary
@@ -31,6 +46,7 @@ from __future__ import annotations
 
 import hashlib
 import os
+import sys
 import tempfile
 import urllib.request
 from pathlib import Path
@@ -39,29 +55,29 @@ from . import _native
 
 URL = "https://github.com/cB-Sigma/uccharan/releases/download/v{version}/{name}.ucd"
 
-# name -> (sha256, size in bytes); written by tools/packs.py from crates/uccharan/data.
+# name -> (sha256, size in bytes); written by tools/packs.py.
 PACKS: dict[str, tuple[str, int]] = {
     # @@PACKS@@
-    "ca": ("fa3bade0cdab6f861e50f0f382813bb75e22828bf60dc2dcbc3f48ac4d540c68", 195196),
-    "cs": ("bd78333a5484f149de56975043d1a8b18d16356ee9ead3ad915b6fa17cc59a09", 77647),
+    "ca": ("c83057571a4ff4d66134299940d38befc780014179e522d7e87e64a4e4ca0faa", 195143),
+    "cs": ("9f4da9b8fba91aa9f39270d07dec9a72cee4b8373d3d917191a686a2462bb1c8", 77151),
     "da": ("b94a426b4dc1b6bacf611eeb34e39b71a85cb725ec9ca747198195cf30d89804", 489926),
     "de": ("5a604a6503873a2d7f1e53c647e39a463b7696d8a8b20baf6be4ad5c610ea9cf", 372646),
     "en-gb": ("c267d028790da5440ae90df87da7b131800f7932124afe356193e387aaab13ad", 707290),
     "en-us": ("337e2c2c25c3d1a376f857634c20e2a220bcc91e65876ec58623f2feaf997aac", 727189),
-    "fi": ("cdf6c318663f16d41680139dcfd969415ef08804b689a26c25f77cbe8ddd2f52", 137291),
-    "fr": ("6640eaed0e5a0a260dc84bf547fd10f9857bd83b61365e7699eb016072851949", 181315),
+    "fi": ("300219864616835b3ce5dc28c7e7bbcfb5d6a0122762f91b1054445e169e57fb", 136697),
+    "fr": ("d2c84507e9bbedce0cdc3531802e9eedaf54243dccc08bfae6c42a39472f7913", 181289),
     "hi": ("970df73a97f846c7089d8794acce6f54f745ffcbfa208b77a5710ad84a2e3a31", 2964),
-    "hu": ("9616e25cbd24cf9588cc6e2b2e777d0ad87b2fa51ae21db030fbbd612a2956e3", 45656),
+    "hu": ("24a33b41ada5eccb82ede40f1dbe9677a367a679cc474866c071fdaba9c338da", 44777),
     "it": ("f500dc08197da28721172218146ba468939964a8e7265f7b81ae6cf6d4449819", 188304),
     "kokoro-en-gb": ("dcd66185dfe6f43c0d244287ffbd895a0f17465e533d1d0394a7d9ed9d7ccea0", 2066805),
     "kokoro-en-us": ("05a70e6f2314c04fcfc7b0a50387025a4919436551cb69a6074417df0641aa76", 1914413),
     "nb": ("ae2b27494d29c31042a0d12d9120e216753942b30bb9534b40cfaa5c192c788f", 99555),
     "nl": ("74ac5c59314639fcc79c0b8880c25c5036c27c5acea4e762ce6cf1e876bd6ca0", 242384),
-    "pl": ("e9012ae209810da0a5bd640963f72cb16f3c0d785a40eec27b7b050c27c91fa9", 239118),
-    "pt-br": ("181a522f2df06ed6897ed67b2f0235f4162390ab215d15d72182caa863fb199c", 170933),
+    "pl": ("bbd723181b9923b6aa567f59100c37bf60682f3b520122b2abdaf6c0a957a84d", 239163),
     "pt": ("7662c0faf867e2dff2da29f1a4b927ca2f9bfc9a979dab308e0ab44d80cdaec8", 215118),
+    "pt-br": ("181a522f2df06ed6897ed67b2f0235f4162390ab215d15d72182caa863fb199c", 170933),
     "ro": ("8f60693549f155fa6a30accbda95e8750e296668a9f14cf073f2b79bda6fd9d3", 308230),
-    "sd": ("92f45a588217d4f677ce113239d50e2916c5c30cd27c01d4671009c5af909e13", 209454),
+    "sd": ("2b7fa672f8212c400ec54b69b45d696d32a84c693eee8163ddf52ef26c00a99b", 119911),
     "sv": ("0db60d4b4ab24d2e1d373eb185c346631bfd812797dc65a6383ad867b69e9af9", 171085),
     "tr": ("c52bbb871db4aa0f9df2a4be2b59a109962a316b02a73d156b62165ac76ce35b", 230491),
     "ur": ("acd79fd0c91e2feb76d64115ae24f5e68fc841866381185bc6dfeb36af9f7936", 542615),
@@ -90,6 +106,10 @@ def cache_dir() -> Path:
     return Path(base) / "uccharan" / _native.__version__
 
 
+def _data_dirs() -> list[Path]:
+    return [Path(d) for d in os.environ.get("UCCHARAN_DATA_DIR", "").split(os.pathsep) if d]
+
+
 def _verify(name: str, blob: bytes, where: str) -> bytes:
     want, size = PACKS[name]
     got = hashlib.sha256(blob).hexdigest()
@@ -102,10 +122,9 @@ def fetch(name: str) -> bytes:
     """The verified bytes of a pack, from the data directory, the cache or the release."""
     if name not in PACKS:
         raise PackError(f"unknown pack {name!r}; packs: {', '.join(sorted(PACKS))}")
-    data_dir = os.environ.get("UCCHARAN_DATA_DIR")
-    if data_dir and (Path(data_dir) / f"{name}.ucd").is_file():
-        p = Path(data_dir) / f"{name}.ucd"
-        return _verify(name, p.read_bytes(), str(p))
+    for p in (d / f"{name}.ucd" for d in _data_dirs()):
+        if p.is_file():
+            return _verify(name, p.read_bytes(), str(p))
     cached = cache_dir() / f"{name}.ucd"
     if cached.is_file():
         try:
@@ -134,7 +153,69 @@ def fetch(name: str) -> bytes:
     return blob
 
 
+def installed(name: str) -> bool:
+    """True when a verified copy of the pack is in the data directory or the cache."""
+    for d in [*_data_dirs(), cache_dir()]:
+        f = d / f"{name}.ucd"
+        if f.is_file():
+            try:
+                _verify(name, f.read_bytes(), str(f))
+            except PackError:
+                continue
+            return True
+    return False
+
+
+def download(names: "list[str] | tuple[str, ...]", directory: "str | os.PathLike[str] | None" = None) -> list[Path]:
+    """Fetch packs for later, offline use: into ``directory`` (to be named by
+    ``UCCHARAN_DATA_DIR``) or, without one, into the cache. Returns the files."""
+    out = []
+    for name in names:
+        blob = fetch(name)
+        target = (Path(directory) if directory is not None else cache_dir()) / f"{name}.ucd"
+        if not target.is_file() or target.read_bytes() != blob:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(blob)
+        out.append(target)
+    return out
+
+
+def _optional(name: str) -> bool:
+    return name.startswith(("wikipron-", "xlit-"))
+
+
+def main(argv: "list[str] | None" = None) -> int:
+    import argparse
+
+    ap = argparse.ArgumentParser(
+        prog="python -m uccharan.packs",
+        description="List uccharan's language packs, or download some for offline use.",
+    )
+    ap.add_argument("names", nargs="*", help="packs to download (language tags such as de, fr, ur; kokoro-en-us; xlit-hi)")
+    ap.add_argument("--all", action="store_true", help="every Apache-2.0 pack (not the CC BY-SA wikipron-* and xlit-* packs)")
+    ap.add_argument("--dir", help="directory to write to (default: the cache); name it in UCCHARAN_DATA_DIR later")
+    args = ap.parse_args(argv)
+    names = list(args.names) + ([n for n in PACKS if not _optional(n)] if args.all else [])
+    if not names:
+        for n, (_, size) in PACKS.items():
+            state = "installed" if installed(n) else "not installed"
+            note = "  (CC BY-SA 4.0)" if _optional(n) else ""
+            print(f"{n:16} {size:>9} bytes  {state}{note}")
+        return 0
+    try:
+        for f in download(names, args.dir):
+            print(f)
+    except PackError as e:
+        print(f"uccharan: {e}", file=sys.stderr)
+        return 1
+    return 0
+
+
 def ensure(lang: str, profile: str = "espeak-ipa") -> None:
     """Load whatever packs ``lang`` with ``profile`` needs and are not loaded yet."""
     for name in _native.missing_packs(lang, profile):
         _native.load_pack(fetch(name))
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

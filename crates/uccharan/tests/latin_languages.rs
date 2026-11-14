@@ -273,6 +273,16 @@ fn hungarian() {
             ("21", "hˈusonɛɟ"),
             ("1984", "ˈɛzɛr kilɛntssaːz ɲoltsvɑnneːɟ"),
             ("és százalék", "ˌeːʃ sˈaːzɑleːk"),
+            // 2,000 as one word; from 10,000 one stress per group of digits.
+            ("2024", "kˈeːtɛzɛr husonneːɟ"),
+            ("15300", "tˈizɛnøt ɛzɛr hˈaːromsaːz"),
+            (
+                "1234567",
+                "ˈɛɟmillioː kˈeːtsaːz hɑrmintsneːɟ ɛzɛr ˈøtsaːz hɑtvɑnheːt",
+            ),
+            // Secondary stress at the end of a clause, and the article before it.
+            ("A város", "ˈɑ vˌaːroʃ"),
+            ("Megjött a tavasz", "mˈɛɡjøtː ˌɑ tˈɑvɑs"),
         ],
     );
 }
@@ -329,4 +339,83 @@ fn danish() {
             ("21", "ˈeːnʌtˈyːʔu"),
         ],
     );
+}
+
+/// Roman numerals and short capitals follow each voice in compatible mode:
+/// cardinals (Spanish, Portuguese, Czech), "römisch" and "romain" (German,
+/// French), ordinals (Italian, Danish), or letters (Swedish, Dutch, Finnish
+/// with the main stress first, Turkish with its dotless I).
+#[test]
+fn roman_numerals_and_capitals() {
+    check(
+        Lang::Es,
+        &[
+            ("Carlos IV fue rey", "kˈaɾlos kwˈatɾo fwˈe rˈeɪ"),
+            ("el plan B es mejor", "el plˈam bˈe ˈes mexˈoɾ"),
+        ],
+    );
+    check(
+        Lang::De,
+        &[
+            ("Ludwig XIV war da", "lˈʊdvɪç rˌøːmɪʃ fˈɪɾtseːn vɑːɾ dˈɑː"),
+            ("die USA sind groß", "diː ˌuːˌɛsˈɑː zɪnt ɡɾˈoːs"),
+        ],
+    );
+    check(
+        Lang::Fr,
+        &[
+            ("Louis XIV est roi", "lwˈi katɔʁz ʁomˈɛ̃ ɛ ʁwˈa"),
+            ("le roi VIII dort", "lə- ʁwˈa yi ʁomˈɛ̃ dˈɔʁ"),
+        ],
+    );
+    check(
+        Lang::It,
+        &[
+            (
+                "papa Giovanni XXIII parla",
+                "pˈapa dʒovˈannɪ vˈentɪtreˈɛzimo pˈarla",
+            ),
+            ("nel XIX secolo", "nel ditʃannovˈɛzimo sˈɛkolo"),
+        ],
+    );
+    check(
+        Lang::Da,
+        &[("Christian IV var konge", "kʁˈʔistʔiˌan fjˈeʌ ʋɑ kˈʔʌŋə")],
+    );
+    check(
+        Lang::Pt,
+        &[("o século XIX foi longo", "ʊ sˈɛkulʊ dˌɨzɐnˈɔvɨ foɪ lˈoŋɡʊ")],
+    );
+    check(
+        Lang::Cs,
+        &[("Karel IV byl král", "kˈarel tʃtˈir̝i bil krˈaːl")],
+    );
+    check(
+        Lang::Sv,
+        &[("Karl XII var kung", "kˈarl ˌɛksˌiːˈiː vɑːr kˈɵŋ")],
+    );
+    check(
+        Lang::Nl,
+        &[("Willem II was koning", "ʋˈɪləm ˌiːˈiː ʋˈɑs kˈoːnɪŋ")],
+    );
+    check(Lang::Fi, &[("karl XI tak", "kˈarl ˈæksˌiː tˈak")]);
+    check(Lang::Tr, &[("karl II tak", "kˈarl ˌɯˈɯ tˈak")]);
+    // Improved mode reads the numeral as a number everywhere.
+    let p = Phonemizer::new();
+    let improved = |lang, text| {
+        let mut o = Options::new(lang);
+        o.mode = uccharan::Mode::Improved;
+        p.phonemize(text, &o)
+    };
+    assert_eq!(
+        improved(Lang::Sv, "Karl XII var kung"),
+        "kˈarl tˈɔlv vɑːr kˈɵŋ"
+    );
+    assert_eq!(
+        improved(Lang::Fr, "Louis XIV est roi"),
+        "lwˈi katˈɔʁz ɛ ʁwˈa"
+    );
+    // IV is four, not five; XIIII and IL are not numerals.
+    assert_eq!(improved(Lang::Es, "IV"), improved(Lang::Es, "4"));
+    assert_ne!(improved(Lang::Es, "IL"), improved(Lang::Es, "49"));
 }
