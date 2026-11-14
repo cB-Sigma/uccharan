@@ -1,0 +1,243 @@
+{
+ "language": "pt-br",
+ "reference": "espeak-ng 1.52.0 voice pt-br (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 178680,
+  "per": 0.006749496306245803,
+  "per_without_stress": 0.004240705570153758,
+  "exact_sentence": 0.6116600790513834,
+  "exact_sentence_without_stress": 0.733201581027668,
+  "piper_shape_per": 0.006793530705986799,
+  "piper_shape_exact_sentence": 0.6037549407114624,
+  "word_count_mismatch_sentences": 147,
+  "errors_by_class": {
+   "stress": {
+    "count": 562,
+    "share": 0.4660033167495854,
+    "per_contribution": 0.0031452876650996196
+   },
+   "vowel": {
+    "count": 232,
+    "share": 0.19237147595356552,
+    "per_contribution": 0.0012984105663756437
+   },
+   "other": {
+    "count": 187,
+    "share": 0.1550580431177446,
+    "per_contribution": 0.0010465636892769195
+   },
+   "consonant": {
+    "count": 184,
+    "share": 0.15257048092868988,
+    "per_contribution": 0.001029773897470338
+   },
+   "word-boundary": {
+    "count": 40,
+    "share": 0.03316749585406302,
+    "per_contribution": 0.00022386389075442132
+   },
+   "diacritic": {
+    "count": 1,
+    "share": 0.0008291873963515755,
+    "per_contribution": 5.596597268860533e-06
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˌ→∅",
+    "count": 157
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 119
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 97
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 73
+   },
+   {
+    "edit": "s→z",
+    "count": 57
+   },
+   {
+    "edit": "j→y",
+    "count": 40
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 25
+   },
+   {
+    "edit": "y→j",
+    "count": 24
+   },
+   {
+    "edit": "ʊ→w",
+    "count": 24
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 22
+   },
+   {
+    "edit": " →∅",
+    "count": 20
+   },
+   {
+    "edit": "∅→ ",
+    "count": 20
+   },
+   {
+    "edit": "∅→æ",
+    "count": 19
+   },
+   {
+    "edit": "w→ʊ",
+    "count": 17
+   },
+   {
+    "edit": "ɛ→i",
+    "count": 17
+   },
+   {
+    "edit": "ʊ→∅",
+    "count": 17
+   },
+   {
+    "edit": "∅→ɛ",
+    "count": 16
+   },
+   {
+    "edit": "s→∅",
+    "count": 16
+   },
+   {
+    "edit": "e→∅",
+    "count": 14
+   },
+   {
+    "edit": "∅→ʊ",
+    "count": 12
+   },
+   {
+    "edit": "ɔ→o",
+    "count": 11
+   },
+   {
+    "edit": "∅→y",
+    "count": 10
+   },
+   {
+    "edit": "∅→z",
+    "count": 9
+   },
+   {
+    "edit": "i→j",
+    "count": 9
+   },
+   {
+    "edit": "o→ɔ",
+    "count": 8
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 19756,
+    "wrong": 385,
+    "rate": 0.019487750556792874
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 196,
+    "per": 0.014203051025775907,
+    "exact_sentence": 0.336734693877551
+   },
+   "no-digits": {
+    "sentences": 816,
+    "per": 0.004605106695781895,
+    "exact_sentence": 0.6776960784313726
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-583",
+    "text": "O termo \"insetos\" é utilizado por entomologistas em um sentido formal para tratar desse grupo de insetos.",
+    "reference": "ʊ tˈeɾəmʊ ˌiŋsˈɛtʊs ɛ ˌutʃilizˈadʊ poɾ ˌeɪŋtomˌoloʒˈistæz ˈeɪŋ ũŋ sˌeɪŋtʃˈidʊ foɾəmˈaʊ pˌaɾæ tratˈar dˈesy ɡrˈupʊ dʒj ˌiŋsˈɛtʊs",
+    "uccharan": "ʊ tˈeɾəmw ˌiŋsˈɛtʊz ɛ ˌutʃilizˈadʊ poɾ ˌeɪŋtomˌoloʒˈistæz ˈeɪŋ ũŋ sˌeɪŋtʃˈidʊ foɾəmˈaʊ pˌaɾæ tratˈar dˈesy ɡrˈupʊ dʒj ˌiŋsˈɛtʊs"
+   },
+   {
+    "id": "flores-devtest-287",
+    "text": "Adekoya tem estado no Tribunal do Xerife de Edimburgo desde então, acusada pelo assassinato de seu filho.",
+    "reference": "ˌadekˈɔɪæ teɪŋ ˌestˈadʊ nʊ trˌibunˈaʊ dʊ ʃˌeɾˈify dʒj ˌedʒimbˈuɾəɡʊ dˌezdʒj eɪŋtˈɐ̃ʊ̃ ˌakuzˈadæ pˈelw ˌasasinˈatʊ dʒy seʊ fˈiljʊ",
+    "uccharan": "ˌadʒekˈɔɪæ teɪŋ ˌestˈadʊ nʊ trˌibunˈaʊ dʊ ʃˌeɾˈify dʒj ˌedʒimbˈuɾəɡʊ dˌezdʒy eɪŋtˈɐ̃ʊ̃ ˌakuzˈadæ pˈelw ˌasasinˈatʊ dʒy seʊ fˈiljʊ"
+   },
+   {
+    "id": "flores-devtest-317",
+    "text": "Embora estivesse trabalhando no hospital, Liggins começou a investigar partos prematuros em seu tempo livre.",
+    "reference": "ˌeɪmbˈɔɾæ ˌestʃivˈɛsy trˌabaljˈɐ̃ŋdʊ nʊ ˌospitˈaʊ liʒˈiŋs kˌomesˈow a ˌiŋvestʃiɡˈar pˈaɾətʊs prˌematˈuɾʊz ˈeɪŋ seʊ tˈeɪmpʊ lˈivry",
+    "uccharan": "ˌeɪmbˈɔɾæ ˌestʃivˈɛsy trˌabaljˈɐ̃ŋdʊ nʊ ˌospitˈaʊ lˈiʒiŋs kˌomesˈow a ˌiŋvestʃiɡˈar pˈaɾətʊs prˌematˈuɾʊz ˈeɪŋ seʊ tˈeɪmpʊ lˈivry"
+   },
+   {
+    "id": "flores-devtest-154",
+    "text": "A principal seleção do torneio, a África do Sul, começou com pé direito conquistando uma vitória confortável por 26 a 0 sobre a 5ª colocada, a Zâmbia.",
+    "reference": "a prˌiŋsipˈaʊ sˌelesˈɐ̃ʊ̃ dʊ tˌoɾənˈeɪʊ a ˈafrikæ dʊ sˈuw kˌomesˈow koŋ pˈɛ dʒˌiɾˈeɪtʊ kˌoŋkistˈɐ̃ŋdw ˌumæ vˌitˈɔɾjæ kˌoŋfoɾətˈaveʊ por vˈiŋtʃyisˈeɪz a zˈɛɾʊ sˈobri a kˈiŋtæ kˌolokˈadæ a zˈɐ̃mbjæ",
+    "uccharan": "a prˌiŋsipˈaʊ sˌelesˈɐ̃ʊ̃ dʊ tˌoɾənˈeɪʊ a ˈafrikæ dʊ sˈuw kˌomesˈow koŋ pˈɛ dʒˌiɾˈeɪtʊ kˌoŋkistˈɐ̃ŋdw ˌumæ vˌitˈɔɾjæ kˌoŋfoɾətˈaveʊ por vˈiŋtʃyisˈeɪz a zˈɛɾʊ sˈobri a sˈiŋkʊ kˌolokˈadæ a zˈɐ̃mbjæ"
+   },
+   {
+    "id": "flores-devtest-511",
+    "text": "Os scaffolds podem ser virtuais ou presenciais, em outras palavras, um professor pode ser considerado um scaffold, assim como aquele clipezinho falante do Microsoft Office.",
+    "reference": "ʊs skafˈowds pˌɔdeɪŋ ser vˌiɾətuˈaɪz ow prˌezeɪŋsiˈaɪs ˈeɪŋ ˈowtræs pˌalˈavræs ũŋ prˌofesˈor pˌɔdʒy ser kˌoŋsideɾˈadw ũŋ skafˈowd asˈiŋ kˌomʊ ˌakˈely klˌipezˈiɲʊ fˌalˈɐ̃ŋtʃy dʊ mˈaɪkrowsˈɔft ˈɔfsy",
+    "uccharan": "ʊs skˈafowds pˌɔdeɪŋ ser vˌiɾətuˈaɪz ow prˌezeɪŋsiˈaɪs ˈeɪŋ ˈowtræs pˌalˈavræs ũŋ prˌofesˈor pˌɔdʒy ser kˌoŋsideɾˈadw ũŋ skafˈowd asˈiŋ kˌomʊ ˌakˈely klipezˈiɲʊ fˌalˈɐ̃ŋtʃy dʊ mˈaɪkrowsˈɔft ˈɔfsy"
+   },
+   {
+    "id": "flores-devtest-643",
+    "text": "Os átomos são tão assombrosamente pequenos que seria possível trilhões deles caberem no ponto final desta frase.",
+    "reference": "ʊz ˈatomʊs sɐ̃ʊ̃ tˈɐ̃ʊ̃ ˌasombrˌozæmˈeɪŋtʃy pˌekˈenʊs ky seɾˌiæ pˌosˈiveʊ triljˈõjz dˌelys kˌabˈeɾeɪŋ nʊ pˈoŋtʊ finˈaʊ dˈɛstæ frˈazy",
+    "uccharan": "ʊz ˈatomʊs sɐ̃ʊ̃ tˈɐ̃ʊ̃ ˌasombrˌozæmˈeɪŋtʃy pˌekˈenʊs ky seɾˌiæ pˌosˈiveʊ triljˈõjz dˌelys kˌabeɾˈeɪŋ nʊ pˈoŋtʊ finˈaʊ dˈɛstæ frˈazy"
+   },
+   {
+    "id": "flores-devtest-234",
+    "text": "Então, Lakkha Singh tomou a frente para cantar os bhajans.",
+    "reference": "eɪŋtˈɐ̃ʊ̃ lˈakæ sˈiŋɡ tomˈow a frˈeɪŋtʃy pˌaɾæ kɐ̃ŋtˈaɾ ʊz baʒˈɐ̃ŋs",
+    "uccharan": "eɪŋtˈɐ̃ʊ̃ lˈakkæ sˈiŋɡ tomˈow a frˈeɪŋtʃy pˌaɾæ kɐ̃ŋtˈaɾ ʊz baʒˈɐ̃ŋs"
+   },
+   {
+    "id": "flores-devtest-520",
+    "text": "Por exemplo, \"aprendizado\" e \"socialização\" são indicados como motivações importantes para a utilização da internet  (James et al., 1995).",
+    "reference": "poɾ ˌezˈeɪmplʊ ˌapreɪŋdʒizˈadʊ i sˌosiˌalizasˈɐ̃ʊ̃ sɐ̃ʊ̃ ˌiŋdʒikˈadʊs kˌomʊ mˌotʃivasˈõjz ˌimpoɾətˈɐ̃ŋtʃys pˌaɾæ a ˌutʃilˌizasˈɐ̃ʊ̃ da ˌiŋteɾənˈɛtʃ ʒˈeimys ˈɛtʃ ˈaʊ mˈiʊ nˈɔvysˈeɪŋtʊzˌi novˈeɪŋtæisˈiŋkʊ",
+    "uccharan": "poɾ ˌezˈeɪmplʊ ˌapreɪŋdʒizˈadw i sˌosiˌalizasˈɐ̃ʊ̃ sɐ̃ʊ̃ ˌiŋdʒikˈadʊs kˌomʊ mˌotʃivasˈõjz ˌimpoɾətˈɐ̃ŋtʃys pˌaɾæ a ˌutʃilˌizasˈɐ̃ʊ̃ da ˌiŋteɾənˈɛtʃ ʒˈeimyz ˈɛtʃ ˈaʊ mˈiʊ nˈɔvysˈeɪŋtʊzi novˈeɪŋtæisˈiŋkʊ"
+   },
+   {
+    "id": "flores-devtest-843",
+    "text": "Para que os pés de um cavaleiro tenham apoio, são usados estribos, que ficam pendurados em ambos os lados da sela.",
+    "reference": "pˌaɾækj ʊs pˈɛz dʒj ũŋ kˌavalˈeɪɾʊ tˈeɲɐ̃ʊ̃ ˌapˈoɪʊ sɐ̃ʊ̃ ˌuzˈadʊz ˌestrˈibʊs ky fˈikɐ̃ʊ̃ pˌeɪŋduɾˈadʊz ˈeɪŋ ˈɐ̃mbʊz ʊz lˈadʊz da sˈɛlæ",
+    "uccharan": "pˌaɾæ ky ʊs pˈɛz dʒj ũŋ kˌavalˈeɪɾʊ tˈeɲɐ̃ʊ̃ ˌapˈoɪʊ sɐ̃ʊ̃ ˌuzˈadʊz ˌestrˈibʊs ky fˈikɐ̃ʊ̃ pˌeɪŋduɾˈadʊz ˈeɪŋ ˈɐ̃mbʊz ʊz lˈadʊz da sˈɛlæ"
+   },
+   {
+    "id": "flores-devtest-517",
+    "text": "Supõe-se que os cuidados adotivos satisfaçam a todas as necessidades que faltavam na casa de onde foram tirados.",
+    "reference": "supˈõjsy ky ʊs kˌuɪdˈadʊz ˌadotʃˈivʊs sˌatʃisfˈasɐ̃ʊ̃ a tˈodæz az nˌesesidˈadʒys ky fˌaʊtˈavɐ̃ʊ̃ na kˈazæ dʒj ˌoŋdʒy fˌoɾɐ̃ʊ̃ tʃˌiɾˈadʊs",
+    "uccharan": "supˈõjsy ky ʊs kˌuɪdˈadʊz ˌadotʃˈivʊs sˌatʃisfasɐ̃ˈʊ̃ a tˈodæz az nˌesesidˈadʒys ky fˌaʊtˈavɐ̃ʊ̃ na kˈazæ dʒj ˌoŋdʒy fˌoɾɐ̃ʊ̃ tʃˌiɾˈadʊs"
+   },
+   {
+    "id": "flores-devtest-294",
+    "text": "Israel exige uma presença militar contínua no vale por dez anos assim que um acordo seja assinado, ao passo que a AP concorda em deixar essa presença por apenas cinco anos.",
+    "reference": "ˌizxaˈɛʊ ˌezˈiʒj ˌumæ prˌezˈeɪŋsæ mˌilitˈar kˌoŋtʃˈinuæ nʊ vˈaly por dˈɛz ˈɐ̃nʊz asˈiŋ ky ũŋ ˌakˈoɾədʊ sˈeʒæ ˌasinˈadʊ aʊ pˈasʊ ky a ˌapˈe kˌoŋkˈɔɾədæ ˈeɪŋ deɪʃˈaɾ ˈɛsæ prˌezˈeɪŋsæ poɾ ˌapˈenæs sˈiŋkw ˈɐ̃nʊs",
+    "uccharan": "ˌizxaˈɛʊ ˌezˈiʒj ˌumæ prˌezˈeɪŋsæ mˌilitˈar kˌoŋtʃˈinuæ nʊ vˈaly por dˈɛz ˈɐ̃nʊz asˈiŋ ky ũŋ ˌakˈoɾədʊ sˈeʒæ ˌasinˈadʊ aʊ pˈasʊ ky a ˈap kˌoŋkˈɔɾədæ ˈeɪŋ deɪʃˈaɾ ˈɛsæ prˌezˈeɪŋsæ poɾ ˌapˈenæs sˈiŋkw ˈɐ̃nʊs"
+   },
+   {
+    "id": "flores-devtest-290",
+    "text": "A professora Pamela Ferguson, da Universidade de Dundee, observa que \"os jornalistas parecem ir numa direção perigosa quando publicam fotos, vídeos, etc. de suspeitos\".",
+    "reference": "a prˌofesˈoɾæ pˈɐ̃melæ fˌeɾəɡˈuzoŋ da ˌunivˌeɾəsidˈadʒy dʒy dũŋdˈi ˌobsˈɛɾəvæ ky ʊz ʒˌoɾənalˈistæs pˌaɾˈɛseɪŋ ˈir nˌumæ dʒˌiɾesˈɐ̃ʊ̃ pˌeɾiɡˈɔzæ kwˈɐ̃ŋdʊ pˌublˈikɐ̃ʊ̃ fˈɔtʊs vˈidʒjʊs ˌetsˈɛteɾæ dʒy sˌuspˈeɪtʊs",
+    "uccharan": "a prˌofesˈoɾæ pˈɐ̃melæ fˌeɾəɡˈuzoŋ da ˌunivˌeɾəsidˈadʒy dʒy dˈũŋde ˌobsˈɛɾəvæ ky ʊz ʒˌoɾənalˈistæs pˌaɾˈɛseɪŋ ˈir nˌumæ dʒˌiɾesˈɐ̃ʊ̃ pˌeɾiɡˈɔzæ kwˈɐ̃ŋdʊ pˌublˈikɐ̃ʊ̃ fˈɔtʊs vˈidʒjʊs ˌetsˈɛteɾæ dʒy sˌuspˈeɪtʊs"
+   }
+  ]
+ }
+}

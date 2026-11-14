@@ -129,6 +129,48 @@ export interface Normalized {
 export function normalize(text: string, options?: NormalizeOptions): Promise<Normalized>;
 /** Synchronous variant; the needed languages must already be loaded. */
 export function normalizeSync(text: string, options?: NormalizeOptions): Normalized;
+export interface TranslitOptions {
+  /** Language whose script is written (default `hi`). */
+  lang?: Lang | string;
+  /** English words: left as they are, respelled in the script, or no language decision. */
+  english?: "keep" | "native" | "convert";
+  /** Candidates listed per word (default 3). */
+  alternatives?: number;
+  /** Let neighbouring words decide (default true). */
+  context?: boolean;
+}
+
+export interface TranslitSpan {
+  kind: "indic" | "english" | "other";
+  /** UTF-16 offsets into the input. */
+  start: number;
+  end: number;
+  /** UTF-16 offsets into the output text. */
+  outStart: number;
+  outEnd: number;
+  text: string;
+  written: string;
+  src: Offsets;
+  out: Offsets;
+  /** Native candidates of a Latin word, the chosen one first. */
+  alternatives: { text: string; score: number }[];
+}
+
+export interface Transliterated {
+  text: string;
+  /** True when the language's transliteration pack did the work. */
+  pack: boolean;
+  spans: TranslitSpan[];
+}
+
+/** Load a transliteration pack (`xlit-<lang>`, CC BY-SA 4.0; never fetched automatically). */
+export function loadTranslit(lang: string, bytes?: Uint8Array | ArrayBuffer): Promise<void>;
+/** True when the transliteration pack of the language is loaded. */
+export function hasTranslit(lang: string): boolean;
+/** Romanised text into the script of the language, with spans. */
+export function transliterate(text: string, options?: TranslitOptions): Promise<Transliterated>;
+/** Synchronous variant; the needed data must already be loaded. */
+export function transliterateSync(text: string, options?: TranslitOptions): Transliterated;
 /** Respell IPA for a text voice reading `lang`; null when the language has no writer. */
 export function respell(
   ipa: string,

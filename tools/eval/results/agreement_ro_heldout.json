@@ -1,0 +1,243 @@
+{
+ "language": "ro",
+ "reference": "espeak-ng 1.52.0 voice ro (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 176030,
+  "per": 0.010049423393739704,
+  "per_without_stress": 0.004316172646905876,
+  "exact_sentence": 0.5138339920948617,
+  "exact_sentence_without_stress": 0.7144268774703557,
+  "piper_shape_per": 0.010076595554212756,
+  "piper_shape_exact_sentence": 0.5059288537549407,
+  "word_count_mismatch_sentences": 253,
+  "errors_by_class": {
+   "stress": {
+    "count": 1118,
+    "share": 0.6319954776710006,
+    "per_contribution": 0.006351190138044652
+   },
+   "vowel": {
+    "count": 215,
+    "share": 0.1215375918598078,
+    "per_contribution": 0.0012213827188547407
+   },
+   "other": {
+    "count": 171,
+    "share": 0.0966647823629169,
+    "per_contribution": 0.0009714253252286542
+   },
+   "consonant": {
+    "count": 159,
+    "share": 0.08988128886376484,
+    "per_contribution": 0.0009032551269669943
+   },
+   "word-boundary": {
+    "count": 105,
+    "share": 0.059355568117580554,
+    "per_contribution": 0.0005964892347895245
+   },
+   "length": {
+    "count": 1,
+    "share": 0.0005652911249293386,
+    "per_contribution": 5.680849855138329e-06
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "∅→ˈ",
+    "count": 391
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 298
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 182
+   },
+   {
+    "edit": "∅→e",
+    "count": 97
+   },
+   {
+    "edit": "∅→ ",
+    "count": 82
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 70
+   },
+   {
+    "edit": "ˌ→e",
+    "count": 62
+   },
+   {
+    "edit": "e→ ",
+    "count": 62
+   },
+   {
+    "edit": "ʲ→i",
+    "count": 45
+   },
+   {
+    "edit": "ʲ→∅",
+    "count": 32
+   },
+   {
+    "edit": "∅→i",
+    "count": 28
+   },
+   {
+    "edit": "e→∅",
+    "count": 24
+   },
+   {
+    "edit": " →∅",
+    "count": 23
+   },
+   {
+    "edit": "ʲ→ ",
+    "count": 23
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 17
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 17
+   },
+   {
+    "edit": "∅→u",
+    "count": 13
+   },
+   {
+    "edit": "j→i",
+    "count": 12
+   },
+   {
+    "edit": "∅→ʲ",
+    "count": 12
+   },
+   {
+    "edit": "d→∅",
+    "count": 10
+   },
+   {
+    "edit": "ˈ→e",
+    "count": 9
+   },
+   {
+    "edit": "∅→t",
+    "count": 9
+   },
+   {
+    "edit": "∅→ʃ",
+    "count": 9
+   },
+   {
+    "edit": "ʃ→∅",
+    "count": 9
+   },
+   {
+    "edit": "∅→s",
+    "count": 7
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 17108,
+    "wrong": 420,
+    "rate": 0.024549918166939442
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 194,
+    "per": 0.014053590351718222,
+    "exact_sentence": 0.4381443298969072
+   },
+   "no-digits": {
+    "sentences": 818,
+    "per": 0.008885891081849907,
+    "exact_sentence": 0.5317848410757946
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-500",
+    "text": "Subculturile adună laolaltă indivizi cu gândire similară, care se simt dați la o parte de standardele societății, permițându-le să-și dezvolte un simț al identității.",
+    "reference": "sˌubkultˈurile adˈunə lˌaolˈaltə ˌindivˈizʲʲ ku ɡɨndˈiɾe sˌimilˈaɾə kˌaɾe se sˈimt dˈatsʲʲ la o pˈarte de stˈandardˌele sˌotʃjetˈətsiɪ pˌermitsˈɨndule sˌəʃʲʲ dezvˈolte un sˈimts al ˌidentitˈətsiɪ",
+    "uccharan": "sˌubkultˈurile adˈunə lˌaolˈaltə ˌindivˈizʲʲ ku ɡɨndˈiɾe sˌimilˈaɾə kˌaɾe se sˈimt dˈatsʲʲ la o pˈarte de stˈandardˌele sˌotʃjetˈətsiɪ permitsˈɨndule səʃi dezvˈolte un sˈimts al ˌidentitˈətsiɪ"
+   },
+   {
+    "id": "flores-devtest-215",
+    "text": "În 1989 a participat la crearea Familiei Simpson alături de Brooks și Groening și s-a ocupat de angajarea primei echipe de scenariști a serialului.",
+    "reference": "ɨn ˌomˈie nˈoʊəsˈute ˈoptzetʃʲʃinˈoʊə a pˌartitʃipˈat la krˈeaɾea fˌamilˈieɪ simpsˈon alˈəturʲ de broˈoks ʃi ɡroˈeniŋɡ ʃi sa ˌokupˈat de ˌaŋɡaʒˈaɾea prˈimeɪ ekˈipe de stʃˌenaɾˈiʃtʲʲ a seɾjˈaluluɪ",
+    "uccharan": "ɨn ˌomˈie nˈoʊəsˈute ˈoptzetʃʲʃinˈoʊə a pˌartitʃipˈat la krˈeaɾea fˌamilˈieɪ simpsˈon alˈəturʲ de broˈoks ʃi ɡrˈoeniŋɡ ʃi sˈea ˌokupˈat de ˌaŋɡaʒˈaɾea prˈimeɪ ekˈipe de stʃˌenaɾˈiʃtʲʲ a seɾjˈaluluɪ"
+   },
+   {
+    "id": "flores-devtest-60",
+    "text": "Peste patru milioane de persoane s-au deplasat la Roma pentru a lua parte la funeralii.",
+    "reference": "pˈeste pˈatru mˌiljɔˈane de persˈɔane saʊ dˌeplasˈat la rˈoma pˌentru a lwˈa pˈarte la fˌuneɾˈaliɪ",
+    "uccharan": "pˈeste pˈatru mˌiljɔˈane de persˈɔane sˈeaʊ dˌeplasˈat la rˈoma pˌentru a lwˈa pˈarte la fˌuneɾˈaliɪ"
+   },
+   {
+    "id": "flores-devtest-1009",
+    "text": "Cultura japoneză a muncii are un caracter mai puternic ierarhizat și mai formal decât cea cu care sunt obișnuiți occidentalii.",
+    "reference": "kultˈuɾa ʒˌaponˈezə a mˈuntʃiɪ ˌaɾe un kˌaɾaktˈer maɪ putˈernik jˌeɾarhizˈat ʃi maɪ formˈal dekˈɨt tʃea ku kˌaɾe sunt ˌobiʃnwˈitsʲʲ ˌoktʃidentˈaliɪ",
+    "uccharan": "kultˈuɾa ʒˌaponˈezə a mˈuntʃiɪ ˌaɾe un kˌaɾaktˈer maɪ putˈernik jeɾarhˈizat ʃi maɪ formˈal dekˈɨt tʃea ku kˌaɾe sunt ˌobiʃnwˈitsʲʲ ˌoktʃidentˈaliɪ"
+   },
+   {
+    "id": "flores-devtest-817",
+    "text": "Este așteptat faptul că majoritatea biletelor la evenimente vor costa între 2500 ¥ și 130.000 ¥, biletele obișnuite costând în jur de 7000 ¥.",
+    "reference": "jˌeste ˌaʃteptˈat fˈaptul kə mˌaʒoɾitˈatea bˌiletˈelor la ˌevenimˈente vor kostˈa ˈɨntre dˈouə mˈiɪ tʃˈintʃʲsˈute ʃi ˌosˈutə treɪzˈetʃʲ demˈiɪ bˌiletˈele ˌobiʃnwˈite kostˈɨnd ɨn ʒˈur de ʃˈapte mˈiɪ",
+    "uccharan": "jˌeste ˌaʃteptˈat fˈaptul kə mˌaʒoɾitˈatea bˌiletˈelor la ˌevenimˈente vor kostˈa ˈɨntre dˈouə mˈiɪ tʃˈintʃʲsˈute ʃi ˌosˈutə treɪzˈetʃʲ mˈiɪ bˌiletˈele ˌobiʃnwˈite kˈostɨnd ɨn ʒˈur de ʃˈapte mˈiɪ"
+   },
+   {
+    "id": "flores-devtest-248",
+    "text": "La cinci minute de la începerea prezentării, vântul își face simțită prezența; aproximativ un minut mai târziu, vântul ajunge la 70 km/h... apoi vine ploaia, dar atât de tare și cu picături atât de mari încât îți lovește pielea ca un ac, apoi a căzut grindina, iar oamenii au intrat în panică, țipând și călcându-se în picioare.",
+    "reference": "la tʃˈintʃʲ minˈute dˌela ɨntʃˈepeɾˌea prˌezentəɾˈiɪ vˈɨntul ˈɨʃʲʲ fˌatʃe simtsˈitə prezˈentsa ˌaproksˌimatˈiv un minˈut maɪ tɨrzˈiu vˈɨntul aʒˈuŋdʒe la ʃˌaptezˈetʃʲ kˌilomˈetripe ˈorə apˈoj vˈine plˈɔaja dar atˈɨt de tˈaɾe ʃi ku pˌikətˈurʲ atˈɨt de mˈaɾʲʲ ɨnkˈɨt ˌɨtsʲʲ lovˈeʃte pjˈelea ka un ˈak apˈoj a kəzˈut ɡrindˈina jˈar ˈɔamenˌiɪ aʊ intrˈat ɨn panˈikə tsipˈɨnd ʃi kəlkˈɨnduse ɨn pitʃˈɔaɾe",
+    "uccharan": "la tʃˈintʃʲ minˈute de la ɨntʃˈepeɾˌea prˌezentəɾˈiɪ vˈɨntul ˈɨʃʲʲ fˌatʃe simtsˈitə prezˈentsa ˌaproksˌimatˈiv un minˈut maɪ tɨrzˈiu vˈɨntul aʒˈuŋdʒe la ʃˌaptezˈetʃʲ kˌilomˈetri hˈaʃ apˈoj vˈine plˈɔaja dar atˈɨt de tˈaɾe ʃi ku pˌikətˈurʲ atˈɨt de mˈaɾʲʲ ɨnkˈɨt ˌɨtsʲʲ lovˈeʃte pjˈelea ka un ˈak apˈoj a kəzˈut ɡrindˈina jˈar ˈɔamenˌiɪ aʊ intrˈat ɨn panˈikə tsipˈɨnd ʃi kəlkˈɨnduse ɨn pitʃˈɔaɾe"
+   },
+   {
+    "id": "flores-devtest-14",
+    "text": "USA Gymnastics sprijină scrisoarea Comitetului Olimpic al SUA și acceptă nevoia absolută a familiei olimpice de a promova un mediu sigur pentru toți atleții noștri.",
+    "reference": "ˌusˌeˈa ɡˌimnastˈiks sprˈiʒinˌə skrisˈɔaɾea kˌomitˈetuluɪ olˈimpik al sˌeˌuˈa ʃi aktʃˈeptə nevˈoɪa ˌabsolˈutə a fˌamilˈieɪ olˈimpitʃˌe dea prˌomovˈa un mˈedju sˈiɡur pˌentru tˈotsʲʲ atlˈetsiɪ nˈoʃtɾi",
+    "uccharan": "ˌusˌeˈa ɡimnˈastiks sprˈiʒinˌə skrisˈɔaɾea kˌomitˈetuluɪ olˈimpik al sˌeˌuˈa ʃi aktʃˈeptə nevˈoɪa ˌabsolˈutə a fˌamilˈieɪ olˈimpitʃˌe de a prˌomovˈa un mˈedju sˈiɡur pˌentru tˈotsʲʲ atlˈetsiɪ nˈoʃtɾi"
+   },
+   {
+    "id": "flores-devtest-909",
+    "text": "În partea de nord, numită lanțul Sentinel, se află cei mai înalți munți din Antarctica, Masivul Vinson, cu Muntele Vinson înălțându-se la 4892 m.",
+    "reference": "ɨn pˈartea de nˈord numˈitə lˈantsul sˌentinˈel se ˈaflə tʃeɪ maɪ ɨnˈaltsʲʲ mˈuntsʲʲ din antˈarktikˌa masˈivul vinsˈon ku muntˈele vinsˈon ˌɨnəltsˈɨnduse la pˈatru mˈiɪ ˈoptsˈute nˈoʊəzˌetʃʲʃidˈoɪ mˈe",
+    "uccharan": "ɨn pˈartea de nˈord numˈitə lˈantsul sˌentinˈel se ˈaflə tʃeɪ maɪ ɨnˈaltsʲʲ mˈuntsʲʲ din antˈarktikˌa masˈivul vˈinson ku muntˈele vˈinson ˌɨnəltsˈɨnduse la pˈatru mˈiɪ ˈoptsˈute nˈoʊəzˌetʃʲʃidˈoɪ mˈe"
+   },
+   {
+    "id": "flores-devtest-777",
+    "text": "Plajele Tamaki Drive se află în portul Waitemata, în suburbiile de pe piață din Mission Bay și St Heliers din centrul Auckland-ului.",
+    "reference": "plaʒˈele tamˈakʲ drˈive se ˈaflə ɨn pˈortul wˌaɪtemˈata ɨn sˌuburbˈiɪle de pe pjˈatsə din misjˈon bˈai ʃi sˌetˈe heljˈers din tʃˈentrul aʊkklˈandˈuluɪ",
+    "uccharan": "plaʒˈele tamˈakʲ drˈive se ˈaflə ɨn pˈortul waɪtemˈata ɨn sˌuburbˈiɪle de pe pjˈatsə din misjˈon bˈai ʃi sˌetˈe hˈeljers din tʃˈentrul aʊkklˈandˈuluɪ"
+   },
+   {
+    "id": "flores-devtest-384",
+    "text": "Nu știm cu siguranță, dar ar fi putut avea limba bifurcată. Hrana sa includea broaște țestoase, pești mari, alte specii de mosasaurieni și e posibil chiar să fi fost canibal.",
+    "reference": "nu ʃtˈim ku sˌiɡuɾˈantsə dar ar fˈi putˈut avˌea lˈimba bˌifurkˈatə hrˈana sa inklˈudea brˈɔaʃte tsestˈɔase pˈeʃtʲʲ mˈaɾʲʲ ˈalte spˈetʃiɪ de mˌosasˌauɾjˈenʲʲ ʃi je posˈibil kjˈar sə fˈi fost kˌanibˈal",
+    "uccharan": "nu ʃtˈim ku sˌiɡuɾˈantsə dar ar fˈi putˈut avˌea lˈimba bˌifurkˈatə hrˈana sa inklˈudea brˈɔaʃte tsestˈɔase pˈeʃtʲʲ mˈaɾʲʲ ˈalte spˈetʃiɪ de mosasaˈuɾjenʲʲ ʃi je posˈibil kjˈar sə fˈi fost kˌanibˈal"
+   },
+   {
+    "id": "flores-devtest-70",
+    "text": "A fost întâmpinat de Vice Prim Ministrul Singapore-ului, Wong Kan Seng, și a purtat discuții cu privire la comerț și terorism cu Primul Ministru al Singapore-ului, Lee Hsien Loong.",
+    "reference": "a fost ˌɨntɨmpinˈat de vˈitʃe prˈim minˈistrul sˌiŋɡapˈoɾeˈuluɪ wˈoŋɡ kˈan sˈeŋɡ ʃʲa purtˈat diskˈutsiɪ ku privˈiɾe la komˈerts ʃi tˌeɾoɾˈism ku prˈimul minˈistru al sˌiŋɡapˈoɾeˈuluɪ lˈee hsjˈen loˈoŋɡ",
+    "uccharan": "a fost ˌɨntɨmpinˈat de vˈitʃe prˈim minˈistrul sˌiŋɡapˈoɾeˈuluɪ wˈoŋɡ kˈan sˈeŋɡ ʃi a purtˈat diskˈutsiɪ ku privˈiɾe la komˈerts ʃi tˌeɾoɾˈism ku prˈimul minˈistru al sˌiŋɡapˈoɾeˈuluɪ lˈee hsjˈen lˈooŋɡ"
+   },
+   {
+    "id": "flores-devtest-416",
+    "text": "Congresul nu avea nicio putere de a impune taxe și, pentru că nu exista autoritate executivă sau judiciară la nivel național, se baza pe autoritățile statale, adesea necooperante, pentru a-i pune în aplicare deciziile.",
+    "reference": "koŋɡrˈesul nu avˌea nˌitʃo putˈeɾe dea impˈune tˈakse ʃi pˌentru kə nu ˌeɡzistˈa ˌaʊtoɾitˈate ˌeɡzekutˈivə saʊ ʒˌuditʃjˈaɾə la nivˈel nˌatsjonˈal se bˈaza pe ˌaʊtoɾˌitətsʲˈile statˈale adˈesea nˌekoˌopeɾˈante pˌentru aj pˈune ɨn ˌaplikˈaɾe dˌetʃizˈiɪle",
+    "uccharan": "koŋɡrˈesul nu avˌea nˌitʃo putˈeɾe de a impˈune tˈakse ʃi pˌentru kə nu ˌeɡzistˈa ˌaʊtoɾitˈate ˌeɡzekutˈivə saʊ ʒˌuditʃjˈaɾə la nivˈel nˌatsjonˈal se bˈaza pe ˌaʊtoɾˌitətsʲˈile statˈale adˈesea nˌekoopˌeɾˈante pˌentru aˈi pˈune ɨn ˌaplikˈaɾe dˌetʃizˈiɪle"
+   }
+  ]
+ }
+}

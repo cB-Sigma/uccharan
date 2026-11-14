@@ -1168,17 +1168,7 @@ impl Indic {
                 }
                 continue;
             }
-            // The language's word table (compatible mode), then the rules.
-            let mut found = String::new();
-            let listed = !it.generated && words.is_some_and(|d| d.lookup(&it.text, &mut found));
-            let mut ipa = if listed && compat {
-                found
-            } else if listed {
-                // Improved mode keeps the table's vowels and fixes its letters.
-                self.post_improved.apply(&found, &self.classes)
-            } else {
-                self.word_as(&it.text, compat, it.generated)
-            };
+            let mut ipa = self.read(&it.text, compat, it.generated, words);
             if it.number_tail && self.numbers.demote_tail {
                 ipa = ipa.replace('ˈ', "ˌ");
             }
@@ -1209,6 +1199,40 @@ impl Indic {
             out.push(crate::WordOut::new(&it.text, ipa, lang, it.glue));
         }
         out
+    }
+
+    /// One written word by itself: from the language's word table, from the
+    /// table's letter-to-sound model, or from the letter rules. `generated`
+    /// words (number words) are read by the rules alone.
+    pub fn read(
+        &self,
+        text: &str,
+        compat: bool,
+        generated: bool,
+        table: Option<&crate::data::Data>,
+    ) -> String {
+        let mut found = String::new();
+        let listed = !generated
+            && table.is_some_and(|d| {
+                d.lookup(text, &mut found) || self.model_word(text, d).map(|m| found = m).is_some()
+            });
+        if listed && compat {
+            found
+        } else if listed {
+            // Improved mode keeps the table's vowels and fixes its letters.
+            self.post_improved.apply(&found, &self.classes)
+        } else {
+            self.word_as(text, compat, generated)
+        }
+    }
+
+    /// The reading of a word by the table's letter-to-sound model, when the
+    /// table has one and the language file does not list the word itself.
+    pub fn model_word(&self, word: &str, table: &crate::data::Data) -> Option<String> {
+        if !table.has_lts() || self.words.contains_key(word) {
+            return None;
+        }
+        crate::data::memo(table.id() * 2 + 1, word, || table.model_word(word))
     }
 
     /// The ASCII digit value of a digit of this script.

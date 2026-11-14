@@ -1,14 +1,23 @@
 # uccharan (Python)
 
-**5× faster than espeak-ng. Just as accurate. Free to ship.**
-A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English, Hindi, nineteen more South Asian languages, Spanish, French, German and Dutch, in Rust, Python,
-C and the browser. Apache-2.0. ([measurements](https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md))
+**Phonemiser, text normaliser, transliterator and pronunciation engine** for text-to-speech and
+speech recognition: 39 languages (English, Hindi, nineteen more South Asian languages and
+seventeen European ones), in Rust, Python, JavaScript and C. Apache-2.0, no GPL code or data.
+([what it does](https://github.com/cB-Sigma/uccharan#readme) ·
+[measurements](https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md))
 
-Permissively licensed text-to-phoneme conversion for neural TTS: English (US, British RP), Hindi
-and Hinglish, in the shapes Piper, Kokoro, Kitten TTS, Matcha-TTS and sherpa-onnx voices expect.
-No GPL code or data; no runtime dependencies.
+- **Phonemes** in the shapes Piper, Kokoro, Kitten TTS, Matcha-TTS and sherpa-onnx voices expect,
+  compatible with the espeak-ng output those voices were trained on; an improved mode for voices
+  you train yourself.
+- **Normalise-only mode**: the spoken form of numbers, money, dates and URLs for voices that read
+  text, with spans aligned to the input.
+- **Transliteration** of romanised Hindi, Marathi, Bengali, Tamil, Telugu, Gujarati, Punjabi,
+  Kannada and Malayalam into native script.
+- **Pronunciation word lists**, **sound-alike matching** of a recogniser's output against your
+  vocabulary, and **tools for training voices**.
 
 ```sh
+uv add uccharan          # or: uv pip install uccharan
 pip install uccharan
 ```
 
@@ -22,6 +31,15 @@ uccharan.phonemize("Hi there.", "en-us", "sherpa-onnx")      # [[104, 712, 97, 6
 uccharan.phonemize("I read it yesterday.", improved=True)    # 'aɪ ɹˈɛd ɪt jˈɛstɚdˌeɪ.'
 uccharan.phonemize("I read the book.", "en-us", "kokoro")    # 'ˌI ɹˈɛd ðə bˈʊk.'  (misaki conventions, for Kokoro)
 uccharan.phonemize_batch(lines, "hi")                        # all cores, GIL released
+
+uccharan.normalize("Rs. 250 on 3/4/2024", "en-us").text      # 'two hundred fifty rupees on March fourth twenty twenty four'
+uccharan.normalize("₹5 करोड़ का सौदा 10:30 बजे", "hi").text     # 'पांच करोड़ रुपये का सौदा साढ़े दस बजे'
+
+uccharan.load_pack("xlit-hi")                                # CC BY-SA 4.0 pack, downloaded once
+uccharan.transliterate("mujhe kal office jana hai", "hi").text   # 'मुझे कल office जाना है'
+
+names = uccharan.SoundIndex(["Kothari", "Paytm"])
+names.apply("send it to Coat Harry", "en-us").text           # 'send it to Kothari'
 ```
 
 For code written against `phonemizer`:
@@ -34,6 +52,10 @@ backend.phonemize(["Hello, world."], strip=True)             # ['həlˈoʊ, wˈ�
 
 A command-line program is installed as `uccharan` (`uccharan -l hi -p piper "नमस्ते"`).
 
+Guides: [normalise-only mode](https://github.com/cB-Sigma/uccharan/blob/main/docs/normalize.md), [word lists](https://github.com/cB-Sigma/uccharan/blob/main/docs/wordlists.md),
+[sound-alike matching](https://github.com/cB-Sigma/uccharan/blob/main/docs/soundalike.md), [transliteration](https://github.com/cB-Sigma/uccharan/blob/main/docs/transliteration.md),
+[languages](https://github.com/cB-Sigma/uccharan/blob/main/docs/languages.md).
+
 For training voices and checking pronunciation, `uccharan.train` and the `uccharan-train` command
 label a dataset (training-ready phonemes for Piper, Matcha-TTS and icefall-style recipes, a symbol
 table and a `voice.json`), choose a reading script, report phoneme and diphone coverage, and score
@@ -43,12 +65,14 @@ a recogniser's output against a reference word by word
 English for Kokoro uses a port of misaki with misaki 0.9.4's dictionaries; `load_misaki(dir)`
 loads another copy.
 
-The wheel (about 3 MB) carries the en-US, Hindi and other South Asian, Spanish, German, Dutch and French language data. British English and the Kokoro English data are
-language packs: downloaded from the GitHub release of the same version the first time they are
-needed, checked against SHA-256 sums inside the wheel, and cached in `~/.cache/uccharan`. On an
-offline machine put the `.ucd` files (from the release page) in a directory named by
-`UCCHARAN_DATA_DIR`, set `UCCHARAN_OFFLINE=1` to forbid downloads, or call
-`uccharan.load_pack(path)`.
+The wheel (about 5 MB) carries the data of every language except British English. British
+English and the Kokoro English data are language packs: downloaded from the GitHub release of the
+same version the first time they are needed, checked against SHA-256 sums inside the wheel, and
+cached in `~/.cache/uccharan`. On an offline machine put the `.ucd` files (from the release page)
+in a directory named by `UCCHARAN_DATA_DIR`, set `UCCHARAN_OFFLINE=1` to forbid downloads, or call
+`uccharan.load_pack(path)`. The transliteration packs (`xlit-hi`, …) and the Wiktionary packs
+(`wikipron-en-us`, …) are CC BY-SA 4.0 and are fetched only when you call `load_pack` with their
+name.
 
 Documentation, measured agreement, speed and end-to-end results:
 <https://github.com/cB-Sigma/uccharan>.
@@ -56,3 +80,4 @@ Documentation, measured agreement, speed and end-to-end results:
 ## Licence
 
 Licence: Apache-2.0. Includes data from the CMU Pronouncing Dictionary (BSD-2-Clause) and misaki (Apache-2.0); see NOTICE.
+The optional `wikipron-*` and `xlit-*` packs are CC BY-SA 4.0; they are separate downloads and are not part of this package.

@@ -5,43 +5,43 @@
  "sentence_level": {
   "sentences": 2000,
   "reference_symbols": 81836,
-  "per": 0.0029815729019013635,
-  "per_without_stress": 0.002567579263191299,
-  "exact_sentence": 0.969,
-  "exact_sentence_without_stress": 0.9695,
-  "piper_shape_per": 0.002907461690617478,
-  "piper_shape_exact_sentence": 0.969,
-  "word_count_mismatch_sentences": 33,
+  "per": 0.0026883034361405737,
+  "per_without_stress": 0.0022646626085451346,
+  "exact_sentence": 0.971,
+  "exact_sentence_without_stress": 0.9715,
+  "piper_shape_per": 0.002621481852196087,
+  "piper_shape_exact_sentence": 0.971,
+  "word_count_mismatch_sentences": 32,
   "errors_by_class": {
    "stress": {
-    "count": 83,
-    "share": 0.3401639344262295,
-    "per_contribution": 0.0010142235690893983
+    "count": 80,
+    "share": 0.36363636363636365,
+    "per_contribution": 0.0009775648858692996
    },
    "consonant": {
-    "count": 56,
-    "share": 0.22950819672131148,
-    "per_contribution": 0.0006842954201085097
+    "count": 45,
+    "share": 0.20454545454545456,
+    "per_contribution": 0.000549880248301481
    },
    "other": {
-    "count": 44,
-    "share": 0.18032786885245902,
-    "per_contribution": 0.0005376606872281147
+    "count": 43,
+    "share": 0.19545454545454546,
+    "per_contribution": 0.0005254411261547485
    },
    "vowel": {
-    "count": 41,
-    "share": 0.1680327868852459,
-    "per_contribution": 0.000501002004008016
+    "count": 37,
+    "share": 0.16818181818181818,
+    "per_contribution": 0.00045212375971455106
    },
    "word-boundary": {
-    "count": 16,
-    "share": 0.06557377049180328,
-    "per_contribution": 0.0001955129771738599
+    "count": 13,
+    "share": 0.05909090909090909,
+    "per_contribution": 0.00015885429395376117
    },
    "length": {
-    "count": 4,
-    "share": 0.01639344262295082,
-    "per_contribution": 4.8878244293464976e-05
+    "count": 2,
+    "share": 0.00909090909090909,
+    "per_contribution": 2.4439122146732488e-05
    }
   },
   "top_confusions": [
@@ -62,10 +62,6 @@
     "count": 10
    },
    {
-    "edit": "ɾ→ə",
-    "count": 9
-   },
-   {
     "edit": "ʰ→∅",
     "count": 8
    },
@@ -75,6 +71,10 @@
    },
    {
     "edit": "∅→ˌ",
+    "count": 8
+   },
+   {
+    "edit": "ɾ→ə",
     "count": 8
    },
    {
@@ -102,10 +102,6 @@
     "count": 6
    },
    {
-    "edit": "∅→ˈ",
-    "count": 6
-   },
-   {
     "edit": "ʌ→∅",
     "count": 5
    },
@@ -126,6 +122,10 @@
     "count": 4
    },
    {
+    "edit": "∅→ˈ",
+    "count": 4
+   },
+   {
     "edit": "n→∅",
     "count": 3
    },
@@ -134,35 +134,35 @@
     "count": 3
    },
    {
-    "edit": "∅→ ",
-    "count": 3
-   },
-   {
-    "edit": "∅→n",
-    "count": 3
-   },
-   {
     "edit": "ˌ→∅",
+    "count": 2
+   },
+   {
+    "edit": "h→∅",
+    "count": 2
+   },
+   {
+    "edit": "l→∅",
     "count": 2
    }
   ],
   "word_error_by_class": {
    "lexicon": {
-    "words": 9476,
-    "wrong": 35,
-    "rate": 0.0036935415787252004
+    "words": 9480,
+    "wrong": 33,
+    "rate": 0.003481012658227848
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 17,
-    "per": 0.03137651821862348,
-    "exact_sentence": 0.6470588235294118
+    "per": 0.009109311740890687,
+    "exact_sentence": 0.8235294117647058
    },
    "no-digits": {
     "sentences": 1983,
-    "per": 0.0026345735206807835,
-    "exact_sentence": 0.9717599596570852
+    "per": 0.002609835741143875,
+    "exact_sentence": 0.9722642460917801
    }
   },
   "examples_of_disagreement": [
@@ -233,10 +233,10 @@
     "uccharan": "ʈˈɔm bˈaːdlˌi bəɾpʰˈaːneː bʰˈʌli"
    },
    {
-    "id": "2555736",
-    "text": "'अपप्रयोग'चा अर्थ काय आहे?",
-    "reference": "ˌʌpəpɾəjˈoːɡcˌaː ˈʌɾtʰ kˈaːj ˈaːheː",
-    "uccharan": "ˌʌpəpɾəjˈoːɡ cˈaː ˈʌɾtʰ kˈaːj ˈaːheː"
+    "id": "13699718",
+    "text": "माझ्या काही मैत्रिणी आहेत ज्या बर्‍यापैकी फ्रेंच बोलतात.",
+    "reference": "mˈaːɟʰjaː kˈaːhi mˈaɪtɾɪɳˌi aːhˈeːt zjˈaː bˈʌɾ jaːpˈaɪki pʰɾˈẽːc bˌoːltˈaːt",
+    "uccharan": "mˈaːɟʰjaː kˈaːhi mˈaɪtɾɪɳˌi aːhˈeːt zjˈaː bˌərjaːpˈaɪki pʰɾˈẽːc bˌoːltˈaːt"
    }
   ]
  }

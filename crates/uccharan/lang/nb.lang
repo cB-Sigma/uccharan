@@ -1,0 +1,385 @@
+# Norwegian Bokmål. espeak-ng voice "nb". Letter rules for words outside the
+# word table, the number words and the letter names.
+
+[meta]
+tag = nb
+vowels = a e i o u y ø œ ɛ ɔ ə ɪ ʊ ɑ ʉ
+stress = initial
+secondary = none
+spell-vowels = aeiouyæøå
+
+[classes]
+V = a e i o u y æ ø å
+FV = e i y
+
+[pre]
+skj -> ʃ
+sj -> ʃ
+sk -> ʃ / _ {FV}
+kj -> ç
+tj -> ç
+rs -> ʃ
+ng -> ŋ
+å -> oː
+æ -> æː
+ø -> øː
+o -> uː
+u -> ʉː
+y -> yː
+g -> j / # _ {FV}
+g -> ɡ
+c -> s / _ {FV}
+c -> k
+x -> ks
+z -> s
+w -> v
+
+[words]
+null# nˈʉl
+én# ˈeːn
+to# tˈuː
+tre# trˈeː
+fire# fˈiːrɛ
+fem# fˈɛm
+seks# sˈɛks
+sju# ʃˈʉː
+åtte# ˈɔtːa
+ni# nˈiː
+ti# tˈiː
+elleve# ˈɛlva
+tolv# tˈɔlv
+tretten# trˈɛtːən
+fjorten# fjˈʊrtən
+femten# fˈɛmtən
+seksten# sˈɛkstən
+sytten# sˈytːən
+atten# ˈɑtːən
+nitten# nˈɪtːən
+tjue# ʂˈʉːa
+tjueén# ʂˈʉːaˈeːn
+tjueto# ʂˈʉːatˈuː
+tjuetre# ʂˈʉːatrˈeː
+tjuefire# ʂˈʉːafˈiːrɛ
+tjuefem# ʂˈʉːafˈɛm
+tjueseks# ʂˈʉːasˈɛks
+tjuesju# ʂˈʉːaʃˈʉː
+tjueåtte# ʂˈʉːaˈɔtːa
+tjueni# ʂˈʉːanˈiː
+tretti# trˈɛtːiː
+trettién# trˈɛtːiːˈeːn
+trettito# trˈɛtːiːtˈuː
+trettitre# trˈɛtːiːtrˈeː
+trettifire# trˈɛtːiːfˈiːrɛ
+trettifem# trˈɛtːiːfˈɛm
+trettiseks# trˈɛtːiːsˈɛks
+trettisju# trˈɛtːiːʃˈʉː
+trettiåtte# trˈɛtːiːˈɔtːa
+trettini# trˈɛtːiːnˈiː
+førti# fˈøːrtiː
+førtién# fˈøːrtiːˈeːn
+førtito# fˈøːrtiːtˈuː
+førtitre# fˈøːrtiːtrˈeː
+førtifire# fˈøːrtiːfˈiːrɛ
+førtifem# fˈøːrtiːfˈɛm
+førtiseks# fˈøːrtiːsˈɛks
+førtisju# fˈøːrtiːʃˈʉː
+førtiåtte# fˈøːrtiːˈɔtːa
+førtini# fˈøːrtiːnˈiː
+femti# fˈɛmtiː
+femtién# fˈɛmtiːˈeːn
+femtito# fˈɛmtiːtˈuː
+femtitre# fˈɛmtiːtrˈeː
+femtifire# fˈɛmtiːfˈiːrɛ
+femtifem# fˈɛmtiːfˈɛm
+femtiseks# fˈɛmtiːsˈɛks
+femtisju# fˈɛmtiːʃˈʉː
+femtiåtte# fˈɛmtiːˈɔtːa
+femtini# fˈɛmtiːnˈiː
+seksti# sˈɛkstiː
+sekstién# sˈɛkstiːˈeːn
+sekstito# sˈɛkstiːtˈuː
+sekstitre# sˈɛkstiːtrˈeː
+sekstifire# sˈɛkstiːfˈiːrɛ
+sekstifem# sˈɛkstiːfˈɛm
+sekstiseks# sˈɛkstiːsˈɛks
+sekstisju# sˈɛkstiːʃˈʉː
+sekstiåtte# sˈɛkstiːˈɔtːa
+sekstini# sˈɛkstiːnˈiː
+sytti# sˈytːiː
+syttién# sˈytːiːˈeːn
+syttito# sˈytːiːtˈuː
+syttitre# sˈytːiːtrˈeː
+syttifire# sˈytːiːfˈiːrɛ
+syttifem# sˈytːiːfˈɛm
+syttiseks# sˈytːiːsˈɛks
+syttisju# sˈytːiːʃˈʉː
+syttiåtte# sˈytːiːˈɔtːa
+syttini# sˈytːiːnˈiː
+åtti# ˈɔtːiː
+åttién# ˈɔtːiːˈeːn
+åttito# ˈɔtːiːtˈuː
+åttitre# ˈɔtːiːtrˈeː
+åttifire# ˈɔtːiːfˈiːrɛ
+åttifem# ˈɔtːiːfˈɛm
+åttiseks# ˈɔtːiːsˈɛks
+åttisju# ˈɔtːiːʃˈʉː
+åttiåtte# ˈɔtːiːˈɔtːa
+åttini# ˈɔtːiːnˈiː
+nitti# nˈɪtːiː
+nittién# nˈɪtːiːˈeːn
+nittito# nˈɪtːiːtˈuː
+nittitre# nˈɪtːiːtrˈeː
+nittifire# nˈɪtːiːfˈiːrɛ
+nittifem# nˈɪtːiːfˈɛm
+nittiseks# nˈɪtːiːsˈɛks
+nittisju# nˈɪtːiːʃˈʉː
+nittiåtte# nˈɪtːiːˈɔtːa
+nittini# nˈɪtːiːnˈiː
+hundre# ˈɛt
+hundre2# hˈʉndra
+hundrev22# hˈʉndrauːɡ
+to-hundre# tˈuːhˈʉndra
+to-hundrev2# tˈuːhˈʉndrauːɡ
+tre-hundre# trˈeːhˈʉndra
+tre-hundrev2# trˈeːhˈʉndrauːɡ
+fire-hundre# fˈiːrɛhˈʉndra
+fire-hundrev2# fˈiːrɛhˈʉndrauːɡ
+fem-hundre# fˈɛmhˈʉndra
+fem-hundrev2# fˈɛmhˈʉndrauːɡ
+seks-hundre# sˈɛkshˈʉndra
+seks-hundrev2# sˈɛkshˈʉndrauːɡ
+sju-hundre# ʃˈʉːhˈʉndra
+sju-hundrev2# ʃˈʉːhˈʉndrauːɡ
+åtte-hundre# ˈɔtːahˈʉndra
+åtte-hundrev2# ˈɔtːahˈʉndrauːɡ
+ni-hundre# nˈiːhˈʉndra
+ni-hundrev2# nˈiːhˈʉndrauːɡ
+hundrev2# hˈʉndra
+and# uːɡ
+tusen# ˈɛt
+tusen2# tˈʉːsən
+tusenv2# tˈʉːsən
+enmillion# ˈeːn
+enmillion2# mˈɪlliːˌuːn
+millioner# mˈɪlliːˌuːnər
+komma# kɔmmɑ
+minus# mˈiːnʉːs
+prosent# prˈuːsˈɛnt
+
+[numbers]
+decimal comma
+point komma#
+minus minus#
+percent prosent#
+one-before-scale no
+0 null#
+1 én#
+2 to#
+3 tre#
+4 fire#
+5 fem#
+6 seks#
+7 sju#
+8 åtte#
+9 ni#
+10 ti#
+11 elleve#
+12 tolv#
+13 tretten#
+14 fjorten#
+15 femten#
+16 seksten#
+17 sytten#
+18 atten#
+19 nitten#
+20 tjue#
+21 tjueén#
+22 tjueto#
+23 tjuetre#
+24 tjuefire#
+25 tjuefem#
+26 tjueseks#
+27 tjuesju#
+28 tjueåtte#
+29 tjueni#
+30 tretti#
+31 trettién#
+32 trettito#
+33 trettitre#
+34 trettifire#
+35 trettifem#
+36 trettiseks#
+37 trettisju#
+38 trettiåtte#
+39 trettini#
+40 førti#
+41 førtién#
+42 førtito#
+43 førtitre#
+44 førtifire#
+45 førtifem#
+46 førtiseks#
+47 førtisju#
+48 førtiåtte#
+49 førtini#
+50 femti#
+51 femtién#
+52 femtito#
+53 femtitre#
+54 femtifire#
+55 femtifem#
+56 femtiseks#
+57 femtisju#
+58 femtiåtte#
+59 femtini#
+60 seksti#
+61 sekstién#
+62 sekstito#
+63 sekstitre#
+64 sekstifire#
+65 sekstifem#
+66 sekstiseks#
+67 sekstisju#
+68 sekstiåtte#
+69 sekstini#
+70 sytti#
+71 syttién#
+72 syttito#
+73 syttitre#
+74 syttifire#
+75 syttifem#
+76 syttiseks#
+77 syttisju#
+78 syttiåtte#
+79 syttini#
+80 åtti#
+81 åttién#
+82 åttito#
+83 åttitre#
+84 åttifire#
+85 åttifem#
+86 åttiseks#
+87 åttisju#
+88 åttiåtte#
+89 åttini#
+90 nitti#
+91 nittién#
+92 nittito#
+93 nittitre#
+94 nittifire#
+95 nittifem#
+96 nittiseks#
+97 nittisju#
+98 nittiåtte#
+99 nittini#
+100 hundre# hundre2#
+100+ hundre# hundrev22#
+200 to-hundre#
+200+ to-hundrev2#
+300 tre-hundre#
+300+ tre-hundrev2#
+400 fire-hundre#
+400+ fire-hundrev2#
+500 fem-hundre#
+500+ fem-hundrev2#
+600 seks-hundre#
+600+ seks-hundrev2#
+700 sju-hundre#
+700+ sju-hundrev2#
+800 åtte-hundre#
+800+ åtte-hundrev2#
+900 ni-hundre#
+900+ ni-hundrev2#
+scale100 hundrev2#
+and-below-hundred and#
+1000 tusen# tusen2#
+1000+ tusen# tusen2#
+scale1000 tusenv2#
+scale1000+ tusenv2#
+1000000 enmillion# enmillion2#
+1000000+ enmillion# enmillion2#
+scale1000000 millioner#
+scale1000000+ millioner#
+
+[spell]
+a ˈɑː
+b bˈeː
+c sˈeː
+d dˈeː
+e ˈeː
+f ˈɛf
+g ɡˈeː
+h hˈoː
+i ˈiː
+j jˈeː
+k kˈoː
+l ˈɛl
+m ˈɛm
+n ˈɛn
+o ˈuː
+p pˈeː
+q kˈʉː
+r ˈɛːr
+s ˈɛs
+t tˈeː
+u ˈʉː
+v vˈeː
+w dˈɔbːɛlvˌeː
+x ˈɛks
+y ˈyː
+z sˈɛt
+æ ˈɛː
+ø ˈøː
+å ˈoː
+
+# Words without stress inside a clause and with stress at its end.
+[unstressed]
+i 0 p
+det 0 p
+ham 0 p
+han 0 p
+hans 0 p
+sin 0 p
+dem 0 p
+henne s p
+hennes s p
+meg 0 p
+deg 0 p
+hun 0 p
+sine s p
+den 0 p
+dette s p
+sitt 0 p
+deres s p
+oss 0 p
+min 0 p
+de 0 p
+ble 0 p
+du 0 p
+din 0 p
+å 0 p
+være s p
+mitt 0 p
+vår 0 p
+si 0 p
+denne s p
+mine s p
+disse s p
+jeg s p
+dere s p
+vil 0 p
+ditt 0 p
+ha 0 p
+dine s p
+blitt 0 p
+kan 0 p
+blir 0 p
+vi 0 p
+kunne s p
+skulle s p
+skal 0 p
+våre s p
+vårt 0 p
+DET 0 p
+mi 0 p
+di 0 p

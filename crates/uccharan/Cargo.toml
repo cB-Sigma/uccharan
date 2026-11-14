@@ -1,6 +1,6 @@
 [package]
 name = "uccharan"
-description = "Drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices: 5× faster than espeak-ng, Apache-2.0."
+description = "Phonemiser, text normaliser, transliterator and pronunciation engine for text-to-speech and speech recognition: 39 languages, Apache-2.0."
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
@@ -9,12 +9,12 @@ authors.workspace = true
 repository.workspace = true
 homepage.workspace = true
 readme = "README.md"
-keywords = ["g2p", "phonemizer", "tts", "ipa", "hindi"]
+keywords = ["g2p", "phonemizer", "tts", "transliteration", "text-normalization"]
 categories = ["text-processing", "multimedia::audio", "wasm"]
 include = ["src/**", "data/*.ucd", "lang/*.lang", "lang/numbers/*.txt", "examples/**", "benches/**", "tests/**", "README.md", "LICENSE", "NOTICE", "DATA_LICENSES.md"]
 
 [features]
-default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-ur", "embed-sd", "embed-kokoro", "embed-de", "embed-nl", "embed-fr"]
+default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-ur", "embed-sd", "embed-kokoro", "embed-de", "embed-nl", "embed-fr", "embed-it", "embed-pt-br", "embed-pt", "embed-pl", "embed-tr", "embed-cs", "embed-sv", "embed-ca", "embed-ro", "embed-hu", "embed-fi", "embed-nb", "embed-da"]
 # Compile the language data into the library. Without these, load data at run time with `Phonemizer::load`.
 embed-en-us = []
 embed-en-gb = []
@@ -24,6 +24,19 @@ embed-sd = []
 embed-de = []
 embed-nl = []
 embed-fr = []
+embed-it = []
+embed-pt-br = []
+embed-pt = []
+embed-pl = []
+embed-tr = []
+embed-cs = []
+embed-sv = []
+embed-ca = []
+embed-ro = []
+embed-hu = []
+embed-fi = []
+embed-nb = []
+embed-da = []
 # misaki's English dictionaries for the Kokoro profile (about 3 MB per accent).
 embed-kokoro = []
 

@@ -14,6 +14,10 @@
 //! `-p text-json` the spoken form with spans; `--norm-options JSON` sets the
 //! normalise options. `--wordlist FILE` (TSV or PLS, repeatable) applies a
 //! pronunciation word list in both modes.
+//! `-p native` writes the romanised words of each line in the script of the
+//! language (`aap kaise ho` → `आप कैसे हो`) and `-p native-json` adds spans and
+//! alternatives; `--pack xlit-hi.ucd` loads the language's transliteration
+//! pack and `--translit-options JSON` sets the options.
 //! `--match-terms FILE` corrects each line against a vocabulary (a word list,
 //! a JSON array of terms, or one term per line) by sound and prints one JSON
 //! object per line with the new text, the changes and the candidates;
@@ -39,6 +43,7 @@ fn main() {
     let mut packs: Vec<String> = Vec::new();
     let mut texts: Vec<String> = Vec::new();
     let mut norm_options = String::new();
+    let mut translit_options = String::new();
     let mut wordlists: Vec<std::sync::Arc<uccharan::wordlist::WordList>> = Vec::new();
     let mut match_terms: Option<String> = None;
     let mut match_options = String::new();
@@ -69,6 +74,7 @@ fn main() {
             "--misaki" => misaki = args.next(),
             "--pack" => packs.extend(args.next()),
             "--norm-options" => norm_options = args.next().unwrap_or_default(),
+            "--translit-options" => translit_options = args.next().unwrap_or_default(),
             "--wordlist" => {
                 let f = args.next().unwrap_or_default();
                 let t = std::fs::read_to_string(&f).unwrap_or_else(|e| die(&format!("{f}: {e}")));
@@ -86,7 +92,7 @@ fn main() {
             }
             "-h" | "--help" => {
                 println!(
-                    "usage: uccharan [-l en-us|en-gb|hi] [-p espeak-ipa|piper|kokoro|kitten|matcha|sherpa-onnx]\n                [--normalize natural|espeak|off] [--improved] [--hinglish] [--no-punctuation]\n                [--ids [--voice-config FILE]] [--threads N] [--misaki DIR] [--pack FILE.ucd]... [TEXT...]\n                [--match-terms FILE [--match-options JSON] [--index-options JSON] [--match-stats]]\n\nReads lines from standard input when no TEXT is given."
+                    "usage: uccharan [-l en-us|en-gb|hi] [-p espeak-ipa|piper|kokoro|kitten|matcha|sherpa-onnx]\n                [--normalize natural|espeak|off] [--improved] [--hinglish] [--no-punctuation]\n                [--ids [--voice-config FILE]] [--threads N] [--misaki DIR] [--pack FILE.ucd]... [TEXT...]\n                [--match-terms FILE [--match-options JSON] [--index-options JSON] [--match-stats]]\n                [-p native|native-json --pack xlit-LANG.ucd [--translit-options JSON]]\n\nReads lines from standard input when no TEXT is given."
                 );
                 return;
             }
@@ -131,6 +137,35 @@ fn main() {
                 lines.len() as f64 / secs.max(1e-9),
                 words as f64 / secs.max(1e-9)
             );
+        }
+        return;
+    }
+    if prof == "native" || prof == "native-json" {
+        // Romanised text into the script of the language (see docs/transliteration.md).
+        let p = Phonemizer::new();
+        for f in &packs {
+            let bytes = std::fs::read(f).unwrap_or_else(|e| die(&format!("{f}: {e}")));
+            p.load_pack(bytes)
+                .unwrap_or_else(|e| die(&format!("{f}: {e}")));
+        }
+        let o = uccharan::translit::options_from_json(&translit_options)
+            .unwrap_or_else(|e| die(&format!("--translit-options: {e}")));
+        let mut out = std::io::BufWriter::new(std::io::stdout().lock());
+        let mut write = |line: &str| {
+            let t = uccharan::translit::transliterate(&p, line, lang, &o);
+            let s = if prof == "native" {
+                t.text.clone()
+            } else {
+                t.to_json(line)
+            };
+            let _ = writeln!(out, "{s}");
+        };
+        if texts.is_empty() {
+            for line in std::io::stdin().lock().lines().map_while(Result::ok) {
+                write(&line);
+            }
+        } else {
+            texts.iter().for_each(|t| write(t));
         }
         return;
     }

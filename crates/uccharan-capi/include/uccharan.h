@@ -134,6 +134,27 @@ char *uccharan_normalize(const struct UccharanPhonemizer *p,
                          const char *lang,
                          const char *options_json);
 
+// Romanised text into the script of `lang` (`aap kaise ho` → `आप कैसे हो`),
+// as JSON `{"text", "spans"}` where every span has a `kind` (`indic`,
+// `english` or `other`), `src` and `out` ranges in `byte`, `char` (code
+// point) and `utf16` offsets, and the alternatives of a word (see
+// docs/transliteration.md). Load the language's pack (`xlit-hi.ucd`, …)
+// with [`uccharan_load_pack`] first; without it a rule converter answers.
+//
+// `options_json` may be NULL or a JSON object with the members `english`
+// (`keep`, `native` or `convert`), `alternatives` and `context`.
+//
+// Returns a newly allocated string, or NULL when an argument is invalid
+// (unknown language, malformed options).
+//
+// # Safety
+// `p` must be a live phonemizer; `text` and `lang` valid C strings;
+// `options_json` NULL or a valid C string.
+char *uccharan_transliterate(const struct UccharanPhonemizer *p,
+                             const char *text,
+                             const char *lang,
+                             const char *options_json);
+
 // As [`uccharan_phonemize`], with pronunciation word lists applied:
 // `wordlists_json` is a JSON array of word lists (TSV, PLS or JSON text),
 // highest priority first. A matched entry's IPA replaces the word's

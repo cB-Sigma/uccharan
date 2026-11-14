@@ -25,11 +25,11 @@ from .packs import PackError
 
 __version__: str = _native.__version__
 
-Lang = Literal["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag", "es", "de", "nl", "fr"]
+Lang = Literal["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag", "es", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da"]
 Profile = Literal["espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx"]
 NormalizeMode = Literal["natural", "espeak", "off"]
 
-LANGUAGES: tuple[str, ...] = ("en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag", "es", "de", "nl", "fr")
+LANGUAGES: tuple[str, ...] = ("en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag", "es", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da")
 PROFILES: tuple[str, ...] = ("espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx")
 
 __all__ = [
@@ -68,7 +68,7 @@ def _need(lang: str, profile: str = "espeak-ipa", text: object = "") -> None:
     if key not in _ready:
         _packs.ensure(lang, profile)
         _ready.add(key)
-    if ("en-gb", "") not in _ready and lang.lower().replace("_", "-") not in ("en", "en-us", "en-gb", "en-gb-x-rp", "en-uk", "a", "b", "es", "es-es", "spa", "spanish", "de", "de-de", "deu", "german", "nl", "nl-nl", "nl-be", "nld", "dutch", "fr", "fr-fr", "fra", "french"):
+    if ("en-gb", "") not in _ready and lang.lower().replace("_", "-") not in ("en", "en-us", "en-gb", "en-gb-x-rp", "en-uk", "a", "b", "es", "es-es", "spa", "spanish", "de", "de-de", "deu", "german", "nl", "nl-nl", "nl-be", "nld", "dutch", "fr", "fr-fr", "fra", "french", "it", "it-it", "ita", "italian", "pt-br", "por-br", "brazilian", "pt", "pt-pt", "por", "portuguese", "pl", "pl-pl", "pol", "polish", "tr", "tr-tr", "tur", "turkish", "cs", "cs-cz", "ces", "cze", "czech", "sv", "sv-se", "swe", "swedish", "ca", "ca-es", "cat", "catalan", "ro", "ro-ro", "ron", "rum", "romanian", "hu", "hu-hu", "hun", "hungarian", "fi", "fi-fi", "fin", "finnish", "nb", "nb-no", "no", "nob", "nor", "norwegian", "da", "da-dk", "dan", "danish"):
         texts = [text] if isinstance(text, str) else text
         if any(_LATIN.search(t) for t in texts):  # type: ignore[union-attr]
             _need("en-gb")
@@ -76,7 +76,7 @@ def _need(lang: str, profile: str = "espeak-ipa", text: object = "") -> None:
 
 def load_pack(name_or_path: Union[str, "os.PathLike[str]"]) -> str:
     """Load a language pack: a pack name (``en-gb``, ``kokoro-en-us``,
-    ``kokoro-en-gb``; fetched and checked as described in
+    ``kokoro-en-gb``, ``xlit-hi``; fetched and checked as described in
     :mod:`uccharan.packs`) or the path of a ``.ucd`` file (used as is).
     Returns the pack's language. Packs are also loaded on first use."""
     name = os.fspath(name_or_path)
@@ -291,3 +291,8 @@ __all__ += ["Normalized", "Respelling", "Span", "WordList", "normalize", "phonem
 from .soundalike import Candidate, Change, Corrected, SoundIndex, match_terms  # noqa: E402
 
 __all__ += ["Candidate", "Change", "Corrected", "SoundIndex", "match_terms"]
+
+# Romanised text into native script (see uccharan.translit).
+from .translit import Alternative, Transliterated, TranslitSpan, has_translit, transliterate  # noqa: E402
+
+__all__ += ["Alternative", "Transliterated", "TranslitSpan", "has_translit", "transliterate"]

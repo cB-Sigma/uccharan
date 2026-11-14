@@ -1,5 +1,5 @@
-# Konkani in Devanagari. espeak-ng voice "kok". Written for uccharan from
-# specs/kok.md. The reference voice reads every vowel sign by its name
+# Konkani in Devanagari. espeak-ng voice "kok". Written for uccharan.
+# The reference voice reads every vowel sign by its name
 # ("-kār"), the virama, visarga, candrabindu and most anusvaras by their
 # names; compatible mode reproduces that, improved mode reads Konkani as an
 # Indic language.

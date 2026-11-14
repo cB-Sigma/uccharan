@@ -1,5 +1,4 @@
-# Odia (Oriya). espeak-ng voice "or". Written for uccharan from specs/or.md
-# and specs/family-brahmic.md.
+# Odia (Oriya). espeak-ng voice "or". Written for uccharan.
 
 [meta]
 tag = or
@@ -116,7 +115,7 @@ V = a e i o u ɔ æ
 ହ୍ବ -> Ṽ
 
 [pre.compat]
-# The reference's letter readings (see specs/or.md).
+# The reference's letter readings.
 # A word-initial ୱ with its vowel sign is not read.
 ୱା -> 0 / # _
 ୱି -> 0 / # _

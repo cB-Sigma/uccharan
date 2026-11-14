@@ -2,7 +2,7 @@
 # by |, category, source. W = WikiPron mai_deva_narrow (Wiktionary pronunciations, CC BY-SA 4.0; evaluation only;
 # https://github.com/CUNY-CL/wikipron), converted: spaces and ᵊ removed, ɦ = h, t͡ɕ d͡ʑ = c ɟ, breves dropped; every
 # Wiktionary variant accepted. F = word attested in FLORES-200 mai_Deva (CC BY-SA 4.0, evaluation only); L = Grierson,
-# Linguistic Survey of India V.2 (1903, public domain), Maithili sketch; S = specs/mai.md examples. F/L/S
+# Linguistic Survey of India V.2 (1903, public domain), Maithili sketch; S = the example words of the project's language description. F/L/S
 # pronunciations hand-written from Yadav 1996 (A Reference Grammar of Maithili) and Jha 1958: final short i/u written
 # ि ु are said (also heard moved before the consonant: अछि əcʰɪ|əɪcʰ), ऐ औ = əi əu, avagraha = retained final ə/ɔ,
 # ड़ ढ़ = ɽ ɽʰ, Hindi-type schwa deletion otherwise.
@@ -314,14 +314,14 @@ w-बारह	word	बारह	baːɾəh	num	Grierson, Linguistic Survey of In
 w-बीस	word	बीस	biːs	num	Grierson, Linguistic Survey of India vol. V part II (1903, public domain), or common word; pronunciation hand-written	heldout
 w-सए	word	सए	səeː	num	Grierson, Linguistic Survey of India vol. V part II (1903, public domain), or common word; pronunciation hand-written	heldout
 w-हजार	word	हजार	həɟaːɾ	num	FLORES-200 mai_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
-w-लोक	word	लोक	loːk	noun	specs/mai.md example word; pronunciation hand-written	dev
-w-पुरुष	word	पुरुष	pʊɾʊs|pʊɾʊʂ	noun	specs/mai.md example word; pronunciation hand-written	dev
-w-धिया	word	धिया	dʰɪjaː	noun	specs/mai.md example word; pronunciation hand-written	heldout
-w-माय	word	माय	maːj	noun	specs/mai.md example word; pronunciation hand-written	heldout
-w-बाप	word	बाप	baːp	noun	specs/mai.md example word; pronunciation hand-written	dev
-w-भाय	word	भाय	bʰaːj	noun	specs/mai.md example word; pronunciation hand-written	heldout
-w-बहिन	word	बहिन	bəhɪn	noun	specs/mai.md example word; pronunciation hand-written	heldout
-w-घर	word	घर	ɡʰəɾ	noun	specs/mai.md example word; pronunciation hand-written	dev
+w-लोक	word	लोक	loːk	noun	language description example word; pronunciation hand-written	dev
+w-पुरुष	word	पुरुष	pʊɾʊs|pʊɾʊʂ	noun	language description example word; pronunciation hand-written	dev
+w-धिया	word	धिया	dʰɪjaː	noun	language description example word; pronunciation hand-written	heldout
+w-माय	word	माय	maːj	noun	language description example word; pronunciation hand-written	heldout
+w-बाप	word	बाप	baːp	noun	language description example word; pronunciation hand-written	dev
+w-भाय	word	भाय	bʰaːj	noun	language description example word; pronunciation hand-written	heldout
+w-बहिन	word	बहिन	bəhɪn	noun	language description example word; pronunciation hand-written	heldout
+w-घर	word	घर	ɡʰəɾ	noun	language description example word; pronunciation hand-written	dev
 w-गाम	word	गाम	ɡaːm	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain), or common word; pronunciation hand-written	dev
 w-काज	word	काज	kaːɟ	noun	FLORES-200 mai_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-बात	word	बात	baːt	noun	FLORES-200 mai_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
@@ -355,8 +355,8 @@ w-कारण	word	कारण	kaːɾəɳ	noun	FLORES-200 mai_Deva (CC BY-SA 4
 w-चीज	word	चीज	ciːɟ	noun	FLORES-200 mai_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-खेल	word	खेल	kʰeːl	noun	FLORES-200 mai_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-नाम	word	नाम	naːm	noun	FLORES-200 mai_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
-w-मिथिला	word	मिथिला	mɪtʰɪlaː	noun	specs/mai.md example word; pronunciation hand-written	heldout
-w-विद्यापति	word	विद्यापति	ʋɪdjaːpətɪ	finali	specs/mai.md example word; pronunciation hand-written	dev
+w-मिथिला	word	मिथिला	mɪtʰɪlaː	noun	language description example word; pronunciation hand-written	heldout
+w-विद्यापति	word	विद्यापति	ʋɪdjaːpətɪ	finali	language description example word; pronunciation hand-written	dev
 w-जनकपुर	word	जनकपुर	ɟənəkpʊɾ	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain), or common word; pronunciation hand-written	dev
 w-दरभंगा	word	दरभंगा	dəɾbʰəŋɡaː	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain), or common word; pronunciation hand-written	heldout
 w-मधुबनी	word	मधुबनी	mədʰʊbəniː	noun	Grierson, Linguistic Survey of India vol. V part II (1903, public domain), or common word; pronunciation hand-written	dev

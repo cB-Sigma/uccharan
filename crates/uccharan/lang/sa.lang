@@ -1,6 +1,6 @@
 # Sanskrit in Devanagari. espeak-ng has no Sanskrit voice: compatible mode
 # is the Hindi reading (as with the reference's Hindi voice); this file is
-# the improved reading. Written for uccharan from specs/sa.md (Whitney 1889,
+# the improved reading. Written for uccharan (Whitney 1889,
 # Sanskrit Grammar; Allen 1953, Phonetics in Ancient India; Cardona 2003).
 
 [meta]

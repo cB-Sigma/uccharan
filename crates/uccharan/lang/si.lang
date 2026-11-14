@@ -1,5 +1,4 @@
-# Sinhala. espeak-ng voice "si". Written for uccharan from specs/si.md and
-# specs/family-brahmic.md. The Sinhala block does not follow the common
+# Sinhala. espeak-ng voice "si". Written for uccharan. The Sinhala block does not follow the common
 # Indic layout, so every letter states its kind.
 
 [meta]

@@ -79,6 +79,12 @@ pub struct Latin {
     /// numbers written in digits, take no part in the `[clause]` rules
     /// with the word before them.
     sandhi_block: Option<String>,
+    /// `fuse = na do ...`: these words make one word with the word after
+    /// them, stressed again as a whole (Czech prepositions).
+    fuse: Vec<String>,
+    /// `vowel-mark = yes`: inside a clause, a word written with a vowel
+    /// letter first has `⁑` before its phonemes for the `[clause]` rules.
+    vowel_mark: bool,
     /// `secondary = auto`: trochaic secondary stresses.
     auto_secondary: bool,
     /// `stress-options =` words (see [`Latin::from_text`]).
@@ -101,6 +107,8 @@ pub struct Latin {
 const JOIN: char = '‿';
 /// Stands before a word that is cut off from the word before it.
 const BLOCK: char = '⁞';
+/// Stands before a word written with a vowel letter first.
+const VOWEL: char = '⁑';
 
 impl Latin {
     /// Parse a language file.
@@ -170,6 +178,11 @@ impl Latin {
             secondary: meta.get("secondary").is_some_and(|v| v == "alternate"),
             elision: meta.get("elision").is_some_and(|v| v == "yes"),
             sandhi_block: meta.get("sandhi-block").cloned(),
+            fuse: meta
+                .get("fuse")
+                .map(|v| v.split_whitespace().map(str::to_string).collect())
+                .unwrap_or_default(),
+            vowel_mark: meta.get("vowel-mark").is_some_and(|v| v == "yes"),
             auto_secondary: meta
                 .get("secondary")
                 .is_some_and(|v| v == "auto" || v == "none"),
@@ -210,9 +223,38 @@ impl Latin {
     /// syllable that is free and stands between two syllables without
     /// stress, scanning from the left (a trochaic pattern).
     fn stress(&self, ph: &str, spelling: &str) -> String {
-        let cs: Vec<char> = ph.chars().collect();
-        let nuclei: Vec<usize> = (0..cs.len()).filter(|&i| self.is_vowel(cs[i])).collect();
-        let n = nuclei.len();
+        // Short words (nearly all) are worked on without the heap.
+        const SHORT: usize = 64;
+        let (mut cs_short, mut nuclei_short, mut level_short) =
+            (['\0'; SHORT], [0usize; SHORT], [0i8; SHORT]);
+        let (mut cs_long, mut nuclei_long, mut level_long) = (Vec::new(), Vec::new(), Vec::new());
+        let short = ph.len() <= SHORT;
+        let cs: &mut [char] = if short {
+            let mut k = 0;
+            for c in ph.chars() {
+                cs_short[k] = c;
+                k += 1;
+            }
+            &mut cs_short[..k]
+        } else {
+            cs_long.extend(ph.chars());
+            &mut cs_long
+        };
+        let n = cs.iter().filter(|&&c| self.is_vowel(c)).count();
+        let (nuclei, level): (&mut [usize], &mut [i8]) = if short {
+            (&mut nuclei_short[..n], &mut level_short[..n])
+        } else {
+            nuclei_long.resize(n, 0);
+            level_long.resize(n, 0);
+            (&mut nuclei_long, &mut level_long)
+        };
+        let mut k = 0;
+        for (i, &c) in cs.iter().enumerate() {
+            if self.is_vowel(c) {
+                nuclei[k] = i;
+                k += 1;
+            }
+        }
         let is_mark = |c: char| matches!(c, 'ˈ' | 'ˌ' | '°');
         if n == 0 {
             return ph.chars().filter(|&c| !is_mark(c)).collect();
@@ -220,7 +262,6 @@ impl Latin {
         // Levels: -1 free, 0 never stressed, 2 secondary, 4 primary.
         // `‖` and `¦` are morpheme boundaries whose next free syllable
         // takes primary or secondary stress.
-        let mut level: Vec<i8> = Vec::with_capacity(n);
         let mut pending: i8 = -1;
         let mut v = 0;
         for (i, &c) in cs.iter().enumerate() {
@@ -237,14 +278,16 @@ impl Latin {
                     _ if self.unstressable.contains(&c) => 0,
                     _ => std::mem::replace(&mut pending, -1),
                 };
-                level.push(l);
+                level[v] = l;
                 v += 1;
             }
         }
-        let cs: Vec<char> = cs
-            .into_iter()
-            .map(|c| if matches!(c, '‖' | '¦') { '‧' } else { c })
-            .collect();
+        for c in cs.iter_mut() {
+            if matches!(*c, '‖' | '¦') {
+                *c = '‧';
+            }
+        }
+        let cs: &[char] = cs;
         let long = |k: usize| cs.get(nuclei[k] + 1) == Some(&'ː');
         let marked = level.iter().position(|&l| l == 4);
         let free = |k: usize| level[k] != 0;
@@ -453,19 +496,29 @@ impl Latin {
     }
 
     /// The word table's reading: the word as written when it is all in
-    /// capitals, else in lower case.
-    fn listed(&self, w: &str, table: Option<&crate::data::Data>) -> Option<String> {
+    /// capitals, else in lower case (`lower`).
+    fn listed(&self, w: &str, lower: &str, table: Option<&crate::data::Data>) -> Option<String> {
+        self.listed_as(w, lower, self.words.contains_key(lower), table)
+    }
+
+    /// [`Latin::listed`]; `own`: the language file has the word itself.
+    fn listed_as(
+        &self,
+        w: &str,
+        lower: &str,
+        own: bool,
+        table: Option<&crate::data::Data>,
+    ) -> Option<String> {
         let t = table?;
         let mut found = String::new();
-        let caps = w.chars().count() > 1 && w.chars().all(|c| !c.is_lowercase());
-        if caps && t.lookup(w, &mut found) {
+        let caps = w.chars().nth(1).is_some() && w.chars().all(|c| !c.is_lowercase());
+        if caps && t.lookup_uncached(w, &mut found) {
             return Some(found);
         }
-        let lower = w.to_lowercase();
-        if self.words.contains_key(&lower) {
+        if own || (caps && w == lower) {
             return None;
         }
-        t.lookup(&lower, &mut found).then_some(found)
+        t.lookup_uncached(lower, &mut found).then_some(found)
     }
 
     /// The reading of a word by the table's letter-to-sound model, with
@@ -475,13 +528,22 @@ impl Latin {
     pub fn model_word(&self, word: &str, table: &crate::data::Data) -> Option<String> {
         let lower = word.to_lowercase();
         let space = table.id() * 2 + 1;
-        crate::data::memo(space, &lower, || {
-            let s = table.model_word(&lower)?;
-            Some(if table.meta("stress") == Some("latent") {
-                self.stress(&s, &lower)
-            } else {
-                self.one_primary(&s)
-            })
+        crate::data::memo(space, &lower, || self.model_lower(&lower, table))
+    }
+
+    /// [`Latin::model_word`] of a lower-case word, computed afresh.
+    fn model_lower(&self, lower: &str, table: &crate::data::Data) -> Option<String> {
+        let s = table.model_word(lower)?;
+        let s = if table.stress_latent() {
+            self.stress(&s, lower)
+        } else {
+            self.one_primary(&s)
+        };
+        // The stress mark stands before a glottal stop.
+        Some(if s.contains('ʔ') {
+            s.replace("ʔˈ", "ˈʔ").replace("ʔˌ", "ˌʔ")
+        } else {
+            s
         })
     }
 
@@ -609,24 +671,20 @@ impl Latin {
     }
 
     /// A word read letter by letter: an acronym in capitals, or a word
-    /// without vowels.
-    fn spelled(&self, w: &str) -> Option<String> {
-        if self.spell.is_empty() || self.words.contains_key(&w.to_lowercase()) {
+    /// without vowels. `lower` is `w` in lower case.
+    fn spelled(&self, w: &str, lower: &str, own: bool) -> Option<String> {
+        if self.spell.is_empty() || own {
             return None;
         }
         let n = w.chars().count();
         let caps = (2..=5).contains(&n) && w.chars().all(|c| c.is_uppercase());
         let no_vowel = n >= 2
             && w.chars().all(char::is_alphabetic)
-            && !w
-                .to_lowercase()
-                .chars()
-                .any(|c| self.spell_vowels.contains(c));
+            && !lower.chars().any(|c| self.spell_vowels.contains(c));
         if !caps && !no_vowel {
             return None;
         }
-        let names: Vec<&String> = w
-            .to_lowercase()
+        let names: Vec<&String> = lower
             .chars()
             .map(|c| self.spell.get(&c))
             .collect::<Option<Vec<_>>>()?;
@@ -645,6 +703,29 @@ impl Latin {
         Some(out)
     }
 
+    /// The reading of one word (`lower`: the same in lower case): from the
+    /// word table, as a spelled word, from the table's model or from the
+    /// letter rules.
+    fn read(
+        &self,
+        w: &str,
+        lower: &str,
+        compat: bool,
+        table: Option<&crate::data::Data>,
+    ) -> String {
+        let own = self.words.contains_key(lower);
+        if let Some(s) = self.listed_as(w, lower, own, table) {
+            return s;
+        }
+        if let Some(s) = self.spelled(w, lower, own) {
+            return s;
+        }
+        table
+            .filter(|_| !own)
+            .and_then(|t| self.model_lower(lower, t))
+            .unwrap_or_else(|| self.word(w, compat))
+    }
+
     /// One written word by itself: its key in the `[unstressed]` list and
     /// its phonemes from the word table, as a spelled word, from the
     /// table's model or from the letter rules. An elided word (`l'`, `qu'`)
@@ -655,17 +736,51 @@ impl Latin {
         compat: bool,
         table: Option<&crate::data::Data>,
     ) -> (String, String) {
-        let read = |w: &str| match self.listed(w, table) {
-            Some(s) => s,
-            None => match self.spelled(w) {
-                Some(s) => s,
-                None => table
-                    .filter(|_| !self.words.contains_key(&w.to_lowercase()))
-                    .and_then(|t| self.model_word(w, t))
-                    .unwrap_or_else(|| self.word(w, compat)),
-            },
+        let (mut ipa, at) = self.token_joined(text, compat, table);
+        let key = ipa.get(at + 1..).unwrap_or("").to_string();
+        ipa.truncate(at);
+        (key, ipa)
+    }
+
+    /// [`Latin::token`] in one string: the phonemes, a separator at the
+    /// byte offset that is returned, and the key.
+    fn token_joined(
+        &self,
+        text: &str,
+        compat: bool,
+        table: Option<&crate::data::Data>,
+    ) -> (String, usize) {
+        // Running text repeats its words: remember recent answers.
+        let space = (
+            (self as *const Latin as usize) ^ usize::from(compat),
+            table.map_or(0, crate::data::Data::id) * 2 + 1,
+        );
+        let both = crate::data::memo2(space, text, || {
+            let (key, mut both) = self.token_uncached(text, compat, table);
+            both.reserve(key.len() + 1);
+            both.push('\u{1}');
+            both.push_str(&key);
+            Some(both)
+        })
+        .unwrap_or_default();
+        let at = both.find('\u{1}').unwrap_or(both.len());
+        (both, at)
+    }
+
+    fn token_uncached(
+        &self,
+        text: &str,
+        compat: bool,
+        table: Option<&crate::data::Data>,
+    ) -> (String, String) {
+        let owned;
+        let text: &str = if text.contains('’') {
+            owned = text.replace('’', "'");
+            &owned
+        } else {
+            text
         };
-        let text = text.replace('’', "'");
+        let lower = text.to_lowercase();
         match text.split_once('\'') {
             Some((head, tail))
                 if self.elision
@@ -673,16 +788,21 @@ impl Latin {
                     && self
                         .words
                         .contains_key(&format!("{}'", head.to_lowercase()))
-                    && self.listed(&text, table).is_none()
-                    && !self.words.contains_key(&text.to_lowercase()) =>
+                    && self.listed(text, &lower, table).is_none()
+                    && !self.words.contains_key(&lower) =>
             {
                 let h = self.word(&format!("{head}'"), compat);
+                let tail_lower = tail.to_lowercase();
+                let read = self.read(tail, &tail_lower, compat, table);
                 (
-                    tail.to_lowercase(),
-                    format!("{}{}", crate::ipa::strip_stress(&h), read(tail)),
+                    tail_lower,
+                    format!("{}{}", crate::ipa::strip_stress(&h), read),
                 )
             }
-            _ => (text.to_lowercase(), read(&text)),
+            _ => {
+                let read = self.read(text, &lower, compat, table);
+                (lower, read)
+            }
         }
     }
 
@@ -697,6 +817,7 @@ impl Latin {
     ) -> Vec<crate::WordOut> {
         let n = items.len();
         let mut out: Vec<crate::WordOut> = Vec::with_capacity(n);
+        let mut fuse_at: Option<usize> = None;
         for (i, it) in items.iter().enumerate() {
             if let Some(v) = Self::roman(&it.text).filter(|_| !self.numbers.is_empty()) {
                 let mut ws = Vec::new();
@@ -706,21 +827,42 @@ impl Latin {
                 }
                 continue;
             }
-            let (key, mut ipa) = self.token(&it.text, compat, table);
+            // What the key says is looked up before the phonemes change.
+            let (mut ipa, at) = self.token_joined(&it.text, compat, table);
+            let key = ipa.get(at + 1..).unwrap_or("");
+            let unstressed = self.unstressed.get(key).copied();
+            let fuses = !self.fuse.is_empty() && self.fuse.iter().any(|f| f == key);
+            ipa.truncate(at);
             // Number words before the last of a number lose their stress.
             if self.numbers.stress_last && items.get(i + 1).is_some_and(|x| x.number_tail) {
                 ipa = crate::ipa::strip_stress(&ipa);
             }
+            if it.number_tail && self.numbers.tail_unstressed {
+                ipa = crate::ipa::strip_stress(&ipa);
+            }
+            if it.number_tail && self.numbers.tail_plain {
+                ipa.retain(|c| c != 'ˌ');
+            }
             if it.number_tail && self.numbers.demote_tail {
                 ipa = ipa.replace('ˈ', "ˌ");
             }
-            if let Some(&(mid, fin)) = self.unstressed.get(key.as_str()) {
+            if let Some((mid, fin)) = unstressed {
                 let level = if i + 1 == n && clause_final { fin } else { mid };
                 ipa = match level {
                     b'0' => crate::ipa::strip_stress(&ipa),
                     b's' => ipa.replace('ˈ', "ˌ"),
                     _ => ipa,
                 };
+            }
+            if self.vowel_mark
+                && !it.text.contains('#')
+                && it
+                    .text
+                    .chars()
+                    .next()
+                    .is_some_and(|c| c.to_lowercase().any(|l| self.spell_vowels.contains(l)))
+            {
+                ipa.insert(0, VOWEL);
             }
             if let Some(block) = &self.sandhi_block {
                 let first = it
@@ -742,6 +884,16 @@ impl Latin {
             } else {
                 &it.text
             };
+            if fuse_at == Some(out.len()) && !it.text.contains('#') {
+                if let Some(prev) = out.last_mut() {
+                    let whole = format!("{}{}", prev.ipa, ipa);
+                    prev.ipa = self.stress(&crate::ipa::strip_stress(&whole), "");
+                    prev.text = format!("{} {}", prev.text, shown);
+                    fuse_at = None;
+                    continue;
+                }
+            }
+            fuse_at = fuses.then_some(out.len() + 1);
             out.push(crate::WordOut::new(shown, ipa, lang, it.glue));
         }
         if !self.clause.is_empty() && !out.is_empty() {
@@ -756,15 +908,24 @@ impl Latin {
             let parts: Vec<&str> = done.split(JOIN).collect();
             if parts.len() == out.len() {
                 for (w, p) in out.iter_mut().zip(parts) {
-                    w.ipa = p.to_string();
+                    if w.ipa != p {
+                        w.ipa = p.to_string();
+                    }
                 }
             }
         }
         for w in &mut out {
-            if self.sandhi_block.is_some() {
-                w.ipa.retain(|c| c != BLOCK);
+            if self.sandhi_block.is_some() || self.vowel_mark {
+                w.ipa.retain(|c| c != BLOCK && c != VOWEL);
             }
-            w.ipa = self.finish(&w.ipa, compat);
+            let mode = if compat {
+                &self.post_compat
+            } else {
+                &self.post_improved
+            };
+            if !mode.is_empty() {
+                w.ipa = mode.apply(&w.ipa, &self.classes);
+            }
         }
         out.retain(|w| !w.ipa.is_empty());
         out

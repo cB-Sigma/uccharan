@@ -16,7 +16,7 @@ HERE = Path(__file__).resolve().parent
 SOURCES = {
     "F": "FLORES-200 {lang}_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written",
     "L": "Grierson, Linguistic Survey of India vol. V part II (1903, public domain), or common word; pronunciation hand-written",
-    "S": "specs/{lang}.md example word; pronunciation hand-written",
+    "S": "language description example word; pronunciation hand-written",
     "G": "grammar description (see header); pronunciation hand-written",
     "W": "WikiPron {lang}_deva_narrow (Wiktionary, CC BY-SA 4.0); pronunciation from Wiktionary",
     "K": "Wiktionary {lang} entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand",

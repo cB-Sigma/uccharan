@@ -1,0 +1,248 @@
+{
+ "language": "cs",
+ "reference": "espeak-ng 1.52.0 voice cs (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 161551,
+  "per": 0.014038910313151885,
+  "per_without_stress": 0.008357293734502272,
+  "exact_sentence": 0.44466403162055335,
+  "exact_sentence_without_stress": 0.4891304347826087,
+  "piper_shape_per": 0.014080643686568528,
+  "piper_shape_exact_sentence": 0.43774703557312256,
+  "word_count_mismatch_sentences": 637,
+  "errors_by_class": {
+   "stress": {
+    "count": 1091,
+    "share": 0.4810405643738977,
+    "per_contribution": 0.0067532853402331155
+   },
+   "consonant": {
+    "count": 707,
+    "share": 0.3117283950617284,
+    "per_contribution": 0.004376326980334384
+   },
+   "vowel": {
+    "count": 180,
+    "share": 0.07936507936507936,
+    "per_contribution": 0.0011141992312025304
+   },
+   "other": {
+    "count": 163,
+    "share": 0.0718694885361552,
+    "per_contribution": 0.0010089693038111804
+   },
+   "word-boundary": {
+    "count": 80,
+    "share": 0.03527336860670194,
+    "per_contribution": 0.0004951996583122358
+   },
+   "length": {
+    "count": 46,
+    "share": 0.020282186948853614,
+    "per_contribution": 0.00028473980352953555
+   },
+   "diacritic": {
+    "count": 1,
+    "share": 0.0004409171075837742,
+    "per_contribution": 6.189995728902947e-06
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "∅→ˌ",
+    "count": 314
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 222
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 185
+   },
+   {
+    "edit": "d→t",
+    "count": 169
+   },
+   {
+    "edit": "ʒ→ʃ",
+    "count": 79
+   },
+   {
+    "edit": "z→s",
+    "count": 74
+   },
+   {
+    "edit": "k→ɡ",
+    "count": 68
+   },
+   {
+    "edit": "o→ˈ",
+    "count": 61
+   },
+   {
+    "edit": " →o",
+    "count": 58
+   },
+   {
+    "edit": " →∅",
+    "count": 56
+   },
+   {
+    "edit": "a→ˈ",
+    "count": 52
+   },
+   {
+    "edit": " →a",
+    "count": 51
+   },
+   {
+    "edit": "ʑ→s",
+    "count": 46
+   },
+   {
+    "edit": "o→∅",
+    "count": 45
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 36
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 35
+   },
+   {
+    "edit": "e→∅",
+    "count": 34
+   },
+   {
+    "edit": "∅→ː",
+    "count": 32
+   },
+   {
+    "edit": "a→∅",
+    "count": 32
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 31
+   },
+   {
+    "edit": " →ˈ",
+    "count": 31
+   },
+   {
+    "edit": "∅→e",
+    "count": 29
+   },
+   {
+    "edit": "∅→ ",
+    "count": 24
+   },
+   {
+    "edit": "ˈ→o",
+    "count": 18
+   },
+   {
+    "edit": "t→∅",
+    "count": 17
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 6486,
+    "wrong": 216,
+    "rate": 0.03330249768732655
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 193,
+    "per": 0.023120138288677615,
+    "exact_sentence": 0.2538860103626943
+   },
+   "no-digits": {
+    "sentences": 819,
+    "per": 0.011338906421900472,
+    "exact_sentence": 0.4896214896214896
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-58",
+    "text": "\"Tuto diskuzi rozvířila kontroverze ohledně výdajů za pomoc a rekonstrukci po hurikánu Katrina; které někteří fiskální konzervativci humorně nazývali \"\"Bushův novoorleanský úděl.\"\"\"",
+    "reference": "tˈuto dˈiskuzi rˈozviːr̝ˌila kˈontrovˌerze ˈohledɲe vˈiːdajuː zˈapomots a rˈekonstrˌuktsi po hˈurikˌaːnu kˈatrina ktˈereː ɲˈekter̝iː fˈiskaːlɲiː kˈonzervˌatiftsi hˈumorɲe nˈaziːvˌali bˈushuːv nˈovoˌorleˌanskiː ˈuːɟel",
+    "uccharan": "tˈuto dˈiskuzi rˈozviːr̝ˌila kˈontrovˌerze ˈohledɲe vˈiːdajuː zˈapomots a rˈekonstrˌuktsi pˈohurˌikaːnu kˈatrina ktˈereː ɲˈekter̝iː fˈiskaːlɲiː kˈonzervˌatiftsi hˈumorɲe nˈaziːvˌali bˈusxuːv nˈovoˌorleˌanskiː ˈuːɟel"
+   },
+   {
+    "id": "flores-devtest-930",
+    "text": "Zásilkové společnosti jsou dobře placeny za rychlé doručení zboží. Čas je často velmi důležitým faktorem u obchodních dokumentů, zboží nebo náhradních dílů pro naléhavou opravu.",
+    "reference": "zˈaːsilkˌoveː spˈoletʃnˌosci jsoʊ dˈobr̝e plˈatseni zˈarixleː dˈorutʃˌeɲiː zbˈoʒiː tʃˈas je tʃˈasto vˈelmi dˈuːleʒˌitiːm fˈaktorem ˈu ˈopxodɲiːɣ dˈokumˌentuː zbˈoʒiː nˌebo nˈaːhradɲiːɣ ɟˈiːluː pro nˈaleːhˌavoʊ ˈopravu",
+    "uccharan": "zˈaːsilkˌoveː spˈoletʃnˌosci jsoʊ dˈobr̝e plˈatseni zˈarixleː dˈorutʃˌeɲiː zbˈoʒiː tʃˈas je tʃˈasto vˈelmi dˈuːleʒˌitiːm fˈaktorem ˈu ˈopxodɲiːɣ dˈokumˌentuː zbˈoʒiː nˌebo nˈaːhradɲiːɣ ɟˈiːluː prˈonalˌeːhavˌoʊ ˈopravu"
+   },
+   {
+    "id": "flores-devtest-733",
+    "text": "Sundarbans je největším pásem pobřežních mangrovů na světě, který se od pobřeží táhne 80 km (50 mil) do vnitrozemí Bangladéše a Indie.",
+    "reference": "sˈundarbans je nˈeɪvjetʃiːm pˈaːsem pˈobr̝eʒɲiːx mˈaŋɡrovuː nˈasvjece ktˈeriː se ˈotpobr̝ˌeʒiː tˈaːhne ˈosumdˌesaːt kˈilomˌetr̩ pˈadesaːt mˈil do vɲˈitrozˌemiː bˈaŋɡladˌeːʃe a ˈindie",
+    "uccharan": "sˈundarbans je nˈeɪvjetʃiːm pˈaːsem pˈobr̝eʒɲiːx mˈaŋɡrovuː nˈasvjece ktˈeriː se ˈotpobr̝ˌeʒiː tˈaːhne ˈosumdˌesaːt kˈilomˌetr̩ pˈadesaːt mˈil dˈovɲitrˌozemiː bˈaŋɡladˌeːʃe a ˈindie"
+   },
+   {
+    "id": "flores-devtest-499",
+    "text": "V historii se většina zemědělců zabývala samozásobitelským zemědělstvím, což se stále děje v mnoha rozvojových zemích.",
+    "reference": "v hˈistorˌiji se vjˈetʃina zˈemɲeɟˌeltsuː zˈabiːvˌala sˈamozˌaːsobˌitelskiːm zˈemɲeɟˌelstviːm tsˈoʃ se stˈaːle ɟˈeje v mnˈoha rˈozvojˌoviːɣ zˈemiːx",
+    "uccharan": "v hˈistorˌiji se vjˈetʃina zˈemɲeɟˌeltsuː zˈabiːvˌala sˈamozaːsˌobitˌelskiːm zˈemɲeɟˌelstviːm tsˈoʃ se stˈaːle ɟˈeje v mnˈoha rˈozvojˌoviːɣ zˈemiːx"
+   },
+   {
+    "id": "flores-devtest-57",
+    "text": "Paní Kirchner oznámila svůj záměr ucházet se o prezidentský úřad v Divadle Argentina, tedy na stejném místě, kde v roce 2005 zahájila svou kampaň do Senátu jakožto členka delegace z provincie Buenos Aires.",
+    "reference": "pˈaɲiː kˈirxner ˈoznaːmˌila svˈuːj zˈaːmɲer ˈuxaːzet se o prˈezidˌentskiː ˈuːr̝ad v ɟˈivadle ˈarɡentˌina tˈedi nˈasteɪneːm mˈiːsce kdˈe v rˈotse dvˈa cˈisiːtse pjˈed zˈahaːjˌila svˈoʊ kˈampaɲ dˈosenˌaːtu jˈakoʃto tʃlˈeŋka dˈeleɡˌatse s prˈovintsˌije bˈuenos ˈaires",
+    "uccharan": "pˈaɲiː kˈirxner ˈoznaːmˌila svˈuːj zˈaːmɲer ˈuxaːzet se ˈoprezˌidentskiː ˈuːr̝at v ɟˈivadle ˈarɡentˌina tˈedi nˈasteˌɪneːm mˈiːsce kdˈe v rˈotse dvˈa cˈisiːtse pjˈed zˈahaːjˌila svˈoʊ kˈampaɲ dˈosenˌaːtu jˈakoʃto tʃlˈeŋka dˈeleɡˌatse s prˈovintsˌije bˈuenos ˈaires"
+   },
+   {
+    "id": "flores-devtest-755",
+    "text": "Oficiální měnou Falklandských ostrovů je falklandská libra (FKP), jejíž hodnota odpovídá jedné britské libře (GBP).",
+    "reference": "ˈofitsˌiaːlɲiː mɲˈenoʊ fˈalklantskiːx ˈostrovuː je fˈalklantskaː lˈibra ˈefkˌaːpˌeː jˈejiːʃ hˈodnota ˈotpovˌiːdaː jˈedneː brˈitskeː lˈibr̝e ɡˈeːbˌeːpˌeː",
+    "uccharan": "ˈofitsˌiaːlɲiː mɲˈenoʊ fˈalklantskiːx ˈostrovuː je fˈalklantskaː lˈibra ˌefkˌaːpˈeː jˈejiːʃ hˈodnota ˈotpovˌiːdaː jˈedneː brˈitskeː lˈibr̝e ɡˌeːbˌeːpˈeː"
+   },
+   {
+    "id": "flores-devtest-742",
+    "text": "Oyapock River Bridge je zavěšený most. Klene se přes řeku Oyapock a spojuje města Oiapoque v Brazílii a Saint-Georges de l'Oyapock ve Francouzské Guyaně.",
+    "reference": "ˈoiˌapotsk rˈiver brˈidɡe je zˈavjeʃˌeniː mˈost klˈene se pr̝̊ˈes r̝ˈeku ˈoiˌapotsk a spˈojuje mɲˈesta ˈoiˌapokve v brˈaziːlˌiji a sˈaindɡˈeorɡez dˈe ˈl̩oˌiapotsk vˈe frˈantsoʊsskeː ɡˈuiˌaɲe",
+    "uccharan": "ˈoiˌapotsk rˈiver brˈidɡe je zˈavjeʃˌeniː mˈost klˈene se pr̝̊ˈes r̝ˈeku ˈoiˌapotsk a spˈojuje mɲˈesta ˈoiˌapokve v brˈaziːlˌiji a sˈaindɡˈeorɡes dˈe lˈoiˌapotsk vˈe frˈantsoʊsskeː ɡˈuiˌaɲe"
+   },
+   {
+    "id": "flores-devtest-233",
+    "text": "Večer zahájil zpěvák Sanju Sharma a po něm následoval Jai Shankar Choudhary. Lakkha Singh zazpíval také chhappan bhog bhajan. Doprovázel jej zpěvák Raju Khandelwal.",
+    "reference": "vˈetʃer zˈahaːjil spjˈevaːk sˈanju shˈarma a pˈoɲem nˈaːsledˌoval jˈai shˈaŋkar xˈoʊthari lˈakha sˈiŋɡh zˈaspiːval tˈakeː xhˈappan phˈok phˈajan dˈoprovˌaːzel jˈeɪ spjˈevaːk rˈaju khˈandelval",
+    "uccharan": "vˈetʃer zˈahaːjil spjˈevaːk sˈanju shˈarma a pˈoɲem nˈaːsledˌoval jˈai shˈaŋkar xˈoʊthˌari lˈakkha sˈiŋkɣ zˈaspiːval tˈakeː xhˈapan phˈok phˈajan dˈoprovˌaːzel jˈeɪ spjˈevaːk rˈaju khˈandelval"
+   },
+   {
+    "id": "flores-devtest-819",
+    "text": "Pokud není k dispozici žehlička nebo neradi nosíte vyžehlené ponožky, můžete zkusit použít vysoušeč vlasů, pokud je k dispozici.",
+    "reference": "pˈokud nˈeɲiː k dˈispozˌitsi ʒˈehlitʃka nˌebo nˈeraɟi nˈosiːte vˈiʒehlˌeneː pˈonoʃki mˈuːʒete skˈusit pˈoʊʒiːt vˈisoʊʃetʃ vlˈasuː pˈokud je k dˈispozˌitsi",
+    "uccharan": "pˈokut nˈeɲiː ɡ dˈispozˌitsi ʒˈehlitʃka nˌebo nˈeraɟi nˈosiːte vˈiʒehlˌeneː pˈonoʃki mˈuːʒete skˈusit pˈoʊʒiːt vˈisoʊʃetʃ vlˈasuː pˈokut je ɡ dˈispozˌitsi"
+   },
+   {
+    "id": "flores-devtest-773",
+    "text": "Během snah o nezávislost organizovaných hnutím Mau vyústilo pokojné shromáždění ve městě v zabití nejvyššího předsedy jménem Tupua Tamasese Lealofi III.",
+    "reference": "bjˈehem snˈah o nˈezaːvˌislost ˈorɡanˌizovˌaniːx hnˈuciːm mˈaʊ vˈiuːscˌilo pˈokojneː shrˈomaːʒɟˌeɲiː vˈe mɲˈesce v zˈabiciː nˈeɪviʃʃˌiːho pr̝̊ˈetsedi jmˈeːnem tˈupua tˈamasˌese lˈealˌofi tr̝̊ˈi",
+    "uccharan": "bjˈehem snˈah ˈonezˌaːvislost ˈorɡanˌizovˌaniːx hnˈuciːm mˈaʊ vˈiuːscˌilo pˈokojneː shrˈomaːʒɟˌeɲiː vˈe mɲˈesce v zˈabiciː nˈeɪviʃʃˌiːho pr̝̊ˈetsedi jmˈeːnem tˈupua tˈamasˌese lˈealˌofi tr̝̊ˈi"
+   },
+   {
+    "id": "flores-devtest-131",
+    "text": "Fluke napsala, že snahy některých lidí o umlčení žen v otázce ženského zdraví byly neúspěšné.",
+    "reference": "flˈuke nˈapsala ʒe snˈahi ɲˈekteriːx lˈiɟiː o ˈuml̩tʃˌeɲiː ʒˈen v ˈotaːstse ʒˈenskeːho zdrˈaviː bˌili nˈeuːspjˌeʃneː",
+    "uccharan": "flˈuke nˈapsala ʒe snˈahi ɲˈekteriːx lˈiɟiː ˈouml̩tʃˌeɲiː ʒˈen v ˈotaːstse ʒˈenskeːho zdrˈaviː bˌili nˈeuːspjˌeʃneː"
+   },
+   {
+    "id": "flores-devtest-453",
+    "text": "V průběhu těchto období se odehrávala nelítostná válka mezi mnoha šlechtici bojujícími o trůn.",
+    "reference": "v prˈuːbjehu cˈexto ˈobdobiː se ˈodehrˌaːvala nˈeliːtˌostnaː vˈaːlka mˈezi mnˈoha ʃlˈexcitsi bˈojujˌiːtsiːmi o trˈuːn",
+    "uccharan": "v prˈuːbjehu cˈexto ˈobdobiː se ˈodehrˌaːvala nˈeliːtˌostnaː vˈaːlka mˈezi mnˈoha ʃlˈexcitsi bˈojujˌiːtsiːmi ˈotruːn"
+   }
+  ]
+ }
+}

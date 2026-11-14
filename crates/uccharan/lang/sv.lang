@@ -1,0 +1,335 @@
+# Swedish. espeak-ng voice "sv". Letter rules for words outside the
+# word table, the number words and the letter names.
+
+[meta]
+tag = sv
+vowels = a e i o u y ø œ ɛ ɔ ə ɪ ʊ ɑ ʉ ɵ
+stress = initial
+secondary = none
+spell-vowels = aeiouyåäö
+
+[classes]
+V = a e i o u y å ä ö
+FV = e i y ä ö
+
+[pre]
+sj -> ɧ
+skj -> ɧ
+stj -> ɧ
+sk -> ɧ / _ {FV}
+tj -> ɕ
+kj -> ɕ
+k -> ɕ / # _ {FV}
+ch -> ɧ
+ck -> k
+ng -> ŋ
+å -> oː
+ä -> ɛː
+ö -> øː
+o -> uː
+u -> ʉː
+y -> yː
+g -> j / # _ {FV}
+g -> ɡ
+c -> s / _ {FV}
+c -> k
+x -> ks
+z -> s
+w -> v
+
+[post]
+
+
+[words]
+noll# nˈɔl
+ett# ˈɛt
+två# tvˈoː
+tre# trˈeː
+fyra# fˈyːra
+fem# fˈɛm
+sex# sˈɛks
+sju# sxˈʉ
+åtta# ˈɔta
+nio# nˈiːuː
+tio# tˈiːuː
+elva# ˈɛlva
+tolv# tˈɔlv
+tretton# trˈɛtɔn
+fjorton# fjˈuːrtɔn
+femton# fˈɛmtɔn
+sexton# sˈɛkstɔn
+sjutton# sxˈɵtɔn
+arton# ˈɑːrtɔn
+nitton# nˈɪtɔn
+tjugo# ɕˈʉɡɔ
+tjugoett# ɕˌʉɡɔˈɛt
+tjugotvå# ɕˌʉɡɔtvˈoː
+tjugotre# ɕˌʉɡɔtrˈeː
+tjugofyra# ɕˌʉɡɔfˈyːra
+tjugofem# ɕˌʉɡɔfˈɛm
+tjugosex# ɕˌʉɡɔsˈɛks
+tjugosju# ɕˌʉɡɔsxˈʉ
+tjugoåtta# ɕˌʉɡɔˈɔta
+tjugonio# ɕˌʉɡɔnˈiːuː
+trettio# trˈɛtɪ
+trettioett# trˌɛtɪˈɛt
+trettiotvå# trˌɛtɪtvˈoː
+trettiotre# trˌɛtɪtrˈeː
+trettiofyra# trˌɛtɪfˈyːra
+trettiofem# trˌɛtɪfˈɛm
+trettiosex# trˌɛtɪsˈɛks
+trettiosju# trˌɛtɪsxˈʉ
+trettioåtta# trˌɛtɪˈɔta
+trettionio# trˌɛtɪnˈiːuː
+fyrtio# fˈœrtɪ
+fyrtioett# fˌœrtɪˈɛt
+fyrtiotvå# fˌœrtɪtvˈoː
+fyrtiotre# fˌœrtɪtrˈeː
+fyrtiofyra# fˌœrtɪfˈyːra
+fyrtiofem# fˌœrtɪfˈɛm
+fyrtiosex# fˌœrtɪsˈɛks
+fyrtiosju# fˌœrtɪsxˈʉ
+fyrtioåtta# fˌœrtɪˈɔta
+fyrtionio# fˌœrtɪnˈiːuː
+femtio# fˈɛmtɪ
+femtioett# fˌɛmtɪˈɛt
+femtiotvå# fˌɛmtɪtvˈoː
+femtiotre# fˌɛmtɪtrˈeː
+femtiofyra# fˌɛmtɪfˈyːra
+femtiofem# fˌɛmtɪfˈɛm
+femtiosex# fˌɛmtɪsˈɛks
+femtiosju# fˌɛmtɪsxˈʉ
+femtioåtta# fˌɛmtɪˈɔta
+femtionio# fˌɛmtɪnˈiːuː
+sextio# sˈɛkstɪ
+sextioett# sˌɛkstɪˈɛt
+sextiotvå# sˌɛkstɪtvˈoː
+sextiotre# sˌɛkstɪtrˈeː
+sextiofyra# sˌɛkstɪfˈyːra
+sextiofem# sˌɛkstɪfˈɛm
+sextiosex# sˌɛkstɪsˈɛks
+sextiosju# sˌɛkstɪsxˈʉ
+sextioåtta# sˌɛkstɪˈɔta
+sextionio# sˌɛkstɪnˈiːuː
+sjuttio# sxˈɵtɪ
+sjuttioett# sxˌɵtɪˈɛt
+sjuttiotvå# sxˌɵtɪtvˈoː
+sjuttiotre# sxˌɵtɪtrˈeː
+sjuttiofyra# sxˌɵtɪfˈyːra
+sjuttiofem# sxˌɵtɪfˈɛm
+sjuttiosex# sxˌɵtɪsˈɛks
+sjuttiosju# sxˌɵtɪsxˈʉ
+sjuttioåtta# sxˌɵtɪˈɔta
+sjuttionio# sxˌɵtɪnˈiːuː
+åttio# ˈɔtɪ
+åttioett# ˌɔtɪˈɛt
+åttiotvå# ˌɔtɪtvˈoː
+åttiotre# ˌɔtɪtrˈeː
+åttiofyra# ˌɔtɪfˈyːra
+åttiofem# ˌɔtɪfˈɛm
+åttiosex# ˌɔtɪsˈɛks
+åttiosju# ˌɔtɪsxˈʉ
+åttioåtta# ˌɔtɪˈɔta
+åttionio# ˌɔtɪnˈiːuː
+nittio# nˈɪtɪ
+nittioett# nˌɪtɪˈɛt
+nittiotvå# nˌɪtɪtvˈoː
+nittiotre# nˌɪtɪtrˈeː
+nittiofyra# nˌɪtɪfˈyːra
+nittiofem# nˌɪtɪfˈɛm
+nittiosex# nˌɪtɪsˈɛks
+nittiosju# nˌɪtɪsxˈʉ
+nittioåtta# nˌɪtɪˈɔta
+nittionio# nˌɪtɪnˈiːuː
+etthundra# ˈɛthˈɵndra
+tvåhundra# tvˈoːhˈɵndra
+trehundra# trˈeːhˈɵndra
+fyrahundra# fˈyːrahˈɵndra
+femhundra# fˈɛmhˈɵndra
+sexhundra# sˈɛkshˈɵndra
+sjuhundra# sxˈʉhˈɵndra
+åttahundra# ˈɔtahˈɵndra
+niohundra# nˈiːuːhˈɵndra
+tusen# ˈɛt
+tusen2# tˈʉsɛn
+tusenv2# tˈʉsɛn
+enmiljon# mɪljˈuːn
+miljoner# mɪljˈuːnɛr
+komma# pˈɵŋkt
+minus# mˈiːnɵs
+procent# prɔsˈɛnt
+
+[numbers]
+decimal comma
+point komma#
+minus minus#
+percent procent#
+one-before-scale no
+0 noll#
+1 ett#
+2 två#
+3 tre#
+4 fyra#
+5 fem#
+6 sex#
+7 sju#
+8 åtta#
+9 nio#
+10 tio#
+11 elva#
+12 tolv#
+13 tretton#
+14 fjorton#
+15 femton#
+16 sexton#
+17 sjutton#
+18 arton#
+19 nitton#
+20 tjugo#
+21 tjugoett#
+22 tjugotvå#
+23 tjugotre#
+24 tjugofyra#
+25 tjugofem#
+26 tjugosex#
+27 tjugosju#
+28 tjugoåtta#
+29 tjugonio#
+30 trettio#
+31 trettioett#
+32 trettiotvå#
+33 trettiotre#
+34 trettiofyra#
+35 trettiofem#
+36 trettiosex#
+37 trettiosju#
+38 trettioåtta#
+39 trettionio#
+40 fyrtio#
+41 fyrtioett#
+42 fyrtiotvå#
+43 fyrtiotre#
+44 fyrtiofyra#
+45 fyrtiofem#
+46 fyrtiosex#
+47 fyrtiosju#
+48 fyrtioåtta#
+49 fyrtionio#
+50 femtio#
+51 femtioett#
+52 femtiotvå#
+53 femtiotre#
+54 femtiofyra#
+55 femtiofem#
+56 femtiosex#
+57 femtiosju#
+58 femtioåtta#
+59 femtionio#
+60 sextio#
+61 sextioett#
+62 sextiotvå#
+63 sextiotre#
+64 sextiofyra#
+65 sextiofem#
+66 sextiosex#
+67 sextiosju#
+68 sextioåtta#
+69 sextionio#
+70 sjuttio#
+71 sjuttioett#
+72 sjuttiotvå#
+73 sjuttiotre#
+74 sjuttiofyra#
+75 sjuttiofem#
+76 sjuttiosex#
+77 sjuttiosju#
+78 sjuttioåtta#
+79 sjuttionio#
+80 åttio#
+81 åttioett#
+82 åttiotvå#
+83 åttiotre#
+84 åttiofyra#
+85 åttiofem#
+86 åttiosex#
+87 åttiosju#
+88 åttioåtta#
+89 åttionio#
+90 nittio#
+91 nittioett#
+92 nittiotvå#
+93 nittiotre#
+94 nittiofyra#
+95 nittiofem#
+96 nittiosex#
+97 nittiosju#
+98 nittioåtta#
+99 nittionio#
+100 etthundra#
+200 tvåhundra#
+300 trehundra#
+400 fyrahundra#
+500 femhundra#
+600 sexhundra#
+700 sjuhundra#
+800 åttahundra#
+900 niohundra#
+scale100 etthundra#
+1000 tusen# tusen2#
+1000+ tusen# tusen2#
+scale1000 tusenv2#
+scale1000+ tusenv2#
+1000000 enmiljon#
+1000000+ enmiljon#
+scale1000000 miljoner#
+scale1000000+ miljoner#
+
+[spell]
+a ˈɑː
+b bˈeː
+c sˈeː
+d dˈeː
+e ˈeː
+f ˈɛf
+g ɡˈeː
+h hˈoː
+i iː
+j jˈiː
+k kˈoː
+l ˈɛl
+m ˈɛm
+n ˈɛn
+o ˈuː
+p pˈeː
+q kˈʉ
+r ˈɛr
+s ˈɛs
+t tˈeː
+u ˈʉ
+v vˈeː
+w dˈɵbəlvˌeː
+x ˈɛks
+y ˈyː
+z sˈɛːta
+å ˈoː
+ä ˈɛː
+ö ˈøː
+
+# Words without stress inside a clause and with stress at its end.
+[unstressed]
+er 0 p
+vår 0 p
+hans 0 p
+min 0 p
+sin 0 p
+sitt 0 p
+mitt 0 p
+din 0 p
+hennes s p
+sina s p
+deras s p
+mina s p
+era s p
+ditt 0 p
+våra s p
+vårt 0 p

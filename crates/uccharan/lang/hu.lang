@@ -1,0 +1,358 @@
+# Hungarian. espeak-ng voice "hu". Letter rules for words outside the
+# word table, the number words and the letter names.
+
+[meta]
+tag = hu
+vowels = a e i o u y ø ɛ ɑ
+stress = initial
+secondary = none
+spell-vowels = aeiouáéíóöőúüű
+
+[classes]
+V = a e i o u á é í ó ö ő ú ü ű
+
+[pre]
+dzs -> dʒ
+cs -> tʃ
+sz -> s
+zs -> ʒ
+gy -> ɟ
+ny -> ɲ
+ty -> c
+ly -> j
+dz -> dz
+s -> ʃ
+c -> ts
+a -> ɑ
+á -> aː
+e -> ɛ
+é -> eː
+í -> iː
+ó -> oː
+ö -> ø
+ő -> øː
+ú -> uː
+ü -> y
+ű -> yː
+g -> ɡ
+w -> v
+y -> i
+
+[words]
+nulla# nˈullɑ
+egy# ˈɛɟ
+kettő# kˈɛtːøː
+három# hˈaːrom
+négy# nˈeːɟ
+öt# ˈøt
+hat# hˈɑt
+hét# hˈeːt
+nyolc# ɲˈolts
+kilenc# kˈilɛnts
+tíz# tˈiːz
+tizenegy# tˈizɛnɛɟ
+tizenkettő# tˈizɛnkɛtːøː
+tizenhárom# tˈizɛnhaːrom
+tizennégy# tˈizɛnneːɟ
+tizenöt# tˈizɛnøt
+tizenhat# tˈizɛnhɑt
+tizenhét# tˈizɛnheːt
+tizennyolc# tˈizɛnɲolts
+tizenkilenc# tˈizɛnkilɛnts
+húsz# hˈuːs
+huszonegy# hˈusonɛɟ
+huszonkettő# hˈusonkɛtːøː
+huszonhárom# hˈusonhaːrom
+huszonnégy# hˈusonneːɟ
+huszonöt# hˈusonøt
+huszonhat# hˈusonhɑt
+huszonhét# hˈusonheːt
+huszonnyolc# hˈusonɲolts
+huszonkilenc# hˈusonkilɛnts
+harminc# hˈɑrmints
+harmincegy# hˈɑrmintsɛɟ
+harminckettő# hˈɑrmintskɛtːøː
+harminchárom# hˈɑrmintshaːrom
+harmincnégy# hˈɑrmintsneːɟ
+harmincöt# hˈɑrmintsøt
+harminchat# hˈɑrmintshɑt
+harminchét# hˈɑrmintsheːt
+harmincnyolc# hˈɑrmintsɲolts
+harminckilenc# hˈɑrmintskilɛnts
+negyven# nˈɛɟvɛn
+negyvenegy# nˈɛɟvɛnɛɟ
+negyvenkettő# nˈɛɟvɛnkɛtːøː
+negyvenhárom# nˈɛɟvɛnhaːrom
+negyvennégy# nˈɛɟvɛnneːɟ
+negyvenöt# nˈɛɟvɛnøt
+negyvenhat# nˈɛɟvɛnhɑt
+negyvenhét# nˈɛɟvɛnheːt
+negyvennyolc# nˈɛɟvɛnɲolts
+negyvenkilenc# nˈɛɟvɛnkilɛnts
+ötven# ˈøtvɛn
+ötvenegy# ˈøtvɛnɛɟ
+ötvenkettő# ˈøtvɛnkɛtːøː
+ötvenhárom# ˈøtvɛnhaːrom
+ötvennégy# ˈøtvɛnneːɟ
+ötvenöt# ˈøtvɛnøt
+ötvenhat# ˈøtvɛnhɑt
+ötvenhét# ˈøtvɛnheːt
+ötvennyolc# ˈøtvɛnɲolts
+ötvenkilenc# ˈøtvɛnkilɛnts
+hatvan# hˈɑtvɑn
+hatvanegy# hˈɑtvɑnɛɟ
+hatvankettő# hˈɑtvɑnkɛtːøː
+hatvanhárom# hˈɑtvɑnhaːrom
+hatvannégy# hˈɑtvɑnneːɟ
+hatvanöt# hˈɑtvɑnøt
+hatvanhat# hˈɑtvɑnhɑt
+hatvanhét# hˈɑtvɑnheːt
+hatvannyolc# hˈɑtvɑnɲolts
+hatvankilenc# hˈɑtvɑnkilɛnts
+hetven# hˈɛtvɛn
+hetvenegy# hˈɛtvɛnɛɟ
+hetvenkettő# hˈɛtvɛnkɛtːøː
+hetvenhárom# hˈɛtvɛnhaːrom
+hetvennégy# hˈɛtvɛnneːɟ
+hetvenöt# hˈɛtvɛnøt
+hetvenhat# hˈɛtvɛnhɑt
+hetvenhét# hˈɛtvɛnheːt
+hetvennyolc# hˈɛtvɛnɲolts
+hetvenkilenc# hˈɛtvɛnkilɛnts
+nyolcvan# ɲˈoltsvɑn
+nyolcvanegy# ɲˈoltsvɑnɛɟ
+nyolcvankettő# ɲˈoltsvɑnkɛtːøː
+nyolcvanhárom# ɲˈoltsvɑnhaːrom
+nyolcvannégy# ɲˈoltsvɑnneːɟ
+nyolcvanöt# ɲˈoltsvɑnøt
+nyolcvanhat# ɲˈoltsvɑnhɑt
+nyolcvanhét# ɲˈoltsvɑnheːt
+nyolcvannyolc# ɲˈoltsvɑnɲolts
+nyolcvankilenc# ɲˈoltsvɑnkilɛnts
+kilencven# kˈilɛntsvɛn
+kilencvenegy# kˈilɛntsvɛnɛɟ
+kilencvenkettő# kˈilɛntsvɛnkɛtːøː
+kilencvenhárom# kˈilɛntsvɛnhaːrom
+kilencvennégy# kˈilɛntsvɛnneːɟ
+kilencvenöt# kˌilɛntsvɛnøt
+kilencvenhat# kˈilɛntsvɛnhɑt
+kilencvenhét# kˈilɛntsvɛnheːt
+kilencvennyolc# kˈilɛntsvɛnɲolts
+kilencvenkilenc# kˈilɛntsvɛnkilɛnts
+tizenkettőv2# tˈizɛnkeːt
+huszonkettőv2# hˈusonkeːt
+harminckettőv2# hˈɑrmintskeːt
+negyvenkettőv2# nˈɛɟvɛnkeːt
+ötvenkettőv2# ˈøtvɛnkeːt
+hatvankettőv2# hˈɑtvɑnkeːt
+hetvenkettőv2# hˈɛtvɛnkeːt
+nyolcvankettőv2# ɲˈoltsvɑnkeːt
+kilencvenkettőv2# kˈilɛntsvɛnkeːt
+kilencvenötv2# kˈilɛntsvɛnøt
+száz# sˈaːz
+kétszáz# kˈeːtsaːz
+háromszáz# hˈaːromsaːz
+négyszáz# nˈeːɟsaːz
+ötszáz# ˈøtsaːz
+hatszáz# hˈɑtsaːz
+hétszáz# hˈeːtsaːz
+nyolcszáz# ɲˈoltssaːz
+kilencszáz# kˈilɛntssaːz
+ezer# ˈɛzɛr
+ezerv2# ɛzɛr
+egymillió# ˈɛɟmillioː
+millió# ɛɟmillioː
+egész# ɛɡeːs
+mínusz# mˈinus
+százalék# sˈaːzɑleːk
+
+[numbers]
+decimal comma
+tail-stress no
+point egész#
+minus mínusz#
+percent százalék#
+one-before-scale no
+0 nulla#
+1 egy#
+2 kettő#
+3 három#
+4 négy#
+5 öt#
+6 hat#
+7 hét#
+8 nyolc#
+9 kilenc#
+10 tíz#
+11 tizenegy#
+12 tizenkettő#
+13 tizenhárom#
+14 tizennégy#
+15 tizenöt#
+16 tizenhat#
+17 tizenhét#
+18 tizennyolc#
+19 tizenkilenc#
+20 húsz#
+21 huszonegy#
+22 huszonkettő#
+23 huszonhárom#
+24 huszonnégy#
+25 huszonöt#
+26 huszonhat#
+27 huszonhét#
+28 huszonnyolc#
+29 huszonkilenc#
+30 harminc#
+31 harmincegy#
+32 harminckettő#
+33 harminchárom#
+34 harmincnégy#
+35 harmincöt#
+36 harminchat#
+37 harminchét#
+38 harmincnyolc#
+39 harminckilenc#
+40 negyven#
+41 negyvenegy#
+42 negyvenkettő#
+43 negyvenhárom#
+44 negyvennégy#
+45 negyvenöt#
+46 negyvenhat#
+47 negyvenhét#
+48 negyvennyolc#
+49 negyvenkilenc#
+50 ötven#
+51 ötvenegy#
+52 ötvenkettő#
+53 ötvenhárom#
+54 ötvennégy#
+55 ötvenöt#
+56 ötvenhat#
+57 ötvenhét#
+58 ötvennyolc#
+59 ötvenkilenc#
+60 hatvan#
+61 hatvanegy#
+62 hatvankettő#
+63 hatvanhárom#
+64 hatvannégy#
+65 hatvanöt#
+66 hatvanhat#
+67 hatvanhét#
+68 hatvannyolc#
+69 hatvankilenc#
+70 hetven#
+71 hetvenegy#
+72 hetvenkettő#
+73 hetvenhárom#
+74 hetvennégy#
+75 hetvenöt#
+76 hetvenhat#
+77 hetvenhét#
+78 hetvennyolc#
+79 hetvenkilenc#
+80 nyolcvan#
+81 nyolcvanegy#
+82 nyolcvankettő#
+83 nyolcvanhárom#
+84 nyolcvannégy#
+85 nyolcvanöt#
+86 nyolcvanhat#
+87 nyolcvanhét#
+88 nyolcvannyolc#
+89 nyolcvankilenc#
+90 kilencven#
+91 kilencvenegy#
+92 kilencvenkettő#
+93 kilencvenhárom#
+94 kilencvennégy#
+95 kilencvenöt#
+96 kilencvenhat#
+97 kilencvenhét#
+98 kilencvennyolc#
+99 kilencvenkilenc#
+12x tizenkettőv2#
+22x huszonkettőv2#
+32x harminckettőv2#
+42x negyvenkettőv2#
+52x ötvenkettőv2#
+62x hatvankettőv2#
+72x hetvenkettőv2#
+82x nyolcvankettőv2#
+92x kilencvenkettőv2#
+95x kilencvenötv2#
+100 száz#
+200 kétszáz#
+300 háromszáz#
+400 négyszáz#
+500 ötszáz#
+600 hatszáz#
+700 hétszáz#
+800 nyolcszáz#
+900 kilencszáz#
+scale100 száz#
+1000 ezer#
+1000+ ezer#
+scale1000 ezerv2#
+1000000 egymillió#
+1000000+ egymillió#
+scale1000000 millió#
+
+[spell]
+a ˈɑː
+b bˈeː
+c tsˈeː
+d dˈeː
+e ˌɛ
+f ˈɛff
+g ɡˈeː
+h hˈaː
+i ˈi
+j jˈeː
+k kˈaː
+l ˈɛll
+m ˈɛmm
+n ˈɛnn
+o ˈo
+p pˈeː
+q kˈu
+r ˈɛrr
+s ˈɛʃ
+t tˈeː
+u ˈu
+v vˈeː
+w dˈuplɑveː
+x ˈiks
+y ˈipsilon
+z zˈeː
+á ˈaː
+é ˈeː
+í ˈiː
+ó ˈoː
+ö ˈø
+ő ˈøː
+ú ˈuː
+ü ˈy
+ű ˈyː
+
+# Words without stress inside a clause and with stress at its end.
+[unstressed]
+az s p
+nem 0 p
+és s p
+tudok s p
+tudsz s p
+de s p
+fogok s p
+helyes s p
+szabad s p
+fognak s p
+fogunk s p
+tudnak s p
+tudunk s p
+fogsz s p
+tudtok s p
+szabadban s p
+adsz s p

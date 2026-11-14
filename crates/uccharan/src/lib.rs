@@ -45,6 +45,7 @@ pub mod respell;
 pub mod rules;
 pub mod soundalike;
 pub mod text;
+pub mod translit;
 pub mod wiki;
 pub mod wordlist;
 
@@ -149,6 +150,32 @@ languages! {
     Nl "nl" ["nl-nl", "nl-be", "nld", "dut", "dutch"] Latin, Some(include_str!("../lang/nl.lang"));
     /// French (espeak voice `fr`).
     Fr "fr" ["fr-fr", "fra", "fre", "french"] Latin, Some(include_str!("../lang/fr.lang"));
+    /// Italian (espeak voice `it`).
+    It "it" ["it-it", "ita", "italian"] Latin, Some(include_str!("../lang/it.lang"));
+    /// Portuguese (Brazil) (espeak voice `pt-br`).
+    PtBr "pt-br" ["por-br", "brazilian"] Latin, Some(include_str!("../lang/pt-br.lang"));
+    /// Portuguese (Portugal) (espeak voice `pt`).
+    Pt "pt" ["pt-pt", "por", "portuguese"] Latin, Some(include_str!("../lang/pt.lang"));
+    /// Polish (espeak voice `pl`).
+    Pl "pl" ["pl-pl", "pol", "polish"] Latin, Some(include_str!("../lang/pl.lang"));
+    /// Turkish (espeak voice `tr`).
+    Tr "tr" ["tr-tr", "tur", "turkish"] Latin, Some(include_str!("../lang/tr.lang"));
+    /// Czech (espeak voice `cs`).
+    Cs "cs" ["cs-cz", "ces", "cze", "czech"] Latin, Some(include_str!("../lang/cs.lang"));
+    /// Swedish (espeak voice `sv`).
+    Sv "sv" ["sv-se", "swe", "swedish"] Latin, Some(include_str!("../lang/sv.lang"));
+    /// Catalan (espeak voice `ca`).
+    Ca "ca" ["ca-es", "cat", "catalan"] Latin, Some(include_str!("../lang/ca.lang"));
+    /// Romanian (espeak voice `ro`).
+    Ro "ro" ["ro-ro", "ron", "rum", "romanian"] Latin, Some(include_str!("../lang/ro.lang"));
+    /// Hungarian (espeak voice `hu`).
+    Hu "hu" ["hu-hu", "hun", "hungarian"] Latin, Some(include_str!("../lang/hu.lang"));
+    /// Finnish (espeak voice `fi`).
+    Fi "fi" ["fi-fi", "fin", "finnish"] Latin, Some(include_str!("../lang/fi.lang"));
+    /// Norwegian Bokmål (espeak voice `nb`).
+    Nb "nb" ["nb-no", "no", "nob", "nor", "norwegian"] Latin, Some(include_str!("../lang/nb.lang"));
+    /// Danish (espeak voice `da`).
+    Da "da" ["da-dk", "dan", "danish"] Latin, Some(include_str!("../lang/da.lang"));
 }
 
 impl Lang {
@@ -315,7 +342,7 @@ pub struct Sentence {
 }
 
 /// The phonemizer. Cheap to share between threads (`&Phonemizer` is `Sync`).
-#[derive(Clone, Debug, Default)]
+#[derive(Clone, Debug)]
 pub struct Phonemizer {
     data: [std::sync::OnceLock<Data>; LANGS],
     /// misaki dictionaries for the Kokoro English front end (US, GB).
@@ -326,6 +353,20 @@ pub struct Phonemizer {
     /// Optional WikiPron packs (CC BY-SA, loaded at run time), used by the
     /// improved mode.
     wikipron: [std::sync::OnceLock<Data>; LANGS],
+    /// Optional transliteration packs (`xlit-<lang>.ucd`, loaded at run time).
+    translit: [std::sync::OnceLock<std::sync::Arc<translit::TranslitPack>>; LANGS],
+}
+
+impl Default for Phonemizer {
+    fn default() -> Phonemizer {
+        Phonemizer {
+            data: std::array::from_fn(|_| std::sync::OnceLock::new()),
+            misaki: Default::default(),
+            kokoro_packs: Default::default(),
+            wikipron: std::array::from_fn(|_| std::sync::OnceLock::new()),
+            translit: std::array::from_fn(|_| std::sync::OnceLock::new()),
+        }
+    }
 }
 
 impl Phonemizer {
@@ -378,6 +419,19 @@ impl Phonemizer {
         table!("embed-de", Lang::De, "../data/de.ucd");
         table!("embed-nl", Lang::Nl, "../data/nl.ucd");
         table!("embed-fr", Lang::Fr, "../data/fr.ucd");
+        table!("embed-it", Lang::It, "../data/it.ucd");
+        table!("embed-pt-br", Lang::PtBr, "../data/pt-br.ucd");
+        table!("embed-pt", Lang::Pt, "../data/pt.ucd");
+        table!("embed-pl", Lang::Pl, "../data/pl.ucd");
+        table!("embed-tr", Lang::Tr, "../data/tr.ucd");
+        table!("embed-cs", Lang::Cs, "../data/cs.ucd");
+        table!("embed-sv", Lang::Sv, "../data/sv.ucd");
+        table!("embed-ca", Lang::Ca, "../data/ca.ucd");
+        table!("embed-ro", Lang::Ro, "../data/ro.ucd");
+        table!("embed-hu", Lang::Hu, "../data/hu.ucd");
+        table!("embed-fi", Lang::Fi, "../data/fi.ucd");
+        table!("embed-nb", Lang::Nb, "../data/nb.ucd");
+        table!("embed-da", Lang::Da, "../data/da.ucd");
         p
     }
 
@@ -398,6 +452,9 @@ impl Phonemizer {
     /// A language that already has data keeps it (the call still succeeds),
     /// so that a pack can be loaded on first use from several threads.
     pub fn load_pack(&self, bytes: Vec<u8>) -> Result<String, String> {
+        if translit::pack::pack_language(&bytes).is_some() {
+            return self.load_translit(bytes);
+        }
         let d = Data::from_vec(bytes).map_err(|e| e.to_string())?;
         let name = d.meta("lang").unwrap_or("").to_string();
         if let Some(accent) = name.strip_prefix("kokoro-") {
@@ -610,8 +667,12 @@ impl Phonemizer {
             if opt.lang == Lang::Bho && !compat {
                 bho::rewrite_roman(&mut owned);
             }
-            let english = self.english(opt.embedded_english);
-            hi::roman::rewrite(&mut owned, &hi, english.as_ref());
+            // With the Hindi transliteration pack loaded, it decides; otherwise
+            // the hand list and rules.
+            if !translit::rewrite_items(self, opt.lang, &mut owned) {
+                let english = self.english(opt.embedded_english);
+                hi::roman::rewrite(&mut owned, &hi, english.as_ref());
+            }
             items = &owned;
         }
         let mut out: Vec<WordOut> = Vec::with_capacity(items.len());

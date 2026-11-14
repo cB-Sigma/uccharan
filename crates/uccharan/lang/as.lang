@@ -1,5 +1,5 @@
 # Assamese. espeak-ng voice "as". Derived from bn.lang (same script block) and
-# written for uccharan from specs/as.md.
+# written for uccharan.
 
 [meta]
 tag = as

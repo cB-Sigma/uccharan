@@ -1,0 +1,1450 @@
+{
+ "note": "Scores of the packs as first built, each scored once on the held-out sets (hi, hi-small, hi-permissive and the eight other languages). hi-rev is the Hindi pack after the chat-spelling fix and was scored a second time. The packs in data/packs were rebuilt later (hand lists for all languages, agreement rule, new table layout); their scores are in translit_heldout.json.",
+ "date": "2026-11-14",
+ "packs": {
+  "hi": {
+   "pack_bytes": 8239700,
+   "words": {
+    "test_dak": {
+     "full system": {
+      "inputs": 4442,
+      "top1": "68.69",
+      "top3": "83.09"
+     },
+     "model only": {
+      "inputs": 4442,
+      "top1": "56.24",
+      "top3": "78.01"
+     },
+     "itrans baseline": {
+      "inputs": 4442,
+      "top1": "12.31",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 4442,
+      "top1": "19.83",
+      "top3": null
+     }
+    },
+    "test_ak": {
+     "full system": {
+      "inputs": 9991,
+      "top1": "59.63",
+      "top3": "76.77"
+     },
+     "model only": {
+      "inputs": 9991,
+      "top1": "52.76",
+      "top3": "73.77"
+     },
+     "itrans baseline": {
+      "inputs": 9991,
+      "top1": "12.68",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 9991,
+      "top1": "19.35",
+      "top3": null
+     }
+    },
+    "test_ak_native": {
+     "full system": {
+      "inputs": 3643,
+      "top1": "49.74",
+      "top3": "69.53"
+     },
+     "model only": {
+      "inputs": 3643,
+      "top1": "47.32",
+      "top3": "68.32"
+     },
+     "itrans baseline": {
+      "inputs": 3643,
+      "top1": "16.58",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 3643,
+      "top1": "22.87",
+      "top3": null
+     }
+    },
+    "test_ak_ne": {
+     "full system": {
+      "inputs": 1997,
+      "top1": "57.04",
+      "top3": "75.86"
+     },
+     "model only": {
+      "inputs": 1997,
+      "top1": "54.53",
+      "top3": "74.06"
+     },
+     "itrans baseline": {
+      "inputs": 1997,
+      "top1": "6.11",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 1997,
+      "top1": "11.37",
+      "top3": null
+     }
+    }
+   },
+   "dakshina_sentences": {
+    "full system": {
+     "strict": "86.22",
+     "relaxed": "88.53"
+    },
+    "no context": {
+     "strict": "85.07",
+     "relaxed": "87.41"
+    },
+    "itrans baseline": {
+     "strict": "35.64",
+     "relaxed": "38.15"
+    },
+    "hi/roman.rs baseline": {
+     "strict": "31.17",
+     "relaxed": "31.73"
+    }
+   },
+   "hinglish": {
+    "full system": {
+     "indic": [
+      "93.1",
+      "95.9"
+     ],
+     "en": [
+      "10/130",
+      "7.7"
+     ],
+     "left": [
+      "3/868",
+      "0.3"
+     ],
+     "sent": [
+      "124/164",
+      "75.6"
+     ]
+    },
+    "full system, no context": {
+     "indic": [
+      "91.6",
+      "94.4"
+     ],
+     "en": [
+      "9/130",
+      "6.9"
+     ],
+     "left": [
+      "8/868",
+      "0.9"
+     ],
+     "sent": [
+      "118/164",
+      "72.0"
+     ]
+    },
+    "hi/roman.rs baseline": {
+     "indic": [
+      "71.5",
+      "72.4"
+     ],
+     "en": [
+      "4/130",
+      "3.1"
+     ],
+     "left": [
+      "174/868",
+      "20.0"
+     ],
+     "sent": [
+      "39/164",
+      "23.8"
+     ]
+    },
+    "itrans baseline (converts every word)": {
+     "indic": [
+      "44.7",
+      "45.7"
+     ],
+     "en": [
+      "130/130",
+      "100.0"
+     ],
+     "left": [
+      "0/868",
+      "0.0"
+     ],
+     "sent": [
+      "1/164",
+      "0.6"
+     ]
+    }
+   }
+  },
+  "hi-rev": {
+   "pack_bytes": 8239721,
+   "words": {
+    "test_dak": {
+     "full system": {
+      "inputs": 4442,
+      "top1": "68.69",
+      "top3": "83.12"
+     },
+     "model only": {
+      "inputs": 4442,
+      "top1": "56.24",
+      "top3": "78.01"
+     },
+     "itrans baseline": {
+      "inputs": 4442,
+      "top1": "12.31",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 4442,
+      "top1": "19.83",
+      "top3": null
+     }
+    },
+    "test_ak": {
+     "full system": {
+      "inputs": 9991,
+      "top1": "59.63",
+      "top3": "76.78"
+     },
+     "model only": {
+      "inputs": 9991,
+      "top1": "52.76",
+      "top3": "73.77"
+     },
+     "itrans baseline": {
+      "inputs": 9991,
+      "top1": "12.68",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 9991,
+      "top1": "19.35",
+      "top3": null
+     }
+    },
+    "test_ak_native": {
+     "full system": {
+      "inputs": 3643,
+      "top1": "49.74",
+      "top3": "69.53"
+     },
+     "model only": {
+      "inputs": 3643,
+      "top1": "47.32",
+      "top3": "68.32"
+     },
+     "itrans baseline": {
+      "inputs": 3643,
+      "top1": "16.58",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 3643,
+      "top1": "22.87",
+      "top3": null
+     }
+    },
+    "test_ak_ne": {
+     "full system": {
+      "inputs": 1997,
+      "top1": "57.04",
+      "top3": "75.86"
+     },
+     "model only": {
+      "inputs": 1997,
+      "top1": "54.53",
+      "top3": "74.06"
+     },
+     "itrans baseline": {
+      "inputs": 1997,
+      "top1": "6.11",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 1997,
+      "top1": "11.37",
+      "top3": null
+     }
+    }
+   },
+   "dakshina_sentences": {
+    "full system": {
+     "strict": "86.36",
+     "relaxed": "88.69"
+    },
+    "no context": {
+     "strict": "85.22",
+     "relaxed": "87.59"
+    },
+    "itrans baseline": {
+     "strict": "35.64",
+     "relaxed": "38.15"
+    },
+    "hi/roman.rs baseline": {
+     "strict": "31.17",
+     "relaxed": "31.73"
+    }
+   },
+   "hinglish": {
+    "full system": {
+     "indic": [
+      "95.2",
+      "98.2"
+     ],
+     "en": [
+      "10/130",
+      "7.7"
+     ],
+     "left": [
+      "3/868",
+      "0.3"
+     ],
+     "sent": [
+      "139/164",
+      "84.8"
+     ]
+    },
+    "full system, no context": {
+     "indic": [
+      "94.5",
+      "97.4"
+     ],
+     "en": [
+      "10/130",
+      "7.7"
+     ],
+     "left": [
+      "6/868",
+      "0.7"
+     ],
+     "sent": [
+      "134/164",
+      "81.7"
+     ]
+    },
+    "hi/roman.rs baseline": {
+     "indic": [
+      "71.5",
+      "72.4"
+     ],
+     "en": [
+      "4/130",
+      "3.1"
+     ],
+     "left": [
+      "174/868",
+      "20.0"
+     ],
+     "sent": [
+      "39/164",
+      "23.8"
+     ]
+    },
+    "itrans baseline (converts every word)": {
+     "indic": [
+      "44.7",
+      "45.7"
+     ],
+     "en": [
+      "130/130",
+      "100.0"
+     ],
+     "left": [
+      "0/868",
+      "0.0"
+     ],
+     "sent": [
+      "1/164",
+      "0.6"
+     ]
+    }
+   }
+  },
+  "hi-small": {
+   "pack_bytes": 5601430,
+   "words": {
+    "test_dak": {
+     "full system": {
+      "inputs": 4442,
+      "top1": "66.10",
+      "top3": "80.73"
+     },
+     "model only": {
+      "inputs": 4442,
+      "top1": "52.68",
+      "top3": "75.01"
+     },
+     "itrans baseline": {
+      "inputs": 4442,
+      "top1": "12.31",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 4442,
+      "top1": "19.83",
+      "top3": null
+     }
+    },
+    "test_ak": {
+     "full system": {
+      "inputs": 9991,
+      "top1": "57.23",
+      "top3": "74.36"
+     },
+     "model only": {
+      "inputs": 9991,
+      "top1": "48.98",
+      "top3": "70.65"
+     },
+     "itrans baseline": {
+      "inputs": 9991,
+      "top1": "12.68",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 9991,
+      "top1": "19.35",
+      "top3": null
+     }
+    },
+    "test_ak_native": {
+     "full system": {
+      "inputs": 3643,
+      "top1": "47.41",
+      "top3": "66.62"
+     },
+     "model only": {
+      "inputs": 3643,
+      "top1": "43.65",
+      "top3": "64.70"
+     },
+     "itrans baseline": {
+      "inputs": 3643,
+      "top1": "16.58",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 3643,
+      "top1": "22.87",
+      "top3": null
+     }
+    },
+    "test_ak_ne": {
+     "full system": {
+      "inputs": 1997,
+      "top1": "54.93",
+      "top3": "74.21"
+     },
+     "model only": {
+      "inputs": 1997,
+      "top1": "50.28",
+      "top3": "71.61"
+     },
+     "itrans baseline": {
+      "inputs": 1997,
+      "top1": "6.11",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 1997,
+      "top1": "11.37",
+      "top3": null
+     }
+    }
+   },
+   "dakshina_sentences": {
+    "full system": {
+     "strict": "85.42",
+     "relaxed": "87.68"
+    },
+    "no context": {
+     "strict": "84.18",
+     "relaxed": "86.45"
+    },
+    "itrans baseline": {
+     "strict": "35.64",
+     "relaxed": "38.15"
+    },
+    "hi/roman.rs baseline": {
+     "strict": "31.17",
+     "relaxed": "31.73"
+    }
+   },
+   "hinglish": {
+    "full system": {
+     "indic": [
+      "91.0",
+      "94.4"
+     ],
+     "en": [
+      "9/130",
+      "6.9"
+     ],
+     "left": [
+      "4/868",
+      "0.5"
+     ],
+     "sent": [
+      "112/164",
+      "68.3"
+     ]
+    },
+    "full system, no context": {
+     "indic": [
+      "89.9",
+      "93.1"
+     ],
+     "en": [
+      "8/130",
+      "6.2"
+     ],
+     "left": [
+      "9/868",
+      "1.0"
+     ],
+     "sent": [
+      "110/164",
+      "67.1"
+     ]
+    },
+    "hi/roman.rs baseline": {
+     "indic": [
+      "71.5",
+      "72.4"
+     ],
+     "en": [
+      "4/130",
+      "3.1"
+     ],
+     "left": [
+      "174/868",
+      "20.0"
+     ],
+     "sent": [
+      "39/164",
+      "23.8"
+     ]
+    },
+    "itrans baseline (converts every word)": {
+     "indic": [
+      "44.7",
+      "45.7"
+     ],
+     "en": [
+      "130/130",
+      "100.0"
+     ],
+     "left": [
+      "0/868",
+      "0.0"
+     ],
+     "sent": [
+      "1/164",
+      "0.6"
+     ]
+    }
+   }
+  },
+  "hi-permissive": {
+   "pack_bytes": 7648735,
+   "words": {
+    "test_dak": {
+     "full system": {
+      "inputs": 4442,
+      "top1": "68.08",
+      "top3": "82.49"
+     },
+     "model only": {
+      "inputs": 4442,
+      "top1": "55.40",
+      "top3": "76.70"
+     },
+     "itrans baseline": {
+      "inputs": 4442,
+      "top1": "12.31",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 4442,
+      "top1": "19.83",
+      "top3": null
+     }
+    },
+    "test_ak": {
+     "full system": {
+      "inputs": 9991,
+      "top1": "59.24",
+      "top3": "76.52"
+     },
+     "model only": {
+      "inputs": 9991,
+      "top1": "52.29",
+      "top3": "72.98"
+     },
+     "itrans baseline": {
+      "inputs": 9991,
+      "top1": "12.68",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 9991,
+      "top1": "19.35",
+      "top3": null
+     }
+    },
+    "test_ak_native": {
+     "full system": {
+      "inputs": 3643,
+      "top1": "49.66",
+      "top3": "69.50"
+     },
+     "model only": {
+      "inputs": 3643,
+      "top1": "47.19",
+      "top3": "67.77"
+     },
+     "itrans baseline": {
+      "inputs": 3643,
+      "top1": "16.58",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 3643,
+      "top1": "22.87",
+      "top3": null
+     }
+    },
+    "test_ak_ne": {
+     "full system": {
+      "inputs": 1997,
+      "top1": "56.53",
+      "top3": "76.06"
+     },
+     "model only": {
+      "inputs": 1997,
+      "top1": "54.23",
+      "top3": "73.96"
+     },
+     "itrans baseline": {
+      "inputs": 1997,
+      "top1": "6.11",
+      "top3": null
+     },
+     "hi/roman.rs baseline": {
+      "inputs": 1997,
+      "top1": "11.37",
+      "top3": null
+     }
+    }
+   },
+   "dakshina_sentences": {
+    "full system": {
+     "strict": "85.68",
+     "relaxed": "88.01"
+    },
+    "no context": {
+     "strict": "84.31",
+     "relaxed": "86.67"
+    },
+    "itrans baseline": {
+     "strict": "35.64",
+     "relaxed": "38.15"
+    },
+    "hi/roman.rs baseline": {
+     "strict": "31.17",
+     "relaxed": "31.73"
+    }
+   },
+   "hinglish": {
+    "full system": {
+     "indic": [
+      "93.1",
+      "95.7"
+     ],
+     "en": [
+      "10/130",
+      "7.7"
+     ],
+     "left": [
+      "4/868",
+      "0.5"
+     ],
+     "sent": [
+      "124/164",
+      "75.6"
+     ]
+    },
+    "full system, no context": {
+     "indic": [
+      "91.4",
+      "94.0"
+     ],
+     "en": [
+      "8/130",
+      "6.2"
+     ],
+     "left": [
+      "8/868",
+      "0.9"
+     ],
+     "sent": [
+      "115/164",
+      "70.1"
+     ]
+    },
+    "hi/roman.rs baseline": {
+     "indic": [
+      "71.5",
+      "72.4"
+     ],
+     "en": [
+      "4/130",
+      "3.1"
+     ],
+     "left": [
+      "174/868",
+      "20.0"
+     ],
+     "sent": [
+      "39/164",
+      "23.8"
+     ]
+    },
+    "itrans baseline (converts every word)": {
+     "indic": [
+      "44.7",
+      "45.7"
+     ],
+     "en": [
+      "130/130",
+      "100.0"
+     ],
+     "left": [
+      "0/868",
+      "0.0"
+     ],
+     "sent": [
+      "1/164",
+      "0.6"
+     ]
+    }
+   }
+  },
+  "mr": {
+   "pack_bytes": 7062825,
+   "words": {
+    "test_dak": {
+     "full system": {
+      "inputs": 5667,
+      "top1": "74.41",
+      "top3": "82.87"
+     },
+     "model only": {
+      "inputs": 5667,
+      "top1": "61.69",
+      "top3": "77.66"
+     },
+     "itrans baseline": {
+      "inputs": 5667,
+      "top1": "8.36",
+      "top3": null
+     }
+    },
+    "test_ak": {
+     "full system": {
+      "inputs": 12059,
+      "top1": "64.53",
+      "top3": "75.21"
+     },
+     "model only": {
+      "inputs": 12059,
+      "top1": "54.73",
+      "top3": "71.42"
+     },
+     "itrans baseline": {
+      "inputs": 12059,
+      "top1": "9.03",
+      "top3": null
+     }
+    },
+    "test_ak_native": {
+     "full system": {
+      "inputs": 4459,
+      "top1": "57.14",
+      "top3": "67.93"
+     },
+     "model only": {
+      "inputs": 4459,
+      "top1": "48.22",
+      "top3": "64.84"
+     },
+     "itrans baseline": {
+      "inputs": 4459,
+      "top1": "11.75",
+      "top3": null
+     }
+    },
+    "test_ak_ne": {
+     "full system": {
+      "inputs": 1998,
+      "top1": "52.65",
+      "top3": "69.72"
+     },
+     "model only": {
+      "inputs": 1998,
+      "top1": "49.15",
+      "top3": "68.32"
+     },
+     "itrans baseline": {
+      "inputs": 1998,
+      "top1": "4.80",
+      "top3": null
+     }
+    }
+   },
+   "dakshina_sentences": {
+    "full system": {
+     "strict": "84.45",
+     "relaxed": "84.90"
+    },
+    "no context": {
+     "strict": "84.11",
+     "relaxed": "84.57"
+    },
+    "itrans baseline": {
+     "strict": "16.64",
+     "relaxed": "18.60"
+    }
+   },
+   "hinglish": {}
+  },
+  "bn": {
+   "pack_bytes": 7524711,
+   "words": {
+    "test_dak": {
+     "full system": {
+      "inputs": 9146,
+      "top1": "67.08",
+      "top3": "78.69"
+     },
+     "model only": {
+      "inputs": 9146,
+      "top1": "51.91",
+      "top3": "71.36"
+     },
+     "itrans baseline": {
+      "inputs": 9146,
+      "top1": "6.39",
+      "top3": null
+     }
+    },
+    "test_ak": {
+     "full system": {
+      "inputs": 13366,
+      "top1": "62.98",
+      "top3": "76.03"
+     },
+     "model only": {
+      "inputs": 13366,
+      "top1": "50.85",
+      "top3": "70.31"
+     },
+     "itrans baseline": {
+      "inputs": 13366,
+      "top1": "11.83",
+      "top3": null
+     }
+    },
+    "test_ak_native": {
+     "full system": {
+      "inputs": 2267,
+      "top1": "60.65",
+      "top3": "75.56"
+     },
+     "model only": {
+      "inputs": 2267,
+      "top1": "51.08",
+      "top3": "70.97"
+     },
+     "itrans baseline": {
+      "inputs": 2267,
+      "top1": "32.47",
+      "top3": null
+     }
+    },
+    "test_ak_ne": {
+     "full system": {
+      "inputs": 1999,
+      "top1": "46.42",
+      "top3": "64.28"
+     },
+     "model only": {
+      "inputs": 1999,
+      "top1": "45.52",
+      "top3": "64.63"
+     },
+     "itrans baseline": {
+      "inputs": 1999,
+      "top1": "13.36",
+      "top3": null
+     }
+    }
+   },
+   "dakshina_sentences": {
+    "full system": {
+     "strict": "80.81",
+     "relaxed": "80.82"
+    },
+    "no context": {
+     "strict": "80.34",
+     "relaxed": "80.35"
+    },
+    "itrans baseline": {
+     "strict": "11.97",
+     "relaxed": "11.97"
+    }
+   },
+   "hinglish": {}
+  },
+  "ta": {
+   "pack_bytes": 6834382,
+   "words": {
+    "test_dak": {
+     "full system": {
+      "inputs": 6833,
+      "top1": "75.87",
+      "top3": "82.48"
+     },
+     "model only": {
+      "inputs": 6833,
+      "top1": "66.65",
+      "top3": "79.69"
+     },
+     "itrans baseline": {
+      "inputs": 6833,
+      "top1": "5.80",
+      "top3": null
+     }
+    },
+    "test_ak": {
+     "full system": {
+      "inputs": 11405,
+      "top1": "68.74",
+      "top3": "78.95"
+     },
+     "model only": {
+      "inputs": 11405,
+      "top1": "61.98",
+      "top3": "77.12"
+     },
+     "itrans baseline": {
+      "inputs": 11405,
+      "top1": "5.36",
+      "top3": null
+     }
+    },
+    "test_ak_native": {
+     "full system": {
+      "inputs": 2607,
+      "top1": "72.61",
+      "top3": "85.16"
+     },
+     "model only": {
+      "inputs": 2607,
+      "top1": "68.70",
+      "top3": "84.35"
+     },
+     "itrans baseline": {
+      "inputs": 2607,
+      "top1": "6.41",
+      "top3": null
+     }
+    },
+    "test_ak_ne": {
+     "full system": {
+      "inputs": 1997,
+      "top1": "38.81",
+      "top3": "58.29"
+     },
+     "model only": {
+      "inputs": 1997,
+      "top1": "36.71",
+      "top3": "58.34"
+     },
+     "itrans baseline": {
+      "inputs": 1997,
+      "top1": "2.50",
+      "top3": null
+     }
+    }
+   },
+   "dakshina_sentences": {
+    "full system": {
+     "strict": "76.90",
+     "relaxed": "76.90"
+    },
+    "no context": {
+     "strict": "76.81",
+     "relaxed": "76.81"
+    },
+    "itrans baseline": {
+     "strict": "9.21",
+     "relaxed": "9.22"
+    }
+   },
+   "hinglish": {}
+  },
+  "te": {
+   "pack_bytes": 6845605,
+   "words": {
+    "test_dak": {
+     "full system": {
+      "inputs": 5726,
+      "top1": "81.45",
+      "top3": "89.17"
+     },
+     "model only": {
+      "inputs": 5726,
+      "top1": "71.64",
+      "top3": "86.57"
+     },
+     "itrans baseline": {
+      "inputs": 5726,
+      "top1": "16.68",
+      "top3": null
+     }
+    },
+    "test_ak": {
+     "full system": {
+      "inputs": 9936,
+      "top1": "76.41",
+      "top3": "86.32"
+     },
+     "model only": {
+      "inputs": 9936,
+      "top1": "70.14",
+      "top3": "84.64"
+     },
+     "itrans baseline": {
+      "inputs": 9936,
+      "top1": "16.14",
+      "top3": null
+     }
+    },
+    "test_ak_native": {
+     "full system": {
+      "inputs": 2240,
+      "top1": "83.88",
+      "top3": "92.10"
+     },
+     "model only": {
+      "inputs": 2240,
+      "top1": "83.88",
+      "top3": "92.10"
+     },
+     "itrans baseline": {
+      "inputs": 2240,
+      "top1": "23.66",
+      "top3": null
+     }
+    },
+    "test_ak_ne": {
+     "full system": {
+      "inputs": 1999,
+      "top1": "53.38",
+      "top3": "71.54"
+     },
+     "model only": {
+      "inputs": 1999,
+      "top1": "50.08",
+      "top3": "70.59"
+     },
+     "itrans baseline": {
+      "inputs": 1999,
+      "top1": "6.05",
+      "top3": null
+     }
+    }
+   },
+   "dakshina_sentences": {
+    "full system": {
+     "strict": "82.91",
+     "relaxed": "83.64"
+    },
+    "no context": {
+     "strict": "82.84",
+     "relaxed": "83.57"
+    },
+    "itrans baseline": {
+     "strict": "30.62",
+     "relaxed": "30.68"
+    }
+   },
+   "hinglish": {}
+  },
+  "gu": {
+   "pack_bytes": 5836181,
+   "words": {
+    "test_dak": {
+     "full system": {
+      "inputs": 10229,
+      "top1": "65.58",
+      "top3": "81.22"
+     },
+     "model only": {
+      "inputs": 10229,
+      "top1": "55.45",
+      "top3": "76.83"
+     },
+     "itrans baseline": {
+      "inputs": 10229,
+      "top1": "11.12",
+      "top3": null
+     }
+    },
+    "test_ak": {
+     "full system": {
+      "inputs": 17402,
+      "top1": "60.58",
+      "top3": "77.74"
+     },
+     "model only": {
+      "inputs": 17402,
+      "top1": "53.30",
+      "top3": "74.66"
+     },
+     "itrans baseline": {
+      "inputs": 17402,
+      "top1": "11.13",
+      "top3": null
+     }
+    },
+    "test_ak_native": {
+     "full system": {
+      "inputs": 5243,
+      "top1": "54.72",
+      "top3": "73.87"
+     },
+     "model only": {
+      "inputs": 5243,
+      "top1": "50.60",
+      "top3": "72.13"
+     },
+     "itrans baseline": {
+      "inputs": 5243,
+      "top1": "12.21",
+      "top3": null
+     }
+    },
+    "test_ak_ne": {
+     "full system": {
+      "inputs": 1997,
+      "top1": "49.67",
+      "top3": "69.80"
+     },
+     "model only": {
+      "inputs": 1997,
+      "top1": "48.87",
+      "top3": "69.55"
+     },
+     "itrans baseline": {
+      "inputs": 1997,
+      "top1": "8.36",
+      "top3": null
+     }
+    }
+   },
+   "dakshina_sentences": {
+    "full system": {
+     "strict": "82.74",
+     "relaxed": "82.76"
+    },
+    "no context": {
+     "strict": "82.60",
+     "relaxed": "82.62"
+    },
+    "itrans baseline": {
+     "strict": "48.28",
+     "relaxed": "48.29"
+    }
+   },
+   "hinglish": {}
+  },
+  "pa": {
+   "pack_bytes": 3039246,
+   "words": {
+    "test_dak": {
+     "full system": {
+      "inputs": 6880,
+      "top1": "53.40",
+      "top3": "71.92"
+     },
+     "model only": {
+      "inputs": 6880,
+      "top1": "43.81",
+      "top3": "67.11"
+     },
+     "itrans baseline": {
+      "inputs": 6880,
+      "top1": "8.81",
+      "top3": null
+     }
+    },
+    "test_ak": {
+     "full system": {
+      "inputs": 10949,
+      "top1": "46.35",
+      "top3": "64.68"
+     },
+     "model only": {
+      "inputs": 10949,
+      "top1": "39.90",
+      "top3": "61.33"
+     },
+     "itrans baseline": {
+      "inputs": 10949,
+      "top1": "7.22",
+      "top3": null
+     }
+    },
+    "test_ak_native": {
+     "full system": {
+      "inputs": 2184,
+      "top1": "34.43",
+      "top3": "52.24"
+     },
+     "model only": {
+      "inputs": 2184,
+      "top1": "34.02",
+      "top3": "51.92"
+     },
+     "itrans baseline": {
+      "inputs": 2184,
+      "top1": "5.54",
+      "top3": null
+     }
+    },
+    "test_ak_ne": {
+     "full system": {
+      "inputs": 1997,
+      "top1": "34.00",
+      "top3": "52.23"
+     },
+     "model only": {
+      "inputs": 1997,
+      "top1": "32.05",
+      "top3": "50.48"
+     },
+     "itrans baseline": {
+      "inputs": 1997,
+      "top1": "3.25",
+      "top3": null
+     }
+    }
+   },
+   "dakshina_sentences": {
+    "full system": {
+     "strict": "78.62",
+     "relaxed": "78.63"
+    },
+    "no context": {
+     "strict": "76.66",
+     "relaxed": "76.66"
+    },
+    "itrans baseline": {
+     "strict": "29.25",
+     "relaxed": "30.11"
+    }
+   },
+   "hinglish": {}
+  },
+  "kn": {
+   "pack_bytes": 6442907,
+   "words": {
+    "test_dak": {
+     "full system": {
+      "inputs": 5013,
+      "top1": "84.40",
+      "top3": "91.16"
+     },
+     "model only": {
+      "inputs": 5013,
+      "top1": "75.14",
+      "top3": "88.17"
+     },
+     "itrans baseline": {
+      "inputs": 5013,
+      "top1": "15.32",
+      "top3": null
+     }
+    },
+    "test_ak": {
+     "full system": {
+      "inputs": 11165,
+      "top1": "74.82",
+      "top3": "86.00"
+     },
+     "model only": {
+      "inputs": 11165,
+      "top1": "68.83",
+      "top3": "84.24"
+     },
+     "itrans baseline": {
+      "inputs": 11165,
+      "top1": "11.72",
+      "top3": null
+     }
+    },
+    "test_ak_native": {
+     "full system": {
+      "inputs": 4207,
+      "top1": "75.68",
+      "top3": "86.76"
+     },
+     "model only": {
+      "inputs": 4207,
+      "top1": "71.95",
+      "top3": "85.83"
+     },
+     "itrans baseline": {
+      "inputs": 4207,
+      "top1": "10.51",
+      "top3": null
+     }
+    },
+    "test_ak_ne": {
+     "full system": {
+      "inputs": 1992,
+      "top1": "48.64",
+      "top3": "71.64"
+     },
+     "model only": {
+      "inputs": 1992,
+      "top1": "45.93",
+      "top3": "71.03"
+     },
+     "itrans baseline": {
+      "inputs": 1992,
+      "top1": "5.12",
+      "top3": null
+     }
+    }
+   },
+   "dakshina_sentences": {
+    "full system": {
+     "strict": "83.02",
+     "relaxed": "84.44"
+    },
+    "no context": {
+     "strict": "82.96",
+     "relaxed": "84.39"
+    },
+    "itrans baseline": {
+     "strict": "30.03",
+     "relaxed": "30.10"
+    }
+   },
+   "hinglish": {}
+  },
+  "ml": {
+   "pack_bytes": 6184351,
+   "words": {
+    "test_dak": {
+     "full system": {
+      "inputs": 5561,
+      "top1": "71.61",
+      "top3": "80.22"
+     },
+     "model only": {
+      "inputs": 5561,
+      "top1": "62.33",
+      "top3": "77.27"
+     },
+     "itrans baseline": {
+      "inputs": 5561,
+      "top1": "4.30",
+      "top3": null
+     }
+    },
+    "test_ak": {
+     "full system": {
+      "inputs": 12343,
+      "top1": "61.33",
+      "top3": "72.41"
+     },
+     "model only": {
+      "inputs": 12343,
+      "top1": "55.66",
+      "top3": "70.52"
+     },
+     "itrans baseline": {
+      "inputs": 12343,
+      "top1": "3.88",
+      "top3": null
+     }
+    },
+    "test_ak_native": {
+     "full system": {
+      "inputs": 4854,
+      "top1": "61.54",
+      "top3": "74.37"
+     },
+     "model only": {
+      "inputs": 4854,
+      "top1": "58.45",
+      "top3": "73.16"
+     },
+     "itrans baseline": {
+      "inputs": 4854,
+      "top1": "2.66",
+      "top3": null
+     }
+    },
+    "test_ak_ne": {
+     "full system": {
+      "inputs": 1990,
+      "top1": "30.90",
+      "top3": "44.67"
+     },
+     "model only": {
+      "inputs": 1990,
+      "top1": "29.15",
+      "top3": "44.17"
+     },
+     "itrans baseline": {
+      "inputs": 1990,
+      "top1": "5.63",
+      "top3": null
+     }
+    }
+   },
+   "dakshina_sentences": {
+    "full system": {
+     "strict": "70.82",
+     "relaxed": "71.85"
+    },
+    "no context": {
+     "strict": "70.22",
+     "relaxed": "71.25"
+    },
+    "itrans baseline": {
+     "strict": "5.45",
+     "relaxed": "5.47"
+    }
+   },
+   "hinglish": {}
+  }
+ }
+}

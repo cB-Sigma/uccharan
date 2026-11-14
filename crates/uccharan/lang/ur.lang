@@ -1,4 +1,4 @@
-# Urdu. espeak-ng voice "ur". Written for uccharan from specs/ur.md. The
+# Urdu. espeak-ng voice "ur". Written for uccharan. The
 # script is decoded like an Indic script: every consonant letter carries a
 # short vowel unless a vowel letter, a vowel mark or jazm follows, and the
 # Hindi-type deletion and stress rules apply. In compatible mode common words

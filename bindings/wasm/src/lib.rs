@@ -183,6 +183,22 @@ pub fn normalize_json(text: &str, lang_tag: &str, options: &str) -> Result<Strin
         .map_err(|e| JsError::new(&e))
 }
 
+/// Romanised text into the script of the language, with spans, as JSON;
+/// options as JSON (`english`, `alternatives`, `context`).
+#[wasm_bindgen(js_name = transliterateJson)]
+pub fn transliterate_json(text: &str, lang_tag: &str, options: &str) -> Result<String, JsError> {
+    let l = lang(lang_tag)?;
+    ENGINE
+        .with(|e| uccharan::translit::transliterate_json(&e.borrow(), text, l, options))
+        .map_err(|e| JsError::new(&e))
+}
+
+/// True when the transliteration pack of the language is loaded.
+#[wasm_bindgen(js_name = hasTranslit)]
+pub fn has_translit(lang_tag: &str) -> bool {
+    Lang::parse(lang_tag).is_some_and(|l| ENGINE.with(|e| e.borrow().has_translit(l)))
+}
+
 /// `render` with word lists (TSV, PLS or JSON texts) applied.
 #[wasm_bindgen(js_name = renderWordlists)]
 pub fn render_wordlists(

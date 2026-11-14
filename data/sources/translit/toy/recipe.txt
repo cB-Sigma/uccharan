@@ -1,0 +1,14 @@
+# The tiny pack of the library's tests (crates/uccharan/tests/data/xlit-toy.ucd),
+# built by `lexgen xlit-toy` from the files in this directory.
+lang=hi
+order=4
+min=1,1,1,1
+min_token=1
+prune=0
+freq_min=1
+lex_min=1
+bigram_min=1
+en_freq=en_freq.tsv
+en_min=1
+license=Apache-2.0
+w.floor=-2

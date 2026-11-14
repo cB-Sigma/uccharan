@@ -1,0 +1,504 @@
+# Portuguese (Portugal). espeak-ng voice "pt". Letter rules for words
+# outside the word table, the number words and the letter names.
+
+[meta]
+tag = pt
+vowels = a e ɛ i o ɔ u ɑ ʊ ɐ ə ɨ
+unstressable = ə
+stress = spanish
+secondary = none
+sandhi-block = h
+vowel-mark = yes
+spell-vowels = aeiouáàâãéêíóôõúü
+
+[classes]
+V = a e i o u á à â ã é ê í ó ô õ ú
+FV = e i é ê í
+NV = b c d f g j k l m n p q r s t v x z ç
+VC = b d g l m n r v
+S = ˈ
+VL = p t k f s ʃ ⁞
+K = k
+J = ‿
+VS = a e ɛ i o ɔ u ɨ ʊ ɐ ɑ ə ũ ˈ ˌ
+VCD = b d ɡ v z ʒ m n l ɾ ʁ ɹ j w
+PC = p t k b d ɡ f v s z ʃ ʒ ʁ m n ɲ l ɾ ɹ j
+
+[pre]
+á -> ˈa
+à -> a
+â -> ˈa
+é -> ˈɛ
+ê -> ˈe
+í -> ˈi
+ó -> ˈɔ
+ô -> ˈo
+ú -> ˈu
+ão -> ˈɐ̃ʊ̃
+ões -> ˈoɪŋs
+ãe -> ˈɐ̃y
+ã -> ˈɐ̃
+õ -> ˈo
+am -> ɐ̃ʊ̃ / _ #
+em -> eɪŋ / _ #
+ens -> eɪŋs / _ #
+im -> iŋ / _ # | _ {NV}
+in -> iŋ / _ {NV}
+om -> oŋ / _ # | _ {NV}
+on -> oŋ / _ {NV}
+um -> uŋ / _ # | _ {NV}
+un -> uŋ / _ {NV}
+an -> ɐŋ / _ {NV}
+am -> ɐŋ / _ {NV}
+en -> eɪŋ / _ {NV}
+em -> eɪŋ / _ {NV}
+nh -> ɲ
+lh -> ʎ
+ch -> ʃ
+qu -> k / _ {FV}
+qu -> kw
+gu -> ɡ / _ {FV}
+ç -> s
+c -> s / _ {FV}
+c -> k
+g -> ʒ / _ {FV}
+g -> ɡ
+j -> ʒ
+h -> 0
+rr -> ʁ
+r -> ʁ / # _
+r -> ɹ / _ #
+r -> ɾə / _ {NV}
+r -> ɾ
+ss -> s
+s -> z / {V} _ {V}
+x -> ʃ
+z -> ʃ / _ #
+s -> ʃ / _ # | _ {NV}
+ou -> ow
+ai -> aɪ
+ei -> eɪ
+oi -> oɪ
+au -> aʊ
+eu -> eʊ
+a -> ɐ / _ # | _ s #
+e -> ɨ / _ # | _ s #
+o -> ʊ / _ # | _ s #
+
+[clause]
+# A final ʃ is z before a word written with a vowel first and ʒ before a
+# voiced consonant, a digit or h; a final unstressed ʊ is a glide before a vowel.
+ʃ -> z / _ ‿ ⁑
+ʃ -> ʒ / _ ‿ {VCD} | _ ‿ ⁞
+ʊ -> w / ˈ {!J}* {PC} _ ‿ ⁑
+ʊ -> u / ‿ ⁑ _ ‿ ⁑ | # ⁑ _ ‿ ⁑
+
+[words]
+zero# zˈɛɾu
+um# ˈum
+dois# dˈoɪʃ
+três# tɹˈeʃ
+quatro# kwˈatɹu
+cinco# sˈiŋku
+seis# sˈeɪʃ
+sete# sˈɛtɨ
+oito# ˈoɪtu
+nove# nˈɔvɨ
+dez# dˈɛʃ
+onze# ˈoŋzɨ
+doze# dˈozɨ
+treze# tɹˈezɨ
+catorze# kɐtˈorzɨ
+quinze# kˈiŋzɨ
+dezesseis# dˌɨzɐsˈeiʃ
+dezessete# dˌɨzɐsˈɛtɨ
+dezoito# dˌɨzˈɔitu
+dezenove# dˌɨzɐnˈɔvɨ
+vinte# vˈiŋtɨ
+vinte-e-um# vˈiŋtɨiˈum
+vinte-e-dois# vˈiŋtɨidˈoɪʃ
+vinte-e-três# vˈiŋtɨitɹˈeʃ
+vinte-e-quatro# vˈiŋtɨikwˈatɹu
+vinte-e-cinco# vˈiŋtɨisˈiŋku
+vinte-e-seis# vˈiŋtɨisˈeɪʃ
+vinte-e-sete# vˈiŋtɨisˈɛtɨ
+vinte-e-oito# vˈiŋtɨiˈoɪtu
+vinte-e-nove# vˈiŋtɨinˈɔvɨ
+trinta# tɹˈiŋtɐ
+trinta-e-um# tɹˈiŋtɐiˈum
+trinta-e-dois# tɹˈiŋtɐidˈoɪʃ
+trinta-e-três# tɹˈiŋtɐitɹˈeʃ
+trinta-e-quatro# tɹˈiŋtɐikwˈatɹu
+trinta-e-cinco# tɹˈiŋtɐisˈiŋku
+trinta-e-seis# tɹˈiŋtɐisˈeɪʃ
+trinta-e-sete# tɹˈiŋtɐisˈɛtɨ
+trinta-e-oito# tɹˈiŋtɐiˈoɪtu
+trinta-e-nove# tɹˈiŋtɐinˈɔvɨ
+quarenta# kwɐɾˈeŋtɐ
+quarenta-e-um# kwɐɾˈeŋtɐiˈum
+quarenta-e-dois# kwɐɾˈeŋtɐidˈoɪʃ
+quarenta-e-três# kwɐɾˈeŋtɐitɹˈeʃ
+quarenta-e-quatro# kwɐɾˈeŋtɐikwˈatɹu
+quarenta-e-cinco# kwɐɾˈeŋtɐisˈiŋku
+quarenta-e-seis# kwɐɾˈeŋtɐisˈeɪʃ
+quarenta-e-sete# kwɐɾˈeŋtɐisˈɛtɨ
+quarenta-e-oito# kwɐɾˈeŋtɐiˈoɪtu
+quarenta-e-nove# kwɐɾˈeŋtɐinˈɔvɨ
+cinquenta# sˌiŋkwˈeɪŋtɐ
+cinquenta-e-um# sˌiŋkwˈeɪŋtɐiˈum
+cinquenta-e-dois# sˌiŋkwˈeɪŋtɐidˈoɪʃ
+cinquenta-e-três# sˌiŋkwˈeɪŋtɐitɹˈeʃ
+cinquenta-e-quatro# sˌiŋkwˈeɪŋtɐikwˈatɹu
+cinquenta-e-cinco# sˌiŋkwˈeɪŋtɐisˈiŋku
+cinquenta-e-seis# sˌiŋkwˈeɪŋtɐisˈeɪʃ
+cinquenta-e-sete# sˌiŋkwˈeɪŋtɐisˈɛtɨ
+cinquenta-e-oito# sˌiŋkwˈeɪŋtɐiˈoɪtu
+cinquenta-e-nove# sˌiŋkwˈeɪŋtɐinˈɔvɨ
+sessenta# sˌɨsˈeɪŋtɐ
+sessenta-e-um# sˌɨsˈeɪŋtɐiˈum
+sessenta-e-dois# sˌɨsˈeɪŋtɐidˈoɪʃ
+sessenta-e-três# sˌɨsˈeɪŋtɐitɹˈeʃ
+sessenta-e-quatro# sˌɨsˈeɪŋtɐikwˈatɹu
+sessenta-e-cinco# sˌɨsˈeɪŋtɐisˈiŋku
+sessenta-e-seis# sˌɨsˈeɪŋtɐisˈeɪʃ
+sessenta-e-sete# sˌɨsˈeɪŋtɐisˈɛtɨ
+sessenta-e-oito# sˌɨsˈeɪŋtɐiˈoɪtu
+sessenta-e-nove# sˌɨsˈeɪŋtɐinˈɔvɨ
+setenta# sˌɨtˈeɪŋtɐ
+setenta-e-um# sˌɨtˈeɪŋtɐiˈum
+setenta-e-dois# sˌɨtˈeɪŋtɐidˈoɪʃ
+setenta-e-três# sˌɨtˈeɪŋtɐitɹˈeʃ
+setenta-e-quatro# sˌɨtˈeɪŋtɐikwˈatɹu
+setenta-e-cinco# sˌɨtˈeɪŋtɐisˈiŋku
+setenta-e-seis# sˌɨtˈeɪŋtɐisˈeɪʃ
+setenta-e-sete# sˌɨtˈeɪŋtɐisˈɛtɨ
+setenta-e-oito# sˌɨtˈeɪŋtɐiˈoɪtu
+setenta-e-nove# sˌɨtˈeɪŋtɐinˈɔvɨ
+oitenta# ˌoɪtˈeɪŋtɐ
+oitenta-e-um# ˌoɪtˈeɪŋtɐiˈum
+oitenta-e-dois# ˌoɪtˈeɪŋtɐidˈoɪʃ
+oitenta-e-três# ˌoɪtˈeɪŋtɐitɹˈeʃ
+oitenta-e-quatro# ˌoɪtˈeɪŋtɐikwˈatɹu
+oitenta-e-cinco# ˌoɪtˈeɪŋtɐisˈiŋku
+oitenta-e-seis# ˌoɪtˈeɪŋtɐisˈeɪʃ
+oitenta-e-sete# ˌoɪtˈeɪŋtɐisˈɛtɨ
+oitenta-e-oito# ˌoɪtˈeɪŋtɐiˈoɪtu
+oitenta-e-nove# ˌoɪtˈeɪŋtɐinˈɔvɨ
+noventa# nˌuvˈeɪŋtɐ
+noventa-e-um# nˌuvˈeɪŋtɐiˈum
+noventa-e-dois# nˌuvˈeɪŋtɐidˈoɪʃ
+noventa-e-três# nˌuvˈeɪŋtɐitɹˈeʃ
+noventa-e-quatro# nˌuvˈeɪŋtɐikwˈatɹu
+noventa-e-cinco# nˌuvˈeɪŋtɐisˈiŋku
+noventa-e-seis# nˌuvˈeɪŋtɐisˈeɪʃ
+noventa-e-sete# nˌuvˈeɪŋtɐisˈɛtɨ
+noventa-e-oito# nˌuvˈeɪŋtɐiˈoɪtu
+noventa-e-nove# nˌuvˈeɪŋtɐinˈɔvɨ
+doisv2# dˈoɪʒ
+trêsv2# tɹˈeʒ
+seisv2# sˈeɪʒ
+dezv2# dˈɛʒ
+dezesseisv2# dˌɨzɐsˈeiʒ
+vinte-e-doisv2# vˈiŋtɨidˈoɪʒ
+vinte-e-trêsv2# vˈiŋtɨitɹˈeʒ
+vinte-e-seisv2# vˈiŋtɨisˈeɪʒ
+trinta-e-doisv2# tɹˈiŋtɐidˈoɪʒ
+trinta-e-trêsv2# tɹˈiŋtɐitɹˈeʒ
+trinta-e-seisv2# tɹˈiŋtɐisˈeɪʒ
+quarenta-e-doisv2# kwɐɾˈeŋtɐidˈoɪʒ
+quarenta-e-trêsv2# kwɐɾˈeŋtɐitɹˈeʒ
+quarenta-e-seisv2# kwɐɾˈeŋtɐisˈeɪʒ
+cinquenta-e-doisv2# sˌiŋkwˈeɪŋtɐidˈoɪʒ
+cinquenta-e-trêsv2# sˌiŋkwˈeɪŋtɐitɹˈeʒ
+cinquenta-e-seisv2# sˌiŋkwˈeɪŋtɐisˈeɪʒ
+sessenta-e-doisv2# sˌɨsˈeɪŋtɐidˈoɪʒ
+sessenta-e-trêsv2# sˌɨsˈeɪŋtɐitɹˈeʒ
+sessenta-e-seisv2# sˌɨsˈeɪŋtɐisˈeɪʒ
+setenta-e-doisv2# sˌɨtˈeɪŋtɐidˈoɪʒ
+setenta-e-trêsv2# sˌɨtˈeɪŋtɐitɹˈeʒ
+setenta-e-seisv2# sˌɨtˈeɪŋtɐisˈeɪʒ
+oitenta-e-doisv2# ˌoɪtˈeɪŋtɐidˈoɪʒ
+oitenta-e-trêsv2# ˌoɪtˈeɪŋtɐitɹˈeʒ
+oitenta-e-seisv2# ˌoɪtˈeɪŋtɐisˈeɪʒ
+noventa-e-doisv2# nˌuvˈeɪŋtɐidˈoɪʒ
+noventa-e-trêsv2# nˌuvˈeɪŋtɐitɹˈeʒ
+noventa-e-seisv2# nˌuvˈeɪŋtɐisˈeɪʒ
+cem# sˈeɪŋ
+cemv2# sˈeɪŋtui
+duzentos# dˌuzˈeɪŋtuʃ
+duzentosv2# dˌuzˈeɪŋtuʒi
+trezentos# tɹˌɨzˈeɪŋtuʃ
+trezentosv2# tɹˌɨzˈeɪŋtuʒi
+quatrocentos# kwˈatɹusˈeɪŋtuʃ
+quatrocentosv2# kwˈatɹusˈeɪŋtuʒi
+quinhentos# kˌiɲˈeɪŋtuʃ
+quinhentosv2# kˌiɲˈeɪŋtuʒi
+seiscentos# sˌeɪsˈeɪŋtuʃ
+seiscentosv2# sˌeɪsˈeɪŋtuʒi
+setecentos# sˈɛtɨsˈeɪŋtuʃ
+setecentosv2# sˈɛtɨsˈeɪŋtuʒi
+oitocentos# ˈoɪtusˈeɪŋtuʃ
+oitocentosv2# ˈoɪtusˈeɪŋtuʒi
+novecentos# nˈɔvɨsˈeɪŋtuʃ
+novecentosv2# nˈɔvɨsˈeɪŋtuʒi
+and# i
+mil# mˈil
+ummilhão# ˈũmiljˈɐ̃ʊ̃
+milhões# miljˈõjʃ
+vírgula# ⁞vˈirɡulɐ
+menos# mˈenʊs
+por-cento# pˌorsˈeɪŋtʊ
+
+[numbers]
+decimal comma
+tail-secondary no
+point vírgula#
+minus menos#
+percent por-cento#
+one-before-scale no
+0 zero#
+1 um#
+2 dois#
+3 três#
+4 quatro#
+5 cinco#
+6 seis#
+7 sete#
+8 oito#
+9 nove#
+10 dez#
+11 onze#
+12 doze#
+13 treze#
+14 catorze#
+15 quinze#
+16 dezesseis#
+17 dezessete#
+18 dezoito#
+19 dezenove#
+20 vinte#
+21 vinte-e-um#
+22 vinte-e-dois#
+23 vinte-e-três#
+24 vinte-e-quatro#
+25 vinte-e-cinco#
+26 vinte-e-seis#
+27 vinte-e-sete#
+28 vinte-e-oito#
+29 vinte-e-nove#
+30 trinta#
+31 trinta-e-um#
+32 trinta-e-dois#
+33 trinta-e-três#
+34 trinta-e-quatro#
+35 trinta-e-cinco#
+36 trinta-e-seis#
+37 trinta-e-sete#
+38 trinta-e-oito#
+39 trinta-e-nove#
+40 quarenta#
+41 quarenta-e-um#
+42 quarenta-e-dois#
+43 quarenta-e-três#
+44 quarenta-e-quatro#
+45 quarenta-e-cinco#
+46 quarenta-e-seis#
+47 quarenta-e-sete#
+48 quarenta-e-oito#
+49 quarenta-e-nove#
+50 cinquenta#
+51 cinquenta-e-um#
+52 cinquenta-e-dois#
+53 cinquenta-e-três#
+54 cinquenta-e-quatro#
+55 cinquenta-e-cinco#
+56 cinquenta-e-seis#
+57 cinquenta-e-sete#
+58 cinquenta-e-oito#
+59 cinquenta-e-nove#
+60 sessenta#
+61 sessenta-e-um#
+62 sessenta-e-dois#
+63 sessenta-e-três#
+64 sessenta-e-quatro#
+65 sessenta-e-cinco#
+66 sessenta-e-seis#
+67 sessenta-e-sete#
+68 sessenta-e-oito#
+69 sessenta-e-nove#
+70 setenta#
+71 setenta-e-um#
+72 setenta-e-dois#
+73 setenta-e-três#
+74 setenta-e-quatro#
+75 setenta-e-cinco#
+76 setenta-e-seis#
+77 setenta-e-sete#
+78 setenta-e-oito#
+79 setenta-e-nove#
+80 oitenta#
+81 oitenta-e-um#
+82 oitenta-e-dois#
+83 oitenta-e-três#
+84 oitenta-e-quatro#
+85 oitenta-e-cinco#
+86 oitenta-e-seis#
+87 oitenta-e-sete#
+88 oitenta-e-oito#
+89 oitenta-e-nove#
+90 noventa#
+91 noventa-e-um#
+92 noventa-e-dois#
+93 noventa-e-três#
+94 noventa-e-quatro#
+95 noventa-e-cinco#
+96 noventa-e-seis#
+97 noventa-e-sete#
+98 noventa-e-oito#
+99 noventa-e-nove#
+2x doisv2#
+3x trêsv2#
+6x seisv2#
+10x dezv2#
+16x dezesseisv2#
+22x vinte-e-doisv2#
+23x vinte-e-trêsv2#
+26x vinte-e-seisv2#
+32x trinta-e-doisv2#
+33x trinta-e-trêsv2#
+36x trinta-e-seisv2#
+42x quarenta-e-doisv2#
+43x quarenta-e-trêsv2#
+46x quarenta-e-seisv2#
+52x cinquenta-e-doisv2#
+53x cinquenta-e-trêsv2#
+56x cinquenta-e-seisv2#
+62x sessenta-e-doisv2#
+63x sessenta-e-trêsv2#
+66x sessenta-e-seisv2#
+72x setenta-e-doisv2#
+73x setenta-e-trêsv2#
+76x setenta-e-seisv2#
+82x oitenta-e-doisv2#
+83x oitenta-e-trêsv2#
+86x oitenta-e-seisv2#
+92x noventa-e-doisv2#
+93x noventa-e-trêsv2#
+96x noventa-e-seisv2#
+100 cem#
+100+ cemv2#
+200 duzentos#
+200+ duzentosv2#
+300 trezentos#
+300+ trezentosv2#
+400 quatrocentos#
+400+ quatrocentosv2#
+500 quinhentos#
+500+ quinhentosv2#
+600 seiscentos#
+600+ seiscentosv2#
+700 setecentos#
+700+ setecentosv2#
+800 oitocentos#
+800+ oitocentosv2#
+900 novecentos#
+900+ novecentosv2#
+scale100 cem#
+and-below-hundred and#
+1000 mil#
+1000+ mil#
+scale1000 mil#
+scale1000+ mil#
+1000000 ummilhão#
+1000000+ ummilhão#
+scale1000000 milhões#
+scale1000000+ milhões#
+
+[spell]
+a ˈa
+b bˈe
+c sˈe
+d dˈe
+e ˈɛ
+f ˈɛf
+g ɡˈe
+h ɐɡˈa
+i ˈi
+j ʒˈɔtɐ
+k kˈapɐ
+l ˈɛl
+m ˈɛm
+n ˈɛn
+o ˈɔ
+p pˈe
+q kˈe
+r ˈɛrr
+s ˈɛs
+t tˈe
+u ˈu
+v vˈe
+w dˈɐblˌiu
+x ʃˈiʃ
+y ˈipsˌilɔŋ
+z zˈe
+ç sˌesɨdˈiʎɐ
+á ˈa
+é ˌɛɐɡˈudʊ
+í ˌiɐɡˈudʊ
+ó ˈɔ
+ú ˌuɐɡˈudʊ
+â ˌɐsirkũŋflˈɛksʊ
+ê ˌɛsirkũŋflˈɛksʊ
+ô ˌɔsirkũŋflˈɛksʊ
+ã ˌɐtˈil
+õ ˌɔtˈil
+
+# Words without stress inside a clause and with stress at its end.
+[unstressed]
+você s p
+fazer s p
+ele s p
+não s p
+dele s p
+ela s p
+dela s p
+nós 0 p
+eu 0 p
+eles s p
+vocês s p
+deles s p
+sempre s p
+seu 0 p
+meu 0 p
+poder s p
+vai 0 p
+sua s p
+minha s p
+nele s p
+as 0 p
+nunca s p
+se 0 p
+pode s p
+nela s p
+vão 0 p
+tu 0 p
+vamos s p
+seus 0 p
+tua s p
+posso s p
+vós 0 p
+neles s p
+poderá s p
+meus 0 p
+podem s p
+teu 0 p
+suas s p
+minhas s p
+aquela s p
+podemos s p
+fazemos s p
+jamais s p
+pude s p
+podia s p
+vais 0 p
+teus 0 p

@@ -1,0 +1,53 @@
+# Gujarati words whose usual romanisation is also an English word.
+# For these spellings the neighbouring words decide the language: the native candidate
+# is never taken for a loan of the English word.
+# Hand-written for uccharan (Apache-2.0); not yet reviewed by a native speaker.
+# Columns: romanised form, native word (for the reader; candidates come from the lexicon).
+have	હવે
+mate	માટે
+to	તો
+te	તે
+e	એ
+me	મેં
+man	મન
+pan	પણ
+bar	બાર
+char	ચાર
+sat	સાત
+be	બે
+are	અરે
+mane	મને
+tame	તમે
+ane	અને
+kale	કાલે
+no	નો
+am	આમ
+vat	વાત
+male	મળે
+mare	મારે
+same	સામે
+jam	જામ
+pet	પેટ
+kam	કામ
+jo	જો
+so	સો
+he	હે
+hath	હાથ
+din	દિન
+ja	જા
+ho	હો
+ha	હા
+na	ના
+ma	માં
+ne	ને
+ni	ની
+nu	નું
+tu	તું
+hu	હું
+par	પર
+bas	બસ
+pass	પાસ
+door	દૂર
+war	વાર
+chat	છત
+dam	દમ

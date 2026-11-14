@@ -5,58 +5,58 @@
  "sentence_level": {
   "sentences": 2000,
   "reference_symbols": 98066,
-  "per": 0.003987110721350927,
-  "per_without_stress": 0.003137167373459316,
-  "exact_sentence": 0.931,
-  "exact_sentence_without_stress": 0.939,
-  "piper_shape_per": 0.003931037235103963,
-  "piper_shape_exact_sentence": 0.931,
+  "per": 0.003742377582444476,
+  "per_without_stress": 0.002913969694715175,
+  "exact_sentence": 0.9315,
+  "exact_sentence_without_stress": 0.94,
+  "piper_shape_per": 0.0036915831903260566,
+  "piper_shape_exact_sentence": 0.9315,
   "word_count_mismatch_sentences": 27,
   "errors_by_class": {
    "stress": {
-    "count": 142,
-    "share": 0.3631713554987212,
-    "per_contribution": 0.0014480044051965004
+    "count": 135,
+    "share": 0.3678474114441417,
+    "per_contribution": 0.0013766239063487855
    },
    "vowel": {
-    "count": 97,
-    "share": 0.24808184143222506,
-    "per_contribution": 0.0009891297697469052
+    "count": 96,
+    "share": 0.2615803814713896,
+    "per_contribution": 0.000978932555625803
    },
    "consonant": {
-    "count": 78,
-    "share": 0.19948849104859334,
-    "per_contribution": 0.000795382701445965
+    "count": 65,
+    "share": 0.1771117166212534,
+    "per_contribution": 0.0006628189178716374
    },
    "other": {
-    "count": 62,
-    "share": 0.1585677749360614,
-    "per_contribution": 0.0006322272755083312
+    "count": 59,
+    "share": 0.16076294277929154,
+    "per_contribution": 0.0006016356331450248
    },
    "word-boundary": {
     "count": 6,
-    "share": 0.015345268542199489,
+    "share": 0.01634877384196185,
     "per_contribution": 6.118328472661269e-05
    },
    "length": {
     "count": 5,
-    "share": 0.01278772378516624,
+    "share": 0.013623978201634877,
     "per_contribution": 5.098607060551058e-05
    },
    "diacritic": {
     "count": 1,
-    "share": 0.0025575447570332483,
+    "share": 0.0027247956403269754,
     "per_contribution": 1.0197214121102114e-05
    }
   },
   "top_confusions": [
    {
     "edit": "ˈ→ˌ",
-    "count": 34
+    "count": 33
    },
    {
     "edit": "∅→ˈ",
-    "count": 28
+    "count": 27
    },
    {
     "edit": "ɔ→∅",
@@ -64,15 +64,11 @@
    },
    {
     "edit": "∅→ɔ",
-    "count": 21
+    "count": 20
    },
    {
     "edit": "ˌ→ˈ",
     "count": 17
-   },
-   {
-    "edit": "j→ɟ",
-    "count": 16
    },
    {
     "edit": "ˌ→∅",
@@ -80,10 +76,6 @@
    },
    {
     "edit": "ɔ→o",
-    "count": 13
-   },
-   {
-    "edit": "∅→ˌ",
     "count": 13
    },
    {
@@ -95,11 +87,11 @@
     "count": 12
    },
    {
-    "edit": "æ→e",
-    "count": 10
+    "edit": "∅→ˌ",
+    "count": 12
    },
    {
-    "edit": "∅→j",
+    "edit": "æ→e",
     "count": 10
    },
    {
@@ -107,11 +99,11 @@
     "count": 10
    },
    {
-    "edit": "c→ʃ",
+    "edit": "∅→j",
     "count": 9
    },
    {
-    "edit": "ˈ→∅",
+    "edit": "c→ʃ",
     "count": 9
    },
    {
@@ -123,15 +115,15 @@
     "count": 8
    },
    {
+    "edit": "ˈ→∅",
+    "count": 7
+   },
+   {
     "edit": "ː→ʃ",
     "count": 5
    },
    {
     "edit": "ː→∅",
-    "count": 5
-   },
-   {
-    "edit": "ˈ→ɔ",
     "count": 5
    },
    {
@@ -149,20 +141,28 @@
    {
     "edit": "∅→e",
     "count": 4
+   },
+   {
+    "edit": "̃→ɔ",
+    "count": 4
+   },
+   {
+    "edit": "ɟ→j",
+    "count": 4
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 12272,
-    "wrong": 125,
-    "rate": 0.010185788787483703
+    "wrong": 127,
+    "rate": 0.010348761408083442
    }
   },
   "by_subset": {
    "no-digits": {
     "sentences": 2000,
-    "per": 0.003987110721350927,
-    "exact_sentence": 0.931
+    "per": 0.003742377582444476,
+    "exact_sentence": 0.9315
    }
   },
   "examples_of_disagreement": [
@@ -173,28 +173,10 @@
     "uccharan": "mˈuiɾˌileɾ ˈekʰɔn kˈur. bˈɔtʃʰɔɾ hˈɔtʃʰe"
    },
    {
-    "id": "11685359",
-    "text": "১৯৭৩ সালে আফগানিস্তানের রাজতন্ত্রের অবসান ঘটে।",
-    "reference": "ˈæk hˈajaɾ nˈɔʃˈo tˈiattˈɔɾ ʃˈale ˈafɔɡˌanistˌaneɾ ɾˈaɟɔtˌɔntɾeɾ ˈɔbɔʃˌan ɡʰˈɔʈe",
-    "uccharan": "ˈæk hˈaɟaɾ nˈɔjʃˈo tˈittɔɾ ʃˈale ˈafɔɡˌanistˌaneɾ ɾˈaɟɔtˌɔntɾeɾ ˈɔbɔʃˌan ɡʰˈɔʈe"
-   },
-   {
     "id": "5683469",
     "text": "ওনার এক তিক্ত অভিজ্ঞতা হয়েছিলো।",
     "reference": "ˈoːnaɾ ˈek tˈikto ˈobʰiɡɡˌõta hˈotʃʰilˌo",
     "uccharan": "ˈoːnaɾ ˈek tˈikto ˈobʰiɡɡˌɔta hˈotʃʰilˌo"
-   },
-   {
-    "id": "11500052",
-    "text": "১৭৫৭ সালে পলাশির যুদ্ধ হয়েছিল।",
-    "reference": "ˈæk hˈajaɾ ʃˈatʃˈo ʃˈatannˈo ʃˈale pˈɔlaʃˌiɾ dʒˈuddʰɔ hˈotʃʰil",
-    "uccharan": "ˈæk hˈaɟaɾ ʃˈatʃˈo ʃˈatannˌɔ ʃˈale pˈɔlaʃˌiɾ dʒˈuddʰɔ hˈotʃʰil"
-   },
-   {
-    "id": "11000837",
-    "text": "২০১৮ সালের ২৪ জানুয়ারি এটি আজাকিতে আসে।",
-    "reference": "dˈu hˈajaɾ ˈaʈʰaɾˌɔ ʃˈaleɾ tʃˈɔbbiʃ ɟˈanuɾˌi ˈeʈi ˈaɟakˌite ˈaʃe",
-    "uccharan": "dˈu hˈaɟaɾ ˈaʈʰaɾˌo ʃˈaleɾ tʃˈobbiʃ ɟˈanuɾˌi ˈeʈi ˈaɟakˌite ˈaʃe"
    },
    {
     "id": "11479697",
@@ -207,18 +189,6 @@
     "text": "বাংলাদেশের রাষ্ট্রপতি রাষ্ট্রের প্রধান হিসেবে দায়িত্ব পালন করেন কিন্তু সরকার প্রধানের দায়িত্ব পালন করেন বাংলাদেশের প্রধানমন্ত্রী।",
     "reference": "bˈaŋladˌeʃeɾ ɾˈaʃʈɾɔpˌɔti ɾˈaʃʈɾeɾ pɾˈodʰan hˈiʃebˌe dˈatbɔ pˈalɔn kˈɔɾen kˌintu ʃˈɔɾɔkˌaɾ pɾˈodʰanˌeɾ dˈatbɔ pˈalɔn kˈɔɾen bˈaŋladˌeʃeɾ pɾˌɔɖʰanmˌɔntɾˈi",
     "uccharan": "bˈaŋladˌeʃeɾ ɾˈaʃʈɾɔpˌɔti ɾˈaʃʈɾeɾ pɾˈodʰan hˈiʃebˌe dˈatbɔ pˈalɔn kˈɔɾen kˌintu ʃˈɔɾɔkˌaɾ pɾˈodʰanˌeɾ dˈatbɔ pˈalɔn kˈɔɾen bˈaŋladˌeʃeɾ pɾˈodʰanˌɔmɔntɾˌi"
-   },
-   {
-    "id": "11643656",
-    "text": "ইংরেজরা বাংলাদেশে আগমন করে ১৬০৮ সালে।",
-    "reference": "ˈiŋɾeɟˌɔɾa bˈaŋladˌeʃe ˈaɡɔmˌɔn kˈɔɾe ˈæk hˈajaɾ tʃʰˈɔʃˈo ˈaʈʰ ʃˈale",
-    "uccharan": "ˈiŋɾeɟˌɔɾa bˈaŋladˌeʃe ˈaɡɔmˌɔn kˈɔɾe ˈæk hˈaɟaɾ tʃʰˈɔjʃˈo ˈaʈ ʃˈale"
-   },
-   {
-    "id": "11456767",
-    "text": "বাংলাদেশ ১৯৭১ সালে স্বাধীনতা লাভ করে।",
-    "reference": "bˈaŋladˌeʃ ˈæk hˈajaɾ nˈɔʃˈo ˈekattˈɔɾ ʃˈale ʃˈadʰinˌɔta lˈabʰ kˈɔɾe",
-    "uccharan": "bˈaŋladˌeʃ ˈæk hˈaɟaɾ nˈɔjʃˈo ˈekattˌɔɾ ʃˈale ʃˈadʰinˌɔta lˈabʰ kˈɔɾe"
    },
    {
     "id": "5279662",
@@ -237,6 +207,36 @@
     "text": "গ্রামের কয়েকজন বাসিন্দা সূত্রে জানা গেছে, মঙ্গলবার রাত আটটার দিকে বিজিবির পাঁচ সদস্যের একটি দল ওই গ্রামের বাবলু মিয়ার বাড়িতে যায়।",
     "reference": "ɡɾˈameɾ kˈɔkɔɟˌɔn bˈaʃindˌa ʃˈutɾe ɟˈana ɡˈetʃʰe mɔnɡˈolbˌaɾ ɾˈato ˈaʈɔʈˌaɾ dˈike bˈiɟibˌiɾ pˈãtʃ ʃˈɔdɔsdʒˌeɾ ˈekʈi dˈɔl ˈoːi ɡɾˈameɾ bˈabɔlˌu mˈiɾ bˈar.te dʒˈaj",
     "uccharan": "ɡɾˈameɾ kˈɔkɔɟˌɔn bˈaʃindˌa ʃˈutɾe ɟˈana ɡˈetʃʰe mˈɔŋɡɔlˌɔbaɾ ɾˈato ˈaʈɔʈˌaɾ dˈike bˈiɟibˌiɾ pˈãtʃ ʃˈɔdɔsdʒˌeɾ ˈekʈi dˈɔl ˈoːi ɡɾˈameɾ bˈabɔlˌu mˈiɾ bˈar.te dʒˈaj"
+   },
+   {
+    "id": "11507445",
+    "text": "এই হৃদয়ের চেয়ে বড় কোনো মন্দির-কাবা নাই।",
+    "reference": "ˌei hɾˈidɔɾ tʃˈe bˈɔr. kˈono mˈondiɾˌɔkˈaba nˈai",
+    "uccharan": "ˌei hɾˈidɔɾ tʃˈe bˈɔr. kˈono mˈondiɾkˈaba nˈai"
+   },
+   {
+    "id": "5532473",
+    "text": "ওটাকে কাছে নিয়ে আসো।",
+    "reference": "ˌoːʈakˌe kˈatʃʰe nˈi ˈaʃo",
+    "uccharan": "ˈoːʈakˌe kˈatʃʰe nˈi ˈaʃo"
+   },
+   {
+    "id": "12402877",
+    "text": "সন্তানের লালন-পালন স্বামী-স্ত্রীর যৌথ দায়িত্ব।",
+    "reference": "ʃˈɔntanˌeɾ lˈalɔnˌɔpˈalɔn ʃˈamistɾˈiɾ dʒˈowtʰɔ dˈatbɔ",
+    "uccharan": "ʃˈɔntanˌeɾ lˈalɔnpˈalɔn ʃˈamistɾˈiɾ dʒˈowtʰɔ dˈatbɔ"
+   },
+   {
+    "id": "11685359",
+    "text": "১৯৭৩ সালে আফগানিস্তানের রাজতন্ত্রের অবসান ঘটে।",
+    "reference": "ˈæk hˈajaɾ nˈɔʃˈo tˈiattˈɔɾ ʃˈale ˈafɔɡˌanistˌaneɾ ɾˈaɟɔtˌɔntɾeɾ ˈɔbɔʃˌan ɡʰˈɔʈe",
+    "uccharan": "ˈæk hˈajaɾ nˈɔjʃˈo tˈittɔɾ ʃˈale ˈafɔɡˌanistˌaneɾ ɾˈaɟɔtˌɔntɾeɾ ˈɔbɔʃˌan ɡʰˈɔʈe"
+   },
+   {
+    "id": "11499394",
+    "text": "বাজারে এখন দেশি রসুনের দাম প্রতি কেজি ১০০ থেকে ১৪০ টাকা এবং আমদানি করা রসুনের দাম ১২০ থেকে ১৬০ টাকা।",
+    "reference": "bˈaɟaɾˌe ˈekʰɔn dˈeʃi ɾˈoʃunˌeɾ dˈam pɾˈoti kˈeɟi ˈækʃˈo tʰˈeke ˈækʃˈo tʃɔllˈiʃ ʈˈaka ˌebɔŋ ˈamɔdˌani kˈɔɾa ɾˈoʃunˌeɾ dˈam ˈækʃˈo kˈuɾi tʰˈeke ˈækʃˈo sˈaʈ ʈˈaka",
+    "uccharan": "bˈaɟaɾˌe ˈekʰɔn dˈeʃi ɾˈoʃunˌeɾ dˈam pɾˈoti kˈeɟi ˈækʃˈo tʰˈeke ˈækʃˈo tʃˈolliʃ ʈˈaka ˌebɔŋ ˈamɔdˌani kˈɔɾa ɾˈoʃunˌeɾ dˈam ˈækʃˈo kˈur. tʰˈeke ˈækʃˈo ʃˈaʈ ʈˈaka"
    }
   ]
  }

@@ -1,0 +1,243 @@
+{
+ "language": "it",
+ "reference": "espeak-ng 1.52.0 voice it (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 174556,
+  "per": 0.006593872453539265,
+  "per_without_stress": 0.004755849440488301,
+  "exact_sentence": 0.75,
+  "exact_sentence_without_stress": 0.8003952569169961,
+  "piper_shape_per": 0.006580656822983155,
+  "piper_shape_exact_sentence": 0.7440711462450593,
+  "word_count_mismatch_sentences": 148,
+  "errors_by_class": {
+   "stress": {
+    "count": 410,
+    "share": 0.35621198957428324,
+    "per_contribution": 0.0023488164256742824
+   },
+   "vowel": {
+    "count": 358,
+    "share": 0.3110338835794961,
+    "per_contribution": 0.002050917757052178
+   },
+   "consonant": {
+    "count": 190,
+    "share": 0.16507384882710685,
+    "per_contribution": 0.0010884759045807649
+   },
+   "other": {
+    "count": 97,
+    "share": 0.0842745438748914,
+    "per_contribution": 0.0005556955933912326
+   },
+   "word-boundary": {
+    "count": 64,
+    "share": 0.05560382276281494,
+    "per_contribution": 0.00036664451522720504
+   },
+   "length": {
+    "count": 32,
+    "share": 0.02780191138140747,
+    "per_contribution": 0.00018332225761360252
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→∅",
+    "count": 150
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 119
+   },
+   {
+    "edit": " →∅",
+    "count": 51
+   },
+   {
+    "edit": "ɛ→e",
+    "count": 37
+   },
+   {
+    "edit": "a→∅",
+    "count": 33
+   },
+   {
+    "edit": "e→∅",
+    "count": 28
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 26
+   },
+   {
+    "edit": "ʊ→u",
+    "count": 23
+   },
+   {
+    "edit": "ː→∅",
+    "count": 23
+   },
+   {
+    "edit": "e→ɛ",
+    "count": 23
+   },
+   {
+    "edit": "ɔ→o",
+    "count": 22
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 21
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 20
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 20
+   },
+   {
+    "edit": "u→ʊ",
+    "count": 19
+   },
+   {
+    "edit": "t→∅",
+    "count": 14
+   },
+   {
+    "edit": "∅→ɛ",
+    "count": 13
+   },
+   {
+    "edit": "∅→ ",
+    "count": 13
+   },
+   {
+    "edit": "i→∅",
+    "count": 13
+   },
+   {
+    "edit": "r→∅",
+    "count": 13
+   },
+   {
+    "edit": "z→∅",
+    "count": 12
+   },
+   {
+    "edit": "o→∅",
+    "count": 12
+   },
+   {
+    "edit": "ɾ→∅",
+    "count": 12
+   },
+   {
+    "edit": "∅→e",
+    "count": 11
+   },
+   {
+    "edit": "∅→a",
+    "count": 11
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 20452,
+    "wrong": 223,
+    "rate": 0.010903579112067279
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 187,
+    "per": 0.01326655655602323,
+    "exact_sentence": 0.6149732620320856
+   },
+   "no-digits": {
+    "sentences": 825,
+    "per": 0.004765797194529186,
+    "exact_sentence": 0.7806060606060606
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-227",
+    "text": "Ha annullato il tour dopo che il lead vocalist Steven Tyler si è infortunato a seguito di una caduta dal palco durante una performance il 5 agosto.",
+    "reference": "a annʊllˈato il tˈuːr dˈopo ke il lˈɛad vokˈalist stˈiven tilˈɛr sɪ e infortʊnˈato a sˈeːɡʊito dɪ ˌʊna kadˈuta dal pˈalko dʊrˈante ˌʊna perfˈɔrmans il tʃˈinkwe aɡˈosto",
+    "uccharan": "a annʊllˈato il tˈuːr dˈopo ke il lˈɛad vokˈalist stˈiven tilˈɛr sɪ e infortʊnˈato a seɡwˈito dɪ ˌʊna kadˈuta dal pˈalko dʊrˈante ˌʊna perfˈɔrmans il tʃˈinkwe aɡˈosto"
+   },
+   {
+    "id": "flores-devtest-403",
+    "text": "Comunque, questo è falso. Anche se sul retro del documento c'è scritto qualcosa, non si tratta di una mappa del tesoro.",
+    "reference": "komˈunkwe kwˈesto ˌɛ fˈalso ˌanke se sʊl rˈɛtro del dokʊmˈento tʃe skrˈitːo kwalkˈɔza non sɪ trˈatːa dɪ ˌʊna mˈapːa del tezˈɔro",
+    "uccharan": "komˈunkwe kwˌesto e fˈalso ˌanke se sʊl rˈɛtro del dokʊmˈento tʃe skrˈitːo kwalkˈɔza non sɪ trˈatːa dɪ ˌʊna mˈapːa del tezˈɔro"
+   },
+   {
+    "id": "flores-devtest-954",
+    "text": "Trattate il luogo con tutta la dignità, la serietà e il rispetto che merita. Evitate battute sull'olocausto o sui nazisti.",
+    "reference": "tratːˈate il lʊˈɔɡo kon tˈutːa la diɲitˈa la serietˈa e il rispˈɛtːo ke mˈɛrita evitˈate batːˈute sʊllolokˈaʊsto o sˌʊi natsˈistɪ",
+    "uccharan": "tratːˈate il lʊˈɔɡo kon tˈutːa la diɲitˈa la serietˈa e il rispˈɛtːo ke mˈɛrita evitˈate batːˈute sˌʊllolokaˈʊsto o sˌʊi natsˈistɪ"
+   },
+   {
+    "id": "flores-devtest-177",
+    "text": "Il Sudafrica ha vinto contro gli All Blacks (Nuova Zelanda) nel match del torneo di rugby Tri Nations disputato in casa al Royal Bafokeng Stadium di Rustenburg.",
+    "reference": "il sʊdˈafrika a vˈinto kˌontro ʎɪ ˈal blˈɛːks nʊˈɔva dzelˈanda nel mˈattʃ del tornˈɛo dɪ rˈaɡbɪ trˈi nˈɛʃons dispʊtˈato in kˈaza al rˈojal bafˈokeŋɡ stˈadjʊm dɪ rʊstˈenbʊrɡ",
+    "uccharan": "il sʊdˈafrika a vˈinto kˌontro ʎɪ ˈal blˈɛːks nʊˈɔva dzelˈanda nel mˈattʃ del tornˈɛo dɪ rˈaɡbɪ trˈɪ nˈɛʃons dispʊtˈato in kˈaza al rˈojal bafˈokeŋɡ stˈadjʊm dɪ rˈustenbʊrɡ"
+   },
+   {
+    "id": "flores-devtest-955",
+    "text": "Evitate di deturpare questi luoghi imbrattando le strutture con segni o graffiti.",
+    "reference": "evitˈate dɪ detʊrpˈare kwˌestɪ lʊˈɔɡɪ imbratːˈando le strʊtːˈure kon sˈeɲɲɪ o ɡraffˈitɪ",
+    "uccharan": "evitˈate dɪ detʊrpˈare kwˌestɪ lʊˈɔɡɪ imbrˈatːando le strʊtːˈure kon sˈeɲɲɪ o ɡraffˈitɪ"
+   },
+   {
+    "id": "flores-devtest-110",
+    "text": "Ha indirizzato gli agenti verso la sua vecchia Oldsmobile Intrigue nera che si trovava a 500 piedi di distanza.",
+    "reference": "a indiritsːˈato ʎɪ adʒˈɛntɪ vˌɛrso la sˌʊa vˈɛkːia oldzmˈɔbile intrˈiɡwe nˈera ke sɪ trovˈava a tʃɪnkʊetʃˈɛnto pjˈedɪ dɪ distˈantsa",
+    "uccharan": "a indiritsːˈato ʎɪ adʒˈɛntɪ vˌɛrso la sˌʊa vˈɛkːia oldzmobˈile intrˈiɡwe nˈera ke sɪ trovˈava a tʃɪnkʊetʃˈɛnto pjˈedɪ dɪ distˈantsa"
+   },
+   {
+    "id": "flores-devtest-723",
+    "text": "Il Parco nazionale Kruger (Kruger National Park, KNP) si trova a nord-est del Sudafrica e si snoda a est lungo il confine con il Mozambico, a nord confina con lo Zimbabwe, e il suo confine meridionale è rappresentato dal fiume Crocodile.",
+    "reference": "il pˈarko natsionˈale krʊdʒˈɛr krʊdʒˈɛr nˈaʃonal pˈark kˌapːaˌɛnnepˈi sɪ trˈɔva a nˈɔrdˈest del sʊdˈafrika e sɪ znˈɔda a ˈest lˈuŋɡo il konfˈine kon il modzambˈiko a nˈɔrd konfˈina kon lo dzimbˈabwe e il sˌʊo konfˈine meridjonˈale e rapːrezentˈato dal fjˈume krokˈɔdile",
+    "uccharan": "il pˈarko natsionˈale krˈudʒɛr krˈudʒɛr nˈaʃonal pˈark kˌapːaˌɛnnepˈi sɪ trˈɔva a nˈɔrdˈest del sʊdˈafrika e sɪ znˈɔda a ˈest lˈuŋɡo il konfˈine kon il modzambˈiko a nˈɔrd konfˈina kon lo dzimbˈabwe e il sˌʊo konfˈine meridjonˈale e rapːrezentˈato dal fjˈume krokˈɔdile"
+   },
+   {
+    "id": "flores-devtest-194",
+    "text": "Perry ha dichiarato: \"Tornerò in Texas per verificare i risultati della consultazione di stasera e vedere se per me c'è la possibilità di proseguire in questa competizione\"; tuttavia in seguito ha affermato che rimarrà in corsa e il 21 gennaio parteciperà alle primarie nel South Carolina.",
+    "reference": "pˈɛrɾɪ a dikjaɾˈato torneɾˈɔ in tˈeksas per verifikˈare i rizʊltˈatɪ dˌella konsʊltatsiˈone dɪ stˌa sˈera e vedˈere se per me tʃe la possibilitˈa dɪ prozeɡwˈire in kwˌesta kompetitsiˈone tʊtːavˈia in sˈeːɡwito a affermˈato ke rimarɾˈa in kˈorsa e il ventˈuno dʒennˈaio partetʃipeɾˈa ˌalle primˈarie nel sˈoʊt karolˈina",
+    "uccharan": "pˈɛrɾɪ a dikjaɾˈato torneɾˈɔ in tˈeksas per verifikˈare i rizʊltˈatɪ dˌella konsʊltatsiˈone dɪ stazˈɛra e vedˈere se per me tʃe la possibilitˈa dɪ prozeɡwˈire in kwˌesta kompetitsiˈone tʊtːavˈia in seɡwˈito a affermˈato ke rimarɾˈa in kˈorsa e il ventˈuno dʒennˈaio partetʃipeɾˈa ˌalle primˈarie nel sˈoʊt karolˈina"
+   },
+   {
+    "id": "flores-devtest-233",
+    "text": "Il cantante Sanju Sharma ha aperto la serata, seguito da Jai Shankar Choudhary. Lakkha Singh, accompagnato dal cantante Raju Khandelwal, ha presentato anche il bhajan chhappan bhog.",
+    "reference": "il kantˈante sˈandʒʊ ʃˈarma a apˈɛrto la serˈata seɡwˈito da dʒˈaj ʃaŋkˈar tʃoʊdˈarɪ lˈakːa sˈiŋɡ akːompaɲˈato dal kantˈante rˈajʊ kandˈɛlwal a prezentˈato ˌanke il bˈajan kˈapːan bˈoɡ",
+    "uccharan": "il kantˈante sˈandʒʊ ʃˈarma a apˈɛrto la serˈata seɡwˈito da dʒˈaj ʃˈaŋkar tʃoʊdˈarɪ lˈakːka sˈiŋɡ akːompaɲˈato dal kantˈante rˈajʊ kandˈelwal a prezentˈato ˌanke il bˈajan kˈapːan bˈoɡ"
+   },
+   {
+    "id": "flores-devtest-1",
+    "text": "\"Abbiamo topi di quattro mesi che prima erano diabetici e ora non lo sono più\", ha aggiunto.",
+    "reference": "abːjˌamo tˈɔpɪ dɪ kwˈatːro mˈɛzɪ ke prˈima ˈɛrano djabˈɛtitʃɪ e ˈora non lo sˌono pjˈu a adʒːˈunto",
+    "uccharan": "abːjˌamo tˈɔpɪ dɪ kwˈatːro mˈɛzɪ ke prˈima ˈɛrano djabˈɛtitʃɪ e ˈora non lo sˌono pjʊ a adʒːˈunto"
+   },
+   {
+    "id": "flores-devtest-74",
+    "text": "Dacché il governo federale è intervenuto rilevando il finanziamento dell'ospedale Mersey di Devonport, in Tasmania, il governo statale e diversi deputati hanno criticato la misura come uno stratagemma preelettorale in vista delle consultazioni federali in calendario a novembre.",
+    "reference": "dakːˈe il ɡovˈɛrno federˈale e intervenˈuto rilevˈando il finantsjamˈento dellospedˈale mˈɛrseɪ dɪ devˈonport in tazmˈania il ɡovˈɛrno statˈale e divˈɛrsɪ depʊtˈatɪ ˌanno kritikˈato la mizˈura kˌome ˈuno stratadʒˈɛmma preeletːorˈale in vˈista dˌelle konsʊltatsiˈonɪ federˈalɪ in kalendˈario a novˈɛmbre",
+    "uccharan": "dˈakːe il ɡovˈɛrno federˈale e intervenˈuto rilevˈando il finantsjamˈento dellospedˈale mˈersɪ dɪ devˈonport in tazmˈania il ɡovˈɛrno statˈale e divˈɛrsɪ depʊtˈatɪ ˌanno kritikˈato la mizˈura kˌome ˈuno stratadʒˈɛmma prɛɛletːorˈale in vˈista dˌelle konsʊltatsiˈonɪ federˈalɪ in kalendˈario a novˈɛmbre"
+   },
+   {
+    "id": "flores-devtest-854",
+    "text": "Escursionismo sugli sci: l'attività è chiamata anche fuoripista, sci alpinismo o trekking sugli sci.",
+    "reference": "eskʊrsjonˈizmo sˌʊʎɪ ʃˈi latːivitˈa e kjamˈata ˌanke fʊoripˈista ʃˈi alpinˈizmo o trˈekːiŋɡ sˌʊʎɪ ʃˈi",
+    "uccharan": "eskʊrsjonˈizmo sˌʊʎɪ ʃˈi latːivitˈa e kjamˈata ˌanke fʊorˈipista ʃˈi alpinˈizmo o trˈekːiŋɡ sˌʊʎɪ ʃˈi"
+   }
+  ]
+ }
+}

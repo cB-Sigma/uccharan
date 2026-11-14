@@ -54,13 +54,7 @@ For comparison, the development sets (which the rules were tuned on) give en-US 
 Hindi 0.15 %: held-out and development agree, so the rules are not over-fitted to the development
 sample.
 
-**German** (`de`, FLORES-200 devtest, 1,012 sentences, scored once): PER **1.29 %**, without stress 0.87 %, identical sentences 56.1 %; sentences without digits 1.14 % (first scoring 1.30 %; scored again after two small fixes found on other data: n before k after a linking -en-, and the numeral 1 keeping its stress). Development set (FLORES dev): 1.28 %. By word (sentences whose words align, 819 of 1,012): words in the word table 0.1 % wrong (7,442), words of the word list that the rules read as the reference does 0.0 % (8,916), words outside the word list 53.8 % (813; mostly the stress of long compounds and names).
-
-**Dutch** (`nl`, FLORES-200 devtest, 1,012 sentences, scored once): PER **1.91 %**, without stress 1.35 %, identical sentences 34.1 %; sentences without digits 1.56 %. Development set (FLORES dev): 1.86 %. By word (863 aligned sentences): words in the word table 2.1 % wrong (8,663), listed words read by the rules 1.5 % (9,706), words outside the word list 60.4 % (804). Known gaps: the reference keeps a final d voiced before brackets and dashes, and reads "een" as the numeral in some contexts.
-
-**French** (`fr`, FLORES-200 devtest, 1,012 sentences, scored once): PER **0.98 %**, without stress 0.79 %, identical sentences 54.8 %; sentences without digits 0.76 %. Development set (FLORES dev): 0.94 %. By word (862 aligned sentences): words in the word table 1.6 % wrong (11,236), listed words read by the rules 1.6 % (8,354), words outside the word list 34.6 % (332), tokens with an apostrophe, hyphen or digit 6.9 % (1,425). Known gaps: liaison before h aspiré and before numbers, the stress of *sont* and *ont* before a participle, spaces as thousands separators.
-
-**Word-table model (German, Dutch, French).** After the scorings above, a letter-to-sound model was added to the word tables: back-off tables over letter contexts, trained on the full word lists (139 k German, 80 k Dutch, 100 k French words), with stress marks chosen so that the language's own stress rule gives the reference pattern. It reads words the table does not list, and the tables now keep only the words the model and the rules get wrong (`de.ucd` 54 k → 16 k entries, 748 → 357 KB; `nl.ucd` 41 k → 12 k, 512 → 231 KB; `fr.ucd` 24 k → 12 k, 225 → 170 KB). The model's settings were chosen on words held out of its own training list (every tenth word: German 62.1 → 69.0 % of those words right, Dutch 48.6 → 59.4 %, French 83.7 → 86.4 %), not on FLORES. The FLORES-200 held-out sentences were then scored again (one earlier variant of the model was also scored on them), so these are not first scorings:
+**German, Dutch and French** (`de`, `nl`, `fr`; FLORES-200 devtest, 1,012 sentences each; development sets are FLORES dev). The first scoring, each done once with letter rules and larger word tables, gave PER 1.29 % (German; 1.30 % before two small fixes found on other data), 1.91 % (Dutch) and 0.98 % (French). A letter-to-sound model was then added to the word tables: back-off tables over letter contexts, trained on the full word lists (139 k German, 80 k Dutch, 100 k French words), with stress marks chosen so that the language's own stress rule gives the reference pattern. It reads words the table does not list, and the tables now keep only the words the model and the rules get wrong (`de.ucd` 54 k → 16 k entries, 748 → 357 KB; `nl.ucd` 41 k → 12 k, 512 → 231 KB; `fr.ucd` 24 k → 12 k, 225 → 170 KB). The model's settings were chosen on words held out of its own training list (every tenth word: German 62.1 → 69.0 % of those words right, Dutch 48.6 → 59.4 %, French 83.7 → 86.4 %), not on FLORES. The FLORES-200 held-out sentences were then scored again (one earlier variant of the model was also scored on them: German 1.10 %, Dutch 1.71 %, French 0.85 %), so these are not first scorings:
 
 | | PER | Without stress | Identical sentences | Sentences without digits | Listed words wrong | Words outside the list wrong |
 |---|---|---|---|---|---|---|
@@ -68,7 +62,28 @@ sample.
 | Dutch | **1.77 %** (was 1.91 %) | 1.11 % | 37.3 % | 1.39 % | 1.8 % of 18,370 | 54.7 % of 803 (was 60.4 %) |
 | French | **0.85 %** (was 0.98 %) | 0.69 % | 57.2 % | 0.65 % | 1.6 % of 19,592 | 32.4 % of 330 (was 34.6 %) |
 
-Speed against the same espeak-ng voices with the model in place (p50 per held-out sentence, one thread, a busy machine): German 2.4×, Dutch 1.8×, French 2.8×.
+Speed against the same espeak-ng voices with the model in place (throughput on the held-out sentences, one thread, a busy machine): German 2.4×, Dutch 1.8×, French 2.8× at first; after the model's run-time was rewritten (same output on every development and held-out sentence) German 5.8×, Dutch 3.2×, French 5.9×. The tables also got a key filter of one byte per entry, so the files are 4 to 10 % larger than the sizes above (`de.ucd` 373 KB, `nl.ucd` 242 KB, `fr.ucd` 181 KB).
+
+Known gaps: German and Dutch stress of long compounds and names outside the lists; Dutch final d before brackets and dashes, and "een" read as the numeral in some contexts; French liaison before h aspiré and before numbers, the stress of *sont* and *ont* before a participle, spaces as thousands separators.
+
+**Thirteen more Latin-script languages** (FLORES-200 devtest, 1,012 sentences each, each scored once; the development half is FLORES dev; European Portuguese uses the same sentences as Brazilian Portuguese). Word groups are counted on the sentences whose words align with the reference's. Speed is throughput on one thread against the espeak-ng voice, measured after the run-time rewrite (before it: Turkish 0.9×, Czech 0.7×, Finnish 0.7×, Norwegian 0.9×, Polish 1.0×).
+
+| language | voice | PER | without stress | without digits | identical sentences | in table | other listed | outside list (words) | speed |
+|---|---|---|---|---|---|---|---|---|---|
+| Italian | `it` | 0.66 % | 0.48 % | 0.48 % | 75.0 % | 0.5 % | 0.1 % | 32.2 % (503) | 4.6× |
+| Portuguese (Brazil) | `pt-br` | 0.67 % | 0.42 % | 0.46 % | 61.2 % | 0.7 % | 0.8 % | 42.0 % (490) | 5.1× |
+| Portuguese (Portugal) | `pt` | 0.89 % | 0.68 % | 0.64 % | 50.0 % | 1.3 % | 1.8 % | 50.2 % (484) | 5.2× |
+| Polish | `pl` | 1.33 % | 1.03 % | 1.05 % | 36.0 % | 3.6 % | 2.7 % | 30.7 % (1058) | 3.1× |
+| Turkish | `tr` | 0.72 % | 0.39 % | 0.51 % | 66.5 % | 0.1 % | 0.0 % | 22.3 % (1087) | 2.7× |
+| Czech | `cs` | 1.40 % | 0.84 % | 1.13 % | 44.5 % | 0.9 % | 2.9 % | 11.4 % (501) | 1.8× |
+| Swedish | `sv` | 1.51 % | 1.11 % | 0.88 % | 58.7 % | 0.1 % | 0.0 % | 32.7 % (1161) | 3.7× |
+| Catalan | `ca` | 1.86 % | 1.74 % | 1.53 % | 20.8 % | 7.3 % | 4.4 % | 41.8 % (553) | 4.9× |
+| Romanian | `ro` | 1.00 % | 0.43 % | 0.89 % | 51.4 % | 0.1 % | 0.0 % | 49.1 % (629) | 3.3× |
+| Hungarian | `hu` | 2.08 % | 1.06 % | 1.61 % | 19.3 % | 2.7 % | 6.6 % | 3.8 % (1119) | 13.1× |
+| Finnish | `fi` | 1.64 % | 1.30 % | 1.13 % | 29.0 % | 5.7 % | 4.5 % | 24.6 % (1938) | 1.7× |
+| Norwegian Bokmål | `nb` | 1.11 % | 0.95 % | 0.52 % | 67.9 % | 1.3 % | 0.0 % | 15.9 % (1119) | 2.3× |
+| Danish | `da` | 2.26 % | 1.42 % | 1.81 % | 37.6 % | 0.7 % | 0.4 % | 68.2 % (1025) | 27.1× |
+
 
 **Spanish** (`es`, FLORES-200 devtest, 1,012 sentences, scored once): PER **0.74 %**, without
 stress 0.57 %, identical sentences 66.3 %; sentences without digits 0.45 %. Development set (FLORES
@@ -383,7 +398,7 @@ espeak-ng has no Bhojpuri or Maithili voice; the fallback is its Hindi voice, wh
 compatible mode reproduces. Each gold set was written before any work on the language and split by
 a hash of the item. Bhojpuri: 437 words in 12 categories and 153 short sentences, written by hand
 from Shukla (1981) and Tiwari (1960); each word records where it is attested (FLORES-200 bho_Deva,
-Grierson's *Linguistic Survey of India*, or the spec's examples). Maithili: 410 words (134 with
+Grierson's *Linguistic Survey of India*, or the language description's examples). Maithili: 410 words (134 with
 Wiktionary's own pronunciations via WikiPron, every variant accepted; the rest hand-written from
 Yadav 1996 and Jha 1958) and 151 sentences. The comparison is broad: stress removed, ʌ ɐ = ə,
 ɪ = i, ʊ = u, the reference's r. = ɽ, a geminate written with ː = a double consonant, aspirated
@@ -797,3 +812,200 @@ vocabulary of ordinary-looking words needs recogniser confidences or higher thre
   unit tests only.
 - Hindi precision rests on a hand-written list of about 950 frequent words; the 2 false
   corrections above are words outside it.
+
+## 8. Romanised text into native script
+
+```sh
+XLIT_DATA=DIR python3 tools/eval/translit/prep.py hi                 # word pairs and the fixed split (per language)
+XLIT_DATA=DIR python3 tools/eval/translit/corpus.py hi SENTENCES...  # word and word-pair counts
+cargo run --release -p uccharan-lexgen -- xlit hi --data DIR         # data/packs/xlit-hi.ucd
+python3 tools/eval/translit/score.py hinglish tools/eval/gold/hinglish/dev.tsv        # development
+python3 tools/eval/translit/heldout.py --data DIR                    # tools/eval/results/translit_heldout.json
+```
+
+[`transliterate`](transliteration.md) writes romanised Hindi, Marathi, Bengali, Tamil, Telugu,
+Gujarati, Punjabi, Kannada or Malayalam in its script and leaves English words as English. The
+claims measured here: the first candidate of a single word is right about as often as a neural
+transliterator's; in chat-style Hindi mixed with English the Hindi words are written correctly and
+the English words are left alone; and it is small and fast enough to run in front of a voice.
+
+### Data and split
+
+- **Word pairs.** The Dakshina dataset's lexicons (Google Research, CC BY-SA 4.0) and Aksharantar
+  (AI4Bharat). Development: Dakshina `dev`, Aksharantar `valid`. Held-out: Dakshina `test`, and the
+  two hand-made parts of Aksharantar `test` that its authors report: native words (rows from
+  `AK-Freq` / `AK-Uni`) and named entities (`AK-NEI` / `AK-NEF`). Training: Dakshina `train` and
+  Aksharantar `train`, **minus every pair whose native word or whose romanised word occurs in a
+  development or held-out file**, so each held-out input and reference is new to the model and
+  absent from the spelling lexicon. One row per distinct romanised input; a candidate is right when
+  it equals any reference of that input.
+- **Dakshina romanised sentences.** The 5,000 held-out sentences per language (Wikipedia
+  sentences romanised by annotators), every Latin word converted (`english = convert`: the
+  references are fully native). Tokens are paired by position; the 10 to 265 sentences per language
+  whose two sides differ in token count are skipped. Development: the first 1,500 `dev` sentences.
+- **Hinglish.** `tools/eval/gold/hinglish/test.tsv`: 164 hand-written chat-style sentences, 868
+  Hindi words and 130 English words, references in Devanagari with English left in Latin; among
+  them a block in vowel-less chat spelling (`nhi`, `kr`, `h`). Development: `dev.tsv` (100
+  sentences) and `dev-chat.tsv` (30 sentences in chat spelling). Loanwords typed in English
+  spelling (`office`, `school`) count as English, by the convention of these references.
+- **Strict and relaxed.** Strict is an exact match of the token. Relaxed (Devanagari) folds
+  spelling variants of one word: chandrabindu = anusvara, nukta ignored, nasal + virama before a
+  consonant = anusvara (हिन्दी = हिंदी), and the verb endings यी / ई and ये / ए after a written vowel
+  (लिये = लिए; गयी / गई stay different). For the other scripts the two are practically the same.
+- **Comparison.** IndicXlit (AI4Bharat's neural transliterator, 11 M parameters, one 127 MB
+  download for 21 languages) was not run here; its numbers are the top-1 accuracies published in
+  the README of https://github.com/AI4Bharat/IndicXlit (read on 2026-11-14) for the same test sets.
+  Its evaluation scripts are its own, so small differences of protocol are possible. "No pack" is
+  this library without a pack: the built-in Hindi list and rules, or the plain ITRANS-style
+  converter.
+
+### How the numbers were obtained, and which are clean
+
+Weights and model sizes were chosen on the development sets. The held-out sets were then scored
+once for every language. That run showed one failure in Hindi: the chat spellings of the
+held-out sentences (`nhi`, `h`, `acha`) were being overruled by the model, because nothing in the
+development data had exercised the hand-written chat list. `dev-chat.tsv` was written, the
+failure reproduced and fixed on it, and the packs rebuilt. The packs that ship were then scored
+again; they also differ from the first packs in the hand-written lists for the eight other
+languages, the है / हैं rule (developed on the Dakshina development sentences) and the table
+layout. So:
+
+- the Hinglish number of the shipped Hindi pack, **98.2 %**, was obtained after a change made in
+  response to held-out errors and is optimistic; the number of the one run made before that is
+  **95.9 %**;
+- every other number moved by about a point at most between the two runs, and both are in
+  `tools/eval/results` (`translit_heldout_first.json`, `translit_heldout.json`).
+
+### Hindi
+
+Single words, held-out, top-1 % (top-3 in brackets):
+
+| System | Dakshina test (4,442) | Aksharantar native words (3,643) | Aksharantar named entities (1,997) |
+| --- | ---: | ---: | ---: |
+| uccharan, `xlit-hi` (8.7 MB) | **68.69** (83.12) | 49.66 (69.42) | 57.04 (75.86) |
+| its n-gram model alone (5.4 MB; first run) | 56.24 (78.01) | 47.32 (68.32) | 54.53 (74.06) |
+| IndicXlit, published | 60.56 | 55.59 | 58.87 |
+| uccharan without a pack (list, then rules) | 19.83 | 22.87 | 11.37 |
+| plain ITRANS-style rules | 12.31 | 16.58 | 6.11 |
+
+On Dakshina the first candidate is right 8.1 points more often than IndicXlit's published figure;
+on Aksharantar's hand-made sets it is **behind**, by 5.9 points on native words and 1.8 on named
+entities. The model by itself is behind on all three; the lead on Dakshina comes from re-ranking
+with word frequency, and that test flatters a frequency prior (its words were sampled from
+Wikipedia, and part of the frequency corpus is Wikipedia text). The Aksharantar words are rarer and
+the frequency list knows fewer of them.
+
+Sentences, held-out:
+
+| System | Dakshina sentences (85,623 words): word accuracy, strict (relaxed) |
+| --- | ---: |
+| uccharan, `xlit-hi` | **86.47** (88.81) |
+| each word alone (no context) | 85.33 (87.70) |
+| first run | 86.22 (88.53) |
+| without a pack (every word by list and rules) | 55.52 (57.78) |
+| plain ITRANS-style rules | 35.64 (38.15) |
+
+| System, Hinglish held-out (868 Hindi words, 130 English words) | Hindi words right, strict (relaxed) | English words converted by mistake | Hindi words left in Latin | Sentences fully right |
+| --- | ---: | ---: | ---: | ---: |
+| uccharan, `xlit-hi` as shipped (second scoring, see above) | 95.2 % (**98.2 %**) | 10 / 130 = 7.7 % | 3 / 868 = 0.3 % | 139 / 164 = 84.8 % |
+| the same, each word alone | 94.6 % (97.5 %) | 10 / 130 = 7.7 % | 6 / 868 = 0.7 % | 135 / 164 = 82.3 % |
+| first run (the clean number) | 93.1 % (**95.9 %**) | 10 / 130 = 7.7 % | 3 / 868 = 0.3 % | 124 / 164 = 75.6 % |
+| without a pack (the `hinglish` list and rules) | 71.5 % (72.4 %) | 4 / 130 = 3.1 % | 174 / 868 = 20.0 % | 39 / 164 = 23.8 % |
+| plain ITRANS-style rules, every word converted | 44.7 % (45.7 %) | 130 / 130 | 0 | 1 / 164 |
+
+What is still wrong on the Hinglish set: the English words converted are homographs used as
+English (`sir,`, `trust me`, `bus`, `charger use`, `me too`, `he is`) and loans the sound test
+misses (`login`, `share`, `cricket`); the Hindi words are names (`delhi`, `priya`, `america`),
+causatives the spelling does not distinguish (`nikalna` for निकलना / निकालना), `gaya` for गाया,
+`ki` for कि, and गयी where the reference has गई. On the Dakshina sentences the commonest errors are
+`hai` where the reference has हैं after a feminine form, `ki` for कि / की, and spelling variants.
+
+### All nine languages
+
+Single words, held-out, top-1 % (top-3 in brackets); IndicXlit = published top-1:
+
+| Language | Pack | Dakshina test: top-1 (top-3) | IndicXlit | Aksharantar native words: top-1 (top-3) | IndicXlit | Aksharantar named entities: top-1 (top-3) | IndicXlit |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Hindi | 8.7 MB | 68.69 (83.12) | 60.56 | 49.66 (69.42) | 55.59 | 57.04 (75.86) | 58.87 |
+| Marathi | 7.4 MB | 74.45 (82.87) | 64.85 | 57.08 (67.93) | 63.72 | 52.55 (69.67) | 53.57 |
+| Bengali | 7.8 MB | 67.09 (78.69) | 55.49 | 60.65 (75.56) | 61.70 | 46.42 (64.28) | 37.12 |
+| Tamil | 7.0 MB | 75.90 (82.50) | 68.10 | 72.65 (85.16) | 69.78 | 38.81 (58.29) | 42.12 |
+| Telugu | 7.0 MB | 81.45 (89.17) | 73.38 | 83.88 (92.05) | 84.69 | 53.38 (71.54) | 51.82 |
+| Gujarati | 6.0 MB | 65.62 (81.26) | 62.02 | 54.72 (73.87) | 61.89 | 49.67 (69.80) | 48.89 |
+| Punjabi | 3.1 MB | 53.34 (71.89) | 47.24 | 34.43 (52.24) | 40.27 | 34.05 (52.28) | 36.08 |
+| Kannada | 6.7 MB | 84.40 (91.16) | 77.18 | 75.68 (86.76) | 76.18 | 48.64 (71.69) | 49.92 |
+| Malayalam | 6.4 MB | 71.66 (80.26) | 63.56 | 61.62 (74.43) | 64.73 | 30.90 (44.67) | 33.93 |
+
+The first candidate beats IndicXlit's published figure on Dakshina in all nine languages (by 3.6
+to 11.6 points), is behind it on Aksharantar's native words in eight (by 0.5 to 7.2) and ahead in
+Tamil, and on named entities is ahead in three (Bengali, Telugu, Gujarati) and behind in six. The
+nine packs together are 60 MB.
+
+Dakshina romanised sentences, held-out, word accuracy % (strict; relaxed in brackets):
+
+| Language | Dakshina test inputs | Aksharantar native / entities | Sentence words | Word accuracy, strict (relaxed) | Each word alone | No pack (rules) |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Hindi | 4,442 | 3,643 / 1,997 | 85,623 | 86.47 (88.81) | 85.33 | 55.52 |
+| Marathi | 5,667 | 4,459 / 1,998 | 46,789 | 85.48 (85.93) | 85.14 | 16.64 |
+| Bengali | 9,146 | 2,267 / 1,999 | 57,471 | 80.82 (80.83) | 80.35 | 11.97 |
+| Tamil | 6,833 | 2,607 / 1,997 | 46,460 | 76.68 (76.69) | 76.46 | 9.21 |
+| Telugu | 5,726 | 2,240 / 1,999 | 43,544 | 82.91 (83.64) | 82.85 | 30.62 |
+| Gujarati | 10,229 | 5,243 / 1,997 | 75,619 | 82.74 (82.75) | 82.64 | 48.28 |
+| Punjabi | 6,880 | 2,184 / 1,997 | 84,376 | 79.19 (79.19) | 77.01 | 29.25 |
+| Kannada | 5,013 | 4,207 / 1,992 | 53,919 | 83.02 (84.44) | 82.96 | 30.03 |
+| Malayalam | 5,561 | 4,854 / 1,990 | 42,398 | 70.87 (71.90) | 70.27 | 5.45 |
+
+Outside Hindi the English / native decision is **not measured**: there is no code-mixed test set
+for the other eight languages, their homograph and chat lists were written by hand without review
+by a native speaker, and they use the decision weights fitted on Hindi. Context adds little for
+most of them because their word-pair tables come from small corpora (8 k to 67 k pairs against
+165 k for Hindi).
+
+### What the parts are worth (Hindi, development sets)
+
+| Part | Effect |
+| --- | --- |
+| word frequency in the ranking | +6.5 points top-1 on the development words |
+| phonetic agreement (the sound-alike distance between the romanised word and the candidate) | +0.5 to +0.7 points |
+| word-pair table in the sentence pass | +1.4 points on Dakshina development sentences, +1.8 on the Hinglish development set |
+| loan test and fitted decision weights | English words converted by mistake: 33 % → 8 % of the development set's |
+| chat list taking effect (listed spellings the model cannot produce) | chat-spelling development set 72.3 → 98.1 % |
+| है / हैं after a plural or singular verb form | +0.15 points on Dakshina development sentences |
+| pruning the model from 15.9 MB to 5.3 MB of tables | −1.2 points top-1 |
+| training without the Dakshina rows (a pack without share-alike word pairs) | −1.0 point on Dakshina development words, −0.5 on sentences |
+
+### Size and speed
+
+A pack is 3 to 9 MB; about two thirds of it is the n-gram tables. The code adds no dependency.
+One thread, words per second, on the shared
+development machine (load average 2 to 3 on 4 cores during the run, so these are lower bounds):
+
+| Language | Running text, first pass | Same text again | New words only |
+| --- | ---: | ---: | ---: |
+| Hindi | 12,105 | 243,270 | 3,145 |
+| Marathi | 7,700 | 308,278 | 4,138 |
+| Bengali | 7,793 | 338,922 | 3,246 |
+| Tamil | 5,580 | 755,409 | 4,634 |
+| Telugu | 5,803 | 216,228 | 3,823 |
+| Gujarati | 9,648 | 230,832 | 4,603 |
+| Punjabi | 17,392 | 624,892 | 6,236 |
+| Kannada | 5,999 | 303,021 | 4,224 |
+| Malayalam | 3,482 | 203,986 | 2,895 |
+
+"Running text, first pass" is the 5,000 Dakshina test sentences from a cold start, so it includes
+the first encounter of every word; "same text again" is five more passes in the same process;
+"new words" is the Dakshina test lexicon, where every word needs the beam search and the phonetic
+comparison (about a third of a millisecond each). A chat message of ten words costs 2 to 3 ms the
+first time its words are seen.
+
+### What this does not show
+
+- The Hinglish sets are small and were written by the author of the system, and one fix was made
+  after seeing held-out errors (above).
+- The split removes every training pair that collides with a held-out word, so common words such
+  as `wahan` are missing from the measured packs' lexicon (it writes वाहन); packs trained on all
+  pairs would know more spellings, but could not be measured this way.
+- The frequency prior is partly Wikipedia text and the Dakshina words come from Wikipedia: the
+  Dakshina word numbers are the favourable case, the Aksharantar native words the unfavourable
+  one. Real chat text is closer to the Hinglish set.
+- IndicXlit's figures are published ones, not reproduced here.

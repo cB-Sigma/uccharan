@@ -39,6 +39,7 @@ jobs:
         run: |
           cargo run --release -p uccharan-lexgen -- check
           cargo run --release -p uccharan-lexgen -- wikipron-check
+          cargo run --release -p uccharan-lexgen -- xlit-check
           python3 tools/packs.py --check
       - name: Licence files in the packages match the repository's
         run: |
@@ -56,12 +57,19 @@ jobs:
         run: cargo package -p uccharan --allow-dirty
 
   python:
-    name: Python ${{ matrix.python }} (wheel + pytest)
-    runs-on: ubuntu-latest
+    name: Python ${{ matrix.python }} on ${{ matrix.os }} (wheel + pytest)
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        python: ["3.12", "3.13"]
+        include:
+          - { os: ubuntu-latest,  python: "3.12" }
+          - { os: ubuntu-latest,  python: "3.13" }
+          - { os: windows-latest, python: "3.12" }
+          - { os: macos-latest,   python: "3.12" }
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -81,6 +89,7 @@ jobs:
         working-directory: bindings/python/tests
         run: python -m pytest -q .
       - name: Evaluation tools import and run without a reference phonemizer
+        if: runner.os == 'Linux'
         run: |
           cargo build --release -p uccharan
           python tools/eval/gold_eval.py

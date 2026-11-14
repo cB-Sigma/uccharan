@@ -1,0 +1,372 @@
+# Czech. espeak-ng voice "cs". Letter rules for words outside the
+# word table, the number words and the letter names.
+
+[meta]
+tag = cs
+vowels = a e i o u ɪ ʊ
+stress = initial
+secondary = auto
+stress-options = final-no-secondary
+fuse = na do pro o bez ze po za před od při nad pod
+spell-vowels = aeiouyáéíóúůýě
+
+[classes]
+V = a e i o u y á é í ó ú ů ý ě
+VL = p t k f s ʃ x c
+VO = b d ɡ z ʒ ɦ ɟ
+
+[pre]
+ch -> x
+á -> aː
+é -> ɛː
+í -> iː
+ó -> oː
+ú -> uː
+ů -> uː
+ý -> iː
+y -> i
+dě -> ɟe
+tě -> ce
+ně -> ɲe
+mě -> mɲe
+ě -> je
+di -> ɟi
+ti -> ci
+ni -> ɲi
+ď -> ɟ
+ť -> c
+ň -> ɲ
+š -> ʃ
+č -> tʃ
+ž -> ʒ
+ř -> r̝
+c -> ts
+h -> ɦ
+w -> v
+g -> ɡ
+q -> kv
+x -> ks
+
+[post]
+
+
+[clause]
+# A final obstruent takes the voicing of an obstruent that begins the next word.
+p -> b / _ ‿ {VO}
+b -> p / _ ‿ {VL}
+t -> d / _ ‿ {VO}
+d -> t / _ ‿ {VL}
+k -> ɡ / _ ‿ {VO}
+ɡ -> k / _ ‿ {VL}
+ʃ -> ʒ / _ ‿ {VO}
+ʒ -> ʃ / _ ‿ {VL}
+x -> ɣ / _ ‿ {VO}
+ɣ -> x / _ ‿ {VL}
+
+[words]
+nula# nˈula
+jeden# jˈeden
+dva# dvˈa
+tři# tr̝̊ˈi
+čtyři# tʃtˈir̝i
+pět# pjˈet
+šest# ʃˈest
+sedm# sˈedum
+osm# ˈosum
+devět# dˈevjet
+deset# dˈeset
+jedenáct# jˈedenaːtst
+dvanáct# dvˈanaːtst
+třináct# tr̝̊ˈinaːtst
+čtrnáct# tʃtˈr̩naːtst
+patnáct# pˈatnaːtst
+šestnáct# ʃˈestnaːtst
+sedmnáct# sˈedumnaːtst
+osmnáct# ˈosumnaːtst
+devatenáct# dˈevatˌenaːtst
+dvacet# dvˈatset
+dvacet-jeden# dvˈatsetjˈeden
+dvacet-dva# dvˈatseddvˈa
+dvacet-tři# dvˈatsettr̝̊i
+dvacet-čtyři# dvˈatsettʃtˈir̝i
+dvacet-pět# dvˈatsetpjˈet
+dvacet-šest# dvˈatsetʃˈest
+dvacet-sedm# dvˈatsetsˈedum
+dvacet-osm# dvˈatsetˈosum
+dvacet-devět# dvˈatseddˈevjet
+třicet# tr̝̊ˈitset
+třicet-jeden# tr̝̊ˈitsetjˈeden
+třicet-dva# tr̝̊ˈitseddvˈa
+třicet-tři# tr̝̊ˈitsettr̝̊i
+třicet-čtyři# tr̝̊ˈitsettʃtˈir̝i
+třicet-pět# tr̝̊ˈitsetpjˈet
+třicet-šest# tr̝̊ˈitsetʃˈest
+třicet-sedm# tr̝̊ˈitsetsˈedum
+třicet-osm# tr̝̊ˈitsetˈosum
+třicet-devět# tr̝̊ˈitseddˈevjet
+čtyřicet# tʃtˈir̝itset
+čtyřicet-jeden# tʃtˈir̝itsetjˈeden
+čtyřicet-dva# tʃtˈir̝itseddvˈa
+čtyřicet-tři# tʃtˈir̝itsˌettr̝̊i
+čtyřicet-čtyři# tʃtˈir̝itsettʃtˈir̝i
+čtyřicet-pět# tʃtˈir̝itsetpjˈet
+čtyřicet-šest# tʃtˈir̝itsetʃˈest
+čtyřicet-sedm# tʃtˈir̝itsetsˈedum
+čtyřicet-osm# tʃtˈir̝itsetˈosum
+čtyřicet-devět# tʃtˈir̝itseddˈevjet
+padesát# pˈadesaːt
+padesát-jeden# pˈadesaːtjˈeden
+padesát-dva# pˈadesaːddvˈa
+padesát-tři# pˈadesˌaːttr̝̊i
+padesát-čtyři# pˈadesaːttʃtˈir̝i
+padesát-pět# pˈadesaːtpjˈet
+padesát-šest# pˈadesaːtʃˈest
+padesát-sedm# pˈadesaːtsˈedum
+padesát-osm# pˈadesaːtˈosum
+padesát-devět# pˈadesaːddˈevjet
+šedesát# ʃˈedesaːt
+šedesát-jeden# ʃˈedesaːtjˈeden
+šedesát-dva# ʃˈedesaːddvˈa
+šedesát-tři# ʃˈedesˌaːttr̝̊i
+šedesát-čtyři# ʃˈedesaːttʃtˈir̝i
+šedesát-pět# ʃˈedesaːtpjˈet
+šedesát-šest# ʃˈedesaːtʃˈest
+šedesát-sedm# ʃˈedesaːtsˈedum
+šedesát-osm# ʃˈedesaːtˈosum
+šedesát-devět# ʃˈedesaːddˈevjet
+sedmdesát# sˈedumdˌesaːt
+sedmdesát-jeden# sˈedumdˌesaːtjˈeden
+sedmdesát-dva# sˈedumdˌesaːddvˈa
+sedmdesát-tři# sˈedumdˌesaːttr̝̊i
+sedmdesát-čtyři# sˈedumdˌesaːttʃtˈir̝i
+sedmdesát-pět# sˈedumdˌesaːtpjˈet
+sedmdesát-šest# sˈedumdˌesaːtʃˈest
+sedmdesát-sedm# sˈedumdˌesaːtsˈedum
+sedmdesát-osm# sˈedumdˌesaːtˈosum
+sedmdesát-devět# sˈedumdˌesaːddˈevjet
+osmdesát# ˈosumdˌesaːt
+osmdesát-jeden# ˈosumdˌesaːtjˈeden
+osmdesát-dva# ˈosumdˌesaːddvˈa
+osmdesát-tři# ˈosumdˌesaːttr̝̊i
+osmdesát-čtyři# ˈosumdˌesaːttʃtˈir̝i
+osmdesát-pět# ˈosumdˌesaːtpjˈet
+osmdesát-šest# ˈosumdˌesaːtʃˈest
+osmdesát-sedm# ˈosumdˌesaːtsˈedum
+osmdesát-osm# ˈosumdˌesaːtˈosum
+osmdesát-devět# ˈosumdˌesaːddˈevjet
+devadesát# dˈevadˌesaːt
+devadesát-jeden# dˈevadˌesaːtjˈeden
+devadesát-dva# dˈevadˌesaːddvˈa
+devadesát-tři# dˈevadˌesaːttr̝̊i
+devadesát-čtyři# dˈevadˌesaːttʃtˈir̝i
+devadesát-pět# dˈevadˌesaːtpjˈet
+devadesát-šest# dˈevadˌesaːtʃˈest
+devadesát-sedm# dˈevadˌesaːtsˈedum
+devadesát-osm# dˈevadˌesaːtˈosum
+devadesát-devět# dˈevadˌesaːddˈevjet
+třiv2# tr̝̊i
+sto# stˈo
+dvě-stě# dvjˈescˈe
+tři-sta# tr̝̊ˈistˈa
+čtyři-sta# tʃtˌir̝istˈa
+pět-set# pjˈetsˈet
+šest-set# ʃˈestsˈet
+sedm-set# sˈedumsˈet
+osm-set# ˈosumsˈet
+devět-set# dˈevjetsˈet
+tisíc# cˈisiːts
+tisíce# cˈisiːtse
+tisícem# cˈisiːts
+milion# mˈilioːn
+miliony# mˈiliˌoːni
+milionym# mˈiliˌoːnuː
+celá# tʃˌaːrka
+mínus# mˈiːnus
+procent# prˈotsento
+
+[numbers]
+decimal comma
+point celá#
+minus mínus#
+percent procent#
+one-before-scale no
+0 nula#
+1 jeden#
+2 dva#
+3 tři#
+4 čtyři#
+5 pět#
+6 šest#
+7 sedm#
+8 osm#
+9 devět#
+10 deset#
+11 jedenáct#
+12 dvanáct#
+13 třináct#
+14 čtrnáct#
+15 patnáct#
+16 šestnáct#
+17 sedmnáct#
+18 osmnáct#
+19 devatenáct#
+20 dvacet#
+21 dvacet-jeden#
+22 dvacet-dva#
+23 dvacet-tři#
+24 dvacet-čtyři#
+25 dvacet-pět#
+26 dvacet-šest#
+27 dvacet-sedm#
+28 dvacet-osm#
+29 dvacet-devět#
+30 třicet#
+31 třicet-jeden#
+32 třicet-dva#
+33 třicet-tři#
+34 třicet-čtyři#
+35 třicet-pět#
+36 třicet-šest#
+37 třicet-sedm#
+38 třicet-osm#
+39 třicet-devět#
+40 čtyřicet#
+41 čtyřicet-jeden#
+42 čtyřicet-dva#
+43 čtyřicet-tři#
+44 čtyřicet-čtyři#
+45 čtyřicet-pět#
+46 čtyřicet-šest#
+47 čtyřicet-sedm#
+48 čtyřicet-osm#
+49 čtyřicet-devět#
+50 padesát#
+51 padesát-jeden#
+52 padesát-dva#
+53 padesát-tři#
+54 padesát-čtyři#
+55 padesát-pět#
+56 padesát-šest#
+57 padesát-sedm#
+58 padesát-osm#
+59 padesát-devět#
+60 šedesát#
+61 šedesát-jeden#
+62 šedesát-dva#
+63 šedesát-tři#
+64 šedesát-čtyři#
+65 šedesát-pět#
+66 šedesát-šest#
+67 šedesát-sedm#
+68 šedesát-osm#
+69 šedesát-devět#
+70 sedmdesát#
+71 sedmdesát-jeden#
+72 sedmdesát-dva#
+73 sedmdesát-tři#
+74 sedmdesát-čtyři#
+75 sedmdesát-pět#
+76 sedmdesát-šest#
+77 sedmdesát-sedm#
+78 sedmdesát-osm#
+79 sedmdesát-devět#
+80 osmdesát#
+81 osmdesát-jeden#
+82 osmdesát-dva#
+83 osmdesát-tři#
+84 osmdesát-čtyři#
+85 osmdesát-pět#
+86 osmdesát-šest#
+87 osmdesát-sedm#
+88 osmdesát-osm#
+89 osmdesát-devět#
+90 devadesát#
+91 devadesát-jeden#
+92 devadesát-dva#
+93 devadesát-tři#
+94 devadesát-čtyři#
+95 devadesát-pět#
+96 devadesát-šest#
+97 devadesát-sedm#
+98 devadesát-osm#
+99 devadesát-devět#
+3x třiv2#
+100 sto#
+200 dvě-stě#
+300 tři-sta#
+400 čtyři-sta#
+500 pět-set#
+600 šest-set#
+700 sedm-set#
+800 osm-set#
+900 devět-set#
+scale100 sto#
+1000 tisíc#
+1000+ tisíc#
+scale1000 tisíce#
+many1000 tisícem#
+scale1000+ tisíce#
+1000000 milion#
+1000000+ milion#
+scale1000000 miliony#
+many1000000 milionym#
+scale1000000+ miliony#
+
+[spell]
+a ˈaː
+b bˈeː
+c tsˈeː
+d dˈeː
+e ˈeː
+f ˈef
+g ɡˈeː
+h hˈaː
+i ˈiː
+j jˈeː
+k kˈaː
+l ˈel
+m ˈem
+n ˈen
+o ˈoː
+p pˈeː
+q kvˈeː
+r ˈer
+s ˈes
+t tˈeː
+u ˈu
+v vˈeː
+w dvˈojveː
+x ˈiks
+y ˈipsilon
+z zˈet
+á dlˈoʊheːˌaː
+č tʃˈeː
+ď ɟˈeː
+é dlˈoʊheːˌeː
+ě ˈije
+í dlˈoʊheːˌiː
+ň ˈeɲ
+ó dlˈoʊheːˌoː
+ř ˈer̝
+š ˈeʃ
+ť cˈeː
+ú dlˈoʊheːˌuː
+ů ˈuːskrˈoʊʃkem
+ý dlˈoʊeːˌipsilon
+ž ʒˈet
+
+# Words without stress inside a clause and with stress at its end.
+[unstressed]
+chce 0 p
+chci 0 p
+má 0 p
+chceš 0 p
+chtějí s p
+měl 0 p
+máme s p
+mají s p
+chceme s p
+chcete s p
+mám 0 p
+máš 0 p
+máte s p

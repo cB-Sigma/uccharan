@@ -1,0 +1,38 @@
+uccharan transliteration packs (xlit-<language>.ucd)
+====================================================
+
+These packs are licensed under the Creative Commons Attribution-ShareAlike 4.0
+International licence (CC BY-SA 4.0); the licence text is in
+LICENSE-CC-BY-SA-4.0.txt next to this file. They are not part of the
+Apache-2.0 library, which contains none of the data below.
+
+The packs were built by the uccharan project (https://github.com/cB-Sigma/uccharan)
+from:
+
+  Dakshina dataset v1.0, word lexicons
+  Brian Roark, Lawrence Wolf-Sonkin, Christo Kirov, Sabrina J. Mielke, Cibu
+  Johny, Isin Demirsahin and Keith Hall (Google Research)
+  https://github.com/google-research-datasets/dakshina
+  CC BY-SA 4.0
+
+  Aksharantar
+  Yash Madhani, Sushane Parthan, Priyanka Bedekar, Ruchi Khapra, Anoop
+  Kunchukuttan, Pratyush Kumar and Mitesh M. Khapra (AI4Bharat)
+  https://huggingface.co/datasets/ai4bharat/Aksharantar
+  CC BY (manually collected data) and CC0 (mined data and existing sources)
+
+  Leipzig Corpora Collection (word and word-pair counts)
+  D. Goldhahn, T. Eckart and U. Quasthoff, Leipzig University
+  https://wortschatz.uni-leipzig.de/en/download
+  CC BY 4.0; the Wikipedia samples carry text of Wikipedia contributors,
+  CC BY-SA 4.0
+
+  Tatoeba (Hindi and English word counts)
+  https://tatoeba.org, Tatoeba contributors
+  CC BY 2.0 FR
+
+and from hand-written lists of the uccharan project (Apache-2.0).
+
+Changes made: the word pairs were aligned and reduced to n-gram statistics
+and a lexicon of spellings; the corpora were reduced to word and word-pair
+counts.

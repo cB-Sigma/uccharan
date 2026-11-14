@@ -56,10 +56,21 @@ The Python wheel carries en-US and Hindi and fetches the other packs on first us
 application loads packs at run time with `Phonemizer::load` or, on a shared phonemizer,
 `Phonemizer::load_pack`.
 
+## Romanised text
+
+`translit.rs` (with `translit/`) writes romanised words in the script of an Indian language
+before any of the above runs: see [transliteration.md](transliteration.md). Its data is a
+separate kind of pack (`xlit-<lang>.ucd`, the same container with other sections: n-gram
+tables, a spelling lexicon, hashed word and word-pair counts), loaded with
+`Phonemizer::load_pack` into its own slot and never compiled in. It uses the Hindi and
+English front ends and the sound-alike matcher's phoneme distance to compare how a romanised
+word and a native-script candidate sound. The packs are built by `lexgen xlit`.
+
 ## Threads and memory
 
 `Phonemizer` is immutable after construction and `Sync`: any number of threads can call it through
-a shared reference with no locks and no per-thread state. `render_batch` splits a slice of texts
+a shared reference with no locks and no per-thread state. (The transliterator keeps two caches behind
+locks inside its pack: the words it has decided and the phonemes it has compared.) `render_batch` splits a slice of texts
 over scoped threads. There is no global state anywhere, which is the main structural difference
 from the reference library, whose API is a single global voice.
 

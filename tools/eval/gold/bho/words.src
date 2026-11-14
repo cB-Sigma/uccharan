@@ -2,7 +2,7 @@
 # Bhojpuri work. Word sources: F = attested in FLORES-200 bho_Deva dev/devtest (CC BY-SA 4.0, text used for
 # evaluation only, https://github.com/facebookresearch/flores); L = forms in Grierson, Linguistic Survey of India
 # vol. V part II (1903, public domain, https://archive.org/details/in.ernet.dli.2015.32969) grammar sketch of
-# Bhojpuri; S = the spec's oracle example set (specs/bho.md, words only). Pronunciation: written by hand from
+# Bhojpuri; S = the example words of the project's language description (words only). Pronunciation: written by hand from
 # Shukla 1981, Bhojpuri Grammar, and Tiwari 1960 (vowels a aː i iː u uː e eː o oː ə, ऐ = əi, औ = əu, vowel letters
 # इ उ after a vowel are their own vowel, ड़ ढ़ = ɽ ɽʰ, avagraha = pronounced final ə, final inherent vowel silent
 # after a single consonant, Hindi-type medial schwa deletion, nasal vowels from chandrabindu and from anusvara

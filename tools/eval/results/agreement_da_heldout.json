@@ -1,0 +1,248 @@
+{
+ "language": "da",
+ "reference": "espeak-ng 1.52.0 voice da (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 160630,
+  "per": 0.022635871256925854,
+  "per_without_stress": 0.014233970896613077,
+  "exact_sentence": 0.37648221343873517,
+  "exact_sentence_without_stress": 0.532608695652174,
+  "piper_shape_per": 0.0224716349185939,
+  "piper_shape_exact_sentence": 0.3675889328063241,
+  "word_count_mismatch_sentences": 166,
+  "errors_by_class": {
+   "stress": {
+    "count": 1727,
+    "share": 0.47497249724972496,
+    "per_contribution": 0.010751416298325343
+   },
+   "consonant": {
+    "count": 822,
+    "share": 0.22607260726072606,
+    "per_contribution": 0.005117350432671357
+   },
+   "vowel": {
+    "count": 608,
+    "share": 0.16721672167216722,
+    "per_contribution": 0.0037850961837763803
+   },
+   "other": {
+    "count": 337,
+    "share": 0.09268426842684269,
+    "per_contribution": 0.0020979891676523687
+   },
+   "word-boundary": {
+    "count": 112,
+    "share": 0.030803080308030802,
+    "per_contribution": 0.0006972545601693332
+   },
+   "diacritic": {
+    "count": 24,
+    "share": 0.006600660066006601,
+    "per_contribution": 0.00014941169146485712
+   },
+   "length": {
+    "count": 6,
+    "share": 0.0016501650165016502,
+    "per_contribution": 3.735292286621428e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→∅",
+    "count": 398
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 360
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 290
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 239
+   },
+   {
+    "edit": "∅→ʔ",
+    "count": 116
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 115
+   },
+   {
+    "edit": "ʔ→∅",
+    "count": 94
+   },
+   {
+    "edit": "∅→ ",
+    "count": 71
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 54
+   },
+   {
+    "edit": "∅→e",
+    "count": 49
+   },
+   {
+    "edit": "∅→d",
+    "count": 49
+   },
+   {
+    "edit": " →∅",
+    "count": 41
+   },
+   {
+    "edit": "∅→n",
+    "count": 36
+   },
+   {
+    "edit": "n→t",
+    "count": 34
+   },
+   {
+    "edit": "∅→i",
+    "count": 34
+   },
+   {
+    "edit": "d→s",
+    "count": 32
+   },
+   {
+    "edit": "ə→∅",
+    "count": 32
+   },
+   {
+    "edit": "e→u",
+    "count": 31
+   },
+   {
+    "edit": "∅→ɐ",
+    "count": 30
+   },
+   {
+    "edit": "d→∅",
+    "count": 30
+   },
+   {
+    "edit": "s→∅",
+    "count": 28
+   },
+   {
+    "edit": "ʁ→∅",
+    "count": 28
+   },
+   {
+    "edit": "ʌ→∅",
+    "count": 28
+   },
+   {
+    "edit": "j→∅",
+    "count": 27
+   },
+   {
+    "edit": "ɐ→∅",
+    "count": 23
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 17721,
+    "wrong": 841,
+    "rate": 0.04745781840753908
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 199,
+    "per": 0.037778678556951766,
+    "exact_sentence": 0.23115577889447236
+   },
+   "no-digits": {
+    "sentences": 813,
+    "per": 0.018103134479271994,
+    "exact_sentence": 0.41205412054120544
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-321",
+    "text": "Tommy Dreamer sagde \"Luna var den første dronning af Extreme. Min første manager. Luna døde på natten med to måner. Ret enestående, ligesom hende selv. Stærk kvinde.\"",
+    "reference": "tˈʔʌmʔi dʁˈiːmʔʌ sˈaə lˈʔuna ʋɑ dɛn fˈʔœɐ̯sdə dɐ̯ˈʔʌnʔeŋ ˈa ˈεɡstʁɛmə min fˈʔœɐ̯sdə mˈanʔedʒˌʔʌ lˈʔuna dˈœðə pɒ nˈadən mεð tˈʔo mˈɒnʔʌ ʁˈat ˈenεstˌɒənə lˈʔisʔʌm hʔenə sˈεl stˈεɐ̯k kʋˈʔenə",
+    "uccharan": "tˈʔʌmʔi dʁamˈʔʌ sˈaə lˈʔuna ʋɑ dɛn fˈʔœɐ̯sdə dɐ̯ˈʔʌnʔeŋ ˈa εɡstʁˈemə min fˈʔœɐ̯sdə mˈanʔedʒˌʔʌ lˈʔuna dˈœðə pɒ nˈadən mεð tˈʔo mˈɒnʔʌ ʁˈat ˈenεstˌɒənə lˈʔisʔʌm hʔenə sˈεl stˈεɐ̯k kʋˈʔenə"
+   },
+   {
+    "id": "flores-devtest-581",
+    "text": "Den bedste indikering af indvendig forgiftning, kan være tilstedeværelsen af en åben medicinbeholder eller giftige husholdningskemikalier.",
+    "reference": "dɛn bˈεsdə ˈʔendikˌʌʔeŋ ˈa ʔenʋˈεndi fʔʌɡˈʔiftnʔeŋ kan ʋˈɛʔʌ telstˈεðʔeʋˌɛʌlsən ˈa ʔen ˈɒbən mˌʔeðʔisˈʔinbʔehˌʔʌlʔʌ ˈεlʔʌ ɡˈʔiftˌʔiə hˈʔushʔʌlnˌʔeŋskεmˌʔikaljˌʔʌ",
+    "uccharan": "dɛn bˈεsdə ˌʔendikˈʔeɐ̯ʔeŋ ˈa ʔenʋˈεndi fʔʌɡˈʔiftnʔeŋ kan ʋˈɛʔʌ telstˈεðʔeʋˌɛʌlsən ˈa ʔen ˈɒbən mˌʔeðʔisˈʔinbʔehˌʔʌlʔʌ ˈεlʔʌ ɡˈʔiftˌʔiə hˈʔushʔʌlnˌʔeŋskεmˌʔikaljˌʔʌ"
+   },
+   {
+    "id": "flores-devtest-330",
+    "text": "Flere personer bekræftede denne opdagelse i begyndelsen af februar ved brug af forskelligt hardware og software, og tirsdag annonceredes den.",
+    "reference": "flˈʔeʔʌ pεɐ̯sˈʔonʔʌ bʔekʁˈ?aftəðə dεnə ˈʔʌpdajəlsə i bʔeɡˈʔœnəlsən ˈa fˈʔebɐ̯ʔuˌɑ ʋʔeð bɐ̯ˈu ˈa fɒɒskˈεllʔit hˈɑdwaaɐ̯ ʌ sˈʔʌftwaaɐ̯ ʌ tˈʔiɐ̯sda anˌʌŋsˈeʌðəs dɛn",
+    "uccharan": "flˈʔeʔʌ pεɐ̯sˈʔonʔʌ bʔekʁˈ?aftəðə dεnə ˈʔʌpdajəlsə i bʔeɡˈʔœnəlsən ˈa fˈʔebɐ̯ʔuˌɑ ʋʔeð bɐ̯ˈu ˈa fɒɒskˈεllʔit hˈɑdwaaɐ̯ ʌ sˈʔʌftwaaɐ̯ ʌ tˈʔiɐ̯sda anʌŋsˌeɐ̯ˈɛðəs dɛn"
+   },
+   {
+    "id": "flores-devtest-81",
+    "text": "Den tiende navngivne storm i Atlanterhavets orkansæson, den subtropiske storm, Jerry, blev dannet i Atlanterhavet i dag.",
+    "reference": "dɛn tˈʔiənə nˈ?ɑwnɡʔiwnə stˈɒm i ˈatlantˌʔʌhaʋəðs ɒɒkˈansεsˌʔʌŋ dɛn sʔubtʁˈʔopʔisɡə stˈɒm dʒˈʔeʁi blˈʔe dˈanəð i ˈatlantˌʔʌhaʋəð i dˈaj",
+    "uccharan": "dɛn tˈʔiənə nˈ?ɑwnɡʔiwnə stˈɒm i ˈatlantˌʔʌhaʋəðs ɒˈɒkansεsʔʌŋ dɛn sʔubtʁˈʔopˌʔiskə stˈɒm dʒˈʔeʁi blˈʔe dˈanəð i ˈatlantˌʔʌhaʋəð i dˈaj"
+   },
+   {
+    "id": "flores-devtest-7",
+    "text": "Han fortalte, at han byggede en WiFi-dørklokke. ",
+    "reference": "han fʔʌtˈaldə a han bˈʔyɡəðə ʔen wˈʔi fˈʔidˈʔœɐ̯klʔʌkə",
+    "uccharan": "han fʔʌtˈaldə a han bˈʔyɡəðə ʔen wˈʔifʔidˈʔœɐ̯klʔʌkə"
+   },
+   {
+    "id": "flores-devtest-665",
+    "text": "Virtuelle holdmedlemmer fungerer ofte som kontaktpunkt for deres umiddelbare fysiske gruppe.",
+    "reference": "ʋˈʔiɐ̯tʔuˌεlə hˈʔʌlmʔeðlˌεmʔʌ fɒŋɡˈʔeʔʌ ˈʔʌfdə sʔʌm kʔʌntˈ?ɑktpɒŋt fˈʌ dˌɛʌs ˈʔumʔiðəlbˌɑɑ fˈysʔiskə ɡʁˈʔupə",
+    "uccharan": "ʋˈʔiɐ̯tʔuˌεlə hˈʔʌldmʔeðlεmʔʌ fɒŋɡˈʔeʔʌ ˈʔʌfdə sʔʌm kʔʌnt?ɑktpˈɒŋt fˈʌ dˌɛʌs ˈʔumʔiðəlbˌɑɑ fˈysʔiskə ɡʁˈʔupə"
+   },
+   {
+    "id": "flores-devtest-153",
+    "text": "Kampene startede kl. 10:00 med fantastisk vejr, og bortset fra en smule kortvarig støvregn hen på formiddagen, så var det en perfekt dag til syvmandsrugby.",
+    "reference": "kˈ?ɑmpənə stˈɑtəðə kˌɒɒˈɛl tˈʔi nˈɒl nˈɒl mεð fantˈastʔisɡ ʋˈεɐ̯ ʌ bˈɒɒtsʔet fʁɑ ʔen smˈulə kˈɒɒtʋɑʁˌʔi stˈʔœʋʁ?ɑjn hˈεn pɒ fˈɒɒmʔedˌaj-ən sʌ ʋˈɑɐ̯ de ʔen pεɐ̯fˈεɡt dˈaj tʔel sˈywmansʁˌʌɡbi",
+    "uccharan": "kˈ?ɑmpənə stˈɑtəðə kˌɒɒˈɛl tˈʔi nˈɒl nˈɒl mεð fantˈastʔisɡ ʋˈεɐ̯ ʌ bˈɒɒtsʔet fʁɑ ʔen smˈulə kˈɒɒtʋɑʁˌʔi stˈʔœʋʁ?ɑjn hˈεn pɒ fˈɒɒmʔedˌaj-ən sˈɒ ʋɑ de ʔen pεɐ̯fˈεɡt dˈaj tʔel sˈywmansʁʌɡbˌi"
+   },
+   {
+    "id": "flores-devtest-12",
+    "text": "Antistof-blandingen ZMapp virkede først lovende på området, men formelle studier indikerede, at det var mindre effektivt end formodet til at forhindre dødsfald. ",
+    "reference": "ˈantʔistˌʔʌfblˈanʔeŋən sˈɛt mˈ?ɑp ʋˈʔiɐ̯kəðə fˈʔœɐ̯st lˈɒʋənə pɒ ˈʔʌmʁɒðəð mˈεn fˈɒmˈεllə stˈʔuðjʔʌ ˈʔendikˌʌʔʌðə a de ʋɑ mˈʔendʁʔʌ ˈʔefʔektˌʔiwt ˈεn fʔʌmˈoðəð tʔel a fʔʌhˈʔendʁʔʌ dˈʔœðsfal",
+    "uccharan": "ˈantʔistʔʌfblˈanʔeŋən sm?ˈɑp ʋˈʔiɐ̯kəðə fˈʔœɐ̯st lˈɒʋənə pɒ ˈʔʌmʁɒðəð mˈεn fˈɒmˈεllə stˈʔuðjʔʌ ˈʔendikˌʌʔʌðə a de ʋɑ mˈʔendʁʔʌ ˈʔefʔektˌʔiwt ˈεn fʔʌmˈoðəð tʔel a fʔʌhˈʔendʁʔʌ dˈʔœðsfal"
+   },
+   {
+    "id": "flores-devtest-516",
+    "text": "Vores plejefamiliesystem skal give sikre hjem, kærlige omsorgsgivere, stabil uddannelse og pålidelig sundhedspleje.",
+    "reference": "ʋˌɒɒʔʌs plˈ?ɑjəfamˌʔiljəsʔystˌεm skal ɡˈʔi sˈʔekʁʔʌ jˈεm kˈεɐ̯lˌiə ˈʔʌmsɒɒwsɡˌiʋʔʌʔʌ stabˈil ˈʔuðdˌanəlsə ʌ pʔʌlˈiðəlʔi sˈɒnhʔeðsplˌ?ɑjə",
+    "uccharan": "ʋˌɒɒʔʌs pl?ɑjəfalˈʔiljəsˌʔystεm skal ɡˈʔi sˈʔekʁʔʌ jˈεm kˈεɐ̯lˌiə ˈʔʌmsɒɒwsɡˌiʋʔʌʔʌ stabˈil ˈʔuðdˌanəlsə ʌ pʔʌlˈiðəlʔi sˈɒnhʔeðsplˌ?ɑjə"
+   },
+   {
+    "id": "flores-devtest-360",
+    "text": "Under dem er der flere mellemstore katte, som spiser mellemstort bytte, der rækker fra kaniner til antiloper og hjorte.",
+    "reference": "ˈɒnʔʌ dεm ɛɐ̯ dεɐ̯ flˈʔeʔʌ mˈεləmstʔoɐ̯ˌʔʌ kˈatə sʔʌm spˈisʔʌ mˈεləmstoɐ̯t bˈʔytə dεɐ̯ ʁˈ?akʔʌ fʁɑ kanˈinʔʌ tʔel ˌantʔelˈopʔʌ ʌ jˈʔʌɐ̯də",
+    "uccharan": "ˈɒnʔʌ dεm ɛɐ̯ dεɐ̯ flˈʔeʔʌ mˈεləmstʔoɐ̯ˌʔʌ kˈatə sʔʌm spˈisʔʌ mˈεləmstoɐ̯t bˈʔytə dεɐ̯ ʁˈ?akʔʌ fʁɑ kanˈinʔʌ tʔel ˈantilopˌʔʌ ʌ jˈʔʌɐ̯də"
+   },
+   {
+    "id": "flores-devtest-726",
+    "text": "Som i alle sydafrikanske nationalparker er der daglige bevarelses- og adgangsgebyrer til parken.  ",
+    "reference": "sʔʌm i ˈalə sˈʔyð?ɑfʁˌʔikanskə naʃˈʔonˈalpɑkˌʔʌ ɛɐ̯ dεɐ̯ dˈ?ɑwlˌiə bʔeʋˈɑɑlsəs ʌ ˌaðɡ?ɑŋsɡʔebˈʔyʌ tʔel pˈɑkən",
+    "uccharan": "sʔʌm i ˈalə sˈʔyð?ɑfʁˌʔikanskə naʃˈʔonˈalpɑkˌʔʌ ɛɐ̯ dεɐ̯ dˈ?ɑwlˌiə bʔeʋˈɑɑlsəs ʌ ˈaðɡ?ɑŋsɡˌʔebʔyˌʌ tʔel pˈɑkən"
+   },
+   {
+    "id": "flores-devtest-541",
+    "text": "Den tibetanske buddhisme er baseret på Buddhas lære, men blev udvidet af kærlighedsstien mahayana og med en masse teknikker fra indisk yoga.",
+    "reference": "dɛn tibˌʔetˈanskə bʔudˈʔismə ɛɐ̯ basˈʔeʌt pɒ bˈʔudas lˈɛʔʌ mˈεn blˈʔe ˈʔuðʋˌiðəð ˈa kˈεɐ̯lʔihˌʔeðstʔiən mˈahaˌʔyanˌa ʌ mεð ʔen mˈasə tʔeknˈʔikʔʌ fʁɑ ˈʔendʔisk jˈʔoɡa",
+    "uccharan": "dɛn tibˌʔetˈanskə bʔudˈʔismə ɛɐ̯ basˈʔeʌt pɒ bʔudhˈas lˈɛʔʌ mˈεn blˈʔe ˈʔuðʋˌiðəð ˈa kεɐ̯lʔihˌʔeðsstʔiˈən mˈahaˌʔyanˌa ʌ mεð ʔen mˈasə tʔeknˈʔikʔʌ fʁɑ ˈʔendʔisk jˈʔoɡa"
+   }
+  ]
+ }
+}

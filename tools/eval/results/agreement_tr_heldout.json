@@ -1,0 +1,248 @@
+{
+ "language": "tr",
+ "reference": "espeak-ng 1.52.0 voice tr (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 154565,
+  "per": 0.007226733089638664,
+  "per_without_stress": 0.0039454467510008934,
+  "exact_sentence": 0.6650197628458498,
+  "exact_sentence_without_stress": 0.8191699604743083,
+  "piper_shape_per": 0.00726518896507734,
+  "piper_shape_exact_sentence": 0.6551383399209486,
+  "word_count_mismatch_sentences": 149,
+  "errors_by_class": {
+   "stress": {
+    "count": 582,
+    "share": 0.5210384959713519,
+    "per_contribution": 0.0037654061398117297
+   },
+   "vowel": {
+    "count": 248,
+    "share": 0.22202327663384064,
+    "per_contribution": 0.0016045029599197748
+   },
+   "consonant": {
+    "count": 181,
+    "share": 0.162041181736795,
+    "per_contribution": 0.0011710283699414485
+   },
+   "other": {
+    "count": 75,
+    "share": 0.06714413607878246,
+    "per_contribution": 0.00048523274997573835
+   },
+   "word-boundary": {
+    "count": 27,
+    "share": 0.024171888988361683,
+    "per_contribution": 0.0001746837899912658
+   },
+   "length": {
+    "count": 3,
+    "share": 0.0026857654431512983,
+    "per_contribution": 1.9409309999029535e-05
+   },
+   "diacritic": {
+    "count": 1,
+    "share": 0.0008952551477170994,
+    "per_contribution": 6.469769999676511e-06
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→∅",
+    "count": 271
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 227
+   },
+   {
+    "edit": "∅→ɛ",
+    "count": 29
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 28
+   },
+   {
+    "edit": "o→ɔ",
+    "count": 27
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 25
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 24
+   },
+   {
+    "edit": " →∅",
+    "count": 20
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 19
+   },
+   {
+    "edit": "u→ʊ",
+    "count": 17
+   },
+   {
+    "edit": "ɔ→o",
+    "count": 15
+   },
+   {
+    "edit": "ɪ→i",
+    "count": 15
+   },
+   {
+    "edit": "ʊ→u",
+    "count": 14
+   },
+   {
+    "edit": "e→ɛ",
+    "count": 13
+   },
+   {
+    "edit": "∅→ɯ",
+    "count": 12
+   },
+   {
+    "edit": "ɯ→i",
+    "count": 11
+   },
+   {
+    "edit": "ɪ→∅",
+    "count": 10
+   },
+   {
+    "edit": "ɾ→r",
+    "count": 9
+   },
+   {
+    "edit": "ɯ→∅",
+    "count": 9
+   },
+   {
+    "edit": "t→∅",
+    "count": 8
+   },
+   {
+    "edit": "ɛ→e",
+    "count": 8
+   },
+   {
+    "edit": "i→∅",
+    "count": 7
+   },
+   {
+    "edit": "∅→ ",
+    "count": 7
+   },
+   {
+    "edit": "ɔ→∅",
+    "count": 7
+   },
+   {
+    "edit": "ɯ→ɪ",
+    "count": 7
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 14882,
+    "wrong": 329,
+    "rate": 0.022107243650047036
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 201,
+    "per": 0.014698691212426292,
+    "exact_sentence": 0.527363184079602
+   },
+   "no-digits": {
+    "sentences": 811,
+    "per": 0.005058430717863105,
+    "exact_sentence": 0.6991368680641183
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-548",
+    "text": "17 Eylül 1939'da Polonya savunması çoktan dağılmıştı ve tek ümit Romanya köprübaşı boyunca geri çekilip yeniden örgütlenmekti.",
+    "reference": "ˌonjedˈi ɛjlˈøl bˈin dˈokuzjˈyz otˌuzdˈokuz dˈa poɫɔnjˈa savʊnmasˈɯ tʃɔktˈan daːɯɫmɯʃtˈɯ vɛ tˈɛk ymˈɪt romanjˈa kœprybaʃˈɯ bojʊndʒˈa ɟeɾˈɪ tʃekilˈɪp jenidˈæn œrɟøtlænmɛktˈɪ",
+    "uccharan": "ˌonjedˈi ɛjlˈøl bˈin dˈokuzjˈyz otˌuzdˈokuz da poɫɔnjˈa savʊnmasˈɯ tʃɔktˈan daːɯɫmɯʃtˈɯ vɛ tˈɛk ymˈɪt romanjˈa kœprybaʃˈɯ bojʊndʒˈa ɟeɾˈɪ tʃekilˈɪp jenidˈæn œrɟøtlˈænmɛktɪ"
+   },
+   {
+    "id": "flores-devtest-985",
+    "text": "Çoğu modern araştırma teleskobu, uygun atmosfer koşullarına sahip ücra bölgelerdeki devasa tesislerdir.",
+    "reference": "tʃoːˈʊ modˈɛrn aɾˈaʃtɯrma telɛskobˈʊ ʊjɡˈʊn atmɔsfˈɛr koʃʊɫɫaɾɯnˈa sahˈɪp ødʒrˈa bœlɟelɛrdekˈɪ devˈasa tesɪslˈɛrdɪr",
+    "uccharan": "tʃoːˈʊ modˈɛrn aɾˈaʃtɯrma telɛskobˈʊ ʊjɡˈʊn atmɔsfˈɛr koʃʊɫɫaɾɯnˈa sahˈɪp ødʒrˈa bœlɟelɛrdekˈɪ devˈasa tesɪslɛrdˈɪr"
+   },
+   {
+    "id": "flores-devtest-607",
+    "text": "Bir örnek de Borneo'daki orangutanları ziyaret etmek, fotoğraflarını çekmek ve haklarında bilgi edinmektir.",
+    "reference": "bɪr œrnˈɛk dɛ bɔrneodakˈɪ oɾanɡutanɫaɾˈɯ zijaɾˈɛt ɛtmˈɛk fotoːɾafɫaɾɯnˈɯ tʃɛkmˈɛk vɛ hakɫaɾɯndˈa bɪlɡˈɪ edɪnmˈɛktɪr",
+    "uccharan": "bɪr œrnˈɛk dɛ bɔrneɔdakˈɪ oɾanɡʊtanɫaɾˈɯ zijaɾˈɛt ɛtmˈɛk fotoːɾafɫaɾɯnˈɯ tʃɛkmˈɛk vɛ hakɫaɾɯndˈa bɪlɡˈɪ edɪnmˈɛktɪr"
+   },
+   {
+    "id": "flores-devtest-240",
+    "text": "Gianarlo Fisichella arabasının kontrolünü kaybetti ve starttan çok kısa bir süre sonra yarışı bitirdi.",
+    "reference": "ɟianarɫˈɔ fisɪdʒhˈælɫa aɾabasɯnˈɯn kɔntrolynˈø kajbetːˈɪ vɛ startːˈan tʃˈɔk kˈɯsa bɪr syɾˈɛ sɔnrˈa jaɾɯʃˈɯ bitɪrdˈɪ",
+    "uccharan": "ɟianarɫˈɔ fisɪdʒhælɫˈa aɾabasɯnˈɯn kɔntrolynˈø kajbetːˈɪ vɛ startːˈan tʃˈɔk kˈɯsa bɪr syɾˈɛ sɔnrˈa jaɾɯʃˈɯ bitɪrdˈɪ"
+   },
+   {
+    "id": "flores-devtest-139",
+    "text": "Bu çökelti, vahşi yaşam habitatları yaratan kumsalların ve sahil kordonlarının oluşması için gerekliydi.",
+    "reference": "bʊ tʃœkæltˈɪ vahʃˈɪ jaʃˈam habitatɫaɾˈɯ jˈaɾatan kʊmsaɫɫaɾˈɯn vɛ sahˈɪl kɔrdɔnɫaɾɯnˈɯn oɫʊʃmasˈɯ itʃˈɪn ɟeɾɛklɪjdˈɪ",
+    "uccharan": "bʊ iœkæltˈɪ vahʃˈɪ jaʃˈam habitatɫaɾˈɯ jˈaɾatan kʊmsaɫɫaɾˈɯn vɛ sahˈɪl kɔrdɔnɫaɾɯnˈɯn oɫʊʃmasˈɯ itʃˈɪn ɟeɾɛklɪjdˈɪ"
+   },
+   {
+    "id": "flores-devtest-237",
+    "text": "Perşembe günkü Tokyo Game Show'un açılış sunumunda Nintendo başkanı Satoru Iwata, şirketin yeni Nintendo Revolution konsolunun kumanda tasarımını açıkladı.",
+    "reference": "pɛrʃæmbˈɛ ɟønkˈø tɔkjˈɔ ɡˈamɛ showˈʊn atʃɯɫˈɯʃ sunumʊndˈa nɪntændˈɔ baʃkanˈɯ satoɾˈʊ ɯwatˈa ʃɪrketˈɪn jenˈɪ nɪntændˈɔ revoɫutiˈɔn kɔnsoɫunˈʊn kumandˈa tasaɾɯmɯnˈɯ atʃˈɯkɫadɯ",
+    "uccharan": "pɛrʃæmbˈɛ ɟønkˈø tɔkjˈɔ ɡˈamɛ showˈʊn atʃɯɫˈɯʃ sunumʊndˈa nɪntændˈɔ baʃkanˈɯ satoɾˈʊ iwatˈa ʃɪrketˈɪn jenˈɪ nɪntændˈɔ rɛvoɫʊtiˈɔn kɔnsoɫunˈʊn kumandˈa tasaɾɯmɯnˈɯ atʃˈɯkɫadɯ"
+   },
+   {
+    "id": "flores-devtest-972",
+    "text": "Özellikle yazın popüler bir akşam yemeği; ekmek, zeytinyağı, domates ve kolaylıkla bulunabilen peynir, tonbalığı vb. lezzet vericileri içeren Pa amb Oli'dir.",
+    "reference": "œzællˈɪklɛ jazˈɯn popylˈɛr bɪr akʃˈam jemejˈɪ ɛkmˈɛk zɛjtɪnjaːˈɯ domatˈɛs vɛ koɫajɫˈɯkɫa buɫunabilˈæn pɛjnˈɪr tɔnbaɫɯɯˈɯ vˌɛbˈɛ lɛzzˈɛt veɾidʒileɾˈɪ itʃeɾˈæn pˈa ˈamb olˈidɪr",
+    "uccharan": "œzællˈɪklɛ jazˈɯn popylˈɛr bɪr akʃˈam jemejˈɪ ɛkmˈɛk zɛjtɪnjaːˈɯ domatˈɛs vɛ koɫajɫˈɯkɫa buɫunabilˈæn pɛjnˈɪr tɔnbaɫɯɯˈɯ vˌɛbˈɛ lɛzzˈɛt veɾidʒileɾˈɪ itʃeɾˈæn pˈa ˈamb olɪdˈɪr"
+   },
+   {
+    "id": "flores-devtest-756",
+    "text": "FIC West mağazasının karşısındaki Stanley'de bulunan adaların tek bankasında döviz bozdura bilirsiniz.",
+    "reference": "fˌɛˌɯdʒˈɛ wˈɛst maːzasɯnˈɯn karʃɯsɯndakˈɪ stanlɛjdˈɛ buɫunˈan adaɫaɾˈɯn tˈɛk bankasɯndˈa dˈœvɪz bɔzduɾˈa bilˈɪrsinɪz",
+    "uccharan": "fˌɛˌidʒˈɛ wˈɛst maːzasɯnˈɯn karʃɯsɯndakˈɪ stanlejdˈɛ buɫunˈan adaɫaɾˈɯn tˈɛk bankasɯndˈa dˈœvɪz bɔzduɾˈa bilˈɪrsinɪz"
+   },
+   {
+    "id": "flores-devtest-946",
+    "text": "Haldarsvík köyü, yakındaki Eysturoy adasından manzaralar sunar ve sıra dışı bir sekizgen kiliseye sahiptir.",
+    "reference": "haɫdarsvˈɪk kœjˈø jakɯndakˈɪ ɛjstuɾˈɔj adasɯndˈan manzˈaɾaɫar sunˈar vɛ sɯɾˈa dɯʃˈɯ bɪr sekɪzɟˈæn kilˈisejɛ sahˈɪptɪr",
+    "uccharan": "haɫdarsvˈik kœjˈø jakɯndakˈɪ ɛjstʊɾˈɔj adasɯndˈan manzˈaɾaɫar sunˈar vɛ sɯɾˈa dɯʃˈɯ bɪr sekɪzɟˈæn kilˈisejɛ sahˈɪptɪr"
+   },
+   {
+    "id": "flores-devtest-658",
+    "text": "İki popüler içerik teorisi, Maslow'un İhtiyaçlar Hiyerarşisi Teorisi ve Hertzberg'in İki Faktör Teorisidir.",
+    "reference": "ikˈɪ popylˈɛr itʃeɾˈɪk teoɾisˈɪ masɫowˈʊn ɪhtijatʃɫˈar hijeɾarʃisˈɪ teoɾisˈɪ vɛ hɛrtzbɛrɡˈɪn ikˈɪ faktˈœr teoɾisˈidɪr",
+    "uccharan": "ikˈɪ popylˈɛr itʃeɾˈɪk teoɾisˈɪ masɫɔwˈʊn ɪhtijatʃɫˈar hijeɾarʃisˈɪ teoɾisˈɪ vɛ hɛrtzbɛrɟˈɪn ikˈɪ faktˈœr teoɾisˈidɪr"
+   },
+   {
+    "id": "flores-devtest-580",
+    "text": "İç zehirlenme hemen ortaya çıkmayabilir. Kusma gibi belirtiler hemen tanı konulamayacak kadar geneldir.",
+    "reference": "ˈɪtʃ zehɪrlˈænmɛ hemˈæn ɔrtajˈa tʃɯkmajabilˈɪr kˈʊsma ɟibˈɪ belɪrtilˈɛr hemˈæn tanˈɯ konuɫˈamajadʒak kadˈar ɟenˈældɪr",
+    "uccharan": "ˈɪtʃ zehɪrlˈænmɛ hemˈæn ɔrtajˈa tʃɯkmajabilˈɪr kˈʊsma ɟibˈɪ belɪrtilˈɛr hemˈæn tanˈɯ konuɫˈamajadʒak kadˈar ɟenældˈɪr"
+   },
+   {
+    "id": "flores-devtest-577",
+    "text": "Pullu ayakları ve pençeleri var, yumurtluyorlar ve bir T-Rex gibi iki arka ayakları üzerinde yürüyorlar.",
+    "reference": "pʊɫɫˈʊ ajakɫaɾˈɯ vɛ pæntʃeleɾˈɪ vˈar jumʊrtɫˈujɔrɫar vɛ bɪr tˈɛɾˈɛks ɟibˈɪ ikˈɪ arkˈa ajakɫaɾˈɯ yzeɾɪndˈɛ jyɾˈyjɔrɫar",
+    "uccharan": "pʊɫɫˈʊ ajakɫaɾˈɯ vɛ pæntʃeleɾˈɪ vˈar jumʊrtlˈujɔrɫar vɛ bɪr tˈɛrˈɛks ɟibˈɪ ikˈɪ arkˈa ajakɫaɾˈɯ yzeɾɪndˈɛ jyɾˈyjɔrɫar"
+   }
+  ]
+ }
+}

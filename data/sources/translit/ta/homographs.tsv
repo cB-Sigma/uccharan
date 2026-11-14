@@ -1,0 +1,31 @@
+# Tamil words whose usual romanisation is also an English word.
+# For these spellings the neighbouring words decide the language: the native candidate
+# is never taken for a loan of the English word.
+# Hand-written for uccharan (Apache-2.0); not yet reviewed by a native speaker.
+# Columns: romanised form, native word (for the reader; candidates come from the lexicon).
+en	என்
+un	உன்
+than	தான்
+pal	பால்
+kal	கல்
+man	மண்
+pen	பெண்
+pin	பின்
+pun	புண்
+kan	கண்
+sol	சொல்
+nil	நில்
+sel	செல்
+vel	வேல்
+pol	போல்
+am	ஆம்
+um	உம்
+poo	பூ
+thee	தீ
+in	இன்
+nee	நீ
+va	வா
+po	போ
+oru	ஒரு
+kai	கை
+vandi	வண்டி

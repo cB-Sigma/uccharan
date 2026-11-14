@@ -1,5 +1,4 @@
-# Marathi. espeak-ng voice "mr". Written for uccharan from specs/mr.md,
-# specs/family-brahmic.md and the Hindi sections of BEHAVIOUR_SPEC.md.
+# Marathi. espeak-ng voice "mr". Written for uccharan.
 
 [meta]
 tag = mr

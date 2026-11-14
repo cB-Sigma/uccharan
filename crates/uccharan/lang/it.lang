@@ -1,0 +1,420 @@
+# Italian. espeak-ng voice "it". Letter rules for words outside the word
+# table, the number words and the letter names.
+
+[meta]
+tag = it
+vowels = a e ɛ i o ɔ u ɪ ʊ
+stress = penult
+secondary = none
+spell-vowels = aeiouyàèéìòóù
+
+[classes]
+V = a e i o u à è é ì ò ó ù
+AOU = a o u à ò ó ù
+FV = e i è é ì
+VC = b d g l m n r v
+S = ˈ
+
+[pre]
+à -> ˈa
+è -> ˈɛ
+é -> ˈe
+ì -> ˈi
+ò -> ˈɔ
+ó -> ˈo
+ù -> ˈu
+gli -> ʎ / _ {V}
+gli -> ʎi
+gn -> ɲ
+sci -> ʃ / _ {AOU}
+sc -> ʃ / _ {FV}
+sch -> sk
+cqu -> kːw
+qu -> kw
+cci -> tʃː / _ {AOU}
+cc -> tʃː / _ {FV}
+cch -> kː
+cc -> kː
+ci -> tʃ / _ {AOU}
+c -> tʃ / _ {FV}
+ch -> k
+c -> k
+ggi -> dʒː / _ {AOU}
+gg -> dʒː / _ {FV}
+ggh -> ɡː
+gg -> ɡː
+gi -> dʒ / _ {AOU}
+g -> dʒ / _ {FV}
+gh -> ɡ
+g -> ɡ
+h -> 0
+zz -> tsː
+z -> ts
+s -> z / {V} _ {V} | _ {VC}
+tt -> tː
+pp -> pː
+bb -> bː
+dd -> dː
+i -> j / _ {V}
+u -> w / _ {V}
+x -> ks
+y -> i
+k -> k
+
+[post]
+i -> ɪ / {!S} _ #
+
+[words]
+zero# dzˈɛɾo
+uno# ˈuno
+due# dˈue
+tre# trˈe
+quattro# kwˈatːro
+cinque# tʃˈinkwe
+sei# sˈɛj
+sette# sˈɛtːe
+otto# ˈɔtːo
+nove# nˈɔve
+dieci# djˈɛtʃɪ
+undici# ˈunditʃɪ
+dodici# dˈoditʃɪ
+tredici# trˈeditʃɪ
+quattordici# kwatːˈorditʃɪ
+quindici# kwˈimditʃɪ
+sedici# sˈeditʃɪ
+diciassette# ditʃassˈɛtːe
+diciotto# ditʃˈɔtːo
+diciannove# ditʃannˈɔve
+venti# vˈentɪ
+ventuno# ventˈuno
+ventidue# vˈentɪdˈue
+ventitré# ventitrˈe
+ventiquattro# ventikwˈatːro
+venticinque# ventitʃˈinkwe
+ventisei# ventisˈɛj
+ventisette# ventisˈɛtːe
+ventotto# ventˈɔtːo
+ventinove# ventinˈɔve
+trenta# trˈeːnta
+trentuno# trˈeːntˈuno
+trentadue# trˈeːntadˈue
+trentatré# trˈeːntatrˈe
+trentaquattro# trˈeːntakwˈatːro
+trentacinque# trˈeːntatʃˈinkwe
+trentasei# trˈeːntasˈɛj
+trentasette# trˈeːntasˈɛtːe
+trentotto# trˈeːntˈɔtːo
+trentanove# trˈeːntanˈɔve
+quaranta# kʊaɾˈaːnta
+quarantuno# kʊaɾˈaːntˈuno
+quarantadue# kʊaɾˈaːntadˈue
+quarantatré# kʊaɾˈaːntatrˈe
+quarantaquattro# kʊaɾˈaːntakwˈatːro
+quarantacinque# kʊaɾˈaːntatʃˈinkwe
+quarantasei# kʊaɾˈaːntasˈɛj
+quarantasette# kʊaɾˈaːntasˈɛtːe
+quarantotto# kʊaɾˈaːntˈɔtːo
+quarantanove# kʊaɾˈaːntanˈɔve
+cinquanta# tʃinkwˈanta
+cinquantuno# tʃinkwˈantˈuno
+cinquantadue# tʃinkwˈantadˈue
+cinquantatré# tʃinkwˈantatrˈe
+cinquantaquattro# tʃinkwˈantakwˈatːro
+cinquantacinque# tʃinkwˈantatʃˈinkwe
+cinquantasei# tʃinkwˈantasˈɛj
+cinquantasette# tʃinkwˈantasˈɛtːe
+cinquantotto# tʃinkwˈantˈɔtːo
+cinquantanove# tʃinkwˈantanˈɔve
+sessanta# sessˈanta
+sessantuno# sessˈantˈuno
+sessantadue# sessˈantadˈue
+sessantatré# sessˈantatrˈe
+sessantaquattro# sessˈantakwˈatːro
+sessantacinque# sessˈantatʃˈinkwe
+sessantasei# sessˈantasˈɛj
+sessantasette# sessˈantasˈɛtːe
+sessantotto# sessˈantˈɔtːo
+sessantanove# sessˈantanˈɔve
+settanta# setːˈanta
+settantuno# setːˈantˈuno
+settantadue# setːˈantadˈue
+settantatré# setːˈantatrˈe
+settantaquattro# setːˈantakwˈatːro
+settantacinque# setːˈantatʃˈinkwe
+settantasei# setːˈantasˈɛj
+settantasette# setːˈantasˈɛtːe
+settantotto# setːˈantˈɔtːo
+settantanove# setːˈantanˈɔve
+ottanta# otːˈanta
+ottantuno# otːˈantˈuno
+ottantadue# otːˈantadˈue
+ottantatré# otːˈantatrˈe
+ottantaquattro# otːˈantakwˈatːro
+ottantacinque# otːˈantatʃˈinkwe
+ottantasei# otːˈantasˈɛj
+ottantasette# otːˈantasˈɛtːe
+ottantotto# otːˈantˈɔtːo
+ottantanove# otːˈantanˈɔve
+novanta# novˈanta
+novantuno# novˈantˈuno
+novantadue# novˈantadˈue
+novantatré# novˈantatrˈe
+novantaquattro# novˈantakwˈatːro
+novantacinque# novˈantatʃˈinkwe
+novantasei# novˈantasˈɛj
+novantasette# novˈantasˈɛtːe
+novantotto# novˈantˈɔtːo
+novantanove# novˈantanˈɔve
+cento# tʃˈɛnto
+duecento# dʊetʃˈɛnto
+trecento# tretʃˈɛnto
+quattrocento# kʊatːrotʃˈɛnto
+cinquecento# tʃɪnkʊetʃˈɛnto
+seicento# sejtʃˈɛnto
+settecento# setːetʃˈɛnto
+ottocento# otːotʃˈɛnto
+novecento# novetʃˈɛnto
+mille# mˈille
+mila# mˈiːla
+unmilione# ʊnmiliˈone
+milioni# miliˈonɪ
+virgola# vˈirɡola
+meno# mˈeno
+percento# pertʃˈɛŋto
+
+[numbers]
+decimal comma
+point virgola#
+minus meno#
+percent percento#
+one-before-scale no
+0 zero#
+1 uno#
+2 due#
+3 tre#
+4 quattro#
+5 cinque#
+6 sei#
+7 sette#
+8 otto#
+9 nove#
+10 dieci#
+11 undici#
+12 dodici#
+13 tredici#
+14 quattordici#
+15 quindici#
+16 sedici#
+17 diciassette#
+18 diciotto#
+19 diciannove#
+20 venti#
+21 ventuno#
+22 ventidue#
+23 ventitré#
+24 ventiquattro#
+25 venticinque#
+26 ventisei#
+27 ventisette#
+28 ventotto#
+29 ventinove#
+30 trenta#
+31 trentuno#
+32 trentadue#
+33 trentatré#
+34 trentaquattro#
+35 trentacinque#
+36 trentasei#
+37 trentasette#
+38 trentotto#
+39 trentanove#
+40 quaranta#
+41 quarantuno#
+42 quarantadue#
+43 quarantatré#
+44 quarantaquattro#
+45 quarantacinque#
+46 quarantasei#
+47 quarantasette#
+48 quarantotto#
+49 quarantanove#
+50 cinquanta#
+51 cinquantuno#
+52 cinquantadue#
+53 cinquantatré#
+54 cinquantaquattro#
+55 cinquantacinque#
+56 cinquantasei#
+57 cinquantasette#
+58 cinquantotto#
+59 cinquantanove#
+60 sessanta#
+61 sessantuno#
+62 sessantadue#
+63 sessantatré#
+64 sessantaquattro#
+65 sessantacinque#
+66 sessantasei#
+67 sessantasette#
+68 sessantotto#
+69 sessantanove#
+70 settanta#
+71 settantuno#
+72 settantadue#
+73 settantatré#
+74 settantaquattro#
+75 settantacinque#
+76 settantasei#
+77 settantasette#
+78 settantotto#
+79 settantanove#
+80 ottanta#
+81 ottantuno#
+82 ottantadue#
+83 ottantatré#
+84 ottantaquattro#
+85 ottantacinque#
+86 ottantasei#
+87 ottantasette#
+88 ottantotto#
+89 ottantanove#
+90 novanta#
+91 novantuno#
+92 novantadue#
+93 novantatré#
+94 novantaquattro#
+95 novantacinque#
+96 novantasei#
+97 novantasette#
+98 novantotto#
+99 novantanove#
+100 cento#
+200 duecento#
+300 trecento#
+400 quattrocento#
+500 cinquecento#
+600 seicento#
+700 settecento#
+800 ottocento#
+900 novecento#
+scale100 cento#
+1000 mille#
+1000+ mille#
+scale1000 mila#
+scale1000+ mila#
+1000000 unmilione#
+1000000+ unmilione#
+scale1000000 milioni#
+scale1000000+ milioni#
+
+[spell]
+a ˈaː
+b bˈi
+c tʃˈi
+d d̪ˈiː
+e ˈeː
+f ˈɛffe
+g dʒˈi
+h ˈakːa
+i ˈi
+j ˈilˈuŋɡa
+k kˈapːa
+l ˈɛlle
+m ˈɛmme
+n ˈɛnne
+o ˈɔː
+p pˈi
+q kˈu
+r ˈɛrɾe
+s ˈɛsse
+t tˈɪ
+u ˈuː
+v vˈu
+w dˈopːjavˈu
+x ˈiks
+y ˈipsilon
+z dzˈɛta
+
+# Words without stress inside a clause and with stress at its end.
+[unstressed]
+lei s p
+me 0 p
+questo s p
+loro s p
+te 0 p
+che 0 p
+noi s p
+mai 0 p
+mia s p
+sono s p
+perché s p
+vuole s p
+mio s p
+ma 0 p
+sei s p
+la 0 p
+questa s p
+come s p
+ha 0 p
+questi s p
+sia s p
+i 0 p
+del 0 p
+queste s p
+vostra s p
+da 0 p
+per 0 p
+anche s p
+quella s p
+della s p
+con 0 p
+siete s p
+hai 0 p
+contro s p
+se 0 p
+sarà s p
+nostra s p
+era s p
+avete s p
+siamo s p
+al 0 p
+vostro s p
+suoi s p
+mie s p
+miei s p
+le 0 p
+nostro s p
+hanno s p
+quelle s p
+oltre s p
+essa s p
+sarebbe s p
+abbiamo s p
+alla s p
+tuoi s p
+de 0 p
+aveva s p
+neanche s p
+delle s p
+essi s p
+lo 0 p
+vostri s p
+nostri s p
+dal 0 p
+esse s p
+sarò s p
+mais 0 p
+l'ha 0 p
+cioè s p
+saranno s p
+verso s p
+mentre s p
+ai 0 p
+ad 0 p
+degli s p
+senza s p
+saremo s p
+dalla s p
+vostre s p
+up s p
+sarebbero s p

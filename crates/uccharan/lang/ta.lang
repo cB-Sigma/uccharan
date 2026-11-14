@@ -1,5 +1,4 @@
-# Tamil. espeak-ng voice "ta". Written for uccharan from specs/ta.md and
-# specs/family-brahmic.md. Tamil writes one letter per place of articulation;
+# Tamil. espeak-ng voice "ta". Written for uccharan. Tamil writes one letter per place of articulation;
 # the voicing of stops is decided by position ([post] rules).
 
 [meta]

@@ -1,5 +1,5 @@
 //! A few words per data-driven Indic language, written from the language
-//! specifications (specs/<tag>.md), in compatible mode.
+//! descriptions, in compatible mode.
 
 use uccharan::{Lang, Mode, Options, Phonemizer};
 

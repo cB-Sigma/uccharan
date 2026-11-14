@@ -1,0 +1,434 @@
+# Polish. espeak-ng voice "pl". Letter rules for words outside the
+# word table, the number words and the letter names.
+
+[meta]
+tag = pl
+vowels = a i u ɛ ɔ ɪ ɨ
+stress = penult
+secondary = none
+spell-vowels = aeiouyąęó
+
+[classes]
+V = a e i o u y ą ę ó
+VL = p t k f s ʃ ɕ x
+VO = b d ɡ z ʒ ʑ v
+
+[pre]
+ch -> x
+cz -> tʃ
+sz -> ʃ
+rz -> ʒ
+dz -> dz
+dź -> dʑ
+dż -> dʒ
+ci -> tɕ / _ {V}
+ci -> tɕi
+si -> ɕ / _ {V}
+si -> ɕi
+zi -> ʑ / _ {V}
+zi -> ʑi
+ni -> ɲ / _ {V}
+ni -> ɲi
+ć -> tɕ
+ś -> ɕ
+ź -> ʑ
+ń -> ɲ
+ł -> w
+w -> v
+c -> ts
+ż -> ʒ
+h -> x
+y -> ɨ
+e -> ɛ
+o -> ɔ
+ó -> u
+ą -> ɔ̃
+ę -> ɛ̃
+j -> j
+g -> ɡ
+
+[post]
+
+
+[clause]
+# A final obstruent takes the voicing of an obstruent that begins the next word.
+p -> b / _ ‿ {VO}
+b -> p / _ ‿ {VL}
+t -> d / _ ‿ {VO}
+d -> t / _ ‿ {VL}
+k -> ɡ / _ ‿ {VO}
+ɡ -> k / _ ‿ {VL}
+f -> v / _ ‿ {VO}
+v -> f / _ ‿ {VL}
+s -> z / _ ‿ {VO}
+z -> s / _ ‿ {VL}
+ʃ -> ʒ / _ ‿ {VO}
+ʒ -> ʃ / _ ‿ {VL}
+ɕ -> ʑ / _ ‿ {VO}
+ʑ -> ɕ / _ ‿ {VL}
+x -> ɣ / _ ‿ {VO}
+ɣ -> x / _ ‿ {VL}
+# The preposition w.
+w -> f / ‿ _ ‿ {VL} | # _ ‿ {VL}
+
+[words]
+w w
+z z
+zero# zˈɛrɔː
+jeden# jˈɛdɛn
+dwa# dvˈa
+trzy# tʃˈɨ
+cztery# tʃtˈɛrɨ
+pięć# pʲˈɛɲtɕ
+sześć# ʃˈɛɕtɕ
+siedem# ɕˈɛdɛm
+osiem# ˈɔɕɛm
+dziewięć# dʑˈɛvʲɛɲtɕ
+dziesięć# dʑˈɛɕɛɲtɕ
+jedenaście# jˌɛdɛnˈaɕtɕɛ
+dwanaście# dvanˈaɕtɕɛ
+trzynaście# tʃɨnˈaɕtɕɛ
+czternaście# tʃtɛrnˈaɕtɕɛ
+piętnaście# pjɛtnˈaɕtɕɛ
+szesnaście# ʃɛsnˈaɕtɕɛ
+siedemnaście# ɕˌɛdɛmnˈaɕtɕɛ
+osiemnaście# ˌɔɕɛmnˈaɕtɕɛ
+dziewiętnaście# dʑˌɛvʲɛtnˈaɕtɕɛ
+dwadzieścia# dvadʑˈɛɕtɕa
+dwadzieścia-jeden# dvadʑˈɛɕtɕajˈɛdɛn
+dwadzieścia-dwa# dvadʑˈɛɕtɕadvˈa
+dwadzieścia-trzy# dvadʑˈɛɕtɕatʃˈɨ
+dwadzieścia-cztery# dvadʑˈɛɕtɕatʃtˈɛrɨ
+dwadzieścia-pięć# dvadʑˈɛɕtɕapʲˈɛɲtɕ
+dwadzieścia-sześć# dvadʑˈɛɕtɕaʃˈɛɕtɕ
+dwadzieścia-siedem# dvadʑˈɛɕtɕaɕˈɛdɛm
+dwadzieścia-osiem# dvadʑˈɛɕtɕaˈɔɕɛm
+dwadzieścia-dziewięć# dvadʑˈɛɕtɕadʑˈɛvʲɛɲtɕ
+trzydzieści# tʃɨdʑˈɛɕcʲi
+trzydzieści-jeden# tʃɨdʑˈɛɕcʲijˈɛdɛn
+trzydzieści-dwa# tʃɨdʑˈɛɕcʲidvˈa
+trzydzieści-trzy# tʃɨdʑˈɛɕcʲitʃˈɨ
+trzydzieści-cztery# tʃɨdʑˈɛɕcʲitʃtˈɛrɨ
+trzydzieści-pięć# tʃɨdʑˈɛɕcʲipʲˈɛɲtɕ
+trzydzieści-sześć# tʃɨdʑˈɛɕcʲiʃˈɛɕtɕ
+trzydzieści-siedem# tʃɨdʑˈɛɕcʲiɕˈɛdɛm
+trzydzieści-osiem# tʃɨdʑˈɛɕcʲiˈɔɕɛm
+trzydzieści-dziewięć# tʃɨdʑˈɛɕcʲidʑˈɛvʲɛɲtɕ
+czterdzieści# tʃtɛrdʑˈɛɕcʲi
+czterdzieści-jeden# tʃtɛrdʑˈɛɕcʲijˈɛdɛn
+czterdzieści-dwa# tʃtɛrdʑˈɛɕcʲidvˈa
+czterdzieści-trzy# tʃtɛrdʑˈɛɕcʲitʃˈɨ
+czterdzieści-cztery# tʃtɛrdʑˈɛɕcʲitʃtˈɛrɨ
+czterdzieści-pięć# tʃtɛrdʑˈɛɕcʲipʲˈɛɲtɕ
+czterdzieści-sześć# tʃtɛrdʑˈɛɕcʲiʃˈɛɕtɕ
+czterdzieści-siedem# tʃtɛrdʑˈɛɕcʲiɕˈɛdɛm
+czterdzieści-osiem# tʃtɛrdʑˈɛɕcʲiˈɔɕɛm
+czterdzieści-dziewięć# tʃtɛrdʑˈɛɕcʲidʑˈɛvʲɛɲtɕ
+pięćdziesiąt# pʲɛɲdʑˈɛɕɔnt
+pięćdziesiąt-jeden# pʲɛɲdʑˈɛɕɔntjˈɛdɛn
+pięćdziesiąt-dwa# pʲɛɲdʑˈɛɕɔnddvˈa
+pięćdziesiąt-trzy# pʲɛɲdʑˈɛɕɔnttʃˈɨ
+pięćdziesiąt-cztery# pʲɛɲdʑˈɛɕɔnttʃtˈɛrɨ
+pięćdziesiąt-pięć# pʲɛɲdʑˈɛɕɔntpʲˈɛɲtɕ
+pięćdziesiąt-sześć# pʲɛɲdʑˈɛɕɔntʃˈɛɕtɕ
+pięćdziesiąt-siedem# pʲɛɲdʑˈɛɕɔntɕˈɛdɛm
+pięćdziesiąt-osiem# pʲɛɲdʑˈɛɕɔntˈɔɕɛm
+pięćdziesiąt-dziewięć# pʲɛɲdʑˈɛɕɔnddʑˈɛvʲɛɲtɕ
+sześćdziesiąt# ʃɛʑdʑˈɛɕɔnt
+sześćdziesiąt-jeden# ʃɛʑdʑˈɛɕɔntjˈɛdɛn
+sześćdziesiąt-dwa# ʃɛʑdʑˈɛɕɔnddvˈa
+sześćdziesiąt-trzy# ʃɛʑdʑˈɛɕɔnttʃˈɨ
+sześćdziesiąt-cztery# ʃɛʑdʑˈɛɕɔnttʃtˈɛrɨ
+sześćdziesiąt-pięć# ʃɛʑdʑˈɛɕɔntpʲˈɛɲtɕ
+sześćdziesiąt-sześć# ʃɛʑdʑˈɛɕɔntʃˈɛɕtɕ
+sześćdziesiąt-siedem# ʃɛʑdʑˈɛɕɔntɕˈɛdɛm
+sześćdziesiąt-osiem# ʃɛʑdʑˈɛɕɔntˈɔɕɛm
+sześćdziesiąt-dziewięć# ʃɛʑdʑˈɛɕɔnddʑˈɛvʲɛɲtɕ
+siedemdziesiąt# ɕˌɛdɛmdʑˈɛɕɔnt
+siedemdziesiąt-jeden# ɕˌɛdɛmdʑˈɛɕɔntjˈɛdɛn
+siedemdziesiąt-dwa# ɕˌɛdɛmdʑˈɛɕɔnddvˈa
+siedemdziesiąt-trzy# ɕˌɛdɛmdʑˈɛɕɔnttʃˈɨ
+siedemdziesiąt-cztery# ɕˌɛdɛmdʑˈɛɕɔnttʃtˈɛrɨ
+siedemdziesiąt-pięć# ɕˌɛdɛmdʑˈɛɕɔntpʲˈɛɲtɕ
+siedemdziesiąt-sześć# ɕˌɛdɛmdʑˈɛɕɔntʃˈɛɕtɕ
+siedemdziesiąt-siedem# ɕˌɛdɛmdʑˈɛɕɔntɕˈɛdɛm
+siedemdziesiąt-osiem# ɕˌɛdɛmdʑˈɛɕɔntˈɔɕɛm
+siedemdziesiąt-dziewięć# ɕˌɛdɛmdʑˈɛɕɔnddʑˈɛvʲɛɲtɕ
+osiemdziesiąt# ˌɔɕɛmdʑˈɛɕɔnt
+osiemdziesiąt-jeden# ˌɔɕɛmdʑˈɛɕɔntjˈɛdɛn
+osiemdziesiąt-dwa# ˌɔɕɛmdʑˈɛɕɔnddvˈa
+osiemdziesiąt-trzy# ˌɔɕɛmdʑˈɛɕɔnttʃˈɨ
+osiemdziesiąt-cztery# ˌɔɕɛmdʑˈɛɕɔnttʃtˈɛrɨ
+osiemdziesiąt-pięć# ˌɔɕɛmdʑˈɛɕɔntpʲˈɛɲtɕ
+osiemdziesiąt-sześć# ˌɔɕɛmdʑˈɛɕɔntʃˈɛɕtɕ
+osiemdziesiąt-siedem# ˌɔɕɛmdʑˈɛɕɔntɕˈɛdɛm
+osiemdziesiąt-osiem# ˌɔɕɛmdʑˈɛɕɔntˈɔɕɛm
+osiemdziesiąt-dziewięć# ˌɔɕɛmdʑˈɛɕɔnddʑˈɛvʲɛɲtɕ
+dziewięćdziesiąt# dʑˌɛvʲɛɲdʑˈɛɕɔnt
+dziewięćdziesiąt-jeden# dʑˌɛvʲɛɲdʑˈɛɕɔntjˈɛdɛn
+dziewięćdziesiąt-dwa# dʑˌɛvʲɛɲdʑˈɛɕɔnddvˈa
+dziewięćdziesiąt-trzy# dʑˌɛvʲɛɲdʑˈɛɕɔnttʃˈɨ
+dziewięćdziesiąt-cztery# dʑˌɛvʲɛɲdʑˈɛɕɔnttʃtˈɛrɨ
+dziewięćdziesiąt-pięć# dʑˌɛvʲɛɲdʑˈɛɕɔntpʲˈɛɲtɕ
+dziewięćdziesiąt-sześć# dʑˌɛvʲɛɲdʑˈɛɕɔntʃˈɛɕtɕ
+dziewięćdziesiąt-siedem# dʑˌɛvʲɛɲdʑˈɛɕɔntɕˈɛdɛm
+dziewięćdziesiąt-osiem# dʑˌɛvʲɛɲdʑˈɛɕɔntˈɔɕɛm
+dziewięćdziesiąt-dziewięć# dʑˌɛvʲɛɲdʑˈɛɕɔnddʑˈɛvʲɛɲtɕ
+sto# stˈɔ
+dwieście# dvʲˈɛɕcʲɛ
+trzysta# tʃˈɨsta
+czterysta# tʃtˈɛrɨstˌa
+czterystav2# tʃtˈɛrɨsta
+pięćset# pʲˈɛɲtɕsɛt
+sześćset# ʃˈɛɕsɛt
+siedemset# ɕˈɛdɛmsˌɛt
+siedemsetv2# ɕˈɛdɛmsɛt
+osiemset# ˈɔɕɛmsˌɛt
+osiemsetv2# ˈɔɕɛmsɛt
+dziewięćset# dʑˈɛvʲɛɲtɕsˌɛt
+dziewięćsetv2# dʑˈɛvʲɛɲtɕsɛt
+tysiąc# tˈɨɕɔnts
+tysiące# tɨɕˈɔntsɛ
+tysiącem# tɨɕˈɛntsɨ
+milion# mʲˈiljɔn
+miliony# mʲiljˈɔnɨ
+milionym# mʲiljˈɔnuf
+przecinek# pʃɛtɕˈinɛk
+procent# prˈɔtsɛnt
+
+[numbers]
+decimal comma
+point przecinek#
+minus minus
+percent procent#
+one-before-scale no
+0 zero#
+1 jeden#
+2 dwa#
+3 trzy#
+4 cztery#
+5 pięć#
+6 sześć#
+7 siedem#
+8 osiem#
+9 dziewięć#
+10 dziesięć#
+11 jedenaście#
+12 dwanaście#
+13 trzynaście#
+14 czternaście#
+15 piętnaście#
+16 szesnaście#
+17 siedemnaście#
+18 osiemnaście#
+19 dziewiętnaście#
+20 dwadzieścia#
+21 dwadzieścia-jeden#
+22 dwadzieścia-dwa#
+23 dwadzieścia-trzy#
+24 dwadzieścia-cztery#
+25 dwadzieścia-pięć#
+26 dwadzieścia-sześć#
+27 dwadzieścia-siedem#
+28 dwadzieścia-osiem#
+29 dwadzieścia-dziewięć#
+30 trzydzieści#
+31 trzydzieści-jeden#
+32 trzydzieści-dwa#
+33 trzydzieści-trzy#
+34 trzydzieści-cztery#
+35 trzydzieści-pięć#
+36 trzydzieści-sześć#
+37 trzydzieści-siedem#
+38 trzydzieści-osiem#
+39 trzydzieści-dziewięć#
+40 czterdzieści#
+41 czterdzieści-jeden#
+42 czterdzieści-dwa#
+43 czterdzieści-trzy#
+44 czterdzieści-cztery#
+45 czterdzieści-pięć#
+46 czterdzieści-sześć#
+47 czterdzieści-siedem#
+48 czterdzieści-osiem#
+49 czterdzieści-dziewięć#
+50 pięćdziesiąt#
+51 pięćdziesiąt-jeden#
+52 pięćdziesiąt-dwa#
+53 pięćdziesiąt-trzy#
+54 pięćdziesiąt-cztery#
+55 pięćdziesiąt-pięć#
+56 pięćdziesiąt-sześć#
+57 pięćdziesiąt-siedem#
+58 pięćdziesiąt-osiem#
+59 pięćdziesiąt-dziewięć#
+60 sześćdziesiąt#
+61 sześćdziesiąt-jeden#
+62 sześćdziesiąt-dwa#
+63 sześćdziesiąt-trzy#
+64 sześćdziesiąt-cztery#
+65 sześćdziesiąt-pięć#
+66 sześćdziesiąt-sześć#
+67 sześćdziesiąt-siedem#
+68 sześćdziesiąt-osiem#
+69 sześćdziesiąt-dziewięć#
+70 siedemdziesiąt#
+71 siedemdziesiąt-jeden#
+72 siedemdziesiąt-dwa#
+73 siedemdziesiąt-trzy#
+74 siedemdziesiąt-cztery#
+75 siedemdziesiąt-pięć#
+76 siedemdziesiąt-sześć#
+77 siedemdziesiąt-siedem#
+78 siedemdziesiąt-osiem#
+79 siedemdziesiąt-dziewięć#
+80 osiemdziesiąt#
+81 osiemdziesiąt-jeden#
+82 osiemdziesiąt-dwa#
+83 osiemdziesiąt-trzy#
+84 osiemdziesiąt-cztery#
+85 osiemdziesiąt-pięć#
+86 osiemdziesiąt-sześć#
+87 osiemdziesiąt-siedem#
+88 osiemdziesiąt-osiem#
+89 osiemdziesiąt-dziewięć#
+90 dziewięćdziesiąt#
+91 dziewięćdziesiąt-jeden#
+92 dziewięćdziesiąt-dwa#
+93 dziewięćdziesiąt-trzy#
+94 dziewięćdziesiąt-cztery#
+95 dziewięćdziesiąt-pięć#
+96 dziewięćdziesiąt-sześć#
+97 dziewięćdziesiąt-siedem#
+98 dziewięćdziesiąt-osiem#
+99 dziewięćdziesiąt-dziewięć#
+100 sto#
+200 dwieście#
+300 trzysta#
+400 czterysta#
+400+ czterystav2#
+500 pięćset#
+600 sześćset#
+700 siedemset#
+700+ siedemsetv2#
+800 osiemset#
+800+ osiemsetv2#
+900 dziewięćset#
+900+ dziewięćsetv2#
+scale100 sto#
+1000 tysiąc#
+1000+ tysiąc#
+scale1000 tysiące#
+many1000 tysiącem#
+scale1000+ tysiące#
+1000000 milion#
+1000000+ milion#
+scale1000000 miliony#
+many1000000 milionym#
+scale1000000+ miliony#
+
+[spell]
+a a
+b bˈɛ
+c tsˈɛ
+d dˈɛ
+e ˈɛ
+f ˈɛf
+g ɡjˈɛ
+h xˈa
+i i
+j jˈɔt
+k kˈa
+l ˈɛl
+m ˈɛm
+n ˈɛn
+o ˈɔ
+p pˈɛ
+q kˈu
+r ˈɛr
+s ˈɛs
+t tˈɛ
+u ˈu
+v fˈaw
+w vɨ
+x ˈiks
+y ˈiɡrɛk
+z zɨ
+ą ˈɔ̃
+ć tɕˈɛ
+ę ˈɛ̃
+ł ˈɛw
+ń ˈɛɲ
+ó ˈu
+ś ɕˈi
+ź ʑˈɛt
+ż ʒˈɛt
+
+# Words without stress inside a clause and with stress at its end.
+[unstressed]
+tego s p
+jest 0 p
+tym 0 p
+temu s p
+o 0 p
+było s p
+na 0 p
+ci 0 p
+do 0 p
+tylko s p
+tych 0 p
+będzie s p
+są 0 p
+ja 0 p
+za 0 p
+ty 0 p
+ale s p
+on 0 p
+ten 0 p
+te 0 p
+jesteś s p
+mamy s p
+my 0 p
+jestem s p
+była s p
+który s p
+taki s p
+były s p
+które s p
+po 0 p
+przed 0 p
+masz 0 p
+ona s p
+ta 0 p
+oni s p
+która s p
+jesteśmy s p
+byli s p
+będą s p
+obok s p
+mają s p
+tymi s p
+tej 0 p
+byłem s p
+którym s p
+wy 0 p
+przecież s p
+którzy s p
+czym 0 p
+przy 0 p
+nad 0 p
+one s p
+pod 0 p
+będę s p
+której s p
+mieli s p
+miałem s p
+których s p
+jesteście s p
+niektórzy s p
+niektórych s p
+ani s p
+ono s p
+miały s p
+macie s p
+byliśmy s p

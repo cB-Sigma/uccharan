@@ -1,0 +1,342 @@
+# Finnish. espeak-ng voice "fi". Letter rules for words outside the
+# word table, the number words and the letter names.
+
+[meta]
+tag = fi
+vowels = a e i o u y ø ɪ æ
+stress = initial
+secondary = none
+spell-vowels = aeiouyäöå
+
+[classes]
+V = a e i o u y ä ö
+
+[pre]
+ä -> æ
+ö -> ø
+å -> oː
+ng -> ŋː
+nk -> ŋk
+aa -> aː
+ee -> eː
+ii -> iː
+oo -> oː
+uu -> uː
+yy -> yː
+ää -> æː
+öö -> øː
+kk -> kː
+pp -> pː
+tt -> tː
+ss -> sː
+ll -> lː
+mm -> mː
+nn -> nː
+rr -> rː
+c -> k
+g -> ɡ
+w -> v
+x -> ks
+z -> ts
+
+[clause]
+# A final n takes the place of the next consonant.
+n -> ŋ / _ ‿ k | _ ‿ ɡ
+n -> m / _ ‿ p | _ ‿ b | _ ‿ m
+
+[words]
+nolla# nˈolla
+yksi# ˈyksi
+kaksi# kˈaksi
+kolme# kˈolme
+neljä# nˈeljæ
+viisi# vˈiːsi
+kuusi# kˈuːsi
+seitsemän# sˈeitsemæn
+kahdeksan# kˈahdeksan
+yhdeksän# ˈyhdeksæn
+kymmenen# kˈymmenen
+yksitoista# ˈyksitˌoista
+kaksitoista# kˈaksitˌoista
+kolmetoista# kˈolmetˌoista
+neljätoista# nˈeljætˌoista
+viisitoista# vˈiːsitˌoista
+kuusitoista# kˈuːsitˌoista
+seitsemäntoista# sˈeitsemæntˌoista
+kahdeksantoista# kˈahdeksantˌoista
+yhdeksäntoista# ˈyhdeksæntˌoista
+kaksikymmentä# kˈaksikymmentæ
+kaksikymmentäyksi# kˌaksikymmentæˈyksi
+kaksikymmentäkaksi# kˌaksikymmentækˈaksi
+kaksikymmentäkolme# kˌaksikymmentækˈolme
+kaksikymmentäneljä# kˌaksikymmentænˈeljæ
+kaksikymmentäviisi# kˌaksikymmentævˈiːsi
+kaksikymmentäkuusi# kˌaksikymmentækˈuːsi
+kaksikymmentäseitsemän# kˌaksikymmentæsˈeitsemæn
+kaksikymmentäkahdeksan# kˌaksikymmentækˈahdeksan
+kaksikymmentäyhdeksän# kˌaksikymmentæˈyhdeksæn
+kolmekymmentä# kˈolmekymmentæ
+kolmekymmentäyksi# kˌolmekymmentæˈyksi
+kolmekymmentäkaksi# kˌolmekymmentækˈaksi
+kolmekymmentäkolme# kˌolmekymmentækˈolme
+kolmekymmentäneljä# kˌolmekymmentænˈeljæ
+kolmekymmentäviisi# kˌolmekymmentævˈiːsi
+kolmekymmentäkuusi# kˌolmekymmentækˈuːsi
+kolmekymmentäseitsemän# kˌolmekymmentæsˈeitsemæn
+kolmekymmentäkahdeksan# kˌolmekymmentækˈahdeksan
+kolmekymmentäyhdeksän# kˌolmekymmentæˈyhdeksæn
+neljäkymmentä# nˈeljækymmentæ
+neljäkymmentäyksi# nˌeljækymmentæˈyksi
+neljäkymmentäkaksi# nˌeljækymmentækˈaksi
+neljäkymmentäkolme# nˌeljækymmentækˈolme
+neljäkymmentäneljä# nˌeljækymmentænˈeljæ
+neljäkymmentäviisi# nˌeljækymmentævˈiːsi
+neljäkymmentäkuusi# nˌeljækymmentækˈuːsi
+neljäkymmentäseitsemän# nˌeljækymmentæsˈeitsemæn
+neljäkymmentäkahdeksan# nˌeljækymmentækˈahdeksan
+neljäkymmentäyhdeksän# nˌeljækymmentæˈyhdeksæn
+viisikymmentä# vˈiːsikymmentæ
+viisikymmentäyksi# vˌiːsikymmentæˈyksi
+viisikymmentäkaksi# vˌiːsikymmentækˈaksi
+viisikymmentäkolme# vˌiːsikymmentækˈolme
+viisikymmentäneljä# vˌiːsikymmentænˈeljæ
+viisikymmentäviisi# vˌiːsikymmentævˈiːsi
+viisikymmentäkuusi# vˌiːsikymmentækˈuːsi
+viisikymmentäseitsemän# vˌiːsikymmentæsˈeitsemæn
+viisikymmentäkahdeksan# vˌiːsikymmentækˈahdeksan
+viisikymmentäyhdeksän# vˌiːsikymmentæˈyhdeksæn
+kuusikymmentä# kˈuːsikymmentæ
+kuusikymmentäyksi# kˌuːsikymmentæˈyksi
+kuusikymmentäkaksi# kˌuːsikymmentækˈaksi
+kuusikymmentäkolme# kˌuːsikymmentækˈolme
+kuusikymmentäneljä# kˌuːsikymmentænˈeljæ
+kuusikymmentäviisi# kˌuːsikymmentævˈiːsi
+kuusikymmentäkuusi# kˌuːsikymmentækˈuːsi
+kuusikymmentäseitsemän# kˌuːsikymmentæsˈeitsemæn
+kuusikymmentäkahdeksan# kˌuːsikymmentækˈahdeksan
+kuusikymmentäyhdeksän# kˌuːsikymmentæˈyhdeksæn
+seitsemänkymmentä# sˈeitsemˌæŋkymmentæ
+seitsemänkymmentäyksi# sˌeitsemˌæŋkymmentæˈyksi
+seitsemänkymmentäkaksi# sˌeitsemˌæŋkymmentækˈaksi
+seitsemänkymmentäkolme# sˌeitsemˌæŋkymmentækˈolme
+seitsemänkymmentäneljä# sˌeitsemˌæŋkymmentænˈeljæ
+seitsemänkymmentäviisi# sˌeitsemˌæŋkymmentævˈiːsi
+seitsemänkymmentäkuusi# sˌeitsemˌæŋkymmentækˈuːsi
+seitsemänkymmentäseitsemän# sˌeitsemˌæŋkymmentæsˈeitsemæn
+seitsemänkymmentäkahdeksan# sˌeitsemˌæŋkymmentækˈahdeksan
+seitsemänkymmentäyhdeksän# sˌeitsemˌæŋkymmentæˈyhdeksæn
+kahdeksankymmentä# kˈahdeksˌaŋkymmentæ
+kahdeksankymmentäyksi# kˌahdeksˌaŋkymmentæˈyksi
+kahdeksankymmentäkaksi# kˌahdeksˌaŋkymmentækˈaksi
+kahdeksankymmentäkolme# kˌahdeksˌaŋkymmentækˈolme
+kahdeksankymmentäneljä# kˌahdeksˌaŋkymmentænˈeljæ
+kahdeksankymmentäviisi# kˌahdeksˌaŋkymmentævˈiːsi
+kahdeksankymmentäkuusi# kˌahdeksˌaŋkymmentækˈuːsi
+kahdeksankymmentäseitsemän# kˌahdeksˌaŋkymmentæsˈeitsemæn
+kahdeksankymmentäkahdeksan# kˌahdeksˌaŋkymmentækˈahdeksan
+kahdeksankymmentäyhdeksän# kˌahdeksˌaŋkymmentæˈyhdeksæn
+yhdeksänkymmentä# ˈyhdeksˌæŋkymmentæ
+yhdeksänkymmentäyksi# ˌyhdeksˌæŋkymmentæˈyksi
+yhdeksänkymmentäkaksi# ˌyhdeksˌæŋkymmentækˈaksi
+yhdeksänkymmentäkolme# ˌyhdeksˌæŋkymmentækˈolme
+yhdeksänkymmentäneljä# ˌyhdeksˌæŋkymmentænˈeljæ
+yhdeksänkymmentäviisi# ˌyhdeksˌæŋkymmentævˈiːsi
+yhdeksänkymmentäkuusi# ˌyhdeksˌæŋkymmentækˈuːsi
+yhdeksänkymmentäseitsemän# ˌyhdeksˌæŋkymmentæsˈeitsemæn
+yhdeksänkymmentäkahdeksan# ˌyhdeksˌæŋkymmentækˈahdeksan
+yhdeksänkymmentäyhdeksän# ˌyhdeksˌæŋkymmentæˈyhdeksæn
+sata# sˈata
+kaksisataa# kˈaksisˌataː
+kolmesataa# kˈolmesˌataː
+neljäsataa# nˈeljæsˌataː
+viisisataa# vˈiːsisˌataː
+kuusisataa# kˈuːsisˌataː
+seitsemänsataa# sˈeitsemænsˌataː
+kahdeksansataa# kˈahdeksansˌataː
+yhdeksänsataa# ˈyhdeksænsˌataː
+tuhat# tˈuhat
+tuhatta# tˌuhatːa
+miljoona# mˈiljoːna
+miljoonaa# mˌiljoːnaː
+pilkku# pˌilkːu
+miinus# mˈiːnus
+prosenttia# prˈosentːɪ
+
+[numbers]
+decimal comma
+point pilkku#
+minus miinus#
+percent prosenttia#
+one-before-scale no
+0 nolla#
+1 yksi#
+2 kaksi#
+3 kolme#
+4 neljä#
+5 viisi#
+6 kuusi#
+7 seitsemän#
+8 kahdeksan#
+9 yhdeksän#
+10 kymmenen#
+11 yksitoista#
+12 kaksitoista#
+13 kolmetoista#
+14 neljätoista#
+15 viisitoista#
+16 kuusitoista#
+17 seitsemäntoista#
+18 kahdeksantoista#
+19 yhdeksäntoista#
+20 kaksikymmentä#
+21 kaksikymmentäyksi#
+22 kaksikymmentäkaksi#
+23 kaksikymmentäkolme#
+24 kaksikymmentäneljä#
+25 kaksikymmentäviisi#
+26 kaksikymmentäkuusi#
+27 kaksikymmentäseitsemän#
+28 kaksikymmentäkahdeksan#
+29 kaksikymmentäyhdeksän#
+30 kolmekymmentä#
+31 kolmekymmentäyksi#
+32 kolmekymmentäkaksi#
+33 kolmekymmentäkolme#
+34 kolmekymmentäneljä#
+35 kolmekymmentäviisi#
+36 kolmekymmentäkuusi#
+37 kolmekymmentäseitsemän#
+38 kolmekymmentäkahdeksan#
+39 kolmekymmentäyhdeksän#
+40 neljäkymmentä#
+41 neljäkymmentäyksi#
+42 neljäkymmentäkaksi#
+43 neljäkymmentäkolme#
+44 neljäkymmentäneljä#
+45 neljäkymmentäviisi#
+46 neljäkymmentäkuusi#
+47 neljäkymmentäseitsemän#
+48 neljäkymmentäkahdeksan#
+49 neljäkymmentäyhdeksän#
+50 viisikymmentä#
+51 viisikymmentäyksi#
+52 viisikymmentäkaksi#
+53 viisikymmentäkolme#
+54 viisikymmentäneljä#
+55 viisikymmentäviisi#
+56 viisikymmentäkuusi#
+57 viisikymmentäseitsemän#
+58 viisikymmentäkahdeksan#
+59 viisikymmentäyhdeksän#
+60 kuusikymmentä#
+61 kuusikymmentäyksi#
+62 kuusikymmentäkaksi#
+63 kuusikymmentäkolme#
+64 kuusikymmentäneljä#
+65 kuusikymmentäviisi#
+66 kuusikymmentäkuusi#
+67 kuusikymmentäseitsemän#
+68 kuusikymmentäkahdeksan#
+69 kuusikymmentäyhdeksän#
+70 seitsemänkymmentä#
+71 seitsemänkymmentäyksi#
+72 seitsemänkymmentäkaksi#
+73 seitsemänkymmentäkolme#
+74 seitsemänkymmentäneljä#
+75 seitsemänkymmentäviisi#
+76 seitsemänkymmentäkuusi#
+77 seitsemänkymmentäseitsemän#
+78 seitsemänkymmentäkahdeksan#
+79 seitsemänkymmentäyhdeksän#
+80 kahdeksankymmentä#
+81 kahdeksankymmentäyksi#
+82 kahdeksankymmentäkaksi#
+83 kahdeksankymmentäkolme#
+84 kahdeksankymmentäneljä#
+85 kahdeksankymmentäviisi#
+86 kahdeksankymmentäkuusi#
+87 kahdeksankymmentäseitsemän#
+88 kahdeksankymmentäkahdeksan#
+89 kahdeksankymmentäyhdeksän#
+90 yhdeksänkymmentä#
+91 yhdeksänkymmentäyksi#
+92 yhdeksänkymmentäkaksi#
+93 yhdeksänkymmentäkolme#
+94 yhdeksänkymmentäneljä#
+95 yhdeksänkymmentäviisi#
+96 yhdeksänkymmentäkuusi#
+97 yhdeksänkymmentäseitsemän#
+98 yhdeksänkymmentäkahdeksan#
+99 yhdeksänkymmentäyhdeksän#
+100 sata#
+200 kaksisataa#
+300 kolmesataa#
+400 neljäsataa#
+500 viisisataa#
+600 kuusisataa#
+700 seitsemänsataa#
+800 kahdeksansataa#
+900 yhdeksänsataa#
+scale100 sata#
+1000 tuhat#
+1000+ tuhat#
+scale1000 tuhatta#
+scale1000+ tuhatta#
+1000000 miljoona#
+1000000+ miljoona#
+scale1000000 miljoonaa#
+scale1000000+ miljoonaa#
+
+[spell]
+a ˈaː
+b bˈeː
+c sˈeː
+d dˈeː
+e ˈeː
+f ˈæf
+g ɡˈeː
+h hˈoː
+i ˈiː
+j jˈiː
+k kˈoː
+l ˈæl
+m ˈæm
+n ˈæn
+o ˈoː
+p pˈeː
+q qˈuː
+r ˈær
+s ˈæs
+t tˈeː
+u ˈuː
+v vˈeː
+w kˈaksoisveː
+x ˈæks
+y ˈyː
+z tsˈet
+ä ˈæː
+ö ˈøː
+å rˈuotsalˌainenˈoː
+
+# Words without stress inside a clause and with stress at its end.
+[unstressed]
+itse s p
+vähän s p
+tätä s p
+tuota s p
+tämän s p
+tässä s p
+tästä s p
+tämä s p
+tuon 0 p
+tähän s p
+tuo 0 p
+tuolla s p
+mutta s p
+tuosta s p
+tuohon s p
+nämä s p
+näitä s p
+joka s p
+tuossa s p
+näistä s p

@@ -1,0 +1,30 @@
+# Telugu words whose usual romanisation is also an English word.
+# For these spellings the neighbouring words decide the language: the native candidate
+# is never taken for a loan of the English word.
+# Hand-written for uccharan (Apache-2.0); not yet reviewed by a native speaker.
+# Columns: romanised form, native word (for the reader; candidates come from the lexicon).
+me	మీ
+ma	మా
+are	అరె
+ore	ఒరే
+mate	మాటే
+rave	రావే
+lo	లో
+a	ఆ
+e	ఈ
+na	నా
+ne	నే
+ni	నీ
+ki	కి
+ku	కు
+ra	రా
+po	పో
+em	ఏం
+ala	అలా
+ela	ఎలా
+pani	పని
+mana	మన
+mari	మరి
+ade	అదే
+ide	ఇదే
+tho	తో

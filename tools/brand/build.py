@@ -147,9 +147,9 @@ def main() -> None:
         second = SECOND_DARK if dark else SECOND_LIGHT
         inner = (
             f'<svg style="position:absolute;left:140px;top:118px" width="{width * k:.0f}" height="{64 * k:.0f}" viewBox="0 0 {width:.0f} 64">{body}</svg>'
-            '<div style="position:absolute;left:140px;top:282px;font-weight:600;font-size:62px;line-height:72px;letter-spacing:-0.022em">5× faster than espeak-ng.<br>Just as accurate. Free to ship.</div>'
+            '<div style="position:absolute;left:140px;top:282px;font-weight:600;font-size:54px;line-height:68px;letter-spacing:-0.022em">Phonemiser, text normaliser,<br>transliterator, pronunciation engine.</div>'
             f'<div class="second" style="position:absolute;left:140px;top:448px;font-size:29px;line-height:41px;width:1120px">'
-            "A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python, C and the browser. Apache-2.0.</div>"
+            "The text front end for speech synthesis and speech recognition — 39 languages, in Rust, Python, C and the browser. Apache-2.0.</div>"
             f'<div class="ipa" style="position:absolute;left:1350px;top:500px;font-size:32px;color:{second};letter-spacing:0.04em">उच्चारण → /ʊcːˈaːɾəɳ/</div>'
             + motif(dark, 1350, 0, 1.0)
         )
@@ -158,10 +158,10 @@ def main() -> None:
     k = 1.55
     inner = (
         f'<svg style="position:absolute;left:96px;top:100px" width="{width * k:.0f}" height="{64 * k:.0f}" viewBox="0 0 {width:.0f} 64">{body}</svg>'
-        '<div style="position:absolute;left:96px;top:250px;font-weight:600;font-size:52px;line-height:62px;letter-spacing:-0.022em">5× faster than espeak-ng.<br>Just as accurate. Free to ship.</div>'
+        '<div style="position:absolute;left:96px;top:250px;font-weight:600;font-size:44px;line-height:58px;letter-spacing:-0.022em">Phonemiser, text normaliser,<br>transliterator, pronunciation engine.</div>'
         f'<div class="second" style="position:absolute;left:96px;top:398px;font-size:25px;line-height:36px;width:880px">'
-        "A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python, C and the browser. Apache-2.0.</div>"
-        f'<div style="position:absolute;left:96px;top:548px;font-size:23px;font-weight:500">English <span class="second">&nbsp;•&nbsp;</span> Hindi <span class="second">&nbsp;•&nbsp;</span> Hinglish'
+        "The text front end for speech synthesis and speech recognition — 39 languages, in Rust, Python, C and the browser. Apache-2.0.</div>"
+        f'<div style="position:absolute;left:96px;top:548px;font-size:23px;font-weight:500">English <span class="second">&nbsp;•&nbsp;</span> South Asian <span class="second">&nbsp;•&nbsp;</span> European languages'
         f'<span class="second"> &nbsp;•&nbsp; Rust · Python · C · WebAssembly &nbsp;•&nbsp; Apache-2.0</span></div>'
         + motif(True, 940, 0, 0.73)
     )

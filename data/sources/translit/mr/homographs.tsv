@@ -1,0 +1,43 @@
+# Marathi words whose usual romanisation is also an English word.
+# For these spellings the neighbouring words decide the language: the native candidate
+# is never taken for a loan of the English word.
+# Hand-written for uccharan (Apache-2.0); not yet reviewed by a native speaker.
+# Columns: romanised form, native word (for the reader; candidates come from the lexicon).
+to	तो
+me	मी
+he	हे
+hi	ही
+tar	तर
+pan	पण
+mag	मग
+bag	बघ
+man	मन
+far	फार
+war	वर
+var	वर
+mat	मत
+kam	काम
+sat	सात
+char	चार
+don	दोन
+are	अरे
+at	आत
+ya	या
+ha	हा
+ho	हो
+la	ला
+ka	का
+ti	ती
+te	ते
+tu	तू
+bar	बरं
+sang	सांग
+ghar	घर
+jam	जाम
+din	दिन
+dar	दर
+par	पर
+ja	जा
+ye	ये
+bas	बस
+aai	आई

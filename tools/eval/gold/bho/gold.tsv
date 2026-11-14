@@ -2,7 +2,7 @@
 # Bhojpuri work. Word sources: F = attested in FLORES-200 bho_Deva dev/devtest (CC BY-SA 4.0, text used for
 # evaluation only, https://github.com/facebookresearch/flores); L = forms in Grierson, Linguistic Survey of India
 # vol. V part II (1903, public domain, https://archive.org/details/in.ernet.dli.2015.32969) grammar sketch of
-# Bhojpuri; S = the spec's oracle example set (specs/bho.md, words only). Pronunciation: written by hand from
+# Bhojpuri; S = the example words of the project's language description (words only). Pronunciation: written by hand from
 # Shukla 1981, Bhojpuri Grammar, and Tiwari 1960 (vowels a aː i iː u uː e eː o oː ə, ऐ = əi, औ = əu, vowel letters
 # इ उ after a vowel are their own vowel, ड़ ढ़ = ɽ ɽʰ, avagraha = pronounced final ə, final inherent vowel silent
 # after a single consonant, Hindi-type medial schwa deletion, nasal vowels from chandrabindu and from anusvara
@@ -85,11 +85,11 @@ w-बतउलस	word	बतउलस	bətəuləs	hiatus	FLORES-200 bho_Deva (C
 w-बतउनें	word	बतउनें	bətəunẽː	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-मउसम	word	मउसम	məusəm	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-लउट	word	लउट	ləuʈ	hiatus	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
-w-भइया	word	भइया	bʰəijaː	hiatus	specs/bho.md example word; pronunciation hand-written	heldout
-w-माई	word	माई	maːiː	hiatus	specs/bho.md example word; pronunciation hand-written	heldout
-w-चिरई	word	चिरई	cɪɾəiː	hiatus	specs/bho.md example word; pronunciation hand-written	dev
-w-दुआरी	word	दुआरी	dʊaːɾiː	hiatus	specs/bho.md example word; pronunciation hand-written	dev
-w-कइसन	word	कइसन	kəisən	hiatus	specs/bho.md example word; pronunciation hand-written	heldout
+w-भइया	word	भइया	bʰəijaː	hiatus	language description example word; pronunciation hand-written	heldout
+w-माई	word	माई	maːiː	hiatus	language description example word; pronunciation hand-written	heldout
+w-चिरई	word	चिरई	cɪɾəiː	hiatus	language description example word; pronunciation hand-written	dev
+w-दुआरी	word	दुआरी	dʊaːɾiː	hiatus	language description example word; pronunciation hand-written	dev
+w-कइसन	word	कइसन	kəisən	hiatus	language description example word; pronunciation hand-written	heldout
 w-आवेलन	word	आवेलन	aːʋeːlən	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-आईं	word	आईं	aːĩː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
 w-जाईं	word	जाईं	ɟaːĩː	hiatus	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
@@ -155,14 +155,14 @@ w-तैरे	word	तैरे	təiɾeː	diph	FLORES-200 bho_Deva (CC BY-SA 4.
 w-पैखाना	word	पैखाना	pəikʰaːnaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-नौका	word	नौका	nəukaː	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-सैद्धांतिक	word	सैद्धांतिक	səiddʰaːntɪk	diph	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
-w-औरत	word	औरत	əuɾət	diph	specs/bho.md example word; pronunciation hand-written	dev
+w-औरत	word	औरत	əuɾət	diph	language description example word; pronunciation hand-written	dev
 w-ऐसन	word	ऐसन	əisən	diph	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
 w-कैसन	word	कैसन	kəisən	diph	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
 w-बैल	word	बैल	bəil	diph	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
 w-भैंस	word	भैंस	bʰəĩs	diph	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
 w-चैत	word	चैत	cəit	diph	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
 w-सैंया	word	सैंया	səĩjaː	diph	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
-w-बड़	word	बड़	bəɽ	flap	specs/bho.md example word; pronunciation hand-written	dev
+w-बड़	word	बड़	bəɽ	flap	language description example word; pronunciation hand-written	dev
 w-बढ़िया	word	बढ़िया	bəɽʰɪjaː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-बड़का	word	बड़का	bəɽkaː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-उड़ान	word	उड़ान	ʊɽaːn	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
@@ -205,12 +205,12 @@ w-करोड़	word	करोड़	kəɾoːɽ	flap	FLORES-200 bho_Deva (CC B
 w-पढ़ला	word	पढ़ला	pəɽʰəlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-बढ़ावा	word	बढ़ावा	bəɽʰaːʋaː	flap	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-बाड़ें	word	बाड़ें	baːɽẽː	cop	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
-w-बाड़े	word	बाड़े	baːɽeː	cop	specs/bho.md example word; pronunciation hand-written	heldout
+w-बाड़े	word	बाड़े	baːɽeː	cop	language description example word; pronunciation hand-written	heldout
 w-बाड़ी	word	बाड़ी	baːɽiː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
 w-बाड़ू	word	बाड़ू	baːɽuː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
 w-बाड़ा	word	बाड़ा	baːɽaː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
-w-पढ़त	word	पढ़त	pəɽʰət	verb	specs/bho.md example word; pronunciation hand-written	heldout
-w-चलऽ	word	चलऽ	cələ	avagraha	specs/bho.md example word; pronunciation hand-written	heldout
+w-पढ़त	word	पढ़त	pəɽʰət	verb	language description example word; pronunciation hand-written	heldout
+w-चलऽ	word	चलऽ	cələ	avagraha	language description example word; pronunciation hand-written	heldout
 w-देखऽ	word	देखऽ	deːkʰə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
 w-करऽ	word	करऽ	kəɾə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
 w-बोलऽ	word	बोलऽ	boːlə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
@@ -240,8 +240,8 @@ w-कइलऽ	word	कइलऽ	kəilə	avagraha	Grierson, Linguistic Survey of
 w-खइलऽ	word	खइलऽ	kʰəilə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
 w-भइलऽ	word	भइलऽ	bʰəilə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
 w-होखऽ	word	होखऽ	hoːkʰə	avagraha	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
-w-बा	word	बा	baː	cop	specs/bho.md example word; pronunciation hand-written	heldout
-w-बानी	word	बानी	baːniː	cop	specs/bho.md example word; pronunciation hand-written	dev
+w-बा	word	बा	baː	cop	language description example word; pronunciation hand-written	heldout
+w-बानी	word	बानी	baːniː	cop	language description example word; pronunciation hand-written	dev
 w-बाटे	word	बाटे	baːʈeː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
 w-बाटी	word	बाटी	baːʈiː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
 w-बाटीं	word	बाटीं	baːʈĩː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
@@ -253,7 +253,7 @@ w-रहे	word	रहे	ɾəheː	cop	Grierson, Linguistic Survey of India vol
 w-रहलन	word	रहलन	ɾəhələn	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
 w-रहली	word	रहली	ɾəhəliː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
 w-रहनी	word	रहनी	ɾəhəniː	cop	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
-w-बोलेनी	word	बोलेनी	boːleːniː	verb	specs/bho.md example word; pronunciation hand-written	heldout
+w-बोलेनी	word	बोलेनी	boːleːniː	verb	language description example word; pronunciation hand-written	heldout
 w-कहेलन	word	कहेलन	kəheːlən	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-सकेला	word	सकेला	səkeːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-करेला	word	करेला	kəɾeːlaː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
@@ -272,7 +272,7 @@ w-बनेला	word	बनेला	bəneːlaː	verb	FLORES-200 bho_Deva (CC 
 w-जालें	word	जालें	ɟaːlẽː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-करेलन	word	करेलन	kəɾeːlən	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-देखल	word	देखल	deːkʰəl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
-w-लागल	word	लागल	laːɡəl	verb	specs/bho.md example word; pronunciation hand-written	dev
+w-लागल	word	लागल	laːɡəl	verb	language description example word; pronunciation hand-written	dev
 w-बनावल	word	बनावल	bənaːʋəl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-देहल	word	देहल	deːhəl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-लिहल	word	लिहल	lɪhəl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
@@ -288,15 +288,15 @@ w-होई	word	होई	hoːiː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word
 w-होखी	word	होखी	hoːkʰiː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-जाई	word	जाई	ɟaːiː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-करीं	word	करीं	kəɾĩː	verb	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
-w-जानत	word	जानत	ɟaːnət	verb	specs/bho.md example word; pronunciation hand-written	heldout
-w-करत	word	करत	kəɾət	verb	specs/bho.md example word; pronunciation hand-written	dev
-w-कहत	word	कहत	kəhət	verb	specs/bho.md example word; pronunciation hand-written	dev
-w-आवत	word	आवत	aːʋət	verb	specs/bho.md example word; pronunciation hand-written	dev
-w-जात	word	जात	ɟaːt	verb	specs/bho.md example word; pronunciation hand-written	dev
-w-खात	word	खात	kʰaːt	verb	specs/bho.md example word; pronunciation hand-written	heldout
-w-देखत	word	देखत	deːkʰət	verb	specs/bho.md example word; pronunciation hand-written	dev
-w-लिखत	word	लिखत	lɪkʰət	verb	specs/bho.md example word; pronunciation hand-written	heldout
-w-पियत	word	पियत	pɪjət	verb	specs/bho.md example word; pronunciation hand-written	heldout
+w-जानत	word	जानत	ɟaːnət	verb	language description example word; pronunciation hand-written	heldout
+w-करत	word	करत	kəɾət	verb	language description example word; pronunciation hand-written	dev
+w-कहत	word	कहत	kəhət	verb	language description example word; pronunciation hand-written	dev
+w-आवत	word	आवत	aːʋət	verb	language description example word; pronunciation hand-written	dev
+w-जात	word	जात	ɟaːt	verb	language description example word; pronunciation hand-written	dev
+w-खात	word	खात	kʰaːt	verb	language description example word; pronunciation hand-written	heldout
+w-देखत	word	देखत	deːkʰət	verb	language description example word; pronunciation hand-written	dev
+w-लिखत	word	लिखत	lɪkʰət	verb	language description example word; pronunciation hand-written	heldout
+w-पियत	word	पियत	pɪjət	verb	language description example word; pronunciation hand-written	heldout
 w-करे	word	करे	kəɾeː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-करके	word	करके	kəɾkeː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-कहले	word	कहले	kəhəleː	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
@@ -307,15 +307,15 @@ w-मिलल	word	मिलल	mɪləl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0)
 w-बोलल	word	बोलल	boːləl	verb	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-खाइल	word	खाइल	kʰaːil	verb	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
 w-खइलीं	word	खइलीं	kʰəilĩː	verb	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
-w-हम	word	हम	həm	pron	specs/bho.md example word; pronunciation hand-written	dev
-w-हमार	word	हमार	həmaːɾ	pron	specs/bho.md example word; pronunciation hand-written	heldout
-w-हमरा	word	हमरा	həmɾaː	pron	specs/bho.md example word; pronunciation hand-written	heldout
+w-हम	word	हम	həm	pron	language description example word; pronunciation hand-written	dev
+w-हमार	word	हमार	həmaːɾ	pron	language description example word; pronunciation hand-written	heldout
+w-हमरा	word	हमरा	həmɾaː	pron	language description example word; pronunciation hand-written	heldout
 w-हमनी	word	हमनी	həmniː	pron	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
 w-तू	word	तू	tuː	pron	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
 w-तोहार	word	तोहार	toːhaːɾ	pron	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
 w-तोहरा	word	तोहरा	toːhɾaː	pron	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	heldout
-w-ऊ	word	ऊ	uː	pron	specs/bho.md example word; pronunciation hand-written	heldout
-w-ई	word	ई	iː	pron	specs/bho.md example word; pronunciation hand-written	heldout
+w-ऊ	word	ऊ	uː	pron	language description example word; pronunciation hand-written	heldout
+w-ई	word	ई	iː	pron	language description example word; pronunciation hand-written	heldout
 w-उनकर	word	उनकर	ʊnkəɾ	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-उनका	word	उनका	ʊnkaː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-ओकर	word	ओकर	oːkəɾ	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
@@ -334,7 +334,7 @@ w-एही	word	एही	eːhiː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word
 w-ओही	word	ओही	oːhiː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-इहे	word	इहे	ɪheː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-उहे	word	उहे	ʊheː	pron	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
-w-का	word	का	kaː	pron	specs/bho.md example word; pronunciation hand-written	dev
+w-का	word	का	kaː	pron	language description example word; pronunciation hand-written	dev
 w-के	word	के	keː	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-में	word	में	mẽː	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-से	word	से	seː	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
@@ -349,52 +349,52 @@ w-पहिले	word	पहिले	pəhɪleː	post	FLORES-200 bho_Deva (CC B
 w-बादे	word	बादे	baːdeː	post	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-जे	word	जे	ɟeː	misc	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-कि	word	कि	kɪ	misc	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
-w-ना	word	ना	naː	misc	specs/bho.md example word; pronunciation hand-written	heldout
+w-ना	word	ना	naː	misc	language description example word; pronunciation hand-written	heldout
 w-नू	word	नू	nuː	misc	Grierson, Linguistic Survey of India vol. V part II (1903, public domain); pronunciation hand-written	dev
 w-भी	word	भी	bʰiː	misc	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-त	word	त	tə	misc	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-बहुत	word	बहुत	bəhʊt	adj	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
-w-छोट	word	छोट	cʰoːʈ	adj	specs/bho.md example word; pronunciation hand-written	heldout
-w-नीक	word	नीक	niːk	adj	specs/bho.md example word; pronunciation hand-written	heldout
-w-खराब	word	खराब	kʰəɾaːb	adj	specs/bho.md example word; pronunciation hand-written	dev
+w-छोट	word	छोट	cʰoːʈ	adj	language description example word; pronunciation hand-written	heldout
+w-नीक	word	नीक	niːk	adj	language description example word; pronunciation hand-written	heldout
+w-खराब	word	खराब	kʰəɾaːb	adj	language description example word; pronunciation hand-written	dev
 w-नया	word	नया	nəjaː	adj	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-पुरान	word	पुरान	pʊɾaːn	adj	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout
 w-जादा	word	जादा	ɟaːdaː	adj	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-ढेर	word	ढेर	ɖʰeːɾ	adj	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
-w-गरम	word	गरम	ɡəɾəm	adj	specs/bho.md example word; pronunciation hand-written	heldout
-w-ठंडा	word	ठंडा	ʈʰəɳɖaː	adj	specs/bho.md example word; pronunciation hand-written	dev
-w-सुंदर	word	सुंदर	sʊndəɾ	adj	specs/bho.md example word; pronunciation hand-written	dev
-w-आदमी	word	आदमी	aːdmiː	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-मरद	word	मरद	məɾəd	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-मेहरारू	word	मेहरारू	meːhəɾaːɾuː	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-बाबूजी	word	बाबूजी	baːbuːɟiː	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-बहिन	word	बहिन	bəhɪn	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-घर	word	घर	ɡʰəɾ	noun	specs/bho.md example word; pronunciation hand-written	dev
-w-किताब	word	किताब	kɪtaːb	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-इस्कूल	word	इस्कूल	ɪskuːl	noun	specs/bho.md example word; pronunciation hand-written	dev
-w-काम	word	काम	kaːm	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-भात	word	भात	bʰaːt	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-मछरी	word	मछरी	məcʰɾiː	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-दूध	word	दूध	duːdʰ	noun	specs/bho.md example word; pronunciation hand-written	dev
-w-पानी	word	पानी	paːniː	noun	specs/bho.md example word; pronunciation hand-written	dev
-w-नून	word	नून	nuːn	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-कुकुर	word	कुकुर	kʊkʊɾ	noun	specs/bho.md example word; pronunciation hand-written	dev
-w-बिलार	word	बिलार	bɪlaːɾ	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-गाय	word	गाय	ɡaːj	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-पोखरा	word	पोखरा	poːkʰəɾaː	noun	specs/bho.md example word; pronunciation hand-written	dev
-w-नदी	word	नदी	nədiː	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-सुरुज	word	सुरुज	sʊɾʊɟ	noun	specs/bho.md example word; pronunciation hand-written	dev
-w-चाँद	word	चाँद	cãːd	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-तारा	word	तारा	taːɾaː	noun	specs/bho.md example word; pronunciation hand-written	dev
-w-हवा	word	हवा	həʋaː	noun	specs/bho.md example word; pronunciation hand-written	dev
-w-बरखा	word	बरखा	bəɾkʰaː	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-भोर	word	भोर	bʰoːɾ	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-साँझ	word	साँझ	sãːɟʰ	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-रात	word	रात	ɾaːt	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-आज	word	आज	aːɟ	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-काल्ह	word	काल्ह	kaːlh	noun	specs/bho.md example word; pronunciation hand-written	dev
-w-गाँव	word	गाँव	ɡãːʋ	noun	specs/bho.md example word; pronunciation hand-written	heldout
-w-भूख	word	भूख	bʰuːkʰ	noun	specs/bho.md example word; pronunciation hand-written	heldout
+w-गरम	word	गरम	ɡəɾəm	adj	language description example word; pronunciation hand-written	heldout
+w-ठंडा	word	ठंडा	ʈʰəɳɖaː	adj	language description example word; pronunciation hand-written	dev
+w-सुंदर	word	सुंदर	sʊndəɾ	adj	language description example word; pronunciation hand-written	dev
+w-आदमी	word	आदमी	aːdmiː	noun	language description example word; pronunciation hand-written	heldout
+w-मरद	word	मरद	məɾəd	noun	language description example word; pronunciation hand-written	heldout
+w-मेहरारू	word	मेहरारू	meːhəɾaːɾuː	noun	language description example word; pronunciation hand-written	heldout
+w-बाबूजी	word	बाबूजी	baːbuːɟiː	noun	language description example word; pronunciation hand-written	heldout
+w-बहिन	word	बहिन	bəhɪn	noun	language description example word; pronunciation hand-written	heldout
+w-घर	word	घर	ɡʰəɾ	noun	language description example word; pronunciation hand-written	dev
+w-किताब	word	किताब	kɪtaːb	noun	language description example word; pronunciation hand-written	heldout
+w-इस्कूल	word	इस्कूल	ɪskuːl	noun	language description example word; pronunciation hand-written	dev
+w-काम	word	काम	kaːm	noun	language description example word; pronunciation hand-written	heldout
+w-भात	word	भात	bʰaːt	noun	language description example word; pronunciation hand-written	heldout
+w-मछरी	word	मछरी	məcʰɾiː	noun	language description example word; pronunciation hand-written	heldout
+w-दूध	word	दूध	duːdʰ	noun	language description example word; pronunciation hand-written	dev
+w-पानी	word	पानी	paːniː	noun	language description example word; pronunciation hand-written	dev
+w-नून	word	नून	nuːn	noun	language description example word; pronunciation hand-written	heldout
+w-कुकुर	word	कुकुर	kʊkʊɾ	noun	language description example word; pronunciation hand-written	dev
+w-बिलार	word	बिलार	bɪlaːɾ	noun	language description example word; pronunciation hand-written	heldout
+w-गाय	word	गाय	ɡaːj	noun	language description example word; pronunciation hand-written	heldout
+w-पोखरा	word	पोखरा	poːkʰəɾaː	noun	language description example word; pronunciation hand-written	dev
+w-नदी	word	नदी	nədiː	noun	language description example word; pronunciation hand-written	heldout
+w-सुरुज	word	सुरुज	sʊɾʊɟ	noun	language description example word; pronunciation hand-written	dev
+w-चाँद	word	चाँद	cãːd	noun	language description example word; pronunciation hand-written	heldout
+w-तारा	word	तारा	taːɾaː	noun	language description example word; pronunciation hand-written	dev
+w-हवा	word	हवा	həʋaː	noun	language description example word; pronunciation hand-written	dev
+w-बरखा	word	बरखा	bəɾkʰaː	noun	language description example word; pronunciation hand-written	heldout
+w-भोर	word	भोर	bʰoːɾ	noun	language description example word; pronunciation hand-written	heldout
+w-साँझ	word	साँझ	sãːɟʰ	noun	language description example word; pronunciation hand-written	heldout
+w-रात	word	रात	ɾaːt	noun	language description example word; pronunciation hand-written	heldout
+w-आज	word	आज	aːɟ	noun	language description example word; pronunciation hand-written	heldout
+w-काल्ह	word	काल्ह	kaːlh	noun	language description example word; pronunciation hand-written	dev
+w-गाँव	word	गाँव	ɡãːʋ	noun	language description example word; pronunciation hand-written	heldout
+w-भूख	word	भूख	bʰuːkʰ	noun	language description example word; pronunciation hand-written	heldout
 w-देस	word	देस	deːs	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-सरीर	word	सरीर	səɾiːɾ	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev
 w-कोसिका	word	कोसिका	koːsɪkaː	noun	FLORES-200 bho_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout

@@ -1,0 +1,443 @@
+# Romanian. espeak-ng voice "ro". Letter rules for words outside the
+# word table, the number words and the letter names.
+
+[meta]
+tag = ro
+vowels = a e i o u y ø ɛ ɔ ə ɪ ʊ ɨ
+stress = penult
+secondary = none
+spell-vowels = aeiouăâî
+
+[classes]
+V = a e i o u ă â î
+FV = e i
+
+[pre]
+ă -> ə
+â -> ɨ
+î -> ɨ
+ș -> ʃ
+ş -> ʃ
+ț -> ts
+ţ -> ts
+che -> ke
+chi -> ki
+ghe -> ɡe
+ghi -> ɡi
+ce -> tʃe
+ci -> tʃi
+ge -> dʒe
+gi -> dʒi
+c -> k
+g -> ɡ
+j -> ʒ
+x -> ks
+h -> h
+r -> ɾ
+qu -> k
+
+[words]
+zero# zˈeɾo
+unu# ˈunu
+doi# dˈoɪ
+trei# trˈeɪ
+patru# pˈatru
+cinci# tʃˈintʃʲ
+şase# ʃˈase
+şapte# ʃˈapte
+opt# ˈopt
+nouă# nˈoʊə
+zece# zˈetʃe
+unsprezece# ˈunsprezˌetʃe
+doisprezece# dˈoɪsprezˌetʃe
+treisprezece# trˈeɪsprezˌetʃe
+patrusprezece# pˈaɪsprezˌetʃe
+cincisprezece# tʃˈinsprezˌetʃe
+şasesprezece# ʃˈaɪsprezˌetʃe
+şaptesprezece# ʃˈaptesprezˌetʃe
+optsprezece# ˈoptsprezˌetʃe
+nouăsprezece# nˈoʊəsprezˌetʃe
+douăzeci# dˌouəzˈetʃʲ
+douăzeci-şi-unu# dˈouˌəzetʃʲʃiˈunu
+douăzeci-şi-doi# dˈouˌəzetʃʲʃidˈoɪ
+douăzeci-şi-trei# dˈouˌəzetʃʲʃitrˈeɪ
+douăzeci-şi-patru# dˈouˌəzetʃʲʃipˈatru
+douăzeci-şi-cinci# dˈouˌəzetʃʲʃitʃˈintʃʲ
+douăzeci-şi-şase# dˈouˌəzetʃʲʃiʃˈase
+douăzeci-şi-şapte# dˈouˌəzetʃʲʃiʃˈapte
+douăzeci-şi-opt# dˈouˌəzetʃʲʃiˈopt
+douăzeci-şi-nouă# dˈouˌəzetʃʲʃinˈoʊə
+treizeci# treɪzˈetʃʲ
+treizeci-şi-unu# trˈeɪzetʃʲʃiˈunu
+treizeci-şi-doi# trˈeɪzetʃʲʃidˈoɪ
+treizeci-şi-trei# trˈeɪzetʃʲʃitrˈeɪ
+treizeci-şi-patru# trˈeɪzetʃʲʃipˈatru
+treizeci-şi-cinci# trˈeɪzetʃʲʃitʃˈintʃʲ
+treizeci-şi-şase# trˈeɪzetʃʲʃiʃˈase
+treizeci-şi-şapte# trˈeɪzetʃʲʃiʃˈapte
+treizeci-şi-opt# trˈeɪzetʃʲʃiˈopt
+treizeci-şi-nouă# trˈeɪzetʃʲʃinˈoʊə
+patruzeci# pˌatruzˈetʃʲ
+patruzeci-şi-unu# pˈatruzˌetʃʲʃiˈunu
+patruzeci-şi-doi# pˈatruzˌetʃʲʃidˈoɪ
+patruzeci-şi-trei# pˈatruzˌetʃʲʃitrˈeɪ
+patruzeci-şi-patru# pˈatruzˌetʃʲʃipˈatru
+patruzeci-şi-cinci# pˈatruzˌetʃʲʃitʃˈintʃʲ
+patruzeci-şi-şase# pˈatruzˌetʃʲʃiʃˈase
+patruzeci-şi-şapte# pˈatruzˌetʃʲʃiʃˈapte
+patruzeci-şi-opt# pˈatruzˌetʃʲʃiˈopt
+patruzeci-şi-nouă# pˈatruzˌetʃʲʃinˈoʊə
+cincizeci# tʃinzˈetʃʲ
+cincizeci-şi-unu# tʃˈinzetʃʲʃiˈunu
+cincizeci-şi-doi# tʃˈinzetʃʲʃidˈoɪ
+cincizeci-şi-trei# tʃˈinzetʃʲʃitrˈeɪ
+cincizeci-şi-patru# tʃˈinzetʃʲʃipˈatru
+cincizeci-şi-cinci# tʃˈinzetʃʲʃitʃˈintʃʲ
+cincizeci-şi-şase# tʃˈinzetʃʲʃiʃˈase
+cincizeci-şi-şapte# tʃˈinzetʃʲʃiʃˈapte
+cincizeci-şi-opt# tʃˈinzetʃʲʃiˈopt
+cincizeci-şi-nouă# tʃˈinzetʃʲʃinˈoʊə
+şasezeci# ʃaɪzˈetʃʲ
+şasezeci-şi-unu# ʃˈaɪzetʃʲʃiˈunu
+şasezeci-şi-doi# ʃˈaɪzetʃʲʃidˈoɪ
+şasezeci-şi-trei# ʃˈaɪzetʃʲʃitrˈeɪ
+şasezeci-şi-patru# ʃˈaɪzetʃʲʃipˈatru
+şasezeci-şi-cinci# ʃˈaɪzetʃʲʃitʃˈintʃʲ
+şasezeci-şi-şase# ʃˈaɪzetʃʲʃiʃˈase
+şasezeci-şi-şapte# ʃˈaɪzetʃʲʃiʃˈapte
+şasezeci-şi-opt# ʃˈaɪzetʃʲʃiˈopt
+şasezeci-şi-nouă# ʃˈaɪzetʃʲʃinˈoʊə
+şaptezeci# ʃˌaptezˈetʃʲ
+şaptezeci-şi-unu# ʃˈaptezˌetʃʲʃiˈunu
+şaptezeci-şi-doi# ʃˈaptezˌetʃʲʃidˈoɪ
+şaptezeci-şi-trei# ʃˈaptezˌetʃʲʃitrˈeɪ
+şaptezeci-şi-patru# ʃˈaptezˌetʃʲʃipˈatru
+şaptezeci-şi-cinci# ʃˈaptezˌetʃʲʃitʃˈintʃʲ
+şaptezeci-şi-şase# ʃˈaptezˌetʃʲʃiʃˈase
+şaptezeci-şi-şapte# ʃˈaptezˌetʃʲʃiʃˈapte
+şaptezeci-şi-opt# ʃˈaptezˌetʃʲʃiˈopt
+şaptezeci-şi-nouă# ʃˈaptezˌetʃʲʃinˈoʊə
+optzeci# optzˈetʃʲ
+optzeci-şi-unu# ˈoptzetʃʲʃiˈunu
+optzeci-şi-doi# ˈoptzetʃʲʃidˈoɪ
+optzeci-şi-trei# ˈoptzetʃʲʃitrˈeɪ
+optzeci-şi-patru# ˈoptzetʃʲʃipˈatru
+optzeci-şi-cinci# ˈoptzetʃʲʃitʃˈintʃʲ
+optzeci-şi-şase# ˈoptzetʃʲʃiʃˈase
+optzeci-şi-şapte# ˈoptzetʃʲʃiʃˈapte
+optzeci-şi-opt# ˈoptzetʃʲʃiˈopt
+optzeci-şi-nouă# ˈoptzetʃʲʃinˈoʊə
+nouăzeci# nˌoʊəzˈetʃʲ
+nouăzeci-şi-unu# nˈoʊəzˌetʃʲʃiˈunu
+nouăzeci-şi-doi# nˈoʊəzˌetʃʲʃidˈoɪ
+nouăzeci-şi-trei# nˈoʊəzˌetʃʲʃitrˈeɪ
+nouăzeci-şi-patru# nˈoʊəzˌetʃʲʃipˈatru
+nouăzeci-şi-cinci# nˈoʊəzˌetʃʲʃitʃˈintʃʲ
+nouăzeci-şi-şase# nˈoʊəzˌetʃʲʃiʃˈase
+nouăzeci-şi-şapte# nˈoʊəzˌetʃʲʃiʃˈapte
+nouăzeci-şi-opt# nˈoʊəzˌetʃʲʃiˈopt
+nouăzeci-şi-nouă# nˈoʊəzˌetʃʲʃinˈoʊə
+doiv2# dˈouə
+douăzeci-şi-doiv2# dˈouˌəzetʃʲʃidˈouˌə
+treizeci-şi-doiv2# trˈeɪzetʃʲʃidˈouˌə
+patruzeci-şi-doiv2# pˈatruzˌetʃʲʃidˈouˌə
+cincizeci-şi-doiv2# tʃˈinzetʃʲʃidˈouˌə
+şasezeci-şi-doiv2# ʃˈaɪzetʃʲʃidˈouˌə
+şaptezeci-şi-doiv2# ʃˈaptezˌetʃʲʃidˈouˌə
+optzeci-şi-doiv2# ˈoptzetʃʲʃidˈouˌə
+nouăzeci-şi-doiv2# nˈoʊəzˌetʃʲʃidˈouˌə
+una-sută# ˌosˈutə
+două-sute# dˈouəsˈute
+trei-sute# trˈeɪsˈute
+patru-sute# pˈatrusˈute
+cinci-sute# tʃˈintʃʲsˈute
+şase-sute# ʃˈasesˈute
+şapte-sute# ʃˈaptesˈute
+opt-sute# ˈoptsˈute
+nouă-sute# nˈoʊəsˈute
+mie# ˌomˈie
+mii# mˈiɪ
+unmilion# ˈunmiljˈon
+milioane# miljˈɔane
+virgulă# vˈirɡulə
+minus# mˈinus
+la-sută# lasˈutə
+
+[numbers]
+decimal comma
+point virgulă#
+minus minus#
+percent la-sută#
+one-before-scale no
+0 zero#
+1 unu#
+2 doi#
+3 trei#
+4 patru#
+5 cinci#
+6 şase#
+7 şapte#
+8 opt#
+9 nouă#
+10 zece#
+11 unsprezece#
+12 doisprezece#
+13 treisprezece#
+14 patrusprezece#
+15 cincisprezece#
+16 şasesprezece#
+17 şaptesprezece#
+18 optsprezece#
+19 nouăsprezece#
+20 douăzeci#
+21 douăzeci-şi-unu#
+22 douăzeci-şi-doi#
+23 douăzeci-şi-trei#
+24 douăzeci-şi-patru#
+25 douăzeci-şi-cinci#
+26 douăzeci-şi-şase#
+27 douăzeci-şi-şapte#
+28 douăzeci-şi-opt#
+29 douăzeci-şi-nouă#
+30 treizeci#
+31 treizeci-şi-unu#
+32 treizeci-şi-doi#
+33 treizeci-şi-trei#
+34 treizeci-şi-patru#
+35 treizeci-şi-cinci#
+36 treizeci-şi-şase#
+37 treizeci-şi-şapte#
+38 treizeci-şi-opt#
+39 treizeci-şi-nouă#
+40 patruzeci#
+41 patruzeci-şi-unu#
+42 patruzeci-şi-doi#
+43 patruzeci-şi-trei#
+44 patruzeci-şi-patru#
+45 patruzeci-şi-cinci#
+46 patruzeci-şi-şase#
+47 patruzeci-şi-şapte#
+48 patruzeci-şi-opt#
+49 patruzeci-şi-nouă#
+50 cincizeci#
+51 cincizeci-şi-unu#
+52 cincizeci-şi-doi#
+53 cincizeci-şi-trei#
+54 cincizeci-şi-patru#
+55 cincizeci-şi-cinci#
+56 cincizeci-şi-şase#
+57 cincizeci-şi-şapte#
+58 cincizeci-şi-opt#
+59 cincizeci-şi-nouă#
+60 şasezeci#
+61 şasezeci-şi-unu#
+62 şasezeci-şi-doi#
+63 şasezeci-şi-trei#
+64 şasezeci-şi-patru#
+65 şasezeci-şi-cinci#
+66 şasezeci-şi-şase#
+67 şasezeci-şi-şapte#
+68 şasezeci-şi-opt#
+69 şasezeci-şi-nouă#
+70 şaptezeci#
+71 şaptezeci-şi-unu#
+72 şaptezeci-şi-doi#
+73 şaptezeci-şi-trei#
+74 şaptezeci-şi-patru#
+75 şaptezeci-şi-cinci#
+76 şaptezeci-şi-şase#
+77 şaptezeci-şi-şapte#
+78 şaptezeci-şi-opt#
+79 şaptezeci-şi-nouă#
+80 optzeci#
+81 optzeci-şi-unu#
+82 optzeci-şi-doi#
+83 optzeci-şi-trei#
+84 optzeci-şi-patru#
+85 optzeci-şi-cinci#
+86 optzeci-şi-şase#
+87 optzeci-şi-şapte#
+88 optzeci-şi-opt#
+89 optzeci-şi-nouă#
+90 nouăzeci#
+91 nouăzeci-şi-unu#
+92 nouăzeci-şi-doi#
+93 nouăzeci-şi-trei#
+94 nouăzeci-şi-patru#
+95 nouăzeci-şi-cinci#
+96 nouăzeci-şi-şase#
+97 nouăzeci-şi-şapte#
+98 nouăzeci-şi-opt#
+99 nouăzeci-şi-nouă#
+2x doiv2#
+22x douăzeci-şi-doiv2#
+32x treizeci-şi-doiv2#
+42x patruzeci-şi-doiv2#
+52x cincizeci-şi-doiv2#
+62x şasezeci-şi-doiv2#
+72x şaptezeci-şi-doiv2#
+82x optzeci-şi-doiv2#
+92x nouăzeci-şi-doiv2#
+100 una-sută#
+200 două-sute#
+300 trei-sute#
+400 patru-sute#
+500 cinci-sute#
+600 şase-sute#
+700 şapte-sute#
+800 opt-sute#
+900 nouă-sute#
+scale100 una-sută#
+1000 mie#
+1000+ mie#
+scale1000 mii#
+scale1000+ mii#
+1000000 unmilion#
+1000000+ unmilion#
+scale1000000 milioane#
+scale1000000+ milioane#
+
+[spell]
+a a
+b bˈe
+c tʃˈe
+d dˈe
+e ˈe
+f fˈe
+g dʒˈe
+h hˈaʃ
+i ˈi
+j ʒˈe
+k kˈa
+l lˈe
+m mˈe
+n nˈe
+o o
+p pˈe
+q kjˈu
+r rˈe
+s sˈe
+t tˈe
+u ˈu
+v vˈe
+w dˌubluvˈe
+x ˈiks
+y ˈiɡrek
+z zˈet
+ă ˈə
+â ˌɨdinˈa
+î ˌɨdinˈi
+ș ʃˈe
+ț tsˈe
+
+# Words without stress inside a clause and with stress at its end.
+[unstressed]
+că 0 p
+ei 0 p
+asta s p
+lor 0 p
+el 0 p
+noi 0 p
+este s p
+lui 0 p
+acestea s p
+său 0 p
+nu 0 p
+sa 0 p
+ea 0 p
+mea 0 p
+sale 0 p
+acesta s p
+noastră s p
+sunt 0 p
+noastre s p
+fost 0 p
+acestuia s p
+meu s p
+ta 0 p
+aceasta s p
+ce 0 p
+nostru s p
+eu 0 p
+acestora s p
+ele s p
+tău 0 p
+face s p
+poate s p
+tale 0 p
+are s p
+săi 0 p
+rece 0 p
+dumneavoastră s p
+nimeni s p
+voi 0 p
+acesteia s p
+tu 0 p
+oricum s p
+mele 0 p
+au 0 p
+noștri s p
+mei 0 p
+ăsta s p
+asa s p
+una s p
+era s p
+aia s p
+avea s p
+ai 0 p
+pot 0 p
+avem s p
+unul 0 p
+oricând s p
+noştri s p
+ești s p
+altora s p
+vor 0 p
+voastră s p
+tăi 0 p
+suntem s p
+celălalt s p
+voastre s p
+am 0 p
+putea s p
+oricine s p
+această s p
+va 0 p
+acela s p
+poți s p
+erau s p
+vostru s p
+celelalte s p
+aveți s p
+însăși s p
+vale 0 p
+însuți s p
+AIEA s p
+putem s p
+unora s p
+acest s p
+sunteți s p
+însuși s p
+ar 0 p
+oricui s p
+eram s p
+voștri s p
+antice 0 p
+cei 0 p
+EU 0 p
+acel s p
+niciunul s p
+însuşi s p
+acelea s p
+cele 0 p
+niciuna s p
+fostul 0 p
+ăia s p
+acele s p
+matale s p
+cel 0 p
+acestor s p
+niciun s p
+aceia s p
+multora s p
+cea 0 p

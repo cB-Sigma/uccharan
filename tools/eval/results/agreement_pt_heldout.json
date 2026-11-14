@@ -1,0 +1,243 @@
+{
+ "language": "pt",
+ "reference": "espeak-ng 1.52.0 voice pt (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 174168,
+  "per": 0.008922419732671903,
+  "per_without_stress": 0.006815805699273517,
+  "exact_sentence": 0.5,
+  "exact_sentence_without_stress": 0.5513833992094862,
+  "piper_shape_per": 0.008934781748163563,
+  "piper_shape_exact_sentence": 0.4950592885375494,
+  "word_count_mismatch_sentences": 138,
+  "errors_by_class": {
+   "stress": {
+    "count": 555,
+    "share": 0.35714285714285715,
+    "per_contribution": 0.003186578475954251
+   },
+   "vowel": {
+    "count": 494,
+    "share": 0.3178893178893179,
+    "per_contribution": 0.0028363419227412615
+   },
+   "consonant": {
+    "count": 296,
+    "share": 0.19047619047619047,
+    "per_contribution": 0.0016995085205089339
+   },
+   "other": {
+    "count": 176,
+    "share": 0.11325611325611326,
+    "per_contribution": 0.0010105185797620688
+   },
+   "word-boundary": {
+    "count": 27,
+    "share": 0.017374517374517374,
+    "per_contribution": 0.00015502273666804465
+   },
+   "diacritic": {
+    "count": 6,
+    "share": 0.003861003861003861,
+    "per_contribution": 3.444949703734326e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˌ→∅",
+    "count": 168
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 99
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 79
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 70
+   },
+   {
+    "edit": "∅→ɨ",
+    "count": 63
+   },
+   {
+    "edit": "∅→ɐ",
+    "count": 52
+   },
+   {
+    "edit": "ʃ→ʒ",
+    "count": 52
+   },
+   {
+    "edit": "ʊ→w",
+    "count": 48
+   },
+   {
+    "edit": "ʒ→z",
+    "count": 47
+   },
+   {
+    "edit": "a→ɐ",
+    "count": 42
+   },
+   {
+    "edit": "o→ɔ",
+    "count": 35
+   },
+   {
+    "edit": "z→ʒ",
+    "count": 30
+   },
+   {
+    "edit": "ɐ→a",
+    "count": 29
+   },
+   {
+    "edit": "e→ɛ",
+    "count": 24
+   },
+   {
+    "edit": "w→ʊ",
+    "count": 23
+   },
+   {
+    "edit": "ʃ→z",
+    "count": 22
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 20
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 20
+   },
+   {
+    "edit": "ɛ→i",
+    "count": 17
+   },
+   {
+    "edit": " →∅",
+    "count": 17
+   },
+   {
+    "edit": "∅→ɛ",
+    "count": 14
+   },
+   {
+    "edit": "s→∅",
+    "count": 13
+   },
+   {
+    "edit": "ɨ→e",
+    "count": 12
+   },
+   {
+    "edit": "∅→u",
+    "count": 12
+   },
+   {
+    "edit": "ʊ→∅",
+    "count": 12
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 19990,
+    "wrong": 590,
+    "rate": 0.029514757378689346
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 196,
+    "per": 0.017714153299518524,
+    "exact_sentence": 0.25
+   },
+   "no-digits": {
+    "sentences": 816,
+    "per": 0.006399219679447864,
+    "exact_sentence": 0.5600490196078431
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-151",
+    "text": "As instituições de caridade médica Mangola, Medecins Sans Frontieres e a Organização Mundial da Saúde, afirmam que é o pior surto registrado no país.",
+    "reference": "ɐz ˌiŋstituɪsˈõjʒ dɨ kˌɐɾidˈadɨ mˈɛdikɐ mˌɐ̃ŋɡˈɔlɐ mˌedɨsˈiŋʃ sˈɐ̃ŋʃ fɹˌuŋtiˈeɾɨz i ɐ ˌɔɾəɡɐnˌizɐsˈɐ̃ʊ̃ mˌũŋdiˈɑl dɐ sˌɐˈudɨ ˌɐfˈiɾəmɐ̃ʊ̃ kɨ ɛ ʊ piˈɔɹ sˈuɾətʊ ʁˌeʒiʃtɹˈadʊ nʊ pɐˈiʃ",
+    "uccharan": "ɐz ˌiŋstituɪsˈõjʒ dɨ kˌɐɾidˈadɨ mˈɛdikɐ mɐ̃ŋɡˈɔlɐ mˌedˈɨsiŋʃ sˈɐ̃ŋʃ fɹˌuŋtiˈeɾɨz i ɐ ˌɔɾəɡɐnˌizɐsˈɐ̃ʊ̃ mˌũŋdiˈɑl dɐ sˌɐˈudɨ ˌɐfˈiɾəmɐ̃ʊ̃ kɨ ɛ ʊ piˈɔɹ sˈuɾətʊ ʁˌeʒiʃtɹˈadʊ nʊ pɐˈiʃ"
+   },
+   {
+    "id": "flores-devtest-19",
+    "text": "Durante as eleições de 1976, ele aconselhou Carter sobre política externa, depois serviu como Conselheiro de Segurança Nacional (NSA) de 1977 a 1981, como sucessor de Henry Kissinger.",
+    "reference": "dˌuɾˈɐ̃ŋtɨ ɐz ˌeleɪsˈõjʒ dɨ mˈil nˈɔvɨsˈeɪŋtuʒˌi sɨtˈeɪŋtɐisˈeɪʃ ˌelɨ ˌɐkuŋsɨʎˈow kɐɾətˈeɹ sˈobɹɨ pˌulˈitikɐ ˌeʃtˈɛɾənɐ dɨpˈoɪʃ sɨɾəvˈiʊ kˈomʊ kˌuŋsɨʎˈeɪɾʊ dɨ sˌeɡuɾˈɐ̃ŋsɐ nˌɐsiunˈɑl ˌɛnʲˌɛsʲˈa dɨ mˈil nˈɔvɨsˈeɪŋtuʒˌi sɨtˈeɪŋtɐisˈɛtɨ ɐ mˈil nˈɔvɨsˈeɪŋtuʒˌi oɪtˈeɪŋtɐiˈum kˈomʊ sˌusɨsˈoɹ dɨ ˈeɪŋʁi kˌisiŋʒˈeɹ",
+    "uccharan": "dˌuɾˈɐ̃ŋtɨ ɐz ˌeleɪsˈõjʒ dɨ mˈil nˈɔvɨsˈeɪŋtuʒi sɨtˈeɪŋtɐisˈeɪʃ ˌelɨ ˌɐkuŋsɨʎˈow kɐɾətˈeɹ sˈobɹɨ pˌulˈitikɐ ˌeʃtˈɛɾənɐ dɨpˈoɪʃ sɨɾəvˈiʊ kˈomʊ kˌuŋsɨʎˈeɪɾʊ dɨ sˌeɡuɾˈɐ̃ŋsɐ nˌɐsiunˈɑl ˌɛnˌɛsˈa dɨ mˈil nˈɔvɨsˈeɪŋtuʒi sɨtˈeɪŋtɐisˈɛtɨ ɐ mˈil nˈɔvɨsˈeɪŋtuʒi oɪtˈeɪŋtɐiˈum kˈomʊ sˌusɨsˈoɹ dɨ ˈeɪŋʁi kˌisiŋʒˈeɹ"
+   },
+   {
+    "id": "flores-devtest-771",
+    "text": "O porto foi palco de um conhecido impasse naval em 1889, quando sete navios da Alemanha, EUA e Grã-Bretanha se recusaram a deixá-lo.",
+    "reference": "ʊ pˈoɾətʊ foɪ pˈɑlkʊ dɨ ũŋ kˌuɲɨsˈidw ˌimpˈasɨ nɐvˈɑl ˈeɪŋ mˈil ˈoɪtusˈeɪŋtuʒˌi oɪtˈeɪŋtɐinˈɔvɨ kwˈɐ̃ŋdʊ sˈɛtɨ nɐvˈiʊʒ d ˌɐlɨmˈɐ̃ɲɐ ˌɛˌuˈa i ɡɹˈɐ̃bɹˌetˈɐ̃ɲɐ sɨ ʁˌekuzˈaɾɐ̃ʊ̃ ɐ deɪʃˈalʊ",
+    "uccharan": "ʊ pˈoɾətʊ foɪ pˈɑlkʊ dɨ ũŋ kˌuɲɨsˈidw ˌimpˈasɨ nɐvˈɑl ˈeɪŋ mˈil ˈoɪtusˈeɪŋtuʒi oɪtˈeɪŋtɐinˈɔvɨ kwˈɐ̃ŋdʊ sˈɛtɨ nɐvˈiʊʒ dɐ ˌɐlɨmˈɐ̃ɲɐ ˌɛˌuˈa i ɡɹˈɐ̃bɹˌetˈɐ̃ɲɐ sɨ ʁˌekuzˈaɾɐ̃ʊ̃ ɐ dˌeɪʃˈalʊ"
+   },
+   {
+    "id": "flores-devtest-710",
+    "text": "O sultão marroquino reconstruiu a cidade como Daru l-Badya, que recebeu o nome de Casablanca pelos comerciantes espanhóis que estabeleceram bases comerciais lá.",
+    "reference": "ʊ suwtˈɐ̃ʊ̃ mˌɐʁukˈinʊ ʁˌekuŋstɹuˈiʊ ɐ sˌidˈadɨ kˈomʊ dɐɾˈu ˈɛlbˈadjɐ kɨ ʁˌesɨbˈeʊ ʊ nˈomɨ dɨ kˌɐzɐblˈɐ̃ŋkɐ pˈelʊʃ kˌumɨɾəsiˈɐ̃ŋtɨz ʃpɐ̃ɲˈɔɪʃ kɨ ʃtˌɐbɨlɨsˈeɾɐ̃ʊ̃ bˈazɨʃ kˌumɨɾəsiˈaɪʒ lˈa",
+    "uccharan": "ʊ suwtˈɐ̃ʊ̃ mˌɐʁukˈinʊ ʁˌekuŋstɹuˈiʊ ɐ sˌidˈadɨ kˈomʊ dˈaɾu ˈɛlbˈadjɐ kɨ ʁˌesɨbˈeʊ ʊ nˈomɨ dɨ kˌɐzɐblˈɐ̃ŋkɐ pˈelʊʃ kˌumɨɾəsiˈɐ̃ŋtɨz ʃpɐ̃ɲˈɔɪʃ kɨ ʃtˌɐbɨlɨsˈeɾɐ̃ʊ̃ bˈazɨʃ kˌumɨɾəsiˈaɪʒ lˈa"
+   },
+   {
+    "id": "flores-devtest-394",
+    "text": "O topo da torre era um santuário especial para o deus.",
+    "reference": "ʊ tˈopʊ dɐ tˈoʁɨ ˌɛɾɐ ũŋ sˌɐ̃ŋtwˈaɾjʊ ʃpˌesiˈɑl pˌɐɾɐ ʊ dˈeʊʃ",
+    "uccharan": "ʊ tˈopʊ dɐ tˈoʁɨ ˌɛɾɐ ũŋ sˌɐ̃ŋtwˈaɾjw ʃpˌesiˈɑl pˌɐɾɐ ʊ dˈeʊʃ"
+   },
+   {
+    "id": "flores-devtest-559",
+    "text": "Embora os vagões consistissem apenas em pranchas paralelas de madeira, isto permitia que os cavalos os puxassem para atingir velocidades maiores e carregar cargas maiores nas estradas um pouco mais acidentadas.",
+    "reference": "ˌeɪmbˈɔɾɐ uʒ vɐɡˈõjʃ kˌuŋsiʃtˈiseɪŋ ˌɐpˈenɐz ˈeɪŋ pɹˈɐ̃ŋʃɐʃ pˌɐɾɐlˈɛlɐʒ dɨ mˌɐdˈeɪɾɐ ˈiʃtʊ pˌeɾəmitˈiɐ kɨ uʃ kˌɐvˈalʊz uʃ pˌuʃˈaseɪŋ pˌɐɾɐ ˌɐtiŋʒˈiɹ vˌɨlusidˈadɨʒ mˌaɪˈɔɾɨz i kˌɐʁɨɡˈaɹ kˈaɾəɡɐʒ mˌaɪˈɔɾɨʒ nɐz ʃtɹˈadɐz ũŋ pˈowkʊ mˈaɪz ˌɐsidˌentˈadɐʃ",
+    "uccharan": "ˌeɪmbˈɔɾɐ uʒ vɐɡˈõjʃ kˌuŋsiʃtisˈeɪŋ ˌɐpˈenɐz ˈeɪŋ pɹˈɐ̃ŋʃɐʃ pˌɐɾɐlˈɛlɐʒ dɨ mˌɐdˈeɪɾɐ ˈiʃtʊ pˌeɾəmitˈiɐ kɨ uʃ kˌɐvˈalʊz uʃ pˌuʃasˈeɪŋ pˌɐɾɐ ˌɐtiŋʒˈiɹ vˌɨlusidˈadɨʒ mˌaɪˈɔɾɨz i kˌɐʁɨɡˈaɹ kˈaɾəɡɐʒ mˌaɪˈɔɾɨʒ nɐz ʃtɹˈadɐz ũŋ pˈowkʊ mˈaɪz ˌɐsidˌentˈadɐʃ"
+   },
+   {
+    "id": "flores-devtest-366",
+    "text": "Alcateias de leões agem de forma similar a grupos de lobos ou cães, animais surpreendentemente similares a leões (mas não a outros grandes felinos) em comportamento, e também muito mortais às suas presas.",
+    "reference": "ˌɑlkɐtˈɛɪɐʒ dɨ lɨˈõjz ˈaʒeɪŋ dɨ fˈɔɾəmɐ sˌimilˈaɹ ɐ ɡɹˈupʊʒ dɨ lˈobʊz ˈow kˈɐ̃ɨʃ ɐnimˈaɪʃ sˌuɾəpɹieɪŋdˌentɨmˈeɪŋtɨ sˌimilˈaɾɨz ɐ lɨˈõjʃ mɐʒ nˌɐ̃ʊ̃ ɐ ˈowtɹʊʒ ɡɹˈɐ̃ŋdɨʃ fˌelˈinʊʃ ˈeɪŋ kˌumpuɾətɐmˈeɪŋtʊ i tɐ̃mbˈeɪŋ mwˈiŋtʊ muɾətˈaɪz ɐɐʃ sˌuɐʃ pɹˈezɐʃ",
+    "uccharan": "ˌɑlkɐtˈeɪɐʒ dɨ lɨˈõjz ˈaʒeɪŋ dɨ fˈɔɾəmɐ sˌimilˈaɹ ɐ ɡɹˈupʊʒ dɨ lˈobʊz ˈow kˈɐ̃jʃ ɐnimˈaɪʃ sˌuɾəpɹieɪŋdˌentɨmˈeɪŋtɨ sˌimilˈaɾɨz ɐ lɨˈõjʒ mɐʒ nˌɐ̃ʊ̃ ɐ ˈowtɹʊʒ ɡɹˈɐ̃ŋdɨʃ fˌelˈinʊz ˈeɪŋ kˌumpuɾətɐmˈeɪŋtʊ i tɐ̃mbˈeɪŋ mwˈiŋtʊ muɾətˈaɪz ɐɐʃ sˌuɐʃ pɹˈezɐʃ"
+   },
+   {
+    "id": "flores-devtest-317",
+    "text": "Embora estivesse trabalhando no hospital, Liggins começou a investigar partos prematuros em seu tempo livre.",
+    "reference": "ˌeɪmbˈɔɾɐ ʃtˌivˈɛsɨ tɹˌɐbɐʎˈɐ̃ŋdʊ nʊ ˌuʃpitˈɑl liʒˈiŋʃ kˌumɨsˈow ɐ ˌiŋvɨʃtiɡˈaɹ pˈaɾətʊʃ pɹˌemɐtˈuɾʊz ˈeɪŋ seʊ tˈeɪmpʊ lˈivɹɨ",
+    "uccharan": "ˌeɪmbˈɔɾɐ ʃtˌivˈɛsɨ tɹˌɐbɐʎˈɐ̃ŋdʊ nʊ ˌuʃpitˈɑl lˈiʒiŋʃ kˌumɨsˈow ɐ ˌiŋvɨʃtiɡˈaɹ pˈaɾətʊʃ pɹˌemɐtˈuɾʊz ˈeɪŋ seʊ tˈeɪmpʊ lˈivɹɨ"
+   },
+   {
+    "id": "flores-devtest-225",
+    "text": "O Aerosmith cancelou os shows restantes da sua turnê.",
+    "reference": "u ˈeəɹəʊzmˌɪθ kˌɐ̃ŋsɨlˈow uʃ ʃˈowz ʁˌeʃtˈɐ̃ŋtɨʒ dɐ sˌuɐ tuɾənˈe",
+    "uccharan": "u ˈeəɹəʊzmˌɪθ kˌɐ̃ŋsɨlˈow uʃ ʃˈowʒ ʁˌeʃtˈɐ̃ŋtɨʒ dɐ sˌuɐ tuɾənˈe"
+   },
+   {
+    "id": "flores-devtest-469",
+    "text": "Cima quer dizer que você deve iniciar na ponta e empurrar o arco; baixo quer dizer que você deve iniciar no talão (que é o local onde você segura o arco) e puxar o arco.",
+    "reference": "sˈimɐ kˈɛɹ dizˈeɹ kɨ vosˌe dˈɛv ˌinisiˈaɹ nɐ pˈoŋtɐ i ˌeɪmpuʁˈaɹ u ˈaɾəkʊ bˈaɪʃʊ kˈɛɹ dizˈeɹ kɨ vosˌe dˈɛv ˌinisiˈaɹ nʊ tɐlˈɐ̃ʊ̃ kɨ ɛ ʊ lukˈɑl ˈoŋdɨ vosˌe sˌeɡˈuɾɐ u ˈaɾəkʊ i puʃˈaɹ u ˈaɾəkʊ",
+    "uccharan": "sˈimɐ kˈɛɹ dizˈeɹ kɨ vosˌe dˈɛvɨ ˌinisiˈaɹ nɐ pˈoŋtɐ i ˌeɪmpuʁˈaɹ u ˈaɾəkʊ bˈaɪʃʊ kˈɛɹ dizˈeɹ kɨ vosˌe dˈɛvɨ ˌinisiˈaɹ nʊ tɐlˈɐ̃ʊ̃ kɨ ɛ ʊ lukˈɑl ˈoŋdɨ vosˌe sˌeɡˈuɾɐ u ˈaɾəkw i puʃˈaɹ u ˈaɾəkʊ"
+   },
+   {
+    "id": "flores-devtest-106",
+    "text": "O Comando Estratégico dos Estados Unidos, do gabinete do Departamento de Defesa, está rastreando os destroços.",
+    "reference": "ʊ kˌumˈɐ̃ŋdʊ ʃtɹˌɐtˈɛʒikʊ dʊz ʃtˈadʊz ˌunˈidʊʃ dʊ ɡˌɐbinˈetɨ dʊ dˌɨpɐɾətɐmˈeɪŋtʊ dɨ dˌefˈezɐ estˌa ʁˌɐʃtɹiˈɐ̃ŋdw uʒ dˌeʃtɹˈosʊʃ",
+    "uccharan": "ʊ kˌumˈɐ̃ŋdw ʃtɹˌɐtˈɛʒikʊ dʊz ʃtˈadʊz ˌunˈidʊʃ dʊ ɡˌɐbinˈetɨ dʊ dˌɨpɐɾətɐmˈeɪŋtʊ dɨ dˌefˈezɐ estˌa ʁˌɐʃtɹiˈɐ̃ŋdw uʒ dˌeʃtɹˈɔsʊʃ"
+   },
+   {
+    "id": "flores-devtest-361",
+    "text": "Por fim, existem muitos gatos pequenos (incluindo gatos de estimação soltos) que comem animais pequenos, muito mais numerosos, como insetos, roedores, lagartos e pássaros.",
+    "reference": "puɹ fˈiŋ ˌezˈiʃteɪŋ mwˈiŋtʊʒ ɡˈatʊʃ pˌekˈenʊʃ ˌiŋkluˈiŋdʊ ɡˈatʊʒ dɨ ʃtˌimɐsˈɐ̃ʊ̃ sˈowtʊʃ kɨ kˈomeɪŋ ɐnimˈaɪʃ pˌekˈenʊʃ mwˈiŋtʊ mˈaɪʒ nˌumɨɾˈozʊʃ kˈomw ˌiŋsˈetʊʃ ʁˌuɨdˈoɾɨʃ lˌɐɡˈaɾətʊz i pˈasɐɾʊʃ",
+    "uccharan": "puɹ fˈiŋ ˌezˈiʃteɪŋ mwˈiŋtʊʒ ɡˈatʊʃ pˌekˈenʊz ˌiŋkluˈiŋdʊ ɡˈatʊʒ dɨ ʃtˌimɐsˈɐ̃ʊ̃ sˈowtʊʃ kɨ kˈomeɪŋ ɐnimˈaɪʃ pˌekˈenʊʃ mwˈiŋtʊ mˈaɪʒ nˌumɨɾˈɔzʊʃ kˈomw ˌiŋsˈɛtʊʃ ʁˌuɨdˈoɾɨʃ lˌɐɡˈaɾətʊz i pˈasɐɾʊʃ"
+   }
+  ]
+ }
+}

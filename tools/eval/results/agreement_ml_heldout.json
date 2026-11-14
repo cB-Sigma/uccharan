@@ -5,42 +5,42 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 192046,
-  "per": 0.020088937025504305,
-  "per_without_stress": 0.016196616600031216,
+  "per": 0.020057694510690147,
+  "per_without_stress": 0.016166600631535976,
   "exact_sentence": 0.3685770750988142,
   "exact_sentence_without_stress": 0.3883399209486166,
-  "piper_shape_per": 0.019936479175567647,
+  "piper_shape_per": 0.019905593847642677,
   "piper_shape_exact_sentence": 0.36462450592885376,
   "word_count_mismatch_sentences": 205,
   "errors_by_class": {
    "stress": {
-    "count": 1170,
-    "share": 0.30326594090202175,
-    "per_contribution": 0.006092290388761026
+    "count": 1169,
+    "share": 0.303478712357217,
+    "per_contribution": 0.006087083302958666
    },
    "consonant": {
-    "count": 1018,
-    "share": 0.263867288750648,
-    "per_contribution": 0.005300813346802329
+    "count": 1016,
+    "share": 0.26375908618899274,
+    "per_contribution": 0.0052903991751976085
    },
    "vowel": {
-    "count": 934,
-    "share": 0.24209434940383617,
-    "per_contribution": 0.004863418139404101
+    "count": 932,
+    "share": 0.24195223260643822,
+    "per_contribution": 0.004853003967799381
    },
    "other": {
     "count": 576,
-    "share": 0.14930015552099535,
+    "share": 0.14953271028037382,
     "per_contribution": 0.0029992814221592745
    },
    "word-boundary": {
-    "count": 106,
-    "share": 0.027475375842405392,
-    "per_contribution": 0.0005519510950501443
+    "count": 105,
+    "share": 0.027258566978193146,
+    "per_contribution": 0.0005467440092477843
    },
    "length": {
     "count": 54,
-    "share": 0.013996889580093312,
+    "share": 0.014018691588785047,
     "per_contribution": 0.000281182633327432
    }
   },
@@ -51,7 +51,7 @@
    },
    {
     "edit": "ˈ→∅",
-    "count": 211
+    "count": 210
    },
    {
     "edit": "∅→ə",
@@ -95,7 +95,7 @@
    },
    {
     "edit": " →∅",
-    "count": 101
+    "count": 100
    },
    {
     "edit": "ˈ→ˌ",
@@ -156,7 +156,7 @@
   "by_subset": {
    "with-digits": {
     "sentences": 228,
-    "per": 0.0509356797620523,
+    "per": 0.050811748667740735,
     "exact_sentence": 0.05701754385964912
    },
    "no-digits": {

@@ -8,6 +8,7 @@ use uccharan::profile::{self, PhonemeIdMap, Profile};
 use uccharan::{Lang, Mode, Normalize, Options, Phonemizer};
 
 mod train;
+mod translit;
 
 fn engine() -> &'static Phonemizer {
     static ENGINE: OnceLock<Phonemizer> = OnceLock::new();
@@ -458,5 +459,6 @@ fn _native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(respell, m)?)?;
     m.add_class::<PySoundIndex>()?;
     train::register(m)?;
+    translit::register(m)?;
     Ok(())
 }

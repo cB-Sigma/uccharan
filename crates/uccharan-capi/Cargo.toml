@@ -1,6 +1,6 @@
 [package]
 name = "uccharan-capi"
-description = "C ABI for uccharan, the drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices: 5× faster than espeak-ng, Apache-2.0."
+description = "C ABI for uccharan, the phonemiser, text normaliser, transliterator and pronunciation engine for text-to-speech and speech recognition. Apache-2.0."
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
@@ -9,7 +9,7 @@ authors.workspace = true
 repository.workspace = true
 homepage.workspace = true
 readme = "README.md"
-keywords = ["g2p", "phonemizer", "tts", "ffi"]
+keywords = ["g2p", "phonemizer", "tts", "transliteration", "ffi"]
 categories = ["text-processing", "external-ffi-bindings"]
 
 [lib]
@@ -18,10 +18,10 @@ crate-type = ["cdylib", "staticlib"]
 doc = false
 
 [dependencies]
-uccharan_core = { package = "uccharan", path = "../uccharan", version = "0.3.0", default-features = false }
+uccharan_core = { package = "uccharan", path = "../uccharan", version = "0.4.0", default-features = false }
 
 [features]
-default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-ur", "embed-sd", "embed-kokoro", "embed-de", "embed-nl", "embed-fr"]
+default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-ur", "embed-sd", "embed-kokoro", "embed-de", "embed-nl", "embed-fr", "embed-it", "embed-pt-br", "embed-pt", "embed-pl", "embed-tr", "embed-cs", "embed-sv", "embed-ca", "embed-ro", "embed-hu", "embed-fi", "embed-nb", "embed-da"]
 # Compile the language data into the library; without them, load packs with uccharan_load().
 embed-en-us = ["uccharan_core/embed-en-us"]
 embed-en-gb = ["uccharan_core/embed-en-gb"]
@@ -31,4 +31,17 @@ embed-sd = ["uccharan_core/embed-sd"]
 embed-de = ["uccharan_core/embed-de"]
 embed-nl = ["uccharan_core/embed-nl"]
 embed-fr = ["uccharan_core/embed-fr"]
+embed-it = ["uccharan_core/embed-it"]
+embed-pt-br = ["uccharan_core/embed-pt-br"]
+embed-pt = ["uccharan_core/embed-pt"]
+embed-pl = ["uccharan_core/embed-pl"]
+embed-tr = ["uccharan_core/embed-tr"]
+embed-cs = ["uccharan_core/embed-cs"]
+embed-sv = ["uccharan_core/embed-sv"]
+embed-ca = ["uccharan_core/embed-ca"]
+embed-ro = ["uccharan_core/embed-ro"]
+embed-hu = ["uccharan_core/embed-hu"]
+embed-fi = ["uccharan_core/embed-fi"]
+embed-nb = ["uccharan_core/embed-nb"]
+embed-da = ["uccharan_core/embed-da"]
 embed-kokoro = ["uccharan_core/embed-kokoro"]

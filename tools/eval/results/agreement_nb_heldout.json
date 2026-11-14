@@ -1,0 +1,243 @@
+{
+ "language": "nb",
+ "reference": "espeak-ng 1.52.0 voice nb (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 164950,
+  "per": 0.011124583207032433,
+  "per_without_stress": 0.009485938772577014,
+  "exact_sentence": 0.6788537549407114,
+  "exact_sentence_without_stress": 0.7144268774703557,
+  "piper_shape_per": 0.011202135107802599,
+  "piper_shape_exact_sentence": 0.6679841897233202,
+  "word_count_mismatch_sentences": 163,
+  "errors_by_class": {
+   "consonant": {
+    "count": 601,
+    "share": 0.32752043596730246,
+    "per_contribution": 0.0036435283419217943
+   },
+   "stress": {
+    "count": 495,
+    "share": 0.26975476839237056,
+    "per_contribution": 0.003000909366474689
+   },
+   "vowel": {
+    "count": 320,
+    "share": 0.17438692098092642,
+    "per_contribution": 0.0019399818126705063
+   },
+   "other": {
+    "count": 214,
+    "share": 0.11662125340599455,
+    "per_contribution": 0.001297362837223401
+   },
+   "length": {
+    "count": 110,
+    "share": 0.05994550408719346,
+    "per_contribution": 0.0006668687481054866
+   },
+   "word-boundary": {
+    "count": 95,
+    "share": 0.051771117166212535,
+    "per_contribution": 0.0005759321006365565
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "∅→ˈ",
+    "count": 126
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 109
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 102
+   },
+   {
+    "edit": "ɹ→r",
+    "count": 70
+   },
+   {
+    "edit": "ʉ→∅",
+    "count": 60
+   },
+   {
+    "edit": "∅→ː",
+    "count": 58
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 56
+   },
+   {
+    "edit": " →∅",
+    "count": 55
+   },
+   {
+    "edit": "t→∅",
+    "count": 54
+   },
+   {
+    "edit": "ː→∅",
+    "count": 52
+   },
+   {
+    "edit": "k→∅",
+    "count": 43
+   },
+   {
+    "edit": "ə→ɛ",
+    "count": 42
+   },
+   {
+    "edit": "∅→ʉ",
+    "count": 40
+   },
+   {
+    "edit": "∅→n",
+    "count": 40
+   },
+   {
+    "edit": "∅→ ",
+    "count": 40
+   },
+   {
+    "edit": "∅→s",
+    "count": 35
+   },
+   {
+    "edit": "∅→i",
+    "count": 34
+   },
+   {
+    "edit": "ˈ→t",
+    "count": 31
+   },
+   {
+    "edit": "n→ɛ",
+    "count": 30
+   },
+   {
+    "edit": "ɪ→ ",
+    "count": 30
+   },
+   {
+    "edit": "p→∅",
+    "count": 30
+   },
+   {
+    "edit": "ŋ→∅",
+    "count": 27
+   },
+   {
+    "edit": "m→∅",
+    "count": 27
+   },
+   {
+    "edit": "a→∅",
+    "count": 27
+   },
+   {
+    "edit": "ə→∅",
+    "count": 26
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 17757,
+    "wrong": 283,
+    "rate": 0.015937376809145688
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 216,
+    "per": 0.029432967907127055,
+    "exact_sentence": 0.4305555555555556
+   },
+   "no-digits": {
+    "sentences": 796,
+    "per": 0.005219566559495843,
+    "exact_sentence": 0.7462311557788944
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-346",
+    "text": "Kåljuice vil endre farge helt avhengig av hvor surt eller basisk (alkaline) kjemikaliet er.",
+    "reference": "kˈɔjʉɪka viːl ˈɛnnra fˈɑrɡa hˈɛlt ˈɑvhəŋˌɪ av vˈuːr sˈʉrt ˌɛllər bˈasɪsk ˈɑlkalˌiːna xˈeːmiːkˌaliːət ˌɛːr",
+    "uccharan": "kˈoːjʉˌɪka viːl ˈɛnnra fˈɑrɡa hˈɛlt ˈɑvhəŋˌɪ av vˈuːr sˈʉrt ˌɛllər bˈasɪsk ˈɑlkalˌiːna xˈeːmiːkˌaliːət ˌɛːr"
+   },
+   {
+    "id": "flores-devtest-561",
+    "text": "Dette ble en vanlig praksis, men strykejernet skapte mer slitasje på trehjulene i vognene.",
+    "reference": "dˌɛtːa bleː eːn vˈɑnlɪ prˈɑksiːs meːn strˈyːkeːjˌarnət skˈɑpta mˈeːr ʃlˈiːtɑʃa poː trˈɛjʉːlˌɛna iː vˈɔŋnɛna",
+    "uccharan": "dˌɛtːa bleː eːn vˈɑnlɪ prˈɑksiːs meːn strˈyːkeːjˌarnət skˈɑpta mˈeːr ʃlˈiːtɑʃa poː trəjˈʉːlˌɛna iː vˈɔŋnɛna"
+   },
+   {
+    "id": "flores-devtest-233",
+    "text": "Sangeren Sanju Sharma startet kvelden, etterfulgt av Jai Shankar Choudhary. Chhappan bhog bhajan ble i tillegg presentert. Sangeren Raju Kvegwal ledsaget ham.",
+    "reference": "sˈɑŋeːrən sˈɑnjʉː shˈɑrmɑ stˈɑrtət kvˈɛllən ˈɛtːarfˌʉlɡt av jˈɑɪ shˈɑŋkar ʃˈuːʉdhˌaryː ʃhˈɑpːan bhˈuːɡ bhˈajan bleː iː tˈɪllɛɡː prˈeːsəntˌart sˈɑŋeːrən rˈajʉː kvˈɛɡval lˈɛdsaɡət hˈam",
+    "uccharan": "sˈɑŋeːrən sˈɑnjʉː shˈɑrmɑ stˈɑrtət kvˈɛllən ˈɛtːarfˌʉlɡt av jˈɑɪ shˈɑŋkar ʃˈuːʉːdhˌaryː ʃhhˈɑpːan bhˈuːɡ bhˈɑjan bleː iː tˈɪllɛɡː prˈeːsəntˌart sˈɑŋeːrən rˈajʉː kvˈeːɡval lˈɛdsaɡət hˈam"
+   },
+   {
+    "id": "flores-devtest-325",
+    "text": "34 prosent i meningsmålingen deler dette synspunkt, og ønsker dronning Elizabeth II som Australias siste monark.",
+    "reference": "trˈɛtːiːfˈiːrɛ prˈuːsɛnt iː mˈeːnɪŋsmˌoːlɪŋən dˈeːlər dˌɛtːa sˈynspʉŋkt uːɡ ˈœnskər drˈɔnnɪŋ ˈeːliːsˌabɛth ˌiːˈiː suːm ˈaʊstralˌiːas sˈɪsta mˈuːnɑrk",
+    "uccharan": "trˈɛtːiːfˈiːrɛ prˈuːsɛnt iː mˈeːnɪŋsmˌoːlɪŋən dˈeːlər dˌɛtːa sˈynspʉŋkt uːɡ ˈœnskər drˈɔnnɪŋ ˈeːliːsˌabɛth tˈuː suːm ˈaʊstralˌiːas sˈɪsta mˈuːnɑrk"
+   },
+   {
+    "id": "flores-devtest-194",
+    "text": "Perry uttalte at han ville «dra tilbake til Texas for å vurdere resultatene etter kveldens nominasjonsmøte for å avgjøre om han hadde en vei videre i løpet», men han sa senere at han kom til å fortsette og være med å konkurrere i primærvalget den 21. januar i Carolina.",
+    "reference": "pˈarryː ˈʉtːɑlta at han vˈɪlla drˈɑ tˈɪlbaka tiːl tˈeːksas fɔrr oː vˈʉrdeːra rˈeːsʉltˌatɛna ˌɛtːər kvˈɛlləns nˈuːmiːnˌɑʃɔnsmˌøːta fɔrr oː ˈɑvjøːra uːm han hˌɑdːa eːn vˈaɪ vˈiːdeːra iː lˈøːpət meːn han sˈɑ sˈeːneːra at han kˈɔm tiːl oː fˈʊrtsɛtːa uːɡ vˌaːra meːd oː kˈɔŋkʉrrˌeːra iː prˈiːmarvˌɑlɡət deːn ʂˈʉːəndafˈœrsta jˈanʉːˌar iː kˈaruːlˌiːnɑ",
+    "uccharan": "pˈarryː ˈʉtːɑlta at han vˈɪlla drˈɑ tˈɪlbaka tiːl tˈeːksas fɔrr oː vˈʉrdeːra rˈeːsʉltˌatɛna ˌɛtːər kvˈɛlləns nˈuːmiːnˌɑʃɔnsmˌøːta fɔrr oː ˈɑvjøːra uːm han hˌɑdːa eːn vˈaɪ vˈiːdeːra iː lˈøːpət meːn han sˈɑ sˈeːneːra at han kˈɔm tiːl oː fˈʊrtsɛtːa uːɡ vˌaːra meːd oː kˈɔŋkʉrrˌeːra iː prˈiːmarvˌɑlɡət deːn ʂˈʉːaˈeːn jˈanʉːˌar iː kˈaruːlˌiːnɑ"
+   },
+   {
+    "id": "flores-devtest-527",
+    "text": "Mutasjon tilfører en ny genvariasjon og utvalget fjerner den fra utvalget av uttrykt variasjon.",
+    "reference": "mˈʉːtɑʃˌuːn tˈɪlføːrər eːn nˈyː ɡˈɛnvarˌiːɑʃˌuːn uːɡ ˈʉtvɑlɡət fjˈarnər deːn frɑ ˈʉtvɑlɡət av ˈʉtːrykt vˈariːˌɑʃuːn",
+    "uccharan": "mˈʉːtɑʃˌuːn tˈɪlføːrər eːn nˈyː ɡənvˈarˌiːɑʃˌuːn uːɡ ˈʉtvɑlɡət fjˈarnər deːn frɑ ˈʉtvɑlɡət av ˈʉtːrykt vˈariːˌɑʃuːn"
+   },
+   {
+    "id": "flores-devtest-80",
+    "text": "Bush sin talsmann, Gordon Johndroe, kalte Nord-Koreas løfte «et svært skritt på veien til målet om å oppnå verifiserbart denuklarering av den koreanske halvøya».",
+    "reference": "bˈʉsh siːn tˈɑlsmɑn ɡˈɔrduːn jˈɔhnnrɔa kˈɑlta nˈɔrkˈuːreːˌas lˈœfta ɛt svˈart skrˈɪtː poː vˈaɪən tiːl mˈoːlət uːm oː ˈɔpːnoː vˈeːriːfˌiːsarbˌɑrt dˈeːnʉklˌareːrˌɪŋ av deːn kˈuːreːˌɑnska hˈɑlvøyˌɑ",
+    "uccharan": "bˈʉsh siːn tˈɑlsmɑn ɡˈɔrduːn jˈɔhnnrɔa kˈɑlta nˈɔrkˈuːreːˌas lˈœfta ɛt svˈart skrˈɪtː poː vˈaɪən tiːl mˈoːlət uːm oː ˈɔpːnoː vˈeːriːfˌiːsarbˌɑrt dənˈʉːklˌareːrˌɪŋ av deːn kˈuːreːˌɑnska hˈɑlvøyˌɑ"
+   },
+   {
+    "id": "flores-devtest-81",
+    "text": "Den subtropiske stormen Jerry, formet seg i Atlanterhavet i dag og er den 10. navngitte stormen i den atlantiske orkansesongen.",
+    "reference": "deːn sˈʉbtruːpˌɪska stˈɔrmən jˈarryː fˈɔrmət sˈeːɡ iː ˈɑtlɑntˌarhavət iː dˈaɡ uːɡ ˌɛːr deːn tˈiːənda nˈɑvŋɪtːa stˈɔrmən iː deːn ˈɑtlɑntˌɪska ˈɔrkɑnsˌeːsɔŋən",
+    "uccharan": "deːn sˈʉbtruːpˌɪska stˈɔrmən jˈarryː fˈɔrmət sˈeːɡ iː ˈɑtlɑntˌarhavət iː dˈaɡ uːɡ ˌɛːr deːn tˈiː nˈɑvŋɪtːa stˈɔrmən iː deːn ˈɑtlɑntˌɪska ˈɔrkɑnsˌeːsɔŋən"
+   },
+   {
+    "id": "flores-devtest-269",
+    "text": "Huhne og Pryce er planlagt å dukke opp på Westminster Magistrater-domstolen den 16. februar.",
+    "reference": "hˈʉhna uːɡ prˈyːka ˌɛːr plˈɑnlɑɡt oː dˈʉkːa ˈɔpː poː vˈɛstmɪnstər mˈajɪstrˌatərdˈɔmstuːlən deːn sˈɛkstənda fˈɛbrʉːˌar",
+    "uccharan": "hˈʉːhna uːɡ prˈyːka ˌɛːr plˈɑnlɑɡt oː dˈʉkːa ˈɔpː poː vˈɛstmɪnstər mˈajɪstrˌatərdˈɔmstuːlən deːn sˈɛkstən fˈɛbrʉːˌar"
+   },
+   {
+    "id": "flores-devtest-369",
+    "text": "Tigerbrølet er ikke som det fullvoksne brølet til en løve, men mer som en setning med gneldrete ord.",
+    "reference": "tˈiːɡarbrˌøːlət ˌɛːr ˌɪkːa suːm deː fˈʉlvɔksna brˈøːlət tiːl eːn lˈøːva meːn mˈeːr suːm eːn sˈɛtnɪŋ meːd ŋnˈɛllreːta ˈɔr",
+    "uccharan": "tˈiːɡarbrˌøːlət ˌɛːr ˌɪkːa suːm deː fˈʉlvɔksna brˈøːlət tiːl eːn lˈøːva meːn mˈeːr suːm eːn sˈɛtnɪŋ meːd ŋnəllrˈeːta ˈɔr"
+   },
+   {
+    "id": "flores-devtest-481",
+    "text": "Høymiddelalderen kom etter tidlig middelalder og etterfulgt av den sene middelalderen, som etter konvensjon ender rundt 1500.",
+    "reference": "hˈøymɪdːˌeːlɑllˌeːrən kˈɔm ˌɛtːər tˈɪdlɪ mˈɪdːeːlˌɑllər uːɡ ˈɛtːarfˌʉlɡt av deːn sˈeːna mˈɪdːeːlˌɑlleːrən suːm ˌɛtːər kˈɔnvənʃˌuːn ˈɛnnər rˈʉnnt ˈɛt tˈʉːsən fˈɛmhˈʉndra",
+    "uccharan": "hˈøymˌɪdːeːlˌɑlleːrən kˈɔm ˌɛtːər tˈɪdlɪ mˈɪdːeːlˌɑllər uːɡ ˈɛtːarfˌʉlɡt av deːn sˈeːna mˈɪdːeːlˌɑlleːrən suːm ˌɛtːər kˈɔnvənʃˌuːn ˈɛnnər rˈʉnnt ˈɛt tˈʉːsən fˈɛmhˈʉndra"
+   },
+   {
+    "id": "flores-devtest-793",
+    "text": "Diverse forandringer eller forespørsler bør foretas via reiseagenten først og ikke direkte med hotellet.",
+    "reference": "dˈiːvarʃa fˈuːrɑnnrˌɪŋər ˌɛllər fˈuːrəspˌœrʃlər bøːr fˈuːreːtˌas vˈiːɑ rˈaɪseːˌaɡɛntən fˈœrʃt uːɡ ˌɪkːa dˈiːrɛkta meːd hˈuːtɛllət",
+    "uccharan": "dˈiːvarʃa fˈuːrɑnnrˌɪŋər ˌɛllər fˈuːrəspˌœrʃlər bøːr fˈuːreːtˌas vˈiːɑ rˈaɪsˌeːaɡˌɛntən fˈœrʃt uːɡ ˌɪkːa dˈiːrɛkta meːd hˈuːtɛllət"
+   }
+  ]
+ }
+}

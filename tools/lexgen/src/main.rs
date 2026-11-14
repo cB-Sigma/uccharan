@@ -24,6 +24,7 @@ mod hi;
 mod lts;
 mod wikipron;
 mod words;
+mod xlit;
 
 use std::collections::BTreeMap;
 use std::io::Write;
@@ -84,7 +85,7 @@ fn gb_from_us(us: &str) -> String {
 }
 
 /// Word tables built from `data/sources/<lang>/words.tsv`: file, language, word source.
-const LATIN_TABLES: [(&str, &str, &str); 3] = [
+const LATIN_TABLES: [(&str, &str, &str); 16] = [
     (
         "de.ucd",
         "de",
@@ -99,6 +100,71 @@ const LATIN_TABLES: [(&str, &str, &str); 3] = [
         "fr.ucd",
         "fr",
         "the words of Tatoeba and Leipzig Corpora Collection French sentences",
+    ),
+    (
+        "it.ucd",
+        "it",
+        "the words of Tatoeba and Leipzig Corpora Collection Italian sentences",
+    ),
+    (
+        "pt-br.ucd",
+        "pt-br",
+        "the words of Tatoeba and Leipzig Corpora Collection Portuguese (Brazil) sentences",
+    ),
+    (
+        "pt.ucd",
+        "pt",
+        "the words of Tatoeba and Leipzig Corpora Collection Portuguese (Portugal) sentences",
+    ),
+    (
+        "pl.ucd",
+        "pl",
+        "the words of Tatoeba and Leipzig Corpora Collection Polish sentences",
+    ),
+    (
+        "tr.ucd",
+        "tr",
+        "the words of Tatoeba and Leipzig Corpora Collection Turkish sentences",
+    ),
+    (
+        "cs.ucd",
+        "cs",
+        "the words of Tatoeba and Leipzig Corpora Collection Czech sentences",
+    ),
+    (
+        "sv.ucd",
+        "sv",
+        "the words of Tatoeba and Leipzig Corpora Collection Swedish sentences",
+    ),
+    (
+        "ca.ucd",
+        "ca",
+        "the words of Tatoeba and Leipzig Corpora Collection Catalan sentences",
+    ),
+    (
+        "ro.ucd",
+        "ro",
+        "the words of Tatoeba and Leipzig Corpora Collection Romanian sentences",
+    ),
+    (
+        "hu.ucd",
+        "hu",
+        "the words of Tatoeba and Leipzig Corpora Collection Hungarian sentences",
+    ),
+    (
+        "fi.ucd",
+        "fi",
+        "the words of Tatoeba and Leipzig Corpora Collection Finnish sentences",
+    ),
+    (
+        "nb.ucd",
+        "nb",
+        "the words of Tatoeba and Leipzig Corpora Collection Norwegian Bokmål sentences",
+    ),
+    (
+        "da.ucd",
+        "da",
+        "the words of Tatoeba and Leipzig Corpora Collection Danish sentences",
     ),
 ];
 
@@ -349,82 +415,145 @@ fn main() {
                 .unwrap_or_default();
             let names =
                 std::fs::read_to_string(root.join("data/sources/en/names.tsv")).unwrap_or_default();
-            // LEXGEN_ONLY=<tag> builds one Latin-script word table.
+            // LEXGEN_ONLY=<tag> builds one word table.
             let only = std::env::var("LEXGEN_ONLY").ok();
-            let files = if only.is_some() {
-                Vec::new()
-            } else {
-                vec![
-                    (
-                        "en-us.ucd",
-                        build_english(&entries, en::Accent::Us, "en-us", &overrides, &names),
-                    ),
-                    (
-                        "en-gb.ucd",
-                        build_english(&entries, en::Accent::Gb, "en-gb", &overrides, &names),
-                    ),
-                    ("hi.ucd", hi::build(&root)),
-                    (
-                        "ur.ucd",
-                        words::build(
-                            &root,
-                            "ur",
-                            "derived from running espeak-ng 1.52.0 on Sangraha Urdu word lists",
-                        ),
-                    ),
-                    (
-                        "sd.ucd",
-                        words::build(
-                            &root,
-                            "sd",
-                            "derived from running espeak-ng 1.52.0 on Sangraha Sindhi word lists",
-                        ),
-                    ),
-                    ("kokoro-en-us.ucd", build_kokoro(&root, false)),
-                    ("kokoro-en-gb.ucd", build_kokoro(&root, true)),
-                ]
-            };
-            // Word tables of the Latin-script languages.
-            let mut files: Vec<(&str, Vec<u8>)> = files;
-            for (name, lang, what) in LATIN_TABLES {
+            type Job<'a> = (
+                &'a str,
+                Option<&'a str>,
+                Box<dyn Fn() -> Vec<u8> + Send + Sync + 'a>,
+            );
+            let mut jobs: Vec<Job> = Vec::new();
+            if only.is_none() {
+                jobs.push((
+                    "en-us.ucd",
+                    None,
+                    Box::new(|| {
+                        build_english(&entries, en::Accent::Us, "en-us", &overrides, &names)
+                    }),
+                ));
+                jobs.push((
+                    "en-gb.ucd",
+                    None,
+                    Box::new(|| {
+                        build_english(&entries, en::Accent::Gb, "en-gb", &overrides, &names)
+                    }),
+                ));
+                jobs.push(("hi.ucd", None, Box::new(|| hi::build(&root))));
+                jobs.push((
+                    "kokoro-en-us.ucd",
+                    None,
+                    Box::new(|| build_kokoro(&root, false)),
+                ));
+                jobs.push((
+                    "kokoro-en-gb.ucd",
+                    None,
+                    Box::new(|| build_kokoro(&root, true)),
+                ));
+            }
+            // Word tables.
+            let tables = [
+                ("ur.ucd", "ur", "Sangraha Urdu word lists"),
+                ("sd.ucd", "sd", "Sangraha Sindhi word lists"),
+            ]
+            .into_iter()
+            .chain(LATIN_TABLES);
+            for (name, lang, what) in tables {
                 if only.as_deref().is_some_and(|o| o != lang) {
                     continue;
                 }
-                files.push((
+                let root = &root;
+                jobs.push((
                     name,
-                    words::build(
-                        &root,
-                        lang,
-                        &format!("derived from running espeak-ng 1.52.0 on {what}"),
-                    ),
+                    Some(lang),
+                    Box::new(move || {
+                        words::build(
+                            root,
+                            lang,
+                            &format!("derived from running espeak-ng 1.52.0 on {what}"),
+                        )
+                    }),
                 ));
             }
-            let mut stale = false;
-            for (name, bytes) in files {
-                let path = out_dir.join(name);
-                let d = Data::from_vec(bytes.clone()).expect("valid image");
-                if cmd == "check" {
-                    let same = std::fs::read(&path)
-                        .map(|old| old == bytes)
-                        .unwrap_or(false);
-                    println!("{name}: {}", if same { "up to date" } else { "STALE" });
-                    stale |= !same;
-                } else {
-                    std::fs::create_dir_all(&out_dir).unwrap();
-                    std::fs::write(&path, &bytes).unwrap();
-                    println!(
-                        "{name}: {} entries, {} bytes, lts: {}",
-                        d.len(),
-                        bytes.len(),
-                        d.has_lts()
-                    );
+            // `check` remembers, under target/, the inputs a word table was
+            // last found up to date with (LEXGEN_NO_CACHE=1 checks afresh).
+            let cache_dir = root.join("target/lexgen-check");
+            let use_cache = cmd == "check" && std::env::var("LEXGEN_NO_CACHE").is_err();
+            let code = digest_dirs(&[
+                root.join("crates/uccharan/src"),
+                root.join("tools/lexgen/src"),
+            ]);
+            let stamp = |name: &str, lang: &str| -> String {
+                let mut h = code;
+                for p in [
+                    root.join("data/sources").join(lang).join("words.tsv"),
+                    root.join("crates/uccharan/lang")
+                        .join(format!("{lang}.lang")),
+                    out_dir.join(name),
+                ] {
+                    h = digest_bytes(h, &std::fs::read(p).unwrap_or_default());
                 }
-            }
+                format!("{h:016x}")
+            };
+            // The tables are built side by side (LEXGEN_JOBS, default: all cores).
+            let workers = std::env::var("LEXGEN_JOBS")
+                .ok()
+                .and_then(|v| v.parse::<usize>().ok())
+                .or_else(|| std::thread::available_parallelism().ok().map(|n| n.get()))
+                .unwrap_or(1)
+                .clamp(1, jobs.len().max(1));
+            let next = std::sync::atomic::AtomicUsize::new(0);
+            let stale = std::sync::atomic::AtomicBool::new(false);
+            std::thread::scope(|sc| {
+                for _ in 0..workers {
+                    sc.spawn(|| loop {
+                        let k = next.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+                        let Some((name, lang, job)) = jobs.get(k) else {
+                            break;
+                        };
+                        let path = out_dir.join(name);
+                        let mark = cache_dir.join(format!("{name}.ok"));
+                        if let Some(lang) = lang.filter(|_| use_cache) {
+                            if std::fs::read_to_string(&mark).is_ok_and(|m| m == stamp(name, lang))
+                            {
+                                println!(
+                                    "{name}: up to date (inputs unchanged since the last check)"
+                                );
+                                continue;
+                            }
+                        }
+                        let bytes = job();
+                        let d = Data::from_vec(bytes.clone()).expect("valid image");
+                        if cmd == "check" {
+                            let same = std::fs::read(&path)
+                                .map(|old| old == bytes)
+                                .unwrap_or(false);
+                            println!("{name}: {}", if same { "up to date" } else { "STALE" });
+                            if !same {
+                                stale.store(true, std::sync::atomic::Ordering::Relaxed);
+                            } else if let Some(lang) = lang {
+                                let _ = std::fs::create_dir_all(&cache_dir);
+                                let _ = std::fs::write(&mark, stamp(name, lang));
+                            }
+                        } else {
+                            std::fs::create_dir_all(&out_dir).unwrap();
+                            std::fs::write(&path, &bytes).unwrap();
+                            println!(
+                                "{name}: {} entries, {} bytes, lts: {}",
+                                d.len(),
+                                bytes.len(),
+                                d.has_lts()
+                            );
+                        }
+                    });
+                }
+            });
+            let stale = stale.into_inner();
             if stale {
                 eprintln!("compiled data is stale: run `cargo run --release -p uccharan-lexgen`");
                 std::process::exit(1);
             }
         }
+        "xlit" | "xlit-toy" | "xlit-check" => xlit::run(&root, cmd, &args[2..]),
         "wikipron" | "wikipron-check" => {
             // Optional CC BY-SA packs, kept out of the core data directory.
             let dir = root.join("data/packs");
@@ -534,7 +663,8 @@ fn main() {
             // `word<TAB>reading` list, train on the rest, score model and rules.
             let a: Vec<String> = std::env::args().skip(2).collect();
             let lang = uccharan::Lang::parse(&a[0]).expect("language");
-            let latin = lang.latin().expect("Latin-script language");
+            let latin = lang.latin();
+            let indic = lang.indic();
             let min: u32 = a.get(2).and_then(|v| v.parse().ok()).unwrap_or(2);
             let rows: Vec<(String, String)> = std::fs::read_to_string(&a[1])
                 .unwrap()
@@ -550,8 +680,17 @@ fn main() {
                     % 10
                     == 0
             };
-            let tr: Vec<(String, String)> =
-                rows.iter().filter(|(w, _)| !held(w)).cloned().collect();
+            // VIA_RULES=1: the model reads the rules' reading, not the spelling.
+            let via = std::env::var("VIA_RULES").is_ok();
+            let input = |w: &str| match indic {
+                Some(i) if via => i.word(w, true),
+                _ => w.to_string(),
+            };
+            let tr: Vec<(String, String)> = rows
+                .iter()
+                .filter(|(w, _)| !held(w))
+                .map(|(w, r)| (input(w), r.clone()))
+                .collect();
             // SHAPES="84,4 83,3 ..." (hex left,right bytes) tries another chain.
             let shapes: Vec<(u8, u8)> = match std::env::var("SHAPES") {
                 Ok(v) => v
@@ -567,7 +706,7 @@ fn main() {
                 Err(_) => g2p::SHAPES.to_vec(),
             };
             let lat = std::env::var("LATENT").is_ok();
-            let (extra, model) = g2p::train(&tr, min, &shapes, lat.then_some(latin));
+            let (extra, model) = g2p::train(&tr, min, &shapes, latin.filter(|_| lat));
             let mut b = Builder::new();
             b.lts(model.outputs, model.tables);
             b.meta("letters", &extra);
@@ -581,7 +720,13 @@ fn main() {
             let show = std::env::var("SHOW").is_ok();
             let mut seg = [0usize; 3];
             for (k, (w, r)) in rows.iter().enumerate() {
-                let got = latin.model_word(w, &d).unwrap_or_default();
+                let got = match (latin, indic) {
+                    (Some(l), _) => l.model_word(w, &d),
+                    (_, Some(_)) if via => d.model_word(&input(w)),
+                    (_, Some(i)) => i.model_word(w, &d),
+                    _ => None,
+                }
+                .unwrap_or_default();
                 if !held(w) {
                     if k % 10 == 1 {
                         tn += 1;
@@ -591,12 +736,18 @@ fn main() {
                 }
                 n += 1;
                 m_ok += (got == *r) as usize;
-                let rule = latin.rule_word(w, true);
+                let rule = match (latin, indic) {
+                    (Some(l), _) => l.rule_word(w, true),
+                    (_, Some(i)) => i.word(w, true),
+                    _ => String::new(),
+                };
                 r_ok += (rule == *r) as usize;
                 let st = uccharan::ipa::strip_stress;
                 seg[0] += (st(&got) == st(r)) as usize;
                 seg[1] += (st(&rule) == st(r)) as usize;
-                let combo = latin.with_stress_of(&got, &rule).unwrap_or(rule.clone());
+                let combo = latin
+                    .and_then(|l| l.with_stress_of(&got, &rule))
+                    .unwrap_or(rule.clone());
                 seg[2] += (combo == *r) as usize;
                 if show && got != *r {
                     println!("{w}\t{r}\t{got}");
@@ -621,6 +772,38 @@ fn main() {
         }
         _ => eprintln!("unknown command"),
     }
+}
+
+/// A running digest (FNV-1a, 64 bit) of `bytes` after `h`.
+fn digest_bytes(mut h: u64, bytes: &[u8]) -> u64 {
+    for b in bytes.iter().chain(&[0xff]) {
+        h ^= *b as u64;
+        h = h.wrapping_mul(0x0000_0100_0000_01b3);
+    }
+    h
+}
+
+/// A digest of the names and contents of the files below `dirs`.
+fn digest_dirs(dirs: &[std::path::PathBuf]) -> u64 {
+    let mut files: Vec<std::path::PathBuf> = Vec::new();
+    let mut todo: Vec<std::path::PathBuf> = dirs.to_vec();
+    while let Some(d) = todo.pop() {
+        for e in std::fs::read_dir(&d).into_iter().flatten().flatten() {
+            let p = e.path();
+            if p.is_dir() {
+                todo.push(p);
+            } else {
+                files.push(p);
+            }
+        }
+    }
+    files.sort();
+    let mut h: u64 = 0xcbf2_9ce4_8422_2325;
+    for f in files {
+        h = digest_bytes(h, f.file_name().unwrap_or_default().as_encoded_bytes());
+        h = digest_bytes(h, &std::fs::read(&f).unwrap_or_default());
+    }
+    h
 }
 
 fn edit_distance(a: &str, b: &str) -> usize {

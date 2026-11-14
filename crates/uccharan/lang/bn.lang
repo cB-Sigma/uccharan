@@ -1,5 +1,5 @@
 # Bengali (Bangla). espeak-ng voice "bn". See docs/adding-a-language.md for the format.
-# Written for uccharan from specs/bn.md and specs/family-brahmic.md.
+# Written for uccharan.
 
 [meta]
 tag = bn

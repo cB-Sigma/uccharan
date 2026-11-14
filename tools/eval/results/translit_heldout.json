@@ -1,0 +1,446 @@
+{
+ "hi": {
+  "pack_bytes": 8666025,
+  "test_dak": {
+   "words": "4442",
+   "top1": "68.69",
+   "top3": "83.12"
+  },
+  "test_ak": {
+   "words": "9991",
+   "top1": "59.60",
+   "top3": "76.74"
+  },
+  "test_ak_native": {
+   "words": "3643",
+   "top1": "49.66",
+   "top3": "69.42"
+  },
+  "test_ak_ne": {
+   "words": "1997",
+   "top1": "57.04",
+   "top3": "75.86"
+  },
+  "sentences": {
+   "sentences": "4977",
+   "words": "85623",
+   "strict": "86.47",
+   "relaxed": "88.81"
+  },
+  "sentences_no_context": {
+   "sentences": "4977",
+   "words": "85623",
+   "strict": "85.33",
+   "relaxed": "87.70"
+  },
+  "sentences_no_pack": {
+   "sentences": "4977",
+   "words": "85623",
+   "strict": "55.52",
+   "relaxed": "57.78"
+  },
+  "hinglish": {
+   "sentences": "164",
+   "indic_words": "868",
+   "english_words": "130",
+   "indic_strict": "95.2",
+   "indic_relaxed": "98.2",
+   "english_converted": "10/130=7.7",
+   "indic_left_latin": "3/868=0.3",
+   "sentences_right": "139/164=84.8"
+  },
+  "hinglish_no_context": {
+   "sentences": "164",
+   "indic_words": "868",
+   "english_words": "130",
+   "indic_strict": "94.6",
+   "indic_relaxed": "97.5",
+   "english_converted": "10/130=7.7",
+   "indic_left_latin": "6/868=0.7",
+   "sentences_right": "135/164=82.3"
+  },
+  "hinglish_no_pack": {
+   "sentences": "164",
+   "indic_words": "868",
+   "english_words": "130",
+   "indic_strict": "71.5",
+   "indic_relaxed": "72.4",
+   "english_converted": "4/130=3.1",
+   "indic_left_latin": "174/868=20.0",
+   "sentences_right": "39/164=23.8"
+  },
+  "speed_words_per_s": {
+   "running_text_first_pass": 12105,
+   "running_text_again": 243270,
+   "new_words": 3145
+  }
+ },
+ "mr": {
+  "pack_bytes": 7355539,
+  "test_dak": {
+   "words": "5667",
+   "top1": "74.45",
+   "top3": "82.87"
+  },
+  "test_ak": {
+   "words": "12059",
+   "top1": "64.52",
+   "top3": "75.21"
+  },
+  "test_ak_native": {
+   "words": "4459",
+   "top1": "57.08",
+   "top3": "67.93"
+  },
+  "test_ak_ne": {
+   "words": "1998",
+   "top1": "52.55",
+   "top3": "69.67"
+  },
+  "sentences": {
+   "sentences": "4942",
+   "words": "46789",
+   "strict": "85.48",
+   "relaxed": "85.93"
+  },
+  "sentences_no_context": {
+   "sentences": "4942",
+   "words": "46789",
+   "strict": "85.14",
+   "relaxed": "85.60"
+  },
+  "sentences_no_pack": {
+   "sentences": "4942",
+   "words": "46789",
+   "strict": "16.64",
+   "relaxed": "18.60"
+  },
+  "speed_words_per_s": {
+   "running_text_first_pass": 7700,
+   "running_text_again": 308278,
+   "new_words": 4138
+  }
+ },
+ "bn": {
+  "pack_bytes": 7836025,
+  "test_dak": {
+   "words": "9146",
+   "top1": "67.09",
+   "top3": "78.69"
+  },
+  "test_ak": {
+   "words": "13366",
+   "top1": "62.99",
+   "top3": "76.03"
+  },
+  "test_ak_native": {
+   "words": "2267",
+   "top1": "60.65",
+   "top3": "75.56"
+  },
+  "test_ak_ne": {
+   "words": "1999",
+   "top1": "46.42",
+   "top3": "64.28"
+  },
+  "sentences": {
+   "sentences": "4890",
+   "words": "57471",
+   "strict": "80.82",
+   "relaxed": "80.83"
+  },
+  "sentences_no_context": {
+   "sentences": "4890",
+   "words": "57471",
+   "strict": "80.35",
+   "relaxed": "80.36"
+  },
+  "sentences_no_pack": {
+   "sentences": "4890",
+   "words": "57471",
+   "strict": "11.97",
+   "relaxed": "11.97"
+  },
+  "speed_words_per_s": {
+   "running_text_first_pass": 7793,
+   "running_text_again": 338922,
+   "new_words": 3246
+  }
+ },
+ "ta": {
+  "pack_bytes": 7039209,
+  "test_dak": {
+   "words": "6833",
+   "top1": "75.90",
+   "top3": "82.50"
+  },
+  "test_ak": {
+   "words": "11405",
+   "top1": "68.77",
+   "top3": "78.96"
+  },
+  "test_ak_native": {
+   "words": "2607",
+   "top1": "72.65",
+   "top3": "85.16"
+  },
+  "test_ak_ne": {
+   "words": "1997",
+   "top1": "38.81",
+   "top3": "58.29"
+  },
+  "sentences": {
+   "sentences": "4963",
+   "words": "46460",
+   "strict": "76.68",
+   "relaxed": "76.69"
+  },
+  "sentences_no_context": {
+   "sentences": "4963",
+   "words": "46460",
+   "strict": "76.46",
+   "relaxed": "76.46"
+  },
+  "sentences_no_pack": {
+   "sentences": "4963",
+   "words": "46460",
+   "strict": "9.21",
+   "relaxed": "9.22"
+  },
+  "speed_words_per_s": {
+   "running_text_first_pass": 5580,
+   "running_text_again": 755409,
+   "new_words": 4634
+  }
+ },
+ "te": {
+  "pack_bytes": 7025004,
+  "test_dak": {
+   "words": "5726",
+   "top1": "81.45",
+   "top3": "89.17"
+  },
+  "test_ak": {
+   "words": "9936",
+   "top1": "76.41",
+   "top3": "86.31"
+  },
+  "test_ak_native": {
+   "words": "2240",
+   "top1": "83.88",
+   "top3": "92.05"
+  },
+  "test_ak_ne": {
+   "words": "1999",
+   "top1": "53.38",
+   "top3": "71.54"
+  },
+  "sentences": {
+   "sentences": "4735",
+   "words": "43544",
+   "strict": "82.91",
+   "relaxed": "83.64"
+  },
+  "sentences_no_context": {
+   "sentences": "4735",
+   "words": "43544",
+   "strict": "82.85",
+   "relaxed": "83.57"
+  },
+  "sentences_no_pack": {
+   "sentences": "4735",
+   "words": "43544",
+   "strict": "30.62",
+   "relaxed": "30.68"
+  },
+  "speed_words_per_s": {
+   "running_text_first_pass": 5803,
+   "running_text_again": 216228,
+   "new_words": 3823
+  }
+ },
+ "gu": {
+  "pack_bytes": 5951140,
+  "test_dak": {
+   "words": "10229",
+   "top1": "65.62",
+   "top3": "81.26"
+  },
+  "test_ak": {
+   "words": "17402",
+   "top1": "60.60",
+   "top3": "77.77"
+  },
+  "test_ak_native": {
+   "words": "5243",
+   "top1": "54.72",
+   "top3": "73.87"
+  },
+  "test_ak_ne": {
+   "words": "1997",
+   "top1": "49.67",
+   "top3": "69.80"
+  },
+  "sentences": {
+   "sentences": "4990",
+   "words": "75619",
+   "strict": "82.74",
+   "relaxed": "82.75"
+  },
+  "sentences_no_context": {
+   "sentences": "4990",
+   "words": "75619",
+   "strict": "82.64",
+   "relaxed": "82.66"
+  },
+  "sentences_no_pack": {
+   "sentences": "4990",
+   "words": "75619",
+   "strict": "48.28",
+   "relaxed": "48.29"
+  },
+  "speed_words_per_s": {
+   "running_text_first_pass": 9648,
+   "running_text_again": 230832,
+   "new_words": 4603
+  }
+ },
+ "pa": {
+  "pack_bytes": 3132326,
+  "test_dak": {
+   "words": "6880",
+   "top1": "53.34",
+   "top3": "71.89"
+  },
+  "test_ak": {
+   "words": "10949",
+   "top1": "46.32",
+   "top3": "64.67"
+  },
+  "test_ak_native": {
+   "words": "2184",
+   "top1": "34.43",
+   "top3": "52.24"
+  },
+  "test_ak_ne": {
+   "words": "1997",
+   "top1": "34.05",
+   "top3": "52.28"
+  },
+  "sentences": {
+   "sentences": "4838",
+   "words": "84376",
+   "strict": "79.19",
+   "relaxed": "79.19"
+  },
+  "sentences_no_context": {
+   "sentences": "4838",
+   "words": "84376",
+   "strict": "77.01",
+   "relaxed": "77.01"
+  },
+  "sentences_no_pack": {
+   "sentences": "4838",
+   "words": "84376",
+   "strict": "29.25",
+   "relaxed": "30.11"
+  },
+  "speed_words_per_s": {
+   "running_text_first_pass": 17392,
+   "running_text_again": 624892,
+   "new_words": 6236
+  }
+ },
+ "kn": {
+  "pack_bytes": 6651694,
+  "test_dak": {
+   "words": "5013",
+   "top1": "84.40",
+   "top3": "91.16"
+  },
+  "test_ak": {
+   "words": "11165",
+   "top1": "74.82",
+   "top3": "86.01"
+  },
+  "test_ak_native": {
+   "words": "4207",
+   "top1": "75.68",
+   "top3": "86.76"
+  },
+  "test_ak_ne": {
+   "words": "1992",
+   "top1": "48.64",
+   "top3": "71.69"
+  },
+  "sentences": {
+   "sentences": "4937",
+   "words": "53919",
+   "strict": "83.02",
+   "relaxed": "84.44"
+  },
+  "sentences_no_context": {
+   "sentences": "4937",
+   "words": "53919",
+   "strict": "82.96",
+   "relaxed": "84.39"
+  },
+  "sentences_no_pack": {
+   "sentences": "4937",
+   "words": "53919",
+   "strict": "30.03",
+   "relaxed": "30.10"
+  },
+  "speed_words_per_s": {
+   "running_text_first_pass": 5999,
+   "running_text_again": 303021,
+   "new_words": 4224
+  }
+ },
+ "ml": {
+  "pack_bytes": 6378093,
+  "test_dak": {
+   "words": "5561",
+   "top1": "71.66",
+   "top3": "80.26"
+  },
+  "test_ak": {
+   "words": "12343",
+   "top1": "61.39",
+   "top3": "72.45"
+  },
+  "test_ak_native": {
+   "words": "4854",
+   "top1": "61.62",
+   "top3": "74.43"
+  },
+  "test_ak_ne": {
+   "words": "1990",
+   "top1": "30.90",
+   "top3": "44.67"
+  },
+  "sentences": {
+   "sentences": "4982",
+   "words": "42398",
+   "strict": "70.87",
+   "relaxed": "71.90"
+  },
+  "sentences_no_context": {
+   "sentences": "4982",
+   "words": "42398",
+   "strict": "70.27",
+   "relaxed": "71.30"
+  },
+  "sentences_no_pack": {
+   "sentences": "4982",
+   "words": "42398",
+   "strict": "5.45",
+   "relaxed": "5.47"
+  },
+  "speed_words_per_s": {
+   "running_text_first_pass": 3482,
+   "running_text_again": 203986,
+   "new_words": 2895
+  }
+ }
+}

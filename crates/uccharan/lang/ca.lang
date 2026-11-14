@@ -1,0 +1,490 @@
+# Catalan. espeak-ng voice "ca". Letter rules for words outside the
+# word table, the number words and the letter names.
+
+[meta]
+tag = ca
+vowels = a e i o u ɛ ɔ ə
+stress = spanish
+secondary = none
+vowel-mark = yes
+spell-vowels = aeiouàèéíïòóúü
+
+[classes]
+V = a e i o u à è é í ï ò ó ú ü
+FV = e i è é í
+VC = b β d ð ɡ ɣ m n l ʎ r ɾ ʒ z v
+PV = a e i o u ɛ ɔ ə
+SP = a e i o u ɛ ɔ ə z s ɾ r ʃ ʒ j w
+
+[pre]
+à -> ˈa
+è -> ˈɛ
+é -> ˈe
+í -> ˈi
+ï -> i
+ò -> ˈɔ
+ó -> ˈo
+ú -> ˈu
+ü -> u
+ny -> ɲ
+ll -> ʎ
+l·l -> ll
+qu -> k / _ {FV}
+qu -> kw
+gu -> ɡ / _ {FV}
+ç -> s
+ss -> s
+c -> s / _ {FV}
+c -> k
+g -> ʒ / _ {FV}
+g -> ɡ
+j -> ʒ
+tx -> tʃ
+ix -> ʃ / {V} _
+x -> ʃ
+h -> 0
+v -> b
+z -> z
+s -> z / {V} _ {V}
+rr -> r
+r -> r / # _
+r -> ɾ
+y -> i
+
+[post]
+
+
+[clause]
+# Final s, t, p, k are voiced before a voiced consonant, s also before a
+# vowel; a final n takes the place of the next consonant; b d ɡ at the
+# start of a word are spirants after a vowel or a continuant; i and u at
+# the start of a word are glides after a vowel.
+s -> z / _ ‿ {VC} | _ ‿ ⁑
+t -> d / _ ‿ {VC}
+p -> b / _ ‿ {VC}
+k -> ɡ / _ ‿ {VC}
+n -> m / _ ‿ p | _ ‿ b | _ ‿ m | _ ‿ β
+n -> ŋ / _ ‿ k | _ ‿ ɡ
+n -> ɱ / _ ‿ f
+n -> ɲ / _ ‿ ʎ
+l -> ʎ / _ ‿ ʎ
+d -> ð / {SP} ‿ _ | {SP} ‿ ⁑ _
+b -> β / {SP} ‿ _ | l ‿ _ | ʎ ‿ _
+ɡ -> ɣ / {SP} ‿ _ | l ‿ _ | ʎ ‿ _
+i -> j / {PV} ‿ ⁑ _
+u -> w / {PV} ‿ ⁑ _
+
+[words]
+i i
+zero# zˈɛɾu
+u# ˈu
+dos# dˈos
+tres# tɾˈɛs
+quatre# kwˈatɾə
+cinc# sˈiŋk
+sis# sˈis
+set# sˈɛt
+vuit# bˈujt
+nou# nˈɔw
+deu# dˈɛw
+onze# ˈonzə
+dotze# dˈodzə
+tretze# tɾˈedzə
+catorze# kətˈorzə
+quinze# kˈinzə
+setze# sˈɛdzə
+disset# disˈɛt
+divuit# diβˈujt
+dinou# dinˈɔw
+vint# bˈint
+vint-i-u# bˌintiˈu
+vint-i-dos# bˌintiðˈos
+vint-i-tres# bˌintitɾˈɛs
+vint-i-quatre# bˌintikwˈatɾə
+vint-i-cinc# bˌintisˈiŋk
+vint-i-sis# bˌintisˈis
+vint-i-set# bˌintisˈɛt
+vint-i-vuit# bˌintiβˈujt
+vint-i-nou# bˌintinˈɔw
+trenta# tɾˈɛntə
+trenta-u# tɾˌɛntəˈu
+trenta-dos# tɾˌɛntəðˈos
+trenta-tres# tɾˌɛntətɾˈɛs
+trenta-quatre# tɾˌɛntəkwˈatɾə
+trenta-cinc# tɾˌɛntəsˈiŋk
+trenta-sis# tɾˌɛntəsˈis
+trenta-set# tɾˌɛntəsˈɛt
+trenta-vuit# tɾˌɛntəβˈujt
+trenta-nou# tɾˌɛntənˈɔw
+quaranta# kwəɾˈantə
+quaranta-u# kwəɾˌantəˈu
+quaranta-dos# kwəɾˌantəðˈos
+quaranta-tres# kwəɾˌantətɾˈɛs
+quaranta-quatre# kwəɾˌantəkwˈatɾə
+quaranta-cinc# kwəɾˌantəsˈiŋk
+quaranta-sis# kwəɾˌantəsˈis
+quaranta-set# kwəɾˌantəsˈɛt
+quaranta-vuit# kwəɾˌantəβˈujt
+quaranta-nou# kwəɾˌantənˈɔw
+cinquanta# siŋkwˈantə
+cinquanta-u# siŋkwˌantəˈu
+cinquanta-dos# siŋkwˌantəðˈos
+cinquanta-tres# siŋkwˌantətɾˈɛs
+cinquanta-quatre# siŋkwˌantəkwˈatɾə
+cinquanta-cinc# siŋkwˌantəsˈiŋk
+cinquanta-sis# siŋkwˌantəsˈis
+cinquanta-set# siŋkwˌantəsˈɛt
+cinquanta-vuit# siŋkwˌantəβˈujt
+cinquanta-nou# siŋkwˌantənˈɔw
+seixanta# səʃˈantə
+seixanta-u# səʃˌantəˈu
+seixanta-dos# səʃˌantəðˈos
+seixanta-tres# səʃˌantətɾˈɛs
+seixanta-quatre# səʃˌantəkwˈatɾə
+seixanta-cinc# səʃˌantəsˈiŋk
+seixanta-sis# səʃˌantəsˈis
+seixanta-set# səʃˌantəsˈɛt
+seixanta-vuit# səʃˌantəβˈujt
+seixanta-nou# səʃˌantənˈɔw
+setanta# sətˈantə
+setanta-u# sətˌantəˈu
+setanta-dos# sətˌantəðˈos
+setanta-tres# sətˌantətɾˈɛs
+setanta-quatre# sətˌantəkwˈatɾə
+setanta-cinc# sətˌantəsˈiŋk
+setanta-sis# sətˌantəsˈis
+setanta-set# sətˌantəsˈɛt
+setanta-vuit# sətˌantəβˈujt
+setanta-nou# sətˌantənˈɔw
+vuitanta# bujtˈantə
+vuitanta-u# bujtˌantəˈu
+vuitanta-dos# bujtˌantəðˈos
+vuitanta-tres# bujtˌantətɾˈɛs
+vuitanta-quatre# bujtˌantəkwˈatɾə
+vuitanta-cinc# bujtˌantəsˈiŋk
+vuitanta-sis# bujtˌantəsˈis
+vuitanta-set# bujtˌantəsˈɛt
+vuitanta-vuit# bujtˌantəβˈujt
+vuitanta-nou# bujtˌantənˈɔw
+noranta# nuɾˈantə
+noranta-u# nuɾˌantəˈu
+noranta-dos# nuɾˌantəðˈos
+noranta-tres# nuɾˌantətɾˈɛs
+noranta-quatre# nuɾˌantəkwˈatɾə
+noranta-cinc# nuɾˌantəsˈiŋk
+noranta-sis# nuɾˌantəsˈis
+noranta-set# nuɾˌantəsˈɛt
+noranta-vuit# nuɾˌantəβˈujt
+noranta-nou# nuɾˌantənˈɔw
+dosv2# dˈoz
+tresv2# tɾˈɛz
+cincv2# sˈiŋɡ
+sisv2# sˈiz
+setv2# sˈɛd
+vuitv2# bˈujd
+dissetv2# disˈɛd
+divuitv2# diβˈujd
+vintv2# bˈind
+vint-i-dosv2# bˌintiðˈoz
+vint-i-tresv2# bˌintitɾˈɛz
+vint-i-cincv2# bˌintisˈiŋɡ
+vint-i-sisv2# bˌintisˈiz
+vint-i-setv2# bˌintisˈɛd
+vint-i-vuitv2# bˌintiβˈujd
+trenta-dosv2# tɾˌɛntəðˈoz
+trenta-tresv2# tɾˌɛntətɾˈɛz
+trenta-cincv2# tɾˌɛntəsˈiŋɡ
+trenta-sisv2# tɾˌɛntəsˈiz
+trenta-setv2# tɾˌɛntəsˈɛd
+trenta-vuitv2# tɾˌɛntəβˈujd
+quaranta-dosv2# kwəɾˌantəðˈoz
+quaranta-tresv2# kwəɾˌantətɾˈɛz
+quaranta-cincv2# kwəɾˌantəsˈiŋɡ
+quaranta-sisv2# kwəɾˌantəsˈiz
+quaranta-setv2# kwəɾˌantəsˈɛd
+quaranta-vuitv2# kwəɾˌantəβˈujd
+cinquanta-dosv2# siŋkwˌantəðˈoz
+cinquanta-tresv2# siŋkwˌantətɾˈɛz
+cinquanta-cincv2# siŋkwˌantəsˈiŋɡ
+cinquanta-sisv2# siŋkwˌantəsˈiz
+cinquanta-setv2# siŋkwˌantəsˈɛd
+cinquanta-vuitv2# siŋkwˌantəβˈujd
+seixanta-dosv2# səʃˌantəðˈoz
+seixanta-tresv2# səʃˌantətɾˈɛz
+seixanta-cincv2# səʃˌantəsˈiŋɡ
+seixanta-sisv2# səʃˌantəsˈiz
+seixanta-setv2# səʃˌantəsˈɛd
+seixanta-vuitv2# səʃˌantəβˈujd
+setanta-dosv2# sətˌantəðˈoz
+setanta-tresv2# sətˌantətɾˈɛz
+setanta-cincv2# sətˌantəsˈiŋɡ
+setanta-sisv2# sətˌantəsˈiz
+setanta-setv2# sətˌantəsˈɛd
+setanta-vuitv2# sətˌantəβˈujd
+vuitanta-dosv2# bujtˌantəðˈoz
+vuitanta-tresv2# bujtˌantətɾˈɛz
+vuitanta-cincv2# bujtˌantəsˈiŋɡ
+vuitanta-sisv2# bujtˌantəsˈiz
+vuitanta-setv2# bujtˌantəsˈɛd
+vuitanta-vuitv2# bujtˌantəβˈujd
+noranta-dosv2# nuɾˌantəðˈoz
+noranta-tresv2# nuɾˌantətɾˈɛz
+noranta-cincv2# nuɾˌantəsˈiŋɡ
+noranta-sisv2# nuɾˌantəsˈiz
+noranta-setv2# nuɾˌantəsˈɛd
+noranta-vuitv2# nuɾˌantəβˈujd
+cent# sˈent
+dos-cents# dˌosˈens
+dos-centsv2# dˌosˈenz
+tres-cents# tɾˌesˈens
+tres-centsv2# tɾˌesˈenz
+quatre-cents# kwˌatɾəsˈens
+quatre-centsv2# kwˌatɾəsˈenz
+cinc-cents# sˌiŋsˈens
+cinc-centsv2# sˌiŋsˈenz
+sis-cents# sˌisˈens
+sis-centsv2# sˌisˈenz
+set-cents# sˌɛtsˈens
+set-centsv2# sˌɛtsˈenz
+vuit-cents# bˌujtsˈens
+vuit-centsv2# bˌujtsˈenz
+nou-cents# nˌɔwsˈens
+nou-centsv2# nˌɔwsˈenz
+mil# mˈil
+milv2# mˌil
+unmilió# ummiliˈo
+milions# miliˌons
+coma# kˌomə
+per-cent# pərsˈen
+
+[numbers]
+decimal comma
+point coma#
+minus menys
+percent per-cent#
+one-before-scale no
+0 zero#
+1 u#
+2 dos#
+3 tres#
+4 quatre#
+5 cinc#
+6 sis#
+7 set#
+8 vuit#
+9 nou#
+10 deu#
+11 onze#
+12 dotze#
+13 tretze#
+14 catorze#
+15 quinze#
+16 setze#
+17 disset#
+18 divuit#
+19 dinou#
+20 vint#
+21 vint-i-u#
+22 vint-i-dos#
+23 vint-i-tres#
+24 vint-i-quatre#
+25 vint-i-cinc#
+26 vint-i-sis#
+27 vint-i-set#
+28 vint-i-vuit#
+29 vint-i-nou#
+30 trenta#
+31 trenta-u#
+32 trenta-dos#
+33 trenta-tres#
+34 trenta-quatre#
+35 trenta-cinc#
+36 trenta-sis#
+37 trenta-set#
+38 trenta-vuit#
+39 trenta-nou#
+40 quaranta#
+41 quaranta-u#
+42 quaranta-dos#
+43 quaranta-tres#
+44 quaranta-quatre#
+45 quaranta-cinc#
+46 quaranta-sis#
+47 quaranta-set#
+48 quaranta-vuit#
+49 quaranta-nou#
+50 cinquanta#
+51 cinquanta-u#
+52 cinquanta-dos#
+53 cinquanta-tres#
+54 cinquanta-quatre#
+55 cinquanta-cinc#
+56 cinquanta-sis#
+57 cinquanta-set#
+58 cinquanta-vuit#
+59 cinquanta-nou#
+60 seixanta#
+61 seixanta-u#
+62 seixanta-dos#
+63 seixanta-tres#
+64 seixanta-quatre#
+65 seixanta-cinc#
+66 seixanta-sis#
+67 seixanta-set#
+68 seixanta-vuit#
+69 seixanta-nou#
+70 setanta#
+71 setanta-u#
+72 setanta-dos#
+73 setanta-tres#
+74 setanta-quatre#
+75 setanta-cinc#
+76 setanta-sis#
+77 setanta-set#
+78 setanta-vuit#
+79 setanta-nou#
+80 vuitanta#
+81 vuitanta-u#
+82 vuitanta-dos#
+83 vuitanta-tres#
+84 vuitanta-quatre#
+85 vuitanta-cinc#
+86 vuitanta-sis#
+87 vuitanta-set#
+88 vuitanta-vuit#
+89 vuitanta-nou#
+90 noranta#
+91 noranta-u#
+92 noranta-dos#
+93 noranta-tres#
+94 noranta-quatre#
+95 noranta-cinc#
+96 noranta-sis#
+97 noranta-set#
+98 noranta-vuit#
+99 noranta-nou#
+2x dosv2#
+3x tresv2#
+5x cincv2#
+6x sisv2#
+7x setv2#
+8x vuitv2#
+17x dissetv2#
+18x divuitv2#
+20x vintv2#
+22x vint-i-dosv2#
+23x vint-i-tresv2#
+25x vint-i-cincv2#
+26x vint-i-sisv2#
+27x vint-i-setv2#
+28x vint-i-vuitv2#
+32x trenta-dosv2#
+33x trenta-tresv2#
+35x trenta-cincv2#
+36x trenta-sisv2#
+37x trenta-setv2#
+38x trenta-vuitv2#
+42x quaranta-dosv2#
+43x quaranta-tresv2#
+45x quaranta-cincv2#
+46x quaranta-sisv2#
+47x quaranta-setv2#
+48x quaranta-vuitv2#
+52x cinquanta-dosv2#
+53x cinquanta-tresv2#
+55x cinquanta-cincv2#
+56x cinquanta-sisv2#
+57x cinquanta-setv2#
+58x cinquanta-vuitv2#
+62x seixanta-dosv2#
+63x seixanta-tresv2#
+65x seixanta-cincv2#
+66x seixanta-sisv2#
+67x seixanta-setv2#
+68x seixanta-vuitv2#
+72x setanta-dosv2#
+73x setanta-tresv2#
+75x setanta-cincv2#
+76x setanta-sisv2#
+77x setanta-setv2#
+78x setanta-vuitv2#
+82x vuitanta-dosv2#
+83x vuitanta-tresv2#
+85x vuitanta-cincv2#
+86x vuitanta-sisv2#
+87x vuitanta-setv2#
+88x vuitanta-vuitv2#
+92x noranta-dosv2#
+93x noranta-tresv2#
+95x noranta-cincv2#
+96x noranta-sisv2#
+97x noranta-setv2#
+98x noranta-vuitv2#
+100 cent#
+200 dos-cents#
+200+ dos-centsv2#
+300 tres-cents#
+300+ tres-centsv2#
+400 quatre-cents#
+400+ quatre-centsv2#
+500 cinc-cents#
+500+ cinc-centsv2#
+600 sis-cents#
+600+ sis-centsv2#
+700 set-cents#
+700+ set-centsv2#
+800 vuit-cents#
+800+ vuit-centsv2#
+900 nou-cents#
+900+ nou-centsv2#
+scale100 cent#
+1000 mil#
+1000+ mil#
+scale1000 milv2#
+scale1000+ milv2#
+1000000 unmilió#
+1000000+ unmilió#
+scale1000000 milions#
+scale1000000+ milions#
+
+[spell]
+a ə
+b bˈe
+c sˈe
+d dˈe
+e ˈɛ
+f ˈefə
+g ʒˈe
+h ˈak
+i i
+j ʒˈɔtə
+k kˈa
+l ˈelə
+m ˈemə
+n ˈenə
+o ˈɔ
+p pˈe
+q kˈu
+r ˈerə
+s ˈesə
+t tˈe
+u ˈu
+v bˈeβˌaʃə
+w bˈeðˌobblə
+x ˈiks
+y ˈiɣɾəɣə
+z zˈɛtə
+ç sˌetɾəŋkˈaðə
+à ˈa
+è ˈɛ
+é ˈe
+í ˈi
+ï ˈi
+ò ˈɔ
+ó ˈo
+ú ˈu
+ü ˈu
+
+# Words without stress inside a clause and with stress at its end.
+[unstressed]
+

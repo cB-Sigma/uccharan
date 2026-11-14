@@ -314,6 +314,53 @@ pub unsafe extern "C" fn uccharan_normalize(
     }
 }
 
+/// Romanised text into the script of `lang` (`aap kaise ho` → `आप कैसे हो`),
+/// as JSON `{"text", "spans"}` where every span has a `kind` (`indic`,
+/// `english` or `other`), `src` and `out` ranges in `byte`, `char` (code
+/// point) and `utf16` offsets, and the alternatives of a word (see
+/// docs/transliteration.md). Load the language's pack (`xlit-hi.ucd`, …)
+/// with [`uccharan_load_pack`] first; without it a rule converter answers.
+///
+/// `options_json` may be NULL or a JSON object with the members `english`
+/// (`keep`, `native` or `convert`), `alternatives` and `context`.
+///
+/// Returns a newly allocated string, or NULL when an argument is invalid
+/// (unknown language, malformed options).
+///
+/// # Safety
+/// `p` must be a live phonemizer; `text` and `lang` valid C strings;
+/// `options_json` NULL or a valid C string.
+#[no_mangle]
+pub unsafe extern "C" fn uccharan_transliterate(
+    p: *const UccharanPhonemizer,
+    text: *const c_char,
+    lang: *const c_char,
+    options_json: *const c_char,
+) -> *mut c_char {
+    if p.is_null() || text.is_null() || lang.is_null() {
+        return std::ptr::null_mut();
+    }
+    // SAFETY: pointers were checked for NULL and the caller guarantees validity.
+    let (p, text, lang) = unsafe { (&*p, CStr::from_ptr(text), CStr::from_ptr(lang)) };
+    let opts = if options_json.is_null() {
+        Some("")
+    } else {
+        // SAFETY: non-NULL and valid per the contract.
+        unsafe { CStr::from_ptr(options_json) }.to_str().ok()
+    };
+    let (Ok(text), Some(lang), Some(opts)) = (
+        text.to_str(),
+        lang.to_str().ok().and_then(Lang::parse),
+        opts,
+    ) else {
+        return std::ptr::null_mut();
+    };
+    match uccharan_core::translit::transliterate_json(&p.inner, text, lang, opts) {
+        Ok(out) => CString::new(out).map_or(std::ptr::null_mut(), CString::into_raw),
+        Err(_) => std::ptr::null_mut(),
+    }
+}
+
 /// As [`uccharan_phonemize`], with pronunciation word lists applied:
 /// `wordlists_json` is a JSON array of word lists (TSV, PLS or JSON text),
 /// highest priority first. A matched entry's IPA replaces the word's
@@ -609,6 +656,47 @@ mod textnorm_tests {
                 .unwrap()
                 .contains("<grapheme>Kokoro</grapheme>"));
             uccharan_string_free(s);
+            uccharan_free(p);
+        }
+    }
+}
+
+#[cfg(test)]
+mod translit_tests {
+    use super::*;
+
+    #[test]
+    fn transliterate_through_the_abi() {
+        let c = |s: &str| CString::new(s).unwrap();
+        // The tiny pack of the library's tests (only in the repository).
+        let path = concat!(
+            env!("CARGO_MANIFEST_DIR"),
+            "/../uccharan/tests/data/xlit-toy.ucd"
+        );
+        let Ok(pack) = std::fs::read(path) else {
+            return;
+        };
+        let p = uccharan_new();
+        // SAFETY: valid pointers and lengths; results freed below.
+        unsafe {
+            assert_eq!(uccharan_load_pack(p, pack.as_ptr(), pack.len()), 0);
+            let out = uccharan_transliterate(
+                p,
+                c("kal jana hai").as_ptr(),
+                c("hi").as_ptr(),
+                std::ptr::null(),
+            );
+            assert!(!out.is_null());
+            let json = CStr::from_ptr(out).to_str().unwrap().to_string();
+            assert!(json.starts_with("{\"text\":\"कल जाना है\""), "{json}");
+            uccharan_string_free(out);
+            let bad = uccharan_transliterate(
+                p,
+                c("kal").as_ptr(),
+                c("hi").as_ptr(),
+                c("{\"english\":\"x\"}").as_ptr(),
+            );
+            assert!(bad.is_null());
             uccharan_free(p);
         }
     }

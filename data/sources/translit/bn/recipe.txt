@@ -1,0 +1,26 @@
+# How xlit-bn.ucd (Bengali) is built by `lexgen xlit bn`.
+order=6
+min=1,1,2,3,4,5
+min_token=20
+prune=2
+max_pairs=2000000
+freq_min=3
+lex_min=20
+bigram_min=10
+license=CC-BY-SA-4.0
+# Weights fitted on development data (docs/evaluation.md).
+w.attested=0.5
+w.lm=1
+w.lm_unseen=-0.5
+w.loan=4
+w.loan_mid=0.5
+w.bias=2
+w.switch=1
+w.en_lex=-2
+w.clm=2
+w.loan_sure=0.7
+w.model=1
+w.freq=0.7
+w.in_vocab=3
+w.phonetic=3
+w.floor=-2

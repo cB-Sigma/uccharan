@@ -1,0 +1,26 @@
+# Kannada words whose usual romanisation is also an English word.
+# For these spellings the neighbouring words decide the language: the native candidate
+# is never taken for a loan of the English word.
+# Hand-written for uccharan (Apache-2.0); not yet reviewed by a native speaker.
+# Columns: romanised form, native word (for the reader; candidates come from the lexicon).
+male	ಮಳೆ
+mane	ಮನೆ
+tale	ತಲೆ
+bale	ಬಲೆ
+hole	ಹೊಳೆ
+kale	ಕಲೆ
+mare	ಮರೆ
+are	ಅರೆ
+a	ಆ
+e	ಈ
+ide	ಇದೆ
+hale	ಹಳೆ
+ba	ಬಾ
+na	ನಾ
+ne	ನೀ
+ni	ನೀ
+illa	ಇಲ್ಲ
+alla	ಅಲ್ಲ
+mole	ಮೊಳೆ
+tore	ತೊರೆ
+bare	ಬರೆ

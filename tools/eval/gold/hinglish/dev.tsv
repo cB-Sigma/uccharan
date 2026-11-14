@@ -1,0 +1,104 @@
+# Hinglish development set: 100 hand-written chat-style sentences, English mixed in.
+# For fitting weights. Columns: romanised sentence, reference. Tokens pair up one to one
+# by white space; Indic words are in Devanagari, English words stay exactly as typed.
+# Apache-2.0.
+aap kaise ho	आप कैसे हो
+mujhe kal office jana hai	मुझे कल office जाना है
+kya tum aaj free ho?	क्या तुम आज free हो?
+main abhi meeting me hoon, baad me call karta hoon	मैं अभी meeting में हूँ, बाद में call करता हूँ
+yaar ye movie bahut boring thi	यार ये movie बहुत boring थी
+tumne khana khaya ya nahi	तुमने खाना खाया या नहीं
+mera phone charge nahi ho raha	मेरा phone charge नहीं हो रहा
+kal raat ko bahut barish hui	कल रात को बहुत बारिश हुई
+please mujhe address send kar do	please मुझे address send कर दो
+hum log weekend pe ghumne ja rahe hain	हम लोग weekend पे घूमने जा रहे हैं
+wo to pehle hi ghar chala gaya	वो तो पहले ही घर चला गया
+is baar exam kaafi tough tha	इस बार exam काफ़ी tough था
+mummy ne bola hai ki jaldi ghar aao	मम्मी ने बोला है कि जल्दी घर आओ
+bhai tu kahan hai, hum wait kar rahe hain	भाई तू कहाँ है, हम wait कर रहे हैं
+mere paas time nahi hai abhi	मेरे पास time नहीं है अभी
+kya haal hai sab theek?	क्या हाल है सब ठीक?
+aaj ka match dekha kya tumne	आज का match देखा क्या तुमने
+mujhe lagta hai ye idea accha hai	मुझे लगता है ये idea अच्छा है
+train do ghante late hai	train दो घंटे late है
+tum kab tak pahunchoge	तुम कब तक पहुँचोगे
+thoda sa paani de do please	थोड़ा सा पानी दे दो please
+uska birthday next week hai	उसका birthday next week है
+main to bas mazak kar raha tha	मैं तो बस मज़ाक कर रहा था
+ye wala design mujhe zyada pasand aaya	ये वाला design मुझे ज़्यादा पसंद आया
+kal subah jaldi uthna hai	कल सुबह जल्दी उठना है
+order cancel kar diya maine	order cancel कर दिया मैंने
+wo log hamare ghar aaye the	वो लोग हमारे घर आए थे
+itna gussa kyun ho rahe ho	इतना गुस्सा क्यों हो रहे हो
+password bhool gaya hoon, reset karna padega	password भूल गया हूँ, reset करना पड़ेगा
+aaj mausam bahut accha hai	आज मौसम बहुत अच्छा है
+dukan band ho gayi thi	दुकान बंद हो गई थी
+salary abhi tak nahi aayi	salary अभी तक नहीं आई
+tum mere saath chaloge?	तुम मेरे साथ चलोगे?
+usne mujhe message kiya tha lekin maine dekha nahi	उसने मुझे message किया था लेकिन मैंने देखा नहीं
+bacche school se aa gaye	बच्चे school से आ गए
+chai piyoge ya coffee	चाय पियोगे या coffee
+ye kaam aaj hi khatam karna hai	ये काम आज ही ख़त्म करना है
+mujhe nahi pata wo kahan gaya	मुझे नहीं पता वो कहाँ गया
+sorry yaar, late ho gaya	sorry यार, late हो गया
+ham sab milkar dinner karenge	हम सब मिलकर dinner करेंगे
+doctor ne aaram karne ko kaha hai	doctor ने आराम करने को कहा है
+meri gaadi kharab ho gayi hai	मेरी गाड़ी ख़राब हो गई है
+kitne baje nikalna hai	कितने बजे निकलना है
+tumhari awaaz nahi aa rahi, network issue hai	तुम्हारी आवाज़ नहीं आ रही, network issue है
+bahut dino baad mile hain hum	बहुत दिनों बाद मिले हैं हम
+paise transfer kar diye hain, check kar lo	पैसे transfer कर दिए हैं, check कर लो
+abhi to party shuru hui hai	अभी तो party शुरू हुई है
+mujhe neend aa rahi hai	मुझे नींद आ रही है
+kya aap meri madad kar sakte hain	क्या आप मेरी मदद कर सकते हैं
+is road par bahut traffic rehta hai	इस road पर बहुत traffic रहता है
+dil se thank you bolna chahta hoon	दिल से thank you बोलना चाहता हूँ
+wo ladki bahut smart hai	वो लड़की बहुत smart है
+ghar pe sab kaise hain	घर पे सब कैसे हैं
+ticket book ho gaya kya	ticket book हो गया क्या
+mere dost ki shaadi hai agle mahine	मेरे दोस्त की शादी है अगले महीने
+itni raat ko kahan ja rahe ho	इतनी रात को कहाँ जा रहे हो
+laptop slow chal raha hai	laptop slow चल रहा है
+sach bolo, tumne kiya tha na	सच बोलो, तुमने किया था ना
+aaj lunch me kya banaya hai	आज lunch में क्या बनाया है
+chalo phir milte hain	चलो फिर मिलते हैं
+i was thinking ki hum kal milte hain	i was thinking कि हम कल मिलते हैं
+bus stand par milna, main wahi hoon	bus stand पर मिलना, मैं वही हूँ
+bas itna hi kaam tha	बस इतना ही काम था
+he said ki wo nahi aayega	he said कि वो नहीं आएगा
+main road par accident ho gaya	main road पर accident हो गया
+to phir kya socha tumne	तो फिर क्या सोचा तुमने
+what to do yaar, kuch samajh nahi aa raha	what to do यार, कुछ समझ नहीं आ रहा
+is week me do exam hain	इस week में दो exam हैं
+this is the best day of my life	this is the best day of my life
+us din ke baad wo kabhi nahi mila	उस दिन के बाद वो कभी नहीं मिला
+tell us the truth please	tell us the truth please
+mere man me ek sawal hai	मेरे मन में एक सवाल है
+that man is very rude	that man is very rude
+door khol do, bahar thand hai	door खोल दो, बाहर ठंड है
+ghar yahan se kitna door hai	घर यहाँ से कितना दूर है
+ye pen use karo, wo kharab hai	ये pen use करो, वो ख़राब है
+maine use sab bata diya	मैंने उसे सब बता दिया
+so jao, bahut raat ho gayi	सो जाओ, बहुत रात हो गई
+so sweet of you, thank you	so sweet of you, thank you
+in logo ko kaun samjhaye	इन लोगों को कौन समझाए
+are you coming ya nahi	are you coming या नहीं
+are bhai, itni jaldi kya hai	अरे भाई, इतनी जल्दी क्या है
+exam pass ho gaya main	exam pass हो गया मैं
+mere pass paise nahi hain	मेरे पास पैसे नहीं हैं
+me and my brother ghar par hain	me and my brother घर पर हैं
+hi guys, kaise ho sab	hi guys, कैसे हो सब
+wo log late aaye the party me	वो लोग late आए थे party में
+log out kar do account se	log out कर दो account से
+do you know uska naam	do you know उसका नाम
+hum the wahan, tumne dekha nahi	हम थे वहाँ, तुमने देखा नहीं
+police ne chor ko pakad liya	police ने चोर को पकड़ लिया
+school ki fees bahut badh gayi hai	school की fees बहुत बढ़ गई है
+mera time kharab chal raha hai	मेरा time ख़राब चल रहा है
+company ne bonus diya is saal	company ने bonus दिया इस साल
+film bahut lambi thi lekin acchi thi	film बहुत लंबी थी लेकिन अच्छी थी
+please door band kar dena	please door बंद कर देना
+kal team lunch hai office me	कल team lunch है office में
+tumhara number kya hai	तुम्हारा number क्या है
+main bus se aaunga	मैं bus से आऊँगा
+it is what it is, chhodo yaar	it is what it is, छोड़ो यार

@@ -1,0 +1,361 @@
+# Danish. espeak-ng voice "da". Letter rules for words outside the
+# word table, the number words and the letter names.
+
+[meta]
+tag = da
+vowels = a e i o u y œ ɛ ɔ ə ɪ ʊ ɑ ɐ ɜ ʌ ɒ
+stress = initial
+secondary = none
+spell-vowels = aeiouyæøå
+
+[classes]
+V = a e i o u y æ ø å
+
+[pre]
+å -> ɔ
+æ -> ε
+ø -> ø
+ng -> ŋ
+nd -> n / _ #
+ld -> l / _ #
+hv -> v
+hj -> j
+g -> ɡ
+c -> s / _ e | _ i
+c -> k
+x -> ks
+z -> s
+w -> v
+r -> ʁ
+v -> ʋ
+
+[words]
+nul# nˈɒl
+et# ˈeːn
+to# tˈo
+tre# tʁˈʔe
+fire# fˈiʌ
+fem# fˈεm
+seks# sˈεɡs
+syv# sˈʔyw
+otte# ˈɒɒdə
+ni# nˈʔi
+ti# tˈʔi
+elleve# ˈεlʋə
+tolv# tˈʌl
+tretten# tʁˈ?adən
+fjorten# fjˈoɐ̯dən
+femten# fˈɛmdən
+seksten# sˈɑjsdən
+sytten# sˈʔœdən
+atten# ˈadən
+nitten# nˈʔedən
+tyve# tˈyːʔu
+enogtyve# ˈeːnʌtˈyːʔu
+toogtyve# tˈoʌtˈyːʔu
+treogtyve# tʁˈʔeʌtˈyːʔu
+fireogtyve# fˈiʌʌtˈyːʔu
+femogtyve# fˈεmʌtˈyːʔu
+seksogtyve# sˈεɡsʌtˈyːʔu
+syvogtyve# sˈʔywʌtˈyːʔu
+otteogtyve# ˈɒɒdəʌtˈyːʔu
+niogtyve# nˈʔiʌtˈyːʔu
+tredive# tɾˈ?aðʋə
+enogtredive# ˈeːnʌtɾˈ?aðʋə
+toogtredive# tˈoʌtɾˈ?aðʋə
+treogtredive# tʁˈʔeʌtɾˈ?aðʋə
+fireogtredive# fˈiʌʌtɾˈ?aðʋə
+femogtredive# fˈεmʌtɾˈ?aðʋə
+seksogtredive# sˈεɡsʌtɾˈ?aðʋə
+syvogtredive# sˈʔywʌtɾˈ?aðʋə
+otteogtredive# ˈɒɒdəʌtɾˈ?aðʋə
+niogtredive# nˈʔiʌtɾˈ?aðʋə
+fyrre# fˈʔœʌ
+enogfyrre# ˈeːnʌfˈʔœʌ
+toogfyrre# tˈoʌfˈʔœʌ
+treogfyrre# tʁˈʔeʌfˈʔœʌ
+fireogfyrre# fˈiʌʌfˈʔœʌ
+femogfyrre# fˈεmʌfˈʔœʌ
+seksogfyrre# sˈεɡsʌfˈʔœʌ
+syvogfyrre# sˈʔywʌfˈʔœʌ
+otteogfyrre# ˈɒɒdəʌfˈʔœʌ
+niogfyrre# nˈʔiʌfˈʔœʌ
+halvtreds# haltɾˈεs
+enoghalvtreds# ˈeːnʌhaltɾˈεs
+tooghalvtreds# tˈoʌhaltɾˈεs
+treoghalvtreds# tʁˈʔeʌhaltɾˈεs
+fireoghalvtreds# fˈiʌˌʌhaltɾˈεs
+femoghalvtreds# fˈεmʌhaltɾˈεs
+seksoghalvtreds# sˈεɡsʌhaltɾˈεs
+syvoghalvtreds# sˈʔywʌhaltɾˈεs
+otteoghalvtreds# ˈɒɒdəˌʌhaltɾˈεs
+nioghalvtreds# nˈʔiʌhaltɾˈεs
+tres# tɾˈɛs
+enogtres# ˈeːnʌtɾˈɛs
+toogtres# tˈoʌtɾˈɛs
+treogtres# tʁˈʔeʌtɾˈɛs
+fireogtres# fˈiʌʌtɾˈɛs
+femogtres# fˈεmʌtɾˈɛs
+seksogtres# sˈεɡsʌtɾˈɛs
+syvogtres# sˈʔywʌtɾˈɛs
+otteogtres# ˈɒɒdəʌtɾˈɛs
+niogtres# nˈʔiʌtɾˈɛs
+halvfjerds# halfjˈεɐ̯s
+enoghalvfjerds# ˈeːnʌhalfjˈεɐ̯s
+tooghalvfjerds# tˈoʌhalfjˈεɐ̯s
+treoghalvfjerds# tʁˈʔeʌhalfjˈεɐ̯s
+fireoghalvfjerds# fˈiʌˌʌhalfjˈεɐ̯s
+femoghalvfjerds# fˈεmʌhalfjˈεɐ̯s
+seksoghalvfjerds# sˈεɡsʌhalfjˈεɐ̯s
+syvoghalvfjerds# sˈʔywʌhalfjˈεɐ̯s
+otteoghalvfjerds# ˈɒɒdəˌʌhalfjˈεɐ̯s
+nioghalvfjerds# nˈʔiʌhalfjˈεɐ̯s
+firs# fˈiɐ̯s
+enogfirs# ˈeːnʌfˈiɐ̯s
+toogfirs# tˈoʌfˈiɐ̯s
+treogfirs# tʁˈʔeʌfˈiɐ̯s
+fireogfirs# fˈiʌʌfˈiɐ̯s
+femogfirs# fˈεmʌfˈiɐ̯s
+seksogfirs# sˈεɡsʌfˈiɐ̯s
+syvogfirs# sˈʔywʌfˈiɐ̯s
+otteogfirs# ˈɒɒdəʌfˈiɐ̯s
+niogfirs# nˈʔiʌfˈiɐ̯s
+halvfems# halfˈɛms
+enoghalvfems# ˈeːnʌhalfˈɛms
+tooghalvfems# tˈoʌhalfˈɛms
+treoghalvfems# tʁˈʔeʌhalfˈɛms
+fireoghalvfems# fˈiʌˌʌhalfˈɛms
+femoghalvfems# fˈεmʌhalfˈɛms
+seksoghalvfems# sˈεɡsʌhalfˈɛms
+syvoghalvfems# sˈʔywʌhalfˈɛms
+otteoghalvfems# ˈɒɒdəˌʌhalfˈɛms
+nioghalvfems# nˈʔiʌhalfˈɛms
+hundrede# ed
+hundrede2# hˈunʁʌːð
+hundredev22# hˈunʁʌːðʌ
+tohundrede# tˈohˈunʁʌð
+tohundredev2# tˈohˈunʁʌðʌ
+trehundrede# tʁˈʔehˈunʁʌð
+trehundredev2# tʁˈʔehˈunʁʌðʌ
+firehundrede# fˈiʌhˈunʁʌð
+firehundredev2# fˈiʌhˈunʁʌðʌ
+femhundrede# fˈεmhˈunʁʌð
+femhundredev2# fˈεmhˈunʁʌðʌ
+sekshundrede# sˈεɡshˈunʁʌð
+sekshundredev2# sˈεɡshˈunʁʌðʌ
+syvhundrede# sˈʔywhˈunʁʌð
+syvhundredev2# sˈʔywhˈunʁʌðʌ
+ottehundrede# ˈɒɒdəhˈunʁʌð
+ottehundredev2# ˈɒɒdəhˈunʁʌðʌ
+nihundrede# nˈʔihˈunʁʌð
+nihundredev2# nˈʔihˈunʁʌðʌ
+hundredev2# hˈunʁʌːð
+and# ʌ
+tusind# ed
+tusind2# tˈʔusən
+tusindv2# tˈʔusən
+enmillion# ˈeːn
+enmillion2# milijˈoːn
+millioner# milijˈoːnʌ
+komma# kˌʌmaa
+procent# pʁosˈɛnd
+
+[numbers]
+decimal comma
+point komma#
+minus minus
+percent procent#
+one-before-scale no
+0 nul#
+1 et#
+2 to#
+3 tre#
+4 fire#
+5 fem#
+6 seks#
+7 syv#
+8 otte#
+9 ni#
+10 ti#
+11 elleve#
+12 tolv#
+13 tretten#
+14 fjorten#
+15 femten#
+16 seksten#
+17 sytten#
+18 atten#
+19 nitten#
+20 tyve#
+21 enogtyve#
+22 toogtyve#
+23 treogtyve#
+24 fireogtyve#
+25 femogtyve#
+26 seksogtyve#
+27 syvogtyve#
+28 otteogtyve#
+29 niogtyve#
+30 tredive#
+31 enogtredive#
+32 toogtredive#
+33 treogtredive#
+34 fireogtredive#
+35 femogtredive#
+36 seksogtredive#
+37 syvogtredive#
+38 otteogtredive#
+39 niogtredive#
+40 fyrre#
+41 enogfyrre#
+42 toogfyrre#
+43 treogfyrre#
+44 fireogfyrre#
+45 femogfyrre#
+46 seksogfyrre#
+47 syvogfyrre#
+48 otteogfyrre#
+49 niogfyrre#
+50 halvtreds#
+51 enoghalvtreds#
+52 tooghalvtreds#
+53 treoghalvtreds#
+54 fireoghalvtreds#
+55 femoghalvtreds#
+56 seksoghalvtreds#
+57 syvoghalvtreds#
+58 otteoghalvtreds#
+59 nioghalvtreds#
+60 tres#
+61 enogtres#
+62 toogtres#
+63 treogtres#
+64 fireogtres#
+65 femogtres#
+66 seksogtres#
+67 syvogtres#
+68 otteogtres#
+69 niogtres#
+70 halvfjerds#
+71 enoghalvfjerds#
+72 tooghalvfjerds#
+73 treoghalvfjerds#
+74 fireoghalvfjerds#
+75 femoghalvfjerds#
+76 seksoghalvfjerds#
+77 syvoghalvfjerds#
+78 otteoghalvfjerds#
+79 nioghalvfjerds#
+80 firs#
+81 enogfirs#
+82 toogfirs#
+83 treogfirs#
+84 fireogfirs#
+85 femogfirs#
+86 seksogfirs#
+87 syvogfirs#
+88 otteogfirs#
+89 niogfirs#
+90 halvfems#
+91 enoghalvfems#
+92 tooghalvfems#
+93 treoghalvfems#
+94 fireoghalvfems#
+95 femoghalvfems#
+96 seksoghalvfems#
+97 syvoghalvfems#
+98 otteoghalvfems#
+99 nioghalvfems#
+100 hundrede# hundrede2#
+100+ hundrede# hundredev22#
+200 tohundrede#
+200+ tohundredev2#
+300 trehundrede#
+300+ trehundredev2#
+400 firehundrede#
+400+ firehundredev2#
+500 femhundrede#
+500+ femhundredev2#
+600 sekshundrede#
+600+ sekshundredev2#
+700 syvhundrede#
+700+ syvhundredev2#
+800 ottehundrede#
+800+ ottehundredev2#
+900 nihundrede#
+900+ nihundredev2#
+scale100 hundredev2#
+and-below-hundred and#
+1000 tusind# tusind2#
+1000+ tusind# tusind2#
+scale1000 tusindv2#
+scale1000+ tusindv2#
+1000000 enmillion# enmillion2#
+1000000+ enmillion# enmillion2#
+scale1000000 millioner#
+scale1000000+ millioner#
+
+[spell]
+a ˈa
+b bˈe
+c sˈe
+d dˈe
+e ˈʔe
+f ˈɛf
+g ɡˈe
+h hˈɒɒ
+i ˈi
+j jˈʌð
+k kˈɒɒ
+l ˈɛl
+m ˈɛm
+n ˈɛn
+o ˈo
+p pˈe
+q kˈu
+r ˈɛɐ̯
+s ˈes
+t tˈeː
+u ˈu
+v ʋˈe
+w dˈʌbeltʋˌeː
+x ˈɛks
+y ˈy
+z sˈɛt
+æ ˈε
+ø ˈœ
+å ˈɒ
+
+# Words without stress inside a clause and with stress at its end.
+[unstressed]
+om 0 p
+til 0 p
+med 0 p
+i 0 p
+dig 0 p
+os 0 p
+ved 0 p
+der 0 p
+jeg 0 p
+fra 0 p
+var 0 p
+har 0 p
+kan 0 p
+og 0 p
+vil 0 p
+dette 0 p
+skal 0 p
+havde s p
+is 0 p
+vel 0 p
+denne 0 p
+skulle 0 p
+hans 0 p
+disse 0 p
+din 0 p
+hendes 0 p
+må 0 p
+sin 0 p
+hvis 0 p
+sine 0 p
+bør 0 p

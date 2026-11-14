@@ -6,10 +6,10 @@
 import initWasm, * as wasm from "./dist/uccharan_wasm.js";
 import { PACKS } from "./packs.js";
 
-export const LANGUAGES = Object.freeze(["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag", "es", "de", "nl", "fr"]);
+export const LANGUAGES = Object.freeze(["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag", "es", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da"]);
 export const PROFILES = Object.freeze(["espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx"]);
 
-const ALIASES = { en: "en-us", "en-us": "en-us", "en-gb": "en-gb", "en-gb-x-rp": "en-gb", "en-uk": "en-gb", hi: "hi", "hi-in": "hi", bn: "bn", "bn-in": "bn", "bn-bd": "bn", mr: "mr", te: "te", ne: "ne", "ne-np": "ne", kn: "kn", ta: "ta", ml: "ml", as: "as", gu: "gu", bho: "bho", bhojpuri: "bho", mai: "mai", maithili: "mai", pa: "pa", "pa-in": "pa", or: "or", odia: "or", oriya: "or", kok: "kok", gom: "kok", konkani: "kok", si: "si", sinhala: "si", sa: "sa", sanskrit: "sa", ur: "ur", "ur-pk": "ur", urdu: "ur", sd: "sd", sindhi: "sd", mag: "mag", magahi: "mag", es: "es", "es-es": "es", spanish: "es", de: "de", "de-de": "de", deu: "de", german: "de", nl: "nl", "nl-nl": "nl", "nl-be": "nl", nld: "nl", dutch: "nl", fr: "fr", "fr-fr": "fr", fra: "fr", french: "fr" };
+const ALIASES = { en: "en-us", "en-us": "en-us", "en-gb": "en-gb", "en-gb-x-rp": "en-gb", "en-uk": "en-gb", hi: "hi", "hi-in": "hi", bn: "bn", "bn-in": "bn", "bn-bd": "bn", mr: "mr", te: "te", ne: "ne", "ne-np": "ne", kn: "kn", ta: "ta", ml: "ml", as: "as", gu: "gu", bho: "bho", bhojpuri: "bho", mai: "mai", maithili: "mai", pa: "pa", "pa-in": "pa", or: "or", odia: "or", oriya: "or", kok: "kok", gom: "kok", konkani: "kok", si: "si", sinhala: "si", sa: "sa", sanskrit: "sa", ur: "ur", "ur-pk": "ur", urdu: "ur", sd: "sd", sindhi: "sd", mag: "mag", magahi: "mag", es: "es", "es-es": "es", spanish: "es", de: "de", "de-de": "de", deu: "de", german: "de", nl: "nl", "nl-nl": "nl", "nl-be": "nl", nld: "nl", dutch: "nl", fr: "fr", "fr-fr": "fr", fra: "fr", french: "fr", it: "it", "it-it": "it", ita: "it", italian: "it", "pt-br": "pt-br", "por-br": "pt-br", brazilian: "pt-br", pt: "pt", "pt-pt": "pt", por: "pt", portuguese: "pt", pl: "pl", "pl-pl": "pl", pol: "pl", polish: "pl", tr: "tr", "tr-tr": "tr", tur: "tr", turkish: "tr", cs: "cs", "cs-cz": "cs", ces: "cs", cze: "cs", czech: "cs", sv: "sv", "sv-se": "sv", swe: "sv", swedish: "sv", ca: "ca", "ca-es": "ca", cat: "ca", catalan: "ca", ro: "ro", "ro-ro": "ro", ron: "ro", rum: "ro", romanian: "ro", hu: "hu", "hu-hu": "hu", hun: "hu", hungarian: "hu", fi: "fi", "fi-fi": "fi", fin: "fi", finnish: "fi", nb: "nb", "nb-no": "nb", no: "nb", nob: "nb", nor: "nb", norwegian: "nb", da: "da", "da-dk": "da", dan: "da", danish: "da" };
 const isNode = typeof process !== "undefined" && process.versions != null && process.versions.node != null && typeof window === "undefined";
 
 let ready = null;
@@ -17,8 +17,8 @@ let wasmReady = false;
 let dataBase = new URL("./data/", import.meta.url);
 const loading = new Map();
 // Latin-script languages read Latin text themselves.
-const LATIN = new Set(["es", "de", "nl", "fr"]);
-const WORD_TABLES = new Set(["ur", "sd", "de", "nl", "fr"]);
+const LATIN = new Set(["es", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da"]);
+const WORD_TABLES = new Set(["ur", "sd", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da"]);
 const tablesLoaded = new Set();
 
 function canonical(lang) {
@@ -300,6 +300,83 @@ export async function normalize(text, options = {}) {
 export function normalizeSync(text, options = {}) {
   if (!wasmReady) throw new Error("uccharan is not initialised: await init() and loadLanguage() first");
   return normalizeRun(text, options);
+}
+
+// Romanised text into native script.
+
+/**
+ * Load the transliteration pack of a language (`xlit-hi`, `xlit-mr`,
+ * `xlit-bn`, `xlit-ta`, `xlit-te`, `xlit-gu`, `xlit-pa`, `xlit-kn`,
+ * `xlit-ml`). These packs are trained on the Dakshina and Aksharantar word
+ * pairs and are under CC BY-SA 4.0, not Apache-2.0, so they are not in this
+ * package and never fetched automatically: download the file from the
+ * GitHub release, then pass its bytes, or place it in the data directory
+ * (see `init`). Files from the data directory are checked by SHA-256.
+ */
+export async function loadTranslit(lang, bytes) {
+  const key = `xlit-${canonical(lang)}`;
+  await init();
+  wasmReady = true;
+  if (bytes) {
+    wasm.loadPack(bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes));
+    return;
+  }
+  if (!loading.has(key)) {
+    loading.set(key, readPack(key).then((b) => wasm.loadPack(b)));
+  }
+  await loading.get(key);
+}
+
+/** True when the transliteration pack of the language is loaded. */
+export function hasTranslit(lang) {
+  return wasmReady && wasm.hasTranslit(canonical(lang));
+}
+
+function transliterateRun(text, o) {
+  const lang = canonical(o.lang ?? "hi");
+  const opts = { english: o.english ?? "keep", alternatives: o.alternatives ?? 3, context: o.context !== false };
+  const r = JSON.parse(wasm.transliterateJson(text, lang, JSON.stringify(opts)));
+  return {
+    text: r.text,
+    pack: wasm.hasTranslit(lang),
+    spans: r.spans.map((s) => ({
+      kind: s.kind,
+      start: s.src.utf16[0],
+      end: s.src.utf16[1],
+      outStart: s.out.utf16[0],
+      outEnd: s.out.utf16[1],
+      text: s.text,
+      written: s.written,
+      src: s.src,
+      out: s.out,
+      alternatives: s.alternatives ?? [],
+    })),
+  };
+}
+
+/**
+ * Write the romanised words of `text` in the script of `options.lang`
+ * (default `hi`): "aap kaise ho" → "आप कैसे हो". English words stay as they
+ * are (`english: "keep"`), are respelled in the script (`"native"`), or no
+ * language decision is made (`"convert"`). Spans carry UTF-16 offsets into
+ * `text` and the alternatives of each word. Uses the language's pack when
+ * `loadTranslit` has loaded it (`pack` in the result); otherwise a plain
+ * rule converter answers.
+ */
+export async function transliterate(text, options = {}) {
+  await init();
+  wasmReady = true;
+  const lang = canonical(options.lang ?? "hi");
+  const langs = new Set([lang, "en-gb"]);
+  if (["bho", "mai", "mag"].includes(lang)) langs.add("hi");
+  await Promise.all([...langs].map((l) => loadLanguage(l).catch(() => {})));
+  return transliterateRun(text, options);
+}
+
+/** Synchronous variant of `transliterate`; the needed data must be loaded. */
+export function transliterateSync(text, options = {}) {
+  if (!wasmReady) throw new Error("uccharan is not initialised: await init() and loadLanguage() first");
+  return transliterateRun(text, options);
 }
 
 /** Respell IPA for a text voice reading `lang`; null when no writer exists. */

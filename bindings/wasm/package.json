@@ -1,7 +1,7 @@
 {
   "name": "uccharan",
-  "version": "0.3.0",
-  "description": "Drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices: 5× faster than espeak-ng, Apache-2.0.",
+  "version": "0.4.0",
+  "description": "Phonemiser, text normaliser, transliterator and pronunciation engine for text-to-speech and speech recognition: 39 languages, Apache-2.0.",
   "license": "Apache-2.0",
   "author": "Abhinav Gautam <abhinav@codebuckets.in>",
   "homepage": "https://cb-sigma.github.io/uccharan/",
@@ -15,8 +15,13 @@
     "g2p",
     "phonemizer",
     "tts",
+    "asr",
+    "text-normalization",
+    "transliteration",
+    "pronunciation",
     "ipa",
     "hindi",
+    "hinglish",
     "wasm",
     "piper",
     "kokoro",
@@ -51,7 +56,7 @@
   },
   "scripts": {
     "build": "node build.mjs",
-    "test": "node --test test/node.test.mjs test/textnorm.test.mjs test/soundalike.test.mjs"
+    "test": "node --test test/node.test.mjs test/textnorm.test.mjs test/soundalike.test.mjs test/translit.test.mjs"
   },
   "publishConfig": {
     "access": "public",

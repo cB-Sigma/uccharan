@@ -1,0 +1,243 @@
+{
+ "language": "fi",
+ "reference": "espeak-ng 1.52.0 voice fi (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 163613,
+  "per": 0.01642901236454316,
+  "per_without_stress": 0.012950584032264817,
+  "exact_sentence": 0.28952569169960474,
+  "exact_sentence_without_stress": 0.37351778656126483,
+  "piper_shape_per": 0.016459739633558342,
+  "piper_shape_exact_sentence": 0.283596837944664,
+  "word_count_mismatch_sentences": 162,
+  "errors_by_class": {
+   "consonant": {
+    "count": 993,
+    "share": 0.36941964285714285,
+    "per_contribution": 0.006069199880205118
+   },
+   "stress": {
+    "count": 853,
+    "share": 0.31733630952380953,
+    "per_contribution": 0.005213522152885162
+   },
+   "vowel": {
+    "count": 425,
+    "share": 0.15811011904761904,
+    "per_contribution": 0.0025975931007927245
+   },
+   "length": {
+    "count": 159,
+    "share": 0.05915178571428571,
+    "per_contribution": 0.0009718054188848074
+   },
+   "other": {
+    "count": 154,
+    "share": 0.057291666666666664,
+    "per_contribution": 0.0009412455000519518
+   },
+   "word-boundary": {
+    "count": 104,
+    "share": 0.03869047619047619,
+    "per_contribution": 0.000635646311723396
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "n→m",
+    "count": 417
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 362
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 253
+   },
+   {
+    "edit": "ː→∅",
+    "count": 135
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 117
+   },
+   {
+    "edit": "ɪ→i",
+    "count": 99
+   },
+   {
+    "edit": "n→ŋ",
+    "count": 82
+   },
+   {
+    "edit": " →∅",
+    "count": 63
+   },
+   {
+    "edit": "s→∅",
+    "count": 53
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 49
+   },
+   {
+    "edit": "∅→ ",
+    "count": 41
+   },
+   {
+    "edit": "∅→n",
+    "count": 40
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 39
+   },
+   {
+    "edit": "∅→l",
+    "count": 35
+   },
+   {
+    "edit": "l→∅",
+    "count": 34
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 32
+   },
+   {
+    "edit": "t→∅",
+    "count": 32
+   },
+   {
+    "edit": "h→∅",
+    "count": 32
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 31
+   },
+   {
+    "edit": "∅→o",
+    "count": 31
+   },
+   {
+    "edit": "v→∅",
+    "count": 30
+   },
+   {
+    "edit": "m→∅",
+    "count": 27
+   },
+   {
+    "edit": "∅→ː",
+    "count": 24
+   },
+   {
+    "edit": "n→∅",
+    "count": 24
+   },
+   {
+    "edit": "a→∅",
+    "count": 23
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 13273,
+    "wrong": 1025,
+    "rate": 0.07722444059368642
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 196,
+    "per": 0.03258510176460073,
+    "exact_sentence": 0.18877551020408162
+   },
+   "no-digits": {
+    "sentences": 816,
+    "per": 0.01134555739470005,
+    "exact_sentence": 0.3137254901960784
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-796",
+    "text": "Muista, että päälavojen musiikkiesitysten päätyttyäkin festivaaleilla saattaa olla paikkoja, joissa musiikin soittaminen jatkuu myöhään yöhön.",
+    "reference": "mˈuista ˈetːæ pˈæːlavojen mˈusɪːkːˌiesɪtˌystem pˈæːtytːˌyækɪn fˈestɪvˌaːleilla sˈaːtːaː ˌolla pːˈaikːoja jˌoissa mˈusɪːkɪn sˈoitːamɪnen jˈatkuː mˈyøhæːn ˈyøhøn",
+    "uccharan": "mˈuista ˈetːæ pˈæːlavojem mˈusɪːkːˌiesɪtˌystem pˈæːtytːyækɪn fˈestɪvˌaːleilla sˈaːtːaː ˌolla pˈaikːoja jˌoissa mˈusɪːkɪn sˈoitːamɪnen jˈatkuː mˈyøhæːn ˈyøhøn"
+   },
+   {
+    "id": "flores-devtest-321",
+    "text": "Tommy Dreamer sanoi: \"Luna oli ensimmäinen äärimmäisyyksien kuningatar. Ensimmäinen managerini. Luna menehtyi kahden kuun yönä. Aika ainutlaatuinen tapaus niin kuin hän itsekin. Vahva nainen.\"",
+    "reference": "tˈommy drˈeamer sˈanoi lˈuna ˌolɪ ˈensɪmmˌæinen ˈæːrɪmmˌæisyːksieŋ kˈunɪŋŋatar ˈensɪmmˌæinen mˈanaɡˌerɪnɪ lˈuna mˈenehtyi kˈahdeŋ kˈuːn ˈyønæ ˈaika ˈainutlˌaːtuinen tˈapaus nˈiːŋ kˈuin hæn ˈitsekɪn vˈahva nˈainen",
+    "uccharan": "tˈommy drˈeamer sˈanoi lˈuna ˌolɪ ˈensɪmmˌæinen ˈæːrɪmmˌæisyːksieŋ kˈunɪŋŋatar ˈensɪmmˌæinem mˈanaɡerˌinɪ lˈuna mˈenehtyi kˈahdeŋ kˈuːn ˈyønæ ˈaika ˈainutlˌaːtuinen tˈapaus nˈiːŋ kˈuin hæn ˈitsekɪn vˈahva nˈainen"
+   },
+   {
+    "id": "flores-devtest-963",
+    "text": "Plitvicen kansallispuistossa on paljon metsää, pääosassa pyökkejä, kuusia ja mäntyjä, ja sen kasvillisuus on sekoitus Alppien ja Välimeren kasveja.",
+    "reference": "plˈitvɪseŋ kˈansallˌispuistˌossa om pˈaljon mˈetsæː pˈæːosˌassa pˈyøkːejæ kˈuːsɪa ja mˈæntyjæ ja sˈeŋ kˈasvɪllɪsuːs on sˈekoitus ˈalpːien ja vˈælɪmereŋ kˈasveja",
+    "uccharan": "plˈɪtviseŋ kˈansallˌispuistˌossa om pˈaljom mˈetsæː pˈæːosˌassa pˈyøkːejæ kˈuːsɪa ja mˈæntyjæ ja sˈeŋ kˈasvɪllɪsuːs on sˈekoitus ˈalpːien ja vˈælɪmereŋ kˈasveja"
+   },
+   {
+    "id": "flores-devtest-623",
+    "text": "Tuhansia vuosia sitten muuan mies nimeltä Aristarkhos sanoi aurinkokunnan kiertävän aurinkoa.",
+    "reference": "tˈuhansˌia vˈuosɪa sˈitːen mˈuːan mˈies nˈimeltæ ˈarɪstˌarkhos sˈanoi ˈaurɪŋkokˌunnaŋ kˈiertævæn ˈaurɪŋkˌoa",
+    "uccharan": "tˈuhansˌia vˈuosɪa sˈitːem mˈuːam mˈies nˈimeltæ ˈarɪstˌarkhos sˈanoi ˈaurɪŋkokˌunnaŋ kˈiertævæn ˈaurɪŋkˌoa"
+   },
+   {
+    "id": "flores-devtest-729",
+    "text": "Hongkongin siluetin muodostavaa rakennusten kulkuetta on verrattu kimaltavaan pylväskaavioon, joka tulee parhaiten ilmi Victorian sataman vedessä.",
+    "reference": "hˈoŋkoŋŋɪn sˈiluetɪn mˈuodostavaː rˈakennˌusteŋ kˈulkuˌetːa on vˈerratːu kˈimaltavaːm pˈylvæskˌaːvɪoːn jˌoka tˈuleː pˈarhaiten ˈilmɪ vˈiktorɪan sˈataman vˈedessæ",
+    "uccharan": "hˈoŋkoŋŋɪn sˈɪluetɪm mˈuodostavaː rˈakennˌusteŋ kˈulkuˌetːa on vˈerratːu kˈimaltavaːm pˈylvæskaːvɪoːn jˌoka tˈuleː pˈarhaiten ˈilmɪ vˈiktorɪan sˈataman vˈedessæ"
+   },
+   {
+    "id": "flores-devtest-253",
+    "text": "Teitä on vaurioitunut, junaliikenne on keskeytetty katastrofialueella ja Ishikawan prefektuurissa sijaitseva Noton lentoasema pysyy suljettuna.",
+    "reference": "tˈeitæ on vˈaurɪˌoitunut jˈunalˌiːkenne oŋ kˈeskeytˌetːy kˈatastrofɪaluˌeːlla ja ˈishɪkavam prˈefektˌuːrɪssa sˈijaitsˌeva nˈoton lˈentoˌasema pˈysyː sˈuljetːˌuna",
+    "uccharan": "tˈeitæ on vˈaurɪˌoitunut jˈunalˌiːkenne oŋ kˈeskeytˌetːy kˈatastrˌofɪaluˌeːlla ja ˈishɪkˌavam prˈefektˌuːrissa sˈijaitsˌeva nˈoton lˈentoˌasema pˈysyː sˈuljetːˌuna"
+   },
+   {
+    "id": "flores-devtest-809",
+    "text": "Kansanomaisesti sana safari viittaa maateitse matkustamiseen, jonka tarkoituksena on katsella Afrikan upeaa eläimistöä, erityisesti savannilla.",
+    "reference": "kˈansanomˌaisestɪs sˈana sˈafarɪ vˈiːtːaː mˈaːteitsem mˈatkustˌamɪseːn jˌoŋka tˈarkoitˌuksena oŋ kˈatsella ˈafrɪkan ˈupeaː ˈelæimˌistøæ ˈerɪtˌyisestɪs sˈavannɪlla",
+    "uccharan": "kˈansanomˌaisestɪ sˈana sˈafarɪ vˈiːtːaː mˈaːteitse mˈatkustˌamɪseːn jˌoŋka tˈarkoitˌuksena oŋ kˈatsella ˈafrɪkan ˈupeaː ˈelæimˌistøæ ˈerɪtˌyisestɪ sˈavannɪlla"
+   },
+   {
+    "id": "flores-devtest-298",
+    "text": "Martelly tunnusti yhdeksän jäsentä eilisessä väliaikaisen vaalineuvoston (CEP) kokouksessa.",
+    "reference": "mˈartelly tˈunnustɪ ˈyhdeksæn jˈæsentæ ˈeilɪsˌessæ vˈælɪˌaikaisen vˈaːlɪnˌeuvoston sˈeːˌeːpˌeː kˈokouksˌessa",
+    "uccharan": "mˈartelly tˈunnustɪ ˈyhdeksæn jˈæsentæ ˈeilɪsˌessæ vˈælɪˌaikaisen vˈaːlɪnˌeuvoston sˌeːˌeːpˈeː kˈokouksˌessa"
+   },
+   {
+    "id": "flores-devtest-274",
+    "text": "Keskiviikon kilpailun ohella Carpanedo osallistui kahteen muuhun MM-kisojen yksilökilpailuun.",
+    "reference": "kˈeskɪvˌiːkoŋ kˈilpailun ˈohella kˈarpanˌedo ˈosallˌistui kˈahteːn mˈuːhun ˈæmˌæmkˈisojen ˈyksɪløkˌilpailuːn",
+    "uccharan": "kˈeskɪvˌiːkoŋ kˈilpailun ˈohella kˈarpanedo ˈosallˌistui kˈahteːm mˈuːhun ˈæmˌæmkˈisojen ˈyksɪløkˌilpailuːn"
+   },
+   {
+    "id": "flores-devtest-418",
+    "text": "Artiklojen muuttaminen vaati kaikkien osavaltioiden yksimielisen hyväksynnän, ja osavaltiot suhtautuivat keskushallintoon niin yliolkaisesti, että usein niiden edustajat eivät olleet paikalla.",
+    "reference": "ˈartɪklojen mˈuːtːamɪnen vˈaːtɪ kˈaikːien ˈosavˌaltɪˌoiden ˈyksɪmˌielɪsen hˈyvæksˌynnæn ja ˈosavˌaltɪot sˈuhtautˌuivat kˈeskushˌallɪntoːn nˈiːn ˈylɪˌolkaisˌestɪ ˈetːæ ˈusein nˈiːden ˈedustajat ˌeivæt ˌolleːt pˈaikalla",
+    "uccharan": "ˈartɪklojem mˈuːtːamɪnen vˈaːtɪ kˈaikːien ˈosavˌaltɪˌoiden ˈyksɪmˌielɪsen hˈyvæksˌynnæn ja ˈosavˌaltɪot sˈuhtautˌuivat kˈeskushˌallɪntoːn nˈiːn ˈylɪolkˌaisestɪ ˈetːæ ˈusein nˈiːden ˈedustajat ˌeivæt ˌolleːt pˈaikalla"
+   },
+   {
+    "id": "flores-devtest-269",
+    "text": "Huhnen ja Prycen on määrä astua Westminsterin poliisituomioistuimen eteen 16. helmikuuta.",
+    "reference": "hˈuhnen ja prˈysen on mˈæːræ ˈastua vˈestmɪnsterɪm pˈolɪːsɪtˌuomɪˌoistuimen ˈeteːn kˈuːsitˌoista hˈelmɪkˌuːta",
+    "uccharan": "hˈuhnen ja prˈysen om mˈæːræ ˈastua vˈestmɪnsterɪm pˈolɪːsɪtˌuomɪˌoistuimen ˈeteːŋ kˈuːsitˌoista hˈelmɪkˌuːta"
+   },
+   {
+    "id": "flores-devtest-706",
+    "text": "Naisten tulisi ymmärtää, että kulttuurieroista voi aiheutua sellaista, mitä he saattavat kokea ahdisteluksi. Ei ole epätavallista, että joku lähtee seuraamaan perässä, tarttuu käsivarresta tms.",
+    "reference": "nˈaisten tˈulɪsɪ ˈymmærtæː ˈetːæ kˈultːuːrˌieroista vˈoi ˈaiheutˌua sˈellaista mˈitæ he sˈaːtːavat kˈokea ˈahdɪstelˌuksɪ ei ˌole ˈepætavˌallɪsta ˈetːæ jˈoku lˈæhteː sˈeuraːmaːm pˈeræssæ tˈartːuː kˈæsɪvˌarresta tˈeːˌæmˌæs",
+    "uccharan": "nˈaisten tˈulɪsɪ ˈymmærtæː ˈetːæ kˈultːuːrierˌoisˌia vˈoi ˈaiheutˌua sˈellaista mˈitæ he sˈaːtːavat kˈokea ˈahdɪstelˌuksɪ ei ˌole ˈepætavˌallɪsta ˈetːæ jˈoku lˈæhteː sˈeuraːmaːm pˈeræssæ tˈartːuː kˈæsɪvˌarresta tˈeːˌæmˌæs"
+   }
+  ]
+ }
+}

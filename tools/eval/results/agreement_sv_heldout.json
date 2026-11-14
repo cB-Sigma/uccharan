@@ -1,0 +1,243 @@
+{
+ "language": "sv",
+ "reference": "espeak-ng 1.52.0 voice sv (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 159056,
+  "per": 0.01508273815511518,
+  "per_without_stress": 0.011102350917431192,
+  "exact_sentence": 0.5869565217391305,
+  "exact_sentence_without_stress": 0.682806324110672,
+  "piper_shape_per": 0.015040814426270213,
+  "piper_shape_exact_sentence": 0.5810276679841897,
+  "word_count_mismatch_sentences": 164,
+  "errors_by_class": {
+   "stress": {
+    "count": 846,
+    "share": 0.3526469362234264,
+    "per_contribution": 0.005318881400261543
+   },
+   "vowel": {
+    "count": 552,
+    "share": 0.23009587328053355,
+    "per_contribution": 0.003470475807262851
+   },
+   "consonant": {
+    "count": 473,
+    "share": 0.19716548561900793,
+    "per_contribution": 0.002973795392817624
+   },
+   "other": {
+    "count": 366,
+    "share": 0.15256356815339725,
+    "per_contribution": 0.00230107635046776
+   },
+   "word-boundary": {
+    "count": 126,
+    "share": 0.05252188411838266,
+    "per_contribution": 0.0007921738255708681
+   },
+   "length": {
+    "count": 36,
+    "share": 0.015006252605252188,
+    "per_contribution": 0.00022633537873453376
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "∅→ˌ",
+    "count": 163
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 159
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 156
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 143
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 99
+   },
+   {
+    "edit": "∅→ ",
+    "count": 80
+   },
+   {
+    "edit": "∅→ɛ",
+    "count": 77
+   },
+   {
+    "edit": "ə→ɛ",
+    "count": 67
+   },
+   {
+    "edit": "∅→t",
+    "count": 66
+   },
+   {
+    "edit": "ɛ→ə",
+    "count": 64
+   },
+   {
+    "edit": "∅→n",
+    "count": 49
+   },
+   {
+    "edit": " →∅",
+    "count": 46
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 37
+   },
+   {
+    "edit": "∅→s",
+    "count": 37
+   },
+   {
+    "edit": "t→ː",
+    "count": 35
+   },
+   {
+    "edit": "∅→ɑ",
+    "count": 34
+   },
+   {
+    "edit": "∅→ʉ",
+    "count": 33
+   },
+   {
+    "edit": "a→ː",
+    "count": 33
+   },
+   {
+    "edit": "ɪ→i",
+    "count": 32
+   },
+   {
+    "edit": "ɔ→u",
+    "count": 32
+   },
+   {
+    "edit": "n→ː",
+    "count": 32
+   },
+   {
+    "edit": "t→∅",
+    "count": 29
+   },
+   {
+    "edit": "∅→e",
+    "count": 29
+   },
+   {
+    "edit": "ː→∅",
+    "count": 25
+   },
+   {
+    "edit": "ː→a",
+    "count": 23
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 16810,
+    "wrong": 398,
+    "rate": 0.023676383105294466
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 199,
+    "per": 0.0362087033257956,
+    "exact_sentence": 0.37185929648241206
+   },
+   "no-digits": {
+    "sentences": 813,
+    "per": 0.0088440803296578,
+    "exact_sentence": 0.6396063960639606
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-276",
+    "text": "I hennes andra lopp, storslalom, slutade hon på en tiondeplats i sittgruppen för kvinnor, med en kombinerad tid på 4:41,30. Det var 2:11,60 minuter långsammare än förstaplatsen med österrikiskan Claudia Loesch, och 1:09.02 minuter långsammare än niondeplatsen med ungerskan Gyöngyi Dani.",
+    "reference": "iː hˌɛnəs ˈandra lˈɔp stˈɔʂlalˌɔm slˈʉtadə hʊn poː ɛn sxˈɔndəplˌats iː sˈɪtɡrɵpən føːr kvˈɪnɔr meːd ɛn kɔmbˈiːneːrˌad tˈiːd poː fˈyːra fˌœrtɪˈɛt pˈɵŋkt trˈeː nˈɔl deːt vɑːr tvˈoː ˈɛlva pˈɵŋkt sˈɛks nˈɔl mˈiːnʉtər lˈɔŋsamˌarə ɛn fˈœʂtaplˌatsən meːd ˈœstərˌiːkɪskˌan klˈɑːʉdˌiːa lˈuːəʃ ɔk ˈɛt nˈɔl nˈiːuː pˈɵŋkt nˈɔl tvˈoː mˈiːnʉtər lˈɔŋsamˌarə ɛn nˈiːɔndˌɛplatsən meːd ˈɵŋəʂkˌan jyːˈœŋyːˌiː dˈaniː",
+    "uccharan": "iː hˌɛnəs ˈandra lˈɔp stˈɔʂlalˌɔm slˈʉtadə hʊn poː ɛn sxˈɔndəplˌats iː sˈɪtɡrɵpən føːr kvˈɪnɔr meːd ɛn kɔmbˈiːneːrˌad tˈiːd poː fˈyːra fˌœrtɪˈɛt pˈɵŋkt trˈeː nˈɔl deːt vɑːr tvˈoː ˈɛlva pˈɵŋkt sˈɛks nˈɔl mˈiːnʉtər lˈɔŋsamˌarə ɛn fˈœʂtaplˌatsən meːd ˈœstərˌiːkɪskˌan klˈɑːʉdˌiːa lˈuːəʃ ɔk ˈɛt nˈɔl nˈiːuː nˈɔl tvˈoː mˈiːnʉtər lˈɔŋsamˌarə ɛn nˈiːɔndəplˌatsən meːd ˈɵŋəʂkˌan jyːˈœŋˌyːiː dˈaniː"
+   },
+   {
+    "id": "flores-devtest-250",
+    "text": "NHK rapporterade även att kärnkraftverket Kashiwazaki Kariwa i Niigata-prefekturen fungerade normalt.",
+    "reference": "ˌɛnhˌoːkˈoː rˈapɔtˌeːradə ˈɛːvən at ɕˈɛrŋkraftvˌɛrkət kˈashiːvˌasakˌiː kˈariːvˌa iː nˈiːiːɡˌɑːtaprˈeːfəktˌʉrən fˈɵnɡeːrˌadə nˈɔrmɑːlt",
+    "uccharan": "ˌɛnhˌoːkˈoː rˈapɔtˌeːradə ˈɛːvən at ɕˈɛrŋkraftvˌɛrkət kˈashiːvˌɑːsakˌiː kˈariːvˌa iː nˈiːɪɡˌɑːtaprˈeːfəktˌʉrən fˈɵnɡeːrˌadə nˈɔrmɑːlt"
+   },
+   {
+    "id": "flores-devtest-59",
+    "text": "Liberal kritik av återuppbyggnadsarbetet har fokuserat på tilldelningen av återuppbyggnadskontrakt till förmodade Washington-insiderpersoner.",
+    "reference": "lˈiːbərˌal krˈɪtiːk ɑːv ˈoːtərˌɵpbyɡnˌadsarbˌeːtət hɑːr fˈuːkʉsˌeːrat poː tˈɪldeːlnˌɪŋən ɑːv ˈoːtərˌɵpbyɡnˌadskɔntrˌakt tɪl fˈœrmuːdˌadə vˈashɪŋtˌuːnˈɪnsiːdˌɛrpəʂˌuːnər",
+    "uccharan": "lˈiːbərˌal krˈɪtiːk ɑːv ˈoːtərˌɵpbyɡnˌadsarbˌeːtət hɑːr fˈuːkʉsˌeːrat poː tˈɪldeːlnˌɪŋən ɑːv ˈoːtərˌɵpbyɡnˌadskɔntrˌakt tɪl fˈœrmuːdˌadə vˈashɪŋtˌuːnˈɪnsiːdərpˌɛʂuːnər"
+   },
+   {
+    "id": "flores-devtest-27",
+    "text": "Turkiet skulle också ta över bevakningen av tillfångatagna ISIS-soldater som, enligt uttalandet, europeiska länder hade vägrat att skicka hem.",
+    "reference": "tˈɵrkiːət skˌɵlə ˈɔksoː tˈɑː ˈøːvər bˈɛvɑːknˌɪŋən ɑːv tˈɪlfɔŋˌatɑːŋnˌa ˈiːsiːssˈɔldatər sɔm ˈeːnlɪkt ˈɵtːalˌandət ˈeːʉrˌuːpəˌɪska lˈɛndər hˌadɛ vˈɛɡrɑːt at sxˈɪkːa hˈɛm",
+    "uccharan": "tˈɵrkiːət skˌɵlə ˈɔksoː tˈɑː ˈøːvər bˈɛvɑːknˌɪŋən ɑːv tˈɪlfɔŋˌatɑːŋnˌa iːˌɛsiːˈɛssˈɔldatər sɔm ˈeːnlɪkt ˈɵtːalˌandət ˈeːʉrˌuːpəˌɪska lˈɛndər hˌadɛ vˈɛɡrɑːt at sxˈɪkːa hˈɛm"
+   },
+   {
+    "id": "flores-devtest-121",
+    "text": "\"Hans tusende frimärke, som gjordes år 2000, visar den magnifika \"\"Svenska konungars berömlige bedrifter\"\" av David Klöcker Ehrenstrahl och är noterat i Guinness rekordbok.\"",
+    "reference": "hans tˈʉsəndə frˈiːmərkə sɔm jˈuːrdəs ˈoːr tvˈoː tˈʉsɛn vˈiːsar dɛn mˈaŋniːfˌiːka svˈɛnska kˈuːnɵŋˌaʂ bərˈœmliːjə bˈɛdrɪftər ɑːv dˈɑːviːd klˈœkːər ˈɛhrənstrˌahl ɔk ɛːr nˈuːteːrˌat iː ɡˈʉɪnˌɛs rəkˈoːrdbuːk",
+    "uccharan": "hans tˈʉsəndə frˈiːmərkə sɔm jˈuːrdəs ˈoːr tvˈoː tˈʉsɛn vˈiːsar dɛn mˈaŋniːfˌiːka svˈɛnska kˈuːnɵŋˌaʂ bərˈœmlˌɪjə bˈɛdrɪftər ɑːv dˈɑːviːd ˌɛlœkːˈər ˈɛhrənstrˌahl ɔk ɛːr nˈuːteːrˌat iː ɡˈʉɪnˌɛs rəkˈoːrdbuːk"
+   },
+   {
+    "id": "flores-devtest-472",
+    "text": "Den vettskrämde kung Ludvig XVI, drottning Marie Antoinette, deras två små barn (11-åriga Marie Therese och fyraårige Louis-Charles) och kungens syster, madam Élisabeth, tvingades den 6 oktober 1789 tillbaka till Paris från Versailles av en hop marknadskvinnor.",
+    "reference": "dɛn vˈɛtskrəmdə kˈɵŋ lˈɵdvɪɡ ˌɛksvˌeːˈiː drˈɔtnɪŋ marˈiː ˈantuːˌiːnətːə dˌeːras tvˈoː smˈoː bˈɑːrn ˈɛlvaˈoːriːɡˌa marˈiː thˈeːrəsə ɔk fˈyːraˌoːriːjə lˈuːʉˌiːsʃˈarləs ɔk kˈɵŋəns systˈeːr mˈɑːdam ˈeːliːsˌabəth tvˈɪŋadəs dɛn sˈɛks ˈɔktuːbər ˈɛt tˈʉsɛn sxˈʉhˈɵndra ˌɔtɪnˈiːuː tˈɪlbɑːkˌa tɪl pˈɑːriːs froːn vˈɛʂaˌɪləs ɑːv ɛn hˈuːp mˈarknadskvˌɪnɔr",
+    "uccharan": "dɛn vˈɛtskrɛmdə kˈɵŋ lˈɵdvɪɡ sˈɛkstɔn drˈɔtnɪŋ marˈiː ˈantuːˌiːnətːə dˌeːras tvˈoː smˈoː bˈɑːrn ˈɛlvaˈoːriːɡˌa marˈiː thˈeːrəsə ɔk fˈyːraˌoːriːjə lˈuːʉˌiːsʃˈarləs ɔk kˈɵŋəns systˈeːr mˈɑːdam ˈeːliːsˌabəth tvˈɪŋadəs dɛn sˈɛks ˈɔktuːbər ˈɛt tˈʉsɛn sxˈʉhˈɵndra ˌɔtɪnˈiːuː tˈɪlbɑːkˌa tɪl pˈɑːriːs froːn vˈɛʂaˌɪləs ɑːv ɛn hˈuːp mˈarknadskvˌɪnɔr"
+   },
+   {
+    "id": "flores-devtest-76",
+    "text": "Enligt den senaste bulletinen indikerade mätningar av havsnivån att en tsunami genererats. Det fanns klara tsunami-aktiviteter registrerade nära Pago Pago och Niue.",
+    "reference": "ˈeːnlɪkt dɛn sˈeːnastə bˌɵlətˈiːnən ˈɪndiːkərˌadə mˈɛtnɪŋˌar ɑːv hˈɑːvsniːvˌoːn at ɛn tsˈɵnamˌiː jənˈeːreːrˌats deːt fˈans klˈɑːra tsˈɵnamˌiːˈaktiːvˌiːteːtər rəjˈɪstreːrˌadə nˈɛːra pˈɑːɡuː pˈɑːɡuː ɔk nˈiːʉə",
+    "uccharan": "ˈeːnlɪkt dɛn sˈeːnastə bˈɵlətˌiːnən ˈɪndiːkərˌadə mˈɛtnɪŋˌar ɑːv hˈɑːvsniːvˌoːn at ɛn tsˈɵnamˌiː jənˈeːreːrˌats deːt fˈans klˈɑːra tsˈɵnamˌiːˈaktiːvˌiːteːtər rəjˈɪstreːrˌadə nˈɛːra pˈaɡuː pˈaɡuː ɔk nˈiːʉə"
+   },
+   {
+    "id": "flores-devtest-12",
+    "text": "En cocktail med antikroppar, ZMapp, såg till en början lovande ut inom fältet, men formella studier indikerade att den hade färre fördelar än förväntat för att förhindra dödsfall.",
+    "reference": "ɛn kˈɔktaˌiːl meːd ˈantɪkrˌɔpar sˈɛːta mˈap sˈoːɡ tɪl ɛn bˈœrjan lˈoːvandə ˈʉt ˈɪnɔm fˈɛltət mˈɛn fˈɔrməlˌa stˈʉdiːər ˈɪndiːkərˌadə at dɛn hˌadɛ fˈɛrə fˈøːrdəlˌar ɛn fˈœrvəntˌat føːr at fˈœrhɪndrˌa dˈœdsfal",
+    "uccharan": "ɛn kˈɔktaˌiːl meːd ˈantɪkrˌɔpar smˈap sˈoːɡ tɪl ɛn bˈœrjan lˈoːvandə ˈʉt ˈɪnɔm fˈɛltət mˈɛn fˈɔrməlˌa stˈʉdiːər ˈɪndiːkərˌadə at dɛn hˌadɛ fˈɛrə fˈøːrdəlˌar ɛn fˈœrvəntˌat føːr at fˈœrhɪndrˌa dˈœdsfal"
+   },
+   {
+    "id": "flores-devtest-254",
+    "text": "En bomb exploderade utanför generalguvernörens kontor.",
+    "reference": "ɛn bˈɔmb ˈɛkspluːdˌeːradə ˈʉtanfˌøːr jənˈeːralɡˌʉvərnˌøːrəns kɔntˈuːr",
+    "uccharan": "ɛn bˈɔmb ˈɛkspluːdˌeːradə ˈʉtanfˌøːr jənˈeːrˌalɡʉvərnˌøːrəns kɔntˈuːr"
+   },
+   {
+    "id": "flores-devtest-323",
+    "text": "Av 1 400 människor som tillfrågades innan det federala valet 2010 hade antalet som var emot att Australien skulle bli en republik vuxit med 8 procent sedan 2008.",
+    "reference": "ɑːv ˈɛt tˈʉsɛn fˈyːrahˈɵndra mˈɛnɪsxˌuːr sɔm tˈɪlfroːɡˌadəs ˈɪnan deːt fˈeːdeːrˌala vˈɑːlət tvˈoː tˈʉsɛn tˈiːuː hˌadɛ antˈɑːlət sɔm vɑːr ɛmˈuːt at ˈɔstralˌiːən skˌɵlə blˈiː ɛn rˈeːpɵblˌiːk vˈɵksiːt meːd ˈɔta prɔsˈɛnt sˈeːdan tvˈoː tˈʉsɛn ˈɔta",
+    "uccharan": "ɑːv ˈɛt fˈyːrahˈɵndra mˈɛnɪsxˌuːr sɔm tˈɪlfroːɡˌadəs ˈɪnan deːt fˈeːdeːrˌala vˈɑːlət tvˈoː tˈʉsɛn tˈiːuː hˌadɛ antˈɑːlət sɔm vɑːr ɛmˈuːt at ˈɔstralˌiːən skˌɵlə blˈiː ɛn rˈeːpɵblˌiːk vˈɵksiːt meːd ˈɔta prɔsˈɛnt sˈeːdan tvˈoː tˈʉsɛn ˈɔta"
+   },
+   {
+    "id": "flores-devtest-296",
+    "text": "I ett partnerskap mellan NPWS och Sporting Shooters Association of Australia (NSW) Inc rekryterades frivilliga, under Sporting Shooters Associations jaktprogram.",
+    "reference": "iː ˈɛt pˈatnəʂkˌɑːp mˈɛlan ˌɛnpˌeːdˌɵbəlvˌeːˈɛs ɔk spˈɔtɪŋ sxˈuːuːtˌɛʂ ˌasʊsˌɪasxˈuːn ɒv ˈɔstralˌiːa ˌɛnˌɛsdˈɵbəlvˌeː ˈɪnk rˈɛkryːtˌeːradəs frˈiːvɪlˌiːɡa ˈɵndər spˈɔtɪŋ sxˈuːuːtˌɛʂ ˌasʊsˌɪasxˈʊns jˈaktprɔɡrˌam",
+    "uccharan": "iː ˈɛt pˈatnəʂkˌɑːp mˈɛlan ˌɛnpˌeːdˌɵbəlvˌeːˈɛs ɔk spˈɔtɪŋ sxˈuːuːtəʂ ˌasʊsˌɪasxˈuːn ɒv ˈɔstralˌiːa ˌɛnˌɛsdˈɵbəlvˌeː ˈɪnk rˈɛkryːtˌeːradəs frˈiːvɪlˌiːɡa ˈɵndər spˈɔtɪŋ sxˈuːuːtəʂ ˈasʊsˌɪasxʊns jˈaktprɔɡrˌam"
+   },
+   {
+    "id": "flores-devtest-694",
+    "text": "Längre söderut ligger Niagarafallen och i den norra delen finns Muskokas vackra, orörda natur.",
+    "reference": "lˈɛŋrə sˈøːdərˌʉt lˈɪɡər nˈiːaɡˌarafˌalən ɔk iː dɛn nˈɔra dˈeːlən fˈɪns mɵskˈuːkas vˈakra uːrˈœrda nˈatˈʉr",
+    "uccharan": "lˈɛŋrə sˈøːdərˌʉt lˈɪɡər nˈiːaɡˌarafˌalən ɔk iː dɛn nˈɔra dˈeːlən fˈɪns mˈɵskuːkˌas vˈakra uːrˈœrda nˈatˈʉr"
+   }
+  ]
+ }
+}

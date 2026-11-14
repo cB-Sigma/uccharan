@@ -323,13 +323,13 @@ pub fn clauses(text: &str) -> Vec<RawClause> {
 /// between letters stay inside a Latin run; `,` and `.` between digits stay
 /// inside a digit run.
 pub fn runs(chunk: &str) -> Vec<(Script, &str)> {
-    let cs: Vec<(usize, char)> = chunk.char_indices().collect();
     let mut out: Vec<(Script, &str)> = Vec::new();
     let mut start = 0usize;
     let mut cur: Option<Script> = None;
-    for (k, &(i, c)) in cs.iter().enumerate() {
-        let prev = if k > 0 { Some(cs[k - 1].1) } else { None };
-        let next = cs.get(k + 1).map(|x| x.1);
+    let mut prev: Option<char> = None;
+    let mut it = chunk.char_indices().peekable();
+    while let Some((i, c)) = it.next() {
+        let next = it.peek().map(|x| x.1);
         let mut sc = script_of(c);
         if matches!(c, '\u{200c}' | '\u{200d}')
             && matches!(cur, Some(Script::Devanagari | Script::Brahmic(_)))
@@ -357,6 +357,7 @@ pub fn runs(chunk: &str) -> Vec<(Script, &str)> {
             start = i;
             cur = Some(sc);
         }
+        prev = Some(c);
     }
     if let Some(p) = cur {
         out.push((p, &chunk[start..]));

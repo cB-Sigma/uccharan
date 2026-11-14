@@ -1,0 +1,33 @@
+# Malayalam words whose usual romanisation is also an English word.
+# For these spellings the neighbouring words decide the language: the native candidate
+# is never taken for a loan of the English word.
+# Hand-written for uccharan (Apache-2.0); not yet reviewed by a native speaker.
+# Columns: romanised form, native word (for the reader; candidates come from the lexicon).
+mole	മോളേ
+are	ആരെ
+ore	ഒരേ
+pole	പോലെ
+pal	പാൽ
+pen	പെൺ
+pin	പിൻ
+a	ആ
+e	ഈ
+poo	പൂ
+thee	തീ
+nee	നീ
+va	വാ
+po	പോ
+da	ഡാ
+di	ഡി
+um	ഉം
+il	ഇൽ
+kan	കൺ
+kal	കാൽ
+ari	അരി
+pani	പനി
+kali	കളി
+mathi	മതി
+oru	ഒരു
+ini	ഇനി
+vare	വരെ
+kure	കുറേ

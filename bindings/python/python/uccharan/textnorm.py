@@ -99,14 +99,16 @@ class Normalized:
     spans: list[Span] = field(default_factory=list)
 
 
-def _try_need(lang: str) -> None:
+def _try_need(lang: str, text: str = "") -> None:
     # Normalising needs no language pack (English words fall back to the other
-    # accent's built-in data); load the request language's pack when it can be had.
+    # accent's built-in data); load the request language's pack, and the
+    # British English data that respells Latin-script words in Indic text,
+    # when they can be had.
     from . import _need
     from .packs import PackError
 
     try:
-        _need(lang)
+        _need(lang, "espeak-ipa", text)
     except PackError:
         pass
 
@@ -139,7 +141,7 @@ def normalize(
     ``read``, ``keep`` or ``drop``. ``respell``: ``native``,
     ``latin-hyphen`` or ``latin-plain`` (word-list entries with IPA only).
     Word lists are applied first, the first list winning."""
-    _try_need(lang)
+    _try_need(lang, text)
     opts = json.dumps(
         {
             "mode": "improved" if improved else "compatible",

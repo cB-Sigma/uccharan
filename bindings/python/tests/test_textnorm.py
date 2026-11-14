@@ -86,3 +86,21 @@ def test_word_list_shapes_match_phonemize() -> None:
     )
     assert isinstance(cps, list) and len(cps) == 2
     assert "".join(map(chr, cps[0])).startswith("kəkˈɔːɹoʊ")
+
+
+def test_respelling_loads_british_data_in_a_fresh_process() -> None:
+    # English words in Indic text are respelled from the British reading; a
+    # fresh interpreter must load that data without phonemize() running first.
+    import subprocess
+    import sys
+
+    code = (
+        "import uccharan\n"
+        "t = uccharan.normalize('office computer', 'hi', latin='transliterate').text\n"
+        "assert t == '\\u0911\\u092b\\u093c\\u093f\\u0938 \\u0915\\u092e\\u094d\\u092a\\u094d\\u092f\\u0942\\u091f\\u0930', ascii(t)\n"
+        "t = uccharan.transliterate('office', 'hi', english='native').text\n"
+        "assert t == '\\u0911\\u092b\\u093c\\u093f\\u0938', ascii(t)\n"
+        "print('ok')\n"
+    )
+    out = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, encoding="utf-8")
+    assert out.returncode == 0 and out.stdout.strip() == "ok", out.stderr

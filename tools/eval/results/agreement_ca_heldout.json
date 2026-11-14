@@ -1,0 +1,243 @@
+{
+ "language": "ca",
+ "reference": "espeak-ng 1.52.0 voice ca (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 155617,
+  "per": 0.01860979198930708,
+  "per_without_stress": 0.01740016771245988,
+  "exact_sentence": 0.2075098814229249,
+  "exact_sentence_without_stress": 0.21936758893280633,
+  "piper_shape_per": 0.01842008681676095,
+  "piper_shape_exact_sentence": 0.2075098814229249,
+  "word_count_mismatch_sentences": 209,
+  "errors_by_class": {
+   "consonant": {
+    "count": 1110,
+    "share": 0.38328729281767954,
+    "per_contribution": 0.007132896791481651
+   },
+   "vowel": {
+    "count": 678,
+    "share": 0.2341160220994475,
+    "per_contribution": 0.0043568504726347376
+   },
+   "stress": {
+    "count": 503,
+    "share": 0.1736878453038674,
+    "per_contribution": 0.0032322946721759192
+   },
+   "other": {
+    "count": 471,
+    "share": 0.16263812154696133,
+    "per_contribution": 0.0030266616115205923
+   },
+   "word-boundary": {
+    "count": 133,
+    "share": 0.045925414364640885,
+    "per_contribution": 0.0008546624083487022
+   },
+   "length": {
+    "count": 1,
+    "share": 0.0003453038674033149,
+    "per_contribution": 6.426033145478964e-06
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "j→i",
+    "count": 235
+   },
+   {
+    "edit": "∅→ə",
+    "count": 224
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 166
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 131
+   },
+   {
+    "edit": "t→d",
+    "count": 125
+   },
+   {
+    "edit": "ʒ→ʃ",
+    "count": 96
+   },
+   {
+    "edit": "b→∅",
+    "count": 95
+   },
+   {
+    "edit": "∅→ ",
+    "count": 91
+   },
+   {
+    "edit": "z→s",
+    "count": 90
+   },
+   {
+    "edit": "i→j",
+    "count": 82
+   },
+   {
+    "edit": "r→∅",
+    "count": 80
+   },
+   {
+    "edit": "s→z",
+    "count": 78
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 77
+   },
+   {
+    "edit": "a→ə",
+    "count": 70
+   },
+   {
+    "edit": "ə→a",
+    "count": 66
+   },
+   {
+    "edit": "t→∅",
+    "count": 55
+   },
+   {
+    "edit": "k→ɡ",
+    "count": 53
+   },
+   {
+    "edit": " →∅",
+    "count": 42
+   },
+   {
+    "edit": "d→ð",
+    "count": 38
+   },
+   {
+    "edit": "u→w",
+    "count": 35
+   },
+   {
+    "edit": "ʒ→z",
+    "count": 35
+   },
+   {
+    "edit": "w→u",
+    "count": 34
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 31
+   },
+   {
+    "edit": "s→∅",
+    "count": 30
+   },
+   {
+    "edit": "ɔ→u",
+    "count": 30
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 19025,
+    "wrong": 1326,
+    "rate": 0.06969776609724047
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 187,
+    "per": 0.030675030765074888,
+    "exact_sentence": 0.058823529411764705
+   },
+   "no-digits": {
+    "sentences": 825,
+    "per": 0.015322976287816844,
+    "exact_sentence": 0.2412121212121212
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-801",
+    "text": "Solen tenir aliments especials, begudes i ofertes d'entreteniment per animar els convidats i evitar que surtin de l'establiment.",
+    "reference": "sˈɔlən tənˈi əlimˈenz əspəsiˈals bəɣˈuðəz j ufˈɛrtəz ðəntɾətənimˈem pəɾ ənimˈa əls kumbiðˈadz j əβitˈa kə sˈurtin də ləstəbblimˈen",
+    "uccharan": "sˈɔlən tənˈi əlimˈenz əspəsiˈals bəɣˈuðəz i wfˈɛrtəz ðəntɾətənimˈem pəɾ ənimˈa əls kumbiðˈadz i əβitˈa kə sˈurtin də ləstəbblimˈen"
+   },
+   {
+    "id": "flores-devtest-707",
+    "text": "Rebutja els homes amb fermesa, i no tinguis por de defensar la teva posició (amb o sense diferències culturals, no està bé!).",
+    "reference": "rəβˈudʒə əlz ˈɔməz əɱ fərmˈɛzə i nˈo tˈiŋɡis pˈo ðə ðəfənsˈa lə tˈeβə puzisiˈo əmb ˈɔ sˈensə ðifəɾˈɛnsiəs kultuɾˈals nˈo əstˈa βˈe",
+    "uccharan": "rəβˈudʒə əls ˈɔməz əm fərmˈɛzə i nˈo tˈiŋɡis pˈo ðə ðəfənsˈa lə tˈeβə puzisiˈo əm ˈɔ sˈensə ðifəɾˈɛnsiəs kultuɾˈals nˈo əstˈa βˈe"
+   },
+   {
+    "id": "flores-devtest-504",
+    "text": "Un dels mètodes més comuns utilitzats per il·lustrar la importància de la socialització és recórrer als pocs casos desafortunats d'infants que no van ser socialitzats per adults mentre creixien, a causa de negligència, desgràcia o abús intencionat.",
+    "reference": "un dəlz mˈɛtuðəz mˈes kumˈunz utilidzˈats pəɾ illustɾˈa lə jmpurtˈansiə ðə lə susiəlidzəsiˈo ˈez rəkˈorə əls pˈɔks kˈazuz ðəzəfurtunˈadz ðiɱfˈans kə nˈo βˈan sˈe susiəlidzˈats pəɾ əðˈulz mˈentɾə kɾəʃˈiən ə kˈawzə ðə nəɣliʒˈɛnsiə dəzɣɾˈasiə w əβˈuz intənsiunˈat",
+    "uccharan": "un dəlz mˈɛtuðəz mˈes kumˈunz utilidzˈats pəɾ ˈil lustɾˈa lə jmpurtˈansiə ðə lə susiəlidzəsiˈo ˈez rəkˈorə əls pˈɔɡs kˈazuz ðəzəfurtunˈatz ðiɱfˈans kə nˈo βˈan sˈe susiəlidzˈats pəɾ əðˈulz mˈentɾə kɾəʃˈiən ə kˈawzə ðə nəɣliʒˈɛnsiə dəzɣɾˈasiə ˈɔ əβˈuz intənsiunˈat"
+   },
+   {
+    "id": "flores-devtest-143",
+    "text": "Malgrat no haver-hi amenaça de tsunami, els residents es van espantar i començaren a desallotjar els seus negocis i habitatges.",
+    "reference": "məlɣɾˈad nˈo əβˈɛɾj əmənˈasə ðə tsunˈami əlz rəziðˈenz əz βˈan əspəntˈa i kumənsˈaɾən ə ðəzəʎudʒˈa əls sˈewz nəɣˈɔsiz j əβitˈadʒəs",
+    "uccharan": "məlɣɾˈad nˈo əβˈɛj əmənˈasə ðə tsunˈami əlz rəziðˈenz əz βˈan əspəntˈa j kumənsˈaɾən ə ðəzəʎudʒˈa əls sˈewz nəɣˈɔsiz i əβitˈadʒəs"
+   },
+   {
+    "id": "flores-devtest-797",
+    "text": "Alguns festivals tenen àrees d'acampada especials per a famílies amb fills petits.",
+    "reference": "əlɣˈuns fəstiβˈals tˈenən ˈaɾeəz ðəkəmpˈaðə əspəsiˈals pəɾ ə fəmˈiliəz əɱ fˈiʎs pətˈits",
+    "uccharan": "əlɣˈuns fəstiβˈals tˈenən ˈaɾeəz ðəkəmpˈaðə əspəsiˈals pəɾ ə fəmˈiliəz əm fˈiʎs pətˈids"
+   },
+   {
+    "id": "flores-devtest-831",
+    "text": "Els límits de velocitat indicats són notablement més baixos que els d'altres trams anteriors i posteriors - generalment 35-40 mph (56-64 km/h) - i l'estricta obediència als límits és encara més important que si fos d'una altra manera.",
+    "reference": "əlz lˈimidz ðə βəlusitˈat indikˈats sˈon nutˈabbləmˈem mˈez βˈaʃus k əlz ðˈaltɾəs tɾˈamz əntəɾiˈorz i pustəɾiˈors ʒənəɾˈalmˈen tɾˌɛntəsˈiŋk kwəɾˈantə ˌeməpˌeˈak siŋkwˌantəsˈis səʃˌantəkwˈatɾə kˌaˈemə βˈarə ˈak i ləstɾˈiktə wβəðiˈɛnsiə əlz lˈimidz ˈez əŋkˈaɾə mˈez impurtˈaŋ kə si fˈoz ðˈunə ˈaltɾə mənˈeɾə",
+    "uccharan": "əlz lˈimidz ðə βəlusitˈat indikˈats sˈon nutˈabbləmˈem mˈez βˈaʃus kə əlz ðˈaltɾəs tɾˈamz əntəɾiˈorz i pustəɾiˈors ʒənəɾˈalmˈen tɾˌɛntəsˈiŋk kwəɾˈantə ˌeməpˌeˈak siŋkwˌantəsˈis səʃˌantəkwˈatɾə kˌaˈemə ˈak i ləstɾˈiktə wβəðiˈɛnsiə əlz lˈimidz ˈez əŋkˈaɾə mˈez impurtˈaŋ kə si fˈoz ðˈunə ˈaltɾə mənˈeɾə"
+   },
+   {
+    "id": "flores-devtest-953",
+    "text": "Encara queden molts homes i moltes dones que van sobreviure a la seva estada aquí, i molts més que hi tenien éssers estimats que van ser assassinats o hi van treballar fins a la mort, tant jueus com no jueus.",
+    "reference": "əŋkˈaɾə kˈeðəm mˈolz ˈɔməz i mˈoltəz ðˈɔnəs kə βˈan sˌoβɾəβˈiwɾə ə lə sˈeβə əstˈaðə əkˈi i mˈolz mˈes kə i tənˈiən ˈesərz əstimˈats kə βˈan sˈe əsəsinˈadz ˈɔ i βˈan tɾəβəʎˈa fˈinz ə lə mˈɔrt tˈan ʒuˈews kˈɔm nˈo ʒuˈews",
+    "uccharan": "əŋkˈaɾə kˈeðəm mˈols ˈɔməz i mˈoltəz ðˈɔnəs kə βˈan sˌoβɾəβˈiwɾə ə lə sˈeβə əstˈaðə əkˈi i mˈolz mˈes kə j tənˈiən ˈesərz əstimˈads kə βˈan sˈe əsəsinˈadz ˈɔ j βˈan tɾəβəʎˈa fˈinz ə lə mˈɔr tˈan ʒuˈews kˈɔm nˈo ʒuˈews"
+   },
+   {
+    "id": "flores-devtest-599",
+    "text": "Els rellotges biològics són oscil·ladors autònoms que segueixen un període d'inèrcia fins i tot en absència de senyals externs.",
+    "reference": "əlz rəʎˈɔdʒəz βiulˈɔʒiks sˈon usilləðˈoz əwtˈɔnums kə səɣˈɛʃən um pəɾˈiuðə ðinˈɛrsiə fˈinz i tˈot ən əpsˈɛnsiə ðə səɲˈalz əkstˈɛrns",
+    "uccharan": "əlz rəʎˈɔdʒəz βiulˈɔʒiɡs sˈon usˈil ləðˈoz əwtˈɔnums kə səɣˈɛʃən um pəɾˈiuðə ðinˈɛrsiə fˈinz i tˈot ən əpsˈɛnsiə ðə səɲˈalz əkstˈɛrns"
+   },
+   {
+    "id": "flores-devtest-360",
+    "text": "Per sota d'ells hi ha més gats de mida mitjana que mengen preses de mida mitjana, des de conills fins a antílops i cérvols.",
+    "reference": "pəɾ sˈotə ðˈeʎz j ˈa mˈez ɣˈadz ðə mˈiðə midʒˈanə kə mˈenʒəm pɾˈɛzəz ðə mˈiðə midʒˈanə dˈez ðə kunˈiʎs fˈinz ə əntˈilubz i sˈerβuls",
+    "uccharan": "pəɾ sˈotə ðˈeʎs j ˈa mˈez ɣˈadz ðə mˈiðə midʒˈanə kə mˈenʒəm pɾˈɛzəz ðə mˈiðə midʒˈanə dˈez ðə kunˈiʎs fˈinz ə əntˈilopz i sˈerβuls"
+   },
+   {
+    "id": "flores-devtest-802",
+    "text": "Alguns recintes ofereixen begudes alcohòliques dins al casa. Tanmateix, l'embriaguesa altera el judici, i tots els bons \"gamblers\" saben que és important mantenir-se sobris. ",
+    "reference": "əlɣˈunz rəsˈintəz ufəɾˈɛʃəm bəɣˈuðəz əlkuˈɔlikəz ðˈinz əl kˈazə tˌammətˈeʃ ləmbɾiəɣˈɛzə əltˈeɾə əl ʒuðˈisi i tˈodz əlz βˈɔns ɡəmblˈes sˈaβəŋ kə ˈez impurtˈam məntənˈirsə sˈɔβɾis",
+    "uccharan": "əlɣˈunz rəsˈintəz ufəɾˈɛʃəm bəɣˈuðəz əlkuˈɔlikəz ðˈinz əl kˈazə tˌammətˈeʃ ləmbɾiaɣˈɛzə əltˈeɾə əl ʒuðˈisi i tˈodz əlz βˈɔnz ɣəmblˈes sˈaβəŋ kə ˈez impurtˈam məntənˈisə sˈɔβɾis"
+   },
+   {
+    "id": "flores-devtest-437",
+    "text": "Diu que el lloc més eficaç per al subjecte principal és en la intersecció entre les línies que divideixen la imatge en terços verticals i horitzontals (vegeu l'exemple).",
+    "reference": "dˈiw k əʎ ʎˈɔɡ mˈez əfikˈas pəɾ əl subʒˈektə pɾinsipˈal ˈez ən lə jntərsəksiˈo ˈentɾə ləz lˈiniəs kə ðiβiðˈɛʃən lə jmˈadʒə ən tˈɛrsuz βərtikˈalz j uɾidzuntˈals bəʒˈɛw ləɡzˈemplə",
+    "uccharan": "dˈiw kə əʎ ʎˈɔɡ mˈez əfikˈas pəɾ əl subʒˈektə pɾinsipˈal ˈez ən lə jntərsəksiˈo ˈentɾə ləz lˈiniəs kə ðiβiðˈɛʃən lə jmˈadʒə ən tˈɛrsuz βərtikˈalz i uɾidzuntˈalz βəʒˈɛw ləɡzˈemplə"
+   },
+   {
+    "id": "flores-devtest-329",
+    "text": "Curtis Cooper, un matemàtic i professor d'informàtica a la University of Central Missouri, ha descobert el nombre primer més gran descobert a data de 25 de gener.",
+    "reference": "kˈatis kˈupə um mətəmˈatik i pɾufəsˈo ðiɱfurmˈatikə ə lə jˌuniβˈasitj ˈɔf səntɾˈal misˈɔwɾi ˈa ðəskuβˈɛrt əl nˈɔmbɾə pɾimˈe mˈez ɣɾˈan dəskuβˈɛrt ə ðˈatə ðə βˌintisˈiŋɡ də ʒənˈe",
+    "uccharan": "kˈatis kˈupə um mətəmˈatik i pɾufəsˈo ðiɱfurmˈatikə ə lə jˌuniβˈasiti ˈɔv səntɾˈal misˈɔwɾi ˈa ðəskuβˈɛr əl nˈɔmbɾə pɾimˈe mˈez ɣɾˈan dəskuβˈɛr ə ðˈatə ðə βˌintisˈiŋɡ də ʒənˈe"
+   }
+  ]
+ }
+}

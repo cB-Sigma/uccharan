@@ -1,0 +1,243 @@
+{
+ "language": "pl",
+ "reference": "espeak-ng 1.52.0 voice pl (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 161757,
+  "per": 0.01326063168827315,
+  "per_without_stress": 0.010272354886242658,
+  "exact_sentence": 0.35968379446640314,
+  "exact_sentence_without_stress": 0.4841897233201581,
+  "piper_shape_per": 0.013305198635426611,
+  "piper_shape_exact_sentence": 0.34980237154150196,
+  "word_count_mismatch_sentences": 175,
+  "errors_by_class": {
+   "consonant": {
+    "count": 841,
+    "share": 0.39207459207459205,
+    "per_contribution": 0.005199156759831105
+   },
+   "stress": {
+    "count": 713,
+    "share": 0.3324009324009324,
+    "per_contribution": 0.004407846337407346
+   },
+   "length": {
+    "count": 193,
+    "share": 0.08997668997668998,
+    "per_contribution": 0.0011931477463108242
+   },
+   "vowel": {
+    "count": 175,
+    "share": 0.08158508158508158,
+    "per_contribution": 0.0010818697181574832
+   },
+   "other": {
+    "count": 160,
+    "share": 0.07459207459207459,
+    "per_contribution": 0.0009891380280296989
+   },
+   "word-boundary": {
+    "count": 63,
+    "share": 0.02937062937062937,
+    "per_contribution": 0.00038947309853669393
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˌ→∅",
+    "count": 309
+   },
+   {
+    "edit": "d→t",
+    "count": 196
+   },
+   {
+    "edit": "ː→∅",
+    "count": 168
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 135
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 73
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 72
+   },
+   {
+    "edit": "ʑ→z",
+    "count": 58
+   },
+   {
+    "edit": "z→s",
+    "count": 47
+   },
+   {
+    "edit": " →∅",
+    "count": 42
+   },
+   {
+    "edit": "ʑ→ɕ",
+    "count": 40
+   },
+   {
+    "edit": "∅→ɛ",
+    "count": 39
+   },
+   {
+    "edit": "∅→ɕ",
+    "count": 38
+   },
+   {
+    "edit": "w→f",
+    "count": 36
+   },
+   {
+    "edit": "t→d",
+    "count": 33
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 29
+   },
+   {
+    "edit": "∅→ː",
+    "count": 25
+   },
+   {
+    "edit": "∅→t",
+    "count": 25
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 23
+   },
+   {
+    "edit": "∅→ ",
+    "count": 21
+   },
+   {
+    "edit": "s→∅",
+    "count": 20
+   },
+   {
+    "edit": "ˈ→ɛ",
+    "count": 18
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 18
+   },
+   {
+    "edit": "∅→ɔ",
+    "count": 17
+   },
+   {
+    "edit": "t→∅",
+    "count": 17
+   },
+   {
+    "edit": "ɛ→ ",
+    "count": 16
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 15751,
+    "wrong": 756,
+    "rate": 0.04799695257443972
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 184,
+    "per": 0.022997531972178596,
+    "exact_sentence": 0.23369565217391305
+   },
+   "no-digits": {
+    "sentences": 828,
+    "per": 0.010507450377078691,
+    "exact_sentence": 0.38768115942028986
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-218",
+    "text": "Z późniejszych raportów wynikało, że do samolotu dotarła informacja o zagrożeniu bombowym, więc zawrócił do Afganistanu i zszedł do lądowania w Kandaharze.",
+    "reference": "s puʑɲʲˈɛjʃɨx rapˈɔrtuv vˌɨɲikˈawɔ ʒˈɛ dɔ sˌamɔlˈɔtu dɔtˈarwa ˌinfɔrmˈatsja ɔ zˌaɡrɔʒˈɛɲʲu bɔmbˈɔvɨm vʲˈɛndʑ zavrˈutɕiw dɔː ˌavɡaɲistˈanu i sʃˈɛd dɔ lˌɔndɔvˈaɲʲa f kˌandaxˈaʒɛ",
+    "uccharan": "s puʑɲʲˈɛjʃɨx rapˈɔrtuv vˌɨɲikˈawɔ ʒˈɛ dɔ sˌamɔlˈɔtu dɔtˈarwa ˌinfɔrmˈatsja ɔ zˌaɡrɔʒˈɛɲʲu bɔmbˈɔvɨm vʲˈɛntz zavrˈutɕiw dɔ ˌavɡaɲistˈanu i sʃˈɛd dɔ lˌɔndɔvˈaɲʲa f kˌandaxˈaʒɛ"
+   },
+   {
+    "id": "flores-devtest-613",
+    "text": "Skąd tyle skarg na systemy transportu, dlaczego każdego dnia są jakieś nieprawidłowości w ich funkcjonowaniu? Czy inżynierowie za nie odpowiedzialni są zwyczajnymi partaczami? A może problem leży dużo głębiej?",
+    "reference": "skˈɔnt tˈɨlɛ skˈark na sɨstˈɛmɨ transpˈɔrtu dlatʃˈɛɡɔ kaʒdˈɛɡɔ dɲʲˈa sɔ̃ jˈakʲɛɕ ɲʲˌɛpravˌidwɔvˈɔɕtɕi w ix fˌuŋktsjɔnɔvˈaɲʲu tʃɨ ˌinʒɨɲʲɛrˈɔvʲɛ zˈaɲʲɛ ˌɔtpɔvʲɛdʑˈalɲi sɔ̃ zvˌɨtʃajnˈɨmi pˌartatʃˈami a mˈɔʒɛ prˈɔblɛm lˈɛʒɨ dˈuʒɔ ɡwˈɛmbjɛj",
+    "uccharan": "skˈɔnt tˈɨlɛ skˈark na sɨstˈɛmɨ transpˈɔrtu dlatʃˈɛɡɔ kaʒdˈɛɡɔ dɲʲˈa sɔ̃ jˈakʲɛɕ ɲʲˌɛpravˌidwɔvˈɔɕtɕi w ix fˌuŋktsjɔnɔvˈaɲʲu tʃɨ ˌinʒɨɲʲɛrˈɔvʲɛ za ɲʲɛ ˌɔtpɔvʲɛdʑˈalɲi sɔ̃ zvɨtʃajnˈɨmi partatʃˈami a mˈɔʒɛ prˈɔblɛm lˈɛʒɨ dˈuʒɔ ɡwˈɛmbjɛj"
+   },
+   {
+    "id": "flores-devtest-38",
+    "text": "Używa się jasności i rotacji razem, by określić numer gwiazdy Rossby'ego, odnoszący się do przepływu plazmy.",
+    "reference": "uʒˈɨva ɕɛ jasnˈɔɕtɕi i rɔtˈatsji rˈazɛm bˈɨ ɔkrˈɛɕlitɕ nˈumɛr ɡvʲˈazdɨ rɔzzbʲˈɛɡɔ ˌɔdnɔʃˈɔntsɨ ɕɛ dɔ pʃɛpwˈɨvu plˈazmɨ",
+    "uccharan": "uʒˈɨva ɕɛ jasnˈɔɕtɕi i rɔtˈatsji rˈazɛm bˈɨ ɔkrˈɛɕlitɕ nˈumɛr ɡvʲˈazdɨ rɔszbɨˈɛɡɔ ˌɔdnɔʃˈɔntsɨ ɕɛ dɔ pʃɛpwˈɨvu plˈazmɨ"
+   },
+   {
+    "id": "flores-devtest-101",
+    "text": "W ciągu roku osoba zarażona może zarazić od 10 do 15 osób, z którymi miała bliski kontakt.",
+    "reference": "f tɕˈɔŋɡu rˈɔku ɔsˈɔba zˌaraʒˈɔna mˈɔʒɛ zarˈazitɕ ɔd dʑˈɛɕɛɲdʑ dɔ pjɛtnˈaɕtɕɛ ˈɔsup s kturˈɨmi mʲˈawa blˈiski kˈɔntakt",
+    "uccharan": "f tɕˈɔŋɡu rˈɔku ɔsˈɔba zˌaraʒˈɔna mˈɔʒɛ zarˈazitɕ ɔd dʑˈɛɕɛɲtʑ dɔ pjɛtnˈaɕtɕɛ ˈɔsup s kturˈɨmi mʲˈawa blˈiski kˈɔntaɡt"
+   },
+   {
+    "id": "flores-devtest-524",
+    "text": "W artykule zatytułowanym „The President's Speech” (Mowa prezydenta) Oliver Sacks dowodzi, że ludzie, którzy wskutek uszkodzenia mózgu nie rozumieją mowy, są mimo to w stanie prawidłowo ocenić szczerość mówiącego.",
+    "reference": "w ˌartɨkˈulɛ zˌatɨtˌuwɔvˈanɨm dˈɛ prɛsˈidɛnts spˈɛɛx mˈɔva prˌɛzɨdˈɛnta ɔlˈivɛr sˈadʑɡz dɔvˈɔdʑi ʒˈɛ lˈudʑɛ ktˌuʒɨ fskˈutɛk ˌuʃkɔdʑˈɛɲʲa mˈuzɡu ɲʲɛ rˌɔzumjˈɛjɔ̃ mˈɔvɨ sɔ̃ mˈimɔ tɔ f stˈaɲʲɛ prˌavidwˈɔvɔː ɔtsˈɛɲitɕ ʃtʃˈɛrɔɕtɕ mˌuvʲɔntsˈɛɡɔ",
+    "uccharan": "w ˌartɨkˈulɛ zˌatɨtˌuwɔvˈanɨm dˈɛ prɛsˈidɛnts spˈɛɛx mˈɔva prˌɛzɨdˈɛnta ɔlˈivɛr sˈakz dɔvˈɔdʑi ʒˈɛ lˈudʑɛ ktˌuʒɨ fskˈutɛk ˌuʃkɔdʑˈɛɲʲa mˈuzɡu ɲʲɛ rˌɔzumjˈɛjɔ̃ mˈɔvɨ sɔ̃ mˈimɔ tɔ f stˈaɲʲɛ prˌavidwˈɔvɔ ɔtsˈɛɲitɕ ʃtʃˈɛrɔɕtɕ mˌuvʲɔntsˈɛɡɔ"
+   },
+   {
+    "id": "flores-devtest-508",
+    "text": "Jeśli zdziczałym dzieckiem opiekują się tylko zwierzęta, zachowuje się ono prawie całkowicie (uwzględniając fizyczne ograniczenia) tak jak te właśnie zwierzęta, przejawiając strach lub obojętność wobec ludzi.",
+    "reference": "jˈɛɕli zdʑitʃˈawɨm dʑˈɛtskʲɛm ˌɔpʲɛkˈujɔ̃ ɕɛ tˌɨlkɔ zvʲɛʒˈɛnta zˌaxɔvˈujɛ ɕɛ ˌɔnɔ prˈavʲɛ tsˌawkɔvˈitɕɛ ˌuvzɡlɛndɲʲˈajɔnts fizˈɨtʃnɛ ˌɔɡraɲitʃˈɛɲʲa tˈak jˈak tɛ vwˈaɕɲʲɛ zvʲɛʒˈɛnta pʃˌɛjavʲˈajɔnts strˈax lˈup ˌɔbɔjˈɛntnɔʑdʑ vˈɔbɛts lˈudʑi",
+    "uccharan": "jˈɛɕli zdʑˌitʃˈawɨm dʑˈɛtskʲɛm ˌɔpʲɛkˈujɔ̃ ɕɛ tˌɨlkɔ zvʲɛʒˈɛnta zˌaxɔvˈujɛ ɕɛ ˌɔnɔ prˈavʲɛ tsˌawkɔvˈitɕɛ ˌuvzɡlɛndɲʲˈajɔnts fizˈɨtʃnɛ ˌɔɡraɲitʃˈɛɲʲa tˈak jˈak tɛ vwˈaɕɲʲɛ zvʲɛʒˈɛnta pʃɛjavʲˈajɔnts strˈax lˈup ˌɔbɔjˈɛntnɔɕtʑ vˈɔbɛts lˈudʑi"
+   },
+   {
+    "id": "flores-devtest-10",
+    "text": "Ring doszedł także do ugody w procesie z ADT Corporation, konkurencyjną firmą z sektora zabezpieczeń.",
+    "reference": "rˈiŋɡ dˈɔʃɛt tˈaɡʒɛ dɔː uɡˈɔdɨ f prɔtsˈɛɕɛ z ˌadˌɛtˈɛ kˌɔrpɔrˈatjɔn kˌɔŋkurɛntsˈɨjnɔ̃ fˈirmɔ̃ s sɛktˈɔra zˌabɛspʲˈɛtʃɛɲ",
+    "uccharan": "rˈiŋɡ dˈɔʃɛt tˈaɡʒɛ dɔ uɡˈɔdɨ f prɔtsˈɛɕɛ z adˌɛtˈɛ kˌɔrpɔrˈatjɔn kˌɔŋkurɛntsˈɨjnɔ̃ fˈirmɔ̃ s sɛktˈɔra zˌabɛspʲˈɛtʃɛɲ"
+   },
+   {
+    "id": "flores-devtest-431",
+    "text": "Na przykład w fotografii najczęściej używany format to 35 mm, czyli najpowszechniejszy rozmiar taśmy filmowej u schyłku epoki filmów analogowych.",
+    "reference": "na pʃˈɨkwat wˈɛ fˌɔtɔɡrˈafji najtʃˈɛɲɕtɕɛj ˌuʒɨvˈanɨ fˈɔrmat tɔ tʃɨdʑˈɛɕcʲipʲˈɛɲtɕ ˌɛmˈɛm tʃˈɨli nˌajpɔfʃɛxɲʲˈɛjʃɨ rˈɔzmʲar tˈaɕmɨ filmˈɔvɛj ˈu sxˈɨwku ɛpˈɔki fˈilmuf ˌanalɔɡˈɔvɨx",
+    "uccharan": "na pʃˈɨkwat f fˌɔtɔɡrˈafji najtʃˈɛɲɕtɕɛj ˌuʒɨvˈanɨ fˈɔrmat tɔ tʃɨdʑˈɛɕcʲipʲˈɛɲtɕ ˌɛmˈɛm tʃˈɨli nˌajpɔfʃɛxɲʲˈɛjʃɨ rˈɔzmʲar tˈaɕmɨ filmˈɔvɛj ˈu sxˈɨwku ɛpˈɔki fˈilmuf ˌanalɔɡˈɔvɨx"
+   },
+   {
+    "id": "flores-devtest-506",
+    "text": "Przed porzuceniem lub ucieczką zdziczałe dzieci mogły cierpieć z powodu doznanej traumy lub maltretowania.",
+    "reference": "pʃɛt pˌɔʒutsˈɛɲʲɛm lˈup utɕˈɛtʃkɔ̃ zdʑitʃˈawɛ dʑˈɛtɕi mˈɔɡwɨ tɕˈɛrpʲɛtɕ s pɔvˈɔdu dɔznˈanɛj trˈawmɨ lˈup mˌaltrɛtɔvˈaɲʲa",
+    "uccharan": "pʃɛt pˌɔʒutsˈɛɲʲɛm lˈup utɕˈɛtʃkɔ̃ zdʑˌitʃˈawɛ dʑˈɛtɕi mˈɔɡwɨ tɕˈɛrpʲɛtʑ s pɔvˈɔdu dɔznˈanɛj trˈawmɨ lˈup mˌaltrɛtɔvˈaɲʲa"
+   },
+   {
+    "id": "flores-devtest-769",
+    "text": "Apia jest stolicą Samoa, położoną na wyspie Upolu i zamieszkałą przez niecałe 40 tysięcy ludzi.",
+    "reference": "ˈapja jɛst stɔlˈitsɔ̃ samˈɔa pˌɔwɔʒˈɔnɔ̃ na vˈɨspʲɛ upˈɔlu i zˌamjɛʃkˈawɔ̃ pʃˈɛs ɲʲɛtsˈawɛ tʃtɛrdʑˈɛɕcʲi tɨɕˈɛntsɨ lˈudʑi",
+    "uccharan": "ˈapʲja jɛst stɔlˈitsɔ̃ samˈɔa pˌɔwɔʒˈɔnɔ̃ na vˈɨspʲɛ ˌupˈɔlu i zˌamjɛʃkˈawɔ̃ pʃˈɛs ɲʲɛtsˈawɛ tʃtɛrdʑˈɛɕcʲi tɨɕˈɛntsɨ lˈudʑi"
+   },
+   {
+    "id": "flores-devtest-73",
+    "text": "Podczas spotkania z premierem Layton zgłosił wniosek o zmiany w ustawie środowiskowej złożonej przez konserwatystów, nawołując do „gruntownego i kompletnego przeredagowania” tej ustawy autorstwa Partii Konserwatywnej.",
+    "reference": "pˈɔttʃas spɔtkˈaɲʲa s prɛmjˈɛrɛm laˈɨtɔn zɡwˈɔɕiw vɲʲˈɔsɛk ɔ zmʲˈanɨ w ustˈavʲɛ ɕrˌɔdɔviskˈɔvɛj zwɔʒˈɔnɛj pʃˈɛs kˌɔnsɛrvatˈɨstuf nˌavɔwˈujɔndʑ dɔ ɡrˌuntɔvnˈɛɡɔː i kˌɔmplɛtnˈɛɡɔ pʃˌɛrɛdˌaɡɔvˈaɲʲa tɛj ustˈavɨ awtˈɔrstfa pˈartji kˌɔnsɛrvatˈɨvnɛj",
+    "uccharan": "pˈɔttʃas spɔtkˈaɲʲa s prɛmjˈɛrɛm laˈɨtɔn zɡwˈɔɕiw vɲʲˈɔsɛk ɔ zmʲˈanɨ w ustˈavʲɛ ɕrˌɔdɔviskˈɔvɛj zwɔʒˈɔnɛj pʃˈɛs kˌɔnsɛrvatˈɨstuf nˌavɔwˈujɔntz dɔ ɡrˌuntɔvnˈɛɡɔ i kˌɔmplɛtnˈɛɡɔ pʃˌɛrɛdaɡɔvˈaɲʲa tɛj ustˈavɨ awtˈɔrstfa pˈartji kˌɔnsɛrvatˈɨvnɛj"
+   },
+   {
+    "id": "flores-devtest-324",
+    "text": "Nadzorująca Premier Julia Gillard stwierdziła w czasie kampanii przed wyborami w 2010 roku, iż według niej Australia powinna zamienić się w republikę wraz z końcem panowania królowej Elżbiety II.",
+    "reference": "nˌadʑɔrujˈɔntsa prˈɛmjɛr jˈulja ɡʲˈillart stfʲɛrdʑˈiwa f tʃˈaɕɛ kampˈaɲʲi pʃɛd vˌɨbɔrˈami w dvˈa tɨɕˈɔntsɛ dʑˈɛɕɛɲtɕ rˈɔku ˈiʒ vˈɛdwuk ɲʲˈɛj awstrˈalja pɔvˈinna zamjˈɛɲitɕ ɕɛ w rɛpˈublikˌɛ vrˈas s kˈɔɲtsɛm pˌanɔvˈaɲʲa krulˈɔvɛj ɛlʒbjˈɛtɨ ˌiˈi",
+    "uccharan": "nˌadʑɔrujˈɔntsa prˈɛmjɛr jˈulja ɡʲˈillart stfʲɛrdʑˈiwa f tʃˈaɕɛ kampˈaɲʲi pʃɛd vˌɨbɔrˈami w dvˈa tɨɕˈɔntsɛ dʑˈɛɕɛɲtɕ rˈɔku ˈiʒ vˈɛdwuk ɲʲˈɛj awstrˈalja pɔvˈinna zamjˈɛɲitɕ ɕɛ w rɛpˈublikˌɛ vrˈaz s kˈɔɲtsɛm pˌanɔvˈaɲʲa krulˈɔvɛj ɛlʒbjˈɛtɨ dvˈa"
+   }
+  ]
+ }
+}

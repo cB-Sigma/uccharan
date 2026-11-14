@@ -194,6 +194,18 @@ pub struct Numbers {
     /// `year-hundreds yes`: 1100 to 1999 are counted in hundreds
     /// ("nineteen hundred eighty-four").
     pub year_hundreds: bool,
+    /// `tail-secondary no`: the words of a number after its first lose
+    /// their secondary stresses.
+    pub tail_plain: bool,
+    /// `many1000 tysięcy`: the scale word after counts that do not end in
+    /// 2, 3 or 4 (or that end in 12, 13, 14), as in the Slavic languages.
+    many: HashMap<u64, String>,
+    /// `tail-stress no`: the words of a number after its first have no
+    /// stress.
+    pub tail_unstressed: bool,
+    /// `and-below-hundred e`: this word stands between a thousand or a
+    /// million and a rest below one hundred ("dois mil e um").
+    pub and_small: Option<String>,
     /// `stress last`: only the last word of a number keeps its stress.
     pub stress_last: bool,
     /// `fraction number`: the digits after the decimal sign are read as
@@ -227,6 +239,13 @@ impl Numbers {
                 "year-hundreds" => n.year_hundreds = v.trim() == "yes",
                 "decimal" => n.decimal_comma = v.trim() == "comma",
                 "swap-tens" => n.swap_tens = Some(v.trim().to_string()),
+                "tail-secondary" => n.tail_plain = v.trim() == "no",
+                k if k.starts_with("many") && k[4..].parse::<u64>().is_ok() => {
+                    n.many
+                        .insert(k[4..].parse().unwrap_or(0), v.trim().to_string());
+                }
+                "tail-stress" => n.tail_unstressed = v.trim() == "no",
+                "and-below-hundred" => n.and_small = Some(v.trim().to_string()),
                 "glue-hundred" => n.glue_hundred = v.trim() == "yes",
                 "one-before-scale" => n.one_before_scale = v.trim() != "no",
                 "join-tens" => n.join_tens = v.trim() == "yes",
@@ -317,8 +336,9 @@ impl Numbers {
         for (val, word, word_more) in &self.scales {
             if n >= *val {
                 let (q, r) = (n / val, n % val);
-                let listed = if r > 0 {
-                    self.table.get(&format!("{}+", q * val))
+                // The form before a rest, else the listed multiple itself.
+                let listed = if r > 0 && q < 1000 {
+                    self.get(q * val, true)
                 } else {
                     None
                 };
@@ -334,9 +354,16 @@ impl Numbers {
                         }
                     }
                     let glue = *val == 100 && self.glue_hundred && (q > 1 || self.one_before_scale);
-                    out.push((if r > 0 { word_more } else { word }.clone(), glue));
+                    let few = (2..=4).contains(&(q % 10)) && !(12..=14).contains(&(q % 100));
+                    match self.many.get(val).filter(|_| !few && q > 1) {
+                        Some(m) => out.push((m.clone(), glue)),
+                        None => out.push((if r > 0 { word_more } else { word }.clone(), glue)),
+                    }
                 }
                 if r > 0 {
+                    if let (Some(and), true) = (&self.and_small, *val >= 1000 && r < 100) {
+                        out.push((and.clone(), false));
+                    }
                     self.cardinal(r, out);
                 }
                 return;

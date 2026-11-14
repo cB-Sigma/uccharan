@@ -26,7 +26,7 @@ rmSync(join(here, "dist", "package.json"), { force: true });
 rmSync(join(here, "dist", ".gitignore"), { force: true });
 
 mkdirSync(join(here, "data"), { recursive: true });
-for (const name of ["en-us", "en-gb", "hi", "ur", "sd", "de", "nl", "fr", "kokoro-en-us", "kokoro-en-gb"]) {
+for (const name of ["en-us", "en-gb", "hi", "ur", "sd", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da", "kokoro-en-us", "kokoro-en-gb"]) {
   cpSync(join(root, "crates", "uccharan", "data", `${name}.ucd`), join(here, "data", `${name}.ucd`));
 }
 for (const f of ["LICENSE", "NOTICE", "DATA_LICENSES.md"]) {
@@ -34,4 +34,4 @@ for (const f of ["LICENSE", "NOTICE", "DATA_LICENSES.md"]) {
 }
 const kb = (p) => (statSync(p).size / 1024).toFixed(0);
 console.log(`wasm: ${kb(join(here, "dist", "uccharan_wasm_bg.wasm"))} KiB`);
-for (const lang of ["en-us", "en-gb", "hi", "ur", "sd", "de", "nl", "fr", "kokoro-en-us", "kokoro-en-gb"]) console.log(`data/${lang}.ucd: ${kb(join(here, "data", `${lang}.ucd`))} KiB`);
+for (const lang of ["en-us", "en-gb", "hi", "ur", "sd", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da", "kokoro-en-us", "kokoro-en-gb"]) console.log(`data/${lang}.ucd: ${kb(join(here, "data", `${lang}.ucd`))} KiB`);

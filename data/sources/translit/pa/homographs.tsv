@@ -1,0 +1,53 @@
+# Punjabi words whose usual romanisation is also an English word.
+# For these spellings the neighbouring words decide the language: the native candidate
+# is never taken for a loan of the English word.
+# Hand-written for uccharan (Apache-2.0); not yet reviewed by a native speaker.
+# Columns: romanised form, native word (for the reader; candidates come from the lexicon).
+main	ਮੈਂ
+to	ਤੋਂ
+te	ਤੇ
+de	ਦੇ
+he	ਹੈ
+me	ਮੈਂ
+is	ਇਸ
+us	ਉਸ
+par	ਪਰ
+so	ਸੋ
+do	ਦੋ
+are	ਅਰੇ
+bas	ਬੱਸ
+kam	ਕੰਮ
+pass	ਪਾਸ
+door	ਦੂਰ
+din	ਦਿਨ
+man	ਮਨ
+sab	ਸਭ
+gal	ਗੱਲ
+hun	ਹੁਣ
+oh	ਉਹ
+eh	ਇਹ
+ki	ਕੀ
+ne	ਨੇ
+nu	ਨੂੰ
+di	ਦੀ
+da	ਦਾ
+san	ਸਨ
+si	ਸੀ
+ho	ਹੋ
+lag	ਲੱਗ
+bar	ਬਾਰ
+sir	ਸਿਰ
+hath	ਹੱਥ
+ja	ਜਾ
+tu	ਤੂੰ
+je	ਜੇ
+hi	ਹੀ
+mat	ਮਤ
+tan	ਤਨ
+ton	ਤੋਂ
+pal	ਪਲ
+dil	ਦਿਲ
+sun	ਸੁਣ
+char	ਚਾਰ
+sat	ਸੱਤ
+war	ਵਾਰ

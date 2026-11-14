@@ -79,29 +79,37 @@ fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str) {
 pub fn expand(chunk: &Chunk, nums: &Numbers, ascii_english: bool) -> Vec<Item> {
     let mut out: Vec<Item> = Vec::new();
     // An apostrophe between two Indic letters is ignored (Assamese ল'ৰা).
-    let cs: Vec<char> = chunk.text.chars().collect();
-    let indic = |c: Option<&char>| c.is_some_and(|c| ('\u{0900}'..'\u{0e00}').contains(c));
-    let text: String = cs
-        .iter()
-        .enumerate()
-        .filter(|&(i, c)| {
-            !(matches!(c, '\'' | '’') && i > 0 && indic(cs.get(i - 1)) && indic(cs.get(i + 1)))
-        })
-        .map(|(_, c)| *c)
-        .collect();
-    let rs = runs(&text);
+    let owned;
+    let text: &str = if chunk.text.contains(['\'', '’']) && !chunk.text.is_ascii() {
+        let cs: Vec<char> = chunk.text.chars().collect();
+        let indic = |c: Option<&char>| c.is_some_and(|c| ('\u{0900}'..'\u{0e00}').contains(c));
+        owned = cs
+            .iter()
+            .enumerate()
+            .filter(|&(i, c)| {
+                !(matches!(c, '\'' | '’') && i > 0 && indic(cs.get(i - 1)) && indic(cs.get(i + 1)))
+            })
+            .map(|(_, c)| *c)
+            .collect::<String>();
+        &owned
+    } else {
+        &chunk.text
+    };
+    let rs = runs(text);
     let n = rs.len();
     for (i, (sc, r)) in rs.iter().enumerate() {
         match sc {
             Script::Latin | Script::Devanagari | Script::Brahmic(_) => {
                 // ZWJ stays inside Brahmic words (the reader decides).
-                let t = if matches!(sc, Script::Brahmic(_)) {
-                    r.to_string()
+                let owned_run;
+                let t: &str = if matches!(sc, Script::Brahmic(_)) || !r.contains('\u{200d}') {
+                    r
                 } else {
-                    r.replace('\u{200d}', "")
+                    owned_run = r.replace('\u{200d}', "");
+                    &owned_run
                 };
                 if !t.is_empty() {
-                    let mut it = Item::word(&t);
+                    let mut it = Item::word(t);
                     it.generated = false;
                     if i >= 2 && rs[i - 1].1 == "-" {
                         it.hyphen = true;

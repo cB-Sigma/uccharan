@@ -225,6 +225,8 @@ jobs:
           mkdir -p dist
           cp crates/uccharan/data/*.ucd data/packs/*.ucd dist/
           cp data/sources/wikipron/LICENSE-CC-BY-SA-4.0.txt dist/wikipron-LICENSE-CC-BY-SA-4.0.txt
+          cp data/sources/translit/LICENSE-CC-BY-SA-4.0.txt dist/xlit-LICENSE-CC-BY-SA-4.0.txt
+          cp data/sources/translit/NOTICE.txt dist/xlit-NOTICE.txt
           (cd dist && sha256sum *.ucd > packs.sha256)
       - uses: actions/download-artifact@v8
         with:

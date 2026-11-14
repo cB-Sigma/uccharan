@@ -17,6 +17,9 @@ pub fn build(root: &Path, lang: &str, source: &str) -> Vec<u8> {
     b.meta("lang", lang);
     b.meta("format", "1");
     b.meta("source", source);
+    // Most words of running text are not in the table: a key filter
+    // answers for them without decoding a block.
+    b.key_filter(8);
     if !text.lines().any(|l| l.starts_with("#model")) {
         // A list of the words the letter rules read differently.
         for (k, v) in &rows {
@@ -34,7 +37,7 @@ pub fn build(root: &Path, lang: &str, source: &str) -> Vec<u8> {
     let train: Vec<(String, String)> = rows
         .iter()
         .filter(|(w, _)| trainable(w))
-        .map(|(w, r)| (w.clone(), plain(r)))
+        .map(|(w, r)| (w.clone(), plain(r).replace("ˈʔ", "ʔˈ").replace("ˌʔ", "ʔˌ")))
         .collect();
     let (letters, model) = crate::g2p::train(&train, 1, &crate::g2p::SHAPES, Some(latin));
     b.lts(model.outputs, model.tables);

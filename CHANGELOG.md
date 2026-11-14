@@ -3,6 +3,75 @@
 All notable changes are listed here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow semantic versioning.
 
+## [Unreleased]
+
+## [0.4.0] - 2026-11-14
+
+### Added
+
+- **Italian** (`it`): compatible with the espeak-ng voice `it`; word table `it.ucd` (9.2 k entries and a letter-to-sound model from 104 k words, 188 KB, feature `embed-it`), number words, letter names and clause rules. Held-out PER 0.66 % on FLORES-200 (0.48 % without digits); words in the table 0.5 % wrong, other listed words 0.1 %, words outside the word list 32.2 % (503 words); 4.6× the speed of espeak-ng.
+- **Portuguese (Brazil)** (`pt-br`): compatible with the espeak-ng voice `pt-br`; word table `pt-br.ucd` (5.1 k entries and a letter-to-sound model from 82.5 k words, 171 KB, feature `embed-pt-br`), number words, letter names and clause rules. Held-out PER 0.67 % on FLORES-200 (0.46 % without digits); words in the table 0.7 % wrong, other listed words 0.8 %, words outside the word list 42.0 % (490 words); 5.1× the speed of espeak-ng.
+- **Portuguese (Portugal)** (`pt`): compatible with the espeak-ng voice `pt`; word table `pt.ucd` (6.9 k entries and a letter-to-sound model from 81.6 k words, 215 KB, feature `embed-pt`), number words, letter names and clause rules. Held-out PER 0.89 % on FLORES-200 (0.64 % without digits); words in the table 1.3 % wrong, other listed words 1.8 %, words outside the word list 50.2 % (484 words); 5.2× the speed of espeak-ng.
+- **Polish** (`pl`): compatible with the espeak-ng voice `pl`; word table `pl.ucd` (18.8 k entries and a letter-to-sound model from 127 k words, 239 KB, feature `embed-pl`), number words, letter names and clause rules. Held-out PER 1.33 % on FLORES-200 (1.05 % without digits); words in the table 3.6 % wrong, other listed words 2.7 %, words outside the word list 30.7 % (1058 words); 3.1× the speed of espeak-ng.
+- **Turkish** (`tr`): compatible with the espeak-ng voice `tr`; word table `tr.ucd` (16.3 k entries and a letter-to-sound model from 151 k words, 230 KB, feature `embed-tr`), number words, letter names and clause rules. Held-out PER 0.72 % on FLORES-200 (0.51 % without digits); words in the table 0.1 % wrong, other listed words 0.0 %, words outside the word list 22.3 % (1087 words); 2.7× the speed of espeak-ng.
+- **Czech** (`cs`): compatible with the espeak-ng voice `cs`; word table `cs.ucd` (4.9 k entries and a letter-to-sound model from 133 k words, 78 KB, feature `embed-cs`), number words, letter names and clause rules. Held-out PER 1.40 % on FLORES-200 (1.13 % without digits); words in the table 0.9 % wrong, other listed words 2.9 %, words outside the word list 11.4 % (501 words); 1.8× the speed of espeak-ng.
+- **Swedish** (`sv`): compatible with the espeak-ng voice `sv`; word table `sv.ucd` (7.0 k entries and a letter-to-sound model from 94.8 k words, 171 KB, feature `embed-sv`), number words, letter names and clause rules. Held-out PER 1.51 % on FLORES-200 (0.88 % without digits); words in the table 0.1 % wrong, other listed words 0.0 %, words outside the word list 32.7 % (1161 words); 3.7× the speed of espeak-ng.
+- **Catalan** (`ca`): compatible with the espeak-ng voice `ca`; word table `ca.ucd` (8.1 k entries and a letter-to-sound model from 71.0 k words, 195 KB, feature `embed-ca`), number words, letter names and clause rules. Held-out PER 1.86 % on FLORES-200 (1.53 % without digits); words in the table 7.3 % wrong, other listed words 4.4 %, words outside the word list 41.8 % (553 words); 4.9× the speed of espeak-ng.
+- **Romanian** (`ro`): compatible with the espeak-ng voice `ro`; word table `ro.ucd` (14.4 k entries and a letter-to-sound model from 92.4 k words, 308 KB, feature `embed-ro`), number words, letter names and clause rules. Held-out PER 1.00 % on FLORES-200 (0.89 % without digits); words in the table 0.1 % wrong, other listed words 0.0 %, words outside the word list 49.1 % (629 words); 3.3× the speed of espeak-ng.
+- **Hungarian** (`hu`): compatible with the espeak-ng voice `hu`; word table `hu.ucd` (3.2 k entries and a letter-to-sound model from 152 k words, 46 KB, feature `embed-hu`), number words, letter names and clause rules. Held-out PER 2.08 % on FLORES-200 (1.61 % without digits); words in the table 2.7 % wrong, other listed words 6.6 %, words outside the word list 3.8 % (1119 words); 13.1× the speed of espeak-ng.
+- **Finnish** (`fi`): compatible with the espeak-ng voice `fi`; word table `fi.ucd` (5.7 k entries and a letter-to-sound model from 153 k words, 137 KB, feature `embed-fi`), number words, letter names and clause rules. Held-out PER 1.64 % on FLORES-200 (1.13 % without digits); words in the table 5.7 % wrong, other listed words 4.5 %, words outside the word list 24.6 % (1938 words); 1.7× the speed of espeak-ng.
+- **Norwegian Bokmål** (`nb`): compatible with the espeak-ng voice `nb`; word table `nb.ucd` (5.2 k entries and a letter-to-sound model from 85.8 k words, 100 KB, feature `embed-nb`), number words, letter names and clause rules. Held-out PER 1.11 % on FLORES-200 (0.52 % without digits); words in the table 1.3 % wrong, other listed words 0.0 %, words outside the word list 15.9 % (1119 words); 2.3× the speed of espeak-ng.
+- **Danish** (`da`): compatible with the espeak-ng voice `da`; word table `da.ucd` (26.6 k entries and a letter-to-sound model from 81.4 k words, 490 KB, feature `embed-da`), number words, letter names and clause rules. Held-out PER 2.26 % on FLORES-200 (1.81 % without digits); words in the table 0.7 % wrong, other listed words 0.4 %, words outside the word list 68.2 % (1025 words); 27.1× the speed of espeak-ng.
+
+- **Romanised text into Indian scripts** (`uccharan::translit`): `aap kaise ho` → `आप कैसे हो`,
+  `mujhe kal office jana hai` → `मुझे कल office जाना है`. Each Latin word gets candidates from a
+  lexicon of attested spellings and from an n-gram transliteration model, ranked by the model,
+  by word frequency and by how alike the romanised word and the candidate sound (the
+  sound-alike matcher's phoneme distance); one pass over the sentence decides per word between
+  English and the language, with word-pair statistics for cases like मैं / में. English words
+  stay in Latin letters by default, loanwords typed in English spelling included; `english`
+  = `native` respells them in the script and `convert` takes every word for a romanised one.
+  The result has spans with byte, code-point and UTF-16 offsets, a kind (`indic`, `english`,
+  `other`) and the alternatives of each word. Rust (`translit::transliterate`,
+  `normalize_romanised`), Python (`uccharan.transliterate`), JavaScript (`transliterate`,
+  `loadTranslit`), C (`uccharan_transliterate`) and `uccharan -p native` / `-p native-json`.
+  The data is in nine optional packs under **CC BY-SA 4.0** (`xlit-hi`, `xlit-mr`, `xlit-bn`,
+  `xlit-ta`, `xlit-te`, `xlit-gu`, `xlit-pa`, `xlit-kn`, `xlit-ml`; 3 to 9 MB each, release
+  assets, never fetched automatically), built by `lexgen xlit` from the Dakshina and
+  Aksharantar word pairs; the library contains none of it and converts by rule without a
+  pack. With the Hindi pack loaded, the `hinglish` option of `phonemize` uses it. Hindi has
+  hand-written chat-spelling and homograph lists checked on development sentences; the lists
+  of the other eight languages are hand-written and not yet reviewed by native speakers.
+  See docs/transliteration.md and docs/evaluation.md.
+
+### Changed
+
+- **Faster word-table models.** The letter-to-sound model's run-time was rewritten: the hashes of
+  a letter's contexts are computed together and shared by the sound and stress tables, a bit set
+  built on first use (one bit per table entry present, about 0.3 MB of memory per language in
+  use) answers for the contexts a table does not have, buckets are searched by bisection, and no
+  text is checked per letter. A word of running text is remembered once instead of three times,
+  and each word table has a key filter (`BLM1`, one byte per entry: files grow by 4 to 10 %) so
+  that a word the table does not list costs no block decode. Output is unchanged on every
+  development and held-out sentence of every language. Throughput against espeak-ng 1.52.0, one
+  thread: German 2.0 → 5.8×, Dutch 1.4 → 3.2×, French 3.0 → 5.9×; with the
+  earlier run-time Turkish, Czech, Finnish and Norwegian were slower than espeak-ng
+  (0.9×, 0.7×, 0.7×, 0.9×) and are now 2.7×, 1.8×, 1.7× and 2.3×.
+- `lexgen build` and `lexgen check` build the word tables side by side (`LEXGEN_JOBS`) and take
+  about two minutes instead of twenty; `check` remembers under `target/lexgen-check` which tables
+  it found up to date with unchanged inputs (`LEXGEN_NO_CACHE=1` checks afresh).
+- The README and the package descriptions describe everything uccharan does: phonemiser, text
+  normaliser, transliterator and pronunciation engine. The per-language notes moved to
+  docs/languages.md and the comparison with other phonemisers to docs/comparison.md.
+- The test suite also runs on Windows and macOS on every change.
+
+### Fixed
+
+- Python: `normalize(..., latin="transliterate")` and `transliterate(..., english="native")`
+  load the British English data when the text has Latin-script words, as `phonemize` does.
+  Without it English words were respelled from the American reading alone (`computer` came out
+  as कम्प्यूरर instead of कम्प्यूटर) unless something else had loaded that data first.
+
 ## [0.3.0] - 2026-11-14
 
 ### Added
