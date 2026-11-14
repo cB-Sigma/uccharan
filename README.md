@@ -9,8 +9,8 @@
 <h3 align="center">5× faster than espeak-ng. Just as accurate. Free to ship.</h3>
 
 <p align="center">
-  A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust,
-  Python, C and the browser. Apache-2.0.
+  A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English, Hindi and sixteen more
+  South Asian languages, in Rust, Python, C and the browser. Apache-2.0.
 </p>
 
 <p align="center"><sub>
@@ -37,8 +37,8 @@
 </p>
 
 **uccharan** (उच्चारण, "pronunciation") turns text into the phoneme streams that neural
-text-to-speech voices expect — for **English (US and British), Hindi and code-mixed Hindi +
-English** — under the Apache-2.0 licence, with no GPL code or data. It is written in Rust and runs
+text-to-speech voices expect — for **English (US and British), Hindi, code-mixed Hindi + English and sixteen more South Asian
+languages** (see [Measured compatibility](#measured-compatibility)) — under the Apache-2.0 licence, with no GPL code or data. It is written in Rust and runs
 from Python, JavaScript (WebAssembly, in the browser and Node), Rust and C.
 
 Most open voices (Piper, Kokoro, Kitten TTS, Matcha-TTS, StyleTTS2) were trained on phonemes from
