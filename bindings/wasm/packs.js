@@ -20,6 +20,14 @@ export const PACKS = Object.freeze({
   "sha256": "05a70e6f2314c04fcfc7b0a50387025a4919436551cb69a6074417df0641aa76",
   "size": 1914413
  },
+ "sd": {
+  "sha256": "03df601bf97c4588a8be6c3a01cb3c0d7678309fd819e4dd91027e60b8d67707",
+  "size": 187440
+ },
+ "ur": {
+  "sha256": "3b5fd97fb49d2cb21ae069e461269ba9e3c5f1c6dc5f7dd7f0e3ad4065de078a",
+  "size": 378180
+ },
  "wikipron-en-gb": {
   "sha256": "53718c5458145f7a49cb0bc29c534f1eddf4f6424f240e654bc469f4884c8d4f",
   "size": 728104

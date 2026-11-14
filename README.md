@@ -9,7 +9,7 @@
 <h3 align="center">5× faster than espeak-ng. Just as accurate. Free to ship.</h3>
 
 <p align="center">
-  A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English, Hindi and sixteen more
+  A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English, Hindi and nineteen more
   South Asian languages, in Rust, Python, C and the browser. Apache-2.0.
 </p>
 
@@ -37,7 +37,7 @@
 </p>
 
 **uccharan** (उच्चारण, "pronunciation") turns text into the phoneme streams that neural
-text-to-speech voices expect — for **English (US and British), Hindi, code-mixed Hindi + English and sixteen more South Asian
+text-to-speech voices expect — for **English (US and British), Hindi, code-mixed Hindi + English and nineteen more South Asian
 languages** (see [Measured compatibility](#measured-compatibility)) — under the Apache-2.0 licence, with no GPL code or data. It is written in Rust and runs
 from Python, JavaScript (WebAssembly, in the browser and Node), Rust and C.
 
@@ -46,7 +46,7 @@ espeak-ng, which is GPL-licensed. sherpa-onnx 2.0 removed espeak-ng for that rea
 the caller to bring phonemes. uccharan is that phonemizer:
 
 - **Compatible mode matches espeak-ng** closely enough that existing voices work unchanged:
-  1.16 % phoneme disagreement on held-out American English, 0.12 % on Hindi, and the same
+  1.16 % phoneme disagreement on held-out American English, 0.09 % on Hindi, and the same
   speech-recognition word error rate when real voices speak its output ([numbers](#measured-compatibility)).
 - **Improved mode is more correct than espeak-ng**: homographs in context, names, numbers, Hindi
   schwa deletion and nasals — 82.0 % against espeak-ng's 51.6 % on a hand-made test set written
@@ -119,6 +119,25 @@ uccharan_free(p);
 **Command line**: `uccharan -l hi -p piper "नमस्ते दुनिया।"`. Code written for `phonemizer` can use
 `from uccharan.compat import EspeakBackend`.
 
+## Text voices and word lists
+
+**Normalise-only mode** gives voices that read text (Indic Parler-TTS, IndicF5, Chatterbox,
+VoxCPM2, Veena and other LLM-based models) the spoken form of a text, with typed spans
+(number, money, date, time, phone, URL, Latin word in Indic text, …) aligned to the input in
+byte, code-point and UTF-16 offsets. Options choose which language reads digits, lakh/crore or
+international grouping in English, whether Latin words are kept, respelled or spelled, and
+whether URLs are read out.
+
+```python
+uccharan.normalize("₹5 करोड़ का सौदा 10:30 बजे", "hi").text   # 'पांच करोड़ रुपये का सौदा साढ़े दस बजे'
+uccharan.normalize("UPI से भुगतान", "hi", latin="transliterate").text  # 'यू पी आई से भुगतान'
+```
+
+**Pronunciation word lists** (TSV with `word lang ipa say match note`, W3C PLS import and
+export) apply to both kinds of voice: phoneme voices get the entry's IPA in their phone set,
+text voices its spoken form or a respelling chosen by reading candidates back with uccharan.
+See [docs/normalize.md](docs/normalize.md) and [docs/wordlists.md](docs/wordlists.md).
+
 ## Output profiles
 
 | Profile | Gives you | For |
@@ -141,7 +160,7 @@ Method and full breakdowns: [docs/evaluation.md](docs/evaluation.md).
 | --- | --- | --- | --- | --- | --- |
 | en-US | Piper / sherpa-onnx | PER 1.13 %, 76.7 % sentences identical | none¹ | `amy-low` 2.94 % → 2.97 %; `lessac-medium` 4.30 % → 4.21 % (0.1.0) | **yes** |
 | en-GB (RP) | Piper / sherpa-onnx | PER 1.36 %, 72.4 % identical | none | `alba-medium` 7.36 % → 7.47 % (0.1.0) | yes, one voice tested |
-| Hindi | Piper / sherpa-onnx | PER 0.12 %, 98.8 % identical | none | `hi_IN-rohan-medium` 8.95 % → 8.82 % (0.1.0) | yes, one voice tested |
+| Hindi | Piper / sherpa-onnx | PER 0.09 %, 99.1 % identical | none | `hi_IN-rohan-medium` 8.95 % → 8.82 % (0.1.0) | yes, one voice tested |
 | en-US | `espeak-ipa` (phonemizer shape) | PER 1.16 % | — | — | yes |
 | Hindi | Kokoro | 98.8 % of sentences identical to espeak-ng + Kokoro's mapping | none | Kokoro sid 32: 10.35 % → 10.25 % (0.1.0) | yes, one voice tested |
 | en-US | Kokoro | 94.9 % of sentences identical to **misaki** (99.96 % of dictionary words) | none | Kokoro sid 3: 2.95 % (misaki) → 2.91 % (0.1.0) | **yes** |
@@ -184,9 +203,12 @@ held-out sentence, one thread, against the same espeak-ng voice.
 | Odia | `or` | FLORES-200, 1,012 sentences | PER 0.50 % | 0.28 % | 2.4× | MMS (character input) |
 | Sinhala | `si` | FLORES-200, 1,012 sentences | PER 0.86 % | 0.24 % | 2.3× | MMS (character input) |
 | Konkani | `kok` | Sangraha, 1,000 sentences | PER 0.20 % | 0.13 % | 5.1× | none |
-| Sanskrit | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.95 % against `hi` | 0.43 % | 4.2× | none |
-| Bhojpuri | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.80 % against `hi` | 0.33 % | 3.3× | SYSPIN (character input) |
-| Maithili | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.75 % against `hi` | 0.29 % | 3.0× | MMS, SYSPIN (character input) |
+| Urdu | `ur` | FLORES-200, 1,012 sentences | PER 2.18 % | 1.87 % | 4.6× | Piper `ur_PK` (2) |
+| Sindhi | `sd` | FLORES-200, 1,012 sentences | PER 2.79 % | 2.14 % | 2.7× | none |
+| Sanskrit | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.64 % against `hi` | 0.43 % | 4.2× | none |
+| Bhojpuri | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.51 % against `hi` | 0.33 % | 3.3× | SYSPIN (character input) |
+| Maithili | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.46 % against `hi` | 0.29 % | 3.0× | MMS, SYSPIN (character input) |
+| Magahi | none (`hi` reading) | FLORES-200, 1,012 sentences | PER 0.40 % against `hi` | 0.23 % | 2.8× | MMS (character input) |
 <!-- @@END@@ -->
 
 FLORES-200 sentences are longer news-style text with many numbers, so their rates are not
@@ -211,6 +233,22 @@ is the Hindi voice's reading (as for Bhojpuri), and improved mode reads Sanskrit
 short a pronounced, the classical stress rule (heavy penult, else heavy antepenult, else the fourth
 syllable from the end), visarga echoing the vowel before it at the end of a word, and Sanskrit
 number words.
+
+**Magahi** (`mag`) is read like Bhojpuri and Maithili: compatible mode is the Hindi voice's
+reading; improved mode adds Magahi's own rules to the shared Bihari ones (no ʃ ʂ ɳ, verb endings
+in -əi such as हलई hələi and गेलय ɡeːləi, a said final short ि ु, मे for में). On a held-out
+Magahi gold set (270 words, 73 sentences) improved mode gets 98.5 % of words right against
+64.4 % for the Hindi voice, and sentence PER 0.71 % against 7.67 %.
+
+**Urdu and Sindhi** are written without most short vowels. uccharan reads them in two layers: a word
+table (`ur.ucd`, 40 k words, 378 KB; `sd.ucd`, 20 k words, 187 KB) with the readings espeak-ng's
+voices give the most frequent words of the AI4Bharat Sangraha corpus in running text, and letter
+rules for every other word (each consonant carries a short vowel unless a vowel letter or mark
+follows, with the Hindi-type deletion and stress for Urdu and penultimate stress for Sindhi). On the
+held-out sentences, words found in the table differ from espeak-ng in 0.6 % (Urdu) and 0.7 %
+(Sindhi) of cases, the other words (about one in nine) in 27 %. Improved mode uses the same table,
+reads ص and ظ as s and z, and reads the Urdu digits ۰–۹, which the espeak-ng voices skip. In the
+browser the tables load with the language (`loadLanguage("ur")`).
 
 **Bhojpuri and Maithili** have no espeak-ng voice; text in them given to espeak-ng is read with the
 Hindi voice, so compatible mode reproduces that Hindi reading (the rows above measure it against
@@ -419,7 +457,7 @@ originally come from (details in [DATA_LICENSES.md](DATA_LICENSES.md)).
 
 ## Roadmap
 
-- **More languages**: Urdu and Sindhi (Perso-Arabic script), then the Latin-alphabet languages —
+- **More languages**: the Latin-alphabet languages, then the rest of espeak-ng's list —
   each with held-out sets and the same gates ([how](docs/adding-a-language.md)).
 - **An optional GPL data pack**, kept in a separate repository and package, for people who can
   accept the GPL and want espeak-ng's own dictionaries for languages uccharan does not cover yet.
@@ -431,6 +469,7 @@ originally come from (details in [DATA_LICENSES.md](DATA_LICENSES.md)).
 
 [Architecture](docs/architecture.md) · [Profiles](docs/profiles.md) ·
 [Improved mode](docs/improved-mode.md) · [Evaluation](docs/evaluation.md) ·
+[Normalise-only mode](docs/normalize.md) · [Word lists](docs/wordlists.md) ·
 [Adding a language](docs/adding-a-language.md) ·
 Integrations: [sherpa-onnx](docs/integrations/sherpa-onnx.md), [Piper](docs/integrations/piper.md),
 [Kokoro](docs/integrations/kokoro.md), [bolo](docs/integrations/bolo.md) ·

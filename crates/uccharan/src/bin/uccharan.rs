@@ -10,6 +10,10 @@
 //! ` | `). `--threads N` phonemizes standard input in parallel (0 = all cores).
 //! `--misaki DIR` replaces the built-in copy of misaki's English dictionaries
 //! (`us_gold.json`, `us_silver.json`, `gb_*` in DIR) for the `kokoro` profile.
+//! `-p text` prints the spoken form of each line (normalise-only mode) and
+//! `-p text-json` the spoken form with spans; `--norm-options JSON` sets the
+//! normalise options. `--wordlist FILE` (TSV or PLS, repeatable) applies a
+//! pronunciation word list in both modes.
 //! Without TEXT arguments, lines are read from standard input.
 
 use std::io::{BufRead, Write};
@@ -28,6 +32,8 @@ fn main() {
     let mut misaki: Option<String> = None;
     let mut packs: Vec<String> = Vec::new();
     let mut texts: Vec<String> = Vec::new();
+    let mut norm_options = String::new();
+    let mut wordlists: Vec<std::sync::Arc<uccharan::wordlist::WordList>> = Vec::new();
     let mut args = std::env::args().skip(1);
     while let Some(a) = args.next() {
         match a.as_str() {
@@ -52,6 +58,14 @@ fn main() {
             "--threads" => threads = args.next().and_then(|v| v.parse().ok()),
             "--misaki" => misaki = args.next(),
             "--pack" => packs.extend(args.next()),
+            "--norm-options" => norm_options = args.next().unwrap_or_default(),
+            "--wordlist" => {
+                let f = args.next().unwrap_or_default();
+                let t = std::fs::read_to_string(&f).unwrap_or_else(|e| die(&format!("{f}: {e}")));
+                let wl = uccharan::wordlist::WordList::parse_any(&t)
+                    .unwrap_or_else(|e| die(&format!("{f}: {e}")));
+                wordlists.push(std::sync::Arc::new(wl));
+            }
             "-V" | "--version" => {
                 println!("uccharan {}", env!("CARGO_PKG_VERSION"));
                 return;
@@ -64,6 +78,35 @@ fn main() {
             }
             _ => texts.push(a),
         }
+    }
+    if prof == "text" || prof == "text-json" {
+        let p = Phonemizer::new();
+        let mut o = uccharan::normalize_api::options_from_json(&norm_options)
+            .unwrap_or_else(|e| die(&format!("--norm-options: {e}")));
+        if mode == Mode::Improved {
+            o.mode = mode;
+        }
+        o.wordlists.extend(wordlists.iter().cloned());
+        let lines: Vec<String> = if texts.is_empty() {
+            std::io::stdin()
+                .lock()
+                .lines()
+                .map_while(Result::ok)
+                .collect()
+        } else {
+            texts.clone()
+        };
+        let mut out = std::io::BufWriter::new(std::io::stdout().lock());
+        for line in &lines {
+            let n = uccharan::normalize_api::normalize(&p, line, lang, &o);
+            let s = if prof == "text" {
+                n.text.clone()
+            } else {
+                n.to_json(line)
+            };
+            let _ = writeln!(out, "{s}");
+        }
+        return;
     }
     let Some(kind) = profile::Profile::parse(&prof) else {
         die(&format!("unknown profile '{prof}'"))
@@ -112,6 +155,16 @@ fn main() {
             .join(" ")
     };
     let render = |line: &str| -> String {
+        if !ids && !wordlists.is_empty() {
+            return uccharan::normalize_api::render_with_wordlists(
+                &p,
+                line,
+                &opt,
+                kind,
+                punctuation,
+                &wordlists,
+            );
+        }
         if !ids {
             return p.render(line, &opt, kind, punctuation);
         }

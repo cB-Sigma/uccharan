@@ -1,0 +1,682 @@
+# Magahi word gold set, written 2026-11-14 before any Magahi-specific rules. Format: word, broad pronunciation(s)
+# separated by |, category, source. K = Wiktionary Magahi entry (lemma and romanisation from the kaikki.org
+# extraction of English Wiktionary, https://kaikki.org/dictionary/Magahi/, CC BY-SA 4.0, evaluation only, fetched
+# 2026-11-14); Kaithi-script lemmas are kept in Kaithi for 45 items (category kaithi), the rest are written in
+# Devanagari. The pronunciation is converted from the Wiktionary romanisation and checked by hand (medial and final
+# vowels, ā = aː, ai au = əi əu, ṛ = ɽ, ś ṣ ṇ = s s n). F = word attested in FLORES-200 mag_Deva (CC BY-SA 4.0,
+# evaluation only); G = form given in a grammar description: Grierson, Linguistic Survey of India V.2 (1903, public
+# domain), Magahi sketch; Verma 2003, "Magahi", in Cardona & Jain (eds.), The Indo-Aryan Languages; Aryani 1965,
+# A Grammar of Magahi. F/G pronunciations hand-written from those grammars: no ʃ ʂ ɳ (Sanskrit loans written with
+# श ष ण also accepted with the Hindi sounds), initial व in Sanskrit loans = b, ऐ औ and a vowel followed by इ उ = əi
+# əu, final -ई/-इ/-य after a consonant with the inherent vowel = the diphthong əi (हलई hələi), final short ि ु said,
+# ड़ ढ़ = ɽ ɽʰ, Hindi-type schwa deletion otherwise; ɦ is written h.
+# Magahi sentence gold set, written 2026-11-14 before any Magahi-specific rules. Sentences 1-108 and 133-152:
+# written for this set on the patterns of the grammars named in words.src (colloquial copula हे/हइ/हथ, 1st person
+# -इयो, 2nd person -ऽ), vocabulary from Wiktionary and FLORES-200 mag_Deva; sentences 109-132: FLORES-200 mag_Deva
+# dev/devtest (CC BY-SA 4.0, evaluation only; in 132 the digits of 16वीं are written out). Pronunciation hand-written with the
+# conventions of words.src. Format: sentence <TAB> pronunciation.
+# Columns: id, kind, text, expected, category, source (with licence), split, date written.
+w-अँचरा	word	अँचरा	ãcɾaː|ə̃cɾaː	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अकड़हर	word	अकड़हर	əkəɽhəɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अकबकाल	word	अकबकाल	əkbəkaːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अकार	word	अकार	əkaːɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अकाल	word	अकाल	əkaːl	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अकास	word	अकास	əkaːs	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂃𑂎𑂢𑂱	word	𑂃𑂎𑂢𑂱	əkʰni	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂃𑂎𑂩𑂷𑂗	word	𑂃𑂎𑂩𑂷𑂗	əkʰɾoːʈ	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अगराहा	word	अगराहा	əɡɾaːhaː	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अङरखा	word	अङरखा	əŋəɾkʰaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अङ्गना	word	अङ्गना	əŋɡnaː|əŋɡənaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अङ्गा	word	अङ्गा	əŋɡaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अङ्गिया	word	अङ्गिया	əŋɡijaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अङ्गुरी	word	अङ्गुरी	əŋɡuɾiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अङ्गोछा	word	अङ्गोछा	əŋɡoːcʰaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अचके	word	अचके	əcəkeː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अच्छे	word	अच्छे	əccʰeː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अछरङ्ग	word	अछरङ्ग	əcʰɾəŋɡ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अजगर	word	अजगर	əɟɡəɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अजगुत	word	अजगुत	əɟɡut	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अजोह	word	अजोह	əɟoːh	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अझुरी	word	अझुरी	əɟʰuɾiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अञ्चल	word	अञ्चल	əɲcəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अटकल	word	अटकल	əʈəkəl|əʈkəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अटी	word	अटी	əʈiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अटैची	word	अटैची	əʈəiciː	diph	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂃𑂘𑂧𑂲	word	𑂃𑂘𑂧𑂲	əʈʰmiː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अड्डा	word	अड्डा	əɖɖaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अति	word	अति	əti	finali	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अधिकांश	word	अधिकांश	ədʰikaːns|ədʰikaːnʃ	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अनुमान	word	अनुमान	ənumaːn	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अन्नस	word	अन्नस	ənnəs	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अपाहिज	word	अपाहिज	əpaːhiɟ	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अप्पन	word	अप्पन	əppən	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अबेर	word	अबेर	əbeːɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अमरलत्ता	word	अमरलत्ता	əməɾləttaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अरमेना	word	अरमेना	əɾmeːnaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂃𑂩𑂰𑂧	word	𑂃𑂩𑂰𑂧	əɾaːm	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अरुई	word	अरुई	əɾuiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂃𑂪𑂏𑂰𑂉𑂪	word	𑂃𑂪𑂏𑂰𑂉𑂪	əlɡaːeːl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अलच्छ	word	अलच्छ	ələccʰ	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अवँरा	word	अवँरा	əũɾaː	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-असेसर	word	असेसर	əseːsəɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अस्तर	word	अस्तर	əstəɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अस्नान	word	अस्नान	əsnaːn	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अहिआ	word	अहिआ	əhiaː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-अहिजा	word	अहिजा	əhiɟaː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-अहे	word	अहे	əheː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-आँटा	word	आँटा	ãːʈaː	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-आँड़	word	आँड़	ãːɽ	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-आइल	word	आइल	aːil	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-आकर्षण	word	आकर्षण	aːkəɾsən|aːkəɾʃən	loan	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-आकलन	word	आकलन	aːklən	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-आक्रमण	word	आक्रमण	aːkɾəmən	loan	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-आगि	word	आगि	aːɡi	finali	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-आगू	word	आगू	aːɡuː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-आदी	word	आदी	aːdiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂄𑂡	word	𑂄𑂡	aːdʰ	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-आरी	word	आरी	aːɾiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-इनार	word	इनार	inaːɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-इर्खा	word	इर्खा	iɾkʰaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-इस्क्रीम	word	इस्क्रीम	iskɾiːm	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-ईटा	word	ईटा	iːʈaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂇𑂐𑂚𑂪	word	𑂇𑂐𑂚𑂪	uɡʰəɽəl|uɡʰɽəl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-उघाड़ल	word	उघाड़ल	uɡʰaːɽəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-उठल	word	उठल	uʈʰəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂇𑂞𑂹𑂞𑂩	word	𑂇𑂞𑂹𑂞𑂩	uttəɾ	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂉𑂁𑂯𑂵	word	𑂉𑂁𑂯𑂵	ẽːheː|eːheː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-एकदम	word	एकदम	eːkdəm	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-एन्ने	word	एन्ने	eːnneː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂉𑂮𑂷𑂀	word	𑂉𑂮𑂷𑂀	eːsõː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-ओँटा	word	ओँटा	õːʈaː	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-ओखनि	word	ओखनि	oːkʰni	finali	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-ओझराल	word	ओझराल	oːɟʰɾaːl	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-ओठ	word	ओठ	oːʈʰ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-ओरिआएल	word	ओरिआएल	oːɾiaːeːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-औजार	word	औजार	əuɟaːɾ	diph	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-कखनि	word	कखनि	kəkʰni	finali	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-कनौला	word	कनौला	kənəulaː	diph	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-कय	word	कय	kəj|kəi	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-कर	word	कर	kəɾ	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-करेजगर	word	करेजगर	kəɾeːɟɡəɾ	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-कलौवा	word	कलौवा	kələuwaː	diph	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-काँख	word	काँख	kãːkʰ	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-कादो	word	कादो	kaːdoː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-काहे	word	काहे	kaːheː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-किनल	word	किनल	kinəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-किरङ्ग	word	किरङ्ग	kiɾəŋɡ	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂍𑂲	word	𑂍𑂲	kiː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-कुइआँ	word	कुइआँ	kuiãː	diph	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-के	word	के	keː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-केताब	word	केताब	keːtaːb	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-केबाड़ी	word	केबाड़ी	keːbaːɽiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂍𑂵𑂯𑂳𑂢𑂲	word	𑂍𑂵𑂯𑂳𑂢𑂲	keːhuniː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-क्रोध	word	क्रोध	kɾoːdʰ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-खग	word	खग	kʰəɡ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂎𑂣𑂪	word	𑂎𑂣𑂪	kʰəpəl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-खरखाह	word	खरखाह	kʰəɾkʰaːh	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-खाएल	word	खाएल	kʰaːeːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-खिआएल	word	खिआएल	kʰiaːeːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-खोट	word	खोट	kʰoːʈ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-गप	word	गप	ɡəp	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-गपिआल	word	गपिआल	ɡəpiaːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-गमक	word	गमक	ɡəmək	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂏𑂧𑂍𑂪	word	𑂏𑂧𑂍𑂪	ɡəmkəl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-गमछा	word	गमछा	ɡəmcʰaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-गरिआएल	word	गरिआएल	ɡəɾiaːeːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-गाछ	word	गाछ	ɡaːcʰ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂏𑂵	word	𑂏𑂵	ɡeː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-गेँठ	word	गेँठ	ɡẽːʈʰ	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂏𑂵𑂢𑂹𑂠𑂰	word	𑂏𑂵𑂢𑂹𑂠𑂰	ɡeːndaː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-गेल	word	गेल	ɡeːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂏𑂷𑂚	word	𑂏𑂷𑂚	ɡoːɽ	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-गोन	word	गोन	ɡoːn	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-गोसिआल	word	गोसिआल	ɡoːsiaːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-गोस्सा	word	गोस्सा	ɡoːssaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-गोहूँ	word	गोहूँ	ɡoːhũː	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-घाम	word	घाम	ɡʰaːm	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-चक्की	word	चक्की	cəkkiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-चाहल	word	चाहल	caːhəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-चिमकी	word	चिमकी	cimkiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂒𑂳𑂪	word	𑂒𑂳𑂪	cul	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-चोख	word	चोख	coːkʰ	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-छज्जा	word	छज्जा	cʰəɟɟaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-छड़	word	छड़	cʰəɽ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-छाह	word	छाह	cʰaːh	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-छितराल	word	छितराल	cʰitɾaːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-छुतल	word	छुतल	cʰutəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂓𑂵𑂀𑂍𑂪	word	𑂓𑂵𑂀𑂍𑂪	cʰẽːkəl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-जखनि	word	जखनि	ɟəkʰni	finali	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-जट्टा	word	जट्टा	ɟəʈʈaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-जड़ी	word	जड़ी	ɟəɽiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-जनानी	word	जनानी	ɟənaːniː	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-जनी	word	जनी	ɟəniː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-जन्म	word	जन्म	ɟənm|ɟənəm	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-जरल	word	जरल	ɟəɾəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-जल	word	जल	ɟəl	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-जलम	word	जलम	ɟələm	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-जातिगर	word	जातिगर	ɟaːtiɡəɾ	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂔𑂰𑂠𑂵	word	𑂔𑂰𑂠𑂵	ɟaːdeː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-जानल	word	जानल	ɟaːnəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-जीभ	word	जीभ	ɟiːbʰ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-जीवन	word	जीवन	ɟiːwən|ɟiːbən|ɟiːʋən	loan	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂔𑂵𑂫𑂪	word	𑂔𑂵𑂫𑂪	ɟeːwəl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-जेहिजा	word	जेहिजा	ɟeːhiɟaː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-जोखा	word	जोखा	ɟoːkʰaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-जोड़िआल	word	जोड़िआल	ɟoːɽiaːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-झपना	word	झपना	ɟʰəpnaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-टेरल	word	टेरल	ʈeːɾəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-ठाढ़	word	ठाढ़	ʈʰaːɽʰ	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-डाक	word	डाक	ɖaːk	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-डाकघर	word	डाकघर	ɖaːkɡʰəɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂙𑂰𑂯	word	𑂙𑂰𑂯	ɖaːh	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-डाहसी	word	डाहसी	ɖaːhsiː	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-डुण्डा	word	डुण्डा	ɖunɖaː	loan	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-डेग	word	डेग	ɖeːɡ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂙𑂷𑂩𑂰	word	𑂙𑂷𑂩𑂰	ɖoːɾaː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-डोलल	word	डोलल	ɖoːləl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-ढारल	word	ढारल	ɖʰaːɾəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-ढेकार	word	ढेकार	ɖʰeːkaːɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-तय	word	तय	təj|təi	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂞𑂰𑂍𑂪	word	𑂞𑂰𑂍𑂪	taːkəl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-तागा	word	तागा	taːɡaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂞𑂱𑂩𑂱𑂄	word	𑂞𑂱𑂩𑂱𑂄	tiɾiaː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-तीरल	word	तीरल	tiːɾəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-तूँ	word	तूँ	tũː	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂞𑂴𑂚𑂪	word	𑂞𑂴𑂚𑂪	tuːɽəl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-तेजल	word	तेजल	teːɟəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-दन्ने	word	दन्ने	dənneː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-दरक	word	दरक	dəɾək	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂠𑂩𑂍𑂪	word	𑂠𑂩𑂍𑂪	dəɾəkəl|dəɾkəl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-दादा	word	दादा	daːdaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-दुख	word	दुख	dukʰ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂠𑂳𑂎𑂰𑂪	word	𑂠𑂳𑂎𑂰𑂪	dukʰaːl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-दुसल	word	दुसल	dusəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-दुस्ना	word	दुस्ना	dusnaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-देस	word	देस	deːs	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-देहचोर	word	देहचोर	deːhcoːɾ	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-धिआ	word	धिआ	dʰiaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-नकटी	word	नकटी	nəkʈiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂢𑂧𑂯𑂩	word	𑂢𑂧𑂯𑂩	nəmhəɾ	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-नसकत	word	नसकत	nəsəkət|nəskət	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-नाक	word	नाक	naːk	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-निराल	word	निराल	niɾaːl	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-नुकल	word	नुकल	nukəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-नूनगर	word	नूनगर	nuːnɡəɾ	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-नेवतल	word	नेवतल	neːwtəl	loan	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-नेवता	word	नेवता	neːwtaː	loan	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-पड़ल	word	पड़ल	pəɽəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-पत्थल	word	पत्थल	pəttʰəl	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-पनसोखा	word	पनसोखा	pənsoːkʰaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂣𑂢𑂹𑂢𑂰	word	𑂣𑂢𑂹𑂢𑂰	pənnaː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-पन्नी	word	पन्नी	pənniː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-पर	word	पर	pəɾ	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-परिआर	word	परिआर	pəɾiaːɾ	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-परेवा	word	परेवा	pəɾeːwaː	loan	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-पान	word	पान	paːn	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-पिछलग्गू	word	पिछलग्गू	picʰləɡɡuː	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-पिड़ाल	word	पिड़ाल	piɽaːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-पुछार	word	पुछार	pucʰaːɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-पुराएल	word	पुराएल	puɾaːeːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-पेड़ाएल	word	पेड़ाएल	peːɽaːeːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-पोथी	word	पोथी	poːtʰiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-फड़ल	word	फड़ल	pʰəɽəl	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂤𑂩𑂱𑂨𑂰𑂪	word	𑂤𑂩𑂱𑂨𑂰𑂪	pʰəɾijaːl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-फिकिर	word	फिकिर	pʰikiɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-फिन	word	फिन	pʰin	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-फेर	word	फेर	pʰeːɾ	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-फैट	word	फैट	pʰəiʈ	diph	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-बकि	word	बकि	bəki	finali	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बच्चा	word	बच्चा	bəccaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बत्ती	word	बत्ती	bəttiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बनिजी	word	बनिजी	bəniɟiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-बयस	word	बयस	bəjəs	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बरिआर	word	बरिआर	bəɾiaːɾ	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बल	word	बल	bəl	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बहिन	word	बहिन	bəhin	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बा	word	बा	baː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बाँचल	word	बाँचल	bãːcəl	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-बाकिर	word	बाकिर	baːkiɾ	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-बाजल	word	बाजल	baːɟəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-बादर	word	बादर	baːdəɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-बार	word	बार	baːɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बिछौति	word	बिछौति	bicʰəuti	finali	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-बिछौना	word	बिछौना	bicʰəunaː	diph	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-बिलम	word	बिलम	biləm	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-बिलाएल	word	बिलाएल	bilaːeːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बुझल	word	बुझल	buɟʰəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बुड़ल	word	बुड़ल	buɽəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂥𑂳𑂛𑂰𑂩𑂲	word	𑂥𑂳𑂛𑂰𑂩𑂲	buɖʰaːɾiː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बुलल	word	बुलल	buləl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-बेगरता	word	बेगरता	beːɡəɾtaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बेथा	word	बेथा	beːtʰaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂥𑂵𑂟𑂰𑂪	word	𑂥𑂵𑂟𑂰𑂪	beːtʰaːl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-बेशी	word	बेशी	beːsiː	loan	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-बेसतर	word	बेसतर	beːstəɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बेसी	word	बेसी	beːsiː	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बोड़ल	word	बोड़ल	boːɽəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-बोलल	word	बोलल	boːləl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂦𑂖𑂹𑂔𑂰𑂉𑂪	word	𑂦𑂖𑂹𑂔𑂰𑂉𑂪	bʰəɲɟaːeːl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂦𑂰𑂞	word	𑂦𑂰𑂞	bʰaːt	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-भिखमङ्ग	word	भिखमङ्ग	bʰikʰməŋɡ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-भिनसर	word	भिनसर	bʰinsəɾ	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂦𑂵𑂗𑂪	word	𑂦𑂵𑂗𑂪	bʰeːʈəl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-भोर	word	भोर	bʰoːɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-मन	word	मन	mən	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-मन्दिल	word	मन्दिल	məndil	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-मम्मा	word	मम्मा	məmmaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-महाजनी	word	महाजनी	məhaːɟəniː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-मांस	word	मांस	maːns|mãːs	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-मागुर	word	मागुर	maːɡuɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-माथा	word	माथा	maːtʰaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-मामा	word	मामा	maːmaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-मीठगर	word	मीठगर	miːʈʰɡəɾ	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-मुआल	word	मुआल	muaːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-मूठि	word	मूठि	muːʈʰi	finali	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-मूड़ी	word	मूड़ी	muːɽiː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂧𑂴𑂮	word	𑂧𑂴𑂮	muːs	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-मूसहर	word	मूसहर	muːshəɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-मे	word	मे	meː	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-मेहरी	word	मेहरी	meːhɾiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-मैसल	word	मैसल	məisəl	diph	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-मौगी	word	मौगी	məuɡiː	diph	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-राजा	word	राजा	ɾaːɟaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-रीछ	word	रीछ	ɾiːcʰ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-रुखी	word	रुखी	ɾukʰiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-रूपा	word	रूपा	ɾuːpaː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂪𑂎𑂰𑂉𑂪	word	𑂪𑂎𑂰𑂉𑂪	ləkʰaːeːl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-लगल	word	लगल	ləɡəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-लङ्गटे	word	लङ्गटे	ləŋɡʈeː	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-लसलस	word	लसलस	ləsləs	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-लसलसाहट	word	लसलसाहट	ləsləsaːhəʈ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-लागल	word	लागल	laːɡəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-लाम	word	लाम	laːm	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂪𑂳𑂍𑂪	word	𑂪𑂳𑂍𑂪	lukəl	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-लूर	word	लूर	luːɾ	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-लेल	word	लेल	leːl	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂪𑂶𑂍𑂰	word	𑂪𑂶𑂍𑂰	ləikaː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-लोघड़ल	word	लोघड़ल	loːɡʰəɽəl|loːɡʰɽəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂬𑂵𑂭	word	𑂬𑂵𑂭	seːs|ʃeːʃ	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂬𑂶𑂪𑂲	word	𑂬𑂶𑂪𑂲	səiliː|ʃəiliː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-सँ	word	सँ	sə̃|sã	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-𑂮𑂦𑂞𑂩	word	𑂮𑂦𑂞𑂩	səbʰtəɾ	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-सलाइ	word	सलाइ	səlaːi	diph	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-सहज	word	सहज	səhəɟ	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-सादा	word	सादा	saːdaː	adj	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-सुइ	word	सुइ	sui	diph	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂮𑂳𑂅𑂄	word	𑂮𑂳𑂅𑂄	suiaː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-सुतल	word	सुतल	sutəl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-सुतारी	word	सुतारी	sutaːɾiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-सुधिआएल	word	सुधिआएल	sudʰiaːeːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-सूधी	word	सूधी	suːdʰiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-हँसुआ	word	हँसुआ	hə̃suaː|hãsuaː	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-हकै	word	हकै	həkəi	diph	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-हगुआएल	word	हगुआएल	həɡuaːeːl	past	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-हम्मर	word	हम्मर	həmməɾ	misc	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-𑂯𑂩𑂹𑂔𑂰	word	𑂯𑂩𑂹𑂔𑂰	həɾɟaː	kaithi	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-हाँड़ा	word	हाँड़ा	hãːɽaː	nasal	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	heldout	2026-11-14
+w-हिन्दी	word	हिन्दी	hindiː	noun	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-है	word	है	həi	diph	Wiktionary mag entry via kaikki.org (CC BY-SA 4.0), fetched 2026-11-14; pronunciation from the romanisation, checked by hand	dev	2026-11-14
+w-हय	word	हय	həi	cop	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-हई	word	हई	həi|həiː	cop	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-हइ	word	हइ	həi	cop	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-हल	word	हल	həl	cop	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-हलय	word	हलय	hələi	cop	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-हलई	word	हलई	hələi|hələiː	cop	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-हले	word	हले	həleː|hleː	cop	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-हलथिन	word	हलथिन	hələtʰin|həltʰin	cop	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-हका	word	हका	həkaː	cop	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-हकइ	word	हकइ	həkəi	cop	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-हके	word	हके	həkeː	cop	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-हथ	word	हथ	hətʰ	cop	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-हथी	word	हथी	hətʰiː	cop	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-हियो	word	हियो	hijoː	cop	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-हकियो	word	हकियो	həkijoː	cop	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-छलई	word	छलई	cʰələi|cʰələiː	cop	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-छई	word	छई	cʰəi|cʰəiː	cop	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-छी	word	छी	cʰiː	cop	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-गेलई	word	गेलई	ɡeːləi|ɡeːləiː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-गेलय	word	गेलय	ɡeːləi	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-गेले	word	गेले	ɡeːleː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-होलई	word	होलई	hoːləi|hoːləiː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-होलय	word	होलय	hoːləi	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-कैलकय	word	कैलकय	kəiləkəi|kəilkəi	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-कैलक	word	कैलक	kəilək|kəilk	verb	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-कहलकय	word	कहलकय	kəhələkəi|kəhləkəi|kəhlkəi	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-कहलक	word	कहलक	kəhələk|kəhlək	verb	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-कहलथिन	word	कहलथिन	kəhələtʰin|kəhəltʰin|kəhlətʰin	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-देलई	word	देलई	deːləi|deːləiː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-दलकय	word	दलकय	dələkəi|dəlkəi	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-करई	word	करई	kəɾəi|kəɾəiː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-सकई	word	सकई	səkəi|səkəiː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-सकइ	word	सकइ	səkəi	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-रहई	word	रहई	ɾəhəi|ɾəhəiː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-रहले	word	रहले	ɾəhleː|ɾəhəleː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-कलई	word	कलई	kələi|kələiː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-होतय	word	होतय	hoːtəi	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-गलय	word	गलय	ɡələi	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-होई	word	होई	hoːi|hoːiː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-जाई	word	जाई	ɟaːi|ɟaːiː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-होवो	word	होवो	hoːwoː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-होवे	word	होवे	hoːweː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-जावो	word	जावो	ɟaːwoː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-करो	word	करो	kəɾoː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-सको	word	सको	səkoː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-रहो	word	रहो	ɾəhoː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-कैल	word	कैल	kəil	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-कइल	word	कइल	kəil	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-कियल	word	कियल	kijəl	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-करल	word	करल	kəɾəl	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-रहल	word	रहल	ɾəhəl	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-बनल	word	बनल	bənəl	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-देवल	word	देवल	deːwəl	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-मानल	word	मानल	maːnəl	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-चल	word	चल	cəl	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-बनावे	word	बनावे	bənaːweː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-देखे	word	देखे	deːkʰeː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-लेवे	word	लेवे	leːweː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-देवे	word	देवे	deːweː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-रखे	word	रखे	ɾəkʰeː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-करे	word	करे	kəɾeː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-करके	word	करके	kəɾkeː	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-जाहियो	word	जाहियो	ɟaːhijoː	verb	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-जाइत	word	जाइत	ɟaːit	verb	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-करइत	word	करइत	kəɾit|kəɾəit	verb	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-खइलक	word	खइलक	kʰəilək|kʰəilk	verb	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-अइलन	word	अइलन	əilən	verb	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-गेलन	word	गेलन	ɡeːlən	verb	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-चाहि	word	चाहि	caːhi	verb	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-लगी	word	लगी	ləɡiː	post	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-ला	word	ला	laː	post	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-से	word	से	seː	post	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-में	word	में	meː|mẽː	post	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-जौरे	word	जौरे	ɟəuɾeː	post	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-साथे	word	साथे	saːtʰeː	post	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-खातिर	word	खातिर	kʰaːtiɾ	post	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-तक	word	तक	tək	post	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-बारे	word	बारे	baːɾeː	post	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-ई	word	ई	iː	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-ऊ	word	ऊ	uː	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-उ	word	उ	u|uː	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-इ	word	इ	i|iː	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-हम	word	हम	həm	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-हमनी	word	हमनी	həmniː	pron	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-अहां	word	अहां	əhãː	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-तोहनी	word	तोहनी	toːhniː	pron	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-अपन	word	अपन	əpən	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-अपने	word	अपने	əpneː	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-ओकरा	word	ओकरा	oːkɾaː	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-ओकर	word	ओकर	oːkəɾ	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-ओकार	word	ओकार	oːkaːɾ	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-जेकरा	word	जेकरा	ɟeːkɾaː	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-जेकर	word	जेकर	ɟeːkəɾ	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-उनकर	word	उनकर	unkəɾ	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-हमर	word	हमर	həməɾ	pron	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-हमरा	word	हमरा	həmɾaː	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-तोहर	word	तोहर	toːhəɾ	pron	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-कोई	word	कोई	koːi|koːiː	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-कोनो	word	कोनो	koːnoː	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-कुछ	word	कुछ	kucʰ	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-सब	word	सब	səb	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-सभे	word	सभे	səbʰeː	pron	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-एगो	word	एगो	eːɡoː	num	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-दूगो	word	दूगो	duːɡoː	num	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-तीनगो	word	तीनगो	tiːnɡoː	num	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-कैगो	word	कैगो	kəiɡoː	num	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-दू	word	दू	duː	num	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-तीन	word	तीन	tiːn	num	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-चार	word	चार	caːɾ	num	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-पहिला	word	पहिला	pəhilaː	num	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-पहिले	word	पहिले	pəhileː	misc	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-दोसर	word	दोसर	doːsəɾ	num	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-केतना	word	केतना	keːtnaː	misc	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-अउ	word	अउ	əu	conj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-आऊर	word	आऊर	aːuɾ|aːuːɾ|əuɾ	conj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-औ	word	औ	əu	conj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-लेकिन	word	लेकिन	leːkin	conj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-बाकि	word	बाकि	baːki	conj	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-काहेकी	word	काहेकी	kaːheːkiː	conj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-जबकि	word	जबकि	ɟəbki	conj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-कि	word	कि	ki|kiː	conj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-जे	word	जे	ɟeː	conj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-जब	word	जब	ɟəb	conj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-तब	word	तब	təb	conj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-नय	word	नय	nəi	neg	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-न	word	न	nə|nəi	neg	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-ना	word	ना	naː	neg	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-नञ	word	नञ	nəɲ|nə̃	neg	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-अइसन	word	अइसन	əisən	diph	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-ऐसन	word	ऐसन	əisən	diph	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-जइसन	word	जइसन	ɟəisən	diph	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-जैसन	word	जैसन	ɟəisən	diph	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-जैसे	word	जैसे	ɟəiseː	diph	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-कैसन	word	कैसन	kəisən	diph	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-लइका	word	लइका	ləikaː	diph	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-बइठल	word	बइठल	bəiʈʰəl	diph	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-अउरत	word	अउरत	əuɾət	diph	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-अप्रैल	word	अप्रैल	əpɾəil	diph	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-दौरान	word	दौरान	dəuɾaːn	diph	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-मौसम	word	मौसम	məusəm	diph	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-लोगन	word	लोगन	loːɡən	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-लोगनन	word	लोगनन	loːɡənən	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-आदमी	word	आदमी	aːdmiː	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-घर	word	घर	ɡʰəɾ	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-पानी	word	पानी	paːniː	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-दिन	word	दिन	din	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-रात	word	रात	ɾaːt	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-काम	word	काम	kaːm	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-बात	word	बात	baːt	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-नाम	word	नाम	naːm	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-साल	word	साल	saːl	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-हाथ	word	हाथ	haːtʰ	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-भोजन	word	भोजन	bʰoːɟən	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-सहर	word	सहर	səhəɾ	noun	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-नदी	word	नदी	nədiː	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-मंदिर	word	मंदिर	məndiɾ	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-दुनिया	word	दुनिया	dunijaː	noun	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-बड़ा	word	बड़ा	bəɽaː	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-छोट	word	छोट	cʰoːʈ	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-छोटा	word	छोटा	cʰoːʈaː	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-अच्छा	word	अच्छा	əccʰaː	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-नया	word	नया	nəjaː	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-नए	word	नए	nəeː	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-अलग	word	अलग	ələɡ	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-सबसे	word	सबसे	səbseː	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-बहुत	word	बहुत	bəhut	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-अधिक	word	अधिक	ədʰik	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-जादे	word	जादे	ɟaːdeː	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-कम	word	कम	kəm	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-दूर	word	दूर	duːɾ	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-आसान	word	आसान	aːsaːn	adj	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-देश	word	देश	deːs|deːʃ	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-शहर	word	शहर	səhəɾ|ʃəhəɾ	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-शामिल	word	शामिल	saːmil|ʃaːmil	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-शुरू	word	शुरू	suɾuː|ʃuɾuː	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-विशेष	word	विशेष	biseːs|wiʃeːʃ|ʋiʃeːʃ	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-क्षेत्र	word	क्षेत्र	kseːtɾ|kʃeːtɾ|cʰeːtɾ	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-प्राप्त	word	प्राप्त	pɾaːpt	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-स्थान	word	स्थान	stʰaːn|əstʰaːn	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-द्वारा	word	द्वारा	dwaːɾaː|dʋaːɾaː	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-समय	word	समय	səməj	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-उपयोग	word	उपयोग	upjoːɡ|upəjoːɡ	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-आवश्यकता	word	आवश्यकता	aːwəsjəktaː|aːʋəʃjəktaː	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-महत्वपूर्ण	word	महत्वपूर्ण	məhətwəpuːɾn|məhətʋəpuːɾɳ	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-भाषा	word	भाषा	bʰaːsaː|bʰaːʃaː	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-यात्रा	word	यात्रा	jaːtɾaː	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-घंटा	word	घंटा	ɡʰənʈaː	nasal	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-संख्या	word	संख्या	səŋkʰjaː	nasal	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-संबंध	word	संबंध	səmbəndʰ	nasal	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-अंत	word	अंत	ənt	nasal	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-जांच	word	जांच	ɟãːc|ɟaːɲc	nasal	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-जहां	word	जहां	ɟəhãː	nasal	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-कहां	word	कहां	kəhãː	nasal	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-हियां	word	हियां	hijãː	nasal	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-उहां	word	उहां	uhãː	nasal	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-बाद	word	बाद	baːd	misc	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-अब	word	अब	əb	misc	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-आज	word	आज	aːɟ	misc	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-फिर	word	फिर	pʰiɾ	misc	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-भी	word	भी	bʰiː	misc	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-ही	word	ही	hiː	misc	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-तो	word	तो	toː	misc	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-बिना	word	बिना	binaː	misc	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-अक्सर	word	अक्सर	əksəɾ	misc	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-लगभग	word	लगभग	ləɡbʰəɡ	misc	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-हालांकि	word	हालांकि	haːlãːki|haːlaːŋki	misc	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	heldout	2026-11-14
+w-शायद	word	शायद	saːjəd|ʃaːjəd	loan	FLORES-200 mag_Deva (CC BY-SA 4.0), word attested; pronunciation hand-written	dev	2026-11-14
+w-मगही	word	मगही	məɡhiː	misc	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-मगह	word	मगह	məɡəh	misc	grammar description (see header); pronunciation hand-written	dev	2026-11-14
+w-पटना	word	पटना	pəʈnaː	misc	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-गया	word	गया	ɡəjaː	misc	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+w-नालंदा	word	नालंदा	naːləndaː	misc	grammar description (see header); pronunciation hand-written	heldout	2026-11-14
+s-005	sentence	हम मगही बोलऽ हियो।	həm məɡhiː boːlə hijoː	sentence	written for this set (see header)	dev	2026-11-14
+s-006	sentence	तोहर नाम की हको?	toːhəɾ naːm kiː həkoː	sentence	written for this set (see header)	dev	2026-11-14
+s-007	sentence	हमर नाम राम हको।	həməɾ naːm ɾaːm həkoː	sentence	written for this set (see header)	dev	2026-11-14
+s-008	sentence	तूँ कहां जा रहलऽ हें?	tũː kəhãː ɟaː ɾəhlə hẽː	sentence	written for this set (see header)	heldout	2026-11-14
+s-009	sentence	हम बजार जा रहलियो हे।	həm bəɟaːɾ ɟaː ɾəhlijoː heː	sentence	written for this set (see header)	dev	2026-11-14
+s-010	sentence	ऊ काल्ह गया गेलन।	uː kaːlh ɡəjaː ɡeːlən	sentence	written for this set (see header)	heldout	2026-11-14
+s-011	sentence	हमरा भूख लगल हे।	həmɾaː bʰuːkʰ ləɡəl heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-012	sentence	ई हमर घर हइ।	iː həməɾ ɡʰəɾ həi	sentence	written for this set (see header)	heldout	2026-11-14
+s-013	sentence	बुतरू इसकूल गेल हे।	butɾuː iskuːl ɡeːl heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-014	sentence	माय खाना बना रहली हे।	maːj kʰaːnaː bənaː ɾəhliː heː	sentence	written for this set (see header)	dev	2026-11-14
+s-015	sentence	बाबूजी खेत में हथ।	baːbuːɟiː kʰeːt meː hətʰ	sentence	written for this set (see header)	dev	2026-11-14
+s-016	sentence	एने आवऽ।	eːneː aːwə	sentence	written for this set (see header)	dev	2026-11-14
+s-017	sentence	जल्दी चलऽ।	ɟəldiː cələ	sentence	written for this set (see header)	heldout	2026-11-14
+s-018	sentence	हमनी साथे खाना खइलियो।	həmniː saːtʰeː kʰaːnaː kʰəilijoː	sentence	written for this set (see header)	dev	2026-11-14
+s-019	sentence	ओकर बेटा पटना में पढ़ऽ हे।	oːkəɾ beːʈaː pəʈnaː meː pəɽʰə heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-020	sentence	आज बड़ी गरमी हे।	aːɟ bəɽiː ɡəɾmiː heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-021	sentence	काल्ह पानी पड़ल हल।	kaːlh paːniː pəɽəl həl	sentence	written for this set (see header)	dev	2026-11-14
+s-022	sentence	हम तोहरा से मिले अइलियो हे।	həm toːhɾaː seː mileː əilijoː heː	sentence	written for this set (see header)	dev	2026-11-14
+s-023	sentence	ई किताब केकर हइ?	iː kitaːb keːkəɾ həi	sentence	written for this set (see header)	dev	2026-11-14
+s-024	sentence	ई किताब हमर हइ।	iː kitaːb həməɾ həi	sentence	written for this set (see header)	heldout	2026-11-14
+s-025	sentence	तोहनी कने रहऽ हऽ?	toːhniː kəneː ɾəhə hə	sentence	written for this set (see header)	dev	2026-11-14
+s-026	sentence	हमनी गाँव में रहऽ हियो।	həmniː ɡãːw meː ɾəhə hijoː	sentence	written for this set (see header)	dev	2026-11-14
+s-027	sentence	ऊ हमर भाई हथ।	uː həməɾ bʰaːiː hətʰ	sentence	written for this set (see header)	dev	2026-11-14
+s-028	sentence	ओकर बहिन बड़ी नीक हे।	oːkəɾ bəhin bəɽiː niːk heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-029	sentence	लइका खेले गेल हे।	ləikaː kʰeːleː ɡeːl heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-030	sentence	लइकी गीत गा रहल हे।	ləikiː ɡiːt ɡaː ɾəhəl heː	sentence	written for this set (see header)	dev	2026-11-14
+s-031	sentence	ई गाछ बड़ी पुरान हे।	iː ɡaːcʰ bəɽiː puɾaːn heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-032	sentence	हमरा ओकर बात नीक लगल।	həmɾaː oːkəɾ baːt niːk ləɡəl	sentence	written for this set (see header)	dev	2026-11-14
+s-033	sentence	ऊ कुछ न बोलल।	uː kucʰ nə boːləl	sentence	written for this set (see header)	heldout	2026-11-14
+s-034	sentence	हम काल्ह आएब।	həm kaːlh aːeːb	sentence	written for this set (see header)	dev	2026-11-14
+s-035	sentence	तूँ कब अइबऽ?	tũː kəb əibə	sentence	written for this set (see header)	dev	2026-11-14
+s-036	sentence	ओजा बहुत लोग हलन।	oːɟaː bəhut loːɡ hələn	sentence	written for this set (see header)	dev	2026-11-14
+s-037	sentence	हम ई काम न करबो।	həm iː kaːm nə kəɾboː	sentence	written for this set (see header)	heldout	2026-11-14
+s-038	sentence	ऊ हमरा से पइसा माँगलक।	uː həmɾaː seː pəisaː mãːɡlək	sentence	written for this set (see header)	dev	2026-11-14
+s-039	sentence	गाय दूध दे हे।	ɡaːj duːdʰ deː heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-040	sentence	कुत्ता भूँक रहल हे।	kuttaː bʰũːk ɾəhəl heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-041	sentence	सूरज उगल।	suːɾəɟ uɡəl	sentence	written for this set (see header)	heldout	2026-11-14
+s-042	sentence	रात में चान निकलल।	ɾaːt meː caːn nikələl	sentence	written for this set (see header)	dev	2026-11-14
+s-043	sentence	हमर गाँव नदी के किनारे हे।	həməɾ ɡãːw nədiː keː kinaːɾeː heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-044	sentence	ओकरा दवाई के जरूरत हे।	oːkɾaː dəwaːiː keː ɟəɾuːɾət heː	sentence	written for this set (see header)	dev	2026-11-14
+s-045	sentence	ई रस्ता पटना जा हे।	iː ɾəstaː pəʈnaː ɟaː heː	sentence	written for this set (see header)	dev	2026-11-14
+s-046	sentence	हमनी मेला देखे गेलियो।	həmniː meːlaː deːkʰeː ɡeːlijoː	sentence	written for this set (see header)	dev	2026-11-14
+s-047	sentence	भात आउ दाल बन गेल।	bʰaːt aːu daːl bən ɡeːl	sentence	written for this set (see header)	dev	2026-11-14
+s-048	sentence	चाह पीअऽ।	caːh piːə	sentence	written for this set (see header)	dev	2026-11-14
+s-049	sentence	हम चाह न पीयो।	həm caːh nə piːjoː	sentence	written for this set (see header)	dev	2026-11-14
+s-050	sentence	ओकर बियाह अगला साल होतइ।	oːkəɾ bijaːh əɡlaː saːl hoːtəi	sentence	written for this set (see header)	heldout	2026-11-14
+s-051	sentence	ऊ बजार से सब्जी लइलक।	uː bəɟaːɾ seː səbɟiː ləilək	sentence	written for this set (see header)	heldout	2026-11-14
+s-052	sentence	हमरा नीन आ रहल हे।	həmɾaː niːn aː ɾəhəl heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-053	sentence	दरवाजा बंद करऽ।	dəɾwaːɟaː bənd kəɾə	sentence	written for this set (see header)	dev	2026-11-14
+s-054	sentence	खिड़की खोलऽ।	kʰiɽkiː kʰoːlə	sentence	written for this set (see header)	heldout	2026-11-14
+s-055	sentence	ई बात सच हइ।	iː baːt səc həi	sentence	written for this set (see header)	heldout	2026-11-14
+s-056	sentence	ऊ झूठ बोलऽ हे।	uː ɟʰuːʈʰ boːlə heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-057	sentence	हम पढ़ाई कर रहलियो हे।	həm pəɽʰaːiː kəɾ ɾəhlijoː heː	sentence	written for this set (see header)	dev	2026-11-14
+s-058	sentence	मास्टर साहेब इसकूल में पढ़ावऽ हथ।	maːsʈəɾ saːheːb iskuːl meː pəɽʰaːwə hətʰ	sentence	written for this set (see header)	dev	2026-11-14
+s-059	sentence	बरसात में खेत हरियर हो जा हे।	bəɾsaːt meː kʰeːt həɾijəɾ hoː ɟaː heː	sentence	written for this set (see header)	dev	2026-11-14
+s-060	sentence	हमनी के गाँव में एगो पोखर हे।	həmniː keː ɡãːw meː eːɡoː poːkʰəɾ heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-061	sentence	पोखर में मछरी हे।	poːkʰəɾ meː məcʰɾiː heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-062	sentence	दादी कहानी सुनावऽ हथ।	daːdiː kəhaːniː sunaːwə hətʰ	sentence	written for this set (see header)	dev	2026-11-14
+s-063	sentence	बुतरू सब सुत गेलन।	butɾuː səb sut ɡeːlən	sentence	written for this set (see header)	heldout	2026-11-14
+s-064	sentence	भोरे उठ के नहा लऽ।	bʰoːɾeː uʈʰ keː nəhaː lə	sentence	written for this set (see header)	heldout	2026-11-14
+s-065	sentence	हम रोज भोरे टहले जा हियो।	həm ɾoːɟ bʰoːɾeː ʈəhleː ɟaː hijoː	sentence	written for this set (see header)	dev	2026-11-14
+s-066	sentence	ओकर तबियत खराब हे।	oːkəɾ təbijət kʰəɾaːb heː	sentence	written for this set (see header)	dev	2026-11-14
+s-067	sentence	डाकटर के बोलावऽ।	ɖaːkʈəɾ keː boːlaːwə	sentence	written for this set (see header)	dev	2026-11-14
+s-068	sentence	ई सड़क बड़ी चौड़ा हे।	iː səɽək bəɽiː cəuɽaː heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-069	sentence	गाड़ी तेज चल रहल हे।	ɡaːɽiː teːɟ cəl ɾəhəl heː	sentence	written for this set (see header)	dev	2026-11-14
+s-070	sentence	ऊ साइकिल से अइलन।	uː saːikil seː əilən	sentence	written for this set (see header)	heldout	2026-11-14
+s-071	sentence	हम ओकरा चिट्ठी लिखलियो।	həm oːkɾaː ciʈʈʰiː likʰlijoː	sentence	written for this set (see header)	heldout	2026-11-14
+s-072	sentence	ओकर जवाब न आएल।	oːkəɾ ɟəwaːb nə aːeːl	sentence	written for this set (see header)	dev	2026-11-14
+s-073	sentence	तोहर घर केतना दूर हे?	toːhəɾ ɡʰəɾ keːtnaː duːɾ heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-074	sentence	बस दू कोस हे।	bəs duː koːs heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-075	sentence	हमरा पास दू गो किताब हे।	həmɾaː paːs duː ɡoː kitaːb heː	sentence	written for this set (see header)	dev	2026-11-14
+s-076	sentence	ऊ तीन गो आम खइलक।	uː tiːn ɡoː aːm kʰəilək	sentence	written for this set (see header)	dev	2026-11-14
+s-077	sentence	अगला हप्ता छुट्टी हे।	əɡlaː həptaː cʰuʈʈiː heː	sentence	written for this set (see header)	dev	2026-11-14
+s-078	sentence	हमनी छठ मनावऽ हियो।	həmniː cʰəʈʰ mənaːwə hijoː	sentence	written for this set (see header)	heldout	2026-11-14
+s-079	sentence	छठ में घाट पर भीड़ होवऽ हे।	cʰəʈʰ meː ɡʰaːʈ pəɾ bʰiːɽ hoːwə heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-080	sentence	माय ठेकुआ बनइलन।	maːj ʈʰeːkuaː bənəilən	sentence	written for this set (see header)	heldout	2026-11-14
+s-081	sentence	ई मिठाई बड़ी मीठ हे।	iː miʈʰaːiː bəɽiː miːʈʰ heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-082	sentence	तूँ का खइबऽ?	tũː kaː kʰəibə	sentence	written for this set (see header)	dev	2026-11-14
+s-083	sentence	हम रोटी खइबो।	həm ɾoːʈiː kʰəiboː	sentence	written for this set (see header)	heldout	2026-11-14
+s-084	sentence	ऊ खेत जोतऽ हे।	uː kʰeːt ɟoːtə heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-085	sentence	किसान धान रोपलक।	kisaːn dʰaːn ɾoːplək	sentence	written for this set (see header)	heldout	2026-11-14
+s-086	sentence	इ साल फसल नीक होतइ।	i saːl pʰəsəl niːk hoːtəi	sentence	written for this set (see header)	heldout	2026-11-14
+s-087	sentence	हमरा ठंढा लगऽ हे।	həmɾaː ʈʰənɖʰaː ləɡə heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-088	sentence	आग जरावऽ।	aːɡ ɟəɾaːwə	sentence	written for this set (see header)	dev	2026-11-14
+s-089	sentence	ओकर बाल पाक गेल।	oːkəɾ baːl paːk ɡeːl	sentence	written for this set (see header)	dev	2026-11-14
+s-090	sentence	बूढ़ा आदमी लाठी लेके चलऽ हथ।	buːɽʰaː aːdmiː laːʈʰiː leːkeː cələ hətʰ	sentence	written for this set (see header)	dev	2026-11-14
+s-091	sentence	हम ओकरा पहचान लेलियो।	həm oːkɾaː pəhcaːn leːlijoː	sentence	written for this set (see header)	dev	2026-11-14
+s-092	sentence	तूँ हमरा भुला गेलऽ।	tũː həmɾaː bʰulaː ɡeːlə	sentence	written for this set (see header)	dev	2026-11-14
+s-093	sentence	हमनी फेर मिलबइ।	həmniː pʰeːɾ milbəi	sentence	written for this set (see header)	dev	2026-11-14
+s-094	sentence	ई बात केकरो मत बतइहऽ।	iː baːt keːkɾoː mət bətəihə	sentence	written for this set (see header)	heldout	2026-11-14
+s-095	sentence	ओकरा गोस्सा आ गेल।	oːkɾaː ɡoːssaː aː ɡeːl	sentence	written for this set (see header)	heldout	2026-11-14
+s-096	sentence	ऊ रोवे लगल।	uː ɾoːweː ləɡəl	sentence	written for this set (see header)	dev	2026-11-14
+s-097	sentence	लइकन हँस रहलन हे।	ləikən hə̃s ɾəhlən heː	sentence	written for this set (see header)	dev	2026-11-14
+s-098	sentence	हम बड़ी थाकल हियो।	həm bəɽiː tʰaːkəl hijoː	sentence	written for this set (see header)	heldout	2026-11-14
+s-099	sentence	चलऽ, घर चलल जाए।	cələ ɡʰəɾ cələl ɟaːeː	sentence	written for this set (see header)	dev	2026-11-14
+s-100	sentence	ई कपड़ा केतना के हइ?	iː kəpɽaː keːtnaː keː həi	sentence	written for this set (see header)	heldout	2026-11-14
+s-101	sentence	सौ रुपया।	səu ɾupjaː	sentence	written for this set (see header)	heldout	2026-11-14
+s-102	sentence	बड़ी महंगा हे।	bəɽiː məhəŋɡaː heː	sentence	written for this set (see header)	dev	2026-11-14
+s-103	sentence	कुछ कम करऽ।	kucʰ kəm kəɾə	sentence	written for this set (see header)	dev	2026-11-14
+s-104	sentence	हम एकरा न लेबो।	həm eːkɾaː nə leːboː	sentence	written for this set (see header)	heldout	2026-11-14
+s-105	sentence	दोकान बंद हो गेल।	doːkaːn bənd hoː ɡeːl	sentence	written for this set (see header)	dev	2026-11-14
+s-106	sentence	आज सोमार हइ।	aːɟ soːmaːɾ həi	sentence	written for this set (see header)	dev	2026-11-14
+s-107	sentence	काल्ह मंगर हलइ।	kaːlh məŋɡəɾ hələi	sentence	written for this set (see header)	heldout	2026-11-14
+s-108	sentence	गंगा जी में नहाए गेलन।	ɡəŋɡaː ɟiː meː nəhaːeː ɡeːlən	sentence	written for this set (see header)	dev	2026-11-14
+s-109	sentence	नालंदा बड़ी पुरान जगह हे।	naːləndaː bəɽiː puɾaːn ɟəɡəh heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-110	sentence	राजगीर में गरम पानी के कुंड हे।	ɾaːɟɡiːɾ meː ɡəɾəm paːniː keː kunɖ heː	sentence	written for this set (see header)	dev	2026-11-14
+s-111	sentence	मगह के लोग मगही बोलऽ हथ।	məɡəh keː loːɡ məɡhiː boːlə hətʰ	sentence	written for this set (see header)	dev	2026-11-14
+s-112	sentence	ई गीत हमर माय गावऽ हलन।	iː ɡiːt həməɾ maːj ɡaːwə hələn	sentence	written for this set (see header)	heldout	2026-11-14
+s-113	sentence	अपार्टमेंट के अंदर कोई न हलई।	əpaːɾʈmeːnʈ keː əndəɾ koːi nə hələi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	heldout	2026-11-14
+s-114	sentence	कुछ पैसा में कुछ बच्चा तोहर कहानी सुनतओ।	kucʰ pəisaː meː kucʰ bəccaː toːhəɾ kəhaːniː suntəo	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	dev	2026-11-14
+s-115	sentence	जांच के लगी जांच बैठा दीयल गलय हय।	ɟãːc keː ləɡiː ɟãːc bəiʈʰaː diːjəl ɡələi həi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	dev	2026-11-14
+s-116	sentence	मंगलवार के ओसाका में उनकर निधन हो गेलय।	məŋɡəlwaːɾ keː oːsaːkaː meː unkəɾ nidʰən hoː ɡeːləi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	dev	2026-11-14
+s-117	sentence	वेटिकन सिटी के सभी नागरिक रोमन कैथोलिक हय।	beːʈikən siʈiː keː səbʰiː naːɡəɾik ɾoːmən kəitʰoːlik həi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	heldout	2026-11-14
+s-118	sentence	ई ईबे के इतिहास में सबसे बड़ा अधिग्रहण हय।	iː iːbeː keː itihaːs meː səbseː bəɽaː ədʰiɡɾəhən həi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	heldout	2026-11-14
+s-119	sentence	जेजा हादसा होले हल ओजा से सभी भाग गलय।	ɟeːɟaː haːdsaː hoːleː həl oːɟaː seː səbʰiː bʰaːɡ ɡələi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	heldout	2026-11-14
+s-120	sentence	टावर के शीर्ष भगवान के लगी विशेष अभयारण्य हलय।	ʈaːwəɾ keː siːɾs bʰəɡwaːn keː ləɡiː biseːs əbʰəjaːɾənj hələi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	dev	2026-11-14
+s-121	sentence	मौत के कारण इंट्राहेपेटिक बाइल डक्ट कैंसर बतावल गेलय।	məut keː kaːɾən inʈɾaːheːpeːʈik baːil ɖəkʈ kəinsəɾ bətaːwəl ɡeːləi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	heldout	2026-11-14
+s-122	sentence	हालांकि चालक के सिर में गंभीर चोट ऐलय हय।	haːlãːki caːlək keː siɾ meː ɡəmbʰiːɾ coːʈ əiləi həi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	heldout	2026-11-14
+s-123	sentence	हिब्रू परिवार के अधिकांश जीवन खुलल हवा में बितलय।	hibɾuː pəɾiwaːɾ keː ədʰikaːns ɟiːwən kʰuləl həwaː meː bitləi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	dev	2026-11-14
+s-124	sentence	छात्रावास के अधिकांश मेहमान संयुक्त अरब अमीरात के नागरिक हलथिन।	cʰaːtɾaːwaːs keː ədʰikaːns meːhmaːn sənjukt əɾəb əmiːɾaːt keː naːɡəɾik hələtʰin	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	heldout	2026-11-14
+s-125	sentence	नाभिक में दू कण होवो हय - न्यूट्रॉन अउ प्रोटॉन।	naːbʰik meː duː kən hoːwoː həi njuːʈɾɔːn əu pɾoːʈɔːn	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	dev	2026-11-14
+s-126	sentence	इ व्यवस्था के होवे से इ स्वतंत्रता समाप्त हो सको हय।	i bjəwəstʰaː keː hoːweː seː i swətəntɾətaː səmaːpt hoː səkoː həi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	dev	2026-11-14
+s-127	sentence	ई पानी जइसन व्यवहार करे जाइत हव, एगोदम पानी जइसन पारदर्शी।	iː paːniː ɟəisən bjəwəhaːɾ kəɾeː ɟaːit həw eːɡoːdəm paːniː ɟəisən paːɾdəɾsiː	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	heldout	2026-11-14
+s-128	sentence	ऊ एगो वाईफाई दरवाजे के घंटी बनलई, ऊ कहले।	uː eːɡoː waːiːpʰaːiː dəɾwaːɟeː keː ɡʰənʈiː bənləi uː kəhleː	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	dev	2026-11-14
+s-129	sentence	गवर्नर जनरल के ऑफिस के बाहर एगो बम फटलइ।	ɡəwəɾnəɾ ɟənəɾəl keː ɔːpʰis keː baːhəɾ eːɡoː bəm pʰəʈləi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	dev	2026-11-14
+s-130	sentence	तब, बग्गा सिंह भजन गायन के नेतृत्व करे लगलथिन।	təb bəɡɡaː sinh bʰəɟən ɡaːjən keː neːtɾitw kəɾeː ləɡəltʰin	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	dev	2026-11-14
+s-131	sentence	फ़ारसी में अपेक्षाकृत आसान अउ अधिकतर नियमित व्याकरण हई।	faːɾsiː meː əpeːkʰsaːkɾit aːsaːn əu ədʰiktəɾ nijmit bjaːkəɾən həi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	heldout	2026-11-14
+s-132	sentence	अंतर्राष्ट्रीय प्रतिबंध के कारण नया एयरक्राफ्ट नय खरीदल जा सकहई।	əntəɾɾaːsʈɾiːj pɾətibəndʰ keː kaːɾən nəjaː eːjəɾkɾaːpʰʈ nəi kʰəɾiːdəl ɟaː səkəhəi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	dev	2026-11-14
+s-133	sentence	फोटॉन परमाणु बनावे वाला सामान से भी छोटे होवो हय!	pʰoːʈɔːn pəɾmaːnu bənaːweː waːlaː saːmaːn seː bʰiː cʰoːʈeː hoːwoː həi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	heldout	2026-11-14
+s-134	sentence	फ्रांसीसी चुनावी कानून कार्यवाही के सख्ती से संहिताबद्ध करो हय।	pʰɾaːnsiːsiː cunaːwiː kaːnuːn kaːɾjəwaːhiː keː səkʰtiː seː sənhitaːbəddʰ kəɾoː həi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	dev	2026-11-14
+s-135	sentence	"हमनीं सब कोई सदमा में हली, " माँ कहलई।	həmnĩː səb koːi sədmaː meː həliː mãː kəhləi	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	heldout	2026-11-14
+s-136	sentence	इंग्लैंड में सोलहवीं शताब्दी में वैगनवे बनावल गेल हले।	iŋɡləinɖ meː soːləhwĩː sətaːbdiː meː wəiɡənweː bənaːwəl ɡeːl həleː	sentence	FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written	dev	2026-11-14
+s-137	sentence	एगो बड़ा पेड़ सड़क पर गिर गेलई।	eːɡoː bəɽaː peːɽ səɽək pəɾ ɡiɾ ɡeːləi	sentence	written for this set (see header)	dev	2026-11-14
+s-138	sentence	लोगन के बहुत मदद कैल गेलय।	loːɡən keː bəhut mədəd kəil ɡeːləi	sentence	written for this set (see header)	dev	2026-11-14
+s-139	sentence	ई देश के सबसे बड़ा सहर हय।	iː deːs keː səbseː bəɽaː səhəɾ həi	sentence	written for this set (see header)	heldout	2026-11-14
+s-140	sentence	ऊ अपन घर लौट गेलन।	uː əpən ɡʰəɾ ləuʈ ɡeːlən	sentence	written for this set (see header)	heldout	2026-11-14
+s-141	sentence	हमनी के पास समय कम हलय।	həmniː keː paːs səməj kəm hələi	sentence	written for this set (see header)	heldout	2026-11-14
+s-142	sentence	सब लोग खुस हलथिन।	səb loːɡ kʰus hələtʰin	sentence	written for this set (see header)	dev	2026-11-14
+s-143	sentence	हम तोहरा के बहुत दिन से जानऽ हियो।	həm toːhɾaː keː bəhut din seː ɟaːnə hijoː	sentence	written for this set (see header)	heldout	2026-11-14
+s-144	sentence	ओकरा कोई कुछ न कहलक।	oːkɾaː koːi kucʰ nə kəhlək	sentence	written for this set (see header)	heldout	2026-11-14
+s-145	sentence	बेटी ससुराल चल गेल।	beːʈiː səsuɾaːl cəl ɡeːl	sentence	written for this set (see header)	dev	2026-11-14
+s-146	sentence	नानी गाँव से अइलन हे।	naːniː ɡãːw seː əilən heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-147	sentence	ई पेड़ पर बहुत चिरईं हे।	iː peːɽ pəɾ bəhut ciɾəĩː heː	sentence	written for this set (see header)	heldout	2026-11-14
+s-148	sentence	हमनी के मुखिया जी आज अइतन।	həmniː keː mukʰijaː ɟiː aːɟ əitən	sentence	written for this set (see header)	dev	2026-11-14
+s-149	sentence	ओकर दोकान चौक पर हे।	oːkəɾ doːkaːn cəuk pəɾ heː	sentence	written for this set (see header)	dev	2026-11-14
+s-150	sentence	तूँ ई काम काहे कइलऽ?	tũː iː kaːm kaːheː kəilə	sentence	written for this set (see header)	heldout	2026-11-14
+s-151	sentence	हमरा मालूम न हल।	həmɾaː maːluːm nə həl	sentence	written for this set (see header)	heldout	2026-11-14
+s-152	sentence	पानी गरम कर दऽ।	paːniː ɡəɾəm kəɾ də	sentence	written for this set (see header)	heldout	2026-11-14
+s-153	sentence	हम सबेरे पटना जइबो।	həm səbeːɾeː pəʈnaː ɟəiboː	sentence	written for this set (see header)	dev	2026-11-14
+s-154	sentence	ऊ दिल्ली में नौकरी करऽ हथ।	uː dilliː meː nəukəɾiː kəɾə hətʰ	sentence	written for this set (see header)	dev	2026-11-14
+s-155	sentence	घर में सब ठीक हइ।	ɡʰəɾ meː səb ʈʰiːk həi	sentence	written for this set (see header)	heldout	2026-11-14
+s-156	sentence	भगवान सब के भला करथ।	bʰəɡwaːn səb keː bʰəlaː kəɾətʰ	sentence	written for this set (see header)	dev	2026-11-14

@@ -5,67 +5,63 @@
  "sentence_level": {
   "sentences": 3000,
   "reference_symbols": 119476,
-  "per": 0.0012136328635039674,
-  "per_without_stress": 0.0009151090342679127,
-  "exact_sentence": 0.9883333333333333,
-  "exact_sentence_without_stress": 0.9883333333333333,
-  "piper_shape_per": 0.001198268624110469,
-  "piper_shape_exact_sentence": 0.9876666666666667,
+  "per": 0.0009374267635340989,
+  "per_without_stress": 0.0007982866043613707,
+  "exact_sentence": 0.991,
+  "exact_sentence_without_stress": 0.991,
+  "piper_shape_per": 0.000929269545228527,
+  "piper_shape_exact_sentence": 0.9903333333333333,
   "word_count_mismatch_sentences": 15,
   "errors_by_class": {
-   "stress": {
-    "count": 51,
-    "share": 0.35172413793103446,
-    "per_contribution": 0.00042686397268070576
-   },
    "consonant": {
     "count": 31,
-    "share": 0.21379310344827587,
+    "share": 0.2767857142857143,
     "per_contribution": 0.0002594663363353309
    },
-   "vowel": {
-    "count": 23,
-    "share": 0.15862068965517243,
-    "per_contribution": 0.000192507281797181
+   "stress": {
+    "count": 30,
+    "share": 0.26785714285714285,
+    "per_contribution": 0.0002510964545180622
    },
-   "other": {
-    "count": 16,
-    "share": 0.1103448275862069,
-    "per_contribution": 0.00013391810907629985
+   "vowel": {
+    "count": 22,
+    "share": 0.19642857142857142,
+    "per_contribution": 0.00018413739997991227
    },
    "schwa": {
-    "count": 13,
-    "share": 0.0896551724137931,
-    "per_contribution": 0.00010880846362449362
+    "count": 12,
+    "share": 0.10714285714285714,
+    "per_contribution": 0.00010043858180722488
+   },
+   "other": {
+    "count": 10,
+    "share": 0.08928571428571429,
+    "per_contribution": 8.369881817268741e-05
    },
    "word-boundary": {
     "count": 5,
-    "share": 0.034482758620689655,
+    "share": 0.044642857142857144,
     "per_contribution": 4.1849409086343704e-05
    },
    "length": {
-    "count": 5,
-    "share": 0.034482758620689655,
-    "per_contribution": 4.1849409086343704e-05
+    "count": 1,
+    "share": 0.008928571428571428,
+    "per_contribution": 8.36988181726874e-06
    },
    "diacritic": {
     "count": 1,
-    "share": 0.006896551724137931,
+    "share": 0.008928571428571428,
     "per_contribution": 8.36988181726874e-06
    }
   },
   "top_confusions": [
    {
     "edit": "ˈ→∅",
-    "count": 13
+    "count": 10
    },
    {
     "edit": "ə→∅",
     "count": 8
-   },
-   {
-    "edit": "∅→ˈ",
-    "count": 6
    },
    {
     "edit": "ˌ→ˈ",
@@ -73,22 +69,6 @@
    },
    {
     "edit": "a→ə",
-    "count": 6
-   },
-   {
-    "edit": "∅→ˌ",
-    "count": 6
-   },
-   {
-    "edit": "ˈ→ə",
-    "count": 6
-   },
-   {
-    "edit": "ʌ→ɟ",
-    "count": 6
-   },
-   {
-    "edit": "ɟ→ˈ",
     "count": 6
    },
    {
@@ -100,16 +80,16 @@
     "count": 4
    },
    {
-    "edit": "∅→ə",
-    "count": 4
-   },
-   {
     "edit": "a→∅",
     "count": 4
    },
    {
-    "edit": "∅→ː",
-    "count": 4
+    "edit": "∅→ˈ",
+    "count": 3
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 3
    },
    {
     "edit": "ʰ→∅",
@@ -120,11 +100,11 @@
     "count": 3
    },
    {
-    "edit": "ˌ→∅",
+    "edit": "∅→ə",
     "count": 3
    },
    {
-    "edit": "ʌ→ə",
+    "edit": "ˌ→∅",
     "count": 3
    },
    {
@@ -137,6 +117,10 @@
    },
    {
     "edit": "ɪ→ː",
+    "count": 2
+   },
+   {
+    "edit": "ʌ→ə",
     "count": 2
    },
    {
@@ -154,6 +138,22 @@
    {
     "edit": "t→∅",
     "count": 2
+   },
+   {
+    "edit": "∅→e",
+    "count": 1
+   },
+   {
+    "edit": "t→ː",
+    "count": 1
+   },
+   {
+    "edit": "r→t",
+    "count": 1
+   },
+   {
+    "edit": "ˈ→i",
+    "count": 1
    }
   ],
   "word_error_by_class": {
@@ -166,8 +166,8 @@
   "by_subset": {
    "with-digits": {
     "sentences": 22,
-    "per": 0.030913978494623656,
-    "exact_sentence": 0.5454545454545454
+    "per": 0.008736559139784945,
+    "exact_sentence": 0.9090909090909091
    },
    "no-digits": {
     "sentences": 2978,
@@ -177,22 +177,10 @@
   },
   "examples_of_disagreement": [
    {
-    "id": "3620608",
-    "text": "बहरीन २००२ में राज्य बना।",
-    "reference": "bˌəhəɾˈiːn dˈoː hˈʌɟaːɾ dˈoː mẽː ɾˈaːɟjə bˈʌnaː",
-    "uccharan": "bˌəhəɾˈiːn dˈoː həɟˈaːɾ dˈoː mẽː ɾˈaːɟjə bˈʌnaː"
-   },
-   {
-    "id": "8686380",
-    "text": "भारत की आबादी १२७ करोड़ से ज़्यादा है।",
-    "reference": "bʰˈaːɾət ki aːbˈaːdi ˈeːksˈɔː sətːˈaːis kəɾˈoːr. seː zjˈaːdaː hɛː",
-    "uccharan": "bʰˈaːɾət ki aːbˈaːdi ˈeːksˈɔː sˌətːaːˈiːs kəɾˈoːr. seː zjˈaːdaː hɛː"
-   },
-   {
-    "id": "3214211",
-    "text": "मेरा जन्म सन १९७७ में ओसाका में हुआ था।",
-    "reference": "mˌeːɾaː ɟˈʌnm sˈʌn ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː səthˈʌtːəɾ mẽː oːsˈaːkaː mẽː hˈʊaː tʰaː",
-    "uccharan": "mˌeːɾaː ɟˈʌnm sˈʌn ˈeːk həɟˈaːɾ nˈɔːsˈɔː sˌətəhˈʌtːəɾ mẽː oːsˈaːkaː mẽː hˈʊaː tʰaː"
+    "id": "446313",
+    "text": "मेरे अंकल क्रिकेट के शौकिया खिलाड़ी हैं।",
+    "reference": "mˌeːɾeː ˈʌŋkəl kɾˈɪkɪt keː ʃˈɔːkɪjˌaː kʰɪlˈaːr.i hɛ̃",
+    "uccharan": "mˌeːɾeː ˈʌŋkəl kɾɪkˈeːʈ keː ʃˈɔːkɪjˌaː kʰɪlˈaːr.i hɛ̃"
    },
    {
     "id": "9957141",
@@ -205,12 +193,6 @@
     "text": "कुछ नेत्रहीन व्यक्तियों में उनके आास-पास की चीज़ों की दूरी को महसूस करने की क्षतिपूरक क्षमता पैदा हो जाती है।",
     "reference": "kˈʊcʰ nˌetrɾahˈɪn ʋjˈʌktɪjˌõ mẽː ˌʊnkˌeː aːʰχˈaːspˈaːs ki cˈiːzõ ki dˈuːɾi koː mˌəhəsˈuːs kˈʌɾnˌeː ki kʃˌətɪpˈuːɾək kʃˈʌmtˌaː pˈɛːdaː hoː ɟˈaːti hɛː",
     "uccharan": "kˈʊcʰ nˈeːtɾəhˌiːn ʋjˈʌktɪjˌõ mẽː ˌʊnkˌeː aːˈaːspˈaːs ki cˈiːzõ ki dˈuːɾi koː mˌəhəsˈuːs kˈʌɾnˌeː ki kʃˌətɪpˈuːɾək kʃˈʌmtˌaː pˈɛːdaː hoː ɟˈaːti hɛː"
-   },
-   {
-    "id": "8686381",
-    "text": "भारत की जनसंख्या १२७ करोड़ से ज़्यादा है।",
-    "reference": "bʰˈaːɾət ki ɟˌənəsˈʌŋkʰjaː ˈeːksˈɔː sətːˈaːis kəɾˈoːr. seː zjˈaːdaː hɛː",
-    "uccharan": "bʰˈaːɾət ki ɟˌənəsˈʌŋkʰjaː ˈeːksˈɔː sˌətːaːˈiːs kəɾˈoːr. seː zjˈaːdaː hɛː"
    },
    {
     "id": "3667661",
@@ -237,16 +219,34 @@
     "uccharan": "hɪmˈaːcəl pɾədˈeːʃ ki ɾˌaːɟdʰˈaːni ʃˈɪmlˌaː cəɳɖˈiːɡər.h seː kˈeːʋəl ˈeːksˈɔː pˈʌndɾəh kˌɪloːmˈiːʈəɾ ki dˈuːɾi pˈʌɾ hɛː"
    },
    {
-    "id": "487723",
-    "text": "१६०० की शतक में चाय को भारत से यूरोप में लाया गया था।",
-    "reference": "ˈeːk hˈʌɟaːɾ cʰˈʌhsˈɔː ki ʃˈʌtək mẽː cˈaːj koː bʰˈaːɾət seː juːɾˈoːp mẽː lˈaːjaː ɡˈʌjaː tʰaː",
-    "uccharan": "ˈeːk həɟˈaːɾ cʰˈʌhsˈɔː ki ʃˈʌtək mẽː cˈaːj koː bʰˈaːɾət seː juːɾˈoːp mẽː lˈaːjaː ɡˈʌjaː tʰaː"
-   },
-   {
     "id": "10301718",
     "text": "घर में तीन मंज़िलें हैं।",
     "reference": "ɡʰˈʌɾ mẽː tˈiːn mˈʌnzɪlˌẽː hɛ̃",
     "uccharan": "ɡʰˈʌɾ mẽː tˈiːn mˈʌɲzɪlˌẽː hɛ̃"
+   },
+   {
+    "id": "516797",
+    "text": "मौसम दिन-ब-दिन बदलता है।",
+    "reference": "mˈɔːsəm dˈɪnəbˈədˈɪn bˈʌdəltaː hɛː",
+    "uccharan": "mˈɔːsəm dˈɪnbˈədˈɪn bˈʌdəltaː hɛː"
+   },
+   {
+    "id": "482441",
+    "text": "मैं चल-चलकर थक गया हूँ।",
+    "reference": "mɛ̃ cˈʌləcˈʌləkˌəɾ tʰˈʌk ɡˈʌjaː hũ",
+    "uccharan": "mɛ̃ cˈʌlcˈʌləkˌəɾ tʰˈʌk ɡˈʌjaː hũ"
+   },
+   {
+    "id": "3788906",
+    "text": "मुझे लग-भग पाँच मिनट लगेंगे।",
+    "reference": "mˌʊɟʰeː lˈʌɡəbʰˈʌɡ pˈãnc mˈɪnəʈ ləɡˈẽːɡeː",
+    "uccharan": "mˌʊɟʰeː lˈʌɡbʰˈʌɡ pˈãnc mˈɪnəʈ ləɡˈẽːɡeː"
+   },
+   {
+    "id": "488685",
+    "text": "यह लिफ़्ट छटी मंज़िल तक ही जाती है।",
+    "reference": "jˌəh lˈɪfʈ cʰˈʌʈi mˈʌnzɪl tˌək hˈi ɟˈaːti hɛː",
+    "uccharan": "jˌəh lˈɪfʈ cʰˈʌʈi mˈʌɲzɪl tˌək hˈi ɟˈaːti hɛː"
    }
   ]
  }

@@ -1,0 +1,21 @@
+# split	class	input	expected	options
+dev	cardinal	3	மூன்று	
+heldout	cardinal	25	இருபத்தைந்து || இருபத்து ஐந்து	
+dev	cardinal	100	நூறு	
+heldout	cardinal	1000	ஆயிரம் || ஒரு ஆயிரம்	
+dev	cardinal	௧௨	பன்னிரண்டு	
+heldout	percent	50%	ஐம்பது சதவீதம் || ஐம்பது சதவிகிதம்	
+dev	cardinal	1,00,000	ஒரு லட்சம் || ஒரு இலட்சம்	
+heldout	cardinal	0	பூஜ்ஜியம் || சுழியம் || பூஜ்யம்	
+dev	cardinal	10	பத்து	
+heldout	cardinal	12	பன்னிரண்டு	
+dev	cardinal	7	ஏழு	
+heldout	cardinal	18	பதினெட்டு	
+dev	cardinal	60	அறுபது	
+heldout	year	2024	இரண்டாயிரத்து இருபத்து நான்கு || இரண்டாயிரத்து இருபத்தி நான்கு	
+dev	cardinal	250	இருநூற்று ஐம்பது || இருநூற்றைம்பது	
+heldout	cardinal	99	தொண்ணூற்று ஒன்பது || தொண்ணூற்றொன்பது	
+dev	cardinal	45	நாற்பத்து ஐந்து || நாற்பத்தைந்து	
+heldout	cardinal	33	முப்பத்து மூன்று || முப்பத்துமூன்று	
+dev	cardinal	1,00,00,000	ஒரு கோடி	
+heldout	cardinal	70	எழுபது	

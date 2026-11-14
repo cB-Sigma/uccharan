@@ -1,4 +1,4 @@
-# Bhojpuri and Maithili: items for a native speaker to check
+# Bhojpuri, Maithili and Magahi: items for a native speaker to check
 
 uccharan's improved mode for Bhojpuri follows published grammars (Shukla 1981, *Bhojpuri Grammar*;
 Tiwari 1960; Grierson's *Linguistic Survey of India* V.2, 1903), and its gold set was written from
@@ -22,3 +22,13 @@ These are the choices a native speaker should confirm or correct (expected readi
 11. **Maithili** (first version): final short ि ु are kept (अछि əcʰɪ), ऐ औ as əi əu; number words
     दू, एगारह, पहिल, दोसर, तेसर, चारिम. Which of these are right, and what else differs most from
     Hindi in your reading?
+12. **Magahi** (first version, from Verma 2003, Aryani 1965 and Grierson): श ष read s and ण read
+    n (देश deːs, कारण kaːɾən) — is that your everyday reading of Sanskrit loans, or ʃ and ɳ?
+    Sanskrit loans starting with व read b (विशेष biseːs, व्यवस्था bjəwəstʰaː) — always?
+13. **Magahi verb endings**: हलई hələi, गेलय ɡeːləi, होतय hoːtəi, करई kəɾəi as one diphthong
+    əi — or two syllables (hə.lə.i), or a long iː (hələiː)? Is कहलकय kəhləkəi or kəhələkəi?
+14. **Magahi final ि ु**: अखनि əkʰni, जखनि ɟəkʰni, आगि aːɡi, राति ɾaːti — is the final i said?
+15. **Magahi** में read as मे meː (no nasal); हियो hijoː, हको həkoː, हथ hətʰ as unstressed
+    auxiliaries; ं after a long vowel as a nasal vowel (जांच ɟãːc) but n before s (फ्रांसीसी).
+16. **Magahi** compounds and reduplication: लसलस ləsləs, नौकरी nəukɾiː or nəukəɾiː, निकलल
+    nikləl or nikələl, एंहे ẽːheː or eːnheː.

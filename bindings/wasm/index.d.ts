@@ -20,6 +20,8 @@ export interface PhonemizeOptions {
   punctuation?: boolean;
   /** Bracket foreign-language words with `(en)`/`(hi)` markers in `espeak-ipa` output. */
   languageFlags?: boolean;
+  /** Pronunciation word lists (TSV, PLS or JSON text), highest priority first. */
+  wordlists?: string[];
 }
 
 export interface InitOptions {
@@ -73,3 +75,64 @@ export function version(): Promise<string>;
 
 /** Load the optional CC BY-SA 4.0 WikiPron pack of a language (improved mode only). */
 export function loadWikipron(lang: string, bytes?: Uint8Array | ArrayBuffer): Promise<void>;
+
+export interface NormalizeOptions {
+  /** Language of the text (default `en-us`). */
+  lang?: Lang | string;
+  /** Keep known brand names whole. */
+  improved?: boolean;
+  /** Which language reads digits: `context` (default), `request` or a language tag. */
+  digits?: string;
+  /** English large numbers: `auto` (default), `indian` (lakh, crore) or `international`. */
+  enScale?: "auto" | "indian" | "international";
+  /** Latin-script words inside other scripts: `keep` (default), `transliterate` or `spell`. */
+  latin?: "keep" | "transliterate" | "spell";
+  /** URLs and email addresses: `read` (default), `keep` or `drop`. */
+  urls?: "read" | "keep" | "drop";
+  /** Respelling style for word-list entries with IPA only. */
+  respell?: "native" | "latin-hyphen" | "latin-plain";
+  /** Word lists (TSV, PLS or JSON text), highest priority first. */
+  wordlists?: string[];
+}
+
+export interface Offsets {
+  byte: [number, number];
+  char: [number, number];
+  utf16: [number, number];
+}
+
+export interface NormSpan {
+  kind: string;
+  lang: string;
+  /** UTF-16 offsets into the input. */
+  start: number;
+  end: number;
+  /** UTF-16 offsets into the output text. */
+  outStart: number;
+  outEnd: number;
+  text: string;
+  spoken: string;
+  src: Offsets;
+  out: Offsets;
+  /** `[list, entry]` for word-list spans. */
+  entry: [number, number] | null;
+  value: string | null;
+}
+
+export interface Normalized {
+  text: string;
+  sentences: { start: number; end: number }[];
+  spans: NormSpan[];
+}
+
+/** Spoken form of `text` for a voice that reads text, with typed spans. */
+export function normalize(text: string, options?: NormalizeOptions): Promise<Normalized>;
+/** Synchronous variant; the needed languages must already be loaded. */
+export function normalizeSync(text: string, options?: NormalizeOptions): Normalized;
+/** Respell IPA for a text voice reading `lang`; null when the language has no writer. */
+export function respell(
+  ipa: string,
+  options?: { lang?: Lang | string; source?: string; style?: "native" | "latin-hyphen" | "latin-plain" },
+): Promise<{ text: string; readback: string; distance: number } | null>;
+/** Convert a word list between TSV, JSON and PLS. */
+export function convertWordlist(text: string, to: "tsv" | "json" | "pls", lang?: string): Promise<string>;

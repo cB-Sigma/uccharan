@@ -112,6 +112,52 @@ int32_t uccharan_load_misaki(const struct UccharanPhonemizer *p,
                              const char *gold,
                              const char *silver);
 
+// Normalise-only mode: the spoken form of `text` for a voice that reads
+// text, as JSON `{"text", "sentences", "spans"}` where every range gives
+// `byte`, `char` (code point) and `utf16` offsets (see docs/normalize.md).
+//
+// `options_json` may be NULL or a JSON object with the members `mode`,
+// `digits`, `en_scale`, `latin`, `urls`, `respell` and `wordlists` (an
+// array of word lists as TSV, PLS or JSON text, highest priority first).
+//
+// Returns a newly allocated string, or NULL when an argument is invalid
+// (unknown language, malformed options or word list).
+//
+// # Safety
+// `p` must be a live phonemizer; `text` and `lang` valid C strings;
+// `options_json` NULL or a valid C string.
+char *uccharan_normalize(const struct UccharanPhonemizer *p,
+                         const char *text,
+                         const char *lang,
+                         const char *options_json);
+
+// As [`uccharan_phonemize`], with pronunciation word lists applied:
+// `wordlists_json` is a JSON array of word lists (TSV, PLS or JSON text),
+// highest priority first. A matched entry's IPA replaces the word's
+// reading (in the profile's phone set); an entry with only a spoken form
+// is phonemised from it.
+//
+// Returns a newly allocated string, or NULL when an argument is invalid.
+//
+// # Safety
+// As [`uccharan_phonemize`]; `wordlists_json` must be a valid C string.
+char *uccharan_phonemize_wordlists(const struct UccharanPhonemizer *p,
+                                   const char *text,
+                                   const char *lang,
+                                   const char *profile,
+                                   uint32_t flags,
+                                   const char *wordlists_json);
+
+// Convert a word list (TSV, PLS or JSON text) to `to`: "tsv", "json" or
+// "pls" (`lang` picks the PLS language and may be NULL for the entries of
+// any language).
+//
+// Returns a newly allocated string, or NULL for invalid input.
+//
+// # Safety
+// `text` and `to` must be valid C strings; `lang` NULL or a valid C string.
+char *uccharan_wordlist_convert(const char *text, const char *to, const char *lang);
+
 // Release a string returned by this library. NULL is ignored.
 //
 // # Safety

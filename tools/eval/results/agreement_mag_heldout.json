@@ -1,0 +1,243 @@
+{
+ "language": "mag",
+ "reference": "espeak-ng 1.52.0 voice hi (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 187432,
+  "per": 0.0039907806564514064,
+  "per_without_stress": 0.00336455340373397,
+  "exact_sentence": 0.8547430830039525,
+  "exact_sentence_without_stress": 0.8586956521739131,
+  "piper_shape_per": 0.004050654275602719,
+  "piper_shape_exact_sentence": 0.8399209486166008,
+  "word_count_mismatch_sentences": 151,
+  "errors_by_class": {
+   "stress": {
+    "count": 211,
+    "share": 0.2820855614973262,
+    "per_contribution": 0.001125741602287763
+   },
+   "vowel": {
+    "count": 205,
+    "share": 0.27406417112299464,
+    "per_contribution": 0.001093729992744035
+   },
+   "consonant": {
+    "count": 194,
+    "share": 0.25935828877005346,
+    "per_contribution": 0.0010350420419138675
+   },
+   "other": {
+    "count": 68,
+    "share": 0.09090909090909091,
+    "per_contribution": 0.0003627982414955824
+   },
+   "word-boundary": {
+    "count": 60,
+    "share": 0.08021390374331551,
+    "per_contribution": 0.0003201160954372786
+   },
+   "length": {
+    "count": 10,
+    "share": 0.013368983957219251,
+    "per_contribution": 5.335268257287976e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": " →∅",
+    "count": 54
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 47
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 43
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 37
+   },
+   {
+    "edit": "∅→ə",
+    "count": 34
+   },
+   {
+    "edit": "ə→∅",
+    "count": 31
+   },
+   {
+    "edit": "a→ə",
+    "count": 30
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 28
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 24
+   },
+   {
+    "edit": "a→∅",
+    "count": 22
+   },
+   {
+    "edit": "ə→ʌ",
+    "count": 21
+   },
+   {
+    "edit": "r→ɾ",
+    "count": 17
+   },
+   {
+    "edit": "l→∅",
+    "count": 17
+   },
+   {
+    "edit": "∅→ɾ",
+    "count": 16
+   },
+   {
+    "edit": "s→ʃ",
+    "count": 14
+   },
+   {
+    "edit": "l→ə",
+    "count": 14
+   },
+   {
+    "edit": "ˈ→l",
+    "count": 14
+   },
+   {
+    "edit": "o→ə",
+    "count": 14
+   },
+   {
+    "edit": "ː→ʋ",
+    "count": 14
+   },
+   {
+    "edit": "ʃ→∅",
+    "count": 13
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 12
+   },
+   {
+    "edit": "s→∅",
+    "count": 12
+   },
+   {
+    "edit": "r→ə",
+    "count": 12
+   },
+   {
+    "edit": "ʃ→ʂ",
+    "count": 10
+   },
+   {
+    "edit": "t→ʈ",
+    "count": 10
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 21040,
+    "wrong": 95,
+    "rate": 0.004515209125475285
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 195,
+    "per": 0.010087741040003966,
+    "exact_sentence": 0.717948717948718
+   },
+   "no-digits": {
+    "sentences": 817,
+    "per": 0.0023183715649348,
+    "exact_sentence": 0.8873929008567931
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-790",
+    "text": "ट्रैवल एजेंट आमतौर पर पैकेज के पेशकश करो हय जेकरा में नाश्ता, हवाई अड्डे से / के लगी परिवहन व्यवस्था या यहां तक ​​कि संयुक्त उड़ान अउ होटल पैकेज शामिल हय।",
+    "reference": "ʈɾˈɛːʋəl eːɟˈẽːʈ ˌaːmtˈɔːɾ pˈʌɾ pɛːkˈeːɟ keː pˈeːʃəkˌəʃ kˈʌɾoː hˈʌɛj ɟˈeːkɾˌaː mẽː nˈaːʃtaː həʋˈaːi ˈʌɖɖeː seː slˈaʃ keː lˈʌɡi pˈʌɾɪʋˌəhən ʋjəʋˈʌstʰaː jˈaː jˈʌhã tˌək kˈɪ səɲjˈʊkt ʊr.ˈaːn ˈʌʊ hˈoːʈəl pɛːkˈeːɟ ʃˈaːmɪl hˈʌɛj",
+    "uccharan": "ʈɾˈɛːʋəl eːɟˈẽːʈ ˌaːmtˈɔːɾ pˈʌɾ pɛːkˈeːɟ keː pˈeːʃəkˌəʃ kˈʌɾoː hˈʌɛj ɟˈeːkɾˌaː mẽː nˈaːʃtaː həʋˈaːi ˈʌɖɖeː seː keː lˈʌɡi pˈʌɾɪʋˌəhən ʋjəʋˈʌstʰaː jˈaː jˈʌhã tˌək kˈɪ səɲjˈʊkt ʊr.ˈaːn ˈʌʊ hˈoːʈəl pɛːkˈeːɟ ʃˈaːmɪl hˈʌɛj"
+   },
+   {
+    "id": "flores-devtest-55",
+    "text": "वर्तमान सीनेटर आऊर अर्जेंटीना के प्रथम महिला क्रिस्टीना फर्नांडीज डी किरचनर ब्यूनस आयर्स से 50 किलोमीटर (31 मील) दूर शहर ला प्लाटा में कलहे शाम राष्ट्रपति पद के उम्मीदवारी के घोषणा कलई।",
+    "reference": "ʋˌəɾtəmˈaːn sinˈeːʈəɾ ˈaːuɾ ˌʌɾɟẽːʈˈiːnaː keː pɾˈʌtʰəm mˈʌhɪlˌaː kɾɪsʈˈiːnaː pʰˌərnãɖˈiːɟ ɖˈi kˈɪɾəcˌənəɾ bjˈuːnəs aːjˈʌrs seː pəcˈaːs kˌɪloːmˈiːʈəɾ ˌɪkətˈis mˈiːl dˈuːɾ ʃˈʌhəɾ lˈaː plˈaːʈaː mẽː kˈʌlhˌeː ʃˈaːm ɾˌaːʃtɾapˈati pˈʌd keː ˌʊmmidʋˈaːɾi keː ɡʰˈoːʂɳˌaː kˈʌlˌi",
+    "uccharan": "ʋˌəɾtəmˈaːn sinˈeːʈəɾ ˈaːuɾ ˌʌɾɟẽːʈˈiːnaː keː pɾˈʌtʰəm mˈʌhɪlˌaː kɾɪsʈˈiːnaː pʰˌərnãɖˈiːɟ ɖˈi kˈɪɾəcˌənəɾ bjˈuːnəs aːjˈʌrs seː pəcˈaːs kˌɪloːmˈiːʈəɾ ˌɪkətˈis mˈiːl dˈuːɾ ʃˈʌhəɾ lˈaː plˈaːʈaː mẽː kˈʌlhˌeː ʃˈaːm ɾˈaːʂʈɾəptɪ pˈʌd keː ˌʊmmidʋˈaːɾi keː ɡʰˈoːʂɳˌaː kˈʌlˌi"
+   },
+   {
+    "id": "flores-devtest-183",
+    "text": "भूकंप डिलन के उत्तर-पूर्वोत्तर में लगभग 20 किमी (15 मील) आऊर बट्टे से लगभग 65 किमी (40 मील) दक्षिण में केंद्रित हलय।",
+    "reference": "bʰuːkˈʌmp ɖˈɪlən keː ˈʊtːrpuːrʋˈoːtːəɾ mẽː lˈʌɡəbʰˌəɡ bˈiːs kˈɪmi pˈʌndɾəh mˈiːl ˈaːuɾ bˈʌʈʈeː seː lˈʌɡəbʰˌəɡ pˈɛ̃səʈʰ kˈɪmi cˈaːlis mˈiːl dˈʌkʃɪɳ mẽː kˈẽːdɾɪt hˈʌlˌɛj",
+    "uccharan": "bʰuːkˈʌmp ɖˈɪlən keː ˈʊtːəɾˌəpuːrʋˈoːtːəɾ mẽː lˈʌɡəbʰˌəɡ bˈiːs kˈɪmi pˈʌndɾəh mˈiːl ˈaːuɾ bˈʌʈʈeː seː lˈʌɡəbʰˌəɡ pˈɛ̃səʈʰ kˈɪmi cˈaːlis mˈiːl dˈʌkʃɪɳ mẽː kˈẽːdɾɪt hˈʌlˌɛj"
+   },
+   {
+    "id": "flores-devtest-56",
+    "text": "श्रीमती किरचनर अर्जेंटीना थिएटर में राष्ट्रपति पद के लेल दौड़े के अपन इरादा के घोषणा कलई, ओहि स्थान पर ऊ ब्यूनस आयर्स प्रांत प्रतिनिधिमंडल के सदस्य के रूप में सीनेट के लेल अपन 2005 अभियान शुरू कैले रहलन।",
+    "reference": "ʃɾˈiːmtˌi kˈɪɾəcˌənəɾ ˌʌɾɟẽːʈˈiːnaː tʰɪˈeːʈəɾ mẽː ɾˌaːʃtɾapˈati pˈʌd keː lˈeːl dˈɔːr.eː keː ˈʌpən ɪɾˈaːdaː keː ɡʰˈoːʂɳˌaː kˈʌlˌi ˈoːhɪ stʰˈaːn pˈʌɾ ˈu bjˈuːnəs aːjˈʌrs pɾˈãt pɾˌətɪnˌɪdʰɪmˈʌɳɖəl keː sədˈʌsjə keː ɾˈuːp mẽː sinˈeːʈ keː lˈeːl ˈʌpən dˈoː hˈʌɟaːɾ pˈãc ˌʌbʰɪjˈaːn ʃˈʊɾuː kˈɛːleː ɾˈʌhəlˌən",
+    "uccharan": "ʃɾˈiːmtˌi kˈɪɾəcˌənəɾ ˌʌɾɟẽːʈˈiːnaː tʰɪˈeːʈəɾ mẽː ɾˈaːʂʈɾəptɪ pˈʌd keː lˈeːl dˈɔːr.eː keː ˈʌpən ɪɾˈaːdaː keː ɡʰˈoːʂɳˌaː kˈʌlˌi ˈoːhɪ stʰˈaːn pˈʌɾ ˈu bjˈuːnəs aːjˈʌrs pɾˈãt pɾˌətɪnˌɪdʰɪmˈʌɳɖəl keː sədˈʌsjə keː ɾˈuːp mẽː sinˈeːʈ keː lˈeːl ˈʌpən dˈoː hˈʌɟaːɾ pˈãc ˌʌbʰɪjˈaːn ʃˈʊɾuː kˈɛːleː ɾˈʌhəlˌən"
+   },
+   {
+    "id": "flores-devtest-551",
+    "text": "एगोर सबसे उल्लेखनीय हाल के उदाहरण डब्ल्यू डब्ल्यू II के उत्तरी अटलांटिक अभियान हले। अमेरिकी ब्रिटेन के मदद खातिर अटलांटिक महासागर के पार पुरुसन अउ समान के ले जाये के कोशिश कर रहले हले।",
+    "reference": "eːɡˈoːɾ sˈʌbsˌeː ˌʊlleːkʰnˈiːj hˈaːl keː ʊdˈaːhəɾˌəɳ ɖˈʌbljuː ɖˈʌbljuː ˈaɪ ˈaɪ keː ˈʊtːɾˌi ˌʌʈlˈãʈɪk ˌʌbʰɪjˈaːn hˈʌleː ʌmˈeːɾɪkˌi bɾɪʈˈeːn keː mˈʌdəd kʰˈaːtɪɾ ˌʌʈlˈãʈɪk mˌahaːsaːɡˈaɾ keː pˈaːɾ pˈʊɾʊsˌən ˈʌʊ səmˈaːn keː lˈeː ɟˈaːjeː keː kˈoːʃɪʃ kˈʌɾ ɾˈʌhəlˌeː hˈʌleː",
+    "uccharan": "eːɡˈoːɾ sˈʌbsˌeː ˌʊlleːkʰnˈiːj hˈaːl keː ʊdˈaːhəɾˌəɳ ɖˈʌbljuː ɖˈʌbljuː ˌaɪˈaɪ keː ˈʊtːɾˌi ˌʌʈlˈãʈɪk ˌʌbʰɪjˈaːn hˈʌleː ʌmˈeːɾɪkˌi bɾɪʈˈeːn keː mˈʌdəd kʰˈaːtɪɾ ˌʌʈlˈãʈɪk mˌəhaːsˈaːɡəɾ keː pˈaːɾ pˈʊɾʊsˌən ˈʌʊ səmˈaːn keː lˈeː ɟˈaːjeː keː kˈoːʃɪʃ kˈʌɾ ɾˈʌhəlˌeː hˈʌleː"
+   },
+   {
+    "id": "flores-devtest-419",
+    "text": "लोकप्रिय खेल में फुटबॉल, बास्केटबॉल, वॉलीबॉल, वाटर-पोलो, तलवारबाजी, रग्बी, साइकिल चलावे, आइस हॉकी, रोलर हॉकी आऊर F1 मोटर रेसिंग शामिल हय।",
+    "reference": "loːkˈʌpɾɪj kʰˈeːl mẽː pʰˈʊʈbˌɔl bˈaːskeːʈbɔl ʋɔlˈiːbɔl ʋˈaːʈrpˈoːloː tˌəlʋˌaːɾbˈaːɟi ɾˈʌɡbi sˈaːɪkˌɪl cəlˈaːʋeː ˈaːɪs hˈɔki ɾˈoːləɾ hˈɔki ˈaːuɾ ˈɛf ˈeːk mˈoːʈəɾ ɾeːsˈĩɡ ʃˈaːmɪl hˈʌɛj",
+    "uccharan": "loːkˈʌpɾɪj kʰˈeːl mẽː pʰˈʊʈbˌɔl bˈaːskeːʈbɔl ʋɔlˈiːbɔl ʋˈaːʈəɾˌəpˈoːloː tˌəlʋˌaːɾbˈaːɟi ɾˈʌɡbi sˈaːɪkˌɪl cəlˈaːʋeː ˈaːɪs hˈɔki ɾˈoːləɾ hˈɔki ˈaːuɾ ˈɛf ˈeːk mˈoːʈəɾ ɾeːsˈĩɡ ʃˈaːmɪl hˈʌɛj"
+   },
+   {
+    "id": "flores-devtest-830",
+    "text": "पोस्ट कियल गेल गति सीमा पिछला अउ बाद के खंड के तुलना में काफी कम हय - आमतौर पर 35-40 मील प्रति घंटा (56-64 किमी / घंटा) - अउ ओकर सख्त आज्ञाकारिता अन्यथा से भी अधिक महत्वपूर्ण हय।",
+    "reference": "pˈoːsʈ kˈɪjəl ɡˈeːl ɡˈʌtɪ sˈiːmaː pˈɪcʰlˌaː ˈʌʊ bˈaːd keː kʰˈʌɳɖ keː tˈʊlnˌaː mẽː kˈaːpʰi kˈʌm hˈʌɛj ˌaːmtˈɔːɾ pˈʌɾ pˈɛ̃tis cˈaːlis mˈiːl pɾˈʌtɪ ɡʰˈʌɳʈaː cʰˈʌpːən cˈɔ̃səʈʰ kˈɪmi slˈaʃ ɡʰˈʌɳʈaː ˈʌʊ ˈoːkəɾ sˈʌkʰt ˈaːɡjaːkˌaːɾɪtˌaː ˈʌnjətʰˌaː seː bʰˈi ˈʌdʰɪk mˌəhətʋəpˈuːrɳə hˈʌɛj",
+    "uccharan": "pˈoːsʈ kˈɪjəl ɡˈeːl ɡˈʌtɪ sˈiːmaː pˈɪcʰlˌaː ˈʌʊ bˈaːd keː kʰˈʌɳɖ keː tˈʊlnˌaː mẽː kˈaːpʰi kˈʌm hˈʌɛj ˌaːmtˈɔːɾ pˈʌɾ pˈɛ̃tis cˈaːlis mˈiːl pɾˈʌtɪ ɡʰˈʌɳʈaː cʰˈʌpːən cˈɔ̃səʈʰ kˈɪmi ɡʰˈʌɳʈaː ˈʌʊ ˈoːkəɾ sˈʌkʰt ˈaːɡjaːkˌaːɾɪtˌaː ˈʌnjətʰˌaː seː bʰˈi ˈʌdʰɪk mˌəhətʋəpˈuːrɳə hˈʌɛj"
+   },
+   {
+    "id": "flores-devtest-14",
+    "text": "हम USOC के अई कथन से सहमत हई कि हमरा एथलीट आऊर क्लब आऊर उनकर खेल के हित के हमरा संगठन के भीतर सार्थक परिवर्तन के जौरे आगे बढ़े से बेहतर ढंग से पूरा कैल जा सकई हई, न कि डीसर्टिफिकेशन से।",
+    "reference": "hˌəm jˈuːzɒk keː ˈʌi kˈʌtʰən seː sˈʌhəmˌət hˈʌi kˈɪ hˈʌmɾˌaː ˌeːtʰlˈiːʈ ˈaːuɾ klˈʌb ˈaːuɾ ˈʊnəkˌəɾ kʰˈeːl keː hˈɪt keː hˈʌmɾˌaː sˈʌŋɡəʈʰˌən keː bʰˈiːtəɾ sˈaːɾtʰək pˌəɾɪʋˈʌɾtən keː ɟˈɔːɾeː ˈaːɡeː bˈʌr.heː seː bˈeːhətˌəɾ ɖʰˈʌŋɡ seː pˈuːɾaː kˈɛːl ɟˈaː sˈʌkˌi hˈʌi nˈə kˈɪ ɖˌiːsrʈˌɪpʰɪkˈeːʃən seː",
+    "uccharan": "hˌəm juːsˈəʊk keː ˈʌi kˈʌtʰən seː sˈʌhəmˌət hˈʌi kˈɪ hˈʌmɾˌaː ˌeːtʰlˈiːʈ ˈaːuɾ klˈʌb ˈaːuɾ ˈʊnəkˌəɾ kʰˈeːl keː hˈɪt keː hˈʌmɾˌaː sˈʌŋɡəʈʰˌən keː bʰˈiːtəɾ sˈaːɾtʰək pˌəɾɪʋˈʌɾtən keː ɟˈɔːɾeː ˈaːɡeː bˈʌr.heː seː bˈeːhətˌəɾ ɖʰˈʌŋɡ seː pˈuːɾaː kˈɛːl ɟˈaː sˈʌkˌi hˈʌi nˈə kˈɪ ɖˌiːsɾʈˌɪpʰɪkˈeːʃən seː"
+   },
+   {
+    "id": "flores-devtest-481",
+    "text": "तकनीकी नियतत्ववाद एगो शब्द हय जे कि अपने आप में विचार का एगो बहुते बड़ा श्रृंखला शामिल हय।प्रौद्योगिकी-पुश या तकनीकी अनिवार्यता के सीधा मतलब हौ कि हम मानुस भाग्य वैज्ञानिक कानूनों आऊर प्रौद्योगिकी में ओकर अभिव्यक्ति से जुड़ा एगो तर्क से प्रेरित हई।",
+    "reference": "tˌəknˈiːki nˌɪjətˌətʋəʋˈaːd ˈeːɡoː ʃˈʌbd hˈʌɛj ɟˈeː kˈɪ ˈʌpnˌeː ˌaːp mẽː ʋɪcˈaːɾ kaː ˈeːɡoː bˈʌhʊtˌeː bˈʌr.aː ʃrɾˈɪŋkʰəlˌaː ʃˈaːmɪl hˈʌɛj pɾˈɔːdjoːɡˌɪkipˈʊʃ jˈaː tˌəknˈiːki ˌʌnɪʋˈaːrjətˌaː keː sˈiːdʰaː mˈʌtəlˌəb hˈɔː kˈɪ hˌəm mˈaːnʊs bʰˈaːɡjə ʋˈɛːɡjaːnˌɪk kaːnˈuːnõ ˈaːuɾ pɾˈɔːdjoːɡˌɪki mẽː ˈoːkəɾ ˌʌbʰɪʋjˈʌktɪ seː ɟˈʊr.aː ˈeːɡoː tˈʌɾk seː pɾˈeːɾɪt hˈʌi",
+    "uccharan": "tˌəknˈiːki nˌɪjətˌətʋəʋˈaːd ˈeːɡoː ʃˈʌbd hˈʌɛj ɟˈeː kˈɪ ˈʌpnˌeː ˌaːp mẽː ʋɪcˈaːɾ kaː ˈeːɡoː bˈʌhʊtˌeː bˈʌr.aː ʃrɾˈĩkʰlˌaː ʃˈaːmɪl hˌəjpɾˈɔːdjoːɡˌɪkipˈʊʃ jˈaː tˌəknˈiːki ˌʌnɪʋˈaːrjətˌaː keː sˈiːdʰaː mˈʌtəlˌəb hˈɔː kˈɪ hˌəm mˈaːnʊs bʰˈaːɡjə ʋˈɛːɡjaːnˌɪk kaːnˈuːnõ ˈaːuɾ pɾˈɔːdjoːɡˌɪki mẽː ˈoːkəɾ ˌʌbʰɪʋjˈʌktɪ seː ɟˈʊr.aː ˈeːɡoː tˈʌɾk seː pɾˈeːɾɪt hˈʌi"
+   },
+   {
+    "id": "flores-devtest-977",
+    "text": "एगोरा अलावा, r अउ rr ke अलग-अलग उच्चारण करना सुनिश्चित करें: कारो के अर्थ प्रिय छलई, जबकि कैरो के अर्थ रथ छलई।",
+    "reference": "eːɡˈoːɾaː ʌlˈaːʋaː ˈɑː ˈʌʊ ˌɑːɹˈɑː kˈiː ˈʌləɡˌəˈʌləɡ ʊcːˈaːɾəɳ kˈʌɾnˌaː sʊnˈɪʃcɪt kˈʌɾẽː kˈaːɾoː keː ˈʌɾtʰ pɾˈɪj cʰˈʌlˌi ɟˈʌbkˌɪ kˈɛːɾoː keː ˈʌɾtʰ ɾˈʌtʰ cʰˈʌlˌi",
+    "uccharan": "eːɡˈoːɾaː ʌlˈaːʋaː ˈɑː ˈʌʊ ˌɑːˈɑː kˈɛ ˈʌləɡˌəˈʌləɡ ʊcːˈaːɾəɳ kˈʌɾnˌaː sʊnˈɪʃcɪt kˈʌɾẽː kˈaːɾoː keː ˈʌɾtʰ pɾˈɪj cʰˈʌlˌi ɟˈʌbkˌɪ kˈɛːɾoː keː ˈʌɾtʰ ɾˈʌtʰ cʰˈʌlˌi"
+   },
+   {
+    "id": "flores-devtest-74",
+    "text": "लेकिन प्रधान मंत्री जॉन हॉवर्ड कहले हई कि ई अधिनियम केवल अस्पताल के सुविधा के तस्मानियाई सरकार द्वारा डाउनग्रेड कैल जाए से बचे के लेल, अतिरिक्त AUD $45 मिलियन देवे के लेल रहई।",
+    "reference": "lˈeːkɪn pɾədʰˈaːn mˈʌntɾi ɟˈɔn hɔʋˈʌɾɖ kˈʌhəlˌeː hˈʌi kˈɪ ˈi ˈʌdʰɪnˌɪjəm kˈeːʋəl ˌʌspətˈaːl keː sˈʊʋɪdʰˌaː keː tˌəsmaːnɪjˈaːi sˌəɾkˈaːɾ dʋˈaːɾaː ɖˌaːʊnɡɾˈeːɖ kˈɛːl ɟˈaːeː seː bˈʌceː keː lˈeːl ˌʌtɪɾˈɪkt ˈeɪ jˈuː dˈiː dˈɔləɾ paɪntˈaːlis mˈɪlɪjˌən dˈeːʋeː keː lˈeːl ɾˈʌhəˌi",
+    "uccharan": "lˈeːkɪn pɾədʰˈaːn mˈʌntɾi ɟˈɔn hɔʋˈʌɾɖ kˈʌhəlˌeː hˈʌi kˈɪ ˈi ˈʌdʰɪnˌɪjəm kˈeːʋəl ˌʌspətˈaːl keː sˈʊʋɪdʰˌaː keː tˌəsmaːnɪjˈaːi sˌəɾkˈaːɾ dʋˈaːɾaː ɖˌaːʊnɡɾˈeːɖ kˈɛːl ɟˈaːeː seː bˈʌceː keː lˈeːl ˌʌtɪɾˈɪkt ˌeɪjˌuːdˈiː ɖˈɔləɾ paɪntˈaːlis mˈɪlɪjˌən dˈeːʋeː keː lˈeːl ɾˈʌhəˌi"
+   },
+   {
+    "id": "flores-devtest-5",
+    "text": "अइसे पहिले, रिंग के CEO, जेमी सिमिनॉफ टिप्पणी कलई कि कंपनी तब शुरू होलई जब उनकर गैरेज में उनकर दोकान से ओकरा दरवाजा के घंटी ना सुनाई देत रहलई।",
+    "reference": "ˈʌɪsˌeː pˈʌhɪlˌeː ɾˈĩɡ keː sˈiː ˈiː ˈəʊ ɟˈeːmi sˈɪmɪnˌɔpʰ ʈˈɪpːɳˌi kˈʌlˌi kˈɪ kˈʌmpənˌi tˈʌb ʃˈʊɾuː hˈoːlˌi ɟˈʌb ˈʊnəkˌəɾ ɡɛːɾˈeːɟ mẽː ˈʊnəkˌəɾ doːkˈaːn seː ˈoːkɾˌaː dˌəɾʋˈaːɟaː keː ɡʰˈʌɳʈi nˈaː sʊnˈaːi dˈeːt ɾˈʌhəli",
+    "uccharan": "ˈʌɪsˌeː pˈʌhɪlˌeː ɾˈĩɡ keː sˌiːˌiːˈəʊ ɟˈeːmi sˈɪmɪnˌɔpʰ ʈˈɪpːɳˌi kˈʌlˌi kˈɪ kˈʌmpənˌi tˈʌb ʃˈʊɾuː hˈoːlˌi ɟˈʌb ˈʊnəkˌəɾ ɡɛːɾˈeːɟ mẽː ˈʊnəkˌəɾ doːkˈaːn seː ˈoːkɾˌaː dˌəɾʋˈaːɟaː keː ɡʰˈʌɳʈi nˈaː sʊnˈaːi dˈeːt ɾˈʌhəli"
+   }
+  ]
+ }
+}

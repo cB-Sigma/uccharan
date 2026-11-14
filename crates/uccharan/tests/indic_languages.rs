@@ -225,3 +225,34 @@ fn konkani_sinhala_sanskrit() {
         "ɾˈaːməɦə ʋˈənəm ɡˈətʃtʃʰəti."
     );
 }
+
+#[test]
+fn urdu_sindhi() {
+    // Common words come from the word tables, others from the rules.
+    check(
+        Lang::Ur,
+        &[
+            ("آپ کیسے ہیں؟", "ˌaːp kˈeːseː hẽ?"),
+            ("بوت", "bˈoːt"),
+            ("ببت", "bˈʌbət"),
+        ],
+    );
+    check(Lang::Sd, &[("سنڌي ٻولي", "sˈɪndhi bˈoːli"), ("۽", "ˈaẽ")]);
+    // Improved mode reads ص and ظ as s and z, and the Urdu digits.
+    let p = Phonemizer::new();
+    let mut o = Options::new(Lang::Ur);
+    o.mode = Mode::Improved;
+    assert_eq!(p.phonemize("صبح ۱۹", &o), "sˌəbˈah ˈʊnnis");
+    assert_eq!(p.phonemize("صبح ۱۹", &Options::new(Lang::Ur)), "ʂˌəbˈah");
+}
+
+#[test]
+fn magahi() {
+    // Compatible mode is the Hindi reading.
+    let p = Phonemizer::new();
+    let t = "हम घरे जाइत ही।";
+    assert_eq!(
+        p.phonemize(t, &Options::new(Lang::Mag)),
+        p.phonemize(t, &Options::new(Lang::Hi))
+    );
+}

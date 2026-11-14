@@ -24,8 +24,11 @@ from common import align, load_oracle, run_uccharan
 HERE = Path(__file__).resolve().parent
 
 
-def norm(s: str) -> str:
+def norm(s: str, lang: str = "bho") -> str:
     s = unicodedata.normalize("NFD", s)
+    if lang == "mag":
+        # The Magahi set writes the labial approximant w (ʋ = w).
+        s = s.replace("ʋ", "w")
     s = re.sub(r"[ˈˌ.?!,।]", lambda m: "ɽ" if m.group(0) == "." else "", s.replace("r.", "ɽ"))
     for a, b in (("ʌ", "ə"), ("ɐ", "ə"), ("ɪ", "i"), ("ʊ", "u"), ("ʱ", "ʰ"), ("̃ː", "̃"), ("ɦ", "h")):
         s = s.replace(a, b)
@@ -61,8 +64,8 @@ def main() -> int:
         wok = wn = sok = sn = 0
         err = tot = 0
         for r, o in zip(rows, outs):
-            got = norm(o)
-            wants = [norm(x) for x in r[3].split("|")]
+            got = norm(o, args.lang)
+            wants = [norm(x, args.lang) for x in r[3].split("|")]
             want = min(wants, key=lambda w: align(list(w), list(got))[0])
             if r[1] == "word":
                 ok = got in wants

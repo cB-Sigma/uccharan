@@ -6,16 +6,18 @@
 import initWasm, * as wasm from "./dist/uccharan_wasm.js";
 import { PACKS } from "./packs.js";
 
-export const LANGUAGES = Object.freeze(["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa"]);
+export const LANGUAGES = Object.freeze(["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag"]);
 export const PROFILES = Object.freeze(["espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx"]);
 
-const ALIASES = { en: "en-us", "en-us": "en-us", "en-gb": "en-gb", "en-gb-x-rp": "en-gb", "en-uk": "en-gb", hi: "hi", "hi-in": "hi", bn: "bn", "bn-in": "bn", "bn-bd": "bn", mr: "mr", te: "te", ne: "ne", "ne-np": "ne", kn: "kn", ta: "ta", ml: "ml", as: "as", gu: "gu", bho: "bho", bhojpuri: "bho", mai: "mai", maithili: "mai", pa: "pa", "pa-in": "pa", or: "or", odia: "or", oriya: "or", kok: "kok", gom: "kok", konkani: "kok", si: "si", sinhala: "si", sa: "sa", sanskrit: "sa" };
+const ALIASES = { en: "en-us", "en-us": "en-us", "en-gb": "en-gb", "en-gb-x-rp": "en-gb", "en-uk": "en-gb", hi: "hi", "hi-in": "hi", bn: "bn", "bn-in": "bn", "bn-bd": "bn", mr: "mr", te: "te", ne: "ne", "ne-np": "ne", kn: "kn", ta: "ta", ml: "ml", as: "as", gu: "gu", bho: "bho", bhojpuri: "bho", mai: "mai", maithili: "mai", pa: "pa", "pa-in": "pa", or: "or", odia: "or", oriya: "or", kok: "kok", gom: "kok", konkani: "kok", si: "si", sinhala: "si", sa: "sa", sanskrit: "sa", ur: "ur", "ur-pk": "ur", urdu: "ur", sd: "sd", sindhi: "sd", mag: "mag", magahi: "mag" };
 const isNode = typeof process !== "undefined" && process.versions != null && process.versions.node != null && typeof window === "undefined";
 
 let ready = null;
 let wasmReady = false;
 let dataBase = new URL("./data/", import.meta.url);
 const loading = new Map();
+const WORD_TABLES = new Set(["ur", "sd"]);
+const tablesLoaded = new Set();
 
 function canonical(lang) {
   const tag = ALIASES[String(lang).toLowerCase().replace("_", "-")];
@@ -80,7 +82,9 @@ export async function loadLanguage(lang, bytes) {
     wasm.load(tag, bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes));
     return;
   }
-  if (wasm.has(tag)) return;
+  // Urdu and Sindhi read with rules alone until their word tables arrive.
+  if (wasm.has(tag) && (!WORD_TABLES.has(tag) || tablesLoaded.has(tag))) return;
+  if (WORD_TABLES.has(tag)) tablesLoaded.add(tag);
   if (!loading.has(tag)) {
     loading.set(
       tag,
@@ -174,6 +178,9 @@ function run(text, o) {
     if (profile === "piper") return sentences;
     return sentences.map((s) => Array.from(s, (ch) => ch.codePointAt(0)));
   }
+  if (o.wordlists && o.wordlists.length) {
+    return wasm.renderWordlists(text, lang, profile, normalize, improved, hinglish, o.punctuation !== false, Boolean(o.languageFlags), Array.from(o.wordlists));
+  }
   return wasm.render(text, lang, profile, normalize, improved, hinglish, o.punctuation !== false, Boolean(o.languageFlags));
 }
 
@@ -235,4 +242,75 @@ export async function version() {
   await init();
   wasmReady = true;
   return wasm.version();
+}
+
+// Normalise-only mode and pronunciation word lists.
+
+function normalizeRun(text, o) {
+  const lang = canonical(o.lang ?? "en-us");
+  const opts = {
+    mode: o.improved ? "improved" : "compatible",
+    digits: o.digits ?? "context",
+    en_scale: o.enScale ?? "auto",
+    latin: o.latin ?? "keep",
+    urls: o.urls ?? "read",
+    respell: o.respell ?? "native",
+    wordlists: Array.from(o.wordlists ?? []),
+  };
+  const r = JSON.parse(wasm.normalizeJson(text, lang, JSON.stringify(opts)));
+  return {
+    text: r.text,
+    sentences: r.sentences.map((s) => ({ start: s.utf16[0], end: s.utf16[1] })),
+    spans: r.spans.map((s) => ({
+      kind: s.kind,
+      lang: s.lang,
+      start: s.src.utf16[0],
+      end: s.src.utf16[1],
+      outStart: s.out.utf16[0],
+      outEnd: s.out.utf16[1],
+      text: s.text,
+      spoken: s.spoken,
+      src: s.src,
+      out: s.out,
+      entry: s.entry ?? null,
+      value: s.value ?? null,
+    })),
+  };
+}
+
+/**
+ * Spoken form of `text` for a voice that reads text, with typed spans whose
+ * `start`/`end` are UTF-16 offsets into `text` (`src.byte`, `src.char` give
+ * byte and code-point offsets).
+ */
+export async function normalize(text, options = {}) {
+  await init();
+  wasmReady = true;
+  const langs = new Set(languagesFor(text, options.lang));
+  if (!canonical(options.lang ?? "en-us").startsWith("en")) langs.add("en-gb");
+  await Promise.all([...langs].map((l) => loadLanguage(l)));
+  return normalizeRun(text, options);
+}
+
+/** Synchronous variant of `normalize`; the needed languages must be loaded. */
+export function normalizeSync(text, options = {}) {
+  if (!wasmReady) throw new Error("uccharan is not initialised: await init() and loadLanguage() first");
+  return normalizeRun(text, options);
+}
+
+/** Respell IPA for a text voice reading `lang`; null when no writer exists. */
+export async function respell(ipa, options = {}) {
+  await init();
+  wasmReady = true;
+  const lang = canonical(options.lang ?? "en-us");
+  await loadLanguage(lang);
+  const r = wasm.respell(ipa, lang, options.source ?? "", options.style ?? "native");
+  return r ? JSON.parse(r) : null;
+}
+
+/** Convert a word list (TSV, PLS or JSON text) to "tsv", "json" or "pls". */
+export async function convertWordlist(text, to, lang = "") {
+  await init();
+  wasmReady = true;
+  return wasm.convertWordlist(text, to, lang ? canonical(lang) : "");
 }

@@ -22,6 +22,7 @@ mod en;
 mod hi;
 mod lts;
 mod wikipron;
+mod words;
 
 use std::collections::BTreeMap;
 use std::io::Write;
@@ -338,6 +339,22 @@ fn main() {
                     build_english(&entries, en::Accent::Gb, "en-gb", &overrides, &names),
                 ),
                 ("hi.ucd", hi::build(&root)),
+                (
+                    "ur.ucd",
+                    words::build(
+                        &root,
+                        "ur",
+                        "derived from running espeak-ng 1.52.0 on Sangraha Urdu word lists",
+                    ),
+                ),
+                (
+                    "sd.ucd",
+                    words::build(
+                        &root,
+                        "sd",
+                        "derived from running espeak-ng 1.52.0 on Sangraha Sindhi word lists",
+                    ),
+                ),
                 ("kokoro-en-us.ucd", build_kokoro(&root, false)),
                 ("kokoro-en-gb.ucd", build_kokoro(&root, true)),
             ];

@@ -259,6 +259,8 @@ struct Ctx {
     out: Vec<Item>,
     /// Keep known mixed-case names whole (improved mode).
     brands: bool,
+    /// Read English numbers with lakh and crore (Indian English).
+    indian: bool,
 }
 
 /// Mixed-case names that are one word, not camelCase humps.
@@ -337,6 +339,23 @@ impl Ctx {
     fn en_cardinal(&mut self, n: u64) {
         if n == 0 {
             self.w("zero");
+            return;
+        }
+        if self.indian && n >= 100_000 {
+            // Indian English: crore, lakh, thousand.
+            let (crore, rest) = (n / 10_000_000, n % 10_000_000);
+            let (lakh, rest) = (rest / 100_000, rest % 100_000);
+            if crore > 0 {
+                self.en_cardinal(crore);
+                self.w("crore");
+            }
+            if lakh > 0 {
+                self.en_below_1000(lakh, false);
+                self.w("lakh");
+            }
+            if rest > 0 {
+                self.en_cardinal(rest);
+            }
             return;
         }
         let and = self.lang == Lang::EnGb;
@@ -681,11 +700,24 @@ pub fn expand(chunk: &Chunk, lang: Lang, style: Normalize) -> Vec<Item> {
 /// [`expand`], optionally keeping known mixed-case names ("iPhone",
 /// "YouTube") as one word instead of splitting them at the capitals.
 pub fn expand_with(chunk: &Chunk, lang: Lang, style: Normalize, brands: bool) -> Vec<Item> {
+    expand_opts(chunk, lang, style, brands, false)
+}
+
+/// [`expand_with`], with `indian` reading English numbers from a lakh up
+/// with lakh and crore ("five lakh") instead of thousand and million.
+pub fn expand_opts(
+    chunk: &Chunk,
+    lang: Lang,
+    style: Normalize,
+    brands: bool,
+    indian: bool,
+) -> Vec<Item> {
     let mut cx = Ctx {
         lang,
         style,
         out: Vec::new(),
         brands,
+        indian,
     };
     let raw = chunk.text.as_str();
     if style == Normalize::Off {
@@ -1107,7 +1139,8 @@ fn special(cx: &mut Ctx, s: &str, lower: &str) -> bool {
         if p.len() == 3 {
             let (y, m, d) = if sep == '-' && p[0] > 31 {
                 (p[0], p[1], p[2])
-            } else if cx.lang == Lang::EnUs {
+            } else if cx.lang == Lang::EnUs && !(p[0] > 12 && p[1] <= 12) {
+                // Month first in the US, unless the first part cannot be a month.
                 (p[2], p[0], p[1])
             } else {
                 (p[2], p[1], p[0])

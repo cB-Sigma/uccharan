@@ -5,9 +5,25 @@ All notable changes are listed here. The format follows
 
 ## [0.2.0] - 2026-11-14
 
-Sixteen more South Asian languages; smaller, with modular language packs; and better at names.
+Nineteen more South Asian languages; smaller, with modular language packs; and better at names.
 
 ### Added
+
+- **Normalise-only mode** for voices that read text: `normalize()` in Rust, Python, JavaScript
+  and C (`uccharan_normalize`), and `-p text` / `-p text-json` on the command line. Returns the
+  spoken form, sentence ranges and typed spans aligned to the input (byte, code-point and UTF-16
+  offsets). Options: digit language (context, request or fixed), lakh/crore or international
+  English, Latin words kept, respelled or spelled, URLs and emails read, kept or dropped. New
+  readings: `Rs.`/`INR`/`रु.` amounts, amounts with scale words (`₹5 करोड़`), Hindi clock and
+  fractional idioms (साढ़े दस बजे, डेढ़ लाख), `+91` numbers, Indian-English lakh/crore, day-first
+  dates in en-US when the first part cannot be a month. Gold sets for en, hi, mr, bn, ne and ta
+  (`tools/eval/gold/norm`, `tools/eval/norm_eval.py`); held-out exact match en 45/45, hi 42/42,
+  mr 9/10, bn 9/10, ne 8/10, ta 5/10.
+- **Pronunciation word lists**: TSV format with word, language, IPA, spoken form and match rule
+  (whole word, case, exact substring, regular expression), W3C PLS 1.0 import and export, ordered
+  lists with first-list-wins priority. Applied in phonemisation (IPA converted to the profile's
+  phone set, including Kokoro) and in normalise-only mode (spoken form, or a respelling chosen by
+  reading candidates back with uccharan, for 13 scripts and English).
 
 - **African names in English text** (improved mode): names spelled in African-language
   orthographies are recognised by spelling cues and read with their own letter values and
@@ -25,8 +41,30 @@ Sixteen more South Asian languages; smaller, with modular language packs; and be
   Chichewa/Shona/Tsonga/Tigrinya 87.5/73.1/73.7/70.4 % against 41.7/42.3/42.1/63.0 %. A list of
   Eritrean and Ethiopian name words from Wikidata (CC0) for Horn of Africa names.
 
+- **Hindi number words in compatible mode** now follow espeak-ng's own readings of 0–99 (a table
+  derived from running espeak-ng 1.52.0 on those numbers) and its one-word "एक सौ": held-out PER
+  Hindi 0.12 → 0.09 %, Bhojpuri 0.80 → 0.51 %, Maithili 0.75 → 0.46 %, Sanskrit 0.95 → 0.64 %.
+- **Magahi** (`mag`): compatible mode is the Hindi voice's reading (held-out PER 0.40 % against
+  `hi` on FLORES-200); improved mode adds Magahi rules to the Bhojpuri ones (s for श ष, n for ण,
+  -əi verb endings, final short ि ु, nasal vowel for ं after a long vowel, reduplication). Magahi
+  gold set (512 words, 152 sentences; Wiktionary, FLORES-200 and grammar sources): held-out words
+  98.5 % (Hindi voice 64.4 %), sentence PER 0.71 % (7.67 %).
+- **Urdu and Sindhi** (`ur`, `sd`), the first Perso-Arabic-script languages: letter rules on the
+  shared engine plus word tables (`ur.ucd`, 40 k words; `sd.ucd`, 20 k words; compiled in by the
+  `embed-ur`/`embed-sd` features, fetched on demand in the browser) with espeak-ng 1.52.0's
+  readings of frequent corpus words in context. Held-out PER 2.18 % (Urdu) and 2.79 % (Sindhi);
+  4.6× and 2.7× faster than espeak-ng. Improved mode reads ص ظ as s z and the Urdu digits ۰–۹.
+  Arabic-script punctuation (، ؛ ؟ ۔) ends clauses.
+- **Punjabi, Odia, Sinhala, Konkani and Sanskrit** (`pa`, `or`, `si`, `kok`, `sa`) on the shared
+  Brahmic engine. Held-out PER against espeak-ng 1.52.0: Punjabi 0.41 %, Odia 0.50 %, Sinhala
+  0.86 % (FLORES-200), Konkani 0.20 % (Sangraha); Sanskrit has no espeak-ng voice, so compatible
+  mode is the Hindi voice's reading (0.64 % against `hi`) and improved mode reads it as Sanskrit
+  (no schwa deletion, classical stress rule, visarga echo, Sanskrit number words). 2.3–5.1× faster
+  than espeak-ng. Engine additions: letter names with their own stress, spelled-out words triggered
+  by a letter sequence, explicit letter kinds for scripts outside the common Indic layout, a word
+  break after ZWJ conjuncts, more anusvara and deletion options, a number-word table per language.
 - **Bhojpuri and Maithili** (`bho`, `mai`): compatible mode reproduces espeak-ng's Hindi-voice
-  reading (no espeak-ng voice exists; held-out PER 0.80 % and 0.75 % against `hi` on FLORES-200),
+  reading (no espeak-ng voice exists; held-out PER 0.51 % and 0.46 % against `hi` on FLORES-200),
   improved mode reads them with their own phonology (ऐ औ = əi əu, इ उ after a vowel, avagraha and
   its Latin-*s* spelling, flaps, nasal vowels, past -ल- forms, unstressed copula, Bhojpuri number
   words), Kaithi script support (`uccharan::kaithi`) and an experimental romanised-Bhojpuri word
@@ -41,14 +79,6 @@ Sixteen more South Asian languages; smaller, with modular language packs; and be
   quirks, every output profile, number reading, and routing of each script to its own language
   inside mixed text (with `(bn)`-style flags in the `espeak-ipa` profile). 2–37× faster than
   espeak-ng on the same sentences.
-- **Punjabi, Odia, Sinhala, Konkani and Sanskrit** (`pa`, `or`, `si`, `kok`, `sa`) on the shared
-  Brahmic engine. Held-out PER against espeak-ng 1.52.0: Punjabi 0.41 %, Odia 0.50 %, Sinhala
-  0.86 % (FLORES-200), Konkani 0.20 % (Sangraha); Sanskrit has no espeak-ng voice, so compatible
-  mode is the Hindi voice's reading (0.95 % against `hi`) and improved mode reads it as Sanskrit
-  (no schwa deletion, classical stress rule, visarga echo, Sanskrit number words). 2.3–5.1× faster
-  than espeak-ng. Engine additions: letter names with their own stress, spelled-out words triggered
-  by a letter sequence, explicit letter kinds for scripts outside the common Indic layout, a word
-  break after ZWJ conjuncts, more anusvara and deletion options, a number-word table per language.
 - **A data-driven language engine**: ordered context-sensitive rewrite rules
   (`uccharan::rules`), a language-file format (`uccharan::langdef`: letters, rule passes per
   mode, exceptions, unstressed words, number words with scale and combining forms) and one

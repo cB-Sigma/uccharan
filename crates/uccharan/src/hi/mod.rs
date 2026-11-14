@@ -876,6 +876,18 @@ impl<'a> Hindi<'a> {
             .enumerate()
             .map(|(i, it)| {
                 let mut ipa = self.word(&it.text, compat);
+                let mut glue = it.glue;
+                // Compatible mode: number words as the reference reads digits.
+                if compat && it.generated {
+                    if let Some(k) = crate::norm::HI_NUM.iter().position(|w| *w == it.text) {
+                        ipa = HI_NUM_REFERENCE[k].to_string();
+                    } else if it.text == "सौ" {
+                        // "एक सौ" is one word in the reference.
+                        glue = i > 0;
+                    } else if it.text == "हज़ार" || it.text == "हजार" {
+                        ipa = "hˈʌɟaːɾ".to_string();
+                    }
+                }
                 if let Ok(k) = FUNCTION_WORDS.binary_search_by(|f| f.0.cmp(it.text.as_str())) {
                     let f = FUNCTION_WORDS[k];
                     let level = if i + 1 == n && clause_final { f.2 } else { f.1 };
@@ -920,11 +932,116 @@ impl<'a> Hindi<'a> {
                         ipa.push('ə');
                     }
                 }
-                WordOut::new(&it.text, ipa, Lang::Hi, it.glue)
+                WordOut::new(&it.text, ipa, Lang::Hi, glue)
             })
             .collect()
     }
 }
+
+/// The reference's readings of the Hindi number words 0-99 (derived from
+/// running espeak-ng 1.52.0 on the numbers 0-99), used in compatible mode.
+const HI_NUM_REFERENCE: [&str; 100] = [
+    "ʃˈuːnjə",
+    "ˈeːk",
+    "dˈoː",
+    "tˈiːn",
+    "cˈaːɾ",
+    "pˈãc",
+    "cʰˈʌh",
+    "sˈaːt",
+    "ˈaːʈʰ",
+    "nˈɔː",
+    "dˈʌs",
+    "ɡjˈaːɾəh",
+    "bˈaːɾəh",
+    "tˈeːɾəh",
+    "cˈɔːdəh",
+    "pˈʌndɾəh",
+    "sˈoːləh",
+    "sˈʌtɾəh",
+    "ʌʈʰˈaːɾəh",
+    "ʊnnˈɪs",
+    "bˈiːs",
+    "ɪkːˈis",
+    "bˈaːis",
+    "tˈeːis",
+    "cˈɔːbis",
+    "pˈʌcːis",
+    "cʰəbbˈis",
+    "sətːˈaːis",
+    "atʰːˈaːis",
+    "ˈʊntis",
+    "tˈiːs",
+    "ˌɪkətˈis",
+    "bˈatːis",
+    "tˈɛ̃tis",
+    "cˈɔ̃tis",
+    "pˈɛ̃tis",
+    "cʰˈʌtːis",
+    "sˈɛ̃tis",
+    "ˈʌɾtis",
+    "ʊntˈaːlis",
+    "cˈaːlis",
+    "ɪktˈaːlis",
+    "baɪˈaːlis",
+    "tɛ̃tˈaːlis",
+    "cɔːʋˈaːlis",
+    "paɪntˈaːlis",
+    "cʰɪjˈaːlis",
+    "sɛ̃tˈaːlis",
+    "ʌɾtˈaːlis",
+    "ˈʊncaːs",
+    "pəcˈaːs",
+    "ɪkjˈaːwən",
+    "bˈaːwən",
+    "tˈɪɾeːpˌən",
+    "cˈɔːwən",
+    "pˈʌcpən",
+    "cʰˈʌpːən",
+    "sətˈaːwən",
+    "aʈʰʈʰˈaːwən",
+    "ˈʊnsəʈʰ",
+    "sˈaːʈʰ",
+    "ˈɪksəʈʰ",
+    "bˈaːsəʈʰ",
+    "tˈɪɾeːsˌəʈʰ",
+    "cˈɔ̃səʈʰ",
+    "pˈɛ̃səʈʰ",
+    "cʰɪjˈaːsəʈʰ",
+    "sˈʌr.səʈʰ",
+    "ˈʌr.səʈʰ",
+    "ˈʊnəhtːˌəɾ",
+    "sˈʌtːəɾ",
+    "ˈɪkhətːˌəɾ",
+    "bˈʌhətːˌəɾ",
+    "tˈɪhətːˌəɾ",
+    "cɔːhˈʌtːəɾ",
+    "pəchˈʌtːəɾ",
+    "cʰɪhˈʌtːəɾ",
+    "səthˈʌtːəɾ",
+    "ʌthˈʌtːəɾ",
+    "ʊnˈaːsi",
+    "ˈʌssi",
+    "ɪkjˈaːsi",
+    "bəjˈaːsi",
+    "tɪɾˈaːsi",
+    "cɔːɾˈaːsi",
+    "pəcˈaːsi",
+    "cʰɪjˈaːsi",
+    "sətːˈaːsi",
+    "atʰːˈaːsi",
+    "nəwˈaːsi",
+    "nˈʌbːeː",
+    "ɪkːjˈaːnəbˌeː",
+    "bˈaːnəbˌeː",
+    "tɪɾˈaːnəbˌeː",
+    "cɔːɾˈaːməbˌeː",
+    "pəncˈaːnəbˌeː",
+    "cʰɪjˈaːnəbˌeː",
+    "sətːˈaːnəbˌeː",
+    "ʌtʰːˈaːnəbˌeː",
+    "nɪɲjˈaːnəbˌeː",
+];
 
 /// Index in `ph` where a known suffix starts, if the word ends with one and
 /// the stem is long enough to be a word.

@@ -155,3 +155,95 @@ pub fn matcha_ids(phonemes: &str) -> Vec<i32> {
         .map(|x| x as i32)
         .collect()
 }
+
+// ---------------------------------------------------------------------------
+// Normalise-only mode and pronunciation word lists.
+
+fn parse_lists(
+    lists: &[String],
+) -> Result<Vec<std::sync::Arc<uccharan::wordlist::WordList>>, JsError> {
+    lists
+        .iter()
+        .enumerate()
+        .map(|(i, t)| {
+            uccharan::wordlist::WordList::parse_any(t)
+                .map(std::sync::Arc::new)
+                .map_err(|e| JsError::new(&format!("wordlists[{i}]: {e}")))
+        })
+        .collect()
+}
+
+/// Spoken form with spans, as JSON; options as JSON (word lists as text
+/// in its `wordlists` member).
+#[wasm_bindgen(js_name = normalizeJson)]
+pub fn normalize_json(text: &str, lang_tag: &str, options: &str) -> Result<String, JsError> {
+    let l = lang(lang_tag)?;
+    ENGINE
+        .with(|e| uccharan::normalize_api::normalize_json(&e.borrow(), text, l, options))
+        .map_err(|e| JsError::new(&e))
+}
+
+/// `render` with word lists (TSV, PLS or JSON texts) applied.
+#[wasm_bindgen(js_name = renderWordlists)]
+pub fn render_wordlists(
+    text: &str,
+    lang_tag: &str,
+    profile_name: &str,
+    normalize: &str,
+    improved: bool,
+    hinglish: bool,
+    punctuation: bool,
+    flags: bool,
+    lists: Vec<String>,
+) -> Result<String, JsError> {
+    let mut opt = options(lang_tag, normalize, improved, hinglish)?;
+    opt.keep_language_flags = flags;
+    let prof = Profile::parse(profile_name)
+        .ok_or_else(|| JsError::new(&format!("unknown profile \"{profile_name}\"")))?;
+    let lists = parse_lists(&lists)?;
+    Ok(ENGINE.with(|e| {
+        uccharan::normalize_api::render_with_wordlists(
+            &e.borrow(),
+            text,
+            &opt,
+            prof,
+            punctuation,
+            &lists,
+        )
+    }))
+}
+
+/// Respell IPA for a text voice: JSON `{"text","readback","distance"}`, or
+/// an empty string when the language has no writer.
+#[wasm_bindgen]
+pub fn respell(ipa: &str, lang_tag: &str, source: &str, style: &str) -> Result<String, JsError> {
+    let l = lang(lang_tag)?;
+    let st = uccharan::respell::Style::parse(style)
+        .ok_or_else(|| JsError::new(&format!("unknown respell style \"{style}\"")))?;
+    let r =
+        ENGINE.with(|e| uccharan::respell::respell(&e.borrow(), ipa, Lang::parse(source), l, st));
+    Ok(r.map_or_else(String::new, |r| {
+        let mut o = String::from("{\"text\":");
+        uccharan::minijson::push_str(&mut o, &r.text);
+        o.push_str(",\"readback\":");
+        uccharan::minijson::push_str(&mut o, &r.readback);
+        o.push_str(&format!(",\"distance\":{}}}", r.distance));
+        o
+    }))
+}
+
+/// Convert a word list (TSV, PLS or JSON text) to `tsv`, `json` or `pls`
+/// (`lang` picks the PLS language; empty for entries of any language).
+#[wasm_bindgen(js_name = convertWordlist)]
+pub fn convert_wordlist(text: &str, to: &str, lang_tag: &str) -> Result<String, JsError> {
+    let w =
+        uccharan::wordlist::WordList::parse_any(text).map_err(|e| JsError::new(&e.to_string()))?;
+    match to {
+        "tsv" => Ok(w.to_tsv()),
+        "json" => Ok(w.to_json()),
+        "pls" => Ok(w.to_pls(Lang::parse(lang_tag))),
+        other => Err(JsError::new(&format!(
+            "unknown word-list format \"{other}\""
+        ))),
+    }
+}

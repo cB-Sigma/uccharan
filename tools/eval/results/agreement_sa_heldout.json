@@ -5,97 +5,77 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 180797,
-  "per": 0.009496838996222282,
-  "per_without_stress": 0.007311002799958519,
-  "exact_sentence": 0.6758893280632411,
-  "exact_sentence_without_stress": 0.6788537549407114,
-  "piper_shape_per": 0.009543927238499677,
-  "piper_shape_exact_sentence": 0.6640316205533597,
+  "per": 0.006360725012030067,
+  "per_without_stress": 0.00571658197656331,
+  "exact_sentence": 0.7460474308300395,
+  "exact_sentence_without_stress": 0.7480237154150198,
+  "piper_shape_per": 0.006441056398918647,
+  "piper_shape_exact_sentence": 0.7322134387351779,
   "word_count_mismatch_sentences": 183,
   "errors_by_class": {
-   "stress": {
-    "count": 595,
-    "share": 0.3465346534653465,
-    "per_contribution": 0.003290983810572078
-   },
    "vowel": {
-    "count": 404,
-    "share": 0.23529411764705882,
-    "per_contribution": 0.002234550352052302
+    "count": 366,
+    "share": 0.3182608695652174,
+    "per_contribution": 0.002024369873393917
    },
    "consonant": {
-    "count": 310,
-    "share": 0.18054746651135703,
-    "per_contribution": 0.0017146302206341919
+    "count": 278,
+    "share": 0.2417391304347826,
+    "per_contribution": 0.0015376361333429205
    },
-   "other": {
-    "count": 207,
-    "share": 0.12055911473500291,
-    "per_contribution": 0.001144930502165412
+   "stress": {
+    "count": 271,
+    "share": 0.23565217391304347,
+    "per_contribution": 0.001498918676747955
    },
    "word-boundary": {
     "count": 105,
-    "share": 0.061153174140943505,
+    "share": 0.09130434782608696,
     "per_contribution": 0.0005807618489244844
    },
+   "other": {
+    "count": 79,
+    "share": 0.06869565217391305,
+    "per_contribution": 0.0004369541530003263
+   },
    "length": {
-    "count": 96,
-    "share": 0.05591147350029121,
-    "per_contribution": 0.0005309822618738142
+    "count": 51,
+    "share": 0.04434782608695652,
+    "per_contribution": 0.00028208432662046385
    }
   },
   "top_confusions": [
-   {
-    "edit": "ˈ→∅",
-    "count": 127
-   },
-   {
-    "edit": "ˈ→ə",
-    "count": 110
-   },
-   {
-    "edit": "ʌ→ɟ",
-    "count": 110
-   },
-   {
-    "edit": "ɟ→ˈ",
-    "count": 110
-   },
    {
     "edit": " →∅",
     "count": 97
    },
    {
+    "edit": "ˈ→∅",
+    "count": 91
+   },
+   {
     "edit": "∅→ə",
-    "count": 84
+    "count": 76
    },
    {
     "edit": "ə→∅",
-    "count": 72
-   },
-   {
-    "edit": "∅→ˈ",
-    "count": 69
+    "count": 63
    },
    {
     "edit": "ˈ→ˌ",
-    "count": 53
-   },
-   {
-    "edit": "∅→ˌ",
-    "count": 51
-   },
-   {
-    "edit": "∅→ː",
-    "count": 49
+    "count": 50
    },
    {
     "edit": "ː→∅",
-    "count": 47
+    "count": 48
    },
    {
     "edit": "ə→ʌ",
     "count": 35
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 34
    },
    {
     "edit": "r→ɾ",
@@ -106,8 +86,8 @@
     "count": 28
    },
    {
-    "edit": "ˌ→∅",
-    "count": 24
+    "edit": "∅→ˈ",
+    "count": 28
    },
    {
     "edit": "l→∅",
@@ -119,7 +99,11 @@
    },
    {
     "edit": "n→∅",
-    "count": 21
+    "count": 22
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 22
    },
    {
     "edit": "ʰ→∅",
@@ -131,11 +115,11 @@
    },
    {
     "edit": "s→∅",
-    "count": 18
+    "count": 17
    },
    {
     "edit": "t→∅",
-    "count": 17
+    "count": 16
    },
    {
     "edit": "ˈ→l",
@@ -144,20 +128,36 @@
    {
     "edit": "ˌ→ˈ",
     "count": 15
+   },
+   {
+    "edit": "s→ʃ",
+    "count": 15
+   },
+   {
+    "edit": "l→ə",
+    "count": 15
+   },
+   {
+    "edit": "o→ə",
+    "count": 15
+   },
+   {
+    "edit": "ː→ʋ",
+    "count": 15
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 13419,
-    "wrong": 212,
-    "rate": 0.01579849467173411
+    "wrong": 189,
+    "rate": 0.014084507042253521
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 210,
-    "per": 0.0262180161233789,
-    "exact_sentence": 0.24285714285714285
+    "per": 0.012968804766912022,
+    "exact_sentence": 0.580952380952381
    },
    "no-digits": {
     "sentences": 802,
@@ -167,76 +167,76 @@
   },
   "examples_of_disagreement": [
    {
-    "id": "flores-devtest-828",
-    "text": "पाइंट मैरियन अपि च फेयरमोरितस्य मध्ये खिंचाव वफेलो/पिट्सवर्ग राजमार्गे सर्व भयावह ड्राईविंग स्थितिनां प्रस्तुत कृतः, यः भिन्न-भिन्न बैंकवुण आवासस्य प्राय: अतिक्रम करोति । ",
-    "reference": "paːˈĩʈ mˈɛːɾɪjˌən ˈʌpɪ cˈə pʰˌeːjəɾmoːɾɪtˈʌsjə mˈʌdʰjeː kʰĩcˈaːʋ ʋəpʰˈeːloː slˈaʃ pˌɪʈsəʋˈʌɾɡ ɾˌaːɟmˈaːɾɡeː sˈʌrʋ bʰəjˈaːʋəh ɖɾˌaːiʋˈĩɡ stʰˈɪtɪnˌã pɾˈʌstʊt kɾˈɪtəh jˈʌh bʰˈɪnnəbʰˈɪnnə bˈɛ̃kʋˌʊɳ ˌaːʋaːsˈʌsjə pɾˈaːj ʌtˈɪkɾəm kəɾˈoːtɪ",
-    "uccharan": "paːˈĩʈ mˈɛːɾɪjˌən ˈʌpɪ cˈə pʰˌeːjəɾmoːɾɪtˈʌsjə mˈʌdʰjeː kʰĩcˈaːʋ ʋəpʰˈeːloː pˌɪʈsəʋˈʌɾɡ ɾˌaːɟmˈaːɾɡeː sˈʌrʋ bʰəjˈaːʋəh ɖɾˌaːiʋˈĩɡ stʰˈɪtɪnˌã pɾˈʌstʊt kɾˈɪtəh jˈʌh bʰˈɪnnəbʰˈɪnnə bˈɛ̃kʋˌʊɳ ˌaːʋaːsˈʌsjə pɾˈaːj ʌtˈɪkɾəm kəɾˈoːtɪ"
+    "id": "flores-devtest-949",
+    "text": "स्कॉटर्ब लोकयानं 403 सिंट्रां नियमेन गच्छति, काबो दा रोका इत्यत्र निवारयति।",
+    "reference": "skɔʈˈʌɾb lˌoːkjˈaːnən cˈaːrsˈɔː tˈiːn sˈĩʈɾã nˌɪjmˈeːn ɡˈʌcʰcʰtˌɪ kˈaːboː dˈaː ɾˈoːkaː ɪtːjˈʌtɾə nɪʋˈaːɾəjtɪ",
+    "uccharan": "skɔʈˈʌɾb lˌoːkjˈaːnən cˈaːɾsˈɔː tˈiːn sˈĩʈɾã nˌɪjmˈeːn ɡˈʌcʰcʰətˌɪ kˈaːboː dˈaː ɾˈoːkaː ɪtːjˈʌtɾə nɪʋˈaːɾəjtɪ"
    },
    {
-    "id": "flores-devtest-627",
-    "text": "पृथिव्याः नदीभिः महासमुद्रान् नीयमानस्य जलस्य 20 प्रतिशतं जलं Amazon नद्याः वर्तते।",
-    "reference": "pɾˌɪtʰɪʋjˈaːh nədˈiːbʰɪh mˌəhaːsmʊdɾˈaːn nˌiːjmaːnˈʌsjə ɟəlˈʌsjə bˈiːs pɾˈʌtɪʃˌətən ɟˈʌlən ˈaməzən nədjˈaːh ʋˈʌɾtətˌeː",
-    "uccharan": "pɾˌɪtʰɪʋjˈaːh nədˈiːbʰɪh mˌəhaːsmʊdɾˈaːn nˌiːjmaːnˈʌsjə ɟəlˈʌsjə bˈiːs pɾˈʌtɪʃˌətən ɟˈʌlən ˈæməzˌɒn nədjˈaːh ʋˈʌɾtətˌeː"
+    "id": "flores-devtest-387",
+    "text": "प्राचीन रोमन भोजनेषु खाद्य पदार्थ संयुक्त ण भवितुम शक्यते यः अमेरिका एवं एशियाया पश्चात् वर्षशतणाम् यूरोपे अगच्छतः ।",
+    "reference": "pɾaːcˈiːn ɾˈoːmən bʰˌoːɟnˈeːʂʊ kʰˈaːdjə pədˈaːɾtʰ səɲjˈʊkt ˈaɳəə bʰˈʌʋɪtˌʊm ʃˈʌkːjətˌeː jˈʌh ʌmˈeːɾɪkˌaː ˈeːʋən ˌeːʃɪjˈaːjaː pəʃcˈaːt ʋˌərʂəʃˌətɳˈaːm juːɾˈoːpeː ʌɡˈʌcʰcʰətˌəh",
+    "uccharan": "pɾaːcˈiːn ɾˈoːmən bʰˌoːɟnˈeːʂʊ kʰˈaːdjə pədˈaːɾtʰ səɲjˈʊkt ɳˈə bʰˈʌʋɪtˌʊm ʃˈʌkːjətˌeː jˈʌh ʌmˈeːɾɪkˌaː ˈeːʋən ˌeːʃɪjˈaːjaː pəʃcˈaːt ʋˌərʂəʃˌətɳˈaːm juːɾˈoːpeː ʌɡˈʌcʰcʰətˌəh"
    },
    {
-    "id": "flores-devtest-434",
-    "text": "नैकानि सामान्यसंरूपाणि (उदाहरणार्थं, संरूपाणाम् APS इति कुलम्) अनेन अनुपातेन समानि गाढं सन्निकृष्टाणि वा सन्ति।",
-    "reference": "nɛːkˈaːnɪ saːmˈaːnjəsnɾuːpˌaːɳɪ ˌʊdaːhˌəɾɳˈaːɾtʰən sˌənɾuːpaːɳˈaːm ˈeɪ pˈiː ˈɛs ˈɪtɪ kˈʊləm ʌnˈeːn ˌʌnʊpaːtˈeːn səmˈaːnɪ ɡˈaːɖʰən sˌənnɪkɾɪʂʈˈaːɳɪ ʋˈaː sˈʌntɪ",
-    "uccharan": "nɛːkˈaːnɪ saːmˈaːnjəsnɾuːpˌaːɳɪ ˌʊdaːhˌəɾɳˈaːɾtʰən sˌənɾuːpaːɳˈaːm ˌeɪpˌiːˈɛs ˈɪtɪ kˈʊləm ʌnˈeːn ˌʌnʊpaːtˈeːn səmˈaːnɪ ɡˈaːɖʰən sˌənnɪkɾɪʂʈˈaːɳɪ ʋˈaː sˈʌntɪ"
+    "id": "flores-devtest-851",
+    "text": "स्कीइंगस्य विचारः अतीब पुरा कंदरस्य चित्रः अस्ति यत्र स्कीयरं 5000 BC दर्शितः । ",
+    "reference": "skˌiːĩɡˈʌsjə ʋɪcˈaːɾəh ʌtˈiːb pˈʊɾaː kˌəndəɾˈʌsjə cˈɪtɾəh ˈʌstɪ jˈʌtɾə skˈiːjəɾˌən pˈãc hˈʌɟaːɾ bˈiː sˈiː dˈʌrʃɪtˌəh",
+    "uccharan": "skˌiːĩɡˈʌsjə ʋɪcˈaːɾəh ʌtˈiːb pˈʊɾaː kˌəndəɾˈʌsjə cˈɪtɾəh ˈʌstɪ jˈʌtɾə skˈiːjəɾˌən pˈãc hˈʌɟaːɾ bˌiːsˈiː dˈʌrʃɪtˌəh"
    },
    {
-    "id": "flores-devtest-12",
-    "text": "PALM इति प्रयोगे. ZMapp नियन्त्रकरूपेण सेवितवत् यस्मात् कारणात् शास्त्रज्ञैः तद् समवस्थितकरूपेण उपयोजितं अन्यैः त्रिभिः उपचारैः सह तस्य तुलना कृता च।",
-    "reference": "pˈɑːm ˈɪtɪ pɾəjˈoːɡeː zˈɛd mˈap nˌɪjəntɾˌəkɾuːpˈeːɳ sˈeːʋɪtˌəʋət jəsmˈaːt kˌaːɾɳˈaːt ʃˈaːstɾəɡjˌɛːh tˈʌd sˌəməʋstʰɪtˌəkɾuːpˈeːɳ ˌʊpjˈoːɟɪtˌən ʌnjˈɛːh tɾˈɪbʰɪh ˌʊpcaːɾˈɛːh sˈʌh tˈʌsjə tˈʊlnˌaː kɾˈɪtaː cˈə",
-    "uccharan": "pˈɑːm ˈɪtɪ pɾəjˈoːɡeː zmˈæp nˌɪjəntɾˌəkɾuːpˈeːɳ sˈeːʋɪtˌəʋət jəsmˈaːt kˌaːɾɳˈaːt ʃˈaːstɾəɡjˌɛːh tˈʌd sˌəməʋstʰɪtˌəkɾuːpˈeːɳ ˌʊpjˈoːɟɪtˌən ʌnjˈɛːh tɾˈɪbʰɪh ˌʊpcaːɾˈɛːh sˈʌh tˈʌsjə tˈʊlnˌaː kɾˈɪtaː cˈə"
+    "id": "flores-devtest-678",
+    "text": "यद्यपि AI विज्ञानकल्पनायाः दृढम् अर्थं धारयति, तथापि AI सङ्गणकविज्ञानस्य महत्त्वपूर्णां शाखां निर्माति या यन्त्रे वर्तनम् अध्ययनं तथा च बुद्धिमत् अनुकूलनं निर्माति।",
+    "reference": "jˈʌdjəpˌɪ ˈeɪ ˈaɪ ʋˌɪɡjaːnˌəkəlpˌənaːjˈaːh dɾˈɪɖʰəm ˈʌɾtʰən dʰˈaːɾəjtɪ tətʰˈaːpɪ ˈeɪ ˈaɪ sˌəŋɡəɳˌəkʋˌɪɡjaːnˈʌsjə mˌəhətːʋəpˈuːrɳã ʃˈaːkʰã nɪrmˈaːtɪ jˈaː jˈʌntɾeː ʋˈʌɾtənˌəm ˈʌdʰjəjˌənən tˈʌtʰaː cˈə bˈʊdʰːɪmˌət ˌʌnʊkˈuːlənˌən nɪrmˈaːtɪ",
+    "uccharan": "jˈʌdjəpˌɪ ˌeɪˈaɪ ʋˌɪɡjaːnˌəkəlpˌənaːjˈaːh dɾˈɪɖʰəm ˈʌɾtʰən dʰˈaːɾəjtɪ tətʰˈaːpɪ ˌeɪˈaɪ sˌəŋɡəɳˌəkʋˌɪɡjaːnˈʌsjə mˌəhətːʋəpˈuːrɳã ʃˈaːkʰã nɪrmˈaːtɪ jˈaː jˈʌntɾeː ʋˈʌɾtənˌəm ˈʌdʰjəjˌənən tˈʌtʰaː cˈə bˈʊdʰːɪmˌət ˌʌnʊkˈuːlənˌən nɪrmˈaːtɪ"
    },
    {
-    "id": "flores-devtest-708",
-    "text": "पूर्तगालदेशीय जनाः भग्नः कृतः एवं पुनः कासा ब्रैंका इति नाम्ना निर्माणं कृतवान्, 1755 मध्ये तम् एकस्य भूकम्पस्य पश्चात् त्यक्तुम् एव।",
-    "reference": "pˈuːɾtəɡˌaːldˌeːʃij ɟənˈaːh bʰˈʌɡnəh kɾˈɪtəh ˈeːʋən pˈʊnəh kˈaːsaː bɾˈɛ̃kaː ˈɪtɪ nˈaːmnaː nɪrmˈaːɳən kɾˌɪtʋˈaːn ˈeːk hˈʌɟaːɾ sˈaːtsˈɔː pˈʌcpən mˈʌdʰjeː tˈʌm eːkˈʌsjə bʰˌuːkəmpˈʌsjə pəʃcˈaːt tːjˈʌktʊm ˈeːʋ",
-    "uccharan": "pˈuːɾtəɡˌaːldˌeːʃij ɟənˈaːh bʰˈʌɡnəh kɾˈɪtəh ˈeːʋən pˈʊnəh kˈaːsaː bɾˈɛ̃kaː ˈɪtɪ nˈaːmnaː nɪrmˈaːɳən kɾˌɪtʋˈaːn ˈeːk həɟˈaːɾ sˈaːtsˈɔː pˈʌcəpˌən mˈʌdʰjeː tˈʌm eːkˈʌsjə bʰˌuːkəmpˈʌsjə pəʃcˈaːt tːjˈʌktʊm ˈeːʋ"
+    "id": "flores-devtest-628",
+    "text": "मुख्या Amazon नदी 6,387 किलोमीटरमिता (3,980 मीलमिता) अस्ति। एषा सहस्राभ्यः नदीभ्यः जलं सञ्चिनोति।",
+    "reference": "mˈʊkʰjaː ˈaməzən nˈʌdi cʰˈʌh hˈʌɟaːɾ tˈiːnsˈɔː sətːˈaːsi kˌɪloːmˈiːʈəɾmɪtˌaː tˈiːn hˈʌɟaːɾ nˈɔːsˈɔː ˈʌssi mˈiːlmˌɪtaː ˈʌstɪ ˈeːʂaː sˌəhəsɾˈaːbʰjəh nədˈiːbʰjəh ɟˈʌlən sˌəɲcɪnˈoːtɪ",
+    "uccharan": "mˈʊkʰjaː ˈæməzˌɒn nˈʌdi cʰˈʌh hˈʌɟaːɾ tˈiːnsˈɔː sətːˈaːsi kˌɪloːmˈiːʈəɾmɪtˌaː tˈiːn hˈʌɟaːɾ nˈɔːsˈɔː ˈʌssi mˈiːlmˌɪtaː ˈʌstɪ ˈeːʂaː sˌəhəsɾˈaːbʰjəh nədˈiːbʰjəh ɟˈʌlən sˌəɲcɪnˈoːtɪ"
    },
    {
-    "id": "flores-devtest-97",
-    "text": "डॉ. टोनीमोलमहोदयः दक्षिण-आफ्रिकादेशस्य क्वाजुलु-नातालप्रान्ते (एक्स् डि आर्-टि.बि) आत्यन्तिकौषधीरोधकं क्षयरोगं अन्वेषितवान्।",
-    "reference": "ɖˈɔ ʈˌoːnimˌoːləmhˈoːdəjˌəh dˈʌkʃɪɳˈaːpʰɾɪkˌaːdeːʃˌəsjə kʋˈaːɟʊlˌʊnˌaːtaːlpɾˈaːnteː ˈeːks ɖˈɪ ˈaːɾʈˈɪ bˈɪ ˈaːtːjəntˌɪkɔːʂdʰiɾˌoːdʰəkˌən kʃˌəjɾˈoːɡən ˌʌnʋeːʂˌɪtʋˈaːn",
-    "uccharan": "ɖˈɔkʈəɾ ʈˌoːnimˌoːləmhˈoːdəjˌəh dˈʌkʃɪɳˈaːpʰɾɪkˌaːdeːʃˌəsjə kʋˈaːɟʊlˌʊnˌaːtaːlpɾˈaːnteː ˈeːks ɖˈɪ ˈaːɾʈˈɪ bˈɪ ˈaːtːjəntˌɪkɔːʂdʰiɾˌoːdʰəkˌən kʃˌəjɾˈoːɡən ˌʌnʋeːʂˌɪtʋˈaːn"
+    "id": "flores-devtest-448",
+    "text": "1884 वर्षे, Tesla महोदयः United States of America देशे New York नगरम् Edison Company इत्यत्र जीविकां स्वीकर्तुम् आगच्छत्।",
+    "reference": "ˈeːk hˈʌɟaːɾ ˈaːʈʰsˈɔː cɔːɾˈaːsi ʋˈʌrʂeː tˈɛslə məhˈoːdəjˌəh juːnˈaɪtɪd stˈeɪts ɒv ɐmˈɛɹɪkə dˈeːʃeː njˈuː jˈɔːk nˈʌɡəɾˌəm ˈɛdɪsən kˈʌmpəni ɪtːjˈʌtɾə ɟˈiːʋɪkˌã sʋikˈʌɾtʊm aːɡˈʌcʰcʰət",
+    "uccharan": "ˈeːk hˈʌɟaːɾ ˈaːʈʰsˈɔː cɔːɾˈaːsi ʋˈʌrʂeː tˈɛslɐ məhˈoːdəjˌəh juːnˈaɪtɪd stˈeɪts ɒv ɐmˈɛɹɪkɐ dˈeːʃeː njˈuː jˈɔːk nˈʌɡəɾˌəm ˈɛdɪsən kˈʌmpənɪ ɪtːjˈʌtɾə ɟˈiːʋɪkˌã sʋikˈʌɾtʊm aːɡˈʌcʰcʰət"
    },
    {
-    "id": "flores-devtest-839",
-    "text": "विलभात् 17,000 द्वीपेनां सह, ईन्दोनेशियानां भोजनः एक व्यापक शब्दः अस्ति यत्र रषने प्राप्य क्षेत्रीय व्यंजनस्य एक विशाल एवं विविधता अंतर्भुक्तः अस्ति । ",
-    "reference": "ʋˌɪlbʰˈaːt sˌətɾəh hˈʌɟaːɾ dʋipˈeːnã sˈʌh ˈiːndoːnˌeːʃɪjˌaːnã bʰˈoːɟənˌəh ˈeːk ʋjˈaːpək ʃˈʌbdəh ˈʌstɪ jˈʌtɾə ɾˈʌʂnˌeː pɾˈaːpːjə kʃˈeːtɾij ʋjˌəɲɟənˈʌsjə ˈeːk ʋɪʃˈaːl ˈeːʋən ʋˈɪʋɪdʰtaː ˌʌntəɾbʰˈʊktəh ˈʌstɪ",
-    "uccharan": "ʋˌɪlbʰˈaːt sˈʌtɾəh həɟˈaːɾ dʋipˈeːnã sˈʌh ˈiːndoːnˌeːʃɪjˌaːnã bʰˈoːɟənˌəh ˈeːk ʋjˈaːpək ʃˈʌbdəh ˈʌstɪ jˈʌtɾə ɾˈʌʂnˌeː pɾˈaːpːjə kʃˈeːtɾij ʋjˌəɲɟənˈʌsjə ˈeːk ʋɪʃˈaːl ˈeːʋən ʋˈɪʋɪdʰtaː ˌʌntəɾbʰˈʊktəh ˈʌstɪ"
+    "id": "flores-devtest-82",
+    "text": "अमरिकीअभियन्तृणां सङ्घटना आगणयत् यत् 6 इंचमिता वर्षा पूर्वं नष्टाः स्तरान् भङ्क्तुं शक्नोति।",
+    "reference": "ˌʌmɾˌɪkibʰɪjˈʌntɾɪɳˌã sˈʌŋɡʰəʈnaː ˈaːɡəɳˌəjət jˈʌt cʰˈʌh ˈĩcmˌɪtaː ʋˈʌrʂaː pˈuːrʋən nəʂʈˈaːh stəɾˈaːn bʰˈʌŋktũ ʃəknˈoːtɪ",
+    "uccharan": "ˌʌmɾˌɪkiˌəbʰɪjˈʌntɾɪɳˌã sˈʌŋɡʰəʈnaː ˈaːɡəɳˌəjət jˈʌt cʰˈʌh ˈĩcmˌɪtaː ʋˈʌrʂaː pˈuːrʋən nəʂʈˈaːh stəɾˈaːn bʰˈʌŋktũ ʃəknˈoːtɪ"
    },
    {
-    "id": "flores-devtest-303",
-    "text": "जपानीय अर्थव्यवस्था, व्यापार एवं उद्योग मंत्रालयं (एमईटीआई) उक्तं यत् तत् यन्त्र सम्बन्धित २७ दुर्घटनायाः विषये जानन्ति।",
-    "reference": "ɟˌəpaːnˈiːj ˌʌɾtʰəʋjəʋˈʌstʰaː ʋjaːpˈaːɾ ˈeːʋən ʊdjˈoːɡ məntɾˈaːləjˌən ˌeːmˌiːʈiˈaːi ˈʊktən jˈʌt tˈʌt jˈʌntɾə səmbˈʌndʰɪt sətːˈaːis dˌʊɾɡʰəʈnaːjˈaːh ʋˈɪʂjˌeː ɟaːnˈʌntɪ",
-    "uccharan": "ɟˌəpaːnˈiːj ˌʌɾtʰəʋjəʋˈʌstʰaː ʋjaːpˈaːɾ ˈeːʋən ʊdjˈoːɡ məntɾˈaːləjˌən ˌeːmˌiːʈiˈaːi ˈʊktən jˈʌt tˈʌt jˈʌntɾə səmbˈʌndʰɪt sˌətːaːˈiːs dˌʊɾɡʰəʈnaːjˈaːh ʋˈɪʂjˌeː ɟaːnˈʌntɪ"
+    "id": "flores-devtest-722",
+    "text": "क्रूगर नेशनल पार्क (KNP) दक्षिण अफ्रीकायाः ईशके स्थितः अस्ति एवं पूर्वे मोजाम्बिकस्य सीमया सह, उत्तरे जिम्बाब्वे राष्ट्रस्य सीमया सह धावते तथा दक्षिणी सीमा क्रोकोडाईल नदी अस्ति।",
+    "reference": "kɾˈuːɡəɾ nˈeːʃənˌəl pˈaːɾk kˈeɪ ˈɛn pˈiː dˈʌkʃɪɳ ˌʌpʰɾikaːjˈaːh ˈiːʃkˌeː stʰˈɪtəh ˈʌstɪ ˈeːʋən pˈuːrʋeː moːɟˈaːmbɪkˌəsjə sˈiːmjˌaː sˈʌh ˈʊtːɾˌeː ɟɪmbˈaːbʋeː ɾˈaːʂʈɾəsjˌə sˈiːmjˌaː sˈʌh dʰˈaːʋtˌeː tˈʌtʰaː dˈʌkʃɪɳˌi sˈiːmaː kɾˌoːkoːɖaːˈiːl nˈʌdi ˈʌstɪ",
+    "uccharan": "kɾˈuːɡəɾ nˈeːʃənˌəl pˈaːɾk kˌeɪˌɛnpˈiː dˈʌkʃɪɳ ˌʌpʰɾikaːjˈaːh ˈiːʃkˌeː stʰˈɪtəh ˈʌstɪ ˈeːʋən pˈuːrʋeː moːɟˈaːmbɪkˌəsjə sˈiːmjˌaː sˈʌh ˈʊtːɾˌeː ɟɪmbˈaːbʋeː ɾˈaːʂʈɾəsjˌə sˈiːmjˌaː sˈʌh dʰˈaːʋtˌeː tˈʌtʰaː dˈʌkʃɪɳˌi sˈiːmaː kɾˌoːkoːɖaːˈiːl nˈʌdi ˈʌstɪ"
    },
    {
-    "id": "flores-devtest-291",
-    "text": "प्रलेखः, बहिर्गत अनुसारेण, सीमा विवादस्य सङ्केतः करिष्यति, यत् पालस्तीन देशः१९६७ मध्यप्राच्य युद्धस्य पूर्वं सीमायाः आधारेण इच्छन्ति।",
-    "reference": "pɾəlˈeːkʰəh bəhˈɪɾɡət ˌʌnʊsaːɾˈeːɳ sˈiːmaː ʋˌɪʋaːdˈʌsjə səŋkˈeːtəh kəɾˈɪʂjətˌɪ jˈʌt pˌaːlstˈiːn dˈeːʃəh ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː sˈʌr.səʈʰ mˌədʰjəpɾˈaːcːjə jʊdʰːˈʌsjə pˈuːrʋən sˌiːmaːjˈaːh ˌaːdʰaːɾˈeːɳ ɪcʰcʰˈʌntɪ",
-    "uccharan": "pɾəlˈeːkʰəh bəhˈɪɾɡət ˌʌnʊsaːɾˈeːɳ sˈiːmaː ʋˌɪʋaːdˈʌsjə səŋkˈeːtəh kəɾˈɪʂjətˌɪ jˈʌt pˌaːlstˈiːn dˈeːʃəh ˈeːk həɟˈaːɾ nˈɔːsˈɔː sˈʌr.əsˌəʈʰ mˌədʰjəpɾˈaːcːjə jʊdʰːˈʌsjə pˈuːrʋən sˌiːmaːjˈaːh ˌaːdʰaːɾˈeːɳ ɪcʰcʰˈʌntɪ"
+    "id": "flores-devtest-380",
+    "text": "वयं वनस्पतिनां अस्माकं गृह निर्माणं करोमि अपि च वनस्पतिनां वस्त्र निर्माण करोमि । वयं यः खादामि सः वंस्पतिः । वनस्पति विना पशुः ण जीवति ।",
+    "reference": "ʋˈʌjən ʋənˈʌspətˌɪnã ʌsmˈaːkən ɡɾˈɪh nɪrmˈaːɳən kəɾˈoːmɪ ˈʌpɪ cˈə ʋənˈʌspətˌɪnã ʋˈʌstɾə nɪrmˈaːɳ kəɾˈoːmɪ ʋˈʌjən jˈʌh kʰaːdˈaːmɪ sˈʌh ʋˈʌnspətˌɪh ʋənˈʌspətˌɪ ʋˈɪnaː pˈʌʃʊh ˈaɳəə ɟˈiːʋtˌɪ",
+    "uccharan": "ʋˈʌjən ʋənˈʌspətˌɪnã ʌsmˈaːkən ɡɾˈɪh nɪrmˈaːɳən kəɾˈoːmɪ ˈʌpɪ cˈə ʋənˈʌspətˌɪnã ʋˈʌstɾə nɪrmˈaːɳ kəɾˈoːmɪ ʋˈʌjən jˈʌh kʰaːdˈaːmɪ sˈʌh ʋˈʌnspətˌɪh ʋənˈʌspətˌɪ ʋˈɪnaː pˈʌʃʊh ɳˈə ɟˈiːʋtˌɪ"
    },
    {
-    "id": "flores-devtest-719",
-    "text": "1990 तमे, तम् अपाये विश्वपरम्परा क्षेत्राणां सूच्यां न्यासं अभवत्, मरुभूम्याः वालुकायाः उद्गूर्णस्य कारणेन।",
-    "reference": "ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː nˈʌbːeː tˈʌmeː tˈʌm ʌpˈaːjeː ʋˌɪʃʋəpəɾˈʌmpəɾˌaː kʃˈeːtɾaːɳˌã sˈuːcːjã njˈaːsən ˈʌbʰəʋˌət mˌəɾʊbʰˈuːmjaːh ʋˌaːlʊkaːjˈaːh ʊdɡˈuːrɳəsjˌə kˌaːɾɳˈeːn",
-    "uccharan": "ˈeːk həɟˈaːɾ nˈɔːsˈɔː nˈʌbbeː tˈʌmeː tˈʌm ʌpˈaːjeː ʋˌɪʃʋəpəɾˈʌmpəɾˌaː kʃˈeːtɾaːɳˌã sˈuːcːjã njˈaːsən ˈʌbʰəʋˌət mˌəɾʊbʰˈuːmjaːh ʋˌaːlʊkaːjˈaːh ʊdɡˈuːrɳəsjˌə kˌaːɾɳˈeːn"
+    "id": "flores-devtest-467",
+    "text": "\"up bow\" चिह्नम् V इव दृश्यते तथा च \"down bow चिह्नम्\" योजिका इव आधारहीनः चतुष्कोनः इव दृश्यते।",
+    "reference": "ˌʌp bˈəʊ cˈɪhnəm vˈiː ˈɪʋ dɾˈɪʃjətˌeː tˈʌtʰaː cˈə dˌaʊn bˈəʊ cˈɪhnəm jˈoːɟɪkˌaː ˈɪʋ ˌaːdʰaːɾhˈiːnəh cˌətʊʂkˈoːnəh ˈɪʋ dɾˈɪʃjətˌeː",
+    "uccharan": "ˌʌp bˈaʊ cˈɪhnəm vˈiː ˈɪʋ dɾˈɪʃjətˌeː tˈʌtʰaː cˈə dˌaʊn bˈaʊ cˈɪhnəm jˈoːɟɪkˌaː ˈɪʋ ˌaːdʰaːɾhˈiːnəh cˌətʊʂkˈoːnəh ˈɪʋ dɾˈɪʃjətˌeː"
    },
    {
-    "id": "flores-devtest-600",
-    "text": "हर्षेमहोदयः चेसमहोदयः च जीवाणौ स्वDNA प्रत्यारोपयितुं विषाणूनाम् उपयोगं कृतवन्तौ।",
-    "reference": "hˌərʂeːmhˈoːdəjˌəh cˌeːsəmhˈoːdəjˌəh cˈə ɟiʋˈaːɳɔː sʋˈʌdˈiːˈɛnˈeɪ pɾˌətːjaːɾˈoːpjˌɪtũ ʋˌɪʂaːɳuːnˈaːm ˌʊpjˈoːɡən kɾˌɪtəʋˈʌntɔː",
-    "uccharan": "hˌərʂeːmhˈoːdəjˌəh cˌeːsəmhˈoːdəjˌəh cˈə ɟiʋˈaːɳɔː sʋˈʌ dˌiːˌɛnˈeɪ pɾˌətːjaːɾˈoːpjˌɪtũ ʋˌɪʂaːɳuːnˈaːm ˌʊpjˈoːɡən kɾˌɪtəʋˈʌntɔː"
+    "id": "flores-devtest-8",
+    "text": "2017 वर्षस्य उत्तरार्धे सिमनोफमहोदयः दूरदर्शनस्य क्युव्हीसी इति विपणिवाहिन्यां प्रकटीभूतः।",
+    "reference": "dˈoː hˈʌɟaːɾ sˌətɾəh ʋərʂˈʌsjə ˌʊtːɾˈaːɾdʰeː sˌɪmnˌoːpʰəmhˈoːdəjˌəh dˌuːɾədˌərʃənˈʌsjə kːjʊʋhˈiːsi ˈɪtɪ ʋˌɪpɳˌɪʋaːhˈɪnjã pɾˌəkʈibʰˈuːtəh",
+    "uccharan": "dˈoː hˈʌɟaːɾ sˈʌtɾəh ʋərʂˈʌsjə ˌʊtːɾˈaːɾdʰeː sˌɪmnˌoːpʰəmhˈoːdəjˌəh dˌuːɾədˌərʃənˈʌsjə kːjʊʋhˈiːsi ˈɪtɪ ʋˌɪpɳˌɪʋaːhˈɪnjã pɾˌəkʈibʰˈuːtəh"
    },
    {
-    "id": "flores-devtest-407",
-    "text": "इदं \"विची\" फ्रेच द्वारा अशासितः । एताः फ़्रांसस्य लोकाः आसीत् यः 1940 वर्षे जर्मनेन सह शांति स्थापयत् अपि च आक्रमणकारीणां सह युद्धं कर्तुनां तत्स्थाने तस्य सह कर्मं कृतः ।",
-    "reference": "ˈɪdən ʋˈɪci pʰɾˈeːc dʋˈaːɾaː ʌʃˈaːsɪtˌəh eːtˈaːh fɾãsˈʌsjə loːkˈaːh aːsˈiːt jˈʌh ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː cˈaːlis ʋˈʌrʂeː ɟˌərmənˈeːn sˈʌh ʃˈãtɪ stʰˈaːpəjˌət ˈʌpɪ cˈə ˈaːkɾəmˌəɳkˌaːɾiɳˌã sˈʌh jˈʊdʰːən kˈʌɾtʊnˌã tətstʰˈaːneː tˈʌsjə sˈʌh kˈʌrmən kɾˈɪtəh",
-    "uccharan": "ˈɪdən ʋˈɪci pʰɾˈeːc dʋˈaːɾaː ʌʃˈaːsɪtˌəh eːtˈaːh fɾãsˈʌsjə loːkˈaːh aːsˈiːt jˈʌh ˈeːk həɟˈaːɾ nˈɔːsˈɔː caːlˈiːs ʋˈʌrʂeː ɟˌərmənˈeːn sˈʌh ʃˈãtɪ stʰˈaːpəjˌət ˈʌpɪ cˈə ˈaːkɾəmˌəɳkˌaːɾiɳˌã sˈʌh jˈʊdʰːən kˈʌɾtʊnˌã tətstʰˈaːneː tˈʌsjə sˈʌh kˈʌrmən kɾˈɪtəh"
+    "id": "flores-devtest-584",
+    "text": "हन्तक-मत्कुणाः तथा कट्वामलाः नीडवासिनः कथ्यन्ते, ये स्वातिथेयस्य नीडे आवासे वसितुं अनुकूलिताः सन्ति।",
+    "reference": "hˈʌntəkˌəmtkʊɳˈaːh tˈʌtʰaː kˌəʈʋaːmlˈaːh nˌiːɖʋˈaːsɪnˌəh kətʰjˈʌnteː jeː sʋˌaːtɪtʰeːjˈʌsjə nˈiːɖeː aːʋˈaːseː ʋˈʌsɪtˌũ ˌʌnʊkˌuːlɪtˈaːh sˈʌntɪ",
+    "uccharan": "hˈʌntəkˌəmˌətkʊɳˈaːh tˈʌtʰaː kˌəʈʋaːmlˈaːh nˌiːɖʋˈaːsɪnˌəh kətʰjˈʌnteː jeː sʋˌaːtɪtʰeːjˈʌsjə nˈiːɖeː aːʋˈaːseː ʋˈʌsɪtˌũ ˌʌnʊkˌuːlɪtˈaːh sˈʌntɪ"
    }
   ]
  }

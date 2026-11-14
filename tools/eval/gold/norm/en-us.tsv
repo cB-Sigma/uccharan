@@ -1,0 +1,91 @@
+# split	class	input	expected	options
+dev	plain	Hello world.	Hello world.	
+heldout	plain	The quick brown fox jumps.	The quick brown fox jumps.	
+dev	cardinal	I have 3 cats.	I have three cats.	
+heldout	cardinal	She owns 7 dogs.	She owns seven dogs.	
+dev	cardinal	The population is 1,234,567.	The population is one million two hundred thirty four thousand five hundred sixty seven.	
+heldout	cardinal	The city has 2,500,000 people.	The city has two million five hundred thousand people.	
+dev	cardinal	We sold 12000 units.	We sold twelve thousand units.	
+heldout	cardinal	They printed 45000 copies.	They printed forty five thousand copies.	
+dev	cardinal	Turn to page 101.	Turn to page one hundred one. || Turn to page one hundred and one.	
+heldout	cardinal	Room 342 is free.	Room three hundred forty two is free. || Room three hundred and forty two is free. || Room three four two is free.	
+dev	decimal	Pi is 3.14.	Pi is three point one four.	
+heldout	decimal	The rate rose to 2.75.	The rate rose to two point seven five.	
+dev	decimal	Add 0.5 litres.	Add zero point five litres. || Add point five litres.	
+heldout	decimal	It weighs 0.25 grams.	It weighs zero point two five grams. || It weighs point two five grams.	
+dev	cardinal	It was -5 degrees.	It was minus five degrees. || It was negative five degrees.	
+heldout	cardinal	The score fell to -12.	The score fell to minus twelve. || The score fell to negative twelve.	
+dev	ordinal	The 21st century began.	The twenty first century began.	
+heldout	ordinal	It is the 42nd edition.	It is the forty second edition.	
+dev	ordinal	He came 2nd.	He came second.	
+heldout	ordinal	She finished 3rd.	She finished third.	
+dev	ordinal	Meet on the 13th floor.	Meet on the thirteenth floor.	
+heldout	ordinal	Our 100th show.	Our one hundredth show.	
+dev	year	Born in 1984.	Born in nineteen eighty four.	
+heldout	year	Built in 1776.	Built in seventeen seventy six.	
+dev	year	Since 2005 we grew.	Since two thousand five we grew. || Since two thousand and five we grew.	
+heldout	year	In 2009 it closed.	In two thousand nine it closed. || In two thousand and nine it closed.	
+dev	year	See you in 2024.	See you in twenty twenty four. || See you in two thousand twenty four.	
+heldout	year	The 2031 plan.	The twenty thirty one plan. || The two thousand thirty one plan.	
+dev	year	Music of the 1990s.	Music of the nineteen nineties.	
+heldout	year	Cars of the 1960s.	Cars of the nineteen sixties.	
+dev	money	It costs $5.50.	It costs five dollars and fifty cents. || It costs five dollars fifty cents.	
+heldout	money	Lunch was $12.25.	Lunch was twelve dollars and twenty five cents. || Lunch was twelve dollars twenty five cents.	
+dev	money	Pay £20 now.	Pay twenty pounds now.	
+heldout	money	Only €3 each.	Only three euros each.	
+dev	money	A fee of ₹500.	A fee of five hundred rupees.	
+heldout	money	A ticket for ₹750.	A ticket for seven hundred fifty rupees. || A ticket for seven hundred and fifty rupees.	
+dev	money	Price: Rs. 250	Price: two hundred fifty rupees || Price: two hundred and fifty rupees	
+heldout	money	Pay Rs 400 today.	Pay four hundred rupees today.	
+dev	money	A $1.5bn deal.	A one point five billion dollar deal. || A one point five billion dollars deal.	
+heldout	money	They raised $2m.	They raised two million dollars.	
+dev	percent	Sales grew 50%.	Sales grew fifty percent.	
+heldout	percent	Tax is 18%.	Tax is eighteen percent.	
+dev	percent	Inflation hit 3.5%.	Inflation hit three point five percent.	
+heldout	percent	Growth of 7.2%.	Growth of seven point two percent.	
+dev	time	Meet at 3:30.	Meet at three thirty.	
+heldout	time	The bus leaves at 4:45.	The bus leaves at four forty five.	
+dev	time	Wake at 9:05am.	Wake at nine oh five a m. || Wake at nine oh five am.	
+heldout	time	Call at 7:15pm.	Call at seven fifteen p m. || Call at seven fifteen pm.	
+dev	time	Lunch at 12:00.	Lunch at twelve o'clock. || Lunch at twelve.	
+heldout	time	Dinner at 8:00.	Dinner at eight o'clock. || Dinner at eight.	
+dev	date	Due 2024-01-05.	Due January fifth twenty twenty four. || Due January fifth, twenty twenty four.	
+heldout	date	Signed 2023-07-14.	Signed July fourteenth twenty twenty three.	
+dev	date	On 12/25/2023 we met.	On December twenty fifth twenty twenty three we met.	
+heldout	date	By 3/17/2022 it ended.	By March seventeenth twenty twenty two it ended.	
+dev	phone	Call 555-123-4567.	Call five five five one two three four five six seven.	
+heldout	phone	Dial 800-555-0199.	Dial eight zero zero five five five zero one nine nine. || Dial eight hundred five five five zero one nine nine.	
+dev	range	Read pages 10-20.	Read pages ten to twenty.	
+heldout	range	Ages 5-12 welcome.	Ages five to twelve welcome.	
+dev	range	From 1990-1995.	From nineteen ninety to nineteen ninety five.	
+heldout	range	During 1914-1918.	During nineteen fourteen to nineteen eighteen.	
+dev	fraction	Add 1/2 cup.	Add one half cup. || Add half a cup.	
+heldout	fraction	Use 3/4 of it.	Use three quarters of it.	
+dev	measure	A 5km run.	A five kilometer run. || A five kilometers run.	
+heldout	measure	Lift 20kg daily.	Lift twenty kilograms daily.	
+dev	measure	Drive at 60 km/h.	Drive at sixty kilometers per hour.	
+heldout	measure	A limit of 30 mph.	A limit of thirty miles per hour.	
+dev	measure	It was 25°C.	It was twenty five degrees Celsius.	
+heldout	measure	Bake at 180°C.	Bake at one hundred eighty degrees Celsius. || Bake at one hundred and eighty degrees Celsius.	
+dev	abbreviation	Dr. Smith is here.	Doctor Smith is here.	
+heldout	abbreviation	Mr. Jones left.	Mister Jones left.	
+dev	abbreviation	Fruit, e.g. apples.	Fruit, for example apples.	
+heldout	abbreviation	Cats vs. dogs.	Cats versus dogs.	
+dev	acronym	The FBI said so.	The F B I said so.	
+heldout	acronym	Ask the CEO.	Ask the C E O.	
+dev	acronym	NASA launched it.	NASA launched it.	
+heldout	acronym	Pay by UPI now.	Pay by U P I now.	
+dev	url	Visit www.example.com today.	Visit w w w dot example dot com today.	
+heldout	url	Go to www.openstreetmap.org now.	Go to w w w dot openstreetmap dot org now.	
+dev	url	See https://github.com/rust for code.	See github dot com slash rust for code.	
+heldout	url	Open https://example.org/help please.	Open example dot org slash help please.	
+dev	email	Mail john@example.com today.	Mail john at example dot com today.	
+heldout	email	Write to anna@mail.org soon.	Write to anna at mail dot org soon.	
+dev	symbol	Salt & pepper.	Salt and pepper.	
+heldout	symbol	Tom & Jerry.	Tom and Jerry.	
+dev	scale	About 5,00,000 people.	About five lakh people.	en_scale=indian
+heldout	scale	Nearly 3,00,000 votes.	Nearly three lakh votes.	en_scale=indian
+dev	scale	It cost ₹1,50,00,000.	It cost one crore fifty lakh rupees.	
+heldout	scale	A budget of ₹2,40,00,000.	A budget of two crore forty lakh rupees.	
+dev	scale	It has 1,000,000 rows.	It has one million rows.	en_scale=international
+heldout	scale	We counted 4,000,000 stars.	We counted four million stars.	en_scale=international

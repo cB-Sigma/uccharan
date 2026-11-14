@@ -5,65 +5,49 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 192932,
-  "per": 0.008039101859722597,
-  "per_without_stress": 0.005801038271157793,
-  "exact_sentence": 0.7055335968379447,
-  "exact_sentence_without_stress": 0.7104743083003953,
-  "piper_shape_per": 0.008044462446357432,
-  "piper_shape_exact_sentence": 0.6986166007905138,
+  "per": 0.005105425745858644,
+  "per_without_stress": 0.004322105517324641,
+  "exact_sentence": 0.7806324110671937,
+  "exact_sentence_without_stress": 0.7855731225296443,
+  "piper_shape_per": 0.005142508498213196,
+  "piper_shape_exact_sentence": 0.7697628458498024,
   "word_count_mismatch_sentences": 229,
   "errors_by_class": {
    "stress": {
-    "count": 597,
-    "share": 0.3849129593810445,
-    "per_contribution": 0.003094354487591483
+    "count": 274,
+    "share": 0.2781725888324873,
+    "per_contribution": 0.0014201894968175316
    },
    "vowel": {
-    "count": 276,
-    "share": 0.17794970986460348,
-    "per_contribution": 0.0014305558435096304
+    "count": 237,
+    "share": 0.24060913705583756,
+    "per_contribution": 0.0012284120830137043
    },
    "consonant": {
-    "count": 228,
-    "share": 0.1470019342359768,
-    "per_contribution": 0.0011817635228992599
-   },
-   "other": {
     "count": 195,
-    "share": 0.12572533849129594,
+    "share": 0.19796954314720813,
     "per_contribution": 0.0010107188024796301
    },
    "word-boundary": {
     "count": 195,
-    "share": 0.12572533849129594,
+    "share": 0.19796954314720813,
     "per_contribution": 0.0010107188024796301
    },
+   "other": {
+    "count": 70,
+    "share": 0.07106598984771574,
+    "per_contribution": 0.00036282213422345695
+   },
    "length": {
-    "count": 60,
-    "share": 0.03868471953578337,
-    "per_contribution": 0.0003109904007629631
+    "count": 14,
+    "share": 0.014213197969543147,
+    "per_contribution": 7.256442684469139e-05
    }
   },
   "top_confusions": [
    {
-    "edit": "ˈ→ə",
-    "count": 108
-   },
-   {
-    "edit": "ʌ→ɟ",
-    "count": 108
-   },
-   {
-    "edit": "ɟ→ˈ",
-    "count": 108
-   },
-   {
     "edit": " →∅",
     "count": 107
-   },
-   {
-    "edit": "ˈ→∅",
-    "count": 94
    },
    {
     "edit": "∅→ ",
@@ -71,27 +55,27 @@
    },
    {
     "edit": "ˈ→ˌ",
-    "count": 83
+    "count": 80
    },
    {
-    "edit": "∅→ˈ",
-    "count": 72
-   },
-   {
-    "edit": "∅→ˌ",
-    "count": 62
+    "edit": "ˈ→∅",
+    "count": 58
    },
    {
     "edit": "∅→ə",
-    "count": 54
+    "count": 46
    },
    {
-    "edit": "∅→ː",
-    "count": 52
+    "edit": "∅→ˌ",
+    "count": 44
    },
    {
     "edit": "ə→∅",
-    "count": 46
+    "count": 37
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 30
    },
    {
     "edit": "a→ə",
@@ -110,10 +94,6 @@
     "count": 19
    },
    {
-    "edit": "ˌ→∅",
-    "count": 19
-   },
-   {
     "edit": "l→∅",
     "count": 18
    },
@@ -122,12 +102,8 @@
     "count": 17
    },
    {
-    "edit": "t→ʈ",
-    "count": 15
-   },
-   {
-    "edit": "s→∅",
-    "count": 15
+    "edit": "ˌ→∅",
+    "count": 17
    },
    {
     "edit": "∅→ɾ",
@@ -138,26 +114,50 @@
     "count": 13
    },
    {
+    "edit": "s→∅",
+    "count": 13
+   },
+   {
     "edit": "s→ʃ",
     "count": 12
    },
    {
     "edit": "l→ə",
     "count": 12
+   },
+   {
+    "edit": "o→ə",
+    "count": 12
+   },
+   {
+    "edit": "ː→ʋ",
+    "count": 12
+   },
+   {
+    "edit": "ʃ→∅",
+    "count": 12
+   },
+   {
+    "edit": "r→ɾ",
+    "count": 12
+   },
+   {
+    "edit": "r→ə",
+    "count": 12
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 19431,
-    "wrong": 122,
-    "rate": 0.00627862693633884
+    "wrong": 94,
+    "rate": 0.0048376305902938605
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 197,
-    "per": 0.024897240164415736,
-    "exact_sentence": 0.2436548223350254
+    "per": 0.011603053435114504,
+    "exact_sentence": 0.6294416243654822
    },
    "no-digits": {
     "sentences": 815,
@@ -167,76 +167,76 @@
   },
   "examples_of_disagreement": [
    {
-    "id": "flores-devtest-520",
-    "text": "ऐइमी अउर मैकॉर्ड (1998) जब वेबसाइट के बारे में दर्सकन के प्रतिक्रिया के पड़ताल कइलें, त उनके पता चलल कि “निजी रूप से जुड़ाव” आ “रिस्ता के आगे बढ़ावे के कोसिस” भी इंटरनेट खातिर एगो नया तरह के प्रेरणा ह.",
-    "reference": "ˈɛːɪmˌi ˈʌʊɾ mɛːkˈɔɾɖ ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː ʌtʰːˈaːnəbˌeː ɟˈʌb ʋˌeːbsˈaːɪʈ keː bˈaːɾeː mẽː dˈʌrsəkˌən keː pɾətˈɪkɾɪjˌaː keː pˌər.tˈaːl kˈʌɪlˌẽː tˈə ˌʊnkˌeː pˈʌtaː cˈʌləl kˈɪ nˈɪɟi ɾˈuːp seː ɟʊr.ˈaːʋ ˈaː ɾˈɪstaː keː ˈaːɡeː bər.hˈaːʋeː keː kˈoːsɪs bʰˈi ˌĩʈəɾnˈeːʈ kʰˈaːtɪɾ ˈeːɡoː nˈʌjaː tˈʌɾəh keː pɾˈeːɾɳˌaː hˈə",
-    "uccharan": "ˈɛːɪmˌi ˈʌʊɾ mɛːkˈɔɾɖ ˈeːk həɟˈaːɾ nˈɔːsˈɔː ʌʈʰʈʰˈaːnʋˌeː ɟˈʌb ʋˌeːbsˈaːɪʈ keː bˈaːɾeː mẽː dˈʌrsəkˌən keː pɾətˈɪkɾɪjˌaː keː pˌər.tˈaːl kˈʌɪlˌẽː tˈə ˌʊnkˌeː pˈʌtaː cˈʌləl kˈɪ nˈɪɟi ɾˈuːp seː ɟʊr.ˈaːʋ ˈaː ɾˈɪstaː keː ˈaːɡeː bər.hˈaːʋeː keː kˈoːsɪs bʰˈi ˌĩʈəɾnˈeːʈ kʰˈaːtɪɾ ˈeːɡoː nˈʌjaː tˈʌɾəh keː pɾˈeːɾɳˌaː hˈə"
+    "id": "flores-devtest-247",
+    "text": "पांच मिनिट के बाद देखाइल कि तेज हवा बहे लागल अउर लगभग एक्के मिनिट के बाद हवा 70किमी/घंटा के तेजी से चले लागल... फेरू बरखा आ गइल अउर ई एतना भारी आ तेज रहे कि सरीर पर सुई जइसन लागत रहे. ई कुल के बाद ओला गिरे लागल अउर सब लोग घबड़ा के चीखत-चिल्लात, गिरत-पड़त भागे लगने.",
+    "reference": "pˈãc mˈɪnɪʈ keː bˈaːd deːkʰˈaːɪl kˈɪ tˈeːɟ hˈʌʋaː bˈʌheː lˈaːɡəl ˈʌʊɾ lˈʌɡəbʰˌəɡ ˈeːkːeː mˈɪnɪʈ keː bˈaːd hˈʌʋaː sˈʌtːəɾ kˈɪmi slˈaʃ ɡʰˈʌɳʈaː keː tˈeːɟi seː cˈʌleː lˈaːɡəl pʰˈeːɾuː bˈʌɾkʰˌaː ˈaː ɡˈʌɪl ˈʌʊɾ ˈi ˈeːtnˌaː bʰˈaːɾi ˈaː tˈeːɟ ɾˌəheː kˈɪ səɾˈiːɾ pˈʌɾ sˈʊi ɟˈʌɪsˌən lˈaːɡət ɾˌəheː ˈi kˈʊl keː bˈaːd ˈoːlaː ɡˈɪɾeː lˈaːɡəl ˈʌʊɾ sˈʌb lˈoːɡ ɡʰˈʌbr.ˌaː keː cˈiːkʰətcɪllˈaːt ɡˈɪɾətˌəpˈʌr.ət bʰˈaːɡeː lˈʌɡnˌeː",
+    "uccharan": "pˈãc mˈɪnɪʈ keː bˈaːd deːkʰˈaːɪl kˈɪ tˈeːɟ hˈʌʋaː bˈʌheː lˈaːɡəl ˈʌʊɾ lˈʌɡəbʰˌəɡ ˈeːkːeː mˈɪnɪʈ keː bˈaːd hˈʌʋaː sˈʌtːəɾ kˈɪmi ɡʰˈʌɳʈaː keː tˈeːɟi seː cˈʌleː lˈaːɡəl pʰˈeːɾuː bˈʌɾkʰˌaː ˈaː ɡˈʌɪl ˈʌʊɾ ˈi ˈeːtnˌaː bʰˈaːɾi ˈaː tˈeːɟ ɾˌəheː kˈɪ səɾˈiːɾ pˈʌɾ sˈʊi ɟˈʌɪsˌən lˈaːɡət ɾˌəheː ˈi kˈʊl keː bˈaːd ˈoːlaː ɡˈɪɾeː lˈaːɡəl ˈʌʊɾ sˈʌb lˈoːɡ ɡʰˈʌbr.ˌaː keː cˈiːkʰətˌəcɪllˈaːt ɡˈɪɾətˌəpˈʌr.ət bʰˈaːɡeː lˈʌɡnˌeː"
    },
    {
-    "id": "flores-devtest-723",
-    "text": "पार्क 19,500 वर्ग किलोमीटर में फइलल बा अउर इ 14 अविभिन्न इकोज़ोन में विभाजित कइल बा,हरेयक एगो अलगा वन्य जीव के समर्थन करेला।",
-    "reference": "pˈaːɾk ʊnnˈɪs hˈʌɟaːɾ pˈãcsˈɔː ʋˈʌɾɡ kˌɪloːmˈiːʈəɾ mẽː pʰˈʌɪlˌəl bˈaː ˈʌʊɾ ˈɪ cˈɔːdəh ˌʌʋɪbʰˈɪnnə ˌɪkoːzˈoːn mẽː ʋɪbʰˈaːɟɪt kˈʌɪl bˈaː həɾˈeːjək ˈeːɡoː ˈʌlɡˌaː ʋˈʌnjə ɟˈiːʋ keː səmˈʌɾtʰən kəɾˈeːlaː",
-    "uccharan": "pˈaːɾk ʊnnˈiːs həɟˈaːɾ pˈãcsˈɔː ʋˈʌɾɡ kˌɪloːmˈiːʈəɾ mẽː pʰˈʌɪlˌəl bˈaː ˈʌʊɾ ˈɪ cˈɔːdəh ˌʌʋɪbʰˈɪnnə ˌɪkoːzˈoːn mẽː ʋɪbʰˈaːɟɪt kˈʌɪl bˈaː həɾˈeːjək ˈeːɡoː ˈʌlɡˌaː ʋˈʌnjə ɟˈiːʋ keː səmˈʌɾtʰən kəɾˈeːlaː"
+    "id": "flores-devtest-119",
+    "text": "उनकर काम अपना गुणवत्ता खातिर एतना जानल-मानल अउर बारीक बा कि टिकट एकट्ठा करे के सउखीनन में उनकर गिनती कुछ गिनल-चुनल \"मसहूर\" लोगन में होला.",
+    "reference": "ˈʊnəkˌəɾ kˈaːm ˈʌpnˌaː ɡˌʊɳəʋˈʌtːaː kʰˈaːtɪɾ ˈeːtnˌaː ɟˈaːnəlmˈaːnəl ˈʌʊɾ baːɾˈiːk bˈaː kˈɪ ʈˈɪkəʈ eːkˈʌʈʰʈʰaː kˈʌɾeː keː sˌəʊkʰˈiːnən mẽː ˈʊnəkˌəɾ ɡˈɪntˌi kˈʊcʰ ɡˈɪnəlcˈʊnəl mˌəshˈuːɾ lˈoːɡən mẽː hˈoːlaː",
+    "uccharan": "ˈʊnəkˌəɾ kˈaːm ˈʌpnˌaː ɡˌʊɳəʋˈʌtːaː kʰˈaːtɪɾ ˈeːtnˌaː ɟˈaːnəlˌəmˈaːnəl ˈʌʊɾ baːɾˈiːk bˈaː kˈɪ ʈˈɪkəʈ eːkˈʌʈʰʈʰaː kˈʌɾeː keː sˌəʊkʰˈiːnən mẽː ˈʊnəkˌəɾ ɡˈɪntˌi kˈʊcʰ ɡˈɪnəlˌəcˈʊnəl mˌəshˈuːɾ lˈoːɡən mẽː hˈoːlaː"
    },
    {
-    "id": "flores-devtest-307",
-    "text": "नॉर्दर्न मेरियाना एमर्जेंसी मैनेजमेंट ऑफिस के हवाले से खबर बा कि देस में इ भूकंप से नुकसान के कौनो खबर नइखे.",
-    "reference": "nˈɔɾdərn mˌeːɾɪjˈaːnaː ˌeːmrɟˈẽːsi mˌɛːneːɟmˈẽːʈ ˈɔpʰɪs keː həʋˈaːleː seː kʰˈʌbəɾ bˈaː kˈɪ dˈeːs mẽː ˈɪ bʰuːkˈʌmp seː nˌʊksˈaːn keː kˈɔːnoː kʰˈʌbəɾ nˈʌɪkʰˌeː",
-    "uccharan": "nɔɾdˈʌrn mˌeːɾɪjˈaːnaː ˌeːmɾɟˈẽːsi mˌɛːneːɟmˈẽːʈ ˈɔpʰɪs keː həʋˈaːleː seː kʰˈʌbəɾ bˈaː kˈɪ dˈeːs mẽː ˈɪ bʰuːkˈʌmp seː nˌʊksˈaːn keː kˈɔːnoː kʰˈʌbəɾ nˈʌɪkʰˌeː"
+    "id": "flores-devtest-977",
+    "text": "साथ में, r आउर rr के अलग-अलग उच्चारण के प्रयास करीं: caro के मतलब प्रिय होला, जबकि carro के मतलब रथ होला।",
+    "reference": "sˈaːtʰ mˈẽː ˈɑː ˈaːʊɾ ˌɑːɹˈɑː keː ˈʌləɡˌəˈʌləɡ ʊcːˈaːɾəɳ keː pɾəjˈaːs kˈʌɾĩ kˈaɹəʊ keː mˈʌtəlˌəb pɾˈɪj hˈoːlaː ɟˈʌbkˌɪ kˈɑːɹəʊ keː mˈʌtəlˌəb ɾˈʌtʰ hˈoːlaː",
+    "uccharan": "sˈaːtʰ mˈẽː ˈɑː ˈaːʊɾ ˌɑːˈɑː keː ˈʌləɡˌəˈʌləɡ ʊcːˈaːɾəɳ keː pɾəjˈaːs kˈʌɾĩ kˈɑːɹəʊ keː mˈʌtəlˌəb pɾˈɪj hˈoːlaː ɟˈʌbkˌɪ kˈɑːɹəʊ keː mˈʌtəlˌəb ɾˈʌtʰ hˈoːlaː"
    },
    {
-    "id": "flores-devtest-74",
-    "text": "बाकिर प्रधानमंत्री जॉन हॉवर्ड के कहला अनुसार सरकार के ओर से 4.5 करोड़ ऑस्ट्रेलियाई डॉलर के रासि खाली ए बात के ध्यान में रखिके दीहल गइल बा कि तस्मानिया सरकार के देखरेख में अस्पताल के सुविधा में कउनो कमी न आवे.",
-    "reference": "bˈaːkɪɾ pɾˌədʰaːnəmˈʌntɾi ɟˈɔn hɔʋˈʌɾɖ keː kˈʌhəlˌaː ˌʌnʊsˈaːɾ sˌəɾkˈaːɾ keː ˈoːɾ seː cˈaːɾ dəsəmlˈoː pˈãc kəɾˈoːr. ˌɔsʈɾeːlɪjˈaːi ɖˈɔləɾ keː ɾˈaːsɪ kʰˈaːli ˈeː bˈaːt keː dʰjˈaːn mẽː ɾˈʌkʰɪkˌeː dˈiːhəl ɡˈʌɪl bˈaː kˈɪ təsmˈaːnɪjˌaː sˌəɾkˈaːɾ keː dˌeːkʰɾˈeːkʰ mẽː ˌʌspətˈaːl keː sˈʊʋɪdʰˌaː mẽː kˈʌʊnˌoː kˈʌmi nˈə ˈaːʋeː",
-    "uccharan": "bˈaːkɪɾ pɾˌədʰaːnəmˈʌntɾi ɟˈɔn hɔʋˈʌɾɖ keː kˈʌhəlˌaː ˌʌnʊsˈaːɾ sˌəɾkˈaːɾ keː ˈoːɾ seː cˈaːɾ dˈʌʃəmˌələʋ pˈãc kəɾˈoːr. ˌɔsʈɾeːlɪjˈaːi ɖˈɔləɾ keː ɾˈaːsɪ kʰˈaːli ˈeː bˈaːt keː dʰjˈaːn mẽː ɾˈʌkʰɪkˌeː dˈiːhəl ɡˈʌɪl bˈaː kˈɪ təsmˈaːnɪjˌaː sˌəɾkˈaːɾ keː dˌeːkʰɾˈeːkʰ mẽː ˌʌspətˈaːl keː sˈʊʋɪdʰˌaː mẽː kˈʌʊnˌoː kˈʌmi nˈə ˈaːʋeː"
+    "id": "flores-devtest-101",
+    "text": "बाकिर, दक्षिण अफ्रीका में तपेदिक के मरीजन के समूह में XDR-TB के बीमारी वाला लोगन के प्रतिसत अबहिनों कम लागता. कुल 330,000 संक्रमित लोगन में 6,000 लोगन के ई बीमारी बा.",
+    "reference": "bˈaːkɪɾ dˈʌkʃɪɳ ʌpʰɾˈiːkaː mẽː təpˈeːdɪk keː məɾˈiːɟən keː səmˈuːh mẽː ˈɛks dˈiː ˈɑːtˈiːbˈiː keː bimˈaːɾi ʋˈaːlaː lˈoːɡən keː pɾˈʌtɪsˌət ˈʌbhˌɪnõ kˈʌm lˈaːɡtˌaː kˈʊl tˈiːn lˈaːkʰ tˈiːs hˈʌɟaːɾ sˈʌŋkɾəmˌɪt lˈoːɡən mẽː cʰˈʌh hˈʌɟaːɾ lˈoːɡən keː ˈi bimˈaːɾi bˈaː",
+    "uccharan": "bˈaːkɪɾ dˈʌkʃɪɳ ʌpʰɾˈiːkaː mẽː təpˈeːdɪk keː məɾˈiːɟən keː səmˈuːh mẽː ˌɛksdˌiːˈɑːtˌiːbˈiː keː bimˈaːɾi ʋˈaːlaː lˈoːɡən keː pɾˈʌtɪsˌət ˈʌbhˌɪnõ kˈʌm lˈaːɡtˌaː kˈʊl tˈiːn lˈaːkʰ tˈiːs hˈʌɟaːɾ sˈʌŋkɾəmˌɪt lˈoːɡən mẽː cʰˈʌh hˈʌɟaːɾ lˈoːɡən keː ˈi bimˈaːɾi bˈaː"
    },
    {
-    "id": "flores-devtest-34",
-    "text": "गवर्नर कहलन कि घायल लोग में 19 गो पुलिस अफसर बाड़न.",
-    "reference": "ɡəʋˈʌrnəɾ kˈʌhəlˌən kˈɪ ɡʰˈaːjəl lˈoːɡ mẽː ʊnnˈɪs ɡˈoː pˈʊlɪs ˈʌpʰəsˌəɾ bˈaːr.ən",
-    "uccharan": "ɡəʋˈʌrnəɾ kˈʌhəlˌən kˈɪ ɡʰˈaːjəl lˈoːɡ mẽː ʊnnˈiːs ɡˈoː pˈʊlɪs ˈʌpʰəsˌəɾ bˈaːr.ən"
+    "id": "flores-devtest-19",
+    "text": "NSA के रूप में उ विश्व राजनीति में राष्ट्रपति जिमी कार्टर के कूटनीतिक कामकाज में खूब साथ देहलन. उनकर प्रमुख काम में शामिल बा, 1978 में कैंप डेविड एकॉर्ड; 1970 के दसक के आखिर में अमेरिका-चीन के रिस्ता सामान्य करे के कोसिस; इरानी क्रांति, जेकरा कारन 1979 में इरान में बंधक बनावे के घटना भइल; अउरी 1979 में अफ़गानिस्तान में सोवियत रूस के आक्रमण के स्थिति.",
+    "reference": "ˈɛn ˈɛs ˈeɪ keː ɾˈuːp mẽː ˈʊ ʋˈɪʃʋ ɾˌaːɟnˈiːtɪ mẽː ɾˌaːʃtɾapˈati ɟˈɪmi kˈaːɾʈəɾ keː kˌuːʈnˈiːtɪk kˌaːmkˈaːɟ mẽː kʰˈuːb sˈaːtʰ dˈeːhəlˌən ˈʊnəkˌəɾ pɾˈʌmʊkʰ kˈaːm mẽː ʃˈaːmɪl bˈaː ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː ʌthˈʌtːəɾ mẽː kˈɛ̃p ɖˈeːʋɪɖ eːkˈɔɾɖ ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː sˈʌtːəɾ keː dˈʌsək keː ˈaːkʰɪɾ mẽː ʌmˈeːɾɪkˌaːcˈiːn keː ɾˈɪstaː saːmˈaːnjə kˈʌɾeː keː kˈoːsɪs ɪɾˈaːni kɾˈãtɪ ɟˈeːkɾˌaː kˈaːɾən ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː ʊnˈaːsi mẽː ɪɾˈaːn mẽː bˈʌndʰək bənˈaːʋeː keː ɡʰˈʌʈnˌaː bʰˈʌɪl ˈʌʊɾˌi ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː ʊnˈaːsi mẽː ˌʌfɡˌaːnɪstˈaːn mẽː sˈoːʋɪjˌət ɾˈuːs keː ˈaːkɾəmˌəɳ keː stʰˈɪtɪ",
+    "uccharan": "ˌɛnˌɛsˈeɪ keː ɾˈuːp mẽː ˈʊ ʋˈɪʃʋ ɾˌaːɟnˈiːtɪ mẽː ɾˈaːʂʈɾəptɪ ɟˈɪmi kˈaːɾʈəɾ keː kˌuːʈnˈiːtɪk kˌaːmkˈaːɟ mẽː kʰˈuːb sˈaːtʰ dˈeːhəlˌən ˈʊnəkˌəɾ pɾˈʌmʊkʰ kˈaːm mẽː ʃˈaːmɪl bˈaː ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː ʌthˈʌtːəɾ mẽː kˈɛ̃p ɖˈeːʋɪɖ eːkˈɔɾɖ ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː sˈʌtːəɾ keː dˈʌsək keː ˈaːkʰɪɾ mẽː ʌmˈeːɾɪkˌaːcˈiːn keː ɾˈɪstaː saːmˈaːnjə kˈʌɾeː keː kˈoːsɪs ɪɾˈaːni kɾˈãtɪ ɟˈeːkɾˌaː kˈaːɾən ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː ʊnˈaːsi mẽː ɪɾˈaːn mẽː bˈʌndʰək bənˈaːʋeː keː ɡʰˈʌʈnˌaː bʰˈʌɪl ˈʌʊɾˌi ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː ʊnˈaːsi mẽː ˌʌfɡˌaːnɪstˈaːn mẽː sˈoːʋɪjˌət ɾˈuːs keː ˈaːkɾəmˌəɳ keː stʰˈɪtɪ"
    },
    {
-    "id": "flores-devtest-479",
-    "text": "जवन युग में ई कुल घटना भइल ओके सामान्य रूप से हाई मिडल युग कहल जाला आ ई यूरोपीय इतिहास में 11वी, 12वीं अउर 13वीं सदी (1000–1300 ई.) के बखत रहे.",
-    "reference": "ɟˈʌʋən jˈʊɡ mẽː ˈi kˈʊl ɡʰˈʌʈnˌaː bʰˈʌɪl ˈoːkeː saːmˈaːnjə ɾˈuːp seː hˈaːi mˈɪɖəl jˈʊɡ kˈʌhəl ɟˈaːlaː ˈaː ˈi jˌuːɾoːpˈiːj ˌɪtɪhˈaːs mẽː ɡjˈaːɾəh ʋˈi bˈaːɾəh ʋˈĩ ˈʌʊɾ tˈeːɾəh ʋˈĩ sˈʌdi ˈeːk hˈʌɟaːɾ ˈeːk hˈʌɟaːɾ tˈiːnsˈɔː ˈi keː bˈʌkʰət ɾˌəheː",
-    "uccharan": "ɟˈʌʋən jˈʊɡ mẽː ˈi kˈʊl ɡʰˈʌʈnˌaː bʰˈʌɪl ˈoːkeː saːmˈaːnjə ɾˈuːp seː hˈaːi mˈɪɖəl jˈʊɡ kˈʌhəl ɟˈaːlaː ˈaː ˈi jˌuːɾoːpˈiːj ˌɪtɪhˈaːs mẽː ɡjˈaːɾəh ʋˈi bˈaːɾəh ʋˈĩ ˈʌʊɾ tˈeːɾəh ʋˈĩ sˈʌdi ˈeːk həɟˈaːɾ ˈeːk həɟˈaːɾ tˈiːnsˈɔː ˈi keː bˈʌkʰət ɾˌəheː"
+    "id": "flores-devtest-777",
+    "text": "कभी-कभार इ सब फैमिली बीच पर बहुते भीड़-भडक्का रहेला जहाँ किनारा में एक लाइन से बहुत नीमन-नीमन दोकान बसल बा. इहाँ तैराकी कइला बहुत सुरक्षित मानल जाला.",
+    "reference": "kˈʌbʰikbʰˈaːɾ ˈɪ sˈʌb pʰˈɛːmɪlˌi bˈiːc pˈʌɾ bˈʌhʊtˌeː bʰˈiːr.əbʰəɖˈʌkːaː ɾəhˈeːlaː ɟˈʌhã kɪnˈaːɾaː mẽː ˈeːk lˈaːɪn seː bˈʌhʊt nˈiːmənnˈiːmən doːkˈaːn bˈʌsəl bˈaː ˈɪhã tɛːɾˈaːki kˈʌɪlˌaː bˈʌhʊt sʊɾˈʌkʃɪt mˈaːnəl ɟˈaːlaː",
+    "uccharan": "kˈʌbʰikəbʰˈaːɾ ˈɪ sˈʌb pʰˈɛːmɪlˌi bˈiːc pˈʌɾ bˈʌhʊtˌeː bʰˈiːr.bʰəɖˈʌkːaː ɾəhˈeːlaː ɟˈʌhã kɪnˈaːɾaː mẽː ˈeːk lˈaːɪn seː bˈʌhʊt nˈiːmənˌənˈiːmən doːkˈaːn bˈʌsəl bˈaː ˈɪhã tɛːɾˈaːki kˈʌɪlˌaː bˈʌhʊt sʊɾˈʌkʃɪt mˈaːnəl ɟˈaːlaː"
    },
    {
-    "id": "flores-devtest-755",
-    "text": "ई द्वीपन पर खाली एगो बैंक ह जहां पइसा के एक्सचेंज कइल जा सकेला. ई बैंक स्टैनली में FIC वेस्ट स्टोर के सामने ह.",
-    "reference": "ˈi dʋˈiːpən pˈʌɾ kʰˈaːli ˈeːɡoː bˈɛ̃k hˈə ɟˈʌhã pˈʌɪsˌaː keː ˈeːksəcˌẽːɟ kˈʌɪl ɟˈaː səkˈeːlaː ˈi bˈɛ̃k sʈˈɛːnlˌi mẽː ˈɛf ˈaɪ sˈiː ʋˈeːsʈ sʈˈoːɾ keː sˈaːmnˌeː hˈə",
-    "uccharan": "ˈi dʋˈiːpən pˈʌɾ kʰˈaːli ˈeːɡoː bˈɛ̃k hˈə ɟˈʌhã pˈʌɪsˌaː keː ˈeːksəcˌẽːɟ kˈʌɪl ɟˈaː səkˈeːlaː ˈi bˈɛ̃k sʈˈɛːnlˌi mẽː ˌɛfˌaɪsˈiː ʋˈeːsʈ sʈˈoːɾ keː sˈaːmnˌeː hˈə"
+    "id": "flores-devtest-772",
+    "text": "मऊ आंदोलन द्वारा आयोजित स्वतंत्रता संग्राम के दौरान, सहर में एगो शांतिपूर्ण सभा के परिणामस्वरूप सर्वोपरि प्रमुख तुपुआ तामासी लीलोफी III केहत्या हो गईल।",
+    "reference": "mˈʌu ãdˈoːlən dʋˈaːɾaː aːjˈoːɟɪt sʋətˈʌntɾətˌaː səŋɡɾˈaːm keː dɔːɾˈaːn sˈʌhəɾ mẽː ˈeːɡoː ʃˌãtɪpˈuːrɳə sˈʌbʰaː keː pˌəɾɪɳˌaːməsʋəɾˈuːp sərʋˈoːpɾˌɪ pɾˈʌmʊkʰ tˈʊpʊˌaː taːmˈaːsi lilˈoːpʰi ˈaɪ ˈaɪ ˈaɪ keːhˈʌtːjaː hoː ɡəˈiːl",
+    "uccharan": "mˈʌu ãdˈoːlən dʋˈaːɾaː aːjˈoːɟɪt sʋətˈʌntɾətˌaː səŋɡɾˈaːm keː dɔːɾˈaːn sˈʌhəɾ mẽː ˈeːɡoː ʃˌãtɪpˈuːrɳə sˈʌbʰaː keː pˌəɾɪɳˌaːməsʋəɾˈuːp sərʋˈoːpɾˌɪ pɾˈʌmʊkʰ tˈʊpʊˌaː taːmˈaːsi lilˈoːpʰi ˌaɪˌaɪˈaɪ keːhˈʌtːjaː hoː ɡəˈiːl"
    },
    {
-    "id": "flores-devtest-839",
-    "text": "17,000 द्वीप में से चाहे जेकरा चुनीं, बाकी इंडोनेवेशिया के भोजन में इतना वेरायटी मिली कि का कहल जाए, अउर वू वेरायटी पूरा देस में पाएल जाला.",
-    "reference": "sˌətɾəh hˈʌɟaːɾ dʋˈiːp mẽː seː cˈaːheː ɟˈeːkɾˌaː cˈʊnĩ bˈaːki ˌĩɖoːneːʋˈeːʃɪjˌaː keː bʰˈoːɟən mẽː ˈɪtnˌaː ʋeːɾˈaːjʈˌi mˈɪli kˈɪ kaː kˈʌhəl ɟˈaːeː ˈʌʊɾ ʋˈuː ʋeːɾˈaːjʈˌi pˈuːɾaː dˈeːs mẽː paːˈeːl ɟˈaːlaː",
-    "uccharan": "sˈʌtɾəh həɟˈaːɾ dʋˈiːp mẽː seː cˈaːheː ɟˈeːkɾˌaː cˈʊnĩ bˈaːki ˌĩɖoːneːʋˈeːʃɪjˌaː keː bʰˈoːɟən mẽː ˈɪtnˌaː ʋeːɾˈaːjʈˌi mˈɪli kˈɪ kaː kˈʌhəl ɟˈaːeː ˈʌʊɾ ʋˈuː ʋeːɾˈaːjʈˌi pˈuːɾaː dˈeːs mẽː paːˈeːl ɟˈaːlaː"
+    "id": "flores-devtest-741",
+    "text": "ओयापॉक रिवर ब्रिज एगो केबल स्टेड ब्रिज बा।ई ब्राजील में ओयापोक के शहरनअउर फ्रेंच गयाना में सेंट-जॉर्जेस डी ल'ओयापॉक के जोड़े खातिर ओयापॉक नदी तकले फैलल बा ।",
+    "reference": "oːjˈaːpɔk ɾˈɪʋəɾ bɾˈɪɟ ˈeːɡoː kˈeːbəl sʈˈeːɖ bɾˈɪɟ bˈaː ˈi bɾaːɟˈiːl mẽː ˌoːjaːpˈoːk keː ʃˈʌhəɾˌənəˌəʊɾ pʰɾˈẽːc ɡəjˈaːnaː mẽː sˈẽːʈɟɔɾɟˈeːs ɖˈi lˌəoːjˈaːpɔk keː ɟˈoːr.eː kʰˈaːtɪɾ oːjˈaːpɔk nˈʌdi tˈʌklˌeː pʰˈɛːləl bˈaː",
+    "uccharan": "oːjˈaːpɔk ɾˈɪʋəɾ bɾˈɪɟ ˈeːɡoː kˈeːbəl sʈˈeːɖ bɾˈɪɟ bˈaːi bɾaːɟˈiːl mẽː ˌoːjaːpˈoːk keː ʃˈʌhəɾˌənəˌəʊɾ pʰɾˈẽːc ɡəjˈaːnaː mẽː sˈẽːʈɟɔɾɟˈeːs ɖˈi lˈə oːjˈaːpɔk keː ɟˈoːr.eː kʰˈaːtɪɾ oːjˈaːpɔk nˈʌdi tˈʌklˌeː pʰˈɛːləl bˈaː"
    },
    {
-    "id": "flores-devtest-572",
-    "text": "डनलप ब्रॉडसाइड के 25 प्रति अब्बो बा जवन दस्तावेज के सबसे पुरान बचल प्रति ह. हाथे के लिखल मूल प्रति अब नईखे बचल.",
-    "reference": "ɖˈʌnəlˌəp bɾˌɔɖsˈaːɪɖ keː pˈʌcːis pɾˈʌtɪ ˈʌbboː bˈaː ɟˈʌʋən dˌəstaːʋˈeːɟ keː sˈʌbsˌeː pʊɾˈaːn bˈʌcəl pɾˈʌtɪ hˈə hˈaːtʰeː keː lˈɪkʰəl mˈuːl pɾˈʌtɪ ˈʌb nəˈiːkʰeː bˈʌcəl",
-    "uccharan": "ɖˈʌnəlˌəp bɾˌɔɖsˈaːɪɖ keː pəcːˈiːs pɾˈʌtɪ ˈʌbboː bˈaː ɟˈʌʋən dˌəstaːʋˈeːɟ keː sˈʌbsˌeː pʊɾˈaːn bˈʌcəl pɾˈʌtɪ hˈə hˈaːtʰeː keː lˈɪkʰəl mˈuːl pɾˈʌtɪ ˈʌb nəˈiːkʰeː bˈʌcəl"
+    "id": "flores-devtest-231",
+    "text": "पूरा देस के जानल-मानल गायक लोग श्री स्याम के चरन में भजन आ भक्ती के गीत गवलस.",
+    "reference": "pˈuːɾaː dˈeːs keː ɟˈaːnəlmˈaːnəl ɡˈaːjək lˈoːɡ ʃɾˈi sjˈaːm keː cˈʌɾən mẽː bʰˈʌɟən ˈaː bʰˈʌkti keː ɡˈiːt ɡˈʌʋəlˌəs",
+    "uccharan": "pˈuːɾaː dˈeːs keː ɟˈaːnəlˌəmˈaːnəl ɡˈaːjək lˈoːɡ ʃɾˈi sjˈaːm keː cˈʌɾən mẽː bʰˈʌɟən ˈaː bʰˈʌkti keː ɡˈiːt ɡˈʌʋəlˌəs"
    },
    {
-    "id": "flores-devtest-434",
-    "text": "आम तौर पर कई गो फॉर्मैट (उदाहरण खातिर APS परिवार के फॉर्मैट) ए आस्पेक्ट रेसिओ के जईसन, चाहे ओकरे बराबर होने.",
-    "reference": "ˈaːm tˈɔːɾ pˈʌɾ kˈʌi ɡˈoː pʰɔrmˈɛːʈ ʊdˈaːhəɾˌəɳ kʰˈaːtɪɾ ˈeɪ pˈiː ˈɛs pˌəɾɪʋˈaːɾ keː pʰɔrmˈɛːʈ ˈeː aːspˈeːkʈ ɾˈeːsɪˌoː keː ɟəˈiːsən cˈaːheː ˈoːkɾˌeː bəɾˈaːbəɾ hˈoːneː",
-    "uccharan": "ˈaːm tˈɔːɾ pˈʌɾ kˈʌi ɡˈoː pʰɔrmˈɛːʈ ʊdˈaːhəɾˌəɳ kʰˈaːtɪɾ ˌeɪpˌiːˈɛs pˌəɾɪʋˈaːɾ keː pʰɔrmˈɛːʈ ˈeː aːspˈeːkʈ ɾˈeːsɪˌoː keː ɟəˈiːsən cˈaːheː ˈoːkɾˌeː bəɾˈaːbəɾ hˈoːneː"
+    "id": "flores-devtest-308",
+    "text": "पैसिफिक सुनामी चेतावनी केंद्र कहsता कि सुनामी आवे के भी कौनो निसानी नइखे मिलल.",
+    "reference": "pˈɛːsɪpʰˌɪk sʊnˈaːmi ceːtˈaːʋnˌi kˈẽːdɾə kˈʌhˈɛstˈaː kˈɪ sʊnˈaːmi ˈaːʋeː keː bʰˈi kˈɔːnoː nɪsˈaːni nˈʌɪkʰˌeː mˈɪləl",
+    "uccharan": "pˈɛːsɪpʰˌɪk sʊnˈaːmi ceːtˈaːʋnˌi kˈẽːdɾə kˈʌh ˈɛs tˈaː kˈɪ sʊnˈaːmi ˈaːʋeː keː bʰˈi kˈɔːnoː nɪsˈaːni nˈʌɪkʰˌeː mˈɪləl"
    },
    {
-    "id": "flores-devtest-182",
-    "text": "संयुक्त राज्य भूवैज्ञानिक सर्वेक्षण (USGS) अऊर ओकरे राष्ट्रीय भूकंप सूचना केंद्र के नुकसान के तत्काल कवनों सूचना नइखे मिलल.",
-    "reference": "səɲjˈʊkt ɾˈaːɟjə bʰuːʋˈɛːɡjaːnˌɪk sərʋˈeːkʃəɳ ˈʌsɡz ˈʌuɾ ˈoːkɾˌeː ɾˈaːʂʈɾij bʰuːkˈʌmp sˈuːcnˌaː kˈẽːdɾə keː nˌʊksˈaːn keː tətkˈaːl kˈʌʋnˌõ sˈuːcnˌaː nˈʌɪkʰˌeː mˈɪləl",
-    "uccharan": "səɲjˈʊkt ɾˈaːɟjə bʰuːʋˈɛːɡjaːnˌɪk sərʋˈeːkʃəɳ jˈuːsz ˈʌuɾ ˈoːkɾˌeː ɾˈaːʂʈɾij bʰuːkˈʌmp sˈuːcnˌaː kˈẽːdɾə keː nˌʊksˈaːn keː tətkˈaːl kˈʌʋnˌõ sˈuːcnˌaː nˈʌɪkʰˌeː mˈɪləl"
+    "id": "flores-devtest-335",
+    "text": "FAA के दावा बा की NextGen एगो अइसन प्रणाली बा जवन हवाई जहाज के कम दूरी वाला रास्तन पर उड़ा के हर साल लाखों गैलन ईंधन बचाई आ कार्बन के उत्सर्जन के कम करी.",
+    "reference": "ˈɛf ˈeɪ ˈeɪ keː dˈaːʋaː bˈaː ki nˈɛkst dʒˈɛn ˈeːɡoː ˈʌɪsˌən pɾəɳˈaːli bˈaː ɟˈʌʋən həʋˈaːi ɟəhˈaːɟ keː kˈʌm dˈuːɾi ʋˈaːlaː ɾˈaːstən pˈʌɾ ˈʊr.aː keː hˈʌɾ sˈaːl lˈaːkʰõ ɡˈɛːlən ˈiːndʰən bəcˈaːi ˈaː kˈaːɾbən keː ʊtsˈʌɾɟən keː kˈʌm kˈʌɾi",
+    "uccharan": "ˌɛfˌeɪˈeɪ keː dˈaːʋaː bˈaː ki nˈɛkst dʒˈɛn ˈeːɡoː ˈʌɪsˌən pɾəɳˈaːli bˈaː ɟˈʌʋən həʋˈaːi ɟəhˈaːɟ keː kˈʌm dˈuːɾi ʋˈaːlaː ɾˈaːstən pˈʌɾ ˈʊr.aː keː hˈʌɾ sˈaːl lˈaːkʰõ ɡˈɛːlən ˈiːndʰən bəcˈaːi ˈaː kˈaːɾbən keː ʊtsˈʌɾɟən keː kˈʌm kˈʌɾi"
    },
    {
-    "id": "flores-devtest-724",
-    "text": "ई दक्षिण अफ्रीका के मुख्य आकर्सन में से एगो बा अउर एकरा के दक्षिण अफ्रीकी राष्ट्रीय उद्यानन (SANParks) में प्रमुख मानल जाला.",
-    "reference": "ˈi dˈʌkʃɪɳ ʌpʰɾˈiːkaː keː mˈʊkʰjə aːkˈʌrsən mẽː seː ˈeːɡoː bˈaː ˈʌʊɾ ˈeːkɾˌaː keː dˈʌkʃɪɳ ʌpʰɾˈiːki ɾˈaːʂʈɾij ʊdjˈaːnən ˈɛs ˈeɪ ˈɛn pˈɑːks mẽː pɾˈʌmʊkʰ mˈaːnəl ɟˈaːlaː",
-    "uccharan": "ˈi dˈʌkʃɪɳ ʌpʰɾˈiːkaː keː mˈʊkʰjə aːkˈʌrsən mẽː seː ˈeːɡoː bˈaː ˈʌʊɾ ˈeːkɾˌaː keː dˈʌkʃɪɳ ʌpʰɾˈiːki ɾˈaːʂʈɾij ʊdjˈaːnən ˌɛsˌeɪˈɛn pˈɑːks mẽː pɾˈʌmʊkʰ mˈaːnəl ɟˈaːlaː"
+    "id": "flores-devtest-295",
+    "text": "NPWS आ स्पोर्टिंग शूटर्स एसोसिएशन ऑफ़ ऑस्ट्रेलिया (NSW) इंक. के साझेदारी में स्पोर्टिंग शूटर एसोसिएशन के सिकार प्रोग्राम के लायक स्वयंसेवकन के भर्ती कइल गइल.",
+    "reference": "ˌɛnpˌiːdˌʌbəljˌuːˈɛs ˈaː spˈoːɾʈĩɡ ʃuːʈˈʌrs ˌeːsoːsɪˈeːʃən ˈɔf ɔsʈɾˈeːlɪjˌaː ˈɛn ˈɛs dˈʌbəljˌuː ˈĩk keː sˌaːɟʰeːdˈaːɾi mẽː spˈoːɾʈĩɡ ʃˈuːʈəɾ ˌeːsoːsɪˈeːʃən keː sɪkˈaːɾ pɾˈoːɡɾaːm keː lˈaːjək sʋˌəjnsˈeːʋəkˌən keː bʰˈʌɾti kˈʌɪl ɡˈʌɪl",
+    "uccharan": "ˌɛnpˌiːdˌʌbəljˌuːˈɛs ˈaː spˈoːɾʈĩɡ ʃuːʈˈʌrs ˌeːsoːsɪˈeːʃən ˈɔf ɔsʈɾˈeːlɪjˌaː ˌɛnˌɛsdˈʌbəljˌuː ˈĩk keː sˌaːɟʰeːdˈaːɾi mẽː spˈoːɾʈĩɡ ʃˈuːʈəɾ ˌeːsoːsɪˈeːʃən keː sɪkˈaːɾ pɾˈoːɡɾaːm keː lˈaːjək sʋˌəjnsˈeːʋəkˌən keː bʰˈʌɾti kˈʌɪl ɡˈʌɪl"
    }
   ]
  }

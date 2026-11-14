@@ -1,0 +1,444 @@
+# Sindhi in Perso-Arabic script. espeak-ng voice "sd". Written for uccharan
+# from specs/sd.md and specs/ur.md. The
+# script is decoded like an Indic script: every consonant letter carries a
+# short vowel unless a vowel letter, a vowel mark or jazm follows, and the
+# Hindi-type deletion and stress rules apply. In compatible mode common words
+# come from the word table `data/sd.ucd`.
+
+[meta]
+tag = sd
+block = 0600
+stress = penult
+deletion = final
+inherent = ə ʌ
+anusvara = split
+visarga = h
+geminate = b p t ʈ ɟ c d ɖ k ɡ q
+final-release = n m j r l
+final-release-not-after = r n
+
+[letters]
+ب b consonant
+پ p consonant
+ت t̪ consonant
+ٹ ʈ consonant
+ث s consonant
+ج ɟ consonant
+چ c consonant
+ح h consonant
+خ x consonant
+د d consonant
+ڈ ɖ consonant
+ذ z consonant
+ر r consonant
+ڑ r. consonant
+ز z consonant
+ژ ʒ consonant
+س s consonant
+ش ʃ consonant
+ص ʂ consonant
+ض z consonant
+ط t consonant
+ظ ʐ consonant
+غ ɣ consonant
+ف f consonant
+ق q consonant
+ک kʰ consonant
+ك k consonant
+گ ɡ consonant
+ل l consonant
+م m consonant
+ن n consonant
+ہ h consonant
+ه h consonant
+ۂ h consonant
+ۃ t consonant
+ة t consonant
+و ʋ consonant
+ی j consonant
+ي j consonant
+ى j consonant
+Ḃ bʰ consonant
+Ṕ pʰ consonant
+Ṫ tʰ consonant
+Ť ʈʰ consonant
+Ĵ ɟʰ consonant
+Ĉ cʰ consonant
+Ḋ dʰ consonant
+Ď ɖʰ consonant
+Ḱ kʰ consonant
+Ġ ɡʰ consonant
+Ř r.h consonant
+Ŕ rʰ consonant
+Ĺ lʰ consonant
+Ṁ mʰ consonant
+Ń nʰ consonant
+ٻ b consonant
+ڀ bʰ consonant
+ٽ ʈ consonant
+ٿ tʰ consonant
+ٺ ʈʰ consonant
+ڄ ɟ consonant
+ڃ ɲ consonant
+ڇ cʰ consonant
+ڌ dʰ consonant
+ڊ ɖ consonant
+ڏ ɖ consonant
+ڍ ɖʰ consonant
+ڙ r. consonant
+ڦ pʰ consonant
+ڪ k consonant
+ڳ ɡ consonant
+ڱ ŋ consonant
+ڻ ɳ consonant
+ا aː vowel
+آ aː vowel
+أ aː vowel
+إ ɪ vowel
+ے eː vowel
+ۓ eː vowel
+َ a sign
+ِ ɪ sign
+ُ ʊ sign
+ٰ aː sign
+ٗ uː sign
+ْ virama
+ھ h consonant
+ء ignore
+ً ignore
+ٍ ignore
+ٌ ignore
+ٔ ignore
+ع ignore
+ئ ignore
+# Markers written by the [pre] rules (never in real text).
+Ā aː sign
+Ă a vowel
+Ō oː sign
+Ē eː sign
+Ī i sign
+Ǐ iː sign
+Ȧ a sign
+ꞁ i vowel
+Ṉ n dead
+Ñ candrabindu
+Ӗ eː vowel
+Ŏ oː vowel
+
+[classes]
+CC = ٻ ڀ ٽ ٿ ٺ ڄ ڃ ڇ ڌ ڊ ڏ ڍ ڙ ڦ ڪ ڳ ڱ ڻ ب پ ت ٹ ث ج چ ح خ د ڈ ذ ر ڑ ز ژ س ش ص ض ط ظ غ ف ق ک ك گ ل م ن ہ ه ۂ ۃ ة و ی ي ى Ḃ Ṕ Ṫ Ť Ĵ Ĉ Ḋ Ď Ḱ Ġ Ř Ŕ Ĺ Ṁ Ń ھ
+VL = ا آ ے ۓ ی ي و
+S = ˈ ˌ
+
+[pre]
+# Aspirates written with do-chashmi he.
+بھ -> Ḃ
+پھ -> Ṕ
+تھ -> Ṫ
+ٹھ -> Ť
+جھ -> Ĵ
+چھ -> Ĉ
+دھ -> Ḋ
+ڈھ -> Ď
+کھ -> Ḱ
+گھ -> Ġ
+ڑھ -> Ř
+رھ -> Ŕ
+لھ -> Ĺ
+مھ -> Ṁ
+نھ -> Ń
+# Shadda doubles the consonant.
+بّ -> بْب
+پّ -> پْپ
+تّ -> تْت
+ٹّ -> ٹْٹ
+ثّ -> ثْث
+جّ -> جْج
+چّ -> چْچ
+حّ -> حْح
+خّ -> خْخ
+دّ -> دْد
+ڈّ -> ڈْڈ
+ذّ -> ذْذ
+رّ -> رْر
+ڑّ -> ڑْڑ
+زّ -> زْز
+ژّ -> ژْژ
+سّ -> سْس
+شّ -> شْش
+صّ -> صْص
+ضّ -> ضْض
+طّ -> طْط
+ظّ -> ظْظ
+غّ -> غْغ
+فّ -> فْف
+قّ -> قْق
+کّ -> کْک
+گّ -> گْگ
+لّ -> لْل
+مّ -> مْم
+نّ -> نْن
+وّ -> وْو
+یّ -> یْی
+# Alif: a long vowel after a consonant, a short one at the start of a word.
+ا -> Ā / {CC} _
+ای -> Ӗ / # _
+او -> Ŏ / # _
+اً -> ȦṈ / {CC} _
+ا -> Ă / # _ {CC}
+ع -> Ā / {CC} _
+ع -> Ă / # _
+# Vav: oː after a consonant before a consonant or at the end, else v.
+و -> Ō / {CC} _ {CC} | {CC} _ # | {CC} _ ں
+# Ye: i at the end, eː inside a word after a consonant, y before a vowel.
+ی -> ْی / {CC} _ {VL}
+ي -> ْي / {CC} _ {VL}
+ی -> Ǐ / {CC} _ #
+ي -> Ǐ / {CC} _ #
+ی -> Ǐ / {CC} _ ں
+ي -> Ǐ / {CC} _ ں
+ی -> Ē / # {CC} _ {CC}
+ي -> Ē / # {CC} _ {CC}
+ی -> Ǐ / {CC} _ {CC}
+ي -> Ǐ / {CC} _ {CC}
+ی -> ꞁ / ئ _
+ي -> ꞁ / ئ _
+ئ -> Ȧ / {CC} _
+ے -> Ē / {CC} _
+# Final he after a consonant is a short a.
+ہ -> Ȧ / {CC} _ #
+ه -> Ȧ / {CC} _ #
+# Noon ghunna: nasal after alif and vav, else n.
+ں -> Ñ / ا _ | و _
+ں -> Ṉ
+
+[post]
+# Final unstressed ii is short.
+iː -> i / {!S} _ #
+
+[post.improved]
+# ص and ظ are s and z in Urdu.
+ʂ -> s
+ʐ -> z
+
+[words]
+# The Sindhi signs for "and" and "in".
+۽ ˈaẽ
+۾ mẽ
+# Number words as the reference reads digits (derived from running
+# espeak-ng 1.52.0 on the numbers 0-99 and the scale numbers).
+@ڙب bˈʊr.i
+@ڙپ hˈɪkʊ
+@ڙت bˈa
+@ڙٹ ʈˈe
+@ڙث cˈaːr
+@ڙج pˈanɟa
+@ڙچ cʰˈaha
+@ڙح sˈatːa
+@ڙخ ˈaʈʰa
+@ڙد nˈaʋa
+@ڙپب ɖˈaha
+@ڙپپ jaːɾˈaha
+@ڙپت baːɾˈaha
+@ڙپٹ teːɾˈaha
+@ڙپث cɔɖˈaha
+@ڙپج pandɾˈaha
+@ڙپچ soɾˈaha
+@ڙپح satɾˈaha
+@ڙپخ arr.ˈaha
+@ڙپد ʊɳʋˈiːha
+@ڙتب ʋˈiːha
+@ڙتپ ɪkʋˈiːha
+@ڙتت baːʋˈiːha
+@ڙتٹ ʈeːʋˈiːha
+@ڙتث coːʋˈiːha
+@ڙتج panɟʋˈiːha
+@ڙتچ cʰaʋˈiːha
+@ڙتح sˌataːʋˈiːha
+@ڙتخ ˌaʈʰaːʋˈiːha
+@ڙتد ˌʊɳaʈˈiːha
+@ڙٹب ʈˈiːha
+@ڙٹپ ˌɪkaʈˈiːha
+@ڙٹت baʈˈiːha
+@ڙٹٹ ʈeːʈˈiːha
+@ڙٹث coːʈˈiːha
+@ڙٹج pˌanɟatˈiːha
+@ڙٹچ cʰaʈˈiːha
+@ڙٹح sˌatatˈiːha
+@ڙٹخ ˌaʈʰatˈiːha
+@ڙٹد ˌʊɳtaːlˈiːha
+@ڙثب caːlˈiːha
+@ڙثپ ˌɪktaːlˈiːha
+@ڙثت bˌaːɪtaːlˈiːha
+@ڙثٹ ʈˌeːtaːlˈiːha
+@ڙثث cˌoːɪtaːlˈiːha
+@ڙثج pˌanɟeːtaːlˈiːha
+@ڙثچ cʰˌaːɪtaːlˈiːha
+@ڙثح sˌateːtaːlˈiːha
+@ڙثخ ˌaʈʰeːtaːlˈiːha
+@ڙثد ʊɳʋˈanɟaːh
+@ڙجب pˈanɟaːh
+@ڙجپ ɪkʋˈanɟaːh
+@ڙجت baːʋˈanɟaːh
+@ڙجٹ ʈeːʋˈanɟaːh
+@ڙجث coːʋˈanɟaːh
+@ڙجج panɟʋˈanɟaːh
+@ڙجچ cʰaːʋˈanɟaːh
+@ڙجح satʋˈanɟaːh
+@ڙجخ aʈʰʋˈanɟaːh
+@ڙجد ˌʊɳahˈaʈʰɪ
+@ڙچب sˈaʈʰɪ
+@ڙچپ ˌɪkahˈaʈʰɪ
+@ڙچت baːhˈaʈʰɪ
+@ڙچٹ ʈeːhˈaʈʰɪ
+@ڙچث coːhˈaʈʰɪ
+@ڙچج pˌanɟahˈaʈʰɪ
+@ڙچچ cʰaːhˈaʈʰɪ
+@ڙچح sˌatahˈaʈʰɪ
+@ڙچخ ˌaʈʰahˈaʈʰɪ
+@ڙچد ʊɳhˈatːar
+@ڙحب sˈatːar
+@ڙحپ ˌɪkahˈatːar
+@ڙحت baːhˈatar
+@ڙحٹ ʈeːhˈatar
+@ڙحث coːhˈatar
+@ڙحج pˌanɟahˈatar
+@ڙحچ cʰaːhˈatar
+@ڙحح satˈatːar
+@ڙحخ ˌaʈʰahˈatar
+@ڙحد ˌʊɳɪˈaːsi
+@ڙخب ˈassi
+@ڙخپ ˌɪkɪˈaːsi
+@ڙخت bɪˈaːsi
+@ڙخٹ ʈeːˈaːsi
+@ڙخث cˌɔoːɾˈaːsi
+@ڙخج panɟˈaːsi
+@ڙخچ cʰahˈaːsi
+@ڙخح sˌatɪˈaːsi
+@ڙخخ ˌaʈʰɪˈaːsi
+@ڙخد ˌʊɳɪaːnˈaʋeː
+@ڙدب nˈaʋʋeː
+@ڙدپ ˌɪkɪanˈaʋeː
+@ڙدت bˌɪaːnˈaʋeː
+@ڙدٹ ʈˌɪaːnˈaʋɛː
+@ڙدث cˌoːraːnˈaʋeː
+@ڙدج pˌanɟaːnˈaʋeː
+@ڙدچ cʰˌahaːnˈaʋeː
+@ڙدح sˌatɪaːnˈaʋeː
+@ڙدخ ˌaʈʰɪaːnˈaʋeː
+@ڙدد nˌaʋaːnˈaʋeː
+@سؤ basˈaʊ
+@هزار hazˈaːɾ
+@لک lˈaːkh
+@ڪروڙ karˈoːr
+
+[unstressed]
+
+[numbers]
+# Keys for the [words] table (not words of the language).
+0 ڙب
+1 ڙپ
+2 ڙت
+3 ڙٹ
+4 ڙث
+5 ڙج
+6 ڙچ
+7 ڙح
+8 ڙخ
+9 ڙد
+10 ڙپب
+11 ڙپپ
+12 ڙپت
+13 ڙپٹ
+14 ڙپث
+15 ڙپج
+16 ڙپچ
+17 ڙپح
+18 ڙپخ
+19 ڙپد
+20 ڙتب
+21 ڙتپ
+22 ڙتت
+23 ڙتٹ
+24 ڙتث
+25 ڙتج
+26 ڙتچ
+27 ڙتح
+28 ڙتخ
+29 ڙتد
+30 ڙٹب
+31 ڙٹپ
+32 ڙٹت
+33 ڙٹٹ
+34 ڙٹث
+35 ڙٹج
+36 ڙٹچ
+37 ڙٹح
+38 ڙٹخ
+39 ڙٹد
+40 ڙثب
+41 ڙثپ
+42 ڙثت
+43 ڙثٹ
+44 ڙثث
+45 ڙثج
+46 ڙثچ
+47 ڙثح
+48 ڙثخ
+49 ڙثد
+50 ڙجب
+51 ڙجپ
+52 ڙجت
+53 ڙجٹ
+54 ڙجث
+55 ڙجج
+56 ڙجچ
+57 ڙجح
+58 ڙجخ
+59 ڙجد
+60 ڙچب
+61 ڙچپ
+62 ڙچت
+63 ڙچٹ
+64 ڙچث
+65 ڙچج
+66 ڙچچ
+67 ڙچح
+68 ڙچخ
+69 ڙچد
+70 ڙحب
+71 ڙحپ
+72 ڙحت
+73 ڙحٹ
+74 ڙحث
+75 ڙحج
+76 ڙحچ
+77 ڙحح
+78 ڙحخ
+79 ڙحد
+80 ڙخب
+81 ڙخپ
+82 ڙخت
+83 ڙخٹ
+84 ڙخث
+85 ڙخج
+86 ڙخچ
+87 ڙخح
+88 ڙخخ
+89 ڙخد
+90 ڙدب
+91 ڙدپ
+92 ڙدت
+93 ڙدٹ
+94 ڙدث
+95 ڙدج
+96 ڙدچ
+97 ڙدح
+98 ڙدخ
+99 ڙدد
+scale100 سؤ
+scale1000 هزار
+scale100000 لک
+scale10000000 ڪروڙ
+glue-hundred yes
+grouping indian

@@ -40,7 +40,7 @@ FLORES = {"bn": "ben_Beng", "mr": "mar_Deva", "ne": "npi_Deva", "gu": "guj_Gujr"
           "as": "asm_Beng", "ta": "tam_Taml", "te": "tel_Telu", "kn": "kan_Knda", "ml": "mal_Mlym", "ur": "urd_Arab",
           "sd": "snd_Arab", "si": "sin_Sinh", "es": "spa_Latn", "fr": "fra_Latn", "de": "deu_Latn", "it": "ita_Latn",
           "pt": "por_Latn", "nl": "nld_Latn", "pl": "pol_Latn", "ru": "rus_Cyrl", "tr": "tur_Latn", "sa": "san_Deva",
-          "mai": "mai_Deva", "bho": "bho_Deva"}
+          "mai": "mai_Deva", "bho": "bho_Deva", "mag": "mag_Deva"}
 
 # uccharan tag -> (Tatoeba code, Wikipedia code, letter regex of the language's script)
 LANGS: dict[str, tuple[str, str, str]] = {
@@ -71,6 +71,7 @@ LANGS: dict[str, tuple[str, str, str]] = {
     "ru": ("rus", "ru", r"[а-яё]"),
     "tr": ("tur", "tr", r"[a-zçğıöşü]"),
     "sa": ("san", "sa", r"[ऀ-ॿ]"),
+    "mag": ("mag", "mag", r"[ऀ-ॿ]"),
 }
 
 

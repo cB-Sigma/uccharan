@@ -269,6 +269,155 @@ pub unsafe extern "C" fn uccharan_load_misaki(
     }
 }
 
+/// Normalise-only mode: the spoken form of `text` for a voice that reads
+/// text, as JSON `{"text", "sentences", "spans"}` where every range gives
+/// `byte`, `char` (code point) and `utf16` offsets (see docs/normalize.md).
+///
+/// `options_json` may be NULL or a JSON object with the members `mode`,
+/// `digits`, `en_scale`, `latin`, `urls`, `respell` and `wordlists` (an
+/// array of word lists as TSV, PLS or JSON text, highest priority first).
+///
+/// Returns a newly allocated string, or NULL when an argument is invalid
+/// (unknown language, malformed options or word list).
+///
+/// # Safety
+/// `p` must be a live phonemizer; `text` and `lang` valid C strings;
+/// `options_json` NULL or a valid C string.
+#[no_mangle]
+pub unsafe extern "C" fn uccharan_normalize(
+    p: *const UccharanPhonemizer,
+    text: *const c_char,
+    lang: *const c_char,
+    options_json: *const c_char,
+) -> *mut c_char {
+    if p.is_null() || text.is_null() || lang.is_null() {
+        return std::ptr::null_mut();
+    }
+    // SAFETY: pointers were checked for NULL and the caller guarantees validity.
+    let (p, text, lang) = unsafe { (&*p, CStr::from_ptr(text), CStr::from_ptr(lang)) };
+    let opts = if options_json.is_null() {
+        Some("")
+    } else {
+        // SAFETY: non-NULL and valid per the contract.
+        unsafe { CStr::from_ptr(options_json) }.to_str().ok()
+    };
+    let (Ok(text), Some(lang), Some(opts)) = (
+        text.to_str(),
+        lang.to_str().ok().and_then(Lang::parse),
+        opts,
+    ) else {
+        return std::ptr::null_mut();
+    };
+    match uccharan_core::normalize_api::normalize_json(&p.inner, text, lang, opts) {
+        Ok(out) => CString::new(out).map_or(std::ptr::null_mut(), CString::into_raw),
+        Err(_) => std::ptr::null_mut(),
+    }
+}
+
+/// As [`uccharan_phonemize`], with pronunciation word lists applied:
+/// `wordlists_json` is a JSON array of word lists (TSV, PLS or JSON text),
+/// highest priority first. A matched entry's IPA replaces the word's
+/// reading (in the profile's phone set); an entry with only a spoken form
+/// is phonemised from it.
+///
+/// Returns a newly allocated string, or NULL when an argument is invalid.
+///
+/// # Safety
+/// As [`uccharan_phonemize`]; `wordlists_json` must be a valid C string.
+#[no_mangle]
+pub unsafe extern "C" fn uccharan_phonemize_wordlists(
+    p: *const UccharanPhonemizer,
+    text: *const c_char,
+    lang: *const c_char,
+    profile: *const c_char,
+    flags: u32,
+    wordlists_json: *const c_char,
+) -> *mut c_char {
+    if p.is_null()
+        || text.is_null()
+        || lang.is_null()
+        || profile.is_null()
+        || wordlists_json.is_null()
+    {
+        return std::ptr::null_mut();
+    }
+    // SAFETY: pointers were checked for NULL and the caller guarantees validity.
+    let (p, text, lang, prof, lists) = unsafe {
+        (
+            &*p,
+            CStr::from_ptr(text),
+            CStr::from_ptr(lang),
+            CStr::from_ptr(profile),
+            CStr::from_ptr(wordlists_json),
+        )
+    };
+    let (Ok(text), Some(lang), Some(prof), Ok(lists)) = (
+        text.to_str(),
+        lang.to_str().ok().and_then(Lang::parse),
+        prof.to_str().ok().and_then(Profile::parse),
+        lists.to_str(),
+    ) else {
+        return std::ptr::null_mut();
+    };
+    let wrapped = format!("{{\"wordlists\":{lists}}}");
+    let Ok(o) = uccharan_core::normalize_api::options_from_json(&wrapped) else {
+        return std::ptr::null_mut();
+    };
+    let opt = options(lang, flags);
+    let out = uccharan_core::normalize_api::render_with_wordlists(
+        &p.inner,
+        text,
+        &opt,
+        prof,
+        flags & UCCHARAN_NO_PUNCTUATION == 0,
+        &o.wordlists,
+    );
+    CString::new(out).map_or(std::ptr::null_mut(), CString::into_raw)
+}
+
+/// Convert a word list (TSV, PLS or JSON text) to `to`: "tsv", "json" or
+/// "pls" (`lang` picks the PLS language and may be NULL for the entries of
+/// any language).
+///
+/// Returns a newly allocated string, or NULL for invalid input.
+///
+/// # Safety
+/// `text` and `to` must be valid C strings; `lang` NULL or a valid C string.
+#[no_mangle]
+pub unsafe extern "C" fn uccharan_wordlist_convert(
+    text: *const c_char,
+    to: *const c_char,
+    lang: *const c_char,
+) -> *mut c_char {
+    if text.is_null() || to.is_null() {
+        return std::ptr::null_mut();
+    }
+    // SAFETY: pointers were checked for NULL and the caller guarantees validity.
+    let (text, to) = unsafe { (CStr::from_ptr(text), CStr::from_ptr(to)) };
+    let lang = if lang.is_null() {
+        None
+    } else {
+        // SAFETY: non-NULL and valid per the contract.
+        unsafe { CStr::from_ptr(lang) }
+            .to_str()
+            .ok()
+            .and_then(Lang::parse)
+    };
+    let (Ok(text), Ok(to)) = (text.to_str(), to.to_str()) else {
+        return std::ptr::null_mut();
+    };
+    let Ok(w) = uccharan_core::wordlist::WordList::parse_any(text) else {
+        return std::ptr::null_mut();
+    };
+    let out = match to {
+        "tsv" => w.to_tsv(),
+        "json" => w.to_json(),
+        "pls" => w.to_pls(lang),
+        _ => return std::ptr::null_mut(),
+    };
+    CString::new(out).map_or(std::ptr::null_mut(), CString::into_raw)
+}
+
 /// Release a string returned by this library. NULL is ignored.
 ///
 /// # Safety
@@ -311,6 +460,50 @@ mod tests {
             uccharan_free(p);
             uccharan_free(std::ptr::null_mut());
             uccharan_string_free(std::ptr::null_mut());
+        }
+    }
+}
+
+#[cfg(test)]
+mod textnorm_tests {
+    use super::*;
+
+    #[test]
+    fn normalize_and_word_lists() {
+        let p = uccharan_new();
+        let c = |s: &str| CString::new(s).unwrap();
+        let (text, lang) = (c("Pay ₹500."), c("en-us"));
+        // SAFETY: all pointers are valid for the duration of the calls.
+        unsafe {
+            let s = uccharan_normalize(p, text.as_ptr(), lang.as_ptr(), std::ptr::null());
+            let out = CStr::from_ptr(s).to_str().unwrap().to_string();
+            assert!(
+                out.starts_with("{\"text\":\"Pay five hundred rupees.\""),
+                "{out}"
+            );
+            uccharan_string_free(s);
+            let bad = c("{\"latin\":\"x\"}");
+            assert!(uccharan_normalize(p, text.as_ptr(), lang.as_ptr(), bad.as_ptr()).is_null());
+            let lists = c("[\"Kokoro\\ten\\tkəkˈɔːɹoʊ\"]");
+            let (k, prof) = (c("Kokoro"), c("espeak-ipa"));
+            let s = uccharan_phonemize_wordlists(
+                p,
+                k.as_ptr(),
+                lang.as_ptr(),
+                prof.as_ptr(),
+                0,
+                lists.as_ptr(),
+            );
+            assert_eq!(CStr::from_ptr(s).to_str().unwrap(), "kəkˈɔːɹoʊ");
+            uccharan_string_free(s);
+            let tsv = c("Kokoro\ten\tkəkˈɔːɹoʊ\n");
+            let s = uccharan_wordlist_convert(tsv.as_ptr(), c("pls").as_ptr(), lang.as_ptr());
+            assert!(CStr::from_ptr(s)
+                .to_str()
+                .unwrap()
+                .contains("<grapheme>Kokoro</grapheme>"));
+            uccharan_string_free(s);
+            uccharan_free(p);
         }
     }
 }

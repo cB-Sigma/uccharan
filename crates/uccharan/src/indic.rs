@@ -1097,6 +1097,7 @@ impl Indic {
         clause_final: bool,
         compat: bool,
         lang: crate::Lang,
+        words: Option<&crate::data::Data>,
     ) -> Vec<crate::WordOut> {
         let n = items.len();
         let mut out: Vec<crate::WordOut> = Vec::with_capacity(n);
@@ -1138,7 +1139,17 @@ impl Indic {
                 }
                 continue;
             }
-            let mut ipa = self.word_as(&it.text, compat, it.generated);
+            // The language's word table (compatible mode), then the rules.
+            let mut found = String::new();
+            let listed = !it.generated && words.is_some_and(|d| d.lookup(&it.text, &mut found));
+            let mut ipa = if listed && compat {
+                found
+            } else if listed {
+                // Improved mode keeps the table's vowels and fixes its letters.
+                self.post_improved.apply(&found, &self.classes)
+            } else {
+                self.word_as(&it.text, compat, it.generated)
+            };
             if it.number_tail && self.numbers.demote_tail {
                 ipa = ipa.replace('ˈ', "ˌ");
             }

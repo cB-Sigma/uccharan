@@ -1,0 +1,21 @@
+# split	class	input	expected	options
+dev	cardinal	माझ्याकडे 3 पुस्तके आहेत.	माझ्याकडे तीन पुस्तके आहेत.	
+heldout	cardinal	वर्गात 25 मुले आहेत.	वर्गात पंचवीस मुले आहेत.	
+dev	cardinal	100	शंभर || एकशे || एक शंभर	
+heldout	cardinal	1000	एक हजार || हजार	
+dev	cardinal	१२	बारा	
+heldout	percent	50%	पन्नास टक्के	
+dev	cardinal	1,00,000	एक लाख	
+heldout	cardinal	45	पंचेचाळीस	
+dev	cardinal	99	नव्व्याण्णव || नव्याण्णव	
+heldout	year	2024	दोन हजार चोवीस	
+dev	cardinal	7	सात	
+heldout	cardinal	18	अठरा	
+dev	cardinal	60	साठ	
+heldout	cardinal	250	दोनशे पन्नास || दोन शे पन्नास	
+dev	cardinal	12,50,000	बारा लाख पन्नास हजार	
+heldout	cardinal	33	तेहेतीस || तेहतीस	
+dev	cardinal	0	शून्य	
+heldout	cardinal	1,00,00,000	एक कोटी	
+dev	cardinal	२०	वीस	
+heldout	cardinal	70	सत्तर	

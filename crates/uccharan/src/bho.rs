@@ -192,8 +192,183 @@ fn past_stem(w: &str) -> Option<&str> {
     None
 }
 
+const UNSTRESSED_MAG: &[&str] = &[
+    "आउ",
+    "अउ",
+    "ई",
+    "ऊ",
+    "उ",
+    "इ",
+    "के",
+    "कि",
+    "जे",
+    "ला",
+    "लगी",
+    "लेल",
+    "पर",
+    "मे",
+    "में",
+    "से",
+    "हइ",
+    "हई",
+    "हय",
+    "हका",
+    "हके",
+    "हको",
+    "हथ",
+    "हम",
+    "हल",
+    "हलइ",
+    "हलई",
+    "हलय",
+    "हियो",
+    "हे",
+    "हो",
+];
+
+const NUMBERS_MAG: &[(&str, &str)] = &[
+    ("दो", "दू"),
+    ("छह", "छव"),
+    ("छः", "छव"),
+    ("ग्यारह", "एगारह"),
+    ("पहला", "पहिला"),
+    ("पहली", "पहिला"),
+    ("दूसरा", "दोसर"),
+    ("दूसरी", "दोसर"),
+    ("तीसरा", "तेसर"),
+    ("तीसरी", "तेसर"),
+];
+
+/// Magahi words whose reading is not the Hindi one of their spelling.
+const WORDS_MAG: &[(&str, &str)] = &[("में", "मे")];
+
+fn is_consonant(c: char) -> bool {
+    ('क'..='ह').contains(&c) || ('\u{0958}'..='\u{095f}').contains(&c)
+}
+
+/// Improved reading of one Magahi word (Verma 2003, "Magahi", in Cardona &
+/// Jain, *The Indo-Aryan Languages*; Aryani 1965, *A Grammar of Magahi*;
+/// Grierson, *Linguistic Survey of India* V.2):
+///
+/// * no ʃ ʂ ɳ: श ष are s, ण and the anusvara before a retroflex are n;
+///   Sanskrit loans starting with व (not वा) have b;
+/// * the verb endings -ई/-इ after a bare consonant and -लय -तय -कय (हलई,
+///   गेलय, होतय) end in the diphthong əi;
+/// * a final short ि ु is said, and the inherent vowel before its
+///   consonant drops as before any other vowel (अखनि əkʰni);
+/// * an anusvara after a long vowel nasalises it before a stop (जांच ɟãːc);
+///   before ह it is n;
+/// * a reduplicated word is read as twice its half (लसलस ləsləs);
+/// * no final inherent vowel after a conjunct (क्षेत्र).
+fn magahi(hi: &Hindi<'_>, w: &str) -> String {
+    let w = WORDS_MAG
+        .iter()
+        .find(|(from, _)| *from == w)
+        .map_or(w, |(_, to)| to);
+    let cs: Vec<char> = w.chars().collect();
+    let n = cs.len();
+    // Reduplication.
+    if n >= 4 && n % 2 == 0 && cs[..n / 2] == cs[n / 2..] && is_consonant(cs[0]) {
+        let half: String = cs[..n / 2].iter().collect();
+        let h = magahi(hi, &half);
+        return format!("{h}{}", crate::ipa::strip_stress(&h));
+    }
+    // Anusvara after a long vowel: a nasal vowel.
+    let mut sp = String::with_capacity(w.len());
+    for (i, &c) in cs.iter().enumerate() {
+        let after_long = i > 0
+            && matches!(
+                cs[i - 1],
+                'ा' | 'ी' | 'ू' | 'े' | 'ो' | 'आ' | 'ई' | 'ऊ' | 'ए' | 'ओ'
+            );
+        let before_fricative = cs
+            .get(i + 1)
+            .is_some_and(|&d| matches!(d, 'स' | 'श' | 'ष' | 'ह'));
+        sp.push(if c == 'ं' && after_long && !before_fricative {
+            'ँ'
+        } else {
+            c
+        });
+    }
+    let last = cs.last().copied();
+    let before = if n >= 2 { Some(cs[n - 2]) } else { None };
+    let bare_before = before.is_some_and(is_consonant);
+    let ai_ending = bare_before
+        && n >= 2
+        && (matches!(last, Some('ई' | 'इ'))
+            || (last == Some('य') && (n == 2 || matches!(before, Some('ल' | 'त' | 'क')))));
+    let mut ipa = if ai_ending {
+        // Read with a final -ā, then turn it into the diphthong.
+        let mut stem: String = sp.chars().take(n - 1).collect();
+        stem.push('ा');
+        let r = base_word(hi, &stem, Lang::Mag);
+        match r.strip_suffix("aː") {
+            Some(base) => format!("{base}əi"),
+            None => r,
+        }
+    } else if matches!(last, Some('ि' | 'ु')) && bare_before && n >= 3 {
+        // Final short i/u: drop the inherent vowel before the last consonant
+        // (VCəC -> VCC), then add the vowel.
+        let stem: String = sp.chars().take(n - 1).collect();
+        let r = base_word(hi, &stem, Lang::Mag);
+        let mut chars: Vec<char> = r.chars().collect();
+        let pos = chars.iter().rposition(|&c| c == 'ə' || c == 'ʌ');
+        if let Some(p) = pos {
+            let cons_after = chars[p + 1..].iter().all(|&c| !is_vowel_ipa(c) && c != 'ː');
+            let k = chars[..p]
+                .iter()
+                .rposition(|&c| is_vowel_ipa(c) || c == 'ː');
+            // Exactly one consonant (with its marks) between the vowels.
+            let one_cons = k.is_some_and(|k| {
+                chars[k + 1..p]
+                    .iter()
+                    .filter(|&&c| !matches!(c, 'ʰ' | 'ʱ' | 'ˈ' | 'ˌ' | '\u{303}'))
+                    .count()
+                    == 1
+            });
+            if cons_after && one_cons && p + 1 < chars.len() {
+                chars.remove(p);
+            }
+        }
+        let mut r: String = chars.into_iter().collect();
+        r.push(if last == Some('ि') { 'i' } else { 'u' });
+        r
+    } else {
+        base_word(hi, &sp, Lang::Mag)
+    };
+    // No final inherent vowel after a conjunct.
+    if n >= 3 && cs[n - 2] == '्' && is_consonant(cs[n - 1]) {
+        if let Some(s) = ipa.strip_suffix('ə') {
+            ipa = s.to_string();
+        }
+    }
+    let mut ipa = ipa
+        .replace(['ʃ', 'ʂ'], "s")
+        .replace('ɳ', "n")
+        .replace("ŋɦ", "nɦ")
+        .replace("ŋh", "nh");
+    if cs.first() == Some(&'व') && !matches!(cs.get(1), Some('ा' | 'ॉ')) {
+        for (from, to) in [("ʋ", "b"), ("w", "b"), ("ˈʋ", "ˈb"), ("ˈw", "ˈb")] {
+            if let Some(rest) = ipa.strip_prefix(from) {
+                ipa = format!("{to}{rest}");
+                break;
+            }
+        }
+    }
+    ipa
+}
+
 /// Improved reading of one Devanagari word.
 pub fn word(hi: &Hindi<'_>, w: &str, lang: Lang) -> String {
+    if lang == Lang::Mag {
+        return magahi(hi, w);
+    }
+    base_word(hi, w, lang)
+}
+
+/// The Bhojpuri / Maithili reading (Magahi builds on it, without the
+/// Bhojpuri past-stem vowel).
+fn base_word(hi: &Hindi<'_>, w: &str, lang: Lang) -> String {
     let maithili = lang == Lang::Mai;
     let (stem, avagraha) = match w.strip_suffix('ऽ') {
         Some(s) if !s.is_empty() => (s, true),
@@ -213,7 +388,7 @@ pub fn word(hi: &Hindi<'_>, w: &str, lang: Lang) -> String {
         stem
     };
     let mut ipa = match past_stem(stem) {
-        Some(st) if hi.lookup(stem).is_none() => hi.word_seam(stem, st),
+        Some(st) if lang != Lang::Mag && hi.lookup(stem).is_none() => hi.word_seam(stem, st),
         _ => hi.word(stem, false),
     };
     if ipa.is_empty() {
@@ -271,10 +446,10 @@ pub fn word(hi: &Hindi<'_>, w: &str, lang: Lang) -> String {
 
 /// Rewrite Hindi number words left by the number reader (improved mode).
 pub fn adapt_numbers(items: &mut [Item], lang: Lang) {
-    let table = if lang == Lang::Mai {
-        NUMBERS_MAI
-    } else {
-        NUMBERS_BHO
+    let table = match lang {
+        Lang::Mai => NUMBERS_MAI,
+        Lang::Mag => NUMBERS_MAG,
+        _ => NUMBERS_BHO,
     };
     for it in items {
         if let Some((_, to)) = table.iter().find(|(from, _)| *from == it.text) {
@@ -298,10 +473,10 @@ pub fn span(
     if compat {
         return out;
     }
-    let unstressed = if lang == Lang::Mai {
-        UNSTRESSED_MAI
-    } else {
-        UNSTRESSED_BHO
+    let unstressed = match lang {
+        Lang::Mai => UNSTRESSED_MAI,
+        Lang::Mag => UNSTRESSED_MAG,
+        _ => UNSTRESSED_BHO,
     };
     for (w, it) in out.iter_mut().zip(items) {
         let mut ipa = word(hi, &it.text, lang);
@@ -446,5 +621,17 @@ mod tests {
         assert!(w("चलऽ").ends_with('ə'));
         assert!(w("ऐसन").starts_with("əi"));
         assert!(w("बाड़े").contains('ɽ'));
+    }
+
+    #[test]
+    fn magahi_words() {
+        let hi = Hindi::new(None);
+        let w = |s: &str| crate::ipa::strip_stress(&word(&hi, s, Lang::Mag));
+        assert!(w("हलई").ends_with("ləi"));
+        assert!(w("गेलय").ends_with("ləi"));
+        assert!(w("अखनि").ends_with("kʰni"));
+        assert!(w("जांच").contains('\u{303}'));
+        assert!(!w("देश").contains('ʃ'));
+        assert_eq!(w("में"), "meː");
     }
 }

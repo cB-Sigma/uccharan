@@ -1,0 +1,269 @@
+{
+ "bn": {
+  "ALL": {
+   "exact": 8,
+   "n": 10,
+   "wer": 18.75
+  },
+  "cardinal": {
+   "exact": 8,
+   "n": 9,
+   "wer": 15.38
+  },
+  "year": {
+   "exact": 0,
+   "n": 1,
+   "wer": 33.33
+  }
+ },
+ "en-us": {
+  "ALL": {
+   "exact": 45,
+   "n": 45,
+   "wer": 0.0
+  },
+  "abbreviation": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "acronym": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 5,
+   "n": 5,
+   "wer": 0.0
+  },
+  "date": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "decimal": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "email": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "fraction": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "measure": {
+   "exact": 3,
+   "n": 3,
+   "wer": 0.0
+  },
+  "money": {
+   "exact": 5,
+   "n": 5,
+   "wer": 0.0
+  },
+  "ordinal": {
+   "exact": 3,
+   "n": 3,
+   "wer": 0.0
+  },
+  "percent": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "phone": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "plain": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "range": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "scale": {
+   "exact": 3,
+   "n": 3,
+   "wer": 0.0
+  },
+  "symbol": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "time": {
+   "exact": 3,
+   "n": 3,
+   "wer": 0.0
+  },
+  "url": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "year": {
+   "exact": 4,
+   "n": 4,
+   "wer": 0.0
+  }
+ },
+ "hi": {
+  "ALL": {
+   "exact": 42,
+   "n": 42,
+   "wer": 0.0
+  },
+  "abbreviation": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "acronym": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 8,
+   "n": 8,
+   "wer": 0.0
+  },
+  "date": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "decimal": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "digits": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "email": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "fraction": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "latin": {
+   "exact": 3,
+   "n": 3,
+   "wer": 0.0
+  },
+  "measure": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "money": {
+   "exact": 5,
+   "n": 5,
+   "wer": 0.0
+  },
+  "ordinal": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "percent": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "phone": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "plain": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "range": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "scale": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  },
+  "time": {
+   "exact": 3,
+   "n": 3,
+   "wer": 0.0
+  },
+  "url": {
+   "exact": 1,
+   "n": 1,
+   "wer": 0.0
+  },
+  "year": {
+   "exact": 2,
+   "n": 2,
+   "wer": 0.0
+  }
+ },
+ "mr": {
+  "ALL": {
+   "exact": 10,
+   "n": 10,
+   "wer": 0.0
+  },
+  "cardinal": {
+   "exact": 10,
+   "n": 10,
+   "wer": 0.0
+  }
+ },
+ "ne": {
+  "ALL": {
+   "exact": 6,
+   "n": 10,
+   "wer": 25.0
+  },
+  "cardinal": {
+   "exact": 6,
+   "n": 9,
+   "wer": 23.08
+  },
+  "year": {
+   "exact": 0,
+   "n": 1,
+   "wer": 33.33
+  }
+ },
+ "ta": {
+  "ALL": {
+   "exact": 5,
+   "n": 10,
+   "wer": 50.0
+  },
+  "cardinal": {
+   "exact": 5,
+   "n": 10,
+   "wer": 50.0
+  }
+ }
+}

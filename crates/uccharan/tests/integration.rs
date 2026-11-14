@@ -127,9 +127,10 @@ fn number_reading_styles() {
     o.normalize = Normalize::Off;
     assert_eq!(p.phonemize("It costs 5 dollars.", &o), "ɪt kˈɔsts dˈɑːlɚz.");
     let hi = Options::new(Lang::Hi);
+    // Compatible mode reads "दो सौ" as one word, as the reference does.
     assert_eq!(
         p.phonemize("यह ₹200 का है।", &hi),
-        p.phonemize("यह दो सौ रुपये का है।", &hi)
+        "jˌəh dˈoːsˈɔː ɾˈʊpjˌeː kaː hɛː."
     );
 }
 

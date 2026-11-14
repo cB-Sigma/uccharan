@@ -1,0 +1,248 @@
+{
+ "language": "sd",
+ "reference": "espeak-ng 1.52.0 voice sd (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 198107,
+  "per": 0.027868777983614916,
+  "per_without_stress": 0.02175256384356692,
+  "exact_sentence": 0.25592885375494073,
+  "exact_sentence_without_stress": 0.2648221343873518,
+  "piper_shape_per": 0.027689434977757586,
+  "piper_shape_exact_sentence": 0.25395256916996045,
+  "word_count_mismatch_sentences": 814,
+  "errors_by_class": {
+   "stress": {
+    "count": 1851,
+    "share": 0.3352653504799855,
+    "per_contribution": 0.009343435618125558
+   },
+   "vowel": {
+    "count": 1813,
+    "share": 0.32838253939503714,
+    "per_contribution": 0.009151620084095969
+   },
+   "other": {
+    "count": 733,
+    "share": 0.13276580329650425,
+    "per_contribution": 0.0037000206958865663
+   },
+   "consonant": {
+    "count": 613,
+    "share": 0.11103061039666727,
+    "per_contribution": 0.003094287430529966
+   },
+   "length": {
+    "count": 346,
+    "share": 0.06266980619452997,
+    "per_contribution": 0.0017465309151115307
+   },
+   "word-boundary": {
+    "count": 160,
+    "share": 0.028980257199782648,
+    "per_contribution": 0.0008076443538088003
+   },
+   "diacritic": {
+    "count": 5,
+    "share": 0.0009056330374932077,
+    "per_contribution": 2.523888605652501e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "∅→ə",
+    "count": 734
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 370
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 335
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 251
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 226
+   },
+   {
+    "edit": "∅→ː",
+    "count": 223
+   },
+   {
+    "edit": "∅→a",
+    "count": 213
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 197
+   },
+   {
+    "edit": " →∅",
+    "count": 144
+   },
+   {
+    "edit": "e→∅",
+    "count": 141
+   },
+   {
+    "edit": "ː→i",
+    "count": 131
+   },
+   {
+    "edit": "ː→∅",
+    "count": 123
+   },
+   {
+    "edit": "∅→b",
+    "count": 101
+   },
+   {
+    "edit": "∅→ʌ",
+    "count": 86
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 84
+   },
+   {
+    "edit": "a→∅",
+    "count": 78
+   },
+   {
+    "edit": "ː→ə",
+    "count": 73
+   },
+   {
+    "edit": "ɪ→∅",
+    "count": 71
+   },
+   {
+    "edit": "n→∅",
+    "count": 68
+   },
+   {
+    "edit": "∅→n",
+    "count": 66
+   },
+   {
+    "edit": "h→∅",
+    "count": 58
+   },
+   {
+    "edit": "e→j",
+    "count": 55
+   },
+   {
+    "edit": "i→∅",
+    "count": 47
+   },
+   {
+    "edit": "ə→∅",
+    "count": 47
+   },
+   {
+    "edit": "u→o",
+    "count": 46
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 4253,
+    "wrong": 232,
+    "rate": 0.054549729602633434
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 201,
+    "per": 0.050661348371272036,
+    "exact_sentence": 0.09950248756218906
+   },
+   "no-digits": {
+    "sentences": 811,
+    "per": 0.021432640273426375,
+    "exact_sentence": 0.29469790382244143
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-44",
+    "text": "ڊيوول، جيڪو شادي شده ۽ ٻن ٻارن جو پي آهي، ملر کي مطمعين نه ڪري سگهيو، جنهن سان ڪهاڻي لاڳاپيل هئي.",
+    "reference": "ɖjʋˈoːl ɟˈeːkoː ʃˈaːdi ʃədˈʌh ˈaẽ bˈʌn baːrˈʌn ɟˈoː pˈeː ˌaːheː məlˈʌr kʰˈeː mˌətmaːˈiːn nˈʌh kˈareː səɡˈʌhjoː ɟˈẽhɪ̃ sˈãː kəhˈaːɳi laːɡˈaːpjal hˈʊi",
+    "uccharan": "ɖjoːˈoːl ɟˈeːkoː ʃˈaːdi ʃədˈʌh ˈaẽ bˈʌn baːrˈʌn ɟˈoː pˈeː ˌaːheː məlˈʌr kʰˈeː mˌətəmaːjˈʌn nˈʌh kˈareː səɡˈʌhjoː ɟˈẽhɪ̃ sˈãː kəhˈaːɳi laːɡˈaːpjal hˈʊi"
+   },
+   {
+    "id": "flores-devtest-81",
+    "text": "نيشنل هريڪين سينٽر (NHC) چوي ٿو تہ هن وقت جيري کان زمين کي ڪو خطرو ناهي.",
+    "reference": "nˌeːʃənˈʌl hˌərikˈiːn sˌeːnəʈˈʌr ˈɛn ˈeɪtʃ sˈiː cʋˈeː tʰˈoː t̪ˈʌh hˈɪna ʋˈaqt ɟˈeːri kʰˈãː zəmˈiːn kʰˈeː kˈoː xətˈʌroː nˈaːhi",
+    "uccharan": "nˌeːʃənˈʌl hˌəriːkˈiːn sˌeːnəʈˈʌr ˌɛnˌeɪtʃsˈiː cʋˈeː tʰˈoː t̪ˈʌh hˈɪna ʋˈaqt ɟˈeːri kʰˈãː zəmˈiːn kʰˈeː kˈoː xətˈʌroː nˈaːhi"
+   },
+   {
+    "id": "flores-devtest-547",
+    "text": "سيپٽمبر 17، 1939 تائين، پولش دفاع پهريان ئي ٽٽي چڪو هو ۽ صرف اميد اها هئي ته رومانيا جي برج هيڊ سان گڏ واپسي ۽ ٻيهر منظم ڪجي.",
+    "reference": "sˌeːpəʈəmbˈʌr satɾˈaha hˌɪkʊ hazˈaːɾ naʋasˈaʊ ʊɳtˌaːlihˌa t̪aːˈiːn poːlˈʌʃ dˈɪfaː pˌəhərjˈaːn ˈiː ʈˈʌʈi cˈʌkoː hˈoː ˈaẽ ʂərˈʌf amˈiːd ˈɪhaː hˈʊi t̪ˈʌh roːmˈaːnjaː ɟˈeː bərˈʌɟ hˈeːɖ sˈãː ɡˈʌɖ ʋaːpˈʌsi ˈaẽ beːhˈʌr mˌənəʐˈʌm kˈʌɟi",
+    "uccharan": "sˌeːpəʈəmbˈʌr satɾˈaha hˈɪkʊ hazˈaːɾ nˈaʋabasˈaʊ ˌʊɳtaːlˈiːha t̪aːˈiːn poːlˈʌʃ dˈɪfaː pˌəhərjˈaːn ˈiː ʈˈʌʈi cˈʌkoː hˈoː ˈaẽ ʂərˈʌf amˈiːd ˈɪhaː hˈʊi t̪ˈʌh roːmˈaːnjaː ɟˈeː bərˈʌɟ hˈeːɖ sˈãː ɡˈʌɖ ʋaːpˈʌsi ˈaẽ beːhˈʌr mˌənəʐˈʌm kˈʌɟi"
+   },
+   {
+    "id": "flores-devtest-962",
+    "text": "پلٽ وائيس ڍنڍن جي قومي پارڪ تمام گهڻي جهنگ سان ڍڪيل آهي، خاص طور تي بيچ، اسپروس ۽ فر جي وڻن سان گڏ، ۽ هن ۾ الپائن ۽ ميڊيٽرينين وڻ ٽڻ شامل آهن.",
+    "reference": "pəlˈʌʈ ʋaːˈiːs ɖʰˌənəɖʰˈʌn ɟˈeː qˈoːmi paːrˈʌk t̪əmˈaːm ɡəhˈʌɳi ɟəhˈʌnɡ sˈãː ɖʰˈʌkjal ˌaːheː xˈaːʂ tˈoːr t̪ˈeː bˈeːc ˌasəprˈoːs ˈaẽ fˈʌr ɟˈeː ʋəɳˈʌn sˈãː ɡˈʌɖ ˈaẽ hˈɪna mẽ ˌalpaːˈɪn ˈaẽ mˌeːɖiʈrinˈiːn ʋˈʌɳ ʈˈʌɳ ʃˈaːmɪl ˈaːhɪn",
+    "uccharan": "pəlˈʌʈ ʋaːˈiːs ɖʰˌənəɖʰˈʌn ɟˈeː qˈoːmi paːrˈʌk t̪əmˈaːm ɡəhˈʌɳi ɟəhˈʌnɡ sˈãː ɖʰˈʌkjal ˌaːheː xˈaːʂ tˈoːr t̪ˈeː bˈeːc ˌasəpərˈoːs ˈaẽ fˈʌr ɟˈeː ʋəɳˈʌn sˈãː ɡˈʌɖ ˈaẽ hˈɪna mẽ ˌaləpˈaːn ˈaẽ mˌeːɖiːʈˌəriːnˈiːn ʋˈʌɳ ʈˈʌɳ ʃˈaːmɪl ˈaːhɪn"
+   },
+   {
+    "id": "flores-devtest-47",
+    "text": "هن ڪٽس لاءِ ڪو انگ اکر اهو چئي سيٽ نه ڪيو ته، اهي چين جي اِقتصادي پيداوار جي بُنياد تي سيٽ ڪيا ويندا.",
+    "reference": "hˈɪna kəʈˈʌs lˈaːɪ kˈoː ˈanɡ akʰˈʌr ˈɪhoː cˈʌi sˈeːʈ nˈʌh kˈajoː t̪ˈʌh ˈɪheː cˈeːn ɟˈeː ˌɪqət̪ʂˈaːdi pˌeːdaːʋˈaːr ɟˈeː bˈʊnjaːd t̪ˈeː sˈeːʈ kjˈaː ʋˈeːndaː",
+    "uccharan": "hˈɪna kəʈˈʌs lˈaːɪ kˈoː ˈanɡ akʰˈʌr ˈɪhoː cˈʌi sˈeːʈ nˈʌh kˈajoː t̪ˈʌh ˈɪheː cˈeːn ɟˈeː ˌaːɪqˌət̪əʂˈaːdi pˌeːdaːʋˈaːr ɟˈeː bʊnjˈaːd t̪ˈeː sˈeːʈ kjˈaː ʋˈeːndaː"
+   },
+   {
+    "id": "flores-devtest-355",
+    "text": "سيٽلائيٽ کي راڪيٽ جي ذريعي موڪلي ويئي، سائنسدان خلا ۾ دوربيني استعمال ڪن ٿا ڇاڪاڻ تہ زمين جو وايومنڊل اسان جي ڪجهہ روشني ۽ نظر کي غلط بيان ڪري ٿو.",
+    "reference": "sˌeːʈlaːˈiːʈ kʰˈeː raːkˈiːʈ ɟˈeː zərˈiːi moːkˈʌli ʋˈeːi sˌaːɪnsədˈaːn xˈʌlaː mẽ dˌoːrbˈiːni ɪstˈeːmaːl kˈʌn tʰˈaː cʰaːkˈaːɳ t̪ˈʌh zəmˈiːn ɟˈoː ʋˌaːjoːmənɖˈʌl ˈasãː ɟˈeː kˈʊɟʰʊ roːʃˈʌni ˈaẽ naʐˈar kʰˈeː ɣəlˈʌt bjˈaːn kˈareː tʰˈoː",
+    "uccharan": "sˌeːʈlaːˈiːʈ kʰˈeː raːkˈiːʈ ɟˈeː zərˈiːi moːkˈʌli ʋˈeːi sˌaːɪnsədˈaːn xˈʌlaː mẽ dˌoːrəbˈiːni ɪstˈeːmaːl kˈʌn tʰˈaː cʰaːkˈaːɳ t̪ˈʌh zəmˈiːn ɟˈoː ʋˌaːjoːmˌənəɖˈʌl ˈasãː ɟˈeː kəɟˈʌha roːʃˈʌni ˈaẽ naʐˈar kʰˈeː ɣəlˈʌt bjˈaːn kˈareː tʰˈoː"
+   },
+   {
+    "id": "flores-devtest-130",
+    "text": "فِلُوڪ لِکيو ته ڪجهه عورتن پاران ٻُڏل عورتن جي صحت بابت ڳالهائڻ جي ڪوشش ناڪام ٿي.",
+    "reference": "fɪlˈuːk lˈɪkʰjoː t̪ˈʌh kˈʊɟʰʊ ˌaoːrət̪ˈʌn paːrˈaːn bʊɖˈʌl ˌaoːrət̪ˈʌn ɟˈeː ʂəhˈʌt̪ bˈaːbɪt̪ ɡˌaːlhaːˈɪɳ ɟˈeː koːʃˈʌʃ naːkˈaːm tʰi",
+    "uccharan": "fˌɪlʊʋˈʌk lˈɪkʰjoː t̪ˈʌh kˈʊɟʰʊ ˌaoːrət̪ˈʌn paːrˈaːn bʊɖˈʌl ˌaoːrət̪ˈʌn ɟˈeː ʂəhˈʌt̪ bˈaːbɪt̪ ɡˌaːlhaːˈɪɳ ɟˈeː koːʃˈʌʃ naːkˈaːm tʰi"
+   },
+   {
+    "id": "flores-devtest-421",
+    "text": "جاپان وٽ لڳ ڀڳ 7,000 ٻيٽ آهن (سڀني کان وڏو هونسو)، جيڪو جاپان کي دنيا جو 7 وڏو ٻيٽ ٺاهي ٿو.",
+    "reference": "ɟaːpˈaːn ʋˈʌʈ lˈʌɡ bʰˈʌɡ sˌatːa hazˈaːɾ bˈeːʈ ˈaːhɪn səbʰˈʌni kʰˈãː ʋˈʌɖoː hˈoːnsoː ɟˈeːkoː ɟaːpˈaːn kʰˈeː dˈʌnjaː ɟˈoː sˈatːa ʋˈʌɖoː bˈeːʈ ʈʰˈaːheː tʰˈoː",
+    "uccharan": "ɟaːpˈaːn ʋˈʌʈ lˈʌɡ bʰˈʌɡ sˈatːa hazˈaːɾ bˈeːʈ ˈaːhɪn səbʰˈʌni kʰˈãː ʋˈʌɖoː hoːnˈʌsoː ɟˈeːkoː ɟaːpˈaːn kʰˈeː dˈʌnjaː ɟˈoː sˈatːa ʋˈʌɖoː bˈeːʈ ʈʰˈaːhi tʰˈoː"
+   },
+   {
+    "id": "flores-devtest-508",
+    "text": "جڏهن ته پروجيڪٽ تي ٻڌل سکيا سکڻ کي آسان ۽ وڌيڪ دلچسپ بڻائڻ گهرجي، اسڪافولڊنگ اڃان هڪ قدم اڳتي هلي وڃي ٿي.",
+    "reference": "ɟaɖˈẽhɪ̃ t̪ˈʌh pˌəroːɟikˈʌʈ t̪ˈeː bədʰˈʌl sˈʌkʰjaː səkʰˈʌɳ kʰˈeː aːsˈaːn ˈaẽ ʋədʰˈiːk dˌɪlcˈasp bˌəɳaːˈɪɳ ɡˌəhərˈʌɟi ˌaskˌaːfoːləɖˈʌnɡ aɲˈaːn hˈɪkʊ qədˈʌm aɡˈʌt̪i hˈʌli ʋˈʌɲeː tʰi",
+    "uccharan": "ɟaɖˈẽhɪ̃ t̪ˈʌh pˌəroːɟikˈʌʈ t̪ˈeː bədʰˈʌl sˈʌkʰjaː səkʰˈʌɳ kʰˈeː aːsˈaːn ˈaẽ ʋədʰˈiːk dˌɪlcˈasp bˌəɳaːˈɪɳ ɡˌəhərˈʌɟi ˌasəkˌaːfoːlˌəɖənˈʌɡ aɲˈaːn hˈɪkʊ qədˈʌm aɡˈʌt̪i hˈʌli ʋˈʌɲi tʰi"
+   },
+   {
+    "id": "flores-devtest-961",
+    "text": "جيڪڏهن توهان ڪجهہ بنيادي نوڙت سان پيش اچو ٿا تہ پئرس جا ماڻهن جي ٻاهرين ڪاوڙ جلدي ختم ٿي ويندي.",
+    "reference": "ɟˌeːkəɖəhˈʌn t̪oːhˈaːn kˈʊɟʰʊ bənjˈaːdi noːr.ˈʌt̪ sˈãː pˈeːʃ ˈacoː tʰˈaː t̪ˈʌh pərˈʌs ɟˈaː mˌaːɳəhˈʌn ɟˈeː bˌaːhərˈiːn kaːˈoːr. ɟəlˈʌdi xət̪ˈʌm tʰi ʋˈeːndi",
+    "uccharan": "ɟˌeːkəɖəhˈʌn t̪oːhˈaːn kəɟˈʌha bənjˈaːdi noːr.ˈʌt̪ sˈãː pˈeːʃ ˈacoː tʰˈaː t̪ˈʌh pərˈʌs ɟˈaː mˌaːɳəhˈʌn ɟˈeː bˌaːhərˈiːn kaːˈoːr. ɟəlˈʌdi xət̪ˈʌm tʰi ʋˈeːndi"
+   },
+   {
+    "id": "flores-devtest-945",
+    "text": "هلدرسوڪ جو ڳوٺ ويهي واري ٻيٽ ايسٽورائي جو نظارو پيش ڪريو ٿو ۽ هن ۾ هڪ عجيب اٺ ڪنڊن وارو چرچ آهي.",
+    "reference": "hˌələdˌərsˈoːk ɟˈoː ɡˈoːʈʰ ʋˈeːhi ʋˈaːri bˈeːʈ ˌeːsʈoːrˈaːi ɟˈoː nəʐˈaːroː pˈeːʃ kˈʌrjoː tʰˈoː ˈaẽ hˈɪna mẽ hˈɪkʊ aɟˈiːb ˈaʈʰ kənɖˈʌn ʋˈaːroː cˈʌrc ˌaːheː",
+    "uccharan": "hˌələdˌərəsˈoːk ɟˈoː ɡˈoːʈʰ ʋˈeːhi ʋˈaːri bˈeːʈ ˌajəsˌəʈoːrˈaːi ɟˈoː nəʐˈaːroː pˈeːʃ kˈʌrjoː tʰˈoː ˈaẽ hˈɪna mẽ hˈɪkʊ aɟˈiːb ˈaʈʰ kənɖˈʌn ʋˈaːroː cˈʌrc ˌaːheː"
+   },
+   {
+    "id": "flores-devtest-500",
+    "text": "ذيلي ثقافتون عمر، نسل، طبقو، هنڌ، ۽/يا ميمبرن جي جنس جي حساب سان مختلف ٿي سگهن ٿا.",
+    "reference": "zˈeːli sˌəqaːft̪ˈoːn ˈʊmr nəsˈʌl təbˈʌqoː hˈʌndʰ slˈaʃ jˈaː mˌeːmbərˈʌn ɟˈeː ɟˈɪns ɟˈeː həsˈaːb sˈãː mʊxtˈalɪf tʰi sˌəɡəhˈʌn tʰˈaː",
+    "uccharan": "zˈeːli sˌəqaːfət̪ˈoːn ˈʊmr nəsˈʌl təbˈʌqoː hˈʌndʰ ˈaẽ jˈaː mˌeːmbərˈʌn ɟˈeː ɟˈɪns ɟˈeː həsˈaːb sˈãː mʊxtˈalɪf tʰi sˌəɡəhˈʌn tʰˈaː"
+   }
+  ]
+ }
+}

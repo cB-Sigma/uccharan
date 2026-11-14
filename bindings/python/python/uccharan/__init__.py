@@ -25,11 +25,11 @@ from .packs import PackError
 
 __version__: str = _native.__version__
 
-Lang = Literal["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa"]
+Lang = Literal["en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag"]
 Profile = Literal["espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx"]
 NormalizeMode = Literal["natural", "espeak", "off"]
 
-LANGUAGES: tuple[str, ...] = ("en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa")
+LANGUAGES: tuple[str, ...] = ("en-us", "en-gb", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag")
 PROFILES: tuple[str, ...] = ("espeak-ipa", "piper", "kokoro", "kitten", "matcha", "sherpa-onnx")
 
 __all__ = [
@@ -279,3 +279,9 @@ def has_misaki(lang: str = "en-us") -> bool:
     """True when misaki's dictionaries are available for ``lang`` (built in or loaded)."""
     return _native.has_misaki(lang)
 
+
+
+# Normalise-only mode and pronunciation word lists (see uccharan.textnorm).
+from .textnorm import Normalized, Respelling, Span, WordList, normalize, phonemize_wordlists, respell  # noqa: E402
+
+__all__ += ["Normalized", "Respelling", "Span", "WordList", "normalize", "phonemize_wordlists", "respell"]

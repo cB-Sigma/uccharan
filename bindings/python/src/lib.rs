@@ -250,6 +250,135 @@ fn unmapped(text: &str, profile: &str) -> PyResult<Vec<String>> {
         .collect())
 }
 
+// ---------------------------------------------------------------------------
+// Normalise-only mode and pronunciation word lists.
+
+/// A parsed pronunciation word list (TSV, PLS or JSON text).
+#[pyclass(name = "WordList", frozen, module = "uccharan._native")]
+struct PyWordList {
+    inner: std::sync::Arc<uccharan::wordlist::WordList>,
+}
+
+#[pymethods]
+impl PyWordList {
+    #[new]
+    fn new(text: &str) -> PyResult<Self> {
+        let w = uccharan::wordlist::WordList::parse_any(text)
+            .map_err(|e| PyValueError::new_err(e.to_string()))?;
+        Ok(PyWordList {
+            inner: std::sync::Arc::new(w),
+        })
+    }
+
+    fn __len__(&self) -> usize {
+        self.inner.len()
+    }
+
+    fn to_tsv(&self) -> String {
+        self.inner.to_tsv()
+    }
+
+    fn to_json(&self) -> String {
+        self.inner.to_json()
+    }
+
+    #[pyo3(signature = (lang=None))]
+    fn to_pls(&self, lang: Option<&str>) -> PyResult<String> {
+        let l = match lang {
+            None | Some("*") => None,
+            Some(t) => Some(
+                Lang::parse(t)
+                    .ok_or_else(|| PyValueError::new_err(format!("unknown language {t:?}")))?,
+            ),
+        };
+        Ok(self.inner.to_pls(l))
+    }
+
+    fn languages(&self) -> Vec<String> {
+        self.inner
+            .languages()
+            .into_iter()
+            .map(|l| l.map_or("*", Lang::tag).to_string())
+            .collect()
+    }
+
+    fn warnings(&self) -> Vec<(usize, String)> {
+        self.inner.warnings.clone()
+    }
+}
+
+fn lists_of(lists: &[PyRef<'_, PyWordList>]) -> Vec<std::sync::Arc<uccharan::wordlist::WordList>> {
+    lists.iter().map(|l| l.inner.clone()).collect()
+}
+
+/// Spoken form of `text` with spans, as JSON (see the Python wrapper).
+#[pyfunction]
+#[pyo3(signature = (text, lang, options, lists))]
+fn normalize(
+    py: Python<'_>,
+    text: &str,
+    lang: &str,
+    options: &str,
+    lists: Vec<PyRef<'_, PyWordList>>,
+) -> PyResult<String> {
+    let l = Lang::parse(lang)
+        .ok_or_else(|| PyValueError::new_err(format!("unknown language {lang:?}")))?;
+    let mut o =
+        uccharan::normalize_api::options_from_json(options).map_err(PyValueError::new_err)?;
+    o.wordlists.extend(lists_of(&lists));
+    Ok(py.detach(|| uccharan::normalize_api::normalize(engine(), text, l, &o).to_json(text)))
+}
+
+/// `render` with word lists applied (entries' IPA for phoneme voices).
+#[pyfunction]
+#[pyo3(signature = (text, lang, profile, normalize, improved, hinglish, punctuation, flags, lists))]
+#[allow(clippy::too_many_arguments)]
+fn render_wordlists(
+    py: Python<'_>,
+    text: &str,
+    lang: &str,
+    profile: &str,
+    normalize: &str,
+    improved: bool,
+    hinglish: bool,
+    punctuation: bool,
+    flags: bool,
+    lists: Vec<PyRef<'_, PyWordList>>,
+) -> PyResult<String> {
+    let mut opt = options(lang, normalize, improved, hinglish)?;
+    opt.keep_language_flags = flags;
+    let prof = parse_profile(profile)?;
+    let lists = lists_of(&lists);
+    Ok(py.detach(|| {
+        uccharan::normalize_api::render_with_wordlists(
+            engine(),
+            text,
+            &opt,
+            prof,
+            punctuation,
+            &lists,
+        )
+    }))
+}
+
+/// Respell IPA for a text voice: `(text, readback, distance)` or None.
+#[pyfunction]
+#[pyo3(signature = (ipa, lang, source=None, style="native"))]
+fn respell(
+    ipa: &str,
+    lang: &str,
+    source: Option<&str>,
+    style: &str,
+) -> PyResult<Option<(String, String, f32)>> {
+    let l = Lang::parse(lang)
+        .ok_or_else(|| PyValueError::new_err(format!("unknown language {lang:?}")))?;
+    let src = source.and_then(Lang::parse);
+    let st = uccharan::respell::Style::parse(style)
+        .ok_or_else(|| PyValueError::new_err(format!("unknown respell style {style:?}")))?;
+    Ok(uccharan::respell::respell(engine(), ipa, src, l, st)
+        .map(|r| (r.text, r.readback, r.distance)))
+}
+
 #[pymodule]
 fn _native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add("__version__", env!("CARGO_PKG_VERSION"))?;
@@ -267,5 +396,9 @@ fn _native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(kitten_ids, m)?)?;
     m.add_function(wrap_pyfunction!(matcha_ids, m)?)?;
     m.add_function(wrap_pyfunction!(unmapped, m)?)?;
+    m.add_class::<PyWordList>()?;
+    m.add_function(wrap_pyfunction!(normalize, m)?)?;
+    m.add_function(wrap_pyfunction!(render_wordlists, m)?)?;
+    m.add_function(wrap_pyfunction!(respell, m)?)?;
     Ok(())
 }

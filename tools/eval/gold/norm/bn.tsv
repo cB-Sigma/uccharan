@@ -1,0 +1,21 @@
+# split	class	input	expected	options
+dev	cardinal	3	তিন	
+heldout	cardinal	25	পঁচিশ	
+dev	cardinal	100	একশো || এক শত || একশ || এক শো	
+heldout	cardinal	1000	এক হাজার	
+dev	cardinal	১২	বারো	
+heldout	percent	50%	পঞ্চাশ শতাংশ || পঞ্চাশ শতাংশ	
+dev	cardinal	1,00,000	এক লাখ || এক লক্ষ	
+heldout	cardinal	99	নিরানব্বই	
+dev	year	2024	দুই হাজার চব্বিশ	
+heldout	cardinal	0	শূন্য	
+dev	cardinal	45	পঁয়তাল্লিশ	
+heldout	cardinal	60	ষাট	
+dev	cardinal	250	দুইশো পঞ্চাশ || দুশো পঞ্চাশ || দুই শত পঞ্চাশ	
+heldout	cardinal	1,00,00,000	এক কোটি	
+dev	cardinal	7	সাত	
+heldout	cardinal	18	আঠারো	
+dev	cardinal	33	তেত্রিশ	
+heldout	cardinal	১৫	পনেরো	
+dev	cardinal	70	সত্তর	
+heldout	cardinal	10	দশ	

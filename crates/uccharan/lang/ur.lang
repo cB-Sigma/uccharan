@@ -1,0 +1,408 @@
+# Urdu. espeak-ng voice "ur". Written for uccharan from specs/ur.md. The
+# script is decoded like an Indic script: every consonant letter carries a
+# short vowel unless a vowel letter, a vowel mark or jazm follows, and the
+# Hindi-type deletion and stress rules apply. In compatible mode common words
+# come from the word table `data/ur.ucd`.
+
+[meta]
+tag = ur
+block = 0600
+stress = weight
+deletion = medial
+inherent = ə ʌ
+anusvara = split
+visarga = h
+geminate = b p t ʈ ɟ c d ɖ k ɡ q
+final-release = n m j r l
+final-release-not-after = r n
+
+[letters]
+ب b consonant
+پ p consonant
+ت t consonant
+ٹ ʈ consonant
+ث s consonant
+ج ɟ consonant
+چ c consonant
+ح h consonant
+خ x consonant
+د d consonant
+ڈ ɖ consonant
+ذ z consonant
+ر r consonant
+ڑ r. consonant
+ز z consonant
+ژ ʒ consonant
+س s consonant
+ش ʃ consonant
+ص ʂ consonant
+ض z consonant
+ط t consonant
+ظ ʐ consonant
+غ ɣ consonant
+ف f consonant
+ق q consonant
+ک k consonant
+ك k consonant
+گ ɡ consonant
+ل l consonant
+م m consonant
+ن n consonant
+ہ h consonant
+ه h consonant
+ۂ h consonant
+ۃ t consonant
+ة t consonant
+و ʋ consonant
+ی j consonant
+ي j consonant
+ى j consonant
+Ḃ bʰ consonant
+Ṕ pʰ consonant
+Ṫ tʰ consonant
+Ť ʈʰ consonant
+Ĵ ɟʰ consonant
+Ĉ cʰ consonant
+Ḋ dʰ consonant
+Ď ɖʰ consonant
+Ḱ kʰ consonant
+Ġ ɡʰ consonant
+Ř r.h consonant
+Ŕ rʰ consonant
+Ĺ lʰ consonant
+Ṁ mʰ consonant
+Ń nʰ consonant
+ا aː vowel
+آ aː vowel
+أ aː vowel
+إ ɪ vowel
+ے eː vowel
+ۓ eː vowel
+َ a sign
+ِ ɪ sign
+ُ ʊ sign
+ٰ aː sign
+ٗ uː sign
+ْ virama
+ھ h consonant
+ء ignore
+ً ignore
+ٍ ignore
+ٌ ignore
+ٔ ignore
+ع ignore
+ئ ignore
+# Markers written by the [pre] rules (never in real text).
+Ā aː sign
+Ă a vowel
+Ō oː sign
+Ē eː sign
+Ī i sign
+Ǐ iː sign
+Ȧ a sign
+ꞁ i vowel
+Ṉ n dead
+Ñ candrabindu
+Ӗ eː vowel
+Ŏ oː vowel
+
+[classes]
+CC = ب پ ت ٹ ث ج چ ح خ د ڈ ذ ر ڑ ز ژ س ش ص ض ط ظ غ ف ق ک ك گ ل م ن ہ ه ۂ ۃ ة و ی ي ى Ḃ Ṕ Ṫ Ť Ĵ Ĉ Ḋ Ď Ḱ Ġ Ř Ŕ Ĺ Ṁ Ń ھ
+VL = ا آ ے ۓ ی و
+S = ˈ ˌ
+
+[pre]
+# Aspirates written with do-chashmi he.
+بھ -> Ḃ
+پھ -> Ṕ
+تھ -> Ṫ
+ٹھ -> Ť
+جھ -> Ĵ
+چھ -> Ĉ
+دھ -> Ḋ
+ڈھ -> Ď
+کھ -> Ḱ
+گھ -> Ġ
+ڑھ -> Ř
+رھ -> Ŕ
+لھ -> Ĺ
+مھ -> Ṁ
+نھ -> Ń
+# Shadda doubles the consonant.
+بّ -> بْب
+پّ -> پْپ
+تّ -> تْت
+ٹّ -> ٹْٹ
+ثّ -> ثْث
+جّ -> جْج
+چّ -> چْچ
+حّ -> حْح
+خّ -> خْخ
+دّ -> دْد
+ڈّ -> ڈْڈ
+ذّ -> ذْذ
+رّ -> رْر
+ڑّ -> ڑْڑ
+زّ -> زْز
+ژّ -> ژْژ
+سّ -> سْس
+شّ -> شْش
+صّ -> صْص
+ضّ -> ضْض
+طّ -> طْط
+ظّ -> ظْظ
+غّ -> غْغ
+فّ -> فْف
+قّ -> قْق
+کّ -> کْک
+گّ -> گْگ
+لّ -> لْل
+مّ -> مْم
+نّ -> نْن
+وّ -> وْو
+یّ -> یْی
+# Alif: a long vowel after a consonant, a short one at the start of a word.
+ا -> Ā / {CC} _
+ای -> Ӗ / # _
+او -> Ŏ / # _
+اً -> ȦṈ / {CC} _
+نگ -> ِنْگ / {CC} _ #
+ا -> Ă / # _ {CC}
+ع -> Ā / {CC} _
+ع -> Ă / # _
+# Vav: oː after a consonant before a consonant or at the end, else v.
+و -> Ō / {CC} _ {CC} | {CC} _ # | {CC} _ ں
+# Ye: i at the end, eː inside a word after a consonant, y before a vowel.
+ی -> ْی / {CC} _ {VL}
+ی -> Ǐ / {CC} _ #
+ی -> Ǐ / {CC} _ ں
+ی -> Ē / # {CC} _ {CC}
+ی -> Ǐ / {CC} _ {CC}
+ی -> ꞁ / ئ _
+ئ -> Ȧ / {CC} _
+ے -> Ē / {CC} _
+# Final he after a consonant is a short a.
+ہ -> Ȧ / {CC} _ #
+ه -> Ȧ / {CC} _ #
+# Noon ghunna: nasal after alif and vav, else n.
+ں -> Ñ / ا _ | و _
+ں -> Ṉ
+
+[post]
+# Final unstressed ii is short.
+iː -> i / {!S} _ #
+
+[post.improved]
+# ص and ظ are s and z in Urdu.
+ʂ -> s
+ʐ -> z
+
+[words]
+@سو sˈaʊ
+@ہزار hazˈaːr
+@لاکھ lˈaːkʰ
+@کروڑ karˈoːr
+# Number words as the reference reads digits (derived from running
+# espeak-ng 1.52.0 on the numbers 0-99).
+@صفر sˈɪfar
+@پانچ pˈaːŋc
+@آٹھ ˈaːtʰ
+@نو nˈaʊ
+@دس dˈas
+@گیارہ ɡjˈaːrah
+@بارہ bˈaːrah
+@تیرہ tˈeːrah
+@چودہ cˈaʊdah
+@پندرہ pˈandrah
+@سولہ sˈoːlah
+@سترہ sˈatrah
+@اٹھارہ atʰˈaːrah
+@انیس ˈʊnnis
+@بیس bˈiːs
+@اکیس ɪkkˈiːs
+@تئیس teːˈiːs
+@چوبیس caʊbˈiːs
+@پچیس paccˈiːs
+@چھبیس cʰabbˈiːs
+@ستائیس sˌatːaːˈiːs
+@اٹھائیس ˌatʰːaːjˈiːs
+@انتیس ʊntˈiːs
+@اکتیس ˌiktˈiːs
+@بتیس batːˈiːs
+@تینتیس tˈaɪŋtˈiːs
+@چونتیس caʊŋtˈiːs
+@پینتیس paɪŋtˈiːs
+@چھتیس cʰatːˈiːs
+@سینتیس saɪŋtˈiːs
+@اڑتیس artˈiːs
+@انتالیس ˌʊntaːlˈiːs
+@اکتالیس ˌɪktaːlˈiːs
+@بیالیس bˌajaːlˈiːs
+@تینتالیس tˌeːŋtaːlˈiːs
+@چوالیس cˌaʋaːlˈiːs
+@پینتالیس pˌaɪŋtaːlˈiːs
+@چھیالیس cʰˌɪjaːlˈiːs
+@سینتالیس sˌaɪŋtaːlˈiːs
+@اڑتالیس ˌartaːlˈiːs
+@انچاس ʊncˈaːs
+@پچاس pacˈaːs
+@اکیاون ɪkˈaːʋan
+@باون bˈaːʋan
+@تریپن tˈɪrpan
+@چون cˈaʊʋan
+@پچپن pˈacpan
+@چھپن cʰˈappan
+@ستاون satːˈaːʋan
+@اٹھاون atʰˈaːʋan
+@انسٹھ ʊnsˈatʰ
+@ساٹھ sˈaːtʰ
+@اکسٹھ ˈɪksatʰ
+@باسٹھ bˈaːsatʰ
+@تریسٹھ tˈɪrsatʰ
+@چونسٹھ cˈaʊsatʰ
+@پینسٹھ pˈaɪŋsatʰ
+@چھیاسٹھ cʰɪjˈaːsatʰ
+@سڑسٹھ sˈarsatʰ
+@اڑسٹھ ˈarsatʰ
+@انہتر ʊnhˌatːˈar
+@ستر satːˈar
+@اکہتر ˌɪkhatːˈar
+@بہتر bˌahatːˈar
+@تہتر tˌɪhatːˈar
+@چوہتر cˌaʊhatːˈar
+@پچہتر pˌacʰatːˈar
+@چھہتر cʰˌɪhatːˈar
+@ستہتر sˌatʰatːˈar
+@اٹھہتر ˌatʰhatːˈar
+@انیاسی ˌʊnnaːsˈiː
+@اسی assˈiː
+@اکیاسی ˌɪkaːsˈiː
+@بیاسی bˌajaːsˈiː
+@تراسی tˌɪraːsˈiː
+@چوراسی cˌaʊraːsˈiː
+@پچاسی pˌacaːsˈiː
+@چھیاسی cʰˌɪjaːsˈiː
+@ستاسی sˌatːaːsˈiː
+@اٹھاسی ˌatʰaːsˈiː
+@نواسی nˌaʋaːsˈiː
+@نوے naʋʋˈeː
+@اکیانوے ɪkjˈaːnʋeː
+@بانوے bˈaːnʋeː
+@ترانوے tɪθˈaːnʋeː
+@چورانوے caʊrˈaːnʋeː
+@پچانوے pacˈaːnʋeː
+@چھیانوے cʰɪjˈaːnʋeː
+@ستانوے satːˈaːnʋeː
+@اٹھانوے atʰːˈaːnʋeː
+@ننانوے nɪnjˈaːnʋeː
+
+[unstressed]
+
+[numbers]
+# Number words 0-99 from Unicode CLDR common/rbnf/ur.xml (Unicode License v3).
+0 صفر
+1 ایک
+2 دو
+3 تین
+4 چار
+5 پانچ
+6 چھ
+7 سات
+8 آٹھ
+9 نو
+10 دس
+11 گیارہ
+12 بارہ
+13 تیرہ
+14 چودہ
+15 پندرہ
+16 سولہ
+17 سترہ
+18 اٹھارہ
+19 انیس
+20 بیس
+21 اکیس
+22 بائیس
+23 تئیس
+24 چوبیس
+25 پچیس
+26 چھبیس
+27 ستائیس
+28 اٹھائیس
+29 انتیس
+30 تیس
+31 اکتیس
+32 بتیس
+33 تینتیس
+34 چونتیس
+35 پینتیس
+36 چھتیس
+37 سینتیس
+38 اڑتیس
+39 انتالیس
+40 چالیس
+41 اکتالیس
+42 بیالیس
+43 تینتالیس
+44 چوالیس
+45 پینتالیس
+46 چھیالیس
+47 سینتالیس
+48 اڑتالیس
+49 انچاس
+50 پچاس
+51 اکیاون
+52 باون
+53 تریپن
+54 چون
+55 پچپن
+56 چھپن
+57 ستاون
+58 اٹھاون
+59 انسٹھ
+60 ساٹھ
+61 اکسٹھ
+62 باسٹھ
+63 تریسٹھ
+64 چونسٹھ
+65 پینسٹھ
+66 چھیاسٹھ
+67 سڑسٹھ
+68 اڑسٹھ
+69 انہتر
+70 ستر
+71 اکہتر
+72 بہتر
+73 تہتر
+74 چوہتر
+75 پچہتر
+76 چھہتر
+77 ستہتر
+78 اٹھہتر
+79 انیاسی
+80 اسی
+81 اکیاسی
+82 بیاسی
+83 تراسی
+84 چوراسی
+85 پچاسی
+86 چھیاسی
+87 ستاسی
+88 اٹھاسی
+89 نواسی
+90 نوے
+91 اکیانوے
+92 بانوے
+93 ترانوے
+94 چورانوے
+95 پچانوے
+96 چھیانوے
+97 ستانوے
+98 اٹھانوے
+99 ننانوے
+scale100 سو
+scale1000 ہزار
+scale100000 لاکھ
+scale10000000 کروڑ
+glue-hundred yes
+grouping indian

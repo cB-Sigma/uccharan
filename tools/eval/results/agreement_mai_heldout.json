@@ -5,43 +5,43 @@
  "sentence_level": {
   "sentences": 1012,
   "reference_symbols": 195019,
-  "per": 0.007512088565729493,
-  "per_without_stress": 0.005251566999830594,
-  "exact_sentence": 0.7312252964426877,
-  "exact_sentence_without_stress": 0.7351778656126482,
-  "piper_shape_per": 0.007503843246287399,
-  "piper_shape_exact_sentence": 0.724308300395257,
+  "per": 0.004604679544044426,
+  "per_without_stress": 0.0037692698627816365,
+  "exact_sentence": 0.808300395256917,
+  "exact_sentence_without_stress": 0.8112648221343873,
+  "piper_shape_per": 0.0046271163222542985,
+  "piper_shape_exact_sentence": 0.7984189723320159,
   "word_count_mismatch_sentences": 189,
   "errors_by_class": {
    "stress": {
-    "count": 604,
-    "share": 0.41228668941979524,
-    "per_contribution": 0.0030971341253929105
+    "count": 280,
+    "share": 0.311804008908686,
+    "per_contribution": 0.0014357575415728724
    },
    "vowel": {
-    "count": 274,
-    "share": 0.18703071672354948,
-    "per_contribution": 0.001404991308539168
+    "count": 236,
+    "share": 0.26280623608017817,
+    "per_contribution": 0.0012101384993257068
    },
    "consonant": {
-    "count": 209,
-    "share": 0.14266211604095563,
-    "per_contribution": 0.0010716904506740369
-   },
-   "other": {
-    "count": 199,
-    "share": 0.13583617747440274,
-    "per_contribution": 0.0010204133956178629
+    "count": 176,
+    "share": 0.19599109131403117,
+    "per_contribution": 0.0009024761689886626
    },
    "word-boundary": {
     "count": 119,
-    "share": 0.08122866894197953,
+    "share": 0.13251670378619154,
     "per_contribution": 0.0006101969551684708
    },
+   "other": {
+    "count": 73,
+    "share": 0.08129175946547884,
+    "per_contribution": 0.0003743225019100703
+   },
    "length": {
-    "count": 60,
-    "share": 0.040955631399317405,
-    "per_contribution": 0.00030766233033704406
+    "count": 14,
+    "share": 0.015590200445434299,
+    "per_contribution": 7.178787707864362e-05
    }
   },
   "top_confusions": [
@@ -50,48 +50,32 @@
     "count": 113
    },
    {
-    "edit": "ˈ→ə",
-    "count": 109
-   },
-   {
-    "edit": "ʌ→ɟ",
-    "count": 109
-   },
-   {
-    "edit": "ɟ→ˈ",
-    "count": 109
-   },
-   {
     "edit": "ˈ→ˌ",
-    "count": 98
+    "count": 95
    },
    {
     "edit": "ˈ→∅",
-    "count": 86
-   },
-   {
-    "edit": "∅→ˈ",
-    "count": 74
-   },
-   {
-    "edit": "∅→ˌ",
-    "count": 60
+    "count": 49
    },
    {
     "edit": "∅→ə",
-    "count": 53
+    "count": 45
    },
    {
-    "edit": "∅→ː",
-    "count": 52
+    "edit": "∅→ˌ",
+    "count": 43
    },
    {
     "edit": "ə→∅",
-    "count": 43
+    "count": 34
    },
    {
     "edit": "a→ə",
     "count": 33
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 32
    },
    {
     "edit": "ˌ→ˈ",
@@ -110,10 +94,6 @@
     "count": 17
    },
    {
-    "edit": "s→∅",
-    "count": 16
-   },
-   {
     "edit": "∅→ɾ",
     "count": 16
    },
@@ -122,15 +102,11 @@
     "count": 15
    },
    {
-    "edit": "ˌ→∅",
-    "count": 15
-   },
-   {
-    "edit": "t→ʈ",
+    "edit": "ˈ→l",
     "count": 14
    },
    {
-    "edit": "ˈ→l",
+    "edit": "s→∅",
     "count": 14
    },
    {
@@ -144,20 +120,44 @@
    {
     "edit": "o→ə",
     "count": 13
+   },
+   {
+    "edit": "ː→ʋ",
+    "count": 13
+   },
+   {
+    "edit": "ʃ→∅",
+    "count": 13
+   },
+   {
+    "edit": "r→ə",
+    "count": 13
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 13
+   },
+   {
+    "edit": "i→ɪ",
+    "count": 12
+   },
+   {
+    "edit": "ʃ→ʂ",
+    "count": 10
    }
   ],
   "word_error_by_class": {
    "lexicon": {
     "words": 19777,
-    "wrong": 134,
-    "rate": 0.0067755473529857915
+    "wrong": 107,
+    "rate": 0.005410325125145371
    }
   },
   "by_subset": {
    "with-digits": {
     "sentences": 197,
-    "per": 0.0241086186540732,
-    "exact_sentence": 0.2639593908629442
+    "per": 0.010720188902007084,
+    "exact_sentence": 0.6598984771573604
    },
    "no-digits": {
     "sentences": 815,
@@ -167,76 +167,76 @@
   },
   "examples_of_disagreement": [
    {
-    "id": "flores-devtest-655",
-    "text": "अहि सिद्धांत सब सँ मालूम होयत अछि कि लोगक किछ ज़रूरत आ/वा इच्छाएँ होइत छय जेकरा वयस्कताक लेल परिपक्व होबय के साथ-साथ आंतरिक रूप देल गेल अछि।",
-    "reference": "ˈɛhɪ sɪdʰːˈãt sˈʌb sˈʌn maːlˈuːm hˈoːjət ˈʌcʰɪ kˈɪ lˈoːɡək kˈɪcʰ zəɾˈuːɾət ˈaː slˈaʃ ʋˈaː ɪcʰcʰˈaːj hˈoːɪt cʰˈʌɛj ɟˈeːkɾˌaː ʋˌəjəskətˈaːk lˈeːl pˌəɾɪpˈʌkʋ hˈoːbˌɛj keː sˈaːtʰsˈaːtʰ ˈãtɾˌɪk ɾˈuːp dˈeːl ɡˈeːl ˈʌcʰɪ",
-    "uccharan": "ˈɛhɪ sɪdʰːˈãt sˈʌb sˈʌn maːlˈuːm hˈoːjət ˈʌcʰɪ kˈɪ lˈoːɡək kˈɪcʰ zəɾˈuːɾət ˈaː ʋˈaː ɪcʰcʰˈaːj hˈoːɪt cʰˈʌɛj ɟˈeːkɾˌaː ʋˌəjəskətˈaːk lˈeːl pˌəɾɪpˈʌkʋ hˈoːbˌɛj keː sˈaːtʰsˈaːtʰ ˈãtɾˌɪk ɾˈuːp dˈeːl ɡˈeːl ˈʌcʰɪ"
+    "id": "flores-devtest-56",
+    "text": "श्रीमती किरचनर अर्जेंटीना थिएटर मे राष्ट्रपति पदक प्रतिस्पर्धा मे शामिल होएबाक अपन इच्छाक घोषणा केलथि, एहि स्थान सँ ओ 2005 मे सीनेट लेल ब्यूनस आयर्स प्रांत प्रतिनिधिमंडलक सदस्यताक लेल अपन अभियान कएने छलिह।",
+    "reference": "ʃɾˈiːmtˌi kˈɪɾəcˌənəɾ ˌʌɾɟẽːʈˈiːnaː tʰɪˈeːʈəɾ mˈeː ɾˌaːʃtɾapˈati pˈʌdək pɾˌətɪspˈʌɾdʰaː mˈeː ʃˈaːmɪl hˌoːeːbˈaːk ˈʌpən ɪcʰcʰˈaːk ɡʰˈoːʂɳˌaː kˈeːltʰˌɪ ˈeːhɪ stʰˈaːn sˈʌn ˈoː dˈoː hˈʌɟaːɾ pˈãc mˈeː sinˈeːʈ lˈeːl bjˈuːnəs aːjˈʌrs pɾˈãt pɾˌətɪnˌɪdʰɪmˈʌɳɖəlˌək sˌədəsjətˈaːk lˈeːl ˈʌpən ˌʌbʰɪjˈaːn kəˈeːneː cʰˈʌlɪh",
+    "uccharan": "ʃɾˈiːmtˌi kˈɪɾəcˌənəɾ ˌʌɾɟẽːʈˈiːnaː tʰɪˈeːʈəɾ mˈeː ɾˈaːʂʈɾəptɪ pˈʌdək pɾˌətɪspˈʌɾdʰaː mˈeː ʃˈaːmɪl hˌoːeːbˈaːk ˈʌpən ɪcʰcʰˈaːk ɡʰˈoːʂɳˌaː kˈeːltʰˌɪ ˈeːhɪ stʰˈaːn sˈʌn ˈoː dˈoː hˈʌɟaːɾ pˈãc mˈeː sinˈeːʈ lˈeːl bjˈuːnəs aːjˈʌrs pɾˈãt pɾˌətɪnˌɪdʰɪmˈʌɳɖəlˌək sˌədəsjətˈaːk lˈeːl ˈʌpən ˌʌbʰɪjˈaːn kəˈeːneː cʰˈʌlɪh"
    },
    {
-    "id": "flores-devtest-303",
-    "text": "जापानक अर्थव्यवस्था, व्यापार एवं उद्योग मंत्रालय (METI) कहलथि कि हुनका उपकरण सभ सें संबंधित 27 दुर्घटना सभक जानकारी छलनि।",
-    "reference": "ɟaːpˈaːnək ˌʌɾtʰəʋjəʋˈʌstʰaː ʋjaːpˈaːɾ ˈeːʋən ʊdjˈoːɡ məntɾˈaːlˌɛj mˈɛti kˈʌhəltʰɪ kˈɪ hˈʊnkˌaː ˈʊpəkˌəɾəɳ sˈʌbʰ sˈẽː səmbˈʌndʰɪt sətːˈaːis dˈʊɾɡʰəʈnaː sˈʌbʰək ɟˌaːnkˈaːɾi cʰˈʌlnˌɪ",
-    "uccharan": "ɟaːpˈaːnək ˌʌɾtʰəʋjəʋˈʌstʰaː ʋjaːpˈaːɾ ˈeːʋən ʊdjˈoːɡ məntɾˈaːlˌɛj mˈɛtɪ kˈʌhəltʰɪ kˈɪ hˈʊnkˌaː ˈʊpəkˌəɾəɳ sˈʌbʰ sˈẽː səmbˈʌndʰɪt sˌətːaːˈiːs dˈʊɾɡʰəʈnaː sˈʌbʰək ɟˌaːnkˈaːɾi cʰˈʌlnˌɪ"
+    "id": "flores-devtest-830",
+    "text": "पोस्ट कएल गेल गतिक सीमा पिछला आ बादक खंड सभक तुलना में बहुत कम अछि - आमतौर पर 35-40 मील प्रति घंटा (56-64 किमी / घंटा) - आ हुनक सख्त अनुपालन अन्य रूप सँ सेहो बेसी महत्वपूर्ण अछि।",
+    "reference": "pˈoːsʈ kəˈeːl ɡˈeːl ɡˈʌtɪk sˈiːmaː pˈɪcʰlˌaː ˈaː bˈaːdək kʰˈʌɳɖ sˈʌbʰək tˈʊlnˌaː mẽː bˈʌhʊt kˈʌm ˈʌcʰɪ ˌaːmtˈɔːɾ pˈʌɾ pˈɛ̃tis cˈaːlis mˈiːl pɾˈʌtɪ ɡʰˈʌɳʈaː cʰˈʌpːən cˈɔ̃səʈʰ kˈɪmi slˈaʃ ɡʰˈʌɳʈaː ˈaː hˈʊnək sˈʌkʰt ˌʌnʊpˈaːlən ˈʌnjə ɾˈuːp sˈʌn sˈeːhoː bˈeːsi mˌəhətʋəpˈuːrɳə ˈʌcʰɪ",
+    "uccharan": "pˈoːsʈ kəˈeːl ɡˈeːl ɡˈʌtɪk sˈiːmaː pˈɪcʰlˌaː ˈaː bˈaːdək kʰˈʌɳɖ sˈʌbʰək tˈʊlnˌaː mẽː bˈʌhʊt kˈʌm ˈʌcʰɪ ˌaːmtˈɔːɾ pˈʌɾ pˈɛ̃tis cˈaːlis mˈiːl pɾˈʌtɪ ɡʰˈʌɳʈaː cʰˈʌpːən cˈɔ̃səʈʰ kˈɪmi ɡʰˈʌɳʈaː ˈaː hˈʊnək sˈʌkʰt ˌʌnʊpˈaːlən ˈʌnjə ɾˈuːp sˈʌn sˈeːhoː bˈeːsi mˌəhətʋəpˈuːrɳə ˈʌcʰɪ"
    },
    {
-    "id": "flores-devtest-720",
-    "text": "हेनरी लुइस गेट्सक PBS स्पेशल वंडर्स ऑफ द अफ्रीकन वर्ल्डक दौरान ई प्रमुख पड़ाव सभ में सँ एकटा छल।",
-    "reference": "hˈeːnɾˌi lˈʊɪs ɡˈeːʈsək pˈiː bˈiː ˈɛs spˈeːʃəl ʋəɳɖˈʌrs ˈɔpʰ dˈə ʌpʰɾˈiːkən ʋˈʌrlɖək dɔːɾˈaːn ˈi pɾˈʌmʊkʰ pər.ˈaːʋ sˈʌbʰ mẽː sˈʌn ˈeːkʈˌaː cʰˈʌl",
-    "uccharan": "hˈeːnɾˌi lˈʊɪs ɡˈeːʈsək pˌiːbˌiːˈɛs spˈeːʃəl ʋəɳɖˈʌrs ˈɔpʰ dˈə ʌpʰɾˈiːkən ʋˈʌrlɖək dɔːɾˈaːn ˈi pɾˈʌmʊkʰ pər.ˈaːʋ sˈʌbʰ mẽː sˈʌn ˈeːkʈˌaː cʰˈʌl"
+    "id": "flores-devtest-954",
+    "text": "निशान आदि सँ वा संरचना पर नोच-खरोंच कए स्थान कें विकृत नहि करू।",
+    "reference": "nɪʃˈaːn ˈaːdɪ sˈʌn ʋˈaː sˈʌnɾəcnaː pˈʌɾ nˈoːcəkʰɾˈõc kˈʌeː stʰˈaːn kˈẽː ʋˈɪkɾɪt nˈʌhɪ kˈʌɾuː",
+    "uccharan": "nɪʃˈaːn ˈaːdɪ sˈʌn ʋˈaː sˈʌnɾəcnaː pˈʌɾ nˈoːckʰəɾˈõc kˈʌeː stʰˈaːn kˈẽː ʋˈɪkɾɪt nˈʌhɪ kˈʌɾuː"
    },
    {
-    "id": "flores-devtest-520",
-    "text": "जखन वेबसाइट सभ पर दर्शकक प्रतिक्रिया सभक जाँच कयल गेल, त' “व्यक्तिगत भागीदारी” आ “निरंतर संबंध” सभ केँ सेहो ईघमी आ मैककॉर्ड (1998) द्वारा नव प्रेरणा पहलू सभक रूप मे चिह्नित कयल गेल।",
-    "reference": "ɟˈʌkʰən ʋˌeːbsˈaːɪʈ sˈʌbʰ pˈʌɾ dˈʌrʃəkˌək pɾətˈɪkɾɪjˌaː sˈʌbʰək ɟˈãnc kˈʌjəl ɡˈeːl tˈə ʋjˈʌktɪɡˌət bʰˌaːɡidˈaːɾi ˈaː nɪɾˈʌntəɾ səmbˈʌndʰ sˈʌbʰ kˈẽː sˈeːhoː ˈiːɡʰmˌi ˈaː mˌɛːkkˈɔɾɖ ˈeːk hˈʌɟaːɾ nˈɔːsˈɔː ʌtʰːˈaːnəbˌeː dʋˈaːɾaː nˈʌʋ pɾˈeːɾɳˌaː pˈʌhəlˌuː sˈʌbʰək ɾˈuːp mˈeː cˈɪhnɪt kˈʌjəl ɡˈeːl",
-    "uccharan": "ɟˈʌkʰən ʋˌeːbsˈaːɪʈ sˈʌbʰ pˈʌɾ dˈʌrʃəkˌək pɾətˈɪkɾɪjˌaː sˈʌbʰək ɟˈãnc kˈʌjəl ɡˈeːl tˈə ʋjˈʌktɪɡˌət bʰˌaːɡidˈaːɾi ˈaː nɪɾˈʌntəɾ səmbˈʌndʰ sˈʌbʰ kˈẽː sˈeːhoː ˈiːɡʰmˌi ˈaː mˌɛːkkˈɔɾɖ ˈeːk həɟˈaːɾ nˈɔːsˈɔː ʌʈʰʈʰˈaːnʋˌeː dʋˈaːɾaː nˈʌʋ pɾˈeːɾɳˌaː pˈʌhəlˌuː sˈʌbʰək ɾˈuːp mˈeː cˈɪhnɪt kˈʌjəl ɡˈeːl"
+    "id": "flores-devtest-419",
+    "text": "लोकप्रिय खेल सभ मे फुटबॉल, बास्केटबॉल, वॉलीबॉल, वाटर-पोलो, तलवारबाजी, रग्बी, साइकिल चलाना, आइस हॉकी, रोलर हॉकी एवं F1 मोटर रेसिंग शामिल अछि।",
+    "reference": "loːkˈʌpɾɪj kʰˈeːl sˈʌbʰ mˈeː pʰˈʊʈbˌɔl bˈaːskeːʈbɔl ʋɔlˈiːbɔl ʋˈaːʈrpˈoːloː tˌəlʋˌaːɾbˈaːɟi ɾˈʌɡbi sˈaːɪkˌɪl cəlˈaːnaː ˈaːɪs hˈɔki ɾˈoːləɾ hˈɔki ˈeːʋən ˈɛf ˈeːk mˈoːʈəɾ ɾeːsˈĩɡ ʃˈaːmɪl ˈʌcʰɪ",
+    "uccharan": "loːkˈʌpɾɪj kʰˈeːl sˈʌbʰ mˈeː pʰˈʊʈbˌɔl bˈaːskeːʈbɔl ʋɔlˈiːbɔl ʋˈaːʈəɾˌəpˈoːloː tˌəlʋˌaːɾbˈaːɟi ɾˈʌɡbi sˈaːɪkˌɪl cəlˈaːnaː ˈaːɪs hˈɔki ɾˈoːləɾ hˈɔki ˈeːʋən ˈɛf ˈeːk mˈoːʈəɾ ɾeːsˈĩɡ ʃˈaːmɪl ˈʌcʰɪ"
    },
    {
-    "id": "flores-devtest-561",
-    "text": "आखिरकार, लकड़ी कें पहिया कें लोहां कें पहिया सँ बदलि देल गेल। 1767 में, पहिल पूर्ण-लौह रेल शुरू कएल गेल छल।",
-    "reference": "ˌaːkʰɪɾkˈaːɾ lˈʌkr.ˌi kˈẽː pˈʌhɪjˌaː kˈẽː lˈoːhã kˈẽː pˈʌhɪjˌaː sˈʌn bˈʌdlˌɪ dˈeːl ɡˈeːl ˈeːk hˈʌɟaːɾ sˈaːtsˈɔː sˈʌr.səʈʰ mˈẽː pˈʌhɪl pˈuːrɳəlˈɔːh ɾˈeːl ʃˈʊɾuː kəˈeːl ɡˈeːl cʰˈʌl",
-    "uccharan": "ˌaːkʰɪɾkˈaːɾ lˈʌkr.ˌi kˈẽː pˈʌhɪjˌaː kˈẽː lˈoːhã kˈẽː pˈʌhɪjˌaː sˈʌn bˈʌdlˌɪ dˈeːl ɡˈeːl ˈeːk həɟˈaːɾ sˈaːtsˈɔː sˈʌr.əsˌəʈʰ mˈẽː pˈʌhɪl pˈuːrɳəlˈɔːh ɾˈeːl ʃˈʊɾuː kəˈeːl ɡˈeːl cʰˈʌl"
+    "id": "flores-devtest-163",
+    "text": "अधिकारी सभ द्वारा मतदाताक पहचान पुष्टि करैय कें बाद, मतदाता लिफाफा के मतपेटी में डालि दए छथि आ मतदान सूची पर हस्ताक्षर करैत छथि।",
+    "reference": "ˌʌdʰɪkˈaːɾi sˈʌbʰ dʋˈaːɾaː mˌətdaːtˈaːk pˌəhəcˈaːn pˈʊʂʈɪ kəɾˈɛːj kˈẽː bˈaːd matdˈaːtaː lɪpʰˈaːpʰaː keː mˌətpˈeːʈi mẽː ɖˈaːlɪ dˈʌeː cʰˈʌtʰɪ ˈaː matdˈaːn sˈuːci pˈʌɾ həstˈaːkʃəɾ kəɾˈɛːt cʰˈʌtʰɪ",
+    "uccharan": "ˌʌdʰɪkˈaːɾi sˈʌbʰ dʋˈaːɾaː mˌətdaːtˈaːk pˌəhəcˈaːn pˈʊʂʈɪ kəɾˈɛːj kˈẽː bˈaːd mˌətdˈaːtaː lɪpʰˈaːpʰaː keː mˌətpˈeːʈi mẽː ɖˈaːlɪ dˈʌeː cʰˈʌtʰɪ ˈaː mˌətdˈaːn sˈuːci pˈʌɾ həstˈaːkʃəɾ kəɾˈɛːt cʰˈʌtʰɪ"
    },
    {
-    "id": "flores-devtest-136",
-    "text": "दमकल कर्मी लोकनि आखिरकार राति 11:35 बजे धरि आगि पर काबू पाबि लेलक।",
-    "reference": "dˈʌməkˌəl kˈʌrmi lˈoːknˌɪ ˌaːkʰɪɾkˈaːɾ ɾˈaːtɪ ɡjˈaːɾəh pˈɛ̃tis bˈʌɟeː dʰˈʌɾɪ ˈaːɡɪ pˈʌɾ kˈaːbuː pˈaːbɪ lˈeːlək",
-    "uccharan": "dˈʌməkˌəl kˈʌrmi lˈoːknˌɪ ˌaːkʰɪɾkˈaːɾ ɾˈaːtɪ ɡjˈaːɾəh pɛ̃tˈiːs bˈʌɟeː dʰˈʌɾɪ ˈaːɡɪ pˈʌɾ kˈaːbuː pˈaːbɪ lˈeːlək"
+    "id": "flores-devtest-601",
+    "text": "ओ सभ दूटा प्रयोग कएलनि या तें फेज में रेडियोधर्मी फास्फोरसक संग DNA या रेडियोधर्मी सल्फरक संग फेजक प्रोटीन कें चिह्नित कएलनि।",
+    "reference": "ˈoː sˈʌbʰ dˈuːʈaː pɾəjˈoːɡ kəˈeːlnˌɪ jˈaː tˈẽː pʰˈeːɟ mẽː ɾˌeːɖɪjoːdʰˈʌrmi pʰˈaːspʰoːɾˌəsək sˈʌŋɡ dˈiː ˈɛn ˈeɪ jˈaː ɾˌeːɖɪjoːdʰˈʌrmi sˈʌlpʰəɾˌək sˈʌŋɡ pʰˈeːɟək pɾoːʈˈiːn kˈẽː cˈɪhnɪt kəˈeːlnˌɪ",
+    "uccharan": "ˈoː sˈʌbʰ dˈuːʈaː pɾəjˈoːɡ kəˈeːlnˌɪ jˈaː tˈẽː pʰˈeːɟ mẽː ɾˌeːɖɪjoːdʰˈʌrmi pʰˈaːspʰoːɾˌəsək sˈʌŋɡ dˌiːˌɛnˈeɪ jˈaː ɾˌeːɖɪjoːdʰˈʌrmi sˈʌlpʰəɾˌək sˈʌŋɡ pʰˈeːɟək pɾoːʈˈiːn kˈẽː cˈɪhnɪt kəˈeːlnˌɪ"
    },
    {
-    "id": "flores-devtest-67",
-    "text": "मुदा कप्तानक विकेट गिरबाक पश्चात भारत पाली समाप्त भेला पर 7 विकेटक नोकसान कए मात्र 36 रन बनोलक।",
-    "reference": "mˈʊdaː kəptˈaːnək ʋɪkˈeːʈ ɡˌɪɾbˈaːk pəʃcˈaːt bʰˈaːɾət pˈaːli səmˈaːpt bʰˈeːlaː pˈʌɾ sˈaːt ʋɪkˈeːʈək nˌoːksˈaːn kˈʌeː mˈaːtɾə cʰˈʌtːis ɾˈʌn bənˈoːlək",
-    "uccharan": "mˈʊdaː kəptˈaːnək ʋɪkˈeːʈ ɡˌɪɾbˈaːk pəʃcˈaːt bʰˈaːɾət pˈaːli səmˈaːpt bʰˈeːlaː pˈʌɾ sˈaːt ʋɪkˈeːʈək nˌoːksˈaːn kˈʌeː mˈaːtɾə cʰətːˈiːs ɾˈʌn bənˈoːlək"
+    "id": "flores-devtest-11",
+    "text": "एकटा एंटीबॉडी कॉकटेल ZMapp, आरम्भ मे उम्मीद जगोलक मुदा औपचारिक अध्ययन संकेत कएलक जे ई मृत्यु रोकबाक मांगक तुलना मे कम लाभकारी छल।",
+    "reference": "ˈeːkʈˌaː ẽːʈˈiːbɔɖˌi kˌɔkʈˈeːl zˈɛd mˈap aːɾˈʌmbʰ mˈeː ʊmmˈiːd ɟəɡˈoːlək mˈʊdaː ˌɔːpcˈaːɾɪk ˈʌdʰjəjˌən səŋkˈeːt kəˈeːlək ɟˈeː ˈi mɾˈɪtːjʊ ɾˌoːkbˈaːk mˈãɡək tˈʊlnˌaː mˈeː kˈʌm lˌaːbʰkˈaːɾi cʰˈʌl",
+    "uccharan": "ˈeːkʈˌaː ẽːʈˈiːbɔɖˌi kˌɔkʈˈeːl zmˈap aːɾˈʌmbʰ mˈeː ʊmmˈiːd ɟəɡˈoːlək mˈʊdaː ˌɔːpcˈaːɾɪk ˈʌdʰjəjˌən səŋkˈeːt kəˈeːlək ɟˈeː ˈi mɾˈɪtːjʊ ɾˌoːkbˈaːk mˈãɡək tˈʊlnˌaː mˈeː kˈʌm lˌaːbʰkˈaːɾi cʰˈʌl"
    },
    {
-    "id": "flores-devtest-6",
-    "text": "ओ कहलथि जे ओ एकटा WiFi डोर बेलक निर्माण केलथि।",
-    "reference": "ˈoː kˈʌhəltʰɪ ɟˈeː ˈoː ˈeːkʈˌaː wˈaɪ fˌaɪ ɖˈoːɾ bˈeːlək nɪrmˈaːɳ kˈeːltʰˌɪ",
-    "uccharan": "ˈoː kˈʌhəltʰɪ ɟˈeː ˈoː ˈeːkʈˌaː wˈɪ fˈaɪ ɖˈoːɾ bˈeːlək nɪrmˈaːɳ kˈeːltʰˌɪ"
+    "id": "flores-devtest-774",
+    "text": "उत्तरी तटक समुद्र तट सभ (उत्तरी हार्बर जिला मे) प्रशांत महासागर पर स्थित अछि आ ओ उत्तर मे लॉन्ग खाड़ी सँ दक्षिण मे डेवोनपोर्ट धरि विस्तारित अछि।",
+    "reference": "ˈʊtːɾˌi tˈʌʈək səmˈʊdɾə tˈʌʈ sˈʌbʰ ˈʊtːɾˌi hˈaːɾbəɾ ɟˈɪlaː mˈeː pɾəʃˈãt mˌahaːsaːɡˈaɾ pˈʌɾ stʰˈɪt ˈʌcʰɪ ˈaː ˈoː ˈʊtːəɾ mˈeː lˈɔnɡ kʰˈaːr.i sˈʌn dˈʌkʃɪɳ mˈeː ɖˌeːʋoːnpˈoːɾʈ dʰˈʌɾɪ ʋɪstˈaːɾɪt ˈʌcʰɪ",
+    "uccharan": "ˈʊtːɾˌi tˈʌʈək səmˈʊdɾə tˈʌʈ sˈʌbʰ ˈʊtːɾˌi hˈaːɾbəɾ ɟˈɪlaː mˈeː pɾəʃˈãt mˌəhaːsˈaːɡəɾ pˈʌɾ stʰˈɪt ˈʌcʰɪ ˈaː ˈoː ˈʊtːəɾ mˈeː lˈɔnɡ kʰˈaːr.i sˈʌn dˈʌkʃɪɳ mˈeː ɖˌeːʋoːnpˈoːɾʈ dʰˈʌɾɪ ʋɪstˈaːɾɪt ˈʌcʰɪ"
    },
    {
-    "id": "flores-devtest-790",
-    "text": "ट्रैवल एजेंट आमतौर पर पैकेजक पेशकश करैत छथि जाहि में नाश्ता, हवाई अड्डे सँ / कें लेल परिवहन व्यवस्था या अतय धरि ​​​​कि संयुक्त उड़ान आ होटल पैकेज शामिल अछि।",
-    "reference": "ʈɾˈɛːʋəl eːɟˈẽːʈ ˌaːmtˈɔːɾ pˈʌɾ pɛːkˈeːɟək pˈeːʃəkˌəʃ kəɾˈɛːt cʰˈʌtʰɪ ɟˈaːhɪ mẽː nˈaːʃtaː həʋˈaːi ˈʌɖɖeː sˈʌn slˈaʃ kˈẽː lˈeːl pˈʌɾɪʋˌəhən ʋjəʋˈʌstʰaː jˈaː ˈʌtˌɛj dʰˈʌɾɪ kˈɪ səɲjˈʊkt ʊr.ˈaːn ˈaː hˈoːʈəl pɛːkˈeːɟ ʃˈaːmɪl ˈʌcʰɪ",
-    "uccharan": "ʈɾˈɛːʋəl eːɟˈẽːʈ ˌaːmtˈɔːɾ pˈʌɾ pɛːkˈeːɟək pˈeːʃəkˌəʃ kəɾˈɛːt cʰˈʌtʰɪ ɟˈaːhɪ mẽː nˈaːʃtaː həʋˈaːi ˈʌɖɖeː sˈʌn kˈẽː lˈeːl pˈʌɾɪʋˌəhən ʋjəʋˈʌstʰaː jˈaː ˈʌtˌɛj dʰˈʌɾɪ kˈɪ səɲjˈʊkt ʊr.ˈaːn ˈaː hˈoːʈəl pɛːkˈeːɟ ʃˈaːmɪl ˈʌcʰɪ"
+    "id": "flores-devtest-977",
+    "text": "संगहि r आ rr कें अलग-अलग उच्चारण निश्चित करू: caro केर अर्थ हिरण होइत अछि आ carro केर अर्थ रथ होइत अछि।",
+    "reference": "sˈʌŋɡəhˌɪ ˈɑː ˈaː ˌɑːɹˈɑː kˈẽː ˈʌləɡˌəˈʌləɡ ʊcːˈaːɾəɳ nˈɪʃcɪt kˈʌɾuː kˈaɹəʊ kˈeːɾ ˈʌɾtʰ hˈɪɾəɳ hˈoːɪt ˈʌcʰɪ ˈaː kˈɑːɹəʊ kˈeːɾ ˈʌɾtʰ ɾˈʌtʰ hˈoːɪt ˈʌcʰɪ",
+    "uccharan": "sˈʌŋɡəhˌɪ ˈɑː ˈaː ˌɑːˈɑː kˈẽː ˈʌləɡˌəˈʌləɡ ʊcːˈaːɾəɳ nˈɪʃcɪt kˈʌɾuː kˈɑːɹəʊ kˈeːɾ ˈʌɾtʰ hˈɪɾəɳ hˈoːɪt ˈʌcʰɪ ˈaː kˈɑːɹəʊ kˈeːɾ ˈʌɾtʰ ɾˈʌtʰ hˈoːɪt ˈʌcʰɪ"
    },
    {
-    "id": "flores-devtest-527",
-    "text": "अलगाव आ पुनर्संयोजन प्रत्येक पीढ़ीक संग द्विटा पूल सभक बीच फेरबदल भिन्नता कें आगू-पाछू करैत रहैत अछि।",
-    "reference": "ˌʌlɡˈaːʋ ˈaː pˌʊnərsəɲjˈoːɟən pɾətːjˈeːk pˈiːr.hik sˈʌŋɡ dʋˈɪʈaː pˈuːl sˈʌbʰək bˈiːc pʰˈeːɾəbˌədəl bʰˈɪnnətˌaː kˈẽː ˈaːɡuːpˈaːcʰuː kəɾˈɛːt ɾəhˈɛːt ˈʌcʰɪ",
-    "uccharan": "ˌʌlɡˈaːʋ ˈaː pˌʊnərsəɲjˈoːɟən pɾətːjˈeːk pir.hˈiːk sˈʌŋɡ dʋˈɪʈaː pˈuːl sˈʌbʰək bˈiːc pʰˈeːɾəbˌədəl bʰˈɪnnətˌaː kˈẽː ˈaːɡuːpˈaːcʰuː kəɾˈɛːt ɾəhˈɛːt ˈʌcʰɪ"
+    "id": "flores-devtest-14",
+    "text": "हमरा सभ USOC-क ई कथन सँ सहमत छी जे हमरा सभक एथलीट आ क्लबक हित आ हुनका सभक खेलकूद कें डीसर्टिफिकेशनक बदला मे हमरा सभक संगठनक अंदर सार्थक परिवर्तन कए बेसी नीक जेकां पूर्ण कएल जा सकैत अछि",
+    "reference": "hˈʌmɾˌaː sˈʌbʰ jˈuːzɒkkˈə ˈi kˈʌtʰən sˈʌn sˈʌhəmˌət cʰˈi ɟˈeː hˈʌmɾˌaː sˈʌbʰək ˌeːtʰlˈiːʈ ˈaː klˈʌbək hˈɪt ˈaː hˈʊnkˌaː sˈʌbʰək kʰˌeːlkˈuːd kˈẽː ɖˌiːsrʈˌɪpʰɪkˈeːʃənˌək bˈʌdlˌaː mˈeː hˈʌmɾˌaː sˈʌbʰək sˈʌŋɡəʈʰˌənək ˈʌndəɾ sˈaːɾtʰək pˌəɾɪʋˈʌɾtən kˈʌeː bˈeːsi nˈiːk ɟˈeːkã pˈuːrɳə kəˈeːl ɟˈaː səkˈɛːt ˈʌcʰɪ",
+    "uccharan": "hˈʌmɾˌaː sˈʌbʰ juːsˈəʊkkˈə ˈi kˈʌtʰən sˈʌn sˈʌhəmˌət cʰˈi ɟˈeː hˈʌmɾˌaː sˈʌbʰək ˌeːtʰlˈiːʈ ˈaː klˈʌbək hˈɪt ˈaː hˈʊnkˌaː sˈʌbʰək kʰˌeːlkˈuːd kˈẽː ɖˌiːsɾʈˌɪpʰɪkˈeːʃənˌək bˈʌdlˌaː mˈeː hˈʌmɾˌaː sˈʌbʰək sˈʌŋɡəʈʰˌənək ˈʌndəɾ sˈaːɾtʰək pˌəɾɪʋˈʌɾtən kˈʌeː bˈeːsi nˈiːk ɟˈeːkã pˈuːrɳə kəˈeːl ɟˈaː səkˈɛːt ˈʌcʰɪ"
    },
    {
-    "id": "flores-devtest-65",
-    "text": "रॉबिन उथप्पा सर्वोच्च स्कोर बनोलक, ओ मात्र 41 गेंद मे 11 चौका आ 2 छक्का केर मदति सँ 70 रन बनोलक।",
-    "reference": "ɾˈɔbɪn ʊtʰˈʌpːaː sərʋˈoːcː skˈoːɾ bənˈoːlək ˈoː mˈaːtɾə ɪktˈaːlis ɡˈẽːd mˈeː ɡjˈaːɾəh cˈɔːkaː ˈaː dˈoː cʰˈʌkːaː kˈeːɾ mˈʌdtˌɪ sˈʌn sˈʌtːəɾ ɾˈʌn bənˈoːlək",
-    "uccharan": "ɾˈɔbɪn ʊtʰˈʌpːaː sərʋˈoːcː skˈoːɾ bənˈoːlək ˈoː mˈaːtɾə ˌɪktaːlˈiːs ɡˈẽːd mˈeː ɡjˈaːɾəh cˈɔːkaː ˈaː dˈoː cʰˈʌkːaː kˈeːɾ mˈʌdtˌɪ sˈʌn sˈʌtːəɾ ɾˈʌn bənˈoːlək"
+    "id": "flores-devtest-101",
+    "text": "हालाँकि, तपेदिक सँ पीड़ित लोक सभक पूरा समूह मे XDR-TB केर प्रतिशत एखनो कम अछि; दक्षिण अफ्रीका मे कोनो विशेष क्षण मे संक्रमित कुल 330,000 लोक सभ मे सँ 6,000।",
+    "reference": "haːlˈãnkɪ təpˈeːdɪk sˈʌn pˈiːr.ɪt lˈoːk sˈʌbʰək pˈuːɾaː səmˈuːh mˈeː ˈɛks dˈiː ˈɑːtˈiːbˈiː kˈeːɾ pɾˈʌtɪʃˌət ˈeːkʰnˌoː kˈʌm ˈʌcʰɪ dˈʌkʃɪɳ ʌpʰɾˈiːkaː mˈeː kˈoːnoː ʋɪʃˈeːʂ kʃˈʌɳ mˈeː sˈʌŋkɾəmˌɪt kˈʊl tˈiːn lˈaːkʰ tˈiːs hˈʌɟaːɾ lˈoːk sˈʌbʰ mˈeː sˈʌn cʰˈʌh hˈʌɟaːɾ",
+    "uccharan": "haːlˈãnkɪ təpˈeːdɪk sˈʌn pˈiːr.ɪt lˈoːk sˈʌbʰək pˈuːɾaː səmˈuːh mˈeː ˌɛksdˌiːˈɑːtˌiːbˈiː kˈeːɾ pɾˈʌtɪʃˌət ˈeːkʰnˌoː kˈʌm ˈʌcʰɪ dˈʌkʃɪɳ ʌpʰɾˈiːkaː mˈeː kˈoːnoː ʋɪʃˈeːʂ kʃˈʌɳ mˈeː sˈʌŋkɾəmˌɪt kˈʊl tˈiːn lˈaːkʰ tˈiːs hˈʌɟaːɾ lˈoːk sˈʌbʰ mˈeː sˈʌn cʰˈʌh hˈʌɟaːɾ"
    },
    {
-    "id": "flores-devtest-600",
-    "text": "हर्शे आ चेज़ अपन स्वयंक DNA कें एकटा जीवाणु में प्रत्यारोपित करय कें लेल फेज या वायरसक उपयोग कएलनि।",
-    "reference": "hˈʌrʃeː ˈaː cˈeːz ˈʌpən sʋəjˈʌŋk dˈiː ˈɛn ˈeɪ kˈẽː ˈeːkʈˌaː ɟiʋˈaːɳʊ mẽː pɾˌətːjaːɾˈoːpɪt kˈʌɾˌɛj kˈẽː lˈeːl pʰˈeːɟ jˈaː ʋˈaːjəɾˌəsək ˌʊpjˈoːɡ kəˈeːlnˌɪ",
-    "uccharan": "hˈʌrʃeː ˈaː cˈeːz ˈʌpən sʋəjˈʌŋk dˌiːˌɛnˈeɪ kˈẽː ˈeːkʈˌaː ɟiʋˈaːɳʊ mẽː pɾˌətːjaːɾˈoːpɪt kˈʌɾˌɛj kˈẽː lˈeːl pʰˈeːɟ jˈaː ʋˈaːjəɾˌəsək ˌʊpjˈoːɡ kəˈeːlnˌɪ"
+    "id": "flores-devtest-544",
+    "text": "विश्व युद्ध 2 मे जर्मनी कमन शत्रु छल जेकर कारण USSR आ USA केर बीच सहयोगक मार्ग प्रशस्त भेल। युद्ध केर समाप्तिक संग तंत्र, प्रक्रिया आ संस्कृतिक टकराव कारण कएक देशक पतन भेल।",
+    "reference": "ʋˈɪʃʋ jˈʊdʰː dˈoː mˈeː ɟˈʌrmənˌi kˈʌmən ʃˈʌtɾʊ cʰˈʌl ɟˈeːkəɾ kˈaːɾəɳ jˌuːˌɛsˌɛsˈɑː ˈaː jˈuː ˈɛs ˈeɪ kˈeːɾ bˈiːc sˌəhəjˈoːɡək mˈaːɾɡ pɾəʃˈʌst bʰˈeːl jˈʊdʰː kˈeːɾ səmˈaːptɪk sˈʌŋɡ tˈʌntɾə pɾˈʌkɾɪjˌaː ˈaː sˈʌnskɾɪtˌɪk ʈˌəkɾˈaːʋ kˈaːɾəɳ kəˈeːk dˈeːʃək pˈʌtən bʰˈeːl",
+    "uccharan": "ʋˈɪʃʋ jˈʊdʰː dˈoː mˈeː ɟˈʌrmənˌi kˈʌmən ʃˈʌtɾʊ cʰˈʌl ɟˈeːkəɾ kˈaːɾəɳ jˌuːˌɛsɛsˈɑː ˈaː jˌuːˌɛsˈeɪ kˈeːɾ bˈiːc sˌəhəjˈoːɡək mˈaːɾɡ pɾəʃˈʌst bʰˈeːl jˈʊdʰː kˈeːɾ səmˈaːptɪk sˈʌŋɡ tˈʌntɾə pɾˈʌkɾɪjˌaː ˈaː sˈʌnskɾɪtˌɪk ʈˌəkɾˈaːʋ kˈaːɾəɳ kəˈeːk dˈeːʃək pˈʌtən bʰˈeːl"
    }
   ]
  }

@@ -34,12 +34,16 @@ pub mod known;
 pub mod kokoro;
 pub mod langdef;
 pub mod lex2;
+pub mod minijson;
 pub mod names;
 pub mod norm;
+pub mod normalize_api;
 pub mod profile;
+pub mod respell;
 pub mod rules;
 pub mod text;
 pub mod wiki;
+pub mod wordlist;
 
 use data::{Data, DataError};
 pub use text::Terminator;
@@ -122,12 +126,18 @@ languages! {
     Si "si" ["si-lk", "sin", "sinhala"] Brahmic(0x0d80), Some(include_str!("../lang/si.lang"));
     /// Sanskrit in Devanagari (no espeak voice: compatible mode is the `hi` reading).
     Sa "sa" ["sa-in", "san", "sanskrit"] Devanagari, Some(include_str!("../lang/sa.lang"));
+    /// Urdu in Perso-Arabic script (espeak voice `ur`).
+    Ur "ur" ["ur-pk", "ur-in", "urd", "urdu"] Brahmic(0x0600), Some(include_str!("../lang/ur.lang"));
+    /// Sindhi in Perso-Arabic script (espeak voice `sd`).
+    Sd "sd" ["sd-pk", "snd", "sindhi"] Brahmic(0x0600), Some(include_str!("../lang/sd.lang"));
     /// Punjabi in Gurmukhi (espeak voice `pa`).
     Pa "pa" ["pa-in", "pan", "pa-guru"] Brahmic(0x0a00), Some(include_str!("../lang/pa.lang"));
     /// Bhojpuri in Devanagari or Kaithi (no espeak voice: compatible mode is the `hi` reading).
     Bho "bho" ["bho-in", "bhojpuri"] Devanagari, None;
     /// Maithili in Devanagari or Kaithi (no espeak voice: compatible mode is the `hi` reading).
     Mai "mai" ["mai-in", "maithili"] Devanagari, None;
+    /// Magahi in Devanagari or Kaithi (no espeak voice: compatible mode is the `hi` reading).
+    Mag "mag" ["mag-in", "magahi"] Devanagari, None;
 }
 
 impl Lang {
@@ -139,7 +149,7 @@ impl Lang {
     /// True for Hindi and the languages read with the Hindi front end
     /// (Bhojpuri, Maithili).
     pub fn hindi_like(self) -> bool {
-        matches!(self, Lang::Hi | Lang::Bho | Lang::Mai)
+        matches!(self, Lang::Hi | Lang::Bho | Lang::Mai | Lang::Mag)
     }
 
     /// The name used in espeak-style language-switch flags (`(en)`, `(hi)`).
@@ -314,6 +324,18 @@ impl Phonemizer {
                 p.data[2] = d.into();
             }
         }
+        #[cfg(feature = "embed-ur")]
+        {
+            if let Ok(d) = Data::from_static(include_bytes!("../data/ur.ucd")) {
+                p.data[Lang::Ur.index()] = d.into();
+            }
+        }
+        #[cfg(feature = "embed-sd")]
+        {
+            if let Ok(d) = Data::from_static(include_bytes!("../data/sd.ucd")) {
+                p.data[Lang::Sd.index()] = d.into();
+            }
+        }
         p
     }
 
@@ -404,6 +426,17 @@ impl Phonemizer {
                 owned_avagraha.as_str()
             }
             None => text,
+        };
+        // The reference's Urdu voice drops the Extended Arabic-Indic digits.
+        let owned_digits;
+        let text = if compat
+            && opt.lang == Lang::Ur
+            && text.contains(|c| ('\u{06f0}'..='\u{06f9}').contains(&c))
+        {
+            owned_digits = text.replace(|c| ('\u{06f0}'..='\u{06f9}').contains(&c), "");
+            owned_digits.as_str()
+        } else {
+            text
         };
         let mut sentences: Vec<Sentence> = Vec::new();
         let mut cur = Sentence::default();
@@ -550,11 +583,13 @@ impl Phonemizer {
             let span = &items[i..j];
             match lang {
                 Lang::Hi => out.extend(hi.span(span, last, compat)),
-                Lang::Bho | Lang::Mai => out.extend(bho::span(&hi, span, last, compat, lang)),
+                Lang::Bho | Lang::Mai | Lang::Mag => {
+                    out.extend(bho::span(&hi, span, last, compat, lang))
+                }
                 Lang::Sa if compat => out.extend(bho::span(&hi, span, last, true, lang)),
                 l if l.indic().is_some() => {
                     let g = l.indic().unwrap();
-                    out.extend(g.span(span, last, compat, l));
+                    out.extend(g.span(span, last, compat, l, self.data[l.index()].get()));
                 }
                 l => {
                     if let Some(e) = self.english(l) {

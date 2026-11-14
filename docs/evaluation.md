@@ -48,7 +48,7 @@ Numbers are read in the reference's style for this comparison (`--normalize espe
 | en-US (`en-us`) | Sherlock Holmes | 1.40 % | 1.15 % | 49.3 % | 1.40 % | 48.0 % |
 | en-GB (`en-gb-x-rp`) | Tatoeba held-out | **1.39 %** | 1.15 % | 72.5 % | 1.36 % | 72.4 % |
 | en-GB (`en-gb-x-rp`) | Sherlock Holmes | 1.51 % | 1.25 % | 45.3 % | 1.51 % | 44.2 % |
-| Hindi (`hi`) | Tatoeba held-out | **0.12 %** | 0.09 % | 98.8 % | 0.12 % | 98.8 % |
+| Hindi (`hi`) | Tatoeba held-out | **0.09 %** | 0.08 % | 99.1 % | 0.09 % | 99.0 % |
 
 For comparison, the development sets (which the rules were tuned on) give en-US 1.16 %, en-GB 1.41 %,
 Hindi 0.15 %: held-out and development agree, so the rules are not over-fitted to the development
@@ -373,6 +373,26 @@ community models (RESPIN ESPnet Bhojpuri, CC BY 4.0; a Whisper-small Bhojpuri ON
 4.0; Vakyansh wav2vec2, no licence stated). No Piper voice takes Bhojpuri or Maithili phonemes, so
 no end-to-end test was run.
 
+**Magahi** (`python tools/eval/bho_eval.py --lang mag --split heldout`). Gold set written before
+any Magahi-specific rule and split by a hash of the item: 512 words (300 Wiktionary entries via
+kaikki.org, with the pronunciation converted from Wiktionary's romanisation and checked by hand, 45
+of them kept in Kaithi script; 212 words attested in FLORES-200 mag_Deva or given in the grammars of
+Verma 2003, Aryani 1965 and Grierson's survey, hand-written) and 152 sentences (128 written for the
+set, 24 from FLORES-200). Each item records its source, licence and date. Same broad comparison,
+with ʋ = w.
+
+| Held-out | Hindi voice (espeak-ng `hi`) | compatible | improved |
+| --- | ---: | ---: | ---: |
+| Magahi words (270) | 64.4 % | 70.0 % | **98.5 %** |
+| — copula / ऐ औ and vowel + इ उ / nasals / loans / Kaithi | 25 / 20 / 42 / 53 / 0 % | 25 / 20 / 42 / 53 / 68 % | **100 / 100 / 92 / 100 / 100 %** |
+| Magahi sentences (73): PER / identical | 7.67 % / 16.4 % | 7.58 % / 17.8 % | **0.71 % / 87.7 %** |
+
+No category is below the Hindi voice. Development half: words 98.3 % (fallback 62.8 %), sentence
+PER 0.54 % (7.89 %). Before the held-out scoring, ten gold items were corrected where the written
+pronunciation contradicted the spelling (थ in हथ, करथ written t; ड in कुंड written d). MMS-1B-all
+has a Magahi adapter (CC BY-NC 4.0), but no Piper voice takes Magahi phonemes, so no end-to-end test
+was run.
+
 ## 5. Speed, start-up, memory and size
 
 ```sh
@@ -504,7 +524,7 @@ espeak-ng WebAssembly build published in the npm package `phonemizer` was **not 
 | Per-language data < 5 MB | en 0.73 MB (+ 1.9 MB for Kokoro English), hi 3 KB | yes |
 | WebAssembly core < 2 MB | 439 KiB | yes |
 | en-US sentence PER ≤ 5 % vs reference | 1.16 % | yes |
-| Hindi PER ≤ 5 % vs reference | 0.12 % | yes |
+| Hindi PER ≤ 5 % vs reference | 0.09 % | yes |
 | End-to-end WER within +0.5 (en) / +1.0 (hi) on two Piper voices per language | en-US: amy-low +0.02 (0.2.0; earlier 0.2.0 builds +0.21 and +0.30), lessac −0.09 (0.1.0); en-GB: one voice, +0.11 (interval up to +0.77); hi: one voice, −0.12 | en-US yes; en-GB and Hindi on one voice only |
 | Zero out-of-table symbols | none, except U+0329 on 130-symbol Piper maps (shared with the reference) | yes, with that note |
 | Faster than the reference on every axis | latency, throughput (one and several workers), start-up, memory: yes. Size: Hindi yes; English pack smaller raw but **larger compressed**, code larger | all speed axes yes; size only partly |
