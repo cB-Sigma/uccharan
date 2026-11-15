@@ -590,6 +590,22 @@ impl Cx<'_> {
                 return (1, self.piece(src, w, SpanKind::Time, dl, None));
             }
         }
+        // "25,50 €": an amount and its currency sign.
+        if let (Some(lat), Some(sign)) = (dl.latin(), next) {
+            if is_number(t) && crate::gnorm::is_currency_sign(sign, &lat.numbers) && !ch.dot {
+                let c = Chunk {
+                    text: format!("{t}{sign}"),
+                    dot: false,
+                    tight: false,
+                };
+                let items = self.expand(&c, dl);
+                let out = self.join(&items, dl);
+                return (
+                    2,
+                    self.piece(src.start..end_of(i + 1), out, SpanKind::Money, dl, Some(t)),
+                );
+            }
+        }
         // "+91 98765 43210": a country code and digit groups.
         let a = ascii_digits(t);
         if a.len() >= 2

@@ -49,10 +49,20 @@ their proper words, and compatible mode follows the reference voices on more num
   number in Italian, Portuguese, Polish, Czech, Turkish, Finnish, Catalan and Romanian
   ("3,25" *vinte e cinco*); no minus word in Polish, Turkish, Catalan and Danish. Improved
   mode and normalise-only mode read "2.5" as a decimal (*zwei Komma fünf*).
+- **Money with cents** in the Latin-script languages ("25,50 €", "€25,50", also with the sign
+  after a space): improved mode and normalise-only mode read the whole units, the currency and
+  the cents (*fünfundzwanzig Euro fünfzig*, *veinticinco euro cincuenta*); they were read as a
+  decimal number (*fünfundzwanzig Komma fünf null Euro*). Compatible mode keeps the reference
+  reading.
 - **French written numbers**: *cent* and *quatre-vingt* take no s before another number word
   (*deux cent mille*, *quatre-vingt mille*; still *deux cents millions*).
 - **Vietnamese letters** (ạ, ễ, ộ … in names such as *Nguyễn*) split a word in two; they are
   now Latin letters, read by their base letter in every language (English included).
+
+### Changed
+
+- The WikiPron packs `wikipron-en-us.ucd` and `wikipron-en-gb.ucd` are rebuilt: which of their
+  words need an entry depends on how accented letters are read (download them again for 0.6.3).
 
 ## [0.6.2] - 2026-11-15
 

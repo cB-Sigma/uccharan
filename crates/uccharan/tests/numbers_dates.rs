@@ -226,6 +226,48 @@ fn written_number_fixes() {
 }
 
 #[test]
+fn money_with_cents() {
+    let cases: &[(Lang, &str, &str)] = &[
+        (
+            Lang::De,
+            "Es kostet 25,50 €.",
+            "Es kostet fünfundzwanzig Euro fünfzig.",
+        ),
+        (Lang::De, "€25,50", "fünfundzwanzig Euro fünfzig"),
+        (
+            Lang::De,
+            "1.250,05 €",
+            "eintausend zweihundertfünfzig Euro fünf",
+        ),
+        (Lang::De, "3,00 €", "drei Euro"),
+        (Lang::Es, "25,50 €", "veinticinco euro cincuenta"),
+        (Lang::Fr, "25,50 €", "vingt-cinq euro cinquante"),
+        (Lang::It, "25,50 €", "venticinque euro cinquanta"),
+        (Lang::Pt, "25,50 €", "vinte e cinco euro cinquenta"),
+        (Lang::Nl, "25,50 €", "vijfentwintig euro vijftig"),
+        (Lang::EnUs, "$25.50", "twenty five dollars and fifty cents"),
+        (Lang::De, "Am 3. Mai", "Am dritten Mai"),
+    ];
+    for (l, t, want) in cases {
+        assert_eq!(norm(*l, t), *want, "{l:?} {t}");
+    }
+    let n = normalize(p(), "25,50 €", Lang::De, &NormOptions::default());
+    assert!(
+        n.spans.iter().any(|s| s.kind == SpanKind::Money),
+        "{:?}",
+        n.spans
+    );
+    let money = ipa(Lang::De, Mode::Improved, "25,50 €");
+    assert!(
+        money.contains(&uccharan::profile::nfd("ˈɔʏʁo fˈʏnftsɪç")),
+        "{money}"
+    );
+    // Compatible mode keeps the reference reading.
+    let money = ipa(Lang::De, Mode::Compatible, "25,50 €");
+    assert!(money.contains(&uccharan::profile::nfd("kɔmɑː")), "{money}");
+}
+
+#[test]
 fn vietnamese_letters_stay_inside_their_word() {
     for l in [Lang::EnUs, Lang::Es, Lang::Fr, Lang::De] {
         let o = p().phonemize("Nguyễn Phạm", &Options::new(l));

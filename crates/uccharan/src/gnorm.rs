@@ -53,6 +53,35 @@ pub fn join_groups(chunks: &[Chunk], first_max: usize, plain_only: bool) -> Vec<
     out
 }
 
+/// True when `t` is a currency sign of the language on its own.
+pub fn is_currency_sign(t: &str, nums: &Numbers) -> bool {
+    let mut cs = t.chars();
+    matches!((cs.next(), cs.next()), (Some(c), None) if nums.currency.iter().any(|x| x.0 == c))
+}
+
+/// Chunks of an amount followed by a currency sign of its own ("25,50 €")
+/// joined into one chunk ("25,50€"), for [`expand`] to read as money.
+pub fn join_currency(chunks: &[Chunk], nums: &Numbers) -> Vec<Chunk> {
+    let mut out: Vec<Chunk> = Vec::with_capacity(chunks.len());
+    for c in chunks {
+        if let Some(prev) = out.last_mut() {
+            if is_currency_sign(&c.text, nums)
+                && !prev.dot
+                && prev.text.starts_with(|x: char| x.is_ascii_digit())
+                && prev
+                    .text
+                    .bytes()
+                    .all(|b| b.is_ascii_digit() || b == b',' || b == b'.')
+            {
+                prev.text.push_str(&c.text);
+                continue;
+            }
+        }
+        out.push(c.clone());
+    }
+    out
+}
+
 /// `compat`: a group of three digits with a leading zero is read as the
 /// reference voices read it ("000" zero-zero zero, "012" zero twelve).
 fn push_number(
@@ -242,6 +271,45 @@ fn date(text: &str, nums: &Numbers, prev: Option<&str>) -> Option<Vec<Item>> {
     Some(out)
 }
 
+/// An amount of money with cents and a currency sign before or after it
+/// ("25,50 €", "€25,50"): the whole units, the currency word, the cents
+/// ("fünfundzwanzig Euro fünfzig").
+fn money(text: &str, nums: &Numbers) -> Option<Vec<Item>> {
+    let (words, amount) = nums.currency.iter().find_map(|(c, w)| {
+        let a = text
+            .strip_suffix(*c)
+            .or_else(|| text.strip_prefix(*c))?
+            .trim_end_matches('\u{a0}');
+        Some((w, a))
+    })?;
+    let sep = if nums.decimal_comma { ',' } else { '.' };
+    let (whole, cents) = amount.split_once(sep)?;
+    let whole = whole.replace([if nums.decimal_comma { '.' } else { ',' }, ' '], "");
+    if cents.len() != 2
+        || whole.is_empty()
+        || !whole.bytes().all(|b| b.is_ascii_digit())
+        || !cents.bytes().all(|b| b.is_ascii_digit())
+    {
+        return None;
+    }
+    let mut w = Vec::new();
+    nums.cardinal(whole.parse().ok()?, &mut w);
+    let item = |(t, g): &(String, bool)| {
+        let mut it = Item::word(t);
+        it.glue = *g;
+        it
+    };
+    let mut out: Vec<Item> = w.iter().map(item).collect();
+    out.extend(words.iter().map(|t| Item::word(t)));
+    let c: u64 = cents.parse().ok()?;
+    if c > 0 {
+        let mut w = Vec::new();
+        nums.cardinal(c, &mut w);
+        out.extend(w.iter().map(item));
+    }
+    Some(out)
+}
+
 /// The Hungarian day of a date: the ordinal with its possessive ending
 /// ("tizenötödik" tizenötödike, "harmadik" harmadika, "első" elseje).
 fn possessive(w: &str) -> String {
@@ -323,7 +391,7 @@ pub fn expand(
     prev: Option<&str>,
 ) -> Vec<Item> {
     if natural {
-        if let Some(items) = date(&chunk.text, nums, prev) {
+        if let Some(items) = date(&chunk.text, nums, prev).or_else(|| money(&chunk.text, nums)) {
             return items;
         }
     }

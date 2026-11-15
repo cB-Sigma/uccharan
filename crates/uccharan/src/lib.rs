@@ -626,6 +626,15 @@ impl Phonemizer {
             } else {
                 &raw.chunks
             };
+            // "25,50 €": an amount and its currency sign read together.
+            let with_sign;
+            let chunks: &[text::Chunk] = match opt.lang.latin() {
+                Some(l) if !compat => {
+                    with_sign = gnorm::join_currency(chunks, &l.numbers);
+                    &with_sign
+                }
+                _ => chunks,
+            };
             for (ci, chunk) in chunks.iter().enumerate() {
                 // "Maple Dr." / "Baker St.": after a capitalised name and not before
                 // another one, these are "drive" and "street", not titles.

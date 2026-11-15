@@ -93,11 +93,11 @@ export const PACKS = Object.freeze({
   "size": 542615
  },
  "wikipron-en-gb": {
-  "sha256": "53718c5458145f7a49cb0bc29c534f1eddf4f6424f240e654bc469f4884c8d4f",
-  "size": 728104
+  "sha256": "04683c84c64aa3daefe99ab66582e541995cc3cfa2d2e58193c36bf0fdaefb61",
+  "size": 728103
  },
  "wikipron-en-us": {
-  "sha256": "85946bafb7e1e9daab9909138c7ba38437ca6d42d8e673122a8eba76dfdf814b",
+  "sha256": "8bd3db37d343c862a93b8350d9b6525a3989ed8e679be79ceb761ebcb612dacf",
   "size": 741599
  },
  "wikipron-hi": {

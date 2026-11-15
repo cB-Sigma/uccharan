@@ -74,4 +74,6 @@ test("dates and ordinals are read in full", async () => {
   assert.equal((await uccharan.normalize("le 1er mai", { lang: "fr" })).text, "le premier mai");
   assert.equal((await uccharan.normalize("200 000", { lang: "fr" })).text, "deux cent mille");
   assert.equal((await uccharan.normalize("el 2º", { lang: "es" })).text, "el segundo");
+  assert.equal((await uccharan.normalize("25,50 €", { lang: "de" })).text, "fünfundzwanzig Euro fünfzig");
+  assert.equal((await uccharan.normalize("Am 3. Mai", { lang: "de" })).text, "Am dritten Mai");
 });

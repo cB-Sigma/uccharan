@@ -691,7 +691,7 @@ fn latin_number_forms() {
     assert_eq!(&"Il y a 12 500 personnes."[s.src.clone()], "12 500");
     // Decimal comma, percent, currency.
     assert_eq!(norm("3,5 %", Lang::De).text, "drei Komma fünf Prozent");
-    assert_eq!(norm("12,50 €", Lang::Es).text, "doce coma cincuenta euro");
+    assert_eq!(norm("12,50 €", Lang::Es).text, "doce euro cincuenta");
     assert_eq!(
         both("€5", Lang::De),
         ("Euro fünf".into(), "fünf Euro".into())

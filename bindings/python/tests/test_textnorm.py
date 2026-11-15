@@ -194,3 +194,5 @@ def test_normalize_dates_and_ordinals() -> None:
     assert uccharan.normalize("200 000", "fr").text == "deux cent mille"
     assert uccharan.normalize("el 2º", "es").text == "el segundo"
     assert uccharan.normalize("15/08/2024", "es").text == "quince de agosto de dos mil veinticuatro"
+    assert uccharan.normalize("Es kostet 25,50 €.", "de").text == "Es kostet fünfundzwanzig Euro fünfzig."
+    assert uccharan.normalize("Am 3. Mai", "de").text == "Am dritten Mai"
