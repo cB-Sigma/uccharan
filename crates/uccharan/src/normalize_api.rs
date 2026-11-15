@@ -714,7 +714,9 @@ impl Cx<'_> {
             let items = crate::gnorm::expand(c, &lat.numbers, false, !improved);
             return written_latin(items, &lat.numbers);
         }
-        if l.hindi_like() || l == Lang::Sa || l.indic().is_none() {
+        // Sanskrit reads numbers in Hindi in compatible mode (as the
+        // reference does) and in Sanskrit in improved mode.
+        if l.hindi_like() || (l == Lang::Sa && !improved) || l.indic().is_none() {
             let mut items = crate::norm::expand_with(c, Lang::Hi, Normalize::Natural, improved);
             if matches!(l, Lang::Bho | Lang::Mai) {
                 crate::bho::adapt_numbers(&mut items, l);
@@ -725,6 +727,13 @@ impl Cx<'_> {
         // Written number words where the language has them.
         let nums = g.numbers_text.as_ref().unwrap_or(&g.numbers);
         let mut items = crate::gnorm::expand(c, nums, false, false);
+        // Languages whose number table holds keys of the word table rather
+        // than words (si, sd) write them by `[numbers.written]`.
+        if g.numbers_text.is_none() {
+            for it in items.iter_mut().filter(|i| i.generated) {
+                it.text = nums.written(&it.text);
+            }
+        }
         // Currency signs the generic reader leaves out.
         if c.text.starts_with('₹') {
             if let Some(w) = rupee_word(l) {
@@ -1132,6 +1141,9 @@ fn rupee_word(l: Lang) -> Option<&'static str> {
         Lang::Kn => "ರೂಪಾಯಿ",
         Lang::Ta => "ரூபாய்",
         Lang::Ml => "രൂപ",
+        Lang::Si => "රුපියල්",
+        Lang::Ur => "روپے",
+        Lang::Sd => "رپيا",
         _ => return None,
     })
 }

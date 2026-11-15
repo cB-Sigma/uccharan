@@ -173,7 +173,8 @@ written-plural million millions ; … the plural of a scale word after a count o
                             ; where it is not the word without its marks (`#`, `num`, and
                             ; the variant suffixes `v2`, `2`, `x`, `-h`): `tusen# ett`;
                             ; `*FROM TO` replaces inside a word (`_` is a space, `FROM$`
-                            ; only at its end: Spanish `*+ì+ _y_`, Italian `*otre$ otré`)
+                            ; only at its end: Spanish `*+ì+ _y_`, Italian `*otre$ otré`);
+                            ; a number table of lookup keys (si, sd) gives every key its word
 ```
 
 Normalise-only mode (`normalize`) writes numbers with the same `[numbers]` rules as the

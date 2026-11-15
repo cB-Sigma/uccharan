@@ -5,6 +5,32 @@ All notable changes are listed here. The format follows
 
 ## [Unreleased]
 
+## [0.6.2] - 2026-11-15
+
+Bug fixes. Normalise-only mode wrote numbers in Sinhala and Sindhi as internal keys instead of
+words; every non-Latin language is now checked for numbers written in its own script.
+
+### Fixed
+
+- **Normalise-only mode in Sinhala and Sindhi** (`normalize` in Python, WASM and C,
+  `normalize_api` in Rust): numbers came out as the keys the phonemiser uses to look up its
+  number readings, strings of letters that are not words ("25" → *ණගඡ* in Sinhala, *ڙتج* in
+  Sindhi). They are now written as Sinhala and Sindhi words, one for each number word the
+  phonemiser reads (`[numbers.written]` in `si.lang` and `sd.lang`): "25" → *විසිපහ*,
+  *پنجويهه*; "1,234" → *එක දහස දෙක සිය තිස්හතර*, *هڪ هزار ٻه سؤ چوٽيهه*.
+- **Decimals in Sinhala, Sindhi, Konkani and Sanskrit (improved mode)** lost their decimal point word ("3.5"
+  was read *three five*). The phonemiser now says the point as the reference voice does
+  (*දශම*, *ڏهائي*, *दशमलव*) and normalise-only mode writes it; Sindhi `%` is *فيصد*.
+- **The rupee sign** is written as a word in Sinhala, Urdu and Sindhi (*රුපියල්*, *روپے*,
+  *رپيا*), as in the other Indian languages; it was left out.
+- **Sanskrit in improved mode** wrote numbers as Hindi words while the phonemiser reads them in
+  Sanskrit; it now writes the Sanskrit words (*पञ्चविंशतिः*). Compatible mode keeps the Hindi
+  words, as the reference voice reads digits in Hindi.
+- **Phonemiser, Sinhala and Sindhi digits**: Sinhala 6 and 7 (alone and in 106, 1006 …) were
+  read as the letters of their internal key (*ɳɐdʒə*) and are now *hɐjə*, *hɐtə*; the Sindhi
+  hundred was *basaʊ* after every count ("500" *panɟa basaʊ*) and is now *saʊ*, as the
+  reference voice reads it.
+
 ## [0.6.1] - 2026-11-15
 
 Bug fixes. Normalise-only mode reads numbers in the Latin-script languages with their own

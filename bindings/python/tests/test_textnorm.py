@@ -124,3 +124,61 @@ def test_normalize_latin_languages() -> None:
     assert n.text == "Ich habe dreiundzwanzig Euro."
     number = next(s for s in n.spans if s.kind == "number")
     assert number.lang == "de" and number.value == "23"
+
+
+# Expected Unicode block of each non-Latin language's output.
+_BLOCKS = {
+    **dict.fromkeys(["hi", "mr", "ne", "kok", "sa", "bho", "mai", "mag"], (0x0900, 0x097F)),
+    **dict.fromkeys(["bn", "as"], (0x0980, 0x09FF)),
+    "pa": (0x0A00, 0x0A7F),
+    "gu": (0x0A80, 0x0AFF),
+    "or": (0x0B00, 0x0B7F),
+    "ta": (0x0B80, 0x0BFF),
+    "te": (0x0C00, 0x0C7F),
+    "kn": (0x0C80, 0x0CFF),
+    "ml": (0x0D00, 0x0D7F),
+    "si": (0x0D80, 0x0DFF),
+    **dict.fromkeys(["ur", "sd"], (0x0600, 0x06FF)),
+}
+
+_TWENTY_FIVE = {
+    "hi": "पच्चीस",
+    "bn": "পঁচিশ",
+    "mr": "पंचवीस",
+    "te": "ఇరవై ఐదు",
+    "ne": "पच्चीस",
+    "kn": "ಇಪ್ಪತ್ತೈದು",
+    "ta": "இருபத்து ஐந்து",
+    "ml": "ഇരുപത്തിയഞ്ച്",
+    "as": "পঁচিশ",
+    "gu": "પચ્ચીસ",
+    "pa": "ਪੱਚੀ",
+    "or": "ପଚିଶ",
+    "kok": "पंचवीस",
+    "si": "විසිපහ",
+    "sa": "पच्चीस",
+    "ur": "پچیس",
+    "sd": "پنجويهه",
+    "bho": "पच्चीस",
+    "mai": "पच्चीस",
+    "mag": "पच्चीस",
+}
+
+
+def test_normalize_indic_languages() -> None:
+    # Every non-Latin language writes numbers as words of its own script.
+    for lang, (lo, hi) in _BLOCKS.items():
+        assert uccharan.normalize("25", lang).text == _TWENTY_FIVE[lang], lang
+        for text in ["25", "1,234", "3.5", "₹500", "15/08/2024"]:
+            for improved in (False, True):
+                out = uccharan.normalize(text, lang, improved=improved).text
+                assert out, (lang, text)
+                for c in out:
+                    assert c in " ‌‍" or lo <= ord(c) <= hi, (lang, text, out, c)
+    # Sinhala and Sindhi: words, not keys of the phonemiser's word table.
+    assert uccharan.normalize("1,234", "si").text == "එක දහස දෙක සිය තිස්හතර"
+    assert uccharan.normalize("3.5", "si").text == "තුන දශම පහ"
+    assert uccharan.normalize("1,234", "sd").text == "هڪ هزار ٻه سؤ چوٽيهه"
+    assert uccharan.normalize("₹500", "sd").text == "پنج سؤ رپيا"
+    # The words read as the digits do.
+    assert uccharan.phonemize(uccharan.normalize("13", "si").text, "si") == uccharan.phonemize("13", "si")

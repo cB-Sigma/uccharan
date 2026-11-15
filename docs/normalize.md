@@ -157,13 +157,18 @@ Number spans carry `value` (the digits read).
   places where a voice reads a number word differently from the same word in letters (Danish,
   Turkish and Swedish most: `crates/uccharan/tests/normalize_api.rs`,
   `latin_numbers_round_trip`).
-- **Other Indian languages** (bn, mr, ne, gu, pa, or, te, kn, ta, ml, as, kok, si): numbers in
+- **Other Indian languages** (bn, mr, ne, gu, pa, or, te, kn, ta, ml, as, kok, si, sd, ur): numbers in
   any of the Indic digit blocks or ASCII, with the language's number words, `%` and `₹`. Dates,
   times and phone numbers are read part by part. For bn, gu, kn, ml, mr, ne, or, pa, ta, te and ur the number words are the standard written
   forms from Unicode CLDR's spell-out rules (`crates/uccharan/lang/numbers/`, read by
   `uccharan::rbnf`): இருபத்து ஐந்து, दोन हजार चोवीस, পঞ্চাশ শতাংশ, पन्नास टक्के, तीन. The phonemiser keeps
-  its own number words, which follow the voices. Assamese, Konkani, Sinhala and Sindhi still use the
-  phonemiser's number words.
+  its own number words, which follow the voices. Assamese, Konkani, Sinhala and Sindhi use the
+  phonemiser's number words; Sinhala and Sindhi write them by `[numbers.written]` (their number
+  tables hold lookup keys, not words): විසිපහ, پنجويهه. Sanskrit writes Hindi number words in
+  compatible mode and Sanskrit ones (पञ्चविंशतिः) in improved mode, as the phonemiser reads them.
+  Every one of these languages is checked for words in its own script that read back to the
+  phonemes of the digits (`indic_numbers_in_their_own_script` in
+  `crates/uccharan/tests/normalize_api.rs`).
 
 ## Accuracy
 

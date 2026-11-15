@@ -821,3 +821,154 @@ fn latin_numbers_round_trip() {
         }
     }
 }
+
+/// Every non-Latin language writes its numbers in its own script: no
+/// digits, no letters of another block, and words that read back to
+/// (nearly) the phonemes of the digits. Sinhala and Sindhi number tables
+/// hold keys of the word table, not words: these must not leak out.
+#[test]
+fn indic_numbers_in_their_own_script() {
+    use uccharan::text::script_of;
+    fn strip(s: &str) -> Vec<char> {
+        s.chars()
+            .filter(|c| !matches!(c, 'ˈ' | 'ˌ' | 'ː' | 'ʔ' | ' ' | '-' | '.' | ','))
+            .collect()
+    }
+    fn dist(a: &[char], b: &[char]) -> usize {
+        let mut prev: Vec<usize> = (0..=b.len()).collect();
+        for i in 1..=a.len() {
+            let mut cur = vec![i; b.len() + 1];
+            for j in 1..=b.len() {
+                cur[j] = (prev[j] + 1)
+                    .min(cur[j - 1] + 1)
+                    .min(prev[j - 1] + usize::from(a[i - 1] != b[j - 1]));
+            }
+            prev = cur;
+        }
+        prev[b.len()]
+    }
+    let twenty_five: &[(Lang, &str)] = &[
+        (Lang::Hi, "पच्चीस"),
+        (Lang::Bn, "পঁচিশ"),
+        (Lang::Mr, "पंचवीस"),
+        (Lang::Te, "ఇరవై ఐదు"),
+        (Lang::Ne, "पच्चीस"),
+        (Lang::Kn, "ಇಪ್ಪತ್ತೈದು"),
+        (Lang::Ta, "இருபத்து ஐந்து"),
+        (Lang::Ml, "ഇരുപത്തിയഞ്ച്"),
+        (Lang::As, "পঁচিশ"),
+        (Lang::Gu, "પચ્ચીસ"),
+        (Lang::Pa, "ਪੱਚੀ"),
+        (Lang::Or, "ପଚିଶ"),
+        (Lang::Kok, "पंचवीस"),
+        (Lang::Si, "විසිපහ"),
+        (Lang::Sa, "पच्चीस"),
+        (Lang::Ur, "پچیس"),
+        (Lang::Sd, "پنجويهه"),
+        (Lang::Bho, "पच्चीस"),
+        (Lang::Mai, "पच्चीस"),
+        (Lang::Mag, "पच्चीस"),
+    ];
+    for (l, want) in twenty_five {
+        assert_eq!(norm("25", *l).text, *want, "{l:?}");
+    }
+    let cases: &[(Lang, &str, &str)] = &[
+        (Lang::Si, "1,234", "එක දහස දෙක සිය තිස්හතර"),
+        (Lang::Si, "3.5", "තුන දශම පහ"),
+        (Lang::Si, "₹500", "පහ සිය රුපියල්"),
+        (Lang::Si, "6 7 16 70 99", "හය හත දහසය හැත්තෑව අනූනවය"),
+        (Lang::Sd, "1,234", "هڪ هزار ٻه سؤ چوٽيهه"),
+        (Lang::Sd, "3.5", "ٽي ڏهائي پنج"),
+        (Lang::Sd, "₹500", "پنج سؤ رپيا"),
+        (Lang::Sd, "50%", "پنجاهه فيصد"),
+        (Lang::Sd, "0 9 20 60 99", "ٻڙي نو ويهه سٺ نوانوي"),
+        (Lang::Ur, "₹500", "پانچ سو روپے"),
+        (Lang::Kok, "3.5", "तीन दशमलव पाच"),
+    ];
+    for (l, t, want) in cases {
+        let n = norm(t, *l);
+        check(t, &n);
+        assert_eq!(n.text, *want, "{l:?} {t}");
+    }
+    // Sanskrit: Hindi number words in compatible mode (as the reference
+    // reads digits), Sanskrit ones in improved mode.
+    let improved = NormOptions {
+        mode: Mode::Improved,
+        ..NormOptions::default()
+    };
+    assert_eq!(
+        normalize(p(), "25 3.5", Lang::Sa, &improved).text,
+        "पञ्चविंशतिः त्रीणि दशमलव पञ्च"
+    );
+    let mut nums: Vec<String> = (0..=110).map(|n| n.to_string()).collect();
+    for n in [
+        150, 200, 222, 345, 999, 1000, 1234, 2024, 12345, 99999, 123456,
+    ] {
+        nums.push(n.to_string());
+    }
+    for s in ["1,234", "3.5", "₹500", "15/08/2024", "50%"] {
+        nums.push(s.to_string());
+    }
+    // Largest share of differing phonemes allowed, in per cent, in
+    // compatible and improved mode. The words are read by the letter
+    // rules, the digits by the reference's number words: Perso-Arabic
+    // script without vowel marks (ur, sd) and the Odia reference differ
+    // most. Compatible Nepali reads digits in English and compatible
+    // Konkani names its vowel signs, as the reference does: not checked.
+    let bounds: &[(Lang, Option<f64>, f64)] = &[
+        (Lang::Hi, Some(11.5), 1.0),
+        (Lang::Bn, Some(8.5), 8.5),
+        (Lang::Mr, Some(9.5), 9.5),
+        (Lang::Te, Some(12.0), 11.0),
+        (Lang::Ne, None, 6.0),
+        (Lang::Kn, Some(11.5), 11.5),
+        (Lang::Ta, Some(12.5), 12.5),
+        (Lang::Ml, Some(10.0), 10.0),
+        (Lang::As, Some(1.5), 1.5),
+        (Lang::Gu, Some(3.0), 3.0),
+        (Lang::Pa, Some(18.5), 18.5),
+        (Lang::Or, Some(43.0), 43.0),
+        (Lang::Kok, None, 38.5),
+        (Lang::Si, Some(13.5), 13.5),
+        (Lang::Sa, Some(11.5), 1.0),
+        (Lang::Ur, Some(33.0), 33.0),
+        (Lang::Sd, Some(45.5), 45.5),
+        (Lang::Bho, Some(13.0), 1.0),
+        (Lang::Mai, Some(12.5), 1.0),
+        (Lang::Mag, Some(11.5), 1.0),
+    ];
+    for &(l, compat_bound, improved_bound) in bounds {
+        for (mode, bound) in [
+            (Mode::Compatible, compat_bound),
+            (Mode::Improved, Some(improved_bound)),
+        ] {
+            let mut o = Options::new(l);
+            o.mode = mode;
+            let no = NormOptions {
+                mode,
+                ..NormOptions::default()
+            };
+            let (mut wrong, mut total) = (0usize, 0usize);
+            for t in &nums {
+                let n = normalize(p(), t, l, &no);
+                check(t, &n);
+                let spoken = n.text;
+                for c in spoken.chars() {
+                    let s = script_of(c);
+                    assert!(
+                        s == l.script() || matches!(c, ' ' | '\u{200c}' | '\u{200d}'),
+                        "{l:?} {mode:?} {t}: {spoken:?} has {c:?} ({s:?})"
+                    );
+                }
+                let a = strip(&p().phonemize(t, &o));
+                let b = strip(&p().phonemize(&spoken, &o));
+                wrong += dist(&a, &b);
+                total += a.len();
+            }
+            let per = 100.0 * wrong as f64 / total as f64;
+            if let Some(bound) = bound {
+                assert!(per <= bound, "{l:?} {mode:?}: {per:.1} % > {bound} %");
+            }
+        }
+    }
+}

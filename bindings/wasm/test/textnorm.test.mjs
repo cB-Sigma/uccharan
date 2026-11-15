@@ -40,3 +40,29 @@ test("Latin-script languages read their own numbers", async () => {
   const da = await uccharan.normalize("Jeg har 95 kroner.", { lang: "da", digits: "request" });
   assert.equal(da.text, "Jeg har femoghalvfems kroner.");
 });
+
+test("non-Latin languages write numbers in their own script", async () => {
+  const twentyFive = {
+    hi: "पच्चीस", bn: "পঁচিশ", mr: "पंचवीस", te: "ఇరవై ఐదు", ne: "पच्चीस",
+    kn: "ಇಪ್ಪತ್ತೈದು", ta: "இருபத்து ஐந்து", ml: "ഇരുപത്തിയഞ്ച്", as: "পঁচিশ",
+    gu: "પચ્ચીસ", pa: "ਪੱਚੀ", or: "ପଚିଶ", kok: "पंचवीस", si: "විසිපහ", sa: "पच्चीस",
+    ur: "پچیس", sd: "پنجويهه", bho: "पच्चीस", mai: "पच्चीस", mag: "पच्चीस",
+  };
+  const block = (lang) =>
+    ({ bn: 0x0980, as: 0x0980, pa: 0x0a00, gu: 0x0a80, or: 0x0b00, ta: 0x0b80, te: 0x0c00,
+       kn: 0x0c80, ml: 0x0d00, si: 0x0d80, ur: 0x0600, sd: 0x0600 })[lang] ?? 0x0900;
+  for (const [lang, want] of Object.entries(twentyFive)) {
+    assert.equal((await uccharan.normalize("25", { lang })).text, want, lang);
+    const lo = block(lang);
+    for (const text of ["1,234", "3.5", "₹500", "15/08/2024"]) {
+      const out = (await uccharan.normalize(text, { lang })).text;
+      for (const c of out) {
+        const u = c.codePointAt(0);
+        assert.ok(" ‌‍".includes(c) || (u >= lo && u < lo + 0x80) ||
+          (lo === 0x0600 && u < 0x0700 && u >= 0x0600), `${lang} ${text}: ${out}`);
+      }
+    }
+  }
+  assert.equal((await uccharan.normalize("1,234", { lang: "si" })).text, "එක දහස දෙක සිය තිස්හතර");
+  assert.equal((await uccharan.normalize("₹500", { lang: "sd" })).text, "پنج سؤ رپيا");
+});

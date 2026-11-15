@@ -343,6 +343,7 @@ s -> sː / _ {!SV} | _ # | _ {S} {!SC}
 # Number words as the reference reads digits (derived from running
 # espeak-ng 1.52.0 on the numbers 0-99, 200 and 2000).
 @शून्य ʃˈuːnjə
+@दशमलव dəsəmlˈoː
 @एक ˈeːkː
 @दोन dˈoːn
 @तीन tˈiːn
@@ -557,3 +558,4 @@ scale100000 लाख
 scale10000000 कोटी
 glue-hundred yes
 grouping indian
+point दशमलव
