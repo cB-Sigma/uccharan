@@ -349,6 +349,8 @@ point komma
 percent prozent
 swap-tens und
 glue-hundred yes
+written-glue tausend
+written-glue-after hundert
 0 null
 1 einsnum
 1u einnum
@@ -496,3 +498,40 @@ wiederum 0 p
 deinem s p
 uneins s p
 vorab s p
+
+[numbers.written]
+# The written form of the number words, for normalise-only mode.
+million Million
+millionen Millionen
+milliarde Milliarde
+milliarden Milliarden
+*einstausend eintausend
+*einsmillion einemillion
+komma Komma
+prozent Prozent
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency € ¤euro#
+currency $ ¤dollar#
+currency £ ¤pfund#
+currency ¥ ¤yen#
+currency ₹ ¤rupie#
+currency ¢ ¤cent#
+
+[words]
+¤euro# ˈɔøroː
+¤dollar# dɔlˈɑː
+¤pfund# pfˈʊnt
+¤yen# jˈeːn
+¤rupie# rˈuːpɪə
+¤cent# sˈɛnt
+
+[numbers.written]
+¤euro# Euro
+¤dollar# Dollar
+¤pfund# Pfund
+¤yen# Yen
+¤rupie# Rupie
+¤cent# Cent

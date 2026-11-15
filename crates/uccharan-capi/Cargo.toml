@@ -18,7 +18,7 @@ crate-type = ["cdylib", "staticlib"]
 doc = false
 
 [dependencies]
-uccharan_core = { package = "uccharan", path = "../uccharan", version = "0.6.0", default-features = false }
+uccharan_core = { package = "uccharan", path = "../uccharan", version = "0.6.1", default-features = false }
 
 [features]
 default = ["embed-en-us", "embed-en-gb", "embed-hi", "embed-kokoro"]

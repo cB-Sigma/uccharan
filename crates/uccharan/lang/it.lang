@@ -238,6 +238,11 @@ meno# mˈeno
 percento# pertʃˈɛŋto
 
 [numbers]
+# "1 500" is one number in improved mode; the reference voice reads the
+# groups apart.
+group space-improved
+written-glue mila
+written-glue-after cento mila mille
 roman-skip VI
 ord2 ord2#
 ord3 ord3#
@@ -519,3 +524,27 @@ dalla s p
 vostre s p
 up s p
 sarebbero s p
+
+[numbers.written]
+# The written form of the number words, for normalise-only mode (see
+# docs/adding-a-language.md): one word up to the thousands
+# ("duemilacentotré").
+unmilione# un milione
+*otre$ otré
+*atre$ atré
+*etre$ etré
+*trémila tremila
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency € ¤euro#
+currency $ ¤dollari#
+currency £ ¤sterlina#
+currency ₹ ¤rupia-indiana#
+
+[words]
+¤euro# ˈɛʊro
+¤dollari# dˈɔllarɪ
+¤sterlina# sterlˈina
+¤rupia-indiana# rʊpjaindjˈana

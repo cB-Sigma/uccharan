@@ -149,6 +149,9 @@ pub struct Latin {
     suffix: Option<(String, String)>,
     /// Letter names for spelled words (`[spell]`).
     spell: HashMap<char, String>,
+    /// Letters beyond ASCII that the language file reads (`[spell]` and
+    /// the letter rules of `[pre]`): see [`Latin::fold_foreign`].
+    alphabet: String,
     /// Number words.
     pub numbers: Numbers,
 }
@@ -314,6 +317,26 @@ impl Latin {
                     Some((k.chars().next()?, v.trim().to_string()))
                 })
                 .collect(),
+            alphabet: {
+                // The letters of `[spell]` and of the left side of the
+                // first letter rules (later passes read phonemes).
+                let mut a: Vec<char> = f
+                    .lines("spell")
+                    .iter()
+                    .filter_map(|l| l.chars().next())
+                    .chain(f.lines("pre").iter().flat_map(|l| {
+                        l.split_once("->")
+                            .map_or("", |(lhs, _)| lhs)
+                            .chars()
+                            .collect::<Vec<_>>()
+                    }))
+                    .filter(|c| c.is_alphabetic() && !c.is_ascii())
+                    .flat_map(char::to_lowercase)
+                    .collect();
+                a.sort_unstable();
+                a.dedup();
+                a.into_iter().collect()
+            },
             classes,
         })
     }
@@ -950,10 +973,44 @@ impl Latin {
         if let Some(s) = self.spelled(w, lower, own) {
             return s;
         }
-        table
-            .filter(|_| !own)
-            .and_then(|t| self.model_lower(lower, t))
-            .unwrap_or_else(|| self.word(w, compat))
+        if own {
+            return self.word(w, compat);
+        }
+        if let Some(r) = table.and_then(|t| self.model_lower(lower, t)) {
+            return r;
+        }
+        // Letters of other alphabets (names: Łódź, Erdoğan) are read as
+        // their base letters, as the reference voices read them.
+        if let Some(folded) = self.fold_foreign(lower, table) {
+            if let Some(r) = table.and_then(|t| self.model_lower(&folded, t)) {
+                return r;
+            }
+            return self.word(&folded, compat);
+        }
+        self.word(w, compat)
+    }
+
+    /// `lower` with each letter that neither the language file nor the
+    /// table's letter-to-sound model knows replaced by its base letter
+    /// (`ł` l, `ř` r, `ø` o); `None` when there is no such letter.
+    fn fold_foreign(&self, lower: &str, table: Option<&crate::data::Data>) -> Option<String> {
+        let model = table.map_or(&[][..], crate::data::Data::model_letters);
+        let known = |c: char| c.is_ascii() || self.alphabet.contains(c) || model.contains(&c);
+        if lower.chars().all(known) {
+            return None;
+        }
+        let mut out = String::with_capacity(lower.len());
+        let mut changed = false;
+        for c in lower.chars() {
+            match crate::text::base_letter(c).filter(|_| !known(c)) {
+                Some(b) => {
+                    out.push_str(b);
+                    changed = true;
+                }
+                None => out.push(c),
+            }
+        }
+        changed.then_some(out)
     }
 
     /// One written word by itself: its key in the `[unstressed]` list and
@@ -1223,7 +1280,7 @@ impl Latin {
             }
             // Number words may carry a `#` that keeps them apart from the
             // same word in running text.
-            let shown = it.text.trim_end_matches(['#', 'x']);
+            let shown = it.text.trim_end_matches(['#', 'x']).trim_start_matches('¤');
             let shown = if it.text.contains('#') {
                 shown
             } else {

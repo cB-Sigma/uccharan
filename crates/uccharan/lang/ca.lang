@@ -292,6 +292,10 @@ coma# kˌomə
 per-cent# pərsˈen
 
 [numbers]
+# "1 500" is one number in improved mode; the reference voice reads the
+# groups apart.
+group space-improved
+written-hyphen keep
 roman-skip VI
 decimal comma
 point coma#
@@ -523,3 +527,21 @@ z zˈɛtə
 # Words without stress inside a clause and with stress at its end.
 [unstressed]
 
+
+[numbers.written]
+# The written form of the number words, for normalise-only mode (see
+# docs/adding-a-language.md).
+per-cent# per cent
+unmilió# un milió
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency € ¤euro#
+currency $ ¤dòlar#
+currency £ ¤lliures#
+
+[words]
+¤euro# ˈɛwɾu
+¤dòlar# dulˈar
+¤lliures# ʎˈiwɾəs

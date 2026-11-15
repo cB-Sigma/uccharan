@@ -231,8 +231,14 @@ y ˌiɣɾjˈeɣa
 z θˈeta
 
 [numbers]
+# "1 500" is one number in improved mode; the reference voice reads the
+# groups apart.
+group space-improved
+# The comma is the decimal sign ("3,5" tres coma cinco, "1.000" mil).
+decimal comma
+fraction number
 roman-skip VI
-point coma
+point coma#
 percent por ciento
 join-tens yes
 one-before-scale no
@@ -303,3 +309,22 @@ scale1000000 millones
 scale1000 mil
 scale100 cien
 scale100+ ciento
+
+[numbers.written]
+# The written form of the number words, for normalise-only mode (`*FROM TO`
+# replaces inside a word; `_` is a space).
+*+ì+ _y_
+*ì i
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency € ¤euro#
+currency $ ¤dólar#
+currency £ ¤libras#
+
+[words]
+coma# koma
+¤euro# ˈeʊɾo
+¤dólar# dˈolaɾ
+¤libras# lˈiβɾas

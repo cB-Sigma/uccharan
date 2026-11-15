@@ -5,11 +5,58 @@ All notable changes are listed here. The format follows
 
 ## [Unreleased]
 
+## [0.6.1] - 2026-11-15
+
+Bug fixes. Normalise-only mode reads numbers in the Latin-script languages with their own
+number words (it read them in English); currency signs and the Spanish decimal comma are read
+as the reference voices read them; letters of other alphabets in names no longer pass into the
+phonemes.
+
+### Added
+
+- Language-file options for the written form of number words in normalise-only mode
+  (`[numbers.written]`, `written-hyphen`, `written-glue`, `written-glue-after`,
+  `written-plural`), for currency signs (`currency`) and `group space-improved`
+  (see `docs/adding-a-language.md`).
+
 ### Fixed
 
+- **Normalise-only mode in the Latin-script languages** (`normalize` in Python, WASM and C,
+  `normalize_api` in Rust): numbers in Spanish, German, Dutch, French (also fr-be, fr-ch),
+  Italian, Portuguese (pt-br, pt), Polish, Turkish, Czech, Swedish, Catalan, Romanian,
+  Hungarian, Finnish, Norwegian and Danish text were read in English (in Hindi with
+  `digits="request"`), and words with hyphens or apostrophes lost them. They are now read with
+  the language's own number rules, the ones the phonemiser uses, and written in the language's
+  spelling: "Ich habe 23 Euro." → *Ich habe dreiundzwanzig Euro.*, "Il a 71 ans." →
+  *septante et un* (fr-be, fr-ch), "Jeg har 95 kroner." → *femoghalvfems*, "1 280" → *mille
+  deux cent quatre-vingts*; decimals with the language's decimal sign, `%` and currency signs.
+  Numbers written in groups of three digits ("1 500") follow the phonemiser: joined in
+  compatible mode where the reference voice joins them, and in improved mode. Abbreviations of
+  the language stay as written (German "Dr." was "Doctor").
+- **Currency signs** (`€ $ £`, in some languages `¥ ₹ ¢`) were left out in the Latin-script
+  languages; they are read where they stand, with the reference voice's word ("5 €" *fünf Euro*,
+  "$5" *dollar cinq*); improved mode says the word after the amount.
+- **Spanish decimal comma**: "3,5" is *tres coma cinco*, "1.000" *mil* and "12,50" *doce coma
+  cincuenta*, as the reference voice reads them ("12,50" was read as 1250). Development PER
+  0.62 → 0.55 %.
+- **Letters of other alphabets in names** (Łódź, Dvořák, Erdoğan, Gödel, Straße) passed into the
+  phonemes unchanged in the Latin-script languages that do not have them (Spanish, French,
+  Romanian, Finnish, Portuguese and others), and Piper voices skipped them. A letter that
+  neither the language's letter rules nor its word table's model know is now read as its base
+  letter (ł l, ř r, ğ g, ø o, ß ss), as the reference voices read them. Development PER is
+  unchanged or slightly better in every Latin-script language (Danish 1.94 → 1.91 %, Dutch 1.64
+  → 1.62 %, French 0.63 → 0.62 %, with the currency signs). Letters of Vietnamese
+  (ễ, ộ, ...) still split the word they stand in. The Finnish word table, rebuilt, no longer
+  needs entries for a few such words (`fi.ucd` 136,697 → 136,680 bytes; same readings).
 - **WASM:** Bhojpuri, Maithili and Magahi asked for data files of their own (`bho.ucd`,
   `mai.ucd`, `mag.ucd`) that do not exist, and failed. They now load the Hindi data, as the
   Rust core and the Python package already did.
+
+### Changed
+
+- **Improved mode** reads numbers written with spaces between groups of three digits ("1 500")
+  as one number in Spanish, Italian, Portuguese, Czech and Catalan too (compatible mode reads
+  the groups apart, as the reference voices do).
 
 ## [0.6.0] - 2026-11-14
 

@@ -311,6 +311,8 @@ point komma
 percent procent
 demote-after-first yes
 glue-hundred yes
+written-glue duizend
+written-glue-after honderd
 one-before-scale no
 year-hundreds yes
 0 nul
@@ -493,3 +495,27 @@ tot 0 p
 geniet s p
 up s p
 sommige s p
+
+[numbers.written]
+# The written form of the number words, for normalise-only mode (see
+# docs/adding-a-language.md).
+eennum één
+*honderdéén honderdeen
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency € ¤euro#
+currency $ ¤dollar#
+currency £ ¤pond#
+currency ¥ ¤yen#
+currency ₹ ¤roepie#
+currency ¢ ¤cent#
+
+[words]
+¤euro# ˈøːroː
+¤dollar# dˈɔlɑr
+¤pond# pˈɔnt
+¤yen# jˈɛn
+¤roepie# rypˈeː
+¤cent# sˈɛnt

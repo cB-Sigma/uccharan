@@ -322,3 +322,19 @@ sen 0 p
 bir 0 p
 şu 0 p
 siz 0 p
+
+[numbers.written]
+# The written form of the number words, for normalise-only mode (see
+# docs/adding-a-language.md).
+birmilyon# bir
+birmilyon2# milyon
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency € ¤avro#
+currency $ ¤dolar#
+
+[words]
+¤avro# avrˈɔ
+¤dolar# dolˈar

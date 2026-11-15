@@ -25,8 +25,8 @@ export const PACKS = Object.freeze({
   "size": 727189
  },
  "fi": {
-  "sha256": "300219864616835b3ce5dc28c7e7bbcfb5d6a0122762f91b1054445e169e57fb",
-  "size": 136697
+  "sha256": "68b0f8d7f6454db01a4874344e853dac5b5f54e0b9acbabc39d838a9bade2255",
+  "size": 136680
  },
  "fr": {
   "sha256": "f09e6d36ebf29950099d3df4b4587ce9409b68f52085d700b6418ba11ca2dec9",

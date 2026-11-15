@@ -104,3 +104,23 @@ def test_respelling_loads_british_data_in_a_fresh_process() -> None:
     )
     out = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, encoding="utf-8")
     assert out.returncode == 0 and out.stdout.strip() == "ok", out.stderr
+
+
+def test_normalize_latin_languages() -> None:
+    # Each Latin-script language reads its numbers in its own words.
+    assert uccharan.normalize("Ich habe 23 Euro.", "de").text == "Ich habe dreiundzwanzig Euro."
+    assert uccharan.normalize("Il a 71 ans.", "fr").text == "Il a soixante et onze ans."
+    assert uccharan.normalize("Il a 71 ans.", "fr-be").text == "Il a septante et un ans."
+    assert uccharan.normalize("Il a 71 ans.", "fr-ch").text == "Il a septante et un ans."
+    assert uccharan.normalize("Jeg har 95 kroner.", "da").text == "Jeg har femoghalvfems kroner."
+    # "1 500": the groups apart in compatible mode, as the reference voice
+    # reads them; one number in improved mode.
+    assert uccharan.normalize("Tengo 1 500 libros.", "es").text == "Tengo uno quinientos libros."
+    assert (
+        uccharan.normalize("Tengo 1 500 libros.", "es", improved=True).text
+        == "Tengo mil quinientos libros."
+    )
+    n = uccharan.normalize("Ich habe 23 Euro.", "de", digits="request")
+    assert n.text == "Ich habe dreiundzwanzig Euro."
+    number = next(s for s in n.spans if s.kind == "number")
+    assert number.lang == "de" and number.value == "23"

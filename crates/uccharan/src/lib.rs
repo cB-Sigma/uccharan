@@ -612,7 +612,10 @@ impl Phonemizer {
             // "10 000": groups of three digits after a space are one number
             // where the language writes numbers so.
             let grouped;
-            let chunks: &[text::Chunk] = if opt.lang.latin().is_some_and(|l| l.numbers.group_space)
+            let chunks: &[text::Chunk] = if opt
+                .lang
+                .latin()
+                .is_some_and(|l| l.numbers.joins_groups(compat))
             {
                 grouped = gnorm::join_groups(&raw.chunks, if compat { 6 } else { 3 }, compat);
                 &grouped

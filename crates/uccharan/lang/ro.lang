@@ -443,3 +443,34 @@ niciun s p
 aceia s p
 multora s p
 cea 0 p
+
+[numbers.written]
+# The written form of the number words, for normalise-only mode (see
+# docs/adding-a-language.md).
+unmilion# un milion
+una-sută# o sută
+mie# o mie
+doiv2# două
+douăzeci-şi-doiv2# douăzeci şi două
+treizeci-şi-doiv2# treizeci şi două
+patruzeci-şi-doiv2# patruzeci şi două
+cincizeci-şi-doiv2# cincizeci şi două
+şasezeci-şi-doiv2# şaizeci şi două
+şaptezeci-şi-doiv2# şaptezeci şi două
+optzeci-şi-doiv2# optzeci şi două
+nouăzeci-şi-doiv2# nouăzeci şi două
+patrusprezece# paisprezece
+şasesprezece# şaisprezece
+*şasezeci şaizeci
+*ş ș
+*ţ ț
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency € ¤euro#
+currency $ ¤dolar#
+
+[words]
+¤euro# ˈeʊɾo
+¤dolar# dolˈar

@@ -349,6 +349,12 @@ impl Data {
         self.bytes.len()
     }
 
+    /// The letters beyond ASCII that the letter-to-sound model was trained
+    /// with (`letters=` of `META`); empty without such a model.
+    pub fn model_letters(&self) -> &[char] {
+        self.letters.as_deref().unwrap_or(&[])
+    }
+
     /// True when the image carries a letter-to-sound model.
     pub fn has_lts(&self) -> bool {
         self.ltsm.is_some()

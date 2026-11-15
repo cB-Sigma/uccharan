@@ -507,6 +507,8 @@ stress last
 point virgule
 percent pour-cent
 glue-hundred yes
+written-hyphen keep
+written-plural million millions milliard milliards
 one-before-scale no
 0 zéro#
 1 un#
@@ -833,3 +835,36 @@ vaux 0 p
 lorsque s p
 n'ai 0 p
 ai 0 p
+
+[numbers.written]
+# The written form of the number words, for normalise-only mode (see
+# docs/adding-a-language.md): hyphens between tens and units only
+# ("vingt-deux", "vingt et un", "deux cent trois").
+pour-cent pour cent
+centx# cent
+deux-centsx# deux cent
+trois-centsx# trois cent
+quatre-centsx# quatre cent
+cinq-centsx# cinq cent
+six-centsx# six cent
+sept-centsx# sept cent
+huit-centsx# huit cent
+neuf-centsx# neuf cent
+*-cents _cents
+*-et- _et_
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency € ¤euro#
+currency $ ¤dollar#
+currency £ ¤livre#
+currency ¥ ¤yen#
+currency ¢ ¤cent#
+
+[words]
+¤euro# əʁˌo
+¤dollar# dɔlˈaʁ
+¤livre# lˈivʁ
+¤yen# jˈɛn
+¤cent# sˈɛnt

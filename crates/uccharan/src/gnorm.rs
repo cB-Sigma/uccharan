@@ -164,7 +164,12 @@ pub fn expand(chunk: &Chunk, nums: &Numbers, ascii_english: bool, compat: bool) 
     };
     let rs = runs(text);
     let n = rs.len();
+    // Improved mode says a currency sign written before the amount after it.
+    let mut after_amount: Vec<Item> = Vec::new();
     for (i, (sc, r)) in rs.iter().enumerate() {
+        if i > 0 && rs[i - 1].0 == Script::Digit && !after_amount.is_empty() {
+            out.append(&mut after_amount);
+        }
         match sc {
             Script::Latin | Script::Devanagari | Script::Brahmic(_) => {
                 // ZWJ stays inside Brahmic words (the reader decides).
@@ -206,10 +211,22 @@ pub fn expand(chunk: &Chunk, nums: &Numbers, ascii_english: bool, compat: bool) 
                         out.extend(nums.minus.iter().map(|w| Item::word(w)));
                     }
                     '%' => out.extend(nums.percent.iter().map(|w| Item::word(w))),
-                    _ => {}
+                    _ => {
+                        let Some((_, words)) = nums.currency.iter().find(|(s, _)| *s == c) else {
+                            continue;
+                        };
+                        let items = words.iter().map(|w| Item::word(w));
+                        let before = rs.get(i + 1).is_some_and(|x| x.0 == Script::Digit);
+                        if !compat && before && r.chars().count() == 1 {
+                            after_amount.extend(items);
+                        } else {
+                            out.extend(items);
+                        }
+                    }
                 }
             }
         }
     }
+    out.append(&mut after_amount);
     out
 }

@@ -186,6 +186,9 @@ pub struct Numbers {
     pub minus: Vec<String>,
     /// Word(s) for `%` after the number.
     pub percent: Vec<String>,
+    /// `currency € ¤euro#`: the word(s) said for a currency sign, where the
+    /// sign stands (compatible mode) or after the amount (improved mode).
+    pub currency: Vec<(char, Vec<String>)>,
     /// `decimal comma`: the comma is the decimal sign and the full stop
     /// groups thousands.
     pub decimal_comma: bool,
@@ -221,6 +224,9 @@ pub struct Numbers {
     pub fraction_number: bool,
     /// `group space`: a space separates groups of three digits ("10 000").
     pub group_space: bool,
+    /// `group space-improved`: the same in improved mode only (the
+    /// reference voice reads the groups as numbers of their own).
+    pub group_space_improved: bool,
     /// `roman off`: Roman numerals are read as ordinary words in
     /// compatible mode.
     pub roman_off: bool,
@@ -243,6 +249,26 @@ pub struct Numbers {
     /// Rules for the written number words of normalise-only mode; when
     /// set, they replace the table above.
     pub speller: Option<std::sync::Arc<crate::rbnf::Rbnf>>,
+    /// `written-hyphen keep`: hyphens inside number words stay in their
+    /// written form ("vingt-deux"); otherwise they become spaces.
+    pub written_hyphen: bool,
+    /// `written-glue tausend`: written number words joined to the number
+    /// word before them ("zweitausend").
+    pub written_glue: Vec<String>,
+    /// `written-glue-after hundert`: the number word after one of these
+    /// is joined to it ("dreihundertzwölf").
+    pub written_glue_after: Vec<String>,
+    /// `written-plural million millions`: pairs of a scale word and its
+    /// plural, written after a count other than one.
+    written_plural: Vec<(String, String)>,
+    /// `[numbers.written]`: the written form of a number word, where it is
+    /// not the word itself without its marks (normalise-only mode).
+    written: HashMap<String, String>,
+    /// `[numbers.written]` lines `*FROM TO`: replacements inside a word
+    /// (`_` in TO is a space; `FROM$` only at the end of the word).
+    written_replace: Vec<(String, String)>,
+    /// Every word of the table, for [`Numbers::written`].
+    tokens: std::collections::HashSet<String>,
 }
 
 impl Numbers {
@@ -260,6 +286,13 @@ impl Numbers {
             let words: Vec<String> = v.split_whitespace().map(str::to_string).collect();
             match k {
                 "point" => n.point = words,
+                "currency" => {
+                    if let Some((sign, rest)) = words.split_first() {
+                        if let Some(c) = sign.chars().next() {
+                            n.currency.push((c, rest.to_vec()));
+                        }
+                    }
+                }
                 "minus" => n.minus = words,
                 "percent" => n.percent = words,
                 "grouping" => n.indian = v.trim() == "indian",
@@ -267,7 +300,11 @@ impl Numbers {
                 "stress" => n.stress_last = v.trim() == "last",
                 "year-hundreds" => n.year_hundreds = v.trim() == "yes",
                 "decimal" => n.decimal_comma = v.trim() == "comma",
-                "group" => n.group_space = v.trim() == "space",
+                "group" => match v.trim() {
+                    "space" => n.group_space = true,
+                    "space-improved" => n.group_space_improved = true,
+                    _ => {}
+                },
                 "roman" => match v.trim() {
                     "off" => n.roman_off = true,
                     m => {
@@ -298,6 +335,16 @@ impl Numbers {
                 "group-stress-spaced" => n.group_stress_spaced = v.trim().parse().unwrap_or(0),
                 "and-below-hundred" => n.and_small = Some(v.trim().to_string()),
                 "glue-hundred" => n.glue_hundred = v.trim() == "yes",
+                "written-hyphen" => n.written_hyphen = v.trim() == "keep",
+                "written-glue" => n.written_glue = words,
+                "written-glue-after" => n.written_glue_after = words,
+                "written-plural" => {
+                    n.written_plural = words
+                        .chunks(2)
+                        .filter(|p| p.len() == 2)
+                        .map(|p| (p[0].clone(), p[1].clone()))
+                        .collect()
+                }
                 "one-before-scale" => n.one_before_scale = v.trim() != "no",
                 "join-tens" => n.join_tens = v.trim() == "yes",
                 "demote-after-first" => n.demote_tail = v.trim() == "yes",
@@ -322,7 +369,122 @@ impl Numbers {
             }
         }
         n.scales.sort_by_key(|s| std::cmp::Reverse(s.0));
+        for l in f.lines("numbers.written") {
+            let Some((k, v)) = l.split_once(char::is_whitespace) else {
+                continue;
+            };
+            match k.strip_prefix('*') {
+                Some(from) => n
+                    .written_replace
+                    .push((from.to_string(), v.trim().replace('_', " "))),
+                None => {
+                    n.written.insert(k.to_string(), v.trim().to_string());
+                }
+            }
+        }
+        let words: Vec<String> = n
+            .table
+            .values()
+            .flatten()
+            .chain(n.scales.iter().flat_map(|s| [&s.1, &s.2]))
+            .chain(n.many.values())
+            .cloned()
+            .collect();
+        for w in words {
+            n.tokens.insert(w.trim_end_matches('#').to_string());
+        }
         n
+    }
+
+    /// True when groups of three digits after a space continue a number
+    /// ("1 500") in this mode.
+    pub fn joins_groups(&self, compat: bool) -> bool {
+        self.group_space || (!compat && self.group_space_improved)
+    }
+
+    /// True when `word` is the hundred of `glue-hundred` (it joins the
+    /// word before it in writing too).
+    pub fn glued_hundred(&self, word: &str) -> bool {
+        self.glue_hundred
+            && self
+                .scales
+                .iter()
+                .any(|s| s.0 == 100 && (s.1 == word || s.2 == word))
+    }
+
+    /// True for a word of the number table (not the words for the decimal
+    /// sign, minus, percent or a currency).
+    pub fn is_number_word(&self, word: &str) -> bool {
+        self.tokens.contains(word.trim_end_matches('#'))
+    }
+
+    /// The plural of a written scale word after the written count `prev`
+    /// (`written-plural`), when the count is not one.
+    pub fn written_plural(&self, word: &str, prev: &str) -> Option<&str> {
+        let (_, plural) = self.written_plural.iter().find(|(w, _)| w == word)?;
+        let one = self
+            .table
+            .get("1")
+            .and_then(|w| w.first())
+            .map(|w| self.written(w));
+        (one.as_deref() != Some(prev)).then_some(plural.as_str())
+    }
+
+    /// The `*FROM TO` replacements of `[numbers.written]` applied to `w`.
+    pub fn replace_written(&self, w: &str) -> String {
+        let mut out = w.to_string();
+        for (from, to) in &self.written_replace {
+            match from.strip_suffix('$') {
+                // `*FROM$ TO`: only at the end of the word.
+                Some(end) => {
+                    if let Some(stem) = out.strip_suffix(end) {
+                        out = format!("{stem}{to}");
+                    }
+                }
+                None => out = out.replace(from.as_str(), to),
+            }
+        }
+        out
+    }
+
+    /// The written form of a number word of this table, for normalise-only
+    /// mode: the word without the marks that tell its reading apart (`#`,
+    /// `num`, and the suffixes of variant forms `v2`, `2`, `x`, `-h` when
+    /// the word without them is a number word too), as `[numbers.written]`
+    /// says. A word that is not a number word comes back unchanged.
+    pub fn written(&self, word: &str) -> String {
+        if let Some(w) = self.written.get(word) {
+            return w.clone();
+        }
+        let marked = word.contains(['#', '¤']) || word.ends_with("num");
+        // `¤` marks the word of a currency sign.
+        let mut base = word
+            .split('#')
+            .next()
+            .unwrap_or(word)
+            .trim_start_matches('¤');
+        while marked || self.tokens.contains(base) {
+            if let Some(b) = base.strip_suffix("num").filter(|b| !b.is_empty()) {
+                base = b;
+                continue;
+            }
+            let next = ["v2", "-h", "2", "x"].iter().find_map(|suf| {
+                base.strip_suffix(suf)
+                    .filter(|b| !b.is_empty() && self.tokens.contains(*b))
+            });
+            match next {
+                Some(b) => base = b,
+                None => break,
+            }
+        }
+        if let Some(w) = self.written.get(base) {
+            return w.clone();
+        }
+        let mut out = self.replace_written(base);
+        if !self.written_hyphen {
+            out = out.replace('-', " ");
+        }
+        out.trim().to_string()
     }
 
     /// The same numbers with the written number words of `rules`

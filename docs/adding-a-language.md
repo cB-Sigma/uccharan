@@ -159,7 +159,30 @@ roman-after romain          ; … or after it (French)
 ord2 secondo#               ; the ordinal a Roman numeral of this value is read as (Italian)
 roman6 si#                  ; a compatible-mode reading of one Roman numeral (French)
 20h kaksikymmentä-h#        ; the form of a rest after a hundred (Finnish)
+group space-improved        ; "1 500" is one number in improved mode only (`group space`:
+                            ; in both modes, compatible mode across a plain space only)
+currency € ¤euro#           ; the word said for a currency sign: where the sign stands in
+                            ; compatible mode, after the amount in improved mode; its
+                            ; reading goes in [words] (`¤euro# ˈeʊɾo`)
+written-hyphen keep         ; normalise-only mode keeps hyphens in number words (French
+                            ; vingt-deux); otherwise they become spaces
+written-glue tausend        ; … joins these words to the number word before them
+written-glue-after hundert  ; … joins the number word after these to them
+written-plural million millions ; … the plural of a scale word after a count other than one
+[numbers.written]           ; the written form of a number word for normalise-only mode,
+                            ; where it is not the word without its marks (`#`, `num`, and
+                            ; the variant suffixes `v2`, `2`, `x`, `-h`): `tusen# ett`;
+                            ; `*FROM TO` replaces inside a word (`_` is a space, `FROM$`
+                            ; only at its end: Spanish `*+ì+ _y_`, Italian `*otre$ otré`)
 ```
+
+Normalise-only mode (`normalize`) writes numbers with the same `[numbers]` rules as the
+phonemiser, so a new number word needs its written form checked: the round-trip test in
+`crates/uccharan/tests/normalize_api.rs` reads the written words back with the phonemiser.
+
+Letters that neither the letter rules (`[pre]`, `[spell]`) nor the word table's model know,
+in names from other languages (Łódź, Dvořák, Erdoğan), are read as their base letters (ł l,
+ř r, ğ g, ø o, ß ss), as the reference voices read them.
 
 ### A word table with a model
 

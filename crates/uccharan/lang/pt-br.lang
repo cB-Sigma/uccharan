@@ -258,6 +258,9 @@ menos# mˈenʊs
 por-cento# pˌorsˈeɪŋtʊ
 
 [numbers]
+# "1 500" is one number in improved mode; the reference voice reads the
+# groups apart.
+group space-improved
 roman max 3999
 roman-skip VI CC CD MM
 decimal comma
@@ -534,3 +537,34 @@ nossas s p
 vais 0 p
 teus 0 p
 neste s p
+
+[numbers.written]
+# The written form of the number words, for normalise-only mode (see
+# docs/adding-a-language.md).
+and# e
+ummilhão# um milhão
+cemv2# cento e
+duzentosv2# duzentos e
+trezentosv2# trezentos e
+quatrocentosv2# quatrocentos e
+quinhentosv2# quinhentos e
+seiscentosv2# seiscentos e
+setecentosv2# setecentos e
+oitocentosv2# oitocentos e
+novecentosv2# novecentos e
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency € ¤euro#
+currency $ ¤dólar#
+currency £ ¤libra#
+currency ¥ ¤iene#
+currency ¢ ¤centavos#
+
+[words]
+¤euro# ˈeʊɾʊ
+¤dólar# dˈolar
+¤libra# lˈibræ
+¤iene# jˈeŋy
+¤centavos# sˌeŋtˈavʊs

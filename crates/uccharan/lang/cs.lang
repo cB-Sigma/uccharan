@@ -186,6 +186,9 @@ mínus# mˈiːnus
 procent# prˈotsento
 
 [numbers]
+# "1 500" is one number in improved mode; the reference voice reads the
+# groups apart.
+group space-improved
 decimal comma
 point celá#
 minus mínus#
@@ -371,3 +374,27 @@ chcete s p
 mám 0 p
 máš 0 p
 máte s p
+
+[numbers.written]
+# The written form of the number words, for normalise-only mode (see
+# docs/adding-a-language.md).
+tisícem# tisíc
+milionym# milionů
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency € ¤euro#
+currency $ ¤dolar#
+currency £ ¤libra#
+currency ¥ ¤jen#
+currency ₹ ¤rupie#
+currency ¢ ¤cent#
+
+[words]
+¤euro# ˈeʊro
+¤dolar# dˈolaːr
+¤libra# lˈibra
+¤jen# ˈien
+¤rupie# rˈupije
+¤cent# tsˈent

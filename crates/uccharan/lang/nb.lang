@@ -386,3 +386,21 @@ vårt 0 p
 DET 0 p
 mi 0 p
 di 0 p
+
+[numbers.written]
+# The written form of the number words, for normalise-only mode (see
+# docs/adding-a-language.md).
+and# og
+hundre# ett
+hundrev22# hundre og
+tusen# ett
+enmillion# en
+enmillion2# million
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency $ ¤dollar#
+
+[words]
+¤dollar# dˈɔllɑːr

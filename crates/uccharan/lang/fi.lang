@@ -359,3 +359,15 @@ näitä s p
 joka s p
 tuossa s p
 näistä s p
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency € ¤euro#
+currency $ ¤dollarin#
+currency £ ¤punta#
+
+[words]
+¤euro# ˈeuro
+¤dollarin# dˈollarɪn
+¤punta# pˈunta

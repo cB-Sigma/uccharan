@@ -451,3 +451,29 @@ sin 0 p
 hvis 0 p
 sine 0 p
 bør 0 p
+
+[numbers.written]
+# The written form of the number words, for normalise-only mode (see
+# docs/adding-a-language.md).
+and# og
+hundrede# et
+hundredev22# hundrede og
+tusind# et
+enmillion# en
+enmillion2# million
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency € ¤euro#
+currency $ ¤dollar#
+currency £ ¤pund#
+currency ¥ ¤yen#
+currency ¢ ¤cent#
+
+[words]
+¤euro# ˈeuʁˌo
+¤dollar# dˈʌlʌ
+¤pund# pˈunʔ
+¤yen# jˈenn
+¤cent# sˈent

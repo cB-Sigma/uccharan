@@ -123,7 +123,7 @@ Number spans carry `value` (the digits read).
 
 | Option (Python / JSON) | Values | Default |
 | --- | --- | --- |
-| `digits` | `context`, `request`, or a language tag | `context`: the request language, except that a number next to a Latin-script word in Indic text is read in English ("कुल 12 students" → "कुल twelve students") |
+| `digits` | `context`, `request`, or a language tag | `context`: the request language, except that a number next to a Latin-script word in Indic text is read in English ("कुल 12 students" → "कुल twelve students"); a Latin-script request language always reads its own numbers |
 | `en_scale` (`enScale` in JS) | `auto`, `indian`, `international` | `auto`: lakh and crore for numbers written with Indian grouping (`5,00,000`) and for English inside Indic text, else thousand/million |
 | `latin` | `keep`, `transliterate`, `spell` | `keep`: Latin-script words stay in Latin, as Indian TTS models are trained; `transliterate` respells them in the request script ("office" → "ऑफ़िस", "UPI" → "यू पी आई") for voices without Latin letters; `spell` reads them letter by letter |
 | `urls` | `read`, `keep`, `drop` | `read`: "w w w dot example dot com", "ram ऐट द रेट gmail डॉट com" |
@@ -141,6 +141,22 @@ Number spans carry `value` (the digits read).
   रुपये/पैसे, `रु.`, dates with month names, बजकर … मिनट times, the clock idioms before बजे
   (साढ़े दस, सवा चार, पौने पाँच), fractional idioms before a scale word (डेढ़ लाख, ढाई करोड़),
   10-digit mobile numbers and `+91` numbers digit by digit, ordinals with -वां/-वीं, Devanagari digits.
+- **Latin-script languages** (es, de, nl, fr, fr-be, fr-ch, it, pt-br, pt, pl, tr, cs, sv, ca,
+  ro, hu, fi, nb, da): numbers with the phonemiser's number rules of the language (the
+  `[numbers]` section of its language file), written in the language's spelling: *Ich habe
+  dreiundzwanzig Euro*, *septante et un* (fr-be), *femoghalvfems* (da), *mille deux cent
+  quatre-vingts*. Decimals with the language's decimal sign (*drei Komma fünf*), `%`, the
+  currency signs the reference voice reads (`€ $ £`, and `¥ ₹ ¢` in some languages), dates,
+  times and phone numbers part by part, as the phonemiser reads them. Numbers written in groups
+  of three digits ("1 500") follow the phonemiser's mode: compatible mode joins the groups where
+  the reference voice does (German, Dutch, French, Polish, Swedish, Romanian, Hungarian,
+  Finnish, Norwegian: across a plain space), improved mode across any space and also in Spanish,
+  Italian, Portuguese, Czech and Catalan. Ordinals ("3.", "1er") are read as cardinals, as the
+  phonemiser reads them. Words of the language are kept as written (abbreviations, hyphens,
+  apostrophes). Phonemising the normalised text gives the phonemes of the digits, up to the
+  places where a voice reads a number word differently from the same word in letters (Danish,
+  Turkish and Swedish most: `crates/uccharan/tests/normalize_api.rs`,
+  `latin_numbers_round_trip`).
 - **Other Indian languages** (bn, mr, ne, gu, pa, or, te, kn, ta, ml, as, kok, si): numbers in
   any of the Indic digit blocks or ASCII, with the language's number words, `%` and `₹`. Dates,
   times and phone numbers are read part by part. For bn, gu, kn, ml, mr, ne, or, pa, ta, te and ur the number words are the standard written

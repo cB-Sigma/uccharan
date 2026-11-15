@@ -434,3 +434,23 @@ ono s p
 miały s p
 macie s p
 byliśmy s p
+
+[numbers.written]
+# The written form of the number words, for normalise-only mode (see
+# docs/adding-a-language.md).
+tysiącem# tysięcy
+milionym# milionów
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency $ ¤dolar#
+currency £ ¤funt#
+currency ¥ ¤jen#
+currency ¢ ¤cent#
+
+[words]
+¤dolar# dˈɔlar
+¤funt# fˈunt
+¤jen# jˈɛn
+¤cent# tsˈɛnt

@@ -26,3 +26,17 @@ test("word lists in both modes", async () => {
   const r = await uccharan.respell("kəkˈɔːɹoʊ", { lang: "hi", source: "en-us" });
   assert.equal(r.text, "ककॉरो");
 });
+
+test("Latin-script languages read their own numbers", async () => {
+  const de = await uccharan.normalize("Ich habe 23 Euro.", { lang: "de" });
+  assert.equal(de.text, "Ich habe dreiundzwanzig Euro.");
+  const n = de.spans.find((s) => s.kind === "number");
+  assert.equal(n.lang, "de");
+  assert.equal(n.value, "23");
+  const be = await uccharan.normalize("Il a 71 ans.", { lang: "fr-be" });
+  assert.equal(be.text, "Il a septante et un ans.");
+  const es = await uccharan.normalize("Tengo 1 500 libros.", { lang: "es", improved: true });
+  assert.equal(es.text, "Tengo mil quinientos libros.");
+  const da = await uccharan.normalize("Jeg har 95 kroner.", { lang: "da", digits: "request" });
+  assert.equal(da.text, "Jeg har femoghalvfems kroner.");
+});

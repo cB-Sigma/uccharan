@@ -2790,3 +2790,13 @@ szellem p s
 házi p s
 ötlettől p s
 paraszt p s
+
+[numbers]
+# The words the reference voice says for currency signs, where the sign
+# stands (improved mode: after the amount).
+currency € ¤euró#
+currency $ ¤dollár#
+
+[words]
+¤euró# ˈɛuro
+¤dollár# dˈollaːr

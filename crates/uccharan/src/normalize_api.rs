@@ -426,7 +426,7 @@ impl Cx<'_> {
                 }
                 breaks.push(base + cursor + b.unwrap_or(0));
             }
-            cls.push(v);
+            cls.push(self.join_groups(v));
         }
         let mut pos = 0usize;
         for v in &cls {
@@ -458,6 +458,33 @@ impl Cx<'_> {
         }
     }
 
+    /// Numbers written in groups of three digits ("1 500") as one chunk,
+    /// where the language that reads the digits writes them so, as the
+    /// phonemiser joins them (compatible mode only across a plain space).
+    fn join_groups(&self, v: Vec<(Range<usize>, Chunk)>) -> Vec<(Range<usize>, Chunk)> {
+        let l = match self.opt.digits {
+            DigitLang::Fixed(l) => l,
+            _ => self.lang,
+        };
+        let compat = self.opt.mode != Mode::Improved;
+        if !l.latin().is_some_and(|x| x.numbers.joins_groups(compat)) {
+            return v;
+        }
+        let chunks: Vec<Chunk> = v.iter().map(|x| x.1.clone()).collect();
+        let joined = crate::gnorm::join_groups(&chunks, if compat { 6 } else { 3 }, compat);
+        if joined.len() == v.len() {
+            return v;
+        }
+        let mut out = Vec::with_capacity(joined.len());
+        let mut k = 0;
+        for c in joined {
+            let n = c.text.matches(crate::gnorm::GROUPED).count();
+            out.push((v[k].0.start..v[k + n].0.end, c));
+            k += n + 1;
+        }
+        out
+    }
+
     /// The language that reads the digits of chunk `i` of a clause.
     fn digit_lang(&self, v: &[(Range<usize>, Chunk)], i: usize) -> Lang {
         let req = self.lang;
@@ -465,7 +492,7 @@ impl Cx<'_> {
             DigitLang::Fixed(l) => l,
             DigitLang::Request => req,
             DigitLang::Context => {
-                if req.is_english() || self.opt.latin != LatinPolicy::Keep {
+                if req.script() == Script::Latin || self.opt.latin != LatinPolicy::Keep {
                     return req;
                 }
                 let sc =
@@ -501,7 +528,10 @@ impl Cx<'_> {
         let dl = self.digit_lang(v, i);
         let end_of = |k: usize| base + v[k].0.end;
         // "Rs. 250", "रु. 250", "INR 900": a currency word before a number.
-        if CURRENCY_WORDS.contains(&t.to_lowercase().as_str()) && next.is_some_and(is_number) {
+        if CURRENCY_WORDS.contains(&t.to_lowercase().as_str())
+            && next.is_some_and(is_number)
+            && dl.latin().is_none()
+        {
             let num = next.unwrap();
             let scale = next2.filter(|s| is_scale_word(s));
             let used = if scale.is_some() { 3 } else { 2 };
@@ -518,7 +548,10 @@ impl Cx<'_> {
             );
         }
         // "₹5 करोड़", "$2 million": an amount with a scale word.
-        if t.starts_with(['₹', '$', '£', '€']) && next.is_some_and(is_scale_word) {
+        if t.starts_with(['₹', '$', '£', '€'])
+            && next.is_some_and(is_scale_word)
+            && dl.latin().is_none()
+        {
             let amount = &t[t.chars().next().unwrap().len_utf8()..];
             if is_number(amount) {
                 let out = self.money(t, next, dl);
@@ -593,8 +626,14 @@ impl Cx<'_> {
             kind,
             lang,
             entry: None,
-            value: value.map(|v| ascii_digits(v).replace(',', "")),
+            value: value.map(|v| ascii_digits(v).replace([',', crate::gnorm::GROUPED], "")),
         }
+    }
+
+    /// True when the request language is written in another script than
+    /// Latin (Latin-script words in its text are foreign words).
+    fn other_script(&self) -> bool {
+        self.lang.script() != Script::Latin
     }
 
     fn word_plus(&self, l: Lang) -> String {
@@ -671,6 +710,10 @@ impl Cx<'_> {
             };
             return crate::norm::expand_opts(c, l, Normalize::Natural, improved, indian);
         }
+        if let Some(lat) = l.latin() {
+            let items = crate::gnorm::expand(c, &lat.numbers, false, !improved);
+            return written_latin(items, &lat.numbers);
+        }
         if l.hindi_like() || l == Lang::Sa || l.indic().is_none() {
             let mut items = crate::norm::expand_with(c, Lang::Hi, Normalize::Natural, improved);
             if matches!(l, Lang::Bho | Lang::Mai) {
@@ -701,9 +744,9 @@ impl Cx<'_> {
             let latin = chunk_script(&it.text) == Some(Script::Latin);
             if it.spell {
                 words.push(self.spell(&it.text, latin));
-            } else if latin && !self.lang.is_english() && it.generated && l.is_english() {
+            } else if latin && self.other_script() && it.generated && l.is_english() {
                 words.push(self.latin_word(&it.text, true));
-            } else if latin && !self.lang.is_english() && !it.generated {
+            } else if latin && self.other_script() && !it.generated {
                 words.push(self.latin_word(&it.text, false));
             } else {
                 words.push(it.text.clone());
@@ -715,7 +758,7 @@ impl Cx<'_> {
     /// Letters of an acronym, as Latin letters or letter names.
     fn spell(&mut self, s: &str, latin: bool) -> String {
         let letters: Vec<char> = s.chars().filter(|c| c.is_alphanumeric()).collect();
-        if !latin || self.lang.is_english() || self.opt.latin == LatinPolicy::Keep {
+        if !latin || !self.other_script() || self.opt.latin == LatinPolicy::Keep {
             return letters
                 .iter()
                 .map(|c| c.to_uppercase().to_string())
@@ -827,7 +870,7 @@ impl Cx<'_> {
         }
         let digits = has_digit(t);
         let script = chunk_script(t);
-        let latin_in_other = script == Some(Script::Latin) && !self.lang.is_english();
+        let latin_in_other = script == Some(Script::Latin) && self.other_script();
         let l = if digits {
             dl
         } else if latin_in_other {
@@ -837,7 +880,24 @@ impl Cx<'_> {
         };
         let items = self.expand(ch, l);
         let out = self.join(&items, l);
-        let same = out == t
+        // The number as written in English (no group marks, decimal point).
+        let mut tc = t.replace(crate::gnorm::GROUPED, "");
+        if l.latin().is_some_and(|x| x.numbers.decimal_comma) {
+            tc = tc
+                .chars()
+                .map(|c| match c {
+                    ',' => '.',
+                    '.' => ',',
+                    c => c,
+                })
+                .collect();
+        }
+        // A word of a Latin-script language without digits or signs that
+        // are read stays as written (hyphens, apostrophes, `&`).
+        let plain_latin =
+            !digits && l.latin().is_some() && !items.iter().any(|i| i.generated || i.spell);
+        let same = plain_latin
+            || out == t
             || (out.split_whitespace().collect::<Vec<_>>()
                 == t.split_whitespace().collect::<Vec<_>>());
         let kind = if !digits && same {
@@ -851,7 +911,7 @@ impl Cx<'_> {
                 SpanKind::Text
             }
         } else if digits {
-            classify(t, l, &items)
+            classify(&tc, l, &items)
         } else if items.iter().any(|i| i.spell) {
             SpanKind::Acronym
         } else if latin_in_other && self.opt.latin != LatinPolicy::Keep {
@@ -879,7 +939,7 @@ impl Cx<'_> {
         }
         // A dot that belonged to the chunk was consumed: keep it when the
         // chunk was not an abbreviation and the dot ended a sentence.
-        let value = matches!(kind, SpanKind::Number).then_some(t);
+        let value = matches!(kind, SpanKind::Number).then_some(tc.as_str());
         let mut p = self.piece(src, out, kind, l, value);
         if matches!(kind, SpanKind::Text | SpanKind::Latin) && raw.len() > t.len() {
             p.out = raw.to_string();
@@ -933,7 +993,7 @@ impl Cx<'_> {
                 } else {
                     letters
                 });
-            } else if !me.lang.is_english() {
+            } else if me.other_script() {
                 parts.push(me.latin_word(&w, false));
             } else {
                 parts.push(w);
@@ -970,6 +1030,61 @@ impl Cx<'_> {
         let _ = kind;
         parts.join(" ")
     }
+}
+
+/// The written form of the number words of a Latin-script language
+/// ([`crate::langdef::Numbers::written`]), with the words that the language
+/// writes as one joined: the hundred of `glue-hundred` (not where hyphens
+/// are kept), the tens of `swap-tens` ("dreiundzwanzig") and the words of
+/// `written-glue` and `written-glue-after`; scale words take the plural of
+/// `written-plural`.
+fn written_latin(items: Vec<Item>, nums: &crate::langdef::Numbers) -> Vec<Item> {
+    let mut out: Vec<Item> = Vec::with_capacity(items.len());
+    let mut prev_number = false;
+    for mut it in items {
+        if !it.generated {
+            prev_number = false;
+            out.push(it);
+            continue;
+        }
+        let mut w = nums.written(&it.text);
+        if prev_number {
+            if let Some(pl) = out.last().and_then(|p| nums.written_plural(&w, &p.text)) {
+                w = pl.to_string();
+            }
+        }
+        let swapped = nums
+            .swap_tens
+            .as_ref()
+            .is_some_and(|link| it.text.starts_with(link.as_str()) && it.text != *link);
+        let hundred = it.glue && nums.glued_hundred(&it.text);
+        let after = out.last().is_some_and(|p| {
+            nums.written_glue_after
+                .iter()
+                .any(|g| p.text.ends_with(g.as_str()))
+        });
+        let number = swapped || nums.is_number_word(&it.text);
+        let joins = hundred || swapped || after || nums.written_glue.contains(&w);
+        if prev_number && number && joins {
+            if let Some(p) = out.last_mut() {
+                if !(hundred && nums.written_hyphen) {
+                    p.text.push_str(&w);
+                    continue;
+                }
+            }
+        }
+        it.text = w;
+        it.glue = false;
+        prev_number = number;
+        out.push(it);
+    }
+    // Replacements that need the joined word ("einstausend").
+    for it in &mut out {
+        if it.generated {
+            it.text = nums.replace_written(&it.text);
+        }
+    }
+    out
 }
 
 /// English IPA of a word for respelling in an Indian script: British

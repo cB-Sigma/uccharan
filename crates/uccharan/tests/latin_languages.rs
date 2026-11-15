@@ -456,3 +456,61 @@ fn roman_numerals_and_capitals() {
     assert_eq!(improved(Lang::Es, "IV"), improved(Lang::Es, "4"));
     assert_ne!(improved(Lang::Es, "IL"), improved(Lang::Es, "49"));
 }
+
+/// Letters of other alphabets in names are read as their base letters, as
+/// the reference voices read them, instead of passing into the phonemes.
+#[test]
+fn letters_of_other_alphabets() {
+    check(Lang::Es, &[("Łódź", "lˈoðθ"), ("Erdoğan", "eɾðˈoɣan")]);
+    check(Lang::Fi, &[("Łódź", "lˈodts"), ("Dvořák", "dvˈorak")]);
+    check(Lang::Ro, &[("Erdoğan", "ˌerdoɡˈan"), ("Łódź", "lˈodz")]);
+    let p = Phonemizer::new();
+    let names = "Erdoğan Łódź Dvořák Gödel Ærø Øresund Şahin Ångström Ñandú Mõisaküla Straße Þór";
+    // (æ and ø are also IPA symbols: not checked.)
+    let foreign = "ğłźřöşåñúõüßþ";
+    for l in [
+        Lang::Es,
+        Lang::Fr,
+        Lang::Ro,
+        Lang::Fi,
+        Lang::Pt,
+        Lang::PtBr,
+        Lang::It,
+        Lang::Ca,
+        Lang::Nl,
+        Lang::Cs,
+        Lang::Sv,
+    ] {
+        let got = p.phonemize(names, &Options::new(l));
+        assert!(
+            !got.chars().any(|c| foreign.contains(c)),
+            "{}: {got}",
+            l.tag()
+        );
+    }
+    // A letter the language has keeps its own reading.
+    check(Lang::Pl, &[("Łódź", "wˈutɕ")]);
+    check(Lang::Tr, &[("Erdoğan", "ɛrdoːˈan")]);
+}
+
+/// Currency signs are read where they stand, as the reference voices read
+/// them; Spanish reads the comma as the decimal sign.
+#[test]
+fn currency_signs_and_decimal_comma() {
+    check(Lang::De, &[("x 5 € x", "ˈɪks fˈʏnf ˈɔøroː ˈɪks")]);
+    check(Lang::Fr, &[("x $5 x", "ˈiks dɔlˈaʁ sˈɛ̃k ˈiks")]);
+    check(
+        Lang::Es,
+        &[
+            ("Tengo 3,5 kilos.", "tˈɛŋɡo tɾˈes koma θˈinko kˈilos."),
+            ("Tengo 1.000 kilos.", "tˈɛŋɡo mˈil kˈilos."),
+        ],
+    );
+    // Improved mode: the amount first, and "1 500" as one number.
+    let p = Phonemizer::new();
+    let mut o = Options::new(Lang::De);
+    o.mode = uccharan::Mode::Improved;
+    assert_eq!(p.phonemize("€5", &o), p.phonemize("5 €", &o));
+    o.lang = Lang::Es;
+    assert_eq!(p.phonemize("1 500", &o), p.phonemize("1500", &o));
+}

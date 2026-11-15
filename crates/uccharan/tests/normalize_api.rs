@@ -78,6 +78,13 @@ const SAMPLES: &[(&str, Lang)] = &[
     ("माझ्याकडे 3 पुस्तके आहेत. 50% आणि ₹200", Lang::Mr),
     ("আমার 25টি বই, ১২ জন।", Lang::Bn),
     ("எனக்கு 45 வயது", Lang::Ta),
+    (
+        "Ich habe 23 Euro, 1 500 € und 3,5 %. Dr. Müller zahlt $5.",
+        Lang::De,
+    ),
+    ("Il a 71 ans et 12 500,50 € — 1 280 hiboux.", Lang::FrBe),
+    ("Tengo 1 500 libros y 12,50 €.", Lang::Es),
+    ("Jeg har 95 kroner. Łódź!", Lang::Da),
     ("", Lang::EnUs),
     ("   ", Lang::Hi),
     ("...!?", Lang::EnUs),
@@ -154,7 +161,7 @@ fn fuzzed_input_keeps_invariants() {
                 s.push(' ');
             }
         }
-        for l in [Lang::EnUs, Lang::Hi, Lang::Ta] {
+        for l in [Lang::EnUs, Lang::Hi, Lang::Ta, Lang::De, Lang::FrCh] {
             let n = norm(&s, l);
             check(&s, &n);
             let again = norm(&n.text, l);
@@ -589,4 +596,228 @@ fn respelling_round_trip() {
         r.text
     );
     assert!(respell::respell(p(), "", None, Lang::Hi, Style::Native).is_none());
+}
+
+/// The request language of a Latin-script text reads its numbers, with
+/// the number words of its language file in their written form.
+#[test]
+fn latin_languages_read_their_own_numbers() {
+    let cases: &[(Lang, &str, &str)] = &[
+        (
+            Lang::De,
+            "Ich habe 23 Euro.",
+            "Ich habe dreiundzwanzig Euro.",
+        ),
+        (
+            Lang::Es,
+            "Tengo 1 500 libros.",
+            "Tengo uno quinientos libros.",
+        ),
+        (Lang::Fr, "Il a 71 ans.", "Il a soixante et onze ans."),
+        (Lang::FrBe, "Il a 71 ans.", "Il a septante et un ans."),
+        (Lang::FrCh, "Il a 71 ans.", "Il a septante et un ans."),
+        (
+            Lang::Da,
+            "Jeg har 95 kroner.",
+            "Jeg har femoghalvfems kroner.",
+        ),
+        (
+            Lang::Nl,
+            "Ik heb 23 boeken.",
+            "Ik heb drieëntwintig boeken.",
+        ),
+        (Lang::It, "Ho 21 anni.", "Ho ventuno anni."),
+        (Lang::PtBr, "Tenho 23 anos.", "Tenho vinte e três anos."),
+        (Lang::Pt, "Custa 101 euros.", "Custa cento e um euros."),
+        (Lang::Pl, "Mam 25 lat.", "Mam dwadzieścia pięć lat."),
+        (Lang::Tr, "Ben 23 yaşındayım.", "Ben yirmi üç yaşındayım."),
+        (Lang::Cs, "Je mi 32 let.", "Je mi třicet dva let."),
+        (Lang::Sv, "Jag har 47 böcker.", "Jag har fyrtiosju böcker."),
+        (Lang::Ca, "Tinc 22 anys.", "Tinc vint-i-dos anys."),
+        (Lang::Ro, "Am 22 de ani.", "Am douăzeci și doi de ani."),
+        (Lang::Hu, "Most 23 éves.", "Most huszonhárom éves."),
+        (
+            Lang::Fi,
+            "Hinta on 250 000 euroa.",
+            "Hinta on kaksisataa viisikymmentä tuhatta euroa.",
+        ),
+        (
+            Lang::Nb,
+            "Jeg har 1 200 kroner.",
+            "Jeg har ett tusen to hundre kroner.",
+        ),
+    ];
+    for (l, t, want) in cases {
+        let n = norm(t, *l);
+        check(t, &n);
+        assert_eq!(n.text, *want, "{l:?}");
+        let s = n.spans.iter().find(|s| s.kind == SpanKind::Number).unwrap();
+        assert_eq!(s.lang, *l);
+    }
+    // `digits: request` and a fixed language give the same reading.
+    let o = options_from_json(r#"{"digits":"request"}"#).unwrap();
+    assert_eq!(
+        normalize(p(), "Ich habe 23 Euro.", Lang::De, &o).text,
+        "Ich habe dreiundzwanzig Euro."
+    );
+    // Abbreviations of the language stay as written (not English "Doctor").
+    assert_eq!(norm("Dr. Müller", Lang::De).text, "Dr. Müller");
+    // Hyphens and apostrophes inside words are kept.
+    let t = "L'homme arrive aujourd'hui, c'est-à-dire à 3 h.";
+    assert_eq!(
+        norm(t, Lang::Fr).text,
+        "L'homme arrive aujourd'hui, c'est-à-dire à trois h."
+    );
+}
+
+/// Numbers written in groups of three digits, decimals, percentages and
+/// currency signs, as the phonemiser reads them in each mode.
+#[test]
+fn latin_number_forms() {
+    let improved = NormOptions {
+        mode: Mode::Improved,
+        ..NormOptions::default()
+    };
+    let both = |t: &str, l: Lang| (norm(t, l).text, normalize(p(), t, l, &improved).text);
+    // Compatible mode joins groups where the reference voice does (German,
+    // French: across a plain space); improved mode also in Spanish.
+    assert_eq!(both("1 500", Lang::Es).0, "uno quinientos");
+    assert_eq!(both("1 500", Lang::Es).1, "mil quinientos");
+    assert_eq!(both("1 500", Lang::De).0, "eintausend fünfhundert");
+    assert_eq!(both("1 280", Lang::Fr).1, "mille deux cent quatre-vingts");
+    let n = norm("Il y a 12 500 personnes.", Lang::Fr);
+    let s = n.spans.iter().find(|s| s.kind == SpanKind::Number).unwrap();
+    assert_eq!(s.value.as_deref(), Some("12500"));
+    assert_eq!(&"Il y a 12 500 personnes."[s.src.clone()], "12 500");
+    // Decimal comma, percent, currency.
+    assert_eq!(norm("3,5 %", Lang::De).text, "drei Komma fünf Prozent");
+    assert_eq!(norm("12,50 €", Lang::Es).text, "doce coma cincuenta euro");
+    assert_eq!(
+        both("€5", Lang::De),
+        ("Euro fünf".into(), "fünf Euro".into())
+    );
+    let kinds = |t: &str, l: Lang| -> Vec<SpanKind> {
+        norm(t, l)
+            .spans
+            .iter()
+            .filter(|s| s.kind != SpanKind::Punct)
+            .map(|s| s.kind)
+            .collect()
+    };
+    assert_eq!(
+        kinds("3,5 50% 1.000 €5", Lang::De),
+        [
+            SpanKind::Decimal,
+            SpanKind::Percent,
+            SpanKind::Number,
+            SpanKind::Money
+        ]
+    );
+    // Written number words of each language.
+    let w = |t: &str, l: Lang| norm(t, l).text;
+    assert_eq!(w("2023", Lang::De), "zweitausend dreiundzwanzig");
+    assert_eq!(w("345", Lang::De), "dreihundertfünfundvierzig");
+    assert_eq!(w("1000000", Lang::De), "eine Million");
+    assert_eq!(w("5000000", Lang::Fr), "cinq millions");
+    assert_eq!(w("222", Lang::Fr), "deux cent vingt-deux");
+    assert_eq!(w("99", Lang::FrCh), "nonante-neuf");
+    assert_eq!(w("80", Lang::FrCh), "huitante");
+    assert_eq!(w("2003", Lang::It), "duemilatré");
+    assert_eq!(
+        w("123456", Lang::It),
+        "centoventitremilaquattrocentocinquantasei"
+    );
+    assert_eq!(w("35", Lang::Es), "treinta y cinco");
+    assert_eq!(w("2001", Lang::Pt), "dois mil e um");
+    assert_eq!(w("1100", Lang::Ro), "o mie o sută");
+    assert_eq!(w("66", Lang::Ro), "șaizeci și șase");
+    assert_eq!(w("5000000", Lang::Pl), "pięć milionów");
+    assert_eq!(w("1000", Lang::Sv), "ett tusen");
+    assert_eq!(w("101", Lang::Da), "et hundrede og et");
+    assert_eq!(w("123", Lang::Nl), "honderddrieëntwintig");
+}
+
+/// Phonemising the normalised text says what phonemising the digits says.
+/// The voices read some number words differently from the same word
+/// written in letters (Danish "6" sεɡs, "seks" sʔeks; Turkish "12" onici,
+/// "on iki" ɔn ikɪ; German "14" fɪɾtseːn, "vierzehn" fiːɾtseːn), so the
+/// readings are compared with stress, length and the glottal stop left out,
+/// and each language has its own bound on the share of phonemes that
+/// differ (measured, with a margin).
+#[test]
+fn latin_numbers_round_trip() {
+    fn strip(s: &str) -> Vec<char> {
+        s.chars()
+            .filter(|c| !matches!(c, 'ˈ' | 'ˌ' | 'ː' | 'ʔ' | ' ' | '-' | '.' | ','))
+            .collect()
+    }
+    fn dist(a: &[char], b: &[char]) -> usize {
+        let mut prev: Vec<usize> = (0..=b.len()).collect();
+        for i in 1..=a.len() {
+            let mut cur = vec![i; b.len() + 1];
+            for j in 1..=b.len() {
+                cur[j] = (prev[j] + 1)
+                    .min(cur[j - 1] + 1)
+                    .min(prev[j - 1] + usize::from(a[i - 1] != b[j - 1]));
+            }
+            prev = cur;
+        }
+        prev[b.len()]
+    }
+    let mut nums: Vec<String> = (0..=130).map(|n| n.to_string()).collect();
+    for n in [
+        150, 200, 222, 345, 999, 1000, 1001, 1100, 1234, 1999, 2001, 2023, 12345, 99999, 123456,
+        1000000, 2500000, 7654321,
+    ] {
+        nums.push(n.to_string());
+    }
+    for s in ["3,5", "0,25", "50%", "1 500", "12 500"] {
+        nums.push(s.to_string());
+    }
+    // Largest share of differing phonemes allowed, in per cent.
+    let bounds: &[(Lang, f64)] = &[
+        (Lang::Es, 1.5),
+        (Lang::De, 6.5),
+        (Lang::Nl, 7.0),
+        (Lang::Fr, 3.5),
+        (Lang::FrBe, 2.5),
+        (Lang::FrCh, 1.5),
+        (Lang::It, 8.0),
+        (Lang::PtBr, 4.5),
+        (Lang::Pt, 11.5),
+        (Lang::Pl, 3.5),
+        (Lang::Tr, 28.0),
+        (Lang::Cs, 4.0),
+        (Lang::Sv, 21.0),
+        (Lang::Ca, 4.0),
+        (Lang::Ro, 7.0),
+        (Lang::Hu, 2.0),
+        (Lang::Fi, 5.5),
+        (Lang::Nb, 12.0),
+        (Lang::Da, 32.0),
+    ];
+    for &(l, bound) in bounds {
+        for mode in [Mode::Compatible, Mode::Improved] {
+            let mut o = Options::new(l);
+            o.mode = mode;
+            let no = NormOptions {
+                mode,
+                ..NormOptions::default()
+            };
+            let (mut wrong, mut total) = (0usize, 0usize);
+            for t in &nums {
+                let spoken = normalize(p(), t, l, &no).text;
+                assert!(
+                    !spoken.chars().any(|c| c.is_ascii_digit()),
+                    "{l:?} {t}: {spoken}"
+                );
+                let a = strip(&p().phonemize(t, &o));
+                let b = strip(&p().phonemize(&spoken, &o));
+                wrong += dist(&a, &b);
+                total += a.len();
+            }
+            let per = 100.0 * wrong as f64 / total as f64;
+            assert!(per <= bound, "{l:?} {mode:?}: {per:.1} % > {bound} %");
+        }
+    }
 }
