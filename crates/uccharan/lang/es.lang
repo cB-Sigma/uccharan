@@ -231,6 +231,10 @@ y ˌiɣɾjˈeɣa
 z θˈeta
 
 [numbers]
+# Ordinals written with digits (words: lang/numbers/ord-es.txt; compat:
+# the reference reads them as ordinals too).
+ordinal-suffix º spellout-ordinal-masculine compat
+ordinal-suffix ª spellout-ordinal-feminine compat
 # "1 500" is one number in improved mode; the reference voice reads the
 # groups apart.
 group space-improved
@@ -239,6 +243,7 @@ decimal comma
 fraction number
 roman-skip VI
 point coma#
+dot-word punto#
 percent por ciento
 join-tens yes
 one-before-scale no
@@ -325,6 +330,24 @@ currency £ ¤libras#
 
 [words]
 coma# koma
+punto# punto
 ¤euro# ˈeʊɾo
 ¤dólar# dˈolaɾ
 ¤libras# lˈiβɾas
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+pattern D de M de Y
+month1 enero
+month2 febrero
+month3 marzo
+month4 abril
+month5 mayo
+month6 junio
+month7 julio
+month8 agosto
+month9 septiembre
+month10 octubre
+month11 noviembre
+month12 diciembre

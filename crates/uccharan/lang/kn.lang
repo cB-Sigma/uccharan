@@ -161,3 +161,19 @@ grouping indian
 join-tens yes
 point ದಶಮಾಂಶ
 percent ಪ್ರತಿಶತ
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+month1 ಜನವರಿ
+month2 ಫೆಬ್ರವರಿ
+month3 ಮಾರ್ಚ್
+month4 ಏಪ್ರಿಲ್
+month5 ಮೇ
+month6 ಜೂನ್
+month7 ಜುಲೈ
+month8 ಆಗಸ್ಟ್
+month9 ಸೆಪ್ಟೆಂಬರ್
+month10 ಅಕ್ಟೋಬರ್
+month11 ನವೆಂಬರ್
+month12 ಡಿಸೆಂಬರ್

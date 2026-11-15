@@ -157,15 +157,21 @@ tusenv2# tˈʉsɛn
 enmiljon# mɪljˈuːn
 miljoner# mɪljˈuːnɛr
 komma# pˈɵŋkt
+punkt# pˈɵŋkt
 minus# mˈiːnɵs
 procent# prɔsˈɛnt
 
 [numbers]
+# Ordinals written with digits (words: lang/numbers/ord-sv.txt; compat:
+# the reference reads them as ordinals too).
+ordinal-suffix :a spellout-ordinal-feminine compat
+ordinal-suffix :e spellout-ordinal-masculine compat
 group space
 roman off
 decimal comma
 point komma#
 minus minus#
+dot-word punkt#
 percent procent#
 one-before-scale no
 0 noll#
@@ -352,3 +358,21 @@ currency $ ¤dollar#
 [words]
 ¤euro# ˈɛvruː
 ¤dollar# dˈɔlar
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+day ordinal spellout-ordinal-feminine
+year cardinal
+month1 januari
+month2 februari
+month3 mars
+month4 april
+month5 maj
+month6 juni
+month7 juli
+month8 augusti
+month9 september
+month10 oktober
+month11 november
+month12 december

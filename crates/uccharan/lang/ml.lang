@@ -182,3 +182,19 @@ scale10000000 കോടി
 grouping indian
 join-tens yes
 one-before-scale no
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+month1 ജനുവരി
+month2 ഫെബ്രുവരി
+month3 മാർച്ച്
+month4 ഏപ്രിൽ
+month5 മേയ്
+month6 ജൂൺ
+month7 ജൂലൈ
+month8 ഓഗസ്റ്റ്
+month9 സെപ്റ്റംബർ
+month10 ഒക്‌ടോബർ
+month11 നവംബർ
+month12 ഡിസംബർ

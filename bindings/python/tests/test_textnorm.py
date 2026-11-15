@@ -176,9 +176,21 @@ def test_normalize_indic_languages() -> None:
                 for c in out:
                     assert c in " ‌‍" or lo <= ord(c) <= hi, (lang, text, out, c)
     # Sinhala and Sindhi: words, not keys of the phonemiser's word table.
-    assert uccharan.normalize("1,234", "si").text == "එක දහස දෙක සිය තිස්හතර"
+    assert uccharan.normalize("1,234", "si").text == "එක්දහස් දෙසිය තිස්හතර"
+    assert uccharan.normalize("100 1000 50%", "si").text == "සියය දහස පනහ ප්\u200dරතිශතය"
+    # Konkani: Goan Konkani number words, not Marathi ones.
+    assert uccharan.normalize("25 9 100", "kok").text == "पंचवीस णव शंबर"
     assert uccharan.normalize("3.5", "si").text == "තුන දශම පහ"
     assert uccharan.normalize("1,234", "sd").text == "هڪ هزار ٻه سؤ چوٽيهه"
     assert uccharan.normalize("₹500", "sd").text == "پنج سؤ رپيا"
     # The words read as the digits do.
     assert uccharan.phonemize(uccharan.normalize("13", "si").text, "si") == uccharan.phonemize("13", "si")
+
+
+def test_normalize_dates_and_ordinals() -> None:
+    # Dates and ordinals are read in full in every mode of normalise-only mode.
+    assert uccharan.normalize("15.08.2024", "de").text == "fünfzehnter August zweitausend vierundzwanzig"
+    assert uccharan.normalize("le 1er mai", "fr").text == "le premier mai"
+    assert uccharan.normalize("200 000", "fr").text == "deux cent mille"
+    assert uccharan.normalize("el 2º", "es").text == "el segundo"
+    assert uccharan.normalize("15/08/2024", "es").text == "quince de agosto de dos mil veinticuatro"

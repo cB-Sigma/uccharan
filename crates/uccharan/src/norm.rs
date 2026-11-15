@@ -1131,6 +1131,8 @@ fn special(cx: &mut Ctx, s: &str, lower: &str) -> bool {
         Some('/')
     } else if s.matches('-').count() == 2 && s.len() == 10 {
         Some('-')
+    } else if s.matches('.').count() == 2 && (8..=10).contains(&s.len()) {
+        Some('.')
     } else {
         None
     };

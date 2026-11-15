@@ -1,0 +1,77 @@
+# Ordinal number words of 'de': rule sets from Unicode CLDR
+# common/rbnf/de.xml (Unicode License v3, see NOTICE), written out by
+# tools/cldr_ordinals.py.
+%spellout-cardinal-feminine:
+0: null;
+1: eine;
+2: =%spellout-numbering=;
+100: <%spellout-cardinal-masculine<­hundert[­>>];
+1000: <%spellout-cardinal-masculine<­tausend[­>>];
+1000000: <%spellout-cardinal-feminine< $(cardinal,one{Million}other{Millionen})$[ >>];
+1000000000: <%spellout-cardinal-feminine< $(cardinal,one{Milliarde}other{Milliarden})$[ >>];
+1000000000000: <%spellout-cardinal-feminine< $(cardinal,one{Billion}other{Billionen})$[ >>];
+1000000000000000: <%spellout-cardinal-feminine< $(cardinal,one{Billiarde}other{Billiarden})$[ >>];
+%spellout-cardinal-masculine:
+0: null;
+1: ein;
+2: =%spellout-numbering=;
+100: <%spellout-cardinal-masculine<­hundert[­>>];
+1000: <%spellout-cardinal-masculine<­tausend[­>>];
+1000000: <%spellout-cardinal-feminine< $(cardinal,one{Million}other{Millionen})$[ >>];
+1000000000: <%spellout-cardinal-feminine< $(cardinal,one{Milliarde}other{Milliarden})$[ >>];
+1000000000000: <%spellout-cardinal-feminine< $(cardinal,one{Billion}other{Billionen})$[ >>];
+1000000000000000: <%spellout-cardinal-feminine< $(cardinal,one{Billiarde}other{Billiarden})$[ >>];
+%spellout-numbering:
+0: null;
+1: eins;
+2: zwei;
+3: drei;
+4: vier;
+5: fünf;
+6: sechs;
+7: sieben;
+8: acht;
+9: neun;
+10: zehn;
+11: elf;
+12: zwölf;
+13: >>zehn;
+16: sechzehn;
+17: siebzehn;
+18: >>zehn;
+20: [>%spellout-cardinal-masculine>­und­]zwanzig;
+30: [>%spellout-cardinal-masculine>­und­]dreißig;
+40: [>%spellout-cardinal-masculine>­und­]vierzig;
+50: [>%spellout-cardinal-masculine>­und­]fünfzig;
+60: [>%spellout-cardinal-masculine>­und­]sechzig;
+70: [>%spellout-cardinal-masculine>­und­]siebzig;
+80: [>%spellout-cardinal-masculine>­und­]achtzig;
+90: [>%spellout-cardinal-masculine>­und­]neunzig;
+100: <%spellout-cardinal-masculine<­hundert[­>>];
+1000: <%spellout-cardinal-masculine<­tausend[­>>];
+1000000: <%spellout-cardinal-feminine< $(cardinal,one{Million}other{Millionen})$[ >>];
+1000000000: <%spellout-cardinal-feminine< $(cardinal,one{Milliarde}other{Milliarden})$[ >>];
+1000000000000: <%spellout-cardinal-feminine< $(cardinal,one{Billion}other{Billionen})$[ >>];
+1000000000000000: <%spellout-cardinal-feminine< $(cardinal,one{Billiarde}other{Billiarden})$[ >>];
+%spellout-ordinal:
+0: nullte;
+1: erste;
+2: zweite;
+3: dritte;
+4: vierte;
+5: fünfte;
+6: sechste;
+7: siebte;
+8: achte;
+9: =%spellout-numbering=te;
+20: =%spellout-numbering=ste;
+100: <%spellout-cardinal-masculine<­hundert[­>>|ste];
+1000: <%spellout-cardinal-masculine<­tausend[­>>|ste];
+1000000: <%spellout-cardinal-feminine<­$(cardinal,one{million}other{millionen})$[­>>|ste];
+1000000000: <%spellout-cardinal-feminine<­$(cardinal,one{milliarde}other{milliarden})$[­>>|ste];
+1000000000000: <%spellout-cardinal-feminine<­$(cardinal,one{billion}other{billionen})$[­>>|ste];
+1000000000000000: <%spellout-cardinal-feminine<­$(cardinal,one{billiarde}other{billiarden})$[­>>|ste];
+%spellout-ordinal-n:
+0: =%spellout-ordinal=n;
+%spellout-ordinal-r:
+0: =%spellout-ordinal=r;

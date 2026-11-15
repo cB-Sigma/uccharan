@@ -3,7 +3,7 @@
 //! words (`[numbers]` in its file); letters of other scripts are kept as
 //! words for the router to hand to their own language.
 
-use crate::langdef::Numbers;
+use crate::langdef::{Fraction, Numbers};
 use crate::norm::Item;
 use crate::text::{indic_digit, runs, Chunk, Script};
 
@@ -55,7 +55,14 @@ pub fn join_groups(chunks: &[Chunk], first_max: usize, plain_only: bool) -> Vec<
 
 /// `compat`: a group of three digits with a leading zero is read as the
 /// reference voices read it ("000" zero-zero zero, "012" zero twelve).
-fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str, spaced: bool, compat: bool) {
+fn push_number(
+    out: &mut Vec<Item>,
+    nums: &Numbers,
+    s: &str,
+    spaced: bool,
+    compat: bool,
+    strict: bool,
+) {
     let ascii: String = s
         .chars()
         .map(|c| digit(c).map_or(c, |d| char::from(b'0' + d)))
@@ -81,10 +88,22 @@ fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str, spaced: bool, compa
         .split([',', ':', '/'])
         .filter(|g| !g.is_empty())
         .collect();
+    // With a decimal comma, a ',' here was a full stop in the text.
+    let dots = nums.decimal_comma && int.contains(',') && !int.contains([':', '/']);
     // "1,00,000" and "1,000,000" are one number; times and dates are read part by part.
     let one_number = int.contains(',')
         && !int.contains([':', '/'])
-        && groups.iter().skip(1).all(|g| g.len() == 2 || g.len() == 3);
+        && groups.iter().skip(1).all(|g| g.len() == 2 || g.len() == 3)
+        && !(strict && dots && nums.dot_no_groups);
+    // Improved mode reads "2.5" in a language with a decimal comma as a
+    // decimal number.
+    let (int, frac, groups) =
+        if !strict && dots && !one_number && frac.is_none() && groups.len() == 2 {
+            (groups[0], Some(groups[1]), vec![groups[0]])
+        } else {
+            (int, frac, groups)
+        };
+    let _ = int;
     let parts: Vec<String> = if one_number {
         vec![groups.concat()]
     } else {
@@ -93,7 +112,12 @@ fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str, spaced: bool, compa
     let mut words: Vec<(String, bool)> = Vec::new();
     // Words that start a group of digits and keep their stress.
     let mut heads: Vec<usize> = Vec::new();
-    for p in &parts {
+    for (pi, p) in parts.iter().enumerate() {
+        // A full stop that does not group digits is read in compatible mode.
+        if pi > 0 && dots && strict {
+            words.extend(nums.dot_word.iter().map(|w| (w.clone(), false)));
+            heads.push(words.len());
+        }
         if compat && p.len() == 3 && p.starts_with('0') && nums.speller.is_none() {
             if let Some(last) = p.strip_prefix("00") {
                 let at = words.len();
@@ -118,10 +142,7 @@ fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str, spaced: bool, compa
     }
     if let Some(f) = frac {
         words.extend(nums.point.iter().map(|w| (w.clone(), false)));
-        match f.parse::<u64>() {
-            Ok(v) if nums.fraction_number && !f.starts_with('0') => nums.cardinal(v, &mut words),
-            _ => nums.digits(f, &mut words),
-        }
+        fraction(nums, f, &mut words, compat);
     }
     for (k, (w, glue)) in words.into_iter().enumerate() {
         let mut it = Item::word(&w);
@@ -131,11 +152,210 @@ fn push_number(out: &mut Vec<Item>, nums: &Numbers, s: &str, spaced: bool, compa
     }
 }
 
+/// A date written with digits (15/08/2024, 15.08.2024, 15-08-2024,
+/// 2024-08-15), read with the language's `[dates]`.
+fn date(text: &str, nums: &Numbers, prev: Option<&str>) -> Option<Vec<Item>> {
+    let d = nums.dates.as_ref()?;
+    let sep = ['/', '.', '-']
+        .into_iter()
+        .find(|&c| text.matches(c).count() == 2)?;
+    let p: Vec<&str> = text.split(sep).collect();
+    if p.iter()
+        .any(|x| x.is_empty() || !x.bytes().all(|b| b.is_ascii_digit()))
+    {
+        return None;
+    }
+    let (y, m, day) = if p[0].len() == 4 && p[1].len() <= 2 && p[2].len() <= 2 {
+        (p[0], p[1], p[2])
+    } else if p[2].len() == 4 && p[0].len() <= 2 && p[1].len() <= 2 {
+        (p[2], p[1], p[0])
+    } else {
+        return None;
+    };
+    let (y, m, day): (u64, usize, u64) = (y.parse().ok()?, m.parse().ok()?, day.parse().ok()?);
+    if !(1..=12).contains(&m) || !(1..=31).contains(&day) {
+        return None;
+    }
+    let mut out: Vec<Item> = Vec::new();
+    let words = |out: &mut Vec<Item>, w: &[(String, bool)]| {
+        out.extend(w.iter().map(|(t, g)| {
+            let mut it = Item::word(t);
+            it.glue = *g;
+            it
+        }))
+    };
+    let plain = |out: &mut Vec<Item>, w: &str| {
+        out.extend(w.split_whitespace().map(|t| {
+            let mut it = Item::word(t);
+            it.generated = false;
+            it
+        }))
+    };
+    for tok in &d.pattern {
+        match tok.as_str() {
+            "D" => {
+                if let (1, Some(w)) = (day, &d.day1) {
+                    plain(&mut out, w);
+                    continue;
+                }
+                let ord = nums.ordinal_words.as_ref();
+                match d.day.0.as_str() {
+                    "ordinal" | "possessive" => {
+                        // The form after the word before the date ("am").
+                        let set = ord
+                            .and_then(|o| o.after_words(prev, day))
+                            .filter(|_| d.day.0 == "ordinal")
+                            .or_else(|| ord.and_then(|o| o.words(&d.day.1, day)));
+                        let mut w = set?;
+                        if d.day.0 == "possessive" {
+                            w = possessive(&w);
+                        }
+                        plain(&mut out, &w);
+                    }
+                    _ => {
+                        let mut w = Vec::new();
+                        nums.cardinal(day, &mut w);
+                        words(&mut out, &w);
+                    }
+                }
+            }
+            "M" => plain(&mut out, &d.months[m - 1]),
+            "Y" => match d.year.0.as_str() {
+                "ordinal" => {
+                    let w = nums.ordinal_words.as_ref()?.words(&d.year.1, y)?;
+                    plain(&mut out, &w);
+                }
+                "hundreds" => {
+                    let mut w = Vec::new();
+                    nums.cardinal_year(y, &mut w);
+                    words(&mut out, &w);
+                }
+                _ => {
+                    let mut w = Vec::new();
+                    nums.cardinal(y, &mut w);
+                    words(&mut out, &w);
+                }
+            },
+            lit => plain(&mut out, lit),
+        }
+    }
+    Some(out)
+}
+
+/// The Hungarian day of a date: the ordinal with its possessive ending
+/// ("tizenötödik" tizenötödike, "harmadik" harmadika, "első" elseje).
+fn possessive(w: &str) -> String {
+    if let Some(stem) = w.strip_suffix("első") {
+        return format!("{stem}elseje");
+    }
+    let Some(stem) = w.strip_suffix("ik") else {
+        return w.to_string();
+    };
+    let back = stem
+        .chars()
+        .rev()
+        .find(|c| "aáeéiíoóöőuúüű".contains(*c))
+        .is_some_and(|c| "aáoóuú".contains(c));
+    format!("{w}{}", if back { "a" } else { "e" })
+}
+
+/// The digits `f` after a decimal sign, as the language reads them.
+fn fraction(nums: &Numbers, f: &str, words: &mut Vec<(String, bool)>, compat: bool) {
+    let start = words.len();
+    let value = f.parse::<u64>().ok();
+    // Words of leading zeros, and whether the rest became one number.
+    let (mut zeros, mut number) = (0, false);
+    match (nums.fraction, value) {
+        (Fraction::Number(max), Some(_)) => {
+            let rest = f.trim_start_matches('0');
+            nums.digits(&f[..f.len() - rest.len()], words);
+            zeros = words.len() - start;
+            match rest.parse::<u64>() {
+                Ok(v) if rest.len() <= max => {
+                    nums.cardinal(v, words);
+                    number = v >= 100;
+                }
+                _ => nums.digits(rest, words),
+            }
+        }
+        (Fraction::Romanian, Some(v)) if f.len() <= 4 && !f.starts_with('0') => {
+            nums.cardinal(v, words);
+            number = v >= 100;
+        }
+        (Fraction::Suffix(zero_only), Some(v)) if f.len() <= 5 => {
+            let suffix = nums.fraction_suffix.get(&f.len());
+            if zero_only && !f.starts_with('0') {
+                nums.cardinal(v, words);
+                number = v >= 100;
+            } else if let Some(sfx) = suffix {
+                nums.cardinal(v, words);
+                words.push((sfx.clone(), true));
+                number = v >= 100;
+            } else {
+                nums.digits(f, words);
+            }
+        }
+        _ => nums.digits(f, words),
+    }
+    // The reference voices join the zeros, and a number of hundreds read
+    // as one number, to the word for the decimal sign.
+    if compat {
+        let n = zeros + usize::from(number);
+        for w in words[start..].iter_mut().take(n) {
+            w.1 = true;
+        }
+    }
+}
+
 /// Expand one chunk for a language whose number words are `nums`. With
 /// `ascii_english`, runs of ASCII digits are read as English numbers (as the
 /// reference's Nepali voice does) and later routed to English.
 /// `compat`: reference-compatible readings (see [`push_number`]).
-pub fn expand(chunk: &Chunk, nums: &Numbers, ascii_english: bool, compat: bool) -> Vec<Item> {
+/// `natural`: dates and ordinals are read in full (improved mode and
+/// normalise-only mode); `prev`: the chunk before this one, which selects
+/// the form of some ordinals ("am 3." dritten).
+pub fn expand(
+    chunk: &Chunk,
+    nums: &Numbers,
+    ascii_english: bool,
+    compat: bool,
+    natural: bool,
+    prev: Option<&str>,
+) -> Vec<Item> {
+    if natural {
+        if let Some(items) = date(&chunk.text, nums, prev) {
+            return items;
+        }
+    }
+    // Ordinals: "1er", "2ª", "3:e", and "3." where the language writes them so.
+    let strict = compat && !natural;
+    let text = chunk.text.as_str();
+    let plain = match text.split_once(['.']) {
+        Some((a, b))
+            if natural && a.bytes().all(|c| c.is_ascii_digit()) && matches!(b, "º" | "ª") =>
+        {
+            std::borrow::Cow::Owned(format!("{a}{b}"))
+        }
+        _ => std::borrow::Cow::Borrowed(text),
+    };
+    let ordinal = (nums.ordinal_words.is_some())
+        .then(|| nums.suffix_ordinal(&plain, strict))
+        .flatten()
+        .or_else(|| {
+            let n = text.parse::<u64>().ok().filter(|_| chunk.dot)?;
+            nums.dot_ordinal(n, prev, strict)
+        });
+    if let Some(words) = ordinal {
+        return words
+            .split_whitespace()
+            .map(|w| {
+                let mut it = Item::word(w);
+                // Number keys (`ord3#`) stay generated words.
+                it.generated = w.ends_with('#');
+                it
+            })
+            .collect();
+    }
     let mut out: Vec<Item> = Vec::new();
     // An apostrophe between two Indic letters is ignored (Assamese ল'ৰা).
     let owned;
@@ -166,6 +386,8 @@ pub fn expand(chunk: &Chunk, nums: &Numbers, ascii_english: bool, compat: bool) 
     let n = rs.len();
     // Improved mode says a currency sign written before the amount after it.
     let mut after_amount: Vec<Item> = Vec::new();
+    // Where the items of the last number start (`percent-before`).
+    let mut number_at = 0usize;
     for (i, (sc, r)) in rs.iter().enumerate() {
         if i > 0 && rs[i - 1].0 == Script::Digit && !after_amount.is_empty() {
             out.append(&mut after_amount);
@@ -203,12 +425,27 @@ pub fn expand(chunk: &Chunk, nums: &Numbers, ascii_english: bool, compat: bool) 
                     crate::Normalize::EspeakLike,
                 ));
             }
-            Script::Digit => push_number(&mut out, nums, r, spaced, compat),
+            Script::Digit => {
+                number_at = out.len();
+                push_number(&mut out, nums, r, spaced, compat, strict)
+            }
             Script::Other => {
                 let c = r.chars().next().unwrap_or(' ');
                 match c {
-                    '-' if i == 0 && n > 1 && rs[1].0 == Script::Digit => {
+                    '-' if i == 0
+                        && n > 1
+                        && rs[1].0 == Script::Digit
+                        && !(compat && nums.minus_silent_compat) =>
+                    {
                         out.extend(nums.minus.iter().map(|w| Item::word(w)));
+                    }
+                    '%' if !nums.percent_before.is_empty() => {
+                        let words = nums.percent_before.iter().map(|w| Item::word(w));
+                        if i > 0 && rs[i - 1].0 == Script::Digit {
+                            out.splice(number_at..number_at, words);
+                        } else {
+                            out.extend(words);
+                        }
                     }
                     '%' => out.extend(nums.percent.iter().map(|w| Item::word(w))),
                     _ => {

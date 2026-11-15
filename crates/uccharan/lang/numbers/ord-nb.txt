@@ -1,0 +1,121 @@
+# Ordinal number words of 'nb': rule sets from Unicode CLDR
+# common/rbnf/no.xml (Unicode License v3, see NOTICE), written out by
+# tools/cldr_ordinals.py.
+%spellout-cardinal-neuter:
+0: null;
+1: ett;
+2: =%%spellout-cardinal-reale=;
+20: tjue[­>>];
+30: tretti[­>>];
+40: førti[­>>];
+50: femti[­>>];
+60: seksti[­>>];
+70: sytti[­>>];
+80: åtti[­>>];
+90: nitti[­>>];
+100: hundre[ og >>];
+200: <%spellout-cardinal-neuter< hundre[ og >>];
+1000: tusen[ >%%and-small-n>];
+2000: <%spellout-cardinal-neuter< tusen[ >%%and-small-n>];
+1000000: én million[ >>];
+2000000: <%%spellout-cardinal-reale< millioner[ >>];
+1000000000: én milliard[ >>];
+2000000000: <%%spellout-cardinal-reale< milliarder[ >>];
+1000000000000: én billion[ >>];
+2000000000000: <%%spellout-cardinal-reale< billioner[ >>];
+1000000000000000: én billiard[ >>];
+2000000000000000: <%%spellout-cardinal-reale< billiarder[ >>];
+%spellout-numbering:
+0: =%%spellout-cardinal-reale=;
+%spellout-ordinal-masculine:
+0: nullte;
+1: første;
+2: andre;
+3: tredje;
+4: fjerde;
+5: femte;
+6: sjette;
+7: sjuende;
+8: åttende;
+9: niende;
+10: tiende;
+11: ellevte;
+12: tolvte;
+13: =%spellout-cardinal-neuter=de;
+20: tjue>%%ord-masc-nde>;
+30: tretti>%%ord-masc-nde>;
+40: førti>%%ord-masc-nde>;
+50: femti>%%ord-masc-nde>;
+60: seksti>%%ord-masc-nde>;
+70: sytti>%%ord-masc-nde>;
+80: åtti>%%ord-masc-nde>;
+90: nitti>%%ord-masc-nde>;
+100: <%spellout-numbering<­hundre>%%ord-masc-de>;
+1000: <%spellout-numbering<­tusen>%%ord-masc-de>;
+1000000: én million>%%ord-masc-te>;
+2000000: <%%spellout-cardinal-reale< million>%%ord-masc-teer>;
+1000000000: én milliard>%%ord-masc-te>;
+2000000000: <%%spellout-cardinal-reale< milliard>%%ord-masc-teer>;
+1000000000000: én billion>%%ord-masc-te>;
+2000000000000: <%%spellout-cardinal-reale< billion>%%ord-masc-teer>;
+1000000000000000: én billiard>%%ord-masc-te>;
+2000000000000000: <%%spellout-cardinal-reale< billiard>%%ord-masc-teer>;
+%%and-small:
+0: og =%%spellout-cardinal-reale=;
+100: =%%spellout-cardinal-reale=;
+%%and-small-n:
+0: og =%spellout-cardinal-neuter=;
+100: =%spellout-cardinal-neuter=;
+%%ord-masc-de:
+0: de;
+1: ' =%spellout-ordinal-masculine=;
+%%ord-masc-nde:
+0: ende;
+1: ­=%spellout-ordinal-masculine=;
+%%ord-masc-te:
+0: te;
+1: ' =%spellout-ordinal-masculine=;
+%%ord-masc-teer:
+0: te;
+1: er =%spellout-ordinal-masculine=;
+%%spellout-cardinal-reale:
+0: null;
+1: én;
+2: to;
+3: tre;
+4: fire;
+5: fem;
+6: seks;
+7: sju;
+8: åtte;
+9: ni;
+10: ti;
+11: elleve;
+12: tolv;
+13: tretten;
+14: fjorten;
+15: femten;
+16: seksten;
+17: sytten;
+18: atten;
+19: nitten;
+20: tjue[­>>];
+30: tretti[­>>];
+40: førti[­>>];
+50: femti[­>>];
+60: seksti[­>>];
+70: sytti[­>>];
+80: åtti[­>>];
+90: nitti[­>>];
+100: hundre[ og >>];
+200: <%spellout-cardinal-neuter< hundre[ og >>];
+1000: tusen[ >%%and-small>];
+2000: <%spellout-cardinal-neuter< tusen[ >%%and-small>];
+1000000: én million[ >>];
+2000000: << millioner[ >>];
+1000000000: én milliard[ >>];
+2000000000: << milliarder[ >>];
+1000000000000: én billion[ >>];
+2000000000000: << billioner[ >>];
+1000000000000000: én billiard[ >>];
+2000000000000000: << billiarder[ >>];

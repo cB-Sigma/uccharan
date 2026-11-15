@@ -1,0 +1,33 @@
+# Ordinal number words of 'fi': rule sets from Unicode CLDR
+# common/rbnf/fi.xml (Unicode License v3, see NOTICE), written out by
+# tools/cldr_ordinals.py.
+%spellout-ordinal:
+0: nollas;
+1: ensimmäinen;
+2: toinen;
+3: kolmas;
+4: neljäs;
+5: viides;
+6: kuudes;
+7: seitsemäs;
+8: kahdeksas;
+9: yhdeksäs;
+10: kymmenes;
+11: yhdestoista;
+12: kahdestoista;
+13: >>toista;
+20: <%%spellout-ordinal-larger<­kymmenes[­>>];
+100: sadas[­>>];
+200: <%%spellout-ordinal-larger<­sadas[­>>];
+1000: tuhannes[­>>];
+2000: <%%spellout-ordinal-larger<­tuhannes[­>>];
+1000000: miljoonas[­>>];
+2000000: <%%spellout-ordinal-larger< miljoonas[­>>];
+1000000000: miljardis[­>>];
+2000000000: <%%spellout-ordinal-larger< miljardis[­>>];
+1000000000000: biljoonas[ >>];
+2000000000000: <%%spellout-ordinal-larger< biljoonas[ >>];
+%%spellout-ordinal-larger:
+0: ;
+2: kahdes;
+3: =%spellout-ordinal=;

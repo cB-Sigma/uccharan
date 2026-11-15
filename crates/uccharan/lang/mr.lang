@@ -263,3 +263,19 @@ glue-hundred yes
 grouping indian
 point दशमलव
 percent प्रतिशत
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+month1 जानेवारी
+month2 फेब्रुवारी
+month3 मार्च
+month4 एप्रिल
+month5 मे
+month6 जून
+month7 जुलै
+month8 ऑगस्ट
+month9 सप्टेंबर
+month10 ऑक्टोबर
+month11 नोव्हेंबर
+month12 डिसेंबर

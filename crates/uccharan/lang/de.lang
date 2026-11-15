@@ -342,10 +342,17 @@ milliardennum mɪljˈaɾdən
 prozent pɾoːtsˈɛnt
 
 [numbers]
+# Ordinals written with digits (words: lang/numbers/ord-de.txt; compat:
+# the reference reads them as ordinals too).
+ordinal-dot spellout-ordinal-r
+ordinal-dot-after spellout-ordinal-n am im vom zum zur beim dem den des einem einen
+ordinal-dot-after spellout-ordinal der die das
 group space
 roman-before römisch#
 decimal comma
 point komma
+minus minus
+dot-word punkt#
 percent prozent
 swap-tens und
 glue-hundred yes
@@ -521,6 +528,7 @@ currency ₹ ¤rupie#
 currency ¢ ¤cent#
 
 [words]
+punkt# pʊŋkt
 ¤euro# ˈɔøroː
 ¤dollar# dɔlˈɑː
 ¤pfund# pfˈʊnt
@@ -535,3 +543,21 @@ currency ¢ ¤cent#
 ¤yen# Yen
 ¤rupie# Rupie
 ¤cent# Cent
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+day ordinal spellout-ordinal-r
+year hundreds
+month1 Januar
+month2 Februar
+month3 März
+month4 April
+month5 Mai
+month6 Juni
+month7 Juli
+month8 August
+month9 September
+month10 Oktober
+month11 November
+month12 Dezember

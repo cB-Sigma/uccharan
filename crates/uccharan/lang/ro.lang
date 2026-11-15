@@ -169,6 +169,7 @@ roman-skip VI VII
 decimal comma
 point virgulă#
 minus minus#
+fraction romanian
 percent la-sută#
 one-before-scale no
 0 zero#
@@ -474,3 +475,20 @@ currency $ ¤dolar#
 [words]
 ¤euro# ˈeʊɾo
 ¤dolar# dolˈar
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+day1 întâi
+month1 ianuarie
+month2 februarie
+month3 martie
+month4 aprilie
+month5 mai
+month6 iunie
+month7 iulie
+month8 august
+month9 septembrie
+month10 octombrie
+month11 noiembrie
+month12 decembrie

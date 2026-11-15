@@ -486,6 +486,13 @@ quatre-vingt-dix-neuf kˈatʁvˈɛ̃dˈiznˈœᶠ
 quatre-vingt-un kˈatʁvˈɛ̃œ̃ⁿ
 
 [numbers]
+# Ordinals written with digits (words: lang/numbers/ord-fr.txt; compat:
+# the reference reads them as ordinals too).
+ordinal-suffix er spellout-ordinal-masculine compat
+ordinal-suffix re spellout-ordinal-feminine
+ordinal-suffix e spellout-ordinal-masculine
+ordinal-suffix ème spellout-ordinal-masculine
+ordinal-suffix è spellout-ordinal-masculine
 group space
 # Scale words keep their stress before more of the number from a million,
 # and from a thousand when the groups are written with spaces.
@@ -505,10 +512,12 @@ decimal comma
 fraction number
 stress last
 point virgule
+dot-word point#
 percent pour-cent
 glue-hundred yes
 written-hyphen keep
 written-plural million millions milliard milliards
+written-drop-s cents vingts
 one-before-scale no
 0 zéro#
 1 un#
@@ -863,8 +872,26 @@ currency ¥ ¤yen#
 currency ¢ ¤cent#
 
 [words]
+point# pwɛ̃
 ¤euro# əʁˌo
 ¤dollar# dɔlˈaʁ
 ¤livre# lˈivʁ
 ¤yen# jˈɛn
 ¤cent# sˈɛnt
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+day1 premier
+month1 janvier
+month2 février
+month3 mars
+month4 avril
+month5 mai
+month6 juin
+month7 juillet
+month8 août
+month9 septembre
+month10 octobre
+month11 novembre
+month12 décembre

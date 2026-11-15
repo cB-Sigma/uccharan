@@ -234,10 +234,15 @@ mila# mˈiːla
 unmilione# ʊnmiliˈone
 milioni# miliˈonɪ
 virgola# vˈirɡola
+punto# pʊnto
 meno# mˈeno
 percento# pertʃˈɛŋto
 
 [numbers]
+# Ordinals written with digits (words: lang/numbers/ord-it.txt; compat:
+# the reference reads them as ordinals too).
+ordinal-suffix º spellout-ordinal-masculine compat
+ordinal-suffix ª spellout-ordinal-feminine compat
 # "1 500" is one number in improved mode; the reference voice reads the
 # groups apart.
 group space-improved
@@ -292,6 +297,9 @@ ord49 ord49#
 decimal comma
 point virgola#
 minus meno#
+fraction suffix-zero
+fraction-suffix3 millesimi
+dot-word punto#
 percent percento#
 one-before-scale no
 0 zero#
@@ -548,3 +556,20 @@ currency ₹ ¤rupia-indiana#
 ¤dollari# dˈɔllarɪ
 ¤sterlina# sterlˈina
 ¤rupia-indiana# rʊpjaindjˈana
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+day1 primo
+month1 gennaio
+month2 febbraio
+month3 marzo
+month4 aprile
+month5 maggio
+month6 giugno
+month7 luglio
+month8 agosto
+month9 settembre
+month10 ottobre
+month11 novembre
+month12 dicembre

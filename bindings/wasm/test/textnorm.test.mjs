@@ -63,6 +63,15 @@ test("non-Latin languages write numbers in their own script", async () => {
       }
     }
   }
-  assert.equal((await uccharan.normalize("1,234", { lang: "si" })).text, "එක දහස දෙක සිය තිස්හතර");
+  assert.equal((await uccharan.normalize("1,234", { lang: "si" })).text, "එක්දහස් දෙසිය තිස්හතර");
+  assert.equal((await uccharan.normalize("25 9 100", { lang: "kok" })).text, "पंचवीस णव शंबर");
   assert.equal((await uccharan.normalize("₹500", { lang: "sd" })).text, "پنج سؤ رپيا");
+});
+
+test("dates and ordinals are read in full", async () => {
+  assert.equal((await uccharan.normalize("15.08.2024", { lang: "de" })).text,
+    "fünfzehnter August zweitausend vierundzwanzig");
+  assert.equal((await uccharan.normalize("le 1er mai", { lang: "fr" })).text, "le premier mai");
+  assert.equal((await uccharan.normalize("200 000", { lang: "fr" })).text, "deux cent mille");
+  assert.equal((await uccharan.normalize("el 2º", { lang: "es" })).text, "el segundo");
 });

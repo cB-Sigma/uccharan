@@ -563,3 +563,19 @@ percent فيصد
 ڙدح ستانوي
 ڙدخ اٺانوي
 ڙدد نوانوي
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+month1 جنوري
+month2 فيبروري
+month3 مارچ
+month4 اپريل
+month5 مئي
+month6 جون
+month7 جولاءِ
+month8 آگسٽ
+month9 سيپٽمبر
+month10 آڪٽوبر
+month11 نومبر
+month12 ڊسمبر

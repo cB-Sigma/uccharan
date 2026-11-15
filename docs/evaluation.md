@@ -230,6 +230,25 @@ words fixed, 29 broken). Development half 1.45 → 1.23 %. `sd.ucd` 209 → 120 
 many idiosyncrasies (digit grouping, "hundred" years, Hindi stress on number words) that are only
 partly reproduced.
 
+**Number formats, ordinals and dates (0.6.3).** Compatible mode was brought closer to the
+reference voices on number formats: the word for a full stop between digits, Czech and Hungarian
+"1.000", the digits after a decimal comma read as one number (Italian, Portuguese, Polish, Czech,
+Turkish, Finnish, Catalan, Romanian), Hungarian *tized/század/ezred*, the German minus, the
+Sinhala hundred, thousand and `%`, and the ordinals the voices read ("3." in Danish, Norwegian and
+Hungarian; *1er*, *1º*, *1r*, *1e*, *1:a*). On 17 Latin probe phrases per language with 14 number
+formats, 116 of 238 differed from the reference before and 54 after (most of the rest are stress
+marks and the joining of words after the decimal sign). Development PER before → after (all
+other languages unchanged): si 0.76 → 0.36 %, hu 1.22 → 1.06 %, nb 0.94 → 0.87 %, da 1.91 →
+1.84 %, pt 0.88 → 0.83 %, pt-br 0.65 → 0.61 %, fi 1.12 → 1.09 %, fr / fr-be / fr-ch 0.62 →
+0.60 %, ca 1.47 → 1.45 %, nl 1.62 → 1.60 %, cs 1.28 → 1.27 %, de 1.06 → 1.05 %, es 0.55 →
+0.54 %, it 0.63 → 0.62 %, pl 1.12 → 1.11 %, ro 0.95 → 0.94 %, sv 1.27 → 1.26 %, tr 0.55 →
+0.54 %; no language got worse. The changes touch numbers only, so the held-out halves were not
+scored again. Dates stay as the voices read them in compatible mode (piece by piece); improved
+mode and normalise-only mode read them with month names, and ordinals in full (tests in
+`crates/uccharan/tests/numbers_dates.rs`). Konkani and Sinhala improved mode now read numbers as
+their written words: the round trip of normalise-only mode through the phonemiser (improved)
+differs by 0.6 % of phonemes in both (was 38.5 % and 13.5 %).
+
 **Word lists** (isolated words):
 
 | List | PER | Exact | Exact ignoring stress | Stress pattern wrong |

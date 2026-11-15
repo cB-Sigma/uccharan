@@ -5,6 +5,8 @@
 # Indic language.
 
 [meta]
+# Improved mode reads numbers as the Konkani words of lang/numbers/kok.txt.
+improved-numbers = written
 tag = kok
 block = 0900
 stress = penult
@@ -559,3 +561,19 @@ scale10000000 कोटी
 glue-hundred yes
 grouping indian
 point दशमलव
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+month1 जानेवारी
+month2 फेब्रुवारी
+month3 मार्च
+month4 एप्रील
+month5 मे
+month6 जून
+month7 जुलय
+month8 ऑगस्ट
+month9 सप्टेंबर
+month10 ऑक्टोबर
+month11 नोव्हेंबर
+month12 डिसेंबर

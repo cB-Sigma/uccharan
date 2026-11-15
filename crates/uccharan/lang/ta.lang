@@ -229,3 +229,19 @@ scale10000000 கோடி
 grouping indian
 join-tens yes
 demote-after-first yes
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+month1 ஜனவரி
+month2 பிப்ரவரி
+month3 மார்ச்
+month4 ஏப்ரல்
+month5 மே
+month6 ஜூன்
+month7 ஜூலை
+month8 ஆகஸ்ட்
+month9 செப்டம்பர்
+month10 அக்டோபர்
+month11 நவம்பர்
+month12 டிசம்பர்

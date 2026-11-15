@@ -309,3 +309,19 @@ r. -> ɽ
 য অন্তস্তে+য
 ন দন্ত্য ন
 ণ মূৰ্ধন্য ণ
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+month1 জানুৱাৰী
+month2 ফেব্ৰুৱাৰী
+month3 মাৰ্চ
+month4 এপ্ৰিল
+month5 মে’
+month6 জুন
+month7 জুলাই
+month8 আগষ্ট
+month9 ছেপ্তেম্বৰ
+month10 অক্টোবৰ
+month11 নৱেম্বৰ
+month12 ডিচেম্বৰ

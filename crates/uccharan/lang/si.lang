@@ -2,6 +2,8 @@
 # Indic layout, so every letter states its kind.
 
 [meta]
+# Improved mode reads numbers as the written words of lang/numbers/si.txt.
+improved-numbers = written
 tag = si
 block = 0d80
 stress = initial
@@ -228,10 +230,15 @@ S = ˈ ˌ
 @ණඨඣ ˈɐnuːhˌətə
 @ණඨට ˈɐnuːˌɐʈə
 @ණඨඨ ˈɐnuːnˌɐvəjə
-@සිය sˈijəjə
+@සියය sˈijəjə
+@සිය sˈijə
 @දහස ˈɐhəs
+@දහස් dˈɐhəs
 @ලක්ෂ lˈɐkʃəjə
+@ලක්ෂ් lˈɐkʃ
 @කෝටි kˈoːʈijə
+@කෝට kˈoːʈi
+@සියයට sˌijəjˌəʈə
 
 [unstressed]
 
@@ -337,12 +344,27 @@ S = ˈ ˌ
 97 ණඨඣ
 98 ණඨට
 99 ණඨඨ
+# As the reference reads them: 100 siyaya (alone, and before more);
+# N hundred as N + siya in one word; a thousand, lakh or crore with more
+# after it in its short form (dahas, lakʃ, koːʈi); no "one" before a
+# thousand; the word for % before the number.
+100 සියය
 scale100 සිය
+glue-hundred yes
 scale1000 දහස
+scale1000+ දහස්
+one-before-scale no
 scale100000 ලක්ෂ
+scale100000+ ලක්ෂ්
+100000 ණඛ ලක්ෂ
+100000+ ණඛ ලක්ෂ්
 scale10000000 කෝටි
+scale10000000+ කෝට
+10000000 ණඛ කෝටි
+10000000+ ණඛ කෝට
 grouping indian
 point දශම
+percent-before සියයට
 
 [numbers.written]
 # Sinhala spellings of the number words above (the keys are not words),
@@ -447,3 +469,19 @@ point දශම
 ණඨඣ අනූහත
 ණඨට අනූඅට
 ණඨඨ අනූනවය
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# the Gregorian month names in common Sri Lankan use.
+month1 ජනවාරි
+month2 පෙබරවාරි
+month3 මාර්තු
+month4 අප්‍රේල්
+month5 මැයි
+month6 ජූනි
+month7 ජූලි
+month8 අගෝස්තු
+month9 සැප්තැම්බර්
+month10 ඔක්තෝබර්
+month11 නොවැම්බර්
+month12 දෙසැම්බර්

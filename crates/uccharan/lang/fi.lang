@@ -168,10 +168,14 @@ tuhatta# tˌuhatːa
 miljoona# mˈiljoːna
 miljoonaa# mˌiljoːnaː
 pilkku# pˌilkːu
+piste# pˌiste
 miinus# mˈiːnus
 prosenttia# prˈosentːɪ
 
 [numbers]
+# Ordinals written with digits (words: lang/numbers/ord-fi.txt; compat:
+# the reference reads them as ordinals too).
+ordinal-dot spellout-ordinal
 group space
 20h kaksikymmentä-h#
 30h kolmekymmentä-h#
@@ -185,6 +189,8 @@ roman off
 decimal comma
 point pilkku#
 minus miinus#
+fraction two
+dot-word piste#
 percent prosenttia#
 one-before-scale no
 0 nolla#
@@ -371,3 +377,20 @@ currency £ ¤punta#
 ¤euro# ˈeuro
 ¤dollarin# dˈollarɪn
 ¤punta# pˈunta
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+day ordinal spellout-ordinal
+month1 tammikuuta
+month2 helmikuuta
+month3 maaliskuuta
+month4 huhtikuuta
+month5 toukokuuta
+month6 kesäkuuta
+month7 heinäkuuta
+month8 elokuuta
+month9 syyskuuta
+month10 lokakuuta
+month11 marraskuuta
+month12 joulukuuta

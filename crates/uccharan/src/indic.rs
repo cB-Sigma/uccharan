@@ -209,6 +209,9 @@ pub struct Indic {
     final_keep_after: Vec<String>,
     /// ASCII digits are read as English numbers (the Nepali voice).
     pub ascii_digits_english: bool,
+    /// `improved-numbers = written`: improved mode reads numbers as the
+    /// written number words of `numbers_text`, not as number keys.
+    pub improved_written_numbers: bool,
     /// Consonants written differently as the first member of a cluster
     /// (`ɾ=rr`: र् prints rr).
     cluster_first: Vec<(String, String)>,
@@ -416,6 +419,7 @@ impl Indic {
             anusvara_n_after_vowel: meta.get("anusvara-after-vowel").is_some_and(|v| v == "n"),
             final_keep_after: list(&meta, "final-keep-after"),
             ascii_digits_english: meta.get("ascii-digits").is_some_and(|v| v == "en"),
+            improved_written_numbers: meta.get("improved-numbers").is_some_and(|v| v == "written"),
             cluster_first: list(&meta, "cluster-first")
                 .iter()
                 .filter_map(|x| {

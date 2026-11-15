@@ -153,10 +153,16 @@ virgül# virɡˌøl
 yüzde# jøzdˈɛ
 
 [numbers]
+# Ordinals written with digits (words: lang/numbers/ord-tr.txt; compat:
+# the reference reads them as ordinals too).
+ordinal-dot spellout-ordinal
 roman off
 decimal comma
 point virgül#
 minus eksi
+minus-compat no
+fraction two
+dot-word nokta
 percent yüzde#
 one-before-scale no
 0 sıfır#
@@ -338,3 +344,19 @@ currency $ ¤dolar#
 [words]
 ¤avro# avrˈɔ
 ¤dolar# dolˈar
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+month1 Ocak
+month2 Şubat
+month3 Mart
+month4 Nisan
+month5 Mayıs
+month6 Haziran
+month7 Temmuz
+month8 Ağustos
+month9 Eylül
+month10 Ekim
+month11 Kasım
+month12 Aralık

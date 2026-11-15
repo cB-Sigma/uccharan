@@ -5,6 +5,55 @@ All notable changes are listed here. The format follows
 
 ## [Unreleased]
 
+## [0.6.3] - 2026-11-15
+
+Bug fixes to the existing languages (no new languages): dates, ordinals and decimals are read
+in full in improved mode and normalise-only mode, Konkani and Sinhala numbers are written with
+their proper words, and compatible mode follows the reference voices on more number formats.
+
+### Fixed
+
+- **Dates** written with digits (15/08/2024, 15.08.2024, 15-08-2024, 2024-08-15; English also
+  MM/DD/YYYY in en-us) are read as day, month name and year in every language with a
+  phonemiser and normalise-only mode, in improved mode and normalise-only mode: German
+  *fünfzehnter August zweitausendvierundzwanzig* (*am fünfzehnten August* after "am"), French
+  *quinze août …* (*premier mai*), Spanish and Portuguese *quince de agosto de …*, Polish
+  *piętnastego sierpnia dwa tysiące dwudziestego czwartego roku*, Hungarian (year first)
+  *… augusztus tizenötödike*, Czech, Finnish, Swedish, Danish, Norwegian, Dutch, Italian,
+  Catalan, Romanian, Turkish, and the Indian languages, Urdu and Sindhi (day, month, year as
+  numbers of the language). They were read piece by piece (*fifteen zero eight …*). Compatible
+  mode keeps the piece-by-piece reading, as the reference voices read dates so. Month names
+  from Unicode CLDR (`[dates]` in the language files).
+- **Ordinals** are read as ordinals where the writing makes it clear: "3." before a lower-case
+  word or next to a month or an article (German, Danish, Norwegian, Finnish, Hungarian, Czech,
+  Polish, Turkish), French *1er*, *1re*, *2e*, Spanish, Italian and Portuguese *1º*, *2ª*,
+  Catalan *1r*, *2n*, *1a*, Dutch *1e*, *2de*, Swedish *1:a*, *3:e*. Ordinal words from the CLDR
+  rule sets (`lang/numbers/ord-*.txt`). Compatible mode reads as ordinals only what the
+  reference voices read so (Danish, Norwegian and Hungarian "3.", French *1er*, the Spanish,
+  Italian and Portuguese º/ª, Catalan *1r*/*2n*, Dutch *1e*, Swedish *:a*/*:e*).
+- **Konkani numbers** were Marathi words. Normalise-only mode and improved mode now use the
+  standard Goan Konkani spellings of the Goa Konkani Akademi (*पांच*, *स*, *णव*, *धा*,
+  *इकरा*, *एकुणीस*, *णव्वद*, *णव्याण्णव*, *शंबर*, *एकशे …*, *तिनशे*, *हजार*, *लाख*,
+  *कोटी*; `lang/numbers/kok.txt`). Compatible mode keeps the reference voice's readings.
+- **Sinhala**: `%` was dropped; compatible mode now says *සියයට* before the number, as the
+  reference voice does, and normalise-only and improved mode write *ප්‍රතිශතය* after it.
+  100 and 1000 were *එක සිය*, *එක දහස*: normalise-only and improved mode write the standard
+  forms *සියය*, *එකසිය …*, *දෙසියය*, *තුන්සියය*, *දහස*, *එක්දහස් …*, *දෙදහස*
+  (`lang/numbers/si.txt`); compatible mode now reads 100, 200, 1000 and 1500 as the
+  reference voice does (*siyaya*, *dekasiya*, *ahas*, *dahas pahasiya*).
+- **Decimals and number signs in compatible mode** now follow the reference voices: German
+  "-5" (*minus*) and "2.5" (*Punkt*); a full stop between digits that does not group thousands
+  in Spanish, French, Italian, Turkish, Czech, Swedish, Catalan, Hungarian, Finnish,
+  Norwegian and Danish; Czech and Hungarian "1.000" (the full stop never groups); Hungarian
+  decimals with *tized*, *század*, *ezred*; the digits after the decimal comma read as one
+  number in Italian, Portuguese, Polish, Czech, Turkish, Finnish, Catalan and Romanian
+  ("3,25" *vinte e cinco*); no minus word in Polish, Turkish, Catalan and Danish. Improved
+  mode and normalise-only mode read "2.5" as a decimal (*zwei Komma fünf*).
+- **French written numbers**: *cent* and *quatre-vingt* take no s before another number word
+  (*deux cent mille*, *quatre-vingt mille*; still *deux cents millions*).
+- **Vietnamese letters** (ạ, ễ, ộ … in names such as *Nguyễn*) split a word in two; they are
+  now Latin letters, read by their base letter in every language (English included).
+
 ## [0.6.2] - 2026-11-15
 
 Bug fixes. Normalise-only mode wrote numbers in Sinhala and Sindhi as internal keys instead of

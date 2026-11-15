@@ -48,6 +48,8 @@ final-secondary = no
 deletion = none        ; none | final | medial (inherent-vowel deletion)
 inherent = ɐ ɐ         ; inherent vowel unstressed, stressed
 anusvara = homorganic  ; split | velar | homorganic | n | m
+improved-numbers = written ; improved mode reads numbers as the written words of
+                       ; lang/numbers/<tag>.txt (si, kok), not as the number keys
 
 [letters]              ; one letter per line: letter, sounds (a sign may be "ɾ ɪ"; "+j" is a glide after the vowel)
 ಕ k
@@ -149,7 +151,29 @@ group-stress 10000          ; from this value on, the first word of each group o
                             ; digits keeps its stress (Hungarian)
 group-stress-spaced 1000    ; the same for numbers written with spaces between the groups
 stress last                 ; only the last word of a number keeps its stress (French)
-fraction number             ; digits after the decimal sign are read as one number
+fraction number             ; digits after the decimal sign: zeros as digits, then one
+                            ; number of up to five digits; `fraction two`: up to two;
+                            ; `fraction romanian`: up to four, no leading zero;
+                            ; `fraction suffix`: one number and the word of
+                            ; `fraction-suffixN` (N digits: Hungarian "öt tized");
+                            ; `fraction suffix-zero`: the suffix only after zeros (Italian)
+fraction-suffix3 millesimi  ; see `fraction suffix`
+dot-word punkt#             ; compatible mode: the word said for a full stop between digits
+                            ; that does not group thousands ("2.5")
+dot-groups no               ; compatible mode: a full stop never groups thousands (Czech,
+                            ; Hungarian "1.000" one, dot-word, zero zero zero)
+minus-compat no             ; compatible mode: the minus sign is not read (as the voice)
+percent-before සියයට        ; the word for % said before the number (Sinhala voice)
+ordinal-dot SET [compat]    ; "3." before a lower-case word (or next to a word of the
+                            ; ordinal context) is an ordinal, its words from the CLDR rule
+                            ; set SET of lang/numbers/ord-<tag>.txt (tools/cldr_ordinals.py);
+                            ; `compat`: the reference reads it so too, else only improved
+                            ; and normalise-only mode; `ordN` keys give compatible readings
+ordinal-dot-after SET am im ; the rule set after these words ("am 3." dritten)
+ordinal-suffix er SET [compat] ; a number with this ending is an ordinal ("1er", "2ª",
+                            ; "3:e"); `compat-said`: the reference also says the ending
+written-drop-s cents vingts ; normalise-only mode: these written words lose their s before
+                            ; another number word that is not a written-plural scale word
 roman off                   ; Roman numerals are not numbers in compatible mode (they are
                             ; spelled like other capitals); `roman max 3999` raises the
                             ; default limit of 49
@@ -169,6 +193,12 @@ written-hyphen keep         ; normalise-only mode keeps hyphens in number words 
 written-glue tausend        ; … joins these words to the number word before them
 written-glue-after hundert  ; … joins the number word after these to them
 written-plural million millions ; … the plural of a scale word after a count other than one
+[dates]                     ; dates written with digits (improved and normalise-only mode;
+                            ; compatible mode keeps the voice's piece-by-piece reading):
+                            ; month1 … month12 (CLDR common/main, format context, wide),
+                            ; pattern D de M de Y, day cardinal | ordinal SET |
+                            ; possessive SET (Hungarian), day1 premier, year cardinal |
+                            ; hundreds | ordinal SET (Polish)
 [numbers.written]           ; the written form of a number word for normalise-only mode,
                             ; where it is not the word without its marks (`#`, `num`, and
                             ; the variant suffixes `v2`, `2`, `x`, `-h`): `tusen# ett`;

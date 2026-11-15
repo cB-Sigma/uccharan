@@ -317,3 +317,19 @@ percent শতকরা
 # The flap letters ড় ঢ় as IPA (the reference prints "r." and "hr.").
 hr. -> ɽʰ
 r. -> ɽ
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+month1 জানুয়ারি
+month2 ফেব্রুয়ারি
+month3 মার্চ
+month4 এপ্রিল
+month5 মে
+month6 জুন
+month7 জুলাই
+month8 আগস্ট
+month9 সেপ্টেম্বর
+month10 অক্টোবর
+month11 নভেম্বর
+month12 ডিসেম্বর

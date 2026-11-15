@@ -517,3 +517,19 @@ scale100000 ਲੱਖ
 scale10000000 ਕਰੋੜ
 glue-hundred yes
 grouping indian
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+month1 ਜਨਵਰੀ
+month2 ਫ਼ਰਵਰੀ
+month3 ਮਾਰਚ
+month4 ਅਪ੍ਰੈਲ
+month5 ਮਈ
+month6 ਜੂਨ
+month7 ਜੁਲਾਈ
+month8 ਅਗਸਤ
+month9 ਸਤੰਬਰ
+month10 ਅਕਤੂਬਰ
+month11 ਨਵੰਬਰ
+month12 ਦਸੰਬਰ

@@ -32,17 +32,42 @@ pub struct Rbnf {
     pub percent: String,
 }
 
+/// The ordinal rule file of a language, when it has one.
+pub fn ordinal_rules_for(tag: &str) -> Option<&'static str> {
+    Some(match tag {
+        "ca" => include_str!("../lang/numbers/ord-ca.txt"),
+        "cs" => include_str!("../lang/numbers/ord-cs.txt"),
+        "da" => include_str!("../lang/numbers/ord-da.txt"),
+        "de" => include_str!("../lang/numbers/ord-de.txt"),
+        "es" => include_str!("../lang/numbers/ord-es.txt"),
+        "fi" => include_str!("../lang/numbers/ord-fi.txt"),
+        "fr" | "fr-be" | "fr-ch" => include_str!("../lang/numbers/ord-fr.txt"),
+        "hu" => include_str!("../lang/numbers/ord-hu.txt"),
+        "it" => include_str!("../lang/numbers/ord-it.txt"),
+        "nb" => include_str!("../lang/numbers/ord-nb.txt"),
+        "nl" => include_str!("../lang/numbers/ord-nl.txt"),
+        "pl" => include_str!("../lang/numbers/ord-pl.txt"),
+        "pt" | "pt-br" => include_str!("../lang/numbers/ord-pt.txt"),
+        "ro" => include_str!("../lang/numbers/ord-ro.txt"),
+        "sv" => include_str!("../lang/numbers/ord-sv.txt"),
+        "tr" => include_str!("../lang/numbers/ord-tr.txt"),
+        _ => return None,
+    })
+}
+
 /// The rule file of a language, when it has one.
 pub fn rules_for(tag: &str) -> Option<&'static str> {
     Some(match tag {
         "bn" => include_str!("../lang/numbers/bn.txt"),
         "gu" => include_str!("../lang/numbers/gu.txt"),
         "kn" => include_str!("../lang/numbers/kn.txt"),
+        "kok" => include_str!("../lang/numbers/kok.txt"),
         "ml" => include_str!("../lang/numbers/ml.txt"),
         "mr" => include_str!("../lang/numbers/mr.txt"),
         "ne" => include_str!("../lang/numbers/ne.txt"),
         "or" => include_str!("../lang/numbers/or.txt"),
         "pa" => include_str!("../lang/numbers/pa.txt"),
+        "si" => include_str!("../lang/numbers/si.txt"),
         "ta" => include_str!("../lang/numbers/ta.txt"),
         "te" => include_str!("../lang/numbers/te.txt"),
         "ur" => include_str!("../lang/numbers/ur.txt"),
@@ -103,6 +128,21 @@ impl Rbnf {
             self.format(s, n, &mut out, 0);
         }
         out.split_whitespace().collect::<Vec<_>>().join(" ")
+    }
+
+    /// The words for `n` by the rule set `name` (`%spellout-ordinal`), if
+    /// the rules have it.
+    pub fn spell_in(&self, name: &str, n: u64) -> Option<String> {
+        let &s = self.names.get(name)?;
+        let mut out = String::new();
+        self.format(s, n, &mut out, 0);
+        let w = out.split_whitespace().collect::<Vec<_>>().join(" ");
+        (!w.is_empty()).then_some(w)
+    }
+
+    /// True when the rules have the set `name`.
+    pub fn has(&self, name: &str) -> bool {
+        self.names.contains_key(name)
     }
 
     fn format(&self, set: usize, n: u64, out: &mut String, depth: u8) {
@@ -176,6 +216,31 @@ impl Rbnf {
                     };
                     self.emit(if n % d != 0 { &a } else { &b }, set, n, d, out, depth);
                     i += j + 1;
+                    continue;
+                }
+                // `$(cardinal,one{million}other{millionen})$`: the form
+                // for the count of the rule's divisor.
+                '$' if cs.get(i + 1) == Some(&'(') => {
+                    let rest: String = cs[i + 2..].iter().collect();
+                    let Some(end) = rest.find(")$") else { break };
+                    let q = n / d;
+                    let cat = if q == 1 {
+                        "one"
+                    } else if (2..=4).contains(&(q % 10)) && !(12..=14).contains(&(q % 100)) {
+                        "few"
+                    } else {
+                        "other"
+                    };
+                    let body = &rest[..end];
+                    let pick = |c: &str| {
+                        let at = body.find(&format!("{c}{{"))?;
+                        let v = &body[at + c.len() + 1..];
+                        Some(v[..v.find('}')?].to_string())
+                    };
+                    if let Some(w) = pick(cat).or_else(|| pick("other")) {
+                        out.push_str(&w);
+                    }
+                    i += 2 + rest[..end].chars().count() + 2;
                     continue;
                 }
                 '\u{ad}' => {}

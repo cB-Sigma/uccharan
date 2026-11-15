@@ -175,12 +175,23 @@ mínusz# mˈinus
 százalék# sˈaːzɑleːk
 
 [numbers]
+# Ordinals written with digits (words: lang/numbers/ord-hu.txt; compat:
+# the reference reads them as ordinals too).
+ordinal-dot spellout-ordinal compat
 group space
 roman off
 decimal comma
 tail-stress no
 point egész#
 minus mínusz#
+fraction suffix
+fraction-suffix1 tized
+fraction-suffix2 század
+fraction-suffix3 ezred
+fraction-suffix4 tízezred
+fraction-suffix5 százezred
+dot-word pont
+dot-groups no
 percent százalék#
 one-before-scale no
 0 nulla#
@@ -2800,3 +2811,21 @@ currency $ ¤dollár#
 [words]
 ¤euró# ˈɛuro
 ¤dollár# dˈollaːr
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+pattern Y M D
+day possessive spellout-ordinal
+month1 január
+month2 február
+month3 március
+month4 április
+month5 május
+month6 június
+month7 július
+month8 augusztus
+month9 szeptember
+month10 október
+month11 november
+month12 december

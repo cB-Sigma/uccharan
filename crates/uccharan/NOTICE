@@ -91,8 +91,10 @@ licensed under the SIL Open Font License 1.1; see docs/assets/brand/brand.md.
 ------------------------------------------------------------------------
 Unicode CLDR
 
-The cardinal number words of the data-driven languages (crates/uccharan/lang/*.lang)
-are taken from Unicode CLDR (common/rbnf). Copyright © 1991-2026 Unicode, Inc.
+The cardinal number words of the data-driven languages (crates/uccharan/lang/*.lang),
+the spell-out and ordinal rule sets in crates/uccharan/lang/numbers/ (common/rbnf) and
+the month names of the [dates] sections of the language files (common/main, format
+wide month names) are taken from Unicode CLDR. Copyright © 1991-2026 Unicode, Inc.
 Distributed under the Unicode License v3, reproduced here:
 
 COPYRIGHT AND PERMISSION NOTICE

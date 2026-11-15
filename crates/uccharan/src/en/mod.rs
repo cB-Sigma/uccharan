@@ -641,7 +641,7 @@ impl<'a> English<'a> {
         if let Some(p) = self.lexicon(w, hint) {
             return p;
         }
-        let ascii: String = w.chars().map(fold_accent).collect();
+        let ascii = fold_accents(w);
         if ascii != w {
             if let Some(p) = self.lexicon(&ascii, hint) {
                 return p;
@@ -847,16 +847,15 @@ impl<'a> English<'a> {
     }
 }
 
-fn fold_accent(c: char) -> char {
-    match c {
-        'à' | 'á' | 'â' | 'ã' | 'ä' | 'å' => 'a',
-        'ç' => 'c',
-        'è' | 'é' | 'ê' | 'ë' => 'e',
-        'ì' | 'í' | 'î' | 'ï' => 'i',
-        'ñ' => 'n',
-        'ò' | 'ó' | 'ô' | 'õ' | 'ö' => 'o',
-        'ù' | 'ú' | 'û' | 'ü' => 'u',
-        'ý' | 'ÿ' => 'y',
-        _ => c,
+/// `w` with its accented letters as their base letters ("café" cafe,
+/// "nguyễn" nguyen; letters of other Latin alphabets too: "ø" o, "ß" ss).
+fn fold_accents(w: &str) -> String {
+    let mut out = String::with_capacity(w.len());
+    for c in w.chars() {
+        match crate::text::base_letter(c).filter(|_| !c.is_ascii()) {
+            Some(b) => out.push_str(b),
+            None => out.push(c),
+        }
     }
+    out
 }

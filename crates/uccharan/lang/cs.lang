@@ -182,16 +182,23 @@ milion# mˈilioːn
 miliony# mˈiliˌoːni
 milionym# mˈiliˌoːnuː
 celá# tʃˌaːrka
+tečka# tetʃka
 mínus# mˈiːnus
 procent# prˈotsento
 
 [numbers]
+# Ordinals written with digits (words: lang/numbers/ord-cs.txt; compat:
+# the reference reads them as ordinals too).
+ordinal-dot spellout-ordinal-masculine
 # "1 500" is one number in improved mode; the reference voice reads the
 # groups apart.
 group space-improved
 decimal comma
 point celá#
 minus mínus#
+fraction two
+dot-word tečka#
+dot-groups no
 percent procent#
 one-before-scale no
 0 nula#
@@ -398,3 +405,20 @@ currency ¢ ¤cent#
 ¤jen# ˈien
 ¤rupie# rˈupije
 ¤cent# tsˈent
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+day ordinal spellout-ordinal-masculine-genitive
+month1 ledna
+month2 února
+month3 března
+month4 dubna
+month5 května
+month6 června
+month7 července
+month8 srpna
+month9 září
+month10 října
+month11 listopadu
+month12 prosince

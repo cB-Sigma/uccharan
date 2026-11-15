@@ -160,6 +160,89 @@ pub fn unstressed(f: &LangFile) -> HashMap<String, (u8, u8)> {
     m
 }
 
+/// How the digits after a decimal sign are read (see `Numbers::fraction`).
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
+pub enum Fraction {
+    /// Digit by digit.
+    #[default]
+    Digits,
+    /// Leading zeros as digits, then one number of up to this many digits.
+    Number(usize),
+    /// One number of up to four digits not starting with a zero.
+    Romanian,
+    /// One number with a suffix word; `true`: the suffix only after zeros.
+    Suffix(bool),
+}
+
+/// Ordinal number words (`ordinal-…` lines of `[numbers]`), from the
+/// language's ordinal rule file (`lang/numbers/ord-<tag>.txt`).
+#[derive(Clone, Debug)]
+pub struct Ordinals {
+    rules: std::sync::Arc<crate::rbnf::Rbnf>,
+    /// `ordinal-dot SET [compat]`: a number with a full stop after it is an
+    /// ordinal (German "3."), read with this rule set; `compat`: the
+    /// reference reads it so too.
+    dot: Option<(String, bool)>,
+    /// `ordinal-dot-after SET w…`: the rule set after these words ("am").
+    dot_after: Vec<(String, Vec<String>)>,
+    /// `ordinal-suffix SUF SET [compat]`: a number with this ending is an
+    /// ordinal ("1er", "2ª").
+    suffixes: Vec<(String, String, bool)>,
+    /// Suffixes marked `compat-said`: the reference reads the ordinal and
+    /// then the ending as a word of its own ("1e" eerste e).
+    said: Vec<String>,
+}
+
+impl Ordinals {
+    /// The ordinal words of `n` by the rule set `set`.
+    pub fn words(&self, set: &str, n: u64) -> Option<String> {
+        self.rules.spell_in(&format!("%{set}"), n)
+    }
+
+    /// The rule set for a number with a full stop after the word `prev`.
+    fn dot_set(&self, prev: Option<&str>) -> Option<&str> {
+        let (set, _) = self.dot.as_ref()?;
+        let prev = prev.map(str::to_lowercase);
+        for (s, after) in &self.dot_after {
+            if prev.as_ref().is_some_and(|p| after.contains(p)) {
+                return Some(s);
+            }
+        }
+        Some(set)
+    }
+
+    /// The ordinal words of `n` in the form `ordinal-dot-after` gives the
+    /// word `prev`, if it is one of them.
+    pub fn after_words(&self, prev: Option<&str>, n: u64) -> Option<String> {
+        let prev = prev?.to_lowercase();
+        let (set, _) = self.dot_after.iter().find(|(_, w)| w.contains(&prev))?;
+        self.words(set, n)
+    }
+
+    /// Words that make a number with a full stop an ordinal when they come
+    /// before it.
+    pub fn context_words(&self) -> impl Iterator<Item = &String> {
+        self.dot_after.iter().flat_map(|(_, w)| w.iter())
+    }
+}
+
+/// How dates are read (`[dates]`).
+#[derive(Clone, Debug, Default)]
+pub struct Dates {
+    /// Month names, January first (`month1` … `month12`).
+    pub months: Vec<String>,
+    /// `pattern D de M de Y`: the words in order (D day, M month, Y year).
+    pub pattern: Vec<String>,
+    /// `day ordinal SET`, `day cardinal` or `day possessive SET`
+    /// (Hungarian: the ordinal with -a/-e).
+    pub day: (String, String),
+    /// `day1 premier`: the word for the first day of a month.
+    pub day1: Option<String>,
+    /// `year hundreds` (1100-1999 counted in hundreds), `year ordinal SET`
+    /// (Polish), else the cardinal.
+    pub year: (String, String),
+}
+
 /// Number words of a language and how they combine.
 #[derive(Clone, Debug, Default)]
 pub struct Numbers {
@@ -186,6 +269,9 @@ pub struct Numbers {
     pub minus: Vec<String>,
     /// Word(s) for `%` after the number.
     pub percent: Vec<String>,
+    /// `percent-before w`: word(s) for `%` said before the number instead
+    /// (the reference's Sinhala voice).
+    pub percent_before: Vec<String>,
     /// `currency € ¤euro#`: the word(s) said for a currency sign, where the
     /// sign stands (compatible mode) or after the amount (improved mode).
     pub currency: Vec<(char, Vec<String>)>,
@@ -220,8 +306,23 @@ pub struct Numbers {
     /// `stress last`: only the last word of a number keeps its stress.
     pub stress_last: bool,
     /// `fraction number`: the digits after the decimal sign are read as
-    /// one number.
-    pub fraction_number: bool,
+    /// one number (zeros first as digits, up to five digits); `fraction
+    /// two`: the same up to two digits; `fraction romanian`: one number of
+    /// up to four digits that does not start with a zero; `fraction suffix`:
+    /// one number with the word of `fraction-suffixN` (N digits) after it,
+    /// glued ("öt tized"); `fraction suffix-zero`: one number, with the
+    /// suffix word only after leading zeros (Italian "zero millesimi").
+    pub fraction: Fraction,
+    /// `fraction-suffix3 millesimi`: see `fraction`.
+    pub fraction_suffix: HashMap<usize, String>,
+    /// `dot-word punkt`: the word said for a full stop between digits that
+    /// does not separate groups of three digits ("2.5", compatible mode).
+    pub dot_word: Vec<String>,
+    /// `dot-groups no`: a full stop never separates groups of three digits
+    /// in compatible mode ("1.000" one, dot-word, zero zero zero).
+    pub dot_no_groups: bool,
+    /// `minus-compat no`: the minus sign is not read in compatible mode.
+    pub minus_silent_compat: bool,
     /// `group space`: a space separates groups of three digits ("10 000").
     pub group_space: bool,
     /// `group space-improved`: the same in improved mode only (the
@@ -261,12 +362,20 @@ pub struct Numbers {
     /// `written-plural million millions`: pairs of a scale word and its
     /// plural, written after a count other than one.
     written_plural: Vec<(String, String)>,
+    /// `written-drop-s cents vingts`: written words that lose their final
+    /// `s` when another number word follows that is not a scale word of
+    /// `written-plural` ("deux cent mille", "deux cents millions").
+    pub written_drop_s: Vec<String>,
     /// `[numbers.written]`: the written form of a number word, where it is
     /// not the word itself without its marks (normalise-only mode).
     written: HashMap<String, String>,
     /// `[numbers.written]` lines `*FROM TO`: replacements inside a word
     /// (`_` in TO is a space; `FROM$` only at the end of the word).
     written_replace: Vec<(String, String)>,
+    /// Ordinal words, where the language has an ordinal rule file.
+    pub ordinal_words: Option<Ordinals>,
+    /// Date readings (`[dates]`).
+    pub dates: Option<Dates>,
     /// Every word of the table, for [`Numbers::written`].
     tokens: std::collections::HashSet<String>,
 }
@@ -295,8 +404,26 @@ impl Numbers {
                 }
                 "minus" => n.minus = words,
                 "percent" => n.percent = words,
+                "percent-before" => n.percent_before = words,
                 "grouping" => n.indian = v.trim() == "indian",
-                "fraction" => n.fraction_number = v.trim() == "number",
+                "fraction" => {
+                    n.fraction = match v.trim() {
+                        "number" => Fraction::Number(5),
+                        "two" => Fraction::Number(2),
+                        "romanian" => Fraction::Romanian,
+                        "suffix" => Fraction::Suffix(false),
+                        "suffix-zero" => Fraction::Suffix(true),
+                        _ => Fraction::Digits,
+                    }
+                }
+                k if k.starts_with("fraction-suffix") => {
+                    if let Ok(d) = k["fraction-suffix".len()..].parse::<usize>() {
+                        n.fraction_suffix.insert(d, v.trim().to_string());
+                    }
+                }
+                "dot-word" => n.dot_word = words,
+                "dot-groups" => n.dot_no_groups = v.trim() == "no",
+                "minus-compat" => n.minus_silent_compat = v.trim() == "no",
                 "stress" => n.stress_last = v.trim() == "last",
                 "year-hundreds" => n.year_hundreds = v.trim() == "yes",
                 "decimal" => n.decimal_comma = v.trim() == "comma",
@@ -345,6 +472,35 @@ impl Numbers {
                         .map(|p| (p[0].clone(), p[1].clone()))
                         .collect()
                 }
+                "written-drop-s" => n.written_drop_s = words,
+                "ordinal-dot" | "ordinal-dot-after" | "ordinal-suffix" => {
+                    let tag = f.meta().get("tag").cloned().unwrap_or_default();
+                    let Some(rules) = crate::rbnf::ordinal_rules_for(&tag) else {
+                        continue;
+                    };
+                    let o = n.ordinal_words.get_or_insert_with(|| Ordinals {
+                        rules: std::sync::Arc::new(crate::rbnf::Rbnf::parse(rules)),
+                        dot: None,
+                        dot_after: Vec::new(),
+                        suffixes: Vec::new(),
+                        said: Vec::new(),
+                    });
+                    let said = words.last().is_some_and(|w| w == "compat-said");
+                    let compat = said || words.last().is_some_and(|w| w == "compat");
+                    if said {
+                        o.said.push(words[0].clone());
+                    }
+                    match (k, words.as_slice()) {
+                        ("ordinal-dot", [set, ..]) => o.dot = Some((set.clone(), compat)),
+                        ("ordinal-dot-after", [set, rest @ ..]) => o
+                            .dot_after
+                            .push((set.clone(), rest.iter().map(|w| w.to_lowercase()).collect())),
+                        ("ordinal-suffix", [suf, set, ..]) => {
+                            o.suffixes.push((suf.clone(), set.clone(), compat))
+                        }
+                        _ => {}
+                    }
+                }
                 "one-before-scale" => n.one_before_scale = v.trim() != "no",
                 "join-tens" => n.join_tens = v.trim() == "yes",
                 "demote-after-first" => n.demote_tail = v.trim() == "yes",
@@ -369,6 +525,47 @@ impl Numbers {
             }
         }
         n.scales.sort_by_key(|s| std::cmp::Reverse(s.0));
+        let date_lines = f.lines("dates");
+        if !date_lines.is_empty() {
+            let mut d = Dates {
+                months: vec![String::new(); 12],
+                day: ("cardinal".into(), String::new()),
+                year: ("cardinal".into(), String::new()),
+                ..Dates::default()
+            };
+            for l in date_lines {
+                let Some((k, v)) = l.split_once(char::is_whitespace) else {
+                    continue;
+                };
+                let v = v.trim();
+                let two = |v: &str| {
+                    let (a, b) = v.split_once(' ').unwrap_or((v, ""));
+                    (a.to_string(), b.trim().to_string())
+                };
+                match k {
+                    "pattern" => d.pattern = v.split_whitespace().map(str::to_string).collect(),
+                    "day" => d.day = two(v),
+                    "day1" => d.day1 = Some(v.to_string()),
+                    "year" => d.year = two(v),
+                    k => {
+                        if let Some(m) = k
+                            .strip_prefix("month")
+                            .and_then(|m| m.parse::<usize>().ok())
+                        {
+                            if (1..=12).contains(&m) {
+                                d.months[m - 1] = v.replace('_', " ");
+                            }
+                        }
+                    }
+                }
+            }
+            if d.pattern.is_empty() {
+                d.pattern = vec!["D".into(), "M".into(), "Y".into()];
+            }
+            if d.months.iter().all(|m| !m.is_empty()) {
+                n.dates = Some(d);
+            }
+        }
         for l in f.lines("numbers.written") {
             let Some((k, v)) = l.split_once(char::is_whitespace) else {
                 continue;
@@ -428,6 +625,12 @@ impl Numbers {
             .and_then(|w| w.first())
             .map(|w| self.written(w));
         (one.as_deref() != Some(prev)).then_some(plural.as_str())
+    }
+
+    /// True when the written word `w` is a scale word of `written-plural`
+    /// (singular or plural).
+    pub fn is_plural_scale(&self, w: &str) -> bool {
+        self.written_plural.iter().any(|(a, b)| a == w || b == w)
     }
 
     /// The `*FROM TO` replacements of `[numbers.written]` applied to `w`.
@@ -499,11 +702,88 @@ impl Numbers {
             }
         };
         Numbers {
+            percent_before: Vec::new(),
             point: words(&r.point, &self.point),
             minus: words(&r.minus, &self.minus),
             percent: words(&r.percent, &self.percent),
             speller: Some(std::sync::Arc::new(r)),
             ..self.clone()
+        }
+    }
+
+    /// The ordinal words of a chunk written as a number with an ordinal
+    /// ending ("1er", "2ª", "3:e"); `compat`: only those the reference reads
+    /// as ordinals.
+    pub fn suffix_ordinal(&self, text: &str, compat: bool) -> Option<String> {
+        let o = self.ordinal_words.as_ref()?;
+        let digits = text.len() - text.trim_start_matches(|c: char| c.is_ascii_digit()).len();
+        if digits == 0 || digits > 4 {
+            return None;
+        }
+        let n: u64 = text[..digits].parse().ok()?;
+        let rest = &text[digits..];
+        let (_, set, _) = o
+            .suffixes
+            .iter()
+            .find(|(suf, _, c)| suf.as_str() == rest && (*c || !compat))?;
+        let w = o.words(set, n)?;
+        if compat && o.said.iter().any(|x| x == rest) {
+            return Some(format!("{w} {rest}"));
+        }
+        Some(w)
+    }
+
+    /// The ordinal words of the number `n` written with a full stop after
+    /// it, after the word `prev`.
+    pub fn dot_ordinal(&self, n: u64, prev: Option<&str>, compat: bool) -> Option<String> {
+        let o = self.ordinal_words.as_ref()?;
+        if compat && !o.dot.as_ref().is_some_and(|d| d.1) {
+            return None;
+        }
+        // The reference's own ordinal words, where the file lists them.
+        if let Some(w) = self.ordinals.get(&n).filter(|_| compat) {
+            return Some(w.clone());
+        }
+        o.words(o.dot_set(prev)?, n)
+    }
+
+    /// True when the language reads a number with a full stop after it as
+    /// an ordinal.
+    pub fn has_dot_ordinals(&self) -> bool {
+        self.ordinal_words.as_ref().is_some_and(|o| o.dot.is_some())
+    }
+
+    /// Lower-case words that make a number with a full stop after it an
+    /// ordinal when they stand next to it (month names, `ordinal-dot-after`
+    /// words); empty when the language has no such ordinals.
+    pub fn ordinal_context(&self) -> Vec<String> {
+        let Some(o) = self.ordinal_words.as_ref().filter(|o| o.dot.is_some()) else {
+            return Vec::new();
+        };
+        let mut v: Vec<String> = o.context_words().cloned().collect();
+        if let Some(d) = &self.dates {
+            v.extend(d.months.iter().map(|m| m.to_lowercase()));
+        }
+        v
+    }
+
+    /// The year `n` read as a number with 1100-1999 counted in hundreds.
+    pub fn cardinal_year(&self, n: u64, out: &mut Vec<(String, bool)>) {
+        if self.year_hundreds || !(1100..2000).contains(&n) || n % 1000 < 100 {
+            return self.cardinal(n, out);
+        }
+        if let Some((_, word, word_more)) = self.scales.iter().find(|s| s.0 == 100) {
+            let r = n % 100;
+            self.cardinal(n / 100, out);
+            out.push((
+                if r > 0 { word_more } else { word }.clone(),
+                self.glue_hundred,
+            ));
+            if r > 0 {
+                self.cardinal(r, out);
+            }
+        } else {
+            self.cardinal(n, out);
         }
     }
 

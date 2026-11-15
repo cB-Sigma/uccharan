@@ -289,9 +289,17 @@ milv2# mˌil
 unmilió# ummiliˈo
 milions# miliˌons
 coma# kˌomə
+punt# pun
 per-cent# pərsˈen
 
 [numbers]
+# Ordinals written with digits (words: lang/numbers/ord-ca.txt; compat:
+# the reference reads them as ordinals too).
+ordinal-suffix r spellout-ordinal-masculine compat
+ordinal-suffix n spellout-ordinal-masculine compat
+ordinal-suffix t spellout-ordinal-masculine compat
+ordinal-suffix è spellout-ordinal-masculine
+ordinal-suffix a spellout-ordinal-feminine
 # "1 500" is one number in improved mode; the reference voice reads the
 # groups apart.
 group space-improved
@@ -300,6 +308,9 @@ roman-skip VI
 decimal comma
 point coma#
 minus menys
+minus-compat no
+fraction number
+dot-word punt#
 percent per-cent#
 one-before-scale no
 0 zero#
@@ -545,3 +556,21 @@ currency £ ¤lliures#
 ¤euro# ˈɛwɾu
 ¤dòlar# dulˈar
 ¤lliures# ʎˈiwɾəs
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+pattern D M de Y
+day1 primer
+month1 de_gener
+month2 de_febrer
+month3 de_març
+month4 d'abril
+month5 de_maig
+month6 de_juny
+month7 de_juliol
+month8 d'agost
+month9 de_setembre
+month10 d'octubre
+month11 de_novembre
+month12 de_desembre

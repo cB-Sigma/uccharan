@@ -77,7 +77,7 @@ pub enum Script {
 /// Script of one character.
 pub fn script_of(c: char) -> Script {
     match c {
-        'a'..='z' | 'A'..='Z' | '\u{00c0}'..='\u{024f}' => Script::Latin,
+        'a'..='z' | 'A'..='Z' | '\u{00c0}'..='\u{024f}' | '\u{1e00}'..='\u{1eff}' => Script::Latin,
         '0'..='9' => Script::Digit,
         '\u{0900}'..='\u{0dff}' if indic_digit(c).is_some() => Script::Digit,
         '\u{0900}'..='\u{097f}' | '\u{200c}' | '\u{200d}' => Script::Devanagari,
@@ -231,6 +231,14 @@ fn is_closer(c: char) -> bool {
 /// `break_after_abbreviation` reproduces the reference behaviour of ending a
 /// clause after a dotted title (`Dr. Smith` → two clauses).
 pub fn clauses(text: &str) -> Vec<RawClause> {
+    clauses_with(text, &[])
+}
+
+/// [`clauses`], where a number with a full stop after it does not end the
+/// sentence when the word before it or the word after it is one of
+/// `ordinal_context` (lower case: "am 3. Mai", for languages that write
+/// ordinals so).
+pub fn clauses_with(text: &str, ordinal_context: &[String]) -> Vec<RawClause> {
     let mut out: Vec<RawClause> = Vec::new();
     let mut cur = RawClause::default();
     let flush = |cur: &mut RawClause, out: &mut Vec<RawClause>, t: Terminator| {
@@ -295,7 +303,18 @@ pub fn clauses(text: &str) -> Vec<RawClause> {
                 let next = words.get(wi + 1);
                 let next_lower =
                     next.is_some_and(|n| n.chars().next().is_some_and(|c| c.is_lowercase()));
-                if next.is_some() && is_abbreviation(s, next_lower) {
+                let in_context = |w: Option<&&str>| {
+                    w.is_some_and(|w| {
+                        let w = w
+                            .trim_matches(|c: char| !c.is_alphanumeric())
+                            .to_lowercase();
+                        ordinal_context.contains(&w)
+                    })
+                };
+                let ordinal = !ordinal_context.is_empty()
+                    && s.bytes().all(|b| b.is_ascii_digit())
+                    && (in_context(next) || (wi > 0 && in_context(words.get(wi - 1))));
+                if next.is_some() && (ordinal || is_abbreviation(s, next_lower)) {
                     term = Terminator::None;
                     dot = true;
                 } else if next.is_none()

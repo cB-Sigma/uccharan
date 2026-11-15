@@ -197,11 +197,16 @@ przecinek# pʃɛtɕˈinɛk
 procent# prˈɔtsɛnt
 
 [numbers]
+# Ordinals written with digits (words: lang/numbers/ord-pl.txt; compat:
+# the reference reads them as ordinals too).
+ordinal-dot spellout-ordinal-masculine
 group space
 roman off
 decimal comma
 point przecinek#
 minus minus
+minus-compat no
+fraction two
 percent procent#
 one-before-scale no
 0 zero#
@@ -454,3 +459,22 @@ currency ¢ ¤cent#
 ¤funt# fˈunt
 ¤jen# jˈɛn
 ¤cent# tsˈɛnt
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+pattern D M Y roku
+day ordinal spellout-ordinal-masculine-genitive
+year ordinal spellout-ordinal-masculine-genitive
+month1 stycznia
+month2 lutego
+month3 marca
+month4 kwietnia
+month5 maja
+month6 czerwca
+month7 lipca
+month8 sierpnia
+month9 września
+month10 października
+month11 listopada
+month12 grudnia

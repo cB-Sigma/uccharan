@@ -607,7 +607,11 @@ impl Phonemizer {
         };
         let mut sentences: Vec<Sentence> = Vec::new();
         let mut cur = Sentence::default();
-        for raw in text::clauses(text) {
+        let context = match opt.lang.latin() {
+            Some(l) if !compat => l.numbers.ordinal_context(),
+            _ => Vec::new(),
+        };
+        for raw in text::clauses_with(text, &context) {
             let mut items: Vec<norm::Item> = Vec::new();
             // "10 000": groups of three digits after a space are one number
             // where the language writes numbers so.
@@ -655,14 +659,32 @@ impl Phonemizer {
                     self.generic_for_chunk(&chunk.text, opt.lang)
                 };
                 if let Some(l) = opt.lang.latin() {
-                    items.extend(gnorm::expand(chunk, &l.numbers, false, compat));
+                    let prev = ci.checked_sub(1).map(|k| chunks[k].text.as_str());
+                    items.extend(gnorm::expand(
+                        chunk, &l.numbers, false, compat, !compat, prev,
+                    ));
                 } else if let Some(g) = generic {
+                    let written = !compat && g.improved_written_numbers;
+                    let nums = match &g.numbers_text {
+                        Some(t) if written => t,
+                        _ => &g.numbers,
+                    };
+                    let start = items.len();
                     items.extend(gnorm::expand(
                         chunk,
-                        &g.numbers,
+                        nums,
                         compat && g.ascii_digits_english,
                         false,
+                        !compat,
+                        None,
                     ));
+                    if written && g.numbers_text.is_some() {
+                        // Written number words are read as words, not as
+                        // the keys of the number table.
+                        for it in &mut items[start..] {
+                            it.generated = false;
+                        }
+                    }
                 } else {
                     let nl = if opt.lang.hindi_like() || opt.lang == Lang::Sa {
                         Lang::Hi

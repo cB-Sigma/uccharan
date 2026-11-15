@@ -169,3 +169,19 @@ grouping indian
 demote-after-first yes
 point దశాంశం
 percent శాతం
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+month1 జనవరి
+month2 ఫిబ్రవరి
+month3 మార్చి
+month4 ఏప్రిల్
+month5 మే
+month6 జూన్
+month7 జులై
+month8 ఆగస్టు
+month9 సెప్టెంబర్
+month10 అక్టోబర్
+month11 నవంబర్
+month12 డిసెంబర్

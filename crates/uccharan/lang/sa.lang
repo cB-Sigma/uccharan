@@ -221,3 +221,19 @@ scale100000 लक्षम्
 scale10000000 कोटिः
 grouping indian
 point दशमलव
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+month1 जनवरीमासः
+month2 फरवरीमासः
+month3 मार्चमासः
+month4 अप्रैलमासः
+month5 मईमासः
+month6 जूनमासः
+month7 जुलाईमासः
+month8 अगस्तमासः
+month9 सितंबरमासः
+month10 अक्तूबरमासः
+month11 नवंबरमासः
+month12 दिसंबरमासः

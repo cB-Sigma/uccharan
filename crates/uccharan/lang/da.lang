@@ -204,9 +204,13 @@ enmillion# ˈeːn
 enmillion2# milijˈoːn
 millioner# milijˈoːnʌ
 komma# kˌʌmaa
+punktum# pɒŋtˌɒm
 procent# pʁosˈɛnd
 
 [numbers]
+# Ordinals written with digits (words: lang/numbers/ord-da.txt; compat:
+# the reference reads them as ordinals too).
+ordinal-dot spellout-ordinal-common compat
 roman-skip VI
 ord2 ord2#
 ord3 ord3#
@@ -256,6 +260,8 @@ ord49 ord49#
 decimal comma
 point komma#
 minus minus
+minus-compat no
+dot-word punktum#
 percent procent#
 one-before-scale no
 0 nul#
@@ -477,3 +483,21 @@ currency ¢ ¤cent#
 ¤pund# pˈunʔ
 ¤yen# jˈenn
 ¤cent# sˈent
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main (format, wide).
+day ordinal spellout-ordinal-common
+year cardinal
+month1 januar
+month2 februar
+month3 marts
+month4 april
+month5 maj
+month6 juni
+month7 juli
+month8 august
+month9 september
+month10 oktober
+month11 november
+month12 december

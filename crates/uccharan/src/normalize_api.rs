@@ -222,6 +222,8 @@ struct Cx<'a> {
     lang: Lang,
     opt: &'a NormOptions,
     cache: HashMap<String, Option<String>>,
+    /// The chunk before the one being read (it selects some ordinal forms).
+    prev: String,
 }
 
 /// Normalise `text` read in language `lang`.
@@ -231,6 +233,7 @@ pub fn normalize(ph: &Phonemizer, text: &str, lang: Lang, opt: &NormOptions) -> 
         lang,
         opt,
         cache: HashMap::new(),
+        prev: String::new(),
     };
     let lists: Vec<&WordList> = opt.wordlists.iter().map(|l| l.as_ref()).collect();
     let hits = wordlist::select(&lists, text, lang);
@@ -385,7 +388,12 @@ impl Cx<'_> {
     ) {
         let base = range.start;
         let sub = &full[range.clone()];
-        let clauses = text::clauses(sub);
+        let context = self
+            .lang
+            .latin()
+            .map(|l| l.numbers.ordinal_context())
+            .unwrap_or_default();
+        let clauses = text::clauses_with(sub, &context);
         // Chunks with their source ranges, by clause.
         let mut cursor = 0usize;
         let mut cls: Vec<Vec<(Range<usize>, Chunk)>> = Vec::new();
@@ -526,6 +534,9 @@ impl Cx<'_> {
         let next = v.get(i + 1).map(|x| x.1.text.as_str());
         let next2 = v.get(i + 2).map(|x| x.1.text.as_str());
         let dl = self.digit_lang(v, i);
+        self.prev = i
+            .checked_sub(1)
+            .map_or(String::new(), |k| v[k].1.text.clone());
         let end_of = |k: usize| base + v[k].0.end;
         // "Rs. 250", "रु. 250", "INR 900": a currency word before a number.
         if CURRENCY_WORDS.contains(&t.to_lowercase().as_str())
@@ -701,6 +712,7 @@ impl Cx<'_> {
     /// The number/symbol expansion of one chunk by language `l`.
     fn expand(&self, c: &Chunk, l: Lang) -> Vec<Item> {
         let improved = self.opt.mode == Mode::Improved;
+        let prev = (!self.prev.is_empty()).then_some(self.prev.as_str());
         if l.is_english() {
             let a = ascii_digits(&c.text);
             let indian = match self.opt.en_scale {
@@ -711,7 +723,7 @@ impl Cx<'_> {
             return crate::norm::expand_opts(c, l, Normalize::Natural, improved, indian);
         }
         if let Some(lat) = l.latin() {
-            let items = crate::gnorm::expand(c, &lat.numbers, false, !improved);
+            let items = crate::gnorm::expand(c, &lat.numbers, false, !improved, true, prev);
             return written_latin(items, &lat.numbers);
         }
         // Sanskrit reads numbers in Hindi in compatible mode (as the
@@ -726,7 +738,7 @@ impl Cx<'_> {
         let g = l.indic().expect("checked above");
         // Written number words where the language has them.
         let nums = g.numbers_text.as_ref().unwrap_or(&g.numbers);
-        let mut items = crate::gnorm::expand(c, nums, false, false);
+        let mut items = crate::gnorm::expand(c, nums, false, false, true, prev);
         // Languages whose number table holds keys of the word table rather
         // than words (si, sd) write them by `[numbers.written]`.
         if g.numbers_text.is_none() {
@@ -1082,6 +1094,17 @@ fn written_latin(items: Vec<Item>, nums: &crate::langdef::Numbers) -> Vec<Item> 
                 }
             }
         }
+        // "deux cents" + "mille": "deux cent mille".
+        if prev_number && number && !nums.is_plural_scale(&w) {
+            if let Some(p) = out.last_mut() {
+                for end in &nums.written_drop_s {
+                    if p.text.ends_with(end.as_str()) && end.ends_with('s') {
+                        p.text.pop();
+                        break;
+                    }
+                }
+            }
+        }
         it.text = w;
         it.glue = false;
         prev_number = number;
@@ -1243,6 +1266,27 @@ fn url_kind(t: &str) -> Option<SpanKind> {
 
 /// The class of a chunk that contains digits.
 fn classify(t: &str, l: Lang, items: &[Item]) -> SpanKind {
+    // Dates and ordinals of the languages with `[dates]` and ordinal
+    // rules: a month name among the words; only written words (no number
+    // words) from a number with an ordinal ending.
+    let dates = l
+        .latin()
+        .map(|x| &x.numbers)
+        .or_else(|| l.indic().map(|x| &x.numbers))
+        .and_then(|n| n.dates.as_ref());
+    if let Some(d) = dates {
+        let month = |w: &str| d.months.iter().any(|m| m.split(' ').any(|p| p == w));
+        if t.matches(['/', '.', '-', ',']).count() == 2 && items.iter().any(|i| month(&i.text)) {
+            return SpanKind::Date;
+        }
+    }
+    if l.latin().is_some()
+        && !items.is_empty()
+        && items.iter().all(|i| !i.generated)
+        && t.starts_with(|c: char| c.is_ascii_digit())
+    {
+        return SpanKind::Ordinal;
+    }
     let a = ascii_digits(t);
     let lower = a.to_lowercase();
     let first = a.chars().next().unwrap_or(' ');
@@ -1256,7 +1300,10 @@ fn classify(t: &str, l: Lang, items: &[Item]) -> SpanKind {
     if a.contains(':') && b.first().is_some_and(u8::is_ascii_digit) {
         return SpanKind::Time;
     }
-    if a.matches('/').count() == 2 || (a.matches('-').count() == 2 && a.len() == 10) {
+    if a.matches('/').count() == 2
+        || a.matches('.').count() == 2
+        || (a.matches('-').count() == 2 && a.len() == 10)
+    {
         // A date has a month name; a phone number is read digit by digit.
         const EN: [&str; 12] = [
             "January",
