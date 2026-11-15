@@ -43,7 +43,7 @@ accuracy and speed figure below comes from a measurement described in
 [docs/evaluation.md](docs/evaluation.md), with its conditions.
 
 <p align="center">
-  <img alt="The live demo: typing English and Hindi, switching between compatible and improved mode and between output profiles" src="docs/assets/demo/demo.gif" width="760">
+  <img alt="The live demo: typing English and Hindi, romanised Hindi written in Devanagari, a French sentence with a number read out, and switching between compatible and improved mode and between output profiles" src="docs/assets/demo/demo.gif" width="760">
 </p>
 
 ## Install

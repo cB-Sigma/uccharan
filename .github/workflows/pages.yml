@@ -39,8 +39,14 @@ jobs:
       - name: Check it before publishing
         working-directory: bindings/wasm
         run: npm test
+      - name: Fetch the transliteration packs of the latest release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download --repo "$GITHUB_REPOSITORY" --pattern 'xlit-*' --dir xlit \
+            || echo "No transliteration packs; the demo falls back to the rule converter."
       - name: Assemble the site
-        run: node demo/build.mjs
+        run: node demo/build.mjs --xlit xlit
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

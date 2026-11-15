@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "_site");
 const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".wasm": "application/wasm", ".svg": "image/svg+xml",
-  ".png": "image/png", ".ico": "image/x-icon", ".ucd": "application/octet-stream", ".md": "text/plain; charset=utf-8" };
+  ".png": "image/png", ".ico": "image/x-icon", ".ucd": "application/octet-stream", ".md": "text/plain; charset=utf-8", ".txt": "text/plain; charset=utf-8" };
 const port = Number(process.argv[2] || 8080);
 createServer(async (req, res) => {
   const path = normalize(decodeURIComponent(new URL(req.url, "http://x").pathname)).replace(/^(\.\.[/\\])+/, "");

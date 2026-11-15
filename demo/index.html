@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>uccharan · 5× faster than espeak-ng</title>
-<meta name="description" content="5× faster than espeak-ng. Just as accurate. Free to ship. A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python, C and the browser. Apache-2.0. Try it live in your browser.">
-<meta property="og:title" content="uccharan · 5× faster than espeak-ng. Just as accurate. Free to ship.">
-<meta property="og:description" content="A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python, C and the browser. Apache-2.0.">
+<title>uccharan · phonemiser, normaliser and transliterator for 39 languages</title>
+<meta name="description" content="Phonemiser, text normaliser, transliterator and pronunciation engine for 39 languages. Faster than espeak-ng in every language (1.7× to 37×) and as accurate through Piper and Kokoro voices. Apache-2.0, with Rust, Python, C and browser bindings. Try it live in your browser.">
+<meta property="og:title" content="uccharan · phonemiser, text normaliser, transliterator and pronunciation engine for 39 languages">
+<meta property="og:description" content="Faster than espeak-ng in every language (1.7× to 37×) and as accurate through Piper and Kokoro voices. English, Hindi, 19 more South Asian languages and 17 European ones. Apache-2.0, with Rust, Python, C and browser bindings.">
 <meta property="og:image" content="https://cb-sigma.github.io/uccharan/og.png">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -35,22 +35,24 @@
 
 <main>
   <section class="intro">
-    <h1>5× faster than espeak-ng. Just as accurate. Free to ship.</h1>
-    <p>A drop-in phonemiser for Piper, Kokoro and sherpa-onnx voices — English and Hindi, in Rust, Python, C and the browser. Apache-2.0.</p>
-    <p class="proof"><a href="https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md#5-speed-start-up-memory-and-size">12 µs per sentence vs 62 µs</a> · <a href="https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md#2-end-to-end-real-voices-real-speech-recognition">same word error rate through Piper and Kokoro voices</a> · <a href="https://github.com/cB-Sigma/uccharan/blob/main/DATA_LICENSES.md">no GPL anywhere</a></p>
+    <h1>Phonemiser, text normaliser, transliterator and pronunciation engine for 39 languages.</h1>
+    <p>English, Hindi, 19 more South Asian languages and 17 European ones. Faster than espeak-ng in every language, and as accurate through Piper and Kokoro voices. Apache-2.0, with Rust, Python, C and browser bindings.</p>
+    <p class="proof"><a href="https://github.com/cB-Sigma/uccharan#phonemiser-and-languages">1.7× to 37× faster than espeak-ng</a> · <a href="https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md#2-end-to-end-real-voices-real-speech-recognition">the same word error rate through Piper and Kokoro voices</a> · <a href="https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md#4-correctness-improved-mode-against-hand-curated-gold-sets">82 % of hard cases right in improved mode, against 52 %</a> · <a href="https://github.com/cB-Sigma/uccharan/blob/main/DATA_LICENSES.md">no GPL anywhere</a></p>
     <p class="note-local">Everything on this page runs locally in WebAssembly; nothing you type leaves your device.</p>
   </section>
 
   <section class="panel" aria-label="Phonemizer">
+    <fieldset class="seg seg3 task" aria-label="Output">
+      <legend>Output</legend>
+      <label><input type="radio" name="task" value="phonemes" checked><span>Phonemes</span></label>
+      <label><input type="radio" name="task" value="spoken"><span>Spoken text</span></label>
+      <label id="task-native"><input type="radio" name="task" value="native"><span>Native script</span></label>
+    </fieldset>
     <div class="controls">
       <label class="field"><span>Language</span>
-        <select id="lang">
-          <option value="en-us">English (US)</option>
-          <option value="en-gb">English (UK, RP)</option>
-          <option value="hi">Hindi · हिन्दी</option>
-        </select>
+        <select id="lang"></select>
       </label>
-      <label class="field"><span>Output profile</span>
+      <label class="field" id="profile-wrap"><span>Output profile</span>
         <select id="profile">
           <option value="espeak-ipa">espeak-style IPA</option>
           <option value="piper">Piper sentences</option>
@@ -60,19 +62,19 @@
           <option value="matcha">Matcha-TTS</option>
         </select>
       </label>
-      <fieldset class="seg" aria-label="Mode">
+      <fieldset class="seg" id="mode-wrap" aria-label="Mode">
         <legend>Mode</legend>
         <label><input type="radio" name="mode" value="compatible" checked><span>Compatible</span></label>
         <label><input type="radio" name="mode" value="improved"><span>Improved</span></label>
       </fieldset>
-      <label class="field"><span>Numbers</span>
+      <label class="field" id="normalize-wrap"><span>Numbers</span>
         <select id="normalize">
           <option value="natural">Natural</option>
           <option value="espeak">Like the reference</option>
           <option value="off">Off</option>
         </select>
       </label>
-      <label class="check" id="hinglish-wrap" hidden><input type="checkbox" id="hinglish"><span>Romanised Hindi (experimental)</span></label>
+      <label class="check" id="hinglish-wrap" hidden><input type="checkbox" id="hinglish"><span>Romanised Hindi input</span></label>
     </div>
 
     <label class="sr" for="text">Text</label>
@@ -101,7 +103,11 @@
     </article>
     <article>
       <h3>Improved</h3>
-      <p>Fixes what the reference gets wrong: homographs in context, names, numbers and dates, Hindi schwa deletion and nasals. For new voices and for reading text out correctly.</p>
+      <p>Fixes what the reference gets wrong: homographs in context, names, numbers and dates, Hindi schwa deletion and nasals, and Bhojpuri, Maithili and Magahi read as themselves.</p>
+    </article>
+    <article>
+      <h3>Spoken text and native script</h3>
+      <p>The normaliser writes numbers, money, dates and times out as words for voices that read text. The transliterator writes romanised Hindi, Marathi, Bengali, Tamil, Telugu, Gujarati, Punjabi, Kannada and Malayalam in their own script.</p>
     </article>
     <article>
       <h3>Small and fast</h3>
@@ -119,9 +125,11 @@
     </div>
 <pre data-pane="js"><code>npm install uccharan
 
-import { phonemize } from "uccharan";
+import { phonemize, normalize, transliterate } from "uccharan";
 await phonemize("Hello, world.");                      // "həlˈoʊ, wˈɜːld."
-await phonemize("नमस्ते", { lang: "hi", profile: "sherpa-onnx" });</code></pre>
+await phonemize("नमस्ते", { lang: "hi", profile: "sherpa-onnx" });
+(await normalize("10:30 बजे", { lang: "hi" })).text;     // "साढ़े दस बजे"
+(await transliterate("aap kaise ho")).text;             // "आप कैसे हो" (with the xlit-hi pack)</code></pre>
 <pre data-pane="py" hidden><code>pip install uccharan
 
 import uccharan
@@ -142,7 +150,8 @@ uccharan_free(p);</code></pre>
 </main>
 
 <footer>
-  <span>uccharan <span id="version"></span> · Apache-2.0 · no espeak-ng code or data</span>
+  <span>uccharan <span id="version"></span> · Apache-2.0 · no GPL code or data</span>
+  <span id="xlit-note" hidden>Transliteration packs: CC BY-SA 4.0, from the Dakshina and Aksharantar word pairs (<a href="pkg/data/xlit-NOTICE.txt">notice</a>)</span>
 </footer>
 <script type="module" src="app.js"></script>
 </body>
