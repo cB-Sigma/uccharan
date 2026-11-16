@@ -372,6 +372,19 @@ näistä s p
 currency € ¤euro#
 currency $ ¤dollarin#
 currency £ ¤punta#
+# Improved mode and normalise-only mode: the currency word agrees with
+# the amount (`currency-plural`, `currency-singular`, `currency-many` by
+# the `plural` rule); `currency-count` gives the words for an amount
+# before a currency word ("1 €", `*`: every currency).
+currency-plural € euroa
+currency-singular $ dollari
+currency-plural $ dollaria
+currency-plural £ puntaa
+# Improved mode and normalise-only mode: clock times. `time` lists the
+# written forms read as times (h: "10h30" "10 h 30" "10h"; colon: "10:30";
+# dot: "10.30"; dot-context: "10.30" after a `time-context` word or before
+# a `time-after` word).
+time colon dot
 
 [words]
 ¤euro# ˈeuro

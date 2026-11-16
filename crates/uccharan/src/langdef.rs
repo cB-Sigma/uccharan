@@ -226,6 +226,119 @@ impl Ordinals {
     }
 }
 
+/// How clock times are read (improved mode and normalise-only mode):
+/// `time` lines of `[numbers]`.
+#[derive(Clone, Debug, Default)]
+pub struct Times {
+    /// `time h colon dot dot-context`: the written forms read as times:
+    /// "10h30" / "10 h 30" / "10h", "10:30", "10.30", and "10.30" only after
+    /// a word of `time-context` or before a word of `time-after`.
+    pub forms: Vec<String>,
+    /// `time-hour heure heures`: the word for "hour" (one, more).
+    pub hour: Option<(String, String)>,
+    /// `time-hour-always yes`: the hour word is said with every form, not
+    /// only with "h" and with `time-after`.
+    pub hour_always: bool,
+    /// `time-and e`: the word between the hour word and the minutes.
+    pub and: Vec<String>,
+    /// `time-hours1 une`: the words for an hour count (feminine forms).
+    pub hours: HashMap<u64, String>,
+    /// `time-context um gegen`: words before a time (lower case).
+    pub context: Vec<String>,
+    /// `time-after Uhr`: words written after a time, said as its hour word.
+    pub after: Vec<String>,
+}
+
+impl Times {
+    /// True when the written form `f` is read as a time.
+    pub fn has(&self, f: &str) -> bool {
+        self.forms.iter().any(|x| x == f)
+    }
+
+    /// The `time-after` word `w` (any case), as the file writes it.
+    pub fn after_word(&self, w: &str) -> Option<&str> {
+        let w = w.to_lowercase();
+        self.after
+            .iter()
+            .find(|a| a.to_lowercase() == w)
+            .map(String::as_str)
+    }
+}
+
+/// Plural rules for currency words (`plural …`).
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
+pub enum Plural {
+    /// One: 1; plural: the rest.
+    #[default]
+    One,
+    /// One: 0 and 1 (French).
+    OneZero,
+    /// One: 1; plural: ending in 2-4 but not 12-14; many: the rest (Polish).
+    Slavic,
+    /// One: 1; plural: 2-4; many: the rest (Czech).
+    Czech,
+}
+
+/// Currency words that agree with the amount (improved mode and
+/// normalise-only mode).
+#[derive(Clone, Debug, Default)]
+pub struct MoneyWords {
+    /// `currency-plural € euros`: the word(s) after an amount that is not one.
+    pub plural: Vec<(char, Vec<String>)>,
+    /// `currency-singular $ dollaro`: the word(s) after the amount one,
+    /// where they are not the `currency` word.
+    pub singular: Vec<(char, Vec<String>)>,
+    /// `currency-many $ dolarów`: the word(s) after a "many" amount
+    /// (`plural slavic` / `plural czech`).
+    pub many: Vec<(char, Vec<String>)>,
+    /// `currency-count € 1 un`: the words for the amount N before this
+    /// currency's word (`*` for every currency).
+    pub count: Vec<(char, u64, Vec<String>)>,
+    /// `currency-of de`: a word between the amount and the currency word
+    /// after amounts ending in 00 or 20-99 (Romanian "douăzeci de euro").
+    pub of: Vec<String>,
+    /// `plural …`: which amounts take the plural.
+    pub rule: Plural,
+}
+
+impl MoneyWords {
+    /// The words of `sign` after the whole amount `n`: the singular, the
+    /// plural or the many form, or `None` for the `currency` word.
+    pub fn word(&self, sign: char, n: u64) -> Option<&Vec<String>> {
+        fn find(v: &[(char, Vec<String>)], sign: char) -> Option<&Vec<String>> {
+            v.iter().find(|x| x.0 == sign).map(|x| &x.1)
+        }
+        let plural = find(&self.plural, sign);
+        let one = find(&self.singular, sign);
+        match self.rule {
+            Plural::One if n == 1 => one,
+            Plural::OneZero if n <= 1 => one,
+            Plural::Slavic | Plural::Czech if n == 1 => one,
+            Plural::Slavic if (2..=4).contains(&(n % 10)) && !(12..=14).contains(&(n % 100)) => {
+                plural
+            }
+            Plural::Czech if (2..=4).contains(&n) => plural,
+            Plural::Slavic | Plural::Czech => find(&self.many, sign).or(plural),
+            _ => plural,
+        }
+    }
+
+    /// The words for the amount `n` before the word of `sign`, where the
+    /// file gives them (`currency-count`).
+    pub fn count_words(&self, sign: char, n: u64) -> Option<&Vec<String>> {
+        self.count
+            .iter()
+            .find(|x| x.1 == n && x.0 == sign)
+            .or_else(|| self.count.iter().find(|x| x.1 == n && x.0 == '*'))
+            .map(|x| &x.2)
+    }
+
+    /// True when `currency-of` goes between the amount `n` and its word.
+    pub fn of_after(&self, n: u64) -> bool {
+        !self.of.is_empty() && n > 0 && (n % 100 == 0 || n % 100 >= 20)
+    }
+}
+
 /// How dates are read (`[dates]`).
 #[derive(Clone, Debug, Default)]
 pub struct Dates {
@@ -376,6 +489,10 @@ pub struct Numbers {
     pub ordinal_words: Option<Ordinals>,
     /// Date readings (`[dates]`).
     pub dates: Option<Dates>,
+    /// Clock times (`time…` lines of `[numbers]`).
+    pub times: Option<Times>,
+    /// Agreement of a currency word with the amount (`currency-…` lines).
+    pub money: MoneyWords,
     /// Every word of the table, for [`Numbers::written`].
     tokens: std::collections::HashSet<String>,
 }
@@ -399,6 +516,59 @@ impl Numbers {
                     if let Some((sign, rest)) = words.split_first() {
                         if let Some(c) = sign.chars().next() {
                             n.currency.push((c, rest.to_vec()));
+                        }
+                    }
+                }
+                "currency-plural" | "currency-many" | "currency-singular" => {
+                    if let Some((sign, rest)) = words.split_first() {
+                        if let Some(c) = sign.chars().next() {
+                            let v = match k {
+                                "currency-plural" => &mut n.money.plural,
+                                "currency-many" => &mut n.money.many,
+                                _ => &mut n.money.singular,
+                            };
+                            v.push((c, rest.to_vec()));
+                        }
+                    }
+                }
+                "currency-count" => {
+                    if let [sign, count, rest @ ..] = words.as_slice() {
+                        if let (Some(c), Ok(k)) = (sign.chars().next(), count.parse::<u64>()) {
+                            n.money.count.push((c, k, rest.to_vec()));
+                        }
+                    }
+                }
+                "currency-of" => n.money.of = words,
+                "plural" => {
+                    n.money.rule = match v.trim() {
+                        "one-zero" => Plural::OneZero,
+                        "slavic" => Plural::Slavic,
+                        "czech" => Plural::Czech,
+                        _ => Plural::One,
+                    }
+                }
+                k if k == "time" || k.starts_with("time-") => {
+                    let t = n.times.get_or_insert_with(Times::default);
+                    match k {
+                        "time" => t.forms = words,
+                        "time-hour" => {
+                            if let Some(one) = words.first() {
+                                let more = words.get(1).unwrap_or(one);
+                                t.hour = Some((one.clone(), more.clone()));
+                            }
+                        }
+                        "time-hour-always" => t.hour_always = v.trim() == "yes",
+                        "time-and" => t.and = words,
+                        "time-context" => {
+                            t.context = words.iter().map(|w| w.to_lowercase()).collect()
+                        }
+                        "time-after" => t.after = words,
+                        k => {
+                            if let Ok(h) = k["time-hours".len().min(k.len())..].parse::<u64>() {
+                                if k.starts_with("time-hours") {
+                                    t.hours.insert(h, v.trim().to_string());
+                                }
+                            }
                         }
                     }
                 }
@@ -754,17 +924,25 @@ impl Numbers {
     }
 
     /// Lower-case words that make a number with a full stop after it an
-    /// ordinal when they stand next to it (month names, `ordinal-dot-after`
-    /// words); empty when the language has no such ordinals.
-    pub fn ordinal_context(&self) -> Vec<String> {
+    /// ordinal when they stand next to it: `ordinal-dot-after` words before
+    /// it, month names after it (and before it where dates put the month
+    /// first, Hungarian "május 15."); empty when the language has no such
+    /// ordinals.
+    pub fn ordinal_context(&self) -> crate::text::OrdinalContext {
+        let mut c = crate::text::OrdinalContext::default();
         let Some(o) = self.ordinal_words.as_ref().filter(|o| o.dot.is_some()) else {
-            return Vec::new();
+            return c;
         };
-        let mut v: Vec<String> = o.context_words().cloned().collect();
+        c.before = o.context_words().cloned().collect();
         if let Some(d) = &self.dates {
-            v.extend(d.months.iter().map(|m| m.to_lowercase()));
+            let months = d.months.iter().map(|m| m.to_lowercase());
+            let pos = |t: &str| d.pattern.iter().position(|x| x == t);
+            if pos("M") < pos("D") {
+                c.month_before.extend(months.clone());
+            }
+            c.after.extend(months);
         }
-        v
+        c
     }
 
     /// The year `n` read as a number with 1100-1999 counted in hundreds.

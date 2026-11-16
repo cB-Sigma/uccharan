@@ -551,6 +551,35 @@ unmilió# un milió
 currency € ¤euro#
 currency $ ¤dòlar#
 currency £ ¤lliures#
+# Improved mode and normalise-only mode: the currency word agrees with
+# the amount (`currency-plural`, `currency-singular`, `currency-many` by
+# the `plural` rule); `currency-count` gives the words for an amount
+# before a currency word ("1 €", `*`: every currency).
+currency-plural € euros
+currency-plural $ dòlars
+currency-singular £ lliura
+currency-count * 1 un
+currency-count £ 1 una
+currency-count £ 2 dues
+currency-count * 21 vint-i-un
+currency-count * 31 trenta-un
+currency-count * 41 quaranta-un
+currency-count * 51 cinquanta-un
+currency-count * 61 seixanta-un
+currency-count * 71 setanta-un
+currency-count * 81 vuitanta-un
+currency-count * 91 noranta-un
+# Improved mode and normalise-only mode: clock times. `time` lists the
+# written forms read as times (h: "10h30" "10 h 30" "10h"; colon: "10:30";
+# dot: "10.30"; dot-context: "10.30" after a `time-context` word or before
+# a `time-after` word).
+time h colon
+time-hour hora hores
+time-and i
+time-hours1 una
+time-hours2 dues
+time-hours21 vint-i-una
+time-hours22 vint-i-dues
 
 [words]
 ¤euro# ˈɛwɾu

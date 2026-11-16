@@ -870,6 +870,25 @@ currency $ ¤dollar#
 currency £ ¤livre#
 currency ¥ ¤yen#
 currency ¢ ¤cent#
+# Improved mode and normalise-only mode: the currency word agrees with
+# the amount (`currency-plural`, `currency-singular`, `currency-many` by
+# the `plural` rule); `currency-count` gives the words for an amount
+# before a currency word ("1 €", `*`: every currency).
+plural one-zero
+currency-plural € euros
+currency-plural $ dollars
+currency-plural £ livres
+currency-plural ¢ cents
+currency-count £ 1 une
+# Improved mode and normalise-only mode: clock times. `time` lists the
+# written forms read as times (h: "10h30" "10 h 30" "10h"; colon: "10:30";
+# dot: "10.30"; dot-context: "10.30" after a `time-context` word or before
+# a `time-after` word).
+time h colon
+time-hour heure heures
+time-hour-always yes
+time-hours1 une
+time-hours21 vingt et une
 
 [words]
 point# pwɛ̃

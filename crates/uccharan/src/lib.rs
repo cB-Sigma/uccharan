@@ -609,7 +609,7 @@ impl Phonemizer {
         let mut cur = Sentence::default();
         let context = match opt.lang.latin() {
             Some(l) if !compat => l.numbers.ordinal_context(),
-            _ => Vec::new(),
+            _ => text::OrdinalContext::default(),
         };
         for raw in text::clauses_with(text, &context) {
             let mut items: Vec<norm::Item> = Vec::new();
@@ -630,7 +630,12 @@ impl Phonemizer {
             let with_sign;
             let chunks: &[text::Chunk] = match opt.lang.latin() {
                 Some(l) if !compat => {
-                    with_sign = gnorm::join_currency(chunks, &l.numbers);
+                    with_sign =
+                        gnorm::join_times(&gnorm::join_currency(chunks, &l.numbers), &l.numbers);
+                    &with_sign
+                }
+                None if opt.lang.is_english() && opt.normalize == Normalize::Natural => {
+                    with_sign = norm::join_currency(chunks);
                     &with_sign
                 }
                 _ => chunks,

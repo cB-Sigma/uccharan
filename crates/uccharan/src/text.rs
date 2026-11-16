@@ -231,14 +231,34 @@ fn is_closer(c: char) -> bool {
 /// `break_after_abbreviation` reproduces the reference behaviour of ending a
 /// clause after a dotted title (`Dr. Smith` → two clauses).
 pub fn clauses(text: &str) -> Vec<RawClause> {
-    clauses_with(text, &[])
+    clauses_with(text, &OrdinalContext::default())
+}
+
+/// Words that make a number with a full stop after it an ordinal (lower
+/// case), for languages that write ordinals so.
+#[derive(Clone, Debug, Default)]
+pub struct OrdinalContext {
+    /// Words before the number ("am 3.", "der 3.").
+    pub before: Vec<String>,
+    /// Month names before the number, where a date ends with the day
+    /// (Hungarian "május 15."): the full stop may end the sentence too.
+    pub month_before: Vec<String>,
+    /// Words after the number (month names: "3. Mai"). A capitalised word
+    /// that is not one of these starts a new sentence ("iPhone 15. Am …").
+    pub after: Vec<String>,
+}
+
+impl OrdinalContext {
+    /// True when the language has no such ordinals.
+    pub fn is_empty(&self) -> bool {
+        self.before.is_empty() && self.after.is_empty() && self.month_before.is_empty()
+    }
 }
 
 /// [`clauses`], where a number with a full stop after it does not end the
-/// sentence when the word before it or the word after it is one of
-/// `ordinal_context` (lower case: "am 3. Mai", for languages that write
-/// ordinals so).
-pub fn clauses_with(text: &str, ordinal_context: &[String]) -> Vec<RawClause> {
+/// sentence when the word before it is one of `ordinal_context.before` or
+/// the word after it one of `ordinal_context.after` ("am 3. Mai").
+pub fn clauses_with(text: &str, ordinal_context: &OrdinalContext) -> Vec<RawClause> {
     let mut out: Vec<RawClause> = Vec::new();
     let mut cur = RawClause::default();
     let flush = |cur: &mut RawClause, out: &mut Vec<RawClause>, t: Terminator| {
@@ -303,18 +323,31 @@ pub fn clauses_with(text: &str, ordinal_context: &[String]) -> Vec<RawClause> {
                 let next = words.get(wi + 1);
                 let next_lower =
                     next.is_some_and(|n| n.chars().next().is_some_and(|c| c.is_lowercase()));
-                let in_context = |w: Option<&&str>| {
+                let in_context = |w: Option<&&str>, list: &[String]| {
                     w.is_some_and(|w| {
                         let w = w
                             .trim_matches(|c: char| !c.is_alphanumeric())
                             .to_lowercase();
-                        ordinal_context.contains(&w)
+                        list.contains(&w)
                     })
                 };
-                let ordinal = !ordinal_context.is_empty()
-                    && s.bytes().all(|b| b.is_ascii_digit())
-                    && (in_context(next) || (wi > 0 && in_context(words.get(wi - 1))));
-                if next.is_some() && (ordinal || is_abbreviation(s, next_lower)) {
+                let prev = if wi > 0 { words.get(wi - 1) } else { None };
+                let digits = !ordinal_context.is_empty() && s.bytes().all(|b| b.is_ascii_digit());
+                let month_before = digits && in_context(prev, &ordinal_context.month_before);
+                let ordinal = digits
+                    && (in_context(next, &ordinal_context.after)
+                        || in_context(prev, &ordinal_context.before)
+                        || month_before);
+                // A date that ends with the day, before a capitalised word
+                // that is not a month: the full stop ends the sentence too
+                // ("május 15. A …").
+                let ends = month_before
+                    && !in_context(prev, &ordinal_context.before)
+                    && !in_context(next, &ordinal_context.after)
+                    && next.is_some_and(|n| n.chars().next().is_some_and(char::is_uppercase));
+                if ends {
+                    dot = true;
+                } else if next.is_some() && (ordinal || is_abbreviation(s, next_lower)) {
                     term = Terminator::None;
                     dot = true;
                 } else if next.is_none()

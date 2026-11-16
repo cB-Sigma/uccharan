@@ -5,6 +5,51 @@ All notable changes are listed here. The format follows
 
 ## [Unreleased]
 
+## [0.6.4] - 2026-11-16
+
+Bug fixes to the existing languages (no new languages): clock times, currency words that agree
+with the amount, ordinals before a hyphen, and numbers before a full stop that ends a sentence.
+
+### Fixed
+
+- **Clock times** were read with the letter *h* or as one number: French and Portuguese "10h30"
+  were *dix h trente*, *dez h trinta*, and "10.30" was *a thousand and thirty* in every
+  language with a decimal comma. Improved mode and normalise-only mode now read times: French
+  *dix heures trente* ("10h30", "10 h 30", "10h", "10:30"; *une heure*, *vingt et une heures*),
+  Portuguese *dez horas e trinta* (*uma hora*, *duas horas*), Spanish *diez horas y treinta*
+  and Catalan *deu hores i trenta* ("10h30"), German *zehn Uhr dreißig* ("10:30", "10.30 Uhr",
+  "um 10.30"; *ein Uhr*), Dutch *tien uur dertig*, and "10.30" / "10:30" as hours and minutes
+  in Finnish (*kymmenen kolmekymmentä*), Swedish, Danish, Norwegian, Italian, Romanian,
+  Hungarian, Czech, Polish and Turkish (*kymmenen nolla viisi* for "10.05"). `time…` lines in
+  `[numbers]` of the language files.
+- **A full stop before two digits** grouped thousands ("10.30" read as 1030). It groups only
+  three digits now; compatible mode reads "10.30" with the voice's word for the full stop
+  (Finnish *kymmenen piste kolmekymmentä*), as the reference voices do, and improved mode reads
+  a time or a decimal.
+- **A number before a full stop that ends the sentence** was read as an ordinal when the next
+  sentence started with a word such as German *Am*: "iPhone 15. Am Montag …" was *fünfzehnter
+  Am …*. "N." is now an ordinal only before a lower-case word or a month name, or after a word
+  such as *am*, *der*, *den*, *zum* (German, Danish, Norwegian, Finnish, Hungarian, Czech,
+  Polish, Turkish); otherwise it is a cardinal and the full stop ends the sentence.
+- **Ordinals before a hyphen** were split: English "3rd-floor" was *three rd floor*, now *third
+  floor* ("21st-century" *twenty first century*) in every mode, as the reference reads it;
+  French "1er-mai" / "2e-étage", Spanish "2º-piso", Dutch "3e-klas" and the like likewise in
+  improved mode and normalise-only mode.
+- **Currency words** were always singular ("25 €" *vingt-cinq euro*). Improved mode and
+  normalise-only mode now use the plural where the language has one: French *euros*,
+  *dollars*, *livres*, Spanish *euros*, *dólares*, Portuguese *euros*, *libras*, *centavos*,
+  Catalan *euros*, *dòlars*, Romanian *douăzeci și cinci de dolari*, Finnish *euroa*, Czech
+  *dolary* / *dolarů*, *eura* / *eur*, Polish *dolary* / *dolarów*, German *Rupien*, English
+  "25 €" *twenty five euros*; Italian *euro*, German *Euro* and the Dutch and Scandinavian
+  words stay invariable. One is said in the form that goes with the currency word: *un euro*,
+  *una libra*, *ein Euro*, *une livre*, *jedno euro*, Spanish *veintiún euros*. Compatible mode
+  keeps the reference readings; English compatible mode now says *euros* and *cents* for `€`
+  and `¢`, as the reference does.
+
+Development PER (compatible mode): fi 1.09 → 1.02 %, nl 1.60 → 1.55 %, sv 1.26 → 1.23 %, de 1.05
+→ 1.03 %, da 1.84 → 1.82 %, tr 0.54 → 0.52 %, nb 0.87 → 0.86 %, es 0.54 → 0.53 %; no language
+got worse.
+
 ## [0.6.3] - 2026-11-15
 
 Bug fixes to the existing languages (no new languages): dates, ordinals and decimals are read

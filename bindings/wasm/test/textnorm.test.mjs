@@ -77,3 +77,18 @@ test("dates and ordinals are read in full", async () => {
   assert.equal((await uccharan.normalize("25,50 €", { lang: "de" })).text, "fünfundzwanzig Euro fünfzig");
   assert.equal((await uccharan.normalize("Am 3. Mai", { lang: "de" })).text, "Am dritten Mai");
 });
+
+test("times, currency plurals, hyphenated ordinals and sentence ends", async () => {
+  const n = async (t, lang) => (await uccharan.normalize(t, { lang })).text;
+  assert.equal(await n("Il est 10h30.", "fr"), "Il est dix heures trente.");
+  assert.equal(await n("às 10h30", "pt"), "às dez horas e trinta");
+  assert.equal(await n("um 10.30 Uhr", "de"), "um zehn Uhr dreißig");
+  assert.equal(await n("Kello on 10.30.", "fi"), "Kello on kymmenen kolmekymmentä.");
+  assert.equal(await n("Ich kaufe das iPhone 15. Am Montag kommt es.", "de"),
+    "Ich kaufe das iPhone fünfzehn. Am Montag kommt es.");
+  assert.equal(await n("the 3rd-floor flat", "en-us"), "the third floor flat");
+  assert.equal(await n("25 €", "fr"), "vingt-cinq euros");
+  assert.equal(await n("25 €", "es"), "veinticinco euros");
+  assert.equal(await n("25 €", "it"), "venticinque euro");
+  assert.equal(await n("25 €", "pt"), "vinte e cinco euros");
+});

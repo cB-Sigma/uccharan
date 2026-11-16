@@ -772,7 +772,7 @@ dependencies = [
 
 [[package]]
 name = "uccharan"
-version = "0.6.3"
+version = "0.6.4"
 dependencies = [
  "criterion",
  "uccharan-data",
@@ -781,25 +781,25 @@ dependencies = [
 
 [[package]]
 name = "uccharan-capi"
-version = "0.6.3"
+version = "0.6.4"
 dependencies = [
  "uccharan",
 ]
 
 [[package]]
 name = "uccharan-data"
-version = "0.6.3"
+version = "0.6.4"
 
 [[package]]
 name = "uccharan-lexgen"
-version = "0.6.3"
+version = "0.6.4"
 dependencies = [
  "uccharan",
 ]
 
 [[package]]
 name = "uccharan-python"
-version = "0.6.3"
+version = "0.6.4"
 dependencies = [
  "pyo3",
  "uccharan",
@@ -807,7 +807,7 @@ dependencies = [
 
 [[package]]
 name = "uccharan-wasm"
-version = "0.6.3"
+version = "0.6.4"
 dependencies = [
  "uccharan",
  "wasm-bindgen",

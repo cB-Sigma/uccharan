@@ -397,6 +397,33 @@ currency £ ¤libra#
 currency ¥ ¤jen#
 currency ₹ ¤rupie#
 currency ¢ ¤cent#
+# Improved mode and normalise-only mode: the currency word agrees with
+# the amount (`currency-plural`, `currency-singular`, `currency-many` by
+# the `plural` rule); `currency-count` gives the words for an amount
+# before a currency word ("1 €", `*`: every currency).
+plural czech
+currency-plural € eura
+currency-many € eur
+currency-plural $ dolary
+currency-many $ dolarů
+currency-plural £ libry
+currency-many £ liber
+currency-plural ¥ jeny
+currency-many ¥ jenů
+currency-many ₹ rupií
+currency-plural ¢ centy
+currency-many ¢ centů
+currency-count € 1 jedno
+currency-count € 2 dvě
+currency-count £ 1 jedna
+currency-count £ 2 dvě
+currency-count ₹ 1 jedna
+currency-count ₹ 2 dvě
+# Improved mode and normalise-only mode: clock times. `time` lists the
+# written forms read as times (h: "10h30" "10 h 30" "10h"; colon: "10:30";
+# dot: "10.30"; dot-context: "10.30" after a `time-context` word or before
+# a `time-after` word).
+time colon dot
 
 [words]
 ¤euro# ˈeʊro

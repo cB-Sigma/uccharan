@@ -164,8 +164,10 @@ dot-groups no               ; compatible mode: a full stop never groups thousand
                             ; Hungarian "1.000" one, dot-word, zero zero zero)
 minus-compat no             ; compatible mode: the minus sign is not read (as the voice)
 percent-before සියයට        ; the word for % said before the number (Sinhala voice)
-ordinal-dot SET [compat]    ; "3." before a lower-case word (or next to a word of the
-                            ; ordinal context) is an ordinal, its words from the CLDR rule
+ordinal-dot SET [compat]    ; "3." before a lower-case word or a month name, or after a
+                            ; word of `ordinal-dot-after`, is an ordinal (before another
+                            ; capitalised word it ends the sentence: "iPhone 15. Am …"
+                            ; is a cardinal), its words from the CLDR rule
                             ; set SET of lang/numbers/ord-<tag>.txt (tools/cldr_ordinals.py);
                             ; `compat`: the reference reads it so too, else only improved
                             ; and normalise-only mode; `ordN` keys give compatible readings
@@ -188,6 +190,25 @@ group space-improved        ; "1 500" is one number in improved mode only (`grou
 currency € ¤euro#           ; the word said for a currency sign: where the sign stands in
                             ; compatible mode, after the amount in improved mode; its
                             ; reading goes in [words] (`¤euro# ˈeʊɾo`)
+currency-plural € euros     ; improved and normalise-only mode: the currency word after an
+                            ; amount that is not one (`plural one-zero`: 0 and 1 are one,
+                            ; French; `plural slavic` / `plural czech`: `currency-plural`
+                            ; for 2-4, `currency-many $ dolarów` for the rest)
+currency-singular $ dollaro ; … the word after one, where it is not the `currency` word
+currency-count * 1 un       ; … the words for this amount before a currency word (`*`:
+                            ; every currency; `currency-count £ 1 une`)
+currency-of de              ; … a word between amounts ending in 00 or 20-99 and the
+                            ; currency word (Romanian "douăzeci de euro")
+time h colon dot            ; improved and normalise-only mode: written forms read as clock
+                            ; times: h "10h30" "10 h 30" "10h", colon "10:30", dot "10.30",
+                            ; dot-context "10.30" after a `time-context` word or before a
+                            ; `time-after` word (German "um 10.30", "10.30 Uhr")
+time-hour heure heures      ; the hour word (one, more), said with the h form, with
+                            ; `time-hour-always yes`, and on the full hour ("10:00")
+time-and e                  ; the word between the hour word and the minutes (Portuguese)
+time-hours1 une             ; the words for an hour count (feminine forms)
+time-context um gegen       ; see `time … dot-context`
+time-after Uhr              ; a word written after a time, said as its hour word
 written-hyphen keep         ; normalise-only mode keeps hyphens in number words (French
                             ; vingt-deux); otherwise they become spaces
 written-glue tausend        ; … joins these words to the number word before them

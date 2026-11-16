@@ -399,13 +399,16 @@ impl Cx<'_> {
         let mut cls: Vec<Vec<(Range<usize>, Chunk)>> = Vec::new();
         for c in &clauses {
             let mut v = Vec::new();
-            for ch in &c.chunks {
+            for (k, ch) in c.chunks.iter().enumerate() {
                 let Some(off) = sub[cursor..].find(ch.text.as_str()) else {
                     continue;
                 };
                 let s = cursor + off;
                 let mut e = s + ch.text.len();
-                if ch.dot && sub[e..].starts_with('.') {
+                // An ordinal at the end of a sentence keeps its full stop
+                // as the sentence's ("am 15. Danach").
+                let ends = k + 1 == c.chunks.len() && c.terminator == text::Terminator::Period;
+                if ch.dot && !ends && sub[e..].starts_with('.') {
                     e += 1;
                 }
                 cursor = e;
@@ -588,6 +591,45 @@ impl Cx<'_> {
         if dl.hindi_like() && next == Some("बजे") {
             if let Some(w) = hindi_clock(&ascii_digits(t)) {
                 return (1, self.piece(src, w, SpanKind::Time, dl, None));
+            }
+        }
+        // "10 h 30", "10.30 Uhr": a clock time written in more than one chunk.
+        if let Some(lat) = dl.latin() {
+            let texts: Vec<&str> = v[i..v.len().min(i + 3)]
+                .iter()
+                .map(|x| x.1.text.as_str())
+                .collect();
+            let open = v[i..].iter().take_while(|x| !x.1.dot).count() + 1;
+            if let Some((k, text)) = crate::gnorm::time_join(&texts, &lat.numbers) {
+                if k > 1 && k <= open {
+                    let c = Chunk {
+                        text,
+                        dot: v[i + k - 1].1.dot,
+                        tight: false,
+                    };
+                    let items = self.expand(&c, dl);
+                    let out = self.join(&items, dl);
+                    return (
+                        k,
+                        self.piece(src.start..end_of(i + k - 1), out, SpanKind::Time, dl, None),
+                    );
+                }
+            }
+        }
+        // "25 €" in English: the amount and its sign ("twenty five euros").
+        if let (true, Some(sign)) = (dl.is_english(), next) {
+            if is_number(t) && crate::norm::is_en_currency_sign(sign) && !ch.dot {
+                let c = Chunk {
+                    text: format!("{t}{sign}"),
+                    dot: false,
+                    tight: false,
+                };
+                let items = self.expand(&c, dl);
+                let out = self.join(&items, dl);
+                return (
+                    2,
+                    self.piece(src.start..end_of(i + 1), out, SpanKind::Money, dl, Some(t)),
+                );
             }
         }
         // "25,50 €": an amount and its currency sign.
@@ -1295,6 +1337,11 @@ fn classify(t: &str, l: Lang, items: &[Item]) -> SpanKind {
         if t.matches(['/', '.', '-', ',']).count() == 2 && items.iter().any(|i| month(&i.text)) {
             return SpanKind::Date;
         }
+    }
+    if l.latin()
+        .is_some_and(|x| crate::gnorm::is_time(t, &x.numbers, None))
+    {
+        return SpanKind::Time;
     }
     if l.latin().is_some()
         && !items.is_empty()

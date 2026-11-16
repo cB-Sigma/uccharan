@@ -526,6 +526,23 @@ currency £ ¤pfund#
 currency ¥ ¤yen#
 currency ₹ ¤rupie#
 currency ¢ ¤cent#
+# Improved mode and normalise-only mode: the currency word agrees with
+# the amount (`currency-plural`, `currency-singular`, `currency-many` by
+# the `plural` rule); `currency-count` gives the words for an amount
+# before a currency word ("1 €", `*`: every currency).
+currency-plural ₹ Rupien
+currency-count * 1 ein
+currency-count ₹ 1 eine
+# Improved mode and normalise-only mode: clock times. `time` lists the
+# written forms read as times (h: "10h30" "10 h 30" "10h"; colon: "10:30";
+# dot: "10.30"; dot-context: "10.30" after a `time-context` word or before
+# a `time-after` word).
+time colon dot-context
+time-hour Uhr
+time-hour-always yes
+time-hours1 ein
+time-context um gegen ab bis von
+time-after Uhr
 
 [words]
 punkt# pʊŋkt

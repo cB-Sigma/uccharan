@@ -340,6 +340,11 @@ birmilyon2# milyon
 # stands (improved mode: after the amount).
 currency € ¤avro#
 currency $ ¤dolar#
+# Improved mode and normalise-only mode: clock times. `time` lists the
+# written forms read as times (h: "10h30" "10 h 30" "10h"; colon: "10:30";
+# dot: "10.30"; dot-context: "10.30" after a `time-context` word or before
+# a `time-after` word).
+time colon dot
 
 [words]
 ¤avro# avrˈɔ

@@ -550,6 +550,22 @@ currency € ¤euro#
 currency $ ¤dollari#
 currency £ ¤sterlina#
 currency ₹ ¤rupia-indiana#
+# Improved mode and normalise-only mode: the currency word agrees with
+# the amount (`currency-plural`, `currency-singular`, `currency-many` by
+# the `plural` rule); `currency-count` gives the words for an amount
+# before a currency word ("1 €", `*`: every currency).
+currency-singular $ dollaro
+currency-plural £ sterline
+currency-plural ₹ rupie indiane
+currency-count * 1 un
+currency-count £ 1 una
+currency-count ₹ 1 una
+# Improved mode and normalise-only mode: clock times. `time` lists the
+# written forms read as times (h: "10h30" "10 h 30" "10h"; colon: "10:30";
+# dot: "10.30"; dot-context: "10.30" after a `time-context` word or before
+# a `time-after` word).
+time colon dot
+time-hours1 una
 
 [words]
 ¤euro# ˈɛʊro

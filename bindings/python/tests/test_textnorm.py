@@ -196,3 +196,23 @@ def test_normalize_dates_and_ordinals() -> None:
     assert uccharan.normalize("15/08/2024", "es").text == "quince de agosto de dos mil veinticuatro"
     assert uccharan.normalize("Es kostet 25,50 €.", "de").text == "Es kostet fünfundzwanzig Euro fünfzig."
     assert uccharan.normalize("Am 3. Mai", "de").text == "Am dritten Mai"
+
+
+def test_normalize_times_money_and_sentence_ends() -> None:
+    # Clock times, plural currency words, ordinals before a hyphen, and a
+    # number before a full stop that ends the sentence.
+    assert uccharan.normalize("Il est 10h30.", "fr").text == "Il est dix heures trente."
+    assert uccharan.normalize("às 10h30", "pt").text == "às dez horas e trinta"
+    assert uccharan.normalize("um 10.30 Uhr", "de").text == "um zehn Uhr dreißig"
+    assert uccharan.normalize("Kello on 10.30.", "fi").text == "Kello on kymmenen kolmekymmentä."
+    assert (
+        uccharan.normalize("Ich kaufe das iPhone 15. Am Montag kommt es.", "de").text
+        == "Ich kaufe das iPhone fünfzehn. Am Montag kommt es."
+    )
+    assert uccharan.normalize("the 3rd-floor flat", "en-us").text == "the third floor flat"
+    assert uccharan.normalize("25 €", "fr").text == "vingt-cinq euros"
+    assert uccharan.normalize("25 €", "es").text == "veinticinco euros"
+    assert uccharan.normalize("25 €", "it").text == "venticinque euro"
+    assert uccharan.normalize("25 €", "pt").text == "vinte e cinco euros"
+    spans = uccharan.normalize("à 10 h 30", "fr").spans
+    assert any(s.kind == "time" for s in spans)

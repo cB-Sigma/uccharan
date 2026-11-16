@@ -240,10 +240,10 @@ fn money_with_cents() {
             "eintausend zweihundertfünfzig Euro fünf",
         ),
         (Lang::De, "3,00 €", "drei Euro"),
-        (Lang::Es, "25,50 €", "veinticinco euro cincuenta"),
-        (Lang::Fr, "25,50 €", "vingt-cinq euro cinquante"),
+        (Lang::Es, "25,50 €", "veinticinco euros cincuenta"),
+        (Lang::Fr, "25,50 €", "vingt-cinq euros cinquante"),
         (Lang::It, "25,50 €", "venticinque euro cinquanta"),
-        (Lang::Pt, "25,50 €", "vinte e cinco euro cinquenta"),
+        (Lang::Pt, "25,50 €", "vinte e cinco euros cinquenta"),
         (Lang::Nl, "25,50 €", "vijfentwintig euro vijftig"),
         (Lang::EnUs, "$25.50", "twenty five dollars and fifty cents"),
         (Lang::De, "Am 3. Mai", "Am dritten Mai"),
@@ -273,4 +273,227 @@ fn vietnamese_letters_stay_inside_their_word() {
         let o = p().phonemize("Nguyễn Phạm", &Options::new(l));
         assert_eq!(o.split(' ').count(), 2, "{l:?}: {o}");
     }
+}
+
+#[test]
+fn clock_times_are_read_as_times() {
+    let cases: &[(Lang, &str, &str)] = &[
+        (Lang::Fr, "Il est 10h30.", "Il est dix heures trente."),
+        (Lang::Fr, "à 10h", "à dix heures"),
+        (Lang::Fr, "à 10 h 30", "à dix heures trente"),
+        (Lang::Fr, "à 10h 30", "à dix heures trente"),
+        (Lang::Fr, "à 1h05", "à une heure cinq"),
+        (Lang::Fr, "à 21h", "à vingt et une heures"),
+        (Lang::Fr, "à 10:30", "à dix heures trente"),
+        (Lang::Pt, "às 10h30", "às dez horas e trinta"),
+        (Lang::Pt, "às 1h", "às uma hora"),
+        (Lang::Pt, "às 22h15", "às vinte e duas horas e quinze"),
+        (Lang::PtBr, "às 10h30", "às dez horas e trinta"),
+        (Lang::Es, "a las 10h30", "a las diez horas y treinta"),
+        (Lang::Es, "a las 10:30", "a las diez treinta"),
+        (Lang::Ca, "a les 10h30", "a les deu hores i trenta"),
+        (Lang::De, "um 10.30 Uhr", "um zehn Uhr dreißig"),
+        (Lang::De, "um 10:30 Uhr", "um zehn Uhr dreißig"),
+        (Lang::De, "um 10.30", "um zehn Uhr dreißig"),
+        (Lang::De, "um 1 Uhr", "um ein Uhr"),
+        (Lang::De, "um 10:05", "um zehn Uhr fünf"),
+        (Lang::Nl, "om 10.30 uur", "om tien uur dertig"),
+        (
+            Lang::Fi,
+            "Kello on 10.30.",
+            "Kello on kymmenen kolmekymmentä.",
+        ),
+        (Lang::Fi, "klo 10.05", "klo kymmenen nolla viisi"),
+        (Lang::Sv, "kl 10.30", "kl tio trettio"),
+        (Lang::Da, "kl 10.30", "kl ti tredive"),
+        (Lang::Nb, "kl 10.30", "kl ti tretti"),
+        (Lang::It, "alle 10.30", "alle dieci trenta"),
+        (Lang::It, "alle 10:00", "alle dieci"),
+    ];
+    for (l, t, want) in cases {
+        assert_eq!(norm(*l, t), *want, "{l:?} {t}");
+    }
+    let n = normalize(p(), "à 10 h 30", Lang::Fr, &NormOptions::default());
+    let s = n.spans.iter().find(|s| s.kind == SpanKind::Time).unwrap();
+    assert_eq!(&"à 10 h 30"[s.src.clone()], "10 h 30");
+    // Improved mode says the hour word; compatible mode reads "h" as the
+    // reference does.
+    let imp = ipa(Lang::Fr, Mode::Improved, "Il est 10h30.");
+    assert!(imp.contains(&uccharan::profile::nfd("ˈœʁ")), "{imp}");
+    let compat = ipa(Lang::Fr, Mode::Compatible, "Il est 10h30.");
+    assert!(compat.contains(&uccharan::profile::nfd("ˈaʃ")), "{compat}");
+    let imp = ipa(Lang::Pt, Mode::Improved, "às 10h30");
+    assert!(imp.contains(&uccharan::profile::nfd("ˈɔɾɐz")), "{imp}");
+}
+
+#[test]
+fn a_number_at_the_end_of_a_sentence_is_a_cardinal() {
+    let cases: &[(Lang, &str, &str)] = &[
+        (
+            Lang::De,
+            "Ich kaufe das iPhone 15. Am Montag kommt es.",
+            "Ich kaufe das iPhone fünfzehn. Am Montag kommt es.",
+        ),
+        (
+            Lang::De,
+            "Das sind 15. Der Rest fehlt.",
+            "Das sind fünfzehn. Der Rest fehlt.",
+        ),
+        (Lang::De, "der 21. Sieger", "der einundzwanzigste Sieger"),
+        (Lang::De, "Am 3. Mai.", "Am dritten Mai."),
+        (
+            Lang::De,
+            "Er kam als 3. ins Ziel.",
+            "Er kam als dritter ins Ziel.",
+        ),
+        (
+            Lang::Da,
+            "Jeg har en iPhone 15. Den var dyr.",
+            "Jeg har en iPhone femten. Den var dyr.",
+        ),
+        (
+            Lang::Nb,
+            "Jeg har en iPhone 15. Den var dyr.",
+            "Jeg har en iPhone femten. Den var dyr.",
+        ),
+        (
+            Lang::Fi,
+            "Ostin iPhone 15. Se oli kallis.",
+            "Ostin iPhone viisitoista. Se oli kallis.",
+        ),
+        (
+            Lang::Hu,
+            "Vettem egy iPhone 15. A telefon jó.",
+            "Vettem egy iPhone tizenöt. A telefon jó.",
+        ),
+        (
+            Lang::Hu,
+            "2024. május 15. A nap szép.",
+            "kétezerhuszonnegyedik május tizenötödik. A nap szép.",
+        ),
+        (
+            Lang::Cs,
+            "Koupil jsem iPhone 15. To je dobré.",
+            "Koupil jsem iPhone patnáct. To je dobré.",
+        ),
+        (
+            Lang::Pl,
+            "Kupiłem iPhone 15. To był błąd.",
+            "Kupiłem iPhone piętnaście. To był błąd.",
+        ),
+        (
+            Lang::Tr,
+            "iPhone 15. Bu pahalı.",
+            "iPhone on beş. Bu pahalı.",
+        ),
+    ];
+    for (l, t, want) in cases {
+        assert_eq!(norm(*l, t), *want, "{l:?} {t}");
+    }
+    let imp = ipa(Lang::De, Mode::Improved, "iPhone 15. Am Montag.");
+    assert!(imp.contains(&uccharan::profile::nfd("fˈʏnftsen.")), "{imp}");
+}
+
+#[test]
+fn a_full_stop_before_two_digits_does_not_group_thousands() {
+    // Compatible mode: as the reference, the full stop is read.
+    let fi = ipa(Lang::Fi, Mode::Compatible, "talo 10.30 talo");
+    assert!(fi.contains("iste"), "{fi}");
+    assert!(!fi.contains("tˈuhat"), "{fi}");
+    let de = ipa(Lang::De, Mode::Compatible, "Haus 10.30 Haus");
+    assert_eq!(
+        de,
+        uccharan::profile::nfd("hˈaʊs tsˈeːn pʊŋkt dɾˈaɪsɪç hˈaʊs")
+    );
+    // Three digits still make a thousand.
+    assert_eq!(norm(Lang::Fi, "1.000"), "tuhat");
+    assert_eq!(norm(Lang::De, "10.300"), "zehntausend dreihundert");
+    // Improved mode and normalise-only mode: a time or a decimal.
+    assert_eq!(norm(Lang::Fi, "10.30"), "kymmenen kolmekymmentä");
+    assert_eq!(
+        norm(Lang::Fi, "2.75"),
+        "kaksi pilkku seitsemänkymmentäviisi"
+    );
+    assert_eq!(norm(Lang::De, "2.45"), "zwei Komma vier fünf");
+}
+
+#[test]
+fn ordinals_before_a_hyphen() {
+    let cases: &[(Lang, &str, &str)] = &[
+        (Lang::EnUs, "the 3rd-floor flat", "the third floor flat"),
+        (
+            Lang::EnUs,
+            "a 21st-century idea",
+            "a twenty first century idea",
+        ),
+        (Lang::EnGb, "a 2nd-hand car", "a second hand car"),
+        (Lang::Fr, "le 1er-mai", "le premier mai"),
+        (Lang::Fr, "le 2e-étage", "le deuxième étage"),
+        (Lang::Es, "el 2º-piso", "el segundo piso"),
+        (Lang::Nl, "de 3e-klas", "de derde klas"),
+    ];
+    for (l, t, want) in cases {
+        assert_eq!(norm(*l, t), *want, "{l:?} {t}");
+    }
+    // Compatible mode: the reference reads the ordinal and joins the word.
+    let en = ipa(Lang::EnUs, Mode::Compatible, "the 3rd-floor flat");
+    assert!(en.contains(&uccharan::profile::nfd("θˈɜːdflˈɔːɹ")), "{en}");
+    let imp = ipa(Lang::EnUs, Mode::Improved, "the 3rd-floor flat");
+    assert!(imp.contains(&uccharan::profile::nfd("θˈɜːd")), "{imp}");
+    assert!(!imp.contains("ɑːɹdˈiː"), "{imp}");
+}
+
+#[test]
+fn currency_words_agree_with_the_amount() {
+    let cases: &[(Lang, &str, &str)] = &[
+        (Lang::Fr, "25 €", "vingt-cinq euros"),
+        (Lang::Fr, "1 €", "un euro"),
+        (Lang::Fr, "1 £", "une livre"),
+        (Lang::Fr, "25 $", "vingt-cinq dollars"),
+        (Lang::Fr, "0,50 €", "zéro euro cinquante"),
+        (Lang::Es, "25 €", "veinticinco euros"),
+        (Lang::Es, "1 €", "un euro"),
+        (Lang::Es, "21 €", "veintiún euros"),
+        (Lang::Es, "3 $", "tres dólares"),
+        (Lang::Es, "1 £", "una libra"),
+        (Lang::It, "25 €", "venticinque euro"),
+        (Lang::It, "1 $", "un dollaro"),
+        (Lang::It, "3 $", "tre dollari"),
+        (Lang::Pt, "25 €", "vinte e cinco euros"),
+        (Lang::Pt, "2 £", "duas libras"),
+        (Lang::Pt, "1 ¢", "um centavo"),
+        (Lang::PtBr, "25 €", "vinte e cinco euros"),
+        (Lang::Ca, "25 €", "vint-i-cinc euros"),
+        (Lang::Ca, "1 £", "una lliura"),
+        (Lang::Ro, "25 $", "douăzeci și cinci de dolari"),
+        (Lang::Ro, "5 $", "cinci dolari"),
+        (Lang::Ro, "1 €", "un euro"),
+        (Lang::De, "25 €", "fünfundzwanzig Euro"),
+        (Lang::De, "1 €", "ein Euro"),
+        (Lang::De, "3 ₹", "drei Rupien"),
+        (Lang::Nl, "5 €", "vijf euro"),
+        (Lang::Sv, "1 €", "en euro"),
+        (Lang::Fi, "25 €", "kaksikymmentäviisi euroa"),
+        (Lang::Fi, "1 €", "yksi euro"),
+        (Lang::Cs, "3 $", "tři dolary"),
+        (Lang::Cs, "25 €", "dvacet pět eur"),
+        (Lang::Cs, "1 €", "jedno euro"),
+        (Lang::Pl, "5 $", "pięć dolarów"),
+        (Lang::Pl, "22 $", "dwadzieścia dwa dolary"),
+        (Lang::Pl, "12 $", "dwanaście dolarów"),
+        (Lang::EnUs, "25 €", "twenty five euros"),
+        (Lang::EnUs, "1 €", "one euro"),
+        (Lang::EnUs, "5 ¢", "five cents"),
+        (Lang::Es, "12,50 €", "doce euros cincuenta"),
+    ];
+    for (l, t, want) in cases {
+        assert_eq!(norm(*l, t), *want, "{l:?} {t}");
+    }
+    let imp = ipa(Lang::Fr, Mode::Improved, "Ça coûte 25 €.");
+    assert!(imp.contains(&uccharan::profile::nfd("øʁˈo")), "{imp}");
+    // Compatible mode keeps the reference reading.
+    let compat = ipa(Lang::Fr, Mode::Compatible, "Ça coûte 25 €.");
+    assert!(compat.contains(&uccharan::profile::nfd("əʁˌo")), "{compat}");
+    let compat = ipa(Lang::EnUs, Mode::Compatible, "5 ¢");
+    assert!(compat.contains("s"), "{compat}");
 }

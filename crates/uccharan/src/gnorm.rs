@@ -82,6 +82,207 @@ pub fn join_currency(chunks: &[Chunk], nums: &Numbers) -> Vec<Chunk> {
     out
 }
 
+fn all_digits(s: &str, n: std::ops::RangeInclusive<usize>) -> bool {
+    n.contains(&s.len()) && s.bytes().all(|b| b.is_ascii_digit())
+}
+
+/// The chunks at the start of `texts` that write one clock time ("10",
+/// "h", "30"; "10.30", "Uhr"), for a language that reads times
+/// (`time…` lines): how many there are and the time as one chunk text
+/// ("10h30", "10.30Uhr").
+pub fn time_join(texts: &[&str], nums: &Numbers) -> Option<(usize, String)> {
+    let t = nums.times.as_ref()?;
+    let a = *texts.first()?;
+    let b = texts.get(1).copied();
+    let c = texts.get(2).copied();
+    if t.has("h") && all_digits(a, 1..=2) && matches!(b, Some("h" | "H")) {
+        return Some(match c.filter(|m| all_digits(m, 2..=2)) {
+            Some(m) => (3, format!("{a}h{m}")),
+            None => (2, format!("{a}h")),
+        });
+    }
+    if t.has("h") {
+        if let Some(h) = a.strip_suffix(['h', 'H']).filter(|h| all_digits(h, 1..=2)) {
+            if let Some(m) = b.filter(|m| all_digits(m, 2..=2)) {
+                return Some((2, format!("{h}h{m}")));
+            }
+        }
+    }
+    let w = t.after_word(b?)?;
+    let clock = match a.split_once([':', '.']) {
+        Some((h, m)) => all_digits(h, 1..=2) && all_digits(m, 2..=2),
+        None => all_digits(a, 1..=2),
+    };
+    clock.then(|| (2, format!("{a}{w}")))
+}
+
+/// Chunks that write one clock time joined into one chunk each
+/// ([`time_join`]).
+pub fn join_times(chunks: &[Chunk], nums: &Numbers) -> Vec<Chunk> {
+    if nums.times.is_none() {
+        return chunks.to_vec();
+    }
+    let mut out: Vec<Chunk> = Vec::with_capacity(chunks.len());
+    let mut i = 0;
+    while i < chunks.len() {
+        let texts: Vec<&str> = chunks[i..chunks.len().min(i + 3)]
+            .iter()
+            .map(|c| c.text.as_str())
+            .collect();
+        // A chunk with a full stop after it ends the time.
+        let open = chunks[i..].iter().take_while(|c| !c.dot).count() + 1;
+        match time_join(&texts, nums).filter(|(k, _)| *k <= open) {
+            Some((k, text)) => {
+                out.push(Chunk {
+                    text,
+                    dot: chunks[i + k - 1].dot,
+                    tight: chunks[i].tight,
+                });
+                i += k;
+            }
+            None => {
+                out.push(chunks[i].clone());
+                i += 1;
+            }
+        }
+    }
+    out
+}
+
+/// A clock time ("10h30", "10:30", "10.30", "10.30Uhr" from
+/// [`time_join`]) read with the language's `time…` lines: the hours, the
+/// hour word, the minutes ("dix heures trente", "zehn Uhr dreißig",
+/// "kymmenen kolmekymmentä").
+fn time(text: &str, nums: &Numbers, prev: Option<&str>) -> Option<Vec<Item>> {
+    let t = nums.times.as_ref()?;
+    let hd = text.len() - text.trim_start_matches(|c: char| c.is_ascii_digit()).len();
+    if hd == 0 || hd > 2 {
+        return None;
+    }
+    let rest = &text[hd..];
+    let (form, rest) = match rest.chars().next() {
+        Some('h' | 'H') => ("h", &rest[1..]),
+        Some(':') => ("colon", &rest[1..]),
+        Some('.') => ("dot", &rest[1..]),
+        _ => ("", rest),
+    };
+    let md = rest.len() - rest.trim_start_matches(|c: char| c.is_ascii_digit()).len();
+    let tail = &rest[md..];
+    let after = if tail.is_empty() {
+        None
+    } else {
+        Some(t.after_word(tail)?)
+    };
+    let minutes = match (form, md) {
+        (_, 2) => rest[..2].parse::<u64>().ok()?,
+        ("h" | "", 0) => 0,
+        _ => return None,
+    };
+    let h: u64 = text[..hd].parse().ok()?;
+    if h > 24 || minutes > 59 {
+        return None;
+    }
+    let context = prev.is_some_and(|p| t.context.contains(&p.to_lowercase()));
+    let is_time = match form {
+        "h" => t.has("h"),
+        "colon" => t.has("colon") || after.is_some(),
+        "dot" => t.has("dot") || (t.has("dot-context") && (after.is_some() || context)),
+        _ => after.is_some(),
+    };
+    if !is_time {
+        return None;
+    }
+    let hour_word = match (after, &t.hour) {
+        (Some(w), _) => Some(w.to_string()),
+        (None, Some((one, more))) if form == "h" || t.hour_always || minutes == 0 => {
+            Some(if h == 1 { one } else { more }.clone())
+        }
+        _ => None,
+    };
+    let mut out: Vec<Item> = Vec::new();
+    let plain = |out: &mut Vec<Item>, w: &str| {
+        out.extend(w.split_whitespace().map(|x| {
+            let mut it = Item::word(x);
+            it.generated = false;
+            it
+        }))
+    };
+    match t.hours.get(&h) {
+        Some(w) => plain(&mut out, w),
+        None => push_number(&mut out, nums, &h.to_string(), false, false, false),
+    }
+    if let Some(w) = &hour_word {
+        plain(&mut out, w);
+    }
+    if minutes > 0 {
+        if hour_word.is_some() {
+            out.extend(t.and.iter().map(|w| Item::word(w)));
+        } else if minutes < 10 {
+            let mut z = Vec::new();
+            nums.digits("0", &mut z);
+            out.extend(z.iter().map(|(w, _)| Item::word(w)));
+        }
+        push_number(&mut out, nums, &minutes.to_string(), false, false, false);
+    }
+    Some(out)
+}
+
+/// True when `text` is a clock time the language reads as one
+/// (normalise-only mode: the kind of the span).
+pub fn is_time(text: &str, nums: &Numbers, prev: Option<&str>) -> bool {
+    time(text, nums, prev).is_some()
+}
+
+/// The whole units of an amount written with digits ("1.250,50" 1250).
+fn whole_amount(s: &str, nums: &Numbers) -> Option<u64> {
+    let (dec, group) = if nums.decimal_comma {
+        (',', '.')
+    } else {
+        ('.', ',')
+    };
+    let whole = s.split(dec).next()?.replace([group, ' ', GROUPED], "");
+    if whole.is_empty() || !whole.bytes().all(|b| b.is_ascii_digit()) {
+        return None;
+    }
+    whole.parse().ok()
+}
+
+/// The words for the currency `sign` after the whole amount `n` (natural
+/// readings: the plural where the language has one), with the word that
+/// goes between them (`currency-of`).
+fn currency_words(nums: &Numbers, sign: char, words: &[String], n: Option<u64>) -> Vec<Item> {
+    let mut out: Vec<Item> = Vec::new();
+    let Some(n) = n else {
+        return words.iter().map(|w| Item::word(w)).collect();
+    };
+    if nums.money.of_after(n) {
+        out.extend(nums.money.of.iter().map(|w| Item::word(w)));
+    }
+    match nums.money.word(sign, n) {
+        Some(p) => out.extend(p.iter().map(|w| {
+            let mut it = Item::word(w);
+            it.generated = w.contains(['#', '¤']);
+            it
+        })),
+        None => out.extend(words.iter().map(|w| Item::word(w))),
+    }
+    out
+}
+
+/// The items of the amount `n` (from `at` on) replaced by the language's
+/// words for it before the currency `sign` (`currency-count`: "un euro").
+fn count_words(out: &mut Vec<Item>, at: usize, nums: &Numbers, sign: char, n: Option<u64>) {
+    let Some(w) = n.and_then(|n| nums.money.count_words(sign, n)) else {
+        return;
+    };
+    out.truncate(at);
+    out.extend(w.iter().map(|x| {
+        let mut it = Item::word(x);
+        it.generated = false;
+        it
+    }));
+}
+
 /// `compat`: a group of three digits with a leading zero is read as the
 /// reference voices read it ("000" zero-zero zero, "012" zero twelve).
 fn push_number(
@@ -119,10 +320,15 @@ fn push_number(
         .collect();
     // With a decimal comma, a ',' here was a full stop in the text.
     let dots = nums.decimal_comma && int.contains(',') && !int.contains([':', '/']);
-    // "1,00,000" and "1,000,000" are one number; times and dates are read part by part.
+    // "1,00,000" and "1,000,000" are one number; times and dates are read
+    // part by part. A full stop groups only three digits ("10.30" is not
+    // a thousand and thirty).
     let one_number = int.contains(',')
         && !int.contains([':', '/'])
-        && groups.iter().skip(1).all(|g| g.len() == 2 || g.len() == 3)
+        && groups
+            .iter()
+            .skip(1)
+            .all(|g| g.len() == 3 || (g.len() == 2 && !dots))
         && !(strict && dots && nums.dot_no_groups);
     // Improved mode reads "2.5" in a language with a decimal comma as a
     // decimal number.
@@ -275,12 +481,12 @@ fn date(text: &str, nums: &Numbers, prev: Option<&str>) -> Option<Vec<Item>> {
 /// ("25,50 €", "€25,50"): the whole units, the currency word, the cents
 /// ("fünfundzwanzig Euro fünfzig").
 fn money(text: &str, nums: &Numbers) -> Option<Vec<Item>> {
-    let (words, amount) = nums.currency.iter().find_map(|(c, w)| {
+    let (sign, words, amount) = nums.currency.iter().find_map(|(c, w)| {
         let a = text
             .strip_suffix(*c)
             .or_else(|| text.strip_prefix(*c))?
             .trim_end_matches('\u{a0}');
-        Some((w, a))
+        Some((*c, w, a))
     })?;
     let sep = if nums.decimal_comma { ',' } else { '.' };
     let (whole, cents) = amount.split_once(sep)?;
@@ -292,15 +498,17 @@ fn money(text: &str, nums: &Numbers) -> Option<Vec<Item>> {
     {
         return None;
     }
+    let n: u64 = whole.parse().ok()?;
     let mut w = Vec::new();
-    nums.cardinal(whole.parse().ok()?, &mut w);
+    nums.cardinal(n, &mut w);
     let item = |(t, g): &(String, bool)| {
         let mut it = Item::word(t);
         it.glue = *g;
         it
     };
     let mut out: Vec<Item> = w.iter().map(item).collect();
-    out.extend(words.iter().map(|t| Item::word(t)));
+    count_words(&mut out, 0, nums, sign, Some(n));
+    out.extend(currency_words(nums, sign, words, Some(n)));
     let c: u64 = cents.parse().ok()?;
     if c > 0 {
         let mut w = Vec::new();
@@ -391,7 +599,10 @@ pub fn expand(
     prev: Option<&str>,
 ) -> Vec<Item> {
     if natural {
-        if let Some(items) = date(&chunk.text, nums, prev).or_else(|| money(&chunk.text, nums)) {
+        if let Some(items) = date(&chunk.text, nums, prev)
+            .or_else(|| money(&chunk.text, nums))
+            .or_else(|| time(&chunk.text, nums, prev).filter(|_| !chunk.dot))
+        {
             return items;
         }
     }
@@ -413,8 +624,8 @@ pub fn expand(
             let n = text.parse::<u64>().ok().filter(|_| chunk.dot)?;
             nums.dot_ordinal(n, prev, strict)
         });
-    if let Some(words) = ordinal {
-        return words
+    let ordinal_items = |words: &str| -> Vec<Item> {
+        words
             .split_whitespace()
             .map(|w| {
                 let mut it = Item::word(w);
@@ -422,7 +633,33 @@ pub fn expand(
                 it.generated = w.ends_with('#');
                 it
             })
-            .collect();
+            .collect()
+    };
+    if let Some(words) = ordinal {
+        return ordinal_items(&words);
+    }
+    // An ordinal before a hyphen and a word ("1er-mai", "2e-étage"): the
+    // ordinal, then the rest as words of their own after the hyphen.
+    if let Some((head, rest)) = text.split_once('-') {
+        let words = (nums.ordinal_words.is_some()
+            && head.starts_with(|c: char| c.is_ascii_digit())
+            && rest.starts_with(char::is_alphabetic))
+        .then(|| nums.suffix_ordinal(head, strict))
+        .flatten();
+        if let Some(words) = words {
+            let mut out = ordinal_items(&words);
+            let c = Chunk {
+                text: rest.to_string(),
+                dot: chunk.dot,
+                tight: false,
+            };
+            let mut more = expand(&c, nums, ascii_english, compat, natural, None);
+            if let Some(first) = more.first_mut() {
+                first.hyphen = true;
+            }
+            out.append(&mut more);
+            return out;
+        }
     }
     let mut out: Vec<Item> = Vec::new();
     // An apostrophe between two Indic letters is ignored (Assamese ল'ৰা).
@@ -454,10 +691,19 @@ pub fn expand(
     let n = rs.len();
     // Improved mode says a currency sign written before the amount after it.
     let mut after_amount: Vec<Item> = Vec::new();
-    // Where the items of the last number start (`percent-before`).
+    // That sign, for the agreement of its word with the amount.
+    let mut sign_before: Option<char> = None;
+    // Where the items of the last number start (`percent-before`), and
+    // its whole units.
     let mut number_at = 0usize;
+    let mut amount: Option<u64> = None;
     for (i, (sc, r)) in rs.iter().enumerate() {
         if i > 0 && rs[i - 1].0 == Script::Digit && !after_amount.is_empty() {
+            if let (Some(c), true) = (sign_before.take(), natural) {
+                let words: Vec<String> = after_amount.iter().map(|x| x.text.clone()).collect();
+                after_amount = currency_words(nums, c, &words, amount);
+                count_words(&mut out, number_at, nums, c, amount);
+            }
             out.append(&mut after_amount);
         }
         match sc {
@@ -495,6 +741,7 @@ pub fn expand(
             }
             Script::Digit => {
                 number_at = out.len();
+                amount = whole_amount(r, nums);
                 push_number(&mut out, nums, r, spaced, compat, strict)
             }
             Script::Other => {
@@ -522,8 +769,14 @@ pub fn expand(
                         };
                         let items = words.iter().map(|w| Item::word(w));
                         let before = rs.get(i + 1).is_some_and(|x| x.0 == Script::Digit);
+                        let after = i > 0 && rs[i - 1].0 == Script::Digit;
                         if !compat && before && r.chars().count() == 1 {
                             after_amount.extend(items);
+                            sign_before = Some(c);
+                        } else if natural && after {
+                            // The word agrees with the amount ("25 euros").
+                            count_words(&mut out, number_at, nums, c, amount);
+                            out.extend(currency_words(nums, c, words, amount));
                         } else {
                             out.extend(items);
                         }

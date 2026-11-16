@@ -384,6 +384,32 @@ impl Ctx {
         }
     }
 
+    /// An ordinal written before a hyphen and a word ("3rd-floor",
+    /// "21st-century"): the ordinal, then the rest as words of its own
+    /// joined by the hyphen. False when `tail` is not so written.
+    fn ordinal_compound(&mut self, value: u64, tail: &str) -> bool {
+        let Some((suf, rest)) = tail.split_once('-') else {
+            return false;
+        };
+        if !matches!(suf.to_lowercase().as_str(), "st" | "nd" | "rd" | "th")
+            || !rest.starts_with(|c: char| c.is_alphabetic())
+        {
+            return false;
+        }
+        self.en_ordinal(value);
+        let c = Chunk {
+            text: rest.to_string(),
+            dot: false,
+            tight: false,
+        };
+        let mut items = expand_opts(&c, self.lang, self.style, self.brands, self.indian);
+        if let Some(first) = items.first_mut() {
+            first.hyphen = true;
+        }
+        self.out.extend(items);
+        true
+    }
+
     fn en_ordinal(&mut self, n: u64) {
         if n % 100 == 0 || n >= 1_000_000 {
             self.en_cardinal(n);
@@ -551,6 +577,9 @@ impl Ctx {
                 '*' => &["asterisk"],
                 '$' => &["dollar"],
                 '£' => &["pound"],
+                // The reference's words for these signs.
+                '€' if self.espeak() => &["euros"],
+                '¢' if self.espeak() => &["cents"],
                 '€' => &["euro"],
                 '₹' => &["rupee"],
                 '°' => &["degrees"],
@@ -564,6 +593,31 @@ impl Ctx {
             self.w(n);
         }
     }
+}
+
+/// True when `t` is a currency sign the English reader knows.
+pub fn is_en_currency_sign(t: &str) -> bool {
+    matches!(t, "$" | "£" | "€" | "₹" | "¢")
+}
+
+/// English chunks of an amount followed by its currency sign ("25 €")
+/// joined into one chunk ("25€"), read as "twenty five euros".
+pub fn join_currency(chunks: &[Chunk]) -> Vec<Chunk> {
+    let mut out: Vec<Chunk> = Vec::with_capacity(chunks.len());
+    for c in chunks {
+        if let Some(prev) = out.last_mut() {
+            if is_en_currency_sign(&c.text)
+                && !prev.dot
+                && prev.text.starts_with(|x: char| x.is_ascii_digit())
+                && split_number(&prev.text).is_some()
+            {
+                prev.text.push_str(&c.text);
+                continue;
+            }
+        }
+        out.push(c.clone());
+    }
+    out
 }
 
 fn split_number(s: &str) -> Option<(&str, Option<&str>)> {
@@ -1006,6 +1060,26 @@ fn unit(cx: &mut Ctx, sym: &str, plural: bool) -> bool {
 fn special(cx: &mut Ctx, s: &str, lower: &str) -> bool {
     let b = s.as_bytes();
     let first = s.chars().next().unwrap_or(' ');
+    // An amount with its sign after it ("25€", "25 €" joined): read as
+    // with the sign first.
+    if let Some(sign) = s
+        .chars()
+        .last()
+        .filter(|c| matches!(c, '$' | '£' | '€' | '₹' | '¢'))
+    {
+        let num = &s[..s.len() - sign.len_utf8()];
+        if first.is_ascii_digit() && sign == '¢' && !cx.hi() {
+            if let Some((int, None)) = split_number(num) {
+                cx.number(int, None);
+                cx.w(if int == "1" { "cent" } else { "cents" });
+                return true;
+            }
+        }
+        if first.is_ascii_digit() && split_number(num).is_some() {
+            let turned = format!("{sign}{num}");
+            return special(cx, &turned, &turned.to_lowercase());
+        }
+    }
     // Currency: $5, $5.50, ₹1,00,000, £3.2m
     if matches!(first, '$' | '£' | '€' | '₹') {
         let rest = &s[first.len_utf8()..];
@@ -1251,6 +1325,9 @@ fn special(cx: &mut Ctx, s: &str, lower: &str) -> bool {
     }
     let tail_l = tail.to_lowercase();
     let value: u64 = int.replace(',', "").parse().unwrap_or(u64::MAX);
+    if sign.is_empty() && frac.is_none() && !cx.hi() && cx.ordinal_compound(value, tail) {
+        return true;
+    }
     let emit_sign = |cx: &mut Ctx| {
         if !sign.is_empty() {
             cx.w(if cx.hi() {
@@ -1378,6 +1455,9 @@ fn special_espeak(cx: &mut Ctx, s: &str, _lower: &str) -> bool {
             cx.en_ordinal(value);
             true
         }
+        // "3rd-floor": the ordinal, then the word (the reference joins
+        // them).
+        t if frac.is_none() && !cx.hi() && value % 100 != 0 => cx.ordinal_compound(value, t),
         _ => false,
     }
 }

@@ -566,6 +566,29 @@ currency $ ¤dólar#
 currency £ ¤libra#
 currency ¥ ¤iene#
 currency ¢ ¤centavos#
+# Improved mode and normalise-only mode: the currency word agrees with
+# the amount (`currency-plural`, `currency-singular`, `currency-many` by
+# the `plural` rule); `currency-count` gives the words for an amount
+# before a currency word ("1 €", `*`: every currency).
+currency-plural € euros
+currency-plural $ dólares
+currency-plural £ libras
+currency-plural ¥ ienes
+currency-singular ¢ centavo
+currency-count £ 1 uma
+currency-count £ 2 duas
+# Improved mode and normalise-only mode: clock times. `time` lists the
+# written forms read as times (h: "10h30" "10 h 30" "10h"; colon: "10:30";
+# dot: "10.30"; dot-context: "10.30" after a `time-context` word or before
+# a `time-after` word).
+time h colon
+time-hour hora horas
+time-hour-always yes
+time-and e
+time-hours1 uma
+time-hours2 duas
+time-hours21 vinte e uma
+time-hours22 vinte e duas
 
 [words]
 ¤euro# ˈeʊɾʊ

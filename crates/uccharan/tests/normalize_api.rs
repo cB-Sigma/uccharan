@@ -666,7 +666,7 @@ fn latin_languages_read_their_own_numbers() {
     let t = "L'homme arrive aujourd'hui, c'est-à-dire à 3 h.";
     assert_eq!(
         norm(t, Lang::Fr).text,
-        "L'homme arrive aujourd'hui, c'est-à-dire à trois h."
+        "L'homme arrive aujourd'hui, c'est-à-dire à trois heures."
     );
 }
 
@@ -691,7 +691,7 @@ fn latin_number_forms() {
     assert_eq!(&"Il y a 12 500 personnes."[s.src.clone()], "12 500");
     // Decimal comma, percent, currency.
     assert_eq!(norm("3,5 %", Lang::De).text, "drei Komma fünf Prozent");
-    assert_eq!(norm("12,50 €", Lang::Es).text, "doce euro cincuenta");
+    assert_eq!(norm("12,50 €", Lang::Es).text, "doce euros cincuenta");
     assert_eq!(
         both("€5", Lang::De),
         ("Euro fünf".into(), "fünf Euro".into())

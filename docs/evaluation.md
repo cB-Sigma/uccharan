@@ -249,6 +249,17 @@ mode and normalise-only mode read them with month names, and ordinals in full (t
 their written words: the round trip of normalise-only mode through the phonemiser (improved)
 differs by 0.6 % of phonemes in both (was 38.5 % and 13.5 %).
 
+**Times, currency words and sentence ends (0.6.4).** A full stop before exactly two digits no
+longer groups thousands ("10.30" is not *a thousand and thirty*): every reference voice reads it
+as two numbers (with its word for the full stop), and compatible mode now does too. English
+compatible mode reads "3rd-floor" as *third floor* and `€`/`¢` as *euros*/*cents*, as the
+reference does. Development PER before → after (compatible mode; all other languages
+unchanged): fi 1.09 → 1.02 %, nl 1.60 → 1.55 %, sv 1.26 → 1.23 %, de 1.05 → 1.03 %, da 1.84 →
+1.82 %, tr 0.54 → 0.52 %, nb 0.87 → 0.86 %, es 0.54 → 0.53 %; no language got worse. Clock
+times, the agreement of currency words with the amount and the cardinal before a full stop
+that ends a sentence change improved mode and normalise-only mode only (tests in
+`crates/uccharan/tests/numbers_dates.rs`).
+
 **Word lists** (isolated words):
 
 | List | PER | Exact | Exact ignoring stress | Stress pattern wrong |

@@ -327,6 +327,34 @@ scale100+ ciento
 currency € ¤euro#
 currency $ ¤dólar#
 currency £ ¤libras#
+# Improved mode and normalise-only mode: the currency word agrees with
+# the amount (`currency-plural`, `currency-singular`, `currency-many` by
+# the `plural` rule); `currency-count` gives the words for an amount
+# before a currency word ("1 €", `*`: every currency).
+currency-plural € euros
+currency-plural $ dólares
+currency-singular £ libra
+currency-plural £ libras
+currency-count * 1 un
+currency-count £ 1 una
+currency-count * 21 veintiún
+currency-count * 31 treinta y un
+currency-count * 41 cuarenta y un
+currency-count * 51 cincuenta y un
+currency-count * 61 sesenta y un
+currency-count * 71 setenta y un
+currency-count * 81 ochenta y un
+currency-count * 91 noventa y un
+currency-count £ 21 veintiuna
+# Improved mode and normalise-only mode: clock times. `time` lists the
+# written forms read as times (h: "10h30" "10 h 30" "10h"; colon: "10:30";
+# dot: "10.30"; dot-context: "10.30" after a `time-context` word or before
+# a `time-after` word).
+time h colon
+time-hour hora horas
+time-and y
+time-hours1 una
+time-hours21 veintiuna
 
 [words]
 coma# koma
