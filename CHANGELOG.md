@@ -5,6 +5,8 @@ All notable changes are listed here. The format follows
 
 ## [Unreleased]
 
+## [0.6.5] - 2026-11-16
+
 ### Fixed
 
 - **`tools/bench/compare.py` on Windows**: the memory measurement read `/proc/self/status` and
