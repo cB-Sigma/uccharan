@@ -7,6 +7,11 @@ All notable changes are listed here. The format follows
 
 ### Fixed
 
+- **`tools/bench/compare.py` on Windows**: the memory measurement read `/proc/self/status` and
+  stopped the run on Windows. It now uses `psutil` when it is installed, else `/proc` on Linux or
+  `getrusage` on other POSIX systems, and on Windows without `psutil` leaves the memory columns
+  empty with a note. The default `--lib` is the platform's library name (`uccharan.dll`,
+  `libuccharan.dylib`, `libuccharan.so`).
 - **Standard input on Windows**: `uccharan -l hi < file.txt` stopped with a `UnicodeDecodeError`
   traceback when the file was UTF-16 (as Notepad and PowerShell write it). The Python and Rust
   command lines read standard input as UTF-8, or as UTF-16 or UTF-32 when it starts with a byte
@@ -20,6 +25,12 @@ All notable changes are listed here. The format follows
 
 ### Changed
 
+- The README shows the MSVC `cl.exe` commands for linking the C library on Windows, against the
+  DLL and statically; a static link needs `ntdll.lib` and `synchronization.lib` among the system
+  libraries.
+- docs/evaluation.md notes the Hindi latency measured on a Windows 11 laptop (8.7 µs p50 per
+  sentence, against 5.5 µs on the Linux machine of the table) and that no Windows-only cost was
+  found in the Hindi path.
 - The Python README says how to set up Windows PowerShell 5.1 for UTF-8 in pipes (cmd and
   PowerShell 7 need nothing).
 

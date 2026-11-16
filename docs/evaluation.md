@@ -675,6 +675,16 @@ start-up weighs more. It is still 3.9× faster in absolute terms.
 The cache of recent words is part of these numbers (the warm-up text fills it with frequent
 words, as a running application would); its first sentences in a fresh process are slower.
 
+**On Windows.** On a Windows 11 laptop (Ryzen 7 5800H, the native MSVC build of the library),
+`compare.py` measured a Hindi p50 of 8.7 µs per sentence, against 5.5 µs in the table above. The
+two machines differ, so this is not a like-for-like comparison of the two systems. A search for a
+cost that only Windows pays in the Hindi path found none: once the built-in table is loaded, a call
+reads no files or environment variables, and the path uses no regular expressions, no locale and no
+general Unicode normalisation. It makes about 16 heap allocations per word, as English does (15;
+counted on Linux), so a slower system allocator (Windows' heap against glibc's `malloc`) would
+slow English as much as Hindi; that has not been measured separately. On Windows `compare.py`
+measures memory only when `psutil` is installed.
+
 Kokoro English against misaki (`tools/bench/kokoro_speed.py`) is in section 6.
 
 ### Size

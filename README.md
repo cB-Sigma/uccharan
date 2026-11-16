@@ -71,6 +71,25 @@ npm install uccharan
 [release](https://github.com/cB-Sigma/uccharan/releases), or build them with
 `cargo build --release -p uccharan-capi`.
 
+With MSVC on Windows, in a Developer Command Prompt in the unpacked release folder (`hello.c`,
+`include\`, `lib\`):
+
+```bat
+:: against the DLL: link its import library, then keep uccharan.dll next to hello.exe (or on PATH)
+cl /nologo /MD /Iinclude hello.c lib\uccharan.dll.lib /Fe:hello.exe
+copy lib\uccharan.dll .
+
+:: static: uccharan.lib and the system libraries Rust's standard library uses
+cl /nologo /MD /Iinclude hello.c lib\uccharan.lib ntdll.lib synchronization.lib kernel32.lib ^
+   userenv.lib ws2_32.lib dbghelp.lib /Fe:hello-static.exe
+```
+
+Link statically with `/MD`: `uccharan.lib` is built against the DLL C runtime. Without `ntdll.lib` and
+`synchronization.lib` the static link fails with unresolved externals. Built from source, the
+system libraries a static link needs are printed by
+`cargo rustc --release -p uccharan-capi --lib --crate-type staticlib -- --print native-static-libs`
+(the list above is from Rust 1.97, with `synchronization.lib` added).
+
 **Homebrew** (macOS, Linux): the `uccharan` command, `libuccharan` and `uccharan.h`, built from
 source
 

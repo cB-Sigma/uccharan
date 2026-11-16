@@ -24,7 +24,9 @@ What is measured, per language:
   phonemizes one sentence (median of several runs), minus the same process
   doing nothing;
 * memory: resident set size added by loading + initialising the library and
-  by processing the whole set, in a fresh process;
+  by processing the whole set, in a fresh process (read with psutil when it is
+  installed, else from /proc on Linux or getrusage's peak on other POSIX
+  systems; on Windows it needs psutil and is skipped, with a note, without it);
 * size on disk of the library and its data.
 """
 
@@ -174,17 +176,51 @@ def bench_threads(eng, lang: str, texts: list[bytes], n: int, repeat: int) -> fl
     return sum(len(t.split()) for t in work) / dt
 
 
+def rss() -> tuple[int | None, str]:
+    """Memory of this process in bytes, and how it was read. psutil (any platform) and Linux's
+    /proc give the resident set size now; getrusage (other POSIX systems) gives the peak, which
+    serves as long as memory only grows, as it does in a child here. None where nothing works
+    (Windows without psutil): the memory columns are then left empty."""
+    try:
+        import psutil  # type: ignore[import-not-found]
+
+        return int(psutil.Process().memory_info().rss), "psutil"
+    except ImportError:
+        pass
+    try:
+        with open("/proc/self/status", encoding="ascii") as f:
+            for line in f:
+                if line.startswith("VmRSS:"):
+                    return int(line.split()[1]) * 1024, "/proc/self/status VmRSS"
+    except OSError:
+        pass
+    try:
+        import resource
+    except ImportError:  # Windows
+        return None, "unavailable: install psutil to measure memory on Windows"
+    peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    # kilobytes everywhere but macOS, where it is bytes
+    return (peak if sys.platform == "darwin" else peak * 1024), "getrusage ru_maxrss (peak)"
+
+
+def diff(a: int | None, b: int | None) -> int | None:
+    return None if a is None or b is None else a - b
+
+
+def mb(n: int | None) -> float | None:
+    return None if n is None else n / 2**20
+
+
+def default_lib() -> Path:
+    name = "uccharan.dll" if sys.platform == "win32" else "libuccharan.dylib" if sys.platform == "darwin" else "libuccharan.so"
+    return ROOT / "target" / "release" / name
+
+
 def child(which: str, lib_path: str, lang: str, mode: str, limit: int, repeat: int) -> None:
     """Runs in a fresh process; prints one JSON object."""
 
-    def rss() -> int:
-        for line in open("/proc/self/status"):
-            if line.startswith("VmRSS:"):
-                return int(line.split()[1]) * 1024
-        return 0
-
     if mode == "noop":
-        print(json.dumps({"rss": rss()}))
+        print(json.dumps({"rss": rss()[0]}))
         return
     if mode == "latency":
         eng = make(which, lib_path)
@@ -200,14 +236,14 @@ def child(which: str, lib_path: str, lang: str, mode: str, limit: int, repeat: i
             lat.append(clock() - t0)
         print(json.dumps({"lat": lat, "words": sum(len(t.split()) for t in texts)}))
         return
-    r0 = rss()
+    r0, rss_method = rss()
     t0 = time.perf_counter()
     eng = make(which, lib_path)
     eng.set_lang(lang)
     first = eng.call("Hello there, this is the first sentence.".encode() if lang != "hi" else "नमस्ते, यह पहला वाक्य है।".encode())
     t1 = time.perf_counter()
-    r1 = rss()
-    out = {"init_plus_first_call_s": t1 - t0, "rss_after_init": r1 - r0, "first": first.decode()}
+    r1 = rss()[0]
+    out = {"init_plus_first_call_s": t1 - t0, "rss_after_init": diff(r1, r0), "rss_method": rss_method, "first": first.decode()}
     if mode == "full":
         texts = [s.encode() for s in sentences(lang, limit)] * repeat
         t2 = time.perf_counter()
@@ -215,7 +251,7 @@ def child(which: str, lib_path: str, lang: str, mode: str, limit: int, repeat: i
             eng.call(t)
         out["seconds"] = time.perf_counter() - t2
         out["words"] = sum(len(t.split()) for t in texts)
-        out["rss_after_run"] = rss() - r0
+        out["rss_after_run"] = diff(rss()[0], r0)
     print(json.dumps(out))
 
 
@@ -257,7 +293,7 @@ def machine_scaling(workers: list[int]) -> dict:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("--lib", default=str(ROOT / "target/release/libuccharan.so"))
+    ap.add_argument("--lib", default=str(default_lib()))
     ap.add_argument("--langs", default="en-us,hi")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--rounds", type=int, default=5)
@@ -318,12 +354,14 @@ def main() -> int:
             inproc = [run_child(which, args.lib, lang, "init")["init_plus_first_call_s"] for _ in range(15)]
             e["init_plus_first_call_ms"] = 1e3 * statistics.median(inproc)
             mem = run_child(which, args.lib, lang, "full", args.limit)
-            e["rss_after_init_mb"] = mem["rss_after_init"] / 2**20
-            e["rss_after_run_mb"] = mem["rss_after_run"] / 2**20
+            e["rss_after_init_mb"] = mb(mem["rss_after_init"])
+            e["rss_after_run_mb"] = mb(mem["rss_after_run"])
+            e["rss_method"] = mem["rss_method"]
             entry[which] = e
+            memory = (f"rss init {e['rss_after_init_mb']:.1f} MB run {e['rss_after_run_mb']:.1f} MB" if e["rss_after_init_mb"] is not None
+                      else f"rss not measured ({e['rss_method']})")
             print(f"[{lang}] {which:9s} p50 {e['latency_us_p50']:7.1f} µs  p99 {e['latency_us_p99']:7.1f} µs  {e['words_per_second_1_thread']:10.0f} words/s  "
-                  f"workers {{{', '.join(f'{k}: {v:.0f}' for k, v in scaling.items())}}}  init+first {e['init_plus_first_call_ms']:.2f} ms  "
-                  f"rss init {e['rss_after_init_mb']:.1f} MB run {e['rss_after_run_mb']:.1f} MB")
+                  f"workers {{{', '.join(f'{k}: {v:.0f}' for k, v in scaling.items())}}}  init+first {e['init_plus_first_call_ms']:.2f} ms  {memory}")
         u_scale = entry["uccharan"]["words_per_second_by_workers"]
         entry["uccharan"]["scaling_vs_1_worker"] = {k: v / u_scale["1"] for k, v in u_scale.items()} if "1" in u_scale else {}
         if "reference" in entry:
