@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 # Tests never download: the packs come from the source tree, and are still
-# checked against the sums in uccharan/packs.py.
+# checked against the sums in uccharan/packs/__init__.py.
 _CRATES = Path(__file__).resolve().parents[3] / "crates"
 _DATA = _CRATES / "uccharan" / "data"
 _TABLES = _CRATES / "uccharan-data" / "data"

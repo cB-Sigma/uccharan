@@ -5,6 +5,24 @@ All notable changes are listed here. The format follows
 
 ## [Unreleased]
 
+### Fixed
+
+- **Standard input on Windows**: `uccharan -l hi < file.txt` stopped with a `UnicodeDecodeError`
+  traceback when the file was UTF-16 (as Notepad and PowerShell write it). The Python and Rust
+  command lines read standard input as UTF-8, or as UTF-16 or UTF-32 when it starts with a byte
+  order mark, and drop a UTF-8 byte order mark; input that does not decode is a one-line error
+  naming the encoding, with exit status 2, instead of a traceback (Python) or silently stopping
+  at the bad line (Rust). The Rust command line's `--wordlist` and `--match-terms` files are
+  read the same way.
+- **`python -m uccharan.packs`** printed a `RuntimeWarning` about `uccharan.packs` being in
+  `sys.modules` before it ran. `uccharan.packs` is now a package with a `__main__` module; its
+  API is unchanged.
+
+### Changed
+
+- The Python README says how to set up Windows PowerShell 5.1 for UTF-8 in pipes (cmd and
+  PowerShell 7 need nothing).
+
 ## [0.6.4] - 2026-11-16
 
 Bug fixes to the existing languages (no new languages): clock times, currency words that agree

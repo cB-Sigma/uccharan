@@ -51,7 +51,7 @@ import tempfile
 import urllib.request
 from pathlib import Path
 
-from . import _native
+from .. import _native
 
 URL = "https://github.com/cB-Sigma/uccharan/releases/download/v{version}/{name}.ucd"
 
@@ -216,6 +216,3 @@ def ensure(lang: str, profile: str = "espeak-ipa") -> None:
     for name in _native.missing_packs(lang, profile):
         _native.load_pack(fetch(name))
 
-
-if __name__ == "__main__":
-    raise SystemExit(main())

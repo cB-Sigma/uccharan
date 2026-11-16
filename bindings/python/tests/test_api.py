@@ -1,3 +1,4 @@
+import io
 import json
 import subprocess
 import sys
@@ -164,3 +165,58 @@ def test_packs_command_copies_packs_for_offline_use(tmp_path, capsys):
     listing = capsys.readouterr().out
     assert "de " in listing and "xlit-hi" in listing and "CC BY-SA 4.0" in listing
     assert packs.installed("de") and not packs.installed("no-such")
+
+
+def _cli_stdin(data: bytes, *args: str) -> subprocess.CompletedProcess:
+    return subprocess.run([sys.executable, "-m", "uccharan", *args], input=data, capture_output=True)
+
+
+def test_cli_stdin_byte_order_marks():
+    # Windows tools (Notepad, PowerShell's Out-File) write UTF-16 with a byte order mark.
+    text = "नमस्ते\r\nदुनिया\r\n"
+    plain = _cli_stdin(text.encode("utf-8"), "-l", "hi")
+    assert plain.returncode == 0, plain.stderr
+    assert len(plain.stdout.decode("utf-8").splitlines()) == 2
+    for data in (
+        b"\xef\xbb\xbf" + text.encode("utf-8"),
+        text.encode("utf-16"),  # with the platform's byte order mark
+        b"\xff\xfe" + text.encode("utf-16-le"),
+        b"\xfe\xff" + text.encode("utf-16-be"),
+        b"\xff\xfe\x00\x00" + text.encode("utf-32-le"),
+        b"\x00\x00\xfe\xff" + text.encode("utf-32-be"),
+    ):
+        out = _cli_stdin(data, "-l", "hi")
+        assert out.returncode == 0, out.stderr
+        assert out.stdout == plain.stdout, data[:4]
+
+
+def test_cli_stdin_bad_encoding():
+    out = _cli_stdin(b"Hello\nwor\xffld\n")
+    assert out.returncode == 2
+    err = out.stderr.decode("utf-8")
+    assert "Traceback" not in err and len(err.splitlines()) == 1, err
+    assert "standard input is not valid UTF-8 (byte 0xff, line 2)" in err
+    assert len(out.stdout.splitlines()) == 1
+    out = _cli_stdin(b"\xff\xfeH\x00i")  # UTF-16 cut in the middle of a character
+    assert out.returncode == 2
+    assert out.stderr.decode("utf-8").startswith("uccharan: standard input is not valid UTF-16-LE")
+
+
+def test_cli_stdin_read_lines():
+    from uccharan.cli import read_lines
+
+    assert list(read_lines(io.BytesIO(b"\xef\xbb\xbfa\r\nb\n\nc"))) == ["a", "b", "", "c"]
+    assert list(read_lines(io.BytesIO(b""))) == []
+    assert list(read_lines(io.BytesIO("é\n".encode("utf-16")))) == ["é"]
+
+
+def test_packs_module_runs_without_warnings():
+    # `python -m uccharan.packs` must not import the module it runs twice (RuntimeWarning).
+    out = subprocess.run([sys.executable, "-W", "error", "-m", "uccharan.packs", "--help"], capture_output=True, text=True)
+    assert out.returncode == 0, out.stderr
+    assert "python -m uccharan.packs" in out.stdout
+    assert out.stderr == ""
+    import uccharan.packs
+
+    assert uccharan.packs.PackError is uccharan.PackError
+    assert callable(uccharan.packs.main) and "en-gb" in uccharan.packs.PACKS

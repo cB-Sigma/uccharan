@@ -2,7 +2,7 @@
 """Write the SHA-256 sums and sizes of the language packs
 (crates/uccharan/data/*.ucd, crates/uccharan-data/data/*.ucd and the optional data/packs/*.ucd)
 into the places that check them: crates/uccharan/src/packs_list.rs,
-bindings/python/python/uccharan/packs.py and bindings/wasm/packs.js.
+bindings/python/python/uccharan/packs/__init__.py and bindings/wasm/packs.js.
 
     python tools/packs.py          # update
     python tools/packs.py --check  # exit 1 when they are out of date (CI)
@@ -19,7 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "crates/uccharan/data"
-PY = ROOT / "bindings/python/python/uccharan/packs.py"
+PY = ROOT / "bindings/python/python/uccharan/packs/__init__.py"
 JS = ROOT / "bindings/wasm/packs.js"
 RS = ROOT / "crates/uccharan/src/packs_list.rs"
 

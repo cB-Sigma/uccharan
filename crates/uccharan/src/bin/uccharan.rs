@@ -30,8 +30,11 @@
 //! `--download NAME...` fetches packs into the cache (cargo feature
 //! `download`).
 //! Without TEXT arguments, lines are read from standard input.
+//! Standard input and the files named by `--wordlist` and `--match-terms` are
+//! UTF-8, or UTF-16 / UTF-32 with a byte order mark (as Windows tools write
+//! them); a UTF-8 byte order mark is dropped.
 
-use std::io::{BufRead, Write};
+use std::io::{BufRead, Read, Write};
 use uccharan::{profile, Lang, Mode, Normalize, Options, Phonemizer};
 
 fn main() {
@@ -105,7 +108,7 @@ fn main() {
             "--translit-options" => translit_options = args.next().unwrap_or_default(),
             "--wordlist" => {
                 let f = args.next().unwrap_or_default();
-                let t = std::fs::read_to_string(&f).unwrap_or_else(|e| die(&format!("{f}: {e}")));
+                let t = read_text(&f);
                 let wl = uccharan::wordlist::WordList::parse_any(&t)
                     .unwrap_or_else(|e| die(&format!("{f}: {e}")));
                 wordlists.push(std::sync::Arc::new(wl));
@@ -130,17 +133,15 @@ fn main() {
     if let Some(f) = &match_terms {
         let p = Phonemizer::new();
         p.ensure(lang).unwrap_or_else(|e| die(&e.to_string()));
-        let vocabulary = std::fs::read_to_string(f).unwrap_or_else(|e| die(&format!("{f}: {e}")));
+        let vocabulary = read_text(f);
         let t0 = std::time::Instant::now();
         let index = uccharan::soundalike::SoundIndex::from_text(&p, &vocabulary, &index_options)
             .unwrap_or_else(|e| die(&format!("{f}: {e}")));
         let built = t0.elapsed();
         let lines: Vec<String> = if texts.is_empty() {
-            std::io::stdin()
-                .lock()
-                .lines()
-                .map_while(Result::ok)
-                .collect()
+            stdin_lines()
+                .collect::<Result<_, _>>()
+                .unwrap_or_else(|e| die(&e))
         } else {
             texts.clone()
         };
@@ -189,12 +190,23 @@ fn main() {
             };
             let _ = writeln!(out, "{s}");
         };
+        let mut failed = None;
         if texts.is_empty() {
-            for line in std::io::stdin().lock().lines().map_while(Result::ok) {
-                write(&line);
+            for line in stdin_lines() {
+                match line {
+                    Ok(line) => write(&line),
+                    Err(e) => {
+                        failed = Some(e);
+                        break;
+                    }
+                }
             }
         } else {
             texts.iter().for_each(|t| write(t));
+        }
+        if let Some(e) = failed {
+            let _ = out.flush();
+            die(&e);
         }
         return;
     }
@@ -208,11 +220,9 @@ fn main() {
         }
         o.wordlists.extend(wordlists.iter().cloned());
         let lines: Vec<String> = if texts.is_empty() {
-            std::io::stdin()
-                .lock()
-                .lines()
-                .map_while(Result::ok)
-                .collect()
+            stdin_lines()
+                .collect::<Result<_, _>>()
+                .unwrap_or_else(|e| die(&e))
         } else {
             texts.clone()
         };
@@ -312,11 +322,9 @@ fn main() {
         }
     };
     if let (Some(n), true, false) = (threads, texts.is_empty(), ids) {
-        let lines: Vec<String> = std::io::stdin()
-            .lock()
-            .lines()
-            .map_while(Result::ok)
-            .collect();
+        let lines: Vec<String> = stdin_lines()
+            .collect::<Result<_, _>>()
+            .unwrap_or_else(|e| die(&e));
         let refs: Vec<&str> = lines.iter().map(String::as_str).collect();
         for s in p.render_batch(&refs, &opt, kind, punctuation, n) {
             let _ = writeln!(out, "{s}");
@@ -327,15 +335,164 @@ fn main() {
         let s = render(line);
         let _ = writeln!(out, "{s}");
     };
+    let mut failed = None;
     if texts.is_empty() {
-        for line in std::io::stdin().lock().lines().map_while(Result::ok) {
-            emit(&line);
+        for line in stdin_lines() {
+            match line {
+                Ok(line) => emit(&line),
+                Err(e) => {
+                    failed = Some(e);
+                    break;
+                }
+            }
         }
     } else {
         for t in &texts {
             emit(t);
         }
     }
+    if let Some(e) = failed {
+        let _ = out.flush();
+        die(&e);
+    }
+}
+
+const ENCODING_HINT: &str = "save it as UTF-8, or as UTF-16 with a byte order mark";
+
+/// The encoding named by a byte order mark at the start of `head`, and the mark's length.
+fn bom(head: &[u8]) -> (&'static str, usize) {
+    // Longest first: the UTF-32 LE mark starts with the UTF-16 LE one.
+    match head {
+        [0xFF, 0xFE, 0, 0, ..] => ("UTF-32LE", 4),
+        [0, 0, 0xFE, 0xFF, ..] => ("UTF-32BE", 4),
+        [0xEF, 0xBB, 0xBF, ..] => ("UTF-8", 3),
+        [0xFF, 0xFE, ..] => ("UTF-16LE", 2),
+        [0xFE, 0xFF, ..] => ("UTF-16BE", 2),
+        _ => ("UTF-8", 0),
+    }
+}
+
+/// Text from bytes: UTF-8, or UTF-16 / UTF-32 after a byte order mark; the mark is dropped.
+fn decode(bytes: &[u8], what: &str) -> Result<String, String> {
+    let (encoding, n) = bom(bytes);
+    let body = &bytes[n..];
+    let bad = || format!("{what} is not valid {encoding}; {ENCODING_HINT}");
+    let units = |size: usize| {
+        if body.len() % size == 0 {
+            Ok(body.chunks_exact(size))
+        } else {
+            Err(bad())
+        }
+    };
+    match encoding {
+        "UTF-16LE" | "UTF-16BE" => {
+            let le = encoding == "UTF-16LE";
+            let words = units(2)?.map(|c| {
+                if le {
+                    u16::from_le_bytes([c[0], c[1]])
+                } else {
+                    u16::from_be_bytes([c[0], c[1]])
+                }
+            });
+            char::decode_utf16(words)
+                .collect::<Result<String, _>>()
+                .map_err(|_| bad())
+        }
+        "UTF-32LE" | "UTF-32BE" => {
+            let le = encoding == "UTF-32LE";
+            units(4)?
+                .map(|c| {
+                    let c = [c[0], c[1], c[2], c[3]];
+                    char::from_u32(if le {
+                        u32::from_le_bytes(c)
+                    } else {
+                        u32::from_be_bytes(c)
+                    })
+                })
+                .collect::<Option<String>>()
+                .ok_or_else(bad)
+        }
+        _ => match std::str::from_utf8(body) {
+            Ok(s) => Ok(s.to_string()),
+            Err(e) => {
+                let line = 1 + body[..e.valid_up_to()]
+                    .iter()
+                    .filter(|&&b| b == b'\n')
+                    .count();
+                Err(format!(
+                    "{what} is not valid UTF-8 (line {line}); {ENCODING_HINT}"
+                ))
+            }
+        },
+    }
+}
+
+/// The text of a file named on the command line (see [`decode`]).
+fn read_text(path: &str) -> String {
+    let bytes = std::fs::read(path).unwrap_or_else(|e| die(&format!("{path}: {e}")));
+    decode(&bytes, path).unwrap_or_else(|e| die(&e))
+}
+
+/// The lines of standard input without their line endings (see [`decode`]). UTF-8 is read
+/// line by line, so a pipe is answered as it is written; UTF-16 and UTF-32 are read whole.
+fn stdin_lines() -> Box<dyn Iterator<Item = Result<String, String>>> {
+    const WHAT: &str = "standard input";
+    let mut stdin = std::io::stdin().lock();
+    let mut head = Vec::with_capacity(4);
+    while head.len() < 4 {
+        let mut b = [0u8; 4];
+        match stdin.read(&mut b[..4 - head.len()]) {
+            Ok(0) => break,
+            Ok(n) => head.extend_from_slice(&b[..n]),
+            Err(e) if e.kind() == std::io::ErrorKind::Interrupted => {}
+            Err(e) => return Box::new(std::iter::once(Err(format!("{WHAT}: {e}")))),
+        }
+    }
+    let (encoding, n) = bom(&head);
+    if encoding != "UTF-8" {
+        let mut all = head;
+        if let Err(e) = stdin.read_to_end(&mut all) {
+            return Box::new(std::iter::once(Err(format!("{WHAT}: {e}"))));
+        }
+        return match decode(&all, WHAT) {
+            Ok(text) => Box::new(
+                text.lines()
+                    .map(|l| Ok(l.to_string()))
+                    .collect::<Vec<_>>()
+                    .into_iter(),
+            ),
+            Err(e) => Box::new(std::iter::once(Err(e))),
+        };
+    }
+    let mut reader = std::io::BufReader::new(std::io::Cursor::new(head[n..].to_vec()).chain(stdin));
+    let mut number = 0;
+    let mut done = false;
+    Box::new(std::iter::from_fn(move || {
+        if done {
+            return None;
+        }
+        let mut buf = Vec::new();
+        match reader.read_until(b'\n', &mut buf) {
+            Ok(0) => None,
+            Ok(_) => {
+                number += 1;
+                if buf.last() == Some(&b'\n') {
+                    buf.pop();
+                    if buf.last() == Some(&b'\r') {
+                        buf.pop();
+                    }
+                }
+                Some(String::from_utf8(buf).map_err(|_| {
+                    done = true;
+                    format!("{WHAT} is not valid UTF-8 (line {number}); {ENCODING_HINT}")
+                }))
+            }
+            Err(e) => {
+                done = true;
+                Some(Err(format!("{WHAT}: {e}")))
+            }
+        }
+    }))
 }
 
 /// True when a verified copy of the pack is in the data directory or the cache.

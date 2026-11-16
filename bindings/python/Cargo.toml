@@ -16,7 +16,7 @@ doc = false
 
 [dependencies]
 # The wheel carries en-us and Hindi; en-gb and the Kokoro English data are
-# packs, fetched on first use (see python/uccharan/packs.py).
+# packs, fetched on first use (see python/uccharan/packs/__init__.py).
 uccharan = { path = "../../crates/uccharan", default-features = false, features = ["embed-en-us", "embed-hi"] }
 pyo3 = { version = "0.30", features = ["extension-module", "abi3-py39"] }
 

@@ -51,6 +51,17 @@ backend.phonemize(["Hello, world."], strip=True)             # ['həlˈoʊ, wˈ�
 ```
 
 A command-line program is installed as `uccharan` (`uccharan -l hi -p piper "नमस्ते"`).
+It reads standard input as UTF-8, or as UTF-16 or UTF-32 with a byte order mark (as Notepad and
+PowerShell write files), and always writes UTF-8.
+
+On Windows, cmd and PowerShell 7 work as they are. Windows PowerShell 5.1 needs UTF-8 set for
+the pipe in both directions:
+
+```powershell
+[Console]::OutputEncoding = [Text.Encoding]::UTF8   # to read uccharan's output in a pipe
+$OutputEncoding = [Text.Encoding]::UTF8             # to pipe text into uccharan
+"नमस्ते" | uccharan -l hi
+```
 
 Guides: [normalise-only mode](https://github.com/cB-Sigma/uccharan/blob/main/docs/normalize.md), [word lists](https://github.com/cB-Sigma/uccharan/blob/main/docs/wordlists.md),
 [sound-alike matching](https://github.com/cB-Sigma/uccharan/blob/main/docs/soundalike.md), [transliteration](https://github.com/cB-Sigma/uccharan/blob/main/docs/transliteration.md),
