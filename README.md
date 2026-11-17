@@ -97,7 +97,9 @@ source
 brew install cb-sigma/tap/uccharan
 ```
 
-**Language packs**: English and Hindi are built in. The word tables of German, Dutch, French,
+**Language packs**: English and Hindi are built in, and so is every language that needs no word
+table, among them the other Indian languages and Bhojpuri, Maithili and Magahi (read with Hindi's
+built-in data). Only the word tables of German, Dutch, French,
 Italian, Portuguese, Polish, Turkish, Czech, Swedish, Catalan, Romanian, Hungarian, Finnish,
 Norwegian, Danish, Urdu and Sindhi are small packs attached to each GitHub release. The wheel and
 the npm package download a language's pack the first time it is used, check its SHA-256 sum and
