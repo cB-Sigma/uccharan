@@ -559,8 +559,11 @@ in [DATA_LICENSES.md](DATA_LICENSES.md).
 - Multi-core scaling beyond about two cores, and speed on any machine but the shared one the
   figures come from.
 - Side-by-side speed against espeak-ng's WebAssembly build.
-- macOS and Windows beyond the test suite, which runs there on every change; speed and
-  agreement were measured on Linux only.
+- macOS beyond the test suite, which runs there on every change. Windows was also run on one Windows 11
+  laptop (Ryzen 7 5800H): the Python and Rust tests passed, the command line read UTF-16 input from
+  Notepad and PowerShell, and the C library linked with MSVC; Hindi took 8.7 µs p50 per sentence there
+  against 5.5 µs on the Linux machine ([evaluation](docs/evaluation.md)). Agreement figures come from
+  Linux only.
 
 ## Licence
 

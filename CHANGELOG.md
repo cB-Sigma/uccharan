@@ -5,6 +5,14 @@ All notable changes are listed here. The format follows
 
 ## [Unreleased]
 
+## [0.6.6] - 2026-11-17
+
+### Changed
+
+- README: Bhojpuri, Maithili, Magahi and the other languages without a word table need no pack (they looked
+  missing from the list of packs); what was run on a Windows 11 laptop (the tests, UTF-16 input, the C library
+  with MSVC, Hindi at 8.7 µs p50 per sentence).
+
 ## [0.6.5] - 2026-11-16
 
 ### Fixed

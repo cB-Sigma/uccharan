@@ -5,7 +5,7 @@ default-members = ["crates/uccharan", "crates/uccharan-data", "crates/uccharan-c
 
 
 [workspace.package]
-version = "0.6.5"
+version = "0.6.6"
 edition = "2021"
 rust-version = "1.82"
 license = "Apache-2.0"
