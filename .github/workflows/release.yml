@@ -81,8 +81,6 @@ jobs:
         include:
           - { name: linux-x86_64,  os: ubuntu-latest,  target: x86_64-unknown-linux-gnu,  manylinux: "2014" }
           - { name: linux-aarch64, os: ubuntu-latest,  target: aarch64-unknown-linux-gnu, manylinux: "2014" }
-          - { name: macos-arm64,   os: macos-latest,   target: aarch64-apple-darwin,      manylinux: "off" }
-          - { name: macos-x86_64,  os: macos-latest,   target: x86_64-apple-darwin,       manylinux: "off" }
           - { name: windows-x64,   os: windows-latest, target: x86_64-pc-windows-msvc,    manylinux: "off" }
     steps:
       - uses: actions/checkout@v7
@@ -97,7 +95,7 @@ jobs:
           manylinux: ${{ matrix.manylinux }}
           args: --release --out dist --manifest-path bindings/python/Cargo.toml
       - name: Smoke-test the wheel
-        if: matrix.name == 'linux-x86_64' || matrix.name == 'macos-arm64' || matrix.name == 'windows-x64'
+        if: matrix.name == 'linux-x86_64' || matrix.name == 'windows-x64'
         shell: bash
         run: |
           python -m pip install --no-index --find-links dist uccharan
@@ -136,8 +134,6 @@ jobs:
         include:
           - { name: linux-x86_64,  os: ubuntu-latest,    target: x86_64-unknown-linux-gnu,  lib: libuccharan.so,    static: libuccharan.a }
           - { name: linux-aarch64, os: ubuntu-24.04-arm, target: aarch64-unknown-linux-gnu, lib: libuccharan.so,    static: libuccharan.a }
-          - { name: macos-arm64,   os: macos-latest,     target: aarch64-apple-darwin,      lib: libuccharan.dylib, static: libuccharan.a }
-          - { name: macos-x86_64,  os: macos-latest,     target: x86_64-apple-darwin,       lib: libuccharan.dylib, static: libuccharan.a }
           - { name: windows-x64,   os: windows-latest,   target: x86_64-pc-windows-msvc,    lib: uccharan.dll,      static: uccharan.lib }
     steps:
       - uses: actions/checkout@v7
@@ -165,6 +161,72 @@ jobs:
         with:
           name: clib-${{ matrix.name }}
           path: out/*
+
+  macos:
+    # one macOS machine builds both Mac wheels and both C libraries (Intel ones cross-compiled): macOS runners are
+    # the scarcest, and four jobs each waiting for one could time out and hold the PyPI upload back
+    name: macOS wheels and C libraries
+    needs: meta
+    if: github.event_name == 'push' || contains(inputs.targets, 'pypi')
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install the Rust toolchain
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+          rustup target add aarch64-apple-darwin x86_64-apple-darwin
+      - name: Build the abi3 wheel (arm64)
+        uses: PyO3/maturin-action@v1
+        with:
+          command: build
+          target: aarch64-apple-darwin
+          args: --release --out dist-arm64 --manifest-path bindings/python/Cargo.toml
+      - name: Build the abi3 wheel (x86_64)
+        uses: PyO3/maturin-action@v1
+        with:
+          command: build
+          target: x86_64-apple-darwin
+          args: --release --out dist-x86_64 --manifest-path bindings/python/Cargo.toml
+      - name: Smoke-test the arm64 wheel
+        run: |
+          python -m pip install --no-index --find-links dist-arm64 uccharan
+          python -m pip install "pytest>=8"
+          cd bindings/python/tests && python -m pytest -q .
+      - name: Build and package the C libraries
+        env:
+          VERSION: ${{ needs.meta.outputs.version }}
+        run: |
+          mkdir -p out-arm64 out-x86_64
+          for pair in aarch64-apple-darwin:arm64 x86_64-apple-darwin:x86_64; do
+            target="${pair%%:*}"; arch="${pair##*:}"
+            cargo build --release -p uccharan-capi --target "$target"
+            dir="uccharan-c-$VERSION-macos-$arch"
+            mkdir -p "$dir/lib" "$dir/include"
+            cp "target/$target/release/libuccharan.dylib" "target/$target/release/libuccharan.a" "$dir/lib/"
+            cp crates/uccharan-capi/include/uccharan.h "$dir/include/"
+            cp crates/uccharan-capi/examples/hello.c LICENSE NOTICE DATA_LICENSES.md "$dir/"
+            tar czf "out-$arch/$dir.tar.gz" "$dir"
+          done
+      - uses: actions/upload-artifact@v7
+        with:
+          name: wheel-macos-arm64
+          path: dist-arm64/*.whl
+      - uses: actions/upload-artifact@v7
+        with:
+          name: wheel-macos-x86_64
+          path: dist-x86_64/*.whl
+      - uses: actions/upload-artifact@v7
+        with:
+          name: clib-macos-arm64
+          path: out-arm64/*
+      - uses: actions/upload-artifact@v7
+        with:
+          name: clib-macos-x86_64
+          path: out-x86_64/*
 
   npm-pack:
     name: WebAssembly package
@@ -194,7 +256,7 @@ jobs:
 
   pypi:
     name: publish to PyPI
-    needs: [wheels, sdist]
+    needs: [wheels, sdist, macos]
     if: github.event_name == 'push' || contains(inputs.targets, 'pypi')
     runs-on: ubuntu-latest
     steps:
@@ -213,7 +275,7 @@ jobs:
 
   release:
     name: GitHub release and tag
-    needs: [meta, pypi, clib, npm-pack]
+    needs: [meta, pypi, clib, macos, npm-pack]
     runs-on: ubuntu-latest
     permissions:
       contents: write   # creates the tag and the release
