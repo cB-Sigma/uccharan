@@ -9,3 +9,13 @@ def test_indic_languages():
     assert "bn" in uccharan.LANGUAGES and "te" in uccharan.LANGUAGES
     ids = uccharan.phonemize("తెలుగు", lang="te", profile="sherpa-onnx")
     assert ids and ids[0]
+
+
+def test_dogri():
+    # Compatible mode is the Hindi reading; improved mode reads Dogri tone.
+    assert "doi" in uccharan.LANGUAGES
+    assert uccharan.phonemize("घर", lang="doi") == uccharan.phonemize("घर", lang="hi")
+    assert uccharan.phonemize("घर", lang="dogri", improved=True) == "kˈʌ̀ɾ"
+    assert uccharan.phonemize("ज्हार", lang="doi", improved=True) == "ɟˈàːɾ"
+    assert uccharan.normalize("25", "doi", improved=True).text == "पंजी"
+    assert uccharan.transliterate("tusen kiyan ho", "doi").text == "तुसें कि’यां हो"

@@ -1,0 +1,169 @@
+# Dogri word gold set, written 2026-11-18 from the descriptions before the Dogri rules were run on these
+# items. Format: word, broad pronunciation(s) separated by |, category, source. R = example word of the
+# Dogri phonology descriptions (Bahri 2001, Dogri: Phonology and Grammatical Sketch; Ghai 1991, Studies in
+# Phonetics and Phonology, with special reference to Dogri; as cited in the Wikipedia and Wiktionary
+# articles on Dogri); N = Dogri numeral as given by U. S. Bahri (2002) in E. Chan's Numeral Systems of the
+# World's Languages; C = word of the Dogri locale of Unicode CLDR (common/main/doi.xml, Unicode License v3);
+# I = word attested in Dogri text of AI4Bharat IndicCorp v2 (CC0). Pronunciations hand-written from these
+# descriptions: a word-initial voiced aspirate is voiceless unaspirated with low tone (grave) on the next
+# vowel; an h before a vowel (initial ह, ह after a consonant) is lost with low tone on that vowel; a voiced
+# aspirate inside the word is voiced unaspirated, and it or a lost h after a vowel (ह्, the apostrophe, the
+# avagraha, final ह) gives high tone (acute) to a stressed vowel before it, else low tone to the vowel after
+# it (Ghai); Hindi-type deletion of the inherent vowel; anusvara after a written vowel = nasal vowel, after
+# the inherent vowel = homorganic nasal; ऐ औ = ɛː ɔː; ष = ʃ; व = ʋ; a doubled consonant is written double.
+# Citation forms with a final ə after a doubled consonant (Bahri: ɪkkə, səttə) are accepted as alternatives.
+# Dogri sentence gold set, written 2026-11-18 before the Dogri rules were run on these items. Sentences:
+# AI4Bharat IndicCorp v2 Dogri text (CC0), lines that are in neither tools/eval/data/doi_dev.tsv nor
+# doi_heldout.tsv. Pronunciation hand-written with the conventions of words.src. Format: sentence <TAB>
+# pronunciation.
+# Columns: id, kind, text, expected, category, source (with licence), split, date written.
+w-घड़ी	word	घड़ी	kə̀ɽiː	tone	example word of the Dogri phonology descriptions (Bahri 2001; Ghai 1991); pronunciation hand-written	heldout	2026-11-18
+w-घर	word	घर	kə̀ɾ	tone	example word of the Dogri phonology descriptions (Bahri 2001; Ghai 1991); pronunciation hand-written	dev	2026-11-18
+w-गल्ल	word	गल्ल	ɡəll|ɡəllə	gem	example word of the Dogri phonology descriptions (Bahri 2001; Ghai 1991); pronunciation hand-written	dev	2026-11-18
+w-गʼल्ल	word	गʼल्ल	ɡə́ll|ɡə́llə	tone	example word of the Dogri phonology descriptions (Bahri 2001; Ghai 1991); pronunciation hand-written	dev	2026-11-18
+w-लʼत्त	word	लʼत्त	lə́tt|lə́ttə	tone	example word of the Dogri phonology descriptions (Bahri 2001; Ghai 1991); pronunciation hand-written	heldout	2026-11-18
+w-साह्ब	word	साह्ब	sáːb	tone	example word of the Dogri phonology descriptions (Bahri 2001; Ghai 1991); pronunciation hand-written	heldout	2026-11-18
+w-हत्थ	word	हत्थ	ə̀ttʰ|ə̀ttʰə	tone	example word of the Dogri phonology descriptions (Bahri 2001; Ghai 1991); pronunciation hand-written	heldout	2026-11-18
+w-बध	word	बध	bə́d	tone	example word of the Dogri phonology descriptions (Bahri 2001; Ghai 1991); pronunciation hand-written	dev	2026-11-18
+w-इक	word	इक	ɪk|ɪkkə	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	dev	2026-11-18
+w-त्रै	word	त्रै	tɾɛː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	dev	2026-11-18
+w-चार	word	चार	caːɾ	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	dev	2026-11-18
+w-पंज	word	पंज	pəɲɟ	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	dev	2026-11-18
+w-छे	word	छे	cʰeː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-सत्त	word	सत्त	sətt|səttə	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-अट्ठ	word	अट्ठ	əʈʈʰ|əʈʈʰə	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-नौ	word	नौ	nɔː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-दस	word	दस	dəs|dəssə	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-बारां	word	बारां	baːɾãː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	dev	2026-11-18
+w-तेरां	word	तेरां	téːɾãː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	dev	2026-11-18
+w-चौदां	word	चौदां	cɔːdãː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-पंदरां	word	पंदरां	pəndɾãː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-सोलां	word	सोलां	sóːlãː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-उन्नी	word	उन्नी	ʊnniː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	dev	2026-11-18
+w-बीह्	word	बीह्	bíː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-इक्की	word	इक्की	ɪkkiː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-बाई	word	बाई	baːiː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	dev	2026-11-18
+w-त्रेई	word	त्रेई	tɾeːiː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-चौबी	word	चौबी	cɔːbiː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	dev	2026-11-18
+w-छब्बी	word	छब्बी	cʰəbbiː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	dev	2026-11-18
+w-त्रीह्	word	त्रीह्	tɾíː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-चाली	word	चाली	caːliː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	dev	2026-11-18
+w-पंजाह्	word	पंजाह्	pəɲɟáː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-अस्सी	word	अस्सी	əssiː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-नब्बै	word	नब्बै	nəbbɛː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	dev	2026-11-18
+w-सौ	word	सौ	sɔː	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-ज्हार	word	ज्हार	ɟàːɾ	num	Dogri numeral, Bahri (2002) in E. Chan's numeral tables; pronunciation hand-written	heldout	2026-11-18
+w-लक्ख	word	लक्ख	ləkkʰ|ləkkʰə	num	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-घैंटा	word	घैंटा	kɛ̀̃ːʈaː	tone	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	dev	2026-11-18
+w-घैंटे	word	घैंटे	kɛ̀̃ːʈeː	tone	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	dev	2026-11-18
+w-म्हीना	word	म्हीना	mìːnaː	tone	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-ब’रा	word	ब’रा	bə́ɾaː	tone	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-अज्ज	word	अज्ज	əɟɟ|əɟɟə	gem	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	dev	2026-11-18
+w-ऐतबार	word	ऐतबार	ɛːtbaːɾ	noun	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	dev	2026-11-18
+w-सोमबार	word	सोमबार	soːmbaːɾ	noun	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-मंगलबार	word	मंगलबार	məŋɡəlbaːɾ	noun	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	dev	2026-11-18
+w-बुधबार	word	बुधबार	bʊ́dbaːɾ	tone	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-बीरबार	word	बीरबार	biːɾbaːɾ	noun	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-शुक्रबार	word	शुक्रबार	ʃʊkɾəbaːɾ	noun	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-शनिबार	word	शनिबार	ʃənɪbaːɾ	noun	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-रपेऽ	word	रपेऽ	ɾəpéː	tone	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-मिंट	word	मिंट	mɪ̃ʈ	noun	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-हून	word	हून	ùːn	tone	Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-ध्याड़ा	word	ध्याड़ा	tjàːɽaː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-ध्याड़ी	word	ध्याड़ी	tjàːɽiː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-भाशा	word	भाशा	pàːʃaː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-भारत	word	भारत	pàːɾət	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-धरती	word	धरती	tə̀ɾtiː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-भाई	word	भाई	pàːiː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-झंडा	word	झंडा	cə̀ɳɖaː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-ढोल	word	ढोल	ʈòːl	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-ऐ	word	ऐ	ɛː	cop	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-न	word	न	nə|n	cop	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-च	word	च	cə|c	post	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-दा	word	दा	daː	post	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-दी	word	दी	diː	post	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-दे	word	दे	deː	post	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-गी	word	गी	ɡiː	post	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-ते	word	ते	teː	conj	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-बी	word	बी	biː	part	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-नेईं	word	नेईं	neːĩː	neg	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-एह्	word	एह्	éː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-ओह्	word	ओह्	óː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-ओह्दे	word	ओह्दे	óːdeː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-जित्थै	word	जित्थै	ɟɪttʰɛː	adv	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-कुत्थै	word	कुत्थै	kʊttʰɛː	adv	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-इत्थै	word	इत्थै	ɪttʰɛː	adv	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-उत्थै	word	उत्थै	ʊttʰɛː	adv	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-सब्भै	word	सब्भै	sə́bbɛː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-कन्नै	word	कन्नै	kənnɛː	post	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-थमां	word	थमां	tʰəmãː	post	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-लेई	word	लेई	leːiː	post	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-आस्तै	word	आस्तै	aːstɛː	post	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-बड़ा	word	बड़ा	bəɽaː	adj	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-शैल	word	शैल	ʃɛːl	adj	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-लोक	word	लोक	loːk	noun	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-गल्लां	word	गल्लां	ɡəllãː	noun	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-माह्नू	word	माह्नू	máːnuː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-म्हौल	word	म्हौल	mɔ̀ːl	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-रौह्ना	word	रौह्ना	ɾɔ́ːnaː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-प्हाड़	word	प्हाड़	pàːɽ	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-ब्हाने	word	ब्हाने	bàːneː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-सिद्धा	word	सिद्धा	sɪ́ddaː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-बद्ध	word	बद्ध	bə́dd|bə́ddə	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-कड्ढना	word	कड्ढना	kə́ɖɖnaː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-दित्ता	word	दित्ता	dɪttaː	verb	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-कीता	word	कीता	kiːtaː	verb	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-गेआ	word	गेआ	ɡeːaː	verb	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-आखेआ	word	आखेआ	aːkʰeːaː	verb	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-होई	word	होई	òːiː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-होर	word	होर	òːɾ	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-हर	word	हर	ə̀ɾ	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-अक्खियां	word	अक्खियां	əkkʰɪjãː	noun	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-चाह्	word	चाह्	cáː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-सलाह्	word	सलाह्	səláː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-बधाई	word	बधाई	bədàːiː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-पढ़ना	word	पढ़ना	pə́ɽnaː	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-कुड़ी	word	कुड़ी	kʊɽiː	noun	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-जागत	word	जागत	ɟaːɡət	noun	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-पानी	word	पानी	paːniː	noun	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-दुद्ध	word	दुद्ध	dʊ́dd|dʊ́ddə	tone	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-सज्जन	word	सज्जन	səɟɟən	noun	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	dev	2026-11-18
+w-कम्म	word	कम्म	kəmm|kəmmə	gem	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-रातीं	word	रातीं	ɾaːtĩː	noun	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-मुंडी	word	मुंडी	mʊ̃ɖiː	noun	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-चंगा	word	चंगा	cəŋɡaː	adj	word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written	heldout	2026-11-18
+s-004	sentence	पैसे होन ते पीनी भाई	pɛːseː òːn teː piːniː pàːiː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-005	sentence	चुक्की मुंडी बड़ी मजाजै नै	cʊkkiː mʊ̃ɖiː bəɽiː məɟaːɟɛː nɛː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-006	sentence	उ’आं गै रखदियां चिड़ुएं दा ख्याल	ʊ́ãː ɡɛː ɾəkʰdɪjãː cɪɽʊẽː daː kʰjaːl	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-007	sentence	पुलस बी सुद्धी दौड़ा करदी	pʊləs biː sʊ́ddiː dɔːɽaː kəɾdiː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-008	sentence	की अस धर्म ते जात दे कैद्दी	kiː əs tə̀ɾm teː ɟaːt deː kɛːddiː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-009	sentence	कु’न कुसगी भरमाने खातर घड़दा र’वै दलीलां	kʊ́n kʊsɡiː pə̀ɾmaːneː kʰaːtəɾ kə̀ɽdaː ɾə́ʋɛː dəliːlãː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-010	sentence	फूढ़ी दी बी लोड़ निं भाई	pʰúːɽiː diː biː loːɽ nɪ̃ pàːiː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-011	sentence	बेशक सौ तुसें हीले कीते	beːʃək sɔː tʊsẽː ìːleː kiːteː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-012	sentence	मते दिनें दे मगरा इ’यां समर्पण आया	məteː dɪnẽː deː məɡɾaː ɪ́jãː səməɾpəɳ aːjaː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-013	sentence	कि’यां ओह्‌दा त्राह् निकलदा ऐ	kɪ́jãː óːdaː tɾáː nɪkəldaː ɛː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-014	sentence	जींदे मौका शायद फ्ही औना	ɟĩːdeː mɔːkaː ʃaːjəd pʰìː ɔːnaː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-015	sentence	मनै दे बुआल जेह्‌ड़े	mənɛː deː bʊaːl ɟéːɽeː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-016	sentence	जिसलै गुबार ठंडा पवै	ɟɪslɛː ɡʊbaːɾ ʈʰəɳɖaː pəʋɛː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-017	sentence	कोई बड़ा कुशल इक धुब्बा ऐ	koːiː bəɽaː kʊʃəl ɪk tʊ̀bbaː ɛː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-018	sentence	समाज तुसें हा बनाया	səmaːɟ tʊsẽː àː bənaːjaː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-019	sentence	जेह्‌ड़ी बैठी दी ऐ	ɟéːɽiː bɛːʈʰiː diː ɛː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-020	sentence	किरणीली लैह्‌रें दी झलमल	kɪɾɳiːliː lɛ́ːɾẽː diː cə̀lməl	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-021	sentence	बनियै ओह् कविता च खड़ोंदा हथ्यार ऐ	bənɪjɛː óː kəʋɪtaː cə kʰəɽõːdaː ə̀tʰjaːɾ ɛː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-022	sentence	कुसै बी रूपै च होन	kʊsɛː biː ɾuːpɛː cə òːn	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-023	sentence	दकानें दे नांएं कन्नै	dəkaːnẽː deː nãːẽː kənnɛː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-024	sentence	मेरी डोगरी, मेरी डोगरी	meːɾiː ɖoːɡɾiː meːɾiː ɖoːɡɾiː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-025	sentence	भारत दे खेतीबाड़ी खेत्तरें दी जोजना	pàːɾət deː kʰeːtiːbaːɽiː kʰeːttəɾẽː diː ɟoːɟnaː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-026	sentence	उस्सै जाड़ै इच्चा लंघदे होई	ʊssɛː ɟaːɽɛː ɪccaː lə́ŋɡdeː òːiː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-027	sentence	शकार बनांदे न, भोगदे न	ʃəkaːɾ bənãːdeː nə pòːɡdeː nə	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-028	sentence	कुरस्ते चा कड्ढी नमीं बत्ता पांदा	kʊɾəsteː caː kə́ɖɖiː nəmĩː bəttaː pãːdaː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-029	sentence	ई’नें गल्लें दा ध्यान रक्खो	íːnẽː ɡəllẽː daː tjàːn ɾəkkʰoː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-030	sentence	मेरी खोखली रूह किश भडकी गेई	meːɾiː kʰoːkʰliː ɾúː kɪʃ pə̀ɖkiː ɡeːiː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-031	sentence	इये गंग दी धारा ऐ	ɪjeː ɡəŋɡ diː tàːɾaː ɛː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-032	sentence	माऊ दा भरी नजरीं नै दिक्खना	maːuː daː pə̀ɾiː nəɟɾĩː nɛː dɪkkʰnaː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18
+s-033	sentence	मिगी मेरी जिंदगी दी ब्हार देई दे	mɪɡiː meːɾiː ɟɪndəɡiː diː bàːɾ deːiː deː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-034	sentence	चन्नै कन्नै चलदी ही जो	cənnɛː kənnɛː cəldiː ìː ɟoː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-035	sentence	एह् कविता लिखने आस्तै	éː kəʋɪtaː lɪkʰneː aːstɛː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-036	sentence	हून ओह् रिश्ते नेईं रेह्	ùːn óː ɾɪʃteː neːĩː ɾéː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-037	sentence	नौकरी लेई आवेदन करो	nɔːkɾiː leːiː aːʋeːdən kəɾoː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	dev	2026-11-18
+s-038	sentence	चाई दी चुस्सकियें कन्नै	caːiː diː cʊssəkɪjẽː kənnɛː	sentence	IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written	heldout	2026-11-18

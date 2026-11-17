@@ -1,0 +1,194 @@
+{
+ "machine": {
+  "cpu": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "logical_cpus": 16,
+  "python": "3.12.16",
+  "system": "Windows-11-10.0.26300-SP0"
+ },
+ "reference": "espeak-ng 1.52.0 shared library via ctypes",
+ "languages": {
+  "doi": {
+   "uccharan": {
+    "sentences": 500,
+    "words": 4987,
+    "latency_us_p50": 12.899996363557875,
+    "latency_us_p99": 41.399995097890496,
+    "latency_us_mean": 16.46240006084554,
+    "words_per_second_1_thread": 605865.4851744453,
+    "sentences_per_second_1_thread": 60744.48417630292,
+    "method": "best of N fresh processes, engines alternating; warm-up on 1 000 development sentences; each held-out sentence timed once",
+    "disk": {
+     "library_bytes": 7874560,
+     "data_bytes": 0,
+     "note": "language data for en-US, en-GB and Hindi is inside the library"
+    },
+    "words_per_second_by_workers": {
+     "1": 742444.5440742341
+    },
+    "parallel_method": "native threads sharing one handle (batch call)",
+    "cold_start_ms": 0.6319000094663352,
+    "init_plus_first_call_ms": 1.0076000035041943,
+    "rss_after_init_mb": 1.3125,
+    "rss_after_run_mb": 2.2578125,
+    "rss_method": "psutil",
+    "scaling_vs_1_worker": {
+     "1": 1.0
+    }
+   },
+   "reference": {
+    "sentences": 500,
+    "words": 4987,
+    "latency_us_p50": 24.299995857290924,
+    "latency_us_p99": 94.90000957157463,
+    "latency_us_mean": 33.383000176399946,
+    "words_per_second_1_thread": 298774.82393122657,
+    "sentences_per_second_1_thread": 29955.366345621274,
+    "method": "best of N fresh processes, engines alternating; warm-up on 1 000 development sentences; each held-out sentence timed once",
+    "disk": {
+     "library_bytes": 419328,
+     "data_bytes": 18373365,
+     "note": "all languages; the data directory is required at run time"
+    },
+    "words_per_second_by_workers": {
+     "1": 294954.3699175159
+    },
+    "parallel_method": "separate processes (library is not thread-safe)",
+    "cold_start_ms": 72.11239999742247,
+    "init_plus_first_call_ms": 68.89920000685379,
+    "rss_after_init_mb": 5.60546875,
+    "rss_after_run_mb": 6.54296875,
+    "rss_method": "psutil"
+   },
+   "speedup": {
+    "latency_p50": 1.8837211401033975,
+    "latency_p99": 2.292271034022663,
+    "throughput_1_thread": 2.0278331259728444,
+    "throughput_max_workers": 2.517150514779147,
+    "init_plus_first_call": 68.37951544982005
+   }
+  },
+  "mag": {
+   "uccharan": {
+    "sentences": 500,
+    "words": 12350,
+    "latency_us_p50": 32.29999856557697,
+    "latency_us_p99": 75.69999434053898,
+    "latency_us_mean": 34.084799874108285,
+    "words_per_second_1_thread": 724663.1956540479,
+    "sentences_per_second_1_thread": 29338.59091716793,
+    "method": "best of N fresh processes, engines alternating; warm-up on 1 000 development sentences; each held-out sentence timed once",
+    "disk": {
+     "library_bytes": 7874560,
+     "data_bytes": 0,
+     "note": "language data for en-US, en-GB and Hindi is inside the library"
+    },
+    "words_per_second_by_workers": {
+     "1": 797057.0196984715
+    },
+    "parallel_method": "native threads sharing one handle (batch call)",
+    "cold_start_ms": 0.4301000153645873,
+    "init_plus_first_call_ms": 1.017399990814738,
+    "rss_after_init_mb": 1.31640625,
+    "rss_after_run_mb": 2.6640625,
+    "rss_method": "psutil",
+    "scaling_vs_1_worker": {
+     "1": 1.0
+    }
+   },
+   "reference": {
+    "sentences": 500,
+    "words": 12350,
+    "latency_us_p50": 72.70000060088933,
+    "latency_us_p99": 180.50000653602183,
+    "latency_us_mean": 76.67000021319836,
+    "words_per_second_1_thread": 322159.90519520064,
+    "sentences_per_second_1_thread": 13042.9111415061,
+    "method": "best of N fresh processes, engines alternating; warm-up on 1 000 development sentences; each held-out sentence timed once",
+    "disk": {
+     "library_bytes": 419328,
+     "data_bytes": 18373365,
+     "note": "all languages; the data directory is required at run time"
+    },
+    "words_per_second_by_workers": {
+     "1": 317356.51018694264
+    },
+    "parallel_method": "separate processes (library is not thread-safe)",
+    "cold_start_ms": 68.0580999905942,
+    "init_plus_first_call_ms": 68.23289999738336,
+    "rss_after_init_mb": 5.53515625,
+    "rss_after_run_mb": 6.8125,
+    "rss_method": "psutil"
+   },
+   "speedup": {
+    "latency_p50": 2.250774112366921,
+    "latency_p99": 2.3844124178403034,
+    "throughput_1_thread": 2.249389771874205,
+    "throughput_max_workers": 2.511550871381071,
+    "init_plus_first_call": 67.06595303066808
+   }
+  },
+  "hi": {
+   "uccharan": {
+    "sentences": 500,
+    "words": 3745,
+    "latency_us_p50": 11.099997209385037,
+    "latency_us_p99": 28.299997211433947,
+    "latency_us_mean": 11.79960000445135,
+    "words_per_second_1_thread": 634767.2800073248,
+    "sentences_per_second_1_thread": 84748.63551499663,
+    "method": "best of N fresh processes, engines alternating; warm-up on 1 000 development sentences; each held-out sentence timed once",
+    "disk": {
+     "library_bytes": 7874560,
+     "data_bytes": 0,
+     "note": "language data for en-US, en-GB and Hindi is inside the library"
+    },
+    "words_per_second_by_workers": {
+     "1": 853755.8409445976
+    },
+    "parallel_method": "native threads sharing one handle (batch call)",
+    "cold_start_ms": 2.9818999901181087,
+    "init_plus_first_call_ms": 0.8383999957004562,
+    "rss_after_init_mb": 1.0625,
+    "rss_after_run_mb": 2.16015625,
+    "rss_method": "psutil",
+    "scaling_vs_1_worker": {
+     "1": 1.0
+    }
+   },
+   "reference": {
+    "sentences": 500,
+    "words": 3745,
+    "latency_us_p50": 19.700004486367106,
+    "latency_us_p99": 52.400006097741425,
+    "latency_us_mean": 21.135400020284578,
+    "words_per_second_1_thread": 354381.74781700445,
+    "sentences_per_second_1_thread": 47313.98502229699,
+    "method": "best of N fresh processes, engines alternating; warm-up on 1 000 development sentences; each held-out sentence timed once",
+    "disk": {
+     "library_bytes": 419328,
+     "data_bytes": 18373365,
+     "note": "all languages; the data directory is required at run time"
+    },
+    "words_per_second_by_workers": {
+     "1": 342776.85860002716
+    },
+    "parallel_method": "separate processes (library is not thread-safe)",
+    "cold_start_ms": 72.95139999769162,
+    "init_plus_first_call_ms": 67.56929999392014,
+    "rss_after_init_mb": 5.41796875,
+    "rss_after_run_mb": 6.73046875,
+    "rss_method": "psutil"
+   },
+   "speedup": {
+    "latency_p50": 1.7747756251425695,
+    "latency_p99": 1.8515905039231042,
+    "throughput_1_thread": 1.7911963127827502,
+    "throughput_max_workers": 2.490704432123908,
+    "init_plus_first_call": 80.59315403200613
+   }
+  }
+ },
+ "machine_scaling_control": {
+  "1": 1.0
+ }
+}

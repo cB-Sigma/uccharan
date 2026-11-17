@@ -247,6 +247,11 @@ pub struct Times {
     pub context: Vec<String>,
     /// `time-after Uhr`: words written after a time, said as its hour word.
     pub after: Vec<String>,
+    /// `time-hour-minutes बजियै`: the hour word said when minutes follow
+    /// (Dogri दस बजियै त्रीह् मिंट), in place of the `time-hour` word.
+    pub hour_minutes: Vec<String>,
+    /// `time-minute मिंट`: the word said after the minutes.
+    pub minute: Vec<String>,
 }
 
 impl Times {
@@ -380,6 +385,9 @@ pub struct Numbers {
     pub point: Vec<String>,
     /// Word(s) for a leading minus sign (empty: the sign is not read).
     pub minus: Vec<String>,
+    /// `apostrophe keep`: an apostrophe between two letters stays in the
+    /// word (Dogri writes a lost h with it: र’लाया); otherwise it is dropped.
+    pub keep_apostrophe: bool,
     /// Word(s) for `%` after the number.
     pub percent: Vec<String>,
     /// `percent-before w`: word(s) for `%` said before the number instead
@@ -563,6 +571,8 @@ impl Numbers {
                             t.context = words.iter().map(|w| w.to_lowercase()).collect()
                         }
                         "time-after" => t.after = words,
+                        "time-hour-minutes" => t.hour_minutes = words,
+                        "time-minute" => t.minute = words,
                         k => {
                             if let Ok(h) = k["time-hours".len().min(k.len())..].parse::<u64>() {
                                 if k.starts_with("time-hours") {
@@ -573,6 +583,7 @@ impl Numbers {
                     }
                 }
                 "minus" => n.minus = words,
+                "apostrophe" => n.keep_apostrophe = v.trim() == "keep",
                 "percent" => n.percent = words,
                 "percent-before" => n.percent_before = words,
                 "grouping" => n.indian = v.trim() == "indian",

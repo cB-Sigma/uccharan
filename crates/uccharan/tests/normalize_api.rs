@@ -868,6 +868,7 @@ fn indic_numbers_in_their_own_script() {
         (Lang::Bho, "पच्चीस"),
         (Lang::Mai, "पच्चीस"),
         (Lang::Mag, "पच्चीस"),
+        (Lang::Doi, "पच्चीस"),
     ];
     for (l, want) in twenty_five {
         assert_eq!(norm("25", *l).text, *want, "{l:?}");
@@ -921,6 +922,22 @@ fn indic_numbers_in_their_own_script() {
         normalize(p(), "25 3.5", Lang::Sa, &improved).text,
         "पञ्चविंशतिः त्रीणि दशमलव पञ्च"
     );
+    // Dogri likewise: Hindi words in compatible mode, Dogri ones in
+    // improved mode, with ordinals, clock times and the rupee.
+    for (t, want) in [
+        ("25 3.5", "पंजी त्रै दशमलव पंज"),
+        ("1,23,456", "इक लक्ख त्रेई ज्हार चार सौ छपंजा"),
+        ("₹25 ₹5.50", "पंजी रपेऽ पंज रपेऽ पंजाह्"),
+        ("12मीं 1ला 5मां", "बारांमीं पैह्ला पंजमां"),
+        ("10:30 10:00", "दस बजियै त्रीह् मिंट दस बजे"),
+        ("15/08/2024", "पंदरां अगस्त दो ज्हार चौबी"),
+        ("50%", "पंजाह् प्रतिशत"),
+        ("कि’यां", "कि’यां"),
+    ] {
+        let n = normalize(p(), t, Lang::Doi, &improved);
+        check(t, &n);
+        assert_eq!(n.text, want, "doi {t}");
+    }
     let mut nums: Vec<String> = (0..=110).map(|n| n.to_string()).collect();
     for n in [
         150, 200, 222, 345, 999, 1000, 1234, 2024, 12345, 99999, 123456,
@@ -957,6 +974,7 @@ fn indic_numbers_in_their_own_script() {
         (Lang::Bho, Some(13.0), 1.0),
         (Lang::Mai, Some(12.5), 1.0),
         (Lang::Mag, Some(11.5), 1.0),
+        (Lang::Doi, Some(11.5), 1.0),
     ];
     for &(l, compat_bound, improved_bound) in bounds {
         for (mode, bound) in [

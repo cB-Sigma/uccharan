@@ -1,0 +1,60 @@
+{
+ "lang": "doi",
+ "split": "heldout",
+ "systems": {
+  "espeak-ng hi (fallback)": {
+   "word_accuracy": 0.44285714285714284,
+   "sentence_per": 0.13034188034188035,
+   "sentence_exact": 0.06666666666666667,
+   "by_category": {
+    "tone": 0.0,
+    "num": 0.4117647058823529,
+    "noun": 0.9,
+    "cop": 1.0,
+    "post": 0.8333333333333334,
+    "part": 0.0,
+    "neg": 0.0,
+    "adv": 1.0,
+    "adj": 1.0,
+    "verb": 1.0,
+    "gem": 1.0
+   }
+  },
+  "uccharan compatible": {
+   "word_accuracy": 0.44285714285714284,
+   "sentence_per": 0.13034188034188035,
+   "sentence_exact": 0.06666666666666667,
+   "by_category": {
+    "tone": 0.0,
+    "num": 0.4117647058823529,
+    "noun": 0.9,
+    "cop": 1.0,
+    "post": 0.8333333333333334,
+    "part": 0.0,
+    "neg": 0.0,
+    "adv": 1.0,
+    "adj": 1.0,
+    "verb": 1.0,
+    "gem": 1.0
+   }
+  },
+  "uccharan improved": {
+   "word_accuracy": 0.9714285714285714,
+   "sentence_per": 0.004273504273504274,
+   "sentence_exact": 0.8666666666666667,
+   "by_category": {
+    "tone": 0.96,
+    "num": 0.9411764705882353,
+    "noun": 1.0,
+    "cop": 1.0,
+    "post": 1.0,
+    "part": 1.0,
+    "neg": 1.0,
+    "adv": 1.0,
+    "adj": 1.0,
+    "verb": 1.0,
+    "gem": 1.0
+   }
+  }
+ }
+}

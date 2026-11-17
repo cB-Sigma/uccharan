@@ -262,3 +262,46 @@ fn magahi() {
         p.phonemize(t, &Options::new(Lang::Hi))
     );
 }
+
+#[test]
+fn dogri() {
+    // Compatible mode is the Hindi reading (the reference has no Dogri
+    // voice); a word with the apostrophe of a lost h is read as one word.
+    let p = Phonemizer::new();
+    assert_eq!(
+        p.phonemize("घर", &Options::new(Lang::Doi)),
+        p.phonemize("घर", &Options::new(Lang::Hi))
+    );
+    assert_eq!(p.phonemize("कि’यां", &Options::new(Lang::Doi)), "kˈɪjã");
+    // Improved mode: a word-initial voiced aspirate is voiceless with low
+    // tone after it; an h before a vowel is lost with low tone; ह् , the
+    // apostrophe and the avagraha after a stressed vowel give it high
+    // tone; a voiced aspirate inside the word loses its aspiration.
+    let mut o = Options::new(Lang::Doi);
+    o.mode = Mode::Improved;
+    let w = |s: &str| p.phonemize(s, &o);
+    assert_eq!(w("घर"), "kˈʌ̀ɾ");
+    assert_eq!(w("भाशा"), "pˈàːʃaː");
+    assert_eq!(w("ज्हार"), "ɟˈàːɾ");
+    assert_eq!(w("म्हीना"), "mˈìːnaː");
+    assert_eq!(w("साह्ब"), "sˈáːb");
+    assert_eq!(w("त्रीह्"), "tɾˈíː");
+    assert_eq!(w("कि’यां"), "kˈɪ́jãː");
+    assert_eq!(w("रपेऽ"), "ɾəpˈéː");
+    assert_eq!(w("सिद्धा"), "sˈɪ́dːaː");
+    assert_eq!(w("बधाई"), "bədˈàːiː");
+    assert_eq!(w("ऐ"), "ɛː");
+    assert_eq!(w("गल्ल"), "ɡˈʌlː");
+    // ऎ is the copula too; a capital S after a letter is the avagraha.
+    assert_eq!(w("ऎ"), "ɛː");
+    assert_eq!(w("रुपेS"), w("रुपेऽ"));
+    assert_eq!(w("एह् मेरा घर ऐ।"), "éː mˈeːɾaː kˈʌ̀ɾ ɛː.");
+    // Numbers, ordinals and clock times in Dogri words.
+    assert_eq!(w("25"), w("पंजी"));
+    assert_eq!(w("12मीं"), w("बारांमीं"));
+    assert_eq!(w("10:30"), w("दस बजियै त्रीह् मिंट"));
+    // Romanised Dogri.
+    let mut r = o.clone();
+    r.hinglish = true;
+    assert_eq!(p.phonemize("eh gall shail ae", &r), w("एह् गल्ल शैल ऐ"));
+}

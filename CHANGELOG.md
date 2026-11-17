@@ -5,6 +5,29 @@ All notable changes are listed here. The format follows
 
 ## [Unreleased]
 
+### Added
+
+- **Dogri** (`doi`, also `dogri`, `dgo`; Devanagari). espeak-ng has no Dogri voice, so compatible
+  mode is the reading of its Hindi voice, as for Sanskrit: PER 1.40 % (1.35 % without digits) on
+  2,000 held-out sentences of IndicCorp v2 Dogri text, 1.9× espeak-ng's speed (measured on a
+  Windows 11 laptop). Improved mode reads Dogri from its own language file (`lang/doi.lang`),
+  with tone written as uccharan's Punjabi writes it: a word-initial voiced aspirate is voiceless
+  with low tone on the next vowel (घर kˈʌ̀ɾ), an h before a vowel is lost with low tone (ज्हार
+  ɟˈàːɾ), and a voiced aspirate inside the word or an h after a vowel (ह्, the apostrophe of
+  कि’यां, the avagraha of रपेऽ) gives high tone to the stressed vowel before it (साह्ब sˈáːb), after
+  Ghai (1991) and Bahri (2001). On a hand-written gold set (held-out half: 70 words, 15 sentences)
+  improved mode gets 97.1 % of words right against 44.3 % for the Hindi voice, sentence PER 0.43 %
+  against 13.03 %. Numbers, ordinals (12मीं, 1ला), decimals, clock times (10:30 दस बजियै त्रीह्
+  मिंट), the rupee (रपेऽ) and dates in Dogri words in improved mode and normalise-only mode
+  (`lang/numbers/ord-doi.txt`; 0–30 and the tens after Bahri, the rest of 31–99 formed like the
+  Punjabi numbers and not yet checked by a Dogri speaker). Romanised Dogri through the `hinglish`
+  option and `transliterate(..., "doi")` without a pack, with a short list of common Dogri words.
+  Python, WebAssembly and C take the new tag; evaluation sets in `tools/eval/data/doi_*.tsv` and
+  `tools/eval/gold/doi`.
+- Language-file options `time-hour-minutes` and `time-minute` (the hour word before minutes and a
+  word after them) and `apostrophe keep` (an apostrophe between Indic letters stays in the word);
+  see `docs/adding-a-language.md`.
+
 ## [0.6.6] - 2026-11-17
 
 ### Changed

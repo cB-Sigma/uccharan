@@ -1,7 +1,7 @@
 # uccharan
 
 **Phonemiser, text normaliser, transliterator and pronunciation engine** for text-to-speech and
-speech recognition: 39 languages (English, Hindi, nineteen more South Asian languages and
+speech recognition: 40 languages (English, Hindi, twenty more South Asian languages and
 seventeen European ones), in Rust, Python, JavaScript and C. Apache-2.0, no GPL code or data.
 ([what it does](https://github.com/cB-Sigma/uccharan#readme) ·
 [measurements](https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md))

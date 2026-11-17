@@ -622,6 +622,32 @@ pronunciation contradicted the spelling (थ in हथ, करथ written t; ड
 has a Magahi adapter (CC BY-NC 4.0), but no Piper voice takes Magahi phonemes, so no end-to-end test
 was run.
 
+**Dogri** (`python tools/eval/bho_eval.py --lang doi --split heldout`). espeak-ng 1.52.0 has no
+Dogri voice, so there is no reference reading of Dogri to measure improved mode against; it is
+checked on a hand-written gold set instead. 115 words (8 example words of the Dogri phonology
+descriptions, Bahri 2001 and Ghai 1991; 28 numerals as given by Bahri 2002; 16 words of the Dogri
+locale of Unicode CLDR; 63 words attested in IndicCorp v2 Dogri text) and 35 sentences (IndicCorp v2
+Dogri text outside the development and held-out sentence sets), with pronunciations written by hand
+from those descriptions (tone, loss of voiced aspirates and h, Hindi-type deletion; conventions in
+the header of `words.src`), split by a hash of the item before the Dogri rules were run on any of
+it. Tone is compared as written (grave and acute accents kept); the other conventions are those of
+the Bhojpuri comparison.
+
+| Held-out | Hindi voice (espeak-ng `hi`) | compatible | improved |
+| --- | ---: | ---: | ---: |
+| Dogri words (70) | 44.3 % | 44.3 % | **97.1 %** |
+| — words with tone (25) | 0 % | 0 % | **96 %** |
+| Dogri sentences (15): PER / identical | 13.03 % / 6.7 % | 13.03 % / 6.7 % | **0.43 % / 86.7 %** |
+
+Development half: words 100 % (fallback 40.0 %), sentence PER 0.61 % (14.11 %); its remaining
+differences are inherent-vowel deletion after a cluster (लंघदे, जिंदगी) and between two inherent
+vowels (झलमल). One development item was corrected after the first run, where the gold
+contradicted the standard pronunciation (नौकरी nɔːkɾiː). The gold set and the rules were written
+by the same hand from the same descriptions, so the figures show that improved mode implements
+them; they say nothing of how a Dogri speaker would judge the forms. Compatible mode against the
+Hindi voice on the 2,000 held-out IndicCorp sentences: PER 1.40 % (1.35 % without digits), 79.5 %
+identical; development 1.24 %. No voice or speech recogniser for Dogri has been tried.
+
 ## 5. Speed, start-up, memory and size
 
 ```sh

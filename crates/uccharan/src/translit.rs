@@ -934,7 +934,7 @@ fn fallback(ph: &Phonemizer, text: &str, lang: Lang, opt: &TranslitOptions) -> T
     let convert = opt.english == EnglishWords::Convert;
     // Per word: the native text, or None for a word that stays.
     let mut written: Vec<Option<String>> = Vec::new();
-    if lang.hindi_like() && !convert {
+    if lang.romanised_as_hindi() && !convert {
         let hi = crate::hi::Hindi::new(ph.data(Lang::Hi));
         let mut i = 0;
         while i < tokens.len() {
@@ -959,6 +959,9 @@ fn fallback(ph: &Phonemizer, text: &str, lang: Lang, opt: &TranslitOptions) -> T
                 })
                 .collect();
             let before: Vec<String> = items.iter().map(|x| x.text.clone()).collect();
+            if lang == Lang::Doi {
+                crate::doi::rewrite_roman(&mut items);
+            }
             crate::hi::roman::rewrite(&mut items, &hi, en.as_ref());
             for (a, b) in before.iter().zip(items) {
                 written.push((*a != b.text).then_some(b.text));
@@ -973,13 +976,13 @@ fn fallback(ph: &Phonemizer, text: &str, lang: Lang, opt: &TranslitOptions) -> T
             let native = match base {
                 Some(b) if !english => {
                     let mut s = String::new();
-                    if lang.hindi_like()
+                    if lang.romanised_as_hindi()
                         && ph
                             .data(Lang::Hi)
                             .is_some_and(|d| d.lookup(&format!("~{lower}"), &mut s))
                     {
                         s
-                    } else if lang.hindi_like() {
+                    } else if lang.romanised_as_hindi() {
                         crate::hi::roman::transliterate(&lower)
                     } else {
                         rules::itrans(&lower, b)

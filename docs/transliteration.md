@@ -192,6 +192,16 @@ language (रहल over रहाल) because the frequencies are its own. The 
 `data/sources/translit/README.md`); what is missing is a large enough corpus per language to
 count from and a test set to measure on.
 
+## Dogri
+
+Dogri is written in Devanagari and typed with the habits of romanised Hindi. It has no pack:
+`transliterate(text, "doi")` and the `hinglish` option first write a short hand-written list of
+common Dogri words in Devanagari (`tusen` तुसें, `kiyan` कि’यां, `eh` एह्, `ae` ऐ, `kanne` कन्नै,
+`nein` नेईं, `ch` च, `gi` गी; 27 entries, not yet checked by a Dogri speaker or on chat text) and
+then use the Hindi list and rules: `tusen kiyan ho` → तुसें कि’यां हो. There is no Dogri test set
+for this yet, so it is not measured. A pack of its own would need romanised–Devanagari Dogri word
+pairs; AI4Bharat's Aksharantar has a Dogri part (`doi.zip`) that the pack builder could use.
+
 ## Accuracy, size and speed
 
 Measured on held-out word pairs and sentences; method, baselines and all numbers are in

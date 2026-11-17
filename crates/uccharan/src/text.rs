@@ -380,10 +380,30 @@ pub fn clauses_with(text: &str, ordinal_context: &OrdinalContext) -> Vec<RawClau
     out
 }
 
+/// `s` without the characters of `marks` that stand between two letters of
+/// an Indic script (Dogri: the apostrophe of कि’यां, a zero-width space
+/// inside आह्​ली), or `None` when it has none.
+pub fn drop_inside_indic(s: &str, marks: &[char]) -> Option<String> {
+    let cs: Vec<char> = s.chars().collect();
+    let indic = |c: Option<&char>| c.is_some_and(|c| ('\u{0900}'..'\u{0e00}').contains(c));
+    let hit =
+        |i: usize| marks.contains(&cs[i]) && i > 0 && indic(cs.get(i - 1)) && indic(cs.get(i + 1));
+    if !(0..cs.len()).any(hit) {
+        return None;
+    }
+    Some((0..cs.len()).filter(|&i| !hit(i)).map(|i| cs[i]).collect())
+}
+
 /// Split a chunk into maximal runs of one script. Apostrophes and hyphens
 /// between letters stay inside a Latin run; `,` and `.` between digits stay
 /// inside a digit run.
 pub fn runs(chunk: &str) -> Vec<(Script, &str)> {
+    runs_with(chunk, false)
+}
+
+/// [`runs`]; with `indic_apostrophe`, an apostrophe between two letters of
+/// an Indic script also stays inside their run (Dogri र’लाया).
+pub fn runs_with(chunk: &str, indic_apostrophe: bool) -> Vec<(Script, &str)> {
     let mut out: Vec<(Script, &str)> = Vec::new();
     let mut start = 0usize;
     let mut cur: Option<Script> = None;
@@ -405,6 +425,12 @@ pub fn runs(chunk: &str) -> Vec<(Script, &str)> {
                     || prev.is_some_and(|p| p == 's' || p == 'S'))
             {
                 sc = Script::Latin;
+            } else if indic_apostrophe
+                && matches!(c, '\'' | '’' | 'ʼ')
+                && matches!(cur, Some(Script::Devanagari | Script::Brahmic(_)))
+                && next.is_some_and(|n| cur == Some(script_of(n)))
+            {
+                sc = cur.unwrap();
             } else if matches!(c, ',' | '.' | ':')
                 && between(|x| x.is_ascii_digit() || indic_digit(x).is_some())
             {

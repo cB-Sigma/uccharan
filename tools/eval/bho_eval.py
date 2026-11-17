@@ -29,6 +29,9 @@ def norm(s: str, lang: str = "bho") -> str:
     if lang == "mag":
         # The Magahi set writes the labial approximant w (ʋ = w).
         s = s.replace("ʋ", "w")
+    if lang == "doi":
+        # Dogri tone: a grave or acute accent stands before the nasal mark.
+        s = re.sub("(̃)([̀́])", r"\2\1", s)
     s = re.sub(r"[ˈˌ.?!,।]", lambda m: "ɽ" if m.group(0) == "." else "", s.replace("r.", "ɽ"))
     for a, b in (("ʌ", "ə"), ("ɐ", "ə"), ("ɪ", "i"), ("ʊ", "u"), ("ʱ", "ʰ"), ("̃ː", "̃"), ("ɦ", "h")):
         s = s.replace(a, b)

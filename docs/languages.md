@@ -1,6 +1,6 @@
 # Languages
 
-uccharan phonemises 39 language tags. English (US and British) and Hindi have hand-built front
+uccharan phonemises 40 language tags. English (US and British) and Hindi have hand-built front
 ends with their own lexicons; the others run on two shared engines, one for Brahmic and
 Perso-Arabic scripts and one for Latin-script languages, each driven by a short language file of
 letters, rewrite rules, exceptions and number words (`crates/uccharan/lang/*.lang`; see
@@ -47,6 +47,7 @@ Runs on that machine differ by about ±10 %.
 | Bhojpuri | `bho` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.51 % | 0.33 % | 3.3× | SYSPIN (character input) |
 | Maithili | `mai` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.46 % | 0.29 % | 3.0× | MMS, SYSPIN (character input) |
 | Magahi | `mag` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.40 % | 0.23 % | 2.8× | MMS (character input) |
+| Dogri | `doi` | `hi` ‡ | IndicCorp v2, 2,000 sentences | 1.40 % | 1.35 % | 1.9× § | none |
 | Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.54 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
 | German | `de` | `de` | FLORES-200, 1,012 sentences | 0.95 % | 0.77 % | 5.8× † | Piper `de_DE` (11) |
 | Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.69 % | 1.32 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
@@ -71,8 +72,12 @@ Runs on that machine differ by about ±10 %.
 French reading only in the numbers 70–99 (septante, huitante, nonante). Their speed is the French
 voice's: in one run on a busy machine French 4.5×, `fr-be` 4.5×, `fr-ch` 5.2×.
 
-‡ espeak-ng has no voice for Sanskrit, Bhojpuri, Maithili or Magahi; text in them is read with its
-Hindi voice, and compatible mode is measured against that reading.
+‡ espeak-ng has no voice for Sanskrit, Bhojpuri, Maithili, Magahi or Dogri; text in them is read
+with its Hindi voice, and compatible mode is measured against that reading.
+
+§ Measured on a Windows 11 laptop (500 held-out sentences, p50, best of 5 rounds,
+[`compare_doi_windows.json`](../tools/bench/results/compare_doi_windows.json)); in the same run
+Magahi gave 2.3× and Hindi 1.8×, against 2.8× each on the machine of the other rows.
 
 ## Notes on the languages
 
@@ -102,6 +107,47 @@ reading; improved mode adds Magahi's own rules to the shared Bihari ones (no ʃ 
 in -əi such as हलई hələi and गेलय ɡeːləi, a said final short ि ु, मे for में). On a held-out
 Magahi gold set (270 words, 73 sentences) improved mode gets 98.5 % of words right against
 64.4 % for the Hindi voice, and sentence PER 0.71 % against 7.67 %.
+
+**Dogri** (`doi`, Devanagari) has no espeak-ng voice (1.52.0 has none); as for
+Sanskrit, compatible mode is the Hindi voice's reading (a word written with the
+apostrophe of a lost h, कि’यां, is read as one word, as the voice reads it), and improved mode reads
+Dogri from its own language file. Dogri is tonal, like Punjabi: historic voiced aspirates and h
+are no longer said as such and leave a tone. uccharan writes the tone as its Punjabi does, a grave
+accent for low tone and an acute for high tone on the vowel: a word-initial voiced aspirate is
+voiceless and unaspirated with low tone on the next vowel (घर kˈʌ̀ɾ, भाशा pˈàːʃaː); an h before a
+vowel is lost with low tone on it (ज्हार ɟˈàːɾ, म्हीना mˈìːnaː, हत्थ ˈʌ̀tʰː); a voiced aspirate
+inside the word stays voiced but loses its aspiration, and it or a lost h after a vowel — written
+ह् (साह्ब), with an apostrophe (कि’यां, र’लाया; some text has ऱ there) or with the avagraha (रपेऽ,
+also typed as a Latin S) — gives high tone to a stressed vowel before it (साह्ब sˈáːb, त्रीह् tɾˈíː,
+सिद्धा sˈɪ́dːaː), otherwise low tone to a stressed vowel after it (बधाई bədˈàːiː). This follows Ved
+Kumari Ghai's description of Dogri tone (Ghai 1991, *Studies in Phonetics and Phonology, with
+special reference to Dogri*; her account of the devoicing of initial voiced aspirates); the
+Wikipedia and Wiktionary articles on Dogri, after U. S. Bahri (2001, *Dogri: Phonology and
+Grammatical Sketch*), call the tone after a vowel low-rising rather than high, and that has not been
+settled here. The rest of the inventory follows Bahri: ऐ औ are ɛː ɔː, ष is ʃ, क़ ख़ ग़ are k kʰ ɡ;
+inherent-vowel deletion is the Hindi type, a doubled consonant is long. Numbers: 0–30, the tens,
+सौ, ज्हार (1000) and the ordinals पैह्ला, दूआ, त्रीया, चौथा, -मां from Bahri (2002, in E. Chan's
+numeral tables); the other numbers below 100 are formed like the Punjabi ones in Dogri spelling and
+have not been checked by a Dogri speaker; रपेऽ, मिंट, प्रतिशत and the month names from Unicode CLDR.
+Improved mode and normalise-only mode read 12मीं, 5मां, 1ला as ordinals (पैह्ला, बारांमीं),
+10:30 as दस बजियै त्रीह् मिंट, ₹25 as पंजी रपेऽ. Romanised Dogri (`hinglish=True`, and
+`transliterate(..., "doi")`, which has no pack) goes through the romanised-Hindi path after a short
+list of common Dogri words (`tusen kiyan ho` → तुसें कि’यां हो).
+
+Held-out text: 2,000 sentences of Dogri from AI4Bharat's IndicCorp v2 (CC0; FLORES-200 and
+Tatoeba have no Dogri), lines in Hindi left out. Most of the remaining disagreement with the
+Hindi voice is in what uccharan's Hindi reading does not reproduce of the voice: ऎ, a chandrabindu
+on ई (नेईँ), a slash read as English *slash*, abbreviations such as डॉ., hyphenated compounds.
+A hand-written gold set ([tools/eval/gold/doi](../tools/eval/gold/doi): 115 words, 35 sentences,
+split by a hash before the rules were run on it) measures improved mode; held-out half:
+
+| Held-out | Hindi-voice fallback (espeak-ng `hi`) | uccharan compatible | **uccharan improved** |
+| --- | ---: | ---: | ---: |
+| Dogri words (70), exact | 44.3 % | 44.3 % | **97.1 %** |
+| Dogri sentences (15): PER / identical | 13.03 % / 6.7 % | 13.03 % / 6.7 % | **0.43 % / 86.7 %** |
+
+The gold set encodes the descriptions named above as written down for this project, so it shows
+that improved mode implements them, not that a Dogri speaker would accept every form.
 
 **German, Dutch and French** (`de`, `nl`, `fr`) run on the same Latin-script engine as Spanish,
 each with letter rules and a **word table** (`de.ucd` 16 k entries, 373 KB; `nl.ucd` 12 k, 242 KB;

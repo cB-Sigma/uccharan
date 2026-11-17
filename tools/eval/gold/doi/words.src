@@ -1,0 +1,129 @@
+# Dogri word gold set, written 2026-11-18 from the descriptions before the Dogri rules were run on these
+# items. Format: word, broad pronunciation(s) separated by |, category, source. R = example word of the
+# Dogri phonology descriptions (Bahri 2001, Dogri: Phonology and Grammatical Sketch; Ghai 1991, Studies in
+# Phonetics and Phonology, with special reference to Dogri; as cited in the Wikipedia and Wiktionary
+# articles on Dogri); N = Dogri numeral as given by U. S. Bahri (2002) in E. Chan's Numeral Systems of the
+# World's Languages; C = word of the Dogri locale of Unicode CLDR (common/main/doi.xml, Unicode License v3);
+# I = word attested in Dogri text of AI4Bharat IndicCorp v2 (CC0). Pronunciations hand-written from these
+# descriptions: a word-initial voiced aspirate is voiceless unaspirated with low tone (grave) on the next
+# vowel; an h before a vowel (initial ह, ह after a consonant) is lost with low tone on that vowel; a voiced
+# aspirate inside the word is voiced unaspirated, and it or a lost h after a vowel (ह्, the apostrophe, the
+# avagraha, final ह) gives high tone (acute) to a stressed vowel before it, else low tone to the vowel after
+# it (Ghai); Hindi-type deletion of the inherent vowel; anusvara after a written vowel = nasal vowel, after
+# the inherent vowel = homorganic nasal; ऐ औ = ɛː ɔː; ष = ʃ; व = ʋ; a doubled consonant is written double.
+# Citation forms with a final ə after a doubled consonant (Bahri: ɪkkə, səttə) are accepted as alternatives.
+घड़ी kə̀ɽiː tone R
+घर kə̀ɾ tone R
+गल्ल ɡəll|ɡəllə gem R
+गʼल्ल ɡə́ll|ɡə́llə tone R
+लʼत्त lə́tt|lə́ttə tone R
+साह्ब sáːb tone R
+हत्थ ə̀ttʰ|ə̀ttʰə tone R
+बध bə́d tone R
+इक ɪk|ɪkkə num N
+त्रै tɾɛː num N
+चार caːɾ num N
+पंज pəɲɟ num N
+छे cʰeː num N
+सत्त sətt|səttə num N
+अट्ठ əʈʈʰ|əʈʈʰə num N
+नौ nɔː num N
+दस dəs|dəssə num N
+बारां baːɾãː num N
+तेरां téːɾãː num N
+चौदां cɔːdãː num N
+पंदरां pəndɾãː num N
+सोलां sóːlãː num N
+उन्नी ʊnniː num N
+बीह् bíː num N
+इक्की ɪkkiː num N
+बाई baːiː num N
+त्रेई tɾeːiː num N
+चौबी cɔːbiː num N
+छब्बी cʰəbbiː num N
+त्रीह् tɾíː num N
+चाली caːliː num N
+पंजाह् pəɲɟáː num N
+अस्सी əssiː num N
+नब्बै nəbbɛː num N
+सौ sɔː num N
+ज्हार ɟàːɾ num N
+लक्ख ləkkʰ|ləkkʰə num C
+घैंटा kɛ̀̃ːʈaː tone C
+घैंटे kɛ̀̃ːʈeː tone C
+म्हीना mìːnaː tone C
+ब’रा bə́ɾaː tone C
+अज्ज əɟɟ|əɟɟə gem C
+ऐतबार ɛːtbaːɾ noun C
+सोमबार soːmbaːɾ noun C
+मंगलबार məŋɡəlbaːɾ noun C
+बुधबार bʊ́dbaːɾ tone C
+बीरबार biːɾbaːɾ noun C
+शुक्रबार ʃʊkɾəbaːɾ noun C
+शनिबार ʃənɪbaːɾ noun C
+रपेऽ ɾəpéː tone C
+मिंट mɪ̃ʈ noun C
+हून ùːn tone C
+ध्याड़ा tjàːɽaː tone I
+ध्याड़ी tjàːɽiː tone I
+भाशा pàːʃaː tone I
+भारत pàːɾət tone I
+धरती tə̀ɾtiː tone I
+भाई pàːiː tone I
+झंडा cə̀ɳɖaː tone I
+ढोल ʈòːl tone I
+ऐ ɛː cop I
+न nə|n cop I
+च cə|c post I
+दा daː post I
+दी diː post I
+दे deː post I
+गी ɡiː post I
+ते teː conj I
+बी biː part I
+नेईं neːĩː neg I
+एह् éː tone I
+ओह् óː tone I
+ओह्दे óːdeː tone I
+जित्थै ɟɪttʰɛː adv I
+कुत्थै kʊttʰɛː adv I
+इत्थै ɪttʰɛː adv I
+उत्थै ʊttʰɛː adv I
+सब्भै sə́bbɛː tone I
+कन्नै kənnɛː post I
+थमां tʰəmãː post I
+लेई leːiː post I
+आस्तै aːstɛː post I
+बड़ा bəɽaː adj I
+शैल ʃɛːl adj I
+लोक loːk noun I
+गल्लां ɡəllãː noun I
+माह्नू máːnuː tone I
+म्हौल mɔ̀ːl tone I
+रौह्ना ɾɔ́ːnaː tone I
+प्हाड़ pàːɽ tone I
+ब्हाने bàːneː tone I
+सिद्धा sɪ́ddaː tone I
+बद्ध bə́dd|bə́ddə tone I
+कड्ढना kə́ɖɖnaː tone I
+दित्ता dɪttaː verb I
+कीता kiːtaː verb I
+गेआ ɡeːaː verb I
+आखेआ aːkʰeːaː verb I
+होई òːiː tone I
+होर òːɾ tone I
+हर ə̀ɾ tone I
+अक्खियां əkkʰɪjãː noun I
+चाह् cáː tone I
+सलाह् səláː tone I
+बधाई bədàːiː tone I
+पढ़ना pə́ɽnaː tone I
+कुड़ी kʊɽiː noun I
+जागत ɟaːɡət noun I
+पानी paːniː noun I
+दुद्ध dʊ́dd|dʊ́ddə tone I
+सज्जन səɟɟən noun I
+कम्म kəmm|kəmmə gem I
+रातीं ɾaːtĩː noun I
+मुंडी mʊ̃ɖiː noun I
+चंगा cəŋɡaː adj I

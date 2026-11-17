@@ -840,7 +840,14 @@ pub fn respell(
         deletes_schwa: lang.hindi_like()
             || matches!(
                 lang,
-                Lang::Mr | Lang::Ne | Lang::Gu | Lang::Pa | Lang::Bn | Lang::As | Lang::Kok
+                Lang::Mr
+                    | Lang::Ne
+                    | Lang::Gu
+                    | Lang::Pa
+                    | Lang::Bn
+                    | Lang::As
+                    | Lang::Kok
+                    | Lang::Doi
             ),
     };
     Some(search(lang, &w, ipa, |t| {

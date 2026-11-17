@@ -7,10 +7,12 @@ Sentences come from the Tatoeba per-language export (CC BY 2.0 FR),
 downloaded into ``--work``. When Tatoeba has fewer than ``--min`` usable
 sentences, the FLORES-200 benchmark (CC BY-SA 4.0; ``--flores DIR`` pointing
 at an unpacked ``flores200_dataset``) is used instead: its ``dev`` split
-becomes our dev set and its ``devtest`` split our held-out set. Without
-FLORES, Wikipedia article extracts (CC BY-SA 4.0, ids ``wp-``) top the set
-up. Share-alike sentences are evaluation input only (``tools/eval`` is not
-part of any package).
+becomes our dev set and its ``devtest`` split our held-out set. Languages
+in neither (Dogri) take their sentences from AI4Bharat's IndicCorp v2
+monolingual text (CC0, downloaded into ``--work``; ids ``indiccorp-``),
+with lines in Hindi left out. Without FLORES, Wikipedia article extracts
+(CC BY-SA 4.0, ids ``wp-``) top the set up. Share-alike sentences are
+evaluation input only (``tools/eval`` is not part of any package).
 
 The split is fixed by a hash of the sentence id, so it never depends on
 which sentences were looked at: ids hashing below 500/1000 are ``dev`` (rules
@@ -42,6 +44,11 @@ FLORES = {"bn": "ben_Beng", "mr": "mar_Deva", "ne": "npi_Deva", "gu": "guj_Gujr"
           "pt": "por_Latn", "nl": "nld_Latn", "pl": "pol_Latn", "ru": "rus_Cyrl", "tr": "tur_Latn", "sa": "san_Deva",
           "mai": "mai_Deva", "bho": "bho_Deva", "mag": "mag_Deva"}
 
+# IndicCorp v2 (AI4Bharat, CC0): uccharan tag -> file name, and a pattern
+# of Hindi function words that marks a line as Hindi rather than the language.
+INDICCORP_URL = "https://huggingface.co/datasets/ai4bharat/IndicCorpV2/resolve/main/data/{}.txt"
+INDICCORP = {"doi": ("dg", r"(?:^|\s)(?:है|हैं|में|का|को|से|था|थी|थे|नहीं|और|लिए|भी|यह|वह)(?=[\s।,?!]|$)")}
+
 # uccharan tag -> (Tatoeba code, Wikipedia code, letter regex of the language's script)
 LANGS: dict[str, tuple[str, str, str]] = {
     "bn": ("ben", "bn", r"[ঀ-৿]"),
@@ -72,6 +79,7 @@ LANGS: dict[str, tuple[str, str, str]] = {
     "tr": ("tur", "tr", r"[a-zçğıöşü]"),
     "sa": ("san", "sa", r"[ऀ-ॿ]"),
     "mag": ("mag", "mag", r"[ऀ-ॿ]"),
+    "doi": ("doi", "dgo", r"[ऀ-ॿ]"),
 }
 
 
@@ -127,6 +135,25 @@ def wikipedia(work: Path, code: str, want: int, letters: str) -> list[tuple[str,
     return list(out.items())
 
 
+def indiccorp(work: Path, lang: str, letters: str) -> list[tuple[str, str]]:
+    """Sentences of the language from its IndicCorp v2 file, Hindi lines left out."""
+    name, hindi = INDICCORP[lang]
+    try:
+        path = fetch(INDICCORP_URL.format(name), work / f"indiccorp_{name}.txt")
+    except OSError as e:
+        print(f"indiccorp {name}: {e}")
+        return []
+    out: dict[str, str] = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        for s in re.split(r"(?<=[।?!|])\s+", line.strip()):
+            s = " ".join(s.split())
+            alpha = [c for c in s if c.isalpha()]
+            own = sum(1 for c in alpha if re.match(letters, c))
+            if 15 <= len(s) <= 160 and alpha and own / len(alpha) >= 0.97 and not re.search(hindi, s):
+                out.setdefault(f"indiccorp-{hashlib.sha1(s.encode()).hexdigest()[:12]}", s)
+    return list(out.items())
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("langs", nargs="+")
@@ -141,6 +168,9 @@ def main() -> None:
         tcode, wcode, letters = LANGS[lang]
         rows = [(i, t) for i, t in tatoeba(args.work, tcode) if 8 <= len(t) <= 160 and re.search(letters, t.lower())]
         source = "Tatoeba (CC BY 2.0 FR)"
+        if len(rows) < args.min and lang in INDICCORP:
+            rows += indiccorp(args.work, lang, letters)
+            source = "IndicCorp v2 (CC0)"
         if len(rows) < args.min and args.flores and lang in FLORES:
             code = FLORES[lang]
             for name, split in (("dev", "dev"), ("heldout", "devtest")):

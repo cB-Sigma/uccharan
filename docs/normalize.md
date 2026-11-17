@@ -166,6 +166,9 @@ Number spans carry `value` (the digits read).
   phonemiser's number words; Sinhala and Sindhi write them by `[numbers.written]` (their number
   tables hold lookup keys, not words): විසිපහ, پنجويهه. Sanskrit writes Hindi number words in
   compatible mode and Sanskrit ones (पञ्चविंशतिः) in improved mode, as the phonemiser reads them.
+  Dogri does the same with Dogri words in improved mode (पंजी, इक लक्ख, ₹25 पंजी रपेऽ), and
+  there also reads ordinals written with an ending (12मीं बारांमीं, 1ला पैह्ला) and clock times
+  (10:30 दस बजियै त्रीह् मिंट).
   Every one of these languages is checked for words in its own script that read back to the
   phonemes of the digits (`indic_numbers_in_their_own_script` in
   `crates/uccharan/tests/normalize_api.rs`).

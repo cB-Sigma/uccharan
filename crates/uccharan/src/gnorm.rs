@@ -5,7 +5,7 @@
 
 use crate::langdef::{Fraction, Numbers};
 use crate::norm::Item;
-use crate::text::{indic_digit, runs, Chunk, Script};
+use crate::text::{indic_digit, runs_with, Chunk, Script};
 
 fn digit(c: char) -> Option<u8> {
     if c.is_ascii_digit() {
@@ -211,6 +211,12 @@ fn time(text: &str, nums: &Numbers, prev: Option<&str>) -> Option<Vec<Item>> {
         Some(w) => plain(&mut out, w),
         None => push_number(&mut out, nums, &h.to_string(), false, false, false),
     }
+    // The hour word before minutes, where the language has its own
+    // (Dogri बजियै), else the plain hour word.
+    let hour_word = match hour_word {
+        Some(_) if minutes > 0 && !t.hour_minutes.is_empty() => Some(t.hour_minutes.join(" ")),
+        w => w,
+    };
     if let Some(w) = &hour_word {
         plain(&mut out, w);
     }
@@ -223,6 +229,7 @@ fn time(text: &str, nums: &Numbers, prev: Option<&str>) -> Option<Vec<Item>> {
             out.extend(z.iter().map(|(w, _)| Item::word(w)));
         }
         push_number(&mut out, nums, &minutes.to_string(), false, false, false);
+        plain(&mut out, &t.minute.join(" "));
     }
     Some(out)
 }
@@ -664,7 +671,10 @@ pub fn expand(
     let mut out: Vec<Item> = Vec::new();
     // An apostrophe between two Indic letters is ignored (Assamese ল'ৰা).
     let owned;
-    let text: &str = if chunk.text.contains(['\'', '’']) && !chunk.text.is_ascii() {
+    let text: &str = if chunk.text.contains(['\'', '’'])
+        && !chunk.text.is_ascii()
+        && !nums.keep_apostrophe
+    {
         let cs: Vec<char> = chunk.text.chars().collect();
         let indic = |c: Option<&char>| c.is_some_and(|c| ('\u{0900}'..'\u{0e00}').contains(c));
         owned = cs
@@ -687,7 +697,7 @@ pub fn expand(
     } else {
         text
     };
-    let rs = runs(text);
+    let rs = runs_with(text, nums.keep_apostrophe);
     let n = rs.len();
     // Improved mode says a currency sign written before the amount after it.
     let mut after_amount: Vec<Item> = Vec::new();

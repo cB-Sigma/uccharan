@@ -1,7 +1,7 @@
 {
   "name": "uccharan",
   "version": "0.6.6",
-  "description": "Phonemiser, text normaliser, transliterator and pronunciation engine for text-to-speech and speech recognition: 39 languages, Apache-2.0.",
+  "description": "Phonemiser, text normaliser, transliterator and pronunciation engine for text-to-speech and speech recognition: 40 languages, Apache-2.0.",
   "license": "Apache-2.0",
   "author": "Abhinav Gautam <abhinav@codebuckets.in>",
   "homepage": "https://cb-sigma.github.io/uccharan/",

@@ -128,7 +128,7 @@ def test_normalize_latin_languages() -> None:
 
 # Expected Unicode block of each non-Latin language's output.
 _BLOCKS = {
-    **dict.fromkeys(["hi", "mr", "ne", "kok", "sa", "bho", "mai", "mag"], (0x0900, 0x097F)),
+    **dict.fromkeys(["hi", "mr", "ne", "kok", "sa", "bho", "mai", "mag", "doi"], (0x0900, 0x097F)),
     **dict.fromkeys(["bn", "as"], (0x0980, 0x09FF)),
     "pa": (0x0A00, 0x0A7F),
     "gu": (0x0A80, 0x0AFF),
@@ -162,6 +162,7 @@ _TWENTY_FIVE = {
     "bho": "पच्चीस",
     "mai": "पच्चीस",
     "mag": "पच्चीस",
+    "doi": "पच्चीस",
 }
 
 

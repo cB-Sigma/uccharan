@@ -489,11 +489,12 @@ pub fn span(
 }
 
 /// Bhojpuri and Maithili texts often write the avagraha as a Latin `s`
-/// right after a Devanagari letter (`हs`, `सs`); restore it.
-pub fn avagraha_s(text: &str) -> Option<String> {
+/// right after a Devanagari letter (`हs`, `सs`); restore it. With `upper`,
+/// a capital `S` too (Dogri `रुपेS` for रुपेऽ).
+pub fn avagraha_s(text: &str, upper: bool) -> Option<String> {
     let cs: Vec<char> = text.chars().collect();
     let hit = |i: usize| {
-        cs[i] == 's'
+        (cs[i] == 's' || (upper && cs[i] == 'S'))
             && i > 0
             && ('\u{0900}'..='\u{097f}').contains(&cs[i - 1])
             && cs.get(i + 1).is_none_or(|c| !c.is_alphanumeric())

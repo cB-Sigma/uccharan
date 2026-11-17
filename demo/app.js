@@ -44,6 +44,7 @@ const GROUPS = [
     ["bho", "Bhojpuri · भोजपुरी", ["रउआ कइसन बानी?"]],
     ["mai", "Maithili · मैथिली", ["अहाँ केहन छी?"]],
     ["mag", "Magahi · मगही", ["तू कइसन हऽ?"]],
+    ["doi", "Dogri · डोगरी", ["तुस कि’यां ओ? एह् मेरा घर ऐ।"], ["tusen kiyan o"]],
   ]],
   ["European", [
     ["es", "Spanish · Español", ["Hola, ¿cómo estás? Tengo 21 años."]],

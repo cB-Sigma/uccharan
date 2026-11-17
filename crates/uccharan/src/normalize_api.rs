@@ -784,9 +784,9 @@ impl Cx<'_> {
             let items = crate::gnorm::expand(c, &lat.numbers, false, !improved, true, prev);
             return written_latin(items, &lat.numbers);
         }
-        // Sanskrit reads numbers in Hindi in compatible mode (as the
-        // reference does) and in Sanskrit in improved mode.
-        if l.hindi_like() || (l == Lang::Sa && !improved) || l.indic().is_none() {
+        // Sanskrit and Dogri read numbers in Hindi in compatible mode (as
+        // the reference does) and in their own words in improved mode.
+        if l.hindi_like() || (l.hindi_voice() && !improved) || l.indic().is_none() {
             let mut items = crate::norm::expand_with(c, Lang::Hi, Normalize::Natural, improved);
             if matches!(l, Lang::Bho | Lang::Mai) {
                 crate::bho::adapt_numbers(&mut items, l);

@@ -84,7 +84,7 @@ def diphone_name(pair: tuple[str, str]) -> str:
 
 # The script each language is written in.
 _SCRIPT = {
-    "DEVANAGARI": ("hi", "mr", "ne", "bho", "mai", "mag", "kok", "sa"),
+    "DEVANAGARI": ("hi", "mr", "ne", "bho", "mai", "mag", "kok", "sa", "doi"),
     "BENGALI": ("bn", "as"),
     "TELUGU": ("te",),
     "KANNADA": ("kn",),

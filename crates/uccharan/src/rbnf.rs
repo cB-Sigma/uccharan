@@ -39,6 +39,7 @@ pub fn ordinal_rules_for(tag: &str) -> Option<&'static str> {
         "cs" => include_str!("../lang/numbers/ord-cs.txt"),
         "da" => include_str!("../lang/numbers/ord-da.txt"),
         "de" => include_str!("../lang/numbers/ord-de.txt"),
+        "doi" => include_str!("../lang/numbers/ord-doi.txt"),
         "es" => include_str!("../lang/numbers/ord-es.txt"),
         "fi" => include_str!("../lang/numbers/ord-fi.txt"),
         "fr" | "fr-be" | "fr-ch" => include_str!("../lang/numbers/ord-fr.txt"),

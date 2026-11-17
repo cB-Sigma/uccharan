@@ -1,0 +1,432 @@
+# Dogri in Devanagari. espeak-ng has no Dogri voice: compatible mode is the
+# Hindi reading (as with the reference's Hindi voice); this file is the
+# improved reading. Written for uccharan from these descriptions:
+#   Ved Kumari Ghai (1991), Studies in Phonetics and Phonology, with special
+#     reference to Dogri; and her account of Dogri tone (voiced aspirates
+#     and h lose voice or aspiration and leave a tone);
+#   Ujjal Singh Bahri (2001), Dogri: Phonology and Grammatical Sketch;
+#   Colin Masica (1991), The Indo-Aryan Languages, on tone in Punjabi and
+#   Dogri.
+# Tone is written as in uccharan's Punjabi: a grave accent for low tone, an
+# acute accent for high tone, on the vowel that carries it.
+#   - A word-initial voiced aspirate (घ झ ढ ध भ) is said voiceless and
+#     unaspirated, and the vowel after it has low tone: घर kʌ̀ɾ.
+#   - An h before a vowel (word-initial ह, or ह after a consonant: म्हीना,
+#     ज्हार) is not said, and that vowel has low tone: ज्हार ɟàːɾ.
+#   - A voiced aspirate inside or at the end of a word loses its aspiration
+#     and stays voiced; an h after a vowel (ह् as Dogri writes it, the
+#     apostrophe of र’लाया, the avagraha of लाऽ) is not said. A stressed
+#     vowel before either has high tone (साह्ब sáːb, त्रीह् tɾíː);
+#     otherwise the vowel after it has low tone.
+# Inherent vowel deletion is the Hindi type; ऐ औ are ɛː ɔː; ष is ʃ, क़ ख़ ग़
+# are k kʰ ɡ (Bahri: q x ɣ are not Dogri sounds).
+
+[meta]
+tag = doi
+block = 0900
+stress = weight
+deletion = medial
+inherent = ə ʌ
+anusvara = split
+visarga = h
+geminate = k ɡ c ɟ ʈ ɖ t d p b m n ɳ l s ʃ ɾ ʋ j ɽ f z
+geminate-aspirate = k c ʈ t p
+
+[letters]
+क k
+ख kʰ
+ग ɡ
+घ ɡʰ
+ङ ŋ
+च c
+छ cʰ
+ज ɟ
+झ ɟʰ
+ञ ɲ
+ट ʈ
+ठ ʈʰ
+ड ɖ
+ढ ɖʰ
+ण ɳ
+त t
+थ tʰ
+द d
+ध dʰ
+न n
+प p
+फ pʰ
+ब b
+भ bʰ
+म m
+य j
+र ɾ
+ल l
+ळ l
+व ʋ
+श ʃ
+ष ʃ
+स s
+ह h
+क़ k
+ख़ kʰ
+ग़ ɡ
+ज़ z
+ड़ ɽ
+ढ़ ɽ
+फ़ f
+य़ j
+क़ k
+ख़ kʰ
+ग़ ɡ
+ज़ z
+ड़ ɽ
+ढ़ ɽ
+फ़ f
+य़ j
+अ ə
+आ aː
+इ ɪ
+ई iː
+उ ʊ
+ऊ uː
+ऋ ɾ ɪ
+ए eː
+ऐ ɛː
+ओ oː
+औ ɔː
+ऑ ɔ
+# ऎ ॆ: some Dogri text writes the copula ऐ so.
+ऎ ɛː
+ऍ ɛ
+ा aː
+ि ɪ
+ी iː
+ु ʊ
+ू uː
+ृ ɾ ɪ
+े eː
+ै ɛː
+ो oː
+ौ ɔː
+ॉ ɔ
+ॆ ɛː
+ॅ ɛ
+# An h after a vowel written with the apostrophe (र’लाया) or the avagraha
+# (लाऽ): the tone marker ↑ and no sound of its own.
+ऽ ↑ dead
+’ ↑ dead
+' ↑ dead
+ʼ ↑ dead
+# Some Dogri text has ऱ (र with nukta) in the place of that apostrophe
+# (तुंऱदी, जिऱयां).
+ऱ ↑ dead
+# Markers written by the [pre] rules (never in real text): word-initial
+# voiced aspirates (voiceless, low tone after), the same letters inside a
+# word (voiced, tone by stress), h before a vowel and h after a vowel.
+K k↓ consonant
+C c↓ consonant
+T ʈ↓ consonant
+D t↓ consonant
+P p↓ consonant
+G ɡ↑ consonant
+J ɟ↑ consonant
+Q ɖ↑ consonant
+Z d↑ consonant
+B b↑ consonant
+R ɽ↑ consonant
+# Doubled voiced aspirates inside a word (कड्ढना, सिद्धा).
+U ɡː↑ consonant
+L ɟː↑ consonant
+W ɖː↑ consonant
+E dː↑ consonant
+F bː↑ consonant
+X ↓ consonant
+Y ↑ consonant
+H ↑ dead
+
+[classes]
+S = ˈ ˌ
+V = ʌ ə a ɪ i ʊ u e ɛ o ɔ
+VM = ː ̃
+CO = k ɡ c ɟ ʈ ɖ t d p b m n ɳ ŋ ɲ s ʃ h l ɾ r ʋ j z f ɽ ʰ ː ↓ ↑
+
+[pre]
+ऱ -> ऱ
+ज्ञ -> ग्य
+क्ष -> क्श
+# h after a vowel, written with a virama (एह्, साह्ब, चेह्रे).
+ह् -> H
+# h before a vowel: after a consonant (म्हीना, ज्हार) or at the start.
+्ह -> ्X
+ह -> X / # _
+# Any other h (between vowels, or written without a virama at the end).
+ह -> Y
+# Voiced aspirates: doubled, at the start of a word, and inside it.
+ग्घ -> U
+ज्झ -> L
+ड्ढ -> W
+द्ध -> E
+ब्भ -> F
+घ -> K / # _
+झ -> C / # _
+ढ -> T / # _
+ध -> D / # _
+भ -> P / # _
+घ -> G
+झ -> J
+ढ -> Q
+ध -> Z
+भ -> B
+ढ़ -> R
+ढ़ -> R
+
+[post]
+# Low tone on the vowel after a word-initial voiced aspirate or an h
+# before the vowel (marker ↓).
+ʌ -> ʌ̀ / ↓ {CO}* {S}* _
+ə -> ə̀ / ↓ {CO}* {S}* _
+a -> à / ↓ {CO}* {S}* _
+ɪ -> ɪ̀ / ↓ {CO}* {S}* _
+i -> ì / ↓ {CO}* {S}* _
+ʊ -> ʊ̀ / ↓ {CO}* {S}* _
+u -> ù / ↓ {CO}* {S}* _
+e -> è / ↓ {CO}* {S}* _
+ɛ -> ɛ̀ / ↓ {CO}* {S}* _
+o -> ò / ↓ {CO}* {S}* _
+ɔ -> ɔ̀ / ↓ {CO}* {S}* _
+# High tone on a stressed vowel before a voiced aspirate or an h after
+# it (marker ↑).
+ʌ -> ʌ́ / ˈ _ {VM}* {CO}* ↑
+ə -> ə́ / ˈ _ {VM}* {CO}* ↑
+a -> á / ˈ _ {VM}* {CO}* ↑
+ɪ -> ɪ́ / ˈ _ {VM}* {CO}* ↑
+i -> í / ˈ _ {VM}* {CO}* ↑
+ʊ -> ʊ́ / ˈ _ {VM}* {CO}* ↑
+u -> ú / ˈ _ {VM}* {CO}* ↑
+e -> é / ˈ _ {VM}* {CO}* ↑
+ɛ -> ɛ́ / ˈ _ {VM}* {CO}* ↑
+o -> ó / ˈ _ {VM}* {CO}* ↑
+ɔ -> ɔ́ / ˈ _ {VM}* {CO}* ↑
+↓ -> 0
+↑ -> 0 / ˈ {V} {VM}* {CO}* _
+
+[post.improved]
+# Otherwise a stressed vowel after the marker takes low tone; at the end
+# of a word the vowel before it takes high tone.
+ʌ -> ʌ̀ / ↑ {CO}* ˈ _
+ə -> ə̀ / ↑ {CO}* ˈ _
+a -> à / ↑ {CO}* ˈ _
+ɪ -> ɪ̀ / ↑ {CO}* ˈ _
+i -> ì / ↑ {CO}* ˈ _
+ʊ -> ʊ̀ / ↑ {CO}* ˈ _
+u -> ù / ↑ {CO}* ˈ _
+e -> è / ↑ {CO}* ˈ _
+ɛ -> ɛ̀ / ↑ {CO}* ˈ _
+o -> ò / ↑ {CO}* ˈ _
+ɔ -> ɔ̀ / ↑ {CO}* ˈ _
+ʌ -> ʌ́ / _ {VM}* {CO}* ↑ {CO}* #
+ə -> ə́ / _ {VM}* {CO}* ↑ {CO}* #
+a -> á / _ {VM}* {CO}* ↑ {CO}* #
+ɪ -> ɪ́ / _ {VM}* {CO}* ↑ {CO}* #
+i -> í / _ {VM}* {CO}* ↑ {CO}* #
+ʊ -> ʊ́ / _ {VM}* {CO}* ↑ {CO}* #
+u -> ú / _ {VM}* {CO}* ↑ {CO}* #
+e -> é / _ {VM}* {CO}* ↑ {CO}* #
+ɛ -> ɛ́ / _ {VM}* {CO}* ↑ {CO}* #
+o -> ó / _ {VM}* {CO}* ↑ {CO}* #
+ɔ -> ɔ́ / _ {VM}* {CO}* ↑ {CO}* #
+↑ -> 0
+
+[words]
+# Number words with a tone the spelling does not show (Bahri 2002).
+तेरां tˈéːɾãː
+सोलां sˈóːlãː
+सतारां sətˈáːɾãː
+ठारां ʈʰˈáːɾãː
+सट्ठ sˈʌ́ʈʰː
+
+[unstressed]
+# Copula, postpositions, pronouns and particles.
+ऐ 0 0
+ऎ 0 0
+न 0 0
+हा 0 0
+ही 0 0
+हे 0 0
+दा 0 0
+दी 0 0
+दे 0 0
+दियां 0 0
+गी 0 0
+च 0 0
+ते 0 0
+बी 0 0
+कन्नै s s
+थमां s s
+लेई 0 0
+आस्तै s s
+नै 0 0
+ने 0 0
+जे 0 0
+के 0 0
+मैं 0 0
+में 0 0
+तूं 0 0
+एह् 0 0
+ओह् 0 0
+
+[numbers]
+# Dogri number words. 0-30, the tens, 100 and 1000 follow Bahri (2002,
+# Dogri numerals as given to E. Chan's "Numeral Systems of the World's
+# Languages") and the Dogri entries of Unicode CLDR (रपेऽ, ज्हार); the
+# other numbers below 100 are formed like their Punjabi counterparts
+# (Unicode CLDR common/rbnf/pa.xml, Unicode License v3) in Dogri spelling,
+# and still need checking by a Dogri speaker.
+0 शून्य
+1 इक
+2 दो
+3 त्रै
+4 चार
+5 पंज
+6 छे
+7 सत्त
+8 अट्ठ
+9 नौ
+10 दस
+11 ञारां
+12 बारां
+13 तेरां
+14 चौदां
+15 पंदरां
+16 सोलां
+17 सतारां
+18 ठारां
+19 उन्नी
+20 बीह्
+21 इक्की
+22 बाई
+23 त्रेई
+24 चौबी
+25 पंजी
+26 छब्बी
+27 सताई
+28 ठाई
+29 उनत्ती
+30 त्रीह्
+31 इकत्ती
+32 बत्ती
+33 त्रेत्ती
+34 चौंती
+35 पैंती
+36 छत्ती
+37 सैंती
+38 ठत्ती
+39 उनताली
+40 चाली
+41 इकताली
+42 बताली
+43 त्रताली
+44 चुताली
+45 पंताली
+46 छताली
+47 सताली
+48 ठताली
+49 उनंजा
+50 पंजाह्
+51 इकवंजा
+52 बवंजा
+53 त्रिवंजा
+54 चुरंजा
+55 पचवंजा
+56 छपंजा
+57 सतवंजा
+58 ठवंजा
+59 उनाह्ठ
+60 सट्ठ
+61 इकाह्ठ
+62 बाह्ठ
+63 त्रेह्ठ
+64 चौंह्ठ
+65 पैंह्ठ
+66 छेआह्ठ
+67 सताह्ठ
+68 ठाह्ठ
+69 उनहत्तर
+70 स्हत्तर
+71 इकहत्तर
+72 बहत्तर
+73 त्रेहत्तर
+74 चुहत्तर
+75 पचहत्तर
+76 छेहत्तर
+77 सतहत्तर
+78 ठहत्तर
+79 उनासी
+80 अस्सी
+81 इकासी
+82 बेआसी
+83 त्रेआसी
+84 चुरासी
+85 पचासी
+86 छेआसी
+87 सतासी
+88 ठासी
+89 उनानबै
+90 नब्बै
+91 इकानबै
+92 बानबै
+93 त्रानबै
+94 चुरानबै
+95 पंचानबै
+96 छेआनबै
+97 सतानबै
+98 ठानबै
+99 नड़िन्नबै
+scale100 सौ
+scale1000 ज्हार
+scale100000 लक्ख
+scale10000000 करोड़
+grouping indian
+point दशमलव
+minus माइनस
+percent प्रतिशत
+# Improved mode and normalise-only mode: ordinals written with digits and
+# an ending (12मीं, 5मां, 1ला), with the words of lang/numbers/ord-doi.txt.
+ordinal-suffix मां spellout-ordinal-masculine
+ordinal-suffix मीं spellout-ordinal-feminine
+ordinal-suffix में spellout-ordinal-oblique
+ordinal-suffix वां spellout-ordinal-masculine
+ordinal-suffix वीं spellout-ordinal-feminine
+ordinal-suffix वें spellout-ordinal-oblique
+ordinal-suffix ला spellout-ordinal-masculine
+ordinal-suffix ली spellout-ordinal-feminine
+ordinal-suffix ले spellout-ordinal-oblique
+ordinal-suffix था spellout-ordinal-masculine
+ordinal-suffix थी spellout-ordinal-feminine
+ordinal-suffix थे spellout-ordinal-oblique
+# The rupee (CLDR: भारती रपेऽ), said after the amount.
+currency ₹ रपेऽ
+# Clock times "10:30": दस बजियै त्रीह् मिंट, "10:00": दस बजे.
+time colon
+time-hour बजे बजे
+time-hour-always yes
+time-hour-minutes बजियै
+time-minute मिंट
+# An apostrophe between letters is the tone mark of a lost h (र’लाया).
+apostrophe keep
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main/doi.xml (format, wide).
+month1 जनवरी
+month2 फरवरी
+month3 मार्च
+month4 अप्रैल
+month5 मेई
+month6 जून
+month7 जुलाई
+month8 अगस्त
+month9 सितंबर
+month10 अक्तूबर
+month11 नवंबर
+month12 दिसंबर

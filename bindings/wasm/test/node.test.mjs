@@ -84,3 +84,11 @@ test("Bhojpuri, Maithili and Magahi load the Hindi data and need no file of thei
   }
   assert.equal(uccharan.isLoaded("hi"), true);
 });
+
+test("Dogri: Hindi reading in compatible mode, tone in improved mode", async () => {
+  assert.ok(uccharan.LANGUAGES.includes("doi"));
+  assert.equal(await uccharan.phonemize("घर", { lang: "doi" }), await uccharan.phonemize("घर", { lang: "hi" }));
+  assert.equal(await uccharan.phonemize("घर", { lang: "dogri", improved: true }), "kˈʌ̀ɾ");
+  assert.equal((await uccharan.normalize("25", { lang: "doi", improved: true })).text, "पंजी");
+  assert.equal((await uccharan.transliterate("tusen kiyan ho", { lang: "doi" })).text, "तुसें कि’यां हो");
+});

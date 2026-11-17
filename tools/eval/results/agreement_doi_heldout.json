@@ -1,0 +1,243 @@
+{
+ "language": "doi",
+ "reference": "espeak-ng 1.52.0 voice hi (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 2000,
+  "reference_symbols": 141402,
+  "per": 0.01397434265427646,
+  "per_without_stress": 0.012367952922529572,
+  "exact_sentence": 0.7945,
+  "exact_sentence_without_stress": 0.7945,
+  "piper_shape_per": 0.014079576562510939,
+  "piper_shape_exact_sentence": 0.7795,
+  "word_count_mismatch_sentences": 295,
+  "errors_by_class": {
+   "stress": {
+    "count": 487,
+    "share": 0.24645748987854252,
+    "per_contribution": 0.0034440814132756254
+   },
+   "vowel": {
+    "count": 464,
+    "share": 0.23481781376518218,
+    "per_contribution": 0.0032814245908827314
+   },
+   "consonant": {
+    "count": 385,
+    "share": 0.19483805668016194,
+    "per_contribution": 0.002722733766141922
+   },
+   "word-boundary": {
+    "count": 299,
+    "share": 0.1513157894736842,
+    "per_contribution": 0.002114538691107622
+   },
+   "length": {
+    "count": 189,
+    "share": 0.09564777327935223,
+    "per_contribution": 0.001336614757924216
+   },
+   "other": {
+    "count": 152,
+    "share": 0.07692307692307693,
+    "per_contribution": 0.001074949434944343
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→∅",
+    "count": 308
+   },
+   {
+    "edit": " →∅",
+    "count": 278
+   },
+   {
+    "edit": "ː→∅",
+    "count": 169
+   },
+   {
+    "edit": "e→∅",
+    "count": 149
+   },
+   {
+    "edit": "ə→∅",
+    "count": 92
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 68
+   },
+   {
+    "edit": "∅→ə",
+    "count": 67
+   },
+   {
+    "edit": "n→̃",
+    "count": 48
+   },
+   {
+    "edit": "ɾ→∅",
+    "count": 38
+   },
+   {
+    "edit": "a→∅",
+    "count": 36
+   },
+   {
+    "edit": "∅→ɾ",
+    "count": 34
+   },
+   {
+    "edit": "s→∅",
+    "count": 31
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 28
+   },
+   {
+    "edit": "ʃ→∅",
+    "count": 28
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 27
+   },
+   {
+    "edit": "l→∅",
+    "count": 27
+   },
+   {
+    "edit": "n→∅",
+    "count": 25
+   },
+   {
+    "edit": "∅→k",
+    "count": 22
+   },
+   {
+    "edit": "∅→ʈ",
+    "count": 22
+   },
+   {
+    "edit": "∅→ ",
+    "count": 21
+   },
+   {
+    "edit": "∅→ː",
+    "count": 20
+   },
+   {
+    "edit": "ʌ→ə",
+    "count": 17
+   },
+   {
+    "edit": "∅→p",
+    "count": 17
+   },
+   {
+    "edit": "∅→l",
+    "count": 16
+   },
+   {
+    "edit": "∅→ʌ",
+    "count": 16
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 13597,
+    "wrong": 271,
+    "rate": 0.019930867103037434
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 109,
+    "per": 0.01812977099236641,
+    "exact_sentence": 0.6513761467889908
+   },
+   "no-digits": {
+    "sentences": 1891,
+    "per": 0.013493253373313344,
+    "exact_sentence": 0.8027498677948176
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "indiccorp-50676c41ffc6",
+    "text": "इस भ्रश्ट समाजै पर कवि ने व्यंग कीते दा ऎ जे कोई बी हक्क जां इंसाफ अड़े बगैर नेईँ मिली सकदा।",
+    "reference": "ˈɪs bʰɾˈʌʃʈ səmˈaːɟɛː pˈʌɾ kˈʌʋɪ nˈeː ʋjˈʌŋɡ kˈiːteː dˈaː ˈe ɟˈeː kˈoːi bˈi hˈʌkː ɟˈã ĩsˈaːpʰ ˈʌr.eː bəɡˈɛːɾ neːˈiːn mˈɪli sˈʌkdˌaː",
+    "uccharan": "ˈɪs bʰɾˈʌʃʈ səmˈaːɟɛː pˈʌɾ kˈʌʋɪ nˈeː ʋjˈʌŋɡ kˈiːteː dˈaː ɟˈeː kˈoːi bˈi hˈʌkː ɟˈã ĩsˈaːpʰ ˈʌr.eː bəɡˈɛːɾ nˈeːĩ mˈɪli sˈʌkdˌaː"
+   },
+   {
+    "id": "indiccorp-4feaabc46636",
+    "text": "डोगरी साहित्य च बी एह् बडी खुशी आह्‍ली गल्ल ऎ जे इसदे साहित्यकार बी हर ओह् चंगे-मडे विशे लेइयै लिखा'दा ऎ।",
+    "reference": "ɖˈoːɡɾˌi saːhˈɪtːjə cˈə bˈi ˈeːh bˈʌɖi kʰˈʊʃi ˈaːh lˈi ɡˈʌllə ˈe ɟˈeː ˈɪsdˌeː sˌaːhɪtːjəkˈaːɾ bˈi hˈʌɾ ˈoːh cˈʌŋɡeːmˈʌɖeː ʋˈɪʃeː lˈeːɪjˌɛː lɪkʰˈaːdaː ˈe",
+    "uccharan": "ɖˈoːɡɾˌi saːhˈɪtːjə cˈə bˈi ˈeːh bˈʌɖi kʰˈʊʃi ˈaːhli ɡˈʌllə ɟˈeː ˈɪsdˌeː sˌaːhɪtːjəkˈaːɾ bˈi hˈʌɾ ˈoːh cˈʌŋɡeːmˈʌɖeː ʋˈɪʃeː lˈeːɪjˌɛː lɪkʰˈaːdaː"
+   },
+   {
+    "id": "indiccorp-42b0eb5c65eb",
+    "text": "सत्त-सबेल्लै, नेईं कोई उट्ठै।",
+    "reference": "sˈʌtːəsbˈeːllɛː neːˈiːn kˈoːi ˈʊʈʰʈʰɛː",
+    "uccharan": "sˈʌtːsəbˈeːllɛː neːˈiːn kˈoːi ˈʊʈʰʈʰɛː"
+   },
+   {
+    "id": "indiccorp-19f1eed52fa7",
+    "text": "किश उपाऽ दस्सो।",
+    "reference": "kˈɪʃ ˈʊpaːː dˈʌssoː",
+    "uccharan": "kˈɪʃ ˈʊpaː dˈʌssoː"
+   },
+   {
+    "id": "indiccorp-bfddc2e71d1a",
+    "text": "ओह् कुसै बी चीजै गी कुसै कन्नै सांझा नेईँ करना चांह्दा।",
+    "reference": "ˈoːh kˈʊsɛː bˈi cˈiːɟɛː ɡˈi kˈʊsɛː kˈʌnnɛː sˈãɟʰaː neːˈiːn kˈʌɾnˌaː cˈãhdaː",
+    "uccharan": "ˈoːh kˈʊsɛː bˈi cˈiːɟɛː ɡˈi kˈʊsɛː kˈʌnnɛː sˈãɟʰaː nˈeːĩ kˈʌɾnˌaː cˈãhdaː"
+   },
+   {
+    "id": "indiccorp-74d788eb5c30",
+    "text": "जिसकरी ग्रां दे लोक उंदे अग्गै बोलने दी जुरत नेईँ करदे।",
+    "reference": "ɟˈɪsəkɾi ɡɾˈã dˈeː lˈoːk ˈʊndeː ˈʌɡːɛː bˈoːlnˌeː dˈi ɟˈʊɾət neːˈiːn kˈʌɾdˌeː",
+    "uccharan": "ɟˈɪsəkɾi ɡɾˈã dˈeː lˈoːk ˈʊndeː ˈʌɡːɛː bˈoːlnˌeː dˈi ɟˈʊɾət nˈeːĩ kˈʌɾdˌeː"
+   },
+   {
+    "id": "indiccorp-7231b48fa6ce",
+    "text": "इन्ने च ओह् दोऐ उंऱदे कोल पुज्जी गेदे हे ।",
+    "reference": "ˈɪnneː cˈə ˈoːh dˈoːɛː ˈʊnɾədˌeː kˈoːl pˈʊɟːi ɡˈeːdeː hˈeː",
+    "uccharan": "ˈɪnneː cˈə ˈoːh dˈoːɛː ˈʊndeː kˈoːl pˈʊɟːi ɡˈeːdeː hˈeː"
+   },
+   {
+    "id": "indiccorp-718bb3fe9ba5",
+    "text": "केंदर शासित प्रदेश: अंडमान-निकोबार द्वीप समूह/दादर ते नागर हवेली ते लक्षद्वीप",
+    "reference": "kˈẽːdəɾ ʃˈaːsɪt pɾədˈeːʃ ˌʌɳɖəmˈaːnnˌɪkoːbˈaːɾ dʋˈiːp səmˈuːh slˈaʃ dˈaːdəɾ tˈeː nˈaːɡəɾ həʋˈeːli tˈeː lˌəkʃədʋˈiːp",
+    "uccharan": "kˈẽːdəɾ ʃˈaːsɪt pɾədˈeːʃ ˌʌɳɖəmˈaːnnˌɪkoːbˈaːɾ dʋˈiːp səmˈuːh dˈaːdəɾ tˈeː nˈaːɡəɾ həʋˈeːli tˈeː lˌəkʃədʋˈiːp"
+   },
+   {
+    "id": "indiccorp-4364beb3d35d",
+    "text": "ओह् हर बेल्लै इस्सै सोच च पेआ रौह्न्दा ऎ जे हून ते मेह्नत करियै खाई लेई ऎ, अगले पैह्‍र बी उस्सी नसीब होई सकग?",
+    "reference": "ˈoːh hˈʌɾ bˈeːllɛː ˈɪssɛː sˈoːc cˈə pˈeːaː ɾˈɔːhndaː ˈe ɟˈeː hˈuːn tˈeː mˈeːhnət kˈʌɾɪjˌɛː kʰˈaːi lˈeːi ˈe ˈʌɡlˌeː pˈɛːh ɾˈə bˈi ˈʊssi nəsˈiːb hˈoːi sˈʌkəɡ",
+    "uccharan": "ˈoːh hˈʌɾ bˈeːllɛː ˈɪssɛː sˈoːc cˈə pˈeːaː ɾˈɔːhndaː ɟˈeː hˈuːn tˈeː mˈeːhnət kˈʌɾɪjˌɛː kʰˈaːi lˈeːi ˈʌɡlˌeː pˈɛːhɾə bˈi ˈʊssi nəsˈiːb hˈoːi sˈʌkəɡ"
+   },
+   {
+    "id": "indiccorp-d27f7af8a8f9",
+    "text": "नां गै हारे कदें उद्दम-हिम्मत",
+    "reference": "nˈã ɡˈɛː hˈaːɾeː kˈʌdẽː ˈʊdːəmhˈɪmmət",
+    "uccharan": "nˈã ɡˈɛː hˈaːɾeː kˈʌdẽː ˈʊdːəmˌəhˈɪmmət"
+   },
+   {
+    "id": "indiccorp-2cf9ff338212",
+    "text": "कोई उस कन्नै हिरख नेईँ करदा सगुआं टबौके गै लांदे न।",
+    "reference": "kˈoːi ˈʊs kˈʌnnɛː hˈɪɾəkʰ neːˈiːn kˈʌɾdˌaː sˈʌɡʊˌã ʈəbˈɔːkeː ɡˈɛː lˈãdeː nˈə",
+    "uccharan": "kˈoːi ˈʊs kˈʌnnɛː hˈɪɾəkʰ nˈeːĩ kˈʌɾdˌaː sˈʌɡʊˌã ʈəbˈɔːkeː ɡˈɛː lˈãdeː nˈə"
+   },
+   {
+    "id": "indiccorp-0b6c8bcaa0fe",
+    "text": "सत-शमानै दे सत्तें-पर्दें च",
+    "reference": "sˈʌtəʃmˈaːnɛː dˈeː sˈʌtːẽːpˈʌɾdẽː cˈə",
+    "uccharan": "sˈʌtʃəmˈaːnɛː dˈeː sˈʌtːẽːpˈʌɾdẽː cˈə"
+   }
+  ]
+ }
+}

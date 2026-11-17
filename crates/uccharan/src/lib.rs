@@ -24,6 +24,7 @@
 pub mod african;
 pub mod bho;
 pub mod data;
+pub mod doi;
 pub mod en;
 pub mod gnorm;
 pub mod hi;
@@ -143,6 +144,8 @@ languages! {
     Mai "mai" ["mai-in", "maithili"] Devanagari, None;
     /// Magahi in Devanagari or Kaithi (no espeak voice: compatible mode is the `hi` reading).
     Mag "mag" ["mag-in", "magahi"] Devanagari, None;
+    /// Dogri in Devanagari (no espeak voice: compatible mode is the `hi` reading).
+    Doi "doi" ["doi-in", "dgo", "dogri"] Devanagari, Some(include_str!("../lang/doi.lang"));
     /// Spanish (espeak voice `es`).
     Es "es" ["es-es", "spa", "spanish"] Latin, Some(include_str!("../lang/es.lang"));
     /// German (espeak voice `de`).
@@ -195,12 +198,26 @@ impl Lang {
         matches!(self, Lang::Hi | Lang::Bho | Lang::Mai | Lang::Mag)
     }
 
+    /// Languages with a language file of their own that espeak-ng has no
+    /// voice for: compatible mode is the reference's Hindi reading
+    /// (Sanskrit, Dogri).
+    pub fn hindi_voice(self) -> bool {
+        matches!(self, Lang::Sa | Lang::Doi)
+    }
+
+    /// Languages typed in Latin letters with the habits of romanised Hindi:
+    /// the `hinglish` option and `transliterate` without a pack read them
+    /// with the Hindi list and rules (Dogri after its own word list).
+    pub fn romanised_as_hindi(self) -> bool {
+        self.hindi_like() || self == Lang::Doi
+    }
+
     /// The name used in espeak-style language-switch flags (`(en)`, `(hi)`).
     pub fn flag(self) -> &'static str {
         if self.is_english() {
             "en"
-        } else if self.hindi_like() || self == Lang::Sa {
-            // Bhojpuri, Maithili and Sanskrit are read with the reference's Hindi voice.
+        } else if self.hindi_like() || self.hindi_voice() {
+            // Bhojpuri, Maithili, Sanskrit and Dogri are read with the reference's Hindi voice.
             "hi"
         } else {
             self.tag()
@@ -584,13 +601,33 @@ impl Phonemizer {
             text
         };
         let owned_avagraha;
-        let text = match (opt.lang.hindi_like() && !compat)
-            .then(|| bho::avagraha_s(text))
+        let text = match (!compat && (opt.lang.hindi_like() || opt.lang == Lang::Doi))
+            .then(|| bho::avagraha_s(text, opt.lang == Lang::Doi))
             .flatten()
         {
             Some(t) => {
                 owned_avagraha = t;
                 owned_avagraha.as_str()
+            }
+            None => text,
+        };
+        // Dogri: the reference's Hindi voice reads a word written with the
+        // apostrophe of a lost h (कि’यां) as one word without it; improved
+        // mode keeps the apostrophe (a tone mark) and joins a word that a
+        // zero-width space splits (आह्​ली).
+        let owned_apostrophe;
+        let marks: &[char] = if compat {
+            &['\'', '’', 'ʼ']
+        } else {
+            &['\u{200b}']
+        };
+        let text = match (opt.lang == Lang::Doi)
+            .then(|| text::drop_inside_indic(text, marks))
+            .flatten()
+        {
+            Some(t) => {
+                owned_apostrophe = t;
+                owned_apostrophe.as_str()
             }
             None => text,
         };
@@ -667,7 +704,7 @@ impl Phonemizer {
                         }
                     }
                 }
-                let generic = if compat && opt.lang == Lang::Sa {
+                let generic = if compat && opt.lang.hindi_voice() {
                     None
                 } else {
                     self.generic_for_chunk(&chunk.text, opt.lang)
@@ -700,7 +737,7 @@ impl Phonemizer {
                         }
                     }
                 } else {
-                    let nl = if opt.lang.hindi_like() || opt.lang == Lang::Sa {
+                    let nl = if opt.lang.hindi_like() || opt.lang.hindi_voice() {
                         Lang::Hi
                     } else {
                         opt.lang
@@ -780,10 +817,13 @@ impl Phonemizer {
         // Romanised Hindi: rewrite Latin items as Devanagari where the classifier says so.
         let mut owned: Vec<norm::Item>;
         let mut items = items;
-        if opt.hinglish && opt.lang.hindi_like() {
+        if opt.hinglish && opt.lang.romanised_as_hindi() {
             owned = items.to_vec();
             if opt.lang == Lang::Bho && !compat {
                 bho::rewrite_roman(&mut owned);
+            }
+            if opt.lang == Lang::Doi {
+                doi::rewrite_roman(&mut owned);
             }
             // With the Hindi transliteration pack loaded, it decides; otherwise
             // the hand list and rules.
@@ -809,7 +849,9 @@ impl Phonemizer {
                 Lang::Bho | Lang::Mai | Lang::Mag => {
                     out.extend(bho::span(&hi, span, last, compat, lang))
                 }
-                Lang::Sa if compat => out.extend(bho::span(&hi, span, last, true, lang)),
+                l if compat && l.hindi_voice() => {
+                    out.extend(bho::span(&hi, span, last, true, lang))
+                }
                 l if l.latin().is_some() => {
                     self.want(l, false);
                     let t = self.data[Self::data_lang(l).index()].get();

@@ -20,7 +20,9 @@ python tools/eval/build_lang_sets.py <tag> --flores /path/to/flores200_dataset
 writes `tools/eval/data/<tag>_dev.tsv` and `<tag>_heldout.tsv` (add the language to `LANGS` and
 `FLORES` in the script). Sentences come from Tatoeba (CC BY 2.0 FR), split by a hash of the
 sentence id; when Tatoeba is small, from FLORES-200 (CC BY-SA 4.0; `dev` becomes our dev set,
-`devtest` our held-out set — evaluation input only, never shipped). Add the espeak voice to
+`devtest` our held-out set — evaluation input only, never shipped); when neither has the language,
+from AI4Bharat's IndicCorp v2 monolingual text (CC0; add it to `INDICCORP` with a pattern that
+marks lines written in Hindi, as for Dogri). Add the espeak voice to
 `VOICES` in `tools/eval/common.py` and `tools/bench/compare.py`. Tune only on the dev set; run the
 held-out set to report.
 
@@ -209,6 +211,12 @@ time-and e                  ; the word between the hour word and the minutes (Po
 time-hours1 une             ; the words for an hour count (feminine forms)
 time-context um gegen       ; see `time … dot-context`
 time-after Uhr              ; a word written after a time, said as its hour word
+time-hour-minutes बजियै      ; the hour word said when minutes follow, in place of
+                            ; the `time-hour` word (Dogri दस बजियै त्रीह् मिंट)
+time-minute मिंट             ; a word said after the minutes
+apostrophe keep             ; an apostrophe between two letters of an Indic script
+                            ; stays in the word (Dogri र’लाया, a tone mark); by
+                            ; default it is dropped (Assamese ল'ৰা)
 written-hyphen keep         ; normalise-only mode keeps hyphens in number words (French
                             ; vingt-deux); otherwise they become spaces
 written-glue tausend        ; … joins these words to the number word before them
