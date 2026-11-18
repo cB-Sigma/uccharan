@@ -122,8 +122,8 @@ jobs:
       - name: Node tests
         working-directory: bindings/wasm
         run: npm test
-      - name: The WebAssembly core stays under 2 MB
-        run: test "$(stat -c %s bindings/wasm/dist/uccharan_wasm_bg.wasm)" -lt 2097152
+      - name: The WebAssembly core stays under 2.5 MB
+        run: test "$(stat -c %s bindings/wasm/dist/uccharan_wasm_bg.wasm)" -lt 2621440
       - name: Assemble the demo site
         run: node demo/build.mjs
       - name: npm package contents

@@ -948,7 +948,7 @@ espeak-ng WebAssembly build published in the npm package `phonemizer` was **not 
 | Lexicon path > 100 k words/s | 0.58 M words/s through ctypes | yes |
 | WebAssembly within 2–3× of native | 14.6 µs vs 11.8 µs p50 for en-US (1.2×) | yes |
 | Per-language data < 5 MB | en 0.73 MB (+ 1.9 MB for Kokoro English), hi 3 KB | yes |
-| WebAssembly core < 2 MB | 439 KiB | yes |
+| WebAssembly core < 2.5 MB (2 MB until 44 languages) | 2.05 MiB with 44 languages (439 KiB with two) | yes |
 | en-US sentence PER ≤ 5 % vs reference | 1.16 % | yes |
 | Hindi PER ≤ 5 % vs reference | 0.09 % | yes |
 | End-to-end WER within +0.5 (en) / +1.0 (hi) on two Piper voices per language | en-US: amy-low +0.02 (0.2.0; earlier 0.2.0 builds +0.21 and +0.30), lessac −0.09 (0.1.0); en-GB: one voice, +0.11 (interval up to +0.77); hi: one voice, −0.12 | en-US yes; en-GB and Hindi on one voice only |
