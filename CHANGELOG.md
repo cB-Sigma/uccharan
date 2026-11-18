@@ -5,6 +5,14 @@ All notable changes are listed here. The format follows
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-11-19
+
+The first stable release. From here on versions follow semantic versioning strictly: compatible
+mode keeps reading text as the reference voices were trained on within a major version, and the
+Python, JavaScript, Rust and C interfaces change incompatibly only in a new major version. This
+release adds Dogri, Bodo, Santali, Manipuri and Kashmiri (44 languages), and fixes number reading
+in improved mode for the South Indian languages.
+
 ### Added
 
 - **Dogri** (`doi`, also `dogri`, `dgo`; Devanagari). espeak-ng has no Dogri voice, so compatible
