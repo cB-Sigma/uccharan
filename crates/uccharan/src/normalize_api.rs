@@ -385,7 +385,7 @@ fn is_number(s: &str) -> bool {
     !a.is_empty()
         && a.chars().next().is_some_and(|c| c.is_ascii_digit())
         && a.chars()
-            .all(|c| c.is_ascii_digit() || c == ',' || c == '.')
+            .all(|c| c.is_ascii_digit() || matches!(c, ',' | '.' | crate::gnorm::GROUPED))
 }
 
 /// Script class of a chunk: its first letter's script.
@@ -603,6 +603,21 @@ impl Cx<'_> {
         if dl.hindi_like() && is_number(t) && next.is_some_and(is_scale_word) {
             if let Some(w) = hindi_fraction(&ascii_digits(t)) {
                 return (1, self.piece(src, w, SpanKind::Decimal, dl, Some(t)));
+            }
+        }
+        // "January 5": the day of the month is an ordinal.
+        if dl.is_english() {
+            let day = crate::norm::day_after_month(&self.prev, t)
+                .or_else(|| crate::norm::day_before_month(t, next));
+            if let Some(day) = day {
+                let c = Chunk {
+                    text: day,
+                    dot: ch.dot,
+                    tight: ch.tight,
+                };
+                let items = self.expand(&c, dl);
+                let out = self.join(&items, dl);
+                return (1, self.piece(src, out, SpanKind::Date, dl, Some(t)));
             }
         }
         // "Jan 5": an English month abbreviation before a day.

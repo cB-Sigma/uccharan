@@ -70,8 +70,8 @@ pub fn join_currency(chunks: &[Chunk], nums: &Numbers) -> Vec<Chunk> {
                 && prev.text.starts_with(|x: char| x.is_ascii_digit())
                 && prev
                     .text
-                    .bytes()
-                    .all(|b| b.is_ascii_digit() || b == b',' || b == b'.')
+                    .chars()
+                    .all(|x| x.is_ascii_digit() || matches!(x, ',' | '.' | GROUPED))
             {
                 prev.text.push_str(&c.text);
                 continue;
@@ -497,7 +497,10 @@ fn money(text: &str, nums: &Numbers) -> Option<Vec<Item>> {
     })?;
     let sep = if nums.decimal_comma { ',' } else { '.' };
     let (whole, cents) = amount.split_once(sep)?;
-    let whole = whole.replace([if nums.decimal_comma { '.' } else { ',' }, ' '], "");
+    let whole = whole.replace(
+        [if nums.decimal_comma { '.' } else { ',' }, ' ', GROUPED],
+        "",
+    );
     if cents.len() != 2
         || whole.is_empty()
         || !whole.bytes().all(|b| b.is_ascii_digit())

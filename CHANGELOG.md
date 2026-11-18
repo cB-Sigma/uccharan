@@ -161,6 +161,16 @@ in improved mode for the South Indian languages.
 - **English month abbreviations** without a full stop before a day are read in full in natural
   normalisation and normalise-only mode: *Jan 5* is *January five*, *Mar 3rd* *March third*. A
   lower-case *mar*, or one not before a day of the month, stays a word.
+- **English telephone numbers**: a string of ten or more digits without commas (*9876543210*,
+  *07700900123*) is read digit by digit in natural normalisation and normalise-only mode; it was
+  read as billions. Hindi already read Indian mobile numbers so.
+- **English days of the month** are ordinals next to a month name: *January 5* is *January
+  fifth*, British *3 March* is *third March*. A day and month without a year are read as a date
+  when the day is above 12 and so cannot be a common fraction: en-US *3/14* is *March
+  fourteenth*, en-GB *14/3* *the fourteenth of March*; *3/4* stays *three quarters*.
+- **Amounts with spaced thousands and a currency sign** (French and German *1 250,50 €*, *10 000 €*)
+  are read as money in improved mode and normalise-only mode: *mille deux cent cinquante euros
+  cinquante*, not *… virgule cinquante euro*.
 - **An unknown language** names every supported tag in the error in Python and the command line, as
   in JavaScript; it listed only en-us, en-gb and hi.
 

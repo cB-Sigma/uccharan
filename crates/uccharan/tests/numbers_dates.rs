@@ -558,10 +558,10 @@ fn hindi_clock_times_before_baje_say_baje_once() {
 fn english_month_abbreviations_before_a_day() {
     assert_eq!(
         norm(Lang::EnUs, "Jan 5, 2024"),
-        "January five, twenty twenty four"
+        "January fifth, twenty twenty four"
     );
     assert_eq!(norm(Lang::EnUs, "Mar 3rd"), "March third");
-    assert_eq!(norm(Lang::EnUs, "Sept 10"), "September ten");
+    assert_eq!(norm(Lang::EnUs, "Sept 10"), "September tenth");
     // Not before a day, or not capitalised: left alone.
     assert_eq!(norm(Lang::EnUs, "Jan is here"), "Jan is here");
     assert_eq!(norm(Lang::EnUs, "mar 3"), "mar three");
@@ -579,4 +579,70 @@ fn unknown_language_lists_every_tag() {
     for l in Lang::ALL {
         assert!(m.contains(l.tag()), "{m} lacks {}", l.tag());
     }
+}
+
+#[test]
+fn english_days_of_the_month_are_ordinals() {
+    assert_eq!(
+        norm(Lang::EnUs, "January 5, 2024"),
+        "January fifth, twenty twenty four"
+    );
+    assert_eq!(norm(Lang::EnUs, "on March 22"), "on March twenty second");
+    assert_eq!(
+        norm(Lang::EnGb, "on 3 March 2024"),
+        "on third March twenty twenty four"
+    );
+    assert_eq!(norm(Lang::EnGb, "21 June"), "twenty first June");
+    // Not next to a month name, or not a day: a cardinal.
+    assert_eq!(norm(Lang::EnUs, "5 apples"), "five apples");
+    assert_eq!(norm(Lang::EnUs, "January 45"), "January forty five");
+    let out = ipa(Lang::EnUs, Mode::Compatible, "January 5");
+    assert!(out.contains("fˈɪfθ"), "{out}");
+}
+
+#[test]
+fn english_day_and_month_without_a_year() {
+    assert_eq!(norm(Lang::EnUs, "by 3/14"), "by March fourteenth");
+    assert_eq!(norm(Lang::EnUs, "by 14/3"), "by March fourteenth");
+    assert_eq!(norm(Lang::EnGb, "by 14/3"), "by the fourteenth of March");
+    // Common fractions stay fractions.
+    assert_eq!(norm(Lang::EnUs, "3/4 cup"), "three quarters cup");
+    assert!(!norm(Lang::EnUs, "3/16 inch").contains("March"));
+    assert!(!norm(Lang::EnUs, "3/5").contains("March"));
+}
+
+#[test]
+fn english_long_digit_strings_are_read_digit_by_digit() {
+    assert_eq!(
+        norm(Lang::EnUs, "call 9876543210"),
+        "call nine eight seven six five four three two one zero"
+    );
+    assert_eq!(
+        norm(Lang::EnGb, "07700900123"),
+        "zero seven seven zero zero nine zero zero one two three"
+    );
+    // Amounts written with commas, and shorter numbers, stay numbers.
+    assert!(norm(Lang::EnUs, "1,234,567,890").starts_with("one billion"));
+    assert!(norm(Lang::EnUs, "1234567").starts_with("one million"));
+    let out = ipa(Lang::EnUs, Mode::Compatible, "9876543210");
+    assert!(!out.contains("bˈɪliən"), "{out}");
+}
+
+#[test]
+fn amounts_with_spaced_thousands_and_a_currency_sign() {
+    assert_eq!(
+        norm(Lang::Fr, "1 250,50 €"),
+        "mille deux cent cinquante euros cinquante"
+    );
+    assert_eq!(norm(Lang::Fr, "1 250 €"), "mille deux cent cinquante euros");
+    assert_eq!(norm(Lang::Fr, "10 000 €"), "dix mille euros");
+    assert_eq!(
+        norm(Lang::De, "1 250,50 €"),
+        "eintausend zweihundertfünfzig Euro fünfzig"
+    );
+    // Compatible mode reads the amount as the reference does, without the sign.
+    assert_eq!(
+        ipa(Lang::Fr, Mode::Improved, "Ça coûte 1 250,50 €."),
+        ipa(Lang::Fr, Mode::Improved, "Ça coûte 1250,50 €.")
+    );
 }

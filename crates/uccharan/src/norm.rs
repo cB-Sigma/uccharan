@@ -685,6 +685,44 @@ pub(crate) fn month_before_day(word: &str, next: Option<&str>) -> Option<&'stati
     (digits.len() <= 2 && (1..=31).contains(&day) && ok_suffix).then_some(MONTHS[m])
 }
 
+/// A day of the month after an English month name ("January 5",
+/// "Jan 5"), written as the ordinal it is said as ("5th"), for the number
+/// reader. Only capitalised month names count.
+pub(crate) fn day_after_month(prev: &str, word: &str) -> Option<String> {
+    let full = MONTHS.contains(&prev);
+    if !full && month_before_day(prev, Some(word)).is_none() {
+        return None;
+    }
+    day_ordinal(word)
+}
+
+/// A day of the month before an English month name ("3 March") as its
+/// ordinal ("3rd").
+pub(crate) fn day_before_month(word: &str, next: Option<&str>) -> Option<String> {
+    if !next.is_some_and(|n| MONTHS.contains(&n)) {
+        return None;
+    }
+    day_ordinal(word)
+}
+
+fn day_ordinal(word: &str) -> Option<String> {
+    if word.is_empty() || word.len() > 2 || !word.bytes().all(|c| c.is_ascii_digit()) {
+        return None;
+    }
+    let d: u32 = word.parse().ok()?;
+    if !(1..=31).contains(&d) {
+        return None;
+    }
+    let suffix = match (d % 10, d % 100) {
+        (_, 11..=13) => "th",
+        (1, _) => "st",
+        (2, _) => "nd",
+        (3, _) => "rd",
+        _ => "th",
+    };
+    Some(format!("{d}{suffix}"))
+}
+
 pub(crate) fn to_ascii_digits(s: &str) -> String {
     s.chars()
         .map(|c| match crate::text::indic_digit(c) {
@@ -1276,6 +1314,36 @@ fn special(cx: &mut Ctx, s: &str, lower: &str) -> bool {
             }
         }
     }
+    // "3/14" (en-US) and "14/3": a day and month without a year, where the
+    // day is above 12 and cannot be a common fraction's denominator.
+    if cx.lang.is_english() {
+        if let Some((a, z)) = s.split_once('/') {
+            let num = |t: &str| {
+                (!t.is_empty() && t.len() <= 2 && t.bytes().all(|c| c.is_ascii_digit()))
+                    .then(|| t.parse::<u64>().ok())
+                    .flatten()
+            };
+            if let (Some(a), Some(z)) = (num(a), num(z)) {
+                let md = match (a, z) {
+                    (1..=12, 13..=31) if z != 16 => Some((a, z)),
+                    (13..=31, 1..=12) => Some((z, a)),
+                    _ => None,
+                };
+                if let Some((m, d)) = md {
+                    if cx.lang == Lang::EnUs {
+                        cx.w(MONTHS[m as usize - 1]);
+                        cx.en_ordinal(d);
+                    } else {
+                        cx.w("the");
+                        cx.en_ordinal(d);
+                        cx.w("of");
+                        cx.w(MONTHS[m as usize - 1]);
+                    }
+                    return true;
+                }
+            }
+        }
+    }
     // Telephone-style digit strings, ranges and simple fractions.
     if b[0].is_ascii_digit() || (b[0] == b'+' && b.len() > 10) {
         let digits_only = s.trim_start_matches('+');
@@ -1284,8 +1352,13 @@ fn special(cx: &mut Ctx, s: &str, lower: &str) -> bool {
             .iter()
             .all(|g| !g.is_empty() && g.bytes().all(|c| c.is_ascii_digit()));
         let total: usize = groups.iter().map(|g| g.len()).sum();
+        // A bare string of ten or more digits is a telephone or account
+        // number: Hindi reads Indian mobile numbers so, and English writes
+        // amounts that large with commas.
         let mobile = groups.len() == 1
-            && ((total == 10 && matches!(b[0], b'6'..=b'9') && cx.hi()) || b[0] == b'+');
+            && ((total == 10 && matches!(b[0], b'6'..=b'9') && cx.hi())
+                || (total >= 10 && !cx.hi())
+                || b[0] == b'+');
         let year_range = groups.len() == 2
             && groups
                 .iter()

@@ -805,6 +805,21 @@ impl Phonemizer {
                         continue;
                     }
                 }
+                // "January 5": the day of the month is an ordinal.
+                if natural && opt.lang.is_english() {
+                    let prev = ci.checked_sub(1).map(|k| chunks[k].text.as_str());
+                    let day = prev
+                        .and_then(|p| norm::day_after_month(p, &chunk.text))
+                        .or_else(|| norm::day_before_month(&chunk.text, next));
+                    if let Some(day) = day {
+                        let c = text::Chunk {
+                            text: day,
+                            ..chunk.clone()
+                        };
+                        items.extend(norm::expand_with(&c, opt.lang, opt.normalize, !compat));
+                        continue;
+                    }
+                }
                 // "Maple Dr." / "Baker St.": after a capitalised name and not before
                 // another one, these are "drive" and "street", not titles.
                 if opt.normalize == Normalize::Natural
