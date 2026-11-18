@@ -1,0 +1,41 @@
+# Santali (Ol Chiki) sentence gold set, written 2026-11-18 before the Santali rules were run on these items. The
+# first two sentences are the first article of the Universal Declaration of Human Rights in Ol Chiki as quoted in
+# the Wikipedia article "Santali language" (CC BY-SA 4.0); the others are lines of AI4Bharat IndicCorp v2 Santali
+# text (CC0) that are in none of tools/eval/data/sat_dev.tsv, sat_heldout.tsv, sat_flores.tsv, sat_tatoeba.tsv and
+# sat_wiki.tsv. Two of them (ᱟ.ᱛᱩ, ᱞᱟ.ᱜᱤᱱ) write ᱹ with a full stop, as some Ol Chiki text does. Pronunciation
+# hand-written with the conventions of words.src. Format: sentence <TAB> pronunciation.
+ᱡᱚᱛᱚ ᱞᱮᱠᱟᱱ ᱢᱳᱱ ᱟᱨ ᱚᱫᱷᱤᱠᱟᱨ ᱨᱮᱭᱟᱜ ᱟᱫᱷᱟᱨ ᱨᱮ ᱢᱩᱪᱟᱹᱫ ᱫᱷᱟᱹᱵᱤᱡ ᱥᱣᱚᱛᱚᱱᱛᱨᱚ ᱟᱨ ᱥᱩᱢᱟᱱ ᱠᱳ ᱦᱩᱭᱩᱜᱼᱟ᱾	ɟɔtɔ lekan mon ar ɔdʱikar rejak̚ʔ adʱar re mucət̚ʔ dʱəbic̚ʔ swɔtɔntrɔ ar suman ko hujuk̚ʔa
+ᱩᱱᱠᱳ ᱦᱳ ᱵᱩᱫᱽᱫᱷᱤ ᱟᱨ ᱵᱩᱡᱷᱟᱹᱣ ᱠᱳ ᱟᱹᱜᱩ ᱛᱚᱨᱟ ᱟᱠᱟ ᱫᱟ ᱱᱮᱡ ᱟᱨ ᱢᱤᱜ ᱦᱚᱲ ᱟᱨ ᱫᱚᱥᱟᱨ ᱦᱚᱲ ᱨᱚ ᱟᱯᱱᱟᱨ ᱨᱮᱭᱟᱜ ᱵᱮᱣᱦᱟᱨ ᱦᱩᱭᱩᱜ ᱡᱳᱨᱩᱲᱟ᱾	unko ho buddʱi ar buɟʱəu ko əɡu tɔra aka da nec̚ʔ ar mik̚ʔ hɔɽ ar dɔsar hɔɽ rɔ apnar rejak̚ʔ beuhar hujuk̚ʔ ɟoruɽa
+ᱚᱱᱟ ᱦᱚᱸ ᱟᱭᱢᱟ ᱦᱚᱲ ᱠᱚ ᱠᱩᱥᱤᱭᱟᱫᱟ ᱾	ɔna hɔ̃ aima hɔɽ kɔ kusijada
+ᱦᱟᱹᱛᱤ ᱫᱚ ᱫᱷᱟᱹᱨᱛᱤ ᱨᱮ ᱢᱟᱨᱟᱝ ᱡᱟᱹᱱᱤ ᱠᱟᱱᱟᱭ ᱾	həti dɔ dʱərti re maraŋ ɟəni kanai
+ᱟᱹᱛᱩ ᱤᱥᱠᱩᱞ ᱠᱷᱚᱱ ᱜᱮ ᱚᱞ ᱚᱜ ᱡᱤᱭᱚᱱ ᱫᱚ ᱮᱛᱚᱦᱚᱵ ᱞᱮᱱᱟ ᱾	ətu iskul kʰɔn ɡe ɔl ɔk̚ʔ ɟijɔn dɔ etɔhɔp̚ʔ lena
+ᱱᱚᱶᱟ ᱵᱚᱸᱜᱟ ᱫᱚ ᱥᱮᱨᱢᱟ ᱨᱮᱱᱟᱜ ᱯᱩᱭᱞᱩ ᱪᱟᱸᱫᱚ ᱠᱟᱱᱟ ᱾	nɔw̃a bɔ̃ɡa dɔ serma renak̚ʔ puilu cãdɔ kana
+ᱚᱢᱨᱮᱞᱤ ᱦᱚᱱᱚᱛ ᱫᱚ ᱥᱤᱧᱚᱛ ᱨᱮ ᱜᱩᱡᱽᱨᱟᱴ ᱯᱚᱱᱚᱛ ᱨᱮᱭᱟᱜ ᱢᱤᱫ ᱦᱚᱱᱚᱛ ᱠᱟᱱᱟ ᱾	ɔmreli hɔnɔt dɔ siɲɔt re ɡuɟraʈ pɔnɔt rejak̚ʔ mit̚ʔ hɔnɔt kana
+ᱜᱟᱲᱣᱟ ᱫᱚ ᱚᱛ ᱦᱚᱨ ᱟᱨ ᱨᱮᱞ ᱦᱚᱨ ᱡᱩᱲᱟᱹᱣ ᱢᱮᱱᱟᱜᱼᱟ ᱾	ɡaɽwa dɔ ɔt hɔr ar rel hɔr ɟuɽəu menak̚ʔa
+ᱤᱱᱟᱹᱜ ᱫᱤᱞ ᱟᱱᱟᱜ ᱵᱚᱛᱚᱨ ᱥᱟᱞᱟᱜ ᱵᱟᱹᱭ ᱵᱟᱹᱭ ᱛᱮ ᱠᱚ ᱜᱟᱞᱢᱟᱨᱟᱣ ᱠᱟᱱᱟ᱾	inək̚ʔ dil anak̚ʔ bɔtɔr salak̚ʔ bəi bəi te kɔ ɡalmarau kana
+ᱠᱚᱭᱟᱢᱵᱟᱴᱩᱨ ᱟᱨ ᱱᱤᱞᱜᱤᱨᱤ ᱦᱚᱱᱚᱛ ᱯᱟᱪᱮ ᱨᱮ ᱢᱮᱱᱟᱜᱼᱟ ᱾	kɔjambaʈur ar nilɡiri hɔnɔt pace re menak̚ʔa
+ᱵᱷᱤᱛ ᱜᱷᱩᱲᱤ ᱨᱮ ᱟᱨᱮ ᱴᱟᱲᱟᱝ ᱦᱩᱭ ᱮᱱ ᱨᱮᱱᱟᱜ ᱥᱟᱰᱮ ᱟᱸᱡᱚᱢᱚᱜᱼᱟ ᱾	bʱit ɡʱuɽi re are ʈaɽaŋ hui en renak̚ʔ saɖe ãɟɔmɔk̚ʔa
+ᱱᱚᱣᱟ ᱴᱚᱴᱷᱟ ᱫᱤᱱᱟᱹᱢ ᱦᱤᱞᱚᱜ ᱵᱩᱸᱫᱮᱞᱠᱷᱚᱸᱰ ᱞᱮᱠᱟᱛᱮ ᱵᱟᱰᱟᱭᱚᱜᱼᱟ ᱾	nɔwa ʈɔʈʰa dinəm hilɔk̚ʔ bũdelkʰɔ̃ɖ lekate baɖajɔk̚ʔa
+ᱨᱟᱵᱟᱝ ᱢᱟᱦᱟᱸ ᱵᱟᱫᱽ ᱠᱟᱛᱮ ᱥᱟᱨᱟ ᱵᱚᱪᱷᱚᱨ ᱜᱮ ᱱᱚᱶᱟ ᱵᱟᱦᱟ ᱫᱚ ᱦᱩᱭᱩᱜᱼᱟ ᱾	rabaŋ mahã bad kate sara bɔcʰɔr ɡe nɔw̃a baha dɔ hujuk̚ʔa
+ᱟᱹᱰᱤ ᱜᱟᱱ ᱫᱷᱤᱨᱤ ᱠᱷᱚᱫᱟ ᱠᱚᱨᱮ ᱦᱚᱸ ᱯᱟᱨᱥᱤᱭᱟᱱ ᱯᱟᱹᱨᱥᱤ ᱧᱮᱞᱚᱜ ᱠᱟᱱᱟ ᱾	əɖi ɡan dʱiri kʰɔda kɔre hɔ̃ parsijan pərsi ɲelɔk̚ʔ kana
+ᱟᱡᱟᱜ ᱜᱩᱨ ᱯᱚᱨᱮ ᱦᱚᱸ ᱟᱡᱟᱜ ᱠᱟᱹᱢᱤ ᱫᱚ ᱦᱚᱲ ᱵᱟᱠᱚ ᱦᱤᱲᱤᱧ ᱫᱟᱲᱮᱟᱜᱼᱟ ᱾	aɟak̚ʔ ɡur pɔre hɔ̃ aɟak̚ʔ kəmi dɔ hɔɽ bakɔ hiɽiɲ daɽeak̚ʔa
+ᱱᱚᱶᱟ ᱠᱩᱞᱤ ᱡᱩᱜᱽ ᱨᱮᱭᱟᱜ ᱟᱹᱱ ᱟᱹᱨᱤ ᱢᱟ ᱥᱟᱱᱟᱢ ᱜᱮᱵᱚᱱ ᱵᱟᱲᱟᱭᱮᱫ ᱜᱮᱭᱟ᱾	nɔw̃a kuli ɟuɡ rejak̚ʔ ən əri ma sanam ɡebɔn baɽajet̚ʔ ɡeja
+ᱜᱚᱴᱟ ᱦᱚᱲᱢᱚ ᱨᱮᱱᱟᱜ ᱦᱟᱢᱟᱞ ᱫᱚ ᱡᱟᱸᱜᱟ ᱪᱮᱛᱟᱱ ᱨᱮᱜᱮ ᱛᱟᱦᱮᱸᱱᱟ ᱾	ɡɔʈa hɔɽmɔ renak̚ʔ hamal dɔ ɟãɡa cetan reɡe tahẽna
+ᱱᱤᱭᱟᱹ ᱴᱚᱴᱷᱟ ᱨᱮ ᱟᱹᱰᱤ ᱜᱟᱱ ᱥᱣᱟᱫᱮᱥᱤ ᱟᱹᱫᱤᱵᱟᱹᱥᱤ ᱢᱮᱱᱟᱜ ᱠᱚᱣᱟ ᱾	nijə ʈɔʈʰa re əɖi ɡan swadesi ədibəsi menak̚ʔ kɔwa
+ᱢᱮᱱᱞᱮᱸᱰ ᱟᱨ ᱥᱤᱝᱜᱟᱯᱩᱨ ᱨᱮ ᱫᱚ ᱦᱚᱲ ᱠᱚ ᱩᱥᱟᱹᱨᱟ ᱪᱤᱠᱤ ᱜᱮ ᱠᱚ ᱵᱮᱵᱷᱟᱨᱮᱜᱼᱟ ᱾	menlẽɖ ar siŋɡapur re dɔ hɔɽ kɔ usəra ciki ɡe kɔ bebʱarek̚ʔa
+ᱤᱱ ᱡᱚᱠᱷᱚᱡ ᱧᱤᱫᱟᱹ ᱪᱟᱸᱫᱚ ᱜᱩᱰᱢᱟᱹᱞ ᱜᱮᱭ ᱧᱮᱞᱚᱜᱼᱟ᱾	in ɟɔkʰɔc̚ʔ ɲidə cãdɔ ɡuɖməl ɡei ɲelɔk̚ʔa
+ᱵᱮᱨᱮᱞ ᱵᱟᱝᱛᱮ ᱩᱛᱩ ᱠᱟᱛᱮᱜ ᱱᱤᱭᱟᱸ ᱫᱚ ᱱᱟᱥᱮ ᱠᱮᱞᱚᱨᱤ ᱢᱮᱥᱟᱣ ᱡᱚᱢ ᱠᱟᱱᱟ᱾	berel baŋte utu katek̚ʔ nijã dɔ nase kelɔri mesau ɟɔm kana
+ᱵᱤᱰ ᱥᱤᱧᱚᱛ ᱨᱮ ᱢᱚᱦᱟᱨᱟᱥᱴᱨᱚ ᱯᱚᱱᱚᱛ ᱨᱮᱱᱟᱜ ᱛᱟᱞᱟ ᱴᱚᱴᱷᱟᱹᱨᱤ ᱨᱮᱱᱟᱜ ᱢᱤᱫ ᱥᱚᱦᱚᱨ ᱠᱟᱱᱟ ᱾	biɖ siɲɔt re mɔharasʈrɔ pɔnɔt renak̚ʔ tala ʈɔʈʰəri renak̚ʔ mit̚ʔ sɔhɔr kana
+ᱡᱚᱡᱚ ᱛᱮ ᱡᱚᱡᱚ ᱦᱮᱲᱮᱢ ᱫᱟᱹᱲ ᱨᱟᱥᱮ ᱛᱮᱭᱟᱨ ᱞᱟᱹᱜᱤᱫ ᱜᱩᱲ ᱟᱨ ᱢᱟᱹᱥᱨᱤ ᱫᱟᱹᱞ ᱠᱚ ᱢᱮᱥᱟᱭᱟ ᱾	ɟɔɟɔ te ɟɔɟɔ heɽem dəɽ rase tejar ləɡit̚ʔ ɡuɽ ar məsri dəl kɔ mesaja
+ᱟᱡ ᱵᱟᱵᱟ ᱫᱚ ᱜᱩᱡᱽᱨᱟᱛᱤ ᱚᱲᱟᱜ ᱨᱤᱱᱤᱡ ᱠᱟᱱᱟᱭ ᱟᱨ ᱱᱩᱠᱩ ᱫᱚ ᱵᱮᱯᱟᱨᱤ ᱠᱟ ᱛᱟᱦᱮᱸ ᱞᱮᱱᱟ ᱾	ac̚ʔ baba dɔ ɡuɟrati ɔɽak̚ʔ rinic̚ʔ kanai ar nuku dɔ bepari ka tahẽ lena
+ᱦᱚᱭ ᱛᱚᱵᱮ ᱵᱟᱯᱫᱷᱚᱱ ᱚᱱᱟ ᱫᱚ ᱵᱚ ᱠᱟᱹᱢᱤ ᱠᱟᱜ ᱜᱮᱭᱟ ᱾	hɔi tɔbe bapdʱɔn ɔna dɔ bɔ kəmi kak̚ʔ ɡeja
+ᱨᱩᱥ ᱨᱤᱱᱤᱡ ᱢᱟᱨᱟᱝ ᱢᱚᱱᱛᱨᱤ ᱥᱴᱟᱞᱤᱱ ᱥᱟᱶ ᱦᱚᱸ ᱟᱡᱟᱜ ᱟᱹᱰᱤ ᱜᱟᱺᱦᱤᱨ ᱥᱟᱹᱜᱟᱹᱭ ᱛᱟᱦᱮᱸ ᱠᱟᱱᱟ ᱾	rus rinic̚ʔ maraŋ mɔntri sʈalin saũ hɔ̃ aɟak̚ʔ əɖi ɡə̃hir səɡəi tahẽ kana
+ᱚᱱᱟ ᱠᱷᱮᱞ ᱫᱚ ᱱᱤᱛᱚᱜᱟᱜ ᱮᱱᱮᱡ ᱠᱷᱚᱱ ᱫᱚ ᱵᱷᱮᱜᱟᱨ ᱜᱮ ᱛᱟᱦᱮᱸ ᱠᱟᱱᱟ ᱾	ɔna kʰel dɔ nitɔɡak̚ʔ enec̚ʔ kʰɔn dɔ bʱeɡar ɡe tahẽ kana
+ᱰᱩᱢᱱᱤ ᱟᱡ ᱵᱟᱵᱟ ᱥᱚᱦᱨᱟᱭ ᱯᱟᱨᱟᱵᱽ ᱱᱮᱶᱛᱟᱭ ᱦᱮᱡ ᱮᱱᱟ ᱾	ɖumni ac̚ʔ baba sɔhrai parab neũtai hec̚ʔ ena
+ᱚᱱᱟ ᱚᱠᱛᱚ ᱫᱚ ᱜᱩᱛᱤ ᱟᱨ ᱠᱟᱹᱲᱢᱤ ᱦᱚᱸ ᱱᱟᱣᱟ ᱞᱩᱜᱽᱲᱤ ᱮᱢ ᱞᱟᱜᱟᱣᱜ ᱜᱮᱭᱟ ᱾	ɔna ɔktɔ dɔ ɡuti ar kəɽmi hɔ̃ nawa luɡɽi em laɡauk̚ʔ ɡeja
+ᱥᱮᱨᱢᱟ ᱨᱮ ᱨᱤᱢᱤᱞ ᱫᱟᱜ ᱡᱮᱢᱚᱱ ᱛᱟᱯᱟᱠᱤᱡ ᱞᱮᱱ ᱠᱷᱟᱱ ᱞᱟᱦᱟᱛᱮ ᱵᱤᱡᱽᱞᱤ ᱧᱮᱞ ᱧᱟᱢᱚᱜᱼᱟ᱾	serma re rimil dak̚ʔ ɟemɔn tapakic̚ʔ len kʰan lahate biɟli ɲel ɲamɔk̚ʔa
+ᱱᱚᱶᱟ ᱵᱟᱱᱟᱨ ᱟ.ᱛᱩ ᱫᱚ ᱫᱚᱨᱭᱟ ᱫᱷᱟᱨᱮ ᱨᱮ ᱢᱮᱱᱟᱜ ᱠᱤᱱᱟ ᱾	nɔw̃a banar ətu dɔ dɔrja dʱare re menak̚ʔ kina
+ᱱᱚᱶᱟ ᱱᱮᱯᱟᱲ ᱥᱮᱱᱚᱜ ᱞᱟ.ᱜᱤᱱ ᱢᱩᱬᱩᱛ ᱥᱚᱲᱚᱠ ᱠᱟᱱᱟ ᱾	nɔw̃a nepaɽ senɔk̚ʔ ləɡin muɳut sɔɽɔk kana
+ᱵᱚᱦᱮᱞ ᱠᱮᱫᱟ ᱞᱤᱧᱟᱢ ᱫᱩᱠ ᱫᱚᱨᱭᱟᱨᱮ !	bɔhel keda liɲam duk dɔrjare
+ᱱᱚᱶᱟ ᱠᱷᱚᱱ ᱯᱨᱚᱴᱤᱱ ᱟᱨ ᱤᱱᱮᱨᱡᱤ ᱨᱮᱱᱟᱜ ᱫᱟᱲᱮ ᱧᱟᱢᱚᱜ ᱠᱟᱱᱟ᱾	nɔw̃a kʰɔn prɔʈin ar inerɟi renak̚ʔ daɽe ɲamɔk̚ʔ kana
+ᱠᱟᱺᱦᱩᱸ ᱠᱳᱣᱟᱜ ᱡᱟᱱᱟᱢ ᱫᱚ ᱛᱟᱞᱟ ᱮᱥᱤᱭᱟ ᱨᱮᱜᱮ᱾	kə̃hũ kowak̚ʔ ɟanam dɔ tala esija reɡe

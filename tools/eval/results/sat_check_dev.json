@@ -1,0 +1,10 @@
+{
+ "set": "dev",
+ "sentences": 1000,
+ "ol_chiki_words": 12600,
+ "words_read": 1.0,
+ "marks_not_said_per_1000_ol_chiki_chars": 1.244722544616575,
+ "other_script_letters": 0,
+ "latin_words": 6,
+ "modes_identical_on_first_50": true
+}

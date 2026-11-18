@@ -1,0 +1,319 @@
+# Santali in the Ol Chiki script (U+1C50-U+1C7F). espeak-ng has no Santali
+# voice and reads Ol Chiki letters as their code points under every voice
+# ("letter 1c65"), so there is no reference reading to be compatible with:
+# both modes give this file's reading. Written for uccharan from these
+# descriptions:
+#   Michael Everson (2005), "Final proposal to encode the Ol Chiki script in
+#     the UCS", ISO/IEC JTC1/SC2/WG2 N2984R = Unicode L2/05-243R, after Zide
+#     (1996) and Raghunath Murmu's Ranar: the letter values; ᱹ (gaahlaa
+#     ttuddaag) after ᱟ ᱮ ᱚ writes the Santal Parganas vowels ə ɛ ɔ; ᱸ (mu
+#     ttuddag) nasalises a vowel, ᱺ (mu-gaahlaa ttuddaag) is the two
+#     together, ᱻ (relaa) lengthens a vowel; the four "glottal" letters ᱜ ᱡ
+#     ᱫ ᱵ are checked stops word-finally and voiced stops before a vowel,
+#     ᱼ (phaarkaa) keeps the checked value before a vowel, ᱽ (ahad) gives
+#     the voiced value where the checked one would be read; ᱷ after a
+#     consonant writes aspiration;
+#   Arun Ghosh (2008), "Santali", in G. D. S. Anderson (ed.), The Munda
+#     Languages (Routledge), pp. 11-98, and Lukas Neukom (2001), Santali
+#     (LINCOM), as summarised in the Wikipedia article "Santali language":
+#     the phonemes (vowels i e ɛ ə a ɔ o u, nasal vowels; p t ʈ c k ʔ, b d
+#     ɖ ɟ ɡ, aspirates mostly in loanwords, m n ɳ ɲ ŋ, s h, r ɽ, l, w j);
+#     word-final stops of native words are checked: glottalised and
+#     unreleased (Sebeok 1943 and Ghosh 2008 treat them as allophones of
+#     p t c k), written here k̚ʔ c̚ʔ t̚ʔ p̚ʔ;
+#   Gregory D. S. Anderson and Luke Horo (2021), "Towards a prosodic
+#     typology of the Kherwarian languages: Santali of Assam", JSEALS
+#     Special Publication 8: Santali is strongly second-syllable prominent
+#     in uninflected disyllables (primary stress on the second syllable).
+# Choices made here where the sources leave it open: a glottal letter before
+# a voiceless consonant (ᱢᱤᱫᱴᱟᱹᱝ, ᱦᱤᱥᱟᱹᱵᱛᱮ) is checked like a final one,
+# before a voiced consonant (ᱜᱤᱫᱨᱟᱹ, ᱰᱤᱜᱨᱤ) it is voiced; ᱚᱹ, whose contrast
+# with ᱚ is marginal, is ɔ; ᱭ ᱣ ᱶ after a vowel and before a consonant or the
+# end of the word are the second half of a diphthong (i u ũ), ᱶ before a
+# vowel is the nasal glide w̃; ᱦ is h; ᱻ after a glottal letter is a mistyped
+# ᱼ (IndicCorp v2 ᱢᱮᱱᱟᱜᱻᱟ); marks found after other letters are not said.
+# Vowel harmony and the dialect differences in the vowels (Ghosh 2008) are
+# not written in Ol Chiki and are not modelled: every letter keeps its value.
+
+[meta]
+tag = sat
+block = 1c00
+stress = second
+final-secondary = no
+deletion = none
+inherent = ə ə
+anusvara = velar
+
+[letters]
+ᱚ ɔ vowel
+ᱟ a vowel
+ᱤ i vowel
+ᱩ u vowel
+ᱮ e vowel
+ᱳ o vowel
+ᱛ t dead
+ᱜ ɡ dead
+ᱝ ŋ dead
+ᱞ l dead
+ᱠ k dead
+ᱡ ɟ dead
+ᱢ m dead
+ᱣ w dead
+ᱥ s dead
+ᱦ h dead
+ᱧ ɲ dead
+ᱨ r dead
+ᱪ c dead
+ᱫ d dead
+ᱬ ɳ dead
+ᱭ j dead
+ᱯ p dead
+ᱰ ɖ dead
+ᱱ n dead
+ᱲ ɽ dead
+ᱴ ʈ dead
+ᱵ b dead
+ᱶ w̃ dead
+ᱷ ʰ dead
+ᱸ candrabindu
+ᱹ ignore
+ᱺ ignore
+ᱻ ignore
+ᱼ ignore
+ᱽ ignore
+# Markers written by the [pre] rules (never in real text).
+Ə ə vowel
+Ɛ ɛ vowel
+Á aː vowel
+Í iː vowel
+Ú uː vowel
+É eː vowel
+Ó oː vowel
+Ɔ ɔː vowel
+Ǝ əː vowel
+Ȩ ɛː vowel
+Ǩ k̚ʔ dead
+Č c̚ʔ dead
+Ť t̚ʔ dead
+Ṕ p̚ʔ dead
+
+[classes]
+V = ᱚ ᱟ ᱤ ᱩ ᱮ ᱳ
+# Voiceless consonants: a glottal letter before one is checked.
+VL = ᱛ ᱠ ᱪ ᱯ ᱴ ᱥ ᱦ
+# Phonemes (for [post]).
+PV = a e i o u ɔ ə ɛ ̃ ː
+PC = p b t d ʈ ɖ c ɟ k ɡ m n ɳ ɲ ŋ s h r ɽ l j w ʔ
+
+[pre]
+# The vowels written with ᱹ, nasal (ᱺ) and long (ᱻ) forms.
+ᱟᱹ -> Ə
+ᱮᱹ -> Ɛ
+ᱚᱹ -> ᱚ
+ᱟᱹᱻ -> Ǝ
+ᱮᱹᱻ -> Ȩ
+ᱟᱹᱸ -> Əᱸ
+ᱮᱹᱸ -> Ɛᱸ
+ᱟᱺ -> Əᱸ
+ᱮᱺ -> Ɛᱸ
+ᱚᱺ -> ᱚᱸ
+ᱤᱺ -> ᱤᱸ
+ᱩᱺ -> ᱩᱸ
+ᱳᱺ -> ᱳᱸ
+ᱟᱻ -> Á
+ᱤᱻ -> Í
+ᱩᱻ -> Ú
+ᱮᱻ -> É
+ᱳᱻ -> Ó
+ᱚᱻ -> Ɔ
+ᱟᱸᱻ -> Áᱸ
+ᱤᱸᱻ -> Íᱸ
+ᱩᱸᱻ -> Úᱸ
+ᱮᱸᱻ -> Éᱸ
+ᱳᱸᱻ -> Óᱸ
+ᱚᱸᱻ -> Ɔᱸ
+# The glottal letters: ahad voices, phaarkaa (or a mistyped relaa) checks,
+# and by position: checked at the end of a word and before a voiceless
+# consonant, voiced elsewhere.
+ᱜᱽ -> ᱜ
+ᱡᱽ -> ᱡ
+ᱫᱽ -> ᱫ
+ᱵᱽ -> ᱵ
+ᱜᱼ -> Ǩ
+ᱡᱼ -> Č
+ᱫᱼ -> Ť
+ᱵᱼ -> Ṕ
+ᱜᱻ -> Ǩ
+ᱡᱻ -> Č
+ᱫᱻ -> Ť
+ᱵᱻ -> Ṕ
+ᱜ -> Ǩ / _ # | _ {VL}
+ᱡ -> Č / _ # | _ {VL}
+ᱫ -> Ť / _ # | _ {VL}
+ᱵ -> Ṕ / _ # | _ {VL}
+# ᱷ that follows no consonant is h.
+ᱷ -> ᱦ / # _ | {V} _
+
+[post]
+# Voiced aspirates are breathy.
+ɡʰ -> ɡʱ
+ɟʰ -> ɟʱ
+dʰ -> dʱ
+ɖʰ -> ɖʱ
+bʰ -> bʱ
+ɽʰ -> ɽʱ
+# Glides closing a syllable: the second half of a diphthong.
+j -> i / {PV} _ {PC} | {PV} _ #
+w -> u / {PV} _ {PC} | {PV} _ #
+w̃ -> ũ / {PV} _ {PC} | {PV} _ #
+
+[unstressed]
+# Particles, postpositions and conjunctions of one syllable (Ghosh 2008):
+# topic ᱫᱚ, locative ᱨᱮ, instrumental ᱛᱮ, ablative ᱠᱷᱚᱱ, plural ᱠᱚ, emphatic
+# ᱜᱮ, ᱟᱨ "and", ᱦᱚᱸ "also", ᱥᱮ "or".
+ᱫᱚ 0 0
+ᱨᱮ 0 0
+ᱛᱮ 0 0
+ᱠᱷᱚᱱ 0 0
+ᱠᱚ 0 0
+ᱜᱮ 0 0
+ᱟᱨ 0 0
+ᱦᱚᱸ 0 0
+ᱥᱮ 0 0
+
+[numbers]
+# Santali number words as Ol Chiki text writes them (AI4Bharat IndicCorp v2
+# Santali, CC0): the units ᱢᱤᱫ ᱵᱟᱨ ᱯᱮ ᱯᱩᱱ ᱢᱚᱬᱮ ᱛᱩᱨᱩᱭ ᱮᱭᱟᱭ ᱤᱨᱟᱹᱞ ᱟᱨᱮ (spelt as
+# in the Wikipedia article "Santali language"), ᱜᱮᱞ 10; 11-19 are ᱜᱮᱞ and
+# the unit (ᱜᱮᱞ ᱢᱤᱫ), the tens a unit and ᱜᱮᱞ (ᱯᱮ ᱜᱮᱞ 30), so 36 is ᱯᱮ ᱜᱮᱞ
+# ᱛᱩᱨᱩᱭ; ᱥᱟᱭ 100 (ᱢᱤᱫ ᱥᱟᱭ); the borrowed ᱦᱟᱡᱟᱨ, ᱞᱟᱠᱷ and ᱠᱳᱴᱤ for 10^3,
+# 10^5 and 10^7, as the same text writes them (ᱢᱤᱫ ᱦᱟᱡᱟᱨ, ᱵᱟᱨ ᱞᱟᱠᱷ).
+# Zero ᱡᱤᱨᱳ, point ᱯᱚᱭᱮᱱᱴ, minus ᱢᱤᱱᱟᱥ, per cent ᱥᱟᱭ ᱠᱟᱲᱟ and the rupee
+# ᱴᱟᱠᱟ after the amount: the same text.
+0 ᱡᱤᱨᱳ
+1 ᱢᱤᱫ
+2 ᱵᱟᱨ
+3 ᱯᱮ
+4 ᱯᱩᱱ
+5 ᱢᱚᱬᱮ
+6 ᱛᱩᱨᱩᱭ
+7 ᱮᱭᱟᱭ
+8 ᱤᱨᱟᱹᱞ
+9 ᱟᱨᱮ
+10 ᱜᱮᱞ
+11 ᱜᱮᱞ ᱢᱤᱫ
+12 ᱜᱮᱞ ᱵᱟᱨ
+13 ᱜᱮᱞ ᱯᱮ
+14 ᱜᱮᱞ ᱯᱩᱱ
+15 ᱜᱮᱞ ᱢᱚᱬᱮ
+16 ᱜᱮᱞ ᱛᱩᱨᱩᱭ
+17 ᱜᱮᱞ ᱮᱭᱟᱭ
+18 ᱜᱮᱞ ᱤᱨᱟᱹᱞ
+19 ᱜᱮᱞ ᱟᱨᱮ
+20 ᱵᱟᱨ ᱜᱮᱞ
+21 ᱵᱟᱨ ᱜᱮᱞ ᱢᱤᱫ
+22 ᱵᱟᱨ ᱜᱮᱞ ᱵᱟᱨ
+23 ᱵᱟᱨ ᱜᱮᱞ ᱯᱮ
+24 ᱵᱟᱨ ᱜᱮᱞ ᱯᱩᱱ
+25 ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ
+26 ᱵᱟᱨ ᱜᱮᱞ ᱛᱩᱨᱩᱭ
+27 ᱵᱟᱨ ᱜᱮᱞ ᱮᱭᱟᱭ
+28 ᱵᱟᱨ ᱜᱮᱞ ᱤᱨᱟᱹᱞ
+29 ᱵᱟᱨ ᱜᱮᱞ ᱟᱨᱮ
+30 ᱯᱮ ᱜᱮᱞ
+31 ᱯᱮ ᱜᱮᱞ ᱢᱤᱫ
+32 ᱯᱮ ᱜᱮᱞ ᱵᱟᱨ
+33 ᱯᱮ ᱜᱮᱞ ᱯᱮ
+34 ᱯᱮ ᱜᱮᱞ ᱯᱩᱱ
+35 ᱯᱮ ᱜᱮᱞ ᱢᱚᱬᱮ
+36 ᱯᱮ ᱜᱮᱞ ᱛᱩᱨᱩᱭ
+37 ᱯᱮ ᱜᱮᱞ ᱮᱭᱟᱭ
+38 ᱯᱮ ᱜᱮᱞ ᱤᱨᱟᱹᱞ
+39 ᱯᱮ ᱜᱮᱞ ᱟᱨᱮ
+40 ᱯᱩᱱ ᱜᱮᱞ
+41 ᱯᱩᱱ ᱜᱮᱞ ᱢᱤᱫ
+42 ᱯᱩᱱ ᱜᱮᱞ ᱵᱟᱨ
+43 ᱯᱩᱱ ᱜᱮᱞ ᱯᱮ
+44 ᱯᱩᱱ ᱜᱮᱞ ᱯᱩᱱ
+45 ᱯᱩᱱ ᱜᱮᱞ ᱢᱚᱬᱮ
+46 ᱯᱩᱱ ᱜᱮᱞ ᱛᱩᱨᱩᱭ
+47 ᱯᱩᱱ ᱜᱮᱞ ᱮᱭᱟᱭ
+48 ᱯᱩᱱ ᱜᱮᱞ ᱤᱨᱟᱹᱞ
+49 ᱯᱩᱱ ᱜᱮᱞ ᱟᱨᱮ
+50 ᱢᱚᱬᱮ ᱜᱮᱞ
+51 ᱢᱚᱬᱮ ᱜᱮᱞ ᱢᱤᱫ
+52 ᱢᱚᱬᱮ ᱜᱮᱞ ᱵᱟᱨ
+53 ᱢᱚᱬᱮ ᱜᱮᱞ ᱯᱮ
+54 ᱢᱚᱬᱮ ᱜᱮᱞ ᱯᱩᱱ
+55 ᱢᱚᱬᱮ ᱜᱮᱞ ᱢᱚᱬᱮ
+56 ᱢᱚᱬᱮ ᱜᱮᱞ ᱛᱩᱨᱩᱭ
+57 ᱢᱚᱬᱮ ᱜᱮᱞ ᱮᱭᱟᱭ
+58 ᱢᱚᱬᱮ ᱜᱮᱞ ᱤᱨᱟᱹᱞ
+59 ᱢᱚᱬᱮ ᱜᱮᱞ ᱟᱨᱮ
+60 ᱛᱩᱨᱩᱭ ᱜᱮᱞ
+61 ᱛᱩᱨᱩᱭ ᱜᱮᱞ ᱢᱤᱫ
+62 ᱛᱩᱨᱩᱭ ᱜᱮᱞ ᱵᱟᱨ
+63 ᱛᱩᱨᱩᱭ ᱜᱮᱞ ᱯᱮ
+64 ᱛᱩᱨᱩᱭ ᱜᱮᱞ ᱯᱩᱱ
+65 ᱛᱩᱨᱩᱭ ᱜᱮᱞ ᱢᱚᱬᱮ
+66 ᱛᱩᱨᱩᱭ ᱜᱮᱞ ᱛᱩᱨᱩᱭ
+67 ᱛᱩᱨᱩᱭ ᱜᱮᱞ ᱮᱭᱟᱭ
+68 ᱛᱩᱨᱩᱭ ᱜᱮᱞ ᱤᱨᱟᱹᱞ
+69 ᱛᱩᱨᱩᱭ ᱜᱮᱞ ᱟᱨᱮ
+70 ᱮᱭᱟᱭ ᱜᱮᱞ
+71 ᱮᱭᱟᱭ ᱜᱮᱞ ᱢᱤᱫ
+72 ᱮᱭᱟᱭ ᱜᱮᱞ ᱵᱟᱨ
+73 ᱮᱭᱟᱭ ᱜᱮᱞ ᱯᱮ
+74 ᱮᱭᱟᱭ ᱜᱮᱞ ᱯᱩᱱ
+75 ᱮᱭᱟᱭ ᱜᱮᱞ ᱢᱚᱬᱮ
+76 ᱮᱭᱟᱭ ᱜᱮᱞ ᱛᱩᱨᱩᱭ
+77 ᱮᱭᱟᱭ ᱜᱮᱞ ᱮᱭᱟᱭ
+78 ᱮᱭᱟᱭ ᱜᱮᱞ ᱤᱨᱟᱹᱞ
+79 ᱮᱭᱟᱭ ᱜᱮᱞ ᱟᱨᱮ
+80 ᱤᱨᱟᱹᱞ ᱜᱮᱞ
+81 ᱤᱨᱟᱹᱞ ᱜᱮᱞ ᱢᱤᱫ
+82 ᱤᱨᱟᱹᱞ ᱜᱮᱞ ᱵᱟᱨ
+83 ᱤᱨᱟᱹᱞ ᱜᱮᱞ ᱯᱮ
+84 ᱤᱨᱟᱹᱞ ᱜᱮᱞ ᱯᱩᱱ
+85 ᱤᱨᱟᱹᱞ ᱜᱮᱞ ᱢᱚᱬᱮ
+86 ᱤᱨᱟᱹᱞ ᱜᱮᱞ ᱛᱩᱨᱩᱭ
+87 ᱤᱨᱟᱹᱞ ᱜᱮᱞ ᱮᱭᱟᱭ
+88 ᱤᱨᱟᱹᱞ ᱜᱮᱞ ᱤᱨᱟᱹᱞ
+89 ᱤᱨᱟᱹᱞ ᱜᱮᱞ ᱟᱨᱮ
+90 ᱟᱨᱮ ᱜᱮᱞ
+91 ᱟᱨᱮ ᱜᱮᱞ ᱢᱤᱫ
+92 ᱟᱨᱮ ᱜᱮᱞ ᱵᱟᱨ
+93 ᱟᱨᱮ ᱜᱮᱞ ᱯᱮ
+94 ᱟᱨᱮ ᱜᱮᱞ ᱯᱩᱱ
+95 ᱟᱨᱮ ᱜᱮᱞ ᱢᱚᱬᱮ
+96 ᱟᱨᱮ ᱜᱮᱞ ᱛᱩᱨᱩᱭ
+97 ᱟᱨᱮ ᱜᱮᱞ ᱮᱭᱟᱭ
+98 ᱟᱨᱮ ᱜᱮᱞ ᱤᱨᱟᱹᱞ
+99 ᱟᱨᱮ ᱜᱮᱞ ᱟᱨᱮ
+scale100 ᱥᱟᱭ
+scale1000 ᱦᱟᱡᱟᱨ
+scale100000 ᱞᱟᱠᱷ
+scale10000000 ᱠᱳᱴᱤ
+
+grouping indian
+point ᱯᱚᱭᱮᱱᱴ
+minus ᱢᱤᱱᱟᱥ
+percent ᱥᱟᱭ ᱠᱟᱲᱟ
+currency ₹ ᱴᱟᱠᱟ
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode). Month names:
+# Unicode CLDR common/main/sat.xml (format, wide); CLDR's long date pattern
+# is d MMMM y.
+month1 ᱡᱟᱱᱣᱟᱨᱤ
+month2 ᱯᱷᱟᱨᱣᱟᱨᱤ
+month3 ᱢᱟᱨᱪ
+month4 ᱟᱯᱨᱮᱞ
+month5 ᱢᱮ
+month6 ᱡᱩᱱ
+month7 ᱡᱩᱞᱟᱭ
+month8 ᱟᱜᱟᱥᱛ
+month9 ᱥᱮᱯᱴᱮᱢᱵᱟᱨ
+month10 ᱚᱠᱴᱚᱵᱟᱨ
+month11 ᱱᱟᱣᱟᱢᱵᱟᱨ
+month12 ᱫᱤᱥᱟᱢᱵᱟᱨ

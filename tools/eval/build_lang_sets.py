@@ -8,12 +8,19 @@ downloaded into ``--work``. When Tatoeba has fewer than ``--min`` usable
 sentences, the FLORES-200 benchmark (CC BY-SA 4.0; ``--flores DIR`` pointing
 at an unpacked ``flores200_dataset``) is used instead: its ``dev`` split
 becomes our dev set and its ``devtest`` split our held-out set. Languages
-in neither (Dogri, Bodo) take their sentences from AI4Bharat's IndicCorp v2
-monolingual text (CC0, downloaded into ``--work``; ids ``indiccorp-``),
-with lines in Hindi left out. A language in Google's IndicGenBench
+in neither (Dogri, Bodo, Santali) take their sentences from AI4Bharat's
+IndicCorp v2 monolingual text (CC0, downloaded into ``--work``; ids
+``indiccorp-``), with lines in Hindi (Santali: lines with wiki markup) left
+out. A language in Google's IndicGenBench
 (Flores-IN, CC BY-SA 4.0: the FLORES-200 sentences in languages FLORES-200
 itself lacks) also gets a second held-out set ``<lang>_flores.tsv`` from
-its ``devtest`` split (ids ``flores-devtest-``), never used for tuning.
+its ``devtest`` split (ids ``flores-devtest-``), never used for tuning. A
+language in ``WIKISET`` (Santali) takes its dev and held-out sets from
+IndicCorp v2 even where Tatoeba has enough sentences, and gets two more
+held-out sets, never used for tuning: ``<lang>_wiki.tsv``, sentences from
+random articles of its Wikipedia (CC BY-SA 4.0, ids ``wp-``) that are not
+in the IndicCorp text, and ``<lang>_tatoeba.tsv``, its Tatoeba sentences
+(CC BY 2.0 FR) whose id hashes into the held-out half.
 Without FLORES, Wikipedia article extracts
 (CC BY-SA 4.0, ids ``wp-``) top the set up. Share-alike sentences are
 evaluation input only (``tools/eval`` is not part of any package).
@@ -53,12 +60,19 @@ FLORES = {"bn": "ben_Beng", "mr": "mar_Deva", "ne": "npi_Deva", "gu": "guj_Gujr"
 INDICCORP_URL = "https://huggingface.co/datasets/ai4bharat/IndicCorpV2/resolve/main/data/{}.txt"
 INDICCORP = {"doi": ("dg", r"(?:^|\s)(?:है|हैं|में|का|को|से|था|थी|थे|नहीं|और|लिए|भी|यह|वह)(?=[\s।,?!]|$)"),
              # Bodo: से is also the Bodo word for one, so it does not mark Hindi.
-             "brx": ("bd", r"(?:^|\s)(?:है|हैं|में|का|को|की|के|था|थी|थे|नहीं|और|लिए|भी|यह|वह|ने)(?=[\s।,?!]|$)")}
+             "brx": ("bd", r"(?:^|\s)(?:है|हैं|में|का|को|की|के|था|थी|थे|नहीं|और|लिए|भी|यह|वह|ने)(?=[\s।,?!]|$)"),
+             # Santali (Ol Chiki): the text is Ol Chiki throughout, but some
+             # lines keep Wikipedia markup.
+             "sat": ("sat", r"\[\[|\]\]|\{\{|\}\}|[<>|=]")}
 
 # IndicGenBench Flores-IN (Google, CC BY-SA 4.0): uccharan tag -> language code
 # of flores_in/flores_<code>_en_test.json (the FLORES-200 devtest sentences).
 INDICGENBENCH_URL = "https://raw.githubusercontent.com/google-research-datasets/indic-gen-bench/main/flores_in/flores_{}_en_test.json"
-INDICGENBENCH = {"brx": "brx"}
+INDICGENBENCH = {"brx": "brx", "sat": "sat"}
+
+# Languages with a third held-out set from their Wikipedia (uccharan tag ->
+# Wikipedia code, number of sentences).
+WIKISET = {"sat": ("sat", 500)}
 
 # uccharan tag -> (Tatoeba code, Wikipedia code, letter regex of the language's script)
 LANGS: dict[str, tuple[str, str, str]] = {
@@ -92,6 +106,7 @@ LANGS: dict[str, tuple[str, str, str]] = {
     "mag": ("mag", "mag", r"[ऀ-ॿ]"),
     "doi": ("doi", "dgo", r"[ऀ-ॿ]"),
     "brx": ("brx", "brx", r"[ऀ-ॿ]"),
+    "sat": ("sat", "sat", r"[ᱚ-ᱽ]"),
 }
 
 
@@ -130,19 +145,26 @@ def wikipedia(work: Path, code: str, want: int, letters: str) -> list[tuple[str,
         dest = work / f"wiki_{code}_{k}.json"
         if not dest.exists():
             time.sleep(1.5)  # be polite to the API
-        try:
-            data = json.loads(fetch(WIKI.format(code), dest).read_text(encoding="utf-8"))
-        except OSError as e:
-            print(f"wikipedia {code}: {e}")
+        data = None
+        for attempt in range(4):
+            try:
+                data = json.loads(fetch(WIKI.format(code), dest).read_text(encoding="utf-8"))
+                break
+            except OSError as e:
+                print(f"wikipedia {code}: {e}")
+                if "429" not in str(e) or attempt == 3:
+                    break
+                time.sleep(60)  # rate limited: wait and try again
+        if data is None:
             break
         for page in data.get("query", {}).get("pages", {}).values():
-            for s in re.split(r"(?<=[.!?।॥])\s+", page.get("extract", "")):
+            for s in re.split(r"(?<=[.!?।॥᱾᱿])\s+", page.get("extract", "")):
                 s = s.strip()
                 alpha = [c for c in s if c.isalpha()]
                 own = sum(1 for c in alpha if re.match(letters, c.lower()))
                 # Prose of the language only: no other alphabets, few digits.
                 clean = alpha and own / len(alpha) >= 0.97 and sum(c.isdigit() for c in s) <= 4
-                if 15 <= len(s) <= 160 and clean and "\n" not in s:
+                if 15 <= len(s) <= 160 and clean and "\n" not in s and "==" not in s:
                     out.setdefault(f"wp-{code}-{hashlib.sha1(s.encode()).hexdigest()[:12]}", s)
     return list(out.items())
 
@@ -157,7 +179,7 @@ def indiccorp(work: Path, lang: str, letters: str) -> list[tuple[str, str]]:
         return []
     out: dict[str, str] = {}
     for line in path.read_text(encoding="utf-8").splitlines():
-        for s in re.split(r"(?<=[।?!|])\s+", line.strip()):
+        for s in re.split(r"(?<=[।?!|᱾᱿])\s+", line.strip()):
             s = " ".join(s.split())
             alpha = [c for c in s if c.isalpha()]
             own = sum(1 for c in alpha if re.match(letters, c))
@@ -176,6 +198,29 @@ def indicgenbench(work: Path, lang: str) -> None:
     print(f"{out.name}: {len(rows)} sentences (IndicGenBench Flores-IN devtest, CC BY-SA 4.0; evaluation only)")
 
 
+def tatoeba_set(lang: str, rows: list[tuple[str, str]], want: int = 1000) -> None:
+    """Write a held-out set of the language's Tatoeba sentences (held-out half of the hash only)."""
+    held = sorted((r for r in rows if bucket(r[0]) >= 500), key=lambda r: r[0])
+    rng = random.Random(20261118)
+    chosen = sorted(rng.sample(held, min(want, len(held))), key=lambda r: r[0])
+    out = HERE / "data" / f"{lang}_tatoeba.tsv"
+    out.write_text("".join(f"{i}\t{' '.join(t.split())}\n" for i, t in chosen), encoding="utf-8")
+    print(f"{out.name}: {len(chosen)} sentences (Tatoeba, CC BY 2.0 FR; evaluation only)")
+
+
+def wiki_set(work: Path, lang: str, avoid: set[str]) -> None:
+    """Write the third held-out set from random articles of the language's Wikipedia."""
+    code, want = WIKISET[lang]
+    letters = LANGS[lang][2]
+    rows = [(i, t) for i, t in wikipedia(work, code, want * 3, letters) if " ".join(t.split()) not in avoid]
+    rng = random.Random(20261118)
+    rng.shuffle(rows)
+    chosen = sorted(rows[:want], key=lambda r: r[0])
+    out = HERE / "data" / f"{lang}_wiki.tsv"
+    out.write_text("".join(f"{i}\t{' '.join(t.split())}\n" for i, t in chosen), encoding="utf-8")
+    print(f"{out.name}: {len(chosen)} sentences ({code}.wikipedia.org, CC BY-SA 4.0; evaluation only)")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("langs", nargs="+")
@@ -192,6 +237,13 @@ def main() -> None:
         tcode, wcode, letters = LANGS[lang]
         rows = [(i, t) for i, t in tatoeba(args.work, tcode) if 8 <= len(t) <= 160 and re.search(letters, t.lower())]
         source = "Tatoeba (CC BY 2.0 FR)"
+        if lang in WIKISET:
+            # Santali: the IndicCorp text is the main set; the Tatoeba
+            # sentences of the held-out half become a held-out set of their own.
+            tatoeba_set(lang, rows)
+            rows = indiccorp(args.work, lang, letters)
+            source = "IndicCorp v2 (CC0)"
+            wiki_set(args.work, lang, {t for _, t in rows})
         if len(rows) < args.min and lang in INDICCORP:
             rows += indiccorp(args.work, lang, letters)
             source = "IndicCorp v2 (CC0)"

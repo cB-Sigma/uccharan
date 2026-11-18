@@ -6,7 +6,9 @@ reproduces) on the hand-written gold set gold/<lang>/gold.tsv.
 Comparison is on a broad transcription: stress marks removed, ʌ ɐ = ə,
 ɪ = i, ʊ = u (quality of short vowels is not tested), the reference's r. = ɽ,
 length after a nasal vowel ignored. Words: exact match. Sentences: phoneme
-error rate (NFD code points) and exact match.
+error rate (NFD code points) and exact match. Santali (Ol Chiki) has no
+fallback row: espeak-ng reads Ol Chiki letters as their code points under
+every voice, so there is nothing to compare with.
 
     python tools/eval/bho_eval.py --lang bho --split dev --show improved
 """
@@ -56,7 +58,7 @@ def main() -> int:
     oracle = load_oracle()
     systems = {}
     texts = [r[2] for r in rows]
-    if oracle is not None:
+    if oracle is not None and args.lang != "sat":
         systems["espeak-ng hi (fallback)"] = [oracle.phonemize(t, "hi") for t in texts]
     systems["uccharan compatible"] = run_uccharan(texts, args.lang)
     systems["uccharan improved"] = run_uccharan(texts, args.lang, extra=("--improved",))

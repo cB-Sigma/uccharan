@@ -47,11 +47,11 @@ test("non-Latin languages write numbers in their own script", async () => {
     kn: "ಇಪ್ಪತ್ತೈದು", ta: "இருபத்து ஐந்து", ml: "ഇരുപത്തിയഞ്ച്", as: "পঁচিশ",
     gu: "પચ્ચીસ", pa: "ਪੱਚੀ", or: "ପଚିଶ", kok: "पंचवीस", si: "විසිපහ", sa: "पच्चीस",
     ur: "پچیس", sd: "پنجويهه", bho: "पच्चीस", mai: "पच्चीस", mag: "पच्चीस",
-    doi: "पच्चीस", brx: "पच्चीस",
+    doi: "पच्चीस", brx: "पच्चीस", sat: "ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ",
   };
   const block = (lang) =>
     ({ bn: 0x0980, as: 0x0980, pa: 0x0a00, gu: 0x0a80, or: 0x0b00, ta: 0x0b80, te: 0x0c00,
-       kn: 0x0c80, ml: 0x0d00, si: 0x0d80, ur: 0x0600, sd: 0x0600 })[lang] ?? 0x0900;
+       kn: 0x0c80, ml: 0x0d00, si: 0x0d80, ur: 0x0600, sd: 0x0600, sat: 0x1c00 })[lang] ?? 0x0900;
   for (const [lang, want] of Object.entries(twentyFive)) {
     assert.equal((await uccharan.normalize("25", { lang })).text, want, lang);
     const lo = block(lang);

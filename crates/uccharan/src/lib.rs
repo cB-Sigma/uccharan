@@ -46,6 +46,7 @@ pub mod profile;
 pub mod rbnf;
 pub mod respell;
 pub mod rules;
+pub mod sat;
 pub mod soundalike;
 pub mod text;
 pub mod translit;
@@ -149,6 +150,9 @@ languages! {
     Doi "doi" ["doi-in", "dgo", "dogri"] Devanagari, Some(include_str!("../lang/doi.lang"));
     /// Bodo (Boro) in Devanagari (no espeak voice: compatible mode is the `hi` reading).
     Brx "brx" ["brx-in", "bodo", "boro"] Devanagari, Some(include_str!("../lang/brx.lang"));
+    /// Santali in Ol Chiki (no espeak voice, and espeak-ng cannot read the
+    /// script: both modes give the improved reading).
+    Sat "sat" ["sat-in", "sat-olck", "santali"] Brahmic(0x1c00), Some(include_str!("../lang/sat.lang"));
     /// Spanish (espeak voice `es`).
     Es "es" ["es-es", "spa", "spanish"] Latin, Some(include_str!("../lang/es.lang"));
     /// German (espeak voice `de`).
@@ -206,6 +210,14 @@ impl Lang {
     /// (Sanskrit, Dogri, Bodo).
     pub fn hindi_voice(self) -> bool {
         matches!(self, Lang::Sa | Lang::Doi | Lang::Brx)
+    }
+
+    /// Languages whose script espeak-ng cannot read at all (Santali in Ol
+    /// Chiki: it says the code points of the letters under every voice).
+    /// There is no reference reading to reproduce, so compatible mode gives
+    /// the improved reading.
+    pub fn no_reference(self) -> bool {
+        self == Lang::Sat
     }
 
     /// Languages typed in Latin letters with the habits of romanised Hindi:
@@ -593,7 +605,7 @@ impl Phonemizer {
 
     /// Analyse text into sentences, clauses and words.
     pub fn analyze(&self, text: &str, opt: &Options) -> Vec<Sentence> {
-        let compat = opt.mode == Mode::Compatible;
+        let compat = opt.mode == Mode::Compatible && !opt.lang.no_reference();
         self.want(opt.lang, true);
         // Kaithi is read as the Devanagari it transliterates to.
         let owned_kaithi;
@@ -644,6 +656,18 @@ impl Phonemizer {
             Some(t) => {
                 owned_bodo = t;
                 owned_bodo.as_str()
+            }
+            None => text,
+        };
+        // Santali: a full stop typed for ᱹ, a hyphen typed for ᱼ.
+        let owned_santali;
+        let text = match (opt.lang == Lang::Sat)
+            .then(|| sat::prepare(text))
+            .flatten()
+        {
+            Some(t) => {
+                owned_santali = t;
+                owned_santali.as_str()
             }
             None => text,
         };
@@ -855,6 +879,16 @@ impl Phonemizer {
             owned = items.to_vec();
             let english = self.english(opt.embedded_english);
             brx::rewrite_roman(&mut owned, |w| {
+                english.as_ref().is_some_and(|e| e.in_lexicon(w))
+            });
+            items = &owned;
+        }
+        // Romanised Santali: Latin words that are not English are written in
+        // Ol Chiki by the Santali rules.
+        if opt.hinglish && opt.lang == Lang::Sat {
+            owned = items.to_vec();
+            let english = self.english(opt.embedded_english);
+            sat::rewrite_roman(&mut owned, |w| {
                 english.as_ref().is_some_and(|e| e.in_lexicon(w))
             });
             items = &owned;

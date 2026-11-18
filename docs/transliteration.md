@@ -221,6 +221,26 @@ English text is left alone. `ang boro raw bungw` → आं बर’ राव 
 set, so it is not measured. AI4Bharat's Aksharantar has a Bodo part (`brx.zip`) that the pack
 builder could use; whether its romanisations follow the Latin orthography above has not been checked.
 
+## Santali
+
+Romanised Santali is written in the Santali Latin alphabet (Bodding 1930; ạ for ə, k' c' t' p' for
+the checked stops, ṭ ḍ ṇ ṛ, ñ ṅ, a tilde for a nasal vowel) or in a casual ASCII form of it.
+`transliterate(text, "sat")` and the `hinglish` option write it in Ol Chiki with rules of their own
+(`crates/uccharan/src/sat.rs`), without a pack: a hand-written list of 25 common words (`johar`
+ᱡᱚᱦᱟᱨ, `inj` ᱤᱧ, `disom` ᱫᱤᱥᱚᱢ, `do` ᱫᱚ, `re` ᱨᱮ, `santali` ᱥᱟᱱᱛᱟᱲᱤ, `menak'a` ᱢᱮᱱᱟᱜᱼᱟ, `mit` ᱢᱤᱫ),
+then a letter converter for the other words that the English lexicon does not know: a ạ e ẹ i o ō
+u = ᱟ ᱟᱹ ᱮ ᱮᱹ ᱤ ᱚ ᱳ ᱩ (a doubled vowel is one), c ᱪ, j ᱡ, y ᱭ, w v ᱣ, ñ ny ᱧ, ṅ ng ᱝ (ᱝᱜ before a
+vowel: `sengel` ᱥᱮᱝᱜᱮᱞ), h after a stop ᱷ (`dharti` ᱫᱷᱟᱨᱛᱤ); k' c' t' p', and k c t p at the end of a
+word, are the glottal letters ᱜ ᱡ ᱫ ᱵ, with ᱼ before a vowel (`mit'` ᱢᱤᱫ, `menak'a` ᱢᱮᱱᱟᱜᱼᱟ), and g j d
+b where those letters would be read checked take ᱽ (`raj` ᱨᱟᱡᱽ). A clause is rewritten only when it
+has one of 17 distinctive listed words or a letter that only the Santali alphabet uses (ạ ṛ ṭ ḍ ṇ ñ
+ṅ, an apostrophe after k c t p), so English text is left alone; English words stay in Latin
+letters, as there is no Ol Chiki respelling of English. `johar inj disom do santali kana` →
+ᱡᱚᱦᱟᱨ ᱤᱧ ᱫᱤᱥᱚᱢ ᱫᱚ ᱥᱟᱱᱛᱟᱲᱤ ᱠᱟᱱᱟ. Casual romanisation leaves ə, ɛ, o against ɔ and the checked
+stops unmarked, so the converter guesses there (o is ᱚ, the commoner vowel); there is no romanised
+Santali test set, so it is not measured. Santali written in Bengali, Odia or Devanagari script is
+not converted.
+
 ## Accuracy, size and speed
 
 Measured on held-out word pairs and sentences; method, baselines and all numbers are in

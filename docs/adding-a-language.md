@@ -11,6 +11,13 @@ Find the voices you want to serve and read their configuration: which espeak voi
 trained with (`espeak.voice` in a Piper `.onnx.json`), which symbols are in their table, which
 espeak-ng version. Install that espeak-ng yourself and pin the version in your notes.
 
+A language espeak-ng has no voice for is usually read in compatible mode with the voice of a related
+language (Sanskrit, Dogri and Bodo with the Hindi voice). Where espeak-ng cannot read the script at
+all (Santali in Ol Chiki: it says the code point of each letter), there is nothing to be compatible
+with: list the language in `Lang::no_reference` (`crates/uccharan/src/lib.rs`), so that both modes
+give the language file's reading, leave it out of `VOICES` (the speed tool then times uccharan
+alone), and check the reading on a hand-written gold set.
+
 ## 2. Build the evaluation sets first
 
 ```sh
@@ -25,7 +32,9 @@ from AI4Bharat's IndicCorp v2 monolingual text (CC0; add it to `INDICCORP` with 
 marks lines written in Hindi, as for Dogri and Bodo). A language that Google's IndicGenBench covers
 (Flores-IN: FLORES-200 sentences in languages FLORES-200 lacks, CC BY-SA 4.0) also gets a second
 held-out set `<tag>_flores.tsv` from its `devtest` split (add it to `INDICGENBENCH`; run it with
-`run_eval.py --set flores`). Add the espeak voice to
+`run_eval.py --set flores`). A language in `WIKISET` also gets held-out sets from its Wikipedia and
+from Tatoeba (`<tag>_wiki.tsv`, `<tag>_tatoeba.tsv`), its dev and held-out sets coming from IndicCorp
+v2 (Santali). Add the espeak voice to
 `VOICES` in `tools/eval/common.py` and `tools/bench/compare.py`. Tune only on the dev set; run the
 held-out set to report.
 
@@ -48,7 +57,7 @@ npm package (`bindings/wasm/index.js`).
 [meta]                 ; engine options
 tag = kn
 block = 0c80           ; first code point of the script's Unicode block
-stress = initial       ; initial | penult | weight | initial-light-heavy
+stress = initial       ; initial | penult | weight | initial-light-heavy | second
 final-secondary = no
 deletion = none        ; none | final | medial (inherent-vowel deletion)
 inherent = ɐ ɐ         ; inherent vowel unstressed, stressed

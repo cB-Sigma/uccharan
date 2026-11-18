@@ -870,6 +870,7 @@ fn indic_numbers_in_their_own_script() {
         (Lang::Mag, "पच्चीस"),
         (Lang::Doi, "पच्चीस"),
         (Lang::Brx, "पच्चीस"),
+        (Lang::Sat, "ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ"),
     ];
     for (l, want) in twenty_five {
         assert_eq!(norm("25", *l).text, *want, "{l:?}");
@@ -956,6 +957,20 @@ fn indic_numbers_in_their_own_script() {
         check(t, &n);
         assert_eq!(n.text, want, "brx {t}");
     }
+    // Santali: native number words with ᱥᱟᱭ for 100, ᱦᱟᱡᱟᱨ ᱞᱟᱠᱷ ᱠᱳᱴᱤ above,
+    // Ol Chiki or ASCII digits, the rupee and dates (CLDR month names).
+    for (t, want) in [
+        ("25 ᱓.᱕", "ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ ᱯᱮ ᱯᱚᱭᱮᱱᱴ ᱢᱚᱬᱮ"),
+        ("2021 ᱑᱕᱐᱐", "ᱵᱟᱨ ᱦᱟᱡᱟᱨ ᱵᱟᱨ ᱜᱮᱞ ᱢᱤᱫ ᱢᱤᱫ ᱦᱟᱡᱟᱨ ᱢᱚᱬᱮ ᱥᱟᱭ"),
+        ("1,50,000 100", "ᱢᱤᱫ ᱞᱟᱠᱷ ᱢᱚᱬᱮ ᱜᱮᱞ ᱦᱟᱡᱟᱨ ᱢᱤᱫ ᱥᱟᱭ"),
+        ("₹25 6", "ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ ᱴᱟᱠᱟ ᱛᱩᱨᱩᱭ"),
+        ("15/08/2024", "ᱜᱮᱞ ᱢᱚᱬᱮ ᱟᱜᱟᱥᱛ ᱵᱟᱨ ᱦᱟᱡᱟᱨ ᱵᱟᱨ ᱜᱮᱞ ᱯᱩᱱ"),
+        ("50%", "ᱢᱚᱬᱮ ᱜᱮᱞ ᱥᱟᱭ ᱠᱟᱲᱟ"),
+    ] {
+        let n = normalize(p(), t, Lang::Sat, &improved);
+        check(t, &n);
+        assert_eq!(n.text, want, "sat {t}");
+    }
     let mut nums: Vec<String> = (0..=110).map(|n| n.to_string()).collect();
     for n in [
         150, 200, 222, 345, 999, 1000, 1234, 2024, 12345, 99999, 123456,
@@ -994,6 +1009,7 @@ fn indic_numbers_in_their_own_script() {
         (Lang::Mag, Some(11.5), 1.0),
         (Lang::Doi, Some(11.5), 1.0),
         (Lang::Brx, Some(11.5), 1.0),
+        (Lang::Sat, Some(1.0), 1.0),
     ];
     for &(l, compat_bound, improved_bound) in bounds {
         for (mode, bound) in [

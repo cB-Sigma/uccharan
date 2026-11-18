@@ -682,6 +682,43 @@ IndicCorp v2 sentences PER 0.37 % (0.32 % without stress), 93.4 % identical; 1,0
 `devtest` sentences of IndicGenBench, a second held-out set, PER 0.48 % (0.35 %), 76.9 % identical;
 development 0.40 %. No voice or speech recogniser for Bodo has been tried.
 
+**Santali** (`python tools/eval/bho_eval.py --lang sat --split heldout`; `python
+tools/eval/sat_check.py --set heldout`). espeak-ng 1.52.0 has no Santali voice and cannot read Ol
+Chiki at all (it says the code point of each letter), so there is no reference reading and no
+compatible-mode agreement to measure: both modes give the same reading, and the gold set has no
+espeak-ng column. 164 words (23 from the Ol Chiki descriptions: Everson's Unicode proposal
+L2/05-243R and the Wikipedia articles "Ol Chiki script" and "Santali language", including the Ol
+Chiki text of the first article of the Universal Declaration of Human Rights quoted there; 12
+numerals from that article; 25 words of the Santali locale of Unicode CLDR; 104 words attested in
+IndicCorp v2 Santali text) and 35 sentences (the Declaration's first article, two sentences, and 33
+lines of IndicCorp v2 Santali text outside all five sentence sets), with pronunciations written by
+hand from the letter values of Everson (2005, after Zide 1996) and the phonemes of Ghosh (2008)
+(conventions in the header of `words.src`), split by a hash of the item after `lang/sat.lang` was
+written and before it was run on any of it.
+
+| Held-out | espeak-ng | uccharan (both modes) |
+| --- | ---: | ---: |
+| Santali words (100) | — | **100.0 %** |
+| Santali sentences (16): PER / identical | — | **0.00 % / 100.0 %** |
+
+Development half: 63 of 64 words (ᱟᱹᱵᱠᱷᱟᱡᱤᱭᱟᱹᱱ "Abkhazian", a loanword whose b before kʰ the rules read
+as a checked p̚ʔ), sentence PER 0.00 %; nothing was changed after the first run. Ol Chiki is a
+phonemic alphabet and the gold set applies the same published letter values as the rules, by hand,
+so these figures show that the rules implement the description without slips; vowel harmony,
+dialect vowels and the stress and voicing of loanwords are in neither, and no Santali speaker has
+judged the forms. The sentence sets can only be checked for coverage (`sat_check.py`: every Ol
+Chiki word read to a pronunciation made of Santali phonemes, and the marks the rules do not say):
+
+| Set | Sentences | Ol Chiki words | read | marks not said per 1,000 Ol Chiki characters |
+| --- | ---: | ---: | ---: | ---: |
+| IndicCorp v2, development | 1,000 | 12,600 | 100.00 % | 1.24 |
+| IndicCorp v2, held-out | 2,000 | 25,262 | 100.00 % | 1.47 |
+| IndicGenBench Flores-IN `devtest`, held-out | 1,012 | 23,935 | 100.00 % | 1.53 |
+| Santali Wikipedia, held-out | 500 | 7,197 | 100.00 % | 0.36 |
+| Tatoeba, held-out | 1,000 | 4,865 | 100.00 % | 0.29 |
+
+No voice or speech recogniser for Santali has been tried.
+
 ## 5. Speed, start-up, memory and size
 
 ```sh

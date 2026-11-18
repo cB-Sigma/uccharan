@@ -9,7 +9,9 @@ one Python process, on the same sentences, producing the same kind of output
 
 The reference side is optional: it needs an espeak-ng shared library that you
 installed yourself (for example `pip install espeakng-loader`). Without it
-only the uccharan columns are filled in.
+only the uccharan columns are filled in. A language without an espeak-ng
+voice to compare with (Santali: espeak-ng reads Ol Chiki as code points) is
+measured for uccharan alone, in the same run as the others.
 
 What is measured, per language:
 
@@ -328,8 +330,9 @@ def main() -> int:
     for lang in args.langs.split(","):
         texts = [s.encode() for s in sentences(lang, args.limit)]
         entry: dict = {}
-        latency = bench_latency(engines, args.lib, lang, args.limit, args.rounds)
-        for which in engines:
+        lang_engines = [e for e in engines if e != "reference" or lang in VOICES]
+        latency = bench_latency(lang_engines, args.lib, lang, args.limit, args.rounds)
+        for which in lang_engines:
             eng = make(which, args.lib)
             e = latency[which]
             e["disk"] = eng.disk()

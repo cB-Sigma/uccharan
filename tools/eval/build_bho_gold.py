@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Expand the hand-written Bhojpuri (or Maithili, Magahi, Dogri, Bodo) gold sources in
+"""Expand the hand-written Bhojpuri (or Maithili, Magahi, Dogri, Bodo, Santali) gold sources in
 gold/<lang>/{words,sentences}.src into gold/<lang>/gold.tsv with a fixed
 dev/held-out split (by a hash of the item, decided before any tuning).
 
@@ -36,10 +36,18 @@ SOURCES_BRX = {
     "C": "Unicode CLDR common/main/brx.xml (Unicode License v3); pronunciation hand-written",
     "I": "word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written",
 }
-SOURCES_BY_LANG = {"doi": SOURCES_DOI, "brx": SOURCES_BRX}
-DATE = {"doi": "2026-11-18", "brx": "2026-11-18"}
+# Santali: sources of words.src (see its header).
+SOURCES_SAT = {
+    "U": "Ol Chiki description (Unicode L2/05-243R; Wikipedia \"Ol Chiki script\", \"Santali language\", CC BY-SA 4.0); pronunciation hand-written",
+    "N": "Santali numeral, Wikipedia \"Santali language\" (CC BY-SA 4.0); pronunciation hand-written",
+    "C": "Unicode CLDR common/main/sat.xml (Unicode License v3); pronunciation hand-written",
+    "I": "word attested in IndicCorp v2 Santali text (CC0); pronunciation hand-written",
+}
+SOURCES_BY_LANG = {"doi": SOURCES_DOI, "brx": SOURCES_BRX, "sat": SOURCES_SAT}
+DATE = {"doi": "2026-11-18", "brx": "2026-11-18", "sat": "2026-11-18"}
 SENTENCE_SOURCE = {
     "brx": lambda k: "Wikipedia \"Boro language (India)\", UDHR article 1 (CC BY-SA 4.0); pronunciation from its Latin version" if k == 0 else "IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written",
+    "sat": lambda k: "Wikipedia \"Santali language\", UDHR article 1 (CC BY-SA 4.0); pronunciation hand-written" if k < 2 else "IndicCorp v2 sat (CC0), not in the sat_dev/heldout/flores/tatoeba/wiki sets; pronunciation hand-written",
     "doi": lambda k: "IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written",
     "mag": lambda k: "FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written" if 108 <= k < 132 else "written for this set (see header)",
 }

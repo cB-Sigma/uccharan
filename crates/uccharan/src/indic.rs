@@ -99,6 +99,8 @@ pub enum Stress {
     /// Classical Sanskrit: the penult if heavy, else the antepenult if
     /// heavy, else the fourth syllable from the end.
     Sanskrit,
+    /// Second syllable (the first in a word of one syllable): Santali.
+    Second,
 }
 
 /// What happens to inherent vowels.
@@ -380,6 +382,7 @@ impl Indic {
             Some("penult") => Stress::Penult,
             Some("initial-light-heavy") => Stress::InitialLightHeavy,
             Some("sanskrit") => Stress::Sanskrit,
+            Some("second") => Stress::Second,
             _ => Stress::Initial,
         };
         let deletion = match meta.get("deletion").map(String::as_str) {
@@ -798,6 +801,7 @@ impl Indic {
                 }
             }
             Stress::Penult => n.saturating_sub(2),
+            Stress::Second => usize::from(n > 1),
             Stress::InitialLightHeavy => {
                 if n > 1 && !ph[vs[0]].long && ph[vs[1]].long {
                     1
@@ -1255,6 +1259,10 @@ impl Indic {
     /// The ASCII digit value of a digit of this script.
     pub fn digit(&self, c: char) -> Option<u8> {
         let o = (c as u32).wrapping_sub(self.base);
+        if self.base == 0x1c00 {
+            // Ol Chiki: the digits open the block.
+            return (0x50..=0x59).contains(&o).then(|| (o - 0x50) as u8);
+        }
         (0x66..=0x6f).contains(&o).then(|| (o - 0x66) as u8)
     }
 }

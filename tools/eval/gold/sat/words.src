@@ -1,0 +1,182 @@
+# Santali (Ol Chiki) word gold set, written 2026-11-18 from the descriptions below before the Santali rules
+# were run on these items. Format: word, broad pronunciation(s) separated by |, category, source. Sources:
+# U = word of the Ol Chiki descriptions: Everson, "Final proposal to encode the Ol Chiki script in the UCS"
+# (Unicode L2/05-243R, 2005), the Wikipedia articles "Ol Chiki script" and "Santali language" (CC BY-SA 4.0),
+# including the Ol Chiki text of the first article of the Universal Declaration of Human Rights quoted there;
+# N = Santali numeral as listed in the Wikipedia article "Santali language" (CC BY-SA 4.0); C = word of the
+# Santali locale of Unicode CLDR (common/main/sat.xml, Unicode License v3: weekdays, months, names of
+# languages); I = word attested in Santali text of AI4Bharat IndicCorp v2 (CC0). Pronunciations hand-written
+# with the letter values of Everson (2005) and Zide (1996) and the phonemes of Ghosh (2008, "Santali", in
+# Anderson ed., The Munda Languages): ᱚ ᱟ ᱤ ᱩ ᱮ ᱳ = ɔ a i u e o, ᱟᱹ = ə, ᱮᱹ = ɛ, ᱚᱹ = ɔ; ᱸ = nasal vowel, ᱺ after ᱟ
+# = ə̃; ᱻ = long vowel; ᱛ ᱜ ᱝ ᱞ ᱠ ᱡ ᱢ ᱣ ᱥ ᱦ ᱧ ᱨ ᱪ ᱫ ᱬ ᱭ ᱯ ᱰ ᱱ ᱲ ᱴ ᱵ ᱶ = t ɡ ŋ l k ɟ m w s h ɲ r c d ɳ j p
+# ɖ n ɽ ʈ b w̃; ᱷ after a consonant = aspiration (kʰ, ɡʱ); the glottal letters ᱜ ᱡ ᱫ ᱵ are the checked
+# stops k̚ʔ c̚ʔ t̚ʔ p̚ʔ at the end of a word, before a voiceless consonant and before ᱼ (phaarkaa), voiced
+# stops elsewhere and before ᱽ (ahad); ᱭ ᱣ ᱶ after a vowel and before a consonant or the end of a word = i u
+# ũ. Where a loanword is not said as its spelling would be read by these values (ᱟᱹᱵᱠᱷᱟᱡᱤᱭᱟᱹᱱ, b before
+# kʰ), the expected form is the loanword's sound. Stress is not part of the expected forms (the evaluation
+# removes it). Vowel quality that the spelling does not show (Wikipedia's transcription of the numerals has
+# ɛ for ᱮ: pɛ, arɛ, ɡɛl) is not expected either: these forms follow the letters.
+ᱫᱚ dɔ basic I
+ᱨᱮ re basic I
+ᱟᱨ ar basic I
+ᱠᱚ kɔ basic I
+ᱠᱟᱱᱟ kana basic I
+ᱦᱚᱲ hɔɽ basic I
+ᱦᱚᱱᱚᱛ hɔnɔt basic I
+ᱚᱱᱟ ɔna basic I
+ᱞᱮᱠᱟᱛᱮ lekate basic I
+ᱥᱮᱨᱢᱟ serma basic I
+ᱩᱱᱤ uni basic I
+ᱥᱤᱧᱚᱛ siɲɔt basic I
+ᱯᱚᱱᱚᱛ pɔnɔt basic I
+ᱫᱤᱥᱚᱢ disɔm basic I
+ᱧᱩᱛᱩᱢ ɲutum basic I
+ᱜᱚᱴᱟᱝ ɡɔʈaŋ basic I
+ᱞᱮᱠᱟ leka basic I
+ᱥᱚᱦᱚᱨ sɔhɔr basic I
+ᱠᱚᱲᱟ kɔɽa basic I
+ᱵᱟᱝ baŋ basic I
+ᱡᱟᱱᱟᱢ ɟanam basic I
+ᱧᱟᱢ ɲam basic I
+ᱟᱠᱟᱱ akan basic I
+ᱮᱢᱟᱱ eman basic I
+ᱚᱠᱛᱚ ɔktɔ basic I
+ᱠᱩᱲᱤ kuɽi basic I
+ᱢᱟᱨᱟᱝ maraŋ basic I
+ᱧᱮᱞ ɲel basic I
+ᱵᱤᱨᱫᱟᱹᱜᱟᱲ birdəɡaɽ gahla I
+ᱯᱟᱹᱨᱥᱤ pərsi gahla I
+ᱟᱹᱰᱤ əɖi gahla I
+ᱟᱹᱛᱩ ətu gahla I
+ᱠᱟᱹᱢᱤ kəmi gahla I
+ᱞᱟᱹᱜᱤᱫ ləɡit̚ʔ gahla I
+ᱫᱟᱹᱠᱷᱤᱱ dəkʰin gahla I
+ᱨᱮᱹᱞ rɛl gahla I
+ᱥᱮᱹᱱ sɛn gahla I
+ᱛᱟᱦᱮᱸ tahẽ nasal I
+ᱛᱟᱦᱮᱸᱫ tahẽt̚ʔ nasal I
+ᱦᱚᱸ hɔ̃ nasal I
+ᱡᱟᱦᱟᱸ ɟahã nasal I
+ᱪᱟᱸᱫᱚ cãdɔ nasal C
+ᱥᱤᱸᱜᱮ sĩɡe nasal C
+ᱥᱟᱺᱜᱤᱧ sə̃ɡiɲ nasal I
+ᱜᱟᱺᱴ ɡə̃ʈ nasal I
+ᱨᱟᱺᱪᱤ rə̃ci nasal I
+ᱢᱟᱺᱡᱷᱤ mə̃ɟʱi nasal I
+ᱟᱺᱜᱤᱵᱷᱟᱨ ə̃ɡibʱar nasal I
+ᱨᱩᱻ ruː length I
+ᱡᱚᱻ ɟɔː length I
+ᱧᱩᱻ ɲuː length I
+ᱛᱤᱻ tiː length I
+ᱨᱮᱻᱞ reːl length I
+ᱥᱮᱪᱮᱫ secet̚ʔ checked I
+ᱠᱚᱣᱟᱜ kɔwak̚ʔ checked I
+ᱨᱤᱱᱤᱡ rinic̚ʔ checked I
+ᱟᱡᱟᱜ aɟak̚ʔ checked I
+ᱟᱡ ac̚ʔ checked I
+ᱟᱜ ak̚ʔ checked I
+ᱦᱩᱭᱩᱜ hujuk̚ʔ checked I
+ᱨᱮᱭᱟᱜ rejak̚ʔ checked U
+ᱢᱩᱪᱟᱹᱫ mucət̚ʔ checked U
+ᱱᱮᱡ nec̚ʔ checked U
+ᱢᱤᱜ mik̚ʔ checked U
+ᱫᱷᱟᱹᱵᱤᱡ dʱəbic̚ʔ checked U
+ᱮᱛᱚᱦᱚᱵ etɔhɔp̚ʔ checked I
+ᱢᱤᱫᱴᱟᱹᱝ mit̚ʔʈəŋ checked I
+ᱦᱤᱥᱟᱹᱵᱛᱮ hisəp̚ʔte checked I
+ᱥᱟᱶᱦᱮᱫ saũhet̚ʔ checked I
+ᱜᱚ ɡɔ voiced U
+ᱜᱤᱫᱨᱟᱹ ɡidrə voiced I
+ᱰᱤᱜᱨᱤ ɖiɡri voiced I
+ᱚᱨᱵᱤ ɔrbi voiced C
+ᱵᱤᱡᱽᱞᱤ biɟli voiced I
+ᱜᱼᱚ k̚ʔɔ phaarkaa U
+ᱢᱮᱱᱟᱜᱼᱟ menak̚ʔa phaarkaa I
+ᱦᱩᱭᱩᱜᱼᱟ hujuk̚ʔa phaarkaa I
+ᱠᱮᱫᱼᱟ ket̚ʔa phaarkaa I
+ᱞᱮᱫᱼᱟ let̚ʔa phaarkaa I
+ᱟᱠᱟᱫᱼᱟ akat̚ʔa phaarkaa I
+ᱧᱟᱢᱚᱜᱼᱟ ɲamɔk̚ʔa phaarkaa I
+ᱠᱚᱞᱮᱡᱽ kɔleɟ ahad I
+ᱨᱟᱡᱽ raɟ ahad I
+ᱯᱩᱨᱩᱵᱽ purub ahad I
+ᱜᱷᱟᱨᱚᱸᱡᱽ ɡʱarɔ̃ɟ ahad I
+ᱜᱤᱫᱽᱨᱟᱹ ɡidrə ahad I
+ᱰᱤᱜᱽᱨᱤ ɖiɡri ahad I
+ᱵᱷᱟᱜᱽ bʱaɡ ahad I
+ᱦᱤᱥᱟᱹᱵᱽ hisəb ahad I
+ᱵᱩᱫᱽᱫᱷᱤ buddʱi ahad U
+ᱟᱝᱜᱽᱨᱮᱡᱤ aŋɡreɟi ahad C
+ᱪᱟᱭᱱᱤᱡᱽ cainiɟ ahad C
+ᱴᱚᱴᱷᱟ ʈɔʈʰa aspirate I
+ᱵᱩᱫᱫᱷᱚ buddʱɔ aspirate I
+ᱫᱷᱚᱨᱚᱢ dʱɔrɔm aspirate I
+ᱡᱷᱟᱨᱠᱷᱚᱸᱰ ɟʱarkʰɔ̃ɖ aspirate I
+ᱵᱷᱟᱨᱚᱛ bʱarɔt aspirate I
+ᱠᱷᱚᱱ kʰɔn aspirate I
+ᱞᱮᱠᱷᱟ lekʰa aspirate I
+ᱯᱷᱤᱴ pʰiʈ aspirate I
+ᱵᱮᱵᱷᱟᱨ bebʱar aspirate I
+ᱢᱚᱫᱷᱭᱚ mɔdʱjɔ aspirate I
+ᱚᱫᱷᱤᱠᱟᱨ ɔdʱikar aspirate U
+ᱟᱫᱷᱟᱨ adʱar aspirate U
+ᱵᱩᱡᱷᱟᱹᱣ buɟʱəu aspirate U
+ᱱᱚᱣᱟ nɔwa glide I
+ᱛᱟᱭᱚᱢ tajɔm glide I
+ᱵᱮᱱᱟᱣ benau glide I
+ᱟᱭᱢᱟ aima glide I
+ᱠᱟᱱᱟᱭ kanai glide I
+ᱠᱚᱣᱟ kɔwa glide I
+ᱯᱩᱭᱞᱩ puilu glide I
+ᱡᱤᱭᱚᱱ ɟijɔn glide I
+ᱵᱟᱨᱭᱟ barja glide I
+ᱨᱮᱞᱣᱮ relwe glide I
+ᱠᱟᱹᱣᱰᱤ kəuɖi glide I
+ᱵᱮᱣᱦᱟᱨ beuhar glide U
+ᱥᱣᱚᱛᱚᱱᱛᱨᱚ swɔtɔntrɔ glide U
+ᱥᱟᱶ saũ glide I
+ᱱᱚᱶᱟ nɔw̃a glide I
+ᱥᱟᱶᱛᱮ saũte glide I
+ᱡᱟᱶᱟᱭ ɟaw̃ai glide I
+ᱡᱩᱞᱟᱭ ɟulai glide C
+ᱢᱤᱫ mit̚ʔ numeral N
+ᱵᱟᱨ bar numeral N
+ᱯᱮ pe numeral N
+ᱯᱩᱱ pun numeral N
+ᱢᱚᱬᱮ mɔɳe numeral N
+ᱛᱩᱨᱩᱭ turui numeral N
+ᱮᱭᱟᱭ ejai numeral N
+ᱤᱨᱟᱹᱞ irəl numeral N
+ᱟᱨᱮ are numeral N
+ᱜᱮᱞ ɡel numeral N
+ᱤᱥᱤ isi numeral N
+ᱥᱟᱭ sai numeral N
+ᱚᱛᱮ ɔte word C
+ᱵᱟᱞᱮ bale word C
+ᱥᱟᱹᱜᱩᱱ səɡun word C
+ᱥᱟᱹᱨᱫᱤ sərdi word C
+ᱡᱟᱹᱨᱩᱢ ɟərum word C
+ᱧᱩᱦᱩᱢ ɲuhum word C
+ᱥᱟᱱᱛᱟᱲᱤ santaɽi word C
+ᱤᱱᱰᱤᱭᱟ inɖija word C
+ᱡᱟᱨᱢᱟᱱ ɟarman word C
+ᱢᱟᱦᱟ maha word C
+ᱦᱟᱯᱛᱟ hapta word C
+ᱮᱢᱦᱟ emha word C
+ᱡᱟᱱᱣᱟᱨᱤ ɟanwari word C
+ᱯᱷᱟᱨᱣᱟᱨᱤ pʰarwari word C
+ᱟᱜᱟᱥᱛ aɡast word C
+ᱥᱮᱯᱴᱮᱢᱵᱟᱨ sepʈembar word C
+ᱟᱯᱷᱨᱤᱠᱟᱱᱥ apʰrikans word C
+ᱨᱩᱥᱤᱭᱟᱱ rusijan word C
+ᱟᱹᱵᱠᱷᱟᱡᱤᱭᱟᱹᱱ əbkʰaɟijən loan C
+ᱡᱚᱛᱚ ɟɔtɔ word U
+ᱞᱮᱠᱟᱱ lekan word U
+ᱢᱳᱱ mon word U
+ᱥᱩᱢᱟᱱ suman word U
+ᱛᱚᱨᱟ tɔra word U
+ᱫᱚᱥᱟᱨ dɔsar word U
+ᱟᱯᱱᱟᱨ apnar word U
+ᱡᱳᱨᱩᱲᱟ ɟoruɽa word U
+ᱟᱹᱜᱩ əɡu word U
+ᱩᱱᱠᱳ unko word U

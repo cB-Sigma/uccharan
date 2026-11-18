@@ -354,3 +354,56 @@ fn bodo() {
         p.phonemize("आं बर’ राव बुङो", &o)
     );
 }
+
+#[test]
+fn santali() {
+    // Ol Chiki (Everson, Unicode L2/05-243R; Ghosh 2008): every vowel is a
+    // letter, ᱹ makes ə ɛ, ᱸ ᱺ nasalise, ᱻ lengthens; ᱜ ᱡ ᱫ ᱵ are checked
+    // stops at the end of a word and before a voiceless consonant, ᱼ keeps
+    // them checked, ᱽ voices them; ᱷ aspirates; stress on the second syllable
+    // (Anderson & Horo 2021). espeak-ng cannot read the script, so both modes
+    // give this reading.
+    let p = Phonemizer::new();
+    let o = Options::new(Lang::Sat);
+    let mut i = o.clone();
+    i.mode = Mode::Improved;
+    let w = |s: &str| uccharan::profile::nfd(&p.phonemize(s, &o));
+    let n = uccharan::profile::nfd;
+    assert_eq!(w("ᱥᱟᱱᱛᱟᱲᱤ ᱯᱟᱹᱨᱥᱤ"), p.phonemize("ᱥᱟᱱᱛᱟᱲᱤ ᱯᱟᱹᱨᱥᱤ", &i));
+    assert_eq!(w("ᱥᱟᱱᱛᱟᱲᱤ"), "santˈaɽi");
+    assert_eq!(w("ᱯᱟᱹᱨᱥᱤ"), "pərsˈi");
+    assert_eq!(w("ᱨᱮᱹᱞ"), "rˈɛl");
+    assert_eq!(w("ᱢᱤᱫ"), "mˈit\u{31a}ʔ");
+    assert_eq!(w("ᱟᱡᱟᱜ"), "aɟˈak\u{31a}ʔ");
+    assert_eq!(w("ᱢᱮᱱᱟᱜᱼᱟ"), "menˈak\u{31a}ʔa");
+    assert_eq!(w("ᱜᱚ"), "ɡˈɔ");
+    assert_eq!(w("ᱜᱼᱚ"), "k\u{31a}ʔˈɔ");
+    assert_eq!(w("ᱨᱟᱡᱽ"), "rˈaɟ");
+    assert_eq!(w("ᱢᱤᱫᱴᱟᱹᱝ"), "mit\u{31a}ʔʈˈəŋ");
+    assert_eq!(w("ᱜᱤᱫᱨᱟᱹ"), "ɡidrˈə");
+    assert_eq!(w("ᱜᱷᱟᱨᱚᱸᱡᱽ"), n("ɡʱarˈɔ̃ɟ"));
+    assert_eq!(w("ᱞᱮᱠᱷᱟ"), "lekʰˈa");
+    assert_eq!(w("ᱥᱟᱺᱜᱤᱧ"), n("sə̃ɡˈiɲ"));
+    assert_eq!(w("ᱨᱮᱻᱞ"), "rˈeːl");
+    assert_eq!(w("ᱥᱟᱶ"), "sˈau\u{303}");
+    assert_eq!(w("ᱱᱚᱶᱟ"), "nɔw\u{303}ˈa");
+    assert_eq!(w("ᱠᱟᱱᱟᱭ"), "kanˈai");
+    assert_eq!(w("ᱫᱚ ᱦᱚᱲ"), "dɔ hˈɔɽ");
+    // A full stop typed for ᱹ, a hyphen for ᱼ.
+    assert_eq!(w("ᱟ.ᱲᱟ"), w("ᱟᱹᱲᱟ"));
+    assert_eq!(w("ᱢᱮᱱᱟᱜ-ᱟ"), w("ᱢᱮᱱᱟᱜᱼᱟ"));
+    // Numbers in Santali words, from Ol Chiki or ASCII digits.
+    assert_eq!(w("᱒᱕"), w("ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ"));
+    assert_eq!(w("25"), w("ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ"));
+    assert_eq!(w("᱑᱐᱐᱐"), w("ᱢᱤᱫ ᱦᱟᱡᱟᱨ"));
+    assert_eq!(w("₹᱕᱐᱐"), w("ᱢᱚᱬᱮ ᱥᱟᱭ ᱴᱟᱠᱟ"));
+    // ᱾ ends a sentence.
+    assert_eq!(p.analyze("ᱫᱚ᱾ ᱟᱨ", &o).len(), 2);
+    // Romanised Santali.
+    let mut r = o.clone();
+    r.hinglish = true;
+    assert_eq!(
+        p.phonemize("johar, inj disom do santali kana", &r),
+        p.phonemize("ᱡᱚᱦᱟᱨ, ᱤᱧ ᱫᱤᱥᱚᱢ ᱫᱚ ᱥᱟᱱᱛᱟᱲᱤ ᱠᱟᱱᱟ", &o)
+    );
+}

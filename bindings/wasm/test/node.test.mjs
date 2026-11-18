@@ -101,3 +101,12 @@ test("Bodo: Hindi reading in compatible mode, Bodo vowels in improved mode", asy
   assert.equal((await uccharan.normalize("25", { lang: "brx", improved: true })).text, "नैजिबा");
   assert.equal((await uccharan.transliterate("ang boro raw bungw", { lang: "brx" })).text, "आं बर’ राव बुङो");
 });
+
+test("Santali: one reading in both modes (espeak-ng cannot read Ol Chiki)", async () => {
+  assert.ok(uccharan.LANGUAGES.includes("sat"));
+  assert.equal(await uccharan.phonemize("ᱯᱟᱹᱨᱥᱤ", { lang: "sat" }), await uccharan.phonemize("ᱯᱟᱹᱨᱥᱤ", { lang: "santali", improved: true }));
+  assert.equal(await uccharan.phonemize("ᱯᱟᱹᱨᱥᱤ", { lang: "sat" }), "pərsˈi");
+  assert.equal(await uccharan.phonemize("ᱢᱤᱫ", { lang: "sat" }), "mˈit̚ʔ");
+  assert.equal((await uccharan.normalize("25", { lang: "sat" })).text, "ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ");
+  assert.equal((await uccharan.transliterate("johar inj disom do santali kana", { lang: "sat" })).text, "ᱡᱚᱦᱟᱨ ᱤᱧ ᱫᱤᱥᱚᱢ ᱫᱚ ᱥᱟᱱᱛᱟᱲᱤ ᱠᱟᱱᱟ");
+});

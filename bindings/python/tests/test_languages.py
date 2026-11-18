@@ -30,3 +30,15 @@ def test_bodo():
     assert uccharan.phonemize("बर’", lang="brx", improved=True) == "bˈɔrɔ"
     assert uccharan.normalize("25", "brx", improved=True).text == "नैजिबा"
     assert uccharan.transliterate("ang boro raw bungw", "brx").text == "आं बर’ राव बुङो"
+
+
+def test_santali():
+    # Ol Chiki: espeak-ng cannot read it, so both modes give the Santali
+    # reading (ᱹ = ə, the glottal letters checked at the end of a word, stress
+    # on the second syllable).
+    assert "sat" in uccharan.LANGUAGES
+    assert uccharan.phonemize("ᱯᱟᱹᱨᱥᱤ", lang="sat") == uccharan.phonemize("ᱯᱟᱹᱨᱥᱤ", lang="santali", improved=True)
+    assert uccharan.phonemize("ᱯᱟᱹᱨᱥᱤ", lang="sat") == "pərsˈi"
+    assert uccharan.phonemize("ᱢᱤᱫ", lang="sat") == "mˈit̚ʔ"
+    assert uccharan.normalize("25", "sat").text == "ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ"
+    assert uccharan.transliterate("johar inj disom do santali kana", "sat").text == "ᱡᱚᱦᱟᱨ ᱤᱧ ᱫᱤᱥᱚᱢ ᱫᱚ ᱥᱟᱱᱛᱟᱲᱤ ᱠᱟᱱᱟ"

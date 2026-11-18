@@ -1,6 +1,6 @@
 # Languages
 
-uccharan phonemises 41 language tags. English (US and British) and Hindi have hand-built front
+uccharan phonemises 42 language tags. English (US and British) and Hindi have hand-built front
 ends with their own lexicons; the others run on two shared engines, one for Brahmic and
 Perso-Arabic scripts and one for Latin-script languages, each driven by a short language file of
 letters, rewrite rules, exceptions and number words (`crates/uccharan/lang/*.lang`; see
@@ -49,6 +49,7 @@ Runs on that machine differ by about ±10 %.
 | Magahi | `mag` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.40 % | 0.23 % | 2.8× | MMS (character input) |
 | Dogri | `doi` | `hi` ‡ | IndicCorp v2, 2,000 sentences | 1.40 % | 1.35 % | 1.9× § | none |
 | Bodo | `brx` | `hi` ‡ | IndicCorp v2, 2,000 sentences | 0.37 % | 0.32 % | 2.3× § | none |
+| Santali (Ol Chiki) | `sat` | none ¶ | IndicCorp v2, 2,000 sentences | — ¶ | — | — ¶ | none |
 | Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.54 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
 | German | `de` | `de` | FLORES-200, 1,012 sentences | 0.95 % | 0.77 % | 5.8× † | Piper `de_DE` (11) |
 | Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.69 % | 1.32 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
@@ -81,6 +82,14 @@ with its Hindi voice, and compatible mode is measured against that reading.
 Magahi gave 2.3× and Hindi 1.8×, against 2.8× each on the machine of the other rows. Bodo:
 [`compare_brx_windows.json`](../tools/bench/results/compare_brx_windows.json), same method; in that
 run Dogri gave 1.9× and Hindi 1.8×.
+
+¶ espeak-ng cannot read Ol Chiki (it says the code point of each letter, under every voice), so
+Santali has no reference reading: both modes give uccharan's Santali reading, checked on a
+hand-written gold set instead (held-out half: 100 % of 100 words, sentence PER 0.00 %; see the
+notes below for what that does and does not show). Speed, same laptop and method as §: 16.7 µs per
+sentence at the median, 0.72 million words per second, one thread
+([`compare_sat_windows.json`](../tools/bench/results/compare_sat_windows.json)); in that run Bodo
+took 20.4 µs (2.4× espeak-ng) and Hindi 10.8 µs (1.8×).
 
 ## Notes on the languages
 
@@ -233,6 +242,129 @@ consonants (ɟ for z). The gold set writes down the descriptions named above for
 shows that improved mode implements them, not that a Bodo speaker would accept every form; the
 remaining held-out word error is ककबरक (Kokborok), where the Hindi-type deletion keeps a vowel the
 word does not have.
+
+**Santali** (`sat`, also `santali`, `sat-olck`; Ol Chiki, U+1C50–U+1C7F) is a Munda
+(Austroasiatic) language written in its own alphabet, Ol Chiki, which writes every vowel as a
+letter and has no inherent vowel and no virama. espeak-ng 1.52.0 has no Santali voice and cannot
+read the script at all: under every voice it says the code point of each letter (for ᱥ, U+1C65,
+`-v hi` says "akshar ek si chhah panch", `-v en` "letter 1c65"). No voice was trained on that, so there
+is nothing for compatible mode to reproduce, and comparing with it would measure nothing: **both
+modes give the same reading**, uccharan's Santali rules (`lang/sat.lang`, read by the Brahmic
+engine with every consonant marked as having no vowel of its own), and the language-switch flag is
+`(sat)`. The reading:
+
+- vowels ᱚ ᱟ ᱤ ᱩ ᱮ ᱳ = ɔ a i u e o; with ᱹ (gaahlaa ttuddaag) ᱟᱹ = ə and ᱮᱹ = ɛ (ᱯᱟᱹᱨᱥᱤ pərsˈi, ᱨᱮᱹᱞ
+  rˈɛl); ᱚᱹ, whose contrast with ᱚ is marginal, is ɔ; ᱸ (mu ttuddag) nasalises the vowel before it
+  (ᱦᱚᱸ hɔ̃, ᱛᱟᱦᱮᱸ tahˈẽ), ᱺ (mu-gaahlaa ttuddaag) is both marks (ᱥᱟᱺᱜᱤᱧ sə̃ɡˈiɲ), ᱻ (relaa)
+  lengthens the vowel (ᱨᱮᱻᱞ rˈeːl);
+- the four glottal letters ᱜ ᱡ ᱫ ᱵ are voiced stops ɡ ɟ d b before a vowel (ᱜᱚ ɡˈɔ) and checked
+  stops at the end of a word: glottalised and unreleased, written k̚ʔ c̚ʔ t̚ʔ p̚ʔ (ᱢᱤᱫ mˈit̚ʔ, ᱟᱡᱟᱜ
+  aɟˈak̚ʔ); ᱼ (phaarkaa) keeps the checked value before a vowel (ᱢᱮᱱᱟᱜᱼᱟ menˈak̚ʔa, ᱜᱼᱚ k̚ʔˈɔ), ᱽ
+  (ahad) gives the voiced value where the checked one would be read (ᱨᱟᱡᱽ rˈaɟ, ᱜᱷᱟᱨᱚᱸᱡᱽ ɡʱarˈɔ̃ɟ,
+  ᱜᱤᱫᱽᱨᱟᱹ ɡidrˈə). Before another consonant the sources leave the value open (Zide: checked "at
+  certain word-internal preconsonantal junctures"); uccharan reads a glottal letter as checked
+  before a voiceless consonant (ᱢᱤᱫᱴᱟᱹᱝ mit̚ʔʈˈəŋ, ᱦᱤᱥᱟᱹᱵᱛᱮ) and voiced before a voiced one (ᱜᱤᱫᱨᱟᱹ
+  ɡidrˈə, ᱰᱤᱜᱨᱤ), which is how Ol Chiki text spells these words. A loanword whose voiced stop
+  stands before a voiceless consonant without ᱽ (ᱟᱹᱵᱠᱷᱟᱡᱤᱭᱟᱹᱱ "Abkhazian") is therefore read checked;
+- ᱷ after a consonant writes aspiration (ᱞᱮᱠᱷᱟ lekʰˈa, ᱵᱷᱟᱨᱚᱛ bʱarˈɔt: the voiced aspirates are
+  breathy ɡʱ ɟʱ dʱ ɖʱ bʱ ɽʱ), and after a vowel or at the start of a word it is h;
+- the other consonants are ᱛ ᱠ ᱪ ᱯ ᱴ t k c p ʈ, ᱰ ɖ, ᱝ ᱢ ᱱ ᱧ ᱬ ŋ m n ɲ ɳ, ᱥ ᱦ s h, ᱨ ᱲ r ɽ, ᱞ l;
+  ᱭ ᱣ are j w before a vowel and close a diphthong after one (ᱠᱟᱱᱟᱭ kanˈai, ᱵᱮᱱᱟᱣ benˈau), and ᱶ is
+  the nasal glide w̃ (ᱱᱚᱶᱟ nɔw̃ˈa), ũ after a vowel (ᱥᱟᱶ sˈaũ);
+- primary stress is on the second syllable (Santali is "strongly second-syllable prominent in
+  uninflected disyllables", Anderson and Horo 2021); the particles and postpositions ᱫᱚ ᱨᱮ ᱛᱮ
+  ᱠᱷᱚᱱ ᱠᱚ ᱜᱮ ᱟᱨ ᱦᱚᱸ ᱥᱮ are unstressed. Loanwords that keep their own stress are not told apart;
+- written habits: a full stop typed for ᱹ, which it resembles (ᱟ.ᱲᱟ for ᱟᱹᱲᱟ), and a hyphen typed
+  for ᱼ (ᱢᱮᱱᱟᱜ-ᱟ) are read as the marks; ᱻ after a glottal letter, a common slip for ᱼ, is read as
+  ᱼ; ᱾ and ᱿ end a sentence. Marks after a letter that does not take them are not said.
+
+Sources: Michael Everson, *Final proposal to encode the Ol Chiki script in the UCS* (ISO/IEC
+JTC1/SC2/WG2 N2984R, Unicode L2/05-243R, 2005, after Norman Zide 1996, "Scripts for Munda
+languages", and Raghunath Murmu's *Ranar*) for the letter values and the marks; Arun Ghosh,
+"Santali" (in G. D. S. Anderson, ed., *The Munda Languages*, Routledge 2008, pp. 11–98) and Lukas
+Neukom, *Santali* (LINCOM 2001), as summarised in the Wikipedia articles "Santali language" and
+"Ol Chiki script", for the phonemes and the checked stops (Sebeok 1943 and Ghosh 2008 treat them
+as allophones of p t c k in the coda); Gregory D. S. Anderson and Luke Horo (2021), "Towards a
+prosodic typology of the Kherwarian languages: Santali of Assam" (JSEALS Special Publication 8),
+for the stress. Not modelled: vowel harmony and the vowel differences between dialects, which
+Ol Chiki does not write (the Wikipedia transcription of the numerals has ɛ where the spelling has
+ᱮ: pɛ, arɛ, ɡɛl), and the deletion of a second vowel in words of three syllables (Wikipedia's
+/hapaɽam/ → [hapˈɽám]); every letter keeps its value.
+
+**Numbers.** Both modes, and normalise-only mode, read numbers written with ASCII or Ol Chiki
+digits (᱐–᱙) in Santali words: the units ᱢᱤᱫ ᱵᱟᱨ ᱯᱮ ᱯᱩᱱ ᱢᱚᱬᱮ ᱛᱩᱨᱩᱭ ᱮᱭᱟᱭ ᱤᱨᱟᱹᱞ ᱟᱨᱮ, ᱜᱮᱞ 10, 11–19
+as ᱜᱮᱞ and the unit (ᱜᱮᱞ ᱢᱤᱫ), the tens as a unit and ᱜᱮᱞ (25 ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ), ᱥᱟᱭ for hundreds
+(ᱢᱤᱫ ᱥᱟᱭ), and the borrowed ᱦᱟᱡᱟᱨ, ᱞᱟᱠᱷ and ᱠᱳᱴᱤ above (2021 ᱵᱟᱨ ᱦᱟᱡᱟᱨ ᱵᱟᱨ ᱜᱮᱞ ᱢᱤᱫ). This follows
+the numerals of the Wikipedia article and how Santali text in IndicCorp v2 writes numbers (ᱯᱮ ᱜᱮᱞ
+ᱛᱩᱨᱩᱭ 36, ᱵᱟᱨ ᱜᱮᱞ ᱯᱮ 23, ᱢᱤᱫ ᱦᱟᱡᱟᱨ, ᱵᱟᱨ ᱞᱟᱠᱷ); the same text also writes ᱯᱚᱱ for 4 and ᱢᱚᱲᱮ for 5,
+and counts thousands as "ten hundreds" (ᱢᱤᱫ ᱜᱮᱞ ᱥᱟᱭ 1000), which uccharan does not. The twenty
+ᱤᱥᱤ is not used for numbers written with digits. Zero is ᱡᱤᱨᱳ, the decimal point ᱯᱚᱭᱮᱱᱴ, minus
+ᱢᱤᱱᱟᱥ, per cent ᱥᱟᱭ ᱠᱟᱲᱟ and ₹ ᱴᱟᱠᱟ after the amount (all as in the same text); month names come
+from Unicode CLDR (`sat.xml`). There are no ordinals and no clock times: the corpus gives no
+settled written form for either. As for the other Indic scripts, a date written with native digits
+(᱑᱕/᱐᱘/᱒᱐᱒᱔) is read number by number, not as a date.
+
+**Romanised Santali** follows the Santali Latin alphabet (Bodding 1930: ạ for ə, k' c' t' p' for
+the checked stops, ṭ ḍ ṇ ṛ, ñ ṅ, a tilde for a nasal vowel) and its casual ASCII form, with rules of
+its own (`crates/uccharan/src/sat.rs`), written in Ol Chiki: a list of 25 common words (`johar`
+ᱡᱚᱦᱟᱨ, `inj` ᱤᱧ, `disom` ᱫᱤᱥᱚᱢ, `do` ᱫᱚ, `santali` ᱥᱟᱱᱛᱟᱲᱤ, `menak'a` ᱢᱮᱱᱟᱜᱼᱟ), then a letter
+converter: c = ᱪ, j = ᱡ, y = ᱭ, o = ᱚ (ō ô = ᱳ), ng = ᱝ (ᱝᱜ before a vowel), h after a stop = ᱷ;
+k' c' t' p', and k c t p at the end of a word (a final stop of a Santali word is checked), are
+ᱜ ᱡ ᱫ ᱵ, with ᱼ before a vowel; g j d b where ᱜ ᱡ ᱫ ᱵ would be read checked take ᱽ (`raj` ᱨᱟᱡᱽ).
+`transliterate(..., "sat")` (no pack) and the `hinglish` option use it; a clause is rewritten only
+when it has one of 17 distinctive listed words or a letter that only the Santali alphabet uses, so
+English text is left alone, and English words stay in Latin letters (there is no Ol Chiki
+respelling of English). `johar inj disom do santali kana` → ᱡᱚᱦᱟᱨ ᱤᱧ ᱫᱤᱥᱚᱢ ᱫᱚ ᱥᱟᱱᱛᱟᱲᱤ ᱠᱟᱱᱟ. Casual
+romanisation does not mark ə, ɛ, ɔ against o, or the checked stops consistently, so the converter
+guesses there; there is no romanised Santali test set, and this is not measured.
+
+**Other scripts.** Santali is also written in Bengali, Odia, Devanagari and Latin script. uccharan
+reads Santali only in Ol Chiki (and romanised as above): a Bengali, Odia or Devanagari word in a
+`sat` request is read by that script's language (Bengali, Odia, Hindi), not as Santali. Those
+spellings follow each script's own conventions and mark the checked stops and ə differently from
+writer to writer, and all the text available for testing (IndicCorp v2, IndicGenBench, Santali
+Wikipedia, Tatoeba) is in Ol Chiki.
+
+Held-out text: 2,000 sentences of Santali from AI4Bharat's IndicCorp v2 (CC0; in Ol Chiki; lines
+with wiki markup left out), and three more held-out sets, never used for the rules: the 1,012
+FLORES-200 `devtest` sentences in Santali from Google's IndicGenBench (Flores-IN, CC BY-SA 4.0),
+500 sentences from random articles of the Santali Wikipedia (sat.wikipedia.org, CC BY-SA 4.0;
+none of them in the IndicCorp text) and 1,000 Tatoeba sentences (CC BY 2.0 FR). With no reference
+reading they cannot give a phoneme error rate; `tools/eval/sat_check.py` measures what can be
+measured without one:
+
+| Held-out set | Ol Chiki words | read to Santali phonemes | marks not said (per 1,000 Ol Chiki characters) |
+| --- | ---: | ---: | ---: |
+| IndicCorp v2, 2,000 sentences | 25,262 | 100.00 % | 1.47 |
+| IndicGenBench Flores-IN, 1,012 sentences | 23,935 | 100.00 % | 1.53 |
+| Santali Wikipedia, 500 sentences | 7,197 | 100.00 % | 0.36 |
+| Tatoeba, 1,000 sentences | 4,865 | 100.00 % | 0.29 |
+
+"Read" means a non-empty pronunciation made only of the phonemes above; the marks not said are
+mostly ᱹ after ᱤ or a consonant and ᱼ ᱽ after other letters, typing slips the rules leave out. This
+shows the rules cover the text, not that the readings are right. That is what the hand-written
+gold set checks ([tools/eval/gold/sat](../tools/eval/gold/sat): 164 words and 35 sentences, split
+by a hash before the rules were run on it; words from the Ol Chiki descriptions, the Wikipedia
+numerals, CLDR and IndicCorp v2; the first article of the Declaration as quoted in the Wikipedia
+article and 33 IndicCorp v2 lines outside all the evaluation sets). Held-out half:
+
+| Held-out | espeak-ng | uccharan (both modes) |
+| --- | ---: | ---: |
+| Santali words (100), exact | — (reads code points) | **100.0 %** |
+| Santali sentences (16): PER / identical | — | **0.00 % / 100.0 %** |
+
+Development half: 63 of 64 words (the loanword ᱟᱹᱵᱠᱷᱟᱡᱤᱭᱟᱹᱱ, read with a checked p̚ʔ before kʰ),
+sentence PER 0.00 %. The perfect held-out score is not a measure of how Santali sounds: Ol Chiki
+is a phonemic alphabet, the gold set was written by applying the published letter values by hand,
+and the rules apply the same values, so the score shows that the rules implement the description
+without slips. What the description leaves out (vowel harmony, dialect vowels, loanword stress
+and voicing) is in neither. No Santali voice or speech recogniser has been tried.
+
+Speed: there is no espeak-ng reading to time against. On the Windows 11 laptop of the § rows
+(500 held-out IndicCorp v2 sentences, one thread, best of 5 rounds,
+[`compare_sat_windows.json`](../tools/bench/results/compare_sat_windows.json)) uccharan takes
+16.7 µs per sentence at the median (p99 38.4 µs), 0.72 million words per second; in the same run
+Bodo took 20.4 µs (2.4× espeak-ng's speed) and Hindi 10.8 µs (1.8×).
 
 **German, Dutch and French** (`de`, `nl`, `fr`) run on the same Latin-script engine as Spanish,
 each with letter rules and a **word table** (`de.ucd` 16 k entries, 373 KB; `nl.ucd` 12 k, 242 KB;

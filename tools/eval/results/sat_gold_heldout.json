@@ -1,0 +1,44 @@
+{
+ "lang": "sat",
+ "split": "heldout",
+ "systems": {
+  "uccharan compatible": {
+   "word_accuracy": 1.0,
+   "sentence_per": 0.0,
+   "sentence_exact": 1.0,
+   "by_category": {
+    "basic": 1.0,
+    "gahla": 1.0,
+    "nasal": 1.0,
+    "length": 1.0,
+    "checked": 1.0,
+    "voiced": 1.0,
+    "phaarkaa": 1.0,
+    "ahad": 1.0,
+    "aspirate": 1.0,
+    "glide": 1.0,
+    "numeral": 1.0,
+    "word": 1.0
+   }
+  },
+  "uccharan improved": {
+   "word_accuracy": 1.0,
+   "sentence_per": 0.0,
+   "sentence_exact": 1.0,
+   "by_category": {
+    "basic": 1.0,
+    "gahla": 1.0,
+    "nasal": 1.0,
+    "length": 1.0,
+    "checked": 1.0,
+    "voiced": 1.0,
+    "phaarkaa": 1.0,
+    "ahad": 1.0,
+    "aspirate": 1.0,
+    "glide": 1.0,
+    "numeral": 1.0,
+    "word": 1.0
+   }
+  }
+ }
+}

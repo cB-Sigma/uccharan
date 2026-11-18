@@ -171,7 +171,10 @@ Number spans carry `value` (the digits read).
   (10:30 दस बजियै त्रीह् मिंट). Bodo likewise writes Bodo words in improved mode: native numerals up
   to the thousands and लाख, कौटि above (25 नैजिबा, 2021 नै रोजा नैजिसे, 1,50,000 से लाख बाजि रोजा),
   ordinals with -थि (21थि नैजिसेथि), ₹25 नैजिबा रां, 10:30 जि रिंगा थामजि मिनिट; its 6 and 0 (द’, लाथिख’)
-  are written with the apostrophe, as Bodo spells them.
+  are written with the apostrophe, as Bodo spells them. Santali writes Santali words in Ol Chiki in
+  both modes (espeak-ng cannot read Ol Chiki, so there is no compatible reading to follow), from
+  ASCII or Ol Chiki digits: 25 ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ, 2021 ᱵᱟᱨ ᱦᱟᱡᱟᱨ ᱵᱟᱨ ᱜᱮᱞ ᱢᱤᱫ, 1,50,000 ᱢᱤᱫ ᱞᱟᱠᱷ ᱢᱚᱬᱮ
+  ᱜᱮᱞ ᱦᱟᱡᱟᱨ, ₹25 ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ ᱴᱟᱠᱟ, 50% ᱢᱚᱬᱮ ᱜᱮᱞ ᱥᱟᱭ ᱠᱟᱲᱟ; it has no ordinals or clock times.
   Every one of these languages is checked for words in its own script that read back to the
   phonemes of the digits (`indic_numbers_in_their_own_script` in
   `crates/uccharan/tests/normalize_api.rs`).

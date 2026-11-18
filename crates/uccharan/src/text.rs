@@ -50,7 +50,9 @@ impl Terminator {
             ',' | '،' | '、' => Terminator::Comma,
             ':' => Terminator::Colon,
             ';' | '؛' => Terminator::Semicolon,
-            '.' | '।' | '॥' | '…' | '。' | '۔' => Terminator::Period,
+            '.' | '।' | '॥' | '…' | '。' | '۔' | '\u{1c7e}' | '\u{1c7f}' => {
+                Terminator::Period
+            }
             '?' | '？' | '؟' => Terminator::Question,
             '!' | '！' => Terminator::Exclamation,
             _ => return None,
@@ -82,6 +84,10 @@ pub fn script_of(c: char) -> Script {
         '\u{0900}'..='\u{0dff}' if indic_digit(c).is_some() => Script::Digit,
         '\u{0900}'..='\u{097f}' | '\u{200c}' | '\u{200d}' => Script::Devanagari,
         '\u{0980}'..='\u{0dff}' => Script::Brahmic(c as u32 & !0x7f),
+        // Ol Chiki (Santali): digits, the two mucaad stops, letters and marks.
+        '\u{1c50}'..='\u{1c59}' => Script::Digit,
+        '\u{1c7e}' | '\u{1c7f}' => Script::Other,
+        '\u{1c5a}'..='\u{1c7d}' => Script::Brahmic(0x1c00),
         // Arabic script (Urdu, Sindhi): one "block" for the whole range.
         '\u{0660}'..='\u{0669}' | '\u{06f0}'..='\u{06f9}' => Script::Digit,
         '\u{060c}' | '\u{061b}' | '\u{061f}' | '\u{06d4}' | '\u{066a}'..='\u{066d}' => {
@@ -95,9 +101,13 @@ pub fn script_of(c: char) -> Script {
     }
 }
 
-/// Value of a digit of an Indic script (Devanagari to Sinhala blocks).
+/// Value of a digit of an Indic script (Devanagari to Sinhala blocks, Ol
+/// Chiki).
 pub fn indic_digit(c: char) -> Option<u8> {
     let u = c as u32;
+    if (0x1c50..=0x1c59).contains(&u) {
+        return Some((u - 0x1c50) as u8);
+    }
     // Arabic-Indic and Extended (Urdu/Persian) digits.
     if (0x0660..=0x0669).contains(&u) {
         return Some((u - 0x0660) as u8);

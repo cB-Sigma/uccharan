@@ -42,6 +42,29 @@ All notable changes are listed here. The format follows
   (`src/brx.rs`). Python, WebAssembly and C take the new tag; evaluation sets in
   `tools/eval/data/brx_*.tsv` (the second held-out set `brx_flores.tsv` comes from IndicGenBench)
   and `tools/eval/gold/brx`.
+- **Santali** (`sat`, also `santali`, `sat-olck`; Ol Chiki script, U+1C50–U+1C7F). espeak-ng has
+  no Santali voice and cannot read Ol Chiki (it says each letter's code point under every voice),
+  so there is no reference reading: both modes give uccharan's Santali reading, from its own
+  language file (`lang/sat.lang`): ᱚ ᱟ ᱤ ᱩ ᱮ ᱳ = ɔ a i u e o, ᱟᱹ ᱮᱹ = ə ɛ, ᱸ ᱺ nasalise, ᱻ lengthens,
+  the glottal letters ᱜ ᱡ ᱫ ᱵ are checked stops (k̚ʔ c̚ʔ t̚ʔ p̚ʔ) at the end of a word and before a
+  voiceless consonant and voiced elsewhere, ᱼ (phaarkaa) keeps them checked and ᱽ (ahad) voices
+  them, ᱷ aspirates, ᱭ ᱣ ᱶ close diphthongs, stress on the second syllable; after Everson's Ol
+  Chiki proposal (Unicode L2/05-243R), Ghosh (2008) and Anderson and Horo (2021). A full stop typed
+  for ᱹ and a hyphen typed for ᱼ are read as the marks; ᱾ ᱿ end sentences. On a hand-written gold
+  set (held-out half: 100 words, 16 sentences) the reading gets every word right, sentence PER
+  0.00 %, which shows the rules implement the published letter values, not more; every Ol Chiki
+  word of four held-out sets (2,000 IndicCorp v2 sentences, 1,012 IndicGenBench FLORES-200
+  sentences, 500 Santali Wikipedia sentences, 1,000 Tatoeba sentences) is read. 16.7 µs per
+  sentence (p50) on a Windows 11 laptop, where Bodo took 20.4 µs. Numbers from ASCII or Ol Chiki
+  digits in Santali words (25 ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ, ᱥᱟᱭ, ᱦᱟᱡᱟᱨ, ᱞᱟᱠᱷ, ᱠᱳᱴᱤ), the rupee (ᱴᱟᱠᱟ) and dates
+  (CLDR month names). Romanised Santali (Santali Latin alphabet and its ASCII form: `johar`,
+  `menak'a`) in Ol Chiki through the `hinglish` option and `transliterate(..., "sat")` without a
+  pack, with rules and a word list of its own (`src/sat.rs`). Santali in Bengali, Odia or
+  Devanagari script is read as that script's language. Python, WebAssembly and C take the new
+  tag; evaluation sets in `tools/eval/data/sat_*.tsv` (held-out: IndicCorp v2, IndicGenBench,
+  Santali Wikipedia, Tatoeba), `tools/eval/gold/sat` and the coverage check
+  `tools/eval/sat_check.py`.
+- Language-file option `stress = second` (primary stress on the second syllable).
 - Language-file options `time-hour-minutes` and `time-minute` (the hour word before minutes and a
   word after them) and `apostrophe keep` (an apostrophe between Indic letters stays in the word);
   see `docs/adding-a-language.md`.

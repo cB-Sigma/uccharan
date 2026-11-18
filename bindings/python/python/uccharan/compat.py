@@ -30,7 +30,7 @@ _STRESS = "ˈˌ"
 # r-coloured vowels and the syllabic l are only single phonemes when no vowel
 # follows (otherwise the r or l starts the next syllable).
 _TIE_ALWAYS = ("tʃ", "dʒ", "aɪ", "aʊ", "eɪ", "oʊ", "əʊ", "ɔɪ", "iə", "eə", "ʊə")
-_TIE_BEFORE_NON_VOWEL = {"en-us": ("ːɹ", "ɪɹ", "ʊɹ", "ɛɹ", "əl"), "en": ("əl",), "en-gb": ("əl",), "en-gb-x-rp": ("əl",), "hi": (), "bn": (), "mr": (), "te": (), "ne": (), "kn": (), "ta": (), "ml": (), "as": (), "gu": (), "bho": (), "mai": (), "pa": (), "or": (), "kok": (), "si": (), "sa": (), "ur": (), "sd": (), "mag": (), "doi": (), "brx": (), "es": (), "de": (), "nl": (), "fr": (), "it": (), "pt-br": (), "pt": (), "pl": (), "tr": (), "cs": (), "sv": (), "ca": (), "ro": (), "hu": (), "fi": (), "nb": (), "da": (), "fr-be": (), "fr-ch": ()}
+_TIE_BEFORE_NON_VOWEL = {"en-us": ("ːɹ", "ɪɹ", "ʊɹ", "ɛɹ", "əl"), "en": ("əl",), "en-gb": ("əl",), "en-gb-x-rp": ("əl",), "hi": (), "bn": (), "mr": (), "te": (), "ne": (), "kn": (), "ta": (), "ml": (), "as": (), "gu": (), "bho": (), "mai": (), "pa": (), "or": (), "kok": (), "si": (), "sa": (), "ur": (), "sd": (), "mag": (), "doi": (), "brx": (), "sat": (), "es": (), "de": (), "nl": (), "fr": (), "it": (), "pt-br": (), "pt": (), "pl": (), "tr": (), "cs": (), "sv": (), "ca": (), "ro": (), "hu": (), "fi": (), "nb": (), "da": (), "fr-be": (), "fr-ch": ()}
 _PUNCT = re.compile(r"[,.;:!?]")
 
 
@@ -70,7 +70,7 @@ class EspeakBackend:
         words_mismatch: str = "ignore",
         logger: object = None,
     ) -> None:
-        if language.lower().replace("_", "-") not in ("en-us", "en", "en-gb", "en-gb-x-rp", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag", "doi", "brx", "es", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da", "fr-be", "fr-ch"):
+        if language.lower().replace("_", "-") not in ("en-us", "en", "en-gb", "en-gb-x-rp", "hi", "bn", "mr", "te", "ne", "kn", "ta", "ml", "as", "gu", "bho", "mai", "pa", "or", "kok", "si", "sa", "ur", "sd", "mag", "doi", "brx", "sat", "es", "de", "nl", "fr", "it", "pt-br", "pt", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da", "fr-be", "fr-ch"):
             raise ValueError(f"language {language!r} is not supported by uccharan (en-us, en-gb, en-gb-x-rp, hi, bn, mr, te, ne, kn, ta, ml, as, gu)")
         if language_switch not in ("keep-flags", "remove-flags"):
             raise ValueError("language_switch must be 'keep-flags' or 'remove-flags'")

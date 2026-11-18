@@ -1,0 +1,10 @@
+{
+ "set": "tatoeba",
+ "sentences": 1000,
+ "ol_chiki_words": 4865,
+ "words_read": 1.0,
+ "marks_not_said_per_1000_ol_chiki_chars": 0.28847540747151307,
+ "other_script_letters": 0,
+ "latin_words": 8,
+ "modes_identical_on_first_50": true
+}
