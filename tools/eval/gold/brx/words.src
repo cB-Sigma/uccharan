@@ -1,0 +1,170 @@
+# Bodo word gold set, written 2026-11-18 from the descriptions below before the Bodo rules were run on
+# these items. Format: word, broad pronunciation(s) separated by |, category, source. Sources: K = entry of
+# English Wiktionary's "Bodo (India) lemmas" category (CC BY-SA 4.0; spelling, romanisation and gloss read
+# 2026-11-18); U = example word of "Representation of Bodo, Dogri and Maithili languages in Unicode
+# Standard", Government of India, Unicode document L2/08-197 (2008); N = Bodo numeral as listed in the
+# Wikipedia article "Boro language (India)" (CC BY-SA 4.0), in the Devanagari spelling of IndicCorp v2
+# Bodo text; C = word of the Bodo locale of Unicode CLDR (common/main/brx.xml, Unicode License v3); I =
+# word attested in Bodo text of AI4Bharat IndicCorp v2 (CC0). Pronunciations hand-written with the
+# phoneme inventory of Bhattacharya (1977, A Descriptive Analysis of the Boro Language, as given by
+# Sarmah 2004 and the Wikipedia article: i e a ɔ u ɯ; pʰ tʰ kʰ b d ɡ m n ŋ s z r l h j w; no voiced
+# aspirates, no retroflex or palatal stops) and the spelling conventions of L2/08-197 and of the
+# Devanagari and Latin versions of the first article of the Universal Declaration of Human Rights:
+# ो ॊ = ɯ, ै = ɯi, ौ = ɯu, the inherent vowel = ɔ, an apostrophe after a consonant = its inherent vowel
+# said; a bare consonant at the end of a word or before another consonant is said without a vowel (Hindi
+# type), except in the first syllable; ं = ŋ; य व after a vowel and before a consonant or the end of the
+# word = the second half of a diphthong (i, u); च छ श ष स = s, ज झ = z, ट ठ ड ढ ण = t tʰ d d n, ड़ = r,
+# घ ध भ = ɡ d b in loanwords; vowel length is not written. Tone (high or low, on the last syllable of a
+# word: Sarmah 2004) is not written in Bodo Devanagari and is left out here; Wiktionary's tones for गं,
+# दाव and बिमा are therefore not part of the expected forms. Wiktionary's romanisation writes ɯ with o
+# in some entries (लोगो logo, बोराइ borai); the Devanagari ो is read ɯ as the Unicode document gives it.
+अखाफोर ɔkʰapʰɯr word K
+अख्रां ɔkʰraŋ word K
+आं aŋ word K
+आखाय akʰai diph K
+इंराजि iŋrazi word K
+कामिज kamiz loan K
+खालाम kʰalam word K
+खावसे kʰause diph K
+गं ɡɔŋ word K
+गथ ɡɔtʰɔ final K
+गान्दु ɡandu word K
+गाब ɡab word K
+गार' ɡarɔ apos K
+गिरजा ɡirza loan K
+गुफुर ɡupʰur word K
+जा za word K
+जानबुं zanbuŋ word K
+जिराय zirai diph K
+जुनार zunar word K
+जोमै zɯmɯi vowel K
+दंफां dɔŋpʰaŋ word K
+दालां dalaŋ word K
+दाव dau diph K
+दावदै daudɯi diph K
+दिरुं diruŋ word K
+दुवार duwar word K
+दै dɯi vowel K
+दैमा dɯima vowel K
+दोहोरोम dɯhɯrɯm vowel K
+ना na word K
+बर' bɔrɔ apos K
+बार bar word K
+बिदिन्था bidintʰa word K
+बिफा bipʰa word K
+बिमा bima word K
+बेदर bedɔr word K
+बेरे bere word K
+बोरमा bɯrma vowel K
+बोराइ bɯrai vowel K
+मानसि mansi word K
+मायरं mairɔŋ diph K
+मावजि mauzi diph K
+मिसिं misiŋ word K
+मुं muŋ word K
+मोसा mɯsa vowel K
+मोसौ mɯsɯu vowel K
+राव rau diph K
+लाइमोन laimɯn diph K
+लाथिख' latʰikʰɔ apos K
+लामा lama word K
+लिर lir word K
+लोगो lɯɡɯ vowel K
+संख्रि sɔŋkʰri word K
+साहा saha word K
+सिलाइ silai diph K
+सुबुं subuŋ word K
+हाजो hazɯ vowel K
+हादरमा hadɔrma word K
+हादोर hadɯr vowel K
+हिनजाव hinzau diph K
+जोहोलाव zɯhɯlau diph K
+ककबरक kɔkbɔrɔk word K
+गोमो ɡɯmɯ vowel U
+गोसो ɡɯsɯ vowel U
+बोलो bɯlɯ vowel U
+सोलो sɯlɯ vowel U
+सोलोंथाइ sɯlɯŋtʰai vowel U
+गॊमॊ ɡɯmɯ vowel U
+खर' kʰɔrɔ apos U
+आख'ब akʰɔb apos U
+बारग' barɡɔ apos U
+फल' pʰɔlɔ apos U
+बस' bɔsɔ apos U
+दख'ना dɔkʰɔna apos U
+गोजौ ɡɯzɯu vowel U
+से se num N
+नै nɯi num N
+थाम tʰam num N
+ब्रै brɯi num N
+बा ba num N
+द’ dɔ num N
+स्नि sni num N
+दाइन dain num N
+गु ɡu num N
+जि zi num N
+जिसे zise num N
+नैजि nɯizi num N
+थामजि tʰamzi num N
+बाजि bazi num N
+नैजिसे nɯizise num N
+जौसे zɯuse num N
+नैजौ nɯizɯu num N
+रोजा rɯza num N
+जानुवारी zanuwari loan C
+फेब्रूवारी pʰebruwari loan C
+एप्रिल epril loan C
+आगष्ट aɡɔst loan C
+सेप्थेम्बर septʰembɔr loan C
+अक्ट’बर ɔktɔbɔr apos C
+नवेम्बर nɔwembɔr loan C
+डिसेम्बर disembɔr loan C
+आरो arɯ vowel I
+बे be word I
+बिसोर bisɯr vowel I
+जों zɯŋ vowel I
+नों nɯŋ vowel I
+नङा nɔŋa word I
+दं dɔŋ word I
+मोजां mɯzaŋ vowel I
+गोबां ɡɯbaŋ vowel I
+सासे sase word I
+मोनसे mɯnse vowel I
+थाखाय tʰakʰai diph I
+सोरखार sɯrkʰar vowel I
+पुलिस pulis loan I
+भारत barɔt loan I
+कर’ना kɔrɔna apos I
+बिसायख’थि bisaikʰɔtʰi apos I
+मख’नो mɔkʰɔnɯ apos I
+क’कराझार kɔkrazar apos I
+बड’लेण्ड bɔdɔlend apos I
+गथ’ ɡɔtʰɔ apos I
+सुबुंफोरा subuŋpʰɯra word I
+होननानै hɯnnanɯi vowel I
+जादों zadɯŋ vowel I
+गासैबो ɡasɯibɯ vowel I
+खौरां kʰɯuraŋ vowel I
+बिथाङा bitʰaŋa word I
+आसाम asam word I
+रां raŋ word I
+लाख lakʰ word I
+कौटि kɯuti vowel I
+रिंगा riŋɡa word I
+गिबि ɡibi word I
+प्रतिशत prɔtisɔt loan I
+मिनिट minit loan I
+दैदेनगिरि dɯidenɡiri vowel I
+फरायसा pʰɔraisa diph I
+होनाय hɯnai diph I
+मोननाय mɯnnai diph I
+गुबुन ɡubun word I
+लोगोसे lɯɡɯse vowel I
+कंग्रेस kɔŋɡres loan I
+कॉलेज kɔlez loan I
+डॉक्टर dɔktɔr loan I
+आयेन ajen diph I
+लायो lajɯ diph I
+सायाव sajau diph I
+नायगिरदों naiɡirdɯŋ diph I
+बयबो bɔibɯ diph I

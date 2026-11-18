@@ -19,3 +19,14 @@ def test_dogri():
     assert uccharan.phonemize("ज्हार", lang="doi", improved=True) == "ɟˈàːɾ"
     assert uccharan.normalize("25", "doi", improved=True).text == "पंजी"
     assert uccharan.transliterate("tusen kiyan ho", "doi").text == "तुसें कि’यां हो"
+
+
+def test_bodo():
+    # Compatible mode is the Hindi reading; improved mode reads Bodo (ो = ɯ,
+    # the apostrophe = the inherent vowel ɔ).
+    assert "brx" in uccharan.LANGUAGES
+    assert uccharan.phonemize("बोलो", lang="brx") == uccharan.phonemize("बोलो", lang="hi")
+    assert uccharan.phonemize("बोलो", lang="bodo", improved=True) == "bˈɯlɯ"
+    assert uccharan.phonemize("बर’", lang="brx", improved=True) == "bˈɔrɔ"
+    assert uccharan.normalize("25", "brx", improved=True).text == "नैजिबा"
+    assert uccharan.transliterate("ang boro raw bungw", "brx").text == "आं बर’ राव बुङो"

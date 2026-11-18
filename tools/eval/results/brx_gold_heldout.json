@@ -1,0 +1,45 @@
+{
+ "lang": "brx",
+ "split": "heldout",
+ "systems": {
+  "espeak-ng hi (fallback)": {
+   "word_accuracy": 0.02531645569620253,
+   "sentence_per": 0.5290697674418605,
+   "sentence_exact": 0.0,
+   "by_category": {
+    "word": 0.047619047619047616,
+    "diph": 0.0,
+    "loan": 0.0,
+    "vowel": 0.0,
+    "apos": 0.0,
+    "num": 0.1111111111111111
+   }
+  },
+  "uccharan compatible": {
+   "word_accuracy": 0.02531645569620253,
+   "sentence_per": 0.5290697674418605,
+   "sentence_exact": 0.0,
+   "by_category": {
+    "word": 0.047619047619047616,
+    "diph": 0.0,
+    "loan": 0.0,
+    "vowel": 0.0,
+    "apos": 0.0,
+    "num": 0.1111111111111111
+   }
+  },
+  "uccharan improved": {
+   "word_accuracy": 0.9873417721518988,
+   "sentence_per": 0.00436046511627907,
+   "sentence_exact": 0.875,
+   "by_category": {
+    "word": 0.9523809523809523,
+    "diph": 1.0,
+    "loan": 1.0,
+    "vowel": 1.0,
+    "apos": 1.0,
+    "num": 1.0
+   }
+  }
+ }
+}

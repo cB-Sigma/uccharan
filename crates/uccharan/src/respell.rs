@@ -848,6 +848,7 @@ pub fn respell(
                     | Lang::As
                     | Lang::Kok
                     | Lang::Doi
+                    | Lang::Brx
             ),
     };
     Some(search(lang, &w, ipa, |t| {

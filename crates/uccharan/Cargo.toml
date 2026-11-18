@@ -1,6 +1,6 @@
 [package]
 name = "uccharan"
-description = "Phonemiser, text normaliser, transliterator and pronunciation engine for text-to-speech and speech recognition: 40 languages, Apache-2.0."
+description = "Phonemiser, text normaliser, transliterator and pronunciation engine for text-to-speech and speech recognition: 41 languages, Apache-2.0."
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

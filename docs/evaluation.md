@@ -648,6 +648,40 @@ them; they say nothing of how a Dogri speaker would judge the forms. Compatible 
 Hindi voice on the 2,000 held-out IndicCorp sentences: PER 1.40 % (1.35 % without digits), 79.5 %
 identical; development 1.24 %. No voice or speech recogniser for Dogri has been tried.
 
+**Bodo** (`python tools/eval/bho_eval.py --lang brx --split heldout`). espeak-ng 1.52.0 has no
+Bodo voice either, so improved mode is checked on a hand-written gold set. 150 words (62 Wiktionary
+Bodo entries, CC BY-SA 4.0; 13 example words of the Government of India's Unicode document
+L2/08-197; 18 numerals from the Wikipedia article "Boro language (India)" in the spelling of Bodo
+text; 8 words of the Bodo locale of Unicode CLDR; 49 words attested in IndicCorp v2 Bodo text) and
+35 sentences (the first article of the Universal Declaration of Human Rights as quoted in that
+Wikipedia article, its pronunciation taken from the Latin version quoted there; 34 lines of
+IndicCorp v2 Bodo text outside all three sentence sets), with pronunciations written by hand from
+the phoneme inventory of Bhattacharya (1977, as given by Sarmah 2004) and the spelling conventions
+of L2/08-197 and the Declaration (ो = ɯ, ै ौ = ɯi ɯu, the inherent vowel ɔ said where an apostrophe
+follows, Hindi-type deletion otherwise, ं = ŋ, diphthongs closed by य व; conventions in the header
+of `words.src`), split by a hash of the item before the Bodo rules were run on any of it. Tone is
+not written in Bodo and is not part of the expected forms (see [languages.md](languages.md)). The
+other conventions are those of the Bhojpuri comparison.
+
+| Held-out | Hindi voice (espeak-ng `hi`) | compatible | improved |
+| --- | ---: | ---: | ---: |
+| Bodo words (79) | 2.5 % | 2.5 % | **98.7 %** |
+| Bodo sentences (16): PER / identical | 52.91 % / 0.0 % | 52.91 % / 0.0 % | **0.44 % / 87.5 %** |
+
+The one held-out word wrong is ककबरक (kɔkɔbɔrɔk for kɔkbɔrɔk): Hindi-type deletion keeps an
+inherent vowel before another one. The two held-out sentences that differ are the Declaration (उदांयै
+with a j the Latin version does not have, सनमान with ɔ where it writes a) and one with होन्ननै,
+spelt with three n, which the reading says as nː n and the gold, misread when it was written,
+as nn; the gold was left as it was. Development half: words
+100 % (Hindi voice 4.2 %), sentence PER 0.00 % (48.41 %); nothing was corrected after the first
+run. The Hindi voice is far off because it reads Bodo with Hindi's sounds (ə for ɔ, oː for ɯ, ɟ for
+z, voiced aspirates). The gold set and the rules were written by the same hand from the same
+descriptions, so the figures show that improved mode implements them; they say nothing of how a
+Bodo speaker would judge the forms. Compatible mode against the Hindi voice: 2,000 held-out
+IndicCorp v2 sentences PER 0.37 % (0.32 % without stress), 93.4 % identical; 1,012 FLORES-200
+`devtest` sentences of IndicGenBench, a second held-out set, PER 0.48 % (0.35 %), 76.9 % identical;
+development 0.40 %. No voice or speech recogniser for Bodo has been tried.
+
 ## 5. Speed, start-up, memory and size
 
 ```sh

@@ -1,0 +1,42 @@
+# Bodo sentence gold set, written 2026-11-18 before the Bodo rules were run on these items. The first
+# sentence is the first article of the Universal Declaration of Human Rights in Bodo Devanagari as quoted
+# in the Wikipedia article "Boro language (India)" (CC BY-SA 4.0), with the pronunciation taken from the
+# Latin version quoted there ("Gaswi subung anw udangwi man sanman arw mwnthai lana jwnwm layw"); the
+# others are lines of AI4Bharat IndicCorp v2 Bodo text (CC0) that are in none of tools/eval/data/brx_dev.tsv,
+# brx_heldout.tsv and brx_flores.tsv. Pronunciation hand-written with the conventions of words.src.
+# Format: sentence <TAB> pronunciation.
+गासै सुबुं आनो उदांयै मान सनमान आरो मोनथाय लाना जोनोम लायो।	ɡasɯi subuŋ anɯ udaŋɯi man sanman arɯ mɯntʰai lana zɯnɯm lajɯ
+बेखौ नङा होननानै रावबो नेवसिनो हाया।	bekʰɯu nɔŋa hɯnnanɯi raubɯ neusinɯ haja
+बिमा गाजायै साथाम गथ’फोरा सोरखारनिसिम हेफाजाब नायगिरदों ।	bima ɡazajɯi satʰam ɡɔtʰɔpʰɯra sɯrkʰarnisim hepʰazab naiɡirdɯŋ
+गोबां हा याव दंफां दननानै आबाद मावगासिनो।	ɡɯbaŋ ha jau dɔŋpʰaŋ dɔnnanɯi abad mauɡasinɯ
+बे आयदाखौ लानानै गोबां लिरबाय।	be aidakʰɯu lananɯi ɡɯbaŋ lirbai
+अलंबार नों बुंनाय खोथायाबो थार।	ɔlɔŋbar nɯŋ buŋnai kʰɯtʰajabɯ tʰar
+इसोरा अन्थाइ बिखा नङा ।	isɯra ɔntʰai bikʰa nɔŋa
+आइजोफोरासो हारिमुखौ लाखियो, बे थार बाथ्रा।	aizɯpʰɯrasɯ harimukʰɯu lakʰijɯ be tʰar batʰra
+खानाय रज’ होनोब्ला खानायाव थाव बाहाय।	kʰanai rɔzɔ hɯnɯbla kʰanajau tʰau bahai
+नों साजायनाय आंगो बिमा रावजों।	nɯŋ sazainai aŋɡɯ bima rauzɯŋ
+आरो बियो गोबां बाथ्रा बुंदोंमोन ।	arɯ bijɯ ɡɯbaŋ batʰra buŋdɯŋmɯn
+बिनि थाखाय मोनसे गोख्रों आफादनि गोनांथि जादोंमोन ।	bini tʰakʰai mɯnse ɡɯkʰrɯŋ apʰadni ɡɯnaŋtʰi zadɯŋmɯn
+हारिमुआ मोनसे हारिनि आयना।	harimua mɯnse harini aina
+गाज्रि मोनलायनाय फोरखौ बावगारहोयो।	ɡazri mɯnlainai pʰɯrkʰɯu bauɡarhɯjɯ
+होमारगोन ना होआ बेफोर गासैखौबो उनाव सो नुसिगोन।	hɯmarɡɯn na hɯa bepʰɯr ɡasɯikʰɯubɯ unau sɯ nusiɡɯn
+सोरखारआ होनाय आयेन आब्रुथिखौ मानिनानै सोलिनाय नुनो मोनाखै।	sɯrkʰara hɯnai ajen abrutʰikʰɯu maninanɯi sɯlinai nunɯ mɯnakʰɯi
+बे बाथ्राया सैथोदि रावसोलायनाया सोलिफु हाबाफारि।	be batʰraja sɯitʰɯdi rausɯlainaja sɯlipʰu habapʰari
+खायफाया माइ दोनग्राखौ लिरनाय जाया।	kʰaipʰaja mai dɯnɡrakʰɯu lirnai zaja
+एखनब्ला खुगानि रावजोंबो रोखायै फोरमायो।	ekʰɔnbla kʰuɡani rauzɯŋbɯ rɯkʰajɯi pʰɯrmajɯ
+सरकारि रादाब बिबुंसारआ फोरमायो।	sɔrkari radab bibuŋsara pʰɯrmajɯ
+जायनि थाखाय बिखौ बुथारनायनि खैसार खालामनाय जादोंमोन।	zaini tʰakʰai bikʰɯu butʰarnaini kʰɯisar kʰalamnai zadɯŋmɯn
+बे समाव मोननैबो दोलोआ सानखान्थिआव आवबा जादों ।	be sɔmau mɯnnɯibɯ dɯlɯa sankʰantʰiau auba zadɯŋ
+बे हारिहा मोनसे समाव रायजो दंमोन, राजा दंमोन।	be hariha mɯnse sɔmau raizɯ dɔŋmɯn raza dɔŋmɯn
+थिनानै दोनदों जोबथा दावहाखौ नायनो थाखाय ।	tʰinanɯi dɯndɯŋ zɯbtʰa dauhakʰɯu nainɯ tʰakʰai
+बुधबारनिफ्राय गोहोम गोग्लैगोन राइजोआव।	budbarnipʰrai ɡɯhɯm ɡɯɡlɯiɡɯn raizɯau
+जेराव दं बेवहायनो गसंना थाबाय थाथ’।	zerau dɔŋ beuhainɯ ɡɔsɔŋna tʰabai tʰatʰɔ
+जायनि थाखाय सान्थ्रि आरो पुलिसजों बुजानांदोंमोन गोबां खेब।	zaini tʰakʰai santʰri arɯ puliszɯŋ buzanaŋdɯŋmɯn ɡɯbaŋ kʰeb
+बेनि उनावनो नोंथांनि गासै फोरमायथिखौ नोंथाङा मोन्नो हागोन।	beni unaunɯ nɯŋtʰaŋni ɡasɯi pʰɯrmaitʰikʰɯu nɯŋtʰaŋa mɯnnɯ haɡɯn
+अब्ला जों रावनियावबो सोनारनो गोनां जाया।	ɔbla zɯŋ raunijaubɯ sɯnarnɯ ɡɯnaŋ zaja
+होनब्लाबो नों बायदि साफा गुफुर गावदां नुयाखै।	hɯnblabɯ nɯŋ baidi sapʰa ɡupʰur ɡaudaŋ nujakʰɯi
+गामिनि बयबो थुबुर जाफैनायसै ।	ɡamini bɔibɯ tʰubur zapʰɯinaisɯi
+बियो बिब्दिनो खालामगोन आंबोसो जेबो उदिसखौनो मोनाखैमोन ।	bijɯ bibdinɯ kʰalamɡɯn aŋbɯsɯ zebɯ udiskʰɯunɯ mɯnakʰɯimɯn
+हमनो मोन्नाय माइरंखौ कक्राझार पुलिस थानायाव लाबोनाय जाबाय।	hɔmnɯ mɯnnai mairɔŋkʰɯu kɔkrazar pulis tʰanajau labɯnai zabai
+जाथायनि सायाव संदाननाय जागासिनो होन्ननै पुलिसा फोरमायो ।	zatʰaini sajau sɔŋdannai zaɡasinɯ hɯnnɯi pulisa pʰɯrmajɯ
+दुर्गा फुजाखौ हिन्दु सुबुंफोरा सानबासो फालिनाय जायो।	durɡa pʰuzakʰɯu hindu subuŋpʰɯra sanbasɯ pʰalinai zajɯ

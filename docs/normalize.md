@@ -168,7 +168,10 @@ Number spans carry `value` (the digits read).
   compatible mode and Sanskrit ones (पञ्चविंशतिः) in improved mode, as the phonemiser reads them.
   Dogri does the same with Dogri words in improved mode (पंजी, इक लक्ख, ₹25 पंजी रपेऽ), and
   there also reads ordinals written with an ending (12मीं बारांमीं, 1ला पैह्ला) and clock times
-  (10:30 दस बजियै त्रीह् मिंट).
+  (10:30 दस बजियै त्रीह् मिंट). Bodo likewise writes Bodo words in improved mode: native numerals up
+  to the thousands and लाख, कौटि above (25 नैजिबा, 2021 नै रोजा नैजिसे, 1,50,000 से लाख बाजि रोजा),
+  ordinals with -थि (21थि नैजिसेथि), ₹25 नैजिबा रां, 10:30 जि रिंगा थामजि मिनिट; its 6 and 0 (द’, लाथिख’)
+  are written with the apostrophe, as Bodo spells them.
   Every one of these languages is checked for words in its own script that read back to the
   phonemes of the digits (`indic_numbers_in_their_own_script` in
   `crates/uccharan/tests/normalize_api.rs`).

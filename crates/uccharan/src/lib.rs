@@ -23,6 +23,7 @@
 
 pub mod african;
 pub mod bho;
+pub mod brx;
 pub mod data;
 pub mod doi;
 pub mod en;
@@ -146,6 +147,8 @@ languages! {
     Mag "mag" ["mag-in", "magahi"] Devanagari, None;
     /// Dogri in Devanagari (no espeak voice: compatible mode is the `hi` reading).
     Doi "doi" ["doi-in", "dgo", "dogri"] Devanagari, Some(include_str!("../lang/doi.lang"));
+    /// Bodo (Boro) in Devanagari (no espeak voice: compatible mode is the `hi` reading).
+    Brx "brx" ["brx-in", "bodo", "boro"] Devanagari, Some(include_str!("../lang/brx.lang"));
     /// Spanish (espeak voice `es`).
     Es "es" ["es-es", "spa", "spanish"] Latin, Some(include_str!("../lang/es.lang"));
     /// German (espeak voice `de`).
@@ -200,9 +203,9 @@ impl Lang {
 
     /// Languages with a language file of their own that espeak-ng has no
     /// voice for: compatible mode is the reference's Hindi reading
-    /// (Sanskrit, Dogri).
+    /// (Sanskrit, Dogri, Bodo).
     pub fn hindi_voice(self) -> bool {
-        matches!(self, Lang::Sa | Lang::Doi)
+        matches!(self, Lang::Sa | Lang::Doi | Lang::Brx)
     }
 
     /// Languages typed in Latin letters with the habits of romanised Hindi:
@@ -217,7 +220,7 @@ impl Lang {
         if self.is_english() {
             "en"
         } else if self.hindi_like() || self.hindi_voice() {
-            // Bhojpuri, Maithili, Sanskrit and Dogri are read with the reference's Hindi voice.
+            // Bhojpuri, Maithili, Sanskrit, Dogri and Bodo are read with the reference's Hindi voice.
             "hi"
         } else {
             self.tag()
@@ -621,13 +624,26 @@ impl Phonemizer {
         } else {
             &['\u{200b}']
         };
-        let text = match (opt.lang == Lang::Doi)
+        let text = match (opt.lang == Lang::Doi || (opt.lang == Lang::Brx && compat))
             .then(|| text::drop_inside_indic(text, marks))
             .flatten()
         {
             Some(t) => {
                 owned_apostrophe = t;
                 owned_apostrophe.as_str()
+            }
+            None => text,
+        };
+        // Bodo: the apostrophe after a consonant says its inherent vowel
+        // (बर’, कर’ना); improved mode reads it as that vowel's sign.
+        let owned_bodo;
+        let text = match (opt.lang == Lang::Brx && !compat)
+            .then(|| brx::apostrophe_vowel(text))
+            .flatten()
+        {
+            Some(t) => {
+                owned_bodo = t;
+                owned_bodo.as_str()
             }
             None => text,
         };
@@ -831,6 +847,16 @@ impl Phonemizer {
                 let english = self.english(opt.embedded_english);
                 hi::roman::rewrite(&mut owned, &hi, english.as_ref());
             }
+            items = &owned;
+        }
+        // Romanised Bodo: Latin words that are not English are written in
+        // Devanagari by the Bodo rules.
+        if opt.hinglish && opt.lang == Lang::Brx {
+            owned = items.to_vec();
+            let english = self.english(opt.embedded_english);
+            brx::rewrite_roman(&mut owned, |w| {
+                english.as_ref().is_some_and(|e| e.in_lexicon(w))
+            });
             items = &owned;
         }
         let mut out: Vec<WordOut> = Vec::with_capacity(items.len());

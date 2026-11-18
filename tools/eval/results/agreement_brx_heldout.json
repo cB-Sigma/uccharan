@@ -1,0 +1,243 @@
+{
+ "language": "brx",
+ "reference": "espeak-ng 1.52.0 voice hi (library API)",
+ "set": "heldout",
+ "sentence_level": {
+  "sentences": 2000,
+  "reference_symbols": 251769,
+  "per": 0.0037057779154701332,
+  "per_without_stress": 0.0032061707169741185,
+  "exact_sentence": 0.934,
+  "exact_sentence_without_stress": 0.936,
+  "piper_shape_per": 0.0037325185838478015,
+  "piper_shape_exact_sentence": 0.928,
+  "word_count_mismatch_sentences": 326,
+  "errors_by_class": {
+   "consonant": {
+    "count": 281,
+    "share": 0.3011789924973205,
+    "per_contribution": 0.0011161024590001152
+   },
+   "vowel": {
+    "count": 244,
+    "share": 0.2615219721329046,
+    "per_contribution": 0.0009691423487403135
+   },
+   "stress": {
+    "count": 243,
+    "share": 0.2604501607717042,
+    "per_contribution": 0.000965170453868427
+   },
+   "other": {
+    "count": 80,
+    "share": 0.0857449088960343,
+    "per_contribution": 0.0003177515897509225
+   },
+   "word-boundary": {
+    "count": 46,
+    "share": 0.04930332261521972,
+    "per_contribution": 0.0001827071641067804
+   },
+   "length": {
+    "count": 39,
+    "share": 0.04180064308681672,
+    "per_contribution": 0.0001549039000035747
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": "ˈ→∅",
+    "count": 80
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 60
+   },
+   {
+    "edit": " →∅",
+    "count": 41
+   },
+   {
+    "edit": "ː→∅",
+    "count": 39
+   },
+   {
+    "edit": "ə→ʌ",
+    "count": 37
+   },
+   {
+    "edit": "s→∅",
+    "count": 36
+   },
+   {
+    "edit": "a→∅",
+    "count": 35
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 34
+   },
+   {
+    "edit": "l→∅",
+    "count": 34
+   },
+   {
+    "edit": "ə→∅",
+    "count": 34
+   },
+   {
+    "edit": "s→ʃ",
+    "count": 32
+   },
+   {
+    "edit": "l→ə",
+    "count": 32
+   },
+   {
+    "edit": "ˈ→l",
+    "count": 32
+   },
+   {
+    "edit": "o→ə",
+    "count": 32
+   },
+   {
+    "edit": "ː→ʋ",
+    "count": 32
+   },
+   {
+    "edit": "∅→ə",
+    "count": 30
+   },
+   {
+    "edit": "ʃ→∅",
+    "count": 21
+   },
+   {
+    "edit": "k→∅",
+    "count": 15
+   },
+   {
+    "edit": "b→∅",
+    "count": 14
+   },
+   {
+    "edit": "ɛ→∅",
+    "count": 14
+   },
+   {
+    "edit": "ɾ→∅",
+    "count": 14
+   },
+   {
+    "edit": "t→∅",
+    "count": 14
+   },
+   {
+    "edit": "ŋ→∅",
+    "count": 13
+   },
+   {
+    "edit": "ɡ→∅",
+    "count": 13
+   },
+   {
+    "edit": "ɑ→∅",
+    "count": 13
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 18879,
+    "wrong": 49,
+    "rate": 0.0025954764553207266
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 506,
+    "per": 0.007347038735220887,
+    "exact_sentence": 0.857707509881423
+   },
+   "no-digits": {
+    "sentences": 1494,
+    "per": 0.0022045212318393447,
+    "exact_sentence": 0.9598393574297188
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "indiccorp-6269a4fcb00f",
+    "text": "आसाम लकसेवा आयगनि गोरोबजाबथाय गिबि आनजादाव अदालगुरिआव ज’नाय आनजादसानि हारोंथाया 52.34 जौखोन्दो",
+    "reference": "aːsˈaːm lˌəksˈeːʋaː ˈaːjəɡnɪ ɡˌoːɾoːbɟaːbtʰˈaːj ɡˈɪbɪ ˌaːnɟaːdˈaːʋ ˌʌdaːlɡʊɾɪˈaːʋ ɟənˈaːj ˌaːnɟˌaːdsˈaːnɪ hˌaːɾõtʰˈaːjaː bˈaːwən dˌəsəmlˈoː tˈiːn cˈaːɾ ɟɔːkʰˈoːndoː",
+    "uccharan": "aːsˈaːm lˌəksˈeːʋaː ˈaːjəɡnɪ ɡˌoːɾoːbɟaːbtʰˈaːj ɡˈɪbɪ ˌaːnɟaːdˈaːʋ ˌʌdaːlɡʊɾɪˈaːʋ ɟənˈaːj ˌaːnɟˌaːdsˈaːnɪ hˌaːɾõtʰˈaːjaː bˈaːwən dˈʌʃəmˌələʋ tˈiːn cˈaːɾ ɟɔːkʰˈoːndoː"
+   },
+   {
+    "id": "indiccorp-8db0b0123f6c",
+    "text": "बेनिनो दिनैसिम मावनाय बांग्रिंनि गेजेराव 28 एप्रिलखालि 6.4 रिखटार स्केलआव मावनाय बांग्रिंआनो बयनिख्रुइबो।",
+    "reference": "bˈeːnɪnˌoː dɪnˈɛːsɪm mˌaːʋnˈaːj bˈãɡɾĩnˌɪ ɡˌeːɟeːɾˈaːʋ atʰːˈaːis ˈeːpɾɪlkʰaːlˌɪ cʰˈʌh dəsəmlˈoː cˈaːɾ ɾˌɪkʰʈˈaːɾ skˌeːlˈaːʋ mˌaːʋnˈaːj bˈãɡɾĩˌaːnoː bˌəjnˈɪkʰɾʊˌɪboː",
+    "uccharan": "bˈeːnɪnˌoː dɪnˈɛːsɪm mˌaːʋnˈaːj bˈãɡɾĩnˌɪ ɡˌeːɟeːɾˈaːʋ atʰːˈaːis ˈeːpɾɪlkʰaːlˌɪ cʰˈʌh dˈʌʃəmˌələʋ cˈaːɾ ɾˌɪkʰʈˈaːɾ skˌeːlˈaːʋ mˌaːʋnˈaːj bˈãɡɾĩˌaːnoː bˌəjnˈɪkʰɾʊˌɪboː"
+   },
+   {
+    "id": "indiccorp-77dc41dc48ec",
+    "text": "भारतखौ खेब नै वर्ल्ड काप देरहा होनो हानाय आरो भारतनि क्रिकेट टिमनि अलराउन्डार गेलेगिरि युसुफ पाठानआ गासै क्रिकेट बिथिंनिफ्राय आजिरा लानो फोरमायो।",
+    "reference": "bʰˈaːɾətkʰɔː kʰˈeːb nˈɛː ʋˈʌrlɖ kˈaːp dˈeːɾhˌaː hˈoːnoː haːnˈaːj ˈaːɾoː bʰˈaːɾətnɪ kɾˈɪkɪt ʈˈɪmnˌɪ ˌʌlɾˌaːʊnɖˈaːɾ ɡeːlˈeːɡɪɾˌɪ jˈʊsʊpʰ paːʈʰˈaːnˌaː ɡˈaːsɛː kɾˈɪkɪt bˌɪtʰĩnɪpʰɾˈaːj ˈaːɟɪɾˌaː lˈaːnoː pʰˌoːɾmˈaːjoː",
+    "uccharan": "bʰˈaːɾətkʰɔː kʰˈeːb nˈɛː ʋˈʌrlɖ kˈaːp dˈeːɾhˌaː hˈoːnoː haːnˈaːj ˈaːɾoː bʰˈaːɾətnɪ kɾɪkˈeːʈ ʈˈɪmnˌɪ ˌʌlɾˌaːʊnɖˈaːɾ ɡeːlˈeːɡɪɾˌɪ jˈʊsʊpʰ paːʈʰˈaːnˌaː ɡˈaːsɛː kɾɪkˈeːʈ bˌɪtʰĩnɪpʰɾˈaːj ˈaːɟɪɾˌaː lˈaːnoː pʰˌoːɾmˈaːjoː"
+   },
+   {
+    "id": "indiccorp-57a36ea406dd",
+    "text": "जायखौ सोरांजुलिनि नख‘राबो हमनो हायाखैमोन।",
+    "reference": "ɟˈaːjkʰˌɔː soːɾˈãɟʊlˌɪnɪ nˌəkʰɾˈaːboː hˈʌmnˌoː hˌaːjaːkʰɛːmˈoːn",
+    "uccharan": "ɟˈaːjkʰˌɔː soːɾˈãɟʊlˌɪnɪ nˈʌkʰ ɾˈaːboː hˈʌmnˌoː hˌaːjaːkʰɛːmˈoːn"
+   },
+   {
+    "id": "indiccorp-b390e1bc1eff",
+    "text": "आसामनि रांखान्थि मन्थ्रि अजन्ता नेवगआ आसाम आयेन आफादनि रांबावजाआव 566.20 कौटि रांजौ थिसनजाबाय।",
+    "reference": "aːsˈaːmnˌɪ ɾãkʰˈaːntʰɪ mˈʌntʰɾɪ ʌɟˈʌntaː nˈeːʋəɡaː aːsˈaːm aːjˈeːn aːpʰˈaːdnˌɪ ɾˌãbaːʋɟaːˈaːʋ pˈãcsˈɔː cʰɪjˈaːsəʈʰ dˌəsəmlˈoː dˈoː ʃˈuːnjə kˈɔːʈɪ ɾˈãɟɔː tʰˌɪsənɟaːbˈaːj",
+    "uccharan": "aːsˈaːmnˌɪ ɾãkʰˈaːntʰɪ mˈʌntʰɾɪ ʌɟˈʌntaː nˈeːʋəɡaː aːsˈaːm aːjˈeːn aːpʰˈaːdnˌɪ ɾˌãbaːʋɟaːˈaːʋ pˈãcsˈɔː cʰɪjˈaːsəʈʰ dˈʌʃəmˌələʋ dˈoː ʃˈuːnjə kˈɔːʈɪ ɾˈãɟɔː tʰˌɪsənɟaːbˈaːj"
+   },
+   {
+    "id": "indiccorp-6d96b980ab26",
+    "text": "मोनसे खौरांनि गोजोरजों साइल्द लाइननि टिम आरो चान्दमारि पुलिसा बामुनिमैदाम बाजाराव संदाननानै सा 5 साइल्द लेबारखौ बोखांनो हायो ।",
+    "reference": "bˈakslaʃ mˈoːnsˌeː kʰɔːɾˈãnɪ ɡoːɟˈoːɾɟˌõ saːˈɪld lˈaːɪnnɪ ʈˈɪm ˈaːɾoː cˈaːndəmˌaːɾɪ pˈʊlɪsˌaː bˌaːmʊnˌɪmɛːdˈaːm bˌaːɟaːɾˈaːʋ sˌəndaːnnˈaːnɛː sˈaː pˈãc saːˈɪld leːbˈaːɾkʰˌɔː boːkʰˈãnoː hˈaːjoː",
+    "uccharan": "mˈoːnsˌeː kʰɔːɾˈãnɪ ɡoːɟˈoːɾɟˌõ saːˈɪld lˈaːɪnnɪ ʈˈɪm ˈaːɾoː cˈaːndəmˌaːɾɪ pˈʊlɪsˌaː bˌaːmʊnˌɪmɛːdˈaːm bˌaːɟaːɾˈaːʋ sˌəndaːnnˈaːnɛː sˈaː pˈãc saːˈɪld leːbˈaːɾkʰˌɔː boːkʰˈãnoː hˈaːjoː"
+   },
+   {
+    "id": "indiccorp-c231392d7f8b",
+    "text": "63 नं. चापागुरि बियाबाव आंनि देरहानाया रोखा : हितेस बसुमतारी",
+    "reference": "tˈɪɾeːsˌəʈʰ nˈʌn caːpˈaːɡʊɾˌɪ bˌɪjaːbˈaːʋ ˈãnɪ dˌeːɾhaːnˈaːjaː ɾˈoːkʰaː hɪtˈeːs bˌəsʊmtˈaːɾi",
+    "uccharan": "tˈɪɾeːsˌəʈʰ nˈʌmbəɾ caːpˈaːɡʊɾˌɪ bˌɪjaːbˈaːʋ ˈãnɪ dˌeːɾhaːnˈaːjaː ɾˈoːkʰaː hɪtˈeːs bˌəsʊmtˈaːɾi"
+   },
+   {
+    "id": "indiccorp-c5c47db3ffb1",
+    "text": "मुलुगनां आइजो सानआव संसदआव आइजोफोरनो 50% मासि लाखिनांगौनि दाबि दैखांदों …",
+    "reference": "mˈʊlʊɡnã ˈaːɪɟˌoː sˌaːnˈaːʋ sˌənsədˈaːʋ ˌaːɪɟoːpʰˈoːɾnˌoː pəcˈaːs pətˈɪʃət mˈaːsɪ lˌaːkʰɪnãɡˈɔːnɪ dˈaːbɪ dɛːkʰˈãdõ",
+    "uccharan": "mˈʊlʊɡnã ˈaːɪɟˌoː sˌaːnˈaːʋ sˌənsədˈaːʋ ˌaːɪɟoːpʰˈoːɾnˌoː pəcˈaːs pɾˈʌtɪʃˌət mˈaːsɪ lˌaːkʰɪnãɡˈɔːnɪ dˈaːbɪ dɛːkʰˈãdõ"
+   },
+   {
+    "id": "indiccorp-aaf47c998d7f",
+    "text": "बिटिआर गोरोबथानि 6.3 दफाखौ मावफुंना गं 126 सोरखारि नङै गोजौ फरायसालिफोरखौ प्रभिनसिलाइस खालामनांगौनि दाबि…",
+    "reference": "bˌɪʈɪˈaːɾ ɡˌoːɾoːbtʰˈaːnɪ cʰˈʌh dəsəmlˈoː tˈiːn dəpʰˈaːkʰɔː mˌaːʋpʰˈũnaː ɡˈʌn ˈeːksˈɔː cʰəbbˈis sˌoːɾkʰˈaːɾɪ nˈʌŋɛː ɡˈoːɟɔː pʰˌəɾaːjsaːlɪpʰˈoːɾkʰˌɔː pɾˌəbʰɪnsɪlˈaːɪs kʰˌaːlaːmnãɡˈɔːnɪ dˈaːbɪ",
+    "uccharan": "bˌɪʈɪˈaːɾ ɡˌoːɾoːbtʰˈaːnɪ cʰˈʌh dˈʌʃəmˌələʋ tˈiːn dəpʰˈaːkʰɔː mˌaːʋpʰˈũnaː ɡˈʌn ˈeːksˈɔː cʰəbbˈis sˌoːɾkʰˈaːɾɪ nˈʌŋɛː ɡˈoːɟɔː pʰˌəɾaːjsaːlɪpʰˈoːɾkʰˌɔː pɾˌəbʰɪnsɪlˈaːɪs kʰˌaːlaːmnãɡˈɔːnɪ dˈaːbɪ"
+   },
+   {
+    "id": "indiccorp-c426097b7d64",
+    "text": "बिटिआर गोरोबथानि दफा 3.1क्लसनि गेजेरजों बिटिआरआव ओनसोल दाजाबदेरनो कमिसन दाफुंबाय; एबसुनि लेङाइ आफादगिरि जयन्त बसुमतारीआ...",
+    "reference": "bˌɪʈɪˈaːɾ ɡˌoːɾoːbtʰˈaːnɪ dˈʌpʰaː tˈiːn dəsəmlˈoː ˈeːk klˈʌsnˌɪ ɡeːɟˈeːɾɟˌõ bˌɪʈɪˌaːɾˈaːʋ ˌoːnsˈoːl dˌaːɟaːbdˈeːɾnˌoː kˈʌmɪsˌən dˌaːpʰũbˈaːj ˈeːbsˌʊnɪ leːŋˈaːɪ aːpʰˈaːdɡˌɪɾɪ ɟəjˈʌnt bˌəsʊmtaːɾˈiːaː",
+    "uccharan": "bˌɪʈɪˈaːɾ ɡˌoːɾoːbtʰˈaːnɪ dˈʌpʰaː tˈiːn dˈʌʃəmˌələʋ ˈeːk klˈʌsnˌɪ ɡeːɟˈeːɾɟˌõ bˌɪʈɪˌaːɾˈaːʋ ˌoːnsˈoːl dˌaːɟaːbdˈeːɾnˌoː kˈʌmɪsˌən dˌaːpʰũbˈaːj ˈeːbsˌʊnɪ leːŋˈaːɪ aːpʰˈaːdɡˌɪɾɪ ɟəjˈʌnt bˌəsʊmtaːɾˈiːaː"
+   },
+   {
+    "id": "indiccorp-bf0f72ba8c64",
+    "text": "1. मासिनि मुं : अडिअ भिजुयेल प्रडाकसन",
+    "reference": "ˈeːk mˈaːsɪnˌɪ mˈũ ˈʌɖɪ bʰˌɪɟʊjˈeːl pɾəɖˈaːkəsˌən",
+    "uccharan": "ˈeːk mˈaːsɪnˌɪ mˈũ ˈʌɖɪˌə bʰˌɪɟʊjˈeːl pɾəɖˈaːkəsˌən"
+   },
+   {
+    "id": "indiccorp-cba86439b186",
+    "text": "टाइम8//अक्ट’बर03 थांनाय 14 सेप्टेम्बरखालि हाथरसआव दलिन हारिनि सासे हिन्जावसाया हान्जायारि जिनाहारि खालामनायनि जाहोनाव 29 सेप्तेम्बरखालि रुंसारि जालांदोंमोन।",
+    "reference": "ʈˈaːɪm ˈaːʈʰ slˈaʃslaʃ ˈʌkʈəbˌəɾ ʃˈuːnjə tˈiːn tʰãnˈaːj cˈɔːdəh seːpʈˈeːmbəɾkʰaːlˌɪ hˌaːtʰəɾˌəsˈaːʋ dˈʌlɪn hˈaːɾɪnˌɪ sˈaːseː hˌɪnɟaːʋsˈaːjaː hˈaːnɟaːjˌaːɾɪ ɟˌɪnaːhˈaːɾɪ kʰˌaːlaːmnˈaːjnˌɪ ɟˌaːhoːnˈaːʋ ˈʊntis seːptˈeːmbəɾkʰaːlˌɪ ɾũsˈaːɾɪ ɟˌaːlãdõmˈoːn",
+    "uccharan": "ʈˈaːɪm ˈaːʈʰ ˈʌkʈəbˌəɾ ʃˈuːnjə tˈiːn tʰãnˈaːj cˈɔːdəh seːpʈˈeːmbəɾkʰaːlˌɪ hˌaːtʰəɾˌəsˈaːʋ dˈʌlɪn hˈaːɾɪnˌɪ sˈaːseː hˌɪnɟaːʋsˈaːjaː hˈaːnɟaːjˌaːɾɪ ɟˌɪnaːhˈaːɾɪ kʰˌaːlaːmnˈaːjnˌɪ ɟˌaːhoːnˈaːʋ ˈʊntis seːptˈeːmbəɾkʰaːlˌɪ ɾũsˈaːɾɪ ɟˌaːlãdõmˈoːn"
+   }
+  ]
+ }
+}

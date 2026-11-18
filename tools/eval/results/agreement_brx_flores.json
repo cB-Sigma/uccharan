@@ -1,0 +1,243 @@
+{
+ "language": "brx",
+ "reference": "espeak-ng 1.52.0 voice hi (library API)",
+ "set": "flores",
+ "sentence_level": {
+  "sentences": 1012,
+  "reference_symbols": 222633,
+  "per": 0.004824082683160178,
+  "per_without_stress": 0.003495492654209046,
+  "exact_sentence": 0.7687747035573123,
+  "exact_sentence_without_stress": 0.7697628458498024,
+  "piper_shape_per": 0.004860288946848378,
+  "piper_shape_exact_sentence": 0.7579051383399209,
+  "word_count_mismatch_sentences": 296,
+  "errors_by_class": {
+   "stress": {
+    "count": 408,
+    "share": 0.37988826815642457,
+    "per_contribution": 0.001832612415949118
+   },
+   "word-boundary": {
+    "count": 230,
+    "share": 0.21415270018621974,
+    "per_contribution": 0.001033090332520336
+   },
+   "vowel": {
+    "count": 179,
+    "share": 0.16666666666666666,
+    "per_contribution": 0.0008040137805266964
+   },
+   "consonant": {
+    "count": 176,
+    "share": 0.16387337057728119,
+    "per_contribution": 0.0007905386892329529
+   },
+   "other": {
+    "count": 66,
+    "share": 0.061452513966480445,
+    "per_contribution": 0.00029645200846235733
+   },
+   "length": {
+    "count": 15,
+    "share": 0.013966480446927373,
+    "per_contribution": 6.737545646871757e-05
+   }
+  },
+  "top_confusions": [
+   {
+    "edit": " →∅",
+    "count": 201
+   },
+   {
+    "edit": "ˈ→ˌ",
+    "count": 142
+   },
+   {
+    "edit": "ˈ→∅",
+    "count": 93
+   },
+   {
+    "edit": "∅→ˌ",
+    "count": 76
+   },
+   {
+    "edit": "∅→ˈ",
+    "count": 38
+   },
+   {
+    "edit": "ə→∅",
+    "count": 33
+   },
+   {
+    "edit": "∅→ ",
+    "count": 29
+   },
+   {
+    "edit": "ˌ→∅",
+    "count": 23
+   },
+   {
+    "edit": "∅→ə",
+    "count": 22
+   },
+   {
+    "edit": "ə→ʌ",
+    "count": 21
+   },
+   {
+    "edit": "l→∅",
+    "count": 19
+   },
+   {
+    "edit": "r→ɾ",
+    "count": 16
+   },
+   {
+    "edit": "s→ʃ",
+    "count": 14
+   },
+   {
+    "edit": "ˈ→l",
+    "count": 14
+   },
+   {
+    "edit": "a→∅",
+    "count": 14
+   },
+   {
+    "edit": "s→∅",
+    "count": 14
+   },
+   {
+    "edit": "l→ə",
+    "count": 13
+   },
+   {
+    "edit": "o→ə",
+    "count": 13
+   },
+   {
+    "edit": "ː→ʋ",
+    "count": 13
+   },
+   {
+    "edit": "ʃ→∅",
+    "count": 13
+   },
+   {
+    "edit": "ʌ→ə",
+    "count": 12
+   },
+   {
+    "edit": "ˌ→ˈ",
+    "count": 12
+   },
+   {
+    "edit": "ː→∅",
+    "count": 10
+   },
+   {
+    "edit": "∅→j",
+    "count": 10
+   },
+   {
+    "edit": "n→∅",
+    "count": 9
+   }
+  ],
+  "word_error_by_class": {
+   "lexicon": {
+    "words": 13095,
+    "wrong": 36,
+    "rate": 0.0027491408934707906
+   }
+  },
+  "by_subset": {
+   "with-digits": {
+    "sentences": 196,
+    "per": 0.011106871847047353,
+    "exact_sentence": 0.673469387755102
+   },
+   "no-digits": {
+    "sentences": 816,
+    "per": 0.0031347069049043916,
+    "exact_sentence": 0.7916666666666666
+   }
+  },
+  "examples_of_disagreement": [
+   {
+    "id": "flores-devtest-790",
+    "text": "सनाखौ गोबां रोखोमनि महरफोराव मावनो हायो।बेखौ फिसा-फिसा महराव रल खालामनो हायो।",
+    "reference": "sənˈaːkʰɔː ɡˈoːbã ɾoːkʰˈoːmnˌɪ mˌəhəɾpʰoːɾˈaːʋ mˈaːʋnˌoː hˈaːjoː bˈeːkʰɔː pʰˈɪsaːpʰˈɪsaː mˌəhəɾˈaːʋ ɾˈʌl kʰaːlˈaːmnˌoː hˈaːjoː",
+    "uccharan": "sənˈaːkʰɔː ɡˈoːbã ɾoːkʰˈoːmnˌɪ mˌəhəɾpʰoːɾˈaːʋ mˈaːʋnˌoː hˌaːjoːbˈeːkʰɔː pʰˈɪsaːpʰˈɪsaː mˌəhəɾˈaːʋ ɾˈʌl kʰaːlˈaːmnˌoː hˈaːjoː"
+   },
+   {
+    "id": "flores-devtest-183",
+    "text": "अदेबानि, टिउबारकल’सिसजों गाग्लोबजानाय सुबुंफोरनि गासै हानजायाव XDR-TB नि जौखोन्दोआव दाबो खम बायदि मोनो; खोला आफ्रिकायाव गासै 330,000 सुबुंफोरनि गेजेराव 6,000 या बबेबा जर’खा समाव बारदेर जादोंमोन।",
+    "reference": "ˌʌdeːbˈaːnɪ ʈˌɪʊbˈaːɾəkˌəlsˌɪsɟˌõ ɡˈaːɡloːbɟaːnˌaːj sˌʊbũpʰˈoːɾnˌɪ ɡˈaːsɛː hˌaːnɟaːjˈaːʋ ˈɛks dˈiː ˈɑːtˈiːbˈiː nˈɪ ɟɔːkʰˈoːndoːˌaːʋ dˈaːboː kʰˈʌm bˈaːjdˌɪ mˈoːnoː kʰˈoːlaː ˈaːpʰɾɪkˌaːjaːʋ ɡˈaːsɛː tˈiːn lˈaːkʰ tˈiːs hˈʌɟaːɾ sˌʊbũpʰˈoːɾnˌɪ ɡˌeːɟeːɾˈaːʋ cʰˈʌh hˈʌɟaːɾ jˈaː bəbˈeːbaː ɟˈʌɾkʰˌaː səmˈaːʋ bˌaːɾdˈeːɾ ɟˌaːdõmˈoːn",
+    "uccharan": "ˌʌdeːbˈaːnɪ ʈˌɪʊbˈaːɾəkˌəlsˌɪsɟˌõ ɡˈaːɡloːbɟaːnˌaːj sˌʊbũpʰˈoːɾnˌɪ ɡˈaːsɛː hˌaːnɟaːjˈaːʋ ˌɛksdˌiːˈɑːtˌiːbˈiː nˈɪ ɟɔːkʰˈoːndoːˌaːʋ dˈaːboː kʰˈʌm bˈaːjdˌɪ mˈoːnoː kʰˈoːlaː ˈaːpʰɾɪkˌaːjaːʋ ɡˈaːsɛː tˈiːn lˈaːkʰ tˈiːs hˈʌɟaːɾ sˌʊbũpʰˈoːɾnˌɪ ɡˌeːɟeːɾˈaːʋ cʰˈʌh hˈʌɟaːɾ jˈaː bəbˈeːbaː ɟˈʌɾkʰˌaː səmˈaːʋ bˌaːɾdˈeːɾ ɟˌaːdõmˈoːn"
+   },
+   {
+    "id": "flores-devtest-736",
+    "text": "2017 नि जोबथायाव, सिमिनफआ बाजार खालामनाय टेलिभिसन चेनेल क्युभिसिआव नुजादोंमोन।",
+    "reference": "dˈoː hˈʌɟaːɾ sˌətɾəh nˈɪ ɟˌoːbtʰaːjˈaːʋ sˈɪmɪnˌəpʰˌaː baːɟˈaːɾ kʰˌaːlaːmnˈaːj ʈˈeːlɪbʰˌɪsən ceːnˈeːl kːjˌʊbʰɪsɪˈaːʋ nˌʊɟaːdõmˈoːn",
+    "uccharan": "dˈoː hˈʌɟaːɾ sˈʌtɾəh nˈɪ ɟˌoːbtʰaːjˈaːʋ sˈɪmɪnˌəpʰˌaː baːɟˈaːɾ kʰˌaːlaːmnˈaːj ʈˈeːlɪbʰˌɪsən ceːnˈeːl kːjˌʊbʰɪsɪˈaːʋ nˌʊɟaːdõmˈoːn"
+   },
+   {
+    "id": "flores-devtest-398",
+    "text": "US रैखाथि मावख’नि इउनाइटेड स्टेट्स स्ट्रेटिजिक कमाण्डआ दाखोर-दालायाव नोजोर लाखिगासिनो दं।",
+    "reference": "jˈuː ˈɛs ɾɛːkʰˈaːtʰɪ mˈaːʋəkʰnɪ ˌɪʊnˌaːɪʈˈeːɖ sʈˈeːʈs sʈɾˈeːʈɪɟˌɪk kəmˈaːɳɖəˌaː daːkʰˈoːɾdˌaːlaːjˈaːʋ noːɟˈoːɾ lˌaːkʰɪɡˈaːsɪnˌoː dˈʌn",
+    "uccharan": "jˌuːˈɛs ɾɛːkʰˈaːtʰɪ mˈaːʋəkʰnɪ ˌɪʊnˌaːɪʈˈeːɖ sʈˈeːʈs sʈɾˈeːʈɪɟˌɪk kəmˈaːɳɖəˌaː daːkʰˈoːɾdˌaːlaːjˈaːʋ noːɟˈoːɾ lˌaːkʰɪɡˈaːsɪnˌoː dˈʌn"
+   },
+   {
+    "id": "flores-devtest-236",
+    "text": "बार्सिनलनानि मावख’आरि रावफोरा जादों काटालान आरो स्पेनिस।खमैबो खावसे सुबुंफोरानो काटालान बुंनो मोजां मोनो, गुवार बांसिन अनजिमाया बेखौ बुजियो, आरो भार्चुवेलि साफ्रोमबोआ स्पेनिस मिथियो।",
+    "reference": "bˈaːrsɪnˌəlnˌaːnɪ mˌaːʋəkʰˈaːɾɪ ɾˌaːʋpʰˈoːɾaː ɟˈaːdõ kˌaːʈaːlˈaːn ˈaːɾoː spˈeːnɪs kʰəmˈɛːboː kʰˈaːʋsˌeː sˌʊbũpʰoːɾˈaːnoː kˌaːʈaːlˈaːn bˈũnoː mˈoːɟã mˈoːnoː ɡʊʋˈaːɾ bˈãsɪn ˌʌnɟɪmˈaːjaː bˈeːkʰɔː bˈʊɟɪjˌoː ˈaːɾoː bʰˈaːɾcʊʋˌeːlɪ sˈaːpʰɾoːmboːˌaː spˈeːnɪs mˈɪtʰɪjˌoː",
+    "uccharan": "bˈaːrsɪnˌəlnˌaːnɪ mˌaːʋəkʰˈaːɾɪ ɾˌaːʋpʰˈoːɾaː ɟˈaːdõ kˌaːʈaːlˈaːn ˈaːɾoː spˌeːnɪsˌəkʰmˈɛːboː kʰˈaːʋsˌeː sˌʊbũpʰoːɾˈaːnoː kˌaːʈaːlˈaːn bˈũnoː mˈoːɟã mˈoːnoː ɡʊʋˈaːɾ bˈãsɪn ˌʌnɟɪmˈaːjaː bˈeːkʰɔː bˈʊɟɪjˌoː ˈaːɾoː bʰˈaːɾcʊʋˌeːlɪ sˈaːpʰɾoːmboːˌaː spˈeːnɪs mˈɪtʰɪjˌoː"
+   },
+   {
+    "id": "flores-devtest-269",
+    "text": "“बियो [वेल्स] गाहाइयै जोंखौ जागायनायनिफ्रायनो थगायदोंमोन।गिबियाव, ओरैबायदि फाव खालामनानै जेरैहाय बेयो आयेनारि जाहोनफोरनि थाखायमोन।नैथियाव, दिन्थिफ्लानानै दि बियो जोंनि बाथ्राफोरखौ खोनासंगासिनो दंमोन, बिनि आरिमुखौ खोमोरनायसिम।“",
+    "reference": "bˈɪjoː ʋˈeːls ɡaːhˈaːɪjˌɛː ɟˈõkʰɔː ɟˌaːɡaːjnaːjnɪpʰɾˈaːjnˌoː tʰˌəɡaːjdõmˈoːn ɡˌɪbɪjˈaːʋ ˌoːɾɛːbˈaːjdˌɪ pʰˈaːʋ kʰˌaːlaːmnˈaːnɛː ɟˌeːɾɛːhˈaːj bˈeːjoː ˌaːjeːnˈaːɾɪ ɟˌaːhoːnpʰˈoːɾnˌɪ tʰˌaːkʰaːjmˈoːn nˌɛːtʰɪjˈaːʋ dˌɪntʰɪpʰlaːnˈaːnɛː dˈɪ bˈɪjoː ɟˈõnɪ bˈaːtʰɾaːpʰˌoːɾkʰˌɔː kʰˌoːnaːsŋɡˈaːsɪnˌoː dəmmˈoːn bˈɪnɪ ˈaːɾɪmˌʊkʰɔː kʰˌoːmoːɾnˈaːjsˌɪm",
+    "uccharan": "bˈɪjoː ʋˈeːls ɡaːhˈaːɪjˌɛː ɟˈõkʰɔː ɟˌaːɡaːjnaːjnɪpʰɾˈaːjnˌoː tʰˌəɡaːjdõmˌoːnɡˌɪbɪjˈaːʋ ˌoːɾɛːbˈaːjdˌɪ pʰˈaːʋ kʰˌaːlaːmnˈaːnɛː ɟˌeːɾɛːhˈaːj bˈeːjoː ˌaːjeːnˈaːɾɪ ɟˌaːhoːnpʰˈoːɾnˌɪ tʰˌaːkʰaːjmoːnnɛːtʰɪjˈaːʋ dˌɪntʰɪpʰlaːnˈaːnɛː dˈɪ bˈɪjoː ɟˈõnɪ bˈaːtʰɾaːpʰˌoːɾkʰˌɔː kʰˌoːnaːsŋɡˈaːsɪnˌoː dəmmˈoːn bˈɪnɪ ˈaːɾɪmˌʊkʰɔː kʰˌoːmoːɾnˈaːjsˌɪm"
+   },
+   {
+    "id": "flores-devtest-193",
+    "text": "केसिन’फोरा सरासनस्रायाव आलासिफोरनि दारै खरसा खालामजानाय सम आरो रांखौ बांसिन खालामनायनि थाखाय गोबां नाजानायफोर खालामो।खिरखिफोर आरो घड़ीफोरा सरासनस्रायै गोमानानै थायो, आरो ओंखारलांनायखौ नागिरनाया गोब्राब जानो हायो।",
+    "reference": "kˌeːsɪnpʰˈoːɾaː sˌəɾaːsˌənsɾaːjˈaːʋ ˌaːlaːsɪpʰˈoːɾnˌɪ dˈaːɾɛː kʰˈʌɾsˌaː kʰˌaːlaːmɟaːnˈaːj sˈʌm ˈaːɾoː ɾˈãkʰɔː bˈãsɪn kʰˌaːlaːmnˈaːjnˌɪ tʰaːkʰˈaːj ɡˈoːbã nˌaːɟaːnˌaːjpʰˈoːɾ kʰaːlˈaːmoː kʰˌɪɾkʰɪpʰˈoːɾ ˈaːɾoː ɡʰˌər.ipʰˈoːɾaː sˌəɾaːsˌənsɾˈaːjɛː ɡˌoːmaːnˈaːnɛː tʰˈaːjoː ˈaːɾoː ˌõkʰaːɾlãnˈaːjkʰˌɔː nˌaːɡɪɾnˈaːjaː ɡˈoːbɾaːb ɟˈaːnoː hˈaːjoː",
+    "uccharan": "kˌeːsɪnpʰˈoːɾaː sˌəɾaːsˌənsɾaːjˈaːʋ ˌaːlaːsɪpʰˈoːɾnˌɪ dˈaːɾɛː kʰˈʌɾsˌaː kʰˌaːlaːmɟaːnˈaːj sˈʌm ˈaːɾoː ɾˈãkʰɔː bˈãsɪn kʰˌaːlaːmnˈaːjnˌɪ tʰaːkʰˈaːj ɡˈoːbã nˌaːɟaːnˌaːjpʰˈoːɾ kʰˌaːlaːmˌoːkʰɪɾkʰɪpʰˈoːɾ ˈaːɾoː ɡʰˌər.ipʰˈoːɾaː sˌəɾaːsˌənsɾˈaːjɛː ɡˌoːmaːnˈaːnɛː tʰˈaːjoː ˈaːɾoː ˌõkʰaːɾlãnˈaːjkʰˌɔː nˌaːɡɪɾnˈaːjaː ɡˈoːbɾaːb ɟˈaːnoː hˈaːjoː"
+   },
+   {
+    "id": "flores-devtest-798",
+    "text": "शार्कफोरा दाबो दङ, अदेबानि बिसोरो माब्लाबासो सुबुं माहारिखौ गाग्लोबो।बांसिन शार्कफोरा सुबुं माहारिफोरखौ गियो आरो सानस्रिनानै गोजानाव थाङो।",
+    "reference": "ʃˈaːɾkəpʰˌoːɾaː dˈaːboː dˈʌŋ ˌʌdeːbˈaːnɪ bɪsˈoːɾoː mˈaːblaːbˌaːsoː sˈʊbũ maːhˈaːɾɪkʰˌɔː ɡˈaːɡloːbˌoː bˈãsɪn ʃˈaːɾkəpʰˌoːɾaː sˈʊbũ mˌaːhaːɾɪpʰˈoːɾkʰˌɔː ɡˈɪjoː ˈaːɾoː sˌaːnsɾɪnˈaːnɛː ɡˌoːɟaːnˈaːʋ tʰˈaːŋoː",
+    "uccharan": "ʃˈaːɾkəpʰˌoːɾaː dˈaːboː dˈʌŋ ˌʌdeːbˈaːnɪ bɪsˈoːɾoː mˈaːblaːbˌaːsoː sˈʊbũ maːhˈaːɾɪkʰˌɔː ɡˈaːɡloːbˌoːbãsˌɪn ʃˈaːɾkəpʰˌoːɾaː sˈʊbũ mˌaːhaːɾɪpʰˈoːɾkʰˌɔː ɡˈɪjoː ˈaːɾoː sˌaːnsɾɪnˈaːnɛː ɡˌoːɟaːnˈaːʋ tʰˈaːŋoː"
+   },
+   {
+    "id": "flores-devtest-612",
+    "text": "मलड’भानि राजथावनिआ चिशिनाव।जायगायारि रावआ रमानियान, नाथाय रासियाना गुवार महराव बाहायजायो।",
+    "reference": "mˌələɖbʰˈaːnɪ ɾˌaːɟtʰˈaːʋnˌɪaː cˌɪʃɪnˈaːʋ ɟˌaːjɡaːjˈaːɾɪ ɾˈaːʋˌaː ɾˌəmaːnɪjˈaːn naːtʰˈaːj ɾˌaːsɪjˈaːnaː ɡʊʋˈaːɾ mˌəhəɾˈaːʋ bˌaːhaːjɟˈaːjoː",
+    "uccharan": "mˌələɖbʰˈaːnɪ ɾˌaːɟtʰˈaːʋnˌɪaː cˌɪʃɪnˌaːʋɟˌaːjɡaːjˈaːɾɪ ɾˈaːʋˌaː ɾˌəmaːnɪjˈaːn naːtʰˈaːj ɾˌaːsɪjˈaːnaː ɡʊʋˈaːɾ mˌəhəɾˈaːʋ bˌaːhaːjɟˈaːjoː"
+   },
+   {
+    "id": "flores-devtest-51",
+    "text": "माउ सोमावसारनायनि गेजेरजों खुंफुंजानाय उदांश्रीनि थाखाय जुजिनायनि समाव, सहराव मोनसे गोजोन जथुमनायनि फिथायमहरै बयनिख्रुइ गोनांसिन गाहाइ टुपुवा टामासिस लेल’फि III नि बुथारनाया जादोंमोन।",
+    "reference": "mˈaːʊ sˌoːmaːʋsaːɾnˈaːjnˌɪ ɡeːɟˈeːɾɟˌõ kʰˌũpʰũɟaːnˈaːj ʊdˈãʃɾinˌɪ tʰaːkʰˈaːj ɟˌʊɟɪnˈaːjnˌɪ səmˈaːʋ sˌəhəɾˈaːʋ mˈoːnsˌeː ɡoːɟˈoːn ɟˌətʰʊmnˈaːjnˌɪ pʰɪtʰˈaːjəmˌəhəɾˌɛː bˌəjnˈɪkʰɾʊˌɪ ɡoːnˈãsɪn ɡaːhˈaːɪ ʈˈʊpʊʋˌaː ʈaːmˈaːsɪs lˈeːlpʰˌɪ ˈaɪ ˈaɪ ˈaɪ nˈɪ bˌʊtʰaːɾnˈaːjaː ɟˌaːdõmˈoːn",
+    "uccharan": "mˈaːʊ sˌoːmaːʋsaːɾnˈaːjnˌɪ ɡeːɟˈeːɾɟˌõ kʰˌũpʰũɟaːnˈaːj ʊdˈãʃɾinˌɪ tʰaːkʰˈaːj ɟˌʊɟɪnˈaːjnˌɪ səmˈaːʋ sˌəhəɾˈaːʋ mˈoːnsˌeː ɡoːɟˈoːn ɟˌətʰʊmnˈaːjnˌɪ pʰɪtʰˈaːjəmˌəhəɾˌɛː bˌəjnˈɪkʰɾʊˌɪ ɡoːnˈãsɪn ɡaːhˈaːɪ ʈˈʊpʊʋˌaː ʈaːmˈaːsɪs lˈeːlpʰˌɪ ˌaɪˌaɪˈaɪ nˈɪ bˌʊtʰaːɾnˈaːjaː ɟˌaːdõmˈoːn"
+   },
+   {
+    "id": "flores-devtest-11",
+    "text": "लाइफांफोरा अक्सिजेन बानायो जायखौ सुबुं माहारिया हां लायो, आरो बिसोर कार्बन-डाइ-अक्साइड लायो जायखौ सुबुं माहारिया बायजोआव हगारो (ओंथिया, हां हगारो)।",
+    "reference": "lˌaːɪpʰãpʰˈoːɾaː ˌʌksɪɟˈeːn baːnˈaːjoː ɟˈaːjkʰˌɔː sˈʊbũ maːhˈaːɾɪjˌaː hˈã lˈaːjoː ˈaːɾoː bɪsˈoːɾ kˈaːɾbənɖˈaːɪksˈaːɪɖ lˈaːjoː ɟˈaːjkʰˌɔː sˈʊbũ maːhˈaːɾɪjˌaː bˌaːjɟoːˈaːʋ həɡˈaːɾoː ˈõtʰɪjˌaː hˈã həɡˈaːɾoː",
+    "uccharan": "lˌaːɪpʰãpʰˈoːɾaː ˌʌksɪɟˈeːn baːnˈaːjoː ɟˈaːjkʰˌɔː sˈʊbũ maːhˈaːɾɪjˌaː hˈã lˈaːjoː ˈaːɾoː bɪsˈoːɾ kˈaːɾbənˌəɖˈaːɪʌksˈaːɪɖ lˈaːjoː ɟˈaːjkʰˌɔː sˈʊbũ maːhˈaːɾɪjˌaː bˌaːjɟoːˈaːʋ həɡˈaːɾoː ˈõtʰɪjˌaː hˈã həɡˈaːɾoː"
+   },
+   {
+    "id": "flores-devtest-330",
+    "text": "हट चकलेटआ बेलजियाम मानथाखोनि बायदियै जायो।फिथाइफोरनि रोसिआ बेसेन गोसा नाथाय साबसिन जायो।",
+    "reference": "hˈʌʈ cˌəklˈeːʈˌaː bˌeːlɟɪjˈaːm mˌaːntʰaːkʰˈoːnɪ bˈaːjdˌɪjɛː ɟˈaːjoː pʰˌɪtʰaːɪpʰˈoːɾnˌɪ ɾˈoːsɪˌaː beːsˈeːn ɡˈoːsaː naːtʰˈaːj sˈaːbsˌɪn ɟˈaːjoː",
+    "uccharan": "hˈʌʈ cˌəklˈeːʈˌaː bˌeːlɟɪjˈaːm mˌaːntʰaːkʰˈoːnɪ bˈaːjdˌɪjɛː ɟˌaːjoːpʰˌɪtʰaːɪpʰˈoːɾnˌɪ ɾˈoːsɪˌaː beːsˈeːn ɡˈoːsaː naːtʰˈaːj sˈaːbsˌɪn ɟˈaːjoː"
+   }
+  ]
+ }
+}

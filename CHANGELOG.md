@@ -24,6 +24,24 @@ All notable changes are listed here. The format follows
   option and `transliterate(..., "doi")` without a pack, with a short list of common Dogri words.
   Python, WebAssembly and C take the new tag; evaluation sets in `tools/eval/data/doi_*.tsv` and
   `tools/eval/gold/doi`.
+- **Bodo** (`brx`, also `bodo`, `boro`; Devanagari). espeak-ng has no Bodo voice, so compatible
+  mode is the reading of its Hindi voice, as for Sanskrit and Dogri: PER 0.37 % (0.32 % without
+  stress) on 2,000 held-out sentences of IndicCorp v2 Bodo text and 0.48 % on the 1,012 FLORES-200
+  sentences of IndicGenBench, 2.3× espeak-ng's speed (measured on a Windows 11 laptop). Improved
+  mode reads Bodo from its own language file (`lang/brx.lang`): ो is ɯ and ै ौ are ɯi ɯu (Unicode
+  L2/08-197), the inherent vowel is ɔ, said where an apostrophe follows the consonant (बर’, दख’ना)
+  and otherwise dropped as in Hindi, ं is ŋ, य व close diphthongs, and loanword letters take Bodo
+  sounds (ज z, भ b, श s), after Bhattacharya (1977) as given by Sarmah (2004). Tone (two lexical
+  tones, one per word) is not written in Bodo and not said. On a hand-written gold set (held-out
+  half: 79 words, 16 sentences) improved mode gets 98.7 % of words right against 2.5 % for the
+  Hindi voice, sentence PER 0.44 % against 52.91 %. Numbers in Bodo words in improved mode and
+  normalise-only mode: native numerals up to the thousands, लाख and कौटि above (25 नैजिबा, 2021 नै
+  रोजा नैजिसे), ordinals with -थि (`lang/numbers/ord-brx.txt`), the rupee (रां), clock times and
+  dates. Romanised Bodo in its Latin orthography (`jwnwm`, `arw`) through the `hinglish` option and
+  `transliterate(..., "brx")` without a pack, with rules and a word list of its own
+  (`src/brx.rs`). Python, WebAssembly and C take the new tag; evaluation sets in
+  `tools/eval/data/brx_*.tsv` (the second held-out set `brx_flores.tsv` comes from IndicGenBench)
+  and `tools/eval/gold/brx`.
 - Language-file options `time-hour-minutes` and `time-minute` (the hour word before minutes and a
   word after them) and `apostrophe keep` (an apostrophe between Indic letters stays in the word);
   see `docs/adding-a-language.md`.

@@ -1,6 +1,6 @@
 # Languages
 
-uccharan phonemises 40 language tags. English (US and British) and Hindi have hand-built front
+uccharan phonemises 41 language tags. English (US and British) and Hindi have hand-built front
 ends with their own lexicons; the others run on two shared engines, one for Brahmic and
 Perso-Arabic scripts and one for Latin-script languages, each driven by a short language file of
 letters, rewrite rules, exceptions and number words (`crates/uccharan/lang/*.lang`; see
@@ -48,6 +48,7 @@ Runs on that machine differ by about ±10 %.
 | Maithili | `mai` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.46 % | 0.29 % | 3.0× | MMS, SYSPIN (character input) |
 | Magahi | `mag` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.40 % | 0.23 % | 2.8× | MMS (character input) |
 | Dogri | `doi` | `hi` ‡ | IndicCorp v2, 2,000 sentences | 1.40 % | 1.35 % | 1.9× § | none |
+| Bodo | `brx` | `hi` ‡ | IndicCorp v2, 2,000 sentences | 0.37 % | 0.32 % | 2.3× § | none |
 | Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.54 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
 | German | `de` | `de` | FLORES-200, 1,012 sentences | 0.95 % | 0.77 % | 5.8× † | Piper `de_DE` (11) |
 | Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.69 % | 1.32 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
@@ -72,12 +73,14 @@ Runs on that machine differ by about ±10 %.
 French reading only in the numbers 70–99 (septante, huitante, nonante). Their speed is the French
 voice's: in one run on a busy machine French 4.5×, `fr-be` 4.5×, `fr-ch` 5.2×.
 
-‡ espeak-ng has no voice for Sanskrit, Bhojpuri, Maithili, Magahi or Dogri; text in them is read
+‡ espeak-ng has no voice for Sanskrit, Bhojpuri, Maithili, Magahi, Dogri or Bodo; text in them is read
 with its Hindi voice, and compatible mode is measured against that reading.
 
 § Measured on a Windows 11 laptop (500 held-out sentences, p50, best of 5 rounds,
 [`compare_doi_windows.json`](../tools/bench/results/compare_doi_windows.json)); in the same run
-Magahi gave 2.3× and Hindi 1.8×, against 2.8× each on the machine of the other rows.
+Magahi gave 2.3× and Hindi 1.8×, against 2.8× each on the machine of the other rows. Bodo:
+[`compare_brx_windows.json`](../tools/bench/results/compare_brx_windows.json), same method; in that
+run Dogri gave 1.9× and Hindi 1.8×.
 
 ## Notes on the languages
 
@@ -148,6 +151,88 @@ split by a hash before the rules were run on it) measures improved mode; held-ou
 
 The gold set encodes the descriptions named above as written down for this project, so it shows
 that improved mode implements them, not that a Dogri speaker would accept every form.
+
+**Bodo** (`brx`, also `bodo`, `boro`; Devanagari, the official script since 1975) is a
+Tibeto-Burman language with no espeak-ng voice (1.52.0 has none); as for Sanskrit and Dogri,
+compatible mode is the Hindi voice's reading (a word written with an apostrophe inside it, कर’ना,
+is read as one word, as the voice reads it), and improved mode reads Bodo from its own language
+file, `lang/brx.lang`. Its spelling differs from Hindi's in ways the Hindi reading cannot see:
+
+- ओ ो (and ऒ ॊ, which the Bodo Sahitya Sabha prefers) write the vowel ɯ, not o: बोलो bˈɯlɯ, मोसा
+  mˈɯsa; ै ौ are ɯi ɯu (दै dˈɯi, मोसौ mˈɯsɯu); vowel length is not distinctive (ई ऊ = इ उ);
+- the inherent vowel is ɔ. A bare consonant at the end of a word or before another consonant has
+  no vowel, as in Hindi (मोनथाय mˈɯntʰai, जोनोम zˈɯnɯm), except in the first syllable (गसंना
+  ɡˈɔsɔŋna); where the vowel is said all the same, Bodo writes an apostrophe after the consonant
+  (गोजौ कमा: बर’ bˈɔrɔ, दख’ना dˈɔkʰɔna, लाथिख’), which improved mode reads as ɔ in any of its forms
+  (`'`, `’`, `ʼ`). A closing quotation mark right after a consonant is read the same way;
+- ं is always ŋ (सुबुं sˈubuŋ, संख्रि sˈɔŋkʰri), and a bare consonant before it keeps its vowel;
+  य and व after a vowel and before a consonant or the end of the word close a diphthong (थाखाय
+  tʰˈakʰai, दाव dˈau, मायरं mˈairɔŋ);
+- the consonants are those of Bodo: ख थ फ kʰ tʰ pʰ, ज z, स s, र r; the Indo-Aryan letters of
+  loanwords are read with Bodo sounds (घ झ ढ ध भ as ɡ z d d b, च छ श ष as s, ट ठ ड ण as t tʰ d n, ड़ as
+  r: भारत bˈarɔt).
+
+Sources: the phoneme inventory of P. C. Bhattacharya (1977, *A Descriptive Analysis of the Boro
+Language*) as given by Priyankoo Sarmah (2004, *Some Aspects of the Tonal Phonology of Bodo*, M.Phil.
+thesis, CIEFL Hyderabad) and the Wikipedia article "Boro language (India)"; the Government of India's
+Unicode document L2/08-197 (2008, *Representation of Bodo, Dogri and Maithili languages in Unicode
+Standard*) for ो = ɯ and the apostrophe; and the first article of the Universal Declaration of
+Human Rights in Bodo Devanagari and in the older Latin orthography (quoted in the Wikipedia article)
+for ै, ं and the bare consonants.
+
+**Tone.** Bodo has two lexical tones, high and low (Burling 1959; Joseph and Burling 2001; Sarmah
+2004, who shows from recordings that the third and fourth tones of Bhattacharya 1977 are not
+distinct, and that a word carries one tone, on its last syllable). Bodo Devanagari does not write
+tone, so improved mode does not say it: its output has no tone marks, and minimal pairs such as
+Wikipedia's *ja* "eat" (high) and "be" (low) come out the same. L2/08-197 and Wiktionary call the
+apostrophe a tone mark of the short o; in running text it stands after the first and middle
+syllables too (क’कराझार, बिसायख’थि), which in Sarmah's account carry no lexical tone, so uccharan
+reads it as the vowel it shows and not as a tone. A Bodo tone dictionary would be needed to say
+tone; none with an open licence was found.
+
+**Numbers.** Improved mode and normalise-only mode read numbers in Bodo words: the native numerals
+for the units, tens, hundreds and thousands (से नै थाम ब्रै बा द’ स्नि दाइन गु, जि 10, जिसे 11,
+नैजि 20, नैजिबा 25, जौसे 100, नै जौ 200, रोजासे 1000, नै रोजा 2000), and the Indo-Aryan लाख and कौटि
+for 10^5 and 10^7 (से लाख, बा कौटि). This follows the numerals of the Wikipedia article and how Bodo
+text writes them (IndicCorp v2: नैजिसे, नैरोजा नैजिसे, द’जिदाइन
+रोजा, से लाख रां); the corpus uses लाख and कौटि, not a native word, above the thousands. Zero is
+लाथिख’ (Wiktionary). Ordinals take -थि (1थि सेथि, 21थि नैजिसेथि, as in Bodo text), ₹25 is नैजिबा
+रां, 10:30 जि रिंगा थामजि मिनिट (रिंगा and मिनिट as in Bodo text; the word order has not been
+checked by a Bodo speaker), percent प्रतिशत, the decimal point पइन्ट, and the month names come from
+Unicode CLDR (`brx.xml`). Bodo also counts with classifiers (मोनसे "one thing", सासे "one person");
+numbers written with digits are read without one. Compatible mode reads numbers in Hindi, as the
+reference voice does.
+
+**Romanised Bodo** follows the older Latin orthography (w for ɯ, o for the inherent vowel, ng for
+ŋ), not romanised Hindi, so it has its own rules (`crates/uccharan/src/brx.rs`): a list of 32
+common words that are also English words or have irregular spellings (`ang` आं, `arw` आरो, `boro`
+बर’, `raw` राव, `man` मान), then a letter converter for the other words that the English lexicon
+does not know (`jwnwm` जोनोम, `dokhona` दख’ना, `kokrajhar` कक्राझार). `transliterate(..., "brx")` (no
+pack) and the `hinglish` option use it: `ang boro raw bungw` → आं बर’ राव बुङो. The list holds the
+words of the first article of the Declaration, so that sentence is no test of the converter; there
+is no romanised Bodo test set, so this is not measured.
+
+Held-out text: 2,000 sentences of Bodo from AI4Bharat's IndicCorp v2 (CC0; Tatoeba has too few and
+FLORES-200 itself has no Bodo), lines in Hindi left out, and as a second held-out set the 1,012
+FLORES-200 `devtest` sentences in Bodo from Google's IndicGenBench (Flores-IN, CC BY-SA 4.0):
+compatible mode against the Hindi voice gives PER 0.37 % (0.32 % without stress) on the first and
+0.48 % (0.35 %) on the second. Bodo Wikipedia exists only in the Wikimedia Incubator (`Wp/brx`,
+189 pages; `bxr` is Buryat) and is not used. A hand-written gold set
+([tools/eval/gold/brx](../tools/eval/gold/brx): 150 words and 35 sentences, split by a hash before
+the rules were run on it; words from Wiktionary, L2/08-197, the Wikipedia numerals, CLDR and
+IndicCorp v2; the Declaration sentence with its pronunciation from the Latin version, the others
+from IndicCorp v2 lines outside the evaluation sets) measures improved mode; held-out half:
+
+| Held-out | Hindi-voice fallback (espeak-ng `hi`) | uccharan compatible | **uccharan improved** |
+| --- | ---: | ---: | ---: |
+| Bodo words (79), exact | 2.5 % | 2.5 % | **98.7 %** |
+| Bodo sentences (16): PER / identical | 52.91 % / 0.0 % | 52.91 % / 0.0 % | **0.44 % / 87.5 %** |
+
+The Hindi voice scores so low because it reads Bodo with Hindi's vowels (ə for ɔ, oː for ɯ) and
+consonants (ɟ for z). The gold set writes down the descriptions named above for this project, so it
+shows that improved mode implements them, not that a Bodo speaker would accept every form; the
+remaining held-out word error is ककबरक (Kokborok), where the Hindi-type deletion keeps a vowel the
+word does not have.
 
 **German, Dutch and French** (`de`, `nl`, `fr`) run on the same Latin-script engine as Spanish,
 each with letter rules and a **word table** (`de.ucd` 16 k entries, 373 KB; `nl.ucd` 12 k, 242 KB;

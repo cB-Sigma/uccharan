@@ -8,9 +8,13 @@ downloaded into ``--work``. When Tatoeba has fewer than ``--min`` usable
 sentences, the FLORES-200 benchmark (CC BY-SA 4.0; ``--flores DIR`` pointing
 at an unpacked ``flores200_dataset``) is used instead: its ``dev`` split
 becomes our dev set and its ``devtest`` split our held-out set. Languages
-in neither (Dogri) take their sentences from AI4Bharat's IndicCorp v2
+in neither (Dogri, Bodo) take their sentences from AI4Bharat's IndicCorp v2
 monolingual text (CC0, downloaded into ``--work``; ids ``indiccorp-``),
-with lines in Hindi left out. Without FLORES, Wikipedia article extracts
+with lines in Hindi left out. A language in Google's IndicGenBench
+(Flores-IN, CC BY-SA 4.0: the FLORES-200 sentences in languages FLORES-200
+itself lacks) also gets a second held-out set ``<lang>_flores.tsv`` from
+its ``devtest`` split (ids ``flores-devtest-``), never used for tuning.
+Without FLORES, Wikipedia article extracts
 (CC BY-SA 4.0, ids ``wp-``) top the set up. Share-alike sentences are
 evaluation input only (``tools/eval`` is not part of any package).
 
@@ -47,7 +51,14 @@ FLORES = {"bn": "ben_Beng", "mr": "mar_Deva", "ne": "npi_Deva", "gu": "guj_Gujr"
 # IndicCorp v2 (AI4Bharat, CC0): uccharan tag -> file name, and a pattern
 # of Hindi function words that marks a line as Hindi rather than the language.
 INDICCORP_URL = "https://huggingface.co/datasets/ai4bharat/IndicCorpV2/resolve/main/data/{}.txt"
-INDICCORP = {"doi": ("dg", r"(?:^|\s)(?:है|हैं|में|का|को|से|था|थी|थे|नहीं|और|लिए|भी|यह|वह)(?=[\s।,?!]|$)")}
+INDICCORP = {"doi": ("dg", r"(?:^|\s)(?:है|हैं|में|का|को|से|था|थी|थे|नहीं|और|लिए|भी|यह|वह)(?=[\s।,?!]|$)"),
+             # Bodo: से is also the Bodo word for one, so it does not mark Hindi.
+             "brx": ("bd", r"(?:^|\s)(?:है|हैं|में|का|को|की|के|था|थी|थे|नहीं|और|लिए|भी|यह|वह|ने)(?=[\s।,?!]|$)")}
+
+# IndicGenBench Flores-IN (Google, CC BY-SA 4.0): uccharan tag -> language code
+# of flores_in/flores_<code>_en_test.json (the FLORES-200 devtest sentences).
+INDICGENBENCH_URL = "https://raw.githubusercontent.com/google-research-datasets/indic-gen-bench/main/flores_in/flores_{}_en_test.json"
+INDICGENBENCH = {"brx": "brx"}
 
 # uccharan tag -> (Tatoeba code, Wikipedia code, letter regex of the language's script)
 LANGS: dict[str, tuple[str, str, str]] = {
@@ -80,6 +91,7 @@ LANGS: dict[str, tuple[str, str, str]] = {
     "sa": ("san", "sa", r"[ऀ-ॿ]"),
     "mag": ("mag", "mag", r"[ऀ-ॿ]"),
     "doi": ("doi", "dgo", r"[ऀ-ॿ]"),
+    "brx": ("brx", "brx", r"[ऀ-ॿ]"),
 }
 
 
@@ -154,6 +166,16 @@ def indiccorp(work: Path, lang: str, letters: str) -> list[tuple[str, str]]:
     return list(out.items())
 
 
+def indicgenbench(work: Path, lang: str) -> None:
+    """Write the second held-out set from IndicGenBench's Flores-IN devtest split."""
+    code = INDICGENBENCH[lang]
+    path = fetch(INDICGENBENCH_URL.format(code), work / f"indicgenbench_{code}_test.json")
+    rows = [e["source"] for e in json.loads(path.read_text(encoding="utf-8"))["examples"]]
+    out = HERE / "data" / f"{lang}_flores.tsv"
+    out.write_text("".join(f"flores-devtest-{k}\t{' '.join(t.split())}\n" for k, t in enumerate(rows)), encoding="utf-8")
+    print(f"{out.name}: {len(rows)} sentences (IndicGenBench Flores-IN devtest, CC BY-SA 4.0; evaluation only)")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("langs", nargs="+")
@@ -165,6 +187,8 @@ def main() -> None:
     args = ap.parse_args()
     args.work.mkdir(parents=True, exist_ok=True)
     for lang in args.langs:
+        if lang in INDICGENBENCH:
+            indicgenbench(args.work, lang)
         tcode, wcode, letters = LANGS[lang]
         rows = [(i, t) for i, t in tatoeba(args.work, tcode) if 8 <= len(t) <= 160 and re.search(letters, t.lower())]
         source = "Tatoeba (CC BY 2.0 FR)"

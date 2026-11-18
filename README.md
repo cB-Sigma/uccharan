@@ -9,7 +9,7 @@
 <h3 align="center">Phonemiser, text normaliser, transliterator and pronunciation engine.</h3>
 
 <p align="center">
-  The text side of text-to-speech and speech recognition in one library: 40 languages,
+  The text side of text-to-speech and speech recognition in one library: 41 languages,
   in Rust, Python, JavaScript and C. Apache-2.0.
 </p>
 
@@ -29,7 +29,7 @@
 and behind a speech recogniser:
 
 - as a **phonemiser** it turns text into the phonemes that Piper, Kokoro, Kitten TTS, Matcha-TTS
-  and sherpa-onnx voices were trained on, in 40 languages, with output measured against
+  and sherpa-onnx voices were trained on, in 41 languages, with output measured against
   espeak-ng's;
 - as a **text normaliser** it gives voices that read plain text the spoken form of numbers,
   money, dates, times and URLs, with every change aligned to the input;
@@ -99,7 +99,7 @@ brew install cb-sigma/tap/uccharan
 
 **Language packs**: English and Hindi are built in, and so is every language that needs no word
 table, among them the other Indian languages, Bhojpuri, Maithili and Magahi (read with Hindi's
-built-in data) and Dogri. Only the word tables of German, Dutch, French,
+built-in data), Dogri and Bodo. Only the word tables of German, Dutch, French,
 Italian, Portuguese, Polish, Turkish, Czech, Swedish, Catalan, Romanian, Hungarian, Finnish,
 Norwegian, Danish, Urdu and Sindhi are small packs attached to each GitHub release. The wheel and
 the npm package download a language's pack the first time it is used, check its SHA-256 sum and
@@ -209,7 +209,7 @@ uccharan_free(p);
 
 | | What it does | Guide |
 | --- | --- | --- |
-| [Phonemiser](#phonemiser-and-languages) | text to phonemes in 40 languages, in the shape each voice family expects | [profiles](docs/profiles.md), [languages](docs/languages.md) |
+| [Phonemiser](#phonemiser-and-languages) | text to phonemes in 41 languages, in the shape each voice family expects | [profiles](docs/profiles.md), [languages](docs/languages.md) |
 | [Normalise-only mode](#normalise-only-mode) | the spoken form of a text, with typed spans, for voices that read text | [normalize](docs/normalize.md) |
 | [Pronunciation word lists](#pronunciation-word-lists) | your pronunciations as TSV, PLS or JSON, applied to phoneme and text voices alike | [word lists](docs/wordlists.md) |
 | [Sound-alike matching](#sound-alike-matching) | corrects a recogniser's transcript against your vocabulary by sound | [soundalike](docs/soundalike.md) |
@@ -270,6 +270,7 @@ second) and are the lower of two runs. The measurements vary by about ±10 % bet
 | Maithili | `mai` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.46 % | 0.29 % | 3.0× | MMS, SYSPIN (character input) |
 | Magahi | `mag` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.40 % | 0.23 % | 2.8× | MMS (character input) |
 | Dogri | `doi` | `hi` ‡ | IndicCorp v2, 2,000 sentences | 1.40 % | 1.35 % | 1.9× § | none |
+| Bodo | `brx` | `hi` ‡ | IndicCorp v2, 2,000 sentences | 0.37 % | 0.32 % | 2.3× § | none |
 | Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.54 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
 | German | `de` | `de` | FLORES-200, 1,012 sentences | 0.95 % | 0.77 % | 5.8× † | Piper `de_DE` (11) |
 | Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.69 % | 1.32 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
@@ -294,13 +295,14 @@ second) and are the lower of two runs. The measurements vary by about ±10 % bet
 French reading only in the numbers 70–99 (septante, huitante, nonante). Their speed is the French
 voice's: in one run on a busy machine French 4.5×, `fr-be` 4.5×, `fr-ch` 5.2×.
 
-‡ espeak-ng has no voice for Sanskrit, Bhojpuri, Maithili, Magahi or Dogri; text in them is read
+‡ espeak-ng has no voice for Sanskrit, Bhojpuri, Maithili, Magahi, Dogri or Bodo; text in them is read
 with its Hindi voice, and compatible mode is measured against that reading. Improved mode reads
 them as themselves (below).
 
 § Measured on a Windows 11 laptop, not on the machine of the other rows (500 held-out sentences,
-p50, best of 5 rounds); in the same run Magahi gave 2.3× and Hindi 1.8×, against 2.8× each in the
-table.
+p50, best of 5 rounds); in the same run as Dogri, Magahi gave 2.3× and Hindi 1.8×, against 2.8× each
+in the table; in the same run as Bodo, Dogri gave 1.9× and Hindi 1.8×. Bodo's second held-out set,
+the 1,012 FLORES-200 sentences of Google's IndicGenBench, gives 0.48 % (0.35 % without stress).
 
 How to read it:
 
@@ -500,11 +502,12 @@ before the work on them began, and the figures are for held-out items:
 | Maithili words (226) | 68.6 % | 66.4 % | **93.4 %** |
 | Magahi words (270) | 64.4 % | 70.0 % | **98.5 %** |
 | Dogri words (70) | 44.3 % | 44.3 % | **97.1 %** |
+| Bodo words (79) | 2.5 % | 2.5 % | **98.7 %** |
 
 What these do and do not show: for names that are in CMUdict the reference *is* CMUdict, which
 uccharan's lexicon comes from, so the fair rows are Indian names and names not in CMUdict. The
 North African, Egyptian and Chichewa / Shona / Tsonga / Tigrinya sets were scored twice (the table
-gives the second scoring; the first is in the evaluation). The Bhojpuri, Maithili, Magahi and Dogri sets mostly encode grammars' descriptions as
+gives the second scoring; the first is in the evaluation). The Bhojpuri, Maithili, Magahi, Dogri and Bodo sets mostly encode grammars' descriptions as
 written down for this project, so they show that improved mode implements them, not that a
 native speaker would accept every form
 ([items to check](docs/bhojpuri-maithili-review.md)). On the 348 development items improved mode

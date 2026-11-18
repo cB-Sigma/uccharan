@@ -869,6 +869,7 @@ fn indic_numbers_in_their_own_script() {
         (Lang::Mai, "पच्चीस"),
         (Lang::Mag, "पच्चीस"),
         (Lang::Doi, "पच्चीस"),
+        (Lang::Brx, "पच्चीस"),
     ];
     for (l, want) in twenty_five {
         assert_eq!(norm("25", *l).text, *want, "{l:?}");
@@ -938,6 +939,23 @@ fn indic_numbers_in_their_own_script() {
         check(t, &n);
         assert_eq!(n.text, want, "doi {t}");
     }
+    // Bodo: native number words up to the thousands, लाख and कौटि above,
+    // the ordinal ending -थि, clock times, the rupee and dates.
+    for (t, want) in [
+        ("25 3.5", "नैजिबा थाम पइन्ट बा"),
+        ("2021 1500", "नै रोजा नैजिसे रोजासे बा जौ"),
+        ("1,50,000 100", "से लाख बाजि रोजा जौसे"),
+        ("₹25 6", "नैजिबा रां द’"),
+        ("1थि 21थि", "सेथि नैजिसेथि"),
+        ("10:30", "जि रिंगा थामजि मिनिट"),
+        ("15/08/2024", "जिबा आगष्ट नै रोजा नैजिब्रै"),
+        ("50%", "बाजि प्रतिशत"),
+        ("कर’ना", "कर’ना"),
+    ] {
+        let n = normalize(p(), t, Lang::Brx, &improved);
+        check(t, &n);
+        assert_eq!(n.text, want, "brx {t}");
+    }
     let mut nums: Vec<String> = (0..=110).map(|n| n.to_string()).collect();
     for n in [
         150, 200, 222, 345, 999, 1000, 1234, 2024, 12345, 99999, 123456,
@@ -975,6 +993,7 @@ fn indic_numbers_in_their_own_script() {
         (Lang::Mai, Some(12.5), 1.0),
         (Lang::Mag, Some(11.5), 1.0),
         (Lang::Doi, Some(11.5), 1.0),
+        (Lang::Brx, Some(11.5), 1.0),
     ];
     for &(l, compat_bound, improved_bound) in bounds {
         for (mode, bound) in [
@@ -994,8 +1013,11 @@ fn indic_numbers_in_their_own_script() {
                 let spoken = n.text;
                 for c in spoken.chars() {
                     let s = script_of(c);
+                    // Bodo writes 6 and 0 with the apostrophe (द’, लाथिख’).
                     assert!(
-                        s == l.script() || matches!(c, ' ' | '\u{200c}' | '\u{200d}'),
+                        s == l.script()
+                            || matches!(c, ' ' | '\u{200c}' | '\u{200d}')
+                            || (l == Lang::Brx && c == '’'),
                         "{l:?} {mode:?} {t}: {spoken:?} has {c:?} ({s:?})"
                     );
                 }

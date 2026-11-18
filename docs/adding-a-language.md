@@ -22,7 +22,10 @@ writes `tools/eval/data/<tag>_dev.tsv` and `<tag>_heldout.tsv` (add the language
 sentence id; when Tatoeba is small, from FLORES-200 (CC BY-SA 4.0; `dev` becomes our dev set,
 `devtest` our held-out set — evaluation input only, never shipped); when neither has the language,
 from AI4Bharat's IndicCorp v2 monolingual text (CC0; add it to `INDICCORP` with a pattern that
-marks lines written in Hindi, as for Dogri). Add the espeak voice to
+marks lines written in Hindi, as for Dogri and Bodo). A language that Google's IndicGenBench covers
+(Flores-IN: FLORES-200 sentences in languages FLORES-200 lacks, CC BY-SA 4.0) also gets a second
+held-out set `<tag>_flores.tsv` from its `devtest` split (add it to `INDICGENBENCH`; run it with
+`run_eval.py --set flores`). Add the espeak voice to
 `VOICES` in `tools/eval/common.py` and `tools/bench/compare.py`. Tune only on the dev set; run the
 held-out set to report.
 

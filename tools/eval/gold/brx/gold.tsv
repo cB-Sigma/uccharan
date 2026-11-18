@@ -1,0 +1,213 @@
+# Bodo word gold set, written 2026-11-18 from the descriptions below before the Bodo rules were run on
+# these items. Format: word, broad pronunciation(s) separated by |, category, source. Sources: K = entry of
+# English Wiktionary's "Bodo (India) lemmas" category (CC BY-SA 4.0; spelling, romanisation and gloss read
+# 2026-11-18); U = example word of "Representation of Bodo, Dogri and Maithili languages in Unicode
+# Standard", Government of India, Unicode document L2/08-197 (2008); N = Bodo numeral as listed in the
+# Wikipedia article "Boro language (India)" (CC BY-SA 4.0), in the Devanagari spelling of IndicCorp v2
+# Bodo text; C = word of the Bodo locale of Unicode CLDR (common/main/brx.xml, Unicode License v3); I =
+# word attested in Bodo text of AI4Bharat IndicCorp v2 (CC0). Pronunciations hand-written with the
+# phoneme inventory of Bhattacharya (1977, A Descriptive Analysis of the Boro Language, as given by
+# Sarmah 2004 and the Wikipedia article: i e a ɔ u ɯ; pʰ tʰ kʰ b d ɡ m n ŋ s z r l h j w; no voiced
+# aspirates, no retroflex or palatal stops) and the spelling conventions of L2/08-197 and of the
+# Devanagari and Latin versions of the first article of the Universal Declaration of Human Rights:
+# ो ॊ = ɯ, ै = ɯi, ौ = ɯu, the inherent vowel = ɔ, an apostrophe after a consonant = its inherent vowel
+# said; a bare consonant at the end of a word or before another consonant is said without a vowel (Hindi
+# type), except in the first syllable; ं = ŋ; य व after a vowel and before a consonant or the end of the
+# word = the second half of a diphthong (i, u); च छ श ष स = s, ज झ = z, ट ठ ड ढ ण = t tʰ d d n, ड़ = r,
+# घ ध भ = ɡ d b in loanwords; vowel length is not written. Tone (high or low, on the last syllable of a
+# word: Sarmah 2004) is not written in Bodo Devanagari and is left out here; Wiktionary's tones for गं,
+# दाव and बिमा are therefore not part of the expected forms. Wiktionary's romanisation writes ɯ with o
+# in some entries (लोगो logo, बोराइ borai); the Devanagari ो is read ɯ as the Unicode document gives it.
+# Bodo sentence gold set, written 2026-11-18 before the Bodo rules were run on these items. The first
+# sentence is the first article of the Universal Declaration of Human Rights in Bodo Devanagari as quoted
+# in the Wikipedia article "Boro language (India)" (CC BY-SA 4.0), with the pronunciation taken from the
+# Latin version quoted there ("Gaswi subung anw udangwi man sanman arw mwnthai lana jwnwm layw"); the
+# others are lines of AI4Bharat IndicCorp v2 Bodo text (CC0) that are in none of tools/eval/data/brx_dev.tsv,
+# brx_heldout.tsv and brx_flores.tsv. Pronunciation hand-written with the conventions of words.src.
+# Format: sentence <TAB> pronunciation.
+# Columns: id, kind, text, expected, category, source (with licence), split, date written.
+w-अखाफोर	word	अखाफोर	ɔkʰapʰɯr	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-अख्रां	word	अख्रां	ɔkʰraŋ	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-आं	word	आं	aŋ	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-आखाय	word	आखाय	akʰai	diph	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-इंराजि	word	इंराजि	iŋrazi	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-कामिज	word	कामिज	kamiz	loan	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-खालाम	word	खालाम	kʰalam	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-खावसे	word	खावसे	kʰause	diph	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-गं	word	गं	ɡɔŋ	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-गथ	word	गथ	ɡɔtʰɔ	final	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-गान्दु	word	गान्दु	ɡandu	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-गाब	word	गाब	ɡab	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-गार'	word	गार'	ɡarɔ	apos	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-गिरजा	word	गिरजा	ɡirza	loan	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-गुफुर	word	गुफुर	ɡupʰur	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-जा	word	जा	za	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-जानबुं	word	जानबुं	zanbuŋ	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-जिराय	word	जिराय	zirai	diph	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-जुनार	word	जुनार	zunar	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-जोमै	word	जोमै	zɯmɯi	vowel	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-दंफां	word	दंफां	dɔŋpʰaŋ	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-दालां	word	दालां	dalaŋ	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-दाव	word	दाव	dau	diph	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-दावदै	word	दावदै	daudɯi	diph	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-दिरुं	word	दिरुं	diruŋ	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-दुवार	word	दुवार	duwar	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-दै	word	दै	dɯi	vowel	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-दैमा	word	दैमा	dɯima	vowel	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-दोहोरोम	word	दोहोरोम	dɯhɯrɯm	vowel	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-ना	word	ना	na	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-बर'	word	बर'	bɔrɔ	apos	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-बार	word	बार	bar	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-बिदिन्था	word	बिदिन्था	bidintʰa	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-बिफा	word	बिफा	bipʰa	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-बिमा	word	बिमा	bima	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-बेदर	word	बेदर	bedɔr	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-बेरे	word	बेरे	bere	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-बोरमा	word	बोरमा	bɯrma	vowel	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-बोराइ	word	बोराइ	bɯrai	vowel	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-मानसि	word	मानसि	mansi	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-मायरं	word	मायरं	mairɔŋ	diph	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-मावजि	word	मावजि	mauzi	diph	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-मिसिं	word	मिसिं	misiŋ	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-मुं	word	मुं	muŋ	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-मोसा	word	मोसा	mɯsa	vowel	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-मोसौ	word	मोसौ	mɯsɯu	vowel	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-राव	word	राव	rau	diph	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-लाइमोन	word	लाइमोन	laimɯn	diph	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-लाथिख'	word	लाथिख'	latʰikʰɔ	apos	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-लामा	word	लामा	lama	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-लिर	word	लिर	lir	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-लोगो	word	लोगो	lɯɡɯ	vowel	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-संख्रि	word	संख्रि	sɔŋkʰri	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-साहा	word	साहा	saha	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-सिलाइ	word	सिलाइ	silai	diph	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-सुबुं	word	सुबुं	subuŋ	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-हाजो	word	हाजो	hazɯ	vowel	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-हादरमा	word	हादरमा	hadɔrma	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-हादोर	word	हादोर	hadɯr	vowel	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-हिनजाव	word	हिनजाव	hinzau	diph	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	dev	2026-11-18
+w-जोहोलाव	word	जोहोलाव	zɯhɯlau	diph	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-ककबरक	word	ककबरक	kɔkbɔrɔk	word	Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written	heldout	2026-11-18
+w-गोमो	word	गोमो	ɡɯmɯ	vowel	example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written	dev	2026-11-18
+w-गोसो	word	गोसो	ɡɯsɯ	vowel	example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written	heldout	2026-11-18
+w-बोलो	word	बोलो	bɯlɯ	vowel	example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written	dev	2026-11-18
+w-सोलो	word	सोलो	sɯlɯ	vowel	example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written	dev	2026-11-18
+w-सोलोंथाइ	word	सोलोंथाइ	sɯlɯŋtʰai	vowel	example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written	heldout	2026-11-18
+w-गॊमॊ	word	गॊमॊ	ɡɯmɯ	vowel	example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written	heldout	2026-11-18
+w-खर'	word	खर'	kʰɔrɔ	apos	example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written	heldout	2026-11-18
+w-आख'ब	word	आख'ब	akʰɔb	apos	example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written	dev	2026-11-18
+w-बारग'	word	बारग'	barɡɔ	apos	example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written	dev	2026-11-18
+w-फल'	word	फल'	pʰɔlɔ	apos	example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written	heldout	2026-11-18
+w-बस'	word	बस'	bɔsɔ	apos	example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written	heldout	2026-11-18
+w-दख'ना	word	दख'ना	dɔkʰɔna	apos	example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written	dev	2026-11-18
+w-गोजौ	word	गोजौ	ɡɯzɯu	vowel	example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written	heldout	2026-11-18
+w-से	word	से	se	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	dev	2026-11-18
+w-नै	word	नै	nɯi	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	heldout	2026-11-18
+w-थाम	word	थाम	tʰam	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	heldout	2026-11-18
+w-ब्रै	word	ब्रै	brɯi	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	dev	2026-11-18
+w-बा	word	बा	ba	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	heldout	2026-11-18
+w-द’	word	द’	dɔ	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	heldout	2026-11-18
+w-स्नि	word	स्नि	sni	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	heldout	2026-11-18
+w-दाइन	word	दाइन	dain	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	dev	2026-11-18
+w-गु	word	गु	ɡu	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	dev	2026-11-18
+w-जि	word	जि	zi	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	dev	2026-11-18
+w-जिसे	word	जिसे	zise	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	heldout	2026-11-18
+w-नैजि	word	नैजि	nɯizi	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	heldout	2026-11-18
+w-थामजि	word	थामजि	tʰamzi	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	dev	2026-11-18
+w-बाजि	word	बाजि	bazi	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	heldout	2026-11-18
+w-नैजिसे	word	नैजिसे	nɯizise	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	heldout	2026-11-18
+w-जौसे	word	जौसे	zɯuse	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	dev	2026-11-18
+w-नैजौ	word	नैजौ	nɯizɯu	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	dev	2026-11-18
+w-रोजा	word	रोजा	rɯza	num	Bodo numeral, Wikipedia "Boro language (India)" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written	dev	2026-11-18
+w-जानुवारी	word	जानुवारी	zanuwari	loan	Unicode CLDR common/main/brx.xml (Unicode License v3); pronunciation hand-written	dev	2026-11-18
+w-फेब्रूवारी	word	फेब्रूवारी	pʰebruwari	loan	Unicode CLDR common/main/brx.xml (Unicode License v3); pronunciation hand-written	dev	2026-11-18
+w-एप्रिल	word	एप्रिल	epril	loan	Unicode CLDR common/main/brx.xml (Unicode License v3); pronunciation hand-written	dev	2026-11-18
+w-आगष्ट	word	आगष्ट	aɡɔst	loan	Unicode CLDR common/main/brx.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-सेप्थेम्बर	word	सेप्थेम्बर	septʰembɔr	loan	Unicode CLDR common/main/brx.xml (Unicode License v3); pronunciation hand-written	dev	2026-11-18
+w-अक्ट’बर	word	अक्ट’बर	ɔktɔbɔr	apos	Unicode CLDR common/main/brx.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-नवेम्बर	word	नवेम्बर	nɔwembɔr	loan	Unicode CLDR common/main/brx.xml (Unicode License v3); pronunciation hand-written	heldout	2026-11-18
+w-डिसेम्बर	word	डिसेम्बर	disembɔr	loan	Unicode CLDR common/main/brx.xml (Unicode License v3); pronunciation hand-written	dev	2026-11-18
+w-आरो	word	आरो	arɯ	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-बे	word	बे	be	word	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-बिसोर	word	बिसोर	bisɯr	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-जों	word	जों	zɯŋ	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-नों	word	नों	nɯŋ	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-नङा	word	नङा	nɔŋa	word	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-दं	word	दं	dɔŋ	word	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-मोजां	word	मोजां	mɯzaŋ	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-गोबां	word	गोबां	ɡɯbaŋ	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-सासे	word	सासे	sase	word	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-मोनसे	word	मोनसे	mɯnse	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-थाखाय	word	थाखाय	tʰakʰai	diph	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-सोरखार	word	सोरखार	sɯrkʰar	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-पुलिस	word	पुलिस	pulis	loan	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-भारत	word	भारत	barɔt	loan	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-कर’ना	word	कर’ना	kɔrɔna	apos	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-बिसायख’थि	word	बिसायख’थि	bisaikʰɔtʰi	apos	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-मख’नो	word	मख’नो	mɔkʰɔnɯ	apos	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-क’कराझार	word	क’कराझार	kɔkrazar	apos	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-बड’लेण्ड	word	बड’लेण्ड	bɔdɔlend	apos	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-गथ’	word	गथ’	ɡɔtʰɔ	apos	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-सुबुंफोरा	word	सुबुंफोरा	subuŋpʰɯra	word	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-होननानै	word	होननानै	hɯnnanɯi	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-जादों	word	जादों	zadɯŋ	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-गासैबो	word	गासैबो	ɡasɯibɯ	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-खौरां	word	खौरां	kʰɯuraŋ	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-बिथाङा	word	बिथाङा	bitʰaŋa	word	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-आसाम	word	आसाम	asam	word	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-रां	word	रां	raŋ	word	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-लाख	word	लाख	lakʰ	word	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-कौटि	word	कौटि	kɯuti	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-रिंगा	word	रिंगा	riŋɡa	word	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-गिबि	word	गिबि	ɡibi	word	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-प्रतिशत	word	प्रतिशत	prɔtisɔt	loan	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-मिनिट	word	मिनिट	minit	loan	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-दैदेनगिरि	word	दैदेनगिरि	dɯidenɡiri	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-फरायसा	word	फरायसा	pʰɔraisa	diph	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-होनाय	word	होनाय	hɯnai	diph	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-मोननाय	word	मोननाय	mɯnnai	diph	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-गुबुन	word	गुबुन	ɡubun	word	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-लोगोसे	word	लोगोसे	lɯɡɯse	vowel	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-कंग्रेस	word	कंग्रेस	kɔŋɡres	loan	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-कॉलेज	word	कॉलेज	kɔlez	loan	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-डॉक्टर	word	डॉक्टर	dɔktɔr	loan	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-आयेन	word	आयेन	ajen	diph	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-लायो	word	लायो	lajɯ	diph	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-सायाव	word	सायाव	sajau	diph	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	dev	2026-11-18
+w-नायगिरदों	word	नायगिरदों	naiɡirdɯŋ	diph	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+w-बयबो	word	बयबो	bɔibɯ	diph	word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written	heldout	2026-11-18
+s-007	sentence	गासै सुबुं आनो उदांयै मान सनमान आरो मोनथाय लाना जोनोम लायो।	ɡasɯi subuŋ anɯ udaŋɯi man sanman arɯ mɯntʰai lana zɯnɯm lajɯ	sentence	Wikipedia "Boro language (India)", UDHR article 1 (CC BY-SA 4.0); pronunciation from its Latin version	heldout	2026-11-18
+s-008	sentence	बेखौ नङा होननानै रावबो नेवसिनो हाया।	bekʰɯu nɔŋa hɯnnanɯi raubɯ neusinɯ haja	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-009	sentence	बिमा गाजायै साथाम गथ’फोरा सोरखारनिसिम हेफाजाब नायगिरदों ।	bima ɡazajɯi satʰam ɡɔtʰɔpʰɯra sɯrkʰarnisim hepʰazab naiɡirdɯŋ	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-010	sentence	गोबां हा याव दंफां दननानै आबाद मावगासिनो।	ɡɯbaŋ ha jau dɔŋpʰaŋ dɔnnanɯi abad mauɡasinɯ	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-011	sentence	बे आयदाखौ लानानै गोबां लिरबाय।	be aidakʰɯu lananɯi ɡɯbaŋ lirbai	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-012	sentence	अलंबार नों बुंनाय खोथायाबो थार।	ɔlɔŋbar nɯŋ buŋnai kʰɯtʰajabɯ tʰar	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-013	sentence	इसोरा अन्थाइ बिखा नङा ।	isɯra ɔntʰai bikʰa nɔŋa	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-014	sentence	आइजोफोरासो हारिमुखौ लाखियो, बे थार बाथ्रा।	aizɯpʰɯrasɯ harimukʰɯu lakʰijɯ be tʰar batʰra	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-015	sentence	खानाय रज’ होनोब्ला खानायाव थाव बाहाय।	kʰanai rɔzɔ hɯnɯbla kʰanajau tʰau bahai	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-016	sentence	नों साजायनाय आंगो बिमा रावजों।	nɯŋ sazainai aŋɡɯ bima rauzɯŋ	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-017	sentence	आरो बियो गोबां बाथ्रा बुंदोंमोन ।	arɯ bijɯ ɡɯbaŋ batʰra buŋdɯŋmɯn	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-018	sentence	बिनि थाखाय मोनसे गोख्रों आफादनि गोनांथि जादोंमोन ।	bini tʰakʰai mɯnse ɡɯkʰrɯŋ apʰadni ɡɯnaŋtʰi zadɯŋmɯn	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-019	sentence	हारिमुआ मोनसे हारिनि आयना।	harimua mɯnse harini aina	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-020	sentence	गाज्रि मोनलायनाय फोरखौ बावगारहोयो।	ɡazri mɯnlainai pʰɯrkʰɯu bauɡarhɯjɯ	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-021	sentence	होमारगोन ना होआ बेफोर गासैखौबो उनाव सो नुसिगोन।	hɯmarɡɯn na hɯa bepʰɯr ɡasɯikʰɯubɯ unau sɯ nusiɡɯn	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-022	sentence	सोरखारआ होनाय आयेन आब्रुथिखौ मानिनानै सोलिनाय नुनो मोनाखै।	sɯrkʰara hɯnai ajen abrutʰikʰɯu maninanɯi sɯlinai nunɯ mɯnakʰɯi	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-023	sentence	बे बाथ्राया सैथोदि रावसोलायनाया सोलिफु हाबाफारि।	be batʰraja sɯitʰɯdi rausɯlainaja sɯlipʰu habapʰari	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-024	sentence	खायफाया माइ दोनग्राखौ लिरनाय जाया।	kʰaipʰaja mai dɯnɡrakʰɯu lirnai zaja	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-025	sentence	एखनब्ला खुगानि रावजोंबो रोखायै फोरमायो।	ekʰɔnbla kʰuɡani rauzɯŋbɯ rɯkʰajɯi pʰɯrmajɯ	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-026	sentence	सरकारि रादाब बिबुंसारआ फोरमायो।	sɔrkari radab bibuŋsara pʰɯrmajɯ	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-027	sentence	जायनि थाखाय बिखौ बुथारनायनि खैसार खालामनाय जादोंमोन।	zaini tʰakʰai bikʰɯu butʰarnaini kʰɯisar kʰalamnai zadɯŋmɯn	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-028	sentence	बे समाव मोननैबो दोलोआ सानखान्थिआव आवबा जादों ।	be sɔmau mɯnnɯibɯ dɯlɯa sankʰantʰiau auba zadɯŋ	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-029	sentence	बे हारिहा मोनसे समाव रायजो दंमोन, राजा दंमोन।	be hariha mɯnse sɔmau raizɯ dɔŋmɯn raza dɔŋmɯn	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-030	sentence	थिनानै दोनदों जोबथा दावहाखौ नायनो थाखाय ।	tʰinanɯi dɯndɯŋ zɯbtʰa dauhakʰɯu nainɯ tʰakʰai	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-031	sentence	बुधबारनिफ्राय गोहोम गोग्लैगोन राइजोआव।	budbarnipʰrai ɡɯhɯm ɡɯɡlɯiɡɯn raizɯau	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-032	sentence	जेराव दं बेवहायनो गसंना थाबाय थाथ’।	zerau dɔŋ beuhainɯ ɡɔsɔŋna tʰabai tʰatʰɔ	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-033	sentence	जायनि थाखाय सान्थ्रि आरो पुलिसजों बुजानांदोंमोन गोबां खेब।	zaini tʰakʰai santʰri arɯ puliszɯŋ buzanaŋdɯŋmɯn ɡɯbaŋ kʰeb	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-034	sentence	बेनि उनावनो नोंथांनि गासै फोरमायथिखौ नोंथाङा मोन्नो हागोन।	beni unaunɯ nɯŋtʰaŋni ɡasɯi pʰɯrmaitʰikʰɯu nɯŋtʰaŋa mɯnnɯ haɡɯn	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-035	sentence	अब्ला जों रावनियावबो सोनारनो गोनां जाया।	ɔbla zɯŋ raunijaubɯ sɯnarnɯ ɡɯnaŋ zaja	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-036	sentence	होनब्लाबो नों बायदि साफा गुफुर गावदां नुयाखै।	hɯnblabɯ nɯŋ baidi sapʰa ɡupʰur ɡaudaŋ nujakʰɯi	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-037	sentence	गामिनि बयबो थुबुर जाफैनायसै ।	ɡamini bɔibɯ tʰubur zapʰɯinaisɯi	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-038	sentence	बियो बिब्दिनो खालामगोन आंबोसो जेबो उदिसखौनो मोनाखैमोन ।	bijɯ bibdinɯ kʰalamɡɯn aŋbɯsɯ zebɯ udiskʰɯunɯ mɯnakʰɯimɯn	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-039	sentence	हमनो मोन्नाय माइरंखौ कक्राझार पुलिस थानायाव लाबोनाय जाबाय।	hɔmnɯ mɯnnai mairɔŋkʰɯu kɔkrazar pulis tʰanajau labɯnai zabai	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18
+s-040	sentence	जाथायनि सायाव संदाननाय जागासिनो होन्ननै पुलिसा फोरमायो ।	zatʰaini sajau sɔŋdannai zaɡasinɯ hɯnnɯi pulisa pʰɯrmajɯ	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	heldout	2026-11-18
+s-041	sentence	दुर्गा फुजाखौ हिन्दु सुबुंफोरा सानबासो फालिनाय जायो।	durɡa pʰuzakʰɯu hindu subuŋpʰɯra sanbasɯ pʰalinai zajɯ	sentence	IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written	dev	2026-11-18

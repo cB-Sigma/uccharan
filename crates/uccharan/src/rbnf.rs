@@ -35,6 +35,7 @@ pub struct Rbnf {
 /// The ordinal rule file of a language, when it has one.
 pub fn ordinal_rules_for(tag: &str) -> Option<&'static str> {
     Some(match tag {
+        "brx" => include_str!("../lang/numbers/ord-brx.txt"),
         "ca" => include_str!("../lang/numbers/ord-ca.txt"),
         "cs" => include_str!("../lang/numbers/ord-cs.txt"),
         "da" => include_str!("../lang/numbers/ord-da.txt"),

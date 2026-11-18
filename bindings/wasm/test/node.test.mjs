@@ -92,3 +92,12 @@ test("Dogri: Hindi reading in compatible mode, tone in improved mode", async () 
   assert.equal((await uccharan.normalize("25", { lang: "doi", improved: true })).text, "पंजी");
   assert.equal((await uccharan.transliterate("tusen kiyan ho", { lang: "doi" })).text, "तुसें कि’यां हो");
 });
+
+test("Bodo: Hindi reading in compatible mode, Bodo vowels in improved mode", async () => {
+  assert.ok(uccharan.LANGUAGES.includes("brx"));
+  assert.equal(await uccharan.phonemize("बोलो", { lang: "brx" }), await uccharan.phonemize("बोलो", { lang: "hi" }));
+  assert.equal(await uccharan.phonemize("बोलो", { lang: "bodo", improved: true }), "bˈɯlɯ");
+  assert.equal(await uccharan.phonemize("बर’", { lang: "brx", improved: true }), "bˈɔrɔ");
+  assert.equal((await uccharan.normalize("25", { lang: "brx", improved: true })).text, "नैजिबा");
+  assert.equal((await uccharan.transliterate("ang boro raw bungw", { lang: "brx" })).text, "आं बर’ राव बुङो");
+});

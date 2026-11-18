@@ -919,8 +919,8 @@ fn tokenize(text: &str) -> Vec<Token> {
 }
 
 /// Without a pack: the hand list and rules of [`crate::hi::roman`] for the
-/// Hindi-like languages, a plain rule converter for the others. English is
-/// whatever the English lexicon lists.
+/// Hindi-like languages, those of [`crate::brx`] for Bodo, a plain rule
+/// converter for the others. English is whatever the English lexicon lists.
 fn fallback(ph: &Phonemizer, text: &str, lang: Lang, opt: &TranslitOptions) -> Transliterated {
     let tokens = tokenize(text);
     let base = script_base(lang);
@@ -934,7 +934,7 @@ fn fallback(ph: &Phonemizer, text: &str, lang: Lang, opt: &TranslitOptions) -> T
     let convert = opt.english == EnglishWords::Convert;
     // Per word: the native text, or None for a word that stays.
     let mut written: Vec<Option<String>> = Vec::new();
-    if lang.romanised_as_hindi() && !convert {
+    if (lang.romanised_as_hindi() || lang == Lang::Brx) && !convert {
         let hi = crate::hi::Hindi::new(ph.data(Lang::Hi));
         let mut i = 0;
         while i < tokens.len() {
@@ -962,7 +962,13 @@ fn fallback(ph: &Phonemizer, text: &str, lang: Lang, opt: &TranslitOptions) -> T
             if lang == Lang::Doi {
                 crate::doi::rewrite_roman(&mut items);
             }
-            crate::hi::roman::rewrite(&mut items, &hi, en.as_ref());
+            if lang == Lang::Brx {
+                crate::brx::rewrite_roman(&mut items, |w| {
+                    en.as_ref().is_some_and(|e| e.in_lexicon(w))
+                });
+            } else {
+                crate::hi::roman::rewrite(&mut items, &hi, en.as_ref());
+            }
             for (a, b) in before.iter().zip(items) {
                 written.push((*a != b.text).then_some(b.text));
             }
@@ -984,6 +990,8 @@ fn fallback(ph: &Phonemizer, text: &str, lang: Lang, opt: &TranslitOptions) -> T
                         s
                     } else if lang.romanised_as_hindi() {
                         crate::hi::roman::transliterate(&lower)
+                    } else if lang == Lang::Brx {
+                        crate::brx::transliterate(&lower)
                     } else {
                         rules::itrans(&lower, b)
                     }

@@ -202,6 +202,25 @@ then use the Hindi list and rules: `tusen kiyan ho` → तुसें कि�
 for this yet, so it is not measured. A pack of its own would need romanised–Devanagari Dogri word
 pairs; AI4Bharat's Aksharantar has a Dogri part (`doi.zip`) that the pack builder could use.
 
+## Bodo
+
+Romanised Bodo follows the older Latin orthography of Bodo (in use before Devanagari was adopted in
+1975, and in the Wikipedia article's quotation of the Universal Declaration of Human Rights): `w`
+for the vowel ɯ (ो), `wi` `wu` for ै ौ, `o` for the inherent vowel, `ng` for ŋ, `kh` `th` `ph` for
+ख थ फ, `j` and `z` for ज. It is not romanised Hindi, so `transliterate(text, "brx")` and the
+`hinglish` option use rules of their own (`crates/uccharan/src/brx.rs`), without a pack: a
+hand-written list of 32 words that are also English words or are spelt irregularly (`ang` आं,
+`arw` आरो, `boro` बर’, `raw` राव, `man` मान, `be` बे), then a letter converter for the other words
+that the English lexicon does not know. The converter writes the inherent vowel of the first
+syllable as a bare consonant and a later one with the apostrophe, as Bodo spelling does (`boro`
+बर’, `dokhona` दख’ना, `lathikho` लाथिख’), joins consonants without a vowel between them with a
+virama (`sni` स्नि, `kokrajhar` कक्राझार), and writes ŋ as ं at the end of a syllable (`subung`
+सुबुं) and ङ before a vowel (`bithanga` बिथाङा). With the `hinglish` option it rewrites a clause only
+when the clause has a listed word or one with the vowel `w` after a consonant (`jwnwm`, `arw`), so
+English text is left alone. `ang boro raw bungw` → आं बर’ राव बुङो. There is no romanised Bodo test
+set, so it is not measured. AI4Bharat's Aksharantar has a Bodo part (`brx.zip`) that the pack
+builder could use; whether its romanisations follow the Latin orthography above has not been checked.
+
 ## Accuracy, size and speed
 
 Measured on held-out word pairs and sentences; method, baselines and all numbers are in

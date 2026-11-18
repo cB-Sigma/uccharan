@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Expand the hand-written Bhojpuri (or Maithili, Magahi, Dogri) gold sources in
+"""Expand the hand-written Bhojpuri (or Maithili, Magahi, Dogri, Bodo) gold sources in
 gold/<lang>/{words,sentences}.src into gold/<lang>/gold.tsv with a fixed
 dev/held-out split (by a hash of the item, decided before any tuning).
 
@@ -28,8 +28,18 @@ SOURCES_DOI = {
     "C": "Unicode CLDR common/main/doi.xml (Unicode License v3); pronunciation hand-written",
     "I": "word attested in IndicCorp v2 Dogri text (CC0); pronunciation hand-written",
 }
-DATE = {"doi": "2026-11-18"}
+# Bodo: sources of words.src (see its header).
+SOURCES_BRX = {
+    "K": "Wiktionary Bodo (India) entry (CC BY-SA 4.0), read 2026-11-18; pronunciation hand-written",
+    "U": "example word of Unicode document L2/08-197 (Government of India, 2008); pronunciation hand-written",
+    "N": "Bodo numeral, Wikipedia \"Boro language (India)\" (CC BY-SA 4.0), spelt as in IndicCorp v2; pronunciation hand-written",
+    "C": "Unicode CLDR common/main/brx.xml (Unicode License v3); pronunciation hand-written",
+    "I": "word attested in IndicCorp v2 Bodo text (CC0); pronunciation hand-written",
+}
+SOURCES_BY_LANG = {"doi": SOURCES_DOI, "brx": SOURCES_BRX}
+DATE = {"doi": "2026-11-18", "brx": "2026-11-18"}
 SENTENCE_SOURCE = {
+    "brx": lambda k: "Wikipedia \"Boro language (India)\", UDHR article 1 (CC BY-SA 4.0); pronunciation from its Latin version" if k == 0 else "IndicCorp v2 bd (CC0), not in the brx_dev/brx_heldout/brx_flores sets; pronunciation hand-written",
     "doi": lambda k: "IndicCorp v2 doi (CC0), not in the doi_dev/doi_heldout sets; pronunciation hand-written",
     "mag": lambda k: "FLORES-200 mag_Deva (CC BY-SA 4.0); pronunciation hand-written" if 108 <= k < 132 else "written for this set (see header)",
 }
@@ -51,7 +61,7 @@ def main() -> None:
         if not line.strip():
             continue
         word, ipa, cat, src = line.split()
-        source = SOURCES_DOI[src] if lang == "doi" else SOURCES[src].format(lang=lang)
+        source = SOURCES_BY_LANG[lang][src] if lang in SOURCES_BY_LANG else SOURCES[src].format(lang=lang)
         rows.append((f"w-{word}", "word", word, ipa, cat, source, split("w" + word)))
     sentence_source = SENTENCE_SOURCE.get(lang, lambda k: "written for this set (see header)")
     n = -1

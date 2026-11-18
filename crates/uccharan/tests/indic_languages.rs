@@ -305,3 +305,52 @@ fn dogri() {
     r.hinglish = true;
     assert_eq!(p.phonemize("eh gall shail ae", &r), w("एह् गल्ल शैल ऐ"));
 }
+
+#[test]
+fn bodo() {
+    // Compatible mode is the Hindi reading (the reference has no Bodo
+    // voice); a word written with the apostrophe is read as one word.
+    let p = Phonemizer::new();
+    assert_eq!(
+        p.phonemize("बोलो", &Options::new(Lang::Brx)),
+        p.phonemize("बोलो", &Options::new(Lang::Hi))
+    );
+    assert_eq!(
+        p.phonemize("कर’ना", &Options::new(Lang::Brx)),
+        p.phonemize("करना", &Options::new(Lang::Hi))
+    );
+    // Improved mode (Unicode L2/08-197; Bhattacharya 1977): ो is ɯ, ै ौ
+    // are ɯi ɯu, the inherent vowel is ɔ and the apostrophe says it, ं is
+    // ŋ, य व after a vowel close a diphthong, ज is z, no voiced aspirates.
+    let mut o = Options::new(Lang::Brx);
+    o.mode = Mode::Improved;
+    let w = |s: &str| uccharan::profile::nfd(&p.phonemize(s, &o));
+    assert_eq!(w("बोलो"), "bˈɯlɯ");
+    assert_eq!(w("बॊलॊ"), "bˈɯlɯ");
+    assert_eq!(w("दै"), "dˈɯi");
+    assert_eq!(w("मोसौ"), "mˈɯsɯu");
+    assert_eq!(w("बर’"), "bˈɔrɔ");
+    assert_eq!(w("बर'"), w("बर’"));
+    assert_eq!(w("बरʼ"), w("बर’"));
+    assert_eq!(w("दख'ना"), "dˈɔkʰɔna");
+    assert_eq!(w("सुबुं"), "sˈubuŋ");
+    assert_eq!(w("थाखाय"), "tʰˈakʰai");
+    assert_eq!(w("दाव"), "dˈau");
+    assert_eq!(w("मोनथाय"), "mˈɯntʰˌai");
+    assert_eq!(w("जोनोम"), "zˈɯnɯm");
+    assert_eq!(w("संख्रि"), "sˈɔŋkʰri");
+    assert_eq!(w("भारत"), "bˈarɔt");
+    assert_eq!(w("गथ"), "ɡˈɔtʰɔ");
+    // Numbers, ordinals and clock times in Bodo words.
+    assert_eq!(w("25"), w("नैजिबा"));
+    assert_eq!(w("6"), w("द’"));
+    assert_eq!(w("21थि"), w("नैजिसेथि"));
+    assert_eq!(w("10:30"), w("जि रिंगा थामजि मिनिट"));
+    // Romanised Bodo (w = ɯ, o = the inherent vowel).
+    let mut r = o.clone();
+    r.hinglish = true;
+    assert_eq!(
+        p.phonemize("ang boro raw bungw", &r),
+        p.phonemize("आं बर’ राव बुङो", &o)
+    );
+}

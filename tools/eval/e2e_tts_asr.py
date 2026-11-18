@@ -91,8 +91,8 @@ def pick_sentences(lang: str, n: int) -> list[tuple[str, str]]:
 
 def asr_language(lang: str) -> str:
     """Whisper's code for a language tag (en-us -> en, pt-br -> pt; Bhojpuri,
-    Maithili, Magahi and Dogri are transcribed as Hindi)."""
-    return "hi" if lang in ("bho", "mai", "mag", "doi") else lang.split("-")[0]
+    Maithili, Magahi, Dogri and Bodo are transcribed as Hindi)."""
+    return "hi" if lang in ("bho", "mai", "mag", "doi", "brx") else lang.split("-")[0]
 
 
 def make_asr(spec: str, lang: str):
