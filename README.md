@@ -83,7 +83,7 @@ C: `libuccharan` + `uccharan.h` on each
 </table>
 
 <p align="center">
-  <img alt="The live demo in improved mode: English, Hindi, Tamil, Telugu and German sentences with money, dates, times and percentages turned into the words a voice should say, then the same English sentence as phonemes" src="docs/assets/demo/demo.gif" width="760">
+  <img alt="A tour of the live demo in improved mode: English, Hindi, Tamil, Marathi, French and German sentences with money, dates, times and phone numbers turned into the words a voice should say, each with a note on what to notice, then romanised Hindi written in Devanagari" src="docs/assets/demo/demo.gif" width="760">
 </p>
 
 ## Contents
@@ -275,18 +275,20 @@ compatible mode.
 
 ### What changes
 
-| | Compatible (espeak-ng's reading) | Improved |
-| --- | --- | --- |
-| English homographs | `I read it yesterday.` → `aɪ ɹˈiːd …` | `aɪ ɹˈɛd …`, from tense, time words and the words around it |
-| Names and brands | `Siobhan`, `iPhone` → `ʃˈaʊbɑːn`, `aɪ fˈoʊn` | `ʃəvˈɔːn`, `ˈaɪfoʊn`, from a hand-written list first |
-| Hindi schwa deletion | `लड़कपन` → `lˈʌr.əkˌəpən` | `lˈʌɽəkpən` |
-| Hindi nasals and long vowels | `हिंदी` → `hˈĩdi`, `पानी` → `pˈaːni`, `गाँव` → `ɡˈãnʋ` | `hˈɪndiː`, `pˈaːniː`, `ɡˈãʋ` |
-| Hindi flaps ड़ ढ़ | `r.` (an ASCII stand-in) | `ɽ` `ɽʰ` |
-| English words in Hindi text | British English phones a Hindi voice never saw (`ɒ`, `ɹ`, `w`) | mapped into the Hindi phone set |
-| Romanised Hindi (`main kal office jaunga`) | read as English | read as Hindi with `hinglish=True` (experimental) |
-| Bhojpuri, Maithili, Magahi, Dogri, Bodo, Sanskrit | read as Hindi (espeak-ng has no voice for them) | read as themselves, from each language's own rules |
-| Tamil, Kannada, Telugu, Malayalam numbers | `₹1,250` (Tamil) → *ஒன்று ஆயிரம் இரண்டு நூறு ஐம்பது*, the rupee dropped | *ஆயிரத்து இருநூற்று ஐம்பது ரூபாய்*, written number words |
-| The rupee sign in the Indian languages | dropped | said |
+What a listener hears in each mode:
+
+| | Text | Compatible says | Improved says |
+| --- | --- | --- | --- |
+| Words spelt alike, said differently | *I read it yesterday.* | "I **reed** it yesterday" | "I **red** it yesterday": past tense, because of *yesterday* |
+| Names | *Siobhan* | "**SHOW**-bahn", from the spelling | "shuh-**VAWN**", from a list of names |
+| Brands | *iPhone* | "eye **FONE**", like two words | "**EYE**-fone", one word |
+| Hindi silent vowels | लड़कपन | "lur-uh-**kuh**-pun", a vowel said that Hindi drops | "lur-uk-pun" |
+| Hindi nasals and long endings | हिंदी, पानी | "hĩ-di", "paa-ni": a nasal vowel and short endings | "hin-**dee**", "paa-**nee**", as written |
+| English words in Hindi text | मैं Monday को office जाऊँगा | British English sounds a Hindi voice has never heard | मंडे, ऑफ़िस: Hindi sounds |
+| Romanised Hindi (with `hinglish=True`) | *main kal office jaunga* | read as English: "mane kal office jawn-ga" | read as Hindi: मैं कल ऑफ़िस जाऊँगा |
+| Bhojpuri, Maithili, Magahi, Dogri, Bodo, Sanskrit | | read as Hindi (espeak-ng has no voice for them) | read by each language's own rules |
+| Tamil, Kannada, Telugu and Malayalam money | ₹1,250 (Tamil) | ஒன்று ஆயிரம் இரண்டு நூறு ஐம்பது, "one thousand two hundred fifty", and no "rupees" | ஆயிரத்து இருநூற்று ஐம்பது ரூபாய், "one thousand two hundred and fifty rupees", as Tamil says it |
+| The rupee sign in Marathi, Bengali, Urdu and the other languages with their own script rules | ₹500 | left out | said: रुपये, টাকা, روپے |
 
 Santali, Manipuri and Kashmiri read the same in both modes: espeak-ng cannot read them, so there is
 no reference to be compatible with. The full list per language is in
