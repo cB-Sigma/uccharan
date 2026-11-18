@@ -83,7 +83,7 @@ C: `libuccharan` + `uccharan.h` on each
 </table>
 
 <p align="center">
-  <img alt="The live demo: English, Hindi and Tamil read in compatible and then improved mode (a homograph, a name, rupee amounts and a clock time), the spoken form of a sentence with money and a date, and German phonemes in the espeak, Piper and sherpa-onnx profiles" src="docs/assets/demo/demo.gif" width="760">
+  <img alt="The live demo in improved mode: English, Hindi, Tamil, Telugu and German sentences with money, dates, times and percentages turned into the words a voice should say, then the same English sentence as phonemes" src="docs/assets/demo/demo.gif" width="760">
 </p>
 
 ## Contents
