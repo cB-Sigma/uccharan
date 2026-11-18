@@ -638,4 +638,4 @@ Integrations: [sherpa-onnx](docs/integrations/sherpa-onnx.md), [Piper](docs/inte
 [Kokoro](docs/integrations/kokoro.md), [bolo](docs/integrations/bolo.md) ·
 [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md) · [Security](SECURITY.md)
 
-uccharan is a sibling of [bolo](https://github.com/cB-Sigma/bolo). Made by Abhinav Gautam.
+uccharan is a sibling of [bolo](https://github.com/cB-Sigma/bolo-speech). Made by Abhinav Gautam.

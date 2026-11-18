@@ -1,6 +1,6 @@
 # uccharan brand assets
 
-uccharan is a sibling of [bolo](https://github.com/cB-Sigma/bolo) and shares its identity: a blue
+uccharan is a sibling of [bolo](https://github.com/cB-Sigma/bolo-speech) and shares its identity: a blue
 rounded square with flat white shapes, the same voice bars, the same two typefaces and colours.
 
 ## The mark
