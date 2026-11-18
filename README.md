@@ -9,7 +9,7 @@
 <h3 align="center">Phonemiser, text normaliser, transliterator and pronunciation engine.</h3>
 
 <p align="center">
-  The text side of text-to-speech and speech recognition in one library: 43 languages,
+  The text side of text-to-speech and speech recognition in one library: 44 languages,
   in Rust, Python, JavaScript and C. Apache-2.0.
 </p>
 
@@ -29,7 +29,7 @@
 and behind a speech recogniser:
 
 - as a **phonemiser** it turns text into the phonemes that Piper, Kokoro, Kitten TTS, Matcha-TTS
-  and sherpa-onnx voices were trained on, in 43 languages, with output measured against
+  and sherpa-onnx voices were trained on, in 44 languages, with output measured against
   espeak-ng's;
 - as a **text normaliser** it gives voices that read plain text the spoken form of numbers,
   money, dates, times and URLs, with every change aligned to the input;
@@ -99,7 +99,7 @@ brew install cb-sigma/tap/uccharan
 
 **Language packs**: English and Hindi are built in, and so is every language that needs no word
 table, among them the other Indian languages, Bhojpuri, Maithili and Magahi (read with Hindi's
-built-in data), Dogri, Bodo, Santali and Manipuri. Only the word tables of German, Dutch, French,
+built-in data), Dogri, Bodo, Santali, Manipuri and Kashmiri. Only the word tables of German, Dutch, French,
 Italian, Portuguese, Polish, Turkish, Czech, Swedish, Catalan, Romanian, Hungarian, Finnish,
 Norwegian, Danish, Urdu and Sindhi are small packs attached to each GitHub release. The wheel and
 the npm package download a language's pack the first time it is used, check its SHA-256 sum and
@@ -209,7 +209,7 @@ uccharan_free(p);
 
 | | What it does | Guide |
 | --- | --- | --- |
-| [Phonemiser](#phonemiser-and-languages) | text to phonemes in 43 languages, in the shape each voice family expects | [profiles](docs/profiles.md), [languages](docs/languages.md) |
+| [Phonemiser](#phonemiser-and-languages) | text to phonemes in 44 languages, in the shape each voice family expects | [profiles](docs/profiles.md), [languages](docs/languages.md) |
 | [Normalise-only mode](#normalise-only-mode) | the spoken form of a text, with typed spans, for voices that read text | [normalize](docs/normalize.md) |
 | [Pronunciation word lists](#pronunciation-word-lists) | your pronunciations as TSV, PLS or JSON, applied to phoneme and text voices alike | [word lists](docs/wordlists.md) |
 | [Sound-alike matching](#sound-alike-matching) | corrects a recogniser's transcript against your vocabulary by sound | [soundalike](docs/soundalike.md) |
@@ -273,6 +273,7 @@ second) and are the lower of two runs. The measurements vary by about ±10 % bet
 | Bodo | `brx` | `hi` ‡ | IndicCorp v2, 2,000 sentences | 0.37 % | 0.32 % | 2.3× § | none |
 | Santali (Ol Chiki) | `sat` | none ¶ | IndicCorp v2, 2,000 sentences | — ¶ | — | — ¶ | none |
 | Manipuri (Meetei Mayek, Bengali script) | `mni` | none ◊ | IndicCorp v2, 2,000 sentences | — ◊ | — | — ◊ | none |
+| Kashmiri (Perso-Arabic, Devanagari) | `ks` | none ※ | IndicCorp v2, 1,678 sentences | — ※ | — | — ※ | none |
 | Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.54 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
 | German | `de` | `de` | FLORES-200, 1,012 sentences | 0.95 % | 0.77 % | 5.8× † | Piper `de_DE` (11) |
 | Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.69 % | 1.32 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
@@ -324,6 +325,16 @@ the § laptop, 500 held-out Meetei Mayek sentences, one thread: 14.2 µs per sen
 million words per second; in the same run Bodo gave 2.4× espeak-ng's speed and Hindi 1.8×. Every
 word of the held-out sets (IndicCorp v2 and Manipuri Wikipedia in Meetei Mayek, IndicGenBench in
 Bengali script) is read ([notes](docs/languages.md#notes-on-the-languages)).
+
+※ Kashmiri is read in both its scripts: the Perso-Arabic of its official orthography, which writes
+nearly every vowel, by its own language file, and Devanagari through the Perso-Arabic spelling it
+corresponds to. espeak-ng has no Kashmiri voice, so both modes give uccharan's reading, checked on a
+gold set of Wiktionary pronunciations and hand-written sentences (below). espeak-ng's Urdu and Hindi
+voices read Kashmiri as Urdu and Hindi: on the held-out gold set they get 27.9 % of 455 Perso-Arabic
+and 30.5 % of 190 Devanagari words, against 95.8 % and 92.6 % for uccharan. On the § laptop, 500
+held-out sentences, one thread: 15.0 µs per sentence (p50), 0.68 million words per second; in the
+same run Bodo gave 2.4× espeak-ng's speed and Hindi 1.8×. Every word of the held-out sets
+(IndicCorp v2, Kashmiri Wikipedia) is read ([notes](docs/languages.md#notes-on-the-languages)).
 
 How to read it:
 
@@ -527,14 +538,16 @@ before the work on them began, and the figures are for held-out items:
 | Santali words (100) ¶ | — | **100.0 %** | **100.0 %** |
 | Manipuri words, Meetei Mayek (193) ◊ | — | **92.2 %** | **92.2 %** |
 | Manipuri words, Bengali script (83) ◊ | 28.9 % (`bn` voice) | **95.2 %** | **95.2 %** |
+| Kashmiri words, Perso-Arabic (455) ※ | 27.9 % (`ur` voice) | **95.8 %** | **95.8 %** |
+| Kashmiri words, Devanagari (190) ※ | 30.5 % (`hi` voice) | **92.6 %** | **92.6 %** |
 
 What these do and do not show: for names that are in CMUdict the reference *is* CMUdict, which
 uccharan's lexicon comes from, so the fair rows are Indian names and names not in CMUdict. The
 North African, Egyptian and Chichewa / Shona / Tsonga / Tigrinya sets were scored twice (the table
 gives the second scoring; the first is in the evaluation). The Bhojpuri, Maithili, Magahi, Dogri, Bodo and Santali sets mostly encode grammars' descriptions as
 written down for this project, so they show that improved mode implements them, not that a
-native speaker would accept every form (the Manipuri words come with Wiktionary's pronunciations
-instead, and miss where Wiktionary's vowel is not the one the letters write)
+native speaker would accept every form (the Manipuri and Kashmiri words come with Wiktionary's
+pronunciations instead, and miss where Wiktionary's vowel is not the one the letters write)
 ([items to check](docs/bhojpuri-maithili-review.md)). On the 348 development items improved mode
 scores 99.7 %, which only shows the rules do what they were written to do. Full tables:
 [docs/evaluation.md](docs/evaluation.md#4-correctness-improved-mode-against-hand-curated-gold-sets);

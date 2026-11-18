@@ -138,7 +138,7 @@ _BLOCKS = {
     "kn": (0x0C80, 0x0CFF),
     "ml": (0x0D00, 0x0D7F),
     "si": (0x0D80, 0x0DFF),
-    **dict.fromkeys(["ur", "sd"], (0x0600, 0x06FF)),
+    **dict.fromkeys(["ur", "sd", "ks"], (0x0600, 0x06FF)),
     "sat": (0x1C50, 0x1C7F),
     "mni": (0xABC0, 0xABFF),
 }
@@ -168,6 +168,7 @@ _TWENTY_FIVE = {
     "brx": "पच्चीस",
     "sat": "ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ",
     "mni": "ꯀꯨꯟꯃꯉꯥ",
+    "ks": "پٕنٛژٕہ",
 }
 
 

@@ -54,3 +54,16 @@ def test_manipuri():
     assert uccharan.normalize("25", "mni").text == "ꯀꯨꯟꯃꯉꯥ"
     assert uccharan.normalize("অমা 25", "mni").text == "অমা কুন্মঙা"
     assert uccharan.transliterate("eina nangbu nungsi", "mni").text == "ꯑꯩꯅꯥ ꯅꯪꯕꯨ ꯅꯨꯡꯁꯤ"
+
+
+def test_kashmiri():
+    # Perso-Arabic (the official orthography): espeak-ng has no Kashmiri
+    # voice, so both modes give the Kashmiri reading; Devanagari Kashmiri is
+    # read as the Perso-Arabic word it spells.
+    assert "ks" in uccharan.LANGUAGES
+    assert uccharan.phonemize("کٲشُر زَبان", lang="ks") == uccharan.phonemize("کٲشُر زَبان", lang="kashmiri", improved=True)
+    assert uccharan.phonemize("کٲشُر", lang="ks") == "kˈəːʃur"
+    assert uccharan.phonemize("कॉशुर", lang="ks") == "kˈəːʃur"
+    assert uccharan.normalize("25", "ks").text == "پٕنٛژٕہ"
+    assert uccharan.normalize("कॉशुर 25", "ks").text == "कॉशुर पॖंच़ॖह"
+    assert uccharan.transliterate("koshur chhu akh zabaan", "ks").text == "کٲشُر چھُ اَکھ زَبان"

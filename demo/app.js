@@ -48,6 +48,7 @@ const GROUPS = [
     ["brx", "Bodo · बर’", ["आं बर’ राव बुङो। नों माबोरै दं?"], ["ang boro raw bungw"]],
     ["sat", "Santali · ᱥᱟᱱᱛᱟᱲᱤ", ["ᱡᱚᱦᱟᱨ! ᱥᱟᱱᱛᱟᱲᱤ ᱯᱟᱹᱨᱥᱤ ᱫᱚ ᱚᱞ ᱪᱤᱠᱤ ᱛᱮ ᱚᱞᱚᱜᱼᱟ ᱾"], ["johar inj disom do santali kana"]],
     ["mni", "Manipuri · ꯃꯤꯇꯩꯂꯣꯟ", ["ꯃꯤꯇꯩꯂꯣꯟ ꯑꯁꯤ ꯃꯅꯤꯄꯨꯔꯒꯤ ꯂꯣꯟꯅꯤ꯫", "মৈতৈলোন অসি মণিপুরগী লোননি।"], ["eina nangbu nungsi"]],
+    ["ks", "Kashmiri · کٲشُر", ["کٲشُر چھُ کٔشیٖر ہٕنٛز زَبان۔", "कॉशुर छु कऺशीर हॖंज़ ज़बान।"], ["koshur chhu akh zabaan"]],
   ]],
   ["European", [
     ["es", "Spanish · Español", ["Hola, ¿cómo estás? Tengo 21 años."]],

@@ -11,7 +11,7 @@ The reference side is optional: it needs an espeak-ng shared library that you
 installed yourself (for example `pip install espeakng-loader`). Without it
 only the uccharan columns are filled in. A language without an espeak-ng
 voice to compare with (Santali, Manipuri: espeak-ng reads Ol Chiki and Meetei
-Mayek as code points) is
+Mayek as code points; Kashmiri: espeak-ng has no Kashmiri voice) is
 measured for uccharan alone, in the same run as the others.
 
 What is measured, per language:

@@ -872,6 +872,7 @@ fn indic_numbers_in_their_own_script() {
         (Lang::Brx, "पच्चीस"),
         (Lang::Sat, "ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ"),
         (Lang::Mni, "ꯀꯨꯟꯃꯉꯥ"),
+        (Lang::Ks, "پٕنٛژٕہ"),
     ];
     for (l, want) in twenty_five {
         assert_eq!(norm("25", *l).text, *want, "{l:?}");
@@ -988,6 +989,24 @@ fn indic_numbers_in_their_own_script() {
         check(t, &n);
         assert_eq!(n.text, want, "mni {t}");
     }
+    // Kashmiri: number words as Wiktionary spells them (پٕنٛژٕہ 25, ٲٹھ شَتھ
+    // 800, اَکھ ساس 1000), the rupee and dates (CLDR month names); in
+    // Devanagari for Devanagari-script text.
+    for (t, want) in [
+        ("25 ۳.۵", "پٕنٛژٕہ ترٛےٚ پۄیِنٹ پانٛژھ"),
+        ("2021 ۱۵۰۰", "زٕ ساس اَکہٕ وُہ اَکھ ساس پانٛژھ ہَتھ"),
+        ("1,50,000 201", "اَکھ لَچھ پَنٛژاہ ساس زٕ ہَتھ اَکھ"),
+        ("₹25 6", "پٕنٛژٕہ رۄپَے شےٚ"),
+        ("15/08/2024", "پَنٛداہ اَگَست زٕ ساس ژۆوُہ"),
+        ("25%", "پٕنٛژٕہ فیصَد"),
+        ("کٲشُر 25 زَبان", "کٲشُر پٕنٛژٕہ زَبان"),
+        ("कॉशुर 25", "कॉशुर पॖंच़ॖह"),
+        ("२५ ३०", "पॖंच़ॖह त्रॖह"),
+    ] {
+        let n = normalize(p(), t, Lang::Ks, &improved);
+        check(t, &n);
+        assert_eq!(n.text, want, "ks {t}");
+    }
     let mut nums: Vec<String> = (0..=110).map(|n| n.to_string()).collect();
     for n in [
         150, 200, 222, 345, 999, 1000, 1234, 2024, 12345, 99999, 123456,
@@ -1028,6 +1047,7 @@ fn indic_numbers_in_their_own_script() {
         (Lang::Brx, Some(11.5), 1.0),
         (Lang::Sat, Some(1.0), 1.0),
         (Lang::Mni, Some(1.0), 1.0),
+        (Lang::Ks, Some(1.0), 1.0),
     ];
     for &(l, compat_bound, improved_bound) in bounds {
         for (mode, bound) in [

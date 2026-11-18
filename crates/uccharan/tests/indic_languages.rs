@@ -463,3 +463,80 @@ fn manipuri() {
         p.phonemize("ꯑꯩꯅꯥ ꯅꯪꯕꯨ ꯅꯨꯡꯁꯤ", &o)
     );
 }
+
+#[test]
+fn kashmiri() {
+    // Perso-Arabic, the official orthography (the vowel tables of the
+    // Wikipedia article "Kashmiri language"): a mark or letter for every
+    // vowel, ؠ for palatalisation, ٛ for a cluster, a word-final ہ that
+    // carries the mark before it; a word written without marks is read with
+    // a and Urdu-type deletion. Devanagari is written in Perso-Arabic and
+    // read the same way. espeak-ng has no Kashmiri voice, so both modes give
+    // this reading.
+    let p = Phonemizer::new();
+    let o = Options::new(Lang::Ks);
+    let mut i = o.clone();
+    i.mode = Mode::Improved;
+    let w = |s: &str| uccharan::profile::nfd(&p.phonemize(s, &o));
+    assert_eq!(
+        w("کٲشُر زَبان"),
+        uccharan::profile::nfd(&p.phonemize("کٲشُر زَبان", &i))
+    );
+    for (t, want) in [
+        ("کٲشُر", "kˈəːʃur"),
+        ("کٔشیٖر", "kˈəʃiːr"),
+        ("کٔدٕل", "kˈədɨl"),
+        ("گۄلاب", "ɡˈɔlaːb"),
+        ("سۄاد", "sˈɔːd"),
+        ("بیٚنہِ", "bˈeni"),
+        ("پوٗت", "pˈuːt"),
+        ("مور", "mˈoːr"),
+        ("دۆب", "dˈob"),
+        ("ریش", "rˈeːʃ"),
+        ("وَردی", "ʋˈardiː"),
+        ("خٟمہٕ", "xˈɨːmɨ"),
+        ("لؠوان", "lʲˈaʋaːn"),
+        ("بیٛور", "bʲˈoːr"),
+        ("درٛۆگ", "drˈoɡ"),
+        ("سُہ", "sˈu"),
+        ("تہٕ", "tˈɨ"),
+        ("داہ", "dˈaːh"),
+        ("بَہہ", "bˈah"),
+        ("اَنٛدَر", "ˈandar"),
+        ("پانٛژھ", "pˈãːtsʰ"),
+        ("زَنٛگ", "zˈãɡ"),
+        ("عام", "ˈaːm"),
+        ("شہر", "ʃˈahar"),
+        ("چھ", "tʃʰˈi"),
+    ] {
+        assert_eq!(w(t), uccharan::profile::nfd(want), "{t}");
+    }
+    // Devanagari (2002 and 2009 proposals) reads as the Perso-Arabic word.
+    for (d, a) in [
+        ("कॉशुर", "کٲشُر"),
+        ("सबॖज़", "سَبٕز"),
+        ("बॖ", "بہٕ"),
+        ("आशन्य", "آشَنؠ"),
+        ("मासटर", "ماسٹَر"),
+        ("श्वंगनावुन", "شۄنٛگناوُن"),
+        ("ॳंज़", "أنٛز"),
+    ] {
+        assert_eq!(w(d), w(a), "{d}");
+    }
+    // Numbers from ASCII, Extended Arabic-Indic or Devanagari digits.
+    assert_eq!(w("۲۵"), w("پٕنٛژٕہ"));
+    assert_eq!(w("25"), w("۲۵"));
+    assert_eq!(w("२५"), w("۲۵"));
+    assert_eq!(w("800"), w("ٲٹھ شَتھ"));
+    assert_eq!(w("1001"), w("اَکھ ساس اَکھ"));
+    assert_eq!(w("₹۵۰۰"), w("پانٛژھ ہَتھ رۄپَے"));
+    // ۔ ends a sentence.
+    assert_eq!(p.analyze("یہِ چھُ۔ سُہ اوس", &o).len(), 2);
+    // Romanised Kashmiri, written in Perso-Arabic script.
+    let mut r = o.clone();
+    r.hinglish = true;
+    assert_eq!(
+        p.phonemize("koshur chhu akh zabaan", &r),
+        p.phonemize("کٲشُر چھُ اَکھ زَبان", &o)
+    );
+}

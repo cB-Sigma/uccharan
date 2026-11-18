@@ -1,0 +1,318 @@
+# Kashmiri (Koshur) in the Perso-Arabic script, the official Kashmiri
+# alphabet. Text in Devanagari is first written in Perso-Arabic by
+# src/ks.rs (`devanagari_to_arabic`) and read by this file too. espeak-ng
+# 1.52 has no Kashmiri voice, so there is no reference reading to be
+# compatible with: both modes give this file's reading.
+#
+# This file does not read the written word directly: src/ks.rs
+# (`explicit`) first spells every vowel out, following the orthography as
+# described in
+#   the Wikipedia article "Kashmiri language" (section "Writing system":
+#     the letter and vowel tables of the Perso-Arabic and Devanagari
+#     orthographies, after the Kashmiri dictionary of the Jammu and Kashmir
+#     Academy of Art, Culture and Languages), CC BY-SA 4.0;
+#   Unicode's encoding of the Kashmiri letters and marks (U+0620 ؠ, U+0672
+#     ٲ, U+0673 ٳ, U+065A-U+065F, U+06C4 ۄ, U+06C6 ۆ, U+06CE ێ; Devanagari
+#     U+093A U+093B U+094F U+0956 U+0957 U+0973-U+0977);
+#   Wiktionary, Kashmiri entries with a pronunciation (CC BY-SA 4.0), for
+#     what the tables leave open (a word-final ہ, ٛ, ن before a consonant).
+# so that each consonant letter is followed by its vowel sign (ȧ ā ə ǝ ì ī
+# ɨ ȉ ù ū è ē ò ō ɔ ǫ) or by the virama (ْ), and a vowel without a
+# consonant is a vowel letter (Ȧ Ā Ə Ǝ Ì Ī Ɨ Ȉ Ù Ū È Ē Ò Ō Ɔ Ǫ); ʲ is
+# palatalisation (ؠ), ں the anusvara and ñ a nasal vowel. A word written
+# without any vowel mark (names, loanwords: کربلا) keeps its bare
+# consonants: they carry a, and the Hindi-type deletion drops it at the end
+# of the word and in V C _ C V, as in Urdu.
+# The phonemes are those of the Wikipedia article (after Koul and Wali
+# 2006): vowels a aː ə əː i iː ɨ ɨː u uː e eː o oː ɔ ɔː, nasal vowels;
+# p t ʈ ts tʃ k, pʰ tʰ ʈʰ tsʰ tʃʰ kʰ, b d ɖ dʒ ɡ, s z ʃ h, m n, ʋ l j r,
+# palatalised consonants (Cʲ); x q ɣ f in loanwords as written.
+# ن with ٛ (or ں): after a long vowel a nasal vowel (پانٛژٕ pãːtsɨ, سونٛتھ
+# sõːtʰ); after a short vowel n before t d ts tʃ dʒ s z ʃ (اَنٛدَر andar,
+# مَنٛز manz) and a nasal vowel before the others (زَنٛگ zãɡ), the commoner
+# reading of Wiktionary's entries, which have both for some words; src/ks.rs
+# writes ñ or ں for it. In a word without marks, ں after the inherent vowel
+# is a nasal consonant of the place of the next one (anusvara = split).
+# Stress: on the leftmost non-final syllable with a long vowel, else the
+# leftmost non-final closed syllable, else the first (Morén 2000, "The
+# puzzle of Kashmiri stress", Phonology 17: 365-396).
+
+[meta]
+tag = ks
+block = 0600
+reader = ks
+stress = left-heavy
+final-secondary = no
+deletion = medial
+inherent = a a
+anusvara = split
+anusvara-consonant-after-sign = a ə i ɨ u e o ɔ
+geminate = b p t ʈ d ɖ k ɡ ts tʃ dʒ s ʃ z m n l r
+
+[letters]
+ب b consonant
+پ p consonant
+ت t consonant
+ٹ ʈ consonant
+ث s consonant
+ج dʒ consonant
+چ tʃ consonant
+ح h consonant
+خ x consonant
+د d consonant
+ڈ ɖ consonant
+ذ z consonant
+ر r consonant
+ڑ ɽ consonant
+ز z consonant
+ژ ts consonant
+س s consonant
+ش ʃ consonant
+ص s consonant
+ض z consonant
+ط t consonant
+ظ z consonant
+غ ɣ consonant
+ف f consonant
+ق q consonant
+ک k consonant
+گ ɡ consonant
+ل l consonant
+م m consonant
+ن n consonant
+و ʋ consonant
+ہ h consonant
+ی j consonant
+ڤ v consonant
+ڨ q consonant
+# Aspirated consonants (written with ھ; [pre]).
+Ḃ bʰ consonant
+Ṕ pʰ consonant
+Ṫ tʰ consonant
+Ť ʈʰ consonant
+Ĵ dʒʰ consonant
+Ĉ tʃʰ consonant
+Ẑ tsʰ consonant
+Ḋ dʰ consonant
+Ď ɖʰ consonant
+Ḱ kʰ consonant
+Ġ ɡʰ consonant
+Ŕ rʰ consonant
+Ř ɽʰ consonant
+Ĺ lʰ consonant
+Ṁ mʰ consonant
+Ń nʰ consonant
+# Vowel signs and vowel letters of the explicit form.
+ȧ a sign
+ā aː sign
+ə ə sign
+ǝ əː sign
+ì i sign
+ī iː sign
+ɨ ɨ sign
+ȉ ɨː sign
+ù u sign
+ū uː sign
+è e sign
+ē eː sign
+ò o sign
+ō oː sign
+ɔ ɔ sign
+ǫ ɔː sign
+Ȧ a vowel
+Ā aː vowel
+Ə ə vowel
+Ǝ əː vowel
+Ì i vowel
+Ī iː vowel
+Ɨ ɨ vowel
+Ȉ ɨː vowel
+Ù u vowel
+Ū uː vowel
+È e vowel
+Ē eː vowel
+Ò o vowel
+Ō oː vowel
+Ɔ ɔ vowel
+Ǫ ɔː vowel
+ْ virama
+ʲ ʲ dead
+ں anusvara
+ñ candrabindu
+
+[classes]
+S = ˈ ˌ
+
+[pre]
+بھ -> Ḃ
+پھ -> Ṕ
+تھ -> Ṫ
+طھ -> Ṫ
+ٹھ -> Ť
+جھ -> Ĵ
+چھ -> Ĉ
+ژھ -> Ẑ
+دھ -> Ḋ
+ڈھ -> Ď
+کھ -> Ḱ
+گھ -> Ġ
+رھ -> Ŕ
+ڑھ -> Ř
+لھ -> Ĺ
+مھ -> Ṁ
+نھ -> Ń
+
+[post]
+
+[words]
+
+[unstressed]
+
+[numbers]
+# Number words 0-99, the scale words and the forms of 800 and 900 from
+# Wiktionary's Kashmiri cardinal numbers (CC BY-SA 4.0; where it lists two
+# spellings, the first is used, and for 10 the commoner daːh): the hundreds
+# are a count and ہَتھ (zɨ hatʰ), 800 and 900 take شَتھ; a thousand is
+# اَکھ ساس, a hundred plain ہَتھ.
+0 صِفَر
+1 اَکھ
+2 زٕ
+3 ترٛےٚ
+4 ژور
+5 پانٛژھ
+6 شےٚ
+7 سَتھ
+8 ٲٹھ
+9 نَو
+10 داہ
+11 کاہ
+12 باہ
+13 ترُٛواہ
+14 ژۄداہ
+15 پَنٛداہ
+16 شُراہ
+17 سَداہ
+18 اَرٕداہ
+19 کُنہٕ وُہ
+20 وُہ
+21 اَکہٕ وُہ
+22 زٕتووُہ
+23 ترٛۆوُہ
+24 ژۆوُہ
+25 پٕنٛژٕہ
+26 شَتہٕ وُہ
+27 سَتووُہ
+28 اَٹھووُہ
+29 کُنہٕ ترٕٛہ
+30 ترٕٛہ
+31 اَکہٕ ترٕٛہ
+32 دۄیہِ ترٕٛہ
+33 تیٚیہِ ترٕٛہ
+34 ژۄیہِ ترٕٛہ
+35 پانٛژٕ ترٕٛہ
+36 شیٚیہِ ترٕٛہ
+37 سَتہٕ ترٕٛہ
+38 اَرٕترٕٛہ
+39 کُنہٕ تٲجی
+40 ژَتجی
+41 اَکہٕ تٲجی
+42 دۄیہِ تٲجی
+43 تیٚیہِ تٲجی
+44 ژۄیہِ تٲجی
+45 پانٛژٕ تٲجی
+46 شیٚیہِ تٲجی
+47 سَتہٕ تٲجی
+48 اَرٕتٲجی
+49 کُنہٕ وَنٛزاہ
+50 پَنٛژاہ
+51 اَکہٕ وَنٛزاہ
+52 دُوَنٛزاہ
+53 ترُٛوَنٛزاہ
+54 ژُوَنٛزاہ
+55 پانٛژٕ وَنٛزاہ
+56 شُوَنٛزاہ
+57 سَتہٕ وَنٛزاہ
+58 اَرٕوَنٛزاہ
+59 کُنہٕ ہٲٹھ
+60 شیٹھ
+61 اَکہٕ ہٲٹھ
+62 دُ ہٲٹھ
+63 ترُٛہٲٹھ
+64 ژُہٲٹھ
+65 پانٛژٕ ہٲٹھ
+66 شُہٲٹھ
+67 سَتہٕ ہٲٹھ
+68 اَرٕہٲٹھ
+69 کُنہٕ سَتَتھ
+70 سَتَتھ
+71 اَکہٕ سَتَتھ
+72 دُسَتَتھ
+73 ترُٛسَتَتھ
+74 ژُسَتَتھ
+75 پانٛژٕ سَتَتھ
+76 شُسَتَتھ
+77 سَتہٕ سَتَتھ
+78 اَرٕسَتَتھ
+79 کُنہٕ شیٖتھ
+80 شیٖتھ
+81 اَکہٕ شیٖتھ
+82 دۄیہِ شیٖتھ
+83 ترٛیٚیہِ شیٖتھ
+84 ژۄیہِ شیٖتھ
+85 پانٛژٕ شیٖتھ
+86 شیٚیہِ شیٖتھ
+87 سَتہٕ شیٖتھ
+88 اَرٕشیٖتھ
+89 کُنہٕ نَمَتھ
+90 نَمَتھ
+91 اَکہٕ نَمَتھ
+92 دُنَمَتھ
+93 ترُٛنَمَتھ
+94 ژُنَمَتھ
+95 پانٛژٕ نَمَتھ
+96 شُنَمَتھ
+97 سَتہٕ نَمَتھ
+98 اَرٕنَمَتھ
+99 نَمہٕ نَمَتھ
+800 ٲٹھ شَتھ
+800+ ٲٹھ شَتھ
+900 نَو شَتھ
+900+ نَو شَتھ
+1000 اَکھ ساس
+1000+ اَکھ ساس
+100000 اَکھ لَچھ
+100000+ اَکھ لَچھ
+10000000 اَکھ کَرور
+10000000+ اَکھ کَرور
+scale100 ہَتھ
+scale1000 ساس
+scale100000 لَچھ
+scale10000000 کَرور
+one-before-scale no
+grouping indian
+# The rupee: the word of Unicode CLDR common/main/ks.xml (Unicode License
+# v3; ہِندُستٲنؠ رۄپَے), said after the amount; per cent as Kashmiri
+# Wikipedia text writes it (IndicCorp v2); the decimal point is the English
+# word, as in Bodo, Santali and Manipuri (no Kashmiri word for it is in
+# these sources).
+currency ₹ رۄپَے
+percent فیصَد
+point پۄیِنٹ
+
+[dates]
+# Dates written with digits (improved and normalise-only mode). Month names:
+# Unicode CLDR common/main/ks.xml (format, wide; Unicode License v3), with
+# the vowel marks it leaves out added (CLDR: جنؤری فرؤری اپریل مئی اگست
+# ستمبر اکتوٗبر نومبر), as Kashmiri Wikipedia writes them (نَوَمبَر).
+month1 جَنؤری
+month2 فَرؤری
+month3 مارٕچ
+month4 اَپریٖل
+month5 مَے
+month6 جوٗن
+month7 جُلَے
+month8 اَگَست
+month9 سَتَمبَر
+month10 اَکتوٗبَر
+month11 نَوَمبَر
+month12 دَسَمبَر

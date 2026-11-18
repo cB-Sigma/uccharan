@@ -1,6 +1,6 @@
 # Languages
 
-uccharan phonemises 43 language tags. English (US and British) and Hindi have hand-built front
+uccharan phonemises 44 language tags. English (US and British) and Hindi have hand-built front
 ends with their own lexicons; the others run on two shared engines, one for Brahmic and
 Perso-Arabic scripts and one for Latin-script languages, each driven by a short language file of
 letters, rewrite rules, exceptions and number words (`crates/uccharan/lang/*.lang`; see
@@ -51,6 +51,7 @@ Runs on that machine differ by about ±10 %.
 | Bodo | `brx` | `hi` ‡ | IndicCorp v2, 2,000 sentences | 0.37 % | 0.32 % | 2.3× § | none |
 | Santali (Ol Chiki) | `sat` | none ¶ | IndicCorp v2, 2,000 sentences | — ¶ | — | — ¶ | none |
 | Manipuri (Meetei Mayek, Bengali script) | `mni` | none ◊ | IndicCorp v2, 2,000 sentences | — ◊ | — | — ◊ | none |
+| Kashmiri (Perso-Arabic, Devanagari) | `ks` | none ※ | IndicCorp v2, 1,678 sentences | — ※ | — | — ※ | none |
 | Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.54 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
 | German | `de` | `de` | FLORES-200, 1,012 sentences | 0.95 % | 0.77 % | 5.8× † | Piper `de_DE` (11) |
 | Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.69 % | 1.32 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
@@ -99,6 +100,14 @@ for the Bengali voice). Speed, same laptop and method as §: 14.2 µs per senten
 million words per second, one thread
 ([`compare_mni_windows.json`](../tools/bench/results/compare_mni_windows.json)); in that run Bodo
 took 20.3 µs (2.4× espeak-ng) and Hindi 11.1 µs (1.8×).
+
+※ Kashmiri: espeak-ng has no Kashmiri voice, and its Urdu and Hindi voices read Kashmiri as Urdu and
+Hindi, so both modes give uccharan's reading, checked on a gold set (held-out half: 95.8 % of 455
+Perso-Arabic words, 92.6 % of 190 Devanagari words, 100 % of 37 numerals; the Urdu voice gets 27.9 %
+of the Perso-Arabic words). Speed, same laptop and method as §: 15.0 µs per sentence at the median,
+0.68 million words per second, one thread
+([`compare_ks_windows.json`](../tools/bench/results/compare_ks_windows.json)); in that run Bodo
+took 20.1 µs (2.4× espeak-ng) and Hindi 10.9 µs (1.8×).
 
 ## Notes on the languages
 
@@ -489,6 +498,124 @@ held-out IndicCorp v2 sentences, Meetei Mayek, one thread, best of 5 rounds,
 [`compare_mni_windows.json`](../tools/bench/results/compare_mni_windows.json)) uccharan takes 14.2 µs
 per sentence at the median (p99 44.9 µs), 0.55 million words per second; in the same run Bodo took
 20.3 µs (2.4× espeak-ng's speed) and Hindi 11.1 µs (1.8×).
+
+**Kashmiri** (`ks`, also `kashmiri`, `koshur`, `kas`, `ks-arab`, `ks-deva`) is written mainly in
+the **Perso-Arabic script**, in the official orthography of the Jammu and Kashmir Academy of Art,
+Culture and Languages, which, unlike Urdu's, writes nearly every vowel, and also in **Devanagari**
+(the Kashmiri Devanagari proposals of 2002 and 2009, with signs Unicode added for it). uccharan reads
+both. espeak-ng 1.52.0 has no Kashmiri voice, and its Urdu and Hindi voices read Kashmiri as Urdu
+and Hindi (the Urdu voice names the Kashmiri vowel marks as letters), so there is no reference
+reading to be compatible with: **both modes give the same reading** (`Lang::no_reference`) and the
+language-switch flag is `(ks)`.
+
+The Perso-Arabic orthography (the vowel and consonant tables of the Wikipedia article "Kashmiri
+language", after the Kashmiri dictionary of the J&K Academy): َ ِ ُ for a i u, ٔ (hamza above) for
+ə, ٕ (hamza below) for ɨ, ٟ for ɨː; ا for aː (آ at the start), ٲ for əː; وٗ for uː, و for oː, ۆ (or
+وٚ) for o, ۄ for ɔ, ۄا for ɔː; یٖ for iː inside a word and ی at its end, ی for eː inside a word and ے
+at its end, یٚ ےٚ ێ for e; a vowel at the start of a word sits on alif (اَ اِ اُ أ إ ٳ آ ٲ, اوٗ او اۆ
+اۄ, ایٖ ای ایٚ اے); ؠ marks a palatalised consonant, ʲ at the end of a word (ہوٗنؠ huːnʲ) and ʲa inside
+it (لؠوان lʲaʋaːn), as does اؠ at the start (ʲa); ٛ on ر ی و marks the second consonant of a cluster
+(درٛۆگ droɡ; یٛ after a consonant is ʲ: بیٛور bʲoːr), on ن the nasal of the vowel before it; ں is a
+nasal; ھ after a consonant aspirates it (pʰ tʰ ʈʰ tʃʰ tsʰ kʰ); ژ is ts; ث ص are s, ذ ز ض ظ z, ط t,
+ح h; ع is silent (a vowel on it is said, after a consonant it is aː). The language file
+(`lang/ks.lang`, `block = 0600`) does not read the letters directly: `ks::explicit` first writes
+each vowel as one sign or vowel letter, so that every consonant is followed by its vowel sign or a
+virama. What the tables leave open was settled from the development half of the Wiktionary gold set
+and the IndicCorp v2 development sentences:
+
+- a consonant without a vowel mark, in a word that writes its vowel marks, has no vowel (پَمپوش
+  pampoːʃ, لۄکچار lɔktʃaːr); a word that writes none (names, loanwords, casual text: کربلا, شہر) is
+  read with the inherent a and the Urdu-type deletion of the Hindi engine, ی inside it being eː in
+  the first syllable and iː after it, as in Urdu; a marked word that leaves out a vowel the reader
+  supplies gets a: before a second consonant at its start (ہنزِ hanzi, not before r y w), before ن
+  with ٛ (منٛز manz), and when it would have no vowel at all (پرٛتھ pratʰ);
+- a word-final ہ after a vowel mark carries it and is silent (سُہ su, تہٕ tɨ, یہِ ji, زِنٛدَہ zinda),
+  as the orthography writes final vowels and as Kashmiri Wikipedia uses it; after a vowel letter it
+  is h (داہ daːh, دۄہ dɔh); after a consonant without a mark it is a (اَداکارہ adaːkaːra); ہہ is h
+  (بَہہ bah); the numbers ten and twenty to thirty keep h after the mark (دٔہ dəh, وُہ wuh, پٕنٛژٕہ
+  pɨntsɨh, ترٕٛہ trɨh), as Wiktionary has them;
+- ن with ٛ: after a long vowel a nasal vowel (پانٛژھ pãːtsʰ, سونٛتھ sõːtʰ), after a short one a nasal
+  consonant before t d ts tʃ dʒ s z ʃ (اَنٛدَر andar, مَنٛز manz) and a nasal vowel before the others
+  (زَنٛگ zãɡ, بۄنٛوار bɔ̃ʋaːr). Wiktionary has both readings for several of these words (أنٛز ə̃z,
+  أنٛزرَن ənzran; اَنٛگریٖزی aŋɡriːziː and ãɡriːziː); the rule follows its majority;
+- writing habits: zabar before alif (آسَان) and zer before ye (آبأدِی) are aː and iː, أ after a
+  consonant is ٲ, ۅ is ۄ, ۍ is ؠ, Arabic kaf, ye and he are the Kashmiri letters; و and ی after a
+  vowel are consonants (نَو naw, آے aːj), و between a consonant and a vowel too (تَجویٖز tadʒʋiːz);
+- stress (not written): on the leftmost non-final syllable with a long vowel, else the leftmost
+  non-final closed syllable, else the first (new option `stress = left-heavy`; Morén 2000, "The
+  puzzle of Kashmiri stress", *Phonology* 17); the gold sets ignore stress.
+
+Twenty frequent function words that Kashmiri Wikipedia text also writes without their marks are read
+as their marked spelling (`ks::UNMARKED`: چھ as چھِ, its commoner marked form, تہ as تہٕ, منز as
+مَنٛز). Not modelled: the alternations of the morphology (vowel lowering before the plural, the
+palatalisation and affrication before -i), which the orthography writes; words spelled with some
+vowel marks left out where none of the rules above applies (کأشر is read kəːʃr);
+the free variants x ~ kʰ, q ~ k, f ~ pʰ, ɣ ~ ɡ of loanwords are read as written.
+
+**Devanagari.** Kashmiri Devanagari is written in Perso-Arabic script (`ks::devanagari_to_arabic`)
+and then read the same way, so the same word reads the same in both scripts (कॉशुर = کٲشُر kəːʃur,
+सबॖज़ = سَبٕز sabɨz). Both proposals are taken: ॅ ऺ (ॲ ॳ) for ə, ॉ ऻ (ऑ ॴ) for əː, ॖ ॗ (ॶ ॷ) for ɨ ɨː,
+ॆ (ऎ ऄ) for e, ॊ (ऒ) for o, ॏ (ॵ) for ɔ, ौ for ɔː, ्य after a consonant for palatalisation (आशन्य
+aːʃanʲ), ्व with the inherent vowel for ɔ (श्वंग ʃɔ̃ɡ, as in the 2002 proposal), च़ छ़ for ts tsʰ, ज़
+for z; a consonant without a sign keeps the inherent a except at the end of a word and in V C _ C V
+(Hindi-type deletion, right to left: मासटर maːsʈar, पदमान padmaːn). Wiktionary's Devanagari
+spellings are not all of one system (some write ॊ for ɔ and ॉ for ə), which is most of the
+Devanagari errors below. Only a request for `ks` goes this way: Devanagari text in a request for
+Hindi or any other language, and Urdu and Sindhi text, read exactly as before (byte-identical output
+on all their sentence sets, both modes, three profiles, and romanised input).
+
+Sources: the Wikipedia article "Kashmiri language" (CC BY-SA 4.0; the phonemes after Koul and Wali
+2006, the Perso-Arabic, Devanagari and Sharada tables after the J&K Academy's Kashmiri dictionary and
+the 2002 and 2009 Devanagari proposals); Unicode's Arabic and Devanagari charts for the Kashmiri
+letters and marks (U+0620, U+0672, U+0673, U+065A–U+065F, U+06C4, U+06C6, U+06CE; U+093A, U+093B,
+U+094F, U+0956, U+0957, U+0973–U+0977); English Wiktionary's Kashmiri entries (CC BY-SA 4.0) for what
+the tables leave open; Morén (2000) for stress.
+
+**Numbers.** Both modes, and normalise-only mode, read numbers written with ASCII, Extended
+Arabic-Indic (۰–۹), Arabic-Indic or Devanagari digits in Kashmiri words, as Wiktionary's Kashmiri
+cardinal numbers spell them: the 100 words 0–99 (اَکھ زٕ ترٛےٚ ژور پانٛژھ, داہ 10, وُہ 20, پٕنٛژٕہ 25,
+ترٕٛہ 30, پَنٛژاہ 50, نَمہٕ نَمَتھ 99), the hundreds as a count and ہَتھ (زٕ ہَتھ 200) with شَتھ after 8 and 9
+(ٲٹھ شَتھ, نَو شَتھ), اَکھ ساس 1000 and زٕ ساس 2000, لَچھ, کَرور (Indian grouping). The rupee is CLDR's
+رۄپَے after the amount, per cent فیصَد as Kashmiri Wikipedia writes it, the decimal point the English
+word (پۄیِنٹ, as Bodo, Santali and Manipuri do; no Kashmiri word for it is in these sources); dates
+with CLDR's month names (`common/main/ks.xml`, with the vowel marks it leaves out added: اَگَست,
+سَتَمبَر) in day-month-year order (15/08/2024 پَنٛداہ اَگَست زٕ ساس ژۆوُہ). In normalise-only mode, text
+written in Devanagari gets the same words in Devanagari (`ks::arabic_to_devanagari`, 2009 signs:
+कॉशुर 25 → कॉशुर पॖंच़ॖह). No ordinals, clock times or minus.
+
+**Romanised Kashmiri** (`koshur chhu akh zabaan`) is written in Perso-Arabic script through the
+`hinglish` option and `transliterate(..., "ks")` without a pack
+([transliteration](transliteration.md#kashmiri)).
+
+Held-out text: 1,678 IndicCorp v2 sentences (AI4Bharat, CC0; the `ks.txt` file is Perso-Arabic
+Kashmiri Wikipedia-like text; lines with Urdu function words or wiki markup left out; all the
+held-out half of the hash, 3,409 usable sentences in all) and 500 sentences from random articles of
+the Kashmiri Wikipedia (ks.wikipedia.org, CC BY-SA 4.0, none in the IndicCorp text). FLORES+ has
+Kashmiri in both scripts (`kas_Arab`, `kas_Deva`) but is gated, IndicGenBench has no Kashmiri, and
+Tatoeba has fewer than 50 Kashmiri sentences, so there is no Devanagari sentence set. With no
+reference reading, `tools/eval/ks_check.py` checks coverage: every word of every set is read to a
+pronunciation with a vowel, made of Kashmiri phonemes (100.00 %; 75 % of the IndicCorp words and
+57 % of the Wikipedia words are written with vowel marks). The gold set
+([tools/eval/gold/ks](../tools/eval/gold/ks)): Wiktionary pronunciations for 902 Perso-Arabic words,
+370 Devanagari spellings of Wiktionary entries and 72 numerals, and 42 sentences transcribed by hand
+(32 IndicCorp v2 lines outside the sentence sets and 10 of them written in Devanagari); held-out half:
+
+| Held-out | espeak-ng `ur` / `hi` (other languages) | uccharan (both modes) |
+| --- | ---: | ---: |
+| Perso-Arabic words (455), exact | 27.9 % (`ur`) | **95.8 %** |
+| Devanagari words (190), exact | 30.5 % (`hi`) | **92.6 %** |
+| Numerals (37), exact | 24.3 % (`ur`) | **100.0 %** |
+| Perso-Arabic sentences (12): PER | 289.7 % (`ur`) | **0.18 %** |
+| Devanagari sentences (6): PER | 182.2 % (`hi`) | **0.00 %** |
+
+Details and the development half in [evaluation.md](evaluation.md). No Kashmiri voice or speech
+recogniser has been tried.
+
+Speed: there is no espeak-ng reading to time against. On the Windows 11 laptop of the § rows (500
+held-out IndicCorp v2 sentences, one thread, best of 5 rounds,
+[`compare_ks_windows.json`](../tools/bench/results/compare_ks_windows.json)) uccharan takes 15.0 µs
+per sentence at the median (p99 47.1 µs), 0.68 million words per second; in the same run Bodo took
+20.1 µs (2.4× espeak-ng's speed) and Hindi 10.9 µs (1.8×).
 
 **German, Dutch and French** (`de`, `nl`, `fr`) run on the same Latin-script engine as Spanish,
 each with letter rules and a **word table** (`de.ucd` 16 k entries, 373 KB; `nl.ucd` 12 k, 242 KB;

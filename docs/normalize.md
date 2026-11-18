@@ -180,6 +180,11 @@ Number spans carry `value` (the digits read).
   (the scale word before its count), 1,50,000 ꯂꯥꯈ ꯑꯃꯥ ꯂꯤꯁꯤꯡ ꯌꯥꯡꯈꯩ, ₹25 ꯀꯨꯟꯃꯉꯥ ꯂꯨꯄꯥ, 15/08/2024
   ꯇꯔꯥꯃꯉꯥ ꯑꯣꯒꯁ꯭ꯠ ꯂꯤꯁꯤꯡ ꯑꯅꯤ ꯀꯨꯟꯃꯔꯤ; in text written in Bengali script the same words come in Bengali
   script (অমা 25 → অমা কুন্মঙা); no ordinals or clock times.
+  Kashmiri writes Kashmiri words in the Perso-Arabic script in both modes, as Wiktionary spells
+  them, from ASCII, Extended Arabic-Indic (۰–۹) or Devanagari digits: 25 پٕنٛژٕہ, 800 ٲٹھ شَتھ, 2021 زٕ
+  ساس اَکہٕ وُہ, 1,50,000 اَکھ لَچھ پَنٛژاہ ساس, ₹25 پٕنٛژٕہ رۄپَے, 25% پٕنٛژٕہ فیصَد, 15/08/2024 پَنٛداہ اَگَست
+  زٕ ساس ژۆوُہ; in text written in Devanagari the same words come in Devanagari (कॉशुर 25 → कॉशुर
+  पॖंच़ॖह); no ordinals or clock times.
   Every one of these languages is checked for words in its own script that read back to the
   phonemes of the digits (`indic_numbers_in_their_own_script` in
   `crates/uccharan/tests/normalize_api.rs`).

@@ -920,8 +920,9 @@ fn tokenize(text: &str) -> Vec<Token> {
 
 /// Without a pack: the hand list and rules of [`crate::hi::roman`] for the
 /// Hindi-like languages, those of [`crate::brx`] for Bodo, of
-/// [`crate::sat`] for Santali (in Ol Chiki) and of [`crate::mni`] for
-/// Manipuri (in Meetei Mayek; English words stay in Latin letters), a plain
+/// [`crate::sat`] for Santali (in Ol Chiki), of [`crate::mni`] for
+/// Manipuri (in Meetei Mayek) and of [`crate::ks`] for Kashmiri (in
+/// Perso-Arabic script; English words stay in Latin letters), a plain
 /// rule converter for the others. English is whatever the
 /// English lexicon lists.
 fn fallback(ph: &Phonemizer, text: &str, lang: Lang, opt: &TranslitOptions) -> Transliterated {
@@ -937,7 +938,8 @@ fn fallback(ph: &Phonemizer, text: &str, lang: Lang, opt: &TranslitOptions) -> T
     let convert = opt.english == EnglishWords::Convert;
     // Per word: the native text, or None for a word that stays.
     let mut written: Vec<Option<String>> = Vec::new();
-    if (lang.romanised_as_hindi() || matches!(lang, Lang::Brx | Lang::Sat | Lang::Mni)) && !convert
+    if (lang.romanised_as_hindi() || matches!(lang, Lang::Brx | Lang::Sat | Lang::Mni | Lang::Ks))
+        && !convert
     {
         let hi = crate::hi::Hindi::new(ph.data(Lang::Hi));
         let mut i = 0;
@@ -976,6 +978,10 @@ fn fallback(ph: &Phonemizer, text: &str, lang: Lang, opt: &TranslitOptions) -> T
                 });
             } else if lang == Lang::Mni {
                 crate::mni::rewrite_roman(&mut items, |w| {
+                    en.as_ref().is_some_and(|e| e.in_lexicon(w))
+                });
+            } else if lang == Lang::Ks {
+                crate::ks::rewrite_roman(&mut items, |w| {
                     en.as_ref().is_some_and(|e| e.in_lexicon(w))
                 });
             } else {

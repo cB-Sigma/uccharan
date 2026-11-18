@@ -120,3 +120,13 @@ test("Manipuri: Meetei Mayek and Bengali script, one reading in both modes", asy
   assert.equal((await uccharan.normalize("অমা 25", { lang: "mni" })).text, "অমা কুন্মঙা");
   assert.equal((await uccharan.transliterate("eina nangbu nungsi", { lang: "mni" })).text, "ꯑꯩꯅꯥ ꯅꯪꯕꯨ ꯅꯨꯡꯁꯤ");
 });
+
+test("Kashmiri: Perso-Arabic and Devanagari, one reading in both modes", async () => {
+  assert.ok(uccharan.LANGUAGES.includes("ks"));
+  assert.equal(await uccharan.phonemize("کٲشُر زَبان", { lang: "ks" }), await uccharan.phonemize("کٲشُر زَبان", { lang: "kashmiri", improved: true }));
+  assert.equal(await uccharan.phonemize("کٲشُر", { lang: "ks" }), "kˈəːʃur");
+  assert.equal(await uccharan.phonemize("कॉशुर", { lang: "ks" }), "kˈəːʃur");
+  assert.equal((await uccharan.normalize("25", { lang: "ks" })).text, "پٕنٛژٕہ");
+  assert.equal((await uccharan.normalize("कॉशुर 25", { lang: "ks" })).text, "कॉशुर पॖंच़ॖह");
+  assert.equal((await uccharan.transliterate("koshur chhu akh zabaan", { lang: "ks" })).text, "کٲشُر چھُ اَکھ زَبان");
+});

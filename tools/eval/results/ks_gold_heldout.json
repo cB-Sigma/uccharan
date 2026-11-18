@@ -1,0 +1,63 @@
+{
+ "lang": "ks",
+ "split": "heldout",
+ "systems": {
+  "espeak-ng ur/hi (other voices)": {
+   "word_accuracy": 0.2844574780058651,
+   "sentence_per": 2.6278755074424898,
+   "sentence_exact": 0.0,
+   "by_category": {
+    "deva": 0.30526315789473685,
+    "arab": 0.27912087912087913,
+    "num": 0.24324324324324326
+   },
+   "sentence_per_by_category": {
+    "sentence-arab": 2.8971119133574006,
+    "sentence-deva": 1.8216216216216217
+   },
+   "counts_by_category": {
+    "deva": 190,
+    "arab": 455,
+    "num": 37
+   }
+  },
+  "uccharan compatible": {
+   "word_accuracy": 0.9516129032258065,
+   "sentence_per": 0.0013531799729364006,
+   "sentence_exact": 0.9444444444444444,
+   "by_category": {
+    "deva": 0.9263157894736842,
+    "arab": 0.9582417582417583,
+    "num": 1.0
+   },
+   "sentence_per_by_category": {
+    "sentence-arab": 0.0018050541516245488,
+    "sentence-deva": 0.0
+   },
+   "counts_by_category": {
+    "deva": 190,
+    "arab": 455,
+    "num": 37
+   }
+  },
+  "uccharan improved": {
+   "word_accuracy": 0.9516129032258065,
+   "sentence_per": 0.0013531799729364006,
+   "sentence_exact": 0.9444444444444444,
+   "by_category": {
+    "deva": 0.9263157894736842,
+    "arab": 0.9582417582417583,
+    "num": 1.0
+   },
+   "sentence_per_by_category": {
+    "sentence-arab": 0.0018050541516245488,
+    "sentence-deva": 0.0
+   },
+   "counts_by_category": {
+    "deva": 190,
+    "arab": 455,
+    "num": 37
+   }
+  }
+ }
+}

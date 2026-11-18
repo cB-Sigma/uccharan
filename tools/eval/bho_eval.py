@@ -11,7 +11,11 @@ Manipuri have no fallback row: espeak-ng reads Ol Chiki and Meetei Mayek
 letters as their code points under every voice, so there is nothing to
 compare with (for Manipuri in Bengali script, ``--bengali-voice`` adds the
 reading of espeak-ng's Bengali voice, a different language, as a measure of
-how far it is). Manipuri sentences are also scored per script.
+how far it is). Kashmiri has no fallback row either (espeak-ng has no
+Kashmiri voice); ``--other-voice`` adds espeak-ng's Urdu voice on the
+Perso-Arabic items and its Hindi voice on the Devanagari ones, other
+languages' voices, as a measure of how far they are. Manipuri and Kashmiri
+sentences are also scored per script.
 
     python tools/eval/bho_eval.py --lang bho --split dev --show improved
 """
@@ -37,6 +41,17 @@ def norm(s: str, lang: str = "bho") -> str:
     if lang == "doi":
         # Dogri tone: a grave or acute accent stands before the nasal mark.
         s = re.sub("(̃)([̀́])", r"\2\1", s)
+    if lang == "ks":
+        # Kashmiri (Wiktionary notation): tie bars, dental marks and
+        # syllable dots go, optional vowels in parentheses go, ɾ = r,
+        # w = v = ʋ, ɑ = a, g = ɡ; a glide after a consonant is written ʲ
+        # (Wiktionary has both j and ʲ); the sounds of loanwords that the
+        # Wikipedia article "Kashmiri language" gives as free variants are
+        # one: x = kʰ, q = k, f = pʰ, ɣ = ɡ.
+        s = re.sub(r"\([^)]*\)", "", s).replace(".", "").replace("g", "ɡ")
+        s = s.replace("x", "kʰ").replace("q", "k").replace("f", "pʰ").replace("ɣ", "ɡ")
+        s = re.sub("[̪͡]", "", s).replace("ɾ", "r").replace("w", "ʋ").replace("v", "ʋ").replace("ɑ", "a")
+        s = re.sub(r"([bdɡkpqtʈɖmnlrsʃzxfɣhʋʰ])j", r"\1ʲ", s)
     if lang == "mni":
         # Manipuri (Wiktionary notation): tone marks, syllable dots and the
         # unreleased mark go, the tie bar too; r = ɾ, ə = ɐ; ɐj ɐw are said
@@ -65,6 +80,7 @@ def main() -> int:
     ap.add_argument("--show", default="", help="print failures of this system (dev only)")
     ap.add_argument("--out", type=Path)
     ap.add_argument("--bengali-voice", action="store_true", help="Manipuri: add espeak-ng's Bengali voice (Bengali-script items)")
+    ap.add_argument("--other-voice", action="store_true", help="Kashmiri: add espeak-ng's Urdu voice (Perso-Arabic items) and Hindi voice (Devanagari items)")
     args = ap.parse_args()
     rows = [l.split("\t") for l in (HERE / "gold" / args.lang / "gold.tsv").read_text(encoding="utf-8").splitlines() if l and not l.startswith("#")]
     rows = [r for r in rows if args.split in ("all", r[6])]
@@ -72,12 +88,15 @@ def main() -> int:
     oracle = load_oracle()
     systems = {}
     texts = [r[2] for r in rows]
-    if oracle is not None and args.lang not in ("sat", "mni"):
+    if oracle is not None and args.lang not in ("sat", "mni", "ks"):
         systems["espeak-ng hi (fallback)"] = [oracle.phonemize(t, "hi") for t in texts]
     if oracle is not None and args.lang == "mni" and args.bengali_voice:
         # Bengali-script items only: the Meetei Mayek ones are skipped (empty).
         beng = [r[4] in ("beng", "sentence-beng") for r in rows]
         systems["espeak-ng bn (Bengali voice)"] = [oracle.phonemize(t, "bn") if b else "" for t, b in zip(texts, beng)]
+    if oracle is not None and args.lang == "ks" and args.other_voice:
+        deva = [any("\u0900" <= c <= "\u097f" for c in t) for t in texts]
+        systems["espeak-ng ur/hi (other voices)"] = [oracle.phonemize(t, "hi" if d else "ur") for t, d in zip(texts, deva)]
     systems["uccharan compatible"] = run_uccharan(texts, args.lang)
     systems["uccharan improved"] = run_uccharan(texts, args.lang, extra=("--improved",))
     res = {"lang": args.lang, "split": args.split, "systems": {}}

@@ -34,6 +34,7 @@ pub mod ipa;
 pub mod kaithi;
 pub mod known;
 pub mod kokoro;
+pub mod ks;
 pub mod langdef;
 pub mod latin;
 pub mod lex2;
@@ -158,6 +159,9 @@ languages! {
     /// and espeak-ng cannot read Meetei Mayek: both modes give the improved
     /// reading).
     Mni "mni" ["mni-in", "mni-mtei", "mni-beng", "manipuri", "meitei", "meetei"] Brahmic(0xabc0), Some(include_str!("../lang/mni.lang"));
+    /// Kashmiri in Perso-Arabic script or Devanagari (no espeak voice: both
+    /// modes give the improved reading).
+    Ks "ks" ["ks-in", "ks-arab", "ks-deva", "kas", "kashmiri", "koshur"] Brahmic(0x0600), Some(include_str!("../lang/ks.lang"));
     /// Spanish (espeak voice `es`).
     Es "es" ["es-es", "spa", "spanish"] Latin, Some(include_str!("../lang/es.lang"));
     /// German (espeak voice `de`).
@@ -221,9 +225,11 @@ impl Lang {
     /// Chiki, Manipuri in Meetei Mayek: it says the code points of the
     /// letters under every voice). There is no reference reading to
     /// reproduce, so compatible mode gives the improved reading (Manipuri in
-    /// Bengali script too: espeak-ng has no Meitei voice).
+    /// Bengali script too: espeak-ng has no Meitei voice). Kashmiri too:
+    /// espeak-ng has no Kashmiri voice, and no voice of its script writes
+    /// the Kashmiri vowels.
     pub fn no_reference(self) -> bool {
-        matches!(self, Lang::Sat | Lang::Mni)
+        matches!(self, Lang::Sat | Lang::Mni | Lang::Ks)
     }
 
     /// Languages typed in Latin letters with the habits of romanised Hindi:
@@ -680,6 +686,19 @@ impl Phonemizer {
             }
             None => text,
         };
+        // Kashmiri in Devanagari is read as the Perso-Arabic spelling of
+        // the same word.
+        let owned_kashmiri;
+        let text = match (opt.lang == Lang::Ks)
+            .then(|| ks::devanagari_to_arabic(text))
+            .flatten()
+        {
+            Some(t) => {
+                owned_kashmiri = t;
+                owned_kashmiri.as_str()
+            }
+            None => text,
+        };
         // Meetei Mayek: closed syllables and suffix vowels the spelling
         // leaves to the reader.
         let owned_meetei_read;
@@ -940,6 +959,16 @@ impl Phonemizer {
                     it.text = t;
                 }
             }
+            items = &owned;
+        }
+        // Romanised Kashmiri: Latin words that are not English are written
+        // in Perso-Arabic script by the Kashmiri rules.
+        if opt.hinglish && opt.lang == Lang::Ks {
+            owned = items.to_vec();
+            let english = self.english(opt.embedded_english);
+            ks::rewrite_roman(&mut owned, |w| {
+                english.as_ref().is_some_and(|e| e.in_lexicon(w))
+            });
             items = &owned;
         }
         let mut out: Vec<WordOut> = Vec::with_capacity(items.len());

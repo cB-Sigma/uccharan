@@ -1,0 +1,10 @@
+{
+ "set": "dev",
+ "sentences": 1000,
+ "words": 11591,
+ "words_read": 1.0,
+ "words_with_vowel_marks": 0.7527391942023984,
+ "other_script_letters": 0,
+ "latin_words": 0,
+ "modes_identical_on_first_50": true
+}

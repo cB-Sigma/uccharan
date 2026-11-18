@@ -94,14 +94,14 @@ _SCRIPT = {
     "GURMUKHI": ("pa",),
     "ORIYA": ("or",),
     "SINHALA": ("si",),
-    "ARABIC": ("ur", "sd"),
+    "ARABIC": ("ur", "sd", "ks"),
     "OL": ("sat",),
     "MEETEI": ("mni",),
     "LATIN": ("en", "en-us", "en-gb", "es", "de", "nl", "fr", "it", "pt", "pt-br", "pl", "tr", "cs", "sv", "ca", "ro", "hu", "fi", "nb", "da", "fr-be", "fr-ch"),
 }
 _LANG_SCRIPT = {lang: script for script, langs in _SCRIPT.items() for lang in langs}
 # Scripts read as the language's own besides the main one.
-_ALSO = {"bho": ("KAITHI",), "mai": ("TIRHUTA",), "mni": ("BENGALI",)}
+_ALSO = {"bho": ("KAITHI",), "mai": ("TIRHUTA",), "mni": ("BENGALI",), "ks": ("DEVANAGARI",)}
 
 
 def script_of_language(lang: str) -> str | None:

@@ -764,6 +764,51 @@ twice in IndicCorp v2, i.e. a spelling Meetei Mayek writers use):
 Most of the Bengali-script words not matched are loanwords and names that the IndicCorp v2 text does
 not have (রিপোর্ত, য়ুনাইতেদ, পোইন্ত). No voice or speech recogniser for Meitei has been tried.
 
+**Kashmiri** (`python tools/eval/bho_eval.py --lang ks --split heldout --other-voice`; `python
+tools/eval/ks_check.py --set heldout`). espeak-ng 1.52.0 has no Kashmiri voice, so both modes give the
+same reading. Its Urdu voice can be run on the Perso-Arabic items and its Hindi voice on the
+Devanagari ones, but they read other languages (the Urdu voice names the Kashmiri vowel marks as
+letters, hence sentence PERs above 100 %), so they are shown only as a measure of how far they are,
+not as a reference. The gold set (`tools/eval/gold/ks`): 1,344 words, 902 Perso-Arabic headwords of
+English Wiktionary's Kashmiri entries with every pronunciation the entry gives (as extracted by
+kaikki.org from the dump of 2026-10-01), 370 Devanagari spellings that these entries give (with the
+same pronunciations), and 72 numerals; 42 sentences written out by hand (32 Perso-Arabic lines of
+IndicCorp v2 outside the sentence sets, and 10 of them written in Kashmiri Devanagari). The split is
+by a hash of the item, made before the rules were run on it; the comparison is broad (stress, tie
+bars, dental marks and syllable dots removed, optional vowels in parentheses removed, ɾ = r, w = v =
+ʋ, j after a consonant = ʲ, and the loanword variants x = kʰ, q = k, f = pʰ, ɣ = ɡ that the Wikipedia
+article gives as free).
+
+| Held-out | espeak-ng `ur` / `hi` (other languages) | uccharan (both modes) |
+| --- | ---: | ---: |
+| Perso-Arabic words (455), exact | 27.9 % (`ur`) | **95.8 %** |
+| Devanagari words (190), exact | 30.5 % (`hi`) | **92.6 %** |
+| Numerals (37), exact | 24.3 % (`ur`) | **100.0 %** |
+| Perso-Arabic sentences (12): PER | 289.7 % (`ur`) | **0.18 %** |
+| Devanagari sentences (6): PER | 182.2 % (`hi`) | **0.00 %** |
+
+All 682 held-out words 95.2 %, all 18 sentences PER 0.14 %, 94.4 % identical (the one difference:
+the hand transcription has a vowel in لیٖڈرَن that the spelling leaves out). Development half: 93.5 %
+of 662 words (Perso-Arabic 95.3 % of 447, Devanagari 88.3 % of 180, numerals 97.1 % of 35), sentence
+PER 0.38 %; the other voices get 31.3 % of the words. The remaining word errors are mostly where
+Wiktionary has two readings of the same spelling (ن with ٛ before ɡ or z: زَنٛگ zãɡ but شۄنٛگُن ʃɔŋɡun,
+أنٛز ə̃z but أنٛزرَن ənzran), Wiktionary's Devanagari spellings that follow another system (ॊ for ɔ,
+ॉ for ə) and entries whose pronunciation is not the one the letters write (شُراہ ʃurah). The
+Wiktionary pronunciations were written by its editors, not for this project, but the sentences were
+transcribed by hand with the same conventions as the rules (and the Devanagari ones copy the
+Perso-Arabic ones), so their low PER mostly shows the rules do what the conventions say. The
+sentence sets can only be checked for coverage (`ks_check.py`: every word read to a pronunciation
+with a vowel, made of Kashmiri phonemes):
+
+| Set | Sentences | Words | read | written with vowel marks |
+| --- | ---: | ---: | ---: | ---: |
+| IndicCorp v2, development | 1,000 | 11,591 | 100.00 % | 75.3 % |
+| IndicCorp v2, held-out | 1,678 | 19,387 | 100.00 % | 74.7 % |
+| Kashmiri Wikipedia, held-out | 500 | 7,447 | 100.00 % | 57.2 % |
+
+There is no Devanagari sentence set (FLORES+ `kas_Deva` is gated). No voice or speech recogniser for
+Kashmiri has been tried.
+
 ## 5. Speed, start-up, memory and size
 
 ```sh

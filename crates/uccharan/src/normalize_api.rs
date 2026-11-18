@@ -268,6 +268,15 @@ pub fn normalize(ph: &Phonemizer, text: &str, lang: Lang, opt: &NormOptions) -> 
             }
         }
     }
+    // Kashmiri text in Devanagari gets its number and date words in
+    // Devanagari too (the language file writes them in Perso-Arabic).
+    if lang == Lang::Ks && crate::ks::writes_devanagari(text) {
+        for pc in &mut pieces {
+            if pc.kind != SpanKind::Text && pc.kind != SpanKind::Punct {
+                pc.out = crate::ks::arabic_to_devanagari(&pc.out);
+            }
+        }
+    }
     assemble(text, pieces, &breaks)
 }
 

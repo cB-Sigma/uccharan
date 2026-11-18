@@ -267,6 +267,32 @@ they do not offer one. The conversion follows the letters and the habits of each
 Meetei Mayek); it is not a spelling standardiser, and a round trip can change a spelling (a final
 ꯥ written for the vowel ɐ).
 
+## Kashmiri
+
+Romanised Kashmiri, as people type it (`koshur chhu akh zabaan`), is written in the **Perso-Arabic
+script**, the official one, by `transliterate(text, "ks")` and the `hinglish` option, without a pack
+(`crates/uccharan/src/ks.rs`): a hand-written list of 31 common words in their usual spelling
+(`koshur` کٲشُر, `chhu` چھُ, `chhi` چھِ, `manz` مَنٛز, `ta` تہٕ, `kasheer` کٔشیٖر, as Kashmiri Wikipedia text
+and Wiktionary write them), then a letter converter for the words the English lexicon does not know:
+each vowel is written with the mark or letter of the orthography (a َ, aa ا, i ِ, ee یٖ, u ُ, oo وٗ, e
+یٚ, o و, ae ٔ), a final a u ae on the carrier ہ (`na` نَہ), h at the end after a vowel as ہہ (`dah`
+دَہہ), a vowel at the start of a word on alif, and a sukun on the bare consonants of a word that
+would otherwise have no vowel mark (`paanch` پانْچْ, which would be read as an unmarked spelling);
+chh tsh ch ts kh th ph sh have their letters and h after a consonant aspirates it; an apostrophe
+after a consonant is ؠ. With the `hinglish` option, words in the scholarly romanisation of
+Wiktionary written with precomposed letters (ā ạ ụ ǖ ō ọ ś ċ ṭ: `ċōr` ژور, `lạṭ'` لٔٹؠ) are read too;
+`transliterate` takes ASCII words only. A clause is rewritten only when it has one of 17
+distinctive listed words, so English text is left alone, and English words stay in Latin letters.
+Casual romanisation does not tell o from oː or ə from a (`koshur` is kəːʃur), so words outside the
+list are guesses; there is no romanised Kashmiri test set, so this is not measured.
+
+**Between the two scripts.** Kashmiri Devanagari is read through `ks::devanagari_to_arabic`, which
+writes it in the Perso-Arabic script with its vowel marks, and normalise-only mode writes its number
+words back with `ks::arabic_to_devanagari`. Both are public Rust functions; the Python, WebAssembly
+and C interfaces have no script-conversion call, so they do not offer one. The conversion follows
+the letters (both Devanagari proposals are accepted; the output of `arabic_to_devanagari` uses the
+2009 signs); it is not a spelling standardiser.
+
 ## Accuracy, size and speed
 
 Measured on held-out word pairs and sentences; method, baselines and all numbers are in

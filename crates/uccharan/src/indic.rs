@@ -103,6 +103,9 @@ pub enum Stress {
     Second,
     /// No stress marks (Meitei: a tone language without a stress accent).
     None,
+    /// The leftmost non-final syllable with a long vowel, else the leftmost
+    /// non-final closed syllable, else the first (Kashmiri).
+    LeftHeavy,
 }
 
 /// What happens to inherent vowels.
@@ -294,6 +297,9 @@ pub struct Indic {
     /// Number words as they are written (normalise-only mode), for the
     /// languages with a rule file in `lang/numbers`.
     pub numbers_text: Option<Numbers>,
+    /// Rewrites a written word before the letter rules (`reader = ks`:
+    /// Kashmiri, whose vowels are spelled out by [`crate::ks::explicit`]).
+    reader: Option<fn(&str) -> String>,
 }
 
 fn list(meta: &HashMap<String, String>, k: &str) -> Vec<String> {
@@ -386,6 +392,7 @@ impl Indic {
             Some("sanskrit") => Stress::Sanskrit,
             Some("second") => Stress::Second,
             Some("none") => Stress::None,
+            Some("left-heavy") => Stress::LeftHeavy,
             _ => Stress::Initial,
         };
         let deletion = match meta.get("deletion").map(String::as_str) {
@@ -478,6 +485,11 @@ impl Indic {
             final_release_not_after: list(&meta, "final-release-not-after"),
             keep_schwa_near: list(&meta, "keep-schwa-after"),
             y_final: meta.get("y-final").is_some_and(|v| v == "yes"),
+            reader: match meta.get("reader").map(String::as_str) {
+                Some("ks") => Some(crate::ks::explicit as fn(&str) -> String),
+                Some(r) => return Err(format!("unknown reader {r}")),
+                None => None,
+            },
             visarga: match meta.get("visarga").map(String::as_str) {
                 Some("geminate") => Visarga::Geminate,
                 Some("silent") => Visarga::Silent,
@@ -806,6 +818,18 @@ impl Indic {
             Stress::Penult => n.saturating_sub(2),
             Stress::Second => usize::from(n > 1),
             Stress::None => return,
+            Stress::LeftHeavy => {
+                let closed = |k: usize| {
+                    let i = vs[k];
+                    let cons = &ph[i + 1..vs[k + 1]];
+                    cons.len() >= 2 || cons.iter().any(|c| c.long)
+                };
+                let long = |k: usize| ph[vs[k]].long;
+                (0..n.saturating_sub(1))
+                    .find(|&k| long(k))
+                    .or_else(|| (0..n.saturating_sub(1)).find(|&k| closed(k)))
+                    .unwrap_or(0)
+            }
             Stress::InitialLightHeavy => {
                 if n > 1 && !ph[vs[0]].long && ph[vs[1]].long {
                     1
@@ -1074,6 +1098,14 @@ impl Indic {
                 return w.clone();
             }
         }
+        let read;
+        let word = match self.reader {
+            Some(f) => {
+                read = f(word);
+                read.as_str()
+            }
+            None => word,
+        };
         let cs: Vec<char> = word
             .chars()
             .filter(|c| !matches!(c, '\u{200c}' | '\u{200d}'))

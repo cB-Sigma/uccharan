@@ -18,7 +18,7 @@ its ``devtest`` split (ids ``flores-devtest-``), never used for tuning; a
 language in ``FLORES_DEV`` (Manipuri, whose IndicGenBench text is in Bengali
 script while its IndicCorp text is in Meetei Mayek) also gets
 ``<lang>_flores_dev.tsv`` from the ``dev`` split, which rules may be tuned on.
-A language in ``WIKISET`` (Santali, Manipuri) takes its dev and held-out sets from
+A language in ``WIKISET`` (Santali, Manipuri, Kashmiri) takes its dev and held-out sets from
 IndicCorp v2 even where Tatoeba has enough sentences, and gets two more
 held-out sets, never used for tuning: ``<lang>_wiki.tsv``, sentences from
 random articles of its Wikipedia (CC BY-SA 4.0, ids ``wp-``) that are not
@@ -70,7 +70,10 @@ INDICCORP = {"doi": ("dg", r"(?:^|\s)(?:है|हैं|में|का|को
              "sat": ("sat", r"\[\[|\]\]|\{\{|\}\}|[<>|=]"),
              # Manipuri: the IndicCorp text is Meetei Mayek (Wikipedia-like,
              # some markup kept).
-             "mni": ("mni", r"\[\[|\]\]|\{\{|\}\}|[<>|=]")}
+             "mni": ("mni", r"\[\[|\]\]|\{\{|\}\}|[<>|=]"),
+             # Kashmiri: the IndicCorp text is Perso-Arabic (Wikipedia-like);
+             # lines with Urdu function words are left out.
+             "ks": ("ks", r"\[\[|\]\]|\{\{|\}\}|[<>|=]|(?:^|\s)(?:ہے|ہیں|میں|تھا|تھی|تھے|اور)(?=[\s۔،؟!.]|$)")}
 
 # IndicGenBench Flores-IN (Google, CC BY-SA 4.0): uccharan tag -> language code
 # of flores_in/flores_<code>_en_test.json (the FLORES-200 devtest sentences).
@@ -82,7 +85,7 @@ FLORES_DEV = {"mni"}
 
 # Languages with a third held-out set from their Wikipedia (uccharan tag ->
 # Wikipedia code, number of sentences).
-WIKISET = {"sat": ("sat", 500), "mni": ("mni", 500)}
+WIKISET = {"sat": ("sat", 500), "mni": ("mni", 500), "ks": ("ks", 500)}
 
 # uccharan tag -> (Tatoeba code, Wikipedia code, letter regex of the language's script)
 LANGS: dict[str, tuple[str, str, str]] = {
@@ -119,6 +122,8 @@ LANGS: dict[str, tuple[str, str, str]] = {
     "sat": ("sat", "sat", r"[ᱚ-ᱽ]"),
     # Manipuri (Meitei): Meetei Mayek and its extensions.
     "mni": ("mni", "mni", r"[ꯀ-꯭ꫠ-꫶]"),
+    # Kashmiri in Perso-Arabic script (with the Kashmiri vowel signs).
+    "ks": ("kas", "ks", r"[؀-ۿ]"),
 }
 
 
@@ -170,7 +175,7 @@ def wikipedia(work: Path, code: str, want: int, letters: str) -> list[tuple[str,
         if data is None:
             break
         for page in data.get("query", {}).get("pages", {}).values():
-            for s in re.split(r"(?<=[.!?।॥᱾᱿꯫])\s+", page.get("extract", "")):
+            for s in re.split(r"(?<=[.!?।॥᱾᱿꯫۔؟])\s+", page.get("extract", "")):
                 s = s.strip()
                 alpha = [c for c in s if c.isalpha()]
                 own = sum(1 for c in alpha if re.match(letters, c.lower()))
@@ -191,7 +196,7 @@ def indiccorp(work: Path, lang: str, letters: str) -> list[tuple[str, str]]:
         return []
     out: dict[str, str] = {}
     for line in path.read_text(encoding="utf-8").splitlines():
-        for s in re.split(r"(?<=[।?!|᱾᱿꯫])\s+", line.strip()):
+        for s in re.split(r"(?<=[।?!|᱾᱿꯫۔؟])\s+", line.strip()):
             s = " ".join(s.split())
             alpha = [c for c in s if c.isalpha()]
             own = sum(1 for c in alpha if re.match(letters, c))

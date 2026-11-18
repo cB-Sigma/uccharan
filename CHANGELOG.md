@@ -94,6 +94,36 @@ All notable changes are listed here. The format follows
   tag; evaluation sets in `tools/eval/data/mni_*.tsv` (held-out: IndicCorp v2, Manipuri Wikipedia,
   IndicGenBench in Bengali script), `tools/eval/gold/mni` and the coverage check
   `tools/eval/mni_check.py`.
+- **Kashmiri** (`ks`, also `kashmiri`, `koshur`, `kas`, `ks-arab`, `ks-deva`) in the Perso-Arabic
+  script of its official orthography, which writes nearly every vowel, and in Devanagari. A new
+  language file (`lang/ks.lang`) reads the words after `ks::explicit` has spelled each vowel out from
+  the marks and letters of the orthography (َ ِ ُ a i u, ٔ ə, ٕ ɨ, ٟ ɨː, ا aː, ٲ əː, وٗ uː, و oː, ۆ o,
+  ۄ ɔ, یٖ iː, ی eː, یٚ e, ؠ palatalisation, ٛ a cluster, a final ہ carrying the mark before it), after
+  the tables of the Wikipedia article "Kashmiri language" and Wiktionary's pronunciations; a word
+  written without any vowel mark is read with the inherent a and Urdu-type deletion; stress on the
+  leftmost non-final heavy syllable, long vowels first (Morén 2000; new option `stress =
+  left-heavy`). Kashmiri Devanagari (the 2002 and 2009 proposals: ॅ ऺ ॉ ऻ ॖ ॗ ॆ ॊ ॏ, ्य) is written in
+  Perso-Arabic script (`ks::devanagari_to_arabic`) and read the same way, so a word reads the same in
+  both scripts; Urdu, Sindhi and every Devanagari language read as before (outputs identical on all
+  their sentence sets, both modes, three profiles, romanised input). espeak-ng has no Kashmiri voice,
+  so both modes give this reading (`Lang::no_reference`). On a gold set of 1,344 words with
+  Wiktionary's pronunciations and 42 hand-written sentences, split by hash before the rules were run
+  on it, the held-out half gets 95.8 % of 455 Perso-Arabic words, 92.6 % of 190 Devanagari words and
+  37 of 37 numerals right, sentence PER 0.18 % (Perso-Arabic, 12) and 0.00 % (Devanagari, 6);
+  espeak-ng's Urdu and Hindi voices, other languages, get 27.9 % and 30.5 % of the words. Every word
+  of the held-out IndicCorp v2 and Kashmiri Wikipedia sets is read (`tools/eval/ks_check.py`).
+  15.0 µs per sentence (p50) on a Windows 11 laptop, where Bodo took 20.1 µs. Numbers in Kashmiri
+  words from ASCII, Extended Arabic-Indic or Devanagari digits, as Wiktionary spells them (25
+  پٕنٛژٕہ, 800 ٲٹھ شَتھ, 1000 اَکھ ساس, لَچھ, کَرور), the rupee (رۄپَے), per cent and dates (CLDR month
+  names); normalise-only mode writes them in Devanagari for Devanagari text
+  (`ks::arabic_to_devanagari`). Romanised Kashmiri (`koshur chhu akh zabaan`) in Perso-Arabic script
+  through the `hinglish` option and `transliterate(..., "ks")` without a pack (`src/ks.rs`). Python,
+  WebAssembly and C take the new tag; evaluation sets in `tools/eval/data/ks_*.tsv` (held-out:
+  IndicCorp v2, Kashmiri Wikipedia), `tools/eval/gold/ks` and the coverage check
+  `tools/eval/ks_check.py`.
+- Language-file options `stress = left-heavy` (primary stress on the leftmost non-final syllable
+  with a long vowel, else the leftmost closed one, else the first) and `reader = ks` (a Rust
+  function rewrites each word before the letter rules).
 - Language-file options `stress = none` (no stress marks) and `scale-first yes` in `[numbers]` (the
   scale word before its count).
 - Language-file option `stress = second` (primary stress on the second syllable).

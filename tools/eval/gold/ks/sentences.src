@@ -1,0 +1,59 @@
+# Kashmiri sentence gold set, written 2026-11-18 before the Kashmiri rules were run on these items.
+# Perso-Arabic (the first 32): lines of AI4Bharat IndicCorp v2 Kashmiri text (CC0) in none of
+# tools/eval/data/ks_dev.tsv, ks_heldout.tsv and ks_wiki.tsv (the IndicCorp sentences of the development
+# half of the hash that the development set did not draw), chosen among the lines whose words are either
+# written with their vowel marks or written without any (lines with words that leave out some vowel marks
+# and keep others, which no convention reads, were passed over); an empty pair of brackets was left out.
+# Devanagari (the last 10): ten of those lines written in Kashmiri Devanagari by hand (the 2009
+# proposal: ऺ ऻ for ə əː, ॖ ॗ for ɨ ɨː, ॆ ॊ for e o, ्य for palatalisation; a halant where a consonant
+# has no vowel and Hindi-type reading would give it one), with the same pronunciation as the line they
+# copy. Pronunciation hand-written word by word from the letter values of the orthography (the Wikipedia
+# article "Kashmiri language", section "Writing system"): a consonant without a vowel mark in a word that
+# writes its vowels has none (cluster), a word-final ہ after a vowel mark carries it and is silent, ؠ is ʲ
+# at the end of a word and ʲa inside it, ٛ on ی after a consonant is ʲ, ن with ٛ is a nasal consonant after
+# a short vowel and before a consonant and a nasal vowel after a long one, medial ی is eː and یٖ iː, و is
+# oː and وٗ uː; words written without vowel marks as they are said (راجستھان raːdʒastʰaːn, از az, فون
+# foːn). These sentences test that the rules follow the conventions they were written from, not how
+# speakers say the words. Format: sentence <TAB> pronunciation.
+راجستھان چھُ شُمٲلؠ مَغرَبی ہِندوستانَس مَنٛز اَکھ رِیاسَتھ۔	raːdʒastʰaːn tʃʰu ʃuməːlʲ maɣrabiː hindoːstaːnas manz akʰ rijaːsatʰ
+تَشخیٖص چھُ کُنہِ بؠمارِ مُتلِق اَنٛدازٕ کَرُن زِ کۄسہٕ بؠمٲرؠ چھےٚ مٔریٖضَس.	taʃxiːs tʃʰu kuni bʲamaːri mutliq andaːzɨ karun zi kɔsɨ bʲaməːrʲ tʃʰe məriːzas
+اَتھ چھُ پَتہٕ لِگامینٹ بَنان.	atʰ tʃʰu patɨ ligaːmeːnʈ banaːn
+ڈیٚسَمبَر چھؙ نَوَمبَرہٕ پَتہٕ یِوان.	ɖesambar tʃʰu naʋambarɨ patɨ jiʋaːn
+ژوٗنٛٹھ چھُ اَکھ قِسمُک مؠوٕ یا پرَٛسَو۔	tsũːʈʰ tʃʰu akʰ qismuk mʲaʋɨ jaː prasaʋ
+یَتھ پَتہٕ بَنیٛوو گانٛدھی مُلکَس مَنٛز اَکھ اَہَم رَہنُما۔	jatʰ patɨ banʲoːʋ ɡãːdʰiː mulkas manz akʰ aham rahnumaː
+جھارکھَنٛڈ چھُ شُمٲلؠ مَشرِقی ہِنٛدوستانَس مَنٛز اَکھ رِیاسَتھ۔	dʒʰaːrkʰaɳɖ tʃʰu ʃuməːlʲ maʃriqiː hindoːstaːnas manz akʰ rijaːsatʰ
+پَدمان پورَس چھِ از کَل پونٛپَر وَنان۔	padmaːn poːras tʃʰi az kal põːpar ʋanaːn
+گِلگَت بالتِستان چھُ پاکِستان مَنٛز اَکھ علاقہٕ۔	ɡilɡat baːltistaːn tʃʰu paːkistaːn manz akʰ alaːqɨ
+مَدھیَہ پرَٛدیش چھُ مَرکٔزی ہِندوستانَس مَنٛز اَکھ رِیاسَتھ۔	madʰja pradeːʃ tʃʰu markəziː hindoːstaːnas manz akʰ rijaːsatʰ
+ہوٗنؠ سٕنٛز مادٕ چھےٚ ہوٗنؠ۔	huːnʲ sɨnz maːdɨ tʃʰe huːnʲ
+یِم چھِ سٲری واریاہَو ؤرؠو پؠٹھٕ بَدلٔمٕتؠ تہٕ چھِ وُنؠ تہِ بَدلان۔	jim tʃʰi səːriː ʋaːrjaːhaʋ ʋərʲaʋ pʲaʈʰɨ badləmɨtʲ tɨ tʃʰi ʋunʲ ti badlaːn
+یہِ چھُ آبَس بَنان ییٚلہِ سَردی واریاہ زیٛادٕ آسہِ۔	ji tʃʰu aːbas banaːn jeli sardiː ʋaːrjaːh zʲaːdɨ aːsi
+خَرگوش چھُ زیٖٹھؠ کَن کٔرِتھ برٲرِس کھۄتہٕ لۄکُٹ اَکھ جانوَر۔	xarɡoːʃ tʃʰu ziːʈʰʲ kan kəritʰ brəːris kʰɔtɨ lɔkuʈ akʰ dʒaːnʋar
+مِسر چھُ شُمٲلی اَفرٛیٖقُک اَکھ مُلک۔	misr tʃʰu ʃuməːliː afriːquk akʰ mulk
+ژھاوٕلؠ سٕنٛز مادٕ چھےٚ ژھاوٕج ۔	tsʰaːʋɨlʲ sɨnz maːdɨ tʃʰe tsʰaːʋɨdʒ
+شرٛاوُن چھؙ ہارہٕ پَتہٕ یِوان.	ʃraːʋun tʃʰu haːrɨ patɨ jiʋaːn
+اَتھ نِظامَس مَنٛز چھُ دِل، خوٗن تہٕ خوٗن رَگہٕ شٲمِل چھِ.	atʰ nizaːmas manz tʃʰu dil xuːn tɨ xuːn raɡɨ ʃəːmil tʃʰi
+یہِ شرَٛنٛڈ چھُ سۄرٲزؠ تہٕ نِکٲے شرَٛنٛڈَن مَنٛز آمُت تھاونہٕ۔	ji ʃraɳɖ tʃʰu sɔrəːzʲ tɨ nikəːj ʃraɳɖan manz aːmut tʰaːʋnɨ
+کَٹہٕ سٕنٛز مادٕ چھےٚ گٔب ۔	kaʈɨ sɨnz maːdɨ tʃʰe ɡəb
+اَز چھِ اَتھ فون وَنان.	az tʃʰi atʰ foːn ʋanaːn
+اَمُک آغاز چھُ کٔشیٖر مَنٛز گومُت۔	amuk aːɣaːz tʃʰu kəʃiːr manz ɡoːmut
+یہِ چھُ سَرَن تہٕ پۄکھرٛؠن مَنٛز کھَسان۔	ji tʃʰu saran tɨ pɔkʰrʲan manz kʰasaːn
+خَرِ سٕنٛز مادٕ چھےٚ خٔرِنؠ۔	xari sɨnz maːdɨ tʃʰe xərinʲ
+مَگَر یہِ اوس نہٕ گانٛدھی تہٕ کانٛگرٛیس لیٖڈرَن مَقبوٗل۔	maɡar ji oːs nɨ ɡãːdʰiː tɨ kãːɡreːs liːɖaran maqbuːl
+تِجارَت چھُ سامان تہٕ سٔہوٗلِیَت دَرمِیان اَدلٕبَدَل.	tidʒaːrat tʃʰu saːmaːn tɨ səhuːlijat darmijaːn adlɨbadal
+آکسیجَن چھُ اَکھ کیٖمِیٲیی عُنصَر۔	aːkseːdʒan tʃʰu akʰ kiːmijəːjiː unsar
+ہاپتہٕ سٕنٛز مادٕ چھےٚ ہاپٕژ ۔	haːptɨ sɨnz maːdɨ tʃʰe haːpɨts
+نیٖلٕز بُہر اوس اَکھ مٲہِر ساینَسدان.	niːlɨz buhr oːs akʰ məːhir saːjnasdaːn
+ہاپُتھ چھُ زیٛادٕ وَقٕت جَنٛگلَس مَنٛز گُزاران۔	haːputʰ tʃʰu zʲaːdɨ ʋaqɨt dʒaŋɡlas manz ɡuzaːraːn
+أمِس چھےٚ تیوٗنٛت کٔرِتھ لٔٹ آسان۔	əmis tʃʰe tʲũːt kəritʰ ləʈ aːsaːn
+اَیوٹِک آرٕچ چھِ اَکھ حِصہٕ آرٕچ شَکلہٕ پؠٹھ.	ajoːʈik aːrɨtʃ tʃʰi akʰ hisɨ aːrɨtʃ ʃaklɨ pʲaʈʰ
+हून्य सॖंज़ मादॖ छॆ हून्य।	huːnʲ sɨnz maːdɨ tʃʰe huːnʲ
+श्रावुन छु हारॖ पतॖ यिवान।	ʃraːʋun tʃʰu haːrɨ patɨ jiʋaːn
+डॆसम्बर छु नवम्बरॖ पतॖ यिवान।	ɖesambar tʃʰu naʋambarɨ patɨ jiʋaːn
+यि छु आबस बनान यॆलि सर्दी वार्याह ज़्यादॖ आसि।	ji tʃʰu aːbas banaːn jeli sardiː ʋaːrjaːh zʲaːdɨ aːsi
+कटॖ सॖंज़ मादॖ छॆ गऺब।	kaʈɨ sɨnz maːdɨ tʃʰe ɡəb
+छ़ावॖल्य सॖंज़ मादॖ छॆ छ़ावॖज।	tsʰaːʋɨlʲ sɨnz maːdɨ tʃʰe tsʰaːʋɨdʒ
+पदमान पोरस छि अज़ कल पोंपर वनान।	padmaːn poːras tʃʰi az kal põːpar ʋanaːn
+ख़रि सॖंज़ मादॖ छॆ ख़ऺरिन्य।	xari sɨnz maːdɨ tʃʰe xərinʲ
+अज़ छि अथ फ़ोन वनान।	az tʃʰi atʰ foːn ʋanaːn
+यथ पतॖ बन्योव गांधी मुल्कस मंज़ अख अहम रहनुमा।	jatʰ patɨ banʲoːʋ ɡãːdʰiː mulkas manz akʰ aham rahnumaː
