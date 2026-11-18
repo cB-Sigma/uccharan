@@ -69,7 +69,7 @@ try {
   ok(/^\d+\.\d+\.\d+$/.test(await page.locator("#version").textContent()), "version is shown");
   ok(/(µs|ms) · \d+ words/.test(await page.locator("#timing").textContent()), "timing is shown");
   ok((await page.locator("#lang option").count()) === 41, "every language tag is offered");
-  ok(/39 languages/.test(await page.locator("h1").textContent()), "headline names the languages");
+  ok(/44 languages/.test(await page.locator("h1").textContent()), "headline names the languages");
   await snap(1600);
 
   // English: live update while typing, then compatible / improved

@@ -40,6 +40,16 @@ assert_eq!(fixed.text, "send it to Kothari");
 
 `Phonemizer` is `Sync`; share one instance between threads.
 
+### Compatible or improved mode
+
+**Compatible mode** (the default) reproduces espeak-ng's phonemes, mistakes included, because that
+is what existing Piper, Kokoro, Kitten TTS, Matcha-TTS and sherpa-onnx voices were trained on: use
+it to drive those voices. **Improved mode** (`o.mode = Mode::Improved`, as above) reads text as it is actually said:
+homographs in context, names, Hindi schwa deletion and nasals, Bhojpuri, Maithili, Magahi, Dogri
+and Bodo read as themselves, and written number words in Tamil, Kannada, Telugu and Malayalam. Use
+it to train new voices, and always drive a voice with the mode it was trained with.
+[What changes, and how to choose](https://github.com/cB-Sigma/uccharan#compatible-or-improved-choosing-a-mode).
+
 ### Language data
 
 English (0.7 MB per accent), Hindi (3 KB) and misaki's dictionaries for the Kokoro profile (2 MB

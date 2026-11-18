@@ -10,7 +10,7 @@
 
 <p align="center">
   The text side of text-to-speech and speech recognition in one library: 44 languages,
-  in Rust, Python, JavaScript and C. Apache-2.0.
+  in Rust, Python, JavaScript and C. Apache-2.0, no GPL code or data.
 </p>
 
 <p align="center">
@@ -25,54 +25,97 @@
   <a href="https://cb-sigma.github.io/uccharan/"><img alt="Try the live demo" src="docs/assets/brand/button-live-demo.png" width="257"></a>
 </p>
 
+<table>
+<tr>
+<td width="58%" valign="top">
+
 **uccharan** (उच्चारण, "pronunciation") does the text work that sits in front of a neural voice
 and behind a speech recogniser:
 
-- as a **phonemiser** it turns text into the phonemes that Piper, Kokoro, Kitten TTS, Matcha-TTS
-  and sherpa-onnx voices were trained on, in 44 languages, with output measured against
-  espeak-ng's;
-- as a **text normaliser** it gives voices that read plain text the spoken form of numbers,
-  money, dates, times and URLs, with every change aligned to the input;
-- as a **transliterator** it writes romanised Hindi, Marathi, Bengali, Tamil, Telugu, Gujarati,
-  Punjabi, Kannada and Malayalam (`aap kaise ho`) in the native script (`आप कैसे हो`);
-- as a **pronunciation engine** it applies your word lists to every kind of voice, puts names a
-  recogniser misheard back by sound, and labels and checks the data for training voices.
+- **Phonemiser**: text into the phonemes that Piper, Kokoro, Kitten TTS, Matcha-TTS and
+  sherpa-onnx voices were trained on, in 44 languages, measured against espeak-ng's output.
+- **Text normaliser**: the spoken form of numbers, money, dates, times and URLs for voices that
+  read plain text, with every change aligned to the input.
+- **Transliterator**: romanised Hindi, Marathi, Bengali, Tamil, Telugu, Gujarati, Punjabi,
+  Kannada and Malayalam (`aap kaise ho`) in the native script (`आप कैसे हो`).
+- **Pronunciation engine**: your word lists applied to every kind of voice, names a recogniser
+  misheard put back by sound, and tools to label and check data for training voices.
 
-It is written in Rust, has no runtime dependencies, and contains no GPL code or data. Every
-accuracy and speed figure below comes from a measurement described in
-[docs/evaluation.md](docs/evaluation.md), with its conditions.
+Written in Rust with no runtime dependencies, it replaces espeak-ng's text-to-phoneme step.
+Every accuracy and speed figure here comes from a measurement described in
+[docs/evaluation.md](docs/evaluation.md).
 
-<p align="center">
-  <img alt="The live demo: typing English and Hindi, romanised Hindi written in Devanagari, a French sentence with a number read out, and switching between compatible and improved mode and between output profiles" src="docs/assets/demo/demo.gif" width="760">
-</p>
+</td>
+<td width="42%" valign="top">
 
-## Install
+**Install**
 
-**Python** (3.9+; Linux, macOS, Windows)
+Python 3.9+
 
 ```sh
-uv add uccharan          # or, without a project: uv pip install uccharan
 pip install uccharan
 ```
 
-**Rust**
+Rust
 
 ```sh
 cargo add uccharan
 ```
 
-**JavaScript** (browser or Node 18+)
+JavaScript (browser, Node 18+)
 
 ```sh
 npm install uccharan
 ```
 
-**C**: `libuccharan` and `uccharan.h` for Linux, macOS and Windows are attached to each
-[release](https://github.com/cB-Sigma/uccharan/releases), or build them with
-`cargo build --release -p uccharan-capi`.
+Command line (macOS, Linux)
 
-With MSVC on Windows, in a Developer Command Prompt in the unpacked release folder (`hello.c`,
-`include\`, `lib\`):
+```sh
+brew install cb-sigma/tap/uccharan
+```
+
+C: `libuccharan` + `uccharan.h` on each
+[release](https://github.com/cB-Sigma/uccharan/releases).
+[More install options →](#install)
+
+</td>
+</tr>
+</table>
+
+<p align="center">
+  <img alt="The live demo: English, Hindi and Tamil read in compatible and then improved mode (a homograph, a name, rupee amounts and a clock time), the spoken form of a sentence with money and a date, and German phonemes in the espeak, Piper and sherpa-onnx profiles" src="docs/assets/demo/demo.gif" width="760">
+</p>
+
+## Contents
+
+- [Install](#install)
+- [Quick start](#quick-start)
+- [Compatible or improved: choosing a mode](#compatible-or-improved-choosing-a-mode)
+- [What is in it](#what-is-in-it)
+- [Languages](#languages)
+- [Output profiles](#output-profiles)
+- [Normalise-only mode](#normalise-only-mode) · [Word lists](#pronunciation-word-lists) ·
+  [Sound-alike matching](#sound-alike-matching) · [Transliteration](#transliteration) ·
+  [Training tools](#training-tools)
+- [Packs and their licences](#packs-and-their-licences)
+- [Versions and stability](#versions-and-stability)
+- [What is not tested](#what-is-not-tested)
+- [Licence](#licence) · [Documentation](#documentation)
+
+## Install
+
+| | |
+| --- | --- |
+| **Python** 3.9+ (Linux, macOS, Windows) | `pip install uccharan` or `uv add uccharan`; installs the `uccharan` and `uccharan-train` commands too |
+| **Rust** | `cargo add uccharan`; the command line with `cargo install uccharan` |
+| **JavaScript** (browser, Node 18+) | `npm install uccharan` |
+| **Homebrew** (macOS, Linux) | `brew install cb-sigma/tap/uccharan`: the command, `libuccharan` and `uccharan.h`, built from source |
+| **C** | `libuccharan` and `uccharan.h` for Linux, macOS and Windows on each [release](https://github.com/cB-Sigma/uccharan/releases), or `cargo build --release -p uccharan-capi` |
+
+<details>
+<summary><b>Building against the C library with MSVC on Windows</b></summary>
+
+In a Developer Command Prompt in the unpacked release folder (`hello.c`, `include\`, `lib\`):
 
 ```bat
 :: against the DLL: link its import library, then keep uccharan.dll next to hello.exe (or on PATH)
@@ -90,31 +133,25 @@ system libraries a static link needs are printed by
 `cargo rustc --release -p uccharan-capi --lib --crate-type staticlib -- --print native-static-libs`
 (the list above is from Rust 1.97, with `synchronization.lib` added).
 
-**Homebrew** (macOS, Linux): the `uccharan` command, `libuccharan` and `uccharan.h`, built from
-source
+</details>
 
-```sh
-brew install cb-sigma/tap/uccharan
-```
-
-**Language packs**: English and Hindi are built in, and so is every language that needs no word
-table, among them the other Indian languages, Bhojpuri, Maithili and Magahi (read with Hindi's
-built-in data), Dogri, Bodo, Santali, Manipuri and Kashmiri. Only the word tables of German, Dutch, French,
-Italian, Portuguese, Polish, Turkish, Czech, Swedish, Catalan, Romanian, Hungarian, Finnish,
-Norwegian, Danish, Urdu and Sindhi are small packs attached to each GitHub release. The wheel and
-the npm package download a language's pack the first time it is used, check its SHA-256 sum and
-cache it. To install packs ahead of time, or for a machine without network access:
+**Language data.** English and Hindi are built in, and so is every language read by rules alone:
+the other Indian languages, Bhojpuri, Maithili and Magahi (which use Hindi's data), Dogri, Bodo,
+Santali, Manipuri and Kashmiri. The word tables of the European languages, Urdu and Sindhi are
+small packs (46 KB to 0.66 MB) that the Python and npm packages download the first time the
+language is used, check against a SHA-256 sum and cache. For offline machines:
 
 ```sh
 python -m uccharan.packs                 # list the packs and which are installed
-python -m uccharan.packs de fr           # download into the cache
-python -m uccharan.packs --dir DIR --all # or into a directory; then set UCCHARAN_DATA_DIR=DIR
+python -m uccharan.packs --dir DIR --all # download into DIR, then set UCCHARAN_DATA_DIR=DIR
 ```
 
 In Rust, the `download` feature fetches packs on first use and `bundle` compiles every word table
 in. See [Packs and their licences](#packs-and-their-licences).
 
-## Thirty seconds of each function
+<a id="thirty-seconds-of-each-function"></a>
+
+## Quick start
 
 ```python
 import uccharan
@@ -124,7 +161,7 @@ uccharan.phonemize("Hello, world.")                          # 'həlˈoʊ, wˈɜ
 uccharan.phonemize("नमस्ते दुनिया", "hi")                       # 'nəmˈʌsteː dˈʊnɪjˌaː'
 uccharan.phonemize("Guten Morgen, wie geht es dir?", "de")   # 'ɡˈuːtən mˈɔɾɡən, viː ɡˈeːt ɛs dˈiːɾ?'
 uccharan.phonemize("Hi there. Bye!", "en-us", "piper")       # ['hˈaɪ ðˈɛɹ.', 'bˈaɪ!']  one string per sentence
-uccharan.phonemize("I read it yesterday.", improved=True)    # 'aɪ ɹˈɛd ɪt jˈɛstɚdˌeɪ.'
+uccharan.phonemize("I read it yesterday.", improved=True)    # 'aɪ ɹˈɛd ɪt jˈɛstɚdˌeɪ.'  (see "choosing a mode")
 
 # 2. The spoken form of a text, for voices that read text
 uccharan.normalize("Rs. 250 on 3/4/2024", "en-us").text      # 'two hundred fifty rupees on March fourth twenty twenty four'
@@ -148,11 +185,18 @@ uccharan.SoundIndex(["Kothari", "Paytm"]).apply("send it to Coat Harry", "en-us"
 ```
 
 ```sh
-# 6. Training data for a voice: phonemes, symbol table and voice.json from a dataset manifest
+# The command line
+uccharan -l hi -p piper "नमस्ते दुनिया।"
+uccharan -l ta --improved "விலை ₹1,250"
+
+# Training data for a voice: phonemes, symbol table and voice.json from a dataset manifest
 uccharan-train label metadata.csv -l hi --improved -o labels/
 ```
 
-The same functions in the other languages:
+Code written for `phonemizer` can switch with `from uccharan.compat import EspeakBackend`.
+
+<details>
+<summary><b>The same in Rust, JavaScript and C</b></summary>
 
 ```rust
 use uccharan::normalize_api::{normalize, NormOptions};
@@ -200,182 +244,198 @@ uccharan_sound_index_free(names);
 uccharan_free(p);
 ```
 
-**Command line** (installed with the Python package, `brew install cb-sigma/tap/uccharan`, or
-`cargo install uccharan`):
-`uccharan -l hi -p piper "नमस्ते दुनिया।"`. Code written for `phonemizer` can use
-`from uccharan.compat import EspeakBackend`.
+</details>
+
+<a id="improved-mode-and-names"></a>
+
+## Compatible or improved: choosing a mode
+
+Every call that reads text takes a **mode**. The two modes answer different questions:
+
+- **Compatible mode** (the default) answers *"what phonemes was this voice trained on?"* It
+  reproduces espeak-ng's reading, mistakes included, because that is what the existing Piper,
+  Kokoro, Kitten TTS, Matcha-TTS and sherpa-onnx voices learned. Feed a voice anything else and it
+  can mispronounce or garble the sounds it never saw.
+- **Improved mode** answers *"how is this actually said?"* It fixes what espeak-ng gets wrong:
+  homographs in context, names, Hindi schwa deletion and nasals, the languages espeak-ng can only
+  read with its Hindi voice, and number words in the South Indian languages.
+
+### Which one to use
+
+| You are… | Use |
+| --- | --- |
+| driving an existing voice (Piper, Kokoro, Kitten TTS, Matcha-TTS, sherpa-onnx models trained on espeak-ng phonemes) | **compatible** |
+| replacing espeak-ng or `phonemizer` in a pipeline and want the same output | **compatible** |
+| training a new voice, or fine-tuning one on new labels | **improved** (and drive that voice with improved mode from then on; `uccharan-train` records the mode in `voice.json`) |
+| building pronunciation lexicons, scoring pronunciation, aligning speech, or matching names by sound | **improved** |
+| feeding a text-reading voice (Parler-TTS, IndicF5, Chatterbox, LLM-based TTS) through `normalize` | either; improved also keeps brand names whole |
+
+Rule of thumb: **use the mode the voice was trained with.** For a voice you did not train, that is
+compatible mode.
+
+### What changes
+
+| | Compatible (espeak-ng's reading) | Improved |
+| --- | --- | --- |
+| English homographs | `I read it yesterday.` → `aɪ ɹˈiːd …` | `aɪ ɹˈɛd …`, from tense, time words and the words around it |
+| Names and brands | `Siobhan`, `iPhone` → `ʃˈaʊbɑːn`, `aɪ fˈoʊn` | `ʃəvˈɔːn`, `ˈaɪfoʊn`, from a hand-written list first |
+| Hindi schwa deletion | `लड़कपन` → `lˈʌr.əkˌəpən` | `lˈʌɽəkpən` |
+| Hindi nasals and long vowels | `हिंदी` → `hˈĩdi`, `पानी` → `pˈaːni`, `गाँव` → `ɡˈãnʋ` | `hˈɪndiː`, `pˈaːniː`, `ɡˈãʋ` |
+| Hindi flaps ड़ ढ़ | `r.` (an ASCII stand-in) | `ɽ` `ɽʰ` |
+| English words in Hindi text | British English phones a Hindi voice never saw (`ɒ`, `ɹ`, `w`) | mapped into the Hindi phone set |
+| Romanised Hindi (`main kal office jaunga`) | read as English | read as Hindi with `hinglish=True` (experimental) |
+| Bhojpuri, Maithili, Magahi, Dogri, Bodo, Sanskrit | read as Hindi (espeak-ng has no voice for them) | read as themselves, from each language's own rules |
+| Tamil, Kannada, Telugu, Malayalam numbers | `₹1,250` (Tamil) → *ஒன்று ஆயிரம் இரண்டு நூறு ஐம்பது*, the rupee dropped | *ஆயிரத்து இருநூற்று ஐம்பது ரூபாய்*, written number words |
+| The rupee sign in the Indian languages | dropped | said |
+
+Santali, Manipuri and Kashmiri read the same in both modes: espeak-ng cannot read them, so there is
+no reference to be compatible with. The full list per language is in
+[docs/improved-mode.md](docs/improved-mode.md).
+
+**How much better.** On hand-written sets whose expected pronunciations come from dictionaries and
+standard phonology (never from a phonemiser), held out from the work on the rules:
+
+| Held-out set | espeak-ng 1.52 | uccharan compatible | uccharan improved |
+| --- | ---: | ---: | ---: |
+| English homographs, proper nouns, numbers; Hindi schwa and nasals; romanised Hindi (128 items) | 51.6 % | 48.4 % | **82.0 %** |
+| Personal names of many origins (172) | 61.6 % | 80.2 % | **91.3 %** |
+| — Indian names (48) | 43.8 % | 50.0 % | **79.2 %** |
+| — names not in CMUdict (41) | 34.1 % | 19.5 % | **68.3 %** |
+| African names (195) | 45.6 % | 41.5 % | **75.9 %** |
+| Bhojpuri words (224) | 62.9 % | 63.8 % | **96.4 %** |
+| Maithili words (226) | 68.6 % | 66.4 % | **93.4 %** |
+| Magahi words (270) | 64.4 % | 70.0 % | **98.5 %** |
+| Dogri words (70) | 44.3 % | 44.3 % | **97.1 %** |
+| Bodo words (79) | 2.5 % | 2.5 % | **98.7 %** |
+
+For names that are in CMUdict the reference *is* CMUdict, which uccharan's lexicon comes from, so
+the fair name rows are Indian names and names not in CMUdict. The Bhojpuri, Maithili, Magahi, Dogri
+and Bodo sets mostly encode grammars' descriptions as written down for this project: they show
+that improved mode implements them, not that a native speaker would accept every form
+([items to check](docs/bhojpuri-maithili-review.md)). More sets (North African, Egyptian,
+Chichewa, Shona, Tsonga and Tigrinya names; Santali, Manipuri and Kashmiri words) are in
+[docs/evaluation.md](docs/evaluation.md#4-correctness-improved-mode-against-hand-curated-gold-sets).
+
+### Setting the mode
+
+```python
+uccharan.phonemize(text, "ta", improved=True)
+uccharan.phonemize_batch(lines, "ta", improved=True)
+uccharan.normalize(text, "ta", improved=True)
+uccharan.phonemize("main kal office jaunga", "hi", improved=True, hinglish=True)
+```
+
+```js
+await phonemize(text, { lang: "ta", improved: true });
+await normalize(text, { lang: "ta", improved: true });
+```
+
+```rust
+use uccharan::{Lang, Mode, Options, Phonemizer};
+let mut opt = Options::new(Lang::Ta);   // Mode::Compatible by default
+opt.mode = Mode::Improved;
+let ipa = Phonemizer::new().phonemize(text, &opt);
+```
+
+```c
+uccharan_phonemize(p, text, "ta", "espeak-ipa", UCCHARAN_IMPROVED);   /* | UCCHARAN_HINGLISH */
+uccharan_normalize(p, text, "ta", "{\"mode\": \"improved\"}");
+```
+
+```sh
+uccharan -l ta --improved "விலை ₹1,250"
+uccharan-train label metadata.csv -l hi --improved -o labels/
+```
+
+### Number reading is a separate switch
+
+How digits, money, dates and times are read is chosen by `normalize`, independently of the mode:
+
+| `normalize=` | Reads `$5 on 3/4/2024` (en-us) as | Use it for |
+| --- | --- | --- |
+| `"natural"` (default) | *five dollars on March fourth twenty twenty four* | speech: what a person would say |
+| `"espeak"` | *dollar five on three slash four slash two thousand twenty four* | reproducing espeak-ng exactly, number for number |
+| `"off"` | *on* (digits and symbols are left out) | text that is already written out |
+
+The languages read by their own script rules (Bengali, Tamil, Telugu, Urdu and the rest outside
+the Hindi family) read numbers as espeak-ng does in compatible mode, even with `"natural"`;
+improved mode uses each language's own number words.
 
 ## What is in it
 
 | | What it does | Guide |
 | --- | --- | --- |
-| [Phonemiser](#phonemiser-and-languages) | text to phonemes in 44 languages, in the shape each voice family expects | [profiles](docs/profiles.md), [languages](docs/languages.md) |
+| [Phonemiser](#languages) | text to phonemes in 44 languages, in the shape each voice family expects | [profiles](docs/profiles.md), [languages](docs/languages.md) |
 | [Normalise-only mode](#normalise-only-mode) | the spoken form of a text, with typed spans, for voices that read text | [normalize](docs/normalize.md) |
 | [Pronunciation word lists](#pronunciation-word-lists) | your pronunciations as TSV, PLS or JSON, applied to phoneme and text voices alike | [word lists](docs/wordlists.md) |
 | [Sound-alike matching](#sound-alike-matching) | corrects a recogniser's transcript against your vocabulary by sound | [soundalike](docs/soundalike.md) |
 | [Transliteration](#transliteration) | romanised text of nine Indian languages into native script | [transliteration](docs/transliteration.md) |
 | [Training tools](#training-tools) | labels datasets, picks reading scripts, reports coverage, scores pronunciation | [training](docs/training.md) |
-| [Improved mode and names](#improved-mode-and-names) | pronunciations more correct than the espeak-ng reading, for voices you train yourself | [improved mode](docs/improved-mode.md) |
+| [Improved mode](#compatible-or-improved-choosing-a-mode) | pronunciations more correct than the espeak-ng reading, for voices you train yourself | [improved mode](docs/improved-mode.md) |
 | [Packs](#packs-and-their-licences) | optional data under its own licence, downloaded only on request | [data licences](DATA_LICENSES.md) |
 
-## Phonemiser and languages
+<a id="phonemiser-and-languages"></a>
 
-Most open voices (Piper, Kokoro, Kitten TTS, Matcha-TTS, StyleTTS2) were trained on phonemes
-from espeak-ng, which is GPL-licensed; sherpa-onnx 2.0 removed espeak-ng for that reason and
-expects the caller to bring phonemes. uccharan's **compatible mode** produces those phonemes, so
-existing voices work unchanged. espeak-ng is a speech synthesiser; uccharan replaces only its
-text-to-phoneme front end, and the neural voice does the speaking.
+## Languages
+
+Most open voices were trained on phonemes from espeak-ng, which is GPL-licensed; sherpa-onnx 2.0
+removed espeak-ng for that reason and expects the caller to bring phonemes. uccharan replaces only
+espeak-ng's text-to-phoneme front end; the neural voice still does the speaking.
+
+| Group | Languages (tag) |
+| --- | --- |
+| English | American `en-us`, British (RP) `en-gb` |
+| Hindi and its neighbours | Hindi `hi` (with English mixed in), Bhojpuri `bho`, Maithili `mai`, Magahi `mag`, Sanskrit `sa`, Dogri `doi` |
+| Other South Asian | Bengali `bn`, Marathi `mr`, Gujarati `gu`, Punjabi (Gurmukhi) `pa`, Odia `or`, Assamese `as`, Nepali `ne`, Konkani `kok`, Sinhala `si`, Urdu `ur`, Sindhi `sd`, Kashmiri `ks` (Perso-Arabic, Devanagari), Bodo `brx`, Santali `sat` (Ol Chiki), Manipuri `mni` (Meetei Mayek, Bengali script) |
+| South Indian | Tamil `ta`, Telugu `te`, Kannada `kn`, Malayalam `ml` |
+| European | Spanish `es`, German `de`, Dutch `nl`, French `fr` (also `fr-be`, `fr-ch`), Italian `it`, Portuguese `pt-br` and `pt`, Polish `pl`, Turkish `tr`, Czech `cs`, Swedish `sv`, Catalan `ca`, Romanian `ro`, Hungarian `hu`, Finnish `fi`, Norwegian Bokmål `nb`, Danish `da` |
+
+Text in another script inside a sentence is read by that script's language, so Hindi with English
+words, or Bengali inside Hindi, needs no splitting.
+
+**Agreement with espeak-ng** (compatible mode, phoneme error rate on held-out sentences never used
+to write rules or build tables) and **speed** (one thread, both called as libraries):
+
+| | Phoneme error rate | Speed against espeak-ng |
+| --- | ---: | ---: |
+| English (US, British) | 1.16 %, 1.39 % (3,000 sentences) | 5.3×, 5.2× |
+| Hindi | 0.09 % (3,000 sentences) | 2.8× |
+| 21 other South Asian languages | 0.20 % (Konkani) to 7.21 % (Assamese); 12 of them under 1 % | 1.9× to 37× |
+| 19 European languages and accents | 0.53 % (Italian) to 1.95 % (Danish) | 1.7× to 27.1× |
+
+In absolute terms American English takes 11.8 µs per sentence against espeak-ng's 62.1 µs (p50),
+580 k words per second on one thread against 114 k, and starts in 0.65 ms against 4.0 ms. Where
+uccharan does **not** win is size: its library code is larger than espeak-ng's, and its English
+data compresses worse (604 KB against 380 KB with xz).
+
+End to end (voice plus speech recogniser, 200 to 500 held-out sentences per voice) the word error
+rate with uccharan's phonemes is within the confidence interval of espeak-ng's for every voice
+tried: eight Piper voices (English, Hindi, Spanish, German, French, Italian) and one Kokoro speaker
+each for American English, British English and Hindi. Kokoro English goes through a built-in port
+of misaki, the front end Kokoro was trained on, which gives the same tokens as misaki for 94.9 % of
+held-out sentences at 21 µs per sentence against misaki's 1.88 ms.
+
+The table for every language (data set, error rate with and without digits, speed, and which open
+voices use those phonemes), how to read it, and per-language notes are in
+[docs/languages.md](docs/languages.md); the methods are in [docs/evaluation.md](docs/evaluation.md);
+to add a language, see [docs/adding-a-language.md](docs/adding-a-language.md).
+
+## Output profiles
+
+Each voice family wants phonemes in a different shape. Pick it with the profile argument (`-p` on
+the command line):
 
 | Profile | Gives you | For |
 | --- | --- | --- |
-| `espeak-ipa` | IPA string, words separated by spaces | anything that used `phonemizer`'s espeak backend |
+| `espeak-ipa` (default) | IPA string, words separated by spaces | anything that used `phonemizer`'s espeak backend |
 | `piper` | one string per sentence; `piper_ids()` maps it through a voice's `phoneme_id_map` | Piper voices |
 | `sherpa-onnx` | one codepoint list per sentence | sherpa-onnx ≥ 2.0 `phoneme_codepoints` |
-| `kokoro` | Kokoro tokens; `kokoro_ids()` | Kokoro-82M (English through a built-in port of misaki) |
+| `kokoro` | Kokoro tokens; `kokoro_ids()` | Kokoro-82M (English through the built-in misaki port) |
 | `kitten`, `matcha` | phoneme string; `kitten_ids()`, `matcha_ids()` | Kitten TTS 0.8, Matcha-TTS |
 
-**Agreement.** The table gives, for every language, how far compatible mode is from espeak-ng
-1.52.0 (called through its library API) on held-out sentences that were never used to write
-rules or build tables: the phoneme error rate (PER, edit distance over reference length, stress
-marks included), and the same without the sentences that contain digits, because number reading
-is where most languages differ most.
-
-**Speed** is uccharan's speed divided by espeak-ng's on those sentences, one thread, both called
-as shared libraries from one process, on a shared 4-vCPU machine without a GPU. Plain figures
-compare the median (p50) time per sentence; figures marked † compare throughput (words per
-second) and are the lower of two runs. The measurements vary by about ±10 % between runs.
-
-| Language | Tag | espeak-ng voice compared with | Held-out text | Phoneme error rate | Without digits | Speed against espeak-ng | Open voices trained on these phonemes |
-| --- | --- | --- | --- | ---: | ---: | ---: | --- |
-| English (US) | `en-us` | `en-us` | 3,000 sentences | 1.16 % | — | 5.3× | Piper `en_US`, Kokoro (via the misaki port), Kitten TTS, Matcha-TTS |
-| English (British, RP) | `en-gb` | `en-gb` | 3,000 sentences | 1.39 % | — | 5.2× | Piper `en_GB`, Kokoro |
-| Hindi, and Hindi + English | `hi` | `hi` | 3,000 sentences | 0.09 % | — | 2.8× | Piper `hi_IN`, Kokoro |
-| Bengali | `bn` | `bn` | Tatoeba, 2,000 sentences | 0.37 % | — | 2.0× | Piper `bn_BD`, Mimic-3 `bn` |
-| Marathi | `mr` | `mr` | Tatoeba, 2,000 sentences | 0.27 % | — | 3.2× | Piper `mr_IN` |
-| Telugu | `te` | `te` | FLORES-200, 1,012 sentences | 0.87 % | 0.52 % | 3.0× | Piper `te_IN` (3) |
-| Kannada | `kn` | `kn` | FLORES-200, 1,012 sentences | 1.58 % | 0.50 % | 2.4× | MMS / SYSPIN (character input) |
-| Malayalam | `ml` | `ml` | FLORES-200, 1,012 sentences | 2.01 % | 0.97 % | 2.6× | Piper `ml_IN` (2) |
-| Nepali | `ne` | `ne` | FLORES-200, 1,012 sentences | 2.67 % | 2.32 % | 15× | Piper `ne_NP` (3), Mimic-3 `ne` |
-| Tamil | `ta` | `ta` | FLORES-200, 1,012 sentences | 4.09 % | 2.83 % | 37× | Piper `ta_IN` (2, community) |
-| Gujarati | `gu` | `gu` | FLORES-200, 1,012 sentences | 2.41 % | 2.04 % | 3.8× | Mimic-3 `gu` |
-| Assamese | `as` | `as` | Tatoeba, 2,000 sentences | 7.21 % | — | 2.2× | MMS (character input) |
-| Punjabi (Gurmukhi) | `pa` | `pa` | FLORES-200, 1,012 sentences | 0.41 % | 0.22 % | 3.8× | MMS (character input) |
-| Odia | `or` | `or` | FLORES-200, 1,012 sentences | 0.50 % | 0.28 % | 2.4× | MMS (character input) |
-| Sinhala | `si` | `si` | FLORES-200, 1,012 sentences | 0.86 % | 0.24 % | 2.3× | MMS (character input) |
-| Konkani | `kok` | `kok` | Sangraha, 1,000 sentences | 0.20 % | 0.13 % | 5.1× | none |
-| Urdu | `ur` | `ur` | FLORES-200, 1,012 sentences | 1.44 % | 1.16 % | 4.0× | Piper `ur_PK` (2) |
-| Sindhi | `sd` | `sd` | FLORES-200, 1,012 sentences | 1.30 % | 0.70 % | 2.2× | none |
-| Sanskrit | `sa` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.64 % | 0.43 % | 4.2× | none |
-| Bhojpuri | `bho` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.51 % | 0.33 % | 3.3× | SYSPIN (character input) |
-| Maithili | `mai` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.46 % | 0.29 % | 3.0× | MMS, SYSPIN (character input) |
-| Magahi | `mag` | `hi` ‡ | FLORES-200, 1,012 sentences | 0.40 % | 0.23 % | 2.8× | MMS (character input) |
-| Dogri | `doi` | `hi` ‡ | IndicCorp v2, 2,000 sentences | 1.40 % | 1.35 % | 1.9× § | none |
-| Bodo | `brx` | `hi` ‡ | IndicCorp v2, 2,000 sentences | 0.37 % | 0.32 % | 2.3× § | none |
-| Santali (Ol Chiki) | `sat` | none ¶ | IndicCorp v2, 2,000 sentences | — ¶ | — | — ¶ | none |
-| Manipuri (Meetei Mayek, Bengali script) | `mni` | none ◊ | IndicCorp v2, 2,000 sentences | — ◊ | — | — ◊ | none |
-| Kashmiri (Perso-Arabic, Devanagari) | `ks` | none ※ | IndicCorp v2, 1,678 sentences | — ※ | — | — ※ | none |
-| Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.54 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
-| German | `de` | `de` | FLORES-200, 1,012 sentences | 0.95 % | 0.77 % | 5.8× † | Piper `de_DE` (11) |
-| Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.69 % | 1.32 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
-| French | `fr` | `fr` | FLORES-200, 1,012 sentences | 0.63 % | 0.54 % | 5.9× † | Piper `fr_FR` (7), Kokoro `ff_siwis` |
-| French (Belgium) | `fr-be` | `fr-be` | FLORES-200, 1,012 sentences ✦ | 0.63 % | 0.54 % | 5.9× † | none |
-| French (Switzerland) | `fr-ch` | `fr-ch` | FLORES-200, 1,012 sentences ✦ | 0.62 % | 0.54 % | 5.9× † | none |
-| Italian | `it` | `it` | FLORES-200, 1,012 sentences | 0.53 % | 0.37 % | 4.6× † | Piper `it_IT` (4), Kokoro `if_sara`, `im_nicola` |
-| Portuguese (Brazil) | `pt-br` | `pt-br` | FLORES-200, 1,012 sentences | 0.61 % | 0.40 % | 5.1× † | Piper `pt_BR` (4), Kokoro `pf_dora`, `pm_alex`, `pm_santa` |
-| Portuguese (Portugal) | `pt` | `pt` | FLORES-200, 1,012 sentences | 0.84 % | 0.60 % | 5.2× † | Piper `pt_PT` (1) |
-| Polish | `pl` | `pl` | FLORES-200, 1,012 sentences | 1.12 % | 0.92 % | 3.1× † | Piper `pl_PL` (5) |
-| Turkish | `tr` | `tr` | FLORES-200, 1,012 sentences | 0.68 % | 0.47 % | 2.7× † | Piper `tr_TR` (1) |
-| Czech | `cs` | `cs` | FLORES-200, 1,012 sentences | 1.31 % | 1.07 % | 1.8× † | Piper `cs_CZ` (3) |
-| Swedish | `sv` | `sv` | FLORES-200, 1,012 sentences | 1.32 % | 0.83 % | 3.7× † | Piper `sv_SE` (3) |
-| Catalan | `ca` | `ca` | FLORES-200, 1,012 sentences | 1.44 % | 1.10 % | 4.9× † | Piper `ca_ES` (3) |
-| Romanian | `ro` | `ro` | FLORES-200, 1,012 sentences | 0.96 % | 0.86 % | 3.3× † | Piper `ro_RO` (1) |
-| Hungarian | `hu` | `hu` | FLORES-200, 1,012 sentences | 1.34 % | 0.95 % | 13.1× † | Piper `hu_HU` (3) |
-| Finnish | `fi` | `fi` | FLORES-200, 1,012 sentences | 1.36 % | 1.08 % | 1.7× † | Piper `fi_FI` (2) |
-| Norwegian Bokmål | `nb` | `nb` | FLORES-200, 1,012 sentences | 0.96 % | 0.46 % | 2.3× † | Piper `no_NO` (2) |
-| Danish | `da` | `da` | FLORES-200, 1,012 sentences | 1.95 % | 1.49 % | 27.1× † | Piper `da_DK` (1) |
-
-✦ The Belgian and Swiss French voices are scored on the French sentences; they differ from the
-French reading only in the numbers 70–99 (septante, huitante, nonante). Their speed is the French
-voice's: in one run on a busy machine French 4.5×, `fr-be` 4.5×, `fr-ch` 5.2×.
-
-‡ espeak-ng has no voice for Sanskrit, Bhojpuri, Maithili, Magahi, Dogri or Bodo; text in them is read
-with its Hindi voice, and compatible mode is measured against that reading. Improved mode reads
-them as themselves (below).
-
-§ Measured on a Windows 11 laptop, not on the machine of the other rows (500 held-out sentences,
-p50, best of 5 rounds); in the same run as Dogri, Magahi gave 2.3× and Hindi 1.8×, against 2.8× each
-in the table; in the same run as Bodo, Dogri gave 1.9× and Hindi 1.8×. Bodo's second held-out set,
-the 1,012 FLORES-200 sentences of Google's IndicGenBench, gives 0.48 % (0.35 % without stress).
-
-¶ espeak-ng cannot read Santali's Ol Chiki script: under every voice it says the code point of each
-letter. With no reference reading there is no phoneme error rate and no speed ratio; both modes give
-uccharan's Santali reading, checked on a hand-written gold set (below). On the § laptop, 500
-held-out sentences, one thread: 16.7 µs per sentence (p50), 0.72 million words per second; in the
-same run Bodo gave 2.4× espeak-ng's speed and Hindi 1.8×. Every Ol Chiki word of the four held-out
-sets (IndicCorp v2, IndicGenBench, Santali Wikipedia, Tatoeba) is read to Santali phonemes
-([notes](docs/languages.md#notes-on-the-languages)).
-
-◊ Manipuri (Meitei) is read in both its scripts: Meetei Mayek by its own language file, Bengali-script
-Meitei through the Meetei Mayek it spells letter for letter. espeak-ng has no Meitei voice (`bpy` is
-Bishnupriya Manipuri, another language) and cannot read Meetei Mayek, so both modes give uccharan's
-reading, checked on a gold set of Wiktionary pronunciations and hand-written sentences (below). Its
-Bengali voice is no reference for Bengali-script Meitei: on the Bengali-script half of the held-out
-gold set it gets 28.9 % of 83 words (sentence PER 23.3 %), against 95.2 % (0.52 %) for uccharan. On
-the § laptop, 500 held-out Meetei Mayek sentences, one thread: 14.2 µs per sentence (p50), 0.55
-million words per second; in the same run Bodo gave 2.4× espeak-ng's speed and Hindi 1.8×. Every
-word of the held-out sets (IndicCorp v2 and Manipuri Wikipedia in Meetei Mayek, IndicGenBench in
-Bengali script) is read ([notes](docs/languages.md#notes-on-the-languages)).
-
-※ Kashmiri is read in both its scripts: the Perso-Arabic of its official orthography, which writes
-nearly every vowel, by its own language file, and Devanagari through the Perso-Arabic spelling it
-corresponds to. espeak-ng has no Kashmiri voice, so both modes give uccharan's reading, checked on a
-gold set of Wiktionary pronunciations and hand-written sentences (below). espeak-ng's Urdu and Hindi
-voices read Kashmiri as Urdu and Hindi: on the held-out gold set they get 27.9 % of 455 Perso-Arabic
-and 30.5 % of 190 Devanagari words, against 95.8 % and 92.6 % for uccharan. On the § laptop, 500
-held-out sentences, one thread: 15.0 µs per sentence (p50), 0.68 million words per second; in the
-same run Bodo gave 2.4× espeak-ng's speed and Hindi 1.8×. Every word of the held-out sets
-(IndicCorp v2, Kashmiri Wikipedia) is read ([notes](docs/languages.md#notes-on-the-languages)).
-
-How to read it:
-
-- **Tatoeba and FLORES-200 rows are not comparable.** FLORES-200 is longer news text with many
-  numbers and names; Tatoeba is short everyday sentences.
-- **Words outside the word tables are where the errors are.** The sixteen European languages
-  after Spanish use a word table plus a letter-to-sound model, both made by running espeak-ng
-  1.52.0 over word lists from Tatoeba and the Leipzig Corpora Collection. On the held-out text,
-  words outside those lists are wrong far more often than listed ones: from 2.0 % (Hungarian)
-  and 9.2 % (Czech) to 49.0 % (European Portuguese) and 62.3 % (Danish) of such words. Each
-  language's figures are in [docs/languages.md](docs/languages.md).
-- **Assamese (7.21 %), Tamil (4.09 %) and Nepali (2.67 %) are furthest from espeak-ng**; the
-  reasons are in the language notes.
-- **Czech and Finnish are the slowest** against espeak-ng (1.8× and 1.7×): their texts have many
-  distinct word forms, and each new form goes through the letter-to-sound model.
-- **Voices.** End to end (voice plus speech recogniser, 200 to 500 held-out sentences per voice)
-  the word error rate with uccharan's phonemes is within the confidence interval of espeak-ng's
-  for the voices tried: Piper `amy-low` 2.94 % → 2.97 %, `lessac-medium` 4.30 % → 4.21 %,
-  `alba-medium` 7.36 % → 7.47 %, `hi_IN-rohan-medium` 8.95 % → 8.82 %, `es_ES-davefx-medium`
-  13.23 % → 12.90 %, `de_DE-thorsten-medium` 21.76 % → 20.99 %, `fr_FR-siwis-medium` 19.28 % →
-  19.39 %, `it_IT-paola-medium` 30.02 % → 29.91 % (a small recogniser), and three Kokoro
-  speakers. That is eight Piper voices (English, Hindi, Spanish, German, French, Italian) and one
-  Kokoro speaker each for American English, British English and Hindi; no voice of the other
-  languages has been run end to end
-  ([details](docs/evaluation.md#2-end-to-end-real-voices-real-speech-recognition)).
-- **Kokoro English** does not go through espeak-ng: uccharan carries a port of misaki, the front
-  end Kokoro was trained on, with misaki 0.9.4's dictionaries. It gives the same tokens as misaki
-  for 94.9 % of held-out sentences (99.96 % of dictionary words) and takes 21 µs per sentence
-  against misaki's 1.88 ms ([details](docs/evaluation.md#6-kokoro)).
-
-English and Hindi in absolute terms, same method (3 000 held-out sentences, best of 11 rounds,
-each round in a fresh process): 11.8 µs per sentence against espeak-ng's 62.1 µs for American
-English (p50), 5.5 µs against 15.7 µs for Hindi; 580 k words per second on one thread against
-114 k; start-up plus the first sentence in 0.65 ms against 4.0 ms. Where uccharan does **not**
-win is size: its library code is larger than espeak-ng's, and its English data compresses worse
-(604 KB against 380 KB with xz).
-The full tables, including WebAssembly, are in
-[docs/evaluation.md](docs/evaluation.md#5-speed-start-up-memory-and-size).
-
-Per-language notes, the number and clause rules each language follows, and how to add one:
-[docs/languages.md](docs/languages.md), [docs/adding-a-language.md](docs/adding-a-language.md).
+Integration guides: [sherpa-onnx](docs/integrations/sherpa-onnx.md),
+[Piper](docs/integrations/piper.md), [Kokoro](docs/integrations/kokoro.md),
+[bolo](docs/integrations/bolo.md). Details of each profile: [docs/profiles.md](docs/profiles.md).
 
 ## Normalise-only mode
 
@@ -391,8 +451,8 @@ are read.
 uccharan.normalize("UPI से भुगतान", "hi", latin="transliterate").text   # 'यू पी आई से भुगतान'
 ```
 
-It uses the same number, date and currency readers as the phonemiser, for every language the
-phonemiser has. See [docs/normalize.md](docs/normalize.md).
+It uses the same number, date and currency readers as the phonemiser, so a text voice and a
+phoneme voice say the same thing. See [docs/normalize.md](docs/normalize.md).
 
 ## Pronunciation word lists
 
@@ -412,15 +472,13 @@ aspiration, vowel length, retroflex / dental), unrelated ones are not, and becau
 phonemes a Latin-script vocabulary matches a Devanagari transcript and the other way round.
 Every change is reported; none is silent.
 
-Held-out, with 651 terms (Indian names, brands, technical and domain terms) in English, Hindi
-and Hinglish sentences spoken by synthetic voices and transcribed by small recognisers: at the
-default thresholds 43.9 % of the terms the recognisers got wrong are put back (64.2 % in English
+Held out, with 651 terms (Indian names, brands, technical and domain terms) in English, Hindi and
+Hinglish sentences spoken by synthetic voices and transcribed by small recognisers: at the default
+thresholds 43.9 % of the terms the recognisers got wrong are put back (64.2 % in English
 sentences), 97.8 % of the corrections are right, and 2 of 775 sentences without any term are
-changed. Character edit distance puts back 8.8 % (and changes 7 of those sentences); Metaphone
-codes 18.7 % while changing 38 % of them. About 7 800 transcripts a second against 1 000 terms
-and 300 against 50 000. The speech in this test is synthetic; human speakers and larger
-recognisers were not measured. See
-[docs/soundalike.md](docs/soundalike.md) and
+changed. Character edit distance puts back 8.8 %; Metaphone codes 18.7 % while changing 38 % of the
+term-free sentences. The speech in this test is synthetic; human speakers and larger recognisers
+were not measured. See [docs/soundalike.md](docs/soundalike.md) and
 [the evaluation](docs/evaluation.md#7-sound-alike-matching).
 
 ## Transliteration
@@ -429,54 +487,21 @@ People type `aap kaise ho` or `mujhe kal office jana hai`; voices and recogniser
 `आप कैसे हो` and `मुझे कल office जाना है`. `transliterate` writes the romanised words of **Hindi,
 Marathi, Bengali, Tamil, Telugu, Gujarati, Punjabi, Kannada or Malayalam** in the language's
 script, leaves English words as English (or respells them in the script on request), and returns
-spans aligned to the source with the alternatives of each word. Each word gets candidates from a
-lexicon of attested spellings and from a small n-gram model; they are ranked by the model, by
-word frequency and by how alike the romanised word and the candidate *sound*. There is no neural
-network to run: a word it has never seen takes about a third of a millisecond.
+spans aligned to the source with the alternatives of each word. There is no neural network to
+run: a word it has never seen takes about a third of a millisecond.
 
-**Hindi mixed with English** (164 hand-written chat sentences, 868 Hindi and 130 English words,
-held out):
-
-| | Hindi words written correctly | English words converted by mistake | Hindi words left in Latin letters |
-| --- | ---: | ---: | ---: |
-| First run on the held-out set (the clean figure) | **95.9 %** | 7.7 % | 0.3 % |
-| The pack that ships, scored again after a fix prompted by that run | **98.2 %** | 7.7 % | 0.3 % |
-| Without a pack (built-in list and rules) | 72.4 % | 3.1 % | 20.0 % |
-
-The first run showed that vowel-less chat spellings (`nhi`, `kr`, `h`) were being overruled; that
-was fixed on new development sentences and the packs were rebuilt. The 98.2 % was therefore
-obtained after a change made in response to held-out errors and is optimistic; 95.9 % is the
-figure from the one run made before it. (Spelling variants of one word, such as हिन्दी / हिंदी,
-count as correct in both; exact match is 93.1 % and 95.2 %.)
-
-**Single words, first candidate right (%)**, held-out, next to the figures published for
-IndicXlit, AI4Bharat's neural transliterator (taken from its README on 2026-11-14, not re-run
-here, so small differences of protocol are possible):
-
-| Language | Pack | Dakshina test: uccharan | IndicXlit | Aksharantar native words: uccharan | IndicXlit | Aksharantar named entities: uccharan | IndicXlit |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Hindi | 8.7 MB | **68.69** | 60.56 | 49.66 | **55.59** | 57.04 | **58.87** |
-| Marathi | 7.4 MB | **74.45** | 64.85 | 57.08 | **63.72** | 52.55 | **53.57** |
-| Bengali | 7.8 MB | **67.09** | 55.49 | 60.65 | **61.70** | **46.42** | 37.12 |
-| Tamil | 7.0 MB | **75.90** | 68.10 | **72.65** | 69.78 | 38.81 | **42.12** |
-| Telugu | 7.0 MB | **81.45** | 73.38 | 83.88 | **84.69** | **53.38** | 51.82 |
-| Gujarati | 6.0 MB | **65.62** | 62.02 | 54.72 | **61.89** | **49.67** | 48.89 |
-| Punjabi | 3.1 MB | **53.34** | 47.24 | 34.43 | **40.27** | 34.05 | **36.08** |
-| Kannada | 6.7 MB | **84.40** | 77.18 | 75.68 | **76.18** | 48.64 | **49.92** |
-| Malayalam | 6.4 MB | **71.66** | 63.56 | 61.62 | **64.73** | 30.90 | **33.93** |
-
-uccharan is ahead on the Dakshina test words in all nine languages (by 3.6 to 11.6 points),
-**behind** on Aksharantar's native words in eight (by 0.5 to 7.2 points; ahead in Tamil), and on
-named entities ahead in three and behind in six. The Dakshina words were sampled from Wikipedia
-and part of uccharan's frequency list is Wikipedia text, so that set is the favourable case and
-the Aksharantar native words the unfavourable one. Outside Hindi the choice between English and
-the language is not measured (there is no code-mixed test set for the other eight languages),
-and their hand-written chat-spelling and homograph lists have not been reviewed by native
-speakers.
+- **Hindi mixed with English** (164 held-out chat sentences): 95.9 % of the Hindi words written
+  correctly on the first run, 98.2 % with the pack that ships (after a fix prompted by that run, so
+  optimistic); 7.7 % of English words converted by mistake.
+- **Single words**, first candidate right, against the figures published for AI4Bharat's
+  IndicXlit: ahead on the Dakshina test words in all nine languages (by 3.6 to 11.6 points),
+  behind on Aksharantar's native words in eight of nine (by 0.5 to 7.2 points), and mixed on named
+  entities.
 
 The data is one optional pack per language under CC BY-SA 4.0 (see
 [Packs](#packs-and-their-licences)); without a pack the function converts by rule, far less
-accurately. See [docs/transliteration.md](docs/transliteration.md) and
+accurately (72.4 % of the Hindi words above). Full tables and caveats:
+[docs/transliteration.md](docs/transliteration.md),
 [the evaluation](docs/evaluation.md#8-romanised-text-into-native-script).
 
 ## Training tools
@@ -509,49 +534,6 @@ uccharan-train mfa-dict corpus.txt -l bho -o bho.dict                # dictionar
 The file layouts were checked against the Piper, Matcha-TTS, icefall and Montreal Forced Aligner
 sources and documentation; **no voice has been trained with them yet**. See
 [docs/training.md](docs/training.md) and the [example](examples/train).
-
-## Improved mode and names
-
-Compatible mode reproduces the espeak-ng reading, mistakes included, because that is what
-existing voices learned. **Improved mode** (`improved=True`) is for voices you train yourself, and
-for word lists and scoring: homographs in context, names, numbers, dates and units, Hindi schwa
-deletion and nasals, and the languages espeak-ng reads with its Hindi voice read as themselves.
-Scores on hand-written sets whose expected pronunciations come from dictionaries and standard
-phonology, never from a phonemiser; each set was written after the rules it tests were frozen or
-before the work on them began, and the figures are for held-out items:
-
-| Held-out set | espeak-ng 1.52 | uccharan compatible | uccharan improved |
-| --- | ---: | ---: | ---: |
-| English homographs, proper nouns, numbers; Hindi schwa and nasals; romanised Hindi (128 items) | 51.6 % | 48.4 % | **82.0 %** |
-| Personal names of many origins (172) | 61.6 % | 80.2 % | **91.3 %** |
-| — Indian names (48) | 43.8 % | 50.0 % | **79.2 %** |
-| — names not in CMUdict (41) | 34.1 % | 19.5 % | **68.3 %** |
-| African names (195) | 45.6 % | 41.5 % | **75.9 %** |
-| North African names (100) | 40.0 % | 33.0 % | **66.0 %** |
-| Egyptian names (85) | 56.5 % | 48.2 % | **69.4 %** |
-| Chichewa, Shona, Tsonga and Tigrinya names (96) | 47.9 % | 31.2 % | **76.0 %** |
-| Bhojpuri words (224) | 62.9 % | 63.8 % | **96.4 %** |
-| Maithili words (226) | 68.6 % | 66.4 % | **93.4 %** |
-| Magahi words (270) | 64.4 % | 70.0 % | **98.5 %** |
-| Dogri words (70) | 44.3 % | 44.3 % | **97.1 %** |
-| Bodo words (79) | 2.5 % | 2.5 % | **98.7 %** |
-| Santali words (100) ¶ | — | **100.0 %** | **100.0 %** |
-| Manipuri words, Meetei Mayek (193) ◊ | — | **92.2 %** | **92.2 %** |
-| Manipuri words, Bengali script (83) ◊ | 28.9 % (`bn` voice) | **95.2 %** | **95.2 %** |
-| Kashmiri words, Perso-Arabic (455) ※ | 27.9 % (`ur` voice) | **95.8 %** | **95.8 %** |
-| Kashmiri words, Devanagari (190) ※ | 30.5 % (`hi` voice) | **92.6 %** | **92.6 %** |
-
-What these do and do not show: for names that are in CMUdict the reference *is* CMUdict, which
-uccharan's lexicon comes from, so the fair rows are Indian names and names not in CMUdict. The
-North African, Egyptian and Chichewa / Shona / Tsonga / Tigrinya sets were scored twice (the table
-gives the second scoring; the first is in the evaluation). The Bhojpuri, Maithili, Magahi, Dogri, Bodo and Santali sets mostly encode grammars' descriptions as
-written down for this project, so they show that improved mode implements them, not that a
-native speaker would accept every form (the Manipuri and Kashmiri words come with Wiktionary's
-pronunciations instead, and miss where Wiktionary's vowel is not the one the letters write)
-([items to check](docs/bhojpuri-maithili-review.md)). On the 348 development items improved mode
-scores 99.7 %, which only shows the rules do what they were written to do. Full tables:
-[docs/evaluation.md](docs/evaluation.md#4-correctness-improved-mode-against-hand-curated-gold-sets);
-what improved mode changes: [docs/improved-mode.md](docs/improved-mode.md).
 
 ## Packs and their licences
 
@@ -589,11 +571,25 @@ JavaScript, the npm package carries the files and loads each on first use, and `
 Compatible mode never uses the WikiPron packs. Every file, its source and its licence are listed
 in [DATA_LICENSES.md](DATA_LICENSES.md).
 
+## Versions and stability
+
+uccharan follows [semantic versioning](https://semver.org/) from 1.0.0:
+
+- **Compatible mode's output** changes within a major version only to match espeak-ng's reading
+  more closely, so a voice keeps getting the phonemes it was trained on. Any other change to it is
+  a new major version.
+- **Improved mode and normalise-only mode** get more correct in minor versions. A voice trained on
+  improved-mode labels should pin the version it was trained with; `uccharan-train label` writes
+  it into `voice.json`.
+- **The Python, JavaScript, Rust and C interfaces** change incompatibly only in a major version.
+
+Changes are listed in [CHANGELOG.md](CHANGELOG.md).
+
 ## What is not tested
 
 - Voices of the languages other than English, Hindi, Spanish, German, French and Italian end to
-  end (Telugu, Marathi, Bengali and Urdu had no offline voice or recogniser that works); en-GB and Hindi on more
-  than one Piper voice each; Kokoro on more than one speaker per language.
+  end (Telugu, Marathi, Bengali and Urdu had no offline voice or recogniser that works); en-GB and
+  Hindi on more than one Piper voice each; Kokoro on more than one speaker per language.
 - Kitten TTS and Matcha-TTS end to end (only symbol tables and framing are checked).
 - The `piper` command-line program (it embeds espeak-ng and has no hook) and running Piper voices
   directly with onnxruntime.
@@ -606,11 +602,11 @@ in [DATA_LICENSES.md](DATA_LICENSES.md).
 - Multi-core scaling beyond about two cores, and speed on any machine but the shared one the
   figures come from.
 - Side-by-side speed against espeak-ng's WebAssembly build.
-- macOS beyond the test suite, which runs there on every change. Windows was also run on one Windows 11
-  laptop (Ryzen 7 5800H): the Python and Rust tests passed, the command line read UTF-16 input from
-  Notepad and PowerShell, and the C library linked with MSVC; Hindi took 8.7 µs p50 per sentence there
-  against 5.5 µs on the Linux machine ([evaluation](docs/evaluation.md)). Agreement figures come from
-  Linux only.
+- macOS beyond the test suite, which runs there on every change. Windows was also run on one
+  Windows 11 laptop (Ryzen 7 5800H): the Python and Rust tests passed, the command line read UTF-16
+  input from Notepad and PowerShell, and the C library linked with MSVC; Hindi took 8.7 µs p50 per
+  sentence there against 5.5 µs on the Linux machine ([evaluation](docs/evaluation.md)). Agreement
+  figures come from Linux only.
 
 ## Licence
 
@@ -619,10 +615,10 @@ Apache-2.0. Includes data from the CMU Pronouncing Dictionary (BSD-2-Clause) and
 with its source and licence. The optional `wikipron-*` and `xlit-*` packs are CC BY-SA 4.0; they
 are not part of any package and are loaded only on request.
 
-uccharan contains no espeak-ng code, rules or dictionary data. The Kokoro English front end is a port
-of misaki's Apache-2.0 code and ships misaki 0.9.4's English dictionaries unchanged under their
-upstream Apache-2.0 licence statement; upstream does not document where the dictionary entries
-originally come from (details in [DATA_LICENSES.md](DATA_LICENSES.md)).
+uccharan contains no espeak-ng code, rules or dictionary data. The Kokoro English front end is a
+port of misaki's Apache-2.0 code and ships misaki 0.9.4's English dictionaries unchanged under
+their upstream Apache-2.0 licence statement; upstream does not document where the dictionary
+entries originally come from (details in [DATA_LICENSES.md](DATA_LICENSES.md)).
 
 ## Documentation
 

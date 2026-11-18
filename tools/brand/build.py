@@ -149,7 +149,7 @@ def main() -> None:
             f'<svg style="position:absolute;left:140px;top:118px" width="{width * k:.0f}" height="{64 * k:.0f}" viewBox="0 0 {width:.0f} 64">{body}</svg>'
             '<div style="position:absolute;left:140px;top:282px;font-weight:600;font-size:54px;line-height:68px;letter-spacing:-0.022em">Phonemiser, text normaliser,<br>transliterator, pronunciation engine.</div>'
             f'<div class="second" style="position:absolute;left:140px;top:448px;font-size:29px;line-height:41px;width:1120px">'
-            "The text front end for speech synthesis and speech recognition — 39 languages, in Rust, Python, C and the browser. Apache-2.0.</div>"
+            "The text front end for speech synthesis and speech recognition — 44 languages, in Rust, Python, JavaScript and C. Apache-2.0.</div>"
             f'<div class="ipa" style="position:absolute;left:1350px;top:500px;font-size:32px;color:{second};letter-spacing:0.04em">उच्चारण → /ʊcːˈaːɾəɳ/</div>'
             + motif(dark, 1350, 0, 1.0)
         )
@@ -160,9 +160,9 @@ def main() -> None:
         f'<svg style="position:absolute;left:96px;top:100px" width="{width * k:.0f}" height="{64 * k:.0f}" viewBox="0 0 {width:.0f} 64">{body}</svg>'
         '<div style="position:absolute;left:96px;top:250px;font-weight:600;font-size:44px;line-height:58px;letter-spacing:-0.022em">Phonemiser, text normaliser,<br>transliterator, pronunciation engine.</div>'
         f'<div class="second" style="position:absolute;left:96px;top:398px;font-size:25px;line-height:36px;width:880px">'
-        "The text front end for speech synthesis and speech recognition — 39 languages, in Rust, Python, C and the browser. Apache-2.0.</div>"
+        "The text front end for speech synthesis and speech recognition — 44 languages, in Rust, Python, JavaScript and C. Apache-2.0.</div>"
         f'<div style="position:absolute;left:96px;top:548px;font-size:23px;font-weight:500">English <span class="second">&nbsp;•&nbsp;</span> South Asian <span class="second">&nbsp;•&nbsp;</span> European languages'
-        f'<span class="second"> &nbsp;•&nbsp; Rust · Python · C · WebAssembly &nbsp;•&nbsp; Apache-2.0</span></div>'
+        f'<span class="second"> &nbsp;•&nbsp; Rust · Python · JavaScript · C &nbsp;•&nbsp; Apache-2.0</span></div>'
         + motif(True, 940, 0, 0.73)
     )
     (WORK / "social-preview.html").write_text(page(True, 1280, 640, fonts, inner), encoding="utf-8")

@@ -34,6 +34,16 @@ const names = await createSoundIndex(["Kothari", "Paytm"]);
 names.apply("send it to Coat Harry", { lang: "en-us" }).text;         // "send it to Kothari"
 ```
 
+### Compatible or improved mode
+
+**Compatible mode** (the default) reproduces espeak-ng's phonemes, mistakes included, because that
+is what existing Piper, Kokoro, Kitten TTS, Matcha-TTS and sherpa-onnx voices were trained on: use
+it to drive those voices. **Improved mode** (`{ improved: true }`) reads text as it is actually said:
+homographs in context, names, Hindi schwa deletion and nasals, Bhojpuri, Maithili, Magahi, Dogri
+and Bodo read as themselves, and written number words in Tamil, Kannada, Telugu and Malayalam. Use
+it to train new voices, and always drive a voice with the mode it was trained with.
+[What changes, and how to choose](https://github.com/cB-Sigma/uccharan#compatible-or-improved-choosing-a-mode).
+
 The WebAssembly core is about 1.5 MiB (about 560 KiB gzipped). Language data is fetched the first
 time a language is used (`data/en-us.ucd` and `data/en-gb.ucd` about 0.7 MB each, `data/hi.ucd`
 3 KB, the Urdu, Sindhi and European word tables 46 KB to 0.66 MB each; `data/kokoro-en-*.ucd`,

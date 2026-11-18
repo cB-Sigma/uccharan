@@ -42,6 +42,16 @@ names = uccharan.SoundIndex(["Kothari", "Paytm"])
 names.apply("send it to Coat Harry", "en-us").text           # 'send it to Kothari'
 ```
 
+### Compatible or improved mode
+
+**Compatible mode** (the default) reproduces espeak-ng's phonemes, mistakes included, because that
+is what existing Piper, Kokoro, Kitten TTS, Matcha-TTS and sherpa-onnx voices were trained on: use
+it to drive those voices. **Improved mode** (`improved=True`; `--improved` on the command line) reads text as it is actually said:
+homographs in context, names, Hindi schwa deletion and nasals, Bhojpuri, Maithili, Magahi, Dogri
+and Bodo read as themselves, and written number words in Tamil, Kannada, Telugu and Malayalam. Use
+it to train new voices, and always drive a voice with the mode it was trained with. Numbers and dates are read as speech by default in both modes (`normalize="natural"`); `normalize="espeak"` copies espeak-ng number for number.
+[What changes, and how to choose](https://github.com/cB-Sigma/uccharan#compatible-or-improved-choosing-a-mode).
+
 For code written against `phonemizer`:
 
 ```python

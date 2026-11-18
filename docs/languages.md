@@ -109,6 +109,31 @@ of the Perso-Arabic words). Speed, same laptop and method as §: 15.0 µs per se
 ([`compare_ks_windows.json`](../tools/bench/results/compare_ks_windows.json)); in that run Bodo
 took 20.1 µs (2.4× espeak-ng) and Hindi 10.9 µs (1.8×).
 
+How to read it:
+
+- **Tatoeba and FLORES-200 rows are not comparable.** FLORES-200 is longer news text with many
+  numbers and names; Tatoeba is short everyday sentences.
+- **Words outside the word tables are where the errors are.** The sixteen European languages
+  after Spanish use a word table plus a letter-to-sound model, both made by running espeak-ng
+  1.52.0 over word lists from Tatoeba and the Leipzig Corpora Collection. On the held-out text,
+  words outside those lists are wrong far more often than listed ones: from 2.0 % (Hungarian)
+  and 9.2 % (Czech) to 49.0 % (European Portuguese) and 62.3 % (Danish) of such words. Each
+  language's figures are in the notes below.
+- **Assamese (7.21 %), Tamil (4.09 %) and Nepali (2.67 %) are furthest from espeak-ng**; the
+  reasons are in the language notes.
+- **Czech and Finnish are the slowest** against espeak-ng (1.8× and 1.7×): their texts have many
+  distinct word forms, and each new form goes through the letter-to-sound model.
+- **Voices.** End to end (voice plus speech recogniser, 200 to 500 held-out sentences per voice)
+  the word error rate with uccharan's phonemes is within the confidence interval of espeak-ng's
+  for the voices tried: Piper `amy-low` 2.94 % → 2.97 %, `lessac-medium` 4.30 % → 4.21 %,
+  `alba-medium` 7.36 % → 7.47 %, `hi_IN-rohan-medium` 8.95 % → 8.82 %, `es_ES-davefx-medium`
+  13.23 % → 12.90 %, `de_DE-thorsten-medium` 21.76 % → 20.99 %, `fr_FR-siwis-medium` 19.28 % →
+  19.39 %, `it_IT-paola-medium` 30.02 % → 29.91 % (a small recogniser), and three Kokoro
+  speakers. That is eight Piper voices (English, Hindi, Spanish, German, French, Italian) and one
+  Kokoro speaker each for American English, British English and Hindi; no voice of the other
+  languages has been run end to end
+  ([details](evaluation.md#2-end-to-end-real-voices-real-speech-recognition)).
+
 ## Notes on the languages
 
 FLORES-200 sentences are longer news-style text with many numbers, so their rates are not
