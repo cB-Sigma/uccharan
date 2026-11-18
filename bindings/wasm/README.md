@@ -2,7 +2,7 @@
 
 **Phonemiser, text normaliser, transliterator and pronunciation engine** for text-to-speech and
 speech recognition: 44 languages (English, Hindi, twenty-four more South Asian languages and
-seventeen European ones), in Rust, Python, JavaScript and C. Apache-2.0, no GPL code or data.
+seventeen European ones), in Rust, Python, JavaScript and C. Apache-2.0.
 ([what it does](https://github.com/cB-Sigma/uccharan#readme) ·
 [measurements](https://github.com/cB-Sigma/uccharan/blob/main/docs/evaluation.md))
 

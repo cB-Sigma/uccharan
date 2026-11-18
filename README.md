@@ -10,7 +10,7 @@
 
 <p align="center">
   The text side of text-to-speech and speech recognition in one library: 44 languages,
-  in Rust, Python, JavaScript and C. Apache-2.0, no GPL code or data.
+  in Rust, Python, JavaScript and C. Apache-2.0.
 </p>
 
 <p align="center">
