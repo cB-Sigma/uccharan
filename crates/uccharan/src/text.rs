@@ -47,13 +47,13 @@ impl Terminator {
 
     fn from_char(c: char) -> Option<Terminator> {
         Some(match c {
-            ',' | '،' | '、' => Terminator::Comma,
+            ',' | '،' | '、' | '\u{aaf0}' => Terminator::Comma,
             ':' => Terminator::Colon,
             ';' | '؛' => Terminator::Semicolon,
-            '.' | '।' | '॥' | '…' | '。' | '۔' | '\u{1c7e}' | '\u{1c7f}' => {
+            '.' | '।' | '॥' | '…' | '。' | '۔' | '\u{1c7e}' | '\u{1c7f}' | '\u{abeb}' => {
                 Terminator::Period
             }
-            '?' | '？' | '؟' => Terminator::Question,
+            '?' | '？' | '؟' | '\u{aaf1}' => Terminator::Question,
             '!' | '！' => Terminator::Exclamation,
             _ => return None,
         })
@@ -88,6 +88,13 @@ pub fn script_of(c: char) -> Script {
         '\u{1c50}'..='\u{1c59}' => Script::Digit,
         '\u{1c7e}' | '\u{1c7f}' => Script::Other,
         '\u{1c5a}'..='\u{1c7d}' => Script::Brahmic(0x1c00),
+        // Meetei Mayek (Manipuri): digits, cheikhei ꯫ and the extension
+        // marks ꫰ ꫱ ꫲ ꫳ ꫴ, letters and signs of the block and its extensions.
+        '\u{abf0}'..='\u{abf9}' => Script::Digit,
+        '\u{abeb}' | '\u{aaf0}'..='\u{aaf4}' => Script::Other,
+        '\u{abc0}'..='\u{abed}' | '\u{aae0}'..='\u{aaef}' | '\u{aaf5}' | '\u{aaf6}' => {
+            Script::Brahmic(0xabc0)
+        }
         // Arabic script (Urdu, Sindhi): one "block" for the whole range.
         '\u{0660}'..='\u{0669}' | '\u{06f0}'..='\u{06f9}' => Script::Digit,
         '\u{060c}' | '\u{061b}' | '\u{061f}' | '\u{06d4}' | '\u{066a}'..='\u{066d}' => {
@@ -102,11 +109,14 @@ pub fn script_of(c: char) -> Script {
 }
 
 /// Value of a digit of an Indic script (Devanagari to Sinhala blocks, Ol
-/// Chiki).
+/// Chiki, Meetei Mayek).
 pub fn indic_digit(c: char) -> Option<u8> {
     let u = c as u32;
     if (0x1c50..=0x1c59).contains(&u) {
         return Some((u - 0x1c50) as u8);
+    }
+    if (0xabf0..=0xabf9).contains(&u) {
+        return Some((u - 0xabf0) as u8);
     }
     // Arabic-Indic and Extended (Urdu/Persian) digits.
     if (0x0660..=0x0669).contains(&u) {

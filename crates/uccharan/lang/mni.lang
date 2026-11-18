@@ -1,0 +1,324 @@
+# Manipuri (Meitei, Meeteilon) in the Meetei Mayek script (U+ABC0-U+ABFF and
+# the extensions U+AAE0-U+AAFF). Text in Bengali script is first written in
+# Meetei Mayek by src/mni.rs (`bengali_to_meetei`) and read by this file too.
+# espeak-ng 1.52 has no Meitei voice (its `bpy` voice is Bishnupriya
+# Manipuri, another language) and reads Meetei Mayek letters as their code
+# points, so there is no reference reading to be compatible with: both modes
+# give this file's reading. Written for uccharan from these descriptions:
+#   Michael Everson, "Proposal for encoding the Meitei Mayek script in the
+#     BMP of the UCS" (ISO/IEC JTC1/SC2/WG2 N3206R2, Unicode L2/07-005R2,
+#     2007), and the Irish and US national bodies, "Proposed Encoding for
+#     Meetei Mayek Block" (N3473, L2/08-232, 2008; the block ABC0-ABFF, the
+#     extensions AAE0-AAFF): the letter values; a consonant letter carries
+#     the inherent vowel; the lonsum letters ꯛ ꯜ ꯝ ꯞ ꯟ ꯠ ꯡ (and ꯢ, "now often
+#     counted as a final Y") are explicit finals without a vowel; ꯭ (apun
+#     iyek) kills a vowel, its use optional ("kara or kra"); ꯪ (nung) is
+#     the anusvara; ꯬ (lum iyek) is a heavy-tone mark; modern spelling
+#     sometimes tells words apart by tone (the proposal's kan "chariot"
+#     against a falling-tone kan "mosquito");
+#   Shobhana L. Chelliah (1997), A Grammar of Meithei (Mouton de Gruyter),
+#     and D. N. S. Bhat and M. S. Ningomba (1997), Manipuri Grammar (LINCOM),
+#     as summarised in the Wikipedia article "Meitei language": the
+#     phonemes (vowels i e ɐ a o u; p t tʃ k, pʰ tʰ kʰ, b d dʒ ɡ, bʱ dʱ ɡʱ
+#     in loanwords, m n ŋ, s h, ɾ, l, w j); the central vowel, written ə in
+#     much recent work, is said [ɐ], and before a glide it is [e] or [o]
+#     (/ɐj/ [ej], /ɐw/ [ow], written ei and ou here); Meitei has two (some
+#     say three) lexical tones, which neither script writes: they are not
+#     read here;
+#   Wiktionary, Manipuri entries with a pronunciation (CC BY-SA 4.0), for
+#     the treatment of a final letter without a vowel sign.
+# Tone is read from neither the spelling nor ꯬: words are read by their
+# letters (ꯥ is a).
+# Choices made here where the descriptions leave it open, checked on the
+# development half of the gold set and on IndicCorp v2 text (CC0): a final
+# consonant letter keeps its inherent vowel after ꯕ ꯅ ꯄ ꯗ ꯒ ꯃ ꯇ ꯀ (the
+# consonants of the suffixes -bɐ -nɐ -pɐ -dɐ -ɡɐ -mɐ -tɐ -kɐ: ꯑꯁꯤꯗ ɐsidɐ,
+# ꯂꯩꯕ lɐibɐ) and drops it after the others, which end loanwords (ꯃꯅꯤꯄꯨꯔ
+# mɐnipuɾ, ꯁꯍꯔ sɐhɐɾ); ꯏ ꯎ ꯌ after a vowel sign and before a consonant or the
+# end of the word close a diphthong (ꯂꯥꯏ lai, ꯆꯥꯎ tʃau, ꯃꯈꯣꯌ mɐkʰoi); ꯏ ꯎ
+# right after a consonant letter make ꯩ ꯧ with its vowel (ꯄꯨꯔꯀꯏ puɾɐkei).
+# Closed syllables and suffix vowels that the spelling leaves to the reader
+# (ꯃꯇꯃꯗꯥ mɐtɐmdɐ, ꯂꯥꯎꯕꯥ laubɐ) are written out by src/mni.rs (`prepare`)
+# before this file reads the text. Meitei has no stress accent to mark:
+# words carry no stress marks. The extension letters for Sanskrit and Pali
+# sounds keep their Unicode values.
+
+[meta]
+tag = mni
+block = abc0
+stress = none
+final-secondary = no
+deletion = final
+final-keep-after = b n p d ɡ m t k
+inherent = ɐ ɐ
+anusvara = velar
+
+[letters]
+ꯀ k consonant
+ꯁ s consonant
+ꯂ l consonant
+ꯃ m consonant
+ꯄ p consonant
+ꯅ n consonant
+ꯆ tʃ consonant
+ꯇ t consonant
+ꯈ kʰ consonant
+ꯉ ŋ consonant
+ꯊ tʰ consonant
+ꯋ w consonant
+ꯌ j consonant
+ꯍ h consonant
+ꯐ pʰ consonant
+ꯒ ɡ consonant
+ꯓ dʒʱ consonant
+ꯔ ɾ consonant
+ꯕ b consonant
+ꯖ dʒ consonant
+ꯗ d consonant
+ꯘ ɡʱ consonant
+ꯙ dʱ consonant
+ꯚ bʱ consonant
+ꯎ u vowel
+ꯏ i vowel
+ꯑ ɐ vowel
+ꯛ k dead
+ꯜ l dead
+ꯝ m dead
+ꯞ p dead
+ꯟ n dead
+ꯠ t dead
+ꯡ ŋ dead
+ꯢ i dead
+ꯣ o sign
+ꯤ i sign
+ꯥ a sign
+ꯦ e sign
+ꯧ ou sign
+ꯨ u sign
+ꯩ ei sign
+ꯪ anusvara
+꯬ ignore
+꯭ virama
+# Extensions (Sanskrit and Pali sounds).
+ꫠ e vowel
+ꫡ o vowel
+ꫢ tʃʰ consonant
+ꫣ ɲ consonant
+ꫤ ʈ consonant
+ꫥ ʈʰ consonant
+ꫦ ɖ consonant
+ꫧ ɖʱ consonant
+ꫨ ɳ consonant
+ꫩ ʃ consonant
+ꫪ ʂ consonant
+ꫫ i sign
+ꫬ u sign
+ꫭ ai sign
+ꫮ au sign
+ꫯ au sign
+ꫵ visarga
+꫶ virama
+# Markers written by the [pre] rules (never in real text).
+Á a vowel
+É e vowel
+Ó o vowel
+Ɛ ei vowel
+Ɔ ou vowel
+Ŭ u dead
+
+[classes]
+C = ꯀ ꯁ ꯂ ꯃ ꯄ ꯅ ꯆ ꯇ ꯈ ꯉ ꯊ ꯋ ꯌ ꯍ ꯐ ꯒ ꯓ ꯔ ꯕ ꯖ ꯗ ꯘ ꯙ ꯚ ꫢ ꫣ ꫤ ꫥ ꫦ ꫧ ꫨ ꫩ ꫪ
+# Vowel signs and vowel letters after which ꯏ ꯎ ꯌ close a diphthong.
+VS = ꯥ ꯣ ꯨ ꯦ
+
+[pre]
+# ꯑ carries the vowel signs.
+ꯑꯥ -> Á
+ꯑꯤ -> ꯏ
+ꯑꯨ -> ꯎ
+ꯑꯦ -> É
+ꯑꯣ -> Ó
+ꯑꯩ -> Ɛ
+ꯑꯧ -> Ɔ
+ꯑꯏ -> Ɛ
+# A lonsum letter is already without a vowel.
+ꯛ꯭ -> ꯛ
+ꯜ꯭ -> ꯜ
+ꯝ꯭ -> ꯝ
+ꯞ꯭ -> ꯞ
+ꯟ꯭ -> ꯟ
+ꯠ꯭ -> ꯠ
+ꯡ꯭ -> ꯡ
+ꯢ꯭ -> ꯢ
+# Diphthongs.
+ꯏ -> ꯢ / {VS} _
+ꯏ -> ꯩ / {C} _
+ꯎ -> Ŭ / {VS} _
+ꯎ -> ꯧ / {C} _
+ꯌ -> ꯢ / {VS} _ {C} | {VS} _ #
+
+
+[numbers]
+# Meitei number words as Meetei Mayek text writes them (AI4Bharat IndicCorp
+# v2 Manipuri, CC0, whose number articles spell out 1-999; the units, tens,
+# 100 and 1000 as listed in the Wikipedia article "Meitei language"): the
+# units ꯑꯃꯥ ꯑꯅꯤ ꯑꯍꯨꯝ ꯃꯔꯤ ꯃꯉꯥ ꯇꯔꯨꯛ ꯇꯔꯦꯠ ꯅꯤꯄꯥꯟ ꯃꯥꯄꯟ, ꯇꯔꯥ 10, ꯀꯨꯟ 20, ꯀꯨꯟꯊ꯭ꯔꯥ
+# 30, ꯅꯤꯐꯨ 40 ("two twenties"), ꯌꯥꯡꯈꯩ 50, ꯍꯨꯝꯐꯨ 60, ꯍꯨꯝꯐꯨꯇꯔꯥ 70, ꯃꯔꯤꯐꯨ 80,
+# ꯃꯔꯤꯐꯨꯇꯔꯥ 90; a unit after a ten is one word with it, 1-3 in the forms
+# ꯃꯊꯣꯏ ꯅꯤꯊꯣꯏ ꯍꯨꯝꯊꯣꯏ (ꯀꯨꯟꯃꯊꯣꯏ 21; 11 and 13 as Wikipedia lists them,
+# ꯇꯔꯥꯃꯥꯊꯣꯏ ꯇꯔꯥꯍꯨꯝꯗꯣꯏ); the hundreds ꯆꯥ- with the unit (ꯆꯥꯝꯃꯥ 100, ꯆꯥꯅꯤ
+# 200, ꯆꯥꯝꯉꯥ 500), followed by -ꯒ ꯁꯨꯞꯅ ("and, adding") when more follows
+# (ꯆꯥꯅꯤꯒ ꯁꯨꯞꯅ ꯑꯃꯥ 201); above, the scale word comes first and its count
+# after it (ꯂꯤꯁꯤꯡ ꯑꯅꯤ 2000, ꯂꯥꯈ ꯇꯔꯥ ten lakh, as the same text writes
+# them), with the borrowed ꯂꯥꯈ and ꯀ꯭ꯔꯣꯔ for 10^5 and 10^7. Zero ꯐꯨꯟ
+# (Wiktionary), point ꯄꯣꯏꯟꯇ and the rupee ꯂꯨꯄꯥ (said after the amount here;
+# Meitei text often writes it before) as the same text uses them; minus and
+# per cent are the English loans ꯃꯥꯏꯅꯁ and ꯄꯔꯁꯦꯟꯇ (no Meitei word found in
+# the sources).
+0 ꯐꯨꯟ
+1 ꯑꯃꯥ
+2 ꯑꯅꯤ
+3 ꯑꯍꯨꯝ
+4 ꯃꯔꯤ
+5 ꯃꯉꯥ
+6 ꯇꯔꯨꯛ
+7 ꯇꯔꯦꯠ
+8 ꯅꯤꯄꯥꯟ
+9 ꯃꯥꯄꯟ
+10 ꯇꯔꯥ
+11 ꯇꯔꯥꯃꯥꯊꯣꯏ
+12 ꯇꯔꯥꯅꯤꯊꯣꯏ
+13 ꯇꯔꯥꯍꯨꯝꯗꯣꯏ
+14 ꯇꯔꯥꯃꯔꯤ
+15 ꯇꯔꯥꯃꯉꯥ
+16 ꯇꯔꯥꯇꯔꯨꯛ
+17 ꯇꯔꯥꯇꯔꯦꯠ
+18 ꯇꯔꯥꯅꯤꯄꯥꯟ
+19 ꯇꯔꯥꯃꯥꯄꯟ
+20 ꯀꯨꯟ
+21 ꯀꯨꯟꯃꯊꯣꯏ
+22 ꯀꯨꯟꯅꯤꯊꯣꯏ
+23 ꯀꯨꯟꯍꯨꯝꯊꯣꯏ
+24 ꯀꯨꯟꯃꯔꯤ
+25 ꯀꯨꯟꯃꯉꯥ
+26 ꯀꯨꯟꯇꯔꯨꯛ
+27 ꯀꯨꯟꯇꯔꯦꯠ
+28 ꯀꯨꯟꯅꯤꯄꯥꯟ
+29 ꯀꯨꯟꯃꯥꯄꯟ
+30 ꯀꯨꯟꯊ꯭ꯔꯥ
+31 ꯀꯨꯟꯊ꯭ꯔꯥꯃꯊꯣꯏ
+32 ꯀꯨꯟꯊ꯭ꯔꯥꯅꯤꯊꯣꯏ
+33 ꯀꯨꯟꯊ꯭ꯔꯥꯍꯨꯝꯊꯣꯏ
+34 ꯀꯨꯟꯊ꯭ꯔꯥꯃꯔꯤ
+35 ꯀꯨꯟꯊ꯭ꯔꯥꯃꯉꯥ
+36 ꯀꯨꯟꯊ꯭ꯔꯥꯇꯔꯨꯛ
+37 ꯀꯨꯟꯊ꯭ꯔꯥꯇꯔꯦꯠ
+38 ꯀꯨꯟꯊ꯭ꯔꯥꯅꯤꯄꯥꯟ
+39 ꯀꯨꯟꯊ꯭ꯔꯥꯃꯥꯄꯟ
+40 ꯅꯤꯐꯨ
+41 ꯅꯤꯐꯨꯃꯊꯣꯏ
+42 ꯅꯤꯐꯨꯅꯤꯊꯣꯏ
+43 ꯅꯤꯐꯨꯍꯨꯝꯊꯣꯏ
+44 ꯅꯤꯐꯨꯃꯔꯤ
+45 ꯅꯤꯐꯨꯃꯉꯥ
+46 ꯅꯤꯐꯨꯇꯔꯨꯛ
+47 ꯅꯤꯐꯨꯇꯔꯦꯠ
+48 ꯅꯤꯐꯨꯅꯤꯄꯥꯟ
+49 ꯅꯤꯐꯨꯃꯥꯄꯟ
+50 ꯌꯥꯡꯈꯩ
+51 ꯌꯥꯡꯈꯩꯃꯊꯣꯏ
+52 ꯌꯥꯡꯈꯩꯅꯤꯊꯣꯏ
+53 ꯌꯥꯡꯈꯩꯍꯨꯝꯊꯣꯏ
+54 ꯌꯥꯡꯈꯩꯃꯔꯤ
+55 ꯌꯥꯡꯈꯩꯃꯉꯥ
+56 ꯌꯥꯡꯈꯩꯇꯔꯨꯛ
+57 ꯌꯥꯡꯈꯩꯇꯔꯦꯠ
+58 ꯌꯥꯡꯈꯩꯅꯤꯄꯥꯟ
+59 ꯌꯥꯡꯈꯩꯃꯥꯄꯟ
+60 ꯍꯨꯝꯐꯨ
+61 ꯍꯨꯝꯐꯨꯃꯊꯣꯏ
+62 ꯍꯨꯝꯐꯨꯅꯤꯊꯣꯏ
+63 ꯍꯨꯝꯐꯨꯍꯨꯝꯊꯣꯏ
+64 ꯍꯨꯝꯐꯨꯃꯔꯤ
+65 ꯍꯨꯝꯐꯨꯃꯉꯥ
+66 ꯍꯨꯝꯐꯨꯇꯔꯨꯛ
+67 ꯍꯨꯝꯐꯨꯇꯔꯦꯠ
+68 ꯍꯨꯝꯐꯨꯅꯤꯄꯥꯟ
+69 ꯍꯨꯝꯐꯨꯃꯥꯄꯟ
+70 ꯍꯨꯝꯐꯨꯇꯔꯥ
+71 ꯍꯨꯝꯐꯨꯇꯔꯥꯃꯊꯣꯏ
+72 ꯍꯨꯝꯐꯨꯇꯔꯥꯅꯤꯊꯣꯏ
+73 ꯍꯨꯝꯐꯨꯇꯔꯥꯍꯨꯝꯊꯣꯏ
+74 ꯍꯨꯝꯐꯨꯇꯔꯥꯃꯔꯤ
+75 ꯍꯨꯝꯐꯨꯇꯔꯥꯃꯉꯥ
+76 ꯍꯨꯝꯐꯨꯇꯔꯥꯇꯔꯨꯛ
+77 ꯍꯨꯝꯐꯨꯇꯔꯥꯇꯔꯦꯠ
+78 ꯍꯨꯝꯐꯨꯇꯔꯥꯅꯤꯄꯥꯟ
+79 ꯍꯨꯝꯐꯨꯇꯔꯥꯃꯥꯄꯟ
+80 ꯃꯔꯤꯐꯨ
+81 ꯃꯔꯤꯐꯨꯃꯊꯣꯏ
+82 ꯃꯔꯤꯐꯨꯅꯤꯊꯣꯏ
+83 ꯃꯔꯤꯐꯨꯍꯨꯝꯊꯣꯏ
+84 ꯃꯔꯤꯐꯨꯃꯔꯤ
+85 ꯃꯔꯤꯐꯨꯃꯉꯥ
+86 ꯃꯔꯤꯐꯨꯇꯔꯨꯛ
+87 ꯃꯔꯤꯐꯨꯇꯔꯦꯠ
+88 ꯃꯔꯤꯐꯨꯅꯤꯄꯥꯟ
+89 ꯃꯔꯤꯐꯨꯃꯥꯄꯟ
+90 ꯃꯔꯤꯐꯨꯇꯔꯥ
+91 ꯃꯔꯤꯐꯨꯇꯔꯥꯃꯊꯣꯏ
+92 ꯃꯔꯤꯐꯨꯇꯔꯥꯅꯤꯊꯣꯏ
+93 ꯃꯔꯤꯐꯨꯇꯔꯥꯍꯨꯝꯊꯣꯏ
+94 ꯃꯔꯤꯐꯨꯇꯔꯥꯃꯔꯤ
+95 ꯃꯔꯤꯐꯨꯇꯔꯥꯃꯉꯥ
+96 ꯃꯔꯤꯐꯨꯇꯔꯥꯇꯔꯨꯛ
+97 ꯃꯔꯤꯐꯨꯇꯔꯥꯇꯔꯦꯠ
+98 ꯃꯔꯤꯐꯨꯇꯔꯥꯅꯤꯄꯥꯟ
+99 ꯃꯔꯤꯐꯨꯇꯔꯥꯃꯥꯄꯟ
+100 ꯆꯥꯝꯃꯥ
+100+ ꯆꯥꯝꯃꯥꯒ ꯁꯨꯞꯅ
+200 ꯆꯥꯅꯤ
+200+ ꯆꯥꯅꯤꯒ ꯁꯨꯞꯅ
+300 ꯆꯥꯍꯨꯝ
+300+ ꯆꯥꯍꯨꯝꯒ ꯁꯨꯞꯅ
+400 ꯆꯥꯃꯔꯤ
+400+ ꯆꯥꯃꯔꯤꯒ ꯁꯨꯞꯅ
+500 ꯆꯥꯝꯉꯥ
+500+ ꯆꯥꯝꯉꯥꯒ ꯁꯨꯞꯅ
+600 ꯆꯥꯇꯔꯨꯛ
+600+ ꯆꯥꯇꯔꯨꯛꯀ ꯁꯨꯞꯅ
+700 ꯆꯥꯇꯔꯦꯠ
+700+ ꯆꯥꯇꯔꯦꯠꯀ ꯁꯨꯞꯅ
+800 ꯆꯥꯅꯤꯄꯥꯟ
+800+ ꯆꯥꯅꯤꯄꯥꯟꯒ ꯁꯨꯞꯅ
+900 ꯆꯥꯃꯥꯄꯟ
+900+ ꯆꯥꯃꯥꯄꯟꯒ ꯁꯨꯞꯅ
+scale100 ꯆꯥꯝꯃꯥ
+scale1000 ꯂꯤꯁꯤꯡ
+scale100000 ꯂꯥꯈ
+scale10000000 ꯀ꯭ꯔꯣꯔ
+scale-first yes
+
+grouping indian
+point ꯄꯣꯏꯟꯇ
+minus ꯃꯥꯏꯅꯁ
+percent ꯄꯔꯁꯦꯟꯇ
+currency ₹ ꯂꯨꯄꯥ
+
+[dates]
+# Dates written with digits (improved mode, normalise-only mode), day month
+# year as the Meetei Mayek locale of Unicode CLDR (common/main/mni_Mtei.xml,
+# d MMMM, y). Month names as IndicCorp v2 Manipuri text spells them most
+# often (CLDR has them for the Bengali script only).
+month1 ꯖꯅꯨꯋꯥꯔꯤ
+month2 ꯐꯦꯕ꯭ꯔꯨꯋꯥꯔꯤ
+month3 ꯃꯥꯔꯆ
+month4 ꯑꯦꯄ꯭ꯔꯤꯜ
+month5 ꯃꯦ
+month6 ꯖꯨꯟ
+month7 ꯖꯨꯂꯥꯏ
+month8 ꯑꯣꯒꯁ꯭ꯠ
+month9 ꯁꯦꯞꯇꯦꯝꯕꯔ
+month10 ꯑꯣꯛꯇꯣꯕꯔ
+month11 ꯅꯣꯕꯦꯝꯕꯔ
+month12 ꯗꯤꯁꯦꯝꯕꯔ

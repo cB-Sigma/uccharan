@@ -14,13 +14,17 @@ IndicCorp v2 monolingual text (CC0, downloaded into ``--work``; ids
 out. A language in Google's IndicGenBench
 (Flores-IN, CC BY-SA 4.0: the FLORES-200 sentences in languages FLORES-200
 itself lacks) also gets a second held-out set ``<lang>_flores.tsv`` from
-its ``devtest`` split (ids ``flores-devtest-``), never used for tuning. A
-language in ``WIKISET`` (Santali) takes its dev and held-out sets from
+its ``devtest`` split (ids ``flores-devtest-``), never used for tuning; a
+language in ``FLORES_DEV`` (Manipuri, whose IndicGenBench text is in Bengali
+script while its IndicCorp text is in Meetei Mayek) also gets
+``<lang>_flores_dev.tsv`` from the ``dev`` split, which rules may be tuned on.
+A language in ``WIKISET`` (Santali, Manipuri) takes its dev and held-out sets from
 IndicCorp v2 even where Tatoeba has enough sentences, and gets two more
 held-out sets, never used for tuning: ``<lang>_wiki.tsv``, sentences from
 random articles of its Wikipedia (CC BY-SA 4.0, ids ``wp-``) that are not
 in the IndicCorp text, and ``<lang>_tatoeba.tsv``, its Tatoeba sentences
-(CC BY 2.0 FR) whose id hashes into the held-out half.
+(CC BY 2.0 FR) whose id hashes into the held-out half (not written when
+Tatoeba has fewer than 50 sentences of the language: Manipuri has 7).
 Without FLORES, Wikipedia article extracts
 (CC BY-SA 4.0, ids ``wp-``) top the set up. Share-alike sentences are
 evaluation input only (``tools/eval`` is not part of any package).
@@ -63,16 +67,22 @@ INDICCORP = {"doi": ("dg", r"(?:^|\s)(?:है|हैं|में|का|को
              "brx": ("bd", r"(?:^|\s)(?:है|हैं|में|का|को|की|के|था|थी|थे|नहीं|और|लिए|भी|यह|वह|ने)(?=[\s।,?!]|$)"),
              # Santali (Ol Chiki): the text is Ol Chiki throughout, but some
              # lines keep Wikipedia markup.
-             "sat": ("sat", r"\[\[|\]\]|\{\{|\}\}|[<>|=]")}
+             "sat": ("sat", r"\[\[|\]\]|\{\{|\}\}|[<>|=]"),
+             # Manipuri: the IndicCorp text is Meetei Mayek (Wikipedia-like,
+             # some markup kept).
+             "mni": ("mni", r"\[\[|\]\]|\{\{|\}\}|[<>|=]")}
 
 # IndicGenBench Flores-IN (Google, CC BY-SA 4.0): uccharan tag -> language code
 # of flores_in/flores_<code>_en_test.json (the FLORES-200 devtest sentences).
 INDICGENBENCH_URL = "https://raw.githubusercontent.com/google-research-datasets/indic-gen-bench/main/flores_in/flores_{}_en_test.json"
-INDICGENBENCH = {"brx": "brx", "sat": "sat"}
+INDICGENBENCH = {"brx": "brx", "sat": "sat", "mni": "mni"}
+INDICGENBENCH_DEV_URL = INDICGENBENCH_URL.replace("_test.json", "_dev.json")
+# Languages whose IndicGenBench dev split is written as a tuning set too.
+FLORES_DEV = {"mni"}
 
 # Languages with a third held-out set from their Wikipedia (uccharan tag ->
 # Wikipedia code, number of sentences).
-WIKISET = {"sat": ("sat", 500)}
+WIKISET = {"sat": ("sat", 500), "mni": ("mni", 500)}
 
 # uccharan tag -> (Tatoeba code, Wikipedia code, letter regex of the language's script)
 LANGS: dict[str, tuple[str, str, str]] = {
@@ -107,6 +117,8 @@ LANGS: dict[str, tuple[str, str, str]] = {
     "doi": ("doi", "dgo", r"[ऀ-ॿ]"),
     "brx": ("brx", "brx", r"[ऀ-ॿ]"),
     "sat": ("sat", "sat", r"[ᱚ-ᱽ]"),
+    # Manipuri (Meitei): Meetei Mayek and its extensions.
+    "mni": ("mni", "mni", r"[ꯀ-꯭ꫠ-꫶]"),
 }
 
 
@@ -158,7 +170,7 @@ def wikipedia(work: Path, code: str, want: int, letters: str) -> list[tuple[str,
         if data is None:
             break
         for page in data.get("query", {}).get("pages", {}).values():
-            for s in re.split(r"(?<=[.!?।॥᱾᱿])\s+", page.get("extract", "")):
+            for s in re.split(r"(?<=[.!?।॥᱾᱿꯫])\s+", page.get("extract", "")):
                 s = s.strip()
                 alpha = [c for c in s if c.isalpha()]
                 own = sum(1 for c in alpha if re.match(letters, c.lower()))
@@ -179,7 +191,7 @@ def indiccorp(work: Path, lang: str, letters: str) -> list[tuple[str, str]]:
         return []
     out: dict[str, str] = {}
     for line in path.read_text(encoding="utf-8").splitlines():
-        for s in re.split(r"(?<=[।?!|᱾᱿])\s+", line.strip()):
+        for s in re.split(r"(?<=[।?!|᱾᱿꯫])\s+", line.strip()):
             s = " ".join(s.split())
             alpha = [c for c in s if c.isalpha()]
             own = sum(1 for c in alpha if re.match(letters, c))
@@ -196,6 +208,12 @@ def indicgenbench(work: Path, lang: str) -> None:
     out = HERE / "data" / f"{lang}_flores.tsv"
     out.write_text("".join(f"flores-devtest-{k}\t{' '.join(t.split())}\n" for k, t in enumerate(rows)), encoding="utf-8")
     print(f"{out.name}: {len(rows)} sentences (IndicGenBench Flores-IN devtest, CC BY-SA 4.0; evaluation only)")
+    if lang in FLORES_DEV:
+        path = fetch(INDICGENBENCH_DEV_URL.format(code), work / f"indicgenbench_{code}_dev.json")
+        rows = [e["source"] for e in json.loads(path.read_text(encoding="utf-8"))["examples"]]
+        out = HERE / "data" / f"{lang}_flores_dev.tsv"
+        out.write_text("".join(f"flores-dev-{k}\t{' '.join(t.split())}\n" for k, t in enumerate(rows)), encoding="utf-8")
+        print(f"{out.name}: {len(rows)} sentences (IndicGenBench Flores-IN dev, CC BY-SA 4.0; evaluation only)")
 
 
 def tatoeba_set(lang: str, rows: list[tuple[str, str]], want: int = 1000) -> None:
@@ -240,7 +258,8 @@ def main() -> None:
         if lang in WIKISET:
             # Santali: the IndicCorp text is the main set; the Tatoeba
             # sentences of the held-out half become a held-out set of their own.
-            tatoeba_set(lang, rows)
+            if len(rows) >= 50:
+                tatoeba_set(lang, rows)
             rows = indiccorp(args.work, lang, letters)
             source = "IndicCorp v2 (CC0)"
             wiki_set(args.work, lang, {t for _, t in rows})

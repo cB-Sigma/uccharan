@@ -5,7 +5,7 @@ build-backend = "maturin"
 [project]
 name = "uccharan"
 version = "0.6.6"
-description = "Phonemiser, text normaliser, transliterator and pronunciation engine for text-to-speech and speech recognition: 42 languages, Apache-2.0."
+description = "Phonemiser, text normaliser, transliterator and pronunciation engine for text-to-speech and speech recognition: 43 languages, Apache-2.0."
 readme = "README.md"
 requires-python = ">=3.9"
 license = "Apache-2.0"

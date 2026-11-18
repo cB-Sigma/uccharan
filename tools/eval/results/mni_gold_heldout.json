@@ -1,0 +1,48 @@
+{
+ "lang": "mni",
+ "split": "heldout",
+ "systems": {
+  "espeak-ng bn (Bengali voice)": {
+   "word_accuracy": 0.2891566265060241,
+   "sentence_per": 0.23316062176165803,
+   "sentence_exact": 0.0,
+   "by_category": {
+    "beng": 0.2891566265060241
+   }
+  },
+  "uccharan compatible": {
+   "word_accuracy": 0.9311594202898551,
+   "sentence_per": 0.010416666666666666,
+   "sentence_exact": 0.7894736842105263,
+   "by_category": {
+    "mtei": 0.9222797927461139,
+    "beng": 0.9518072289156626
+   },
+   "sentence_per_by_category": {
+    "sentence-beng": 0.0051813471502590676,
+    "sentence-mtei": 0.012526096033402923
+   },
+   "counts_by_category": {
+    "mtei": 193,
+    "beng": 83
+   }
+  },
+  "uccharan improved": {
+   "word_accuracy": 0.9311594202898551,
+   "sentence_per": 0.010416666666666666,
+   "sentence_exact": 0.7894736842105263,
+   "by_category": {
+    "mtei": 0.9222797927461139,
+    "beng": 0.9518072289156626
+   },
+   "sentence_per_by_category": {
+    "sentence-beng": 0.0051813471502590676,
+    "sentence-mtei": 0.012526096033402923
+   },
+   "counts_by_category": {
+    "mtei": 193,
+    "beng": 83
+   }
+  }
+ }
+}

@@ -407,3 +407,59 @@ fn santali() {
         p.phonemize("ᱡᱚᱦᱟᱨ, ᱤᱧ ᱫᱤᱥᱚᱢ ᱫᱚ ᱥᱟᱱᱛᱟᱲᱤ ᱠᱟᱱᱟ", &o)
     );
 }
+
+#[test]
+fn manipuri() {
+    // Meetei Mayek (the Unicode proposals; Chelliah 1997 and Bhat & Ningomba
+    // 1997 as summarised by Wikipedia): consonant letters carry ɐ, the
+    // lonsum letters close a syllable, ꯭ makes a cluster, ꯩ ꯧ are ei ou; a
+    // final letter keeps ɐ after the suffix consonants; no stress marks (a
+    // tone language; the tones are not written). Bengali-script Meitei is
+    // read as the Meetei Mayek it is written in letter for letter. espeak-ng
+    // cannot read the script, so both modes give this reading.
+    let p = Phonemizer::new();
+    let o = Options::new(Lang::Mni);
+    let mut i = o.clone();
+    i.mode = Mode::Improved;
+    let w = |s: &str| p.phonemize(s, &o);
+    assert_eq!(w("ꯃꯤꯇꯩꯂꯣꯟ ꯑꯁꯤ"), p.phonemize("ꯃꯤꯇꯩꯂꯣꯟ ꯑꯁꯤ", &i));
+    assert_eq!(w("ꯃꯤꯇꯩꯂꯣꯟ"), "miteilon");
+    assert_eq!(w("ꯃꯅꯤꯄꯨꯔ"), "mɐnipuɾ");
+    assert_eq!(w("ꯂꯥꯏ"), "lai");
+    assert_eq!(w("ꯆꯥꯎꯕ"), "tʃaubɐ");
+    assert_eq!(w("ꯃꯈꯣꯌ"), "mɐkʰoi");
+    assert_eq!(w("ꯃꯤꯑꯣꯏ"), "mioi");
+    assert_eq!(w("ꯄꯨꯔꯀꯏ"), "puɾɐkei");
+    assert_eq!(w("ꯀ꯭ꯂꯥꯁ"), "klas");
+    assert_eq!(w("ꯏꯪꯂꯤꯁ"), "iŋlis");
+    assert_eq!(w("ꯑ꯬ꯃꯥ"), "ɐma");
+    // What the spelling leaves to the reader: a stem closed before a
+    // suffix, a suffix vowel written ꯥ.
+    assert_eq!(w("ꯑꯃꯁꯨꯡ"), "ɐmɐsuŋ");
+    assert_eq!(w("ꯃꯇꯃꯗꯥ"), "mɐtɐmdɐ");
+    assert_eq!(w("ꯂꯥꯎꯕꯥ"), "laubɐ");
+    // Bengali script.
+    assert_eq!(w("মৈতৈলোন"), "meiteilon");
+    assert_eq!(w("মতম"), "mɐtɐm");
+    assert_eq!(w("লৈবা"), "leibɐ");
+    assert_eq!(w("শহর"), "sɐhɐɾ");
+    assert_eq!(w("খ্বাইদগী"), "kʰwaidɐɡi");
+    assert_eq!(w("মোমবিখোয়"), "mombikʰoi");
+    assert_eq!(w("লৈবাক অমসুং"), w("ꯂꯩꯕꯥꯛ ꯑꯃꯁꯨꯡ"));
+    // Numbers in Meitei words, from ASCII, Meetei Mayek or Bengali digits.
+    assert_eq!(w("꯲꯵"), "kunmɐŋa");
+    assert_eq!(w("25"), w("꯲꯵"));
+    assert_eq!(w("২৫"), w("꯲꯵"));
+    assert_eq!(w("꯱꯰꯰꯰"), w("ꯂꯤꯁꯤꯡ ꯑꯃꯥ"));
+    assert_eq!(w("꯲꯰꯱"), w("ꯆꯥꯅꯤꯒ ꯁꯨꯞꯅ ꯑꯃꯥ"));
+    assert_eq!(w("₹꯵꯰꯰"), w("ꯆꯥꯝꯉꯥ ꯂꯨꯄꯥ"));
+    // ꯫ ends a sentence.
+    assert_eq!(p.analyze("ꯑꯁꯤ꯫ ꯑꯗꯨ", &o).len(), 2);
+    // Romanised Meitei, written in Meetei Mayek.
+    let mut r = o.clone();
+    r.hinglish = true;
+    assert_eq!(
+        p.phonemize("eina nangbu nungsi", &r),
+        p.phonemize("ꯑꯩꯅꯥ ꯅꯪꯕꯨ ꯅꯨꯡꯁꯤ", &o)
+    );
+}

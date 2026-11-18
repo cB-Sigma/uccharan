@@ -1,0 +1,10 @@
+{
+ "set": "dev",
+ "script": "Meetei Mayek",
+ "sentences": 1000,
+ "words": 8512,
+ "words_read": 1.0,
+ "other_script_letters": 1,
+ "latin_words": 1,
+ "modes_identical_on_first_50": true
+}

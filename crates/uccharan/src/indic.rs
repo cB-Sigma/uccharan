@@ -101,6 +101,8 @@ pub enum Stress {
     Sanskrit,
     /// Second syllable (the first in a word of one syllable): Santali.
     Second,
+    /// No stress marks (Meitei: a tone language without a stress accent).
+    None,
 }
 
 /// What happens to inherent vowels.
@@ -383,6 +385,7 @@ impl Indic {
             Some("initial-light-heavy") => Stress::InitialLightHeavy,
             Some("sanskrit") => Stress::Sanskrit,
             Some("second") => Stress::Second,
+            Some("none") => Stress::None,
             _ => Stress::Initial,
         };
         let deletion = match meta.get("deletion").map(String::as_str) {
@@ -741,7 +744,7 @@ impl Indic {
 
     fn assign_stress(&self, ph: &mut [Ph]) {
         let vs: Vec<usize> = (0..ph.len()).filter(|&i| ph[i].vowel).collect();
-        if vs.is_empty() {
+        if vs.is_empty() || self.stress == Stress::None {
             return;
         }
         let n = vs.len();
@@ -802,6 +805,7 @@ impl Indic {
             }
             Stress::Penult => n.saturating_sub(2),
             Stress::Second => usize::from(n > 1),
+            Stress::None => return,
             Stress::InitialLightHeavy => {
                 if n > 1 && !ph[vs[0]].long && ph[vs[1]].long {
                     1
@@ -1262,6 +1266,10 @@ impl Indic {
         if self.base == 0x1c00 {
             // Ol Chiki: the digits open the block.
             return (0x50..=0x59).contains(&o).then(|| (o - 0x50) as u8);
+        }
+        if self.base == 0xabc0 {
+            // Meetei Mayek: the digits close the block.
+            return (0x30..=0x39).contains(&o).then(|| (o - 0x30) as u8);
         }
         (0x66..=0x6f).contains(&o).then(|| (o - 0x66) as u8)
     }

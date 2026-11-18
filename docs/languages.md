@@ -1,6 +1,6 @@
 # Languages
 
-uccharan phonemises 42 language tags. English (US and British) and Hindi have hand-built front
+uccharan phonemises 43 language tags. English (US and British) and Hindi have hand-built front
 ends with their own lexicons; the others run on two shared engines, one for Brahmic and
 Perso-Arabic scripts and one for Latin-script languages, each driven by a short language file of
 letters, rewrite rules, exceptions and number words (`crates/uccharan/lang/*.lang`; see
@@ -50,6 +50,7 @@ Runs on that machine differ by about ±10 %.
 | Dogri | `doi` | `hi` ‡ | IndicCorp v2, 2,000 sentences | 1.40 % | 1.35 % | 1.9× § | none |
 | Bodo | `brx` | `hi` ‡ | IndicCorp v2, 2,000 sentences | 0.37 % | 0.32 % | 2.3× § | none |
 | Santali (Ol Chiki) | `sat` | none ¶ | IndicCorp v2, 2,000 sentences | — ¶ | — | — ¶ | none |
+| Manipuri (Meetei Mayek, Bengali script) | `mni` | none ◊ | IndicCorp v2, 2,000 sentences | — ◊ | — | — ◊ | none |
 | Spanish | `es` | `es` | FLORES-200, 1,012 sentences | 0.54 % | 0.32 % | 2.3× † | Piper `es_ES` (5), Kokoro `ef_dora`, `em_alex`, `em_santa` |
 | German | `de` | `de` | FLORES-200, 1,012 sentences | 0.95 % | 0.77 % | 5.8× † | Piper `de_DE` (11) |
 | Dutch | `nl` | `nl` | FLORES-200, 1,012 sentences | 1.69 % | 1.32 % | 3.2× † | Piper `nl_NL`, `nl_BE` (11) |
@@ -90,6 +91,14 @@ notes below for what that does and does not show). Speed, same laptop and method
 sentence at the median, 0.72 million words per second, one thread
 ([`compare_sat_windows.json`](../tools/bench/results/compare_sat_windows.json)); in that run Bodo
 took 20.4 µs (2.4× espeak-ng) and Hindi 10.8 µs (1.8×).
+
+◊ Manipuri: espeak-ng has no Meitei voice and cannot read Meetei Mayek, and its Bengali voice reads
+Bengali-script Meitei as Bengali, so both modes give uccharan's reading, checked on a gold set
+(held-out half: 92.2 % of 193 Meetei Mayek words, 95.2 % of 83 Bengali-script words against 28.9 %
+for the Bengali voice). Speed, same laptop and method as §: 14.2 µs per sentence at the median, 0.55
+million words per second, one thread
+([`compare_mni_windows.json`](../tools/bench/results/compare_mni_windows.json)); in that run Bodo
+took 20.3 µs (2.4× espeak-ng) and Hindi 11.1 µs (1.8×).
 
 ## Notes on the languages
 
@@ -365,6 +374,121 @@ Speed: there is no espeak-ng reading to time against. On the Windows 11 laptop o
 [`compare_sat_windows.json`](../tools/bench/results/compare_sat_windows.json)) uccharan takes
 16.7 µs per sentence at the median (p99 38.4 µs), 0.72 million words per second; in the same run
 Bodo took 20.4 µs (2.4× espeak-ng's speed) and Hindi 10.8 µs (1.8×).
+
+**Manipuri** (`mni`, also `manipuri`, `meitei`, `meetei`, `mni-mtei`, `mni-beng`) is Meitei
+(Meeteilon), a Tibeto-Burman language with two lexical tones, written in two scripts: **Meetei
+Mayek** (U+ABC0–U+ABFF, extensions U+AAE0–U+AAFF), its own Brahmic-type script, official since the
+2000s, and the **Bengali script**, long the usual one and still common. uccharan reads both.
+espeak-ng 1.52.0 has no Meitei voice (its `bpy` voice is Bishnupriya Manipuri, an Indo-Aryan
+language) and cannot read Meetei Mayek (it says each letter's code point), so **both modes give the
+same reading** (`Lang::no_reference`) and the language-switch flag is `(mni)`. Its Bengali voice can
+read Bengali-script Meitei, but as Bengali (inherent ɔ, Bengali vowels and finals, ৱ spelt out by
+name): a compatible mode reproducing it would reproduce another language, so there is none; the gold
+set below shows how far it is.
+
+Meetei Mayek is read by `lang/mni.lang` (Brahmic engine, `block = abc0`):
+
+- a consonant letter carries the inherent vowel ɐ (written ə in much recent work, said [ɐ]);
+  ꯥ ꯤ ꯨ ꯦ ꯣ = a i u e o, and ꯩ ꯧ, /ɐj/ /ɐw/, are said [ej] [ow], written ei ou (ꯃꯤꯇꯩꯂꯣꯟ miteilon);
+  ꯑ carries the vowel signs, ꯏ ꯎ are i u;
+- the lonsum letters ꯛ ꯜ ꯝ ꯞ ꯟ ꯠ ꯡ write k l m p n t ŋ closing a syllable, ꯢ a closing i; apun iyek
+  ꯭ kills a vowel inside a cluster (ꯀ꯭ꯂꯥꯁ klas) and is ignored after a lonsum letter; ꯪ (nung) is ŋ;
+- the consonants ꯀ ꯈ ꯒ ꯘ ꯉ = k kʰ ɡ ɡʱ ŋ, ꯆ ꯖ ꯓ = tʃ dʒ dʒʱ, ꯇ ꯊ ꯗ ꯙ ꯅ = t tʰ d dʱ n, ꯄ ꯐ ꯕ ꯚ ꯃ
+  = p pʰ b bʱ m, ꯌ ꯔ ꯂ ꯋ = j ɾ l w, ꯁ ꯍ = s h; the extension letters for Sanskrit and Pali sounds
+  keep their Unicode values;
+- ꯏ ꯎ ꯌ after a vowel sign and before a consonant or the end of a word close a diphthong (ꯂꯥꯏ lai,
+  ꯆꯥꯎꯕ tʃaubɐ, ꯃꯈꯣꯌ mɐkʰoi), and ꯏ ꯎ right after a consonant letter make ꯩ ꯧ with its vowel (ꯄꯨꯔꯀꯏ
+  puɾɐkei); elsewhere they are vowels (ꯃꯤꯑꯣꯏ mioi, ꯉꯥꯡꯏ ŋaŋi);
+- a word-final consonant letter keeps ɐ after the consonants of the suffixes -bɐ -nɐ -pɐ -dɐ -ɡɐ -mɐ
+  -tɐ -kɐ (ꯂꯩꯕ leibɐ, ꯑꯁꯤꯗ ɐsidɐ) and has none after the others, which end loanwords (ꯃꯅꯤꯄꯨꯔ
+  mɐnipuɾ; Wiktionary has mɐnipuɾɐ for this one);
+- no stress marks (`stress = none`): Meitei is a tone language, and the sources give no stress
+  accent to mark. The tones (two, some say three) are written in neither script, so they are not
+  read; lum iyek ꯬, a heavy-tone mark the proposal encodes but text rarely uses (76 times in
+  IndicCorp v2), is skipped. The proposal also notes that modern spelling sometimes tells words apart
+  by tone with or without ꯥ; uccharan reads ꯥ as a there.
+
+Two things neither script writes are made explicit first (`mni::prepare`): a stem ending in a
+consonant is often spelt without a lonsum letter or hasanta before a suffix (ꯃꯇꯃꯗꯥ, মতমদা
+mɐtɐmdɐ, ꯇꯃꯅꯥ tɐmnɐ), so a k t p m n ŋ l letter without a vowel sign, after a vowel and before a
+consonant that has one, closes the syllable (right to left; not after ꯑ: ꯑꯃꯁꯨꯡ ɐmɐsuŋ, and not at
+the start of a number word after a ten: ꯇꯔꯥꯃꯔꯤ); and many writers spell the suffix vowel ɐ at the
+end of a word with ꯥ or া (ꯂꯥꯎꯕꯥ, লৈবা), so after ꯅ, after ꯕ ꯗ ꯒ following a vowel or voiced
+consonant, and after ꯄ ꯇ ꯀ following ꯛ ꯠ ꯞ (the suffixes alternate p t k / b d ɡ), a final ꯥ of a
+longer word is ɐ (laubɐ, leibɐ), except in six listed words with a final a (ꯀꯅꯥ "who", ꯃꯄꯥ "father").
+Both are guesses about morphology the spelling hides: ꯁꯅꯥꯃꯍꯤ (Sanamahi) is read with a closed
+syllable it does not have.
+
+**Bengali script.** Bengali-script Meitei is written in Meetei Mayek letter for letter
+(`mni::bengali_to_meetei`) and then read the same way, so the two scripts give the same reading of
+the same word (লৈবাক অমসুং = ꯂꯩꯕꯥꯛ ꯑꯃꯁꯨꯡ). The correspondences follow how Bengali-script Meitei is
+spelt: a final consonant without a vowel sign closes the syllable (মতম mɐtɐm, থবক tʰɐbɐk; শহর gets ꯁꯍꯔ꯭
+with apun iyek, as র has no lonsum form); hasanta before a consonant is a lonsum letter (মহাক্না
+ꯃꯍꯥꯛꯅꯥ), except before র য ৱ, ব after a stop (খ্বাই kʰwai) and ল at the start of a word, which make a
+cluster; শ ষ স are s, ছ is tʃ, the retroflex letters are the dental ones, ড় ঢ় are ɾ, য য় are j, ৱ is
+w, ং is ŋ, ৎ is t; Bengali digits are digits. This is not how the Bengali or Assamese readers read
+the script: only a request for `mni` goes this way, and Bengali and Assamese text read exactly as
+before (byte-identical output on their 8,000 development and held-out sentences, both modes, three
+profiles). A Bengali-script word in a request for another language is read as Bengali.
+
+Sources: Michael Everson, *Proposal for encoding the Meitei Mayek script in the BMP of the UCS*
+(ISO/IEC JTC1/SC2/WG2 N3206R2, Unicode L2/07-005R2, 2007) and the Irish and US national bodies'
+*Proposed Encoding for Meetei Mayek Block* (N3473, L2/08-232, 2008) for the letters, the lonsum
+letters, apun iyek and lum iyek; Shobhana L. Chelliah, *A Grammar of Meithei* (Mouton de Gruyter,
+1997) and D. N. S. Bhat and M. S. Ningomba, *Manipuri Grammar* (LINCOM, 1997), as summarised in the
+Wikipedia articles "Meitei language" and "Meitei script", for the phonemes, the [ɐ] and the
+diphthongs, the tones and the voicing of suffixes; English Wiktionary's Manipuri entries for the
+pronunciation of final letters. Not modelled: tone; the dissimilation of aspirates and the velar
+deletion that Wikipedia describes (they are mostly written); a and ɐ in closed syllables where the
+spelling does not show them (ꯂꯝꯕꯤ lambi); clusters in loanwords written without apun iyek (ꯙꯔꯃ,
+Wiktionary dʱɐɾmɐ, is read dʱɐɾɐmɐ).
+
+**Numbers.** Both modes, and normalise-only mode, read numbers written with ASCII, Meetei Mayek
+(꯰–꯹) or Bengali digits in Meitei words, as Meetei Mayek text spells them (IndicCorp v2, whose number
+articles spell out 1–999; the units, tens, 100 and 1000 as the Wikipedia article lists them): the
+units ꯑꯃꯥ ꯑꯅꯤ ꯑꯍꯨꯝ ꯃꯔꯤ ꯃꯉꯥ ꯇꯔꯨꯛ ꯇꯔꯦꯠ ꯅꯤꯄꯥꯟ ꯃꯥꯄꯟ, ꯇꯔꯥ 10, ꯀꯨꯟ 20, ꯀꯨꯟꯊ꯭ꯔꯥ 30, ꯅꯤꯐꯨ 40, ꯌꯥꯡꯈꯩ 50,
+ꯍꯨꯝꯐꯨ 60, ꯍꯨꯝꯐꯨꯇꯔꯥ 70, ꯃꯔꯤꯐꯨ 80, ꯃꯔꯤꯐꯨꯇꯔꯥ 90 (scores of twenty), a unit glued to its ten (ꯀꯨꯟꯃꯉꯥ 25,
+1–3 as ꯃꯊꯣꯏ ꯅꯤꯊꯣꯏ ꯍꯨꯝꯊꯣꯏ: ꯀꯨꯟꯃꯊꯣꯏ 21; 11 and 13 as ꯇꯔꯥꯃꯥꯊꯣꯏ ꯇꯔꯥꯍꯨꯝꯗꯣꯏ), the hundreds ꯆꯥ- with
+the unit (ꯆꯥꯝꯃꯥ 100, ꯆꯥꯅꯤ 200, ꯆꯥꯝꯉꯥ 500) and -ꯒ ꯁꯨꯞꯅ before the rest (ꯆꯥꯅꯤꯒ ꯁꯨꯞꯅ ꯑꯃꯥ 201); above,
+the scale word before its count, as the text writes it (`scale-first`: ꯂꯤꯁꯤꯡ ꯑꯅꯤ 2000, ꯂꯥꯈ ꯇꯔꯥ,
+ꯀ꯭ꯔꯣꯔ). Zero ꯐꯨꯟ (Wiktionary), point ꯄꯣꯏꯟꯇ and the rupee ꯂꯨꯄꯥ after the amount (Meitei text often
+puts it first; uccharan does not); minus and per cent are the English loans ꯃꯥꯏꯅꯁ ꯄꯔꯁꯦꯟꯇ, as no
+Meitei word was found in the sources; months as IndicCorp v2 spells them, in CLDR's day-month-year
+order. In normalise-only mode, text written in Bengali script gets the same words in Bengali script
+(`mni::meetei_to_bengali`: অমা 25 → অমা কুন্মঙা, as Bengali-script Meitei writes অমা অনি তরা লিশিং).
+No ordinals or clock times.
+
+**Romanised Meitei** (`eina nangbu nungsi`) is written in Meetei Mayek through the `hinglish` option
+and `transliterate(..., "mni")` without a pack ([transliteration](transliteration.md#manipuri)).
+
+Held-out text: 2,000 IndicCorp v2 sentences (CC0; Meetei Mayek; lines with wiki markup left out),
+370 sentences from random articles of the Manipuri Wikipedia (mni.wikipedia.org, CC BY-SA 4.0, in
+Meetei Mayek; none in the IndicCorp text; the 300 random articles the builder fetches gave 370
+sentences), and, in Bengali script, the 1,012 FLORES-200 `devtest` sentences of IndicGenBench
+(Flores-IN, CC BY-SA 4.0), whose `dev` split is the Bengali-script development set. FLORES+ also has
+Manipuri in both scripts (`mni_Beng`, `mni_Mtei`) but is gated; Tatoeba has eleven Manipuri
+sentences (used in the gold set). With no reference reading, `tools/eval/mni_check.py` checks
+coverage: every word of every set is read (100.00 %), and 71.4 % of the Bengali-script word tokens
+of the held-out IndicGenBench set are read the same as a Meetei Mayek word that occurs in IndicCorp
+v2. The gold set ([tools/eval/gold/mni](../tools/eval/gold/mni)): Wiktionary pronunciations for
+375 Meetei Mayek words and 150 of their Bengali-script spellings, 36 numerals, 33 sentences
+transcribed by hand; held-out half:
+
+| Held-out | espeak-ng `bn` | uccharan (both modes) |
+| --- | ---: | ---: |
+| Meetei Mayek words (193), exact | — (reads code points) | **92.2 %** |
+| Bengali-script words (83), exact | 28.9 % | **95.2 %** |
+| Meetei Mayek sentences (10): PER | — | **1.25 %** |
+| Bengali-script sentences (9): PER | 23.32 % | **0.52 %** |
+
+Details and the development half in [evaluation.md](evaluation.md). No Meitei voice or speech
+recogniser has been tried.
+
+Speed: there is no espeak-ng reading to time against. On the Windows 11 laptop of the § rows (500
+held-out IndicCorp v2 sentences, Meetei Mayek, one thread, best of 5 rounds,
+[`compare_mni_windows.json`](../tools/bench/results/compare_mni_windows.json)) uccharan takes 14.2 µs
+per sentence at the median (p99 44.9 µs), 0.55 million words per second; in the same run Bodo took
+20.3 µs (2.4× espeak-ng's speed) and Hindi 11.1 µs (1.8×).
 
 **German, Dutch and French** (`de`, `nl`, `fr`) run on the same Latin-script engine as Spanish,
 each with letter rules and a **word table** (`de.ucd` 16 k entries, 373 KB; `nl.ucd` 12 k, 242 KB;

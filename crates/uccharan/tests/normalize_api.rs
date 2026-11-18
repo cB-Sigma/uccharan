@@ -871,6 +871,7 @@ fn indic_numbers_in_their_own_script() {
         (Lang::Doi, "पच्चीस"),
         (Lang::Brx, "पच्चीस"),
         (Lang::Sat, "ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ"),
+        (Lang::Mni, "ꯀꯨꯟꯃꯉꯥ"),
     ];
     for (l, want) in twenty_five {
         assert_eq!(norm("25", *l).text, *want, "{l:?}");
@@ -971,6 +972,22 @@ fn indic_numbers_in_their_own_script() {
         check(t, &n);
         assert_eq!(n.text, want, "sat {t}");
     }
+    // Manipuri: Meitei number words as Meetei Mayek text spells them (ꯀꯨꯟꯃꯉꯥ
+    // 25, ꯆꯥꯅꯤꯒ ꯁꯨꯞꯅ 200 and..., the scale word before its count: ꯂꯤꯁꯤꯡ ꯑꯅꯤ
+    // 2000), the rupee and dates; in Bengali script for Bengali-script text.
+    for (t, want) in [
+        ("25 ꯳.꯵", "ꯀꯨꯟꯃꯉꯥ ꯑꯍꯨꯝ ꯄꯣꯏꯟꯇ ꯃꯉꯥ"),
+        ("2021 ꯱꯵꯰꯰", "ꯂꯤꯁꯤꯡ ꯑꯅꯤ ꯀꯨꯟꯃꯊꯣꯏ ꯂꯤꯁꯤꯡ ꯑꯃꯥ ꯆꯥꯝꯉꯥ"),
+        ("1,50,000 201", "ꯂꯥꯈ ꯑꯃꯥ ꯂꯤꯁꯤꯡ ꯌꯥꯡꯈꯩ ꯆꯥꯅꯤꯒ ꯁꯨꯞꯅ ꯑꯃꯥ"),
+        ("₹25 6", "ꯀꯨꯟꯃꯉꯥ ꯂꯨꯄꯥ ꯇꯔꯨꯛ"),
+        ("15/08/2024", "ꯇꯔꯥꯃꯉꯥ ꯑꯣꯒꯁ꯭ꯠ ꯂꯤꯁꯤꯡ ꯑꯅꯤ ꯀꯨꯟꯃꯔꯤ"),
+        ("অমা 25 লৈবা", "অমা কুন্মঙা লৈবা"),
+        ("১৫ ২০", "তরামঙা কুন"),
+    ] {
+        let n = normalize(p(), t, Lang::Mni, &improved);
+        check(t, &n);
+        assert_eq!(n.text, want, "mni {t}");
+    }
     let mut nums: Vec<String> = (0..=110).map(|n| n.to_string()).collect();
     for n in [
         150, 200, 222, 345, 999, 1000, 1234, 2024, 12345, 99999, 123456,
@@ -1010,6 +1027,7 @@ fn indic_numbers_in_their_own_script() {
         (Lang::Doi, Some(11.5), 1.0),
         (Lang::Brx, Some(11.5), 1.0),
         (Lang::Sat, Some(1.0), 1.0),
+        (Lang::Mni, Some(1.0), 1.0),
     ];
     for &(l, compat_bound, improved_bound) in bounds {
         for (mode, bound) in [

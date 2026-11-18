@@ -1,0 +1,43 @@
+# Manipuri (Meitei) sentence gold set, written 2026-11-18 before the Manipuri rules were run on these items.
+# Bengali script: lines of Bengali-script Meitei text (songs and prose) in AI4Bharat IndicCorp v2 Manipuri (CC0),
+# which the Meetei Mayek sentence sets never contain. Meetei Mayek: the Meetei Mayek sentences of Tatoeba
+# (CC BY 2.0 FR; Tatoeba has eleven Manipuri sentences, eight of them in Meetei Mayek; the seven without Latin
+# letters are here) and lines of IndicCorp v2 Manipuri text in none of tools/eval/data/mni_dev.tsv,
+# mni_heldout.tsv and mni_wiki.tsv. Pronunciation hand-written word by word: the words of words.src as given
+# there, the others from the letter values of words.src and the morphemes of the words, which neither script
+# marks: a stem that ends in a consonant keeps it closed before a suffix (Bengali মোমবি mombi, Meetei Mayek
+# ꯃꯔꯨꯄꯀꯤ mɐɾupki), a suffix vowel written া or ꯥ at the end of a word is ɐ (-বা -bɐ, ꯂꯥꯎꯕꯥ laubɐ); tone is not
+# written. Format: sentence <TAB> pronunciation.
+শদুনা য়াংগেল লিংবীনে	sɐdunɐ jaŋɡel liŋbine
+অহানবা মাইবীঃ	ɐhanbɐ maibi
+ইবুংখোয় মোমবিখোয়।	ibuŋkʰoi mombikʰoi
+ঈখোঙনা হাওখোং তাবীনে,	ikʰoŋnɐ haokʰoŋ tabine
+উৎপী উরেল থারকপী,	utpi uɾel tʰaɾɐkpi
+কৌবনা লোকশা অমদা	kɐwbɐnɐ loksa ɐmɐdɐ
+হায়না অসুম্না লৈথারি।	hainɐ ɐsumnɐ lɐjtʰaɾi
+য়ামদ্রবসু য়াইশিল্লৈ।	jamdɾɐbɐsu jaisillɐj
+শিংঙেল লৈপুন শাবদি দে।	siŋŋel lɐjpun sabɐdi de
+নুংশাবু শাদনা ফৌকংবী	nuŋsabu sadɐnɐ pʰɐwkɐŋbi
+লৈরাং খয়োম লৈনৌবা	lɐjɾaŋ kʰɐjom lɐjnɐwbɐ
+ঈদুনা নোংথাং লৈমনে,	idunɐ noŋtʰaŋ lɐjmɐne
+ঙাঙনা নিঙথিরে। ঙাঙনা ফজরে।	ŋaŋnɐ niŋtʰiɾe ŋaŋnɐ pʰɐdʒɐɾe
+খিৎতা খুনবিয়ো।	kʰittɐ kʰunbijo
+হা নুংবালনা পুনশি ঈৱাল্লৈ।	ha nuŋbalnɐ punsi iwallɐj
+নোংমাইজিংদা উ য়াল্লে, খোংদা য়ুহাররে।	noŋmaidʒiŋdɐ u jalle kʰoŋdɐ juhaɾɾe
+হাওলৈনা ঙাঙাং শাৎপদি	haolɐjnɐ ŋaŋaŋ satpɐdi
+ꯌꯥꯅꯤꯅꯥ ꯂꯥꯎꯕꯥ ꯄꯥꯝꯂꯕꯗꯤ ꯂꯥꯎꯕꯥ ꯌꯥꯏ꯫	janinɐ laubɐ pamlɐbɐdi laubɐ jai
+ꯀ꯭ꯂꯥꯎꯗꯤꯌꯁꯅꯥ ꯃꯍꯥꯛꯀꯤ ꯃꯔꯨꯄꯀꯤꯗꯃꯛ ꯋꯥꯏꯇꯦꯞ ꯑꯃꯥ ꯁꯦꯝꯂꯤ꯫	klaudijɐsnɐ mɐhakki mɐɾupkidɐmɐk waitep ɐma semli
+ꯁꯥꯃꯤꯅꯥ ꯅꯨꯃꯤꯠ ꯈꯨꯗꯤꯡꯒꯤ ꯕꯦꯉ꯭ꯀꯇꯥ ꯆꯠꯂꯤ꯫	saminɐ numit kʰudiŋɡi beŋktɐ tʃɐtli
+ꯑꯩꯕꯨ ꯇꯃꯗꯥ ꯂꯧꯈꯠꯄꯤꯌꯨ꯫	ɐjbu tɐmdɐ lɐwkʰɐtpiju
+ꯇꯃꯅꯥ ꯃꯍꯥꯛꯀꯤ ꯁꯥꯏꯅꯦꯠ ꯔꯤꯡ ꯁꯤꯖꯤꯟꯅꯗꯨꯅꯥ ꯆꯤꯊꯤ ꯑꯗꯨ ꯋꯥꯛꯁꯅꯥ ꯁꯤꯜ ꯇꯧꯈꯤ꯫	tɐmnɐ mɐhakki sainet ɾiŋ sidʒinnɐdunɐ tʃitʰi ɐdu waksnɐ sil tɐwkʰi
+ꯑꯩꯍꯥꯛꯅꯥ ꯃꯗꯨ ꯇꯧꯔꯃꯂꯣꯏ꯫	ɐjhaknɐ mɐdu tɐwɾɐmloi
+"ꯅꯉꯅꯥ ꯊꯕꯛ ꯇꯧꯕꯥ ꯉꯃꯒꯗ꯭ꯔꯥ?" "ꯇꯁꯦꯡꯅꯥ ꯍꯥꯌꯔꯕꯗꯥ ꯑꯩꯍꯥꯛ ꯊꯕꯛ ꯇꯧꯔꯤ꯫"	nɐŋnɐ tʰɐbɐk tɐwbɐ ŋɐmɡɐdɾa tɐseŋnɐ haiɾɐbɐdɐ ɐjhak tʰɐbɐk tɐwɾi
+ꯊꯣꯡꯉꯥꯝ ꯁꯥꯒꯩ ꯑꯁꯤ ꯃꯩꯇꯩ ꯐꯨꯔꯨꯞꯀꯤ ꯁꯥꯒꯩ ꯑꯃꯅꯤ꯫	tʰoŋŋam saɡɐj ɐsi mɐjtɐj pʰuɾupki saɡɐj ɐmɐni
+ꯃꯤꯇꯩꯂꯣꯟꯁꯤ ꯋꯥꯍꯩ ꯄꯔꯦꯡ ꯑꯣꯢꯕ ꯂꯣꯟ ꯑꯃꯅꯤ ꯫	mitɐjlonsi wahɐj pɐɾeŋ oibɐ lon ɐmɐni
+ꯇꯞꯅꯥ ꯇꯞꯅꯥ ꯅꯨꯃꯤꯠ ꯑꯃꯗꯥ ꯅꯍꯥꯛ ꯁꯤꯒꯅꯤ꯫	tɐpnɐ tɐpnɐ numit ɐmɐdɐ nɐhak siɡɐni
+ꯋꯥꯡꯈꯦꯝ ꯑꯁꯤ ꯃꯤꯇꯩ ꯐꯨꯔꯨꯞꯀꯤ ꯁꯥꯒꯩ ꯑꯃꯅꯤ ꯫	waŋkʰem ɐsi mitɐj pʰuɾupki saɡɐj ɐmɐni
+ꯂꯨꯍꯣꯡꯂꯕꯥ ꯅꯨꯄꯤ ꯑꯗꯨꯅꯥ ꯍꯧꯖꯤꯛ ꯌꯥꯝꯅꯥ ꯁꯣꯌꯗꯅꯥ ꯐꯥꯑꯣꯈꯤ꯫	luhoŋlɐbɐ nupi ɐdunɐ hɐwdʒik jamnɐ soidɐnɐ pʰaokʰi
+ꯄꯥꯏꯔꯗꯥ ꯍꯀꯆꯥꯡ ꯑꯗꯨ ꯃꯩ ꯊꯥꯕꯥ ꯎꯕꯗꯥ ꯃꯍꯥꯛ ꯌꯥꯝꯅꯥ ꯀꯟꯅꯥ ꯀꯞꯄꯥ ꯍꯧꯔꯀꯈꯤ꯫	paiɾɐdɐ hɐktʃaŋ ɐdu mɐj tʰabɐ ubɐdɐ mɐhak jamnɐ kɐnnɐ kɐppɐ hɐwɾɐkkʰi
+ꯕꯥꯘꯅꯥ ꯐ꯭ꯔꯣꯒꯅꯥ ꯃꯥꯏꯊꯤꯕꯥ ꯄꯤꯔꯕꯥ ꯃꯇꯨꯡꯗꯥ ꯂꯝꯕꯤ ꯆꯠꯈꯤ꯫	baɡʱnɐ pʰɾoɡnɐ maitʰibɐ piɾɐbɐ mɐtuŋdɐ lambi tʃɐtkʰi
+ꯅꯣꯡꯄꯣꯛ ꯏꯝꯐꯥꯜ ꯄꯅꯥ ꯑꯁꯤ ꯃꯅꯤꯄꯨꯔꯒꯤ ꯇꯝꯄꯥꯛꯀꯤ ꯂꯝꯒꯤ ꯄꯅꯥ ꯑꯃꯅꯤ ꯫	noŋpok impʰal pɐna ɐsi mɐnipuɾɡi tɐmpakki lɐmɡi pɐna ɐmɐni
+ꯃꯍꯥꯛ ꯑꯉꯀꯄꯥ ꯐꯥꯑꯣꯈꯤ ꯃꯗꯨꯗꯤ ꯃꯍꯥꯛ ꯑꯇꯣꯞꯄꯥ ꯀꯅꯥꯁꯨ ꯅꯠꯇꯦ, ꯃꯍꯥꯛ ꯁꯥꯟꯗ꯭ꯔꯦꯝꯕꯤꯅꯤ꯫	mɐhak ɐŋɐkpɐ pʰaokʰi mɐdudi mɐhak ɐtoppɐ kɐnasu nɐtte mɐhak sandɾembini

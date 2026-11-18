@@ -38,6 +38,7 @@ pub mod langdef;
 pub mod latin;
 pub mod lex2;
 pub mod minijson;
+pub mod mni;
 pub mod names;
 pub mod norm;
 pub mod normalize_api;
@@ -153,6 +154,10 @@ languages! {
     /// Santali in Ol Chiki (no espeak voice, and espeak-ng cannot read the
     /// script: both modes give the improved reading).
     Sat "sat" ["sat-in", "sat-olck", "santali"] Brahmic(0x1c00), Some(include_str!("../lang/sat.lang"));
+    /// Manipuri (Meitei) in Meetei Mayek or Bengali script (no espeak voice,
+    /// and espeak-ng cannot read Meetei Mayek: both modes give the improved
+    /// reading).
+    Mni "mni" ["mni-in", "mni-mtei", "mni-beng", "manipuri", "meitei", "meetei"] Brahmic(0xabc0), Some(include_str!("../lang/mni.lang"));
     /// Spanish (espeak voice `es`).
     Es "es" ["es-es", "spa", "spanish"] Latin, Some(include_str!("../lang/es.lang"));
     /// German (espeak voice `de`).
@@ -213,11 +218,12 @@ impl Lang {
     }
 
     /// Languages whose script espeak-ng cannot read at all (Santali in Ol
-    /// Chiki: it says the code points of the letters under every voice).
-    /// There is no reference reading to reproduce, so compatible mode gives
-    /// the improved reading.
+    /// Chiki, Manipuri in Meetei Mayek: it says the code points of the
+    /// letters under every voice). There is no reference reading to
+    /// reproduce, so compatible mode gives the improved reading (Manipuri in
+    /// Bengali script too: espeak-ng has no Meitei voice).
     pub fn no_reference(self) -> bool {
-        self == Lang::Sat
+        matches!(self, Lang::Sat | Lang::Mni)
     }
 
     /// Languages typed in Latin letters with the habits of romanised Hindi:
@@ -381,7 +387,9 @@ pub struct Sentence {
 /// The phonemizer. Cheap to share between threads (`&Phonemizer` is `Sync`).
 #[derive(Clone, Debug)]
 pub struct Phonemizer {
-    data: [std::sync::OnceLock<Data>; LANGS],
+    /// Word tables by language (on the heap: the per-language arrays of
+    /// `Data` would make the struct large to move around).
+    data: Box<[std::sync::OnceLock<Data>; LANGS]>,
     /// misaki dictionaries for the Kokoro English front end (US, GB).
     misaki: [std::sync::OnceLock<std::sync::Arc<kokoro::MisakiLexicon>>; 2],
     /// Compiled Kokoro English packs loaded at run time (US, GB); dictionaries
@@ -389,7 +397,7 @@ pub struct Phonemizer {
     kokoro_packs: [std::sync::OnceLock<std::sync::Arc<kokoro::MisakiLexicon>>; 2],
     /// Optional WikiPron packs (CC BY-SA, loaded at run time), used by the
     /// improved mode.
-    wikipron: [std::sync::OnceLock<Data>; LANGS],
+    wikipron: Box<[std::sync::OnceLock<Data>; LANGS]>,
     /// Optional transliteration packs (`xlit-<lang>.ucd`, loaded at run time).
     translit: [std::sync::OnceLock<std::sync::Arc<translit::TranslitPack>>; LANGS],
     /// Read a language whose word table is not available with its letter
@@ -404,10 +412,10 @@ pub struct Phonemizer {
 impl Default for Phonemizer {
     fn default() -> Phonemizer {
         Phonemizer {
-            data: std::array::from_fn(|_| std::sync::OnceLock::new()),
+            data: Box::new(std::array::from_fn(|_| std::sync::OnceLock::new())),
             misaki: Default::default(),
             kokoro_packs: Default::default(),
-            wikipron: std::array::from_fn(|_| std::sync::OnceLock::new()),
+            wikipron: Box::new(std::array::from_fn(|_| std::sync::OnceLock::new())),
             translit: std::array::from_fn(|_| std::sync::OnceLock::new()),
             rules_fallback: false,
             auto: true,
@@ -659,6 +667,32 @@ impl Phonemizer {
             }
             None => text,
         };
+        // Manipuri in Bengali script is read as the Meetei Mayek it is
+        // written in letter for letter.
+        let owned_meetei;
+        let text = match (opt.lang == Lang::Mni)
+            .then(|| mni::bengali_to_meetei(text))
+            .flatten()
+        {
+            Some(t) => {
+                owned_meetei = t;
+                owned_meetei.as_str()
+            }
+            None => text,
+        };
+        // Meetei Mayek: closed syllables and suffix vowels the spelling
+        // leaves to the reader.
+        let owned_meetei_read;
+        let text = match (opt.lang == Lang::Mni)
+            .then(|| mni::prepare(text))
+            .flatten()
+        {
+            Some(t) => {
+                owned_meetei_read = t;
+                owned_meetei_read.as_str()
+            }
+            None => text,
+        };
         // Santali: a full stop typed for ᱹ, a hyphen typed for ᱼ.
         let owned_santali;
         let text = match (opt.lang == Lang::Sat)
@@ -891,6 +925,21 @@ impl Phonemizer {
             sat::rewrite_roman(&mut owned, |w| {
                 english.as_ref().is_some_and(|e| e.in_lexicon(w))
             });
+            items = &owned;
+        }
+        // Romanised Meitei: Latin words that are not English are written in
+        // Meetei Mayek by the Meitei rules.
+        if opt.hinglish && opt.lang == Lang::Mni {
+            owned = items.to_vec();
+            let english = self.english(opt.embedded_english);
+            mni::rewrite_roman(&mut owned, |w| {
+                english.as_ref().is_some_and(|e| e.in_lexicon(w))
+            });
+            for it in &mut owned {
+                if let Some(t) = mni::prepare(&it.text) {
+                    it.text = t;
+                }
+            }
             items = &owned;
         }
         let mut out: Vec<WordOut> = Vec::with_capacity(items.len());

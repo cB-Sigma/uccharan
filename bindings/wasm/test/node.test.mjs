@@ -110,3 +110,13 @@ test("Santali: one reading in both modes (espeak-ng cannot read Ol Chiki)", asyn
   assert.equal((await uccharan.normalize("25", { lang: "sat" })).text, "ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ");
   assert.equal((await uccharan.transliterate("johar inj disom do santali kana", { lang: "sat" })).text, "ᱡᱚᱦᱟᱨ ᱤᱧ ᱫᱤᱥᱚᱢ ᱫᱚ ᱥᱟᱱᱛᱟᱲᱤ ᱠᱟᱱᱟ");
 });
+
+test("Manipuri: Meetei Mayek and Bengali script, one reading in both modes", async () => {
+  assert.ok(uccharan.LANGUAGES.includes("mni"));
+  assert.equal(await uccharan.phonemize("ꯃꯤꯇꯩꯂꯣꯟ", { lang: "mni" }), await uccharan.phonemize("ꯃꯤꯇꯩꯂꯣꯟ", { lang: "manipuri", improved: true }));
+  assert.equal(await uccharan.phonemize("ꯃꯤꯇꯩꯂꯣꯟ", { lang: "mni" }), "miteilon");
+  assert.equal(await uccharan.phonemize("মৈতৈলোন", { lang: "mni" }), "meiteilon");
+  assert.equal((await uccharan.normalize("25", { lang: "mni" })).text, "ꯀꯨꯟꯃꯉꯥ");
+  assert.equal((await uccharan.normalize("অমা 25", { lang: "mni" })).text, "অমা কুন্মঙা");
+  assert.equal((await uccharan.transliterate("eina nangbu nungsi", { lang: "mni" })).text, "ꯑꯩꯅꯥ ꯅꯪꯕꯨ ꯅꯨꯡꯁꯤ");
+});

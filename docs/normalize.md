@@ -175,6 +175,11 @@ Number spans carry `value` (the digits read).
   both modes (espeak-ng cannot read Ol Chiki, so there is no compatible reading to follow), from
   ASCII or Ol Chiki digits: 25 ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ, 2021 ᱵᱟᱨ ᱦᱟᱡᱟᱨ ᱵᱟᱨ ᱜᱮᱞ ᱢᱤᱫ, 1,50,000 ᱢᱤᱫ ᱞᱟᱠᱷ ᱢᱚᱬᱮ
   ᱜᱮᱞ ᱦᱟᱡᱟᱨ, ₹25 ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ ᱴᱟᱠᱟ, 50% ᱢᱚᱬᱮ ᱜᱮᱞ ᱥᱟᱭ ᱠᱟᱲᱟ; it has no ordinals or clock times.
+  Manipuri writes Meitei words in Meetei Mayek in both modes, as Meetei Mayek text spells them, from
+  ASCII, Meetei Mayek or Bengali digits: 25 ꯀꯨꯟꯃꯉꯥ, 201 ꯆꯥꯅꯤꯒ ꯁꯨꯞꯅ ꯑꯃꯥ, 2021 ꯂꯤꯁꯤꯡ ꯑꯅꯤ ꯀꯨꯟꯃꯊꯣꯏ
+  (the scale word before its count), 1,50,000 ꯂꯥꯈ ꯑꯃꯥ ꯂꯤꯁꯤꯡ ꯌꯥꯡꯈꯩ, ₹25 ꯀꯨꯟꯃꯉꯥ ꯂꯨꯄꯥ, 15/08/2024
+  ꯇꯔꯥꯃꯉꯥ ꯑꯣꯒꯁ꯭ꯠ ꯂꯤꯁꯤꯡ ꯑꯅꯤ ꯀꯨꯟꯃꯔꯤ; in text written in Bengali script the same words come in Bengali
+  script (অমা 25 → অমা কুন্মঙা); no ordinals or clock times.
   Every one of these languages is checked for words in its own script that read back to the
   phonemes of the digits (`indic_numbers_in_their_own_script` in
   `crates/uccharan/tests/normalize_api.rs`).

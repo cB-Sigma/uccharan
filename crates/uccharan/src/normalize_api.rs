@@ -259,6 +259,15 @@ pub fn normalize(ph: &Phonemizer, text: &str, lang: Lang, opt: &NormOptions) -> 
     if pos < text.len() || text.is_empty() {
         cx.segment(text, pos..text.len(), &mut pieces, &mut breaks);
     }
+    // Manipuri text in Bengali script gets its number and date words in
+    // Bengali script too (the language file writes them in Meetei Mayek).
+    if lang == Lang::Mni && crate::mni::writes_bengali(text) {
+        for pc in &mut pieces {
+            if crate::mni::has_meetei(&pc.out) {
+                pc.out = crate::mni::meetei_to_bengali(&pc.out);
+            }
+        }
+    }
     assemble(text, pieces, &breaks)
 }
 

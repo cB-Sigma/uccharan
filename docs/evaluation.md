@@ -719,6 +719,51 @@ Chiki word read to a pronunciation made of Santali phonemes, and the marks the r
 
 No voice or speech recogniser for Santali has been tried.
 
+**Manipuri** (`python tools/eval/bho_eval.py --lang mni --split heldout --bengali-voice`; `python
+tools/eval/mni_check.py --set heldout`). espeak-ng 1.52.0 has no Meitei voice (`bpy` is Bishnupriya
+Manipuri) and cannot read Meetei Mayek (it says the code point of each letter), so both modes give the
+same reading. For Bengali-script Meitei its Bengali voice can be run, but it reads another language
+(inherent ɔ, Bengali final vowels, ৱ spelt out letter by letter), so it is shown only as a measure of
+how far it is, not as a reference. The gold set (`tools/eval/gold/mni`): 561 words, 375 Meetei Mayek
+headwords of English Wiktionary's Manipuri entries with the pronunciation the entry gives, 150
+Bengali-script spellings of the same words as IndicGenBench's Bengali-script sentences write them (with
+the same pronunciation), and 36 numerals of the Wikipedia article "Meitei language" in both scripts; 33
+sentences written out by hand (17 Bengali-script lines of IndicCorp v2, the 7 Meetei Mayek Tatoeba
+sentences without Latin letters and 9 Meetei Mayek IndicCorp v2 lines outside the sentence sets). The
+split is by a hash of the item, made before the rules were run on it; the comparison is broad (tone
+marks, syllable dots and unreleased marks removed, ɐj ɐw = ei ou, glides after a vowel = i u).
+
+| Held-out | espeak-ng `bn` | uccharan (both modes) |
+| --- | ---: | ---: |
+| Meetei Mayek words (193), exact | — (reads code points) | **92.2 %** |
+| Bengali-script words (83), exact | 28.9 % | **95.2 %** |
+| Meetei Mayek sentences (10): PER | — | **1.25 %** |
+| Bengali-script sentences (9): PER | 23.32 % | **0.52 %** |
+
+All 276 held-out words 93.1 %, all 19 sentences PER 1.04 %, 78.9 % identical. Development half:
+94.0 % of 285 words (Meetei Mayek 92.7 % of 206, Bengali script 97.5 % of 79), sentence PER 0.68 %;
+the `bn` voice gets 39.2 % of the Bengali-script words and PER 50.0 % (it spells out ৱ). The
+remaining word errors are mostly where Wiktionary's vowel is not the one the letters write (ꯁꯍꯔ
+sahaɾ, ꯂꯝꯕꯤ lambi: a for ɐ in a closed syllable, which neither script marks), loanwords with a
+consonant cluster written without apun iyek (ꯙꯔꯃ dʱɐɾmɐ) and words with a final a or ɐ against the
+suffix rule (মাইবা maiba, নুপা nupɐ). The Wiktionary pronunciations were written by its editors, not
+for this project, but the sentences were transcribed by hand with the same conventions as the rules,
+so their low PER mostly shows the rules do what the conventions say. The sentence sets can only be
+checked for coverage (`mni_check.py`: every word read to a pronunciation made of Meitei phonemes; for
+Bengali script, the share of word tokens read the same as a Meetei Mayek word that occurs at least
+twice in IndicCorp v2, i.e. a spelling Meetei Mayek writers use):
+
+| Set | Script | Sentences | Words | read | read as an attested Meetei Mayek word |
+| --- | --- | ---: | ---: | ---: | ---: |
+| IndicCorp v2, development | Meetei Mayek | 1,000 | 8,512 | 100.00 % | — |
+| IndicCorp v2, held-out | Meetei Mayek | 2,000 | 17,011 | 100.00 % | — |
+| Manipuri Wikipedia, held-out | Meetei Mayek | 370 | 4,615 | 100.00 % | — |
+| IndicGenBench Flores-IN `dev`, development | Bengali | 997 | 18,404 | 100.00 % | 71.81 % |
+| IndicGenBench Flores-IN `devtest`, held-out | Bengali | 1,012 | 19,497 | 100.00 % | 71.43 % |
+
+Most of the Bengali-script words not matched are loanwords and names that the IndicCorp v2 text does
+not have (রিপোর্ত, য়ুনাইতেদ, পোইন্ত). No voice or speech recogniser for Meitei has been tried.
+
 ## 5. Speed, start-up, memory and size
 
 ```sh

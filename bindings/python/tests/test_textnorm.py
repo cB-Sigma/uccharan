@@ -140,6 +140,7 @@ _BLOCKS = {
     "si": (0x0D80, 0x0DFF),
     **dict.fromkeys(["ur", "sd"], (0x0600, 0x06FF)),
     "sat": (0x1C50, 0x1C7F),
+    "mni": (0xABC0, 0xABFF),
 }
 
 _TWENTY_FIVE = {
@@ -166,6 +167,7 @@ _TWENTY_FIVE = {
     "doi": "पच्चीस",
     "brx": "पच्चीस",
     "sat": "ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ",
+    "mni": "ꯀꯨꯟꯃꯉꯥ",
 }
 
 

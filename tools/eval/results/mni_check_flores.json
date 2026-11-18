@@ -1,0 +1,12 @@
+{
+ "set": "flores",
+ "script": "Bengali",
+ "sentences": 1012,
+ "words": 19497,
+ "words_read": 1.0,
+ "other_script_letters": 0,
+ "latin_words": 177,
+ "modes_identical_on_first_50": true,
+ "read_as_attested_meetei_mayek_word": 0.7142637328819819,
+ "attested_meetei_mayek_words": 22282
+}

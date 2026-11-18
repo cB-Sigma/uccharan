@@ -241,6 +241,32 @@ stops unmarked, so the converter guesses there (o is ᱚ, the commoner vowel); t
 Santali test set, so it is not measured. Santali written in Bengali, Odia or Devanagari script is
 not converted.
 
+## Manipuri
+
+Romanised Meitei, as people type it (a for ɐ, aa for a, ei, ou, kh th ph, ng; `eina nangbu nungsi`),
+is written in **Meetei Mayek**, the official script, by `transliterate(text, "mni")` and the
+`hinglish` option, without a pack (`crates/uccharan/src/mni.rs`): a hand-written list of 28 common
+words in their usual Meetei Mayek spelling (`eina` ꯑꯩꯅꯥ, `nangbu` ꯅꯪꯕꯨ, `amasung` ꯑꯃꯁꯨꯡ, `leibak`
+ꯂꯩꯕꯥꯛ, `ngasi` ꯉꯁꯤ, as in IndicCorp v2 text), then a letter converter for the words the English
+lexicon does not know: a is the inherent vowel, aa ꯥ, i ee ꯤ, u oo ꯨ, e ꯦ, o ꯣ, ei ꯩ, ou ꯧ; i and u
+(o after a) after a vowel close a diphthong (`lai` ꯂꯥꯏ, `chaoba` ꯆꯥꯎꯕ); kh gh ng ch jh th dh ph bh
+sh have their letters; a consonant not followed by a vowel is a lonsum letter (k l m p n t ng: ꯛ ꯜ ꯝ
+ꯞ ꯟ ꯠ ꯡ, `imphal` ꯏꯝꯐꯜ) or takes apun iyek ꯭ (`thr` ꯊ꯭ꯔ); an apostrophe separates syllables
+(`laak'i` ꯂꯥꯛꯏ). A clause is rewritten only when it has one of 21 distinctive listed words, so
+English text is left alone, and English words stay in Latin letters. Romanised Meitei does not tell
+a from ɐ before a consonant (Meetei Mayek ꯂꯩꯕꯥꯛ, romanised `leibak`), so the converter writes ɐ there
+unless the word is listed; there is no romanised Meitei test set (Tatoeba has three romanised
+sentences), so this is not measured.
+
+**Between the two scripts.** Bengali-script Meitei is read through `mni::bengali_to_meetei`, which
+writes it in Meetei Mayek letter for letter, and normalise-only mode writes its number words back
+with `mni::meetei_to_bengali`. Both are public Rust functions; the Python, WebAssembly and C
+interfaces have no script-conversion call (`transliterate` writes romanised text in a script), so
+they do not offer one. The conversion follows the letters and the habits of each script's spelling
+(a final consonant without a vowel sign in Bengali script closes the syllable, a lonsum letter in
+Meetei Mayek); it is not a spelling standardiser, and a round trip can change a spelling (a final
+ꯥ written for the vowel ɐ).
+
 ## Accuracy, size and speed
 
 Measured on held-out word pairs and sentences; method, baselines and all numbers are in

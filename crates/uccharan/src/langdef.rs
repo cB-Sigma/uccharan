@@ -377,6 +377,9 @@ pub struct Numbers {
     pub glue_hundred: bool,
     /// Say "one" before a scale word.
     pub one_before_scale: bool,
+    /// The scale word comes before its count (`scale-first yes`: Meitei
+    /// ꯂꯤꯁꯤꯡ ꯑꯅꯤ "thousand two", 2000).
+    pub scale_first: bool,
     /// Tens and units make one word ("twenty" + "five" read as one).
     pub join_tens: bool,
     /// Words of a number after its first carry secondary stress at most.
@@ -683,6 +686,7 @@ impl Numbers {
                     }
                 }
                 "one-before-scale" => n.one_before_scale = v.trim() != "no",
+                "scale-first" => n.scale_first = v.trim() == "yes",
                 "join-tens" => n.join_tens = v.trim() == "yes",
                 "demote-after-first" => n.demote_tail = v.trim() == "yes",
                 k if k.starts_with("scale") => {
@@ -1037,6 +1041,11 @@ impl Numbers {
                 if let Some(w) = listed {
                     // A listed multiple (e.g. "two hundred" as one word).
                     out.extend(w.iter().map(|x| (x.clone(), false)));
+                } else if self.scale_first {
+                    out.push((if r > 0 { word_more } else { word }.clone(), false));
+                    if q > 1 || self.one_before_scale {
+                        self.cardinal(q, out);
+                    }
                 } else {
                     if q > 1 || self.one_before_scale {
                         // A combining form before a scale word ("2x" in the file).

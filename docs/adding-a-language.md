@@ -13,7 +13,7 @@ espeak-ng version. Install that espeak-ng yourself and pin the version in your n
 
 A language espeak-ng has no voice for is usually read in compatible mode with the voice of a related
 language (Sanskrit, Dogri and Bodo with the Hindi voice). Where espeak-ng cannot read the script at
-all (Santali in Ol Chiki: it says the code point of each letter), there is nothing to be compatible
+all (Santali in Ol Chiki, Manipuri in Meetei Mayek: it says the code point of each letter), there is nothing to be compatible
 with: list the language in `Lang::no_reference` (`crates/uccharan/src/lib.rs`), so that both modes
 give the language file's reading, leave it out of `VOICES` (the speed tool then times uccharan
 alone), and check the reading on a hand-written gold set.
@@ -34,7 +34,7 @@ marks lines written in Hindi, as for Dogri and Bodo). A language that Google's I
 held-out set `<tag>_flores.tsv` from its `devtest` split (add it to `INDICGENBENCH`; run it with
 `run_eval.py --set flores`). A language in `WIKISET` also gets held-out sets from its Wikipedia and
 from Tatoeba (`<tag>_wiki.tsv`, `<tag>_tatoeba.tsv`), its dev and held-out sets coming from IndicCorp
-v2 (Santali). Add the espeak voice to
+v2 (Santali, Manipuri). Add the espeak voice to
 `VOICES` in `tools/eval/common.py` and `tools/bench/compare.py`. Tune only on the dev set; run the
 held-out set to report.
 
@@ -57,7 +57,7 @@ npm package (`bindings/wasm/index.js`).
 [meta]                 ; engine options
 tag = kn
 block = 0c80           ; first code point of the script's Unicode block
-stress = initial       ; initial | penult | weight | initial-light-heavy | second
+stress = initial       ; initial | penult | weight | initial-light-heavy | second | none
 final-secondary = no
 deletion = none        ; none | final | medial (inherent-vowel deletion)
 inherent = ɐ ɐ         ; inherent vowel unstressed, stressed
@@ -87,7 +87,7 @@ k -> ɡ / {V} _ {V}
 [numbers]              ; 0–99 words (draft them with tools/cldr_numbers.py from Unicode CLDR), then
 scale100 ನೂರು           ; scale words; "scale1000+" = form when more follows, "2x" = form before a scale,
 grouping indian        ; "100+" = form of an exact value when more follows, join-tens, glue-hundred,
-point ದಶಮಾಂಶ            ; point, minus, percent, one-before-scale
+point ದಶಮಾಂಶ            ; point, minus, percent, one-before-scale, scale-first (scale word before its count)
 ```
 
 Rewrite rules (`uccharan::rules`) are written `match -> output / left _ right`, with classes

@@ -1,0 +1,621 @@
+# Manipuri (Meitei) word gold set, written 2026-11-18 from the sources below before the Manipuri rules
+# were run on these items. Format: word, pronunciation(s) separated by |, category, source. Categories: mtei
+# = word in Meetei Mayek, beng = word in Bengali script. Sources: W = Wiktionary, Manipuri entry with a
+# pronunciation (English Wiktionary, Category:Manipuri terms with IPA pronunciation, CC BY-SA 4.0, read
+# 2026-11-18): the headword in Meetei Mayek and the pronunciation as the entry gives it (the first one
+# when there are several spellings of it; tone marks and syllable dots kept as written); B = the same
+# Wiktionary entry's pronunciation for the Bengali-script spelling of the word that Bengali-script Meitei
+# text uses (the spelling as attested in the IndicGenBench Flores-IN Manipuri sentences, CC BY-SA 4.0,
+# matched to the Meetei Mayek headword letter for letter: a lonsum letter is a bare consonant or one with
+# hasanta, a final consonant without a vowel sign is one written with া); N = Meitei numeral as listed in
+# the Wikipedia article "Meitei language" (CC BY-SA 4.0), in Meetei Mayek as listed there and in Bengali
+# script as attested in the IndicGenBench sentences, pronunciation hand-written from the article's
+# romanisation (a = ɐ, aa = a). Letter names and affixes are left out. The evaluation compares a broad
+# transcription (tools/eval/bho_eval.py): tone marks, syllable dots and the unreleased mark are removed,
+# ɐj ɐw are ei ou (the Wikipedia article "Meitei language": /ɐj/ [ej], /ɐw/ [ow]), a glide after a vowel
+# is i or u, r is ɾ, a length mark after a consonant is a doubled consonant.
+# Manipuri (Meitei) sentence gold set, written 2026-11-18 before the Manipuri rules were run on these items.
+# Bengali script: lines of Bengali-script Meitei text (songs and prose) in AI4Bharat IndicCorp v2 Manipuri (CC0),
+# which the Meetei Mayek sentence sets never contain. Meetei Mayek: the Meetei Mayek sentences of Tatoeba
+# (CC BY 2.0 FR; Tatoeba has eleven Manipuri sentences, eight of them in Meetei Mayek; the seven without Latin
+# letters are here) and lines of IndicCorp v2 Manipuri text in none of tools/eval/data/mni_dev.tsv,
+# mni_heldout.tsv and mni_wiki.tsv. Pronunciation hand-written word by word: the words of words.src as given
+# there, the others from the letter values of words.src and the morphemes of the words, which neither script
+# marks: a stem that ends in a consonant keeps it closed before a suffix (Bengali মোমবি mombi, Meetei Mayek
+# ꯃꯔꯨꯄꯀꯤ mɐɾupki), a suffix vowel written া or ꯥ at the end of a word is ɐ (-বা -bɐ, ꯂꯥꯎꯕꯥ laubɐ); tone is not
+# written. Format: sentence <TAB> pronunciation.
+# Columns: id, kind, text, expected, category, source (with licence), split, date written.
+w-ꯀꯅꯥ	word	ꯀꯅꯥ	kɐna	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀꯔꯄꯨꯔ	word	ꯀꯔꯄꯨꯔ	kaɾpuɾ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯀꯔꯝꯅ	word	ꯀꯔꯝꯅ	kɐɾɐmnɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀꯔꯤ	word	ꯀꯔꯤ	kɐɾi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯀꯕꯣꯛ	word	ꯀꯕꯣꯛ	kɐbok	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯀꯖꯦꯡꯂꯩ	word	ꯀꯖꯦꯡꯂꯩ	kɐdʒeŋlɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯀꯗꯥꯏ	word	ꯀꯗꯥꯏ	kɐdai	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀꯗꯧꯉꯩ	word	ꯀꯗꯧꯉꯩ	kɐdɐwŋɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀꯛ	word	ꯀꯛ	kɐk	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀꯛꯆꯦꯡ	word	ꯀꯛꯆꯦꯡ	kɐktʃeŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯀꯞ	word	ꯀꯞ	kɐp	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀꯣꯛ	word	ꯀꯣꯛ	kok	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀꯤ	word	ꯀꯤ	ki	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯀꯥꯂꯦꯟ	word	ꯀꯥꯂꯦꯟ	kalen	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯀꯥꯡꯂꯨꯞ	word	ꯀꯥꯡꯂꯨꯞ	kaŋlup	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯀꯥꯡꯖꯩ	word	ꯀꯥꯡꯖꯩ	kaŋdʒɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀꯦꯒꯦ	word	ꯀꯦꯒꯦ	keɡe	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀꯧꯅꯨ	word	ꯀꯧꯅꯨ	kɐwnu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀꯧꯕ꯭ꯔꯨ	word	ꯀꯧꯕ꯭ꯔꯨ	koubru	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯀꯨꯃ	word	ꯀꯨꯃ	kumɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀꯨꯆꯨ	word	ꯀꯨꯆꯨ	kutʃu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯀꯨꯝꯃꯩ	word	ꯀꯨꯝꯃꯩ	kumːɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀꯩ	word	ꯀꯩ	kɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀꯩꯊꯦꯟ	word	ꯀꯩꯊꯦꯟ	kɐjtʰen	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯀ꯭ꯋꯥꯛ	word	ꯀ꯭ꯋꯥꯛ	kwak	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯁꯂꯥꯏ	word	ꯁꯂꯥꯏ	sɐlai	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯃꯨꯗ꯭ꯔ	word	ꯁꯃꯨꯗ꯭ꯔ	sɐmudɾɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯅꯥꯃꯍꯤ	word	ꯁꯅꯥꯃꯍꯤ	sɐnɐmɐhi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯇ꯭ꯔꯡ	word	ꯁꯇ꯭ꯔꯡ	sɐtɾɐŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯉꯥꯏ	word	ꯁꯉꯥꯏ	sɐŋai	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯍꯔ	word	ꯁꯍꯔ	sahaɾ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯁꯑꯣꯝ	word	ꯁꯑꯣꯝ	sə.om	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯒꯣꯜꯁꯦꯟ	word	ꯁꯒꯣꯜꯁꯦꯟ	sɐɡolsen	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯁꯔꯨ	word	ꯁꯔꯨ	sɐɾu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯖꯤ	word	ꯁꯖꯤ	sɐdʒi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯖꯤꯕꯨ	word	ꯁꯖꯤꯕꯨ	sɐdʒibu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯁꯖꯤꯛ	word	ꯁꯖꯤꯛ	sɐdʒik	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯁꯛ	word	ꯁꯛ	sɐk	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯁꯝ	word	ꯁꯝ	sam	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯝꯖꯦꯠ	word	ꯁꯝꯖꯦꯠ	samdʒet	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯟ	word	ꯁꯟ	sɐn	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯟꯅꯤꯡꯍꯟꯕ	word	ꯁꯟꯅꯤꯡꯍꯟꯕ	sən.níŋ.hən.bə	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯟꯒꯥꯔꯤ	word	ꯁꯟꯒꯥꯔꯤ	sən.ɡa.ri	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯡꯁ꯭ꯀ꯭ꯔꯤꯠ	word	ꯁꯡꯁ꯭ꯀ꯭ꯔꯤꯠ	səŋs.kɾit	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯣꯏꯕꯨꯝ	word	ꯁꯣꯏꯕꯨꯝ	soibum	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯁꯤ	word	ꯁꯤ	si|sí	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯁꯤꯟꯗꯨꯔ	word	ꯁꯤꯟꯗꯨꯔ	sinduɾ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯁꯤꯠ	word	ꯁꯤꯠ	sit	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯁꯤꯡꯖꯨ	word	ꯁꯤꯡꯖꯨ	siŋdʒu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯥ	word	ꯁꯥ	sá|sa	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯥꯁꯇ꯭ꯔ	word	ꯁꯥꯁꯇ꯭ꯔ	sastɾɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯁꯥꯃꯨ	word	ꯁꯥꯃꯨ	samu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯁꯥꯃꯩ	word	ꯁꯥꯃꯩ	samɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯥꯍꯤꯇ꯭ꯌ	word	ꯁꯥꯍꯤꯇ꯭ꯌ	sahitjɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯁꯥꯕꯤ	word	ꯁꯥꯕꯤ	sabi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯥꯟꯅ	word	ꯁꯥꯟꯅ	sanːɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯁꯩꯔꯦꯡ	word	ꯁꯩꯔꯦꯡ	sɐjɾeŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯂꯛꯁꯃꯤ	word	ꯂꯛꯁꯃꯤ	lɐksmi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯂꯝꯃꯣꯛ	word	ꯂꯝꯃꯣꯛ	ləm.mok	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯂꯝꯇꯥ	word	ꯂꯝꯇꯥ	lɐmta	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯝꯕꯤ	word	ꯂꯝꯕꯤ	lambi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯡ	word	ꯂꯡ	lɐŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯣꯌꯥꯔꯥꯛꯄ	word	ꯂꯣꯌꯥꯔꯥꯛꯄ	lojaɾakpɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯂꯣꯏꯅ	word	ꯂꯣꯏꯅ	loinɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯂꯣꯛꯇꯥꯛ	word	ꯂꯣꯛꯇꯥꯛ	loktak	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯤꯜ	word	ꯂꯤꯜ	lil	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯥ	word	ꯂꯥ	la	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯥꯏ	word	ꯂꯥꯏ	lai	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯥꯏꯅꯤꯡ	word	ꯂꯥꯏꯅꯤꯡ	lɐjniŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯥꯏꯅꯤꯡꯊꯧ	word	ꯂꯥꯏꯅꯤꯡꯊꯧ	lainiŋtʰɐw	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯂꯥꯏꯈꯨꯔꯦꯝꯕꯤ	word	ꯂꯥꯏꯈꯨꯔꯦꯝꯕꯤ	laikʰuɾembi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯂꯥꯏꯔꯦꯝꯕꯤ	word	ꯂꯥꯏꯔꯦꯝꯕꯤ	laiɾembi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯂꯥꯛ	word	ꯂꯥꯛ	lak|lák	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯥꯡꯕꯟ	word	ꯂꯥꯡꯕꯟ	laŋbɐn	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯂꯦꯞ	word	ꯂꯦꯞ	lep	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯂꯧꯁꯤꯡ	word	ꯂꯧꯁꯤꯡ	lɐwsiŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯨꯋꯥꯡ	word	ꯂꯨꯋꯥꯡ	luwaŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯩ	word	ꯂꯩ	lɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯩꯆꯤꯟ	word	ꯂꯩꯆꯤꯟ	lɐjtʃin	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯩꯉꯣꯏ	word	ꯂꯩꯉꯣꯏ	lɐjŋoi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯩꯕꯥꯛ	word	ꯂꯩꯕꯥꯛ	lɐjbak	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯂꯩꯕꯥꯛꯄꯣꯛꯄ	word	ꯂꯩꯕꯥꯛꯄꯣꯛꯄ	lɐjbak̚pok̚pɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯁꯖꯤꯠ	word	ꯃꯁꯖꯤꯠ	mɐsɐdʒit	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯃꯥ	word	ꯃꯃꯥ	mɐma	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯄꯥ	word	ꯃꯄꯥ	mɐpa	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯄꯥꯟ	word	ꯃꯄꯥꯟ	mɐpan	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯅꯤꯄꯨꯔ	word	ꯃꯅꯤꯄꯨꯔ	mə.ni.pu.ɾə	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯅꯥ	word	ꯃꯅꯥ	mɐna	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯆꯤ	word	ꯃꯆꯤ	mɐtʃi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯆꯤꯟ	word	ꯃꯆꯤꯟ	mɐtʃín	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯇꯝ	word	ꯃꯇꯝ	mɐtɐm	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯇꯨ	word	ꯃꯇꯨ	mɐtu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯈꯣꯏ	word	ꯃꯈꯣꯏ	mɐkʰoi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯈꯨꯖꯤꯟ	word	ꯃꯈꯨꯖꯤꯟ	mɐkʰudʒin	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯌꯥꯝ	word	ꯃꯌꯥꯝ	mɐjam	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯌꯥꯡ	word	ꯃꯌꯥꯡ	mɐjaŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯌꯦꯛ	word	ꯃꯌꯦꯛ	mɐjek	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯍꯥꯛ	word	ꯃꯍꯥꯛ	mɐhak	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯔꯝ	word	ꯃꯔꯝ	mɐɾɐm	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯔꯥꯛ	word	ꯃꯔꯥꯛ	mɐɾak	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯔꯦꯛ	word	ꯃꯔꯦꯛ	mɐɾek	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯔꯨ	word	ꯃꯔꯨ	mɐɾu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯔꯨꯝ	word	ꯃꯔꯨꯝ	mɐɾum	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯗꯨ	word	ꯃꯗꯨ	mɐdu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯡ	word	ꯃꯡ	mə́ŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯤ	word	ꯃꯤ	mi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯤꯑꯣꯏ	word	ꯃꯤꯑꯣꯏ	mioi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯤꯠ	word	ꯃꯤꯠ	mit	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯤꯡ	word	ꯃꯤꯡ	miŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯥꯂꯡ	word	ꯃꯥꯂꯡ	malɐŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯥꯏꯀꯩ	word	ꯃꯥꯏꯀꯩ	maikɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯥꯏꯌꯣꯟ	word	ꯃꯥꯏꯌꯣꯟ	máijon	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯥꯏꯕ	word	ꯃꯥꯏꯕ	maiba	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯥꯏꯕꯤ	word	ꯃꯥꯏꯕꯤ	maibi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯥꯔꯖꯤꯡ	word	ꯃꯥꯔꯖꯤꯡ	maɾdʒiŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯥꯟꯅ	word	ꯃꯥꯟꯅ	manːɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯦꯔꯥ	word	ꯃꯦꯔꯥ	meɾa	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯦꯔꯨꯛ	word	ꯃꯦꯔꯨꯛ	meɾuk	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯦꯠ	word	ꯃꯦꯠ	mét	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯃꯩ	word	ꯃꯩ	mə́j	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯩꯇꯩ	word	ꯃꯩꯇꯩ	mɐjtɐj|mejtej	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯩꯇꯩꯂꯣꯟ	word	ꯃꯩꯇꯩꯂꯣꯟ	mɐjtɐjlon|mejtejlon	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯃꯩꯈꯨ	word	ꯃꯩꯈꯨ	mɐjkʰu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯄꯣꯝ	word	ꯄꯣꯝ	pom	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯄꯤ	word	ꯄꯤ	pi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯄꯤꯁꯨꯝ	word	ꯄꯤꯁꯨꯝ	písúm	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯄꯥ	word	ꯄꯥ	pa	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯄꯥꯈꯡꯕ	word	ꯄꯥꯈꯡꯕ	pakʰɐŋbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯄꯥꯏ	word	ꯄꯥꯏ	pai|pái	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯄꯥꯟꯊꯣꯏꯕꯤ	word	ꯄꯥꯟꯊꯣꯏꯕꯤ	pan.tʰoi.bi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯄꯥꯟꯖꯤ	word	ꯄꯥꯟꯖꯤ	pandʒi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯄꯥꯠ	word	ꯄꯥꯠ	pat	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯄꯦꯅꯥ	word	ꯄꯦꯅꯥ	pena	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯄꯦꯡꯕ	word	ꯄꯦꯡꯕ	peŋ.ba	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯄꯨꯋꯥꯔꯤ	word	ꯄꯨꯋꯥꯔꯤ	pu.wa.ɾi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯄꯨꯌꯥ	word	ꯄꯨꯌꯥ	puja	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯄꯨꯔꯩꯔꯣꯝꯕ	word	ꯄꯨꯔꯩꯔꯣꯝꯕ	puɾɐjɾombɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯄꯨꯛ	word	ꯄꯨꯛ	puk	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯄꯨꯜꯂꯞ	word	ꯄꯨꯜꯂꯞ	pulːɐp	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯄꯨꯝꯅꯃꯛ	word	ꯄꯨꯝꯅꯃꯛ	pumnɐmɐk	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯄꯨꯟ	word	ꯄꯨꯟ	pun|pún	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯛ	word	ꯅꯛ	nɐk	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯝ	word	ꯅꯝ	nɐm	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯅꯠꯇꯦ	word	ꯅꯠꯇꯦ	nɐtte	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯅꯡ	word	ꯅꯡ	nɐŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯅꯣꯛ	word	ꯅꯣꯛ	nok	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯣꯡ	word	ꯅꯣꯡ	noŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯣꯡꯁꯥꯕ	word	ꯅꯣꯡꯁꯥꯕ	noŋsabɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯣꯡꯃꯥꯏꯖꯤꯡ	word	ꯅꯣꯡꯃꯥꯏꯖꯤꯡ	noŋmaidʒiŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯤꯉꯣꯜ	word	ꯅꯤꯉꯣꯜ	niŋol	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯅꯤꯡ	word	ꯅꯤꯡ	níŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯅꯤꯡꯇꯝ	word	ꯅꯤꯡꯇꯝ	niŋtɐm	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯤꯡꯊꯧ	word	ꯅꯤꯡꯊꯧ	niŋtʰɐw	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯅꯤꯡꯊꯧꯀꯥꯕ	word	ꯅꯤꯡꯊꯧꯀꯥꯕ	niŋtʰɐwkabɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯤꯡꯊꯧꯖꯥ	word	ꯅꯤꯡꯊꯧꯖꯥ	niŋtʰɐwdʒa	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯥ	word	ꯅꯥ	na	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯥꯄꯤ	word	ꯅꯥꯄꯤ	napi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯥꯇꯣꯟ	word	ꯅꯥꯇꯣꯟ	naton	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯥꯟ	word	ꯅꯥꯟ	nan|nán	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯨꯃꯤꯠ	word	ꯅꯨꯃꯤꯠ	nu.mit	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯅꯨꯄꯤ	word	ꯅꯨꯄꯤ	nupi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯅꯨꯄꯥ	word	ꯅꯨꯄꯥ	nupɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯅꯨꯡ	word	ꯅꯨꯡ	núŋ|nuŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯅꯨꯡꯁꯤꯠ	word	ꯅꯨꯡꯁꯤꯠ	nuŋsit	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯆꯠꯄ	word	ꯆꯠꯄ	tʃɐtpɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯆꯤꯊꯦꯛ	word	ꯆꯤꯊꯦꯛ	tʃitʰek	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯆꯤꯔꯣꯡ	word	ꯆꯤꯔꯣꯡ	tʃiɾoŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯆꯤꯛ	word	ꯆꯤꯛ	tʃik	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯆꯤꯜ	word	ꯆꯤꯜ	tʃil	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯆꯤꯟ	word	ꯆꯤꯟ	tʃin	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯆꯤꯡ	word	ꯆꯤꯡ	tʃíŋ|tʃiŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯆꯤꯡꯁꯥꯡ	word	ꯆꯤꯡꯁꯥꯡ	tʃiŋsaŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯆꯤꯡꯂꯥꯏ	word	ꯆꯤꯡꯂꯥꯏ	tʃiŋlai	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯆꯤꯡꯖꯥꯎ	word	ꯆꯤꯡꯖꯥꯎ	tʃiŋdʒau	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯆꯤꯡꯗꯨꯝ	word	ꯆꯤꯡꯗꯨꯝ	tʃiŋdum	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯆꯥ	word	ꯆꯥ	tʃa|tʃá	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯆꯥꯏꯅ	word	ꯆꯥꯏꯅ	tʃainɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯆꯥꯛ	word	ꯆꯥꯛ	tʃak	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯆꯥꯛꯀꯧꯕ	word	ꯆꯥꯛꯀꯧꯕ	tʃakːɐwbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯆꯥꯝ	word	ꯆꯥꯝ	tʃam|tʃám	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯆꯦꯟꯊꯕ	word	ꯆꯦꯟꯊꯕ	tʃentʰɐbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯆꯦꯡ	word	ꯆꯦꯡ	tʃeŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯆꯦꯡꯂꯩ	word	ꯆꯦꯡꯂꯩ	tʃeŋlɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯆꯨꯞ	word	ꯆꯨꯞ	tʃup	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯆꯩ	word	ꯆꯩ	tʃɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯆꯩꯔꯥꯞ	word	ꯆꯩꯔꯥꯞ	tʃɐjɾap	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯇꯈꯦꯜ	word	ꯇꯈꯦꯜ	tɐkʰel	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯇꯞꯇꯥ	word	ꯇꯞꯇꯥ	tɐpta	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯇꯣꯈꯥꯏ	word	ꯇꯣꯈꯥꯏ	tokʰai	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯇꯤꯟ	word	ꯇꯤꯟ	tin|tín	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯇꯥ	word	ꯇꯥ	ta|tá	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯇꯥꯂꯣꯏ	word	ꯇꯥꯂꯣꯏ	taloi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯇꯥꯎꯔꯣꯢꯅꯥꯢ	word	ꯇꯥꯎꯔꯣꯢꯅꯥꯢ	tauɾɐjnai	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯇꯥꯏꯃꯔꯥꯛ	word	ꯇꯥꯏꯃꯔꯥꯛ	taimɐɾak	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯇꯥꯑꯣ	word	ꯇꯥꯑꯣ	tao	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯇꯥꯟ	word	ꯇꯥꯟ	tan	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯇꯥꯡ	word	ꯇꯥꯡ	taŋ|táŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯇꯥꯡꯈꯨꯜ	word	ꯇꯥꯡꯈꯨꯜ	taŋkʰul	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯇꯧ	word	ꯇꯧ	tɐw	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯇꯨ	word	ꯇꯨ	tu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯇꯨꯔꯦꯟ	word	ꯇꯨꯔꯦꯟ	tuɾen	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯇꯨꯜꯁꯤ	word	ꯇꯨꯜꯁꯤ	tul.si	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯇꯨꯝ	word	ꯇꯨꯝ	tum|túm	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯇꯩ	word	ꯇꯩ	tɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯇꯩꯊꯣꯛ	word	ꯇꯩꯊꯣꯛ	tɐjtʰok	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯈꯌꯣꯝ	word	ꯈꯌꯣꯝ	kʰɐjom	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯈꯔ	word	ꯈꯔ	kʰɐɾɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯈꯝꯅꯨꯡ	word	ꯈꯝꯅꯨꯡ	kʰɐmnuŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯈꯝꯕ꯭ꯔꯥꯡꯆꯥꯛ	word	ꯈꯝꯕ꯭ꯔꯥꯡꯆꯥꯛ	kʰɐŋbɾaŋtʃak	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯈꯟ	word	ꯈꯟ	kʰɐn	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯈꯡ	word	ꯈꯡ	kʰɐŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯈꯣꯏ	word	ꯈꯣꯏ	kʰoi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯈꯣꯝ	word	ꯈꯣꯝ	kʰom|kʰóm	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯈꯣꯠ	word	ꯈꯣꯠ	kʰot	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯈꯣꯡ	word	ꯈꯣꯡ	kʰóŋ|kʰoŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯈꯥꯒꯦꯝꯕ	word	ꯈꯥꯒꯦꯝꯕ	kʰaɡembɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯈꯧ	word	ꯈꯧ	kʰɐw	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯈꯨ	word	ꯈꯨ	kʰu|kʰú	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯈꯨꯃꯟ	word	ꯈꯨꯃꯟ	kʰumɐn	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯈꯨꯠ	word	ꯈꯨꯠ	kʰut	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯈ꯭ꯋꯥꯏ	word	ꯈ꯭ꯋꯥꯏ	kʰwai	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯈ꯭ꯋꯥꯏꯔꯝꯕꯟ	word	ꯈ꯭ꯋꯥꯏꯔꯝꯕꯟ	kʰwaiɾɐmbɐn	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯉꯛ	word	ꯉꯛ	ŋɐk	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯉꯥ	word	ꯉꯥ	ŋá	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯉꯧ	word	ꯉꯧ	ŋɐw	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯊꯋꯥꯟꯃꯤꯆꯥꯛ	word	ꯊꯋꯥꯟꯃꯤꯆꯥꯛ	tʰɐwanmitʃak	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯊꯕꯥ	word	ꯊꯕꯥ	tʰɐba	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯊꯛ	word	ꯊꯛ	tʰɐk	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯊꯝꯃꯣꯏ	word	ꯊꯝꯃꯣꯏ	tʰɐmːoi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯊꯝꯕꯥꯜ	word	ꯊꯝꯕꯥꯜ	tʰəm.bal	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯊꯣꯉꯥꯔꯦꯟ	word	ꯊꯣꯉꯥꯔꯦꯟ	tʰoŋaɾen	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯊꯣꯏꯕꯤ	word	ꯊꯣꯏꯕꯤ	tʰoibi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯊꯣꯛ	word	ꯊꯣꯛ	tʰok	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯊꯤ	word	ꯊꯤ	tʰi|tʰí	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯊꯤꯟ	word	ꯊꯤꯟ	tʰin	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯊꯥ	word	ꯊꯥ	tʰa	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯊꯥꯀꯨꯔ	word	ꯊꯥꯀꯨꯔ	tʰakuɾ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯊꯥꯑꯣꯃꯩ	word	ꯊꯥꯑꯣꯃꯩ	tʰaomɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯊꯥꯡꯖ	word	ꯊꯥꯡꯖ	tʰaŋdʒɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯊꯥꯡꯖꯤꯡ	word	ꯊꯥꯡꯖꯤꯡ	tʰaŋdʒiŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯊꯦꯛ	word	ꯊꯦꯛ	tʰek	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯊꯧ	word	ꯊꯧ	tʰɐw	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯊꯧꯔꯤ	word	ꯊꯧꯔꯤ	tʰɐwɾi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯊꯨꯝ	word	ꯊꯨꯝ	tʰum	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯊꯨꯝꯂꯩꯃ	word	ꯊꯨꯝꯂꯩꯃ	tʰumlɐjma	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯋꯥꯈꯜ	word	ꯋꯥꯈꯜ	wakʰɐl	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯋꯥꯔꯤ	word	ꯋꯥꯔꯤ	waɾi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯋꯥꯛꯆꯤꯡ	word	ꯋꯥꯛꯆꯤꯡ	waktʃíŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯋꯥꯜꯍꯧ	word	ꯋꯥꯜꯍꯧ	walhɐw	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯌꯥ	word	ꯌꯥ	ja	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯌꯥꯡ	word	ꯌꯥꯡ	jaŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯌꯦꯔꯨꯝ	word	ꯌꯦꯔꯨꯝ	je.ɾum	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯌꯦꯛ	word	ꯌꯦꯛ	jek	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯌꯦꯟ	word	ꯌꯦꯟ	jen	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯌꯦꯟꯁꯤꯟ	word	ꯌꯦꯟꯁꯤꯟ	jén.sín	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯌꯦꯠ	word	ꯌꯦꯠ	jet	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯌꯦꯡ	word	ꯌꯦꯡ	jeŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯌꯨꯕꯤ	word	ꯌꯨꯕꯤ	jubi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯌꯨꯝ	word	ꯌꯨꯝ	júm	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯌꯨꯝꯁꯀꯩꯁ	word	ꯌꯨꯝꯁꯀꯩꯁ	jumsɐkɐjsɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯌꯨꯝꯅꯥꯛ	word	ꯌꯨꯝꯅꯥꯛ	jumnak	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯌꯩ	word	ꯌꯩ	jɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯍꯛ	word	ꯍꯛ	hɐk	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯍꯡꯒꯥꯝꯄꯥꯜ	word	ꯍꯡꯒꯥꯝꯄꯥꯜ	hɐŋɡampal	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯍꯣꯏ	word	ꯍꯣꯏ	hoi|hói	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯍꯤ	word	ꯍꯤ	hi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯍꯤꯌꯥꯡ	word	ꯍꯤꯌꯥꯡ	híjáŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯍꯤꯔꯦꯟ	word	ꯍꯤꯔꯦꯟ	hiren	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯍꯤꯛ	word	ꯍꯤꯛ	hik	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯍꯤꯞ	word	ꯍꯤꯞ	hip	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯍꯤꯟꯗꯨ	word	ꯍꯤꯟꯗꯨ	hindu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯍꯤꯡꯆꯥꯕꯤ	word	ꯍꯤꯡꯆꯥꯕꯤ	hiŋtʃabi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯍꯥꯎꯔꯩꯃ	word	ꯍꯥꯎꯔꯩꯃ	haurɐjmɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯍꯥꯏ	word	ꯍꯥꯏ	hai|hái	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯍꯥꯔꯝ	word	ꯍꯥꯔꯝ	haɾɐm	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯍꯥꯠ	word	ꯍꯥꯠ	hat	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯍꯦꯂꯣꯏ	word	ꯍꯦꯂꯣꯏ	heloi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯍꯧ	word	ꯍꯧ	hɔu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯍꯨꯏ	word	ꯍꯨꯏ	húi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯍꯨꯛ	word	ꯍꯨꯛ	huk	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯍꯨꯝ	word	ꯍꯨꯝ	hum|húm	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯍꯩ	word	ꯍꯩ	hɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯎꯀꯨ	word	ꯎꯀꯨ	uku	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯎꯃꯡ	word	ꯎꯃꯡ	umɐŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯎꯃꯡꯂꯥꯏ	word	ꯎꯃꯡꯂꯥꯏ	umɐŋlai	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯎꯆꯦꯛ	word	ꯎꯆꯦꯛ	utʃek	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯎꯍꯩ	word	ꯎꯍꯩ	uhɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯎꯐꯨꯜ	word	ꯎꯐꯨꯜ	upʰul	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯎꯔꯥ	word	ꯎꯔꯥ	uɾa	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯎꯟ	word	ꯎꯟ	un|ún	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯎꯠ	word	ꯎꯠ	ut	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯏ	word	ꯏ	í|i	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯏꯀꯥꯏ	word	ꯏꯀꯥꯏ	í.kai	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯏꯁꯋ꯭ꯔ	word	ꯏꯁꯋ꯭ꯔ	iswɐɾ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯏꯁꯤꯡ	word	ꯏꯁꯤꯡ	í.siŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯏꯃꯣꯏꯅꯨ	word	ꯏꯃꯣꯏꯅꯨ	imoinu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯏꯉꯥ	word	ꯏꯉꯥ	íŋa	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯏꯉꯦꯟ	word	ꯏꯉꯦꯟ	iŋen	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯏꯔꯣꯏ	word	ꯏꯔꯣꯏ	iɾoi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯏꯔꯥꯏ	word	ꯏꯔꯥꯏ	iɾai	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯏꯖꯠ	word	ꯏꯖꯠ	idʒət	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯏꯝꯐꯥꯜ	word	ꯏꯝꯐꯥꯜ	impʰal	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯏꯟ	word	ꯏꯟ	ín|in	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯏꯟꯗ꯭ꯔꯥ	word	ꯏꯟꯗ꯭ꯔꯥ	indɾa	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯐꯅꯦꯛ	word	ꯐꯅꯦꯛ	pʰɐnek	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯐꯝ	word	ꯐꯝ	pʰɐm	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯐꯠꯇ	word	ꯐꯠꯇ	pʰɐtːɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯐꯤꯔꯥꯛ	word	ꯐꯤꯔꯥꯛ	pʰiɾak	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯐꯧꯑꯣꯏꯕꯤ	word	ꯐꯧꯑꯣꯏꯕꯤ	pʰɐwoibi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯐꯨꯟ	word	ꯐꯨꯟ	pʰun	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯀꯡꯕ	word	ꯑꯀꯡꯕ	ɐkɐŋbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯀꯣꯏꯕ	word	ꯑꯀꯣꯏꯕ	ɐkoibɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯀꯨꯡꯕ	word	ꯑꯀꯨꯡꯕ	ɐkuŋbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯁꯡꯕ	word	ꯑꯁꯡꯕ	ɐsɐŋbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯁꯤ	word	ꯑꯁꯤ	ɐsi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯁꯤꯗ	word	ꯑꯁꯤꯗ	ɐsidɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯁꯥꯡꯕ	word	ꯑꯁꯥꯡꯕ	ɐsaŋbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯂꯥ	word	ꯑꯂꯥ	ɐlːa	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯃ	word	ꯑꯃ	ɐmɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯃꯁꯨꯡ	word	ꯑꯃꯁꯨꯡ	ɐmɐsuŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯃꯣꯠꯄ	word	ꯑꯃꯣꯠꯄ	ɐmotpɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯃꯨꯕ	word	ꯑꯃꯨꯕ	ɐmubɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯄꯛꯉꯥ	word	ꯑꯄꯛꯉꯥ	ɐpɐkŋa	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯄꯠꯄ	word	ꯑꯄꯠꯄ	ɐpɐtpɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯄꯣꯛꯄ	word	ꯑꯄꯣꯛꯄ	ɐpokpɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯄꯤꯛꯄ	word	ꯑꯄꯤꯛꯄ	ɐpikpɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯄꯥꯕ	word	ꯑꯄꯥꯕ	ɐpabɐ|ɐpábɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯅꯥꯟꯕ	word	ꯑꯅꯥꯟꯕ	ɐnanbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯅꯧꯕ	word	ꯑꯅꯧꯕ	ɐnɐwbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯆꯣꯠꯄ	word	ꯑꯆꯣꯠꯄ	ɐtʃotpɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯆꯧꯕ	word	ꯑꯆꯧꯕ	ɐtʃɐwbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯆꯨꯝꯕ	word	ꯑꯆꯨꯝꯕ	ɐtʃumbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯇꯣꯞꯄ	word	ꯑꯇꯣꯞꯄ	ɐtoppɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯇꯤꯌꯥ	word	ꯑꯇꯤꯌꯥ	ɐtija	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯇꯤꯡꯉꯥ	word	ꯑꯇꯤꯡꯉꯥ	ɐtiŋːa	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯇꯤꯡꯕ	word	ꯑꯇꯤꯡꯕ	ɐtiŋbɐ|ɐtíŋbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯇꯦꯟꯕ	word	ꯑꯇꯦꯟꯕ	ɐtenbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯈꯨꯕ	word	ꯑꯈꯨꯕ	ɐkʰubɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯉꯣꯝ	word	ꯑꯉꯣꯝ	ɐŋom	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯉꯥꯡ	word	ꯑꯉꯥꯡ	ɐ.ŋaŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯉꯥꯡꯕ	word	ꯑꯉꯥꯡꯕ	ɐŋaŋbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯉꯧꯕ	word	ꯑꯉꯧꯕ	ɐŋɐwbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯊꯟꯕ	word	ꯑꯊꯟꯕ	ɐtʰɐnbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯊꯧꯕ	word	ꯑꯊꯧꯕ	ɐtʰɐwbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯌꯥꯝꯕ	word	ꯑꯌꯥꯝꯕ	ɐjambɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯍꯤꯡ	word	ꯑꯍꯤꯡ	ɐhiŋ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯏꯡꯕ	word	ꯑꯏꯡꯕ	ɐiŋbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯐꯕ	word	ꯑꯐꯕ	ɐpʰɐbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯔꯤꯕ	word	ꯑꯔꯤꯕ	ɐɾibɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯔꯥꯑꯣꯕ	word	ꯑꯔꯥꯑꯣꯕ	ɐɾɐwbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯔꯥꯞꯄ	word	ꯑꯔꯥꯞꯄ	ɐɾapːɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯔꯨꯝꯕ	word	ꯑꯔꯨꯝꯕ	ɐɾumbɐ|ɐɾúmbɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯗꯣꯝ	word	ꯑꯗꯣꯝ	ɐdom	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯗꯨ	word	ꯑꯗꯨ	ɐdu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯗꯨꯗ	word	ꯑꯗꯨꯗ	ɐdudɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯣ	word	ꯑꯣ	o	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯣꯎꯒ꯭ꯔꯤ	word	ꯑꯣꯎꯒ꯭ꯔꯤ	ouɡɾi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯣꯏ	word	ꯑꯣꯏ	oi|ói	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯥꯌꯨꯕꯦꯗ	word	ꯑꯥꯌꯨꯕꯦꯗ	a.jur.be.də	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯦꯂꯥꯏꯆꯤ	word	ꯑꯦꯂꯥꯏꯆꯤ	elaitʃi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯑꯩ	word	ꯑꯩ	ɐj	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯩꯈꯣꯏ	word	ꯑꯩꯈꯣꯏ	ɐjkʰoi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯔꯥꯃꯥꯌꯟ	word	ꯔꯥꯃꯥꯌꯟ	ra.ma.jən	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯕꯔꯞ	word	ꯕꯔꯞ	bɐɾɐp	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯕꯔꯥꯛ	word	ꯕꯔꯥꯛ	bɐɾak	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯕꯤꯟꯗꯨ	word	ꯕꯤꯟꯗꯨ	bindu	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯕꯥꯃꯣꯟ	word	ꯕꯥꯃꯣꯟ	bamon	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯕꯥꯔꯨꯅꯤ	word	ꯕꯥꯔꯨꯅꯤ	baɾuni	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯕꯥꯖꯥꯔ	word	ꯕꯥꯖꯥꯔ	badʒaɾ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯕ꯭ꯔꯤꯍꯁꯄꯇꯤ	word	ꯕ꯭ꯔꯤꯍꯁꯄꯇꯤ	bɾihɐspɐti	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯖꯒꯣꯏ	word	ꯖꯒꯣꯏ	dʒɐɡoi	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯗꯨꯔꯒꯥ	word	ꯗꯨꯔꯒꯥ	duɾɡa	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	dev	2026-11-18
+w-ꯙꯔꯃ	word	ꯙꯔꯃ	dʱɐɾmɐ	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯚꯒꯕꯥꯟ	word	ꯚꯒꯕꯥꯟ	bʱɐɡɐban	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯚꯥꯔꯠ	word	ꯚꯥꯔꯠ	bʱaɾɐt	mtei	Wiktionary Manipuri entry with a pronunciation (CC BY-SA 4.0), read 2026-11-18; pronunciation from Wiktionary	heldout	2026-11-18
+w-কনা	word	কনা	kɐna	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-করম্না	word	করম্না	kɐɾɐmnɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-করি	word	করি	kɐɾi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-কপ	word	কপ	kɐp	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-কী	word	কী	ki	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-কালেন	word	কালেন	kalen	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-কাংলুপ	word	কাংলুপ	kaŋlup	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-কৈ	word	কৈ	kɐj	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-শওম	word	শওম	sə.om	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-শরূ	word	শরূ	sɐɾu	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-শজি	word	শজি	sɐdʒi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-শজিক	word	শজিক	sɐdʒik	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-শক	word	শক	sɐk	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-সন	word	সন	sɐn	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-সি	word	সি	si|sí	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-সিত	word	সিত	sit	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-শা	word	শা	sá|sa	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-শান্না	word	শান্না	sanːɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-শৈরেং	word	শৈরেং	sɐjɾeŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-লম্বী	word	লম্বী	lambi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-লঙ	word	লঙ	lɐŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-লোইনা	word	লোইনা	loinɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-লা	word	লা	la	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-লাই	word	লাই	lai	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-লাইনিং	word	লাইনিং	lɐjniŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-লৌশিং	word	লৌশিং	lɐwsiŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-লৈ	word	লৈ	lɐj	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-লৈঙোই	word	লৈঙোই	lɐjŋoi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-লৈবাক	word	লৈবাক	lɐjbak	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-মমা	word	মমা	mɐma	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-মপা	word	মপা	mɐpa	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-মপান	word	মপান	mɐpan	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-মনা	word	মনা	mɐna	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-মচি	word	মচি	mɐtʃi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-মচিন	word	মচিন	mɐtʃín	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-মতম	word	মতম	mɐtɐm	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-মতু	word	মতু	mɐtu	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-মহাক	word	মহাক	mɐhak	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-মরম	word	মরম	mɐɾɐm	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-মরু	word	মরু	mɐɾu	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-মরুম	word	মরুম	mɐɾum	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-মদু	word	মদু	mɐdu	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-মঙ	word	মঙ	mə́ŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-মী	word	মী	mi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-মীওই	word	মীওই	mioi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-মীৎ	word	মীৎ	mit	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-মিং	word	মিং	miŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-মাইকৈ	word	মাইকৈ	maikɐj	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-মাইবা	word	মাইবা	maiba	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-মৈ	word	মৈ	mə́j	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-মৈখু	word	মৈখু	mɐjkʰu	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-পী	word	পী	pi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-পা	word	পা	pa	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-পাই	word	পাই	pai|pái	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-পাৎ	word	পাৎ	pat	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-পুৱারী	word	পুৱারী	pu.wa.ɾi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-পুক	word	পুক	puk	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-পুম্নমক	word	পুম্নমক	pumnɐmɐk	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-নত্তে	word	নত্তে	nɐtte	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-নোক	word	নোক	nok	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-নোং	word	নোং	noŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-নোংমাইজিং	word	নোংমাইজিং	noŋmaidʒiŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-নীং	word	নীং	níŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-নীংতম	word	নীংতম	niŋtɐm	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-নিংথৌ	word	নিংথৌ	niŋtʰɐw	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-নিংথৌকাবা	word	নিংথৌকাবা	niŋtʰɐwkabɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-না	word	না	na	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-নাপী	word	নাপী	napi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-নুমিৎ	word	নুমিৎ	nu.mit	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-নুপী	word	নুপী	nupi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-নুপা	word	নুপা	nupɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-নুং	word	নুং	núŋ|nuŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-নুংশিৎ	word	নুংশিৎ	nuŋsit	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-চৎপা	word	চৎপা	tʃɐtpɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-চিং	word	চিং	tʃíŋ|tʃiŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-চা	word	চা	tʃa|tʃá	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-চাইনা	word	চাইনা	tʃainɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-চাক	word	চাক	tʃak	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-চেঙ	word	চেঙ	tʃeŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-চৈ	word	চৈ	tʃɐj	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-তোখাই	word	তোখাই	tokʰai	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-তিন	word	তিন	tin|tín	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-তা	word	তা	ta|tá	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-তাং	word	তাং	taŋ|táŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-তৌ	word	তৌ	tɐw	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-তু	word	তু	tu	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-খরা	word	খরা	kʰɐɾɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-খং	word	খং	kʰɐŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-খোঙ	word	খোঙ	kʰóŋ|kʰoŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-খুৎ	word	খুৎ	kʰut	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-ঙা	word	ঙা	ŋá	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-থৱান্মিচাক	word	থৱান্মিচাক	tʰɐwanmitʃak	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-থক	word	থক	tʰɐk	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-থি	word	থি	tʰi|tʰí	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-থা	word	থা	tʰa	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-থৌ	word	থৌ	tʰɐw	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-থুম	word	থুম	tʰum	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-ৱাখল	word	ৱাখল	wakʰɐl	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-ৱারী	word	ৱারী	waɾi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-হক	word	হক	hɐk	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-হোই	word	হোই	hoi|hói	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-হি	word	হি	hi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-হিন্দু	word	হিন্দু	hindu	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-হাই	word	হাই	hai|hái	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-হুই	word	হুই	húi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-হৈ	word	হৈ	hɐj	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-উমং	word	উমং	umɐŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-উচেক	word	উচেক	utʃek	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-উহৈ	word	উহৈ	uhɐj	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-উফুল	word	উফুল	upʰul	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-উন	word	উন	un|ún	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-ই	word	ই	í|i	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-ইকাই	word	ইকাই	í.kai	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-ঈশিং	word	ঈশিং	í.siŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-ইরোই	word	ইরোই	iɾoi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-ইরাই	word	ইরাই	iɾai	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-ইন	word	ইন	ín|in	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-ফম	word	ফম	pʰɐm	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অকোইবা	word	অকোইবা	ɐkoibɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অশংবা	word	অশংবা	ɐsɐŋbɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-অসি	word	অসি	ɐsi	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অসিদা	word	অসিদা	ɐsidɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অশাংবা	word	অশাংবা	ɐsaŋbɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অমা	word	অমা	ɐmɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-অমসুং	word	অমসুং	ɐmɐsuŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অমুবা	word	অমুবা	ɐmubɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-অপাবা	word	অপাবা	ɐpabɐ|ɐpábɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-অনৌবা	word	অনৌবা	ɐnɐwbɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অচোৎপা	word	অচোৎপা	ɐtʃotpɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অচৌবা	word	অচৌবা	ɐtʃɐwbɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-অচুম্বা	word	অচুম্বা	ɐtʃumbɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-অতোপ্পা	word	অতোপ্পা	ɐtoppɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অখুবা	word	অখুবা	ɐkʰubɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অঙাং	word	অঙাং	ɐ.ŋaŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-অঙাংবা	word	অঙাংবা	ɐŋaŋbɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-অঙৌবা	word	অঙৌবা	ɐŋɐwbɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অথৌবা	word	অথৌবা	ɐtʰɐwbɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অহিং	word	অহিং	ɐhiŋ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অইংবা	word	অইংবা	ɐiŋbɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অফবা	word	অফবা	ɐpʰɐbɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-অরিবা	word	অরিবা	ɐɾibɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-অরাপ্পা	word	অরাপ্পা	ɐɾapːɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অরুম্বা	word	অরুম্বা	ɐɾumbɐ|ɐɾúmbɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-অদোম	word	অদোম	ɐdom	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-অদু	word	অদু	ɐdu	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-অদুদা	word	অদুদা	ɐdudɐ	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-ও	word	ও	o	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-ওই	word	ওই	oi|ói	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-বিন্দু	word	বিন্দু	bindu	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	dev	2026-11-18
+w-ভারত	word	ভারত	bʱaɾɐt	beng	Wiktionary Manipuri entry (CC BY-SA 4.0), Bengali-script spelling attested in IndicGenBench Flores-IN mni (CC BY-SA 4.0); pronunciation from Wiktionary	heldout	2026-11-18
+w-ꯑꯃꯥ	word	ꯑꯃꯥ	ɐma	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-ꯑꯅꯤ	word	ꯑꯅꯤ	ɐni	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-অনি	word	অনি	ɐni	beng	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-ꯑꯍꯨꯝ	word	ꯑꯍꯨꯝ	ɐhum	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-অহুম	word	অহুম	ɐhum	beng	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-ꯃꯔꯤ	word	ꯃꯔꯤ	mɐɾi	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-মরি	word	মরি	mɐɾi	beng	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-ꯃꯉꯥ	word	ꯃꯉꯥ	mɐŋa	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-মঙা	word	মঙা	mɐŋa	beng	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-ꯇꯔꯨꯛ	word	ꯇꯔꯨꯛ	tɐɾuk	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-তরুক	word	তরুক	tɐɾuk	beng	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-ꯇꯔꯦꯠ	word	ꯇꯔꯦꯠ	tɐɾet	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-তরেৎ	word	তরেৎ	tɐɾet	beng	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-ꯅꯤꯄꯥꯟ	word	ꯅꯤꯄꯥꯟ	nipan	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-নিপান	word	নিপান	nipan	beng	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-ꯃꯥꯄꯟ	word	ꯃꯥꯄꯟ	mapɐn	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-ꯇꯔꯥ	word	ꯇꯔꯥ	tɐɾa	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-তরা	word	তরা	tɐɾa	beng	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-ꯇꯔꯥꯃꯥꯊꯣꯏ	word	ꯇꯔꯥꯃꯥꯊꯣꯏ	tɐɾamatʰoi	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-ꯇꯔꯥꯅꯤꯊꯣꯏ	word	ꯇꯔꯥꯅꯤꯊꯣꯏ	tɐɾanitʰoi	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-তরানিথোই	word	তরানিথোই	tɐɾanitʰoi	beng	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-ꯇꯔꯥꯍꯨꯝꯗꯣꯏ	word	ꯇꯔꯥꯍꯨꯝꯗꯣꯏ	tɐɾahumdoi	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-ꯇꯔꯥꯃꯔꯤ	word	ꯇꯔꯥꯃꯔꯤ	tɐɾamɐɾi	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-ꯇꯔꯥꯃꯉꯥ	word	ꯇꯔꯥꯃꯉꯥ	tɐɾamɐŋa	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-ꯀꯨꯟ	word	ꯀꯨꯟ	kun	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-কুন	word	কুন	kun	beng	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-ꯀꯨꯟꯊ꯭ꯔꯥ	word	ꯀꯨꯟꯊ꯭ꯔꯥ	kuntʰɾa	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-কুন্থ্রা	word	কুন্থ্রা	kuntʰɾa	beng	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-ꯅꯤꯐꯨ	word	ꯅꯤꯐꯨ	nipʰu	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-ꯌꯥꯡꯈꯩ	word	ꯌꯥꯡꯈꯩ	jaŋkʰɐj	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-ꯍꯨꯝꯐꯨ	word	ꯍꯨꯝꯐꯨ	humpʰu	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-ꯍꯨꯝꯐꯨꯇꯔꯥ	word	ꯍꯨꯝꯐꯨꯇꯔꯥ	humpʰutɐɾa	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-ꯃꯔꯤꯐꯨ	word	ꯃꯔꯤꯐꯨ	mɐɾipʰu	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-ꯃꯔꯤꯐꯨꯇꯔꯥ	word	ꯃꯔꯤꯐꯨꯇꯔꯥ	mɐɾipʰutɐɾa	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	heldout	2026-11-18
+w-ꯂꯤꯁꯤꯡ	word	ꯂꯤꯁꯤꯡ	lisiŋ	mtei	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+w-লিশিং	word	লিশিং	lisiŋ	beng	Meitei numeral, Wikipedia "Meitei language" (CC BY-SA 4.0); pronunciation hand-written from its romanisation	dev	2026-11-18
+s-010	sentence	শদুনা য়াংগেল লিংবীনে	sɐdunɐ jaŋɡel liŋbine	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	dev	2026-11-18
+s-011	sentence	অহানবা মাইবীঃ	ɐhanbɐ maibi	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	heldout	2026-11-18
+s-012	sentence	ইবুংখোয় মোমবিখোয়।	ibuŋkʰoi mombikʰoi	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	dev	2026-11-18
+s-013	sentence	ঈখোঙনা হাওখোং তাবীনে,	ikʰoŋnɐ haokʰoŋ tabine	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	heldout	2026-11-18
+s-014	sentence	উৎপী উরেল থারকপী,	utpi uɾel tʰaɾɐkpi	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	heldout	2026-11-18
+s-015	sentence	কৌবনা লোকশা অমদা	kɐwbɐnɐ loksa ɐmɐdɐ	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	dev	2026-11-18
+s-016	sentence	হায়না অসুম্না লৈথারি।	hainɐ ɐsumnɐ lɐjtʰaɾi	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	dev	2026-11-18
+s-017	sentence	য়ামদ্রবসু য়াইশিল্লৈ।	jamdɾɐbɐsu jaisillɐj	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	dev	2026-11-18
+s-018	sentence	শিংঙেল লৈপুন শাবদি দে।	siŋŋel lɐjpun sabɐdi de	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	heldout	2026-11-18
+s-019	sentence	নুংশাবু শাদনা ফৌকংবী	nuŋsabu sadɐnɐ pʰɐwkɐŋbi	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	heldout	2026-11-18
+s-020	sentence	লৈরাং খয়োম লৈনৌবা	lɐjɾaŋ kʰɐjom lɐjnɐwbɐ	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	heldout	2026-11-18
+s-021	sentence	ঈদুনা নোংথাং লৈমনে,	idunɐ noŋtʰaŋ lɐjmɐne	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	heldout	2026-11-18
+s-022	sentence	ঙাঙনা নিঙথিরে। ঙাঙনা ফজরে।	ŋaŋnɐ niŋtʰiɾe ŋaŋnɐ pʰɐdʒɐɾe	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	heldout	2026-11-18
+s-023	sentence	খিৎতা খুনবিয়ো।	kʰittɐ kʰunbijo	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	dev	2026-11-18
+s-024	sentence	হা নুংবালনা পুনশি ঈৱাল্লৈ।	ha nuŋbalnɐ punsi iwallɐj	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	dev	2026-11-18
+s-025	sentence	নোংমাইজিংদা উ য়াল্লে, খোংদা য়ুহাররে।	noŋmaidʒiŋdɐ u jalle kʰoŋdɐ juhaɾɾe	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	dev	2026-11-18
+s-026	sentence	হাওলৈনা ঙাঙাং শাৎপদি	haolɐjnɐ ŋaŋaŋ satpɐdi	sentence-beng	IndicCorp v2 mni (CC0), Bengali-script line; pronunciation hand-written	heldout	2026-11-18
+s-027	sentence	ꯌꯥꯅꯤꯅꯥ ꯂꯥꯎꯕꯥ ꯄꯥꯝꯂꯕꯗꯤ ꯂꯥꯎꯕꯥ ꯌꯥꯏ꯫	janinɐ laubɐ pamlɐbɐdi laubɐ jai	sentence-mtei	Tatoeba (CC BY 2.0 FR); pronunciation hand-written	dev	2026-11-18
+s-028	sentence	ꯀ꯭ꯂꯥꯎꯗꯤꯌꯁꯅꯥ ꯃꯍꯥꯛꯀꯤ ꯃꯔꯨꯄꯀꯤꯗꯃꯛ ꯋꯥꯏꯇꯦꯞ ꯑꯃꯥ ꯁꯦꯝꯂꯤ꯫	klaudijɐsnɐ mɐhakki mɐɾupkidɐmɐk waitep ɐma semli	sentence-mtei	Tatoeba (CC BY 2.0 FR); pronunciation hand-written	heldout	2026-11-18
+s-029	sentence	ꯁꯥꯃꯤꯅꯥ ꯅꯨꯃꯤꯠ ꯈꯨꯗꯤꯡꯒꯤ ꯕꯦꯉ꯭ꯀꯇꯥ ꯆꯠꯂꯤ꯫	saminɐ numit kʰudiŋɡi beŋktɐ tʃɐtli	sentence-mtei	Tatoeba (CC BY 2.0 FR); pronunciation hand-written	heldout	2026-11-18
+s-030	sentence	ꯑꯩꯕꯨ ꯇꯃꯗꯥ ꯂꯧꯈꯠꯄꯤꯌꯨ꯫	ɐjbu tɐmdɐ lɐwkʰɐtpiju	sentence-mtei	Tatoeba (CC BY 2.0 FR); pronunciation hand-written	heldout	2026-11-18
+s-031	sentence	ꯇꯃꯅꯥ ꯃꯍꯥꯛꯀꯤ ꯁꯥꯏꯅꯦꯠ ꯔꯤꯡ ꯁꯤꯖꯤꯟꯅꯗꯨꯅꯥ ꯆꯤꯊꯤ ꯑꯗꯨ ꯋꯥꯛꯁꯅꯥ ꯁꯤꯜ ꯇꯧꯈꯤ꯫	tɐmnɐ mɐhakki sainet ɾiŋ sidʒinnɐdunɐ tʃitʰi ɐdu waksnɐ sil tɐwkʰi	sentence-mtei	Tatoeba (CC BY 2.0 FR); pronunciation hand-written	dev	2026-11-18
+s-032	sentence	ꯑꯩꯍꯥꯛꯅꯥ ꯃꯗꯨ ꯇꯧꯔꯃꯂꯣꯏ꯫	ɐjhaknɐ mɐdu tɐwɾɐmloi	sentence-mtei	Tatoeba (CC BY 2.0 FR); pronunciation hand-written	heldout	2026-11-18
+s-033	sentence	"ꯅꯉꯅꯥ ꯊꯕꯛ ꯇꯧꯕꯥ ꯉꯃꯒꯗ꯭ꯔꯥ?" "ꯇꯁꯦꯡꯅꯥ ꯍꯥꯌꯔꯕꯗꯥ ꯑꯩꯍꯥꯛ ꯊꯕꯛ ꯇꯧꯔꯤ꯫"	nɐŋnɐ tʰɐbɐk tɐwbɐ ŋɐmɡɐdɾa tɐseŋnɐ haiɾɐbɐdɐ ɐjhak tʰɐbɐk tɐwɾi	sentence-mtei	Tatoeba (CC BY 2.0 FR); pronunciation hand-written	heldout	2026-11-18
+s-034	sentence	ꯊꯣꯡꯉꯥꯝ ꯁꯥꯒꯩ ꯑꯁꯤ ꯃꯩꯇꯩ ꯐꯨꯔꯨꯞꯀꯤ ꯁꯥꯒꯩ ꯑꯃꯅꯤ꯫	tʰoŋŋam saɡɐj ɐsi mɐjtɐj pʰuɾupki saɡɐj ɐmɐni	sentence-mtei	Tatoeba (CC BY 2.0 FR); pronunciation hand-written	heldout	2026-11-18
+s-035	sentence	ꯃꯤꯇꯩꯂꯣꯟꯁꯤ ꯋꯥꯍꯩ ꯄꯔꯦꯡ ꯑꯣꯢꯕ ꯂꯣꯟ ꯑꯃꯅꯤ ꯫	mitɐjlonsi wahɐj pɐɾeŋ oibɐ lon ɐmɐni	sentence-mtei	IndicCorp v2 mni (CC0), not in the mni_dev/heldout/wiki sets; pronunciation hand-written	dev	2026-11-18
+s-036	sentence	ꯇꯞꯅꯥ ꯇꯞꯅꯥ ꯅꯨꯃꯤꯠ ꯑꯃꯗꯥ ꯅꯍꯥꯛ ꯁꯤꯒꯅꯤ꯫	tɐpnɐ tɐpnɐ numit ɐmɐdɐ nɐhak siɡɐni	sentence-mtei	IndicCorp v2 mni (CC0), not in the mni_dev/heldout/wiki sets; pronunciation hand-written	dev	2026-11-18
+s-037	sentence	ꯋꯥꯡꯈꯦꯝ ꯑꯁꯤ ꯃꯤꯇꯩ ꯐꯨꯔꯨꯞꯀꯤ ꯁꯥꯒꯩ ꯑꯃꯅꯤ ꯫	waŋkʰem ɐsi mitɐj pʰuɾupki saɡɐj ɐmɐni	sentence-mtei	IndicCorp v2 mni (CC0), not in the mni_dev/heldout/wiki sets; pronunciation hand-written	dev	2026-11-18
+s-038	sentence	ꯂꯨꯍꯣꯡꯂꯕꯥ ꯅꯨꯄꯤ ꯑꯗꯨꯅꯥ ꯍꯧꯖꯤꯛ ꯌꯥꯝꯅꯥ ꯁꯣꯌꯗꯅꯥ ꯐꯥꯑꯣꯈꯤ꯫	luhoŋlɐbɐ nupi ɐdunɐ hɐwdʒik jamnɐ soidɐnɐ pʰaokʰi	sentence-mtei	IndicCorp v2 mni (CC0), not in the mni_dev/heldout/wiki sets; pronunciation hand-written	heldout	2026-11-18
+s-039	sentence	ꯄꯥꯏꯔꯗꯥ ꯍꯀꯆꯥꯡ ꯑꯗꯨ ꯃꯩ ꯊꯥꯕꯥ ꯎꯕꯗꯥ ꯃꯍꯥꯛ ꯌꯥꯝꯅꯥ ꯀꯟꯅꯥ ꯀꯞꯄꯥ ꯍꯧꯔꯀꯈꯤ꯫	paiɾɐdɐ hɐktʃaŋ ɐdu mɐj tʰabɐ ubɐdɐ mɐhak jamnɐ kɐnnɐ kɐppɐ hɐwɾɐkkʰi	sentence-mtei	IndicCorp v2 mni (CC0), not in the mni_dev/heldout/wiki sets; pronunciation hand-written	heldout	2026-11-18
+s-040	sentence	ꯕꯥꯘꯅꯥ ꯐ꯭ꯔꯣꯒꯅꯥ ꯃꯥꯏꯊꯤꯕꯥ ꯄꯤꯔꯕꯥ ꯃꯇꯨꯡꯗꯥ ꯂꯝꯕꯤ ꯆꯠꯈꯤ꯫	baɡʱnɐ pʰɾoɡnɐ maitʰibɐ piɾɐbɐ mɐtuŋdɐ lambi tʃɐtkʰi	sentence-mtei	IndicCorp v2 mni (CC0), not in the mni_dev/heldout/wiki sets; pronunciation hand-written	heldout	2026-11-18
+s-041	sentence	ꯅꯣꯡꯄꯣꯛ ꯏꯝꯐꯥꯜ ꯄꯅꯥ ꯑꯁꯤ ꯃꯅꯤꯄꯨꯔꯒꯤ ꯇꯝꯄꯥꯛꯀꯤ ꯂꯝꯒꯤ ꯄꯅꯥ ꯑꯃꯅꯤ ꯫	noŋpok impʰal pɐna ɐsi mɐnipuɾɡi tɐmpakki lɐmɡi pɐna ɐmɐni	sentence-mtei	IndicCorp v2 mni (CC0), not in the mni_dev/heldout/wiki sets; pronunciation hand-written	dev	2026-11-18
+s-042	sentence	ꯃꯍꯥꯛ ꯑꯉꯀꯄꯥ ꯐꯥꯑꯣꯈꯤ ꯃꯗꯨꯗꯤ ꯃꯍꯥꯛ ꯑꯇꯣꯞꯄꯥ ꯀꯅꯥꯁꯨ ꯅꯠꯇꯦ, ꯃꯍꯥꯛ ꯁꯥꯟꯗ꯭ꯔꯦꯝꯕꯤꯅꯤ꯫	mɐhak ɐŋɐkpɐ pʰaokʰi mɐdudi mɐhak ɐtoppɐ kɐnasu nɐtte mɐhak sandɾembini	sentence-mtei	IndicCorp v2 mni (CC0), not in the mni_dev/heldout/wiki sets; pronunciation hand-written	heldout	2026-11-18

@@ -64,10 +64,47 @@ All notable changes are listed here. The format follows
   tag; evaluation sets in `tools/eval/data/sat_*.tsv` (held-out: IndicCorp v2, IndicGenBench,
   Santali Wikipedia, Tatoeba), `tools/eval/gold/sat` and the coverage check
   `tools/eval/sat_check.py`.
+- **Manipuri** (Meitei; `mni`, also `manipuri`, `meitei`, `meetei`, `mni-mtei`, `mni-beng`) in both
+  its scripts. Meetei Mayek (U+ABC0–U+ABFF and the extensions U+AAE0–U+AAFF) gets its own block in
+  the tokenizer (letters, ꯰–꯹ digits, ꯫ and ꫱ sentence ends, ꫰ a comma) and its own language file
+  (`lang/mni.lang`): consonant letters carry ɐ, the lonsum letters ꯛ ꯜ ꯝ ꯞ ꯟ ꯠ ꯡ ꯢ close a syllable,
+  apun iyek ꯭ makes a cluster, ꯩ ꯧ are ei ou, ꯏ ꯎ ꯌ after a vowel close a diphthong, a final letter
+  keeps ɐ only after the suffix consonants (ꯂꯩꯕ leibɐ, ꯃꯅꯤꯄꯨꯔ mɐnipuɾ); after Everson's Meitei Mayek
+  proposal (WG2 N3206R2, Unicode L2/07-005R2) and Chelliah (1997) and Bhat and Ningomba (1997) as
+  summarised by Wikipedia. The two lexical tones are written in neither script and are not read
+  (lum iyek ꯬ is skipped); words carry no stress marks (new option `stress = none`). What the
+  spelling leaves to the reader is written out first (`mni::prepare`): a stem closed before a
+  suffix (ꯃꯇꯃꯗꯥ mɐtɐmdɐ, মোমবি mombi) and a suffix vowel written ꯥ or া (ꯂꯥꯎꯕꯥ laubɐ). Bengali-script
+  Meitei is written in Meetei Mayek letter for letter (`mni::bengali_to_meetei`: a final bare
+  consonant closes the syllable, hasanta before a consonant is a lonsum letter, শ ষ স are s) and read
+  the same way; Bengali and Assamese text read as before (outputs identical on their 8,000 dev and
+  held-out sentences). espeak-ng has no Meitei voice and cannot read Meetei Mayek, so both modes
+  give this reading (`Lang::no_reference`). On a gold set of 561 words with Wiktionary's
+  pronunciations and 33 hand-written sentences, split by hash before the rules were run on it, the
+  held-out half gets 92.2 % of 193 Meetei Mayek words and 95.2 % of 83 Bengali-script words right,
+  sentence PER 1.25 % (Meetei Mayek, 10) and 0.52 % (Bengali script, 9); espeak-ng's Bengali voice
+  gets 28.9 % of the Bengali-script words. Every word of the held-out IndicCorp v2, Manipuri
+  Wikipedia and IndicGenBench sets is read (`tools/eval/mni_check.py`). 14.2 µs per sentence (p50)
+  on a Windows 11 laptop, where Bodo took 20.3 µs. Numbers in Meitei words from ASCII, Meetei Mayek
+  or Bengali digits, as Meetei Mayek text writes them (25 ꯀꯨꯟꯃꯉꯥ, 201 ꯆꯥꯅꯤꯒ ꯁꯨꯞꯅ ꯑꯃꯥ, 2000 ꯂꯤꯁꯤꯡ
+  ꯑꯅꯤ with the scale word first: new option `scale-first`), the rupee (ꯂꯨꯄꯥ) and dates;
+  normalise-only mode writes them in Bengali script for Bengali-script text (`mni::meetei_to_bengali`).
+  Romanised Meitei (`eina nangbu nungsi`) in Meetei Mayek through the `hinglish` option and
+  `transliterate(..., "mni")` without a pack (`src/mni.rs`). Python, WebAssembly and C take the new
+  tag; evaluation sets in `tools/eval/data/mni_*.tsv` (held-out: IndicCorp v2, Manipuri Wikipedia,
+  IndicGenBench in Bengali script), `tools/eval/gold/mni` and the coverage check
+  `tools/eval/mni_check.py`.
+- Language-file options `stress = none` (no stress marks) and `scale-first yes` in `[numbers]` (the
+  scale word before its count).
 - Language-file option `stress = second` (primary stress on the second syllable).
 - Language-file options `time-hour-minutes` and `time-minute` (the hour word before minutes and a
   word after them) and `apostrophe keep` (an apostrophe between Indic letters stays in the word);
   see `docs/adding-a-language.md`.
+
+### Changed
+
+- The phonemizer keeps its per-language word tables on the heap: with 43 languages the unoptimised
+  command-line tool overflowed the 1 MB main-thread stack on Windows.
 
 ## [0.6.6] - 2026-11-17
 

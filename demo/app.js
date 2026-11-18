@@ -47,6 +47,7 @@ const GROUPS = [
     ["doi", "Dogri · डोगरी", ["तुस कि’यां ओ? एह् मेरा घर ऐ।"], ["tusen kiyan o"]],
     ["brx", "Bodo · बर’", ["आं बर’ राव बुङो। नों माबोरै दं?"], ["ang boro raw bungw"]],
     ["sat", "Santali · ᱥᱟᱱᱛᱟᱲᱤ", ["ᱡᱚᱦᱟᱨ! ᱥᱟᱱᱛᱟᱲᱤ ᱯᱟᱹᱨᱥᱤ ᱫᱚ ᱚᱞ ᱪᱤᱠᱤ ᱛᱮ ᱚᱞᱚᱜᱼᱟ ᱾"], ["johar inj disom do santali kana"]],
+    ["mni", "Manipuri · ꯃꯤꯇꯩꯂꯣꯟ", ["ꯃꯤꯇꯩꯂꯣꯟ ꯑꯁꯤ ꯃꯅꯤꯄꯨꯔꯒꯤ ꯂꯣꯟꯅꯤ꯫", "মৈতৈলোন অসি মণিপুরগী লোননি।"], ["eina nangbu nungsi"]],
   ]],
   ["European", [
     ["es", "Spanish · Español", ["Hola, ¿cómo estás? Tengo 21 años."]],

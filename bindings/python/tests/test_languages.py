@@ -42,3 +42,15 @@ def test_santali():
     assert uccharan.phonemize("ᱢᱤᱫ", lang="sat") == "mˈit̚ʔ"
     assert uccharan.normalize("25", "sat").text == "ᱵᱟᱨ ᱜᱮᱞ ᱢᱚᱬᱮ"
     assert uccharan.transliterate("johar inj disom do santali kana", "sat").text == "ᱡᱚᱦᱟᱨ ᱤᱧ ᱫᱤᱥᱚᱢ ᱫᱚ ᱥᱟᱱᱛᱟᱲᱤ ᱠᱟᱱᱟ"
+
+
+def test_manipuri():
+    # Meetei Mayek: espeak-ng cannot read it, so both modes give the Meitei
+    # reading; Bengali-script Meitei is read as the Meetei Mayek it spells.
+    assert "mni" in uccharan.LANGUAGES
+    assert uccharan.phonemize("ꯃꯤꯇꯩꯂꯣꯟ", lang="mni") == uccharan.phonemize("ꯃꯤꯇꯩꯂꯣꯟ", lang="manipuri", improved=True)
+    assert uccharan.phonemize("ꯃꯤꯇꯩꯂꯣꯟ", lang="mni") == "miteilon"
+    assert uccharan.phonemize("মৈতৈলোন", lang="mni") == "meiteilon"
+    assert uccharan.normalize("25", "mni").text == "ꯀꯨꯟꯃꯉꯥ"
+    assert uccharan.normalize("অমা 25", "mni").text == "অমা কুন্মঙা"
+    assert uccharan.transliterate("eina nangbu nungsi", "mni").text == "ꯑꯩꯅꯥ ꯅꯪꯕꯨ ꯅꯨꯡꯁꯤ"

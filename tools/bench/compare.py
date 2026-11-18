@@ -10,7 +10,8 @@ one Python process, on the same sentences, producing the same kind of output
 The reference side is optional: it needs an espeak-ng shared library that you
 installed yourself (for example `pip install espeakng-loader`). Without it
 only the uccharan columns are filled in. A language without an espeak-ng
-voice to compare with (Santali: espeak-ng reads Ol Chiki as code points) is
+voice to compare with (Santali, Manipuri: espeak-ng reads Ol Chiki and Meetei
+Mayek as code points) is
 measured for uccharan alone, in the same run as the others.
 
 What is measured, per language:
