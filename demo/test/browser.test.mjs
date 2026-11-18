@@ -68,8 +68,8 @@ try {
   ok((await out.textContent()).startsWith("həlˈoʊ, wˈɜːld."), "default text is phonemized on load");
   ok(/^\d+\.\d+\.\d+$/.test(await page.locator("#version").textContent()), "version is shown");
   ok(/(µs|ms) · \d+ words/.test(await page.locator("#timing").textContent()), "timing is shown");
-  ok((await page.locator("#lang option").count()) === 41, "every language tag is offered");
-  ok(/44 languages/.test(await page.locator("h1").textContent()), "headline names the languages");
+  ok((await page.locator("#lang option").count()) === 46, "every language tag is offered");
+  ok(/24 more South Asian languages/.test(await page.locator("h1 + p").textContent()), "the line under the headline names the languages");
   await snap(1600);
 
   // English: live update while typing, then compatible / improved
