@@ -497,3 +497,86 @@ fn currency_words_agree_with_the_amount() {
     let compat = ipa(Lang::EnUs, Mode::Compatible, "5 ¢");
     assert!(compat.contains("s"), "{compat}");
 }
+
+#[test]
+fn improved_mode_reads_south_indian_numbers_in_written_words() {
+    // Tamil, Kannada, Telugu and Malayalam read amounts with the written
+    // number words (as normalize() does), not the table word by word
+    // ("ஒன்று ஆயிரம் இரண்டு நூறு"), and say the rupee sign and percent.
+    let cases: &[(Lang, &str, &str)] = &[
+        (
+            Lang::Ta,
+            "₹1,250",
+            "ˈaːjiɹˌʌttʉ ˌiɹʉnˌʉʈrʉ ˌaɪmbʌdʉ ɹˈuːbaːj",
+        ),
+        (Lang::Ta, "10%", "pˈʌttʉ sˈʌdʌvˌiːdʌm"),
+        (
+            Lang::Kn,
+            "₹1,250",
+            "sˈaːviɹˌɐdɐ ˈinnuːɹɐ ˈaɪvɐttu ɹˈuːpaːji",
+        ),
+        (
+            Lang::Te,
+            "₹1,250",
+            "ʋˈejji rˌeɳɖu ʋˌandala jˌaːbʰaɪ rˈuːpaːjˌalu",
+        ),
+        (Lang::Ml, "₹1,250", "ˈaːjiɾˌɐtːi ˈiɾunˌuːʈʈi ˈɐnbəd ɾˈuːbɐ"),
+    ];
+    for &(lang, text, want) in cases {
+        let want = uccharan::profile::nfd(want);
+        assert_eq!(ipa(lang, Mode::Improved, text), want, "{lang:?} {text}");
+    }
+    // The other Indian languages keep their number table and gain the rupee.
+    let bn = ipa(Lang::Bn, Mode::Improved, "₹500");
+    assert!(bn.ends_with(&uccharan::profile::nfd("ʈˈaka")), "{bn}");
+    // Compatible mode keeps the reference voices' reading.
+    let ta = ipa(Lang::Ta, Mode::Compatible, "₹1,250");
+    assert_eq!(
+        ta,
+        uccharan::profile::nfd("ˈonrʉ ˌaːjiɹʌm ˌiɹʌɳɖʉ nˌuːrʉ ˌaɪmbʌdʉ")
+    );
+}
+
+#[test]
+fn hindi_clock_times_before_baje_say_baje_once() {
+    for mode in [Mode::Compatible, Mode::Improved] {
+        for text in ["3:30 बजे", "3:20 बजे", "4:00 बजे"] {
+            let out = ipa(Lang::Hi, mode, text);
+            assert!(
+                out.matches("bˈʌɟeː").count() <= 1 && !out.contains("mˈɪnəʈ bˈʌɟeː"),
+                "{mode:?} {text}: {out}"
+            );
+        }
+    }
+    assert!(ipa(Lang::Hi, Mode::Compatible, "3:30 बजे").ends_with("tˈiːn bˈʌɟeː"));
+    assert_eq!(norm(Lang::Hi, "3:30 बजे"), "साढ़े तीन बजे");
+    assert_eq!(norm(Lang::Hi, "3:20 बजे"), "तीन बजकर बीस मिनट");
+    assert_eq!(norm(Lang::Hi, "4:00 बजे"), "चार बजे");
+}
+
+#[test]
+fn english_month_abbreviations_before_a_day() {
+    assert_eq!(
+        norm(Lang::EnUs, "Jan 5, 2024"),
+        "January five, twenty twenty four"
+    );
+    assert_eq!(norm(Lang::EnUs, "Mar 3rd"), "March third");
+    assert_eq!(norm(Lang::EnUs, "Sept 10"), "September ten");
+    // Not before a day, or not capitalised: left alone.
+    assert_eq!(norm(Lang::EnUs, "Jan is here"), "Jan is here");
+    assert_eq!(norm(Lang::EnUs, "mar 3"), "mar three");
+    assert_eq!(norm(Lang::EnUs, "Dec 32"), "Dec thirty two");
+    for mode in [Mode::Compatible, Mode::Improved] {
+        let out = ipa(Lang::EnUs, mode, "Jan 5");
+        assert!(out.starts_with("dʒˈænjuː"), "{mode:?}: {out}");
+    }
+}
+
+#[test]
+fn unknown_language_lists_every_tag() {
+    let m = Lang::unknown_message("xx");
+    assert!(m.contains("\"xx\""), "{m}");
+    for l in Lang::ALL {
+        assert!(m.contains(l.tag()), "{m} lacks {}", l.tag());
+    }
+}

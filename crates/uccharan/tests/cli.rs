@@ -69,3 +69,14 @@ fn invalid_utf8_is_a_one_line_error() {
     // The lines before the bad one are written.
     assert_eq!(String::from_utf8_lossy(&o.stdout).lines().count(), 1);
 }
+
+#[test]
+fn unknown_language_names_the_supported_ones() {
+    let o = run(&["-l", "xx", "hello"], b"");
+    assert!(!o.status.success());
+    let err = String::from_utf8_lossy(&o.stderr);
+    assert!(
+        err.contains("\"xx\"") && err.contains("ta") && err.contains("fr-ch"),
+        "{err}"
+    );
+}

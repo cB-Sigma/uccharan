@@ -605,10 +605,24 @@ impl Cx<'_> {
                 return (1, self.piece(src, w, SpanKind::Decimal, dl, Some(t)));
             }
         }
-        // "10:30 बजे": Hindi clock idioms.
+        // "Jan 5": an English month abbreviation before a day.
+        if dl.is_english() && !ch.dot {
+            if let Some(m) = crate::norm::month_before_day(t, next) {
+                return (1, self.piece(src, m.to_string(), SpanKind::Date, dl, None));
+            }
+        }
+        // "10:30 बजे": Hindi clock idioms; "3:20 बजे" is read without a
+        // second बजे.
         if dl.hindi_like() && next == Some("बजे") {
-            if let Some(w) = hindi_clock(&ascii_digits(t)) {
-                return (1, self.piece(src, w, SpanKind::Time, dl, None));
+            if let Some((w, keeps)) = hindi_clock(&ascii_digits(t)) {
+                return if keeps {
+                    (1, self.piece(src, w, SpanKind::Time, dl, None))
+                } else {
+                    (
+                        2,
+                        self.piece(src.start..end_of(i + 1), w, SpanKind::Time, dl, None),
+                    )
+                };
             }
         }
         // "10 h 30", "10.30 Uhr": a clock time written in more than one chunk.
@@ -1227,7 +1241,7 @@ fn indian_grouping(a: &str) -> bool {
         && groups[1..groups.len() - 1].iter().all(|g| g.len() == 2)
 }
 
-fn rupee_word(l: Lang) -> Option<&'static str> {
+pub(crate) fn rupee_word(l: Lang) -> Option<&'static str> {
     Some(match l {
         Lang::Mr | Lang::Kok => "रुपये",
         Lang::Ne => "रुपैयाँ",
@@ -1266,23 +1280,26 @@ fn hindi_fraction(a: &str) -> Option<String> {
     })
 }
 
-/// "10:30" before बजे -> साढ़े दस, "4:15" -> सवा चार, "4:45" -> पौने पाँच,
-/// "9:00" -> नौ.
-fn hindi_clock(a: &str) -> Option<String> {
+/// A clock time written before बजे: "10:30" -> साढ़े दस, "4:15" -> सवा चार,
+/// "4:45" -> पौने पाँच, "9:00" -> नौ, each followed by the बजे of the text
+/// (`true`); other minutes, "3:20" -> तीन बजकर बीस मिनट, which takes the
+/// place of that बजे (`false`).
+pub(crate) fn hindi_clock(a: &str) -> Option<(String, bool)> {
     let (h, m) = a.split_once(':')?;
     let h: u64 = h.parse().ok()?;
-    if h > 24 || m.len() != 2 {
+    let mm: u64 = m.parse().ok()?;
+    if h > 24 || m.len() != 2 || !m.bytes().all(|b| b.is_ascii_digit()) || mm >= 60 {
         return None;
     }
     let num = |k: u64| crate::norm::HI_NUM[k as usize].to_string();
     Some(match m {
-        "00" => num(h),
-        "30" if h == 1 => "डेढ़".into(),
-        "30" if h == 2 => "ढाई".into(),
-        "30" => format!("साढ़े {}", num(h)),
-        "15" => format!("सवा {}", num(h)),
-        "45" => format!("पौने {}", num(h % 12 + 1)),
-        _ => return None,
+        "00" => (num(h), true),
+        "30" if h == 1 => ("डेढ़".into(), true),
+        "30" if h == 2 => ("ढाई".into(), true),
+        "30" => (format!("साढ़े {}", num(h)), true),
+        "15" => (format!("सवा {}", num(h)), true),
+        "45" => (format!("पौने {}", num(h % 12 + 1)), true),
+        _ => (format!("{} बजकर {} मिनट", num(h), num(mm)), false),
     })
 }
 

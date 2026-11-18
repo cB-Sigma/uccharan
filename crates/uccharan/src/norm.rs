@@ -655,7 +655,37 @@ fn split_number(s: &str) -> Option<(&str, Option<&str>)> {
     Some((int, frac))
 }
 
-fn to_ascii_digits(s: &str) -> String {
+/// The full name of an English month abbreviation written without a dot
+/// before a day of the month: "Jan" before "5" or "3rd" -> January. Only
+/// capitalised forms count, so the verb "mar" stays a word.
+pub(crate) fn month_before_day(word: &str, next: Option<&str>) -> Option<&'static str> {
+    let first_upper = word.chars().next().is_some_and(|c| c.is_ascii_uppercase());
+    if !first_upper {
+        return None;
+    }
+    let m = match word.to_ascii_lowercase().as_str() {
+        "jan" => 0,
+        "feb" => 1,
+        "mar" => 2,
+        "apr" => 3,
+        "jun" => 5,
+        "jul" => 6,
+        "aug" => 7,
+        "sep" | "sept" => 8,
+        "oct" => 9,
+        "nov" => 10,
+        "dec" => 11,
+        _ => return None,
+    };
+    let next = next?.to_ascii_lowercase();
+    let digits = next.trim_end_matches(|c: char| c.is_ascii_alphabetic());
+    let suffix = &next[digits.len()..];
+    let day: u32 = digits.parse().ok()?;
+    let ok_suffix = matches!(suffix, "" | "st" | "nd" | "rd" | "th");
+    (digits.len() <= 2 && (1..=31).contains(&day) && ok_suffix).then_some(MONTHS[m])
+}
+
+pub(crate) fn to_ascii_digits(s: &str) -> String {
     s.chars()
         .map(|c| match crate::text::indic_digit(c) {
             Some(d) => char::from(b'0' + d),

@@ -62,7 +62,7 @@ fn main() {
         match a.as_str() {
             "-l" | "--lang" => {
                 let v = args.next().unwrap_or_default();
-                lang = Lang::parse(&v).unwrap_or_else(|| die(&format!("unknown language '{v}'")));
+                lang = Lang::parse(&v).unwrap_or_else(|| die(&Lang::unknown_message(&v)));
             }
             "-p" | "--profile" => prof = args.next().unwrap_or_default(),
             "--normalize" => {

@@ -69,7 +69,7 @@ def test_batch_matches_single():
 
 
 def test_errors():
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match=r"expected .*\bta\b.*fr-ch"):
         uccharan.phonemize("x", lang="xx")
     with pytest.raises(ValueError):
         uccharan.phonemize("x", profile="nope")  # type: ignore[call-overload]

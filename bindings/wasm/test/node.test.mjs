@@ -41,7 +41,7 @@ test("profiles", async () => {
 test("sync API and errors", async () => {
   await uccharan.loadLanguage("en-us");
   assert.equal(uccharan.phonemizeSync("Hello"), "həlˈoʊ");
-  await assert.rejects(() => uccharan.phonemize("x", { lang: "xx" }), /unknown language/);
+  await assert.rejects(() => uccharan.phonemize("x", { lang: "xx" }), /unknown language "xx" \(expected .*\bta\b/);
   await assert.rejects(() => uccharan.phonemize("x", { profile: "nope" }), /unknown profile/);
   assert.equal(await uccharan.phonemize(""), "");
 });

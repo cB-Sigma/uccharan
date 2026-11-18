@@ -13,11 +13,7 @@ thread_local! {
 }
 
 fn lang(s: &str) -> Result<Lang, JsError> {
-    Lang::parse(s).ok_or_else(|| {
-        JsError::new(&format!(
-            "unknown language \"{s}\" (expected en-us, en-gb or hi)"
-        ))
-    })
+    Lang::parse(s).ok_or_else(|| JsError::new(&Lang::unknown_message(s)))
 }
 
 fn options(

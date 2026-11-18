@@ -2,6 +2,9 @@
 # the voicing of stops is decided by position ([post] rules).
 
 [meta]
+# Improved mode reads numbers as the Tamil words of lang/numbers/ta.txt
+# (Unicode CLDR): the number table joins them word by word.
+improved-numbers = written
 tag = ta
 block = 0b80
 stress = initial

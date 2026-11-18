@@ -203,6 +203,13 @@ languages! {
 }
 
 impl Lang {
+    /// The error message for a language tag that [`Lang::parse`] does not
+    /// know, listing every supported tag.
+    pub fn unknown_message(tag: &str) -> String {
+        let tags: Vec<&str> = Lang::ALL.iter().map(|l| l.tag()).collect();
+        format!("unknown language {tag:?} (expected {})", tags.join(", "))
+    }
+
     /// True for the English accents.
     pub fn is_english(self) -> bool {
         matches!(self, Lang::EnUs | Lang::EnGb)
@@ -770,7 +777,34 @@ impl Phonemizer {
                 }
                 _ => chunks,
             };
+            let mut skip_next = false;
             for (ci, chunk) in chunks.iter().enumerate() {
+                if std::mem::take(&mut skip_next) {
+                    continue;
+                }
+                let natural = opt.normalize == Normalize::Natural;
+                let next = chunks.get(ci + 1).map(|c| c.text.as_str());
+                // "3:30 बजे": Hindi clock idioms (साढ़े तीन बजे), read as
+                // normalize() reads them.
+                if natural
+                    && (opt.lang.hindi_like() || (compat && opt.lang.hindi_voice()))
+                    && next == Some("बजे")
+                    && !chunk.dot
+                {
+                    let a = norm::to_ascii_digits(&chunk.text);
+                    if let Some((w, keeps)) = normalize_api::hindi_clock(&a) {
+                        items.extend(w.split(' ').map(norm::Item::word));
+                        skip_next = !keeps;
+                        continue;
+                    }
+                }
+                // "Jan 5": an English month abbreviation before a day.
+                if natural && opt.lang.is_english() && !chunk.dot {
+                    if let Some(month) = norm::month_before_day(&chunk.text, next) {
+                        items.push(norm::Item::word(month));
+                        continue;
+                    }
+                }
                 // "Maple Dr." / "Baker St.": after a capitalised name and not before
                 // another one, these are "drive" and "street", not titles.
                 if opt.normalize == Normalize::Natural
@@ -827,6 +861,17 @@ impl Phonemizer {
                         // the keys of the number table.
                         for it in &mut items[start..] {
                             it.generated = false;
+                        }
+                    }
+                    // Improved mode says the rupee sign, which the generic
+                    // reader leaves out (as normalize() does).
+                    let rupees = chunk
+                        .text
+                        .strip_prefix('₹')
+                        .is_some_and(|a| a.starts_with(|c: char| c.is_numeric()));
+                    if !compat && rupees && items.len() > start {
+                        if let Some(w) = Lang::parse(&g.tag).and_then(normalize_api::rupee_word) {
+                            items.push(norm::Item::word(w));
                         }
                     }
                 } else {

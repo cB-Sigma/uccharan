@@ -136,6 +136,26 @@ All notable changes are listed here. The format follows
 - The phonemizer keeps its per-language word tables on the heap: with 43 languages the unoptimised
   command-line tool overflowed the 1 MB main-thread stack on Windows.
 
+### Fixed
+
+- **Tamil, Kannada, Telugu and Malayalam numbers** in improved mode are read with the written number
+  words of Unicode CLDR, as normalise-only mode reads them (`improved-numbers = written`): Tamil
+  ₹1,250 is *ஆயிரத்து இருநூற்று ஐம்பது ரூபாய்*, not *ஒன்று ஆயிரம் இரண்டு நூறு ஐம்பது*, and 10% says
+  *சதவீதம்*. Kannada and Telugu no longer say "one thousand" and "one hundred" for ಸಾವಿರ, వెయ్యి
+  and వంద. The other Indian languages keep their number table, which reads better there (Bengali
+  একশো, Urdu 19 and 45). Compatible mode is unchanged.
+- **The rupee sign** is said in improved mode in every Indian language and in Urdu and Sindhi
+  (*ரூபாய்*, *টাকা*, *روپے*); the phonemiser dropped it.
+- **Hindi clock times before बजे** say बजे once: *3:30 बजे* is *साढ़े तीन बजे* in every mode with
+  natural normalisation, as in normalise-only mode, and *3:20 बजे* is *तीन बजकर बीस मिनट*
+  (was *… मिनट बजे*; *4:00 बजे* was *चार बजे बजे*). Normalise-only mode reads *3:20 बजे* the same
+  way.
+- **English month abbreviations** without a full stop before a day are read in full in natural
+  normalisation and normalise-only mode: *Jan 5* is *January five*, *Mar 3rd* *March third*. A
+  lower-case *mar*, or one not before a day of the month, stays a word.
+- **An unknown language** names every supported tag in the error in Python and the command line, as
+  in JavaScript; it listed only en-us, en-gb and hi.
+
 ## [0.6.6] - 2026-11-17
 
 ### Changed

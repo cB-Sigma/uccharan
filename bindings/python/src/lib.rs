@@ -18,11 +18,8 @@ fn engine() -> &'static Phonemizer {
 }
 
 fn options(lang: &str, normalize: &str, improved: bool, hinglish: bool) -> PyResult<Options> {
-    let lang = Lang::parse(lang).ok_or_else(|| {
-        PyValueError::new_err(format!(
-            "unknown language {lang:?} (expected en-us, en-gb or hi)"
-        ))
-    })?;
+    let lang =
+        Lang::parse(lang).ok_or_else(|| PyValueError::new_err(Lang::unknown_message(lang)))?;
     let mut opt = Options::new(lang);
     opt.normalize = match normalize {
         "natural" => Normalize::Natural,

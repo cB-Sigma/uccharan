@@ -1,6 +1,9 @@
 # Malayalam. espeak-ng voice "ml". Written for uccharan.
 
 [meta]
+# Improved mode reads numbers as the Malayalam words of lang/numbers/ml.txt
+# (Unicode CLDR): the number table joins them word by word.
+improved-numbers = written
 tag = ml
 block = 0d00
 stress = initial-light-heavy

@@ -1,6 +1,9 @@
 # Kannada. espeak-ng voice "kn". Written for uccharan.
 
 [meta]
+# Improved mode reads numbers as the Kannada words of lang/numbers/kn.txt
+# (Unicode CLDR): the number table joins them word by word.
+improved-numbers = written
 tag = kn
 block = 0c80
 stress = initial
